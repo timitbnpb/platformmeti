@@ -1,0 +1,37 @@
+/* /akses-energi: pelengkap info.css dan analisis.css. Token tema.css saja; tanpa gaya inline, tanpa warna sendiri. */
+.akn-panel{display:grid;gap:24px;min-width:0;margin-top:24px}
+.akn-panel[hidden]{display:none}
+.akn-panel>*{min-width:0}
+.akn-dua{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:24px;align-items:start}
+.akn-dua>*{min-width:0}
+.akn-sub{margin:0 0 12px;font:700 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
+.akn-grafik{display:block;width:100%;height:auto}
+.akn-pil{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:700 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap}
+.akn-pil i{width:10px;height:10px;border-radius:50%;background:currentColor;flex:none}
+.akn-p-ok{color:var(--ok);background:var(--ok-bg)}
+.akn-p-info{color:var(--info);background:var(--info-bg)}
+.akn-p-warn{color:var(--warn);background:var(--warn-bg)}
+.akn-p-bad{color:var(--bad);background:var(--bad-bg)}
+.akn-ket{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 16px;padding:0;list-style:none}
+.akn-fakta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:16px}
+.akn-fk{display:grid;gap:4px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);min-width:0}
+.akn-fk b{font:700 var(--t-h3)/var(--lh-rapat) var(--font);font-variant-numeric:tabular-nums;color:var(--head);overflow-wrap:anywhere}
+.akn-fk span{color:var(--ink2);font-size:var(--t-kecil)}
+.akn-reg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:16px}
+.akn-reg-k{display:grid;gap:8px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);min-width:0}
+.akn-reg-k header{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.akn-reg-k h3{margin:0;font:700 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
+.akn-reg-k p{margin:0;color:var(--ink2);font-size:var(--t-kecil)}
+.akn-celah{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.akn-celah li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;padding:12px 16px;border:1px dashed var(--line-ctl);border-radius:var(--r);background:var(--surface)}
+.akn-terkait{display:flex;flex-wrap:wrap;gap:12px}
+.akn-terkait a{display:inline-flex;align-items:center;gap:8px}
+.akn-c-ok{background:var(--ok)}.akn-c-info{background:var(--info)}.akn-c-warn{background:var(--warn)}.akn-c-bad{background:var(--bad)}
+.akn-panel .jm-gulir{margin-top:16px}
+.akn-panel .jm-batang{margin:0 0 16px}
+.akn-panel .akn-fakta{margin:16px 0}
+.akn-panel .akn-ket{margin:0 0 16px}
+@media (max-width:640px){
+  #tabHal.jm-tab-rata{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+  #tabHal.jm-tab-rata>button{flex-direction:column;justify-content:center;gap:4px;padding:8px 2px;font-size:var(--t-label)}
+}

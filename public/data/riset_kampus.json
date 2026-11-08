@@ -2364,7 +2364,10 @@
    "Hanya 25 kampus teratas menurut karya energi; kampus lain dan lembaga riset non-pendidikan (BRIN, LIPI) tidak diambil.",
    "Tanpa kunci API dan tanpa parameter mailto (tidak ada alamat generik METI ditetapkan); anggaran gratis harian bersama.",
    "Kueri kata kunci bahasa Inggris saja; karya berbahasa Indonesia terlewat. Tidak memakai klasifikasi topik OpenAlex.",
-   "organisasi_id memetakan kampus ke unit pusat studi di organisasi.json berdasarkan nama kampus pada nama unit; kosong bila tidak ada."
-  ]
+   "organisasi_id memetakan kampus ke unit pusat studi di organisasi.json berdasarkan nama kampus pada nama unit; kosong bila tidak ada.",
+   "Tren/kolaborator/sitasi baru untuk 0 dari 25 kampus (HTTP 503 https://api.openalex.org/works?filter=authorships.institutions.id:I1346); anggaran gratis OpenAlex dibagi per IP. Jalankan ulang untuk melanjutkan.",
+   "Tren/kolaborator/sitasi belum terisi untuk 25 kampus: OpenAlex anonim membalas HTTP 503 (pencarian anonim dijeda, 8 Nov 2026) dan anggaran gratis per IP nyaris habis. Jalankan node scripts/panen/openalex_kampus.mjs setelah pulih (atau dengan kunci API gratis); cache dipakai ulang."
+  ],
+  "catatan_tambahan": "tren_tahunan = karya energi per tahun terbit; kolaborator_negara = karya energi kampus yang juga berafiliasi di negara lain (iso2, tanpa ID); sitasi_min = jumlah sitasi dari 200 kelompok sitasi terbesar (batas bawah, ekor panjang terpotong)."
  }
 }

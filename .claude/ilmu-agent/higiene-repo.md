@@ -55,3 +55,4 @@ Berkas yang tidak boleh terlacak sama sekali: `.dev.vars`, `daftar-tolak.json`, 
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-08 · Berkas gitignored tetap terlacak bila pernah di-add: .playwright-cli/ (147 berkas, ada surel gmail di snapshot yml) dan tests/layar/tangkapan (352 PNG, 161 MB) sudah di origin/main. .gitignore tidak mencegah berkas yang sudah ada di indeks. Cek dengan git ls-files, bukan hanya git status. Bundle Claude outputs/agenda-struktur-v2.bundle 28 MB juga sudah publik.

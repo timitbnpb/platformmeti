@@ -1,4654 +1,4508 @@
 {
- "_catatan": "Pemilik/operator/induk GEM yang belum ada di organisasi.json (nama ternormalisasi + alias). KANDIDAT saja: tinjau kurator sebelum masuk direktori; tidak dimuat potret.",
- "sumber": "Global Energy Monitor (CC BY 4.0)",
- "tanggal": "2026-11-08",
- "jumlah": 324,
- "baris": [
-  {
-   "nama": "to be determined",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 42,
-   "kapasitas_pemilik_mw": 8250,
-   "contoh_proyek": [
-    "Jawa-11 power station",
-    "Jawa-12 power station",
-    "Jawa-13 power station"
-   ]
-  },
-  {
-   "nama": "PT Bukit Asam Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal",
-    "solar"
-   ],
-   "jumlah_baris": 36,
-   "kapasitas_pemilik_mw": 4580,
-   "contoh_proyek": [
-    "Ombilin solar farm",
-    "Tanjung Enim solar farm",
-    "Bantuas solar farm"
-   ]
-  },
-  {
-   "nama": "Hong Kong Prime Aluminium Investment Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 25,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Nanshan Industrial Park power station"
-   ]
-  },
-  {
-   "nama": "Nanshan Aluminium International Holdings Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 25,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Nanshan Industrial Park power station"
-   ]
-  },
-  {
-   "nama": "PT Bintan Alumina Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 25,
-   "kapasitas_pemilik_mw": 3030,
-   "contoh_proyek": [
-    "Nanshan Industrial Park power station"
-   ]
-  },
-  {
-   "nama": "Jiangsu Delong Nickel Industry Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 24,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Delong Nickel Phase II power station",
-    "Delong Nickel Phase III power station",
-    "Delong Nickel Phase IV power station"
-   ]
-  },
-  {
-   "nama": "PT Indah Kiat Pulp & Paper Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 24,
-   "kapasitas_pemilik_mw": 965,
-   "contoh_proyek": [
-    "Perawang Mill power station",
-    "Indah Kiat Serang power station"
-   ]
-  },
-  {
-   "nama": "PT Trimegah Bangun Persada Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 17,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Xinxing Ductile Iron Pipes power station",
-    "PT Halmahera Persada Lygend Nickel Smelter power station"
-   ]
-  },
-  {
-   "nama": "PT Alamtri Resources Indonesia Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 16,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Adaro East Kalimantan power station",
-    "Central Java Power Project",
-    "Tabalong power station"
-   ]
-  },
-  {
-   "nama": "Shanghai Decent Investment (Group) Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 16,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station",
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "TSINGSHAN Holding Group Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 15,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station",
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "Zhejiang Qingshan Business Management Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 15,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station",
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Bintang Delapan Group",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 12,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station",
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "PT Metal Smeltindo Selaras",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 12,
-   "kapasitas_pemilik_mw": 390,
-   "contoh_proyek": [
-    "Qingdao Zhongsheng captive power station"
-   ]
-  },
-  {
-   "nama": "PT Pabrik Kertas Tjiwi Kimia Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 12,
-   "kapasitas_pemilik_mw": 230,
-   "contoh_proyek": [
-    "Sinar Mas OKI Paper Mill power station",
-    "Tjiwi Kimia Paper Mill power station"
-   ]
-  },
-  {
-   "nama": "China Huadian Corp Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 11,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bangko Tengah power station",
-    "Celukan Bawang power station",
-    "Jambi-2 power station"
-   ]
-  },
-  {
-   "nama": "Huakai Investment Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 11,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station",
-    "PT IHIP power station"
-   ]
-  },
-  {
-   "nama": "PT Dian Swastatika Sentosa Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 11,
-   "kapasitas_pemilik_mw": 400,
-   "contoh_proyek": [
-    "Kalselteng-1 power station",
-    "Kendari-3 power station",
-    "Sinar Mas Jambi power station"
-   ]
-  },
-  {
-   "nama": "PT Gunbuster Nickel Industry",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 11,
-   "kapasitas_pemilik_mw": 2160,
-   "contoh_proyek": [
-    "Delong Nickel Phase III power station"
-   ]
-  },
-  {
-   "nama": "PT Obsidian Stainless Steel",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 11,
-   "kapasitas_pemilik_mw": 2220,
-   "contoh_proyek": [
-    "Delong Nickel Phase II power station"
-   ]
-  },
-  {
-   "nama": "Tongxiang Wushi Trading Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 11,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station",
-    "PT IHIP power station"
-   ]
-  },
-  {
-   "nama": "Xiamen Xiangyu Group Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 11,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Delong Nickel Phase II power station"
-   ]
-  },
-  {
-   "nama": "Zhenshi Holding Group Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 11,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station",
-    "PT IHIP power station"
-   ]
-  },
-  {
-   "nama": "PT APP Purinusa Ekapersada",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 10,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sinar Mas Jambi Lontar power station",
-    "Sinar Mas OKI Paper Mill power station",
-    "Pindo-Deli-Ii power station"
-   ]
-  },
-  {
-   "nama": "PT Cita Mineral Investindo Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 10,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Ketapang Smelter power station",
-    "AlamTri Aluminum Smelter power station"
-   ]
-  },
-  {
-   "nama": "China Datang Overseas Investment Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 9,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Kalselteng-1 power station",
-    "Kendari-3 power station",
-    "Nagan Raya power station"
-   ]
-  },
-  {
-   "nama": "Lygend Resources & Technology Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 8,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "PT Halmahera Persada Lygend Nickel Smelter power station"
-   ]
-  },
-  {
-   "nama": "Oceanwide Holdings Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 8,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Banyuasin power station",
-    "Karang Asem power station",
-    "Kuala Tanjung-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Barito Pacific Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 8,
-   "kapasitas_pemilik_mw": 2200,
-   "contoh_proyek": [
-    "Banten Suralaya power station",
-    "Kalselteng-4 Hybrid power station"
-   ]
-  },
-  {
-   "nama": "PT Bosowa Makassar",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 8,
-   "kapasitas_pemilik_mw": 520,
-   "contoh_proyek": [
-    "Punagaya power station"
-   ]
-  },
-  {
-   "nama": "PT Halmahera Persada Lygend",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 8,
-   "kapasitas_pemilik_mw": 870,
-   "contoh_proyek": [
-    "PT Halmahera Persada Lygend Nickel Smelter power station"
-   ]
-  },
-  {
-   "nama": "PT Kaltara Power Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 8,
-   "kapasitas_pemilik_mw": 2120,
-   "contoh_proyek": [
-    "AlamTri Aluminum Smelter power station"
-   ]
-  },
-  {
-   "nama": "PT Praba Indopersada",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 8,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Parit Baru power station"
-   ]
-  },
-  {
-   "nama": "PT Virtue Dragon Nickel Industry",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 8,
-   "kapasitas_pemilik_mw": 530,
-   "contoh_proyek": [
-    "Delong Nickel Phase I power station"
-   ]
-  },
-  {
-   "nama": "PT Wanxiang Steel Indonesia",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 8,
-   "kapasitas_pemilik_mw": 530,
-   "contoh_proyek": [
-    "Wanxiang Nickel Indonesia power station"
-   ]
-  },
-  {
-   "nama": "AC Energy and Infrastructure Corp",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 378,
-   "contoh_proyek": [
-    "Gunung Salak geothermal power plant"
-   ]
-  },
-  {
-   "nama": "Korea Electric Power Corp",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Cirebon power station",
-    "Jambi Tebo power station",
-    "Tabalong power station"
-   ]
-  },
-  {
-   "nama": "PT Bumipertiwi Tatapradipta",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Cilacap power station",
-    "Paiton-2 power station"
-   ]
-  },
-  {
-   "nama": "PT Indonesia Power Suralaya",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 3400,
-   "contoh_proyek": [
-    "Banten Suralaya power station"
-   ]
-  },
-  {
-   "nama": "PT Pembangunan Perumahan (Persero)",
-   "peran": [
-    "induk",
-    "operator"
-   ],
-   "tracker": [
-    "coal",
-    "wind"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Tolo wind farm",
-    "Nagan Raya power station",
-    "Jambi-2 power station"
-   ]
-  },
-  {
-   "nama": "Siemens AG",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Cilacap power station",
-    "Paiton-2 power station"
-   ]
-  },
-  {
-   "nama": "Star Energy Group PLC",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 378,
-   "contoh_proyek": [
-    "Gunung Salak geothermal power plant"
-   ]
-  },
-  {
-   "nama": "YTL Corporation Bhd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Cilacap power station",
-    "Paiton-2 power station"
-   ]
-  },
-  {
-   "nama": "Zhejiang Huayou Holding Group Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 7,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "China Power International Development Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Banyuasin power station",
-    "Karang Asem power station",
-    "Kuala Tanjung-1 power station"
-   ]
-  },
-  {
-   "nama": "Dingxin Group",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station",
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "Hanwa Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "Kamojang POMU",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Gunung Salak geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Amman Mineral Internasional Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Batu Hijau power station"
-   ]
-  },
-  {
-   "nama": "PT Amman Mineral Nusa Tenggara",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 424,
-   "contoh_proyek": [
-    "Batu Hijau power station"
-   ]
-  },
-  {
-   "nama": "PT Satya Abadi Semesta",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Banyuasin power station",
-    "Karang Asem power station",
-    "Kuala Tanjung-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Sulawesi Mining Investment",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 1650,
-   "contoh_proyek": [
-    "Sulawesi Mining power station",
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "PT Tambang Batubara Bukit Asam",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 150,
-   "contoh_proyek": [
-    "East Halmahera power station"
-   ]
-  },
-  {
-   "nama": "PT Truba Alam Manunggal Engineering Tbk",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 710,
-   "contoh_proyek": [
-    "Banyuasin power station",
-    "Karang Asem power station",
-    "Kuala Tanjung-1 power station"
-   ]
-  },
-  {
-   "nama": "Tsingshan Steel Group",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 6,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "BTN Power",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "BTN Dumai power station",
-    "Bantaeng BSE power station"
-   ]
-  },
-  {
-   "nama": "Ecolab Inc",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "NALCO East Kutai power station"
-   ]
-  },
-  {
-   "nama": "ENGIE SA",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 476,
-   "contoh_proyek": [
-    "Muarah Laboh geothermal plant",
-    "Rajabasa geothermal power plant",
-    "Rantau Dedep geothermal power plant"
-   ]
-  },
-  {
-   "nama": "Eternal Tsingshan Group Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Labota power station",
-    "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "KS Orka Renewables Pte Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 223,
-   "contoh_proyek": [
-    "Sorik Marapi geothermal power plant"
-   ]
-  },
-  {
-   "nama": "MEC Coal Pte Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 1250,
-   "contoh_proyek": [
-    "NALCO East Kutai power station"
-   ]
-  },
-  {
-   "nama": "Merryline International Pte Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 1086,
-   "contoh_proyek": [
-    "Celukan Bawang power station"
-   ]
-  },
-  {
-   "nama": "Municipality of Ras al-Khaimah",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "NALCO East Kutai power station"
-   ]
-  },
-  {
-   "nama": "ONC International Trading (Ningbo) Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Xinxing Ductile Iron Pipes power station"
-   ]
-  },
-  {
-   "nama": "PT Gane Permai Sentosa",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Xinxing Ductile Iron Pipes power station"
-   ]
-  },
-  {
-   "nama": "PT General Energy Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 1086,
-   "contoh_proyek": [
-    "Celukan Bawang power station"
-   ]
-  },
-  {
-   "nama": "PT Indonesia Weda Bay Industrial Park",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 1900,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Jawa Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 5000,
-   "contoh_proyek": [
-    "Cilacap power station"
-   ]
-  },
-  {
-   "nama": "PT Megah Surya Pertiwi",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 217,
-   "contoh_proyek": [
-    "Xinxing Ductile Iron Pipes power station"
-   ]
-  },
-  {
-   "nama": "PT Nalco Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 1250,
-   "contoh_proyek": [
-    "NALCO East Kutai power station"
-   ]
-  },
-  {
-   "nama": "PT Singa Energy Indonesia",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Celukan Bawang power station"
-   ]
-  },
-  {
-   "nama": "Trimex International FZE",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 5,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "NALCO East Kutai power station"
-   ]
-  },
-  {
-   "nama": "China Energy Engineering Corp Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Parit Baru power station"
-   ]
-  },
-  {
-   "nama": "Hong Kong Exchanges and Clearing Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Parit Baru power station"
-   ]
-  },
-  {
-   "nama": "Lygend New Power (Hong Kong) Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "PT Halmahera Persada Lygend Nickel Smelter power station"
-   ]
-  },
-  {
-   "nama": "Ormat Technology Inc",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 180,
-   "contoh_proyek": [
-    "Blawan Ijen geothermal project",
-    "Toka Tindung geothermal power plant"
-   ]
-  },
-  {
-   "nama": "Power Construction Corporation of China Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bengkulu power station",
-    "Sumut-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Aneka Tambang Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Pomalaa Nickel power station"
-   ]
-  },
-  {
-   "nama": "PT Bakrie & Brothers Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bakrie Sangatta power station",
-    "Tanjung Jati A power station"
-   ]
-  },
-  {
-   "nama": "PT Baoshuo Taman Industry Investment Group",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 450,
-   "contoh_proyek": [
-    "PT IHIP power station"
-   ]
-  },
-  {
-   "nama": "PT Bumi Resources Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 400,
-   "contoh_proyek": [
-    "BUMI Sangatta power station"
-   ]
-  },
-  {
-   "nama": "PT Central Java Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 2640,
-   "contoh_proyek": [
-    "Tanjung Jati B power station"
-   ]
-  },
-  {
-   "nama": "PT Cikarang Listrindo Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 280,
-   "contoh_proyek": [
-    "Cikarang Babelan power station"
-   ]
-  },
-  {
-   "nama": "PT Huadian Bukit Asam Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 2640,
-   "contoh_proyek": [
-    "Bangko Tengah power station"
-   ]
-  },
-  {
-   "nama": "PT Indocement Tunggal Prakarsa Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 115,
-   "contoh_proyek": [
-    "Kalimantan Cement Works power station",
-    "Pati INTP power station"
-   ]
-  },
-  {
-   "nama": "PT Indonesia Energi Dinamika",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Kaltim-4 power station"
-   ]
-  },
-  {
-   "nama": "PT Indonesia Tsingshan Stainless Steel",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 1400,
-   "contoh_proyek": [
-    "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "PT Lontar Papyrus Pulp & Paper Industry",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 211,
-   "contoh_proyek": [
-    "Sinar Mas Jambi Lontar power station"
-   ]
-  },
-  {
-   "nama": "PT Merak Energi Indonesia",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 120,
-   "contoh_proyek": [
-    "Merak power station"
-   ]
-  },
-  {
-   "nama": "PT Mineral Industri Indonesia (Persero)",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Amamapare Port power station",
-    "Kuala Tanjung Inalum captive power station"
-   ]
-  },
-  {
-   "nama": "PT Obi Nickel Cobalt",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 1520,
-   "contoh_proyek": [
-    "PT Halmahera Persada Lygend Nickel Smelter power station"
-   ]
-  },
-  {
-   "nama": "PT OKI Pulp & Paper Mills",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 500,
-   "contoh_proyek": [
-    "Sinar Mas OKI Paper Mill power station"
-   ]
-  },
-  {
-   "nama": "PT Pembangunan Kota Batam",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 120,
-   "contoh_proyek": [
-    "Kabil PKB power station"
-   ]
-  },
-  {
-   "nama": "PT Sumber Segara Primadaya",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 2260,
-   "contoh_proyek": [
-    "Cilacap Sumber power station"
-   ]
-  },
-  {
-   "nama": "PT Sumberenergy Sakti Prima",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Cilacap Sumber power station"
-   ]
-  },
-  {
-   "nama": "PT Timah Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 300,
-   "contoh_proyek": [
-    "Timah South Sumatra power station"
-   ]
-  },
-  {
-   "nama": "PT Toba Pulp Lestari Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 80,
-   "contoh_proyek": [
-    "Toba Pulp Lestari power station"
-   ]
-  },
-  {
-   "nama": "Sunseap Group Pte Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 5595,
-   "contoh_proyek": [
-    "Batam solar farm",
-    "Combol solar farm",
-    "Citlim Island solar farm"
-   ]
-  },
-  {
-   "nama": "Tsingtuo Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 4,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "Barito Renewables",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 294,
-   "contoh_proyek": [
-    "Sidrap wind farm",
-    "Sukabumi wind farm"
-   ]
-  },
-  {
-   "nama": "China Development Bank Corp",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Jinchuan Group WP&RKA power station"
-   ]
-  },
-  {
-   "nama": "FreePort-McMoran Inc",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Amamapare Port power station"
-   ]
-  },
-  {
-   "nama": "Gansu Provincial State-owned Assets Investment Group Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Jinchuan Group WP&RKA power station"
-   ]
-  },
-  {
-   "nama": "Genting Power Holdings Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Banten Serang power station",
-    "Kaltim Teluk Balikpapan power station"
-   ]
-  },
-  {
-   "nama": "Huafon Group Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "Jinchuan Group Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Jinchuan Group WP&RKA power station"
-   ]
-  },
-  {
-   "nama": "Kalla Group",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 900,
-   "contoh_proyek": [
-    "Tumbuan Mamuju Atas hydroelectric plant",
-    "Tumbuan Mamuju Bawah hydroelectric plant",
-    "Mamuju hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "Nebras Energy QPSC",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Paiton-1 power station",
-    "Paiton-3 power station"
-   ]
-  },
-  {
-   "nama": "Oakridge International",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 165,
-   "contoh_proyek": [
-    "Ngebel geothermal power plant"
-   ]
-  },
-  {
-   "nama": "Pace Energy Pvt Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 150,
-   "contoh_proyek": [
-    "Tanah Laut wind farm"
-   ]
-  },
-  {
-   "nama": "PT BTN Energy Prima",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 450,
-   "contoh_proyek": [
-    "BTN Dumai power station"
-   ]
-  },
-  {
-   "nama": "PT Cirebon Electric Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 2584,
-   "contoh_proyek": [
-    "Cirebon power station"
-   ]
-  },
-  {
-   "nama": "PT DSSP Power Sumsel",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 650,
-   "contoh_proyek": [
-    "Sumsel-5 power station"
-   ]
-  },
-  {
-   "nama": "PT Freeport Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 195,
-   "contoh_proyek": [
-    "Amamapare Port power station"
-   ]
-  },
-  {
-   "nama": "PT Hero Inti Pratama",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Banten Serang power station",
-    "Kaltim Teluk Balikpapan power station"
-   ]
-  },
-  {
-   "nama": "PT Hua Chin Aluminum Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 1140,
-   "contoh_proyek": [
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "PT Lestari Banten Energi",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 1620,
-   "contoh_proyek": [
-    "Banten Serang power station",
-    "Kaltim Teluk Balikpapan power station"
-   ]
-  },
-  {
-   "nama": "PT Medco Daya Abadi Lestari",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Paiton-1 power station",
-    "Paiton-3 power station"
-   ]
-  },
-  {
-   "nama": "PT Paiton Energy Pte Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 2045,
-   "contoh_proyek": [
-    "Paiton-1 power station",
-    "Paiton-3 power station"
-   ]
-  },
-  {
-   "nama": "PT Semen Indonesia (Persero) Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Indarung Cement power station",
-    "Tonasa Cement Plant power station"
-   ]
-  },
-  {
-   "nama": "Ras Laffan Operating Company WLL",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Paiton-1 power station",
-    "Paiton-3 power station"
-   ]
-  },
-  {
-   "nama": "RATCH Group PCL",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Paiton-1 power station",
-    "Paiton-3 power station"
-   ]
-  },
-  {
-   "nama": "Samchully Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Cirebon power station"
-   ]
-  },
-  {
-   "nama": "SDIC Power Holdings Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Banten Serang power station",
-    "Kaltim Teluk Balikpapan power station"
-   ]
-  },
-  {
-   "nama": "WP&RKA Company",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 3,
-   "kapasitas_pemilik_mw": 150,
-   "contoh_proyek": [
-    "Jinchuan Group WP&RKA power station"
-   ]
-  },
-  {
-   "nama": "ACEN Investments HK Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 219,
-   "contoh_proyek": [
-    "Sidrap wind farm",
-    "Sukabumi wind farm"
-   ]
-  },
-  {
-   "nama": "AKR Corp",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Gresik AKR power station"
-   ]
-  },
-  {
-   "nama": "Arrow Resources Development",
-   "peran": [
-    "operator",
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 50,
-   "contoh_proyek": [
-    "Arrow Lampung geothermal power plant"
-   ]
-  },
-  {
-   "nama": "Bangun Palu Sulawesi Tengah PT",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 700,
-   "contoh_proyek": [
-    "Palu SEZ power station"
-   ]
-  },
-  {
-   "nama": "BlackGold Natural Resources Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Riau-1 power station"
-   ]
-  },
-  {
-   "nama": "China Hongqiao Group Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Ketapang Smelter power station"
-   ]
-  },
-  {
-   "nama": "China Hydropower Construction Group New Energy Development Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulut-3 power station"
-   ]
-  },
-  {
-   "nama": "China Shenhua Overseas Development and Investment Co Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 600,
-   "contoh_proyek": [
-    "Adaro East Kalimantan power station"
-   ]
-  },
-  {
-   "nama": "Electric Power Development Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Central Java Power Project"
-   ]
-  },
-  {
-   "nama": "Envision Group",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Bantaeng wind farm"
-   ]
-  },
-  {
-   "nama": "Golden Concord Holdings Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Kalbar-1 power station"
-   ]
-  },
-  {
-   "nama": "Guangdong Guangxin Holdings Group Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "Hangzhou Yande Industrial Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Ketapang Bangun Sarana power station"
-   ]
-  },
-  {
-   "nama": "Hitay Energy Holdings",
-   "peran": [
-    "operator",
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 220,
-   "contoh_proyek": [
-    "Gunung Geureudong geothermal power plant"
-   ]
-  },
-  {
-   "nama": "Hongshi Holding Group Co Ltd",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 2000,
-   "contoh_proyek": [
-    "Hongshi Silikon power station"
-   ]
-  },
-  {
-   "nama": "IMPSA Malaysia Sdn Bhd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 750,
-   "contoh_proyek": [
-    "Longgi hydroelectric plant",
-    "Makale hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "Indonesia Wanjia Ferro Nickel Co Ltd",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 380,
-   "contoh_proyek": [
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "Indonesia Zhaohui Ferro Nickel Co Ltd",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 380,
-   "contoh_proyek": [
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "ITOCHU Corp",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Central Java Power Project"
-   ]
-  },
-  {
-   "nama": "Krakatau Posco Energy PT",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "PT Krakatau Posco Energy power station"
-   ]
-  },
-  {
-   "nama": "Luck Scenery International Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "Madhucon Infra Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sumsel-7 power station"
-   ]
-  },
-  {
-   "nama": "Madhucon Projects Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sumsel-7 power station"
-   ]
-  },
-  {
-   "nama": "Madhucon Sugar & Power Industries Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sumsel-7 power station"
-   ]
-  },
-  {
-   "nama": "Masdar Clean Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 692,
-   "contoh_proyek": [
-    "Cirata Reservoir solar farm"
-   ]
-  },
-  {
-   "nama": "Mitsubishi Corp",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Asahimas Chemical power station"
-   ]
-  },
-  {
-   "nama": "Nanjing Iron and Steel Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Medan Steel Mill power station"
-   ]
-  },
-  {
-   "nama": "Nickel Industries Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "Nusantara Energy Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Jambi-2 power station"
-   ]
-  },
-  {
-   "nama": "PLN Unit Induk Wilayah Riau",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Bintan power station"
-   ]
-  },
-  {
-   "nama": "POSCO International Corp",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "PT Krakatau Posco Energy power station"
-   ]
-  },
-  {
-   "nama": "Press Metal International Resources (HK) Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "PT Kalimantan Alumina Nusantara power station"
-   ]
-  },
-  {
-   "nama": "PT Adaro Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 600,
-   "contoh_proyek": [
-    "Adaro East Kalimantan power station"
-   ]
-  },
-  {
-   "nama": "PT Adimas Puspita Serasi",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sumbagsel-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Alakasa Alumina Refineri",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "PT Kalimantan Alumina Nusantara power station"
-   ]
-  },
-  {
-   "nama": "PT Angel Nickel Industry",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 760,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Asahimas Chemical",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 300,
-   "contoh_proyek": [
-    "Asahimas Chemical power station"
-   ]
-  },
-  {
-   "nama": "PT Bakrie Indo Infrastructure",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Bakrie Sangatta power station"
-   ]
-  },
-  {
-   "nama": "PT Bantaeng Sigma Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 600,
-   "contoh_proyek": [
-    "Bantaeng BSE power station"
-   ]
-  },
-  {
-   "nama": "PT Bhakti Energi Persada",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 600,
-   "contoh_proyek": [
-    "Adaro East Kalimantan power station"
-   ]
-  },
-  {
-   "nama": "PT Bhimasena Power Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 1900,
-   "contoh_proyek": [
-    "Central Java Power Project"
-   ]
-  },
-  {
-   "nama": "PT Bhumi Jati Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 2000,
-   "contoh_proyek": [
-    "Tanjung Jati B power station"
-   ]
-  },
-  {
-   "nama": "PT Biidznillah Tambang Nusantara",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bantaeng BSE power station"
-   ]
-  },
-  {
-   "nama": "PT Binakarya Jaya Abadi Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "KIPI Bika Global power station"
-   ]
-  },
-  {
-   "nama": "PT Bukit Pembangkit Innovative",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 220,
-   "contoh_proyek": [
-    "Banjarsari power station"
-   ]
-  },
-  {
-   "nama": "PT Cemindo Gemilang Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Cemindo Gemilang power station"
-   ]
-  },
-  {
-   "nama": "PT D&C Engineering Co",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sumbagsel-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Dalle Energy Batam",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Lamhotma power station"
-   ]
-  },
-  {
-   "nama": "PT Datang DSSP Power Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Kalselteng-1 power station"
-   ]
-  },
-  {
-   "nama": "PT DSSP Power Kendari",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Kendari-3 power station"
-   ]
-  },
-  {
-   "nama": "PT Energi Manyar Sejahtera",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 660,
-   "contoh_proyek": [
-    "Gresik AKR power station"
-   ]
-  },
-  {
-   "nama": "PT Energi Musi Makmur",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Shenhua Guohua power station"
-   ]
-  },
-  {
-   "nama": "PT Fajar Surya Wisesa Tbk",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 55,
-   "contoh_proyek": [
-    "FAJAR power station"
-   ]
-  },
-  {
-   "nama": "PT Gahapi Nisco Steel",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Medan Steel Mill power station"
-   ]
-  },
-  {
-   "nama": "PT Garda Sayap Garuda",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sumut-1 power station"
-   ]
-  },
-  {
-   "nama": "PT GH EMM Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 300,
-   "contoh_proyek": [
-    "Shenhua Guohua power station"
-   ]
-  },
-  {
-   "nama": "PT Gorontalo Listrik Perdana",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Sulbagut-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Graha Wahyu Kencana",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sumsel-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Gunung Gahapi",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Medan Steel Mill power station"
-   ]
-  },
-  {
-   "nama": "PT Impha Nusantara Mandiri",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 750,
-   "contoh_proyek": [
-    "Longgi hydroelectric plant",
-    "Makale hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT INALUM (Persero)",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 603,
-   "contoh_proyek": [
-    "Sigura Gura hydroelectric plant",
-    "Tangga hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Indonesia Guang Ching Nickel and Stainless Steel Industry",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 300,
-   "contoh_proyek": [
-    "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "PT Intraco Penta Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bengkulu power station"
-   ]
-  },
-  {
-   "nama": "PT Jawa Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 1320,
-   "contoh_proyek": [
-    "Paiton-2 power station"
-   ]
-  },
-  {
-   "nama": "PT Kalimantan Alumina Nusantara",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "PT Kalimantan Alumina Nusantara power station"
-   ]
-  },
-  {
-   "nama": "PT Lion Power Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 700,
-   "contoh_proyek": [
-    "Sumsel-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Mabar Elektrindo",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 300,
-   "contoh_proyek": [
-    "Sumut-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Madhucon Indonesia",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sumsel-7 power station"
-   ]
-  },
-  {
-   "nama": "PT Madhucon Sriwajaya Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 300,
-   "contoh_proyek": [
-    "Sumsel-7 power station"
-   ]
-  },
-  {
-   "nama": "PT Makmur Sejahtera Wisesa",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Tabalong Wisesa power station"
-   ]
-  },
-  {
-   "nama": "PT Medco Power Internasional",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Lamhotma power station"
-   ]
-  },
-  {
-   "nama": "PT Meulaboh Power Generation",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 450,
-   "contoh_proyek": [
-    "Nagan Raya power station"
-   ]
-  },
-  {
-   "nama": "PT Minahasa Cahaya Lestari",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Sulut-3 power station"
-   ]
-  },
-  {
-   "nama": "PT Nadesico Nickel Industry",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 660,
-   "contoh_proyek": [
-    "Delong Nickel Phase IV power station"
-   ]
-  },
-  {
-   "nama": "PT Nusatama Properta Panbil",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Tanjung Sauh power station"
-   ]
-  },
-  {
-   "nama": "PT Okha Hutomo Satrya",
-   "peran": [
-    "operator",
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 40,
-   "contoh_proyek": [
-    "Mount Sibayak geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Pembangkitan Perkasa Daya",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 600,
-   "contoh_proyek": [
-    "Jambi-2 power station"
-   ]
-  },
-  {
-   "nama": "PT Petra Unggul Sejahtera",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Tanjung Kasam power station"
-   ]
-  },
-  {
-   "nama": "PT Pindo Deli Pulp and Paper Mills",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Pindo-Deli-Ii power station"
-   ]
-  },
-  {
-   "nama": "PT PLN Nusantara Renewables",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Kalselteng-3 power station"
-   ]
-  },
-  {
-   "nama": "PT PLN Wilayah Bangka Belitung",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Bangka Baru power station"
-   ]
-  },
-  {
-   "nama": "PT Priamanaya Djan International",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Keban Agung power station"
-   ]
-  },
-  {
-   "nama": "PT Priamanaya Energi",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 270,
-   "contoh_proyek": [
-    "Keban Agung power station"
-   ]
-  },
-  {
-   "nama": "PT Rodamas",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Asahimas Chemical power station"
-   ]
-  },
-  {
-   "nama": "PT Samantaka Batubara",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 600,
-   "contoh_proyek": [
-    "Riau-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Semen Gresik",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 70,
-   "contoh_proyek": [
-    "Tonasa Cement Plant power station"
-   ]
-  },
-  {
-   "nama": "PT Sepoetih Daya Prima",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Komering Agung Power Station"
-   ]
-  },
-  {
-   "nama": "PT Shenhua Guohua Pembangkitan Jawa Bali",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 1982,
-   "contoh_proyek": [
-    "Jawa-7 power station"
-   ]
-  },
-  {
-   "nama": "PT Sintesa Green Energy",
-   "peran": [
-    "operator",
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 110,
-   "contoh_proyek": [
-    "Banten geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Star Vyobros",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Sulawesi Star power station"
-   ]
-  },
-  {
-   "nama": "PT Sumbagsel Energi Sakti Pewali",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 300,
-   "contoh_proyek": [
-    "Sumbagsel-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Sumberenergi Sakti Prima",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sumbagsel-1 power station"
-   ]
-  },
-  {
-   "nama": "PT Tanjung Jati Power Co",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 1320,
-   "contoh_proyek": [
-    "Tanjung Jati A power station"
-   ]
-  },
-  {
-   "nama": "PT Tanjung Kasam Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 130,
-   "contoh_proyek": [
-    "Tanjung Kasam power station"
-   ]
-  },
-  {
-   "nama": "PT Tanjung Power Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Tabalong power station"
-   ]
-  },
-  {
-   "nama": "PT Tanjung Sauh Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 300,
-   "contoh_proyek": [
-    "Tanjung Sauh power station"
-   ]
-  },
-  {
-   "nama": "PT Tenaga Listrik Bengkulu",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Bengkulu power station"
-   ]
-  },
-  {
-   "nama": "PT United Tractors Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Tanjung Jati B power station"
-   ]
-  },
-  {
-   "nama": "PT Well Harvest Winning Alumina Refinery",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Ketapang Smelter power station"
-   ]
-  },
-  {
-   "nama": "Shanghai Electric Power Construction Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulbagut-1 power station"
-   ]
-  },
-  {
-   "nama": "The Trustee for Zhu Family Trust",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Kalbar-1 power station"
-   ]
-  },
-  {
-   "nama": "Tongren Zhongwei Hongling No. 1 Enterprise Management Consulting Partnership LP",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Delong Nickel Phase IV power station"
-   ]
-  },
-  {
-   "nama": "Unnamed special purpose vehicle",
-   "peran": [
-    "induk",
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 110,
-   "contoh_proyek": [
-    "Nagan Raya power station"
-   ]
-  },
-  {
-   "nama": "Viron Energy PPA",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 30,
-   "contoh_proyek": [
-    "Sukabumi (Viron Energy) wind farm"
-   ]
-  },
-  {
-   "nama": "Walsin Lihwa Corp",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Labota power station",
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "YTL Power International Bhd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Tanjung Jati A power station"
-   ]
-  },
-  {
-   "nama": "Zhejiang Hengjia Holding Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Ketapang Bangun Sarana power station"
-   ]
-  },
-  {
-   "nama": "Zhongwei Hong Kong Zhengbang New Energy Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Delong Nickel Phase IV power station"
-   ]
-  },
-  {
-   "nama": "Zhongwei Hong Kong Zhenghong New Energy Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 2,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Delong Nickel Phase IV power station"
-   ]
-  },
-  {
-   "nama": "Aditya Birla Management Corporation Pvt Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Indo Bharat Rayon power station"
-   ]
-  },
-  {
-   "nama": "Anantara Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Riau solar farm"
-   ]
-  },
-  {
-   "nama": "Astratel Nusantara",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Astratel power station"
-   ]
-  },
-  {
-   "nama": "Beijing Chengtong ICBC Equity Investment Fund LP",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "BP Batam",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 333,
-   "contoh_proyek": [
-    "Tembesi Reservoir floating solar farm"
-   ]
-  },
-  {
-   "nama": "CCB Financial Assets Investment Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "China National Petroleum Corp",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "Countrywide Hydrogen",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Riau solar farm"
-   ]
-  },
-  {
-   "nama": "Dutch Entrepreneurial Development Bank NV",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 50,
-   "contoh_proyek": [
-    "Samas wind farm"
-   ]
-  },
-  {
-   "nama": "Fareast Green Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 510,
-   "contoh_proyek": [
-    "Batang Toru hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "Gold Gazelle Profits Corp",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bandung Indosyntec power station"
-   ]
-  },
-  {
-   "nama": "Guolian Industrial Investment Fund Management (Beijing) Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "Hainan PetroChina Shennan Petroleum Technology Development Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "Huafeng Group",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "ib vogt gmbH",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 3500,
-   "contoh_proyek": [
-    "Riau Solar and Storage Power Plant"
-   ]
-  },
-  {
-   "nama": "Indomie",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Kulon Progo power station"
-   ]
-  },
-  {
-   "nama": "Indonesia Eternal Smelting Co",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 350,
-   "contoh_proyek": [
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "Indonesia Huaqing Aluminum Co Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 380,
-   "contoh_proyek": [
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "Indonesia Morowali Power Co",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 250,
-   "contoh_proyek": [
-    "Sulawesi Mining power station"
-   ]
-  },
-  {
-   "nama": "Indorama Ventures PCL",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Cilegon PTIP Power Station"
-   ]
-  },
-  {
-   "nama": "International Finance Corp",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 180,
-   "contoh_proyek": [
-    "Asahan 1 hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "Lenzing AG",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "South Pasific Viscose power station"
-   ]
-  },
-  {
-   "nama": "Lucky Height Resources Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bandung Indosyntec power station"
-   ]
-  },
-  {
-   "nama": "Mercury Capital International Inc",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bandung Indosyntec power station"
-   ]
-  },
-  {
-   "nama": "Metallurgical Corporation of China Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "Olympic Group",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "I Skip power station"
-   ]
-  },
-  {
-   "nama": "Ortega Management Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bandung Indosyntec power station"
-   ]
-  },
-  {
-   "nama": "PacificLight Power Pte Ltd",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 670,
-   "contoh_proyek": [
-    "Pulau Bulan solar farm"
-   ]
-  },
-  {
-   "nama": "Prime Invesco Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bandung Indosyntec power station"
-   ]
-  },
-  {
-   "nama": "PT Antam BK",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Hu'u Daha geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Binatek Energi Terbarukan (BET)",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 50,
-   "contoh_proyek": [
-    "Samas wind farm"
-   ]
-  },
-  {
-   "nama": "PT Cahaya Fajar Kaltim",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Embalut power station"
-   ]
-  },
-  {
-   "nama": "PT Cahaya Sakti",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 30,
-   "contoh_proyek": [
-    "I Skip power station"
-   ]
-  },
-  {
-   "nama": "PT Daya Anugerah Sejati Utama",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 40,
-   "contoh_proyek": [
-    "Nage geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Daya Listrindo Utama",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Dharma Hydro Nusantara",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 510,
-   "contoh_proyek": [
-    "Batang Toru hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Energi Infranusantara",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 127,
-   "contoh_proyek": [
-    "Lariang hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Energy Management Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Krueng Teunom hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Guna Darma Integra",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 680,
-   "contoh_proyek": [
-    "East Halmahera power station"
-   ]
-  },
-  {
-   "nama": "PT Haka Buton Energy",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 88,
-   "contoh_proyek": [
-    "Haka Buton wind farm"
-   ]
-  },
-  {
-   "nama": "PT Harum Energy Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Huake Nickel Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 250,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Huayue Nickel Cobalt",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 250,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Indo Bharat Rayon",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 37,
-   "contoh_proyek": [
-    "Indo Bharat Rayon power station"
-   ]
-  },
-  {
-   "nama": "PT Indorama Petrochemicals",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 40,
-   "contoh_proyek": [
-    "Cilegon PTIP Power Station"
-   ]
-  },
-  {
-   "nama": "PT Infrastruktur Tebarukan Fortuna",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 50,
-   "contoh_proyek": [
-    "Bali-1 solar farm"
-   ]
-  },
-  {
-   "nama": "PT International Nickel Indonesia Tbk",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 90,
-   "contoh_proyek": [
-    "Karebbe hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Jasa Marga (Persero) Tbk",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 30,
-   "contoh_proyek": [
-    "East Kalimantan II solar farm"
-   ]
-  },
-  {
-   "nama": "PT Jasa Sarana",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 32,
-   "contoh_proyek": [
-    "Gunung Tampomas geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Jogja Magasa Iron",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Kulon Progo power station"
-   ]
-  },
-  {
-   "nama": "PT Kawasan Industri Jababeka Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Jababeka KIP power station"
-   ]
-  },
-  {
-   "nama": "PT Kawasan Industri Kendal",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 660,
-   "contoh_proyek": [
-    "Jababeka KIP power station"
-   ]
-  },
-  {
-   "nama": "PT Ketenagalistrikan Kalimantan Timur",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Embalut power station"
-   ]
-  },
-  {
-   "nama": "PT Khatulistiwa Sentra Energi",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Nokan Nayan hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Libai Indonesia Metal Co",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 250,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Panasia Indo Resources Tbk",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 30,
-   "contoh_proyek": [
-    "Bandung Indosyntec power station"
-   ]
-  },
-  {
-   "nama": "PT Panasia Synthetic Abadi",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Bandung Indosyntec power station"
-   ]
-  },
-  {
-   "nama": "PT Papua Power Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 405,
-   "contoh_proyek": [
-    "Urumuka hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Pembangkitan Jawa Bali",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Tulungagung hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT Petrindo Jaya Kreasi Tbk",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "East Halmahera power station"
-   ]
-  },
-  {
-   "nama": "PT PJB Investasi",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 510,
-   "contoh_proyek": [
-    "Batang Toru hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT PLN Batam",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 1000,
-   "contoh_proyek": [
-    "Batam Bintan Karimun solar farm"
-   ]
-  },
-  {
-   "nama": "PT Resources Jaya Teknik Management",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 32,
-   "contoh_proyek": [
-    "Gunung Tampomas geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Semen Padang",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 100,
-   "contoh_proyek": [
-    "Indarung Cement power station"
-   ]
-  },
-  {
-   "nama": "PT Siemens Indonesia",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Tolo wind farm"
-   ]
-  },
-  {
-   "nama": "PT Sunny Metal Industry",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 380,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Supreme Energy Rantau Dedap",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Rantau Dedep geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Tianshan Alumina Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 160,
-   "contoh_proyek": [
-    "PT Tianshan Alumina power station"
-   ]
-  },
-  {
-   "nama": "PT Trisurya Mitra Bersama",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 1000,
-   "contoh_proyek": [
-    "Batam Bintan Karimun solar farm"
-   ]
-  },
-  {
-   "nama": "PT Tujuan Mulia Makmur",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Batoq Kelo hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "PT UPC Sidrap Bayu Energi (UPC SIDRAP)",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sidrap wind farm"
-   ]
-  },
-  {
-   "nama": "PT Walsin Nickel Industrial Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 350,
-   "contoh_proyek": [
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "PT Weda Bay Energi",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 250,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Wika Jabar Power",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Gunung Tampomas geothermal power plant"
-   ]
-  },
-  {
-   "nama": "PT Yashi Indonesia Investment",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 250,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "PT Youshan Nickel Indonesia",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 250,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "Qingshan Industrial Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Sulawesi Labota power station"
-   ]
-  },
-  {
-   "nama": "Rajamandala Electric Power CO LTD",
-   "peran": [
-    "operator"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Rajamandala hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "RH International [",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 180,
-   "contoh_proyek": [
-    "Asahan 1 hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "Scatec ASA",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 70,
-   "contoh_proyek": [
-    "Labuan Bajo solar farm"
-   ]
-  },
-  {
-   "nama": "SN Aboitiz Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 127,
-   "contoh_proyek": [
-    "Lariang hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "SN Power",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "hydropower"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 127,
-   "contoh_proyek": [
-    "Lariang hydroelectric plant"
-   ]
-  },
-  {
-   "nama": "Solar PPA Philippines",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 25,
-   "contoh_proyek": [
-    "East Bali solar farm"
-   ]
-  },
-  {
-   "nama": "South Pasific Viscose PT",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 30,
-   "contoh_proyek": [
-    "South Pasific Viscose power station"
-   ]
-  },
-  {
-   "nama": "Sumber Energi Surya Nusantara",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "solar"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 200,
-   "contoh_proyek": [
-    "Morowali Industrial Park solar power project"
-   ]
-  },
-  {
-   "nama": "Tianshan Aluminum Group Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "PT Tianshan Alumina power station"
-   ]
-  },
-  {
-   "nama": "UPC Renewables Indonesia Limited",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "wind"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 50,
-   "contoh_proyek": [
-    "Samas wind farm"
-   ]
-  },
-  {
-   "nama": "Vale SA",
-   "peran": [
-    "pemilik"
-   ],
-   "tracker": [
-    "geothermal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 60,
-   "contoh_proyek": [
-    "Hu'u Daha geothermal power plant"
-   ]
-  },
-  {
-   "nama": "Zhejiang Huajun Investment Co Ltd",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  },
-  {
-   "nama": "Zhejiang Huayou Cobalt Co",
-   "peran": [
-    "induk"
-   ],
-   "tracker": [
-    "coal"
-   ],
-   "jumlah_baris": 1,
-   "kapasitas_pemilik_mw": 0,
-   "contoh_proyek": [
-    "Weda Bay power station"
-   ]
-  }
- ]
+  "_catatan": "Pemilik/operator/induk GEM yang belum ada di organisasi.json (nama ternormalisasi + alias). KANDIDAT saja: tinjau kurator sebelum masuk direktori; tidak dimuat potret.",
+  "sumber": "Global Energy Monitor (CC BY 4.0)",
+  "tanggal": "2026-11-08",
+  "jumlah": 314,
+  "baris": [
+    {
+      "nama": "to be determined",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 42,
+      "kapasitas_pemilik_mw": 8250,
+      "contoh_proyek": [
+        "Jawa-11 power station",
+        "Jawa-12 power station",
+        "Jawa-13 power station"
+      ]
+    },
+    {
+      "nama": "PT Bukit Asam Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal",
+        "solar"
+      ],
+      "jumlah_baris": 36,
+      "kapasitas_pemilik_mw": 4580,
+      "contoh_proyek": [
+        "Ombilin solar farm",
+        "Tanjung Enim solar farm",
+        "Bantuas solar farm"
+      ]
+    },
+    {
+      "nama": "Hong Kong Prime Aluminium Investment Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 25,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Nanshan Industrial Park power station"
+      ]
+    },
+    {
+      "nama": "Nanshan Aluminium International Holdings Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 25,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Nanshan Industrial Park power station"
+      ]
+    },
+    {
+      "nama": "PT Bintan Alumina Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 25,
+      "kapasitas_pemilik_mw": 3030,
+      "contoh_proyek": [
+        "Nanshan Industrial Park power station"
+      ]
+    },
+    {
+      "nama": "PT Indah Kiat Pulp & Paper Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 24,
+      "kapasitas_pemilik_mw": 965,
+      "contoh_proyek": [
+        "Perawang Mill power station",
+        "Indah Kiat Serang power station"
+      ]
+    },
+    {
+      "nama": "PT Alamtri Resources Indonesia Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 16,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Adaro East Kalimantan power station",
+        "Central Java Power Project",
+        "Tabalong power station"
+      ]
+    },
+    {
+      "nama": "Shanghai Decent Investment (Group) Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 16,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station",
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "TSINGSHAN Holding Group Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 15,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station",
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "Zhejiang Qingshan Business Management Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 15,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station",
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Bintang Delapan Group",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 12,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station",
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "PT Metal Smeltindo Selaras",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 12,
+      "kapasitas_pemilik_mw": 390,
+      "contoh_proyek": [
+        "Qingdao Zhongsheng captive power station"
+      ]
+    },
+    {
+      "nama": "PT Pabrik Kertas Tjiwi Kimia Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 12,
+      "kapasitas_pemilik_mw": 230,
+      "contoh_proyek": [
+        "Sinar Mas OKI Paper Mill power station",
+        "Tjiwi Kimia Paper Mill power station"
+      ]
+    },
+    {
+      "nama": "China Huadian Corp Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 11,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bangko Tengah power station",
+        "Celukan Bawang power station",
+        "Jambi-2 power station"
+      ]
+    },
+    {
+      "nama": "Huakai Investment Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 11,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station",
+        "PT IHIP power station"
+      ]
+    },
+    {
+      "nama": "PT Dian Swastatika Sentosa Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 11,
+      "kapasitas_pemilik_mw": 400,
+      "contoh_proyek": [
+        "Kalselteng-1 power station",
+        "Kendari-3 power station",
+        "Sinar Mas Jambi power station"
+      ]
+    },
+    {
+      "nama": "PT Gunbuster Nickel Industry",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 11,
+      "kapasitas_pemilik_mw": 2160,
+      "contoh_proyek": [
+        "Delong Nickel Phase III power station"
+      ]
+    },
+    {
+      "nama": "PT Obsidian Stainless Steel",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 11,
+      "kapasitas_pemilik_mw": 2220,
+      "contoh_proyek": [
+        "Delong Nickel Phase II power station"
+      ]
+    },
+    {
+      "nama": "Tongxiang Wushi Trading Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 11,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station",
+        "PT IHIP power station"
+      ]
+    },
+    {
+      "nama": "Xiamen Xiangyu Group Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 11,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Delong Nickel Phase II power station"
+      ]
+    },
+    {
+      "nama": "Zhenshi Holding Group Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 11,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station",
+        "PT IHIP power station"
+      ]
+    },
+    {
+      "nama": "PT APP Purinusa Ekapersada",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 10,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sinar Mas Jambi Lontar power station",
+        "Sinar Mas OKI Paper Mill power station",
+        "Pindo-Deli-Ii power station"
+      ]
+    },
+    {
+      "nama": "PT Cita Mineral Investindo Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 10,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Ketapang Smelter power station",
+        "AlamTri Aluminum Smelter power station"
+      ]
+    },
+    {
+      "nama": "China Datang Overseas Investment Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 9,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Kalselteng-1 power station",
+        "Kendari-3 power station",
+        "Nagan Raya power station"
+      ]
+    },
+    {
+      "nama": "Lygend Resources & Technology Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 8,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "PT Halmahera Persada Lygend Nickel Smelter power station"
+      ]
+    },
+    {
+      "nama": "Oceanwide Holdings Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 8,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Banyuasin power station",
+        "Karang Asem power station",
+        "Kuala Tanjung-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Barito Pacific Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 8,
+      "kapasitas_pemilik_mw": 2200,
+      "contoh_proyek": [
+        "Banten Suralaya power station",
+        "Kalselteng-4 Hybrid power station"
+      ]
+    },
+    {
+      "nama": "PT Bosowa Makassar",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 8,
+      "kapasitas_pemilik_mw": 520,
+      "contoh_proyek": [
+        "Punagaya power station"
+      ]
+    },
+    {
+      "nama": "PT Halmahera Persada Lygend",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 8,
+      "kapasitas_pemilik_mw": 870,
+      "contoh_proyek": [
+        "PT Halmahera Persada Lygend Nickel Smelter power station"
+      ]
+    },
+    {
+      "nama": "PT Kaltara Power Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 8,
+      "kapasitas_pemilik_mw": 2120,
+      "contoh_proyek": [
+        "AlamTri Aluminum Smelter power station"
+      ]
+    },
+    {
+      "nama": "PT Praba Indopersada",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 8,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Parit Baru power station"
+      ]
+    },
+    {
+      "nama": "PT Virtue Dragon Nickel Industry",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 8,
+      "kapasitas_pemilik_mw": 530,
+      "contoh_proyek": [
+        "Delong Nickel Phase I power station"
+      ]
+    },
+    {
+      "nama": "PT Wanxiang Steel Indonesia",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 8,
+      "kapasitas_pemilik_mw": 530,
+      "contoh_proyek": [
+        "Wanxiang Nickel Indonesia power station"
+      ]
+    },
+    {
+      "nama": "AC Energy and Infrastructure Corp",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 7,
+      "kapasitas_pemilik_mw": 378,
+      "contoh_proyek": [
+        "Gunung Salak geothermal power plant"
+      ]
+    },
+    {
+      "nama": "Korea Electric Power Corp",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 7,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Cirebon power station",
+        "Jambi Tebo power station",
+        "Tabalong power station"
+      ]
+    },
+    {
+      "nama": "PT Bumipertiwi Tatapradipta",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 7,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Cilacap power station",
+        "Paiton-2 power station"
+      ]
+    },
+    {
+      "nama": "PT Indonesia Power Suralaya",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 7,
+      "kapasitas_pemilik_mw": 3400,
+      "contoh_proyek": [
+        "Banten Suralaya power station"
+      ]
+    },
+    {
+      "nama": "PT Pembangunan Perumahan (Persero)",
+      "peran": [
+        "induk",
+        "operator"
+      ],
+      "tracker": [
+        "coal",
+        "wind"
+      ],
+      "jumlah_baris": 7,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Tolo wind farm",
+        "Nagan Raya power station",
+        "Jambi-2 power station"
+      ]
+    },
+    {
+      "nama": "Siemens AG",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 7,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Cilacap power station",
+        "Paiton-2 power station"
+      ]
+    },
+    {
+      "nama": "Star Energy Group PLC",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 7,
+      "kapasitas_pemilik_mw": 378,
+      "contoh_proyek": [
+        "Gunung Salak geothermal power plant"
+      ]
+    },
+    {
+      "nama": "YTL Corporation Bhd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 7,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Cilacap power station",
+        "Paiton-2 power station"
+      ]
+    },
+    {
+      "nama": "Zhejiang Huayou Holding Group Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 7,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "China Power International Development Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Banyuasin power station",
+        "Karang Asem power station",
+        "Kuala Tanjung-1 power station"
+      ]
+    },
+    {
+      "nama": "Dingxin Group",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station",
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "Hanwa Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station"
+      ]
+    },
+    {
+      "nama": "Kamojang POMU",
+      "peran": [
+        "operator"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Gunung Salak geothermal power plant"
+      ]
+    },
+    {
+      "nama": "PT Amman Mineral Internasional Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Batu Hijau power station"
+      ]
+    },
+    {
+      "nama": "PT Amman Mineral Nusa Tenggara",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 424,
+      "contoh_proyek": [
+        "Batu Hijau power station"
+      ]
+    },
+    {
+      "nama": "PT Satya Abadi Semesta",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Banyuasin power station",
+        "Karang Asem power station",
+        "Kuala Tanjung-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Sulawesi Mining Investment",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 1650,
+      "contoh_proyek": [
+        "Sulawesi Mining power station",
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "PT Tambang Batubara Bukit Asam",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 150,
+      "contoh_proyek": [
+        "East Halmahera power station"
+      ]
+    },
+    {
+      "nama": "PT Truba Alam Manunggal Engineering Tbk",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 710,
+      "contoh_proyek": [
+        "Banyuasin power station",
+        "Karang Asem power station",
+        "Kuala Tanjung-1 power station"
+      ]
+    },
+    {
+      "nama": "Tsingshan Steel Group",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 6,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station"
+      ]
+    },
+    {
+      "nama": "BTN Power",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "BTN Dumai power station",
+        "Bantaeng BSE power station"
+      ]
+    },
+    {
+      "nama": "Ecolab Inc",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "NALCO East Kutai power station"
+      ]
+    },
+    {
+      "nama": "ENGIE SA",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 476,
+      "contoh_proyek": [
+        "Muarah Laboh geothermal plant",
+        "Rajabasa geothermal power plant",
+        "Rantau Dedep geothermal power plant"
+      ]
+    },
+    {
+      "nama": "Eternal Tsingshan Group Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Labota power station",
+        "Sulawesi Mining power station"
+      ]
+    },
+    {
+      "nama": "KS Orka Renewables Pte Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 223,
+      "contoh_proyek": [
+        "Sorik Marapi geothermal power plant"
+      ]
+    },
+    {
+      "nama": "MEC Coal Pte Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 1250,
+      "contoh_proyek": [
+        "NALCO East Kutai power station"
+      ]
+    },
+    {
+      "nama": "Merryline International Pte Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 1086,
+      "contoh_proyek": [
+        "Celukan Bawang power station"
+      ]
+    },
+    {
+      "nama": "Municipality of Ras al-Khaimah",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "NALCO East Kutai power station"
+      ]
+    },
+    {
+      "nama": "ONC International Trading (Ningbo) Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Xinxing Ductile Iron Pipes power station"
+      ]
+    },
+    {
+      "nama": "PT Gane Permai Sentosa",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Xinxing Ductile Iron Pipes power station"
+      ]
+    },
+    {
+      "nama": "PT General Energy Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 1086,
+      "contoh_proyek": [
+        "Celukan Bawang power station"
+      ]
+    },
+    {
+      "nama": "PT Jawa Energy",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 5000,
+      "contoh_proyek": [
+        "Cilacap power station"
+      ]
+    },
+    {
+      "nama": "PT Megah Surya Pertiwi",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 217,
+      "contoh_proyek": [
+        "Xinxing Ductile Iron Pipes power station"
+      ]
+    },
+    {
+      "nama": "PT Nalco Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 1250,
+      "contoh_proyek": [
+        "NALCO East Kutai power station"
+      ]
+    },
+    {
+      "nama": "PT Singa Energy Indonesia",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Celukan Bawang power station"
+      ]
+    },
+    {
+      "nama": "Trimex International FZE",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 5,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "NALCO East Kutai power station"
+      ]
+    },
+    {
+      "nama": "China Energy Engineering Corp Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Parit Baru power station"
+      ]
+    },
+    {
+      "nama": "Hong Kong Exchanges and Clearing Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Parit Baru power station"
+      ]
+    },
+    {
+      "nama": "Lygend New Power (Hong Kong) Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "PT Halmahera Persada Lygend Nickel Smelter power station"
+      ]
+    },
+    {
+      "nama": "Ormat Technology Inc",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 180,
+      "contoh_proyek": [
+        "Blawan Ijen geothermal project",
+        "Toka Tindung geothermal power plant"
+      ]
+    },
+    {
+      "nama": "Power Construction Corporation of China Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bengkulu power station",
+        "Sumut-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Bakrie & Brothers Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bakrie Sangatta power station",
+        "Tanjung Jati A power station"
+      ]
+    },
+    {
+      "nama": "PT Baoshuo Taman Industry Investment Group",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 450,
+      "contoh_proyek": [
+        "PT IHIP power station"
+      ]
+    },
+    {
+      "nama": "PT Bumi Resources Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 400,
+      "contoh_proyek": [
+        "BUMI Sangatta power station"
+      ]
+    },
+    {
+      "nama": "PT Central Java Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 2640,
+      "contoh_proyek": [
+        "Tanjung Jati B power station"
+      ]
+    },
+    {
+      "nama": "PT Huadian Bukit Asam Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 2640,
+      "contoh_proyek": [
+        "Bangko Tengah power station"
+      ]
+    },
+    {
+      "nama": "PT Indocement Tunggal Prakarsa Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 115,
+      "contoh_proyek": [
+        "Kalimantan Cement Works power station",
+        "Pati INTP power station"
+      ]
+    },
+    {
+      "nama": "PT Indonesia Energi Dinamika",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Kaltim-4 power station"
+      ]
+    },
+    {
+      "nama": "PT Indonesia Tsingshan Stainless Steel",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 1400,
+      "contoh_proyek": [
+        "Sulawesi Mining power station"
+      ]
+    },
+    {
+      "nama": "PT Lontar Papyrus Pulp & Paper Industry",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 211,
+      "contoh_proyek": [
+        "Sinar Mas Jambi Lontar power station"
+      ]
+    },
+    {
+      "nama": "PT Merak Energi Indonesia",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 120,
+      "contoh_proyek": [
+        "Merak power station"
+      ]
+    },
+    {
+      "nama": "PT Mineral Industri Indonesia (Persero)",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Amamapare Port power station",
+        "Kuala Tanjung Inalum captive power station"
+      ]
+    },
+    {
+      "nama": "PT Obi Nickel Cobalt",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 1520,
+      "contoh_proyek": [
+        "PT Halmahera Persada Lygend Nickel Smelter power station"
+      ]
+    },
+    {
+      "nama": "PT OKI Pulp & Paper Mills",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 500,
+      "contoh_proyek": [
+        "Sinar Mas OKI Paper Mill power station"
+      ]
+    },
+    {
+      "nama": "PT Pembangunan Kota Batam",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 120,
+      "contoh_proyek": [
+        "Kabil PKB power station"
+      ]
+    },
+    {
+      "nama": "PT Sumber Segara Primadaya",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 2260,
+      "contoh_proyek": [
+        "Cilacap Sumber power station"
+      ]
+    },
+    {
+      "nama": "PT Sumberenergy Sakti Prima",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Cilacap Sumber power station"
+      ]
+    },
+    {
+      "nama": "PT Timah Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 300,
+      "contoh_proyek": [
+        "Timah South Sumatra power station"
+      ]
+    },
+    {
+      "nama": "PT Toba Pulp Lestari Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 80,
+      "contoh_proyek": [
+        "Toba Pulp Lestari power station"
+      ]
+    },
+    {
+      "nama": "Sunseap Group Pte Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 5595,
+      "contoh_proyek": [
+        "Batam solar farm",
+        "Combol solar farm",
+        "Citlim Island solar farm"
+      ]
+    },
+    {
+      "nama": "Tsingtuo Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 4,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station"
+      ]
+    },
+    {
+      "nama": "Barito Renewables",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 294,
+      "contoh_proyek": [
+        "Sidrap wind farm",
+        "Sukabumi wind farm"
+      ]
+    },
+    {
+      "nama": "China Development Bank Corp",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Jinchuan Group WP&RKA power station"
+      ]
+    },
+    {
+      "nama": "FreePort-McMoran Inc",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Amamapare Port power station"
+      ]
+    },
+    {
+      "nama": "Gansu Provincial State-owned Assets Investment Group Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Jinchuan Group WP&RKA power station"
+      ]
+    },
+    {
+      "nama": "Genting Power Holdings Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Banten Serang power station",
+        "Kaltim Teluk Balikpapan power station"
+      ]
+    },
+    {
+      "nama": "Huafon Group Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "Jinchuan Group Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Jinchuan Group WP&RKA power station"
+      ]
+    },
+    {
+      "nama": "Kalla Group",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 900,
+      "contoh_proyek": [
+        "Tumbuan Mamuju Atas hydroelectric plant",
+        "Tumbuan Mamuju Bawah hydroelectric plant",
+        "Mamuju hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "Nebras Energy QPSC",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Paiton-1 power station",
+        "Paiton-3 power station"
+      ]
+    },
+    {
+      "nama": "Oakridge International",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 165,
+      "contoh_proyek": [
+        "Ngebel geothermal power plant"
+      ]
+    },
+    {
+      "nama": "Pace Energy Pvt Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 150,
+      "contoh_proyek": [
+        "Tanah Laut wind farm"
+      ]
+    },
+    {
+      "nama": "PT BTN Energy Prima",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 450,
+      "contoh_proyek": [
+        "BTN Dumai power station"
+      ]
+    },
+    {
+      "nama": "PT Cirebon Electric Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 2584,
+      "contoh_proyek": [
+        "Cirebon power station"
+      ]
+    },
+    {
+      "nama": "PT DSSP Power Sumsel",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 650,
+      "contoh_proyek": [
+        "Sumsel-5 power station"
+      ]
+    },
+    {
+      "nama": "PT Freeport Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 195,
+      "contoh_proyek": [
+        "Amamapare Port power station"
+      ]
+    },
+    {
+      "nama": "PT Hero Inti Pratama",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Banten Serang power station",
+        "Kaltim Teluk Balikpapan power station"
+      ]
+    },
+    {
+      "nama": "PT Hua Chin Aluminum Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 1140,
+      "contoh_proyek": [
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "PT Lestari Banten Energi",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 1620,
+      "contoh_proyek": [
+        "Banten Serang power station",
+        "Kaltim Teluk Balikpapan power station"
+      ]
+    },
+    {
+      "nama": "PT Medco Daya Abadi Lestari",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Paiton-1 power station",
+        "Paiton-3 power station"
+      ]
+    },
+    {
+      "nama": "PT Paiton Energy Pte Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 2045,
+      "contoh_proyek": [
+        "Paiton-1 power station",
+        "Paiton-3 power station"
+      ]
+    },
+    {
+      "nama": "PT Semen Indonesia (Persero) Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Indarung Cement power station",
+        "Tonasa Cement Plant power station"
+      ]
+    },
+    {
+      "nama": "Ras Laffan Operating Company WLL",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Paiton-1 power station",
+        "Paiton-3 power station"
+      ]
+    },
+    {
+      "nama": "RATCH Group PCL",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Paiton-1 power station",
+        "Paiton-3 power station"
+      ]
+    },
+    {
+      "nama": "Samchully Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Cirebon power station"
+      ]
+    },
+    {
+      "nama": "SDIC Power Holdings Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Banten Serang power station",
+        "Kaltim Teluk Balikpapan power station"
+      ]
+    },
+    {
+      "nama": "WP&RKA Company",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 3,
+      "kapasitas_pemilik_mw": 150,
+      "contoh_proyek": [
+        "Jinchuan Group WP&RKA power station"
+      ]
+    },
+    {
+      "nama": "ACEN Investments HK Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 219,
+      "contoh_proyek": [
+        "Sidrap wind farm",
+        "Sukabumi wind farm"
+      ]
+    },
+    {
+      "nama": "AKR Corp",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Gresik AKR power station"
+      ]
+    },
+    {
+      "nama": "Arrow Resources Development",
+      "peran": [
+        "operator",
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 50,
+      "contoh_proyek": [
+        "Arrow Lampung geothermal power plant"
+      ]
+    },
+    {
+      "nama": "BlackGold Natural Resources Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Riau-1 power station"
+      ]
+    },
+    {
+      "nama": "China Hongqiao Group Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Ketapang Smelter power station"
+      ]
+    },
+    {
+      "nama": "China Hydropower Construction Group New Energy Development Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulut-3 power station"
+      ]
+    },
+    {
+      "nama": "China Shenhua Overseas Development and Investment Co Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 600,
+      "contoh_proyek": [
+        "Adaro East Kalimantan power station"
+      ]
+    },
+    {
+      "nama": "Electric Power Development Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Central Java Power Project"
+      ]
+    },
+    {
+      "nama": "Envision Group",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Bantaeng wind farm"
+      ]
+    },
+    {
+      "nama": "Golden Concord Holdings Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Kalbar-1 power station"
+      ]
+    },
+    {
+      "nama": "Guangdong Guangxin Holdings Group Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station"
+      ]
+    },
+    {
+      "nama": "Hangzhou Yande Industrial Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Ketapang Bangun Sarana power station"
+      ]
+    },
+    {
+      "nama": "Hitay Energy Holdings",
+      "peran": [
+        "operator",
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 220,
+      "contoh_proyek": [
+        "Gunung Geureudong geothermal power plant"
+      ]
+    },
+    {
+      "nama": "Hongshi Holding Group Co Ltd",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 2000,
+      "contoh_proyek": [
+        "Hongshi Silikon power station"
+      ]
+    },
+    {
+      "nama": "IMPSA Malaysia Sdn Bhd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 750,
+      "contoh_proyek": [
+        "Longgi hydroelectric plant",
+        "Makale hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "Indonesia Wanjia Ferro Nickel Co Ltd",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 380,
+      "contoh_proyek": [
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "Indonesia Zhaohui Ferro Nickel Co Ltd",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 380,
+      "contoh_proyek": [
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "ITOCHU Corp",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Central Java Power Project"
+      ]
+    },
+    {
+      "nama": "Krakatau Posco Energy PT",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "PT Krakatau Posco Energy power station"
+      ]
+    },
+    {
+      "nama": "Luck Scenery International Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Mining power station"
+      ]
+    },
+    {
+      "nama": "Madhucon Infra Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sumsel-7 power station"
+      ]
+    },
+    {
+      "nama": "Madhucon Projects Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sumsel-7 power station"
+      ]
+    },
+    {
+      "nama": "Madhucon Sugar & Power Industries Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sumsel-7 power station"
+      ]
+    },
+    {
+      "nama": "Masdar Clean Energy",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 692,
+      "contoh_proyek": [
+        "Cirata Reservoir solar farm"
+      ]
+    },
+    {
+      "nama": "Mitsubishi Corp",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Asahimas Chemical power station"
+      ]
+    },
+    {
+      "nama": "Nanjing Iron and Steel Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Medan Steel Mill power station"
+      ]
+    },
+    {
+      "nama": "Nusantara Energy Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Jambi-2 power station"
+      ]
+    },
+    {
+      "nama": "PLN Unit Induk Wilayah Riau",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Bintan power station"
+      ]
+    },
+    {
+      "nama": "POSCO International Corp",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "PT Krakatau Posco Energy power station"
+      ]
+    },
+    {
+      "nama": "Press Metal International Resources (HK) Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "PT Kalimantan Alumina Nusantara power station"
+      ]
+    },
+    {
+      "nama": "PT Adaro Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 600,
+      "contoh_proyek": [
+        "Adaro East Kalimantan power station"
+      ]
+    },
+    {
+      "nama": "PT Adimas Puspita Serasi",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sumbagsel-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Alakasa Alumina Refineri",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "PT Kalimantan Alumina Nusantara power station"
+      ]
+    },
+    {
+      "nama": "PT Angel Nickel Industry",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 760,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Asahimas Chemical",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 300,
+      "contoh_proyek": [
+        "Asahimas Chemical power station"
+      ]
+    },
+    {
+      "nama": "PT Bakrie Indo Infrastructure",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Bakrie Sangatta power station"
+      ]
+    },
+    {
+      "nama": "PT Bantaeng Sigma Energy",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 600,
+      "contoh_proyek": [
+        "Bantaeng BSE power station"
+      ]
+    },
+    {
+      "nama": "PT Bhakti Energi Persada",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 600,
+      "contoh_proyek": [
+        "Adaro East Kalimantan power station"
+      ]
+    },
+    {
+      "nama": "PT Bhimasena Power Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 1900,
+      "contoh_proyek": [
+        "Central Java Power Project"
+      ]
+    },
+    {
+      "nama": "PT Bhumi Jati Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 2000,
+      "contoh_proyek": [
+        "Tanjung Jati B power station"
+      ]
+    },
+    {
+      "nama": "PT Biidznillah Tambang Nusantara",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bantaeng BSE power station"
+      ]
+    },
+    {
+      "nama": "PT Binakarya Jaya Abadi Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "KIPI Bika Global power station"
+      ]
+    },
+    {
+      "nama": "PT Bukit Pembangkit Innovative",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 220,
+      "contoh_proyek": [
+        "Banjarsari power station"
+      ]
+    },
+    {
+      "nama": "PT Cemindo Gemilang Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Cemindo Gemilang power station"
+      ]
+    },
+    {
+      "nama": "PT D&C Engineering Co",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sumbagsel-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Datang DSSP Power Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Kalselteng-1 power station"
+      ]
+    },
+    {
+      "nama": "PT DSSP Power Kendari",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Kendari-3 power station"
+      ]
+    },
+    {
+      "nama": "PT Energi Manyar Sejahtera",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 660,
+      "contoh_proyek": [
+        "Gresik AKR power station"
+      ]
+    },
+    {
+      "nama": "PT Energi Musi Makmur",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Shenhua Guohua power station"
+      ]
+    },
+    {
+      "nama": "PT Fajar Surya Wisesa Tbk",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 55,
+      "contoh_proyek": [
+        "FAJAR power station"
+      ]
+    },
+    {
+      "nama": "PT Gahapi Nisco Steel",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Medan Steel Mill power station"
+      ]
+    },
+    {
+      "nama": "PT Garda Sayap Garuda",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sumut-1 power station"
+      ]
+    },
+    {
+      "nama": "PT GH EMM Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 300,
+      "contoh_proyek": [
+        "Shenhua Guohua power station"
+      ]
+    },
+    {
+      "nama": "PT Gorontalo Listrik Perdana",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Sulbagut-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Graha Wahyu Kencana",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sumsel-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Gunung Gahapi",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Medan Steel Mill power station"
+      ]
+    },
+    {
+      "nama": "PT Impha Nusantara Mandiri",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 750,
+      "contoh_proyek": [
+        "Longgi hydroelectric plant",
+        "Makale hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT INALUM (Persero)",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 603,
+      "contoh_proyek": [
+        "Sigura Gura hydroelectric plant",
+        "Tangga hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT Indonesia Guang Ching Nickel and Stainless Steel Industry",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 300,
+      "contoh_proyek": [
+        "Sulawesi Mining power station"
+      ]
+    },
+    {
+      "nama": "PT Intraco Penta Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bengkulu power station"
+      ]
+    },
+    {
+      "nama": "PT Jawa Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 1320,
+      "contoh_proyek": [
+        "Paiton-2 power station"
+      ]
+    },
+    {
+      "nama": "PT Kalimantan Alumina Nusantara",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "PT Kalimantan Alumina Nusantara power station"
+      ]
+    },
+    {
+      "nama": "PT Lion Power Energy",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 700,
+      "contoh_proyek": [
+        "Sumsel-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Mabar Elektrindo",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 300,
+      "contoh_proyek": [
+        "Sumut-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Madhucon Indonesia",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sumsel-7 power station"
+      ]
+    },
+    {
+      "nama": "PT Madhucon Sriwajaya Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 300,
+      "contoh_proyek": [
+        "Sumsel-7 power station"
+      ]
+    },
+    {
+      "nama": "PT Makmur Sejahtera Wisesa",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Tabalong Wisesa power station"
+      ]
+    },
+    {
+      "nama": "PT Medco Power Internasional",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Lamhotma power station"
+      ]
+    },
+    {
+      "nama": "PT Meulaboh Power Generation",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 450,
+      "contoh_proyek": [
+        "Nagan Raya power station"
+      ]
+    },
+    {
+      "nama": "PT Minahasa Cahaya Lestari",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Sulut-3 power station"
+      ]
+    },
+    {
+      "nama": "PT Nadesico Nickel Industry",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 660,
+      "contoh_proyek": [
+        "Delong Nickel Phase IV power station"
+      ]
+    },
+    {
+      "nama": "PT Nusatama Properta Panbil",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Tanjung Sauh power station"
+      ]
+    },
+    {
+      "nama": "PT Okha Hutomo Satrya",
+      "peran": [
+        "operator",
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 40,
+      "contoh_proyek": [
+        "Mount Sibayak geothermal power plant"
+      ]
+    },
+    {
+      "nama": "PT Pembangkitan Perkasa Daya",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 600,
+      "contoh_proyek": [
+        "Jambi-2 power station"
+      ]
+    },
+    {
+      "nama": "PT Petra Unggul Sejahtera",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Tanjung Kasam power station"
+      ]
+    },
+    {
+      "nama": "PT Pindo Deli Pulp and Paper Mills",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Pindo-Deli-Ii power station"
+      ]
+    },
+    {
+      "nama": "PT PLN Nusantara Renewables",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Kalselteng-3 power station"
+      ]
+    },
+    {
+      "nama": "PT PLN Wilayah Bangka Belitung",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Bangka Baru power station"
+      ]
+    },
+    {
+      "nama": "PT Priamanaya Djan International",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Keban Agung power station"
+      ]
+    },
+    {
+      "nama": "PT Priamanaya Energi",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 270,
+      "contoh_proyek": [
+        "Keban Agung power station"
+      ]
+    },
+    {
+      "nama": "PT Rodamas",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Asahimas Chemical power station"
+      ]
+    },
+    {
+      "nama": "PT Samantaka Batubara",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 600,
+      "contoh_proyek": [
+        "Riau-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Semen Gresik",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 70,
+      "contoh_proyek": [
+        "Tonasa Cement Plant power station"
+      ]
+    },
+    {
+      "nama": "PT Sepoetih Daya Prima",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Komering Agung Power Station"
+      ]
+    },
+    {
+      "nama": "PT Shenhua Guohua Pembangkitan Jawa Bali",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 1982,
+      "contoh_proyek": [
+        "Jawa-7 power station"
+      ]
+    },
+    {
+      "nama": "PT Sintesa Green Energy",
+      "peran": [
+        "operator",
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 110,
+      "contoh_proyek": [
+        "Banten geothermal power plant"
+      ]
+    },
+    {
+      "nama": "PT Star Vyobros",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Sulawesi Star power station"
+      ]
+    },
+    {
+      "nama": "PT Sumbagsel Energi Sakti Pewali",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 300,
+      "contoh_proyek": [
+        "Sumbagsel-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Sumberenergi Sakti Prima",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sumbagsel-1 power station"
+      ]
+    },
+    {
+      "nama": "PT Tanjung Jati Power Co",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 1320,
+      "contoh_proyek": [
+        "Tanjung Jati A power station"
+      ]
+    },
+    {
+      "nama": "PT Tanjung Kasam Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 130,
+      "contoh_proyek": [
+        "Tanjung Kasam power station"
+      ]
+    },
+    {
+      "nama": "PT Tanjung Power Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Tabalong power station"
+      ]
+    },
+    {
+      "nama": "PT Tanjung Sauh Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 300,
+      "contoh_proyek": [
+        "Tanjung Sauh power station"
+      ]
+    },
+    {
+      "nama": "PT Tenaga Listrik Bengkulu",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Bengkulu power station"
+      ]
+    },
+    {
+      "nama": "PT United Tractors Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Tanjung Jati B power station"
+      ]
+    },
+    {
+      "nama": "PT Well Harvest Winning Alumina Refinery",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Ketapang Smelter power station"
+      ]
+    },
+    {
+      "nama": "Shanghai Electric Power Construction Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulbagut-1 power station"
+      ]
+    },
+    {
+      "nama": "The Trustee for Zhu Family Trust",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Kalbar-1 power station"
+      ]
+    },
+    {
+      "nama": "Tongren Zhongwei Hongling No. 1 Enterprise Management Consulting Partnership LP",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Delong Nickel Phase IV power station"
+      ]
+    },
+    {
+      "nama": "Unnamed special purpose vehicle",
+      "peran": [
+        "induk",
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 110,
+      "contoh_proyek": [
+        "Nagan Raya power station"
+      ]
+    },
+    {
+      "nama": "Viron Energy PPA",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 30,
+      "contoh_proyek": [
+        "Sukabumi (Viron Energy) wind farm"
+      ]
+    },
+    {
+      "nama": "Walsin Lihwa Corp",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Labota power station",
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "YTL Power International Bhd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Tanjung Jati A power station"
+      ]
+    },
+    {
+      "nama": "Zhejiang Hengjia Holding Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Ketapang Bangun Sarana power station"
+      ]
+    },
+    {
+      "nama": "Zhongwei Hong Kong Zhengbang New Energy Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Delong Nickel Phase IV power station"
+      ]
+    },
+    {
+      "nama": "Zhongwei Hong Kong Zhenghong New Energy Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 2,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Delong Nickel Phase IV power station"
+      ]
+    },
+    {
+      "nama": "Aditya Birla Management Corporation Pvt Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Indo Bharat Rayon power station"
+      ]
+    },
+    {
+      "nama": "Anantara Energy",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Riau solar farm"
+      ]
+    },
+    {
+      "nama": "Astratel Nusantara",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Astratel power station"
+      ]
+    },
+    {
+      "nama": "Beijing Chengtong ICBC Equity Investment Fund LP",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "BP Batam",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 333,
+      "contoh_proyek": [
+        "Tembesi Reservoir floating solar farm"
+      ]
+    },
+    {
+      "nama": "CCB Financial Assets Investment Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "China National Petroleum Corp",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "Countrywide Hydrogen",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Riau solar farm"
+      ]
+    },
+    {
+      "nama": "Dutch Entrepreneurial Development Bank NV",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 50,
+      "contoh_proyek": [
+        "Samas wind farm"
+      ]
+    },
+    {
+      "nama": "Fareast Green Energy",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 510,
+      "contoh_proyek": [
+        "Batang Toru hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "Gold Gazelle Profits Corp",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bandung Indosyntec power station"
+      ]
+    },
+    {
+      "nama": "Guolian Industrial Investment Fund Management (Beijing) Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "Hainan PetroChina Shennan Petroleum Technology Development Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "Huafeng Group",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "ib vogt gmbH",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 3500,
+      "contoh_proyek": [
+        "Riau Solar and Storage Power Plant"
+      ]
+    },
+    {
+      "nama": "Indomie",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Kulon Progo power station"
+      ]
+    },
+    {
+      "nama": "Indonesia Eternal Smelting Co",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 350,
+      "contoh_proyek": [
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "Indonesia Huaqing Aluminum Co Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 380,
+      "contoh_proyek": [
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "Indonesia Morowali Power Co",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 250,
+      "contoh_proyek": [
+        "Sulawesi Mining power station"
+      ]
+    },
+    {
+      "nama": "Indorama Ventures PCL",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Cilegon PTIP Power Station"
+      ]
+    },
+    {
+      "nama": "International Finance Corp",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 180,
+      "contoh_proyek": [
+        "Asahan 1 hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "Lenzing AG",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "South Pasific Viscose power station"
+      ]
+    },
+    {
+      "nama": "Lucky Height Resources Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bandung Indosyntec power station"
+      ]
+    },
+    {
+      "nama": "Mercury Capital International Inc",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bandung Indosyntec power station"
+      ]
+    },
+    {
+      "nama": "Metallurgical Corporation of China Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "Olympic Group",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "I Skip power station"
+      ]
+    },
+    {
+      "nama": "Ortega Management Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bandung Indosyntec power station"
+      ]
+    },
+    {
+      "nama": "PacificLight Power Pte Ltd",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 670,
+      "contoh_proyek": [
+        "Pulau Bulan solar farm"
+      ]
+    },
+    {
+      "nama": "Prime Invesco Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bandung Indosyntec power station"
+      ]
+    },
+    {
+      "nama": "PT Antam BK",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Hu'u Daha geothermal power plant"
+      ]
+    },
+    {
+      "nama": "PT Binatek Energi Terbarukan (BET)",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 50,
+      "contoh_proyek": [
+        "Samas wind farm"
+      ]
+    },
+    {
+      "nama": "PT Cahaya Fajar Kaltim",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Embalut power station"
+      ]
+    },
+    {
+      "nama": "PT Cahaya Sakti",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 30,
+      "contoh_proyek": [
+        "I Skip power station"
+      ]
+    },
+    {
+      "nama": "PT Daya Anugerah Sejati Utama",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 40,
+      "contoh_proyek": [
+        "Nage geothermal power plant"
+      ]
+    },
+    {
+      "nama": "PT Daya Listrindo Utama",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Dharma Hydro Nusantara",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 510,
+      "contoh_proyek": [
+        "Batang Toru hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT Energi Infranusantara",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 127,
+      "contoh_proyek": [
+        "Lariang hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT Energy Management Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Krueng Teunom hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT Guna Darma Integra",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 680,
+      "contoh_proyek": [
+        "East Halmahera power station"
+      ]
+    },
+    {
+      "nama": "PT Haka Buton Energy",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 88,
+      "contoh_proyek": [
+        "Haka Buton wind farm"
+      ]
+    },
+    {
+      "nama": "PT Harum Energy Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Huake Nickel Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 250,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Huayue Nickel Cobalt",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 250,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Indo Bharat Rayon",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 37,
+      "contoh_proyek": [
+        "Indo Bharat Rayon power station"
+      ]
+    },
+    {
+      "nama": "PT Indorama Petrochemicals",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 40,
+      "contoh_proyek": [
+        "Cilegon PTIP Power Station"
+      ]
+    },
+    {
+      "nama": "PT Infrastruktur Tebarukan Fortuna",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 50,
+      "contoh_proyek": [
+        "Bali-1 solar farm"
+      ]
+    },
+    {
+      "nama": "PT International Nickel Indonesia Tbk",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 90,
+      "contoh_proyek": [
+        "Karebbe hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT Jasa Marga (Persero) Tbk",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 30,
+      "contoh_proyek": [
+        "East Kalimantan II solar farm"
+      ]
+    },
+    {
+      "nama": "PT Jasa Sarana",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 32,
+      "contoh_proyek": [
+        "Gunung Tampomas geothermal power plant"
+      ]
+    },
+    {
+      "nama": "PT Jogja Magasa Iron",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Kulon Progo power station"
+      ]
+    },
+    {
+      "nama": "PT Kawasan Industri Jababeka Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Jababeka KIP power station"
+      ]
+    },
+    {
+      "nama": "PT Ketenagalistrikan Kalimantan Timur",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Embalut power station"
+      ]
+    },
+    {
+      "nama": "PT Khatulistiwa Sentra Energi",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Nokan Nayan hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT Libai Indonesia Metal Co",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 250,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Panasia Indo Resources Tbk",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 30,
+      "contoh_proyek": [
+        "Bandung Indosyntec power station"
+      ]
+    },
+    {
+      "nama": "PT Panasia Synthetic Abadi",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Bandung Indosyntec power station"
+      ]
+    },
+    {
+      "nama": "PT Papua Power Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 405,
+      "contoh_proyek": [
+        "Urumuka hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT Pembangkitan Jawa Bali",
+      "peran": [
+        "operator"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Tulungagung hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT Petrindo Jaya Kreasi Tbk",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "East Halmahera power station"
+      ]
+    },
+    {
+      "nama": "PT PJB Investasi",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 510,
+      "contoh_proyek": [
+        "Batang Toru hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT PLN Batam",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 1000,
+      "contoh_proyek": [
+        "Batam Bintan Karimun solar farm"
+      ]
+    },
+    {
+      "nama": "PT Resources Jaya Teknik Management",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 32,
+      "contoh_proyek": [
+        "Gunung Tampomas geothermal power plant"
+      ]
+    },
+    {
+      "nama": "PT Semen Padang",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 100,
+      "contoh_proyek": [
+        "Indarung Cement power station"
+      ]
+    },
+    {
+      "nama": "PT Siemens Indonesia",
+      "peran": [
+        "operator"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Tolo wind farm"
+      ]
+    },
+    {
+      "nama": "PT Sunny Metal Industry",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 380,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Supreme Energy Rantau Dedap",
+      "peran": [
+        "operator"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Rantau Dedep geothermal power plant"
+      ]
+    },
+    {
+      "nama": "PT Tianshan Alumina Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 160,
+      "contoh_proyek": [
+        "PT Tianshan Alumina power station"
+      ]
+    },
+    {
+      "nama": "PT Trisurya Mitra Bersama",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 1000,
+      "contoh_proyek": [
+        "Batam Bintan Karimun solar farm"
+      ]
+    },
+    {
+      "nama": "PT Tujuan Mulia Makmur",
+      "peran": [
+        "operator"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Batoq Kelo hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "PT UPC Sidrap Bayu Energi (UPC SIDRAP)",
+      "peran": [
+        "operator"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sidrap wind farm"
+      ]
+    },
+    {
+      "nama": "PT Walsin Nickel Industrial Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 350,
+      "contoh_proyek": [
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "PT Weda Bay Energi",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 250,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Wika Jabar Power",
+      "peran": [
+        "operator"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Gunung Tampomas geothermal power plant"
+      ]
+    },
+    {
+      "nama": "PT Yashi Indonesia Investment",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 250,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "PT Youshan Nickel Indonesia",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 250,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    },
+    {
+      "nama": "Qingshan Industrial Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Sulawesi Labota power station"
+      ]
+    },
+    {
+      "nama": "Rajamandala Electric Power CO LTD",
+      "peran": [
+        "operator"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Rajamandala hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "RH International [",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 180,
+      "contoh_proyek": [
+        "Asahan 1 hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "Scatec ASA",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 70,
+      "contoh_proyek": [
+        "Labuan Bajo solar farm"
+      ]
+    },
+    {
+      "nama": "SN Aboitiz Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 127,
+      "contoh_proyek": [
+        "Lariang hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "SN Power",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "hydropower"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 127,
+      "contoh_proyek": [
+        "Lariang hydroelectric plant"
+      ]
+    },
+    {
+      "nama": "Solar PPA Philippines",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 25,
+      "contoh_proyek": [
+        "East Bali solar farm"
+      ]
+    },
+    {
+      "nama": "South Pasific Viscose PT",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 30,
+      "contoh_proyek": [
+        "South Pasific Viscose power station"
+      ]
+    },
+    {
+      "nama": "Sumber Energi Surya Nusantara",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "solar"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 200,
+      "contoh_proyek": [
+        "Morowali Industrial Park solar power project"
+      ]
+    },
+    {
+      "nama": "Tianshan Aluminum Group Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "PT Tianshan Alumina power station"
+      ]
+    },
+    {
+      "nama": "UPC Renewables Indonesia Limited",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "wind"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 50,
+      "contoh_proyek": [
+        "Samas wind farm"
+      ]
+    },
+    {
+      "nama": "Vale SA",
+      "peran": [
+        "pemilik"
+      ],
+      "tracker": [
+        "geothermal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 60,
+      "contoh_proyek": [
+        "Hu'u Daha geothermal power plant"
+      ]
+    },
+    {
+      "nama": "Zhejiang Huajun Investment Co Ltd",
+      "peran": [
+        "induk"
+      ],
+      "tracker": [
+        "coal"
+      ],
+      "jumlah_baris": 1,
+      "kapasitas_pemilik_mw": 0,
+      "contoh_proyek": [
+        "Weda Bay power station"
+      ]
+    }
+  ]
 }

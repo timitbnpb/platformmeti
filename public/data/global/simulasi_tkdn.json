@@ -1,0 +1,259 @@
+{
+ "lapis": "publik",
+ "dibangun_pada": "2026-11-08",
+ "_catatan": "Asumsi bawaan simulasi kebijakan TKDN (rumus: public/inti/simulasi_tkdn_rumus.js). Hipotesis, bukan prakiraan. Semua nilai bisa diganti pengguna.",
+ "sumber": [
+  {
+   "id": "s-benchmark",
+   "judul": "public/data/global/benchmark_harga.json (InfoLink 4 Nov 2026; pv.index sun.store; kurs ECB 4 Nov 2026; BTKI)",
+   "penerbit": "METI (turunan InfoLink, ECB, Kemenkeu)",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "s-biaya-bangun",
+   "judul": "public/data/biaya_bangun.json, skala plts-atap-industri (Rp 9-13 juta/kW, tengah 11)",
+   "penerbit": "METI",
+   "tingkat_bukti": "hipotesis"
+  },
+  {
+   "id": "s-icres",
+   "judul": "Investasi PLTS di Indonesia Terganjal Kebijakan TKDN (Kabar Bursa, 20 Mei 2024): modul buatan dalam negeri 30-45 persen lebih mahal dari impor; TKDN modul minimum 60 persen sejak 1 Jan 2025 (Permenperin 23/2023), ESDM mengusulkan 40 persen",
+   "penerbit": "Kabar Bursa, narasumber Surya Darma (ICRES)",
+   "url": "https://www.kabarbursa.com/market-hari-ini/investasi-plts-di-indonesia-terganjal-kebijakan-tkdn",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "s-kemenperin-kap",
+   "judul": "Kapasitas modul surya Indonesia 10.944 MWp/tahun, 34 pabrikan, TKDN rata-rata 40-55 persen, Tier 1 44,11 persen, ambang minimum proyek 20 persen (dialog Target PLTS 100 GW, 13 Mei 2026)",
+   "penerbit": "Petromindo mengutip Kementerian Perindustrian",
+   "url": "https://dev.petromindo.com/news/article/indonesia-s-solar-module-capacity-reaches-10-9-gw-per-year",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "s-esdm-11-2024",
+   "judul": "Permen ESDM 11/2024 Pasal 19: relaksasi TKDN PLTS COD paling lambat 30 Jun 2026 (PPA s.d. 31 Des 2024, impor s.d. 30 Jun 2025 bagi yang berkomitmen membangun pabrik modul)",
+   "penerbit": "Investortrust, 13 Agu 2024",
+   "url": "https://investortrust.id/national/37063/relaksasi-tkdn-proyek-plts-ini-syarat-dan-batas-waktunya",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "s-tkdn",
+   "judul": "Sertifikat TKDN aktif Kemenperin (public/data/tkdn_produk.json, produk \"Modul Surya\" dan \"Inverter\")",
+   "penerbit": "Kemenperin via METI",
+   "url": "https://tkdn.kemenperin.go.id/",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "s-esdm-17gw",
+   "judul": "Mei 2026 ESDM mengusulkan tahap awal 17 GW PLTS dengan penyimpanan dari target 100 GW (ringkasan pencarian SMM; tanpa tautan primer terbaca)",
+   "penerbit": "SMM (via ringkasan pencarian)",
+   "tingkat_bukti": "media"
+  }
+ ],
+ "syarat_uji": {
+  "modul": [
+   0,
+   20,
+   40,
+   60
+  ],
+  "inverter": [
+   0,
+   20,
+   40,
+   60
+  ],
+  "catatan": "0 = tanpa syarat (dasar)"
+ },
+ "asumsi": {
+  "kurs_rp_usd": {
+   "nilai": 18129,
+   "satuan": "Rp/USD",
+   "tingkat_bukti": "resmi",
+   "sumber": "s-benchmark",
+   "tanggal": "2026-11-08",
+   "catatan": "Kurs ECB 2026-11-04"
+  },
+  "capex_dasar_rp_kwp": {
+   "nilai": 11000000,
+   "satuan": "Rp/kWp",
+   "tingkat_bukti": "hipotesis",
+   "sumber": "s-biaya-bangun",
+   "tanggal": "2026-11-08",
+   "catatan": "Sudah memuat modul dan inverter impor; tengah PLTS atap C&I"
+  },
+  "modul": {
+   "usd_w": {
+    "nilai": 0.1197,
+    "satuan": "USD/Wp",
+    "tingkat_bukti": "media",
+    "sumber": "s-benchmark",
+    "tanggal": "2026-11-08",
+    "catatan": "Kutipan non-Tiongkok 0,114 (InfoLink) x (1 + BM 5 persen); ongkos angkut belum termasuk (celah)"
+   },
+   "premi_ref": {
+    "nilai": 0.375,
+    "satuan": "pecahan",
+    "tingkat_bukti": "media",
+    "sumber": "s-icres",
+    "tanggal": "2026-11-08",
+    "catatan": "Titik tengah rentang 30-45 persen lebih mahal dari impor"
+   },
+   "tkdn_ref": {
+    "nilai": 45,
+    "satuan": "persen TKDN",
+    "tingkat_bukti": "media",
+    "sumber": "s-kemenperin-kap",
+    "tanggal": "2026-11-08",
+    "catatan": "Titik tengah rata-rata modul domestik 40-55 persen; premi dianggap berlaku pada TKDN ini"
+   },
+   "kapasitas_gw_tahun": {
+    "nilai": 10.944,
+    "satuan": "GW/tahun",
+    "tingkat_bukti": "media",
+    "sumber": "s-kemenperin-kap",
+    "tanggal": "2026-11-08",
+    "catatan": "Kapasitas terpasang 34 pabrikan, bukan produksi aktual"
+   },
+   "kebutuhan_gw_tahun": {
+    "nilai": 5.667,
+    "satuan": "GW/tahun",
+    "tingkat_bukti": "hipotesis",
+    "sumber": "s-esdm-17gw",
+    "tanggal": "2026-11-08",
+    "catatan": "17 GW tahap awal dibagi 3 tahun (pembagian 3 tahun adalah asumsi kami)"
+   },
+   "kebutuhan_alternatif": [
+    {
+     "nama": "Target 100 GW dalam 10 tahun",
+     "nilai": 10,
+     "satuan": "GW/tahun",
+     "tingkat_bukti": "hipotesis"
+    }
+   ]
+  },
+  "inverter": {
+   "usd_w": {
+    "nilai": 0.0295,
+    "satuan": "USD/W",
+    "tingkat_bukti": "media",
+    "sumber": "s-benchmark",
+    "tanggal": "2026-11-08",
+    "catatan": "Inverter string besar Eropa 23,76 EUR/kW (pv.index Okt 2026) x 1,1267 / 1000 x (1 + BM 10 persen)"
+   },
+   "premi_ref": {
+    "nilai": 0.15,
+    "satuan": "pecahan",
+    "tingkat_bukti": "hipotesis",
+    "sumber": null,
+    "tanggal": "2026-11-08",
+    "catatan": "Tidak ada sumber terbuka premi inverter lokal; HIPOTESIS"
+   },
+   "tkdn_ref": {
+    "nilai": 40,
+    "satuan": "persen TKDN",
+    "tingkat_bukti": "hipotesis",
+    "sumber": "s-tkdn",
+    "tanggal": "2026-11-08",
+    "catatan": "Median sertifikat inverter aktif sekitar 38-40 persen"
+   },
+   "kapasitas_gw_tahun": {
+    "nilai": null,
+    "satuan": "GW/tahun",
+    "tingkat_bukti": "celah",
+    "sumber": null,
+    "tanggal": "2026-11-08",
+    "catatan": "Kapasitas pabrik inverter lokal tidak ditemukan; analisis pasokan inverter hanya lewat pangsa sertifikat lolos"
+   },
+   "kebutuhan_gw_tahun": {
+    "nilai": 5.667,
+    "satuan": "GW/tahun",
+    "tingkat_bukti": "hipotesis",
+    "sumber": "s-esdm-17gw",
+    "tanggal": "2026-11-08"
+   }
+  },
+  "keuangan": {
+   "mw": 1,
+   "opexUsdKwThn": 10,
+   "fk": 0.17,
+   "degr": 0.005,
+   "umur": 25,
+   "tarif": 1100,
+   "tarifTahun2": null,
+   "tarifGanti": 11,
+   "eskTarif": 0,
+   "eskOpex": 0.03,
+   "porsiBayar": 1,
+   "sewaRpKwp": 0,
+   "recRpMwh": 0,
+   "karbonRpT": 0,
+   "emisiTMwh": 0,
+   "utang": 0.7,
+   "bunga": 0.09,
+   "tenor": 12,
+   "pajak": 0.22,
+   "libur": 0,
+   "susut": 20,
+   "ppn": 0,
+   "ppnPorsi": 0,
+   "ppnDtp": false,
+   "gantiTahun": 0,
+   "gantiPersen": 0,
+   "diskonto": 0.1,
+   "kurs": 18129,
+   "tingkat_bukti": "hipotesis",
+   "catatan": "Tarif Rp 1.100/kWh, FK 17 persen, opex USD 10/kW/tahun, utang 70 persen bunga 9 persen: semuanya asumsi tipikal, bukan data proyek."
+  }
+ },
+ "sertifikat": {
+  "modul": {
+   "jumlah": 18,
+   "tkdn_persen": [
+    33.5,
+    40,
+    43.92,
+    46.5,
+    46.67,
+    47.5,
+    47.5,
+    51.46,
+    51.59,
+    54.48,
+    54.48,
+    55.67,
+    56.28,
+    56.48,
+    56.89,
+    56.92,
+    57.2,
+    61
+   ],
+   "sumber_id": "s-tkdn",
+   "ket": "Sertifikat aktif produk \"Modul Surya\"; bobot sama per sertifikat (HIPOTESIS: kapasitas per pabrik tak terbuka)"
+  },
+  "inverter": {
+   "jumlah": 5,
+   "tkdn_persen": [
+    33.07,
+    33.31,
+    38.89,
+    39.72,
+    40.53
+   ],
+   "sumber_id": "s-tkdn",
+   "ket": "Sertifikat aktif produk \"Inverter\""
+  }
+ },
+ "neraca_pasokan": {
+  "berkas": "public/data/global/neraca_pasokan.json",
+  "ada": true,
+  "catatan": "Belum ada saat dibangun: kapasitas dan kebutuhan memakai asumsi di atas; ganti saat berkas tersedia."
+ },
+ "celah": [
+  "Premi harga modul lokal hanya rentang media 30-45 persen (Mei 2024); tidak ada seri harga lokal per Wp terbaca (e-katalog LKPP tak terjangkau).",
+  "Kapasitas inverter lokal dan kapasitas per pabrik modul tidak terbuka; pangsa lolos memakai bobot sama per sertifikat.",
+  "Nomor Permenperin yang berlaku untuk syarat TKDN modul/inverter pasca-relaksasi 2026 belum dibaca primer; 60 persen (Permenperin 23/2023) dan usul ESDM 40 persen berasal dari berita.",
+  "Ongkos angkut, PPN, PPh 22 impor dan insentif tidak dimodelkan; capex dasar tunggal untuk semua skala."
+ ]
+}

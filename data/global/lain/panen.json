@@ -9,6 +9,11 @@
    "segmen": [
     "bayu"
    ],
+   "sub": [
+    "turbin-lengkap",
+    "nacelle",
+    "bilah"
+   ],
    "alias": "\\bVestas\\b",
    "wikidata": {
     "id": "Q868259",
@@ -53,6 +58,11 @@
    "situs": "https://www.siemensgamesa.com/",
    "segmen": [
     "bayu"
+   ],
+   "sub": [
+    "turbin-lengkap",
+    "nacelle",
+    "bilah"
    ],
    "alias": "Siemens Gamesa",
    "wikidata": {
@@ -99,6 +109,15 @@
     "bayu",
     "hidro",
     "jaringan"
+   ],
+   "sub": [
+    "turbin-lengkap",
+    "nacelle",
+    "turbin",
+    "generator",
+    "transformator",
+    "hvdc",
+    "switchgear"
    ],
    "alias": "GE Vernova|General Electric|\\bGE (Renewable|Grid|Hydro|Power)",
    "wikidata": {
@@ -147,6 +166,9 @@
    "segmen": [
     "bayu"
    ],
+   "sub": [
+    "turbin-lengkap"
+   ],
    "alias": "Goldwind",
    "wikidata": {
     "id": "Q1090900",
@@ -180,9 +202,12 @@
   },
   {
    "nama": "Envision Energy",
-   "situs": "https://www.envision-group.com/",
+   "situs": "https://www.envision-energy.com/",
    "segmen": [
     "bayu"
+   ],
+   "sub": [
+    "turbin-lengkap"
    ],
    "alias": "Envision",
    "wikidata": null,
@@ -196,11 +221,21 @@
      "hidro": [],
      "hidrogen": [],
      "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
      "biomassa": []
     }
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": 2007,
+    "sumber_url": "https://en.wikipedia.org/wiki/Envision_Energy",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "kantor pusat Shanghai",
+    "portofolio": null
    }
   },
   {
@@ -208,6 +243,9 @@
    "situs": "https://www.mywind.com.cn/",
    "segmen": [
     "bayu"
+   ],
+   "sub": [
+    "turbin-lengkap"
    ],
    "alias": "Mingyang|Ming Yang",
    "wikidata": {
@@ -224,36 +262,82 @@
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": 2006,
+    "sumber_url": "https://en.wikipedia.org/wiki/Ming_Yang_Smart_Energy",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "kantor pusat Zhongshan, Guangdong; peringkat 5 produsen turbin dunia 2023 menurut artikel itu",
+    "portofolio": null
    }
   },
   {
    "nama": "Windey",
-   "situs": "https://www.chinawindey.com/",
+   "situs": "https://www.windeyenergy.com/",
    "segmen": [
     "bayu"
+   ],
+   "sub": [
+    "turbin-lengkap"
    ],
    "alias": "Windey",
    "wikidata": null,
    "beranda": {
-    "gagal": "fetch failed"
+    "gagal": "blokir 403"
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": null,
+    "sumber_url": "https://szse.io/companies/300772-windey-energy-technology-group-coltd",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "Windey Energy Technology Group, tercatat di bursa Shenzhen (300772), Hangzhou",
+    "portofolio": null
    }
   },
   {
    "nama": "Sany Renewable Energy",
-   "situs": "https://www.sanyrenewable.com/",
+   "situs": "https://www.sanyre.com.cn/",
    "segmen": [
     "bayu"
+   ],
+   "sub": [
+    "turbin-lengkap"
    ],
    "alias": "Sany Renewable|SANY",
    "wikidata": null,
    "beranda": {
-    "gagal": "robots"
+    "judul": "三一重能",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "bilah turbin"
+     ],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
    },
    "logo": {
-    "tanpa": true
+    "berkas": "en_99afd43f1a.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.sanyre.com.cn/img/favicon.ico"
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": null,
+    "sumber_url": "https://stockanalysis.com/quote/sha/688349/company",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "tercatat di bursa STAR Shanghai (688349), kantor pusat Beijing",
+    "portofolio": null
    }
   },
   {
@@ -261,6 +345,9 @@
    "situs": "https://www.nordex-online.com/",
    "segmen": [
     "bayu"
+   ],
+   "sub": [
+    "turbin-lengkap"
    ],
    "alias": "Nordex",
    "wikidata": {
@@ -305,6 +392,9 @@
    "situs": "https://www.suzlon.com/",
    "segmen": [
     "bayu"
+   ],
+   "sub": [
+    "turbin-lengkap"
    ],
    "alias": "Suzlon",
    "wikidata": {
@@ -351,6 +441,9 @@
    "segmen": [
     "bayu"
    ],
+   "sub": [
+    "bilah"
+   ],
    "alias": "TPI Composites",
    "wikidata": {
     "id": "Q106623027",
@@ -393,6 +486,9 @@
    "segmen": [
     "bayu"
    ],
+   "sub": [
+    "bilah"
+   ],
    "alias": "LM Wind Power",
    "wikidata": {
     "id": "Q508150",
@@ -432,17 +528,40 @@
   },
   {
    "nama": "Titan Wind Energy",
-   "situs": "https://www.titanwind.com/",
+   "situs": "https://www.titanwind.com.cn/",
    "segmen": [
     "bayu"
+   ],
+   "sub": [
+    "menara"
    ],
    "alias": "Titan Wind",
    "wikidata": null,
    "beranda": {
-    "gagal": "blokir 403"
+    "judul": "天顺风能（苏州）股份有限公司",
+    "deskripsi": "天顺风能（苏州）股份有限公司，是全球最具规模的风电装备制造龙头企业。目前，公司以新能源装备制造、零碳实业发展两大主营业务板块，实现双轮驱动。",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": 2005,
+    "sumber_url": "https://en.wikipedia.org/wiki/Titan_Wind_Energy",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "Taicang, Jiangsu; menara dan bilah turbin angin",
+    "portofolio": null
    }
   },
   {
@@ -450,6 +569,10 @@
    "situs": "https://www.ormat.com/",
    "segmen": [
     "panas-bumi"
+   ],
+   "sub": [
+    "binary-orc",
+    "turbin-pembangkit"
    ],
    "alias": "\\bOrmat\\b",
    "wikidata": {
@@ -496,6 +619,11 @@
     "panas-bumi",
     "hidro"
    ],
+   "sub": [
+    "turbin-pembangkit",
+    "turbin",
+    "generator"
+   ],
    "alias": "Toshiba",
    "wikidata": null,
    "beranda": {
@@ -510,6 +638,8 @@
      "jaringan": [
       "jaringan listrik"
      ],
+     "biogas": [],
+     "biofuel": [],
      "biomassa": []
     }
    },
@@ -517,6 +647,14 @@
     "berkas": "en_8a7adde233.png",
     "sumber": "ikon resmi situs",
     "url": "https://www.global.toshiba/content/dam/toshiba/brand-assets/favicon/touch-icon_152.png"
+   },
+   "lengkapi": {
+    "iso2": "JP",
+    "tahun": null,
+    "sumber_url": "https://www.global.toshiba/ww/outline/corporate.html",
+    "tingkat": "situs-sendiri",
+    "ket": "unit usaha Toshiba Corporation (Jepang)",
+    "portofolio": null
    }
   },
   {
@@ -525,8 +663,22 @@
    "segmen": [
     "panas-bumi"
    ],
+   "sub": [
+    "turbin-pembangkit"
+   ],
    "alias": "Fuji Electric",
-   "wikidata": null,
+   "wikidata": {
+    "cocok_by": "label",
+    "id": "Q498662",
+    "label": "Fuji Electric",
+    "deskripsi": "company",
+    "tahun_berdiri": 1923,
+    "enwiki": "Fuji Electric",
+    "logo_berkas": "Fuji Electric company logo.svg",
+    "iso2": [
+     "JP"
+    ]
+   },
    "beranda": {
     "judul": "Fuji Electric Global",
     "deskripsi": "Fuji Electric contributes to the resolution of energy management problems, through pursuit of technological innovation in electric and thermal energy.",
@@ -552,6 +704,9 @@
    "situs": "https://power.mhi.com/",
    "segmen": [
     "panas-bumi"
+   ],
+   "sub": [
+    "turbin-pembangkit"
    ],
    "alias": "Mitsubishi (Power|Heavy|Hitachi Power)|\\bMHI\\b",
    "wikidata": {
@@ -600,6 +755,9 @@
    "segmen": [
     "panas-bumi"
    ],
+   "sub": [
+    "turbin-pembangkit"
+   ],
    "alias": "Ansaldo",
    "wikidata": {
     "id": "Q2852429",
@@ -647,6 +805,9 @@
    "segmen": [
     "panas-bumi"
    ],
+   "sub": [
+    "binary-orc"
+   ],
    "alias": "Turboden",
    "wikidata": {
     "id": "Q131886209",
@@ -685,9 +846,12 @@
   },
   {
    "nama": "Exergy",
-   "situs": "https://www.exergy-orc.com/",
+   "situs": "https://exergyint.com/",
    "segmen": [
     "panas-bumi"
+   ],
+   "sub": [
+    "binary-orc"
    ],
    "alias": "Exergy",
    "wikidata": null,
@@ -708,6 +872,8 @@
      "jaringan": [
       "jaringan listrik"
      ],
+     "biogas": [],
+     "biofuel": [],
      "biomassa": [
       "biomassa",
       "gasifikasi"
@@ -718,6 +884,18 @@
     "berkas": "en_a46cb9a990.png",
     "sumber": "ikon resmi situs",
     "url": "https://exergyint.com/wp-content/uploads/2022/09/favicon-300x300.png"
+   },
+   "lengkapi": {
+    "iso2": "IT",
+    "tahun": null,
+    "sumber_url": "https://www.devex.com/organizations/exergy-spa-exergy-international-srl-160713",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "Exergy International srl, dekat Milan (Olgiate Olona)",
+    "portofolio": {
+     "nilai": "63 pembangkit ORC, 581 MW total (panas bumi 33 unit/538 MW; pemulihan panas 23/36 MW; surya 1/1 MW; biomassa 6/6 MW)",
+     "sumber_url": "https://exergyint.com/",
+     "tingkat": "situs-sendiri"
+    }
    }
   },
   {
@@ -725,6 +903,9 @@
    "situs": "https://www.halliburton.com/",
    "segmen": [
     "panas-bumi"
+   ],
+   "sub": [
+    "pengeboran-sumur"
    ],
    "alias": "Halliburton",
    "wikidata": {
@@ -765,6 +946,9 @@
    "situs": "https://www.slb.com/",
    "segmen": [
     "panas-bumi"
+   ],
+   "sub": [
+    "pengeboran-sumur"
    ],
    "alias": "\\bSLB\\b|Schlumberger",
    "wikidata": {
@@ -810,6 +994,10 @@
    "segmen": [
     "panas-bumi"
    ],
+   "sub": [
+    "pengeboran-sumur",
+    "turbin-pembangkit"
+   ],
    "alias": "Baker Hughes",
    "wikidata": {
     "id": "Q804353",
@@ -852,27 +1040,42 @@
   },
   {
    "nama": "KS Orka",
-   "situs": "https://www.ksorka.com/",
+   "situs": "https://ksorka-sorikmarapi.com/",
    "segmen": [
     "panas-bumi"
+   ],
+   "sub": [
+    "pengembang-operator"
    ],
    "alias": "KS Orka",
    "wikidata": null,
    "beranda": {
-    "judul": "KSORKA Renewables",
+    "judul": "KS Orka Renewable Energy",
     "deskripsi": "",
     "indonesia": null,
     "produk": {
      "bayu": [],
-     "panas-bumi": [],
+     "panas-bumi": [
+      "panas bumi"
+     ],
      "hidro": [],
      "hidrogen": [],
      "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
      "biomassa": []
     }
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "SG",
+    "tahun": null,
+    "sumber_url": "https://www.thinkgeoenergy.com/ks-orka-acquires-controlling-stake-in-240-mw-sorik-marapi-project-in-indonesia/",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "KS Orka Renewables Pte Ltd (anak Kaishan Group), pengembang PLTP Sorik Marapi 240 MW",
+    "portofolio": null
    }
   },
   {
@@ -881,6 +1084,12 @@
    "segmen": [
     "hidro",
     "biomassa"
+   ],
+   "sub": [
+    "turbin",
+    "generator",
+    "pintu-air",
+    "boiler"
    ],
    "alias": "Andritz",
    "wikidata": {
@@ -933,6 +1142,10 @@
    "segmen": [
     "hidro"
    ],
+   "sub": [
+    "turbin",
+    "generator"
+   ],
    "alias": "Voith",
    "wikidata": {
     "id": "Q126944",
@@ -976,8 +1189,23 @@
    "segmen": [
     "hidro"
    ],
+   "sub": [
+    "turbin",
+    "generator"
+   ],
    "alias": "Harbin Electric",
-   "wikidata": null,
+   "wikidata": {
+    "cocok_by": "label",
+    "id": "Q5654441",
+    "label": "Harbin Electric",
+    "deskripsi": "Manufacturer of power plant equipment",
+    "tahun_berdiri": 1994,
+    "enwiki": "Harbin Electric",
+    "logo_berkas": "Harbin Electronic Corporation logo.svg",
+    "iso2": [
+     "CN"
+    ]
+   },
    "beranda": {
     "judul": "上海酒总酒店设备有限公司HEC-酒总易快得",
     "deskripsi": "酒总集团自1992年成立以来，在上海、北京、青岛、重庆、成都、杭州、济南等多地拥有大型酒店设备、酒店用品卖场，并成为肯德基、麦当劳、宜家家居等国际连锁餐饮的主要供应商。主要销售酒店设备、厨房设备、厨房用具、前厅用品、前厅用具、耗品、一次性用品、酒店布草、客房用品、餐饮设备、餐饮用品等商品，以期为广大酒店、餐饮、企事业、机关及个人提供优质的产品及服务。-酒总易快得",
@@ -1002,6 +1230,10 @@
    "situs": "https://www.dongfang.com.cn/",
    "segmen": [
     "hidro"
+   ],
+   "sub": [
+    "turbin",
+    "generator"
    ],
    "alias": "Dongfang",
    "wikidata": {
@@ -1030,8 +1262,23 @@
    "segmen": [
     "hidro"
    ],
+   "sub": [
+    "turbin",
+    "pintu-air",
+    "penstock"
+   ],
    "alias": "Litostroj",
-   "wikidata": null,
+   "wikidata": {
+    "cocok_by": "label",
+    "id": "Q30299422",
+    "label": "Litostroj Power",
+    "deskripsi": "company in Ljubljana, Slovenia",
+    "tahun_berdiri": 2003,
+    "logo_berkas": null,
+    "iso2": [
+     "SI"
+    ]
+   },
    "beranda": {
     "judul": "Engineering the power of water | Litostroj",
     "deskripsi": "Litostroj specializes in the design, development, testing and manufacturing of highly efficient, high-quality and reliable hydropower turbines and related equipment for medium and large hydropower plants.",
@@ -1061,6 +1308,10 @@
    "situs": "https://www.gilkes.com/",
    "segmen": [
     "hidro"
+   ],
+   "sub": [
+    "turbin",
+    "pltmh"
    ],
    "alias": "Gilkes",
    "wikidata": {
@@ -1098,27 +1349,51 @@
   },
   {
    "nama": "Cink Hydro-Energy",
-   "situs": "https://www.cink.cz/",
+   "situs": "https://www.cink-hydro-energy.com/",
    "segmen": [
     "hidro"
+   ],
+   "sub": [
+    "turbin",
+    "pltmh"
    ],
    "alias": "Cink",
    "wikidata": null,
    "beranda": {
-    "judul": "CINK - pokladní systém",
-    "deskripsi": "",
+    "judul": "CINK Hydro - Energy k.s. | CINK Hydro - Energy k.s.",
+    "deskripsi": "CINK Hydro - Energy k.s.",
     "indonesia": null,
     "produk": {
      "bayu": [],
      "panas-bumi": [],
-     "hidro": [],
+     "hidro": [
+      "pembangkit hidro",
+      "turbin Pelton/Francis/Kaplan",
+      "turbin"
+     ],
      "hidrogen": [],
      "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
      "biomassa": []
     }
    },
    "logo": {
-    "tanpa": true
+    "berkas": "en_c0807beb29.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.cink-hydro-energy.com/data/Favicons/cink-hydro-energycom/apple-touch-icon-76x76.png"
+   },
+   "lengkapi": {
+    "iso2": "CZ",
+    "tahun": 1990,
+    "sumber_url": "https://www.cink-hydro-energy.com/about-us",
+    "tingkat": "situs-sendiri",
+    "ket": "pabrik sendiri berdiri 1990 di Karlovy Vary; turbin pertama 1983; nama sekarang sejak 2005; kini di Sadov",
+    "portofolio": {
+     "nilai": "lebih dari 500 turbin terpasang di lebih dari 50 negara (klaim perusahaan)",
+     "sumber_url": "https://www.cink-hydro-energy.com/about-us",
+     "tingkat": "situs-sendiri"
+    }
    }
   },
   {
@@ -1126,6 +1401,10 @@
    "situs": "https://nelhydrogen.com/",
    "segmen": [
     "hidrogen"
+   ],
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
    ],
    "alias": "Nel (ASA|Hydrogen)",
    "wikidata": {
@@ -1169,6 +1448,10 @@
    "segmen": [
     "hidrogen"
    ],
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ],
    "alias": "nucera",
    "wikidata": {
     "id": "Q119781817",
@@ -1209,6 +1492,12 @@
    "segmen": [
     "hidrogen",
     "jaringan"
+   ],
+   "sub": [
+    "sistem-lengkap",
+    "transformator",
+    "hvdc",
+    "kompresor"
    ],
    "alias": "Siemens Energy",
    "wikidata": {
@@ -1265,6 +1554,10 @@
    "segmen": [
     "hidrogen"
    ],
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ],
    "alias": "Plug Power",
    "wikidata": {
     "id": "Q7205253",
@@ -1309,6 +1602,10 @@
    "segmen": [
     "hidrogen"
    ],
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ],
    "alias": "ITM Power",
    "wikidata": {
     "id": "Q5974865",
@@ -1349,6 +1646,9 @@
    "situs": "https://www.longi.com/",
    "segmen": [
     "hidrogen"
+   ],
+   "sub": [
+    "stack-elektroliser"
    ],
    "alias": "LONGi|Longi",
    "wikidata": {
@@ -1391,6 +1691,10 @@
    "segmen": [
     "hidrogen"
    ],
+   "sub": [
+    "stack-elektroliser",
+    "bess-integrasi"
+   ],
    "alias": "Sungrow",
    "wikidata": {
     "id": "Q106003803",
@@ -1417,6 +1721,8 @@
      "jaringan": [
       "penyimpanan baterai"
      ],
+     "biogas": [],
+     "biofuel": [],
      "biomassa": []
     }
    },
@@ -1424,6 +1730,14 @@
     "berkas": "en_297dd3c8ec.png",
     "sumber": "Wikidata P154 / Wikimedia Commons",
     "url": "https://commons.wikimedia.org/wiki/File:Sungrow_Power_Supply.svg"
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": null,
+    "sumber_url": "https://en.wikipedia.org/wiki/Sungrow",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "anak usaha Sungrow, Hefei, Anhui; tahun berdiri induk (1997) tidak dipakai",
+    "portofolio": null
    }
   },
   {
@@ -1432,6 +1746,9 @@
    "segmen": [
     "hidrogen"
    ],
+   "sub": [
+    "stack-elektroliser"
+   ],
    "alias": "\\bPeric\\b",
    "wikidata": null,
    "beranda": {
@@ -1439,6 +1756,14 @@
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": null,
+    "sumber_url": "https://global.chinadaily.com.cn/a/202408/22/WS66c694e0a31060630b9245bb.html",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "Beijing Peric Hydrogen Technologies; ekspor elektroliser naik tiga tahun berturut-turut (sekitar 350 unit 2023, target di atas 1.000 unit/tahun)",
+    "portofolio": null
    }
   },
   {
@@ -1446,6 +1771,10 @@
    "situs": "https://www.johncockerill.com/",
    "segmen": [
     "hidrogen"
+   ],
+   "sub": [
+    "stack-elektroliser",
+    "sistem-lengkap"
    ],
    "alias": "John Cockerill",
    "wikidata": {
@@ -1482,8 +1811,22 @@
    "segmen": [
     "hidrogen"
    ],
+   "sub": [
+    "stack-elektroliser"
+   ],
    "alias": "Accelera|Cummins",
-   "wikidata": null,
+   "wikidata": {
+    "cocok_by": "label",
+    "id": "Q173476",
+    "label": "Cummins",
+    "deskripsi": "American corporation that designs, manufactures, distributes and services engines and related technologies",
+    "tahun_berdiri": 1919,
+    "enwiki": "Cummins",
+    "logo_berkas": "Cummins logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
    "beranda": {
     "judul": "Home | Accelera",
     "deskripsi": "A leading supplier and integration partner for electric and hydrogen products and custom solutions for commercial vehicles and industrial processes.",
@@ -1514,6 +1857,12 @@
    "situs": "https://www.hitachienergy.com/",
    "segmen": [
     "jaringan"
+   ],
+   "sub": [
+    "transformator",
+    "hvdc",
+    "switchgear",
+    "bess-integrasi"
    ],
    "alias": "Hitachi Energy|ABB Power Grids",
    "wikidata": {
@@ -1565,6 +1914,10 @@
    "segmen": [
     "jaringan"
    ],
+   "sub": [
+    "switchgear",
+    "bess-integrasi"
+   ],
    "alias": "Schneider",
    "wikidata": {
     "id": "Q49053",
@@ -1607,6 +1960,10 @@
    "segmen": [
     "jaringan"
    ],
+   "sub": [
+    "switchgear",
+    "hvdc"
+   ],
    "alias": "\\bABB\\b",
    "wikidata": {
     "id": "Q52825",
@@ -1630,17 +1987,29 @@
   },
   {
    "nama": "NARI Group",
-   "situs": "https://www.nari-china.com/",
+   "situs": "https://www.sgepri.sgcc.com.cn/",
    "segmen": [
     "jaringan"
+   ],
+   "sub": [
+    "hvdc",
+    "switchgear"
    ],
    "alias": "\\bNARI\\b",
    "wikidata": null,
    "beranda": {
-    "gagal": "fetch failed"
+    "gagal": "http 412"
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": null,
+    "sumber_url": "https://www.devex.com/organizations/nari-group-corporation-69549",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "Nanjing; kelompok usaha State Grid Electric Power Research Institute (situs di domain SGEPRI)",
+    "portofolio": null
    }
   },
   {
@@ -1648,6 +2017,10 @@
    "situs": "https://www.xd.com.cn/",
    "segmen": [
     "jaringan"
+   ],
+   "sub": [
+    "transformator",
+    "switchgear"
    ],
    "alias": "XD Electric",
    "wikidata": null,
@@ -1661,18 +2034,31 @@
      "hidro": [],
      "hidrogen": [],
      "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
      "biomassa": []
     }
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": 1959,
+    "sumber_url": "https://en.wikipedia.org/wiki/XD_Electric_Company",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "Xi'an, Shaanxi",
+    "portofolio": null
    }
   },
   {
    "nama": "TBEA",
-   "situs": "https://www.tbea.com/",
+   "situs": "https://www.tbea.com.cn/",
    "segmen": [
     "jaringan"
+   ],
+   "sub": [
+    "transformator"
    ],
    "alias": "TBEA",
    "wikidata": {
@@ -1685,20 +2071,18 @@
     "iso2": []
    },
    "beranda": {
-    "judul": "特变电工官网",
-    "deskripsi": "特变电工官网",
-    "indonesia": null,
-    "produk": {
-     "bayu": [],
-     "panas-bumi": [],
-     "hidro": [],
-     "hidrogen": [],
-     "jaringan": [],
-     "biomassa": []
-    }
+    "gagal": "fetch failed"
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "CN",
+    "tahun": null,
+    "sumber_url": "https://en.wikipedia.org/wiki/TBEA",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "Changji, Xinjiang; produsen trafo utama China",
+    "portofolio": null
    }
   },
   {
@@ -1706,6 +2090,10 @@
    "situs": "https://www.hyosungheavyindustries.com/",
    "segmen": [
     "jaringan"
+   ],
+   "sub": [
+    "transformator",
+    "hvdc"
    ],
    "alias": "Hyosung",
    "wikidata": {
@@ -1744,6 +2132,10 @@
    "segmen": [
     "jaringan"
    ],
+   "sub": [
+    "switchgear",
+    "bess-integrasi"
+   ],
    "alias": "LS Electric",
    "wikidata": null,
    "beranda": {
@@ -1756,11 +2148,21 @@
      "hidro": [],
      "hidrogen": [],
      "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
      "biomassa": []
     }
    },
    "logo": {
     "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "KR",
+    "tahun": 1974,
+    "sumber_url": "https://en.wikipedia.org/wiki/LS_Electric",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "Anyang, Gyeonggi",
+    "portofolio": null
    }
   },
   {
@@ -1768,6 +2170,10 @@
    "situs": "https://www.valmet.com/",
    "segmen": [
     "biomassa"
+   ],
+   "sub": [
+    "boiler",
+    "gasifier"
    ],
    "alias": "Valmet",
    "wikidata": {
@@ -1814,6 +2220,9 @@
    "segmen": [
     "biomassa"
    ],
+   "sub": [
+    "boiler"
+   ],
    "alias": "Sumitomo SHI|SHI FW",
    "wikidata": null,
    "beranda": {
@@ -1829,6 +2238,10 @@
       "penyimpanan baterai",
       "jaringan listrik"
      ],
+     "biogas": [
+      "gas engine/CHP"
+     ],
+     "biofuel": [],
      "biomassa": [
       "biomassa",
       "boiler",
@@ -1841,6 +2254,14 @@
    "logo": {
     "berkas": "en_f852bce1ed.png",
     "ada": true
+   },
+   "lengkapi": {
+    "iso2": "FI",
+    "tahun": null,
+    "sumber_url": "https://largestcompanies.com/company/Sumitomo-SHI-FW-Energia-Oy-47328",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "kantor pusat di Espoo, Finlandia; situs sendiri memakai 'sejak 1891' (warisan Foster Wheeler), bukan tahun pendirian",
+    "portofolio": null
    }
   },
   {
@@ -1848,6 +2269,10 @@
    "situs": "https://www.thermaxglobal.com/",
    "segmen": [
     "biomassa"
+   ],
+   "sub": [
+    "boiler",
+    "gasifier"
    ],
    "alias": "Thermax",
    "wikidata": {
@@ -1873,6 +2298,10 @@
    "situs": "https://www.doosanenerbility.com/",
    "segmen": [
     "biomassa"
+   ],
+   "sub": [
+    "boiler",
+    "turbin"
    ],
    "alias": "Doosan",
    "wikidata": {
@@ -1913,6 +2342,963 @@
     "berkas": "en_ea6383af3c.png",
     "sumber": "Wikidata P154 / Wikimedia Commons",
     "url": "https://commons.wikimedia.org/wiki/File:Doosan_logo_(en).png"
+   }
+  },
+  {
+   "nama": "SKF",
+   "situs": "https://www.skf.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "bantalan"
+   ],
+   "alias": "\\bSKF\\b",
+   "wikidata": {
+    "id": "Q52846",
+    "label": "SKF",
+    "deskripsi": "Swedish ball bearing and seal manufacturing company",
+    "tahun_berdiri": 1907,
+    "enwiki": "SKF",
+    "logo_berkas": "SKF-Logo.svg",
+    "iso2": [
+     "SE"
+    ]
+   },
+   "beranda": {
+    "judul": "SKF",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_26808caa67.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:SKF-Logo.svg"
+   }
+  },
+  {
+   "nama": "Schaeffler",
+   "situs": "https://www.schaeffler.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "bantalan"
+   ],
+   "alias": "Schaeffler",
+   "wikidata": {
+    "id": "Q459367",
+    "label": "Schaeffler Group",
+    "deskripsi": "German multinational company",
+    "tahun_berdiri": 1946,
+    "enwiki": "Schaeffler Group",
+    "logo_berkas": "Schaeffler Gruppe logo.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "beranda": {
+    "judul": "Welcome to the Schaeffler Group",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_5eaf532db0.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Schaeffler_Gruppe_logo.svg"
+   }
+  },
+  {
+   "nama": "ZF Friedrichshafen",
+   "situs": "https://www.zf.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "gearbox"
+   ],
+   "alias": "\\bZF\\b",
+   "wikidata": {
+    "id": "Q136119",
+    "label": "ZF Friedrichshafen AG",
+    "deskripsi": "German company",
+    "tahun_berdiri": 1915,
+    "enwiki": "ZF Friedrichshafen",
+    "logo_berkas": "ZF Official Logo.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "beranda": {
+    "judul": "Homepage ZF Friedrichshafen AG - ZF",
+    "deskripsi": "ZF is a global technology company supplying highly advanced dynamic systems for passenger cars, commercial vehicles and industrial technology.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_8ff249911c.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:ZF_Official_Logo.svg"
+   }
+  },
+  {
+   "nama": "CS Wind",
+   "situs": "https://www.cswind.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "menara"
+   ],
+   "alias": "CS Wind",
+   "wikidata": null,
+   "beranda": {
+    "judul": "CS WIND",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin lepas pantai",
+      "turbin angin darat",
+      "menara turbin",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [
+      "gardu induk"
+     ],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   },
+   "lengkapi": {
+    "iso2": "KR",
+    "tahun": 1988,
+    "sumber_url": "https://en.wikipedia.org/wiki/CS_Wind",
+    "tingkat": "via-pihak-ketiga",
+    "ket": "Seoul; pabrik menara Pueblo, Colorado disebut terbesar di dunia menurut artikel itu",
+    "portofolio": null
+   }
+  },
+  {
+   "nama": "Cadeler",
+   "situs": "https://www.cadeler.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "sub": [
+    "kapal-instalasi"
+   ],
+   "alias": "Cadeler",
+   "wikidata": {
+    "id": "Q130348728",
+    "tahun_berdiri": 2008,
+    "logo_berkas": null,
+    "iso2": [
+     "DK"
+    ]
+   },
+   "beranda": {
+    "judul": "Cadeler",
+    "deskripsi": "Cadeler is a global leader in offshore wind farm construction, maintenance, and decommissioning.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "turbin angin lepas pantai",
+      "turbin angin darat",
+      "bilah turbin",
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [
+      "gardu induk",
+      "jaringan listrik"
+     ],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_5c6dfc8215.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.cadeler.com/apple-touch-icon.png"
+   }
+  },
+  {
+   "nama": "Tenaris",
+   "situs": "https://www.tenaris.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "sub": [
+    "pipa-separator"
+   ],
+   "alias": "Tenaris",
+   "wikidata": {
+    "id": "Q642106",
+    "label": "Tenaris",
+    "deskripsi": "company",
+    "tahun_berdiri": 2002,
+    "enwiki": "Tenaris",
+    "logo_berkas": "Tenaris Logo.svg",
+    "iso2": [
+     "LU"
+    ]
+   },
+   "beranda": {
+    "judul": "Tenaris",
+    "deskripsi": "Leading supplier of steel pipes and related services for the world&#x27;s energy industry",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi",
+      "pengeboran"
+     ],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": [
+      "biomassa",
+      "boiler",
+      "waste-to-energy"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_2706f0355b.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Tenaris_Logo.svg"
+   }
+  },
+  {
+   "nama": "Vallourec",
+   "situs": "https://www.vallourec.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "sub": [
+    "pipa-separator"
+   ],
+   "alias": "Vallourec",
+   "wikidata": {
+    "id": "Q2298492",
+    "label": "Vallourec",
+    "deskripsi": "multinational manufacturing company headquartered in Boulogne-Billancourt, Paris, France",
+    "tahun_berdiri": 1957,
+    "enwiki": "Vallourec",
+    "logo_berkas": "Vallourec Logo.jpg",
+    "iso2": [
+     "FR"
+    ]
+   },
+   "beranda": {
+    "judul": "Vallourec Smart Tubular Solutions",
+    "deskripsi": "Vallourec provides benchmark tubular solutions and pipelines for the energy sectors: oil and gas, low-carbon energy, hydrogen and industry.",
+    "indonesia": "https://www.vallourec.com/news/supporting-indonesias-geothermal-ambitions/",
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [
+      "panas bumi"
+     ],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_ba20856fbc.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Vallourec_Logo.jpg"
+   }
+  },
+  {
+   "nama": "Hexagon Purus",
+   "situs": "https://hexagonpurus.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "sub": [
+    "tangki"
+   ],
+   "alias": "Hexagon Purus",
+   "wikidata": null,
+   "beranda": {
+    "judul": "Hexagon Purus | Front Page",
+    "deskripsi": "Driving the transition to zero emission mobility",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [
+      "penyimpanan baterai"
+     ],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_dd47bc7aee.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://hexagonpurus.com/apple-touch-icon.png"
+   },
+   "lengkapi": {
+    "iso2": "NO",
+    "tahun": null,
+    "sumber_url": "https://hexagonpurus.com/",
+    "tingkat": "situs-sendiri",
+    "ket": "alamat di situs: Haakon VII's gate 2, Oslo, Norwegia",
+    "portofolio": null
+   }
+  },
+  {
+   "nama": "Burckhardt Compression",
+   "situs": "https://www.burckhardtcompression.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "sub": [
+    "kompresor"
+   ],
+   "alias": "Burckhardt",
+   "wikidata": {
+    "id": "Q1010409",
+    "label": "Burckhardt Compression",
+    "deskripsi": "company",
+    "tahun_berdiri": 1844,
+    "enwiki": "Burckhardt Compression",
+    "logo_berkas": "Burckhardt Compression Logo.png",
+    "iso2": [
+     "CH"
+    ]
+   },
+   "beranda": {
+    "judul": "Home - Burckhardt Compression",
+    "deskripsi": "We - Burckhardt Compression - are a leading provider of reciprocating compressor systems and services. Discover our innovative solutions for various industries.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [],
+     "biogas": [
+      "biometana"
+     ],
+     "biofuel": [
+      "bioavtur"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_5b0d62e314.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Burckhardt_Compression_Logo.png"
+   }
+  },
+  {
+   "nama": "Linde",
+   "situs": "https://www.linde.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "sub": [
+    "kompresor",
+    "tangki"
+   ],
+   "alias": "\\bLinde\\b",
+   "wikidata": {
+    "id": "Q682759",
+    "label": "Linde Group",
+    "deskripsi": "multinational industrial gases and engineering company founded in Germany in 1879",
+    "tahun_berdiri": null,
+    "enwiki": "Linde plc",
+    "logo_berkas": "Linde plc logo.png",
+    "iso2": [
+     "IE",
+     "GB"
+    ]
+   },
+   "beranda": {
+    "judul": "Linde Is Everywhere | Linde",
+    "deskripsi": "Leading global industrial gases and engineering company making customers more successful and helping to sustain, decarbonize and protect our planet.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen",
+      "sel bahan bakar"
+     ],
+     "jaringan": [
+      "jaringan listrik"
+     ],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_ff545e913d.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Linde_plc_logo.png"
+   }
+  },
+  {
+   "nama": "INNIO Jenbacher",
+   "situs": "https://www.innio.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "gas-engine"
+   ],
+   "alias": "Jenbacher|INNIO",
+   "wikidata": null,
+   "beranda": {
+    "judul": "Power Generation Equipment & Energy Solutions | INNIO",
+    "deskripsi": "With ready-for-hydrogen and renewable technology, INNIO is accelerating clean, future proof energy solutions.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [
+      "hidrogen"
+     ],
+     "jaringan": [
+      "jaringan listrik"
+     ],
+     "biogas": [
+      "gas engine/CHP",
+      "biometana"
+     ],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_5be2e42beb.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.innio.com/wp-content/uploads/2024/10/favicon-300x300.png"
+   },
+   "lengkapi": {
+    "iso2": "AT",
+    "tahun": null,
+    "sumber_url": "https://innio.com/en/imprint",
+    "tingkat": "situs-sendiri",
+    "ket": "kantor terdaftar INNIO di Jenbach, Austria; merek INNIO sejak 2018 (Jenbacher, Waukesha)",
+    "portofolio": null
+   }
+  },
+  {
+   "nama": "Caterpillar",
+   "situs": "https://www.caterpillar.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "gas-engine"
+   ],
+   "alias": "Caterpillar",
+   "wikidata": {
+    "id": "Q459965",
+    "label": "Caterpillar Inc.",
+    "deskripsi": "American corporation which designs, manufactures, markets and sells machinery and engines",
+    "tahun_berdiri": 1925,
+    "enwiki": "Caterpillar Inc.",
+    "logo_berkas": "Caterpillar logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "beranda": {
+    "gagal": "The operation was aborted due to timeout"
+   },
+   "logo": {
+    "berkas": "en_46452x4745.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Caterpillar_logo.svg"
+   }
+  },
+  {
+   "nama": "MWM",
+   "situs": "https://www.mwm.net/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "gas-engine"
+   ],
+   "alias": "\\bMWM\\b",
+   "wikidata": {
+    "id": "Q1691513",
+    "label": "MWM GmbH",
+    "deskripsi": "German engineering company",
+    "tahun_berdiri": 1922,
+    "enwiki": "Caterpillar Energy Solutions",
+    "logo_berkas": "MWM logo.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "beranda": {
+    "judul": "MWM | Gasmotor, Blockheizkraftwerk, Kraft-Wärme-Kopplung, KWK, BHKW",
+    "deskripsi": "MWM steht für hocheffiziente KWK-Anlagen und Blockheizkraftwerke zur dezentralen Energieerzeugung.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [
+      "biogas",
+      "gas engine/CHP"
+     ],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_52536dd20c.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:MWM_logo.svg"
+   }
+  },
+  {
+   "nama": "Weichai Power",
+   "situs": "https://www.weichai.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "gas-engine"
+   ],
+   "alias": "Weichai",
+   "wikidata": {
+    "cocok_by": "label",
+    "id": "Q3567081",
+    "label": "Weichai Power",
+    "deskripsi": "Chinese automotive supplying company",
+    "tahun_berdiri": 2002,
+    "enwiki": "Weichai Power",
+    "logo_berkas": "Weichai Logo Transparent3.png",
+    "iso2": [
+     "CN"
+    ]
+   },
+   "beranda": {
+    "judul": "潍柴集团官方网站-潍柴集团官方网站",
+    "deskripsi": "潍柴控股集团有限公司创建于1946年，已发展成为中国领先、在全球具有重要影响力的高端装备跨国集团。分子公司遍及欧洲、北美、亚洲等地区，产品远销180多个国家和地区。",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_82a1a4fb97.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.weichai.com/eportalsite/img/default-site-img.png"
+   }
+  },
+  {
+   "nama": "Greenlane Renewables",
+   "situs": "https://www.greenlanerenewables.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "sub": [
+    "pemurnian-biometana"
+   ],
+   "alias": "Greenlane",
+   "wikidata": null,
+   "beranda": {
+    "judul": "Greenlane Renewables - Home",
+    "deskripsi": "Greenlane Renewables Inc. (TSX: GRN) is a leading global provider of biogas upgrading systems that are helping decarbonize natural gas",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [
+      "biogas",
+      "biometana"
+     ],
+     "biofuel": [],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_9115ead072.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.greenlanerenewables.com/favicon/apple-touch-icon.png"
+   },
+   "lengkapi": {
+    "iso2": "CA",
+    "tahun": null,
+    "sumber_url": "https://www.greenlanerenewables.com/",
+    "tingkat": "situs-sendiri",
+    "ket": "alamat di situs: Burnaby, BC, Kanada",
+    "portofolio": {
+     "nilai": "lebih dari 500 sistem terjual ke 32 negara (desulfurisasi dan pemurnian biogas)",
+     "sumber_url": "https://www.greenlanerenewables.com/",
+     "tingkat": "situs-sendiri"
+    }
+   }
+  },
+  {
+   "nama": "Drax",
+   "situs": "https://www.drax.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "sub": [
+    "pelet-briket",
+    "cofiring"
+   ],
+   "alias": "\\bDrax\\b",
+   "wikidata": {
+    "cocok_by": "label",
+    "id": "Q1256028",
+    "label": "Drax Group",
+    "deskripsi": "power generation business",
+    "tahun_berdiri": 2005,
+    "enwiki": "Drax Group",
+    "logo_berkas": "Drax Group Logo.svg",
+    "iso2": [
+     "GB"
+    ]
+   },
+   "beranda": {
+    "judul": "Drax Global - Drax is enabling a zero carbon, lower cost energy future",
+    "deskripsi": "Drax Group plc is a leading UK-based global renewable and flexible generation energy company, committed to enabling a zero carbon, lower cost energy future.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [
+      "angin"
+     ],
+     "panas-bumi": [],
+     "hidro": [
+      "pembangkit hidro",
+      "pumped storage",
+      "turbin"
+     ],
+     "hidrogen": [],
+     "jaringan": [
+      "penyimpanan baterai"
+     ],
+     "biogas": [],
+     "biofuel": [],
+     "biomassa": [
+      "biomassa"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_9028b85a2f.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.drax.com/wp-content/themes/drax/assets/images/favicons/apple-icon-180x180.png"
+   }
+  },
+  {
+   "nama": "Neste",
+   "situs": "https://www.neste.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "bioavtur",
+    "fame"
+   ],
+   "alias": "\\bNeste\\b",
+   "wikidata": {
+    "id": "Q616376",
+    "label": "Neste",
+    "deskripsi": "Finnish oil refining and marketing company",
+    "tahun_berdiri": 1948,
+    "enwiki": "Neste",
+    "logo_berkas": "Neste logo.png",
+    "iso2": [
+     "FI"
+    ]
+   },
+   "beranda": {
+    "judul": "Home | Neste",
+    "deskripsi": "Neste is the world’s leading producer of renewable diesel and sustainable aviation fuel (SAF).",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [
+      "renewable diesel",
+      "bioavtur"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_50674f19eb.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Neste_logo.png"
+   }
+  },
+  {
+   "nama": "Wilmar International",
+   "situs": "https://www.wilmar-international.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "fame"
+   ],
+   "alias": "Wilmar",
+   "wikidata": {
+    "id": "Q1786712",
+    "label": "Wilmar International",
+    "deskripsi": "Singaporean food processing and investment holding company",
+    "tahun_berdiri": 1991,
+    "enwiki": "Wilmar International",
+    "logo_berkas": "Wilmar International Logo.svg",
+    "iso2": [
+     "SG"
+    ]
+   },
+   "beranda": {
+    "judul": "Home",
+    "deskripsi": "",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [
+      "biodiesel/FAME"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "berkas": "en_e258813aa4.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Wilmar_International_Logo.svg"
+   }
+  },
+  {
+   "nama": "Musim Mas",
+   "situs": "https://www.musimmas.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "fame"
+   ],
+   "alias": "Musim Mas",
+   "wikidata": {
+    "id": "Q18128328",
+    "label": "Musim Mas",
+    "deskripsi": "Indonesian food processing company",
+    "tahun_berdiri": 1932,
+    "enwiki": "Musim Mas",
+    "logo_berkas": null,
+    "iso2": [
+     "ID"
+    ]
+   },
+   "beranda": {
+    "judul": "You searched for - Musim Mas",
+    "deskripsi": "",
+    "indonesia": "https://bermadah.co.id/berita/detail/pt-musim-mas-terima-penghargaan-sahabat-anak-di-pelalawan",
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [
+      "biodiesel/FAME",
+      "bioetanol"
+     ],
+     "biomassa": [
+      "biomassa"
+     ]
+    }
+   },
+   "logo": {
+    "berkas": "en_47d4add3f5.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.musimmas.com/wp-content/uploads/2024/04/Frame-4191-300x300.jpg"
+   }
+  },
+  {
+   "nama": "Novonesis",
+   "situs": "https://www.novonesis.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "enzim-katalis"
+   ],
+   "alias": "Novonesis|Novozymes",
+   "wikidata": {
+    "id": "Q45576",
+    "label": "Novonesis",
+    "deskripsi": "Danish company",
+    "tahun_berdiri": 2000,
+    "enwiki": "Novozymes",
+    "logo_berkas": null,
+    "iso2": [
+     "DK"
+    ]
+   },
+   "beranda": {
+    "judul": "Novonesis | The time for biosolutions is now",
+    "deskripsi": "Novonesis is a leading global biosolutions company formed through a combination of Chr. Hansen and Novozymes.",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [],
+     "hidrogen": [],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [
+      "enzim"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Johnson Matthey",
+   "situs": "https://matthey.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "sub": [
+    "enzim-katalis"
+   ],
+   "alias": "Johnson Matthey",
+   "wikidata": {
+    "id": "Q502470",
+    "label": "Johnson Matthey",
+    "deskripsi": "British company",
+    "tahun_berdiri": 1817,
+    "enwiki": "Johnson Matthey",
+    "logo_berkas": null,
+    "iso2": [
+     "GB"
+    ]
+   },
+   "beranda": {
+    "judul": "Home | Johnson Matthey",
+    "deskripsi": "Johnson Matthey is a global leader in platinum group metals (PGMs).",
+    "indonesia": null,
+    "produk": {
+     "bayu": [],
+     "panas-bumi": [],
+     "hidro": [
+      "turbin"
+     ],
+     "hidrogen": [
+      "elektroliser",
+      "hidrogen",
+      "sel bahan bakar"
+     ],
+     "jaringan": [],
+     "biogas": [],
+     "biofuel": [
+      "katalis"
+     ],
+     "biomassa": []
+    }
+   },
+   "logo": {
+    "tanpa": true
    }
   }
  ]

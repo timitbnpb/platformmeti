@@ -13,6 +13,7 @@ import { batangHtml, pasangBar, pil as pilAn } from "/analisis.js";
 import { logoOrg } from "/inti/logo_org.js";
 import { kodeProv, singkatProv } from "/inti/prov_singkat.js";
 import "/inti/tip_grafik.js";
+import { integritas } from "/karbon_integritas.js";
 
 const HAL = 20;
 const SEKTOR = ["energi-terbarukan", "efisiensi", "redd", "mangrove", "gambut", "agroforestri", "limbah", "lain"];
@@ -286,7 +287,7 @@ khUbin("khUbin", [
   { ikon: "tag", nilai: angka(ak.harga_rata), satuan: t("kb2.u.rp_t"), label: t("kb2.u.harga") },
 ]);
 const sekali = (f) => { let ok = false; return () => (ok ? Promise.resolve() : ((ok = true), Promise.resolve(f()))); };
-const muatKredit = sekali(panelKredit), muatPasar = sekali(panelPasar), muatSaing = sekali(panelSaing), muatHukum = sekali(panelHukum);
+const muatKredit = sekali(panelKredit), muatPasar = sekali(panelPasar), muatSaing = sekali(panelSaing), muatHukum = sekali(panelHukum), muatIntegritas = sekali(() => integritas(document.getElementById("panelIntegritas")));
 panelRegistri();
 tabHalaman("tabHal", { label: "kb2.tab", tab: [
   { k: "registri", ikon: "tabel", teks: "kb2.tab.registri", panel: "panelRegistri", muat: () => {} },
@@ -294,5 +295,6 @@ tabHalaman("tabHal", { label: "kb2.tab", tab: [
   { k: "pasar", ikon: "kartu", teks: "kb2.tab.pasar", panel: "panelPasar", muat: muatPasar },
   { k: "saing", ikon: "kalkulator", teks: "kb2.tab.saing", panel: "panelSaing", muat: muatSaing },
   { k: "hukum", ikon: "palu", teks: "kb2.tab.hukum", panel: "panelHukum", muat: muatHukum },
+  { k: "integritas", ikon: "perisai", teks: "kb2.tab.integritas", panel: "panelIntegritas", muat: muatIntegritas },
 ] });
 addEventListener("resize", debounce(() => { if (!document.getElementById("panelKredit").hidden) gambarKredit(); if (!document.getElementById("panelPasar").hidden) gambarPasar(); }, 200));

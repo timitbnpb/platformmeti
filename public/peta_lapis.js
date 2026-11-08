@@ -110,6 +110,15 @@ const TITIK = {
     }),
     popup: popupProyek, tip: tipProyek,
   },
+  psn: {
+    palet: "status",
+    baca: (d) => d.baris.filter((b) => b.lat != null && b.lng != null).map((b) => {
+      const st = { beroperasi: "beroperasi", sebagian: "konstruksi", konstruksi: "konstruksi", "pra-konstruksi": "rencana", rencana: "rencana" }[b.status] || "tidak-diketahui";
+      return { id: b.id, nama: b.nama, tek: "", st, w: st, mw: null, prov: "", pk: b.prov_kode[0] || "", lat: b.lat, lng: b.lng, pem: "", pemId: null, sek: b.sektor };
+    }),
+    popup: (r) => kartu({ logo: ikon("mahkota", 24), judul: esc(r.nama), sub: provSub(r.pk), rows: baris("psn.f.sektor", t("psn.sektor." + r.sek)) + baris("psn.f.status", t("pj.st." + r.st)), links: taut("/psn", "psn.nav", "mahkota") + linkProv(r.pk) }),
+    tip: (r) => `<b>${esc(r.nama)}</b><span>${esc(t("psn.sektor." + r.sek))}, ${esc(t("pj.st." + r.st))}</span>`,
+  },
   desa_mandiri: {
     palet: "hidup", saring: false,
     baca: (d) => sebar(d.baris.filter((b) => b.lokasi && b.lokasi.lat != null).map((b) => ({
@@ -125,9 +134,9 @@ const TITIK = {
   },
   generik_titik: {
     palet: "tingkat", saring: false,
-    baca: (d, L) => (Array.isArray(d) ? d : d.baris || []).filter((b) => b.lat != null && (b.lng ?? b.lon) != null).map((b) => {
+    baca: (d, L) => (Array.isArray(d) ? d : d.baris || []).filter((b) => (b.lat ?? b.koordinat?.lat) != null && (b.lng ?? b.lon ?? b.koordinat?.lon) != null && (b.negara_iso2 || "ID") === "ID").map((b) => {
       const w = ["tinggi", "sedang", "rendah"].includes(b.tingkat) ? b.tingkat : "umum";
-      return { id: b.id, nama: b.nama || b.id, tek: b.tek || "", st: "", w, skor: b.skor, pk: String(b.prov_kode || ""), lat: b.lat, lng: b.lng ?? b.lon, ket: b.keterangan };
+      return { id: b.id, nama: b.nama || b.perusahaan || b.id, tek: b.tek || "", st: "", w, skor: b.skor, pk: String(b.prov_kode || b.kode_prov || ""), lat: b.lat ?? b.koordinat.lat, lng: b.lng ?? b.lon ?? b.koordinat.lon, ket: b.keterangan };
     }),
     popup: (r) => kartu({ logo: ikon("peringatan", 24), judul: esc(r.nama), sub: provSub(r.pk), rows: baris("pn2.tingkat", t("pn2.tingkat." + r.w)) + baris("pn2.skor", r.skor != null && N(r.skor, 1)) + baris("pn2.ket", r.ket && esc(r.ket)), links: linkProv(r.pk) + taut("/pelacak-proyek", "pn2.t.pelacak", "petir") }),
     tip: (r) => `<b>${esc(r.nama)}</b><span>${esc(t("pn2.tingkat." + r.w))}</span>`,

@@ -135,8 +135,8 @@ Format rute (tabel): `Metode dan jalur | Hak | Perilaku`; lambang hak didefinisi
 
 ### 2.8 KEAMANAN-PRIVASI
 
-Kerangka Kampus: `1 Matriks hak (baca B, tulis T, — tidak)` (baris = jenis data, kolom = peran PB AG BP PL KK ST PM SA) / `2 Data pribadi (UU 27/2022 PDP)` / `3 Autentikasi` / `4 Masukan dan berkas` / `5 Penyalahgunaan` / `6 Header dan CSP`. Kalimat penutup matriks: "Tiap baris = satu uji 'peran salah DITOLAK' di RU §2.4". Kepala menyebut pengulas wajib (`security-reviewer`, `guard-api`). Lapangan: kalimat tak boleh dilanggar "vektor wajah tidak pernah keluar dari Worker".
-Contoh baris: `| Buku profil (bab 8 pakar) | — | — | B kabnya | — | B | B | B | B |`.
+Kerangka Kampus: `1 Matriks hak (baca B, tulis T,, tidak)` (baris = jenis data, kolom = peran PB AG BP PL KK ST PM SA) / `2 Data pribadi (UU 27/2022 PDP)` / `3 Autentikasi` / `4 Masukan dan berkas` / `5 Penyalahgunaan` / `6 Header dan CSP`. Kalimat penutup matriks: "Tiap baris = satu uji 'peran salah DITOLAK' di RU §2.4". Kepala menyebut pengulas wajib (`security-reviewer`, `guard-api`). Lapangan: kalimat tak boleh dilanggar "vektor wajah tidak pernah keluar dari Worker".
+Contoh baris: `| Buku profil (bab 8 pakar) |, |, | B kabnya |, | B | B | B | B |`.
 
 ### 2.9 RENCANA-UJI
 

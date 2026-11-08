@@ -35,11 +35,14 @@ export function patokan(peluang, tek, mw) {
   return x ? { koef: x.koef_1_10, tahun11: x.tahun_11_dst, kapasitas: x.kapasitas, tahunMaks: typeof g.tahun_maks === "object" ? g.tahun_maks[tek.bio] : g.tahun_maks } : null;
 }
 
-/** Baris biaya_bangun.json untuk teknologi ini. Skema yang dibaca: { baris: [{ id, capex_usd_per_kw, opex_usd_per_kw_tahun, faktor_kapasitas, umur_tahun, degradasi_persen_per_tahun, sumber, tingkat_bukti, tanggal }] }. */
-export function barisBangun(bb, tek) {
-  const r = (bb?.baris || bb?.teknologi || []).find((x) => x.id === tek.id || x.teknologi === tek.id);
-  return r || null;
-}
+/** Skala acuan per teknologi (id baris biaya_bangun.json); urutan pertama = bawaan. Hidrogen sengaja kosong (tak ada sumber). */
+export const SKALA = {
+  "surya-atap-rumah": ["plts-atap-rumah"], "surya-ci": ["plts-atap-industri", "plts-cni-as"],
+  "surya-utilitas": ["plts-utilitas-dunia", "plts-program-100gwp", "plts-utilitas-as", "plts-14-proyek-pln"],
+  "surya-terapung": ["plts-terapung-cirata", "plts-terapung-karangkates"], "surya-bess": ["plts-bess-hibrid-sulteng", "plts-bess-hibrid-selayar"],
+  bayu: ["pltb-dunia", "pltb-as", "pltb-sidrap-1", "pltb-sidrap-2"], "panas-bumi": ["pltp-indonesia"], plta: ["plta-dunia"], pltm: ["pltm-asia-lain"],
+  biomassa: ["bioenergi-dunia"], "biogas-pome": ["bioenergi-dunia"], "biogas-ternak": ["bioenergi-dunia"], wte: ["pltsa-psel-bandung", "pltsa-psel-palembang"], bess: [], hidrogen: [],
+};
 
 /**
  * Asumsi bawaan: { nilai: {kunci: angka|null}, sumber: {kunci: {sumber, bukti, tanggal}} }.
@@ -49,38 +52,44 @@ export function barisBangun(bb, tek) {
 export function bawaan(tek, bisnis, k) {
   const v = {}, s = {};
   const set = (kunci, nilai, sumber, bukti, tanggal) => { v[kunci] = nilai; if (nilai !== null) s[kunci] = { sumber, bukti, tanggal }; };
-  const um = k.atap?.asumsi?.umum, tglAtap = k.atap?.dibangun_pada, A = tek.asumsi && ASUMSI[tek.asumsi], bb = barisBangun(k.bangun, tek);
-  set("mw", tek.mw, "mk.src.contoh", "hipotesis", null);
-  set("kurs", KURS_RP, "mk.src.kurs", "hipotesis", null);
-  // capex, opex, umur, fk, degradasi
-  const bbSum = bb && { sumber: bb.sumber || "biaya_bangun.json", bukti: bb.tingkat_bukti || "hipotesis", tanggal: bb.tanggal };
-  const nb = (x) => (x && typeof x === "object" ? x.tengah ?? x.nilai : x);
-  if (bb && nb(bb.capex_usd_per_kw) != null) set("capexUsdKw", nb(bb.capex_usd_per_kw), bbSum.sumber, bbSum.bukti, bbSum.tanggal);
-  else if (tek.atap && k.atap) { const a = k.atap.asumsi[tek.atap]; set("capexUsdKw", Math.round(a.harga_per_kwp_idr.nilai / KURS_RP), "mk.src.atap", "hipotesis", tglAtap); }
-  else if (A) set("capexUsdKw", A.capex, "mk.src.irena", "via-pihak-ketiga", null); else set("capexUsdKw", null);
-  if (bb && nb(bb.opex_usd_per_kw_tahun) != null) set("opexUsdKwThn", nb(bb.opex_usd_per_kw_tahun), bbSum.sumber, bbSum.bukti, bbSum.tanggal);
-  else if (tek.atap && k.atap) set("opexUsdKwThn", Math.round(v.capexUsdKw * k.atap.asumsi[tek.atap].om_persen_per_tahun.nilai) / 100, "mk.src.atap", "hipotesis", tglAtap);
-  else if (A) set("opexUsdKwThn", A.opex, "mk.src.irena", "via-pihak-ketiga", null); else set("opexUsdKwThn", null);
-  if (bb && nb(bb.umur_tahun) != null) set("umur", nb(bb.umur_tahun), bbSum.sumber, bbSum.bukti, bbSum.tanggal);
-  else if (um && tek.atap) set("umur", um.umur_tahun.nilai, "mk.src.atap", "hipotesis", tglAtap);
-  else if (A) set("umur", A.umur, "mk.src.irena", "via-pihak-ketiga", null); else set("umur", null);
-  if (bb && nb(bb.faktor_kapasitas) != null) set("fk", +(nb(bb.faktor_kapasitas) * (nb(bb.faktor_kapasitas) <= 1 ? 100 : 1)).toFixed(2), bbSum.sumber, bbSum.bukti, bbSum.tanggal);
-  else if (tek.surya && k.prov) set("fk", +((k.prov / 8760) * 100).toFixed(1), "mk.src.pvout", "est", tglAtap);
+  const um = k.atap?.asumsi?.umum, tglAtap = k.atap?.dibangun_pada, A = tek.asumsi && ASUMSI[tek.asumsi], bb = k.skalaRow || null;
+  set("mw", bb?.mw_contoh ?? tek.mw, bb ? "mk.src.bangun" : "mk.src.contoh", "hipotesis", bb ? k.bangun?.dibangun_pada : null);
+  const pat = patokan(k.peluang, tek, v.mw);
+  // capex, opex, umur, fk, degradasi: baris skala biaya_bangun.json terpilih > kelayakan_rumus.ASUMSI (umur) > plts_atap_hitung
+  const sb = (x) => x && { sumber: "mk.src.bangun", bukti: String(x.tingkat_bukti || "hipotesis").toLowerCase(), tanggal: x.tanggal || k.bangun?.dibangun_pada, id: x.sumber_id };
+  const kursB = k.bangun?.kurs_rp_usd?.nilai || KURS_RP;
+  set("kurs", kursB, "mk.src.kurs", "hipotesis", k.bangun?.dibangun_pada);
+  const cx = bb && (bb.capex_usd_kw?.tengah != null ? { n: bb.capex_usd_kw.tengah, m: sb(bb.capex_usd_kw) }
+    : bb.total_usd_juta ? { n: Math.round((bb.total_usd_juta * 1000) / bb.kapasitas_mwp), m: { sumber: "mk.src.bangun", bukti: "est", tanggal: k.bangun.dibangun_pada } }
+    : bb.total_rp_miliar ? { n: Math.round((bb.total_rp_miliar * 1e6) / kursB / bb.kapasitas_mwp), m: { sumber: "mk.src.bangun", bukti: "est", tanggal: k.bangun.dibangun_pada } } : null);
+  if (cx) set("capexUsdKw", cx.n, cx.m.sumber, cx.m.bukti, cx.m.tanggal);
+  else if (A && !bb) set("capexUsdKw", A.capex, "mk.src.irena", "via-pihak-ketiga", null); else set("capexUsdKw", null);
+  const ox = bb?.opex?.usd_kw_tahun?.tengah != null ? { n: bb.opex.usd_kw_tahun.tengah, m: sb(bb.opex.usd_kw_tahun) }
+    : bb?.opex?.persen_capex_per_tahun && cx ? { n: Math.round(cx.n * bb.opex.persen_capex_per_tahun.nilai) / 100, m: sb(bb.opex.persen_capex_per_tahun) } : null;
+  if (ox) set("opexUsdKwThn", ox.n, ox.m.sumber, ox.m.bukti, ox.m.tanggal);
+  else if (A && !bb) set("opexUsdKwThn", A.opex, "mk.src.irena", "via-pihak-ketiga", null); else set("opexUsdKwThn", null);
+  if (um && tek.atap) set("umur", um.umur_tahun.nilai, "mk.src.atap", "hipotesis", tglAtap);
+  else if (A) set("umur", A.umur, "mk.src.irena", "via-pihak-ketiga", null);
+  else if (pat?.tahunMaks) set("umur", pat.tahunMaks, "mk.src.masa_ppa", "resmi", String(k.peluang.harga_patokan.tahun)); else set("umur", null);
+  if (tek.surya && k.prov && bb?.kelas !== "pembanding") set("fk", +((k.prov / 8760) * 100).toFixed(1), "mk.src.pvout", "est", tglAtap);
+  else if (bb?.cf_persen?.tengah != null) set("fk", bb.cf_persen.tengah, sb(bb.cf_persen).sumber, sb(bb.cf_persen).bukti, sb(bb.cf_persen).tanggal);
   else if (A?.fc) set("fk", A.fc * 100, "mk.src.irena", "via-pihak-ketiga", null); else set("fk", null);
-  if (bb && nb(bb.degradasi_persen_per_tahun) != null) set("degr", nb(bb.degradasi_persen_per_tahun), bbSum.sumber, bbSum.bukti, bbSum.tanggal);
-  else if (um && tek.surya) set("degr", um.degradasi_persen_per_tahun.nilai, "mk.src.atap", "hipotesis", tglAtap); else set("degr", null);
+  if (um && tek.surya) set("degr", um.degradasi_persen_per_tahun.nilai, "mk.src.atap", "hipotesis", tglAtap); else set("degr", null);
   // penggantian inverter (surya atap) dari plts_atap_hitung
   if (um && tek.atap) { set("gantiTahun", um.ganti_inverter_tahun.nilai, "mk.src.atap", "hipotesis", tglAtap); set("gantiPersen", um.ganti_inverter_persen_capex.nilai, "mk.src.atap", "hipotesis", tglAtap); }
   else { set("gantiTahun", null); set("gantiPersen", null); }
   // tarif menurut model bisnis
   const ak = k.atap?.asumsi?.[tek.atap];
   const porsiAtap = ak ? ak.pakai_sendiri_persen.nilai : null;
-  const pat = patokan(k.peluang, tek, v.mw), kurs = v.kurs;
+  const kurs = v.kurs;
   v.acuan = bisnis === "ipp" || bisnis === "rec" ? (pat ? "perpres" : "manual") : (k.tarifPln ? "pln" : "manual");
+  if (k.acuanPilih && (k.acuanPilih !== "perpres" || pat)) v.acuan = k.acuanPilih;
   if (v.acuan === "perpres") {
     const F = k.faktorLokasi ?? 1;
     set("tarif", Math.round((pat.koef * F * kurs) / 100), "mk.src.perpres", "resmi", String(k.peluang.harga_patokan.tahun));
     set("tarifTahun2", Math.round((pat.tahun11 * kurs) / 100), "mk.src.perpres", "resmi", String(k.peluang.harga_patokan.tahun));
+  } else if (v.acuan === "bpp") {
+    set("tarif", k.bppSistem.tarif, "mk.src.bpp", "resmi", k.bppSistem.tanggal); set("tarifTahun2", null);
   } else if (v.acuan === "pln") {
     set("tarif", k.tarifPln.tarif, "mk.src.pln", k.tarifPln.bukti, k.tarifPln.tanggal); set("tarifTahun2", null);
   } else { set("tarif", null); set("tarifTahun2", null); }
@@ -105,6 +114,9 @@ export function bawaan(tek, bisnis, k) {
   set("diskonto", um ? um.diskonto_persen.nilai : A ? A.wacc * 100 : null, um ? "mk.src.atap" : "mk.src.irena", um ? "hipotesis" : "hipotesis", um ? tglAtap : null);
   if (v.diskonto === null) set("diskonto", 8, "mk.src.model", "hipotesis", null);
   v.ppnDtp = false;
+  const idS = bb?.capex_usd_kw?.sumber_id || bb?.cf_persen?.sumber_id || bb?.opex?.usd_kw_tahun?.sumber_id || bb?.opex?.persen_capex_per_tahun?.sumber_id || (bb?.total_usd_juta || bb?.total_rp_miliar ? bb.rujukan_proyek?.[0] : null);
+  const sm = k.bangun?.sumber?.find((x) => x.id === idS), teks = sm ? `${sm.penerbit}, ${sm.tanggal_terbit || ""}`.replace(/, $/, "") + (bb.nama ? `: ${bb.nama}` : "") : bb?.nama || "";
+  for (const x of Object.values(s)) if (x.sumber === "mk.src.bangun") x.teks = teks;
   return { nilai: v, sumber: s };
 }
 

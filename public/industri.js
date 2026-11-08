@@ -44,7 +44,9 @@ const pilSt = (k) => pil(WARNA_ST, k, "in3.st." + k);
 const pilRt = (k) => pil(WARNA_RT, k, "in3.rt." + k, IKON_RT[k]);
 const pilLs = (k) => (k ? pil(WARNA_LS, k, "in3.ls." + k) : kosong);
 const satuan = (s) => t("in3.sat." + (/MHP/.test(s) ? "mhp" : /GWh/.test(s) ? "gwh" : /konsentrat/.test(s) ? "konsentrat" : /Al\//.test(s) ? "al" : "ni"));
-const kapasitas = (b) => (b.kapasitas ? `${N(b.kapasitas.nilai)} ${satuan(b.kapasitas.satuan)}` : "");
+const un = (k) => `${N(k.nilai, k.nilai < 100 ? 1 : 0)} ${satuan(k.satuan)}`;
+const kapasitas = (b) => { const k = b.kapasitas; if (!k) return ""; if (k.alternatif) return k.alternatif.map(un).join(` ${t("in3.atau")} `); if (k.rentang) return `${t("pel.rentang", { a: N(k.rentang[0], 1), b: N(k.rentang[1], 1) })} ${satuan(k.satuan)}`; return k.nilai == null ? "" : un(k); };
+const ketKap = (b) => (b.kapasitas?.ket ? `<p class="in3-cat">${esc(b.kapasitas.ket)}${(b.kapasitas.alternatif || []).filter((a) => urlAman(a.url)).map((a) => ` <a href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">${esc(a.ket)}</a>`).join("")}</p>` : "");
 const orgChip = (o) => {
   const mk = o.logo ? `<img src="${esc(o.logo)}" width="20" height="20" alt="" loading="lazy" decoding="async" data-galat="hapus">` : `<span class="in3-ini" aria-hidden="true">${esc(String(o.nama).replace(/^(PT|CV)\s+/i, "").charAt(0).toUpperCase())}</span>`;
   const isi = `${mk}<span>${esc(o.nama)}</span>${bdr(o.negara, 16)}`;
@@ -57,7 +59,7 @@ isiC.innerHTML = hantuHtml(6);
 await mulaiHalaman();
 let CP, HI;
 try { [CP, HI] = await Promise.all([ambil("/data/captive_power.json"), ambil("/data/hilirisasi.json")]); } catch (e) {
-  isiC.innerHTML = `<div class="jm-kartu">${galatHtml("jaringan")}</div>`;
+  isiC.innerHTML = exHtml({ isiHtml: galatHtml("jaringan") });
   isiC.querySelector("[data-aksi=ulang]")?.addEventListener("click", () => location.reload());
   throw e;
 }
@@ -348,7 +350,7 @@ function bukaPetaH() {
 function tipSM(id, pt) {
   const s = SM_ID.get(id); if (!s) return;
   const rata = SM.filter((x) => x.intensitas_tco2e_per_ton != null), nas = rata.reduce((a, x) => a + x.intensitas_tco2e_per_ton, 0) / (rata.length || 1);
-  $("inHTip").innerHTML = `<header><strong>${esc(s.nama)}</strong><small>${esc(s.provinsi || "")}</small></header><p>${pilRt(s.rantai)} ${pilSt(s.status)}</p><ul><li><span>${esc(t("in3.th.kapasitas"))}</span><b>${s.kapasitas ? kapasitas(s) : "-"}</b></li>${s.mw_rata ? `<li><span>${esc(t("in3.th.listrik"))}</span><b>${N(s.mw_rata)} MW</b></li>` : ""}${s.intensitas_tco2e_per_ton != null ? `<li><span>${esc(t("in3.th.intens"))}</span><b>${N(s.intensitas_tco2e_per_ton, 1)} t/t</b></li>` : ""}</ul>${s.intensitas_tco2e_per_ton != null ? `<small class="in3-bd">${esc(t("in3.tip.vsrata", { r: N(nas, 1) }))}</small>` : ""}`;
+  $("inHTip").innerHTML = `<header><strong>${esc(s.nama)}</strong><small>${esc(s.provinsi || "")}</small></header><p>${pilRt(s.rantai)} ${pilSt(s.status)}</p><ul><li><span>${esc(t("in3.th.kapasitas"))}</span><b>${kapasitas(s) || "-"}</b></li>${s.mw_rata ? `<li><span>${esc(t("in3.th.listrik"))}</span><b>${N(s.mw_rata)} MW</b></li>` : ""}${s.intensitas_tco2e_per_ton != null ? `<li><span>${esc(t("in3.th.intens"))}</span><b>${N(s.intensitas_tco2e_per_ton, 1)} t/t</b></li>` : ""}</ul>${s.intensitas_tco2e_per_ton != null ? `<small class="in3-bd">${esc(t("in3.tip.vsrata", { r: N(nas, 1) }))}</small>` : ""}`;
   taruhTip($("inHTip"), $("inHKanvas"), pt);
 }
 function alirHtml(s) {
@@ -362,10 +364,10 @@ function pilihSM(id, terbang) {
   const s = SM_ID.get(id); if (!s) return; H.sel = id;
   if (petaH && siapH) { petaH.setFilter("sm-sel", ["==", ["get", "id"], id]); if (terbang) petaH.flyTo({ center: [s.lng, s.lat], zoom: Math.max(petaH.getZoom(), 7), duration: 700 }); }
   $("inHPanelJ").firstElementChild.textContent = s.nama; $("inHPanel").open = true;
-  const fakta = [["in3.th.kapasitas", s.kapasitas ? kapasitas(s) : ""], ["in3.th.tek", s.teknologi], ["in3.th.tahun", s.tahun || ""], ["in3.th.listrik", s.mw_rata ? `${N(s.mw_rata)} MW` : ""], ["in3.th.intens", s.intensitas_tco2e_per_ton != null ? `${N(s.intensitas_tco2e_per_ton, 1)} t/t` : ""]].filter((f) => f[1]);
+  const fakta = [["in3.th.kapasitas", kapasitas(s)], ["in3.th.tek", s.teknologi], ["in3.th.tahun", s.tahun || ""], ["in3.th.listrik", s.mw_rata ? `${N(s.mw_rata)} MW` : ""], ["in3.th.intens", s.intensitas_tco2e_per_ton != null ? `${N(s.intensitas_tco2e_per_ton, 1)} t/t` : ""]].filter((f) => f[1]);
   $("inHPanelIsi").innerHTML = `<p>${pilRt(s.rantai)} ${pilSt(s.status)} ${pilLs(s.sumber_listrik)}</p>${s.ket_status ? `<p class="in3-cat">${esc(s.ket_status)}</p>` : ""}
     <dl class="in3-fakta">${fakta.map(([k, v]) => `<div><dt>${esc(t(k))}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
-    <h4>${esc(t("in3.pemilik"))}</h4><div class="in3-chip">${s.pemilik.map(orgChip).join("")}</div>
+    ${ketKap(s)}<h4>${esc(t("in3.pemilik"))}</h4><div class="in3-chip">${s.pemilik.map(orgChip).join("")}</div>
     <h4>${esc(t("in3.alir"))}</h4>${alirHtml(s)}
     <div class="in3-tautans"><a class="in3-tautan" href="/rantai?cari=${encodeURIComponent(s.nama)}">${ikon("rantai", 14)}${esc(t("in3.rantai"))}</a><a class="in3-tautan" href="/korporat">${ikon("pabrik", 14)}${esc(t("in3.korporat"))}</a>${s.kawasan_id ? `<a class="in3-tautan" href="/lokasi-hijau">${ikon("lokasi", 14)}${esc(t("in3.hijau"))}</a>` : ""}<a class="in3-tautan" href="/topik?id=karbon">${ikon("tek-panas", 14)}${esc(t("in3.karbon"))}</a></div>
     <p class="in3-cat">${sumberLink(s.sumber)}${s.tingkat_bukti === "perlu-verifikasi" ? ` <span class="jm-pil jm-pil-warn">${esc(t("in3.verifikasi"))}</span>` : ""}</p>
@@ -374,7 +376,7 @@ function pilihSM(id, terbang) {
 function panelH() {
   $("inHPanelJ").firstElementChild.textContent = t("in3.h.panel"); H.sel = "";
   petaH && siapH && petaH.setFilter("sm-sel", ["==", ["get", "id"], ""]);
-  $("inHPanelIsi").innerHTML = `<ul class="in3-daftar in3-daftar-b">${barisH().map((s) => `<li><button type="button" data-sm="${esc(s.id)}">${pilRt(s.rantai)}<span><b>${esc(s.nama)}</b><small>${esc(s.provinsi || "")}${s.kapasitas ? " | " + kapasitas(s) : ""}</small></span></button></li>`).join("")}</ul>`;
+  $("inHPanelIsi").innerHTML = `<ul class="in3-daftar in3-daftar-b">${barisH().map((s) => `<li><button type="button" data-sm="${esc(s.id)}">${pilRt(s.rantai)}<span><b>${esc(s.nama)}</b><small>${esc(s.provinsi || "")}${kapasitas(s) ? " | " + kapasitas(s) : ""}</small></span></button></li>`).join("")}</ul>`;
 }
 function intensitas() {
   const rows = barisH().filter((s) => s.intensitas_tco2e_per_ton != null).sort((a, b) => b.intensitas_tco2e_per_ton - a.intensitas_tco2e_per_ton);
@@ -407,7 +409,7 @@ function kerangkaTabelH() {
 }
 function tabelH() {
   const r = barisH().sort((a, b) => (b.mw_rata ?? -1) - (a.mw_rata ?? -1) || a.nama.localeCompare(b.nama)), hal = Math.min(H.hal, Math.max(1, Math.ceil(r.length / PERH))), baris = r.slice((hal - 1) * PERH, hal * PERH);
-  const isi = baris.map((s) => `<tr data-sm="${esc(s.id)}"><td><b>${esc(s.nama)}</b><small>${esc(s.provinsi || "")}</small></td><td><div class="in3-chip">${s.pemilik.slice(0, 2).map(orgChip).join("")}</div></td><td>${pilRt(s.rantai)}<small>${esc(s.produk)}</small></td><td>${s.kapasitas ? kapasitas(s) : kosong}</td><td>${pilSt(s.status)}</td><td>${s.mw_rata ? N(s.mw_rata) : kosong}</td><td>${pilLs(s.sumber_listrik)}</td><td>${s.intensitas_tco2e_per_ton != null ? N(s.intensitas_tco2e_per_ton, 1) : kosong}</td></tr>`).join("");
+  const isi = baris.map((s) => `<tr data-sm="${esc(s.id)}"><td><b>${esc(s.nama)}</b><small>${esc(s.provinsi || "")}</small></td><td><div class="in3-chip">${s.pemilik.slice(0, 2).map(orgChip).join("")}</div></td><td>${pilRt(s.rantai)}<small>${esc(s.produk)}</small></td><td>${kapasitas(s) || kosong}</td><td>${pilSt(s.status)}</td><td>${s.mw_rata ? N(s.mw_rata) : kosong}</td><td>${pilLs(s.sumber_listrik)}</td><td>${s.intensitas_tco2e_per_ton != null ? N(s.intensitas_tco2e_per_ton, 1) : kosong}</td></tr>`).join("");
   $("inHTabelIsi").innerHTML = r.length ? `<div class="jm-tabel-bungkus"><table class="jm-tabel in3-tabel in3-tabel-sm" data-urut="tidak"><thead><tr><th>${esc(t("in3.th.smelter"))}</th><th>${esc(t("in3.th.pemilik"))}</th><th>${esc(t("in3.th.jenis"))}</th><th>${esc(t("in3.th.kapasitas"))}</th><th>${esc(t("in3.th.status"))}</th><th>${esc(t("in3.th.listrik"))}</th><th>${esc(t("in3.th.sumberl"))}</th><th>${esc(t("in3.th.intens"))}</th></tr></thead><tbody>${isi}</tbody></table></div>${paginasiHtml({ hal, total: r.length, per: PERH, satuan: "in3.u.smelter" })}` : `<div class="jm-kosong"><p>${esc(t("in3.kosong"))}</p></div>`;
 }
 function proyekMetodeH() {

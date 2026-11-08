@@ -1,0 +1,94 @@
+{
+  "catatan": "Masukan terkurasi tangan dari halaman sumber publik yang dibaca 8 Nov 2026 (satu halaman per sumber, tanpa login, tanpa melewati paywall). Tiap angka menunjuk sumber_id. Angka yang tidak terbaca (mis. tabel berbayar) sengaja dikosongkan, bukan diperkirakan.",
+  "tanggal_ambil": "2026-11-08",
+  "sumber": {
+    "esdm-lokasi-2026": { "judul": "Masih ada 10.068 lokasi belum berlistrik, ini strategi pemerintah kejar target 2029", "penerbit": "Kontan (keterangan Dit. Pembinaan Program Ketenagalistrikan, Kementerian ESDM)", "terbit": "2026-07-06", "url": "https://industri.kontan.co.id/news/masih-ada-10068-lokasi-belum-berlistrik-ini-strategi-pemerintah-kejar-target-2029", "tingkat_bukti": "media" },
+    "rdb-papua-2026": { "judul": "PLN UIW Papua kebut elektrifikasi di tengah tantangan geografis ekstrem (data RD PLN triwulan I 2026, Kementerian ESDM)", "penerbit": "Listrik Indonesia", "terbit": "2026-09-14", "url": "https://listrikindonesia.com/detail/21173/pln-uiw-papua-kebut-elektrifikasi-di-tengah-tantangan-geografis-ekstrem", "tingkat_bukti": "media" },
+    "re-papua-2026": { "judul": "Rasio elektrifikasi RI 98,56%, Papua Pegunungan jadi prioritas (data Mei 2026)", "penerbit": "Bloomberg Technoz", "terbit": null, "url": "https://www.bloombergtechnoz.com/detail-news/114095/rasio-elektrifikasi-ri-98-56-papua-pegunungan-jadi-prioritas/2", "tingkat_bukti": "media" },
+    "desa-5758": { "judul": "5.758 desa di RI belum teraliri listrik, ESDM target tersambung 2029", "penerbit": "Bisnis.com", "terbit": "2025-09-02", "url": "https://ekonomi.bisnis.com/read/20250902/44/1908047/5758-desa-di-ri-belum-teraliri-listrik-esdm-target-tersambung-2029", "tingkat_bukti": "media" },
+    "spklu-databoks-2025": { "judul": "Stasiun pengisian daya kendaraan listrik Indonesia terkonsentrasi di Jawa (2025; sumber data Kementerian ESDM)", "penerbit": "Databoks Katadata", "terbit": null, "url": "https://databoks.katadata.co.id/utilitas/statistik/6a8f9b7fb72b7/stasiun-pengisian-daya-kendaraan-listrik-indonesia-terkonsentrasi-di-jawa-2025", "tingkat_bukti": "media" },
+    "spklu-pulau-2025": { "judul": "3.700 EV charging stations have been built in Indonesia, Java still dominates (data PLN Maret 2025)", "penerbit": "KatadataOTO", "terbit": "2025-04-26", "url": "https://auto.katadata.co.id/car/3700-ev-charging-stations-have-been-built-in-indonesia-java-still-dominates-18765", "tingkat_bukti": "media" },
+    "spklu-nataru-2025": { "judul": "PLN siagakan 4.516 SPKLU di 2.935 titik selama libur Nataru", "penerbit": "Bisnis.com", "terbit": "2025-12-24", "url": "https://ekonomi.bisnis.com/read/20251224/44/1939435/pln-siagakan-4516-spklu-di-2935-titik-selama-libur-nataru", "tingkat_bukti": "media" },
+    "spklu-2026": { "judul": "Rasio SPKLU rendah, Jawa dan Bali kuasai 78 persen SPKLU nasional (data Ditjen EBTKE April 2026)", "penerbit": "GridOto", "terbit": "2026-10-19", "url": "https://www.gridoto.com/amp/224422818/rasio-spklu-rendah-jawa-dan-bali-kuasai-78-persen-spklu-nasional", "tingkat_bukti": "media" },
+    "kbl-kemenperin-2026": { "judul": "Berapa banyak motor dan mobil listrik di Indonesia (keterangan Menteri Perindustrian)", "penerbit": "GridOto", "terbit": "2026-09-03", "url": "https://www.gridoto.com/amp/224409753/berapa-banyak-motor-dan-mobil-listrik-di-indonesia-segini-angkanya?page=all", "tingkat_bukti": "media" },
+    "kbl-esdm-2025": { "judul": "Kendaraan listrik tembus 274 ribu, ESDM kebut infrastruktur", "penerbit": "CNN Indonesia (keterangan Kementerian ESDM)", "terbit": "2026-02-03", "url": "https://www.cnnindonesia.com/ekonomi/20260203131144-85-1324022/kendaraan-listrik-tembus-274-ribu-esdm-kebut-infrastruktur", "tingkat_bukti": "media" },
+    "kbl-srut-2025": { "judul": "Mengintip data pendaftaran mobil listrik milik Kemenhub (SRUT kumulatif per 9 Desember 2025)", "penerbit": "Listrik Indonesia", "terbit": null, "url": "https://listrikindonesia.com/detail/18971/mengintip-data-pendaftaran-mobil-listrik-milik-kemenhub", "tingkat_bukti": "media" },
+    "edge-ifc-2025": { "judul": "IFC catat mayoritas provinsi di Indonesia miliki bangunan hijau bersertifikat (laporan IFC 28 Juli 2025)", "penerbit": "Kontan", "terbit": "2025-07-30", "url": "https://industri.kontan.co.id/news/ifc-catat-mayoritas-provinsi-di-indonesia-miliki-bangunan-hijau-bersertifikat", "tingkat_bukti": "media" },
+    "gbci-2026": { "judul": "Baru 504 gedung RI bersertifikat hijau, GBCI sebut kendalanya", "penerbit": "Fortune Indonesia", "terbit": "2026-04-15", "url": "https://www.fortuneidn.com/news/baru-504-gedung-ri-bersertifikat-hijau-gbci-sebut-kendalanya-00-6cmtl-tq7ggk/amp", "tingkat_bukti": "media" },
+    "srikandi-2021": { "judul": "Gandeng UNDP, Kementerian ESDM gelar pelatihan Srikandi konservasi energi", "penerbit": "Kementerian ESDM", "terbit": "2021-10-25", "url": "https://esdm.go.id/id/media-center/arsip-berita/gandeng-undp-kementerian-esdm-gelar-pelatihan-srikandi-konservasi-energi", "tingkat_bukti": "resmi" },
+    "irena-gender-2025": { "judul": "Renewable Energy: A Gender Perspective, edisi kedua (Oktober 2025), diberitakan International Water Power", "penerbit": "IRENA (via International Water Power)", "terbit": "2026-01-20", "url": "https://www.waterpowermagazine.com/news/gender-gap-persists-across-global-renewable-energy-workforce-irena-report-finds/", "tingkat_bukti": "media" },
+    "pln-srikandi-2024": { "judul": "Srikandi PLN: peran aktif keterlibatan perempuan dalam produktivitas kinerja perusahaan", "penerbit": "Klik Positif", "terbit": "2024-10-13", "url": "https://klikpositif.com/srikandi-pln-peran-aktif-keterlibatan-perempuan-dalam-produktivitas-kinerja-perusahaan", "tingkat_bukti": "media" }
+  },
+  "lokasi_belum_berlistrik": {
+    "sumber_id": "esdm-lokasi-2026", "periode": "2026-07", "satuan": "lokasi (desa dan dusun; sumber tidak memisahkan)", "nasional": 10068,
+    "wilayah": [
+      { "id": "timur", "nilai": 5555, "ket": { "id": "Maluku, Papua, Nusa Tenggara", "en": "Maluku, Papua, Nusa Tenggara" } },
+      { "id": "jawa", "nilai": 1630, "ket": { "id": "Jawa", "en": "Java" } },
+      { "id": "kalimantan", "nilai": 1099, "ket": { "id": "Kalimantan", "en": "Kalimantan" } },
+      { "id": "sumatera", "nilai": 985, "ket": { "id": "Sumatera", "en": "Sumatra" } },
+      { "id": "sulawesi", "nilai": 799, "ket": { "id": "Sulawesi", "en": "Sulawesi" } }
+    ],
+    "provinsi": [{ "kode": "95", "nilai": 2122 }],
+    "desa_nasional": { "sumber_id": "desa-5758", "desa": 5758, "periode": "2025-09" }
+  },
+  "rd_pln_tw1_2026": {
+    "sumber_id": "rdb-papua-2026", "periode": "2026-Q1", "nasional": 93.674, "nasional_tw4_2025": 93.502,
+    "provinsi": [
+      { "kode": "95", "nilai": 21.165 }, { "kode": "94", "nilai": 26.821 }, { "kode": "93", "nilai": 56.957 },
+      { "kode": "96", "nilai": 66.338 }, { "kode": "92", "nilai": 70.510 }, { "kode": "91", "nilai": 82.883 }
+    ]
+  },
+  "re_nasional_2026": { "sumber_id": "esdm-lokasi-2026", "periode": "2026-Q1", "re_persen": 98.83, "re_pln_persen": 98.56, "target_2029": 99.99 },
+  "papua_rumah_tangga": {
+    "sumber_id": "re-papua-2026", "periode": "2026-05", "rumah_tangga": 652292, "desa": 5204, "belum": 303744,
+    "kabupaten": [
+      { "nama": "Yahukimo", "kode_prov": "95", "belum": 67767 },
+      { "nama": "Nduga", "kode_prov": "95", "belum": 22780 },
+      { "nama": "Asmat", "kode_prov": "93", "belum": 21913 },
+      { "nama": "Intan Jaya", "kode_prov": "94", "belum": 20990 },
+      { "nama": "Paniai", "kode_prov": "94", "belum": 19279 }
+    ]
+  },
+  "spklu": {
+    "deret": [
+      { "periode": "2025-03", "jumlah": 3772, "ket": { "id": "PLN, roda empat", "en": "PLN, four-wheel" }, "sumber_id": "spklu-pulau-2025" },
+      { "periode": "2025-12", "jumlah": 4516, "ket": { "id": "PLN siagakan Nataru, 2.935 titik", "en": "PLN on standby for year-end, 2,935 points" }, "sumber_id": "spklu-nataru-2025" },
+      { "periode": "2025-12", "jumlah": 4778, "ket": { "id": "Data ESDM 2025 (Databoks)", "en": "ESDM data 2025 (Databoks)" }, "sumber_id": "spklu-databoks-2025" },
+      { "periode": "2026-04", "jumlah": 5037, "ket": { "id": "Ditjen EBTKE", "en": "Directorate General of EBTKE" }, "sumber_id": "spklu-2026" }
+    ],
+    "pulau": { "sumber_id": "spklu-pulau-2025", "periode": "2025-03", "baris": [
+      { "id": "jawa", "unit": 2667, "lokasi": 1645, "ket": { "id": "Jawa", "en": "Java" } },
+      { "id": "sumatera", "unit": 442, "lokasi": 364, "ket": { "id": "Sumatera", "en": "Sumatra" } },
+      { "id": "bali-nusa", "unit": 246, "lokasi": 167, "ket": { "id": "Bali dan Nusa Tenggara", "en": "Bali and Nusa Tenggara" } },
+      { "id": "kalimantan", "unit": 217, "lokasi": 170, "ket": { "id": "Kalimantan", "en": "Kalimantan" } },
+      { "id": "sulawesi", "unit": 148, "lokasi": 125, "ket": { "id": "Sulawesi", "en": "Sulawesi" } },
+      { "id": "papua", "unit": 27, "lokasi": 19, "ket": { "id": "Papua", "en": "Papua" } },
+      { "id": "maluku", "unit": 25, "lokasi": 25, "ket": { "id": "Maluku", "en": "Maluku" } }
+    ] },
+    "provinsi": { "sumber_id": "spklu-databoks-2025", "periode": "2025", "baris": [
+      { "kode": "31", "unit": 1438 }, { "kode": "32", "unit": 827 }, { "kode": "36", "unit": 473 }, { "kode": "35", "unit": 446 },
+      { "kode": "33", "unit": 335 }, { "kode": "51", "unit": 197 }, { "kode": "12", "unit": 114 }, { "kode": "13", "unit": 95 },
+      { "kode": "64", "unit": 80 }, { "kode": "18", "unit": 72 },
+      { "kode": "96", "unit": 0 }, { "kode": "94", "unit": 0 }, { "kode": "93", "unit": 0 }, { "kode": "95", "unit": 0 }
+    ], "total_nasional": 4778 }
+  },
+  "kendaraan_listrik": [
+    { "id": "esdm", "periode": "2025", "jumlah": 274000, "ket": { "id": "KBLBB tercatat Kementerian ESDM (akhir 2025)", "en": "BEVs recorded by the Ministry of Energy (end 2025)" }, "sumber_id": "kbl-esdm-2025" },
+    { "id": "kemenperin", "periode": "2026-04", "jumlah": 486231, "ket": { "id": "Populasi kendaraan listrik, Kementerian Perindustrian (roda dua sekitar 242 ribu, roda empat sekitar 223 ribu)", "en": "Electric vehicle population, Ministry of Industry (two-wheel about 242 thousand, four-wheel about 223 thousand)" }, "sumber_id": "kbl-kemenperin-2026" },
+    { "id": "srut", "periode": "2025-12", "jumlah": 106137, "ket": { "id": "Pendaftaran SRUT mobil penumpang listrik kumulatif, Kemenhub", "en": "Cumulative SRUT registrations of electric passenger cars, Ministry of Transportation" }, "sumber_id": "kbl-srut-2025" }
+  ],
+  "efisiensi": {
+    "edge": { "sumber_id": "edge-ifc-2025", "periode": "2025-07", "proyek_lebih_dari": 200, "provinsi_ada": 25, "provinsi_total": 38, "luas_juta_m2": 4.33, "hemat_mwh": 120000, "co2_ton": 100000, "air_juta_m3": 4.7,
+      "bangunan": [{ "kode": "31", "n": 171 }, { "kode": "32", "n": 45 }, { "kode": "36", "n": 26 }, { "kode": "35", "n": 26 }, { "kode": "33", "n": 16 }] },
+    "greenship": { "sumber_id": "gbci-2026", "periode": "2026-04", "gedung": 504, "pengembang_bersertifikat_persen": 5, "pengembang_total": 4000 },
+    "tenaga": { "sumber_id": "srikandi-2021", "periode": "2021", "manajer": 1273, "manajer_perempuan": 43, "auditor": 1128, "auditor_perempuan": 51 },
+    "regulasi": [
+      { "id": "pp-33-2023", "judul": "PP 33/2023 tentang Konservasi Energi", "cari": "33 Tahun 2023" },
+      { "id": "permen-14-2012", "judul": "Permen ESDM 14/2012 tentang Manajemen Energi", "cari": "14 Tahun 2012" }
+    ]
+  },
+  "gender": {
+    "irena": { "sumber_id": "irena-gender-2025", "periode": "2025-10", "penuh_waktu": 32, "menengah": 26, "senior": 19, "rata_tenaga_kerja": 43.4, "negara": 119 },
+    "pln": { "sumber_id": "pln-srikandi-2024", "periode": "2024-10", "manajemen_persen": 15 }
+  }
+}

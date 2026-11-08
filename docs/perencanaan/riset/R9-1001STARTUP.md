@@ -20,7 +20,7 @@ Catatan penyebutan: di situs, "census" = sensus. Entitas utamanya perusahaan rin
    - **Census**: Sectors, The monthly report ("four findings, figures frozen"), Billion-dollar startups, Valuation ("what the combined figure contains"), Y Combinator, Endeavor, Antler, Closed ("what stopped, with dates and sources").
    - **Method**: "How the numbers are made" (/coverage: anchors, inklusi, catatan), "The formal model" (/model: estimator ditulis dengan persamaan), "What the output figure is", "Where the line is" ("what is deliberately not counted, and why"), "Taken out" (baris yang dikeluarkan setelah cek hidup), About.
    - **Agents**: "The dataset" (privat, "held back, every figure is on its company page") dan "Lead search" (/leads, digerbang login: orang yang tepat di tiap perusahaan, dicari agen riset). Menu Agents adalah bagian yang TERTUTUP; sisanya publik.
-4. Kaki: "1001startup.id — the census of Indonesian startups", tautan "Live traffic", "Cookies" (ke kebijakan cookie di vantis.sh), "Anchors: BPS", kartu "Who is building this" (nama pembangun, kontak). Halaman metode menambah "FX 17,701 · updated 2026-10-29".
+4. Kaki: "1001startup.id, the census of Indonesian startups", tautan "Live traffic", "Cookies" (ke kebijakan cookie di vantis.sh), "Anchors: BPS", kartu "Who is building this" (nama pembangun, kontak). Halaman metode menambah "FX 17,701 · updated 2026-10-29".
 
 ### 1.2 Pohon URL (dari sitemap.xml, 2.389 URL, setengahnya pohon /id/)
 
@@ -69,27 +69,27 @@ Konvensi umum yang dipakai SEMUA halaman (ini yang paling perlu ditiru, lebih da
   `According to 1001startup.id (updated 29 Oct 2026), 558 Indonesian startups are on record, with US$18.7 billion in disclosed funding and an estimated 176,895 jobs. 16 of them belong to a big group or listed company and are flagged as such.`
   Profil: `According to the 1001startup.id census (updated 29 Oct 2026), Xurya was founded by Eka Himawan, Edwin Widjonarko and Philip Effendy in 2018; has 110 employees on record; disclosed funding of US$88M; its head office is in Jakarta Selatan.` Kalimat itu disusun dari field yang ada; field kosong dibuang dari kalimat (Xurya tidak punya "market capitalisation", Gojek punya, dan kalimat mengikutinya).
 - **Baris "Cite as"**: `Cite as Xurya, 1001startup.id, the census of Indonesian startups, updated 29 Oct 2026. 1001startup.id/company/xurya`.
-- **Tanda "—"** = tidak ada angka kredibel; tidak pernah diisi tebakan ("a dash means no credible public figure exists — we do not invent one").
+- **Tanda "-"** = tidak ada angka kredibel; tidak pernah diisi tebakan ("a dash means no credible public figure exists, we do not invent one").
 - **Tanda `est`** di samping angka turunan; `min` untuk batas bawah; `trk` untuk sumber pelacak data (bukan pengumuman); `ipo`, `in parent`, `id only` sebagai penanda jenis.
 - **Pengelompokan dengan hitungan**: judul kelompok + angka (`Energy 42`, `Hardware 4`).
-- **Janji kejujuran di bawah daftar**: `Absence of a link is not absence of a relationship — it means nothing public says so yet.`
+- **Janji kejujuran di bawah daftar**: `Absence of a link is not absence of a relationship, it means nothing public says so yet.`
 
 ### 2.1 `/` Beranda
 
 Tujuan: gerbang ke 6 dataset dengan satu janji ("every figure linked to the document that carries it").
 Urutan:
 1. Pita atas + menu.
-2. Hero: judul `Indonesia's company graph.`, satu kalimat penjelas (`Startups, state and regional companies, data centres, exporters and where the internet's networks meet — six live datasets, every figure linked to the document that carries it.`), kotak pencarian, enam hitungan ber-label (`558 startups · 56 BUMN · 719 BUMD · 72 data-centre projects · 1,410 exporters · 80 internet exchanges`), lalu pita logo/nama berjalan (Startup Gojek, BUMN PLN, Data centre DCI, Exporters Coffee & Tea).
+2. Hero: judul `Indonesia's company graph.`, satu kalimat penjelas (`Startups, state and regional companies, data centres, exporters and where the internet's networks meet, six live datasets, every figure linked to the document that carries it.`), kotak pencarian, enam hitungan ber-label (`558 startups · 56 BUMN · 719 BUMD · 72 data-centre projects · 1,410 exporters · 80 internet exchanges`), lalu pita logo/nama berjalan (Startup Gojek, BUMN PLN, Data centre DCI, Exporters Coffee & Tea).
 3. Enam kartu dataset bernomor `01`-`06`, tiap kartu: label nama, `Updated <tanggal>` (tiap dataset punya tanggal sendiri), judul tajuk, satu kalimat, 3 angka besar, SAMPEL isi dataset (10 baris teratas, kuadran mini, titik-titik BUMD, matriks daya mini, batang sektor eksportir), kalimat fakta "According to...", tautan `Browse all 558 →`.
 Pola yang dipakai: **tiap dataset punya tanggal pembaruan sendiri**, dan kartu beranda adalah cuplikan hidup dataset (bukan ilustrasi).
 
 ### 2.2 `/startups` (tabel sensus)
 
 Urutan:
-1. Judul `Indonesia's startup graph.`; satu paragraf cakupan (`558 companies and counting — who they are, where they sit, what they raised, whom they employ, and what that activity adds to the economy. Built from public reporting and national statistics, across 17 cities: Greater Jakarta (485), Bandung (20), Surabaya (12) and 14 more. Search it like a phone book; read it like a census.`).
+1. Judul `Indonesia's startup graph.`; satu paragraf cakupan (`558 companies and counting, who they are, where they sit, what they raised, whom they employ, and what that activity adds to the economy. Built from public reporting and national statistics, across 17 cities: Greater Jakarta (485), Bandung (20), Surabaya (12) and 14 more. Search it like a phone book; read it like a census.`).
 2. Kalimat fakta "According to...", dua tombol (Browse, See on the map).
-3. Lima kartu angka dengan keterangan kecil pada tiap angka: `558 companies tracked`, `US$ 18.7 B disclosed funding · 249 of 558 rows`, `US$ 20.6 B combined valuation · 21 of 558 marked →`, `176,895 jobs — estimate`, `IDR 96.5 T output / yr — estimate · what this means →`. Catatan "249 of 558 rows" adalah penyebut kejujuran: setiap total menyebut berapa baris yang menyumbang.
-4. Bilah alat: kolom pencarian (`Search 558 companies — name, sector, city…`), chip sektor (All + 16, satu aktif), baris chip kedua berhitungan sebagai penyaring boolean: `Y Combinator only · 24`, `Endeavor only · 30`, `Antler only · 19`, `Disclosed funding only · 249`, `Valuation on record · 25`, `Hide group companies · 16`, dan penghitung `558 shown`. Petunjuk baris: `Click any company for its full profile — funding, investors, head office, headcount and every source behind the row.`
+3. Lima kartu angka dengan keterangan kecil pada tiap angka: `558 companies tracked`, `US$ 18.7 B disclosed funding · 249 of 558 rows`, `US$ 20.6 B combined valuation · 21 of 558 marked →`, `176,895 jobs, estimate`, `IDR 96.5 T output / yr, estimate · what this means →`. Catatan "249 of 558 rows" adalah penyebut kejujuran: setiap total menyebut berapa baris yang menyumbang.
+4. Bilah alat: kolom pencarian (`Search 558 companies, name, sector, city…`), chip sektor (All + 16, satu aktif), baris chip kedua berhitungan sebagai penyaring boolean: `Y Combinator only · 24`, `Endeavor only · 30`, `Antler only · 19`, `Disclosed funding only · 249`, `Valuation on record · 25`, `Hide group companies · 16`, dan penghitung `558 shown`. Petunjuk baris: `Click any company for its full profile, funding, investors, head office, headcount and every source behind the row.`
 5. Tabel: `# | Company | Sector | City | Funding US$M | Valuation US$M | Jobs est | Output est IDR bn/yr`. Sel angka membawa penanda (`5,300 trk min`, `3,100 est`, `2,900 in parent`, `Grab Indonesia ... id only`). Lencana inline (YC S15, ENDEAVOR).
 
 ### 2.3 `/company/<slug>` (profil), urutan bagian PERSIS
@@ -104,43 +104,43 @@ Urutan:
    - **Last round**: `Growth round (US$55M, undesignated series) 2024`.
    - **Valuation** (bila ada): `US$ 3,100 M · Market capitalisation, read 2026`.
    - **People**: `110 employees`, tanggal baca (`Read 2026-06-30`) atau `Date of this figure not recorded`.
-   - **Output**: `IDR 74 bn / yr est`, dengan rumus tertulis di bawahnya: `110 employees × Rp 675 million of value added per worker — the Rp 675 million default, this sector having no anchor of its own`.
+   - **Output**: `IDR 74 bn / yr est`, dengan rumus tertulis di bawahnya: `110 employees × Rp 675 million of value added per worker, the Rp 675 million default, this sector having no anchor of its own`.
    - **Where**: kecamatan dan kota (`Kebayoran Baru, Jakarta Selatan`).
 5. **Investors**: nama-nama (chip tautan ke /investor/<slug>).
 6. **Supply chain**: ringkasan (`42 technology & manufacturing links (0 suppliers, 42 customers). Every one links to the page or filing it came from; each was re-checked on 29 Sep 2026.`), lalu dua kolom Suppliers N / Customers N, tiap kolom dikelompokkan per jenis (Hardware 4, Energy 1, Software 3, Cloud & infrastructure 3), tiap baris: nama (tanda `outside the census` / `not in the census` bila tidak punya profil), kalimat hubungan, label bukti, domain sumber, tanggal dokumen. Baris kepemilikan di atasnya: `Owns Bank Jago 21.40% filing goinfra.co.id`. Tautan `The full chain, with every source quoted →`.
-7. **Head office**: alamat lengkap; catatan presisi peta (`Pinned to the road it sits in, not to the building — the map dot is that approximate.`).
+7. **Head office**: alamat lengkap; catatan presisi peta (`Pinned to the road it sits in, not to the building, the map dot is that approximate.`).
 8. **Public contact**: surel peran dan tautan Careers, dengan baris etika: `Published on the company's own pages, read 2026-10-23. Role mailboxes and office lines only: no personal address is guessed and no mobile number is shown.`
-9. **What the figures mean**: satu paragraf per angka yang bisa disalahbaca. Untuk Output: `Output is gross value added — what the company adds to GDP ... Revenue is a bigger number... Nobody publishes value added, so the census estimates it from headcount and a BPS sector anchor; funding, valuation and GMV never enter.`
-10. **How well we know this**: skor `0.90 · high` + tingkat bahasa (`High — primary sources or filings`) + paragraf alasan. Lalu baris status situs: `Website live — checked 2026-08-29. Website responded normally when last checked`. Kadang `Every figure above was put to an adversarial re-check on <tanggal> — the numbers that survived are the ones shown.`
+9. **What the figures mean**: satu paragraf per angka yang bisa disalahbaca. Untuk Output: `Output is gross value added, what the company adds to GDP ... Revenue is a bigger number... Nobody publishes value added, so the census estimates it from headcount and a BPS sector anchor; funding, valuation and GMV never enter.`
+10. **How well we know this**: skor `0.90 · high` + tingkat bahasa (`High, primary sources or filings`) + paragraf alasan. Lalu baris status situs: `Website live, checked 2026-08-29. Website responded normally when last checked`. Kadang `Every figure above was put to an adversarial re-check on <tanggal>, the numbers that survived are the ones shown.`
 11. **Sources**: daftar `domain + URL penuh`, 3-6 baris (rata-rata 12-33 tautan eksternal per profil termasuk bukti rantai).
 12. **Comparable in <Sektor>**: 6 nama + nomor urut sensus (`SUN Energy #86`).
-13. Kaki: `Public sources only. Figures marked est are ours, derived and labeled — never disclosed numbers. How the estimates are built →`, tombol `← Back to the census`.
+13. Kaki: `Public sources only. Figures marked est are ours, derived and labeled, never disclosed numbers. How the estimates are built →`, tombol `← Back to the census`.
 
-Catatan "Website blocked": di 20 profil yang saya periksa hanya muncul status "Website live — checked <tanggal>". Varian "blocked" tidak saya temui di halaman publik; kemungkinan hanya muncul bila pengecekan hidup gagal. Saran METI: tiga status (live, blocked/tidak bisa dicek, mati) dengan tanggal cek, karena situs BUMN dan koperasi sering menolak bot.
+Catatan "Website blocked": di 20 profil yang saya periksa hanya muncul status "Website live, checked <tanggal>". Varian "blocked" tidak saya temui di halaman publik; kemungkinan hanya muncul bila pengecekan hidup gagal. Saran METI: tiga status (live, blocked/tidak bisa dicek, mati) dengan tanggal cek, karena situs BUMN dan koperasi sering menolak bot.
 
 ### 2.4 `/chain` dan `/chain/<slug>`, `/chain/x/<slug>` (rantai pasok)
 
 Indeks `/chain`:
-1. Judul `Who supplies whom`; paragraf cakupan (`The technology and manufacturing chain around Indonesian startups: who makes their products and parts, who supplies their materials and goods, whose hardware, software, energy and cloud they run on — and who buys from them. Suppliers on the left, customers on the right. The census is where the map starts, not where it ends — any company these chains run through can hold a page, in the census or outside it.`).
+1. Judul `Who supplies whom`; paragraf cakupan (`The technology and manufacturing chain around Indonesian startups: who makes their products and parts, who supplies their materials and goods, whose hardware, software, energy and cloud they run on, and who buys from them. Suppliers on the left, customers on the right. The census is where the map starts, not where it ends, any company these chains run through can hold a page, in the census or outside it.`).
 2. Satu kalimat angka: `732 supply-chain links and 41 ownership links (334 filing · 439 first-party), every one a claim some named document still makes today: an audited filing that names the counterparty, or a page published by one side of the relationship. Re-checked 29 Sep 2026.`
 3. Chip jenis hubungan berhitungan: `Materials 19, Parts & components 9, Contract manufacturing 104, Goods 123, Hardware 90, Energy 86, Software 148, Cloud & infrastructure 147, Technology licence 6`.
-4. Tabel `Company | Sector | Suppliers | Customers | Corporate` (angka masuk/keluar per perusahaan, `—` bila nol), urut dari yang terhubung terbanyak. Perusahaan di luar sensus tampil sejajar dengan label `outside the census` + nama hukum (Google Cloud 26, AWS 23, Alibaba Cloud 22, Alfamart 14 pelanggan).
+4. Tabel `Company | Sector | Suppliers | Customers | Corporate` (angka masuk/keluar per perusahaan, `-` bila nol), urut dari yang terhubung terbanyak. Perusahaan di luar sensus tampil sejajar dengan label `outside the census` + nama hukum (Google Cloud 26, AWS 23, Alibaba Cloud 22, Alfamart 14 pelanggan).
 
 Halaman rantai satu perusahaan (/chain/xurya), urutan:
 1. Jejak `Supply chain / Xurya`; judul; satu baris hitungan `42 technology & manufacturing links (0 suppliers, 42 customers). Re-checked 29 Sep 2026. The company profile →`.
 2. **Diagram dua sisi**: kolom kiri `Suppliers 0` (`No supplier publicly evidenced yet.`), kotak tengah nama + sektor + `0 in · 42 out`, kolom kanan `Customers 42`, dikelompokkan per jenis (Energy), nama-nama sebagai chip.
-3. `Every relationship`: daftar lengkap Suppliers lalu Customers. Baris = nama + `outside the census`/`not in the census` + kalimat hubungan (dengan angka teknis: `4,554 panels, ~2.9 GWh a year`, `22.5 MW rooftop solar plant`) + label bukti + domain + tanggal. Tooltip pada tombol bukti memuat KUTIPAN BEKU dokumen: `Named in a company's own regulatory filing — "Below is the detail of revenue from customers which exceeded 10% from the total consolidated revenue: 2025 ... PT Berau Coal Energy Tbk 58.126.355.000 17,71% ..."`.
+3. `Every relationship`: daftar lengkap Suppliers lalu Customers. Baris = nama + `outside the census`/`not in the census` + kalimat hubungan (dengan angka teknis: `4,554 panels, ~2.9 GWh a year`, `22.5 MW rooftop solar plant`) + label bukti + domain + tanggal. Tooltip pada tombol bukti memuat KUTIPAN BEKU dokumen: `Named in a company's own regulatory filing, "Below is the detail of revenue from customers which exceeded 10% from the total consolidated revenue: 2025 ... PT Berau Coal Energy Tbk 58.126.355.000 17,71% ..."`.
 4. Angka konsentrasi inline pada baris: `· 17.71% of SUN Energy's revenue` (dari catatan laporan tahunan).
 5. `Supply chain map`: dua tingkat (suppliers' suppliers, customers' customers, `Buys from the same suppliers`), dengan aturan eksplisit: `Only technology and manufacturing links are followed, and never through a shared rail such as a hyperscaler, which links to nearly everything.`
 6. `The documents`: daftar dokumen sumber (judul, penerbit, tanggal, "Audited consolidated FS FY2025: Note 26 purchases >10% of revenue ...").
 
-Halaman `/chain/x/<slug>` (perusahaan di luar sensus): sama, tapi diawali pernyataan `PT PLN. Not a census company — this page exists because census companies' chains run through it.` plus satu kalimat peran (`State electricity company; supplies charging power to Grab and buys rooftop solar from BTI Energy.`) dan tautan `Its website ↗`. Ini kunci: **entitas tidak harus anggota sensus untuk punya halaman**, cukup ada hubungan bersumber yang melewatinya.
+Halaman `/chain/x/<slug>` (perusahaan di luar sensus): sama, tapi diawali pernyataan `PT PLN. Not a census company, this page exists because census companies' chains run through it.` plus satu kalimat peran (`State electricity company; supplies charging power to Grab and buys rooftop solar from BTI Energy.`) dan tautan `Its website ↗`. Ini kunci: **entitas tidak harus anggota sensus untuk punya halaman**, cukup ada hubungan bersumber yang melewatinya.
 
 Dua jenis bukti saja: **filing** (laporan tahunan/keuangan audit/dokumen regulator yang menyebut pihak lawan; 203 label di halaman yang saya baca) dan **first-party** (halaman yang diterbitkan salah satu pihak; 580 label). Tidak ada "berita".
 
 ### 2.5 `/investors` dan `/investor/<slug>`
 
-Indeks: tabel `# | Investor | Companies | Portfolio disclosed funding | Jobs | Top sectors | Examples` (contoh: `East Ventures 73 · US$2.5B · 24,942 jobs`). Profil: kalimat jujur di atas (`Everything on this page derives from the census: the companies below name East Ventures among their investors, each with the source on its company page. A curated fund profile lands here when a per-fund verification pass runs.`), empat angka (`73 census companies backed`, `US$2.5B disclosed funding raised by that portfolio — all investors combined, not this fund's cheque`, jobs, sektor), tabel `The census portfolio` (`Company | Sector | Round note | Raised total | Jobs | Where`). Perhatikan peringatan "all investors combined, not this fund's cheque": angka tidak diklaim lebih dari isinya.
+Indeks: tabel `# | Investor | Companies | Portfolio disclosed funding | Jobs | Top sectors | Examples` (contoh: `East Ventures 73 · US$2.5B · 24,942 jobs`). Profil: kalimat jujur di atas (`Everything on this page derives from the census: the companies below name East Ventures among their investors, each with the source on its company page. A curated fund profile lands here when a per-fund verification pass runs.`), empat angka (`73 census companies backed`, `US$2.5B disclosed funding raised by that portfolio, all investors combined, not this fund's cheque`, jobs, sektor), tabel `The census portfolio` (`Company | Sector | Round note | Raised total | Jobs | Where`). Perhatikan peringatan "all investors combined, not this fund's cheque": angka tidak diklaim lebih dari isinya.
 
 ### 2.6 `/bumn` (kuadran skor dua sumbu)
 
@@ -149,7 +149,7 @@ Urutan:
 2. Kalimat fakta (`...hold 1,120 subsidiaries and stakes, and 50 of them are held by Danantara Asset Management. The largest by FY2025 revenue are Pertamina (Rp1,168 trillion) and PLN (Rp583 trillion).`).
 3. Lima angka besar (56 placed, 1,120 subsidiaries/stakes (386 held directly), 50 held by Danantara in 14 sectors, `Rp131.41T dividends to Danantara 2025`, `1,046 → 200` target entitas).
 4. **THE QUADRANT**: kanvas dua sumbu, tiap titik = logo bundar BUMN (14 terbesar berlogo; sisanya titik/inisial), garis silang di MEDIAN (`The lines cross at the median, so half the companies sit on each side of each line`), skala sama 0-5 di dua sumbu, pemilih `X` dan `Y` (10 ukuran) dan pemilih "Lens" bernama (`Where money comes from`). Empat kuadran diberi nama manusiawi (`State-funded`, `Twin engines`, `Small, self-standing`, `Market earners`). Klik logo membuka kartu skor, angka, dan sumber.
-5. `ALL SCORES AND RANKS`: tabel semua skor, angka kecil = peringkat dari 56, `=` untuk seri, `—` bila tak ada angka publik; satuan rupiah triliun bertautan ke sumber.
+5. `ALL SCORES AND RANKS`: tabel semua skor, angka kecil = peringkat dari 56, `=` untuk seri, `-` bila tak ada angka publik; satuan rupiah triliun bertautan ke sumber.
 6. `DANANTARA, IN FOUR FACTS`: empat butir dengan domain sumber di ujung.
 7. `HOW THE SCORES WORK`: satu blok per ukuran dengan rumus teks (`finance = 5 × mean( pct(assets), pct(revenue), pct(net profit) )`), pita 0-5 yang didefinisikan (`public money 1 = under Rp1T, 2 = Rp1–5T ...`), dan `Limits`.
 8. Tautan ke BUMD.
@@ -189,10 +189,10 @@ Urutan artikel (diperiksa pada tiga artikel: funding rounds 2026, biggest employ
 2. **Short answer** (kalimat "As of 18 October 2026, ..." berangka, dengan tautan ke profil).
 3. Empat angka besar bertajuk kecil.
 4. Satu grafik batang berurutan (`US$ million, as stated in the round`), judul bagian diikuti satu kalimat pengantar yang menyebut batasnya.
-5. Tabel lengkap (`Company | Sector | What the census records | US$ million | Source`), kolom sumber = domain + `↗`, baris tanpa angka diberi `—` (tidak diisi).
+5. Tabel lengkap (`Company | Sector | What the census records | US$ million | Source`), kolom sumber = domain + `↗`, baris tanpa angka diberi `-` (tidak diisi).
 6. Dua-tiga bagian "bukan semua ini X" (`Not all of it is venture money`, `Most rounds do not say how much`) yang menyingkap penyebut dan jenis peristiwa.
 7. **How this was counted** (aturan hitung: `The census keeps each company's most recent round. A company is counted here when that round is dated 2026. Amounts are only the US-dollar figures written in the round's own record; rupiah and Singapore-dollar figures are left as written. 23 is the count among the 499 companies in the census, not every Indonesian startup that raised money in 2026.`).
-8. **Using these numbers** (aturan kutip: `Quote any figure with the credit below and a link. For a figure about one company, link that company's page: that is where its sources are. The figures on this page were frozen on the date above; company pages keep updating.`) lalu baris `Source: 1001startup.id census, data frozen 18 October 2026 — <URL>`.
+8. **Using these numbers** (aturan kutip: `Quote any figure with the credit below and a link. For a figure about one company, link that company's page: that is where its sources are. The figures on this page were frozen on the date above; company pages keep updating.`) lalu baris `Source: 1001startup.id census, data frozen 18 October 2026, <URL>`.
 9. `More from the census`: tautan ke cerita lain.
 
 Kunci pola: **angka di artikel DIBEKUKAN pada tanggal**; profil terus diperbarui. Dua lapis: arsip beku yang bisa dikutip, dan data hidup.
@@ -206,7 +206,7 @@ Research (001 Perdagangan dan komputasi, 002 Internet tanpa Singapura): makalah 
 
 - `/closed`: `What stopped.`; alasan keberadaan halaman (`A census that only counts the living flatters the ecosystem twice`), 37 perusahaan, kolom `Company | Sector | City | Founded | Ended | What happened | Raised US$M | Why, and where it is written down`. "Nothing listed on rumour" adalah syarat masuk.
 - `/unicorn`: daftar bernilai ≥ US$1B, tiga kelompok dipisah (`private marks`, `live market capitalisation`, `estimated`), kotak `What this page does not claim.`
-- `/sector/climate`: judul `Climate & sustainability startups in Indonesia.`; kalimat `The census tracks 33 operating ... — US$144.6 million of disclosed funding across 12 companies, roughly 1,775 jobs (estimated), and IDR 1.2 trillion a year of output (estimated).`; empat angka; tabel perusahaan.
+- `/sector/climate`: judul `Climate & sustainability startups in Indonesia.`; kalimat `The census tracks 33 operating ..., US$144.6 million of disclosed funding across 12 companies, roughly 1,775 jobs (estimated), and IDR 1.2 trillion a year of output (estimated).`; empat angka; tabel perusahaan.
 - `/stats`: lalu-lintas hidup, orang vs AI vs mesin pencari dipisah.
 
 ### 2.14 `/coverage` dan `/model` (halaman Method)
@@ -247,7 +247,7 @@ Saya tidak menemukan: halaman syarat penggunaan, halaman lisensi data, halaman p
 - **Skor keyakinan 0-1** per profil, tiga tingkat teks: `high` ≥ 0,80 ("primary sources or filings"; contoh 0,90 Xurya, 0,85 SUN Energy, 0,80 Volta), `medium` 0,60-0,79 ("credible reporting, not company-confirmed"; 0,75 Dash Electric, 0,70 ALVA, 0,65 BTI Energy), `low` < 0,60 ("thin public record; the doubt is stated, not hidden"; 0,50 Charged Asia). Pembatas tingkat ini saya simpulkan dari 9 profil; ambangnya TIDAK dipublikasikan secara eksplisit.
 - **Penanda EST** pada angka turunan (jobs, output) dan pada valuasi hasil carve-out (`3,100 est`).
 - **Tanggal**: setiap angka punya tanggal-baca sendiri (`Read 2026-06-30`) atau "Date of this figure not recorded". Per halaman: `updated`; per rantai: `Re-checked 29 Sep 2026`; per situs: `checked 2026-08-29`.
-- **Alasan kosong** yang bertipe: bukan sekadar blank; tiap `—` memiliki salah satu dari empat alasan (tidak diumumkan, tak ada putaran luar, didanai induk luar negeri, jenis modal lain).
+- **Alasan kosong** yang bertipe: bukan sekadar blank; tiap `-` memiliki salah satu dari empat alasan (tidak diumumkan, tak ada putaran luar, didanai induk luar negeri, jenis modal lain).
 - **Pengecualian ganda hitung**: `held out of the sum` untuk anak yang nilainya sudah termasuk induk.
 - **Pengecekan hidup** (liveness screen): situs masih merespons, LinkedIn aktif, pemberitaan terbaru; yang gagal masuk `Taken out` atau `Closed`.
 
@@ -273,7 +273,7 @@ Saya tidak menemukan: halaman syarat penggunaan, halaman lisensi data, halaman p
 - **Pengganda tidak langsung κ = 1,5** dikenakan SEKALI pada portofolio, tidak per baris (dampak tak langsung satu startup sebagian adalah dampak langsung yang lain).
 - **Model galat**: galat multiplikatif per baris; jumlah portofolio tahan terhadap ±50% galat independen; sumber ~5% adalah batas bawah pita jujur; sebab itu situs mengutip total portofolio dan jumlah sektor, "no single company row should ever be read as that company's measured output".
 - **Gerbang waras**: `GMV gate` (output marketplace tak boleh melebihi pendapatan take-rate), `Payroll gate` (perusahaan pra-pendapatan ≈ payroll + penyusutan), `Null gate`.
-- Diagram alir Mermaid disalin di halaman (`Mermaid source — copy for docs`), 10 persamaan EQ 1-10, tabel jangkar 15 sektor per jumlah perusahaan, pekerja, GVA (T Rp). Catatan ketidaksesuaian vintage (jangkar 2023 pada headcount 2026) dinyatakan sebagai konservatisme sengaja.
+- Diagram alir Mermaid disalin di halaman (`Mermaid source, copy for docs`), 10 persamaan EQ 1-10, tabel jangkar 15 sektor per jumlah perusahaan, pekerja, GVA (T Rp). Catatan ketidaksesuaian vintage (jangkar 2023 pada headcount 2026) dinyatakan sebagai konservatisme sengaja.
 - Penjelasan awam di profil (bagian "What the figures mean"): nilai tambah, bukan pendapatan, bukan gaji.
 
 ### 4.3 Skor kuadran BUMN (contoh metode yang bisa ditiru persis)
@@ -380,7 +380,7 @@ Perhatian: sumber primer bagi METI sebaiknya diambil LANGSUNG ke domain sumber t
 3. Pengecualian untuk crawler mereka sendiri (`VantisSupportBot`): tidak boleh ke `/id/`, `/map`, `/leads`, `/api/`, `/stats`.
 Dua blok pertama bertentangan secara teks (blok Cloudflare melarang training; komentar operator mengundangnya). Perlakukan yang LEBIH KETAT sebagai berlaku bila ragu.
 
-**`/llms.txt`**: `How to attribute: name the source and link the page.` Contoh yang diminta: `According to the 1001startup.id census (updated 29 Oct 2026), Gojek (GoTo Group) has ...` + URL profil. Aturan membaca angka: `est` = estimasi kami, `—` = tidak ada angka kredibel, jumlah pekerja memuat tanggal baca. Setiap profil menyertakan baris "Cite as".
+**`/llms.txt`**: `How to attribute: name the source and link the page.` Contoh yang diminta: `According to the 1001startup.id census (updated 29 Oct 2026), Gojek (GoTo Group) has ...` + URL profil. Aturan membaca angka: `est` = estimasi kami, `-` = tidak ada angka kredibel, jumlah pekerja memuat tanggal baca. Setiap profil menyertakan baris "Cite as".
 **`/about`**: "How to cite it" (nama sensus, tanggal, tautan halaman). **`/report/2026-10`**: `Free to cite with credit`. **Berita**: `Quote any figure with the credit below and a link.`
 **Tidak ditemukan**: syarat penggunaan, lisensi data (CC/ODbL dsb.), API publik, atau unduhan dataset berlisensi. Menu "The dataset" ditandai `private` ("Held back"). Data kontak dan "lead" digerbang login dan dikecualikan dari robots.
 **Kebijakan cookie** (vantis.sh/cookies/): analitik Umami milik sendiri, tidak ada cookie iklan; GPC/DNT dianggap penolakan. Banner persetujuan memblokir skrip analitik sampai dijawab. Saya tidak menerima apa pun; semua pengambilan lewat curl tanpa cookie.
@@ -464,10 +464,10 @@ Urutan dan kalimat di bawah berupa TEMPLAT untuk METI (bukan salinan teks mereka
 3. **Jawaban singkat**: `Per <tgl>, direktori mencatat <n> dari <N> perusahaan ... <angka kunci>; terbesar <nama> (<angka>).`
 4. Empat angka besar.
 5. Satu grafik batang berurutan + kalimat pengantar yang menyebut batasnya.
-6. Tabel lengkap `Entitas | Sektor | Yang dicatat | Nilai | Sumber`, `—` bila angka tidak diumumkan.
+6. Tabel lengkap `Entitas | Sektor | Yang dicatat | Nilai | Sumber`, `-` bila angka tidak diumumkan.
 7. Bagian "Tidak semua ini <X>" dan "Kebanyakan <Y> tidak menyebut angka".
 8. **Cara menghitung**: `Direktori memakai putaran/PPA/COD terbaru tiap entitas ... angka hanya yang tertulis di catatan ... <N> adalah hitungan di antara <M> entitas direktori, bukan seluruh <populasi>.`
-9. **Memakai angka ini**: `Kutip angka mana pun dengan kredit di bawah dan tautan. Angka pada halaman ini dibekukan pada tanggal di atas; halaman perusahaan terus diperbarui.` + `Sumber: Platform Jaringan METI, data dibekukan <tgl> — <url>`.
+9. **Memakai angka ini**: `Kutip angka mana pun dengan kredit di bawah dan tautan. Angka pada halaman ini dibekukan pada tanggal di atas; halaman perusahaan terus diperbarui.` + `Sumber: Platform Jaringan METI, data dibekukan <tgl>, <url>`.
 10. Cerita lain.
 
 ### 9.5 Halaman rantai pasok EBT (tiru 2.4)

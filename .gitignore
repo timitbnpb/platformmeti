@@ -20,3 +20,8 @@ docs/internal/
 
 # seed pustaka hukum (~62 MB), dibangun ulang: python3 -I scripts/hukum/hukum.py
 data/hukum/seed*.sql
+
+# artefak lokal, jangan dilacak (higiene 8 Nov 2026)
+Claude outputs/
+tests/layar/tangkapan/
+.playwright-cli/

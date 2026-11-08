@@ -1,0 +1,120 @@
+/* /psn: hanya token tema.css. Kelas .psn-*. Tanpa kapital, tanpa garis bawah diam. */
+.psn-halaman{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);padding-block:20px 64px;align-content:start}
+.psn-halaman>*{min-width:0}
+.psn-isi{display:grid;gap:32px;align-content:start}
+.psn-isi>.jm-ex{margin:0}
+.psn-bantu{margin:0;font:400 var(--t-kecil)/var(--lh-isi) var(--font);color:var(--ink2)}
+
+/* warna per sektor (--sk) dan sumber dana */
+.psn-s-energi{--sk:var(--tp-listrik)}.psn-s-kawasan{--sk:var(--tp-industri)}.psn-s-smelter{--sk:var(--tp-karbon)}.psn-s-jalan{--sk:var(--data1)}.psn-s-pelabuhan{--sk:var(--data2)}
+.psn-s-bandara{--sk:var(--data3)}.psn-s-kereta{--sk:var(--data4)}.psn-s-bendungan{--sk:var(--tp-hidro)}.psn-s-air{--sk:var(--tp-simpan)}.psn-s-tanggul{--sk:var(--tp-jaringan)}
+.psn-s-teknologi{--sk:var(--tp-hidrogen)}.psn-s-pendidikan{--sk:var(--tp-adil)}.psn-s-pariwisata{--sk:var(--tp-bio)}.psn-s-pertanian{--sk:var(--tp-efisiensi)}
+.psn-s-perumahan{--sk:var(--tp-biaya)}.psn-s-program{--sk:var(--tp-kebijakan)}
+.psn-d-apbn{--sk:var(--data1)}.psn-d-bumn{--sk:var(--data2)}.psn-d-swasta{--sk:var(--data3)}.psn-d-kpbu{--sk:var(--data4)}
+.psn-sk{display:inline-flex;align-items:center;gap:6px;color:var(--sk);font:600 var(--t-label)/var(--lh-rapat) var(--font)}
+.psn-sk span{color:var(--ink)}
+.psn-st{gap:6px}
+.psn-st-beroperasi{background:var(--ok-bg);color:var(--ok)}.psn-st-sebagian,.psn-st-konstruksi{background:var(--info-bg);color:var(--info)}
+.psn-st-pra-konstruksi,.psn-st-rencana{background:var(--warn-bg);color:var(--warn)}.psn-st-tidak-diketahui{background:var(--surface);color:var(--ink2)}
+
+/* penyaring */
+.psn-saring{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.psn-chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-tombol)/1 var(--font);cursor:pointer}
+.psn-chip[aria-pressed="true"]{background:var(--soft-hijau);border-color:var(--accent);color:var(--head)}
+.psn-chip:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+
+/* peta */
+.psn-peta{position:relative;height:max(560px,70vh);border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);overflow:clip}
+.psn-kanvas{position:absolute;inset:0;width:100%;height:100%}
+.psn-panel{position:absolute;z-index:3;top:12px;right:12px;width:min(300px,calc(100% - 24px));max-height:calc(100% - 24px);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--card) 94%,transparent);box-shadow:var(--shadow)}
+.psn-panel:not([open]){width:auto}
+.psn-panel summary{flex:none;cursor:pointer;min-height:40px;padding:0 14px;display:flex;align-items:center;gap:10px;font:700 var(--t-label)/1 var(--font);color:var(--head);list-style:none}
+.psn-panel summary::-webkit-details-marker{display:none}
+.psn-panel[open] summary{border-bottom:1px solid var(--line)}
+.psn-panel summary:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+.psn-panel-isi{flex:1;min-height:0;overflow:auto;padding:10px 12px 12px;display:grid;gap:10px;align-content:start}
+.psn-leg{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.psn-leg-b{display:flex;align-items:center;gap:8px;width:100%;min-height:36px;padding:0 8px;border:0;border-radius:var(--r-sm);background:transparent;color:var(--ink);font:400 var(--t-kecil)/1 var(--font);text-align:left;cursor:pointer}
+.psn-leg-b span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.psn-leg-b small{color:var(--ink2);font-variant-numeric:tabular-nums}
+.psn-leg-b:hover,.psn-leg-b[aria-pressed="true"]{background:var(--soft-hijau)}
+.psn-leg-b:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+.psn-dot{flex:none;width:12px;height:12px;border-radius:50%;background:var(--sk)}
+.psn-leg-b .jm-ik{color:var(--sk)}
+.psn-tip{position:absolute;z-index:6;width:240px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow-lg);pointer-events:none;display:grid;gap:4px;font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.psn-tip[hidden]{display:none}
+.psn-tip b{font-weight:700;color:var(--head)}
+
+/* grafik SVG */
+.psn-svg{display:block;width:100%;height:auto}
+.psn-svg text{fill:var(--ink)}
+.psn-svg .jm-gf-t1{font-size:var(--t-label);fill:var(--ink)}
+.psn-bar{fill:var(--sk,var(--accent))}
+.psn-gb{cursor:pointer}
+.psn-gb:hover .psn-bar,.psn-gb.jm-gf-on .psn-bar{filter:brightness(.88)}
+.psn-gr{stroke:var(--line);stroke-width:1}
+.psn-tg{fill:var(--card);stroke:var(--head);stroke-width:1.5;cursor:pointer}
+.psn-svg-g{min-width:720px}
+#psnGanttIsi{overflow-x:auto}
+.psn-tiga{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.psn-tiga section{display:grid;gap:8px;align-content:start;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.psn-tiga h3{display:flex;align-items:center;gap:8px;margin:0;font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--head)}
+
+/* tabel */
+.psn-tabel{min-width:920px}
+.psn-tabel td{vertical-align:middle}
+.psn-tabel td:nth-child(2){min-width:240px}
+.psn-nama{border:0;background:none;padding:0;color:var(--head);font:600 var(--t-body)/var(--lh-rapat) var(--font);text-align:left;cursor:pointer;overflow-wrap:anywhere}
+.psn-nama:hover{color:var(--accent);text-decoration:underline}
+.psn-nama:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.psn-ang{font-variant-numeric:tabular-nums;white-space:nowrap}
+.psn-prov{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+
+/* metode */
+.psn-reg{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:10px}
+.psn-reg li{display:flex;gap:12px;align-items:flex-start}
+.psn-reg b{display:block;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
+.psn-reg small{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.psn-celah{padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.psn-celah h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;font:700 var(--t-body)/var(--lh-rapat) var(--display)}
+.psn-celah ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.psn-celah li{display:flex;gap:8px;font:400 var(--t-kecil)/var(--lh-isi) var(--font);color:var(--ink2)}
+
+/* panel rinci: lembar geser dari kanan */
+dialog.psn-dlg{position:fixed;inset:0 0 0 auto;margin:0;width:min(520px,100vw);max-width:100vw;height:100dvh;max-height:100dvh;padding:0;border:0;border-left:1px solid var(--line);border-radius:0;overflow:auto;background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg)}
+dialog.psn-dlg[open]{display:grid;align-content:start;gap:16px;padding:20px;animation:psn-masuk .22s ease-out}
+@keyframes psn-masuk{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){dialog.psn-dlg[open]{animation:none}}
+.psn-r-h{display:flex;gap:12px;align-items:flex-start}
+.psn-r-h>div{flex:1;min-width:0;display:grid;gap:8px}
+.psn-r-h h2{margin:0;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head);overflow-wrap:anywhere}
+.psn-r-h p{margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.psn-r-ik{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--sk) 16%,var(--card));color:var(--sk)}
+.psn-x{flex:none}
+.psn-r-fakta{display:grid;gap:10px;margin:0}
+.psn-r-fakta>div{display:grid;grid-template-columns:20px minmax(90px,130px) minmax(0,1fr);gap:8px;align-items:start}
+.psn-r-fakta dt{color:var(--ink2);font:600 var(--t-label)/var(--lh-rapat) var(--font)}
+.psn-r-fakta dd{margin:0;overflow-wrap:anywhere;font:400 var(--t-body)/var(--lh-rapat) var(--font)}
+.psn-r{display:grid;gap:8px}
+.psn-r h3{margin:0;font:700 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.psn-r p{margin:0}
+.psn-orgs,.psn-tl,.psn-isu,.psn-sm{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.psn-org{display:flex;align-items:center;gap:10px}
+.psn-org img:first-child{border-radius:6px;object-fit:contain;background:var(--card)}
+.psn-bd{border-radius:3px;border:1px solid var(--line)}
+.psn-tl li,.psn-isu li{display:grid;grid-template-columns:16px auto minmax(0,1fr);gap:8px;align-items:start;font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.psn-tl li b,.psn-isu li b{white-space:nowrap;color:var(--head)}
+.psn-sm li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start}
+.psn-sm small{display:block;color:var(--ink2)}
+.psn-prog{display:flex;align-items:center;gap:12px}
+.psn-prog svg{flex:1;height:12px}
+.psn-prog-l{fill:var(--line)}.psn-prog-i{fill:var(--ok)}
+
+@media (max-width:999px){.psn-tiga{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:639px){
+  .psn-saring>*{flex:1 1 100%}
+  .psn-peta{height:max(520px,75vh)}
+  .psn-panel{top:auto;bottom:12px;right:12px;left:12px;width:auto;max-height:50%}
+  .psn-r-fakta>div{grid-template-columns:20px minmax(0,1fr)}
+  .psn-r-fakta dd{grid-column:2}
+}

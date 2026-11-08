@@ -13,6 +13,7 @@ import * as B from "/topik_bab.js";
 import * as KB from "/topik_karbon.js";
 import * as W from "/topik_tampil.js";
 import * as D from "/topik_data.js";
+import { pasangJalan } from "/topik_jalan.js";
 import { isiK } from "/topik_wujud.js";
 import { pasangBar } from "/analisis.js";
 
@@ -92,7 +93,7 @@ function pengembangKarbon(ctx) {
 }
 
 function susun(ctx) {
-  const out = [], urutan = Array.from({ length: 42 }, (_, i) => i + 1).filter((n) => n !== 37 && n !== 38);
+  const out = [], urutan = Array.from({ length: 44 }, (_, i) => i + 1).filter((n) => n !== 37 && n !== 38);
   let diperbarui = ctx.naskah?.diperbarui || ctx.dasar.dibangun_pada, ubin = [];
   const csvBab = [];
   for (const n of urutan) {
@@ -142,7 +143,7 @@ async function halaman(id) {
   $("isi").innerHTML = `<div class="jm-tp">${tocHtml(out, id)}<div class="jm-tp-isi">${out.map((x) => x.html).join("")}</div></div>`;
   pasangScroll(out);
   B.pasangPeriksa();
-  D.pasangGrafik(); W.pasangTampil(); W.awalTampil($("isi")); pasangBar($("isi"));
+  D.pasangGrafik(); pasangJalan(); W.pasangTampil(); W.awalTampil($("isi")); pasangBar($("isi"));
   nanti(() => D.pasangPeta($("isi")));
   if (IKUTI_TOPIK) pasangIkuti($("isi"));
   if (location.hash) $(location.hash.slice(1))?.scrollIntoView();

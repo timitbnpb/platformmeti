@@ -2,7 +2,7 @@
    Butir ringkas: j judul, s sub, u tautan, x teks cari tambahan (alias, singkatan, nomor), b tingkat bukti, e=1 tautan luar,
    l=1 logo organisasi, p kode lambang provinsi, t teknologi, st status, k kunci i18n (halaman). Normalisasi + peringkat ada di public/inti/cari_rumus.js.
    Pakai: node scripts/pipa/indeks_cari.mjs   (hukum: public/data/hukum/katalog.json dipakai bila ada) */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -15,7 +15,7 @@ const b = (j, s, u, x, o = {}) => bersih({ j: String(j ?? "").trim(), s, u, x: A
 const tanggalPendek = (t) => String(t || "").slice(0, 10);
 
 // halaman situs: judul dari kamus (kunci disimpan, klien memakai t(k) agar mengikuti bahasa)
-const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai", "nav.rantai"], ["/asean", "nav.asean"], ["/jejaring", "nav.jejaring"], ["/metode", "nav.sub.metode"],
+const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai", "nav.rantai"], ["/rantai-global", "rg3.nav"], ["/asean", "nav.asean"], ["/jejaring", "nav.jejaring"], ["/metode", "nav.sub.metode"],
   ["/proyek", "nav.proyek"], ["/wilayah", "nav.wilayah"], ["/regulasi", "nav.regulasi"], ["/berita", "nav.berita"], ["/kalender", "nav.kalender"], ["/tentang", "nav.tentang"],
   ["/pustaka", "nav.pustaka"], ["/program", "nav.program"], ["/topik", "nav.topik"], ["/peluang", "nav.peluang"], ["/indeks", "nav.indeks"], ["/strategi", "nav.strategi"],
   ["/direktori", "nav.direktori"], ["/transisi", "nav.transisi"], ["/pelacak", "nav.pelacak"], ["/kuadran", "nav.kuadran"], ["/rapor", "nav.rapor"], ["/kerja", "nav.kerja"],
@@ -83,6 +83,18 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
 
   for (const w of baris(data("wilayah"))) tambah("wilayah", b(w.nama, w.identitas?.ibu_kota, "/wilayah/" + w.kode, ["provinsi", w.identitas?.ibu_kota], { p: w.kode }));
 
+  // entitas modul baru: isu, PSN, PLTU, sistem PLN, kawasan, pemasok global (tiap butir menunjuk halaman modulnya)
+  for (const r of baris(data("isu"))) tambah("isu", b(r.judul, [r.tema, r.status].filter(Boolean).join(", "), "/isu#" + encodeURIComponent(r.id), [r.tema, r.ringkas?.slice(0, 120)], { b: r.bukti }));
+  for (const r of baris(data("psn"))) tambah("psn", b(r.nama, [r.sektor, r.lokasi].filter(Boolean).join(", "), "/psn#" + encodeURIComponent(r.id), [r.sektor, r.lokasi], { b: "resmi" }));
+  for (const r of baris(data("pltu"))) tambah("pltu", b(r.nama, [r.mw_operasi ? r.mw_operasi + " MW" : "", r.kab, r.pulau].filter(Boolean).join(", "), `/peta?l=pltu&v=${r.lng},${r.lat},9`, [r.pemilik?.nama, r.prov, "PLTU", "batubara"], { b: "kajian" }));
+  for (const r of baris(data("sistem_pln"))) tambah("sistem", b(r.nama?.id || r.singkat, "Sistem kelistrikan PLN", "/sistem", [r.singkat, r.nama?.en, ...(r.provinsi || []).map((x) => x.nama)], { b: "resmi" }));
+  for (const r of baris(data("kawasan"))) tambah("kawasan", b(r.nama, [String(r.jenis || "").toUpperCase(), r.provinsi].filter(Boolean).join(", "), "/kawasan#" + encodeURIComponent(r.id), [r.sektor, r.pengelola], { b: r.tingkat_bukti }));
+  const seenP = new Set();
+  const pasok = (d, tab, f) => { for (const r of baris(d)) { if (!r.nama || seenP.has(r.id)) continue; seenP.add(r.id); const t = f(r); tambah("pemasok", b(r.nama, [t.sub, r.negara_iso2 || r.negara].filter(Boolean).join(", "), orgIds.has(r.organisasi_id || r.id) ? "/o/" + (r.organisasi_id || r.id) : "/rantai-global?tab=" + encodeURIComponent(t.tab), [...(r.nama_lain || []), ...(t.x || [])], { b: "via-pihak-ketiga" })); } };
+  pasok(data("global/pemasok_surya"), "surya", (r) => ({ sub: (r.segmen || []).join("/"), tab: "surya", x: r.segmen }));
+  pasok(data("global/pemasok_lain"), "lain", (r) => ({ sub: (r.segmen || []).join("/"), tab: (r.segmen || [])[0] || "lain", x: r.produk }));
+  pasok(data("global/pemasok_wte"), "wte", (r) => ({ sub: (r.teknologi || []).join("/"), tab: "wte", x: r.komponen }));
+
   for (const [href, k] of HALAMAN) tambah("halaman", b(id[k] || href, "", href, href.slice(1), { k }));
   // halaman/modul baru: pindai public/*.html, judul dari <title> (tanpa akhiran situs); yang sudah ada di daftar atas dilewati
   const ada = new Set(HALAMAN.map(([h]) => h));
@@ -98,10 +110,22 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
   return out;
 }
 
+const BATAS_BELING = 350_000;   // gerbang uji: tiap berkas < 400 KB
 export function tulisIndeks(out, dir = join(PUB, "data/cari")) {
   mkdirSync(dir, { recursive: true });
   const ukuran = {};
-  for (const [g, a] of Object.entries(out)) { const s = JSON.stringify(a); writeFileSync(join(dir, g + ".json"), s); ukuran[g] = [a.length, s.length]; }
+  for (const f of readdirSync(dir)) if (/\.\d+\.json$/.test(f)) unlinkSync(join(dir, f));   // beling lama
+  for (const [g, a] of Object.entries(out)) {
+    const s = JSON.stringify(a);
+    if (s.length < BATAS_BELING) { writeFileSync(join(dir, g + ".json"), s); ukuran[g] = [a.length, s.length]; continue; }
+    // terlalu besar: pecah jadi beling <g>.1.json ..., <g>.json hanya berisi {"beling":n}; pemuat (cari_indeks.js) menggabungkan
+    const bagian = []; let cur = [], by = 2;
+    for (const e of a) { const n = JSON.stringify(e).length + 1; if (cur.length && by + n > BATAS_BELING) { bagian.push(cur); cur = []; by = 2; } cur.push(e); by += n; }
+    if (cur.length) bagian.push(cur);
+    bagian.forEach((c, i) => writeFileSync(join(dir, `${g}.${i + 1}.json`), JSON.stringify(c)));
+    writeFileSync(join(dir, g + ".json"), JSON.stringify({ beling: bagian.length }));
+    ukuran[g] = [a.length, s.length];
+  }
   return ukuran;
 }
 

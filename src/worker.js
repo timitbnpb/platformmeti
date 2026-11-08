@@ -23,6 +23,7 @@ import { rute as ruteKonsultasi } from "./konsultasi.js";
 import { rute as ruteKerja } from "./kerja.js";
 import { rute as ruteSurel } from "./surel.js";
 import { rute as ruteHukum } from "./hukum.js";
+import { rute as ruteKeyakinan } from "./keyakinan.js";
 import { catatHit, perbaruiRentang } from "./lalin.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
@@ -47,7 +48,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteKerja, ...ruteSurel, ...ruteHukum, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteKerja, ...ruteSurel, ...ruteHukum, ...ruteKeyakinan, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -237,7 +238,25 @@ async function halaman(req, env, url, akun) {
     return halamanHtml(html, res);
   }
   if ((m = path.match(/^\/program\/([a-z0-9-]{1,40})$/)) && (req.method === "GET" || req.method === "HEAD")) return halamanProgram(req, env, url, m[1]);
+  // /sistem/<id> dan /kawasan/<id>: cangkang statis, <title> diisi dari potret; id tak dikenal = 404.
+  if ((m = path.match(/^\/(sistem|kawasan)\/([a-z0-9_.-]{1,80})$/)) && (req.method === "GET" || req.method === "HEAD")) return halamanSistemKawasan(req, env, url, m[1], m[2]);
   return env.ASSETS.fetch(req);
+}
+
+// /sistem/<id> (sistem_pln.json) dan /kawasan/<id> (kawasan_industri.json): judul dari potret, kode tak dikenal = 404.
+export async function halamanSistemKawasan(req, env, url, jenis, id) {
+  let nama = null;
+  try {
+    const r = await env.ASSETS.fetch(new Request(new URL(jenis === "sistem" ? "/data/sistem_pln.json" : "/data/kawasan_industri.json", url)));
+    const b = r.ok ? (await r.json()).baris.find((x) => x.id === id) : null;
+    nama = b ? (typeof b.nama === "string" ? b.nama : b.nama?.id) : null;
+  } catch { nama = null; }
+  if (!nama) return TIDAK_ADA();
+  const res = await env.ASSETS.fetch(new Request(new URL("/" + jenis, url), req));
+  if (!res.ok || req.method === "HEAD") return res;
+  const aman = nama.replace(/[<>&"]/g, "").slice(0, 140);
+  const html = (await res.text()).replace(/<title[^>]*>[^<]*<\/title>/, () => `<title>${aman} | ${jenis === "sistem" ? "Sistem kelistrikan PLN" : "Kawasan industri dan KEK"} | Direktori METI</title>`);
+  return halamanHtml(html, res);
 }
 
 // /program/<kode>: cangkang /program, <title> diisi dari potret program_analisis (SSR judul); kode tak dikenal = 404.

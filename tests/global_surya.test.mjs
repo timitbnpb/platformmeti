@@ -55,3 +55,28 @@ test('entitas_tambah memuat pemasok global dan lolos validasi', () => {
   const g = d.baris.filter((b) => b._asal === 'global_surya');
   assert.ok(g.length >= 80); assert.ok(g.every((b) => b.kategori === 'internasional' && b.peran_rantai.includes('penyedia-teknologi-global')));
 });
+test('pengayaan: tiap butir menunjuk sumber terdaftar (https, bertingkat, bertanggal), tanpa em dash', async () => {
+  const { perkaya } = await import('../scripts/pipa/global_surya_perkaya.mjs');
+  const { TINGKAT } = await import('../scripts/pipa/global_pemasok.mjs');
+  const o = J('data/global/surya/pengayaan.json');
+  for (const [id, s] of Object.entries(o.sumber)) { assert.match(s.url, /^https:\/\//, id); assert.ok(TINGKAT.has(s.tingkat_bukti), id); assert.ok(s.terbit && s.penerbit, id); }
+  for (const [nama, b] of Object.entries(o.baris)) for (const [k, arr] of Object.entries(b)) for (const x of arr) { if (x.pd_ref) continue; assert.ok(o.sumber[x.sumber], nama + ' ' + k); assert.ok(x.kutipan, nama + ' ' + k); }
+  assert.ok(!/[—·]/.test(JSON.stringify(o)));
+  // idempoten: dua kali panggil = satu kali
+  const r = { id: 'en_x', nama: 'JinkoSolar', negara_iso2: 'CN', segmen: ['modul'], kantor_pusat: null, fakta: [], kapasitas: [], pangsa_pasar: [], status_tier1: [], pabrik_indonesia: [], pabrik_asean: [], mitra_indonesia: [], proyek_indonesia: [], isu_dagang: [], esg: [] };
+  const a = JSON.stringify(perkaya([r])); const b = JSON.stringify(perkaya([r])); assert.equal(a, b);
+  assert.ok(r.status_tier1.length && r.kapasitas.length && r.proyek_indonesia[0].proyek_id === 'pj_0334');
+});
+test('data panen: butir pengayaan lengkap dan proyek_id terhubung ke proyek.json', () => {
+  const d = J('data/global/surya/perusahaan.json'); const proyek = new Set(J('public/data/proyek.json').baris.map((p) => p.id));
+  let n = 0;
+  for (const r of d.baris) for (const k of ['kapasitas', 'pangsa_pasar', 'status_tier1', 'pabrik_indonesia', 'pabrik_asean', 'mitra_indonesia', 'proyek_indonesia', 'isu_dagang', 'esg']) for (const x of r[k]) {
+    if (x.asal !== 'pengayaan') continue; n++;
+    assert.ok(/^https:\/\//.test(x.sumber_url) && x.tanggal_periksa && TINGKAT_OK.has(x.tingkat_bukti), r.nama + ' ' + k);
+    if (k === 'proyek_indonesia' && x.proyek_id) assert.ok(proyek.has(x.proyek_id), x.proyek_id);
+  }
+  assert.ok(n >= 150, 'butir pengayaan ' + n);
+  const pct = (f) => (100 * d.baris.filter(f).length) / d.baris.length;
+  assert.ok(pct((r) => r.kapasitas.length) >= 25 && pct((r) => r.status_tier1.length) >= 15 && pct((r) => r.isu_dagang.length) >= 20);
+});
+const TINGKAT_OK = new Set(['resmi', 'situs-sendiri', 'kata-pihak', 'cuplikan', 'via-pihak-ketiga', 'kajian']);

@@ -1,0 +1,1743 @@
+{
+ "_catatan": "Pengayaan manual pemasok global SURYA: tiap butir menunjuk satu sumber di blok \"sumber\" yang dibuka dan dibaca pada tanggal periksa. Kapasitas pada daftar Tier 1 adalah angka distributor/media, bukan angka BNEF. Pengapalan 2024 adalah estimasi media. Dipakai oleh scripts/pipa/global_surya_perkaya.mjs.",
+ "tanggal_periksa": "2026-11-08",
+ "sumber": {
+  "sq-t1-2026q2": {
+   "url": "https://solarquarter.com/2026/07/24/bloombergnef-q2-2026-tier-1-rankings-highlight-global-leaders-in-solar-module-manufacturing/",
+   "judul": "BloombergNEF Q2 2026 Tier 1 Rankings Highlight Global Leaders In Solar Module Manufacturing",
+   "penerbit": "SolarQuarter (laporan sekunder atas daftar BNEF)",
+   "terbit": "2026-07-24",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "vico-t1-2025q4": {
+   "url": "https://www.vicoexport.com/en/64212/tier-1-solar-panel-manufacturers-list-q4-2025/",
+   "judul": "Tier 1 Solar Panel Manufacturers List Q4 2025",
+   "penerbit": "Vico Export (distributor modul, Spanyol)",
+   "terbit": "2025-12-17",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "tongwei-t1-2026q3": {
+   "url": "https://taiyangnews.info/pressreleases/tongwei-recognized-on-bloombergnef-tier-1-list-for-q3-2026",
+   "judul": "TONGWEI Recognized on BloombergNEF Tier 1 List for Q3 2026",
+   "penerbit": "TaiyangNews (siaran pers Tongwei)",
+   "terbit": "2026-08-28",
+   "tingkat_bukti": "kata-pihak"
+  },
+  "longi-t1-2025q2": {
+   "url": "https://www.longi.com/en/news/bloomberg-tier-1-list/",
+   "judul": "LONGi Ranks on the Bloomberg Tier 1 List",
+   "penerbit": "LONGi (situs resmi)",
+   "terbit": "2025-06-05",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  "pvtime-2024": {
+   "url": "https://www.pvtime.org/?p=22592",
+   "judul": "Global Module Shipments of 20+ Major Chinese Solar Module Manufacturers in 2024",
+   "penerbit": "PVTIME",
+   "terbit": "2025-01-31",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "infolink-mod-2024": {
+   "url": "https://taiyangnews.info/business/top-10-solar-module-manufacturers-shipped-502-gw-2024",
+   "judul": "Top 10 Solar Module Manufacturers Ship 502 GW In 2024 (peringkat InfoLink)",
+   "penerbit": "TaiyangNews (InfoLink Consulting)",
+   "terbit": "2025-02-19",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "woodmac-mod-2025": {
+   "url": "https://www.woodmac.com/press-releases/2025-solar-ranking/",
+   "judul": "Wood Mackenzie Global Solar Module Manufacturer Rankings 2025 (data 2024, skor)",
+   "penerbit": "Wood Mackenzie",
+   "terbit": "2025-06-09",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "tn-inverter-2024": {
+   "url": "https://taiyangnews.info/business/wood-mackenzie-2024-solar-inverter-shipment-ranking",
+   "judul": "China Leads 589 GW AC Global PV Inverter Shipments In 2024",
+   "penerbit": "TaiyangNews (Wood Mackenzie)",
+   "terbit": "2025-07-11",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "tn-tracker-2024": {
+   "url": "https://taiyangnews.info/business/wood-mackenzie-2024-global-solar-tracker-shipments-report",
+   "judul": "2024 Global Solar Tracker Shipments Up 20% to 111 GW DC",
+   "penerbit": "TaiyangNews (Wood Mackenzie)",
+   "terbit": "2025-06-13",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "tn-bess-2024": {
+   "url": "https://taiyangnews.info/business/wood-mackenzie-2024-bess-suppliers-ranking",
+   "judul": "Tesla Maintained BESS Lead In 2024; Chinese Firms Gain Ground",
+   "penerbit": "TaiyangNews (Wood Mackenzie)",
+   "terbit": "2025-08-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "infolink-bess-2024": {
+   "url": "https://infolink-group.com/energy-article/energy-storage-topic-2024-global-bess-integrator-shipments-ranking",
+   "judul": "2024 Global BESS Integrator Shipments Ranking",
+   "penerbit": "InfoLink Consulting",
+   "terbit": "2025-02-25",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "smm-ess-cell-2024": {
+   "url": "https://news.metal.com/en/newscontent/103174804",
+   "judul": "2024 Energy Storage Battery Cell Shipment Rankings",
+   "penerbit": "Shanghai Metals Market (SMM)",
+   "terbit": "2025-02-13",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "infolink-cell-2024": {
+   "url": "https://taiyangnews.info/business/infolink-consulting-top-5-solar-cell-shipment-ranking-2024",
+   "judul": "Top 5 Solar Cell Suppliers Shipped 163 GW Capacity In 2024",
+   "penerbit": "TaiyangNews (InfoLink Consulting)",
+   "terbit": "2025-02-18",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "spw-poli-2025": {
+   "url": "https://www.solarpowerworldonline.com/2025/12/china-takes-9-of-top-10-polysilicon-manufacturer-spots-expanding-industry-dominance/",
+   "judul": "China takes 9 of top 10 polysilicon manufacturer spots",
+   "penerbit": "Solar Power World (Bernreuter Research)",
+   "terbit": "2025-12-01",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "tn-xinyi-fy2024": {
+   "url": "https://taiyangnews.info/business/xinyi-solar-fy2024-financial-results",
+   "judul": "Low Solar Glass Prices Pull Down Xinyi Solar FY2024 Net Profit",
+   "penerbit": "TaiyangNews (hasil tahunan Xinyi Solar)",
+   "terbit": "2025",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "pvtech-trina-vn": {
+   "url": "https://www.pv-tech.org/trina-solar-begins-wafer-production-at-6-5gw-vietnam-facility",
+   "judul": "Trina Solar begins wafer production at 6.5GW Vietnam facility",
+   "penerbit": "PV Tech",
+   "terbit": "2023-08-29",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "pvtech-trina-th": {
+   "url": "https://www.pv-tech.org/news/trina-solar-starts-ramping-cell-and-module-production-in-thailand",
+   "judul": "Trina Solar starts ramping cell and module production in Thailand",
+   "penerbit": "PV Tech",
+   "terbit": "2016-03-29",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "jktpost-kendal": {
+   "url": "https://www.thejakartapost.com/business/2025/06/20/govt-launches-rp-1-5-trillion-solar-panel-factory-in-central-java",
+   "judul": "Govt launches Rp 1.5 trillion solar panel factory in Central Java",
+   "penerbit": "The Jakarta Post",
+   "terbit": "2025-06-20",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "pvtech-jinko-vn": {
+   "url": "https://www.pv-tech.org/jinkosolar-setting-up-7gw-ingot-and-wafer-plant-in-vietnam/",
+   "judul": "JinkoSolar setting up 7GW ingot and wafer plant in Vietnam",
+   "penerbit": "PV Tech",
+   "terbit": "2021-09-27",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "pvtech-longi-my": {
+   "url": "https://www.pv-tech.org/news/longi-to-build-new-1gw-mono-solar-cell-plant-in-malaysia",
+   "judul": "LONGi to build new 1GW mono solar cell plant in Malaysia",
+   "penerbit": "PV Tech",
+   "terbit": "2019-02-25",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "longi-id": {
+   "url": "https://www.longi.com/en/news/manufacturing-project-in-indonesia/",
+   "judul": "LONGi Launches Strategic Solar Panel Manufacturing Project in Indonesia",
+   "penerbit": "LONGi (situs resmi)",
+   "terbit": "2025-06-25",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  "pvtech-csi-th": {
+   "url": "https://www.pv-tech.org/canadian-solar-to-build-5gw-n-type-wafer-plant-in-thailand/",
+   "judul": "Canadian Solar to build 5GW n-type wafer plant in Thailand",
+   "penerbit": "PV Tech",
+   "terbit": "2023-11-09",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "pvtech-solarspace-la": {
+   "url": "https://www.pv-tech.org/solarspace-begins-cell-production-at-first-laos-manufacturing-plant",
+   "judul": "SolarSpace begins cell production at first Laos manufacturing plant",
+   "penerbit": "PV Tech",
+   "terbit": "2023-09-28",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "caixin-asean-2025": {
+   "url": "https://www.caixinglobal.com/2025-04-23/chinas-solar-firms-rekindle-strategy-as-us-prepares-tariff-tsunami-on-southeast-asia-102312232.html",
+   "judul": "China solar firms rekindle strategy as US prepares tariff tsunami on Southeast Asia",
+   "penerbit": "Caixin Global",
+   "terbit": "2025-04-23",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "boviet-pr-2024": {
+   "url": "https://prnewswire.com/news-releases/boviet-solar-north-carolina-plant-to-begin-module-production-in-early-2025-302271303.html",
+   "judul": "Boviet Solar North Carolina plant to begin module production in early 2025",
+   "penerbit": "Boviet Solar (siaran pers via PR Newswire)",
+   "terbit": "2024-10-09",
+   "tingkat_bukti": "kata-pihak"
+  },
+  "sungrow-summit": {
+   "url": "https://www.sungrowpower.com/en/case/distributors/Summit-Solar-Indonesia",
+   "judul": "Summit Solar Indonesia (halaman distributor Sungrow)",
+   "penerbit": "Sungrow (situs resmi)",
+   "terbit": "2022",
+   "tingkat_bukti": "situs-sendiri"
+  },
+  "sungrow-utomo": {
+   "url": "https://energetica-india.net/news/sungrow-signs-300mw-sales-contract-with-utomo-solaruv-for-indonesian-market",
+   "judul": "Sungrow signs 300MW sales contract with Utomo SolaRUV for Indonesian market",
+   "penerbit": "Energetica India",
+   "terbit": "2022-03-23",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "detik-huawei": {
+   "url": "https://inet.detik.com/business/d-7571567/dukung-energi-terbarukan-huawei-digital-power-luncurkan-fusionsolar-terbaru",
+   "judul": "Dukung energi terbarukan, Huawei Digital Power luncurkan FusionSolar terbaru",
+   "penerbit": "detikInet",
+   "terbit": "2024-10-04",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "tn-cirata": {
+   "url": "https://taiyangnews.info/se-asias-largest-floating-solar-plant-inaugurated",
+   "judul": "SE Asia largest floating solar plant inaugurated",
+   "penerbit": "TaiyangNews",
+   "terbit": "2023-11-10",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "pvtech-sungrow-fpv": {
+   "url": "https://www.pv-tech.org/sungrow-fpv-supplies-hardware-to-192mw-largest-floating-solar-site-in-indonesia",
+   "judul": "Sungrow FPV supplies hardware to 192MW largest floating solar site in Indonesia",
+   "penerbit": "PV Tech",
+   "terbit": "2023-03-07",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  "fr-s301": {
+   "url": "https://www.federalregister.gov/d/2024-21217",
+   "judul": "Section 301 tariff increase on Chinese solar cells (USTR)",
+   "penerbit": "Federal Register (AS)",
+   "terbit": "2024-09-18",
+   "tingkat_bukti": "resmi"
+  },
+  "dhs-uflpa": {
+   "url": "https://www.dhs.gov/uflpa-entity-list",
+   "judul": "UFLPA Entity List",
+   "penerbit": "U.S. Department of Homeland Security",
+   "terbit": "2026-10-29",
+   "tingkat_bukti": "resmi"
+  }
+ },
+ "dagang_kunci": {
+  "Adani Solar": [
+   "Mundra"
+  ],
+  "REC Group": [
+   "REC Solar Energy Indonesia"
+  ],
+  "Premier Energies": [
+   "Premier Energies"
+  ],
+  "Solarspace": [
+   "Solarspace"
+  ]
+ },
+ "hapus_kantor_pusat": {
+  "LONGi Green Energy Technology": "Wikidata P159 menyebut San Francisco; tidak cocok dengan situs perusahaan, dibuang",
+  "Hanwha Qcells": "Wikidata P159 menyebut lokasi pabrik Jerman, bukan kantor pusat grup; dibuang",
+  "Envision AESC": "Wikidata item adalah Envision Energy (induk), bukan AESC; dibuang"
+ },
+ "baris": {
+  "JinkoSolar": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 120 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 120,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 90 GW atau lebih; angka yang dilaporkan perusahaan menurut PVTIME.",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 90,
+     "nilai_maks": null,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-mod-2024",
+     "kutipan": "Peringkat 1 pengapalan modul 2024 dalam 10 besar InfoLink (total 10 besar 502 GW)."
+    }
+   ],
+   "pabrik_asean": [
+    {
+     "sumber": "pvtech-jinko-vn",
+     "kutipan": "Quang Ninh, Vietnam: pabrik ingot dan wafer 7 GW senilai US$500 juta, dibangun 2021 untuk memasok pabrik sel dan modul di AS dan Malaysia; operasi dijadwalkan awal 2022.",
+     "negara_iso2": "VN",
+     "kota": "Quang Ninh",
+     "segmen": [
+      "wafer"
+     ],
+     "kapasitas": {
+      "wafer": 7,
+      "satuan": "GW/tahun"
+     },
+     "status": "belum-dipastikan",
+     "catatan": "data September 2021; status operasi tidak dikonfirmasi"
+    },
+    {
+     "sumber": "caixin-asean-2025",
+     "kutipan": "Pabrik Jinko di Penang, Malaysia, dilaporkan berhenti produksi atau tutup (Caixin, April 2025); kapasitas dan segmen tidak disebut.",
+     "negara_iso2": "MY",
+     "kota": "Penang",
+     "segmen": [],
+     "kapasitas": null,
+     "status": "dilaporkan-berhenti",
+     "catatan": "laporan media; belum dikonfirmasi perusahaan"
+    }
+   ],
+   "proyek_indonesia": [
+    {
+     "sumber": "tn-cirata",
+     "kutipan": "Modul bifacial n-type TOPCon Tiger Neo 570 W JinkoSolar dipasok untuk PLTS apung Cirata 192 MWp (diresmikan November 2023).",
+     "proyek_id": "pj_0334",
+     "nama": "Cirata floating solar",
+     "peran": "pemasok modul"
+    }
+   ],
+   "isu_dagang": [
+    {
+     "sumber": "caixin-asean-2025",
+     "kutipan": "Caixin (April 2025): produk dari pabrik Jinko di Penang, Malaysia, menghadapi tarif gabungan AS sedikit di atas 40 persen; pabrik dilaporkan berhenti produksi.",
+     "jenis": "bea-AD-CVD-AS",
+     "negara_produksi": "MY",
+     "tarif_pct": null,
+     "tahap": "tidak-dibedakan-sumber"
+    }
+   ]
+  },
+  "LONGi Green Energy Technology": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 120 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 120,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 76 sampai 80 GW; estimasi PVTIME.",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 76,
+     "nilai_maks": 80,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "longi-t1-2025q2",
+     "kutipan": "Siaran pers LONGi: tercantum dalam daftar Tier 1 BNEF Q2 2025 (ambang proyek naik dari 5 ke 10 MW kuartal itu).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2025",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-mod-2024",
+     "kutipan": "Peringkat 2 pengapalan modul 2024 dalam 10 besar InfoLink (total 10 besar 502 GW)."
+    }
+   ],
+   "pabrik_asean": [
+    {
+     "sumber": "pvtech-longi-my",
+     "kutipan": "Kuching, Sarawak: rencana sel mono 1 GW baru di Shama Jaya (2019) di samping sel mono 500 MW dan perakitan modul 500 MW yang sudah ada.",
+     "negara_iso2": "MY",
+     "kota": "Kuching",
+     "segmen": [
+      "sel",
+      "modul"
+     ],
+     "kapasitas": {
+      "sel": 1.5,
+      "modul": 0.5,
+      "satuan": "GW/tahun"
+     },
+     "status": "belum-dipastikan",
+     "catatan": "data Februari 2019; status terkini tidak dikonfirmasi"
+    }
+   ],
+   "pabrik_indonesia": [
+    {
+     "sumber": "longi-id",
+     "kutipan": "Deltamas, Cikarang, Jawa Barat, bersama Pertamina NRE: pabrik modul HPBC 2.0 berkapasitas 1,6 GW per tahun; persiapan manufaktur dimulai Juni 2025, tanggal operasi tidak disebut.",
+     "negara_iso2": "ID",
+     "kota": "Cikarang (Deltamas)",
+     "provinsi": "Jawa Barat",
+     "segmen": [
+      "modul"
+     ],
+     "kapasitas": {
+      "modul": 1.6,
+      "satuan": "GW/tahun"
+     },
+     "status": "bangun",
+     "badan_usaha": "kemitraan LONGi dengan Pertamina NRE"
+    }
+   ],
+   "mitra_indonesia": [
+    {
+     "sumber": "longi-id",
+     "kutipan": "Mitra pabrik modul Deltamas: Pertamina New & Renewable Energy (anak usaha PT Pertamina).",
+     "badan_usaha": [
+      "PT Pertamina New & Renewable Energy"
+     ],
+     "peran": "mitra pabrik modul"
+    }
+   ]
+  },
+  "Trina Solar": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 100 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 100,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 77 sampai 77 GW; estimasi PVTIME.",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 77,
+     "nilai_maks": 77,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    },
+    {
+     "sumber": "pvtech-trina-vn",
+     "kutipan": "Kompleks Thai Nguyen, Vietnam: wafer 6,5 GW, sel 4 GW, modul 5 GW; produksi wafer dimulai Agustus 2023.",
+     "segmen": [
+      "wafer",
+      "sel",
+      "modul"
+     ],
+     "nilai": null,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Agustus 2023",
+     "cakupan": "satu lokasi (Thai Nguyen)",
+     "rincian": {
+      "wafer": 6.5,
+      "sel": 4,
+      "modul": 5
+     }
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-mod-2024",
+     "kutipan": "Peringkat 4 pengapalan modul 2024 dalam 10 besar InfoLink (total 10 besar 502 GW)."
+    }
+   ],
+   "pabrik_asean": [
+    {
+     "sumber": "pvtech-trina-vn",
+     "kutipan": "Kompleks Thai Nguyen, Vietnam: wafer 6,5 GW, sel 4 GW, modul 5 GW; wafer 210 mm untuk modul Vertex pasar AS.",
+     "negara_iso2": "VN",
+     "kota": "Thai Nguyen",
+     "segmen": [
+      "wafer",
+      "sel",
+      "modul"
+     ],
+     "kapasitas": {
+      "wafer": 6.5,
+      "sel": 4,
+      "modul": 5,
+      "satuan": "GW/tahun"
+     },
+     "status": "belum-dipastikan",
+     "catatan": "data Agustus 2023; status terkini tidak dikonfirmasi"
+    },
+    {
+     "sumber": "pvtech-trina-th",
+     "kutipan": "Rayong, Thailand: sel 700 MW dan modul 500 MW saat mulai ramp-up (Maret 2016).",
+     "negara_iso2": "TH",
+     "kota": "Rayong",
+     "segmen": [
+      "sel",
+      "modul"
+     ],
+     "kapasitas": {
+      "sel": 0.7,
+      "modul": 0.5,
+      "satuan": "GW/tahun"
+     },
+     "status": "belum-dipastikan",
+     "catatan": "data 2016, kemungkinan sudah berubah"
+    }
+   ],
+   "pabrik_indonesia": [
+    {
+     "sumber": "jktpost-kendal",
+     "kutipan": "PT Trina Mas Agra Indonesia, Kawasan Industri Kendal, Jawa Tengah: sel dan panel surya terintegrasi hingga 1 GW per tahun, panel i-TOPCon hingga 720 Wp; diresmikan 19 Juni 2025, investasi Rp 1,5 triliun.",
+     "negara_iso2": "ID",
+     "kota": "Kendal",
+     "provinsi": "Jawa Tengah",
+     "segmen": [
+      "sel",
+      "modul"
+     ],
+     "kapasitas": {
+      "sel": 1,
+      "modul": 1,
+      "satuan": "GW/tahun"
+     },
+     "status": "operasi",
+     "badan_usaha": "PT Trina Mas Agra Indonesia",
+     "pd_ganti": "pd-trina-kendal"
+    }
+   ],
+   "mitra_indonesia": [
+    {
+     "sumber": "jktpost-kendal",
+     "kutipan": "Pemegang saham PT Trina Mas Agra Indonesia selain Trina: PT Daya Sukses Makmur Selaras (berafiliasi Sinar Mas) dan PT PLN Indonesia Power Renewables.",
+     "badan_usaha": [
+      "PT Daya Sukses Makmur Selaras",
+      "PT PLN Indonesia Power Renewables"
+     ],
+     "peran": "pemegang saham pabrik Kendal"
+    }
+   ],
+   "isu_dagang": [
+    {
+     "sumber": "caixin-asean-2025",
+     "kutipan": "Caixin (April 2025): produk Trina dari operasi di Thailand menghadapi tarif AS 375,19 persen; sumber tidak membedakan tahap prosedural (pendahuluan atau final).",
+     "jenis": "bea-AD-CVD-AS",
+     "negara_produksi": "TH",
+     "tarif_pct": 375.19,
+     "tahap": "tidak-dibedakan-sumber"
+    }
+   ]
+  },
+  "JA Solar Technology": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 88 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 88,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 75 sampai 79 GW; estimasi PVTIME.",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 75,
+     "nilai_maks": 79,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-mod-2024",
+     "kutipan": "Peringkat 3 pengapalan modul 2024 dalam 10 besar InfoLink (total 10 besar 502 GW)."
+    }
+   ]
+  },
+  "Tongwei": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 85 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 85,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 45 sampai 47 GW; kisaran PVTIME.",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 45,
+     "nilai_maks": 47,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "tongwei-t1-2026q3",
+     "kutipan": "Siaran pers Tongwei: tercantum dalam daftar Tier 1 BNEF Q3 2026, kuartal ke-16 berturut-turut.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q3 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-mod-2024",
+     "kutipan": "Peringkat 5 pengapalan modul 2024 dalam 10 besar InfoLink (total 10 besar 502 GW)."
+    },
+    {
+     "sumber": "infolink-cell-2024",
+     "kutipan": "Peringkat 1 pengapalan sel surya dunia 2024 versi InfoLink (5 besar total 162,8 GW)."
+    }
+   ]
+  },
+  "Canadian Solar": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 61 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 61,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 31 sampai 31 GW; perkiraan PVTIME (panduan awal perusahaan 32 sampai 36 GW).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 31,
+     "nilai_maks": 31,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-mod-2024",
+     "kutipan": "Peringkat 7 pengapalan modul 2024 dalam 10 besar InfoLink (total 10 besar 502 GW)."
+    },
+    {
+     "sumber": "infolink-bess-2024",
+     "kutipan": "Peringkat 9 integrator BESS sisi AC 2024 versi InfoLink."
+    }
+   ],
+   "pabrik_asean": [
+    {
+     "sumber": "pvtech-csi-th",
+     "kutipan": "Chonburi, Thailand: pabrik wafer n-type 5 GW (produksi direncanakan Maret 2024) untuk memasok pabrik sel TOPCon di lokasi yang sama; kapasitas sel tidak disebut.",
+     "negara_iso2": "TH",
+     "kota": "Chonburi",
+     "segmen": [
+      "wafer",
+      "sel"
+     ],
+     "kapasitas": {
+      "wafer": 5,
+      "satuan": "GW/tahun"
+     },
+     "status": "belum-dipastikan",
+     "catatan": "data November 2023"
+    }
+   ]
+  },
+  "Astronergy": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 56 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 56,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 40 GW atau lebih; angka PVTIME.",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 40,
+     "nilai_maks": null,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-mod-2024",
+     "kutipan": "Peringkat 6 pengapalan modul 2024 dalam 10 besar InfoLink (total 10 besar 502 GW)."
+    }
+   ]
+  },
+  "Risen Energy": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 48 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 48,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 24.5 sampai 24.5 GW; antisipasi PVTIME.",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 24.5,
+     "nilai_maks": 24.5,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "woodmac-mod-2025",
+     "kutipan": "Peringkat 8 dalam 10 besar pabrikan modul Wood Mackenzie 2025 (skor atas data 2024, bukan volume)."
+    }
+   ]
+  },
+  "Aiko Solar": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 35.5 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 35.5,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-cell-2024",
+     "kutipan": "Peringkat 5 pengapalan sel surya pihak luar 2024 versi InfoLink; sel back-contact Aiko terutama dipakai sendiri."
+    }
+   ]
+  },
+  "TCL Zhonghuan Renewable Energy Technology": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 35 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 35,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "woodmac-mod-2025",
+     "kutipan": "Peringkat 10 dalam 10 besar pabrikan modul Wood Mackenzie 2025 (skor atas data 2024, bukan volume)."
+    }
+   ]
+  },
+  "First Solar": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 24.4 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 24.4,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ]
+  },
+  "Waaree Energies": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 22.3 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 22.3,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ]
+  },
+  "Yingli Green Energy": {
+   "kapasitas": [
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Kapasitas modul tahunan 19.2 GW menurut tabel SolarQuarter atas daftar Tier 1 BNEF Q2 2026 (angka kapasitas bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 19.2,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q2 2026",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 22 GW atau lebih; angka PVTIME.",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 22,
+     "nilai_maks": null,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    },
+    {
+     "sumber": "sq-t1-2026q2",
+     "kutipan": "Tercantum dalam daftar Tier 1 BloombergNEF edisi Q2 2026 menurut laporan sekunder SolarQuarter (24 Jul 2026).",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q2 2026",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-mod-2024",
+     "kutipan": "Peringkat 10 pengapalan modul 2024 dalam 10 besar InfoLink (total 10 besar 502 GW)."
+    }
+   ]
+  },
+  "DAS Solar": {
+   "kapasitas": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Kapasitas modul tahunan 31 GW menurut tabel distributor Vico Export atas daftar Tier 1 BNEF Q4 2025 (urutan dan angka bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 31,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q4 2025",
+     "cakupan": "total perusahaan"
+    },
+    {
+     "sumber": "pvtime-2024",
+     "kutipan": "Pengapalan modul 2024 sekitar 26 sampai 26 GW; perkiraan PVTIME.",
+     "segmen": [
+      "modul"
+     ],
+     "nilai_min": 26,
+     "nilai_maks": 26,
+     "satuan": "GW",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan",
+     "catatan": "estimasi sementara media, menunggu angka final perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-mod-2024",
+     "kutipan": "Peringkat 9 pengapalan modul 2024 dalam 10 besar InfoLink (total 10 besar 502 GW)."
+    }
+   ]
+  },
+  "Talesun Solar": {
+   "kapasitas": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Kapasitas modul tahunan 13 GW menurut tabel distributor Vico Export atas daftar Tier 1 BNEF Q4 2025 (urutan dan angka bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 13,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q4 2025",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ]
+  },
+  "Hanwha Qcells": {
+   "kapasitas": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Kapasitas modul tahunan 11.2 GW menurut tabel distributor Vico Export atas daftar Tier 1 BNEF Q4 2025 (urutan dan angka bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 11.2,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q4 2025",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "woodmac-mod-2025",
+     "kutipan": "Peringkat 8 dalam 10 besar pabrikan modul Wood Mackenzie 2025 (skor atas data 2024, bukan volume)."
+    }
+   ]
+  },
+  "Znshine PV-Tech": {
+   "kapasitas": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Kapasitas modul tahunan 10 GW menurut tabel distributor Vico Export atas daftar Tier 1 BNEF Q4 2025 (urutan dan angka bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 10,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q4 2025",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ]
+  },
+  "Phono Solar": {
+   "kapasitas": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Kapasitas modul tahunan 4 GW menurut tabel distributor Vico Export atas daftar Tier 1 BNEF Q4 2025 (urutan dan angka bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 4,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q4 2025",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ]
+  },
+  "Tata Power Solar": {
+   "kapasitas": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Kapasitas modul tahunan 4.91 GW menurut tabel distributor Vico Export atas daftar Tier 1 BNEF Q4 2025 (urutan dan angka bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 4.91,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q4 2025",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ]
+  },
+  "Adani Solar": {
+   "kapasitas": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Kapasitas modul tahunan 4 GW menurut tabel distributor Vico Export atas daftar Tier 1 BNEF Q4 2025 (urutan dan angka bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 4,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q4 2025",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "woodmac-mod-2025",
+     "kutipan": "Peringkat 9 dalam 10 besar pabrikan modul Wood Mackenzie 2025 (skor atas data 2024, bukan volume)."
+    }
+   ]
+  },
+  "Vikram Solar": {
+   "kapasitas": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Kapasitas modul tahunan 3.5 GW menurut tabel distributor Vico Export atas daftar Tier 1 BNEF Q4 2025 (urutan dan angka bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 3.5,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q4 2025",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ]
+  },
+  "BYD Company": {
+   "kapasitas": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Kapasitas modul tahunan 4 GW menurut tabel distributor Vico Export atas daftar Tier 1 BNEF Q4 2025 (urutan dan angka bukan terbitan BNEF).",
+     "segmen": [
+      "modul"
+     ],
+     "nilai": 4,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Q4 2025",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-bess-2024",
+     "kutipan": "Peringkat 2 sisi DC (sel) integrator BESS 2024 versi InfoLink."
+    },
+    {
+     "sumber": "smm-ess-cell-2024",
+     "kutipan": "Peringkat 4 pengapalan sel baterai penyimpan energi dunia 2024 versi SMM (total 334 GWh)."
+    }
+   ]
+  },
+  "Boviet Solar": {
+   "kapasitas": [
+    {
+     "sumber": "boviet-pr-2024",
+     "kutipan": "Siaran pers perusahaan: kapasitas tahunan sel dan modul 3,0 GW per Januari 2024; fasilitas di Vietnam dan Amerika Serikat (tidak dirinci per lokasi atau per segmen).",
+     "segmen": [
+      "sel",
+      "modul"
+     ],
+     "nilai": 3.0,
+     "satuan": "GW/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "Januari 2024",
+     "cakupan": "total perusahaan, Vietnam dan AS"
+    }
+   ],
+   "status_tier1": [
+    {
+     "sumber": "vico-t1-2025q4",
+     "kutipan": "Tercantum dalam daftar pabrikan modul Tier 1 BloombergNEF edisi Q4 2025, dikutip distributor Vico Export. Tier 1 menilai kelayakan bank (bankability), bukan mutu produk.",
+     "daftar": "BloombergNEF PV Module Maker Tier 1",
+     "periode": "Q4 2025",
+     "status": "tercantum"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "woodmac-mod-2025",
+     "kutipan": "Peringkat 7 dalam 10 besar pabrikan modul Wood Mackenzie 2025 (skor atas data 2024, bukan volume)."
+    }
+   ]
+  },
+  "Huawei": {
+   "kapasitas": [
+    {
+     "sumber": "tn-inverter-2024",
+     "kutipan": "Pengapalan inverter PV 2024 sebesar 176 GWac, peringkat 1 dunia (Wood Mackenzie).",
+     "segmen": [
+      "inverter-string",
+      "inverter-sentral"
+     ],
+     "nilai": 176,
+     "satuan": "GWac",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-inverter-2024",
+     "kutipan": "Peringkat 1 pengapalan inverter PV dunia 2024, kali ke-10 berturut-turut (176 GWac dari 589 GWac pasar)."
+    },
+    {
+     "sumber": "tn-bess-2024",
+     "kutipan": "Peringkat bersama 4 integrator BESS dunia 2024 menurut Wood Mackenzie (pangsa tidak disebut)."
+    }
+   ],
+   "mitra_indonesia": [
+    {
+     "sumber": "detik-huawei",
+     "kutipan": "JJ-LAPP Indonesia disebut mitra resmi (Authorized Partner) Huawei Digital Power sejak 2020.",
+     "badan_usaha": [
+      "JJ-LAPP Indonesia"
+     ],
+     "peran": "mitra resmi FusionSolar",
+     "sejak": "2020"
+    }
+   ],
+   "proyek_indonesia": [
+    {
+     "sumber": "detik-huawei",
+     "kutipan": "Huawei Digital Power bersama JJ-LAPP disebut telah menyelesaikan banyak proyek PLTS di Indonesia, antara lain Jakarta International Stadium, gedung DPR/MPR, dan Pulau Maratua.",
+     "proyek_id": null,
+     "nama": "Jakarta International Stadium; gedung DPR/MPR; Pulau Maratua",
+     "peran": "penyedia teknologi (kata mitra)"
+    }
+   ]
+  },
+  "Sungrow": {
+   "kapasitas": [
+    {
+     "sumber": "tn-inverter-2024",
+     "kutipan": "Pengapalan inverter PV 2024 sebesar 148 GWac, peringkat 2 dunia (Wood Mackenzie).",
+     "segmen": [
+      "inverter-string",
+      "inverter-sentral"
+     ],
+     "nilai": 148,
+     "satuan": "GWac",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-inverter-2024",
+     "kutipan": "Peringkat 2 pengapalan inverter PV dunia 2024 (148 GWac); bersama Huawei sekitar 55 persen pasar."
+    },
+    {
+     "sumber": "tn-bess-2024",
+     "kutipan": "Peringkat 2 integrator BESS dunia 2024 menurut Wood Mackenzie, pangsa 14 persen."
+    }
+   ],
+   "mitra_indonesia": [
+    {
+     "sumber": "sungrow-summit",
+     "kutipan": "Summit Solar ditetapkan Sungrow sebagai distributor inti inverter dan solusi penyimpanan di Indonesia sejak kuartal ketiga 2022 (prapenjualan, pengiriman, komisioning, purnajual).",
+     "badan_usaha": [
+      "Summit Solar"
+     ],
+     "peran": "distributor inti inverter dan penyimpanan",
+     "sejak": "2022-Q3"
+    },
+    {
+     "sumber": "sungrow-utomo",
+     "kutipan": "Utomo SolaRUV disebut agen kanal Sungrow; kontrak penjualan 300 MW ditandatangani saat Solartech Indonesia (Maret 2022).",
+     "badan_usaha": [
+      "Utomo SolaRUV"
+     ],
+     "peran": "agen kanal, kontrak 300 MW (2022)",
+     "sejak": "2022"
+    }
+   ],
+   "proyek_indonesia": [
+    {
+     "sumber": "pvtech-sungrow-fpv",
+     "kutipan": "Sungrow FPV memasok perangkat apung, platform, dan sistem penjangkaran untuk PLTS apung Cirata 192 MW; pemasok modul dan inverter tidak disebut di sumber ini.",
+     "proyek_id": "pj_0334",
+     "nama": "Cirata floating solar",
+     "peran": "pemasok sistem apung (Sungrow FPV)"
+    }
+   ]
+  },
+  "Nextracker": {
+   "kapasitas": [
+    {
+     "sumber": "tn-tracker-2024",
+     "kutipan": "Pengapalan tracker 2024 sebesar 28,5 GWdc, pangsa sekitar 26 persen dari 111 GWdc pasar (Wood Mackenzie).",
+     "segmen": [
+      "tracker-mounting"
+     ],
+     "nilai": 28.5,
+     "satuan": "GWdc",
+     "jenis": "pengapalan",
+     "periode": "2024",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-tracker-2024",
+     "kutipan": "Peringkat 1 pengapalan tracker dunia 2024 untuk tahun ke-10 berturut-turut, pangsa sekitar 26 persen."
+    }
+   ]
+  },
+  "Xinyi Solar Holdings": {
+   "kapasitas": [
+    {
+     "sumber": "tn-xinyi-fy2024",
+     "kutipan": "Kapasitas operasi kaca surya 23.200 ton per hari pada 31 Des 2024 (turun dari 27.000 ton per hari pada 30 Jun 2024); enam fasilitas di Tiongkok dan Malaysia.",
+     "segmen": [
+      "kaca"
+     ],
+     "nilai": 23200,
+     "satuan": "ton/hari",
+     "jenis": "kapasitas-produksi",
+     "periode": "31 Des 2024",
+     "cakupan": "total perusahaan"
+    }
+   ],
+   "pabrik_asean": [
+    {
+     "sumber": "tn-xinyi-fy2024",
+     "kutipan": "Enam fasilitas kaca surya Xinyi berada di Tiongkok dan Malaysia (hasil FY2024); lokasi dan kapasitas Malaysia tidak dirinci di sumber ini.",
+     "negara_iso2": "MY",
+     "kota": null,
+     "segmen": [
+      "kaca"
+     ],
+     "kapasitas": null,
+     "status": "operasi"
+    }
+   ]
+  },
+  "TBEA": {
+   "kapasitas": [
+    {
+     "sumber": "spw-poli-2025",
+     "kutipan": "Peringkat Bernreuter via Solar Power World memuat Xinte Energy (anak usaha TBEA) dengan kapasitas polisilikon 300.000 ton (Xinjiang dan Mongolia Dalam); angka 210.000 ton dari sumber lain tercatat terpisah.",
+     "segmen": [
+      "polisilikon"
+     ],
+     "nilai": 300000,
+     "satuan": "ton/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "2024",
+     "cakupan": "unit usaha Xinte Energy"
+    }
+   ]
+  },
+  "East Hope Group": {
+   "kapasitas": [
+    {
+     "sumber": "spw-poli-2025",
+     "kutipan": "Kapasitas polisilikon East Hope New Energy 335.000 ton (Xinjiang dan Ningxia); produksi tidak mencapai angka itu (Bernreuter via Solar Power World).",
+     "segmen": [
+      "polisilikon"
+     ],
+     "nilai": 335000,
+     "satuan": "ton/tahun",
+     "jenis": "kapasitas-produksi",
+     "periode": "2024",
+     "cakupan": "unit usaha New Energy"
+    }
+   ]
+  },
+  "Ginlong Technologies": {
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-inverter-2024",
+     "kutipan": "Peringkat 3 pengapalan inverter PV dunia 2024 (Ginlong Solis)."
+    }
+   ]
+  },
+  "Growatt": {
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-inverter-2024",
+     "kutipan": "Peringkat 4 pengapalan inverter PV dunia 2024."
+    }
+   ]
+  },
+  "Arctech Solar": {
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-tracker-2024",
+     "kutipan": "Peringkat 2 pengapalan tracker dunia 2024, vendor tracker Tiongkok terbesar (volume tidak disebut)."
+    }
+   ]
+  },
+  "GameChange Solar": {
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-tracker-2024",
+     "kutipan": "Peringkat 3 pengapalan tracker dunia 2024."
+    }
+   ]
+  },
+  "PV Hardware": {
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-tracker-2024",
+     "kutipan": "Peringkat 4 pengapalan tracker dunia 2024."
+    }
+   ]
+  },
+  "Array Technologies": {
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-tracker-2024",
+     "kutipan": "Peringkat 5 pengapalan tracker dunia 2024 (turun dari peringkat 2 tahun sebelumnya)."
+    }
+   ]
+  },
+  "Tesla Energy": {
+   "pangsa_pasar": [
+    {
+     "sumber": "tn-bess-2024",
+     "kutipan": "Peringkat 1 integrator BESS dunia 2024 menurut Wood Mackenzie, pangsa 15 persen; juga peringkat 1 sisi AC versi InfoLink."
+    }
+   ]
+  },
+  "Fluence Energy": {
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-bess-2024",
+     "kutipan": "Peringkat 4 integrator BESS sisi AC 2024 versi InfoLink (total pasar sekitar 240 GWh)."
+    }
+   ]
+  },
+  "Contemporary Amperex Technology": {
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-bess-2024",
+     "kutipan": "Peringkat 1 sisi DC (sel) integrator BESS 2024 versi InfoLink."
+    },
+    {
+     "sumber": "smm-ess-cell-2024",
+     "kutipan": "Peringkat 1 pengapalan sel baterai penyimpan energi dunia 2024 versi SMM (total 334 GWh)."
+    }
+   ]
+  },
+  "Hithium Energy Storage Technology": {
+   "pangsa_pasar": [
+    {
+     "sumber": "infolink-bess-2024",
+     "kutipan": "Peringkat 4 sisi DC (sel) integrator BESS 2024 versi InfoLink."
+    },
+    {
+     "sumber": "smm-ess-cell-2024",
+     "kutipan": "Peringkat 3 pengapalan sel baterai penyimpan energi dunia 2024 versi SMM (total 334 GWh)."
+    }
+   ]
+  },
+  "EVE Energy": {
+   "pangsa_pasar": [
+    {
+     "sumber": "smm-ess-cell-2024",
+     "kutipan": "Peringkat 2 pengapalan sel baterai penyimpan energi dunia 2024 versi SMM (total 334 GWh)."
+    }
+   ]
+  },
+  "REPT Battero": {
+   "pangsa_pasar": [
+    {
+     "sumber": "smm-ess-cell-2024",
+     "kutipan": "Peringkat 5 pengapalan sel baterai penyimpan energi dunia 2024 versi SMM (total 334 GWh)."
+    }
+   ]
+  },
+  "CALB": {
+   "pangsa_pasar": [
+    {
+     "sumber": "smm-ess-cell-2024",
+     "kutipan": "Peringkat 6 pengapalan sel baterai penyimpan energi dunia 2024 versi SMM (total 334 GWh)."
+    }
+   ]
+  },
+  "Envision AESC": {
+   "pangsa_pasar": [
+    {
+     "sumber": "smm-ess-cell-2024",
+     "kutipan": "Peringkat 7 pengapalan sel baterai penyimpan energi dunia 2024 versi SMM (total 334 GWh)."
+    }
+   ]
+  },
+  "Gotion High-tech": {
+   "pangsa_pasar": [
+    {
+     "sumber": "smm-ess-cell-2024",
+     "kutipan": "Peringkat 8 pengapalan sel baterai penyimpan energi dunia 2024 versi SMM (total 334 GWh)."
+    }
+   ]
+  },
+  "Solarspace": {
+   "pabrik_asean": [
+    {
+     "sumber": "pvtech-solarspace-la",
+     "kutipan": "Saysettha Development Zone, Laos (dekat perbatasan Thailand): pabrik sel 5 GW mulai produksi sel (September 2023).",
+     "negara_iso2": "LA",
+     "kota": "Saysettha (Vientiane)",
+     "segmen": [
+      "sel"
+     ],
+     "kapasitas": {
+      "sel": 5,
+      "satuan": "GW/tahun"
+     },
+     "status": "operasi"
+    }
+   ]
+  },
+  "LG Energy Solution": {
+   "pabrik_indonesia": [
+    {
+     "sumber": null,
+     "kutipan": "",
+     "pd_ref": "pd-hli-karawang"
+    }
+   ]
+  },
+  "Hounen Solar": {
+   "isu_dagang": [
+    {
+     "sumber": "caixin-asean-2025",
+     "kutipan": "Caixin (April 2025): Hounen Solar (Kamboja) menghadapi tarif AS 3.521 persen, disebut karena tidak bekerja sama dalam penyelidikan.",
+     "jenis": "bea-AD-CVD-AS",
+     "negara_produksi": "KH",
+     "tarif_pct": 3521,
+     "tahap": "tidak-dibedakan-sumber"
+    }
+   ]
+  }
+ }
+}

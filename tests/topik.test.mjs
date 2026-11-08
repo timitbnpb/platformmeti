@@ -8,7 +8,7 @@ const baca = (p) => JSON.parse(readFileSync(p, "utf8"));
 const ui = baca(D + "ui.json"), indeks = baca(D + "indeks.json");
 const ID_TOPIK = Object.keys(ui.topik);
 const berkas = (id) => id.replace(/-/g, "_");
-const TIPE = new Set(["teks", "faq", "glosarium", "rumus", "langkah", "tabel", "grafik", "linimasa", "kasus", "pola", "periksa"]);
+const TIPE = new Set(["teks", "faq", "glosarium", "rumus", "langkah", "tabel", "grafik", "linimasa", "kasus", "pola", "periksa", "jalan", "model"]);
 const DILARANG = /[—·→]/;
 const dua = (o, jalur) => { assert.ok(o && typeof o.id === "string" && o.id.trim() && typeof o.en === "string" && o.en.trim(), `${jalur}: teks id+en wajib`); };
 const param = (s) => (String(s).match(/\{\w+\}/g) || []).sort().join();
@@ -18,9 +18,9 @@ function jalan(x, fn, jalur = "") {
   else if (x && typeof x === "object") { fn(x, jalur); for (const [k, v] of Object.entries(x)) jalan(v, fn, `${jalur}.${k}`); }
 }
 
-test("ui.json: 42 bab dalam 11 kelompok, semua teks id+en dengan parameter sama", () => {
-  assert.equal(Object.keys(ui.grup).length, 11);
-  assert.equal(Object.keys(ui.bab).length, 42);
+test("ui.json: 44 bab dalam 12 kelompok, semua teks id+en dengan parameter sama", () => {
+  assert.equal(Object.keys(ui.grup).length, 12);
+  assert.equal(Object.keys(ui.bab).length, 44);
   for (const [n, b] of Object.entries(ui.bab)) { assert.ok(ui.grup[b.g], `bab ${n}: kelompok`); dua(b.j, `bab ${n}`); }
   for (const [k, v] of Object.entries(ui.s)) { dua(v, `s.${k}`); assert.equal(param(v.en), param(v.id), `parameter ${k}`); }
   assert.equal(ID_TOPIK.length, 16);

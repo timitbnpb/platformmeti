@@ -20,6 +20,7 @@ const KPV = {
   sesi_admin: "- - - - - cabut cabut",
   konsultasi: "- daftar daftar daftar daftar T T", konsultasi_putus: "- - T T - T T",
   surel_minta: "- daftar daftar daftar daftar T T",
+  keyakinan: "- daftar daftar daftar daftar T T",
 };
 const KODE_KPV = (s) => s.split(" ").map((x) => ({ "-": "-", B: "B", T: "T", "B(prov)": "B prov", diri: "T diri", "bukan-super": "T bukan-super",
   cabut: "T cabut", kirim: "T kirim", "kirim(prov)": "T kirim prov", daftar: "T daftar" })[x]);

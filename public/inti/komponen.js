@@ -260,6 +260,7 @@ const TERKAIT_URUT = [
   ["event", "kalender"],
   ["dokumen", "buku"],
   ["siaran", "siaran"],
+  ["isu", "peringatan"],
   ["berita", "berita"],
 ];
 const TERKAIT_TAMPIL = 9;

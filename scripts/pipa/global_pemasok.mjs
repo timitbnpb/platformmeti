@@ -50,13 +50,13 @@ export class Penambang {
 const WD = 'https://www.wikidata.org/w/api.php';
 const norm = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 /** Cari entitas perusahaan di Wikidata: coba tiap istilah, ambil kandidat yang bercirikan perusahaan (situs/kantor pusat/tahun/enwiki) dan labelnya cocok. */
-export async function wikidataCari(p, istilah) {
+export async function wikidataCari(p, istilah, terima = () => true) {
   for (const t of [].concat(istilah)) {
     const j = await p.json(`${WD}?action=wbsearchentities&search=${encodeURIComponent(t)}&language=en&type=item&limit=6&format=json`);
     const ids = (j?.search || []).map((x) => x.id); if (!ids.length) continue;
     const ent = await wikidataEntitas(p, ids); const n = norm(t);
     const skor = (id) => {
-      const e = ent[id]; if (!e) return -1;
+      const e = ent[id]; if (!e || !terima(e, id)) return -1;
       if (klaim(e, 'P31').some((v) => ['Q5', 'Q16521', 'Q4167410', 'Q13442814'].includes(v?.id))) return -1; // manusia, taksa, disambiguasi, artikel
       const lab = [e.labels?.en?.value, ...Object.values(e.aliases || {}).flat().map((a) => a.value)].map(norm);
       const cocok = lab.some((l) => l === n || l.startsWith(n + ' ') || n.startsWith(l + ' ') && l.length > 3);
@@ -82,13 +82,11 @@ export async function labelQid(p, ids) { // QID -> label en
   for (let i = 0; i < u.length; i += 40) { const j = await p.json(`${WD}?action=wbgetentities&ids=${u.slice(i, i + 40).join('|')}&props=labels|claims&languages=en&format=json`); for (const [k, v] of Object.entries(j?.entities || {})) out[k] = { label: v.labels?.en?.value, iso2: klaim(v, 'P297')[0] }; }
   return out;
 }
-export async function wikipediaTeks(p, judul) { // judul[] -> {judul: teks polos penuh}
+export async function wikipediaTeks(p, judul) { // judul[] -> {judul: teks polos penuh}; satu judul per permintaan (extracts teks penuh dibatasi 1 halaman per permintaan API)
   const out = {};
-  for (let i = 0; i < judul.length; i += 20) {
-    const j = await p.json(`https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&titles=${encodeURIComponent(judul.slice(i, i + 20).join('|'))}&format=json&formatversion=2`);
-    const norm = new Map([...(j?.query?.normalized || []), ...(j?.query?.redirects || [])].map((x) => [x.from, x.to]));
-    const pages = new Map((j?.query?.pages || []).map((x) => [x.title, x.extract || '']));
-    for (const t of judul.slice(i, i + 20)) { let k = t; for (let n = 0; n < 3 && norm.has(k); n++) k = norm.get(k); out[t] = pages.get(k) || ''; }
+  for (const t of judul) {
+    const j = await p.json(`https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&titles=${encodeURIComponent(t)}&format=json&formatversion=2`);
+    out[t] = (j?.query?.pages || [])[0]?.extract || '';
   }
   return out;
 }
@@ -123,7 +121,8 @@ export const bacaJson = (f, d = null) => (fs.existsSync(f) ? JSON.parse(fs.readF
 /** Gabung ke data/direktori/entitas_tambah.json, idempoten: baris ber-`_asal` sama diganti; nama yang sudah ada tanpa _asal dilewati. */
 export function gabungEntitasTambah(asal, daftar, { kepakaran, peran, tanggal, berkas = path.join(ROOT, 'data/direktori/entitas_tambah.json') }) {
   const d = bacaJson(berkas);
-  const lama = d.baris.filter((b) => b._asal !== asal);
+  const idBaru = new Set(daftar.map((p) => idEntitas(p.nama)));
+  const lama = d.baris.filter((b) => b._asal !== asal || !idBaru.has(idEntitas(b.nama))); // tahan baris lama yang tak lagi dipanen (mungkin sudah dirujuk data lain)
   const ada = new Set(lama.map((b) => idEntitas(b.nama)));
   const baru = [], lewat = [];
   for (const p of daftar) {

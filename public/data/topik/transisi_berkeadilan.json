@@ -1463,13 +1463,12 @@
     },
     {
      "nama": "US International Development Finance Corporation (DFC)",
-     "id": "in_80ff9e7496",
-     "url": "/o/in_80ff9e7496",
      "peran": {
       "id": "Lembaga pembiayaan pembangunan AS tercatat di direktori; peran AS dalam JETP dibahas di bab Kasus",
       "en": "US development finance body listed in the directory; the US role in JETP is in the Cases chapter"
      },
      "rujuk": "Direktori METI",
+     "id": null,
      "mw": null
     },
     {

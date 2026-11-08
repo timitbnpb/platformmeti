@@ -802,3 +802,10 @@ li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border
   button.jm-urut{min-width:44px;min-height:44px}
   .jm-ex .jm-ex-aksi>*{min-width:44px;min-height:44px}
 }
+
+/* data tertaut (tertaut.js): bendera negara dan kartu peran global di /o, /p, /wilayah */
+.td-neg{display:inline-flex;align-items:center;gap:8px}
+.td-bd{flex:none;width:20px;height:15px;border-radius:2px;object-fit:cover;box-shadow:0 0 0 1px var(--line)}
+.td-kartu{display:grid;gap:12px}
+.td-ikat{margin:0;color:var(--ink2)}
+.td-ikat small{color:var(--ink2)}

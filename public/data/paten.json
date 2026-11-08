@@ -1,0 +1,17 @@
+{
+ "jenis": "paten",
+ "sumber": "Lens.org Patent API",
+ "url": "https://www.lens.org",
+ "tanggal_ambil": "2026-11-07",
+ "tingkat_bukti": "via-pihak-ketiga",
+ "cakupan": "CPC Y02E, H01L31, F03D, H01M; pemohon berdomisili ID atau perlindungan di yurisdiksi ID",
+ "jumlah": 0,
+ "baris": [],
+ "meta": {
+  "celah": [
+   "PATENTSCOPE WIPO: tidak ada API terbuka tanpa akun (pencarian JSF bersesi, hasil via AJAX); tidak dipanen otomatis.",
+   "PDKI DJKI (pdki-indonesia.dgip.go.id): gerbang pengalihan 302 tanpa data publik yang dapat dibaca skrip.",
+   "Lens.org: penelusuran web dilarang robots; Patent API butuh token (LENS_API_TOKEN). Token tidak ada: tidak ada paten terambil."
+  ]
+ }
+}

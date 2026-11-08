@@ -1345,15 +1345,15 @@
      "mw": 220
     },
     {
-     "nama": "Contemporary Amperex Technology (CATL)",
-     "id": "in_b50ac2a3e1",
-     "kategori": "Perusahaan Internasional di Indonesia",
+     "nama": "Contemporary Amperex Technology",
+     "id": "en_eb7ac55bdd",
+     "kategori": "Pemasok Global (rantai pasok dunia)",
      "peran": {
       "id": "Pemasok sel baterai",
       "en": "Battery cell supplier"
      },
      "proyek": 0,
-     "u": "/o/in_b50ac2a3e1",
+     "u": "/o/en_eb7ac55bdd",
      "mw": 0
     },
     {
@@ -1399,12 +1399,30 @@
      "mw": 0
     },
     {
+     "nama": "LG Energy Solution",
+     "id": "en_e1421af365",
+     "kategori": "Perusahaan Internasional di Indonesia",
+     "peran": "manufaktur",
+     "proyek": 0,
+     "u": "/o/en_e1421af365",
+     "mw": 0
+    },
+    {
      "nama": "PT Astra International Tbk",
      "id": "en_9babc68051",
      "kategori": "Swasta",
      "peran": "-",
      "proyek": 0,
      "u": "/o/en_9babc68051",
+     "mw": 0
+    },
+    {
+     "nama": "PT HLI Green Power",
+     "id": "en_fc2382eb45",
+     "kategori": "Swasta",
+     "peran": "manufaktur",
+     "proyek": 0,
+     "u": "/o/en_fc2382eb45",
      "mw": 0
     },
     {

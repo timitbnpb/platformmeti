@@ -164,7 +164,7 @@ Ini yang relevan jika METI memang ingin gaya 1001:
 - **Pencarian global**: `setupSearch()` (`template.html:754-769`) mengindeks izin, WK, tangki, simpul jaringan, 42 wilayah; substring, 14 hasil, klik membuka laci rincian.
 - **Laci rincian** (`openDrawer`/`closeDrawer`/`kvList`/`drawerRow`, `template.html:573-588`): satu panel kanan untuk semua entitas; kolom bernama `sumber*` jadi tautan berdomain, `bukti*` jadi lencana, nilai kosong jadi strip beralasan; baris "Kutip sebagai: Neraca Papua (dibangun tanggal), ...".
 - **Lencana bukti** (`bukti()`, `normBukti`, `ARTI_BUKTI`, `template.html:557-562`): TERKONFIRMASI/KATA_PERUSAHAAN/KATA_PEMERINTAH/KATA_LEMBAGA/CUPLIKAN/INFERENSI dengan tooltip arti; CSS `.b-*` di `template.html:~161-164`. Normalisasi legacy huruf A/B/C/D -> tingkat (`:557-560`).
-- **Strip beralasan**: `dash(alasan)` menghasilkan "—" dengan `title` alasan; `val(v, alasan)` otomatis untuk nilai kosong (`template.html:565-566`). Tidak pernah menulis 0 untuk data hilang.
+- **Strip beralasan**: `dash(alasan)` menghasilkan "-" dengan `title` alasan; `val(v, alasan)` otomatis untuk nilai kosong (`template.html:565-566`). Tidak pernah menulis 0 untuk data hilang.
 - **Kartu fakta** `factCard(id)` (`:615`): periode, angka + satuan, label, catatan, lencana + sumber.
 - **Tabel** (`table.t`, `.tbl-wrap`) dengan chip filter, kolom angka rata kanan, baris klik; cakupan field `coverage(rows, fields)` (`:807`) = bar "n dari N" di bawah tabel dataset.
 - **Peta dasar** `baseMap(el, opts)` (`:626-640`): SVG d3, `geoEquirectangular().fitExtent`, citra NASA sebagai `<image>` terpasang di bbox, 42 kabupaten (`.kab`) + 6 provinsi (`.prov`, `topojson.merge`), label provinsi, pengganti dasar Relief/Malam/Polos (`setRaster`, kelas `flat`). `addPoints()` titik klik->laci; `canvasDots()` canvas untuk ribuan titik (FIRMS), `ResizeObserver`.
@@ -203,7 +203,7 @@ Tidak ada konfigurasi deploy: tidak ada `wrangler.toml/jsonc`, `_headers`, workf
 | `05_tenaga_kerja.csv` | 23 | `perusahaan,indikator,nilai,periode,dasar_hitung,sumber_url,tingkat_bukti` |
 | `06_komoditas.csv` | 143 | `id,komoditas,kelompok,provinsi,kabupaten,lokasi,lat,lon,tahap,kuantitas,satuan,kadar,tahun_estimasi,pemegang,status_mineral_kritis,sumber_url,tanggal_akses,tingkat_bukti,catatan` |
 
-Konvensi: "—" (em dash) = tidak diketahui, alasannya di `catatan`; desimal koma Indonesia pada beberapa kolom string ("48,76%") sementara kolom `lat/lon/luas_ha` memakai titik; `sumber_url` boleh memuat beberapa URL dipisah ` | `; `tanggal_akses` 2026-10-19; `tingkat_bukti` bercampur antara skema baru (`terkonfirmasi/cuplikan/inferensi`) dan lama A/B/C/D (`C_osm_infe...`, `primer`), dinormalisasi di JS (`normBukti`). Tiap `.md` pendamping (`01_...06_`, `katalog_A-D`, `03_vendor_citra`) memuat metode, tabel ringkas, dan peringatan jujur per dataset.
+Konvensi: "-" (em dash) = tidak diketahui, alasannya di `catatan`; desimal koma Indonesia pada beberapa kolom string ("48,76%") sementara kolom `lat/lon/luas_ha` memakai titik; `sumber_url` boleh memuat beberapa URL dipisah ` | `; `tanggal_akses` 2026-10-19; `tingkat_bukti` bercampur antara skema baru (`terkonfirmasi/cuplikan/inferensi`) dan lama A/B/C/D (`C_osm_infe...`, `primer`), dinormalisasi di JS (`normBukti`). Tiap `.md` pendamping (`01_...06_`, `katalog_A-D`, `03_vendor_citra`) memuat metode, tabel ringkas, dan peringatan jujur per dataset.
 
 ### 5.2 Sumber
 
@@ -213,7 +213,7 @@ Lihat tabel B2 `blueprint-neraca-papua.md`: NASA FIRMS, World Bank GGFR, GFW, Ma
 
 - **Tidak ada pipeline terjadwal.** Dua skrip manual Python stdlib, tanpa dependensi:
   - `situs/tarik_firms.py` (2,6 KB): mengunduh dua CSV publik 7 hari VIIRS S-NPP dan NOAA-20 dari `firms.modaps.eosdis.nasa.gov/data/active_fire/.../SouthEast_Asia_7d.csv` (berkas publik, **tanpa API key**), saring ke kotak lon 129-141,1 / lat -9,2-1, titik-dalam-poligon ray casting murni (`in_ring`, `in_poly`) terhadap `papua42.geojson`, simpan `firms_7h.json` (kab, prov, tgl, jam, sat, conf, frp). Baris 8-30 di berkas.
-  - `situs/build.py` (3,4 KB): `BERKAS` memetakan kunci -> CSV; `KOLOM_SUMBER` mewajibkan `sumber_url` terisi dan bukan "—"/"-"; baris tanpa sumber dibuang dan dilaporkan ("n ditolak tanpa sumber"); memuat JSON pendukung, memampatkan FIRMS jadi array indeks (`[lat, lon, hari_idx, sat_idx, kab_idx]`), menyisipkan topojson, CSS tema, `dibangun` = tanggal hari ini, lalu mengganti `/*__DATA__*/null` di template (`</` di-escape jadi `<\/`).
+  - `situs/build.py` (3,4 KB): `BERKAS` memetakan kunci -> CSV; `KOLOM_SUMBER` mewajibkan `sumber_url` terisi dan bukan "-"/"-"; baris tanpa sumber dibuang dan dilaporkan ("n ditolak tanpa sumber"); memuat JSON pendukung, memampatkan FIRMS jadi array indeks (`[lat, lon, hari_idx, sat_idx, kab_idx]`), menyisipkan topojson, CSS tema, `dibangun` = tanggal hari ini, lalu mengganti `/*__DATA__*/null` di template (`</` di-escape jadi `<\/`).
 - Tidak ada uji, tidak ada gerbang selain filter sumber di `build.py`.
 
 ### 5.4 Lisensi

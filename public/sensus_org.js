@@ -14,7 +14,7 @@ const SARING = ["proyek", "aplsi", "situs", "anak"];
 const saringFn = { proyek: (r) => r.nProy > 0, aplsi: (r) => r.aplsi, situs: (r) => !!r.o.situs, anak: (r) => !r.anak };
 const dim = (alasanKunci) => `<span class="so-dim" title="${esc(t(alasanKunci))}">-</span>`;
 const infoIk = (kunci, p) => `<span class="so-ii" tabindex="0" role="img" title="${esc(t(kunci, p))}" aria-label="${esc(t(kunci, p))}">${ikon("info", 14)}</span>`;
-const JENIS = { swasta: ["swasta", "koperasi"], bumn: ["bumn"], pemerintah: ["kementerian-lembaga", "pemda"], kampus: ["perguruan-tinggi", "think-tank"], asosiasi: ["asosiasi", "ormawa"], pendana: ["keuangan", "donor", "internasional"], lsm: ["lsm-yayasan"] };
+const JENIS = { swasta: ["swasta", "koperasi"], bumn: ["bumn"], pemerintah: ["kementerian-lembaga", "pemda"], kampus: ["perguruan-tinggi", "think-tank"], asosiasi: ["asosiasi", "ormawa"], pendana: ["keuangan", "donor", "internasional", "global"], lsm: ["lsm-yayasan"] };
 const IKJ = { swasta: "gedung", bumn: "bintang", pemerintah: "palu", kampus: "wisuda", asosiasi: "orang", pendana: "kalkulator", lsm: "kajian" };
 const jenisDari = (o) => Object.keys(JENIS).find((k) => JENIS[k].includes(o.kategori?.kode)) || "swasta";
 const IKF = { proyek: "proyek", aplsi: "perisai", situs: "tautan", anak: "rantai" };

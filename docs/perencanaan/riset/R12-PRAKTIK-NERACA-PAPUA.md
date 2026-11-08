@@ -87,16 +87,16 @@ Bagian 8 berisi 11 hutang yang tidak boleh ditiru; bagian 9 memberi urutan pener
 ## 3. Data dan pipeline
 
 ### 3.1 Aturan "baris tanpa sumber ditolak" di build [JALAN]
-- Praktik: `KOLOM_SUMBER` per dataset; baris yang kolom `sumber_url`-nya kosong, "—", atau "-" dibuang dan dihitung di laporan.
+- Praktik: `KOLOM_SUMBER` per dataset; baris yang kolom `sumber_url`-nya kosong, "-", atau "-" dibuang dan dihitung di laporan.
 - Bukti: `situs/build.py:24-27`, `:45-53`.
 - Kenapa penting: ini satu-satunya gerbang mutu yang benar-benar berjalan di repo, dan murah. Hasil pemeriksaan data: 0 baris tanpa sumber pada 9 dari 11 CSV; 1 baris pada `03_situs_tangki.csv` dan 5 baris pada `05_wilayah_long.csv`, yang semuanya dibuang build.
 - Verdict METI: **SESUAIKAN** (rinciannya di 8.1 dan 8.3 karena implementasinya terlalu longgar): terapkan di Worker (jalur POST/impor) dan di D1 (`CHECK (sumber_url LIKE 'https://%')`, `NOT NULL`), bukan hanya "tidak kosong".
 
 ### 3.2 Gap yang jujur sebagai baris, bukan sebagai lubang diam-diam [JALAN, tetapi bocor]
-- Praktik: nilai tidak diketahui ditulis "—" dengan alasan di kolom `catatan`; baris untuk data yang gagal ditarik tetap dicatat dengan `tingkat_bukti=tidak_ada` dan alasannya (mis. portal dibalik anti-bot).
-- Bukti: `data/05_wilayah_long.csv` baris 141-143 (tiga dari lima baris `tidak_ada`); `data/06_komoditas.md:4` ("Aturan: ... '—' berarti tidak diketahui dan alasannya ada di kolom `catatan`").
+- Praktik: nilai tidak diketahui ditulis "-" dengan alasan di kolom `catatan`; baris untuk data yang gagal ditarik tetap dicatat dengan `tingkat_bukti=tidak_ada` dan alasannya (mis. portal dibalik anti-bot).
+- Bukti: `data/05_wilayah_long.csv` baris 141-143 (tiga dari lima baris `tidak_ada`); `data/06_komoditas.md:4` ("Aturan: ... '-' berarti tidak diketahui dan alasannya ada di kolom `catatan`").
 - Kenapa penting: menghindari angka nol palsu; pembaca tahu apakah "kosong" berarti tak ada atau belum dicari.
-- Bocornya: baris-baris "tidak ada data" itu justru dibuang oleh filter sumber di 3.1 (karena `sumber_url` "—"), jadi alasannya tak sampai ke layar (lihat 8.2).
+- Bocornya: baris-baris "tidak ada data" itu justru dibuang oleh filter sumber di 3.1 (karena `sumber_url` "-"), jadi alasannya tak sampai ke layar (lihat 8.2).
 - Verdict METI: **TERAPKAN dengan perbaikan**: di METI, "alasan kosong" jadi kolom resmi `alasan_kosong` (enum: `tidak_dipublikasikan | belum_ada | menunggu_konfirmasi | belum_dicari`) pada tabel fakta; CHECK menuntut `nilai IS NOT NULL OR alasan_kosong IS NOT NULL`. Sel kosong tanpa alasan = ditolak. (Enum empat jenis itu ada di `blueprint-lengkap-neraca-papua.md:38-41`; yang baru di sini adalah mengubahnya menjadi constraint.)
 
 ### 3.3 Tingkat bukti, tanggal baca, dan peringatan jujur per berkas [JALAN]
@@ -193,7 +193,7 @@ R7 sudah memuat token dan komponen. Tambahan yang belum:
 - Bukti: `:focus-visible` (`situs/template.html:78`), `prefers-reduced-motion` mematikan transisi (`:330`) dan simulasi graf (`:1032`), `aria-live` pada panel info (`:1087`), `aria-pressed` pada tab, `role="img"` + `aria-label` pada grafik (`:684`, `:711`, `:1320`), fokus ke tombol tutup laci (`:574`), Escape menutup laci (`:577`), `tabindex=0` + Enter pada titik peta (`:594-595`), mode gelap mengikuti sistem dengan tombol penimpa (`:33`, `:1343`, `:1359`).
 - Verdict METI: **TERAPKAN** sebagai batas bawah, ditambah yang tidak ada: `lang` di `<html>` (dan berganti dengan bahasa), "lewati ke konten", jebakan fokus pada laci, dan padanan papan ketik/teks untuk graf (tabel tersembunyi atau daftar sisi). Perhatian khusus dwibahasa: `lang="id"`/`"en"` pada potongan teks yang bercampur, `hreflang`, dan format angka/tanggal per bahasa dari satu pembungkus `Intl`.
 
-### 6.4 Perangkat bahasa: strip alasan dan "—" sebagai komponen [JALAN]
+### 6.4 Perangkat bahasa: strip alasan dan "-" sebagai komponen [JALAN]
 Sudah di R7 (`dash`, `val`). Tambahan METI: teks alasan ikut dikamuskan ID/EN karena itu bagian dari antarmuka kepercayaan. Verdict: **TERAPKAN**.
 
 ---
@@ -226,18 +226,18 @@ Sudah di R7 (`dash`, `val`). Tambahan METI: teks alasan ikut dikamuskan ID/EN ka
 Setiap butir: apa, bukti, dampak bagi METI, tindakan.
 
 ### 8.1 Gerbang sumber terlalu longgar dan tidak memvalidasi enum
-- Apa: hanya memeriksa bahwa `sumber_url` tidak kosong dan bukan "—"/"-". Teks apa pun lolos ("belum ada", "lihat berita"); tidak ada pemeriksaan bahwa itu URL; `tingkat_bukti` tidak divalidasi.
+- Apa: hanya memeriksa bahwa `sumber_url` tidak kosong dan bukan "-"/"-". Teks apa pun lolos ("belum ada", "lihat berita"); tidak ada pemeriksaan bahwa itu URL; `tingkat_bukti` tidak divalidasi.
 - Bukti: `situs/build.py:47`. Hasil pembacaan data (hitungan sendiri atas semua CSV): `tingkat_bukti` memakai **empat kosakata**: `terkonfirmasi/kata_perusahaan/cuplikan/inferensi` (huruf kecil), `TERKONFIRMASI/...` (kapital, di jaringan), huruf `A_/B_/C_/D_...` dengan teks bebas di belakangnya (`C_osm_inferens...`, `B_berita (satu...`, `A_osm+B_berita`, `D_kandidat_bel...`), dan `primer/sekunder/klaim/tidak_ada` (wilayah, SDM, tenaga kerja). Normalisasi ditambal di tampilan (`situs/template.html:555-559`, `normBukti`) dengan tebakan: `A->TERKONFIRMASI`, `B->CUPLIKAN`, `C/D->INFERENSI`, sisanya `toUpperCase()`. Nilai `primer/sekunder/klaim` jatuh ke cabang `toUpperCase()` dan tampil sebagai lencana yang tak punya arti di `ARTI_BUKTI`.
 - Dampak: skema bukti tidak bisa dipercaya dan tidak bisa difilter; lencana bisa tampil tanpa arti.
 - Tindakan METI: enum tunggal di `CHECK` D1 (atau tabel referensi + FK), validasi di Worker, dan **penolakan** saat impor, bukan penambalan saat tampil. Uji: memasukkan nilai di luar enum harus gagal.
 
 ### 8.2 Filter sumber membuang baris "gap beralasan"
-- Apa: baris yang sengaja mencatat "data tidak bisa diambil, ini alasannya" dibuang karena `sumber_url` "—".
+- Apa: baris yang sengaja mencatat "data tidak bisa diambil, ini alasannya" dibuang karena `sumber_url` "-".
 - Bukti: `situs/build.py:47` vs `data/05_wilayah_long.csv` baris 141-143 (`tingkat_bukti=tidak_ada`); enam baris dibuang total (satu di tangki, lima di wilayah) oleh perhitungan di atas. Dua prinsip bertabrakan: "bersumber atau ditarik" (`README.md:32`) dan "strip selalu punya alasan" (`README.md:33`). Alasan tertulis hilang dari layar.
 - Tindakan METI: pisahkan dua konsep di skema (3.2): `fakta` bersumber dan `celah` (indikator, entitas, `alasan_kosong`, `diminta_ke`, `tanggal_diminta`). Gerbang menolak fakta tanpa sumber tetapi **menerima celah** dengan alasan.
 
 ### 8.3 Pencocokan CSV rapuh: desimal, kunci, dan format bercampur
-- Apa: koma desimal dalam string ("48,76%") bercampur titik pada kolom numerik; `—` sebagai null; `|` memisah banyak URL dalam satu sel; periode bebas teks.
+- Apa: koma desimal dalam string ("48,76%") bercampur titik pada kolom numerik; `-` sebagai null; `|` memisah banyak URL dalam satu sel; periode bebas teks.
 - Bukti: `data/` (lihat R7 6.2 butir 7 untuk koma desimal); pemisah `|` dan `;` di `situs/template.html:564`; tidak ada skema atau tipe kolom di `build.py` (`baca()` mengembalikan semua nilai sebagai string, `:35`).
 - Dampak: salah urai diam-diam, tidak ada tempat menolak.
 - Tindakan METI: skema bertipe (zod-tanpa-dependensi, atau JSON Schema + validator kecil) per tabel, sumber banyak URL sebagai tabel anak `sumber`, bukan sel dengan pemisah.

@@ -1633,13 +1633,12 @@
     },
     {
      "nama": "US International Development Finance Corporation (DFC)",
-     "id": "in_80ff9e7496",
-     "url": "/o/in_80ff9e7496",
      "peran": {
       "id": "Lembaga pembiayaan pembangunan AS",
       "en": "US development finance institution"
      },
      "rujuk": "Direktori METI",
+     "id": null,
      "mw": null
     },
     {
@@ -1731,6 +1730,171 @@
      "mw": null
     },
     {
+     "nama": "Rothschild and Co",
+     "id": "en_03251d5001",
+     "url": "/o/en_03251d5001",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: konsultan",
+      "en": "Perusahaan Internasional di Indonesia; chain role: konsultan"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Swiss Re",
+     "id": "en_114bf82c5c",
+     "url": "/o/en_114bf82c5c",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pembiaya",
+      "en": "Lembaga Keuangan; chain role: pembiaya"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Korea Trade Insurance Corporation",
+     "id": "en_1f931667a9",
+     "url": "/o/en_1f931667a9",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Munich Re",
+     "id": "en_2196546c15",
+     "url": "/o/en_2196546c15",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pembiaya",
+      "en": "Lembaga Keuangan; chain role: pembiaya"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Allianz",
+     "id": "en_2dcd4caea8",
+     "url": "/o/en_2dcd4caea8",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pembiaya",
+      "en": "Lembaga Keuangan; chain role: pembiaya"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Sinosure",
+     "id": "en_365c6a2bd7",
+     "url": "/o/en_365c6a2bd7",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Export-Import Bank of the United States",
+     "id": "en_5473168b99",
+     "url": "/o/en_5473168b99",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Lazard",
+     "id": "en_859c8a6d48",
+     "url": "/o/en_859c8a6d48",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: konsultan",
+      "en": "Perusahaan Internasional di Indonesia; chain role: konsultan"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "US International Development Finance Corporation",
+     "id": "en_95675c74ca",
+     "url": "/o/en_95675c74ca",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Multilateral Investment Guarantee Agency",
+     "id": "en_9f6f2809d5",
+     "url": "/o/en_9f6f2809d5",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "UK Export Finance",
+     "id": "en_b66c86b2ed",
+     "url": "/o/en_b66c86b2ed",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Nippon Export and Investment Insurance",
+     "id": "en_dc86f41739",
+     "url": "/o/en_dc86f41739",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Export-Import Bank of China",
+     "id": "en_e052307be5",
+     "url": "/o/en_e052307be5",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Eifo",
+     "id": "en_f10414c4af",
+     "url": "/o/en_f10414c4af",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Allianz Trade",
+     "id": "en_f966e4220f",
+     "url": "/o/en_f966e4220f",
+     "peran": {
+      "id": "Lembaga Keuangan; peran rantai: pendana",
+      "en": "Lembaga Keuangan; chain role: pendana"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
      "nama": "Badan Pengelola Dana Perkebunan",
      "id": "l_060c77568c",
      "url": "/o/l_060c77568c",
@@ -1748,28 +1912,6 @@
      "peran": {
       "id": "Think Tank dan Lembaga Riset; peran rantai: tercatat di direktori",
       "en": "Think Tank dan Lembaga Riset; chain role: listed in the directory"
-     },
-     "rujuk": "Direktori METI",
-     "mw": null
-    },
-    {
-     "nama": "Center of Economic and Law Studies",
-     "id": "l_488614e2c7",
-     "url": "/o/l_488614e2c7",
-     "peran": {
-      "id": "Think Tank dan Lembaga Riset; peran rantai: tercatat di direktori",
-      "en": "Think Tank dan Lembaga Riset; chain role: listed in the directory"
-     },
-     "rujuk": "Direktori METI",
-     "mw": null
-    },
-    {
-     "nama": "Badan Kebijakan Fiskal",
-     "id": "l_c6d98b8a10",
-     "url": "/o/l_c6d98b8a10",
-     "peran": {
-      "id": "Kementerian dan Lembaga Negara; peran rantai: tercatat di direktori",
-      "en": "Kementerian dan Lembaga Negara; chain role: listed in the directory"
      },
      "rujuk": "Direktori METI",
      "mw": null

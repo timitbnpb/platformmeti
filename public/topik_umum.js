@@ -37,7 +37,7 @@ export function sumberHtml(ids = [], tambahan = []) {
 }
 
 /* ---------- eksibit bab ---------- */
-export const IKON_GRUP = { A: "kajian", B: "buku", C: "grafik", D: "regulasi", E: "tek-listrik", F: "asean", G: "kartu", H: "orang", I: "linimasa", J: "berita", K: "bintang" };
+export const IKON_GRUP = { A: "kajian", B: "buku", C: "grafik", D: "regulasi", E: "tek-listrik", F: "asean", G: "kartu", H: "orang", I: "linimasa", J: "berita", K: "bintang", L: "proyek" };
 export function eksibit(n, isi, { csv = false, sumber = "", sub = "", judul = "", kelas = "" } = {}) {
   const b = S.ui.bab[n], g = b.g;
   return exHtml({ id: "bab-" + n, ikon: IKON_GRUP[g], topik: `${g}. ${L(S.ui.grup[g])}`, judulHtml: esc(judul || L(b.j)), subHtml: sub ? esc(sub) : "", aksiHtml: aksiHtml({ csv, png: false, pdf: true, bagi: true }) + sumber, isiHtml: isi, kelas: "jm-tp-bab" + (kelas ? " " + kelas : "") }).replace('<section class="jm-ex', "<section " + REL_MATI + ' class="jm-ex'); /* daftar isi kiri menggantikan rel mengambang */

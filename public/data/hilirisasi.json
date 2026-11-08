@@ -37,9 +37,9 @@
  "meta": {
   "jumlah": 20,
   "jumlah_operasi": 14,
-  "jumlah_smelter_nikel": 14,
-  "nikel_ton_operasi": 628966,
-  "nikel_ton_konstruksi": 187000,
+  "jumlah_smelter_nikel": 13,
+  "nikel_ton_operasi": 586966,
+  "nikel_ton_konstruksi": 114000,
   "tanpa_kapasitas": 7,
   "mwh_per_ton": {
    "matte": 30,
@@ -947,18 +947,32 @@
   },
   {
    "id": "vale-bahodopi",
-   "nama": "Vale Bahodopi (RKEF)",
+   "nama": "Vale Bahodopi (RKEF atau HPAL)",
    "rantai": "smelter",
-   "jenis": "rkef",
-   "produk": "Feronikel",
+   "jenis": "belum-pasti",
+   "produk": "Feronikel atau MHP",
    "kapasitas": {
-    "nilai": 73000,
+    "nilai": null,
     "satuan": "ton Ni/tahun",
     "jenis": "rencana",
-    "ket": "Sumber berbeda tentang teknologi (RKEF atau HPAL 66.000 ton MHP); dipakai angka RKEF"
+    "alternatif": [
+     {
+      "nilai": 73000,
+      "satuan": "ton Ni/tahun",
+      "ket": "RKEF feronikel",
+      "url": "https://indonesiabusinesspost.com/2637/Politics/pt-vale-indonesia-set-to-launch-nickel-plant-in-southeast-sulawesi-by-2026"
+     },
+     {
+      "nilai": 66000,
+      "satuan": "ton MHP/tahun",
+      "ket": "HPAL",
+      "url": "https://metalswire.net/news-of-the-week/pt-vale-indonesia-targets-2026-for-nickel-processing-plant-operation-in-southeast-sulawesi"
+     }
+    ],
+    "ket": "Sumber berbeda tentang teknologi dan kapasitas; kedua angka ditampilkan, tidak dipilih satu"
    },
-   "ton_logam_tahun": 73000,
-   "teknologi": "RKEF",
+   "ton_logam_tahun": null,
+   "teknologi": "RKEF atau HPAL (sumber berbeda)",
    "pemilik": [
     {
      "nama": "PT Vale Indonesia Tbk",
@@ -988,11 +1002,11 @@
    "mw_pembangkit": 5700,
    "mw_pembangkit_konstruksi": 760,
    "ebt_ids": [],
-   "mwh_per_ton": 38,
-   "listrik_gwh_tahun": 2774,
-   "mw_rata": 317,
-   "faktor_emisi": 0.92,
-   "intensitas_tco2e_per_ton": 35,
+   "mwh_per_ton": null,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
+   "faktor_emisi": null,
+   "intensitas_tco2e_per_ton": null,
    "pembeli": [],
    "ekspor_utama": [
     "cn"
@@ -1001,8 +1015,12 @@
    "tingkat_bukti": "laporan-publik",
    "sumber": [
     {
-     "judul": "Indonesia Business Post: Vale Indonesia nickel plant Southeast Sulawesi 2026",
+     "judul": "Indonesia Business Post: Vale Indonesia, pabrik nikel Sulawesi Tenggara 2026",
      "url": "https://indonesiabusinesspost.com/2637/Politics/pt-vale-indonesia-set-to-launch-nickel-plant-in-southeast-sulawesi-by-2026"
+    },
+    {
+     "judul": "Metals Wire: Vale Indonesia targets 2026",
+     "url": "https://metalswire.net/news-of-the-week/pt-vale-indonesia-targets-2026-for-nickel-processing-plant-operation-in-southeast-sulawesi"
     }
    ]
   },
@@ -1073,12 +1091,26 @@
    "jenis": "hpal",
    "produk": "MHP (nikel kobalt hidroksida)",
    "kapasitas": {
-    "nilai": 120000,
+    "nilai": null,
     "satuan": "ton MHP/tahun",
     "jenis": "terpasang",
-    "ket": "Sumber berbeda (120.000 gabungan, 65.000 per pabrik ONC); produksi 2024 63.431 ton MHP"
+    "alternatif": [
+     {
+      "nilai": 120000,
+      "satuan": "ton MHP/tahun",
+      "ket": "angka gabungan pada pemberitaan 2023",
+      "url": "https://tbpnickel.com/media/news/operational/harita-nickels-high-pressure-acid-leach-hpal-smelter-to-be-operational-by-mid-2024"
+     },
+     {
+      "nilai": 65000,
+      "satuan": "ton Ni/tahun",
+      "ket": "pabrik ONC saja",
+      "url": "https://www.marketforces.org.au/campaigns/asia/harita-group-fossil-fuel-powered-nickel-exacerbates-global-climate-crisis/"
+     }
+    ],
+    "ket": "Sumber berbeda dan tahunnya tidak sama; produksi 2024 63.431 ton MHP"
    },
-   "ton_logam_tahun": 42000,
+   "ton_logam_tahun": null,
    "teknologi": "HPAL",
    "pemilik": [
     {
@@ -1114,8 +1146,8 @@
    "mw_pembangkit_konstruksi": 760,
    "ebt_ids": [],
    "mwh_per_ton": 9,
-   "listrik_gwh_tahun": 378,
-   "mw_rata": 43,
+   "listrik_gwh_tahun": null,
+   "mw_rata": null,
    "faktor_emisi": 1.001,
    "intensitas_tco2e_per_ton": 9,
    "pembeli": [],
@@ -1125,6 +1157,14 @@
    "org_id": "en_f99309c07b",
    "tingkat_bukti": "laporan-publik",
    "sumber": [
+    {
+     "judul": "Harita Nickel: HPAL operasi 2024",
+     "url": "https://tbpnickel.com/media/news/operational/harita-nickels-high-pressure-acid-leach-hpal-smelter-to-be-operational-by-mid-2024"
+    },
+    {
+     "judul": "Market Forces: Harita Group",
+     "url": "https://www.marketforces.org.au/campaigns/asia/harita-group-fossil-fuel-powered-nickel-exacerbates-global-climate-crisis/"
+    },
     {
      "judul": "Lygend fase dua HPAL dioperasikan",
      "url": "https://news.metal.com/newscontent/102070296-lygends-phase-two-hpal-cobalt-nickel-project-commissioned-as-scheduled"
@@ -1332,7 +1372,7 @@
     "nilai": 27000,
     "satuan": "ton Ni/tahun",
     "jenis": "terpasang",
-    "ket": "Kapasitas nominal pabrik feronikel Pomalaa; belum dicek pada laporan tahunan terbaru"
+    "ket": "Nameplate 27.000 ton Ni dalam feronikel (empat lini); Wood Mackenzie, Antam, dan Jakarta Post 2014 sepakat"
    },
    "ton_logam_tahun": 27000,
    "teknologi": "RKEF",
@@ -1372,8 +1412,20 @@
     "cn"
    ],
    "org_id": "en_8a4ce87da1",
-   "tingkat_bukti": "perlu-verifikasi",
+   "tingkat_bukti": "laporan-publik",
    "sumber": [
+    {
+     "judul": "Wood Mackenzie: Pomalaa Nickel Operation",
+     "url": "https://woodmac.com/reports/metals-pomalaa-nickel-operation-15930017"
+    },
+    {
+     "judul": "Antam: kolaborasi PLN untuk smelter Kolaka",
+     "url": "https://antam.com/news-and-events/article/antam-pln-strategic-collaboration-to-boost-mineral-downstreaming--150-mva-electricity-supply-ready-to-optimize-smelter-in-kolaka"
+    },
+    {
+     "judul": "Jakarta Post: Antam fasilitas feronikel Pomalaa",
+     "url": "https://www.thejakartapost.com/news/2014/10/04/antam-commissions-facilities-pomalaa-ferronickel-plant.html"
+    },
     {
      "judul": "GEM Wiki: Pomalaa Nickel power station",
      "url": "https://www.gem.wiki/Pomalaa_Nickel_power_station"
@@ -1422,11 +1474,11 @@
    "mw_pembangkit": 3360,
    "mw_pembangkit_konstruksi": 760,
    "ebt_ids": [],
-   "mwh_per_ton": null,
+   "mwh_per_ton": 38,
    "listrik_gwh_tahun": null,
    "mw_rata": null,
-   "faktor_emisi": null,
-   "intensitas_tco2e_per_ton": null,
+   "faktor_emisi": 0.92,
+   "intensitas_tco2e_per_ton": 35,
    "pembeli": [],
    "ekspor_utama": [
     "cn"
@@ -1475,11 +1527,11 @@
    "mw_pembangkit": 2080,
    "mw_pembangkit_konstruksi": 0,
    "ebt_ids": [],
-   "mwh_per_ton": null,
+   "mwh_per_ton": 38,
    "listrik_gwh_tahun": null,
    "mw_rata": null,
-   "faktor_emisi": null,
-   "intensitas_tco2e_per_ton": null,
+   "faktor_emisi": 0.92,
+   "intensitas_tco2e_per_ton": 35,
    "pembeli": [],
    "ekspor_utama": [
     "cn"
@@ -1528,11 +1580,11 @@
    "mw_pembangkit": 810,
    "mw_pembangkit_konstruksi": 0,
    "ebt_ids": [],
-   "mwh_per_ton": null,
+   "mwh_per_ton": 38,
    "listrik_gwh_tahun": null,
    "mw_rata": null,
-   "faktor_emisi": null,
-   "intensitas_tco2e_per_ton": null,
+   "faktor_emisi": 0.986,
+   "intensitas_tco2e_per_ton": 37.5,
    "pembeli": [],
    "ekspor_utama": [
     "cn"
@@ -1582,11 +1634,11 @@
    "mw_pembangkit": 2370,
    "mw_pembangkit_konstruksi": 0,
    "ebt_ids": [],
-   "mwh_per_ton": null,
+   "mwh_per_ton": 38,
    "listrik_gwh_tahun": null,
    "mw_rata": null,
-   "faktor_emisi": null,
-   "intensitas_tco2e_per_ton": null,
+   "faktor_emisi": 0.987,
+   "intensitas_tco2e_per_ton": 37.5,
    "pembeli": [],
    "ekspor_utama": [
     "cn"
@@ -1635,11 +1687,11 @@
    "mw_pembangkit": 4540,
    "mw_pembangkit_konstruksi": 0,
    "ebt_ids": [],
-   "mwh_per_ton": null,
+   "mwh_per_ton": 38,
    "listrik_gwh_tahun": null,
    "mw_rata": null,
-   "faktor_emisi": null,
-   "intensitas_tco2e_per_ton": null,
+   "faktor_emisi": 0.902,
+   "intensitas_tco2e_per_ton": 34.3,
    "pembeli": [],
    "ekspor_utama": [
     "cn"
@@ -1732,15 +1784,19 @@
   },
   {
    "id": "catl-ibc",
-   "nama": "CATL, Antam, IBC: sel baterai Karawang",
+   "nama": "CATL, Antam, IBC: sel baterai Karawang (CATIB)",
    "rantai": "sel",
    "jenis": "sel",
    "produk": "Sel baterai",
    "kapasitas": {
-    "nilai": 15,
+    "nilai": null,
     "satuan": "GWh/tahun",
     "jenis": "rencana",
-    "ket": "Kapasitas rencana 15 GWh; angka 6,9 GWh pada pemberitaan lama kemungkinan fase awal; peresmian belum terkonfirmasi"
+    "rentang": [
+     6.9,
+     15
+    ],
+    "ket": "Fase awal 6,9 GWh dengan rencana naik sampai 15 GWh; status operasi atau peresmian belum terkonfirmasi"
    },
    "ton_logam_tahun": null,
    "teknologi": "Sel baterai litium",
@@ -1790,11 +1846,19 @@
    "pembeli": [],
    "ekspor_utama": [],
    "org_id": "in_b50ac2a3e1",
-   "tingkat_bukti": "perlu-verifikasi",
+   "tingkat_bukti": "laporan-publik",
    "sumber": [
     {
-     "judul": "Kemenko Perekonomian: ekosistem baterai kendaraan listrik",
-     "url": "https://www.ekon.go.id/publikasi/detail/6661/pengembangan-ekosistem-baterai-kendaraan-listrik-dalam-mendorong-kemandirian-dan-ketahanan-energi-nasional"
+     "judul": "PR Newswire: CATL dan mitra groundbreaking proyek baterai Indonesia",
+     "url": "https://tools.prnewswire.com/en-us/live/20823/release/20250701EN22046"
+    },
+    {
+     "judul": "Pemprov Jawa Barat: pabrik baterai Karawang",
+     "url": "https://investasi.jabarprov.go.id/news/karawang-ev-battery-plant-set-to-begin-operations"
+    },
+    {
+     "judul": "Gasgoo: proyek CATL groundbreaking",
+     "url": "https://autonews.gasgoo.com/articles/news/catl-led-nickel-battery-project-breaks-ground-in-indonesia-70037994"
     }
    ]
   },
@@ -1992,7 +2056,7 @@
     "nilai": 1700000,
     "satuan": "ton konsentrat/tahun",
     "jenis": "terpasang",
-    "ket": "Angka dari ingatan kurasi, tidak ditemukan pada pencarian 8 Nov 2026; wajib diverifikasi"
+    "ket": "Kapasitas desain; satu laporan Jakarta Post 2025 menulis 1,3 juta (kemungkinan tertukar dengan PT Smelting)"
    },
    "ton_logam_tahun": null,
    "teknologi": "Peleburan flash",
@@ -2006,7 +2070,7 @@
     }
    ],
    "status": "operasi",
-   "ket_status": null,
+   "ket_status": "Berhenti setelah kebakaran pabrik asam; restart bertahap dijadwalkan September 2026",
    "tahun": 2024,
    "lat": -7.12,
    "lng": 112.62,
@@ -2028,11 +2092,19 @@
    "pembeli": [],
    "ekspor_utama": [],
    "org_id": null,
-   "tingkat_bukti": "perlu-verifikasi",
+   "tingkat_bukti": "laporan-publik",
    "sumber": [
     {
-     "judul": "PT Freeport Indonesia",
-     "url": "https://ptfi.co.id/"
+     "judul": "Indonesia Miner: Manyar restart September 2026, kapasitas 1,7 juta ton",
+     "url": "https://indonesiaminer.com/news/detail/freeports-manyar-smelter-to-resume-operations-in-september-2026-17-million-ton-capacity-targeted"
+    },
+    {
+     "judul": "Engineering News: Manyar copper smelter update",
+     "url": "https://www.engineeringnews.co.za/article/manyar-copper-smelter-project-indonesia-update-2025-10-17"
+    },
+    {
+     "judul": "Jakarta Post: penutupan smelter Freeport (menulis 1,3 juta ton)",
+     "url": "https://www.thejakartapost.com/business/2025/08/21/prolonged-freeport-smelter-shutdown-frees-up-scarce-ore-for-copper-market"
     }
    ]
   }

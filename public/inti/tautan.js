@@ -12,8 +12,8 @@ export { tautkanOrg } from "/inti/tautan_org.js";
 
 const norm = (s) => String(s ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 export const TEKNOLOGI = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "penyimpanan", "hidrogen", "nuklir"];
-const SUMBER = { proyek: "proyek", org: "organisasi", orang: "orang", regulasi: "regulasi", event: "kalender", dokumen: "pustaka", program: "program", siaran: "siaran_pers", berita: "berita" };
-const RUTE = { proyek: (k) => "/p/" + k, org: (k) => "/o/" + k, regulasi: (k) => "/regulasi?id=" + encodeURIComponent(k), provinsi: (k) => "/wilayah/" + k, teknologi: (k) => "/teknologi/" + k, program: (k) => "/program/" + k, event: (k) => "/event/" + k, dokumen: (k) => "/pustaka?id=" + encodeURIComponent(k), siaran: (k) => "/siaran-pers/" + k };
+const SUMBER = { proyek: "proyek", org: "organisasi", orang: "orang", regulasi: "regulasi", event: "kalender", dokumen: "pustaka", program: "program", siaran: "siaran_pers", berita: "berita", isu: "isu" };
+const RUTE = { isu: (k) => "/isu#" + encodeURIComponent(k), proyek: (k) => "/p/" + k, org: (k) => "/o/" + k, regulasi: (k) => "/regulasi?id=" + encodeURIComponent(k), provinsi: (k) => "/wilayah/" + k, teknologi: (k) => "/teknologi/" + k, program: (k) => "/program/" + k, event: (k) => "/event/" + k, dokumen: (k) => "/pustaka?id=" + encodeURIComponent(k), siaran: (k) => "/siaran-pers/" + k };
 
 /* ---------- indeks malas ---------- */
 const data = {}; // jenis -> Promise<json>
@@ -30,6 +30,7 @@ const rekam = {
   program: (b) => ({ id: b.id, nama: b.nama, lain: [b.nama] }),
   siaran: (b) => ({ id: b.id, nama: b.judul, lain: [], tgl: b.tanggal }),
   berita: (b) => ({ id: b.id, nama: b.judul, lain: [] }),
+  isu: (b) => ({ id: b.id, nama: b.judul, lain: [], tgl: b.terbaru }),
 };
 export function siapTautan(...jenis) {
   return Promise.all(jenis.map((j) => idx[j] ? 0 : muatJson(j).then((d) => {
@@ -104,7 +105,7 @@ export const tautSiaran = (id, teks) => bangun("siaran", id, teks);
 let graf = null;
 const NAMA_BERITA = (b) => ({ id: b.id, nama: b.judul, url: b.url, media: b.media, tgl: b.terbit });
 async function bangunGraf() {
-  const J = ["proyek", "org", "orang", "regulasi", "berita", "event", "dokumen", "siaran", "program"];
+  const J = ["proyek", "org", "orang", "regulasi", "berita", "event", "dokumen", "siaran", "program", "isu"];
   const D = Object.fromEntries(await Promise.all(J.map(async (j) => [j, (await muatJson(j)).baris || []])));
   await siapTautan("org");
   const e = new Map(); // "j:id" -> Map("j2:id2" -> {j, id})
@@ -165,6 +166,13 @@ async function bangunGraf() {
     for (const k of s.org_ids || []) sisi(s.id, "siaran", k, "org");
     for (const k of s.proyek_ids || []) sisi(s.id, "siaran", k, "proyek");
     for (const k of s.regulasi_ids || []) sisi(s.id, "siaran", k, "regulasi");
+  }
+  for (const i of D.isu) {
+    for (const k of i.proyek_ids || []) sisi(i.id, "isu", k, "proyek");
+    for (const k of i.regulasi_ids || []) sisi(i.id, "isu", k, "regulasi");
+    for (const k of i.berita_ids || []) sisi(i.id, "isu", k, "berita");
+    for (const k of i.prov || []) sisi(i.id, "isu", k, "provinsi");
+    for (const p of i.pihak || []) sisi(i.id, "isu", p.org_id, "org");
   }
   const slugEvent = new Map(D.event.filter((k) => k.slug).map((k) => [k.id, k.slug]));
   for (const d of D.dokumen) {

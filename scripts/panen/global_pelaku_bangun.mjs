@@ -17,6 +17,7 @@ const esc = (s) => s.replace(/[.*+?^${}()[\]\\]/g, '\\$&');
 export const aliasPelaku = (nama) => { const a = ALIAS[nama] || esc(nama); return `\\b(?:${a})\\b`; };
 export const kategoriPelaku = (nama, kelompok, iso2) => KAT_KHUSUS[nama] || (kelompok === 'eca' || kelompok === 'asuransi' ? 'keuangan' : iso2 === 'ID' ? 'swasta' : 'internasional');
 
+const bersih = (v) => typeof v === 'string' ? v.replace(/\s*—\s*/g, ', ').replace(/\s*·\s*/g, ' ') : Array.isArray(v) ? v.map(bersih) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, bersih(x)])) : v;
 export function bangunSatu(r, tgl, proyek, gem, orgAda) {
   const w = r.wikidata, b = r.beranda, wk = r.wikipedia, fakta = [], sumber = [], catatan = [];
   const f = (medan, nilai, url, tingkat) => fakta.push({ medan, nilai, sumber_url: url, tanggal_periksa: tgl, tingkat_bukti: tingkat });
@@ -87,7 +88,7 @@ if (process.argv[1] === new URL(import.meta.url).pathname) {
     const panen = bacaJson(path.join(ROOT, 'data/global/pelaku/panen.json'));
     const proyek = bacaJson(path.join(ROOT, 'public/data/proyek.json')).baris, gem = bacaJson(path.join(ROOT, 'public/data/gem_pembangkit.json')).baris;
     const orgAda = new Map(bacaJson(path.join(ROOT, 'public/data/organisasi.json')).baris.map((o) => [kunciNama(o.nama), o.id]));
-    const semua = panen.baris.map((r) => bangunSatu(r, tgl, proyek, gem, orgAda));
+    const semua = panen.baris.map((r) => bersih(bangunSatu(r, tgl, proyek, gem, orgAda)));
     const lengkap = semua.filter((p) => p.terverifikasi && p.negara_iso2), tunda = semua.filter((p) => !lengkap.includes(p)).map((p) => p.nama);
     const salah = lengkap.flatMap(validasi); if (salah.length) throw new Error(salah.join('; '));
     const medan = { negara: (p) => p.negara_iso2, tahun_berdiri: (p) => p.tahun_berdiri, halaman_indonesia: (p) => p.halaman_indonesia, kehadiran_indonesia: (p) => p.kehadiran_indonesia.length, portofolio: (p) => p.portofolio.length, minat_komitmen: (p) => p.minat_komitmen.length, proyek_indonesia: (p) => p.proyek_id.length, logo: (p) => p.logo };

@@ -1,0 +1,399 @@
+{
+ "tanggal_ambil": "2026-11-08",
+ "catatan": "Seed kurasi isu nasional. Ringkasan berparafrase dari sumber tercantum; tanggal hanya yang tertera pada sumber. Status aktif/mereda/selesai per tanggal_ambil.",
+ "isu": [
+  {
+   "id": "ruu-ebet", "tema": "kebijakan", "status": "aktif", "bukti": "media",
+   "judul": "RUU Energi Baru dan Energi Terbarukan (RUU EBET)",
+   "ringkas": "Pembahasan RUU EBET di Komisi XII DPR sudah lama memasuki tahap akhir, namun terus diperpanjang karena satu klausul yang paling diperdebatkan, yaitu pemanfaatan bersama jaringan transmisi (power wheeling). DPR menyatakan ingin mengesahkannya pada 2026, lalu beralih ke revisi UU Ketenagalistrikan.",
+   "konsultasi_id": "ruu-ebet",
+   "kata": ["ruu ebet", "ebet", "undang-undang energi baru"],
+   "regulasi": ["uu-30-2009", "uu-21-2014"],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2024-07-05", "p": "Pemberitaan menyebut RUU EBET tinggal satu pasal yang belum disepakati.", "s": 0},
+    {"t": "2026-09-08", "p": "METI menyampaikan 22 substansi pokok dalam audiensi/RDPU Komisi XII DPR.", "s": 1},
+    {"t": "2026-09", "p": "Rapat paripurna DPR menyetujui perpanjangan waktu pembahasan; tanggal pasti tidak tercantum pada cuplikan sumber.", "s": 2}
+   ],
+   "pihak": [
+    {"nama": "Komisi XII DPR RI", "org_id": "l_774a8755e8", "peran": "pembahas", "posisi": "Berkomitmen mengesahkan RUU pada 2026, kemudian menggarap revisi UU Ketenagalistrikan.", "s": 3},
+    {"nama": "Kementerian ESDM", "org_id": "l_7278e0528a", "peran": "pemerintah", "posisi": "Dikabarkan menimbang penghapusan skema power wheeling dari pembahasan.", "s": 4},
+    {"nama": "Utusan Khusus Presiden bidang energi", "peran": "pemerintah", "posisi": "Menyampaikan bahwa Presiden menolak konsep power wheeling dalam RUU.", "s": 4}
+   ],
+   "sumber": [
+    {"j": "RUU EBET tinggal satu pasal, target diputuskan tahun ini", "p": "Kompas.com", "u": "https://lestari.kompas.com/read/2024/07/05/080000486/ruu-ebet-tinggal-satu-pasal-target-diputuskan-tahun-ini", "t": "2024-07-05"},
+    {"j": "Begini Update Kelanjutan RUU EBET dan UU Ketenagalistrikan", "p": "Listrik Indonesia", "u": "https://listrikindonesia.com/detail/21222/begini-update-kelanjutan-ruu-ebet-dan-uu-ketenagalistrikan"},
+    {"j": "Paripurna DPR sepakati perpanjangan waktu pembahasan RUU EBET", "p": "Kontan", "u": "https://nasional.kontan.co.id/news/paripurna-dpr-sepakati-perpanjangan-waktu-pembahasan-ruu-ebet"},
+    {"j": "DPR prioritaskan pengesahan RUU energi terbarukan pada tahun ini", "p": "Kontan", "u": "https://industri.kontan.co.id/news/dpr-prioritaskan-pengesahan-ruu-energi-terbarukan-pada-tahun-ini"},
+    {"j": "Presiden Prabowo tolak skema power wheeling, kelanjutan RUU EBET dipertanyakan", "p": "Kontan", "u": "https://industri.kontan.co.id/news/presiden-prabowo-tolak-skema-power-wheeling-kelanjutan-ruu-ebet-dipertanyakan"}
+   ]
+  },
+  {
+   "id": "power-wheeling", "tema": "jaringan", "status": "aktif", "bukti": "media",
+   "judul": "Power wheeling: pemanfaatan bersama jaringan transmisi",
+   "ringkas": "Skema yang membolehkan produsen listrik swasta menyalurkan listrik ke pelanggan lewat jaringan milik PLN dengan membayar sewa jaringan. Pendukungnya menilai skema ini membuka investasi energi terbarukan; penentangnya menilainya bentuk liberalisasi yang melemahkan peran negara dan PLN. Ketua METI menilai dasar mekanismenya sudah ada di beberapa regulasi, tetapi pengaturan sewa jaringan di RUU EBET perlu diperjelas.",
+   "kata": ["power wheeling", "sewa jaringan", "wheeling"],
+   "regulasi": ["uu-30-2009"],
+   "konsultasi_id": null,
+   "posisi_meti": {"ringkas": "Mekanisme sudah punya dasar di sejumlah regulasi; pengaturan pemanfaatan dan sewa jaringan di RUU EBET masih perlu diperjelas.", "tanggal": "2026-09-08", "sumber_idx": 0},
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2026-09-08", "p": "Dalam RDPU Komisi XII, Ketua METI menyampaikan pandangan tentang dasar regulasi dan perlunya kejelasan sewa jaringan.", "s": 0}
+   ],
+   "pihak": [
+    {"nama": "METI", "org_id": "l_41bf1f0b41", "peran": "asosiasi", "posisi": "Memandang mekanisme sudah berdasar regulasi, mendorong kejelasan aturan sewa jaringan.", "s": 0},
+    {"nama": "PLN", "org_id": "su_ed074ff5", "peran": "operator jaringan", "posisi": "Pengamat menilai skema ini tidak serta-merta menggeser monopoli PLN pada jaringan.", "s": 1},
+    {"nama": "Anggota DPR penentang", "peran": "legislatif", "posisi": "Menilai skema sarat kepentingan asing dan harus mengutamakan negara.", "s": 2}
+   ],
+   "sumber": [
+    {"j": "RUU EBET Kembali Didorong, Power Wheeling Jadi Titik Krusial", "p": "Listrik Indonesia", "u": "https://listrikindonesia.com/detail/21133/ruu-ebet-kembali-didorong-power-wheeling-jadi-titik-krusial"},
+    {"j": "Power Wheeling Tak Geser Monopoli PLN", "p": "Kontan", "u": "https://insight.kontan.co.id/news/power-wheeling-tak-geser-monopoli-pln"},
+    {"j": "Soal RUU EBET, anggota DPR nilai skema power wheeling sarat kepentingan asing", "p": "Investortrust", "u": "https://investortrust.id/esg/7565/soal-ruu-ebet-anggota-dpr-ini-nilai-skema-power-wheeling-sarat-kepentingan-asing"}
+   ]
+  },
+  {
+   "id": "tkdn-surya", "tema": "industri", "status": "aktif", "bukti": "media",
+   "judul": "TKDN modul surya dan target PLTS 100 GW",
+   "ringkas": "Syarat kandungan dalam negeri untuk PLTS dipandang pengembang menyulitkan pembiayaan, sehingga pemerintah memberi relaksasi bagi proyek yang beroperasi komersial sampai 30 Juni 2026. Di sisi lain pabrikan modul menyebut kapasitas terpasang sekitar 10,9 GWp dari 34 pabrik dan meminta perlindungan pasar saat program PLTS 100 GW dikejar.",
+   "kata": ["tkdn", "modul surya", "panel surya", "100 gw"],
+   "regulasi": ["permen-kemenperin-24-2020"],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2024-08-14", "p": "Pemerintah resmi merelaksasi TKDN PLTS dengan tenggat produksi modul sesuai TKDN akhir 2025 dan COD proyek paling lambat 30 Juni 2026.", "s": 0},
+    {"t": "2026-05-14", "p": "Pembahasan kesiapan industri panel surya menyongsong proyek PLTS 100 GW.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Asosiasi Pabrikan Modul Surya Indonesia", "org_id": "l_67ed5e1422", "peran": "industri", "posisi": "Menekankan daya saing harga dan perlindungan pasar domestik di tengah penerapan TKDN.", "s": 1},
+    {"nama": "Asosiasi Energi Surya Indonesia", "org_id": "l_dd90c88f59", "peran": "pengembang", "posisi": "Sebelumnya menilai TKDN 60% menghambat pembiayaan; menyoroti hambatan capaian 100 GW.", "s": 2}
+   ],
+   "sumber": [
+    {"j": "Pemerintah resmi relaksasi TKDN PLTS, cek jadwalnya", "p": "Kompas.com", "u": "https://lestari.kompas.com/read/2024/08/14/090000086/pemerintah-resmi-relaksasi-tkdn-plts-cek-jadwalnya", "t": "2024-08-14"},
+    {"j": "Kesiapan industri panel surya RI menangkap peluang proyek PLTS 100 GW", "p": "Bisnis.com", "u": "https://ekonomi.bisnis.com/read/20260514/257/1973607/kesiapan-industri-panel-surya-ri-menangkap-peluang-proyek-plts-100-gw", "t": "2026-05-14"},
+    {"j": "Kapasitas PLTS Indonesia baru 1,5 GW, AESI soroti hambatan capai target 100 GW", "p": "Kompas.com", "u": "https://lestari.kompas.com/read/2026/09/04/160205286/kapasitas-plts-indonesia-baru-15-gw-aesi-soroti-hambatan-capai-target-100", "t": "2026-09-04"}
+   ]
+  },
+  {
+   "id": "harga-patokan-112", "tema": "harga", "status": "aktif", "bukti": "media",
+   "judul": "Harga patokan tertinggi Perpres 112/2022 dan rencana revisi",
+   "ringkas": "Perpres 112/2022 menetapkan harga patokan tertinggi (ceiling) pembelian listrik energi terbarukan oleh PLN. Pengembang menilai angka itu tertinggal dari biaya pembiayaan saat ini dan negosiasi PPA sering berlarut karena tidak ada batas bawah. Pemerintah menyiapkan revisi dengan batas atas dan bawah, sementara asosiasi panas bumi mengusulkan feed-in tariff.",
+   "kata": ["perpres 112", "harga patokan", "ceiling tariff", "feed-in tariff", "tarif listrik ebt"],
+   "regulasi": ["perpres-112-2022", "permen-esdm-5-2025"],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2026-02-05", "p": "Pemerintah menyatakan akan menetapkan batas atas dan bawah tarif listrik EBT.", "s": 0},
+    {"t": "2026-07", "p": "Ditjen EBTKE menyebut revisi Perpres 112 masih dalam pembahasan.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Asosiasi Panas Bumi Indonesia", "org_id": "l_7e5f8d771d", "peran": "asosiasi", "posisi": "Mengusulkan perubahan dari harga patokan tertinggi menjadi feed-in tariff untuk PLTP.", "s": 2},
+    {"nama": "Kementerian ESDM", "org_id": "l_7278e0528a", "peran": "pemerintah", "posisi": "Menyiapkan skema batas atas-bawah agar negosiasi tidak alot.", "s": 0},
+    {"nama": "PLN", "org_id": "su_ed074ff5", "peran": "pembeli listrik", "posisi": "Pembeli tunggal; harga mengikuti patokan dan hasil negosiasi.", "s": 1}
+   ],
+   "sumber": [
+    {"j": "Siap-siap, pemerintah mau tetapkan batas atas bawah tarif listrik EBT", "p": "CNBC Indonesia", "u": "https://www.cnbcindonesia.com/news/20260205161013-4-708547/siap-siap-pemerintah-mau-tetapkan-batas-atas-bawah-tarif-listrik-ebt", "t": "2026-02-05"},
+    {"j": "Harga listrik EBT akan diatur, tidak ada lagi diskusi alot IPP dan PLN", "p": "Listrik Indonesia", "u": "https://listrikindonesia.com/detail/19147/harga-listrik-ebt-akan-diatur-tidak-ada-lagi-diskusi-alot-ipp-dan-pln"},
+    {"j": "PGEO usul pemerintah tetapkan feed-in tariff listrik panas bumi", "p": "Bloomberg Technoz", "u": "https://www.bloombergtechnoz.com/detail-news/117280/pgeo-usul-pemerintah-tetapkan-feed-in-tariff-listrik-panas-bumi/2"}
+   ]
+  },
+  {
+   "id": "dmo-harga-batubara", "tema": "batubara", "status": "aktif", "bukti": "media",
+   "judul": "DMO dan harga batubara untuk pembangkit PLN",
+   "ringkas": "Harga batubara untuk pembangkit dalam negeri dipatok maksimal US$70 per ton sejak 2018, jauh di bawah harga acuan pasar. Penambang menyebut harga itu di bawah biaya keekonomian; pemerintah menahan perubahan sambil mengevaluasi. Pada Oktober 2026 dilaporkan penjualan ke pembangkit off-grid tidak lagi dihitung sebagai pemenuhan DMO.",
+   "kata": ["dmo", "harga batu bara", "harga batubara", "hba"],
+   "regulasi": ["permen-esdm-19-2017"],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2026-06-22", "p": "ESDM ditanya soal kemungkinan mengubah harga patokan DMO US$70/ton; belum ada keputusan.", "s": 0},
+    {"t": "2026-10-31", "p": "Dilaporkan penambang tak bisa lagi memenuhi DMO dengan memasok pembangkit off-grid.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Kementerian ESDM", "org_id": "l_7278e0528a", "peran": "pemerintah", "posisi": "Mempertahankan harga DMO sambil terus mengevaluasi.", "s": 0},
+    {"nama": "Asosiasi Pengusaha Batubara Indonesia", "org_id": "l_06ec0b587e", "peran": "penambang", "posisi": "Menilai rencana pembatasan DMO off-grid perlu kajian dan penjelasan tambahan.", "s": 1},
+    {"nama": "PLN", "org_id": "su_ed074ff5", "peran": "pembeli", "posisi": "Bergantung pada pasokan DMO untuk PLTU.", "s": 2}
+   ],
+   "sumber": [
+    {"j": "Harga patokan DMO batu bara US$70/ton bakal diubah? Ini kata ESDM", "p": "CNBC Indonesia", "u": "https://www.cnbcindonesia.com/news/20260622192933-4-744811/harga-patokan-dmo-batu-bara-us-70-ton-bakal-diubah-ini-kata-esdm", "t": "2026-06-22"},
+    {"j": "Penjualan batubara ke pembangkit listrik off grid tidak lagi masuk hitungan DMO", "p": "Kontan", "u": "https://industri.kontan.co.id/news/penjualan-batubara-ke-pembangkit-listrik-off-grid-tidak-lagi-masuk-hitungan-dmo", "t": "2026-10-31"},
+    {"j": "Dilema DMO batubara dan ketergantungan PLN", "p": "Kontan", "u": "https://insight.kontan.co.id/news/dilema-dmo-batubara-dan-ketergantungan-pln"}
+   ]
+  },
+  {
+   "id": "pltu-captive", "tema": "batubara", "status": "aktif", "bukti": "kajian",
+   "judul": "PLTU captive di kawasan industri",
+   "ringkas": "Perpres 112/2022 melarang PLTU baru tetapi memberi pengecualian bagi PLTU untuk industri tertentu. Kapasitas PLTU captive dilaporkan mencapai 19,3 GW pada 2025, terutama di kawasan nikel Sulawesi Tengah dan Maluku Utara. Koalisi masyarakat sipil menggugat pasal pengecualian ke Mahkamah Agung, sementara pembahasan revisi perpres dikhawatirkan melonggarkan syarat.",
+   "kata": ["pltu captive", "captive power", "captive"],
+   "regulasi": ["perpres-112-2022"],
+   "wilayah": ["72", "82"],
+   "linimasa": [
+    {"t": "2025-05-30", "p": "Koalisi masyarakat sipil Sulawesi mendesak revisi aturan PLTU captive.", "s": 0},
+    {"t": "2025-11-30", "p": "Liputan tentang masifnya PLTU di kawasan industri.", "s": 1},
+    {"t": "2026-01-27", "p": "CREA menyebut pembangunan PLTU captive melejit dipicu Perpres 112/2022.", "s": 2}
+   ],
+   "pihak": [
+    {"nama": "Koalisi masyarakat sipil Sulawesi", "peran": "masyarakat sipil", "posisi": "Meminta pasal pengecualian PLTU industri dihapus; mengajukan uji materi ke MA.", "s": 0},
+    {"nama": "CREA", "peran": "lembaga riset", "posisi": "Menilai risiko ekonomi dan emisi dari PLTU captive kian besar.", "s": 2},
+    {"nama": "IESR", "peran": "lembaga riset", "posisi": "Mengingatkan revisi Perpres 112 berpotensi menambah PLTU batubara baru.", "s": 3}
+   ],
+   "sumber": [
+    {"j": "Koalisi Sulawesi desak revisi aturan PLTU captive", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2025/05/30/koalisi-sulawesi-desak-revisi-aturan-pltu-captive/", "t": "2025-05-30"},
+    {"j": "Menyoal masifnya PLTU di kawasan industri", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2025/11/30/menyoal-masifnya-pltu-di-kawasan-industri/", "t": "2025-11-30"},
+    {"j": "PLTU captive melejit dipicu Perpres 112/2022 (siaran pers)", "p": "CREA", "u": "https://energyandcleanair.org/wp/wp-content/uploads/2026/01/ID-CREA_Press-release_PLTU-Captive-Melejit-Dipicu-Perpres-112_2022-Risiko-Ekonomi-dan-Emisi-Kian-Besar.pdf", "t": "2026-01"},
+    {"j": "IESR: revisi Perpres 112 berpotensi menambah PLTU batubara baru", "p": "Kontan", "u": "https://industri.kontan.co.id/news/iesr-revisi-perpres-112-berpotensi-menambah-pltu-batubara-baru-di-indonesia"}
+   ]
+  },
+  {
+   "id": "jetp-cipp", "tema": "pendanaan", "status": "aktif", "bukti": "media",
+   "judul": "JETP dan Rencana Investasi dan Kebijakan Komprehensif (CIPP)",
+   "ringkas": "Kemitraan transisi energi berkeadilan (JETP) menjanjikan pendanaan besar untuk mempensiunkan batubara dan memperluas energi terbarukan. CIPP edisi November 2023 menjadi acuan prioritas, tetapi realisasi tersendat; pendanaan dilaporkan naik menjadi US$21,4 miliar sementara proyek percontohan pensiun dini PLTU dibatalkan.",
+   "kata": ["jetp", "cipp"],
+   "regulasi": ["permen-esdm-10-2025"],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2023-11", "p": "CIPP JETP Indonesia memuat Cirebon-1 sebagai prioritas pensiun dini dengan taksiran biaya sekitar US$300 juta.", "s": 0},
+    {"t": "2025-12-05", "p": "Pemerintah membatalkan pensiun dini PLTU Cirebon-1.", "s": 1},
+    {"t": "2026-06-05", "p": "Opini Jakarta Post menyebut janji pendanaan transisi batubara tak terpenuhi.", "s": 2}
+   ],
+   "pihak": [
+    {"nama": "Sekretariat JETP Indonesia", "org_id": "l_c455b2f724", "peran": "pengelola", "posisi": "Mengoordinasikan CIPP dan prioritas proyek.", "s": 0},
+    {"nama": "Asian Development Bank", "org_id": "in_9a375db244", "peran": "pendana", "posisi": "Dana untuk Cirebon-1 dilaporkan dialihkan ke pembangkit lain.", "s": 1}
+   ],
+   "sumber": [
+    {"j": "JETP prioritaskan pensiun dini PLTU Cirebon I ketimbang Pelabuhan Ratu", "p": "Kontan", "u": "https://insight.kontan.co.id/news/jetp-prioritaskan-pensiun-dini-pltu-cirebon-i-ketimbang-pelabuhan-ratu"},
+    {"j": "PLTU Cirebon-1 batal disuntik mati, pemerintah cari pengganti", "p": "Bisnis.com", "u": "https://ekonomi.bisnis.com/read/20251205/9/1934499/pltu-cirebon-1-batal-disuntik-mati-pemerintah-cari-pengganti", "t": "2025-12-05"},
+    {"j": "The broken promise of coal transition finance", "p": "The Jakarta Post", "u": "https://thejakartapost.com/opinion/2026/06/05/the-broken-promise-of-coal-transition-finance", "t": "2026-06-05"}
+   ]
+  },
+  {
+   "id": "pensiun-dini-pltu", "tema": "batubara", "status": "aktif", "bukti": "media",
+   "judul": "Pensiun dini PLTU: Cirebon-1 batal, pengganti dicari",
+   "ringkas": "PLTU Cirebon-1 (Jawa Barat) semula calon pensiun dini pertama Indonesia. Pada Desember 2025 pemerintah membatalkannya dengan alasan keandalan dan biaya; pemerintah mencari pembangkit lain yang lebih tua. Kritik muncul soal transparansi keputusan dan hak pekerja.",
+   "kata": ["pensiun dini", "cirebon-1", "cirebon 1", "pltu cirebon"],
+   "regulasi": ["perpres-112-2022"],
+   "wilayah": ["32"],
+   "linimasa": [
+    {"t": "2025-12-05", "p": "Pemerintah resmi membatalkan pensiun dini PLTU Cirebon-1 dan membidik pembangkit yang lebih tua.", "s": 0},
+    {"t": "2026-01", "p": "Mongabay melaporkan Indonesia mundur dari uji coba keluar batubara di tengah tekanan keuangan dan politik.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Pemerintah (Kemenko Perekonomian/ESDM)", "peran": "pemerintah", "posisi": "Dana ADB untuk Cirebon-1 disebut tetap tersedia dan diarahkan ke pembangkit lain.", "s": 0},
+    {"nama": "IESR", "peran": "lembaga riset", "posisi": "Menilai pembatalan akan memperlambat transisi sektor listrik.", "s": 0}
+   ],
+   "sumber": [
+    {"j": "Pemerintah resmi batalkan pensiun dini PLTU Cirebon 1, bidik pembangkit yang lebih tua", "p": "JawaPos", "u": "https://www.jawapos.com/energi/2512050207/pemerintah-resmi-batalkan-pensiun-dini-pltu-cirebon-1-bidik-pembangkit-listrik-yang-lebih-tua", "t": "2025-12-05"},
+    {"j": "Indonesia backs away from coal exit test case amid financial and political pushback", "p": "Mongabay", "u": "https://news.mongabay.com/2026/01/indonesia-backs-away-from-coal-exit-test-case-amid-financial-and-political-pushback/", "t": "2026-01"}
+   ]
+  },
+  {
+   "id": "plts-atap", "tema": "kebijakan", "status": "aktif", "bukti": "media",
+   "judul": "PLTS atap: Permen ESDM 2/2024 dan kuota",
+   "ringkas": "Permen ESDM 2/2024 menghapus skema ekspor-impor listrik PLTS atap dan memperkenalkan kuota pengembangan lima tahunan oleh pemegang IUPTLU, dengan pendaftaran dua kali setahun (Januari dan Juli). Pelanggan lama tetap memakai skema lama selama 10 tahun. IESR menilai revisi condong ke PLN; pada Agustus 2026 kebijakan kuota kembali dipersoalkan.",
+   "kata": ["plts atap", "atap surya", "permen esdm 2"],
+   "regulasi": ["permen-esdm-2-2024"],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2024-02-23", "p": "IESR menyayangkan revisi Permen PLTS atap yang dinilai condong ke PLN.", "s": 0},
+    {"t": "2024-02-25", "p": "Revisi disahkan; skema ekspor-impor dihapus dan kuota berlaku.", "s": 1},
+    {"t": "2026-08-08", "p": "Pembahasan bahwa PLTS atap dapat memperkuat keandalan dan permintaan meninjau kebijakan kuota.", "s": 2}
+   ],
+   "pihak": [
+    {"nama": "Kementerian ESDM", "org_id": "l_7278e0528a", "peran": "regulator", "posisi": "Menghapus ekspor-impor listrik dan mengatur kuota agar sesuai kapasitas sistem.", "s": 1},
+    {"nama": "IESR", "peran": "lembaga riset", "posisi": "Mendesak evaluasi satu tahun atas penghapusan ekspor-impor dan kuota.", "s": 0}
+   ],
+   "sumber": [
+    {"j": "IESR sayangkan revisi Permen PLTS atap condong berpihak ke PLN", "p": "Bisnis.com", "u": "https://ekonomi.bisnis.com/read/20240223/44/1743527/iesr-sayangkan-revisi-permen-plts-atap-condong-berpihak-ke-pln", "t": "2024-02-23"},
+    {"j": "Aturan ekspor-impor dihapus, PLTS atap juga bakal dibatasi", "p": "Detik Finance", "u": "https://finance.detik.com/energi/d-7227184/aturan-ekspor-impor-dihapus-plts-atap-juga-bakal-dibatasi", "t": "2024-02-25"},
+    {"j": "PLTS atap dinilai bisa perkuat keandalan listrik, kebijakan kuota diminta ditinjau", "p": "Kompas.com", "u": "https://lestari.kompas.com/read/2026/08/08/130100886/plts-atap-dinilai-bisa-perkuat-keandalan-listrik-kebijakan-kuota-diminta?page=all", "t": "2026-08-08"}
+   ]
+  },
+  {
+   "id": "oversupply-take-or-pay", "tema": "jaringan", "status": "aktif", "bukti": "media",
+   "judul": "Kelebihan pasokan, take-or-pay, dan curtailment",
+   "ringkas": "Sistem Jawa-Bali dinilai kelebihan kapasitas sehingga klausul take-or-pay membebani keuangan PLN, namun Juni 2026 terjadi pemadaman bergilir yang menurut IESR dipicu kekurangan pasokan batubara di banyak PLTU. Pembatasan keluaran PLTS/PLTB (curtailment) belum terdokumentasi pada sumber yang ditemukan; PLN berencana memakai baterai (BESS) untuk menyerap kelebihan energi.",
+   "kata": ["take or pay", "take-or-pay", "oversupply", "pemadaman bergilir", "curtailment"],
+   "regulasi": [],
+   "wilayah": ["31", "32", "33", "36", "35", "51"],
+   "linimasa": [
+    {"t": "2026-06-11", "p": "ESDM menjelaskan penyebab pemadaman listrik di Jawa.", "s": 0},
+    {"t": "2026-07-02", "p": "DEN menyatakan klausul take-or-pay dalam RUPTL membebani PLN di tengah oversupply.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Dewan Energi Nasional", "peran": "pemerintah", "posisi": "Meminta RUPTL lebih realistis karena take-or-pay membebani PLN.", "s": 1},
+    {"nama": "IESR", "peran": "lembaga riset", "posisi": "Menduga pemadaman terkait pasokan batubara dan lambatnya persetujuan RKAB.", "s": 2},
+    {"nama": "PLN", "org_id": "su_ed074ff5", "peran": "operator", "posisi": "Menyiapkan BESS untuk menyerap surplus dan mendukung PLTS.", "s": 3}
+   ],
+   "sumber": [
+    {"j": "ESDM buka suara soal pemadaman listrik di Jawa, ternyata ini penyebabnya", "p": "Bisnis.com", "u": "https://ekonomi.bisnis.com/read/20260611/44/1980245/esdm-buka-suara-soal-pemadaman-listrik-di-jawa-ternyata-ini-penyebabnya", "t": "2026-06-11"},
+    {"j": "Skema take or pay bebani PLN, DEN minta RUPTL lebih realistis", "p": "Kontan", "u": "https://industri.kontan.co.id/news/skema-take-or-pay-bebani-pln-den-minta-ruptl-lebih-realistis", "t": "2026-07-02"},
+    {"j": "Listrik Jawa-Bali padam massal, IESR bongkar carut marut Kementerian ESDM", "p": "Kabar Bursa", "u": "https://www.kabarbursa.com/makro/listrik-jawa-bali-padam-massal-iesr-bongkar-carut-marut-kementerian-esdm"},
+    {"j": "PLN siapkan tambahan listrik 19,1 GW hingga 2030, PLTS dan BESS jadi andalan", "p": "Investortrust", "u": "https://investortrust.id/business/108304/pln-siapkan-tambahan-listrik-19-1-gw-hingga-2030-plts-dan-bess-jadi-andalan"}
+   ]
+  },
+  {
+   "id": "pendanaan-suku-bunga", "tema": "pendanaan", "status": "aktif", "bukti": "media",
+   "judul": "Biaya pendanaan dan suku bunga proyek energi terbarukan",
+   "ringkas": "IESR menilai tarif patokan dihitung dengan suku bunga rendah era 2019-2021 sehingga tak lagi sejalan dengan pasar, dan banyak proyek belum memenuhi kriteria kelayakan bank. METI menegaskan bunga murah tidak cukup tanpa regulasi konsisten, offtake pasti, dan kontrak jelas.",
+   "kata": ["suku bunga", "pembiayaan", "bankability", "pendanaan ebt"],
+   "regulasi": ["permen-kemenkeu-5-2025"],
+   "posisi_meti": {"ringkas": "Pembiayaan proyek EBT tidak bisa hanya mengandalkan bunga rendah; dibutuhkan regulasi konsisten, offtake pasti, dan kontrak yang jelas (EBTKE ConEx 2026).", "tanggal": "2026", "sumber_idx": 0},
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2026", "p": "Dalam EBTKE ConEx 2026 METI menekankan kepastian regulasi di atas bunga murah.", "s": 0}
+   ],
+   "pihak": [
+    {"nama": "METI", "org_id": "l_41bf1f0b41", "peran": "asosiasi", "posisi": "Kepastian regulasi, offtake, dan kontrak lebih menentukan dari bunga.", "s": 0},
+    {"nama": "IESR", "peran": "lembaga riset", "posisi": "Biaya pembiayaan tinggi menjadi penghalang utama transisi.", "s": 1},
+    {"nama": "Otoritas Jasa Keuangan", "org_id": "l_15e21f04fa", "peran": "regulator keuangan", "posisi": "Pengatur sektor jasa keuangan; posisi spesifik belum ditemukan pada sumber.", "s": 1}
+   ],
+   "sumber": [
+    {"j": "Bunga murah tak cukup, METI minta kepastian regulasi untuk biayai proyek EBT", "p": "Kabar Bursa", "u": "https://www.kabarbursa.com/makro/bunga-murah-tak-cukup-meti-minta-kepastian-regulasi-untuk-biayai-proyek-ebt"},
+    {"j": "IESR: biaya mahal, pendanaan jadi penghambat transisi energi", "p": "Kabar Bursa", "u": "https://www.kabarbursa.com/ekonomi-hijau/iesr-biaya-mahal-pendanaan-jadi-penghambat-transisi-energi"}
+   ]
+  },
+  {
+   "id": "perizinan-lahan", "tema": "perizinan", "status": "aktif", "bukti": "media",
+   "judul": "Perizinan berlapis dan pengadaan lahan proyek energi terbarukan",
+   "ringkas": "Asosiasi surya menyebut perizinan lintas kementerian berlapis dan berbeda antara pusat dan daerah, ditambah akuisisi lahan serta negosiasi PPA yang bisa memakan 6-12 bulan. Ditjen EBTKE mengklaim izin panas bumi lewat OSS kini hanya tujuh hari, tetapi klaim itu belum tentu berlaku untuk jenis pembangkit lain.",
+   "kata": ["perizinan", "oss", "pengadaan lahan", "izin lokasi"],
+   "regulasi": ["permen-esdm-7-2026"],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2026-09-14", "p": "Liputan sederet hambatan mengejar target PLTS 100 GW, termasuk perizinan dan lahan.", "s": 0}
+   ],
+   "pihak": [
+    {"nama": "Asosiasi Energi Surya Indonesia", "org_id": "l_dd90c88f59", "peran": "pengembang", "posisi": "Usul penyederhanaan perizinan dan kesiapan lahan sebelum tender.", "s": 1},
+    {"nama": "Ditjen EBTKE", "org_id": "l_7278e0528a", "peran": "regulator", "posisi": "Klaim izin panas bumi lewat OSS tujuh hari.", "s": 2}
+   ],
+   "sumber": [
+    {"j": "Sederet hambatan RI kejar target PLTS 100 GW", "p": "CNBC Indonesia", "u": "https://cnbcindonesia.com/news/20260914192731-4-767870/sederet-hambatan-ri-kejar-target-plts-100-gw", "t": "2026-09-14"},
+    {"j": "AESI beberkan hambatan di industri PLTS dari masalah perizinan hingga sewa waduk", "p": "Kontan", "u": "https://industri.kontan.co.id/news/aesi-beberkan-hambatan-di-industri-plts-dari-masalah-perizinan-hingga-sewa-waduk"},
+    {"j": "Lewat OSS, Dirjen EBTKE klaim izin panas bumi kini hanya tujuh hari", "p": "Listrik Indonesia", "u": "https://listrikindonesia.com/detail/18591/lewat-oss-dirjen-ebtke-klaim-izin-panas-bumi-kini-hanya-tujuh-hari"}
+   ]
+  },
+  {
+   "id": "subsidi-tarif-listrik", "tema": "harga", "status": "aktif", "bukti": "media",
+   "judul": "Subsidi dan kompensasi listrik, tarif ditahan",
+   "ringkas": "Tarif listrik PLN ditahan sejak 2017; tarif triwulan III 2026 juga tidak naik meski parameter makro mengarah naik. Alokasi APBN 2026 untuk subsidi dan kompensasi listrik mencapai sekitar Rp245,6 triliun dan piutang kompensasi PLN membesar. Tarif tertahan mengurangi ruang bagi harga energi terbarukan yang lebih tinggi.",
+   "kata": ["tarif listrik", "subsidi listrik", "kompensasi pln"],
+   "regulasi": [],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2026-06-04", "p": "Pemberitaan: hampir 10 tahun tarif listrik RI tak pernah naik.", "s": 0},
+    {"t": "2026-07-01", "p": "Tarif PLN Juli-September 2026 tetap; pemerintah menahan kenaikan.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Kementerian ESDM", "org_id": "l_7278e0528a", "peran": "pemerintah", "posisi": "Menahan tarif untuk menjaga daya beli dan stabilitas ekonomi.", "s": 1},
+    {"nama": "Kementerian Keuangan", "org_id": "l_7b43a2574c", "peran": "pemerintah", "posisi": "Menanggung subsidi dan kompensasi dalam APBN.", "s": 2}
+   ],
+   "sumber": [
+    {"j": "Hampir 10 tahun tarif listrik RI tak pernah naik", "p": "CNBC Indonesia", "u": "https://www.cnbcindonesia.com/news/20260604192507-4-740259/hampir-10-tahun-tarif-listrik-ri-tak-pernah-naik", "t": "2026-06-04"},
+    {"j": "Tarif listrik PLN Juli-September 2026 tetap, pemerintah tahan kenaikan", "p": "Investortrust", "u": "https://investortrust.id/business/108052/tarif-listrik-pln-juli-september-2026-tetap-pemerintah-tahan-kenaikan"},
+    {"j": "Tarif listrik tak naik 9 tahun, beban subsidi dan kompensasi tembus Rp201 triliun", "p": "Investortrust", "u": "https://investortrust.id/business/105366/tarif-listrik-tak-naik-9-tahun-beban-subsidi-dan-kompensasi-tembus-rp-201-triliun"}
+   ]
+  },
+  {
+   "id": "co-firing-biomassa", "tema": "industri", "status": "aktif", "bukti": "media",
+   "judul": "Co-firing biomassa di PLTU",
+   "ringkas": "PLN EPI menargetkan pasokan biomassa 3,65 juta ton pada 2026 untuk co-firing di 52 PLTU, tetapi realisasi hingga Juni 2026 baru sekitar 0,93 juta ton. Kendala yang disebut: standardisasi mutu, rantai pasok petani yang tersebar, dan infrastruktur pengolahan. Ombudsman pernah menilai program berada di bawah target.",
+   "kata": ["co-firing", "cofiring", "biomassa"],
+   "regulasi": [],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2026-06", "p": "Realisasi penggunaan biomassa di 52 PLTU mencapai 932.906 ton.", "s": 0}
+   ],
+   "pihak": [
+    {"nama": "PLN Energi Primer Indonesia", "peran": "pemasok bahan bakar", "posisi": "Menekankan standardisasi dan efisiensi rantai pasok.", "s": 0},
+    {"nama": "Ombudsman RI", "peran": "pengawas", "posisi": "Menilai program di bawah target dan berisiko mengganggu NZE 2060.", "s": 1}
+   ],
+   "sumber": [
+    {"j": "PLN EPI targetkan pasokan biomassa 3,65 juta ton pada 2026", "p": "Investortrust", "u": "https://investortrust.id/business/110828/pln-epi-targetkan-pasokan-biomassa-3-65-juta-ton-pada-2026-percepat-co-firing-di-52-pltu"},
+    {"j": "Soroti program biomassa di bawah target, Ombudsman sebut target NZE 2060 bisa terganggu", "p": "Investortrust", "u": "https://investortrust.id/business/91481/soroti-program-biomassa-di-bawah-target-ombudsman-sebut-target-nze-2060-bisa-terganggu"}
+   ]
+  },
+  {
+   "id": "nuklir-pltn", "tema": "nuklir", "status": "aktif", "bukti": "media",
+   "judul": "PLTN pertama dan pembentukan NEPIO",
+   "ringkas": "RUPTL 2025-2034 memuat rencana PLTN 250 MW di dua lokasi (Kepulauan Bangka Belitung dan Kalimantan Barat). Syarat IAEA berupa badan pelaksana program nuklir (NEPIO) belum rampung dan sumber berbeda soal tahap regulasinya. Masyarakat sipil di kedua wilayah dilaporkan menolak, dan Mongabay menyoroti biaya serta risiko.",
+   "kata": ["pltn", "nuklir", "nepio", "thorcon"],
+   "regulasi": ["uu-10-1997", "pp-2-2014"],
+   "wilayah": ["19", "61"],
+   "linimasa": [
+    {"t": "2025-07", "p": "PLN Nusantara Power dan ThorCon menandatangani MoU studi kelayakan PLTN di Bangka Belitung.", "s": 0},
+    {"t": "2026-02-16", "p": "Mongabay mengangkat biaya dan risiko, mendorong pertimbangan ulang proyek PLTN.", "s": 1},
+    {"t": "2026-10-27", "p": "Katadata menyebut NEPIO belum disahkan.", "s": 2}
+   ],
+   "pihak": [
+    {"nama": "PT PLN Nusantara Power", "org_id": "p_ff7a390a42", "peran": "pelaksana (Bangka)", "posisi": "Menggarap studi kelayakan PLTN di Bangka.", "s": 0},
+    {"nama": "PT PLN Indonesia Power", "org_id": "p_5a2e7d0c63", "peran": "pelaksana (Kalimantan)", "posisi": "Ditunjuk menggarap PLTN di Kalimantan.", "s": 2}
+   ],
+   "sumber": [
+    {"j": "Pembangkit listrik tenaga nuklir bakal dibangun di Babel dan Kalbar", "p": "Detik Finance", "u": "https://finance.detik.com/energi/d-8296794/pembangkit-listrik-tenaga-nuklir-bakal-dibangun-di-babel-dan-kalbar"},
+    {"j": "Lebih mahal dan berisiko, timbang ulang proyek PLTN", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2026/02/16/lebih-mahal-dan-berisiko-timbang-ulang-proyek-pltn/", "t": "2026-02-16"},
+    {"j": "PLTN terus dibicarakan, mengapa aturan lembaga NEPIO tak kunjung disahkan?", "p": "Katadata", "u": "https://katadata.co.id/ekonomi-hijau/energi-baru/6ae089077b2af/pltn-terus-dibicarakan-mengapa-aturan-lembaga-nepio-tak-kunjung-disahkan"}
+   ]
+  },
+  {
+   "id": "karbon-pajak-bursa", "tema": "karbon", "status": "aktif", "bukti": "media",
+   "judul": "Pajak karbon dan bursa karbon",
+   "ringkas": "Pajak karbon yang berulang kali ditunda belum terbit; pada Februari 2026 pejabat menyebutnya masih disusun. Bursa karbon IDXCarbon bergerak lesu (nilai transaksi Januari 2026 sekitar Rp4,7 miliar) dan aturannya disesuaikan lagi pada Juli 2026 (BEI dan POJK 10/2026).",
+   "kata": ["pajak karbon", "bursa karbon", "idxcarbon", "nilai ekonomi karbon"],
+   "regulasi": ["perpres-98-2021", "perpres-110-2025", "permen-klhk-7-2023"],
+   "wilayah": [],
+   "linimasa": [
+    {"t": "2025-10-16", "p": "Dua tahun berjalan, pasar karbon Indonesia belum menunjukkan geliat.", "s": 0},
+    {"t": "2026-07-09", "p": "Perubahan peraturan bursa karbon mulai berlaku.", "s": 1},
+    {"t": "2026-07-17", "p": "OJK menerbitkan POJK 10/2026 untuk menyelaraskan perdagangan karbon dengan perpres.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Otoritas Jasa Keuangan", "org_id": "l_15e21f04fa", "peran": "regulator bursa karbon", "posisi": "Memperbarui aturan perdagangan karbon.", "s": 1},
+    {"nama": "PT Bursa Efek Indonesia", "org_id": "en_7f548f73fd", "peran": "penyelenggara", "posisi": "Memperluas cakupan unit karbon dan memperpanjang relaksasi biaya pendaftaran.", "s": 1},
+    {"nama": "Kementerian Keuangan", "org_id": "l_7b43a2574c", "peran": "pemerintah", "posisi": "Pajak karbon sedang disusun (Februari 2026).", "s": 2}
+   ],
+   "sumber": [
+    {"j": "Dua tahun berjalan, pasar karbon Indonesia belum menunjukkan geliat", "p": "Kompas.com", "u": "https://lestari.kompas.com/read/2025/10/16/103700386/dua-tahun-berjalan-pasar-karbon-indonesia-belum-menunjukkan-geliat", "t": "2025-10-16"},
+    {"j": "Surat Keputusan Direksi BEI KEP-00102/BEI/07-2026: perluas cakupan unit karbon", "p": "Veritask", "u": "https://veritask.ai/en/artikel/surat-keputusan-direksi-pt-bursa-efek-indonesia-nomor-kep-00102-bei-07-2026-perluas-cakupan-unit-karbon-dan-perpanjang-masa-relaksasi-biaya-pendaftaran", "t": "2026-07"},
+    {"j": "Perdagangan karbon Indonesia Januari 2026 turun, nilai transaksi Rp4,7 miliar", "p": "Kabar Bursa", "u": "https://www.kabarbursa.com/carbon-trading/perdagangan-karbon-indonesia-januari-2026-turun-nilai-transaksi-rp47-miliar", "t": "2026-02"}
+   ]
+  },
+  {
+   "id": "psel-tipping-fee", "tema": "sampah", "status": "aktif", "bukti": "media",
+   "judul": "PSEL: tipping fee dihapus, subsidi pusat, Danantara",
+   "ringkas": "Perpres 109/2025 menghapus tipping fee yang dulu ditanggung APBD dan menetapkan PLN membeli listrik sampah sekitar US$0,20 per kWh dengan subsidi dari pusat. Pengembangan dipimpin Danantara bersama enam pemda (nilai investasi sekitar US$5 miliar). PLN menyiapkan PPA 30 tahun; ada kekhawatiran harga listrik naik dan beban subsidi pusat.",
+   "kata": ["psel", "sampah menjadi energi", "waste to energy", "pltsa", "tipping fee"],
+   "regulasi": ["perpres-109-2025", "perpres-35-2018"],
+   "wilayah": ["51", "31", "32", "36", "35", "33", "16", "73", "71", "12", "18"],
+   "linimasa": [
+    {"t": "2025-09-07", "p": "Pemerintah menjajaki obligasi patriot dan meniadakan tipping fee untuk PSEL.", "s": 0},
+    {"t": "2026-05-11", "p": "Danantara dan enam pemda mempercepat proyek PSEL senilai US$5 miliar.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Danantara", "org_id": "l_43f00f6a72", "peran": "pengembang program", "posisi": "Menggandeng pemda, menyiapkan tender dan investasi besar.", "s": 1},
+    {"nama": "PLN", "org_id": "su_ed074ff5", "peran": "pembeli listrik", "posisi": "Siap PPA jangka panjang 30 tahun dengan kompensasi dari pusat.", "s": 2},
+    {"nama": "PLN Indonesia Power", "org_id": "p_5a2e7d0c63", "peran": "pembangkit", "posisi": "Menyebut penghapusan tipping fee akan mendorong harga listrik naik.", "s": 0}
+   ],
+   "sumber": [
+    {"j": "Govt bets on patriot bonds, drops tipping fees to power waste-to-energy", "p": "The Jakarta Post", "u": "https://www.thejakartapost.com/business/2025/09/07/govt-bets-on-patriot-bonds-drops-tipping-fees-to-power-waste-to-energy", "t": "2025-09-07"},
+    {"j": "Danantara gandeng 6 pemda percepat proyek PSEL, nilai investasi capai US$5 miliar", "p": "Bisnis.com", "u": "https://kabar24.bisnis.com/read/20260511/15/1972997/danantara-gandeng-6-pemda-percepat-proyek-psel-nilai-investasi-capai-us5-miliar", "t": "2026-05-11"},
+    {"j": "PLN siapkan kontrak jangka panjang proyek PSEL, durasi jual beli listrik 30 tahun", "p": "Kontan", "u": "https://industri.kontan.co.id/news/pln-siapkan-kontrak-jangka-panjang-proyek-psel-durasi-jual-beli-listrik-30-tahun"}
+   ]
+  },
+  {
+   "id": "konflik-panas-bumi", "tema": "sosial", "status": "aktif", "bukti": "media",
+   "judul": "Konflik sosial dan keselamatan proyek panas bumi",
+   "ringkas": "Pola penolakan dan insiden keselamatan di banyak wilayah kerja panas bumi (Poco Leok, Wae Sano, Mataloko, Gunung Talang, Dieng, Ungaran, Sorik Marapi) memunculkan tuntutan partisipasi bermakna, persetujuan warga, dan tata kelola gas beracun. Isu ini bergabung dengan target besar panas bumi nasional.",
+   "kata": ["panas bumi", "geothermal", "pltp"],
+   "regulasi": ["uu-21-2014", "pp-7-2017"],
+   "wilayah": ["53", "13", "33", "12"],
+   "linimasa": [
+    {"t": "2025-06-04", "p": "Mongabay menerbitkan liputan tentang pembangkit panas bumi dan paparan gas beracun.", "s": 0},
+    {"t": "2026-04", "p": "Pernyataan bahwa sejumlah proyek panas bumi tersendat di tengah kekhawatiran masyarakat adat.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "PT Pertamina Geothermal Energy Tbk", "org_id": "p_dda1e51dae", "peran": "pengembang", "posisi": "Pengembang panas bumi terbesar; terkait beberapa wilayah kerja.", "s": 0},
+    {"nama": "PT Geo Dipa Energi (Persero)", "org_id": "p_7b70728bb7", "peran": "pengembang", "posisi": "Pengelola PLTP Dieng dan Patuha.", "s": 0}
+   ],
+   "sumber": [
+    {"j": "Transisi energi yang beracun: cerita pembangkit panas bumi di Indonesia", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2025/06/04/transisi-energi-yang-beracun-cerita-pembangkit-panas-bumi-di-indonesia/", "t": "2025-06-04"},
+    {"j": "Indonesian geothermal projects stall amid indigenous concerns over justice", "p": "Mongabay", "u": "https://news.mongabay.com/short-article/2026/04/indonesian-geothermal-projects-stall-amid-indigenous-concerns-over-justice/", "t": "2026-04"}
+   ]
+  }
+ ]
+}

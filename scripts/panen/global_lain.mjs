@@ -51,7 +51,10 @@ async function utama() {
       const j = await p.json(`${WD}?action=wbsearchentities&search=${encodeURIComponent(s.cari || s.nama)}&language=en&type=item&limit=6&format=json`);
       const ids = (j?.search || []).map((x) => x.id); const ent = ids.length ? await wikidataEntitas(p, ids) : {};
       const cocok = ids.map((i) => ent[i]).find((e) => klaim(e, 'P856').some((u) => { try { return hostInti(u) === hostInti(s.situs); } catch { return false; } }));
-      cache.wd[s.nama] = cocok ? { id: cocok.id, label: cocok.labels?.en?.value, desk: cocok.descriptions?.en?.value, situs: klaim(cocok, 'P856')[0], negara: klaim(cocok, 'P17').map((x) => x.id), hq: klaim(cocok, 'P159').map((x) => x.id), logo: klaim(cocok, 'P154')[0] || null, berdiri: tahunDari(klaim(cocok, 'P571')[0]), enwiki: cocok.sitelinks?.enwiki?.title } : { tidak: true };
+      const lbl = (e) => (e.labels?.en?.value || '').toLowerCase(), q = (s.cari || s.nama).toLowerCase(); // cadangan: label persis sama dan punya negara
+      const cadangan = cocok ? null : ids.map((i) => ent[i]).find((e) => lbl(e) === q && klaim(e, 'P17').length && !/species|genus|album|film|person/i.test(e.descriptions?.en?.value || ''));
+      const pilih = cocok || cadangan;
+      cache.wd[s.nama] = pilih ? { cocok_by: cocok ? 'situs' : 'label', id: pilih.id, label: pilih.labels?.en?.value, desk: pilih.descriptions?.en?.value, situs: klaim(pilih, 'P856')[0], negara: klaim(pilih, 'P17').map((x) => x.id), hq: klaim(pilih, 'P159').map((x) => x.id), logo: klaim(pilih, 'P154')[0] || null, berdiri: tahunDari(klaim(pilih, 'P571')[0]), enwiki: pilih.sitelinks?.enwiki?.title } : { tidak: true };
       fs.writeFileSync(cf, JSON.stringify(cache));
     }
     // 2. beranda resmi
@@ -78,7 +81,7 @@ async function utama() {
     fs.writeFileSync(cf, JSON.stringify(cache));
   }
   const baris = seed.map((s) => { const w = cache.wd[s.nama], b = cache.beranda[s.nama];
-    return { nama: s.nama, situs: s.situs, segmen: s.segmen, sub: s.sub || [], alias: s.alias, wikidata: w.tidak ? null : { id: w.id, label: w.label, deskripsi: w.desk, tahun_berdiri: w.berdiri, enwiki: w.enwiki, logo_berkas: w.logo, iso2: [...new Set((w.negara || []).map((q) => lab[q]?.iso2).filter(Boolean))] },
+    return { nama: s.nama, situs: s.situs, segmen: s.segmen, sub: s.sub || [], alias: s.alias, wikidata: w.tidak ? null : { cocok_by: w.cocok_by, id: w.id, label: w.label, deskripsi: w.desk, tahun_berdiri: w.berdiri, enwiki: w.enwiki, logo_berkas: w.logo, iso2: [...new Set((w.negara || []).map((q) => lab[q]?.iso2).filter(Boolean))] },
       beranda: b.ok ? { judul: b.judul, deskripsi: b.deskripsi, indonesia: b.indonesia, produk: b.produk } : { gagal: b.alasan }, logo: cache.logo[s.nama] }; });
   tulisJson(path.join(ROOT, 'data/global/lain/panen.json'), { sumber: 'Wikidata (CC0) + beranda resmi perusahaan', diambil: tgl, lisensi: 'Wikidata CC0; fakta beranda dikutip singkat dengan tautan', baris });
   const sumber = path.join(logoDir, 'SUMBER.md');

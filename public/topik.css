@@ -390,3 +390,22 @@ a.jm-tp-ent:hover,.jm-tp-ent a:hover{color:var(--accent)}
 @media (max-width:899px){.jm-tp-tiga{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:767px){.jm-tp-tb .jm-tabel td .jm-pil-tek{white-space:normal}}
 .jm-tp-ub-n{font-size:var(--t-h1);overflow-wrap:normal;white-space:nowrap}
+
+/* bab 43 jalan proyek dan bab 44 model bisnis */
+.jm-jl-tab{margin:12px 0}
+.jm-jl-gantt{margin:12px 0 16px;overflow-x:auto}
+.jm-jl-gantt svg{display:block;width:100%;height:auto}
+.jm-jl-bar-max{fill:var(--soft-hijau);stroke:var(--line);stroke-width:1}
+.jm-jl-bar{fill:var(--accent)}
+.jm-jl-bar.jm-jl-b-Hipotesis{fill:var(--info)}
+.jm-jl-bar:hover,.jm-jl-bar-max:hover{opacity:.85}
+.jm-jl-tahap{grid-template-columns:minmax(0,1fr)}
+.jm-jl-dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px 18px;margin:10px 0 0}
+.jm-jl-dl>div{display:grid;gap:2px;align-content:start}
+.jm-jl-dl dt{display:flex;align-items:center;gap:6px;font:700 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-jl-dl dd{margin:0;line-height:var(--lh-isi)}
+.jm-jl-kartu{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.jm-jl-model h3{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.jm-jl-n{color:var(--accent);letter-spacing:1px;white-space:nowrap}
+.jm-jl-n i{font-style:normal;color:var(--line)}
+@media (max-width:560px){.jm-jl-dl{grid-template-columns:minmax(0,1fr)}.jm-jl-kartu{grid-template-columns:minmax(0,1fr)}}

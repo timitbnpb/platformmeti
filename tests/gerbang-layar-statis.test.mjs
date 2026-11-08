@@ -65,6 +65,7 @@ test("tanpa hex di CSS selain tema.css, tanpa :focus polos, tanpa em dash dan ti
 test("tiap var(--x) di CSS layar baru terdefinisi di tema.css atau lokal", () => {
   const tema = baca("inti/tema.css");
   for (const f of semua.filter((x) => x.endsWith(".css") && x !== "inti/tema.css" && !/^(fungsi_)?direktori[._]/.test(x) && !x.startsWith("vendor/"))) {
-    for (const m of baca(f).matchAll(/var\((--[\w-]+)/g)) assert.match(tema, new RegExp(m[1] + ":"), `${f}: ${m[1]} tak terdefinisi`);
+    const lokal = baca(f);
+    for (const m of lokal.matchAll(/var\((--[\w-]+)/g)) assert.ok(tema.includes(m[1] + ":") || lokal.includes(m[1] + ":"), `${f}: ${m[1]} tak terdefinisi`);
   }
 });

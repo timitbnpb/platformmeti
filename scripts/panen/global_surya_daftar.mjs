@@ -23,7 +23,7 @@ export const BENIH = [
   ['Suntech Power', 'CN', [M], { alias: ['Wuxi Suntech', 'Suntech'] }],
   ['Seraphim Solar', 'CN', [M], { alias: ['Seraphim Energy Group'], cari: 'Seraphim Solar' }],
   ['Talesun Solar', 'CN', [S, M], { alias: ['Talesun'], cari: 'Talesun' }],
-  ['TCL Zhonghuan Renewable Energy Technology', 'CN', [W, S, M], { alias: ['TCL Zhonghuan', 'TZE', 'Maxeon'], cari: 'TCL Zhonghuan' }],
+  ['TCL Zhonghuan Renewable Energy Technology', 'CN', [W, S, M], { alias: ['TCL Zhonghuan', 'TZE'], cari: 'TCL Zhonghuan' }],
   ['Yingli Green Energy', 'CN', [W, S, M], { alias: ['Yingli Solar'] }],
   ['Maxeon Solar Technologies', 'SG', [S, M], { alias: ['SunPower', 'Maxeon'] }],
   ['Aiko Solar', 'CN', [S, M], { alias: ['AIKO', 'Aiko Solar Energy'], cari: 'Aiko Solar' }],
@@ -126,3 +126,18 @@ export const BENIH = [
   ['Great Power Energy', 'CN', [B], { alias: ['Great Power', 'Shenzhen Greatpower'], cari: 'Great Power Energy' }],
   ['Trina Storage', 'CN', [B], { alias: ['Trinasolar Storage'], cari: 'Trina Storage' }],
 ];
+// Situs resmi untuk perusahaan yang tak ada di Wikidata (kurasi tim; diverifikasi saat panen: beranda harus memuat nama merek).
+export const SITUS = {
+  Astronergy: ['https://www.astronergy.com/', 'astronergy'], 'DAS Solar': ['https://www.das-solar.com/', 'das'], 'GCL Technology Holdings': ['https://www.gcl-tech.com/', 'gcl'], 'REC Group': ['https://www.recgroup.com/', 'rec'],
+  'Waaree Energies': ['https://waaree.com/', 'waaree'], 'Seraphim Solar': ['https://www.seraphim-energy.com/', 'seraphim'], 'Talesun Solar': ['https://www.talesun.com/', 'talesun'], 'Aiko Solar': ['https://www.aikosolar.com/', 'aiko'],
+  'Huasun Energy': ['https://www.huasunsolar.com/', 'huasun'], 'Znshine PV-Tech': ['https://www.znshinesolar.com/', 'znshine'], 'Phono Solar': ['https://www.phonosolar.com/', 'phono'], 'Boviet Solar': ['https://www.bovietsolar.com/', 'boviet'],
+  'Premier Energies': ['https://www.premierenergies.com/', 'premier'], 'Tata Power Solar': ['https://www.tatapowersolar.com/', 'tata'], 'Emmvee Photovoltaic Power': ['https://www.emmvee.com/', 'emmvee'], 'Mission Solar Energy': ['https://www.missionsolar.com/', 'mission'],
+  'Hangzhou First Applied Material': ['https://www.firstpvm.com/', 'first'], Jolywood: ['https://www.jolywood.cn/', 'jolywood'], Growatt: ['https://www.growatt.com/', 'growatt'], 'Ginlong Technologies': ['https://www.ginlong.com/', 'ginlong'],
+  'Sineng Electric': ['https://www.sineng.com.cn/', 'sineng'], FIMER: ['https://www.fimer.com/', 'fimer'], 'Power Electronics': ['https://www.power-electronics.com/', 'power electronics'], 'Sofar Solar': ['https://www.sofarsolar.com/', 'sofar'],
+  'SAJ Electric': ['https://www.saj-electric.com/', 'saj'], Hoymiles: ['https://www.hoymiles.com/', 'hoymiles'], APsystems: ['https://apsystems.com/', 'apsystems'], 'Chint Power Systems': ['https://www.chintpower.com/', 'chint'],
+  'Gamesa Electric': ['https://www.gamesaelectric.com/', 'gamesa'], 'Arctech Solar': ['https://www.arctechsolar.com/', 'arctech'], 'FTC Solar': ['https://ftcsolar.com/', 'ftc'], 'GameChange Solar': ['https://gamechangesolar.com/', 'gamechange'],
+  'K2 Systems': ['https://k2-systems.com/', 'k2'], 'Convert Italia': ['https://www.convertitalia.com/', 'convert'], Terrasmart: ['https://terrasmart.com/', 'terrasmart'], Esdec: ['https://www.esdec.com/', 'esdec'],
+  'Gonvarri Solar Steel': ['https://gonvarrisolarsteel.com/', 'gonvarri'], 'Hithium Energy Storage Technology': ['https://www.hithium.com/', 'hithium'], 'Fluence Energy': ['https://fluenceenergy.com/', 'fluence'], Powin: ['https://powin.com/', 'powin'],
+  'Hounen Solar': ['https://www.hounensolar.com/', 'hounen'], 'Shuangliang Eco-Energy Systems': ['https://www.shuangliang.com/', 'shuangliang'], 'Great Power Energy': ['https://www.greatpower.net/', 'great power'], 'Antai Solar': ['https://www.antaisolar.com/', 'antai'], 'PV Hardware': ['https://www.pvhardware.com/', 'pv hardware'],
+  Sigenergy: ['https://www.sigenergy.com/', 'sigenergy'], 'Trina Storage': ['https://www.trinastorage.com/', 'trina'], 'Kehua Data': ['https://www.kehua.com/', 'kehua'],
+};

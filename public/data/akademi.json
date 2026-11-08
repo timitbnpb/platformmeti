@@ -1,0 +1,1128 @@
+{
+ "lapis": "publik",
+ "dibangun_pada": "2026-11-08",
+ "tingkat_bukti": "kajian",
+ "lulus_persen": 75,
+ "catatan": {
+  "id": "Jalur belajar merangkai konten wiki METI yang sudah ada. Soal diambil dari ringkasan topik, kamus istilah, dan tanya jawab perizinan yang bersumber; tiap soal memuat tautan ke sumbernya.",
+  "en": "The learning path strings together existing METI wiki content. Questions come from sourced topic summaries, the glossary and licensing Q&A; every question links to its source."
+ },
+ "modul": [
+  {
+   "id": "dasar-ebt",
+   "ikon": "tek-surya",
+   "warna": "surya",
+   "judul": {
+    "id": "Dasar energi terbarukan",
+    "en": "Renewable energy basics"
+   },
+   "ringkas": {
+    "id": "Surya, hidro, dan panas bumi dalam angka Indonesia, serta cara membaca faktor kapasitas dan biaya listrik.",
+    "en": "Solar, hydro and geothermal in Indonesian numbers, and how to read capacity factor and cost of electricity."
+   },
+   "menit": 25,
+   "langkah": [
+    {
+     "jenis": "topik",
+     "ref": "surya",
+     "judul": {
+      "id": "Topik Surya",
+      "en": "Solar topic"
+     }
+    },
+    {
+     "jenis": "topik",
+     "ref": "hidro",
+     "judul": {
+      "id": "Topik Hidro",
+      "en": "Hydro topic"
+     }
+    },
+    {
+     "jenis": "topik",
+     "ref": "panas-bumi",
+     "judul": {
+      "id": "Topik Panas bumi",
+      "en": "Geothermal topic"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "faktor-kapasitas",
+     "judul": {
+      "id": "Istilah: faktor kapasitas",
+      "en": "Glossary: capacity factor"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "lcoe",
+     "judul": {
+      "id": "Istilah: LCOE",
+      "en": "Glossary: LCOE"
+     }
+    },
+    {
+     "jenis": "halaman",
+     "ref": "/biaya-listrik",
+     "judul": {
+      "id": "Biaya listrik per teknologi",
+      "en": "Cost of electricity by technology"
+     }
+    }
+   ],
+   "kuis": [
+    {
+     "id": "dasar-ebt-1",
+     "q": {
+      "id": "Apa arti faktor kapasitas?",
+      "en": "What does capacity factor mean?"
+     },
+     "o": [
+      {
+       "id": "Produksi sebenarnya dibagi produksi maksimum teoretis dalam setahun, dalam persen",
+       "en": "Actual output divided by theoretical maximum output over a year, in percent"
+      },
+      {
+       "id": "Kapasitas terpasang dibagi beban puncak sistem",
+       "en": "Installed capacity divided by system peak load"
+      },
+      {
+       "id": "Harga jual listrik dibagi biaya pokok penyediaan",
+       "en": "Selling price divided by cost of supply"
+      },
+      {
+       "id": "Jumlah jam matahari bersinar dalam setahun",
+       "en": "Number of sunshine hours in a year"
+      }
+     ],
+     "a": 0,
+     "sumber": {
+      "jenis": "istilah",
+      "ref": "faktor-kapasitas"
+     },
+     "cek": "produksi maksimum teoretis"
+    },
+    {
+     "id": "dasar-ebt-2",
+     "q": {
+      "id": "Kapasitas surya terpasang Indonesia 1.493,97 MW (2025) baru setara berapa persen listrik Indonesia pada 2024?",
+      "en": "Indonesia's installed solar capacity of 1,493.97 MW (2025) is only equal to what share of 2024 electricity?"
+     },
+     "o": [
+      {
+       "id": "3,6 persen",
+       "en": "3,6 persen"
+      },
+      {
+       "id": "0,36 persen",
+       "en": "0,36 persen"
+      },
+      {
+       "id": "7,34 persen",
+       "en": "7,34 persen"
+      },
+      {
+       "id": "36 persen",
+       "en": "36 persen"
+      }
+     ],
+     "a": 1,
+     "sumber": {
+      "jenis": "topik",
+      "ref": "surya"
+     },
+     "cek": "0.36 persen"
+    },
+    {
+     "id": "dasar-ebt-3",
+     "q": {
+      "id": "Berapa porsi hidro dalam listrik Indonesia pada 2024?",
+      "en": "What share of Indonesia's electricity came from hydro in 2024?"
+     },
+     "o": [
+      {
+       "id": "0,36 persen",
+       "en": "0,36 persen"
+      },
+      {
+       "id": "1,7 persen",
+       "en": "1,7 persen"
+      },
+      {
+       "id": "7,34 persen",
+       "en": "7,34 persen"
+      },
+      {
+       "id": "25 persen",
+       "en": "25 persen"
+      }
+     ],
+     "a": 2,
+     "sumber": {
+      "jenis": "topik",
+      "ref": "hidro"
+     },
+     "cek": "7,34 persen"
+    },
+    {
+     "id": "dasar-ebt-4",
+     "q": {
+      "id": "Berapa faktor kapasitas nasional panas bumi pada 2024?",
+      "en": "What was the national capacity factor of geothermal in 2024?"
+     },
+     "o": [
+      {
+       "id": "35 persen",
+       "en": "35 persen"
+      },
+      {
+       "id": "18 persen",
+       "en": "18 persen"
+      },
+      {
+       "id": "95 persen",
+       "en": "95 persen"
+      },
+      {
+       "id": "72,5 persen",
+       "en": "72,5 persen"
+      }
+     ],
+     "a": 3,
+     "sumber": {
+      "jenis": "topik",
+      "ref": "panas-bumi"
+     },
+     "cek": "72.5"
+    }
+   ]
+  },
+  {
+   "id": "plts-atap",
+   "ikon": "tek-surya",
+   "warna": "surya",
+   "judul": {
+    "id": "PLTS atap",
+    "en": "Rooftop solar"
+   },
+   "ringkas": {
+    "id": "Aturan sambungan ke jaringan PLN, izin menurut kapasitas, dan akibat memasang sebelum disetujui.",
+    "en": "Rules for connecting to the PLN grid, licensing by capacity, and the penalty for installing before approval."
+   },
+   "menit": 20,
+   "langkah": [
+    {
+     "jenis": "istilah",
+     "ref": "plts-atap",
+     "judul": {
+      "id": "Istilah: PLTS atap",
+      "en": "Glossary: rooftop solar"
+     }
+    },
+    {
+     "jenis": "izin",
+     "ref": "plts-atap",
+     "judul": {
+      "id": "Izin PLTS atap tersambung PLN",
+      "en": "Licence for grid-connected rooftop solar"
+     }
+    },
+    {
+     "jenis": "izin",
+     "ref": "plts-atap-tanpa-izin",
+     "judul": {
+      "id": "Akibat memasang tanpa persetujuan",
+      "en": "Consequence of installing without approval"
+     }
+    },
+    {
+     "jenis": "metode",
+     "ref": "plts-atap",
+     "judul": {
+      "id": "Cara hitung PLTS atap",
+      "en": "Rooftop solar method"
+     }
+    },
+    {
+     "jenis": "halaman",
+     "ref": "/peluang",
+     "judul": {
+      "id": "Hitung PLTS atap",
+      "en": "Rooftop solar calculator"
+     }
+    }
+   ],
+   "kuis": [
+    {
+     "id": "plts-atap-1",
+     "q": {
+      "id": "PLTS atap tersambung PLN dengan total kapasitas inverter lebih dari 500 kW wajib memiliki apa?",
+      "en": "A grid-connected rooftop solar system with total inverter capacity above 500 kW must hold what?"
+     },
+     "o": [
+      {
+       "id": "Cukup melapor satu kali",
+       "en": "A one-time report is enough"
+      },
+      {
+       "id": "IUPTLS",
+       "en": "An IUPTLS"
+      },
+      {
+       "id": "Tidak perlu izin",
+       "en": "No licence"
+      },
+      {
+       "id": "IUPTLU",
+       "en": "An IUPTLU"
+      }
+     ],
+     "a": 1,
+     "sumber": {
+      "jenis": "izin",
+      "ref": "plts-atap"
+     },
+     "cek": "IUPTLS"
+    },
+    {
+     "id": "plts-atap-2",
+     "q": {
+      "id": "Menurut ringkasan topik Surya, bagaimana nasib ekspor listrik PLTS atap ke jaringan sejak Permen ESDM 2/2024?",
+      "en": "According to the Solar topic, what happens to rooftop solar exports to the grid under Energy Ministry Regulation 2/2024?"
+     },
+     "o": [
+      {
+       "id": "Dibayar penuh sebesar tarif PLN",
+       "en": "Paid in full at the PLN tariff"
+      },
+      {
+       "id": "Dibayar setengah tarif",
+       "en": "Paid at half the tariff"
+      },
+      {
+       "id": "Tidak dibayar",
+       "en": "Not paid"
+      },
+      {
+       "id": "Dibayar tanpa batas kuota",
+       "en": "Paid without any quota"
+      }
+     ],
+     "a": 2,
+     "sumber": {
+      "jenis": "topik",
+      "ref": "surya"
+     },
+     "cek": "ekspor ke jaringan tidak dibayar"
+    },
+    {
+     "id": "plts-atap-3",
+     "q": {
+      "id": "Apa pinalti memasang PLTS atap sebelum disetujui pemegang IUPTLU?",
+      "en": "What is the penalty for installing rooftop solar before the IUPTLU holder approves?"
+     },
+     "o": [
+      {
+       "id": "Kapasitas total inverter dikali 24 jam dikali tarif listrik",
+       "en": "Total inverter capacity times 24 hours times the electricity tariff"
+      },
+      {
+       "id": "Kapasitas total inverter dikali 240 jam dikali tarif listrik",
+       "en": "Total inverter capacity times 240 hours times the electricity tariff"
+      },
+      {
+       "id": "Denda tetap Rp1 juta",
+       "en": "A fixed fine of Rp1 million"
+      },
+      {
+       "id": "Kapasitas total inverter dikali 720 jam dikali tarif listrik",
+       "en": "Total inverter capacity times 720 hours times the electricity tariff"
+      }
+     ],
+     "a": 1,
+     "sumber": {
+      "jenis": "izin",
+      "ref": "plts-atap-tanpa-izin"
+     },
+     "cek": "240 jam"
+    },
+    {
+     "id": "plts-atap-4",
+     "q": {
+      "id": "Sistem sampai 500 kW berkontrol panel terpadu (plug and play) cukup dengan apa untuk keselamatan?",
+      "en": "A system up to 500 kW with an integrated control panel (plug and play) needs only what for safety?"
+     },
+     "o": [
+      {
+       "id": "Amdal lengkap",
+       "en": "A full Amdal"
+      },
+      {
+       "id": "SLO dari lembaga inspeksi",
+       "en": "An SLO from an inspection body"
+      },
+      {
+       "id": "IUPTLU baru",
+       "en": "A new IUPTLU"
+      },
+      {
+       "id": "Surat pernyataan keselamatan beserta dokumen pendukung",
+       "en": "A safety statement with supporting documents"
+      }
+     ],
+     "a": 3,
+     "sumber": {
+      "jenis": "izin",
+      "ref": "plts-atap"
+     },
+     "cek": "surat pernyataan keselamatan"
+    }
+   ]
+  },
+  {
+   "id": "perizinan",
+   "ikon": "lencana",
+   "warna": "kebijakan",
+   "judul": {
+    "id": "Perizinan pembangkit",
+    "en": "Power plant licensing"
+   },
+   "ringkas": {
+    "id": "IUPTLU, IUPTLS, SLO, batas waktu kontrak jual beli listrik, dan koperasi sebagai pengelola.",
+    "en": "IUPTLU, IUPTLS, SLO, timelines for power purchase contracts, and cooperatives as operators."
+   },
+   "menit": 25,
+   "langkah": [
+    {
+     "jenis": "halaman",
+     "ref": "/perizinan",
+     "judul": {
+      "id": "Peta perizinan",
+      "en": "Licensing map"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "iuptlu",
+     "judul": {
+      "id": "Istilah: IUPTLU",
+      "en": "Glossary: IUPTLU"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "slo",
+     "judul": {
+      "id": "Istilah: SLO",
+      "en": "Glossary: SLO"
+     }
+    },
+    {
+     "jenis": "izin",
+     "ref": "waktu",
+     "judul": {
+      "id": "Batas waktu proses PJBL",
+      "en": "PJBL process deadlines"
+     }
+    },
+    {
+     "jenis": "halaman",
+     "ref": "/regulasi",
+     "judul": {
+      "id": "Telusuri regulasi",
+      "en": "Browse regulations"
+     }
+    }
+   ],
+   "kuis": [
+    {
+     "id": "perizinan-1",
+     "q": {
+      "id": "IUPTLU berlaku paling lama berapa tahun?",
+      "en": "For how many years at most is an IUPTLU valid?"
+     },
+     "o": [
+      {
+       "id": "5 tahun",
+       "en": "5 tahun"
+      },
+      {
+       "id": "10 tahun",
+       "en": "10 tahun"
+      },
+      {
+       "id": "20 tahun",
+       "en": "20 tahun"
+      },
+      {
+       "id": "30 tahun",
+       "en": "30 tahun"
+      }
+     ],
+     "a": 3,
+     "sumber": {
+      "jenis": "izin",
+      "ref": "iuptlu"
+     },
+     "cek": "30 tahun"
+    },
+    {
+     "id": "perizinan-2",
+     "q": {
+      "id": "Pembangkit untuk kepentingan sendiri dengan total kapasitas lebih dari berapa wajib IUPTLS?",
+      "en": "A captive power plant with total capacity above what must hold an IUPTLS?"
+     },
+     "o": [
+      {
+       "id": "100 kW",
+       "en": "100 kW"
+      },
+      {
+       "id": "500 kW",
+       "en": "500 kW"
+      },
+      {
+       "id": "1 MW",
+       "en": "1 MW"
+      },
+      {
+       "id": "5 MW",
+       "en": "5 MW"
+      }
+     ],
+     "a": 1,
+     "sumber": {
+      "jenis": "izin",
+      "ref": "iuptls"
+     },
+     "cek": "500 kW"
+    },
+    {
+     "id": "perizinan-3",
+     "q": {
+      "id": "Berapa batas waktu paling lama proses penunjukan langsung dari dokumen sampai tanda tangan PJBL?",
+      "en": "What is the maximum duration of the direct appointment process from documents to PJBL signing?"
+     },
+     "o": [
+      {
+       "id": "30 hari kalender",
+       "en": "30 hari kalender"
+      },
+      {
+       "id": "60 hari kalender",
+       "en": "60 hari kalender"
+      },
+      {
+       "id": "90 hari kalender",
+       "en": "90 hari kalender"
+      },
+      {
+       "id": "180 hari kalender",
+       "en": "180 hari kalender"
+      }
+     ],
+     "a": 2,
+     "sumber": {
+      "jenis": "izin",
+      "ref": "waktu"
+     },
+     "cek": "90 hari"
+    },
+    {
+     "id": "perizinan-4",
+     "q": {
+      "id": "Koperasi primer dibentuk sekurang-kurangnya oleh berapa orang?",
+      "en": "A primary cooperative is formed by at least how many people?"
+     },
+     "o": [
+      {
+       "id": "5 orang",
+       "en": "5 orang"
+      },
+      {
+       "id": "10 orang",
+       "en": "10 orang"
+      },
+      {
+       "id": "50 orang",
+       "en": "50 orang"
+      },
+      {
+       "id": "20 orang",
+       "en": "20 orang"
+      }
+     ],
+     "a": 3,
+     "sumber": {
+      "jenis": "izin",
+      "ref": "koperasi"
+     },
+     "cek": "20 orang"
+    }
+   ]
+  },
+  {
+   "id": "pembiayaan",
+   "ikon": "kartu",
+   "warna": "biaya",
+   "judul": {
+    "id": "Pembiayaan hijau",
+    "en": "Green finance"
+   },
+   "ringkas": {
+    "id": "PPA, green sukuk, JETP, dan TKBI: apa yang dijanjikan dan berapa yang benar-benar tersalur.",
+    "en": "PPAs, green sukuk, JETP and TKBI: what was promised and how much actually flowed."
+   },
+   "menit": 25,
+   "langkah": [
+    {
+     "jenis": "topik",
+     "ref": "pembiayaan-hijau",
+     "judul": {
+      "id": "Topik Pembiayaan hijau",
+      "en": "Green finance topic"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "ppa",
+     "judul": {
+      "id": "Istilah: PPA",
+      "en": "Glossary: PPA"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "green-sukuk",
+     "judul": {
+      "id": "Istilah: green sukuk",
+      "en": "Glossary: green sukuk"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "jetp",
+     "judul": {
+      "id": "Istilah: JETP",
+      "en": "Glossary: JETP"
+     }
+    },
+    {
+     "jenis": "halaman",
+     "ref": "/keuangan-hijau",
+     "judul": {
+      "id": "Keuangan hijau",
+      "en": "Green finance data"
+     }
+    },
+    {
+     "jenis": "halaman",
+     "ref": "/model-keuangan",
+     "judul": {
+      "id": "Model keuangan proyek",
+      "en": "Project finance model"
+     }
+    }
+   ],
+   "kuis": [
+    {
+     "id": "pembiayaan-1",
+     "q": {
+      "id": "Apa fungsi utama PPA dalam proyek pembangkit?",
+      "en": "What is the main function of a PPA in a power project?"
+     },
+     "o": [
+      {
+       "id": "Mengunci harga dan volume penjualan listrik jangka panjang",
+       "en": "Locks in long-term price and volume of electricity sales"
+      },
+      {
+       "id": "Memberi izin lingkungan",
+       "en": "Grants environmental approval"
+      },
+      {
+       "id": "Menetapkan kandungan lokal",
+       "en": "Sets local content"
+      },
+      {
+       "id": "Menjamin pasokan bahan bakar",
+       "en": "Guarantees fuel supply"
+      }
+     ],
+     "a": 0,
+     "sumber": {
+      "jenis": "istilah",
+      "ref": "ppa"
+     },
+     "cek": "mengunci harga dan volume"
+    },
+    {
+     "id": "pembiayaan-2",
+     "q": {
+      "id": "Dari komitmen JETP USD 21,4 miliar, berapa yang disetujui menurut ringkasan topik Pembiayaan hijau?",
+      "en": "Of the USD 21.4 billion JETP commitment, how much was approved according to the Green finance topic?"
+     },
+     "o": [
+      {
+       "id": "USD 21,4 miliar",
+       "en": "USD 21,4 miliar"
+      },
+      {
+       "id": "USD 10 miliar",
+       "en": "USD 10 miliar"
+      },
+      {
+       "id": "USD 3,1 miliar",
+       "en": "USD 3,1 miliar"
+      },
+      {
+       "id": "USD 0,5 miliar",
+       "en": "USD 0,5 miliar"
+      }
+     ],
+     "a": 2,
+     "sumber": {
+      "jenis": "topik",
+      "ref": "pembiayaan-hijau"
+     },
+     "cek": "USD 3,1 miliar dari USD 21,4 miliar"
+    },
+    {
+     "id": "pembiayaan-3",
+     "q": {
+      "id": "Berapa persen alokasi green sukuk 2025 yang masuk ke energi terbarukan?",
+      "en": "What share of the 2025 green sukuk allocation went to renewable energy?"
+     },
+     "o": [
+      {
+       "id": "59 persen",
+       "en": "59 persen"
+      },
+      {
+       "id": "35,9 persen",
+       "en": "35,9 persen"
+      },
+      {
+       "id": "12 persen",
+       "en": "12 persen"
+      },
+      {
+       "id": "3,59 persen",
+       "en": "3,59 persen"
+      }
+     ],
+     "a": 3,
+     "sumber": {
+      "jenis": "topik",
+      "ref": "pembiayaan-hijau"
+     },
+     "cek": "3,59 persen"
+    },
+    {
+     "id": "pembiayaan-4",
+     "q": {
+      "id": "TKBI membagi aktivitas ke dalam klasifikasi apa?",
+      "en": "Into which classes does the TKBI divide activities?"
+     },
+     "o": [
+      {
+       "id": "Hijau, transisi, tidak memenuhi",
+       "en": "Green, transition, non-compliant"
+      },
+      {
+       "id": "Murah, sedang, mahal",
+       "en": "Cheap, medium, expensive"
+      },
+      {
+       "id": "Domestik, asing, campuran",
+       "en": "Domestic, foreign, mixed"
+      },
+      {
+       "id": "Hibah, pinjaman, ekuitas",
+       "en": "Grant, loan, equity"
+      }
+     ],
+     "a": 0,
+     "sumber": {
+      "jenis": "topik",
+      "ref": "pembiayaan-hijau"
+     },
+     "cek": "hijau, transisi, tidak memenuhi"
+    }
+   ]
+  },
+  {
+   "id": "karbon",
+   "ikon": "tek-panas",
+   "warna": "karbon",
+   "judul": {
+    "id": "Karbon dan klaim hijau",
+    "en": "Carbon and green claims"
+   },
+   "ringkas": {
+    "id": "Offset, sistem perdagangan emisi, net zero, dan sertifikat energi terbarukan sebagai dasar klaim listrik hijau.",
+    "en": "Offsets, emissions trading, net zero and renewable energy certificates as the basis for green electricity claims."
+   },
+   "menit": 20,
+   "langkah": [
+    {
+     "jenis": "topik",
+     "ref": "karbon",
+     "judul": {
+      "id": "Topik Karbon",
+      "en": "Carbon topic"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "offset",
+     "judul": {
+      "id": "Istilah: offset",
+      "en": "Glossary: offset"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "ets",
+     "judul": {
+      "id": "Istilah: ETS",
+      "en": "Glossary: ETS"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "net-zero",
+     "judul": {
+      "id": "Istilah: net zero",
+      "en": "Glossary: net zero"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "rec",
+     "judul": {
+      "id": "Istilah: REC",
+      "en": "Glossary: REC"
+     }
+    },
+    {
+     "jenis": "halaman",
+     "ref": "/karbon",
+     "judul": {
+      "id": "Pasar karbon",
+      "en": "Carbon market"
+     }
+    }
+   ],
+   "kuis": [
+    {
+     "id": "karbon-1",
+     "q": {
+      "id": "Apa yang dimaksud offset karbon?",
+      "en": "What is a carbon offset?"
+     },
+     "o": [
+      {
+       "id": "Kredit dari proyek di luar batas emisi pembeli, dibeli untuk mengimbangi emisinya",
+       "en": "A credit from a project outside the buyer's emissions boundary, bought to offset its emissions"
+      },
+      {
+       "id": "Pajak atas tiap ton emisi",
+       "en": "A tax on each tonne of emissions"
+      },
+      {
+       "id": "Batas emisi tahunan sebuah pabrik",
+       "en": "A factory's annual emissions cap"
+      },
+      {
+       "id": "Biaya perizinan lingkungan",
+       "en": "An environmental permit fee"
+      }
+     ],
+     "a": 0,
+     "sumber": {
+      "jenis": "istilah",
+      "ref": "offset"
+     },
+     "cek": "mengimbangi emisinya"
+    },
+    {
+     "id": "karbon-2",
+     "q": {
+      "id": "Bagaimana sistem perdagangan emisi (ETS) bekerja?",
+      "en": "How does an emissions trading system (ETS) work?"
+     },
+     "o": [
+      {
+       "id": "Setiap pabrik membayar tarif tetap per ton",
+       "en": "Each factory pays a fixed fee per tonne"
+      },
+      {
+       "id": "Pemerintah membatasi emisi total, pelaku menerima atau membeli izin, dan kelebihan atau kekurangan izin diperdagangkan",
+       "en": "The government caps total emissions, participants receive or buy allowances, and surpluses or shortfalls are traded"
+      },
+      {
+       "id": "Bank memberi kredit murah bagi proyek hijau",
+       "en": "Banks give cheap credit to green projects"
+      },
+      {
+       "id": "Pembeli listrik memilih pembangkit termurah",
+       "en": "Electricity buyers choose the cheapest plant"
+      }
+     ],
+     "a": 1,
+     "sumber": {
+      "jenis": "istilah",
+      "ref": "ets"
+     },
+     "cek": "membatasi emisi total"
+    },
+    {
+     "id": "karbon-3",
+     "q": {
+      "id": "Pada tahun berapa Indonesia menyebut sasaran net zero dalam KEN PP 40/2025?",
+      "en": "In which year does Indonesia state its net zero target in KEN PP 40/2025?"
+     },
+     "o": [
+      {
+       "id": "2045",
+       "en": "2045"
+      },
+      {
+       "id": "2050",
+       "en": "2050"
+      },
+      {
+       "id": "2060",
+       "en": "2060"
+      },
+      {
+       "id": "2070",
+       "en": "2070"
+      }
+     ],
+     "a": 2,
+     "sumber": {
+      "jenis": "istilah",
+      "ref": "net-zero"
+     },
+     "cek": "2060"
+    },
+    {
+     "id": "karbon-4",
+     "q": {
+      "id": "Apa fungsi REC?",
+      "en": "What is the function of a REC?"
+     },
+     "o": [
+      {
+       "id": "Mengukur kecepatan angin",
+       "en": "Measures wind speed"
+      },
+      {
+       "id": "Mengunci harga bahan bakar",
+       "en": "Locks in fuel prices"
+      },
+      {
+       "id": "Memberi izin usaha pembangkit",
+       "en": "Grants a generation business licence"
+      },
+      {
+       "id": "Sertifikat energi terbarukan yang menjadi dasar klaim listrik hijau",
+       "en": "A renewable energy certificate that is the basis for green electricity claims"
+      }
+     ],
+     "a": 3,
+     "sumber": {
+      "jenis": "istilah",
+      "ref": "rec"
+     },
+     "cek": "dasar klaim listrik hijau"
+    }
+   ]
+  },
+  {
+   "id": "keselamatan",
+   "ikon": "perisai",
+   "warna": "kebijakan",
+   "judul": {
+    "id": "Keselamatan",
+    "en": "Safety"
+   },
+   "ringkas": {
+    "id": "K3, sertifikat laik operasi, serta pelajaran keselamatan dari panas bumi dan baterai.",
+    "en": "Occupational safety, operation worthiness certificates, and safety lessons from geothermal and batteries."
+   },
+   "menit": 20,
+   "langkah": [
+    {
+     "jenis": "istilah",
+     "ref": "k3",
+     "judul": {
+      "id": "Istilah: K3",
+      "en": "Glossary: OSH"
+     }
+    },
+    {
+     "jenis": "istilah",
+     "ref": "slo",
+     "judul": {
+      "id": "Istilah: SLO",
+      "en": "Glossary: SLO"
+     }
+    },
+    {
+     "jenis": "topik",
+     "ref": "penyimpanan",
+     "judul": {
+      "id": "Topik Penyimpanan dan baterai",
+      "en": "Storage and batteries topic"
+     }
+    },
+    {
+     "jenis": "topik",
+     "ref": "panas-bumi",
+     "judul": {
+      "id": "Topik Panas bumi",
+      "en": "Geothermal topic"
+     }
+    },
+    {
+     "jenis": "topik",
+     "ref": "hidro",
+     "judul": {
+      "id": "Topik Hidro",
+      "en": "Hydro topic"
+     }
+    }
+   ],
+   "kuis": [
+    {
+     "id": "keselamatan-1",
+     "q": {
+      "id": "Apa yang dimaksud K3?",
+      "en": "What does K3 (occupational safety and health) mean?"
+     },
+     "o": [
+      {
+       "id": "Upaya terencana, terpadu, dan sistematis agar kegiatan usaha aman serta mencegah kecelakaan dan penyakit akibat kerja",
+       "en": "A planned, integrated and systematic effort to keep business activity safe and prevent accidents and work-related disease"
+      },
+      {
+       "id": "Kewajiban membayar iuran karyawan",
+       "en": "The duty to pay employee dues"
+      },
+      {
+       "id": "Kontrak kerja tiga tahun",
+       "en": "A three-year employment contract"
+      },
+      {
+       "id": "Kode klasifikasi kawasan hutan",
+       "en": "A forest area classification code"
+      }
+     ],
+     "a": 0,
+     "sumber": {
+      "jenis": "istilah",
+      "ref": "k3"
+     },
+     "cek": "mencegah terjadinya kecelakaan"
+    },
+    {
+     "id": "keselamatan-2",
+     "q": {
+      "id": "Apa itu SLO?",
+      "en": "What is an SLO?"
+     },
+     "o": [
+      {
+       "id": "Surat izin lokasi",
+       "en": "A site permit"
+      },
+      {
+       "id": "Bukti pengakuan formal bahwa instalasi tenaga listrik berfungsi sesuai persyaratan dan siap dioperasikan",
+       "en": "Formal proof that an electricity installation works to requirements and is ready to operate"
+      },
+      {
+       "id": "Standar harga listrik",
+       "en": "A standard electricity price"
+      },
+      {
+       "id": "Laporan studi lingkungan",
+       "en": "An environmental study report"
+      }
+     ],
+     "a": 1,
+     "sumber": {
+      "jenis": "istilah",
+      "ref": "slo"
+     },
+     "cek": "siap dioperasikan"
+    },
+    {
+     "id": "keselamatan-3",
+     "q": {
+      "id": "Menurut topik Panas bumi, kasus gagal di Indonesia berpusat pada apa?",
+      "en": "According to the Geothermal topic, failures in Indonesia centre on what?"
+     },
+     "o": [
+      {
+       "id": "Teknologi turbin yang usang",
+       "en": "Outdated turbine technology"
+      },
+      {
+       "id": "Harga uap yang terlalu rendah",
+       "en": "Steam prices that are too low"
+      },
+      {
+       "id": "Keselamatan H2S dan penerimaan warga, bukan teknologi",
+       "en": "H2S safety and community acceptance, not technology"
+      },
+      {
+       "id": "Kurangnya sumber daya panas bumi",
+       "en": "A lack of geothermal resources"
+      }
+     ],
+     "a": 2,
+     "sumber": {
+      "jenis": "topik",
+      "ref": "panas-bumi"
+     },
+     "cek": "keselamatan H2S"
+    },
+    {
+     "id": "keselamatan-4",
+     "q": {
+      "id": "Apa pelajaran kebakaran Moss Landing 2025 dalam topik Penyimpanan dan baterai?",
+      "en": "What lesson does the 2025 Moss Landing fire teach in the Storage and batteries topic?"
+     },
+     "o": [
+      {
+       "id": "Baterai tidak cocok untuk jaringan listrik",
+       "en": "Batteries are unsuitable for the grid"
+      },
+      {
+       "id": "Biaya sel baterai terus naik",
+       "en": "Battery cell costs keep rising"
+      },
+      {
+       "id": "Pembangkit pompa lebih murah",
+       "en": "Pumped storage is cheaper"
+      },
+      {
+       "id": "Keselamatan tidak boleh ditawar",
+       "en": "Safety cannot be compromised"
+      }
+     ],
+     "a": 3,
+     "sumber": {
+      "jenis": "topik",
+      "ref": "penyimpanan"
+     },
+     "cek": "keselamatan tidak boleh ditawar"
+    }
+   ]
+  }
+ ]
+}

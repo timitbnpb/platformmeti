@@ -1,0 +1,54 @@
+/* /sejarah: linimasa per dekade + grafik kapasitas. Token tema.css saja (tanpa hex, tanpa style=). */
+.sj-k-proyek{--k:var(--data1)}.sj-k-regulasi{--k:var(--data2)}.sj-k-kelembagaan{--k:var(--data3)}.sj-k-teknologi{--k:var(--data4)}.sj-k-pendanaan{--k:var(--data5)}
+.sj-saring{display:grid;gap:10px;margin-bottom:var(--gap)}
+.sj-lbl{display:flex;align-items:center;gap:6px;margin:0;color:var(--ink2);font-size:var(--t-kecil)}
+.sj-chips{display:flex;flex-wrap:wrap;gap:8px}
+.sj-chip{display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 14px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:inherit;font-size:var(--t-kecil);cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.sj-chip .jm-ik{color:var(--k,var(--ink2))}
+.sj-chip b{font-weight:600;color:var(--ink2)}
+.sj-chip:hover{border-color:var(--k,var(--accent))}
+.sj-chip[aria-pressed=true]{border-color:var(--k,var(--accent));background:color-mix(in srgb,var(--k,var(--accent)) 14%,var(--card));font-weight:600}
+.sj-chip:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.sj-dekade{margin-bottom:calc(var(--gap)*1.5)}
+.sj-dh{display:flex;align-items:center;gap:8px;margin:0 0 12px;font-size:var(--t-h3);color:var(--head)}
+.sj-dh .jm-bantu{margin-left:auto}
+.sj-gar{list-style:none;margin:0;padding:0 0 0 18px;display:grid;gap:14px;border-left:2px solid var(--line)}
+.sj-kartu{position:relative;display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:16px;padding:16px;border:1px solid var(--line);border-left:4px solid var(--k);border-radius:var(--r);background:var(--card);scroll-margin-top:96px}
+.sj-kartu::before{content:"";position:absolute;left:-29px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--k);border:2px solid var(--card)}
+.sj-tgl{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.sj-tgl b{font-size:var(--t-body);color:var(--head);font-variant-numeric:tabular-nums}
+.sj-tek{display:inline-flex;color:var(--ink2)}
+.sj-tek .jm-ikt{width:26px;height:26px}
+.sj-isi{min-width:0}
+.sj-isi h3{margin:0 0 6px;font-size:var(--t-h3);color:var(--head)}
+.sj-isi p{margin:0 0 8px;color:var(--ink)}
+.sj-isi .sj-kat{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+.sj-pil{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:var(--r-pil);background:color-mix(in srgb,var(--k) 16%,var(--card));color:var(--ink);font-size:var(--t-kecil);font-weight:600}
+.sj-pil .jm-ik{color:var(--k)}
+.sj-bukti{display:inline-flex;align-items:center;gap:4px;color:var(--ink2);font-size:var(--t-kecil)}
+.sj-tauts{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.sj-taut{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 10px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--surface);color:var(--ink);font-size:var(--t-kecil);text-decoration:none;max-width:100%}
+.sj-taut span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sj-taut small{color:var(--warn);font-weight:600}
+a.sj-taut:hover{border-color:var(--accent)}
+.sj-logo{object-fit:contain;border-radius:3px}
+.sj-t-proyek .jm-ik{color:var(--data1)}.sj-t-org .jm-ik{color:var(--data3)}.sj-t-regulasi .jm-ik{color:var(--data2)}.sj-t-istilah .jm-ik{color:var(--data4)}.sj-t-topik .jm-ik{color:var(--data5)}
+.sj-sumber summary{cursor:pointer;color:var(--ink2);font-size:var(--t-kecil)}
+.sj-sumber ul{margin:8px 0 0;padding-left:18px;display:grid;gap:6px;font-size:var(--t-kecil)}
+.sj-kotak{margin:12px 0}
+.sj-gf{width:100%;height:auto;display:block}
+.sj-s-hidro{fill:var(--tp-hidro)}.sj-s-panas-bumi{fill:var(--tp-panas)}.sj-s-bioenergi{fill:var(--tp-bio)}.sj-s-surya{fill:var(--tp-surya)}.sj-s-bayu{fill:var(--tp-bayu)}
+.sj-gf rect[class^=sj-s-]{stroke:var(--card);stroke-width:.5}
+.sj-leg{list-style:none;margin:0 0 8px;padding:0;display:flex;flex-wrap:wrap;gap:8px 16px}
+.sj-leg li{display:inline-flex;align-items:center;gap:6px;font-size:var(--t-kecil);color:var(--ink)}
+.sj-lik{display:inline-flex;padding:4px;border-radius:var(--r-sm);color:var(--on-brand)}
+.sj-lik .jm-ikt{width:16px;height:16px}
+.sj-l-hidro .sj-lik{background:var(--tp-hidro)}.sj-l-panas-bumi .sj-lik{background:var(--tp-panas)}.sj-l-bioenergi .sj-lik{background:var(--tp-bio)}.sj-l-surya .sj-lik{background:var(--tp-surya)}.sj-l-bayu .sj-lik{background:var(--tp-bayu)}
+.sj-celah{margin:0 0 var(--gap);padding-left:20px;display:grid;gap:8px;color:var(--ink2)}
+@media (max-width:639px){
+  .sj-kartu{grid-template-columns:minmax(0,1fr);gap:8px;padding:14px}
+  .sj-tgl{flex-direction:row;align-items:center;gap:12px}
+  .sj-gar{padding-left:14px}
+  .sj-kartu::before{left:-23px}
+}
+@media (prefers-reduced-motion:reduce){.sj-chip{transition:none}}

@@ -1,0 +1,1971 @@
+{
+ "lapis": "akses_energi",
+ "dibangun_pada": "2026-11-08",
+ "tahun_data": 2026,
+ "nasional": {
+  "re_2024_persen": 99.83,
+  "re_2026": {
+   "sumber_id": "esdm-lokasi-2026",
+   "periode": "2026-Q1",
+   "re_persen": 98.83,
+   "re_pln_persen": 98.56,
+   "target_2029": 99.99
+  },
+  "konsumsi_kapita": [
+   {
+    "tahun": 2020,
+    "gwh": 293465,
+    "penduduk": 269603400,
+    "kwh_per_kapita": 1089
+   },
+   {
+    "tahun": 2021,
+    "gwh": 305627,
+    "penduduk": 272248500,
+    "kwh_per_kapita": 1123
+   },
+   {
+    "tahun": 2022,
+    "gwh": 322337,
+    "penduduk": 274859100,
+    "kwh_per_kapita": 1173
+   },
+   {
+    "tahun": 2023,
+    "gwh": 370997,
+    "penduduk": 277433400,
+    "kwh_per_kapita": 1337
+   },
+   {
+    "tahun": 2024,
+    "gwh": 397606,
+    "penduduk": 281603900,
+    "kwh_per_kapita": 1411
+   }
+  ],
+  "rd_pln": {
+   "periode": "2026-Q1",
+   "nilai": 93.674,
+   "sebelumnya": 93.502,
+   "sumber_id": "rdb-papua-2026"
+  },
+  "desa_2024": {
+   "jumlah_desa": 83763,
+   "desa_non_pln": 5751,
+   "belum": 70,
+   "persen": 99.92,
+   "tren": [
+    {
+     "tahun": 2019,
+     "jumlah_desa": 83436,
+     "desa_terlistriki": 83003,
+     "persen": 99.48
+    },
+    {
+     "tahun": 2020,
+     "jumlah_desa": 83436,
+     "desa_terlistriki": 83072,
+     "persen": 99.56
+    },
+    {
+     "tahun": 2021,
+     "jumlah_desa": 83441,
+     "desa_terlistriki": 83148,
+     "persen": 99.65
+    },
+    {
+     "tahun": 2022,
+     "jumlah_desa": 83467,
+     "desa_terlistriki": 83292,
+     "persen": 99.79
+    },
+    {
+     "tahun": 2023,
+     "jumlah_desa": 83763,
+     "desa_terlistriki": 83637,
+     "persen": 99.85
+    },
+    {
+     "tahun": 2024,
+     "jumlah_desa": 83763,
+     "desa_terlistriki": 83693,
+     "persen": 99.92
+    }
+   ]
+  }
+ },
+ "sumber": {
+  "gatrik-2024": {
+   "judul": "Statistik Ketenagalistrikan Tahun 2024 (Tabel 7, 22, 37, 38, 42)",
+   "penerbit": "Direktorat Jenderal Ketenagalistrikan, Kementerian ESDM",
+   "terbit": null,
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tingkat_bukti": "resmi",
+   "tanggal_ambil": "2026-11-07"
+  },
+  "esdm-lokasi-2026": {
+   "judul": "Masih ada 10.068 lokasi belum berlistrik, ini strategi pemerintah kejar target 2029",
+   "penerbit": "Kontan (keterangan Dit. Pembinaan Program Ketenagalistrikan, Kementerian ESDM)",
+   "terbit": "2026-07-06",
+   "url": "https://industri.kontan.co.id/news/masih-ada-10068-lokasi-belum-berlistrik-ini-strategi-pemerintah-kejar-target-2029",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "rdb-papua-2026": {
+   "judul": "PLN UIW Papua kebut elektrifikasi di tengah tantangan geografis ekstrem (data RD PLN triwulan I 2026, Kementerian ESDM)",
+   "penerbit": "Listrik Indonesia",
+   "terbit": "2026-09-14",
+   "url": "https://listrikindonesia.com/detail/21173/pln-uiw-papua-kebut-elektrifikasi-di-tengah-tantangan-geografis-ekstrem",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "re-papua-2026": {
+   "judul": "Rasio elektrifikasi RI 98,56%, Papua Pegunungan jadi prioritas (data Mei 2026)",
+   "penerbit": "Bloomberg Technoz",
+   "terbit": null,
+   "url": "https://www.bloombergtechnoz.com/detail-news/114095/rasio-elektrifikasi-ri-98-56-papua-pegunungan-jadi-prioritas/2",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "desa-5758": {
+   "judul": "5.758 desa di RI belum teraliri listrik, ESDM target tersambung 2029",
+   "penerbit": "Bisnis.com",
+   "terbit": "2025-09-02",
+   "url": "https://ekonomi.bisnis.com/read/20250902/44/1908047/5758-desa-di-ri-belum-teraliri-listrik-esdm-target-tersambung-2029",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "spklu-databoks-2025": {
+   "judul": "Stasiun pengisian daya kendaraan listrik Indonesia terkonsentrasi di Jawa (2025; sumber data Kementerian ESDM)",
+   "penerbit": "Databoks Katadata",
+   "terbit": null,
+   "url": "https://databoks.katadata.co.id/utilitas/statistik/6a8f9b7fb72b7/stasiun-pengisian-daya-kendaraan-listrik-indonesia-terkonsentrasi-di-jawa-2025",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "spklu-pulau-2025": {
+   "judul": "3.700 EV charging stations have been built in Indonesia, Java still dominates (data PLN Maret 2025)",
+   "penerbit": "KatadataOTO",
+   "terbit": "2025-04-26",
+   "url": "https://auto.katadata.co.id/car/3700-ev-charging-stations-have-been-built-in-indonesia-java-still-dominates-18765",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "spklu-nataru-2025": {
+   "judul": "PLN siagakan 4.516 SPKLU di 2.935 titik selama libur Nataru",
+   "penerbit": "Bisnis.com",
+   "terbit": "2025-12-24",
+   "url": "https://ekonomi.bisnis.com/read/20251224/44/1939435/pln-siagakan-4516-spklu-di-2935-titik-selama-libur-nataru",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "spklu-2026": {
+   "judul": "Rasio SPKLU rendah, Jawa dan Bali kuasai 78 persen SPKLU nasional (data Ditjen EBTKE April 2026)",
+   "penerbit": "GridOto",
+   "terbit": "2026-10-19",
+   "url": "https://www.gridoto.com/amp/224422818/rasio-spklu-rendah-jawa-dan-bali-kuasai-78-persen-spklu-nasional",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "kbl-kemenperin-2026": {
+   "judul": "Berapa banyak motor dan mobil listrik di Indonesia (keterangan Menteri Perindustrian)",
+   "penerbit": "GridOto",
+   "terbit": "2026-09-03",
+   "url": "https://www.gridoto.com/amp/224409753/berapa-banyak-motor-dan-mobil-listrik-di-indonesia-segini-angkanya?page=all",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "kbl-esdm-2025": {
+   "judul": "Kendaraan listrik tembus 274 ribu, ESDM kebut infrastruktur",
+   "penerbit": "CNN Indonesia (keterangan Kementerian ESDM)",
+   "terbit": "2026-02-03",
+   "url": "https://www.cnnindonesia.com/ekonomi/20260203131144-85-1324022/kendaraan-listrik-tembus-274-ribu-esdm-kebut-infrastruktur",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "kbl-srut-2025": {
+   "judul": "Mengintip data pendaftaran mobil listrik milik Kemenhub (SRUT kumulatif per 9 Desember 2025)",
+   "penerbit": "Listrik Indonesia",
+   "terbit": null,
+   "url": "https://listrikindonesia.com/detail/18971/mengintip-data-pendaftaran-mobil-listrik-milik-kemenhub",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "edge-ifc-2025": {
+   "judul": "IFC catat mayoritas provinsi di Indonesia miliki bangunan hijau bersertifikat (laporan IFC 28 Juli 2025)",
+   "penerbit": "Kontan",
+   "terbit": "2025-07-30",
+   "url": "https://industri.kontan.co.id/news/ifc-catat-mayoritas-provinsi-di-indonesia-miliki-bangunan-hijau-bersertifikat",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "gbci-2026": {
+   "judul": "Baru 504 gedung RI bersertifikat hijau, GBCI sebut kendalanya",
+   "penerbit": "Fortune Indonesia",
+   "terbit": "2026-04-15",
+   "url": "https://www.fortuneidn.com/news/baru-504-gedung-ri-bersertifikat-hijau-gbci-sebut-kendalanya-00-6cmtl-tq7ggk/amp",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "srikandi-2021": {
+   "judul": "Gandeng UNDP, Kementerian ESDM gelar pelatihan Srikandi konservasi energi",
+   "penerbit": "Kementerian ESDM",
+   "terbit": "2021-10-25",
+   "url": "https://esdm.go.id/id/media-center/arsip-berita/gandeng-undp-kementerian-esdm-gelar-pelatihan-srikandi-konservasi-energi",
+   "tingkat_bukti": "resmi",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "irena-gender-2025": {
+   "judul": "Renewable Energy: A Gender Perspective, edisi kedua (Oktober 2025), diberitakan International Water Power",
+   "penerbit": "IRENA (via International Water Power)",
+   "terbit": "2026-01-20",
+   "url": "https://www.waterpowermagazine.com/news/gender-gap-persists-across-global-renewable-energy-workforce-irena-report-finds/",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  },
+  "pln-srikandi-2024": {
+   "judul": "Srikandi PLN: peran aktif keterlibatan perempuan dalam produktivitas kinerja perusahaan",
+   "penerbit": "Klik Positif",
+   "terbit": "2024-10-13",
+   "url": "https://klikpositif.com/srikandi-pln-peran-aktif-keterlibatan-perempuan-dalam-produktivitas-kinerja-perusahaan",
+   "tingkat_bukti": "media",
+   "tanggal_ambil": "2026-11-08"
+  }
+ },
+ "provinsi": [
+  {
+   "kode": "11",
+   "nama": "Aceh",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1535109,
+   "jumlah_desa": 6500,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 647,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "12",
+   "nama": "Sumatera Utara",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 4341061,
+   "jumlah_desa": 6110,
+   "desa_non_pln": 48,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 840,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 114,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "13",
+   "nama": "Sumatera Barat",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1509900,
+   "jumlah_desa": 1265,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 672,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 95,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "14",
+   "nama": "Riau",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 2135698,
+   "jumlah_desa": 1862,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "21",
+   "nama": "Kepulauan Riau",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 630759,
+   "jumlah_desa": 419,
+   "desa_non_pln": 1,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "15",
+   "nama": "Jambi",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1145304,
+   "jumlah_desa": 1585,
+   "desa_non_pln": 2,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "17",
+   "nama": "Bengkulu",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 649823,
+   "jumlah_desa": 1513,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "19",
+   "nama": "Kepulauan Bangka Belitung",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 517222,
+   "jumlah_desa": 393,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 1022,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "16",
+   "nama": "Sumatera Selatan",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 2528237,
+   "jumlah_desa": 3258,
+   "desa_non_pln": 22,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "18",
+   "nama": "Lampung",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 2524321,
+   "jumlah_desa": 2651,
+   "desa_non_pln": 7,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 646,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 72,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "36",
+   "nama": "Banten",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 4647296,
+   "jumlah_desa": 1552,
+   "desa_non_pln": 1,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 2204,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 473,
+   "edge_bangunan": 26,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": "edge-ifc-2025"
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "32",
+   "nama": "Jawa Barat",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 16777333,
+   "jumlah_desa": 5957,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 1190,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 827,
+   "edge_bangunan": 45,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": "edge-ifc-2025"
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "31",
+   "nama": "DKI Jakarta",
+   "re_persen": 100,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 3507091,
+   "jumlah_desa": 267,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 3461,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 1438,
+   "edge_bangunan": 171,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": "edge-ifc-2025"
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "33",
+   "nama": "Jawa Tengah",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 11168130,
+   "jumlah_desa": 8563,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 335,
+   "edge_bangunan": 16,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": "edge-ifc-2025"
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "34",
+   "nama": "DI Yogyakarta",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1413898,
+   "jumlah_desa": 438,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "35",
+   "nama": "Jawa Timur",
+   "re_persen": 99.67,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 12800730,
+   "jumlah_desa": 8494,
+   "desa_non_pln": 3,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 1057,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 446,
+   "edge_bangunan": 26,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": "edge-ifc-2025"
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "51",
+   "nama": "Bali",
+   "re_persen": 100,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1468786,
+   "jumlah_desa": 716,
+   "desa_non_pln": 0,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 1664,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 197,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "52",
+   "nama": "Nusa Tenggara Barat",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1919137,
+   "jumlah_desa": 1166,
+   "desa_non_pln": 5,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 504,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "53",
+   "nama": "Nusa Tenggara Timur",
+   "re_persen": 96.35,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1358394,
+   "jumlah_desa": 3442,
+   "desa_non_pln": 120,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 253,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "61",
+   "nama": "Kalimantan Barat",
+   "re_persen": 99.85,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1572863,
+   "jumlah_desa": 2145,
+   "desa_non_pln": 340,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": 627,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "62",
+   "nama": "Kalimantan Tengah",
+   "re_persen": 98.05,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 813597,
+   "jumlah_desa": 1571,
+   "desa_non_pln": 284,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "63",
+   "nama": "Kalimantan Selatan",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1399724,
+   "jumlah_desa": 2016,
+   "desa_non_pln": 13,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "64",
+   "nama": "Kalimantan Timur",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 1292554,
+   "jumlah_desa": 1038,
+   "desa_non_pln": 114,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 80,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "65",
+   "nama": "Kalimantan Utara",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 204468,
+   "jumlah_desa": 482,
+   "desa_non_pln": 104,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "71",
+   "nama": "Sulawesi Utara",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 792322,
+   "jumlah_desa": 1839,
+   "desa_non_pln": 10,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "75",
+   "nama": "Gorontalo",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 345195,
+   "jumlah_desa": 729,
+   "desa_non_pln": 6,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "72",
+   "nama": "Sulawesi Tengah",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 942261,
+   "jumlah_desa": 2017,
+   "desa_non_pln": 89,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "74",
+   "nama": "Sulawesi Tenggara",
+   "re_persen": 99.78,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 832390,
+   "jumlah_desa": 2287,
+   "desa_non_pln": 50,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "76",
+   "nama": "Sulawesi Barat",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 388590,
+   "jumlah_desa": 648,
+   "desa_non_pln": 19,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "73",
+   "nama": "Sulawesi Selatan",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 2770172,
+   "jumlah_desa": 3059,
+   "desa_non_pln": 61,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "81",
+   "nama": "Maluku",
+   "re_persen": 99.08,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 455034,
+   "jumlah_desa": 1235,
+   "desa_non_pln": 137,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "82",
+   "nama": "Maluku Utara",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 385017,
+   "jumlah_desa": 1185,
+   "desa_non_pln": 78,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": null,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": null,
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "92",
+   "nama": "Papua Barat",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 154135,
+   "jumlah_desa": 824,
+   "desa_non_pln": 246,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": 70.51,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": "rdb-papua-2026",
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "96",
+   "nama": "Papua Barat Daya",
+   "re_persen": 99.99,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 151765,
+   "jumlah_desa": 1013,
+   "desa_non_pln": 434,
+   "desa_belum_2024": 0,
+   "persen_desa_berlistrik_2024": 100,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": 66.338,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 0,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": "rdb-papua-2026",
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "91",
+   "nama": "Papua",
+   "re_persen": 99.81,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 297726,
+   "jumlah_desa": 999,
+   "desa_non_pln": 228,
+   "desa_belum_2024": 7,
+   "persen_desa_berlistrik_2024": 99.3,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": 82.883,
+   "lokasi_belum_2026": null,
+   "spklu_2025": null,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": "rdb-papua-2026",
+    "lokasi": null,
+    "spklu": null,
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "94",
+   "nama": "Papua Tengah",
+   "re_persen": 94.49,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 253519,
+   "jumlah_desa": 1208,
+   "desa_non_pln": 903,
+   "desa_belum_2024": 28,
+   "persen_desa_berlistrik_2024": 97.68,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": 26.821,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 0,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": "rdb-papua-2026",
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "93",
+   "nama": "Papua Selatan",
+   "re_persen": 99.08,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 126089,
+   "jumlah_desa": 690,
+   "desa_non_pln": 342,
+   "desa_belum_2024": 3,
+   "persen_desa_berlistrik_2024": 99.57,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": 56.957,
+   "lokasi_belum_2026": null,
+   "spklu_2025": 0,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": "rdb-papua-2026",
+    "lokasi": null,
+    "spklu": "spklu-databoks-2025",
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  },
+  {
+   "kode": "95",
+   "nama": "Papua Pegunungan",
+   "re_persen": 94.02,
+   "re_tahun": 2024,
+   "rumah_tangga_berlistrik": 239380,
+   "jumlah_desa": 2627,
+   "desa_non_pln": 2084,
+   "desa_belum_2024": 32,
+   "persen_desa_berlistrik_2024": 98.78,
+   "konsumsi_kwh_kapita_est": null,
+   "rd_pln_2026q1": 21.165,
+   "lokasi_belum_2026": 2122,
+   "spklu_2025": 0,
+   "edge_bangunan": null,
+   "sumber_id": {
+    "re": "gatrik-2024",
+    "desa": "gatrik-2024",
+    "konsumsi": "gatrik-2024",
+    "rd_pln": "rdb-papua-2026",
+    "lokasi": "esdm-lokasi-2026",
+    "spklu": "spklu-databoks-2025",
+    "edge": null
+   },
+   "tingkat_bukti": {
+    "re": "resmi",
+    "desa": "resmi",
+    "konsumsi": "est",
+    "rd_pln": "media",
+    "lokasi": "media",
+    "spklu": "media",
+    "edge": "media"
+   }
+  }
+ ],
+ "lokasi_belum_berlistrik": {
+  "sumber_id": "esdm-lokasi-2026",
+  "periode": "2026-07",
+  "satuan": "lokasi (desa dan dusun; sumber tidak memisahkan)",
+  "nasional": 10068,
+  "wilayah": [
+   {
+    "id": "timur",
+    "nilai": 5555,
+    "ket": {
+     "id": "Maluku, Papua, Nusa Tenggara",
+     "en": "Maluku, Papua, Nusa Tenggara"
+    }
+   },
+   {
+    "id": "jawa",
+    "nilai": 1630,
+    "ket": {
+     "id": "Jawa",
+     "en": "Java"
+    }
+   },
+   {
+    "id": "kalimantan",
+    "nilai": 1099,
+    "ket": {
+     "id": "Kalimantan",
+     "en": "Kalimantan"
+    }
+   },
+   {
+    "id": "sumatera",
+    "nilai": 985,
+    "ket": {
+     "id": "Sumatera",
+     "en": "Sumatra"
+    }
+   },
+   {
+    "id": "sulawesi",
+    "nilai": 799,
+    "ket": {
+     "id": "Sulawesi",
+     "en": "Sulawesi"
+    }
+   }
+  ],
+  "provinsi": [
+   {
+    "kode": "95",
+    "nilai": 2122
+   }
+  ],
+  "desa_nasional": {
+   "sumber_id": "desa-5758",
+   "desa": 5758,
+   "periode": "2025-09"
+  }
+ },
+ "rd_pln": {
+  "sumber_id": "rdb-papua-2026",
+  "periode": "2026-Q1",
+  "nasional": 93.674,
+  "nasional_tw4_2025": 93.502,
+  "provinsi": [
+   {
+    "kode": "95",
+    "nilai": 21.165
+   },
+   {
+    "kode": "94",
+    "nilai": 26.821
+   },
+   {
+    "kode": "93",
+    "nilai": 56.957
+   },
+   {
+    "kode": "96",
+    "nilai": 66.338
+   },
+   {
+    "kode": "92",
+    "nilai": 70.51
+   },
+   {
+    "kode": "91",
+    "nilai": 82.883
+   }
+  ]
+ },
+ "papua_rumah_tangga": {
+  "sumber_id": "re-papua-2026",
+  "periode": "2026-05",
+  "rumah_tangga": 652292,
+  "desa": 5204,
+  "belum": 303744,
+  "kabupaten": [
+   {
+    "nama": "Yahukimo",
+    "kode_prov": "95",
+    "belum": 67767
+   },
+   {
+    "nama": "Nduga",
+    "kode_prov": "95",
+    "belum": 22780
+   },
+   {
+    "nama": "Asmat",
+    "kode_prov": "93",
+    "belum": 21913
+   },
+   {
+    "nama": "Intan Jaya",
+    "kode_prov": "94",
+    "belum": 20990
+   },
+   {
+    "nama": "Paniai",
+    "kode_prov": "94",
+    "belum": 19279
+   }
+  ],
+  "persen_belum": 46.6
+ },
+ "spklu": {
+  "deret": [
+   {
+    "periode": "2025-03",
+    "jumlah": 3772,
+    "ket": {
+     "id": "PLN, roda empat",
+     "en": "PLN, four-wheel"
+    },
+    "sumber_id": "spklu-pulau-2025"
+   },
+   {
+    "periode": "2025-12",
+    "jumlah": 4516,
+    "ket": {
+     "id": "PLN siagakan Nataru, 2.935 titik",
+     "en": "PLN on standby for year-end, 2,935 points"
+    },
+    "sumber_id": "spklu-nataru-2025"
+   },
+   {
+    "periode": "2025-12",
+    "jumlah": 4778,
+    "ket": {
+     "id": "Data ESDM 2025 (Databoks)",
+     "en": "ESDM data 2025 (Databoks)"
+    },
+    "sumber_id": "spklu-databoks-2025"
+   },
+   {
+    "periode": "2026-04",
+    "jumlah": 5037,
+    "ket": {
+     "id": "Ditjen EBTKE",
+     "en": "Directorate General of EBTKE"
+    },
+    "sumber_id": "spklu-2026"
+   }
+  ],
+  "pulau": {
+   "sumber_id": "spklu-pulau-2025",
+   "periode": "2025-03",
+   "baris": [
+    {
+     "id": "jawa",
+     "unit": 2667,
+     "lokasi": 1645,
+     "ket": {
+      "id": "Jawa",
+      "en": "Java"
+     }
+    },
+    {
+     "id": "sumatera",
+     "unit": 442,
+     "lokasi": 364,
+     "ket": {
+      "id": "Sumatera",
+      "en": "Sumatra"
+     }
+    },
+    {
+     "id": "bali-nusa",
+     "unit": 246,
+     "lokasi": 167,
+     "ket": {
+      "id": "Bali dan Nusa Tenggara",
+      "en": "Bali and Nusa Tenggara"
+     }
+    },
+    {
+     "id": "kalimantan",
+     "unit": 217,
+     "lokasi": 170,
+     "ket": {
+      "id": "Kalimantan",
+      "en": "Kalimantan"
+     }
+    },
+    {
+     "id": "sulawesi",
+     "unit": 148,
+     "lokasi": 125,
+     "ket": {
+      "id": "Sulawesi",
+      "en": "Sulawesi"
+     }
+    },
+    {
+     "id": "papua",
+     "unit": 27,
+     "lokasi": 19,
+     "ket": {
+      "id": "Papua",
+      "en": "Papua"
+     }
+    },
+    {
+     "id": "maluku",
+     "unit": 25,
+     "lokasi": 25,
+     "ket": {
+      "id": "Maluku",
+      "en": "Maluku"
+     }
+    }
+   ]
+  },
+  "provinsi": {
+   "sumber_id": "spklu-databoks-2025",
+   "periode": "2025",
+   "baris": [
+    {
+     "kode": "31",
+     "unit": 1438
+    },
+    {
+     "kode": "32",
+     "unit": 827
+    },
+    {
+     "kode": "36",
+     "unit": 473
+    },
+    {
+     "kode": "35",
+     "unit": 446
+    },
+    {
+     "kode": "33",
+     "unit": 335
+    },
+    {
+     "kode": "51",
+     "unit": 197
+    },
+    {
+     "kode": "12",
+     "unit": 114
+    },
+    {
+     "kode": "13",
+     "unit": 95
+    },
+    {
+     "kode": "64",
+     "unit": 80
+    },
+    {
+     "kode": "18",
+     "unit": 72
+    },
+    {
+     "kode": "96",
+     "unit": 0
+    },
+    {
+     "kode": "94",
+     "unit": 0
+    },
+    {
+     "kode": "93",
+     "unit": 0
+    },
+    {
+     "kode": "95",
+     "unit": 0
+    }
+   ],
+   "total_nasional": 4778
+  },
+  "tidak_terbaca": {
+   "id": "Rincian 24 provinsi lain tidak terbuka tanpa berlangganan; hanya sepuluh teratas dan empat provinsi tanpa SPKLU yang tercatat.",
+   "en": "The other 24 provinces are behind a paywall; only the top ten and the four provinces with no chargers are recorded."
+  }
+ },
+ "kendaraan_listrik": [
+  {
+   "id": "esdm",
+   "periode": "2025",
+   "jumlah": 274000,
+   "ket": {
+    "id": "KBLBB tercatat Kementerian ESDM (akhir 2025)",
+    "en": "BEVs recorded by the Ministry of Energy (end 2025)"
+   },
+   "sumber_id": "kbl-esdm-2025"
+  },
+  {
+   "id": "kemenperin",
+   "periode": "2026-04",
+   "jumlah": 486231,
+   "ket": {
+    "id": "Populasi kendaraan listrik, Kementerian Perindustrian (roda dua sekitar 242 ribu, roda empat sekitar 223 ribu)",
+    "en": "Electric vehicle population, Ministry of Industry (two-wheel about 242 thousand, four-wheel about 223 thousand)"
+   },
+   "sumber_id": "kbl-kemenperin-2026"
+  },
+  {
+   "id": "srut",
+   "periode": "2025-12",
+   "jumlah": 106137,
+   "ket": {
+    "id": "Pendaftaran SRUT mobil penumpang listrik kumulatif, Kemenhub",
+    "en": "Cumulative SRUT registrations of electric passenger cars, Ministry of Transportation"
+   },
+   "sumber_id": "kbl-srut-2025"
+  }
+ ],
+ "efisiensi": {
+  "edge": {
+   "sumber_id": "edge-ifc-2025",
+   "periode": "2025-07",
+   "proyek_lebih_dari": 200,
+   "provinsi_ada": 25,
+   "provinsi_total": 38,
+   "luas_juta_m2": 4.33,
+   "hemat_mwh": 120000,
+   "co2_ton": 100000,
+   "air_juta_m3": 4.7,
+   "bangunan": [
+    {
+     "kode": "31",
+     "n": 171
+    },
+    {
+     "kode": "32",
+     "n": 45
+    },
+    {
+     "kode": "36",
+     "n": 26
+    },
+    {
+     "kode": "35",
+     "n": 26
+    },
+    {
+     "kode": "33",
+     "n": 16
+    }
+   ]
+  },
+  "greenship": {
+   "sumber_id": "gbci-2026",
+   "periode": "2026-04",
+   "gedung": 504,
+   "pengembang_bersertifikat_persen": 5,
+   "pengembang_total": 4000
+  },
+  "tenaga": {
+   "sumber_id": "srikandi-2021",
+   "periode": "2021",
+   "manajer": 1273,
+   "manajer_perempuan": 43,
+   "auditor": 1128,
+   "auditor_perempuan": 51,
+   "persen_manajer_perempuan": 3.4,
+   "persen_auditor_perempuan": 4.5
+  },
+  "regulasi": [
+   {
+    "id": "pp-33-2023",
+    "judul": "PP 33/2023 tentang Konservasi Energi",
+    "cari": "33 Tahun 2023"
+   },
+   {
+    "id": "permen-14-2012",
+    "judul": "Permen ESDM 14/2012 tentang Manajemen Energi",
+    "cari": "14 Tahun 2012"
+   }
+  ]
+ },
+ "gender": {
+  "irena": {
+   "sumber_id": "irena-gender-2025",
+   "periode": "2025-10",
+   "penuh_waktu": 32,
+   "menengah": 26,
+   "senior": 19,
+   "rata_tenaga_kerja": 43.4,
+   "negara": 119
+  },
+  "pln": {
+   "sumber_id": "pln-srikandi-2024",
+   "periode": "2024-10",
+   "manajemen_persen": 15
+  },
+  "esdm": {
+   "sumber_id": "srikandi-2021",
+   "periode": "2021",
+   "manajer": 3.4,
+   "auditor": 4.5
+  }
+ },
+ "metode": {
+  "id": "Rasio elektrifikasi, desa berlistrik 2024, dan konsumsi per kapita memakai kelistrikan.json dan desa_listrik.json (Statistik Ketenagalistrikan 2024); data 2025 dan 2026 dari keterangan resmi yang dimuat media dan diberi label Media. Dua ukuran desa berbeda: \"desa berlistrik\" 2024 menghitung PLN dan non-PLN (PLTS, diesel komunal), \"RD PLN\" 2026 hanya jaringan PLN, sehingga angkanya tidak boleh dibandingkan langsung.",
+  "en": "Electrification ratio, 2024 electrified villages and per-capita use come from kelistrikan.json and desa_listrik.json (Electricity Statistics 2024); 2025 and 2026 data come from official statements reported by media and are labelled Media. Two village measures differ: 2024 \"electrified villages\" counts PLN and non-PLN (solar, communal diesel), 2026 \"RD PLN\" counts the PLN grid only, so they must not be compared directly."
+ },
+ "celah": [
+  {
+   "id": "Tingkat kabupaten: hanya lima kabupaten Papua dengan rumah tangga belum berlistrik terbanyak (Bloomberg Technoz, Mei 2026). BPS Podes dan RUPTL per kabupaten tidak terbuka.",
+   "en": "District level: only the five Papua districts with the most unelectrified households (Bloomberg Technoz, May 2026). BPS Podes and district RUPTL are not open."
+  },
+  {
+   "id": "Daftar nama desa belum berlistrik: tidak ada daftar terbuka yang ditemukan; yang terbit hanya jumlah per wilayah.",
+   "en": "Names of unelectrified villages: no open list was found; only counts per region are published."
+  },
+  {
+   "id": "SPKLU per provinsi: sepuluh teratas saja; KBLBB per provinsi (data registrasi Korlantas/Samsat) tidak terbuka.",
+   "en": "Chargers per province: top ten only; BEV counts per province (Korlantas/Samsat registrations) are not open."
+  },
+  {
+   "id": "Jumlah manajer dan auditor energi bersertifikat terbaru, serta pangsa perempuan sektor EBT Indonesia, tidak terbit; angka tertua 2021 dan global IRENA dipakai sebagai pembanding.",
+   "en": "Latest certified energy managers and auditors, and the women share of Indonesia's RE sector, are not published; the 2021 figures and the global IRENA figure serve as benchmarks."
+  }
+ ]
+}

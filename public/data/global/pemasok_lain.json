@@ -1,0 +1,6819 @@
+{
+ "lapis": "publik",
+ "dibangun_pada": "2026-11-08",
+ "sumber": "Wikidata (CC0), beranda resmi perusahaan, proyek.json, Global Energy Monitor (CC BY 4.0)",
+ "jumlah": 74,
+ "belum_lengkap": [],
+ "kelengkapan_persen": {
+  "negara": 100,
+  "produk": 70,
+  "halaman_indonesia": 5,
+  "proyek_indonesia": 4,
+  "logo": 76,
+  "tahun_berdiri": 76
+ },
+ "catatan": "kapasitas_produksi, pangsa_dunia, kantor_pabrik_asean, mitra_lokal sengaja kosong: belum ada sumber publik yang dibaca; jangan diisi tanpa sumber.",
+ "rantai": {
+  "bayu": {
+   "bahan-baku-komposit": [],
+   "bilah": [
+    {
+     "id": "en_99265x2651",
+     "nama": "Vestas",
+     "negara_iso2": "DK",
+     "organisasi_id": "en_99265x2651"
+    },
+    {
+     "id": "en_9013c0f215",
+     "nama": "Siemens Gamesa",
+     "negara_iso2": "ES",
+     "organisasi_id": "en_9013c0f215"
+    },
+    {
+     "id": "en_a92c58d4e6",
+     "nama": "TPI Composites",
+     "negara_iso2": "US",
+     "organisasi_id": "en_a92c58d4e6"
+    },
+    {
+     "id": "en_edcadb340d",
+     "nama": "LM Wind Power",
+     "negara_iso2": "DK",
+     "organisasi_id": "en_edcadb340d"
+    }
+   ],
+   "menara": [
+    {
+     "id": "en_41c21cff25",
+     "nama": "Titan Wind Energy",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_41c21cff25"
+    },
+    {
+     "id": "en_e2471c9eea",
+     "nama": "CS Wind",
+     "negara_iso2": "KR",
+     "organisasi_id": "en_e2471c9eea"
+    }
+   ],
+   "bantalan": [
+    {
+     "id": "en_26808caa67",
+     "nama": "SKF",
+     "negara_iso2": "SE",
+     "organisasi_id": "en_26808caa67"
+    },
+    {
+     "id": "en_5eaf532db0",
+     "nama": "Schaeffler",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_5eaf532db0"
+    }
+   ],
+   "gearbox": [
+    {
+     "id": "en_8ff249911c",
+     "nama": "ZF Friedrichshafen",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_8ff249911c"
+    }
+   ],
+   "generator": [
+    {
+     "id": "en_489bd14e4e",
+     "nama": "GE Vernova",
+     "negara_iso2": "US",
+     "organisasi_id": "en_489bd14e4e"
+    }
+   ],
+   "nacelle": [
+    {
+     "id": "en_99265x2651",
+     "nama": "Vestas",
+     "negara_iso2": "DK",
+     "organisasi_id": "en_99265x2651"
+    },
+    {
+     "id": "en_9013c0f215",
+     "nama": "Siemens Gamesa",
+     "negara_iso2": "ES",
+     "organisasi_id": "en_9013c0f215"
+    },
+    {
+     "id": "en_489bd14e4e",
+     "nama": "GE Vernova",
+     "negara_iso2": "US",
+     "organisasi_id": "en_489bd14e4e"
+    }
+   ],
+   "turbin-lengkap": [
+    {
+     "id": "en_99265x2651",
+     "nama": "Vestas",
+     "negara_iso2": "DK",
+     "organisasi_id": "en_99265x2651"
+    },
+    {
+     "id": "en_9013c0f215",
+     "nama": "Siemens Gamesa",
+     "negara_iso2": "ES",
+     "organisasi_id": "en_9013c0f215"
+    },
+    {
+     "id": "en_489bd14e4e",
+     "nama": "GE Vernova",
+     "negara_iso2": "US",
+     "organisasi_id": "en_489bd14e4e"
+    },
+    {
+     "id": "en_26327x1969",
+     "nama": "Goldwind",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_26327x1969"
+    },
+    {
+     "id": "en_8f9393bb8e",
+     "nama": "Envision Energy",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_8f9393bb8e"
+    },
+    {
+     "id": "en_e955bf0d90",
+     "nama": "Mingyang Smart Energy",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_e955bf0d90"
+    },
+    {
+     "id": "en_eb6541b467",
+     "nama": "Windey",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_eb6541b467"
+    },
+    {
+     "id": "en_99afd43f1a",
+     "nama": "Sany Renewable Energy",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_99afd43f1a"
+    },
+    {
+     "id": "en_97fda94e39",
+     "nama": "Nordex",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_97fda94e39"
+    },
+    {
+     "id": "en_524dca79a9",
+     "nama": "Suzlon",
+     "negara_iso2": "IN",
+     "organisasi_id": "en_524dca79a9"
+    }
+   ],
+   "kapal-instalasi": [
+    {
+     "id": "en_5c6dfc8215",
+     "nama": "Cadeler",
+     "negara_iso2": "DK",
+     "organisasi_id": "en_5c6dfc8215"
+    }
+   ],
+   "pengembang-operator": []
+  },
+  "panas-bumi": {
+   "pengeboran-sumur": [
+    {
+     "id": "en_d41c4a1533",
+     "nama": "Halliburton",
+     "negara_iso2": "US",
+     "organisasi_id": "en_d41c4a1533"
+    },
+    {
+     "id": "en_ab0a9744bd",
+     "nama": "SLB",
+     "negara_iso2": "US",
+     "organisasi_id": "en_ab0a9744bd"
+    },
+    {
+     "id": "en_631ec58416",
+     "nama": "Baker Hughes",
+     "negara_iso2": "US",
+     "organisasi_id": "en_631ec58416"
+    }
+   ],
+   "pipa-separator": [
+    {
+     "id": "en_2706f0355b",
+     "nama": "Tenaris",
+     "negara_iso2": "LU",
+     "organisasi_id": "en_2706f0355b"
+    },
+    {
+     "id": "en_ba20856fbc",
+     "nama": "Vallourec",
+     "negara_iso2": "FR",
+     "organisasi_id": "en_ba20856fbc"
+    }
+   ],
+   "turbin-pembangkit": [
+    {
+     "id": "en_35453c105a",
+     "nama": "Ormat",
+     "negara_iso2": "IL",
+     "organisasi_id": "en_35453c105a"
+    },
+    {
+     "id": "en_8a7adde233",
+     "nama": "Toshiba Energy Systems & Solutions",
+     "negara_iso2": "JP",
+     "organisasi_id": "en_8a7adde233"
+    },
+    {
+     "id": "en_a811f09966",
+     "nama": "Fuji Electric",
+     "negara_iso2": "JP",
+     "organisasi_id": "en_a811f09966"
+    },
+    {
+     "id": "en_8f3dd6037a",
+     "nama": "Mitsubishi Power",
+     "negara_iso2": "JP",
+     "organisasi_id": "en_8f3dd6037a"
+    },
+    {
+     "id": "en_aff3374b59",
+     "nama": "Ansaldo Energia",
+     "negara_iso2": "IT",
+     "organisasi_id": "en_aff3374b59"
+    },
+    {
+     "id": "en_631ec58416",
+     "nama": "Baker Hughes",
+     "negara_iso2": "US",
+     "organisasi_id": "en_631ec58416"
+    }
+   ],
+   "binary-orc": [
+    {
+     "id": "en_35453c105a",
+     "nama": "Ormat",
+     "negara_iso2": "IL",
+     "organisasi_id": "en_35453c105a"
+    },
+    {
+     "id": "en_e27160fee2",
+     "nama": "Turboden",
+     "negara_iso2": "IT",
+     "organisasi_id": "en_e27160fee2"
+    },
+    {
+     "id": "en_a46cb9a990",
+     "nama": "Exergy",
+     "negara_iso2": "IT",
+     "organisasi_id": "en_a46cb9a990"
+    }
+   ],
+   "pengembang-operator": [
+    {
+     "id": "en_f471cbc18d",
+     "nama": "KS Orka",
+     "negara_iso2": "SG",
+     "organisasi_id": "en_f471cbc18d"
+    }
+   ]
+  },
+  "hidro": {
+   "pintu-air": [
+    {
+     "id": "en_eb48793c13",
+     "nama": "Andritz",
+     "negara_iso2": "AT",
+     "organisasi_id": "en_eb48793c13"
+    },
+    {
+     "id": "en_8e17d19435",
+     "nama": "Litostroj Power",
+     "negara_iso2": "SI",
+     "organisasi_id": "en_8e17d19435"
+    }
+   ],
+   "penstock": [
+    {
+     "id": "en_8e17d19435",
+     "nama": "Litostroj Power",
+     "negara_iso2": "SI",
+     "organisasi_id": "en_8e17d19435"
+    }
+   ],
+   "turbin": [
+    {
+     "id": "en_489bd14e4e",
+     "nama": "GE Vernova",
+     "negara_iso2": "US",
+     "organisasi_id": "en_489bd14e4e"
+    },
+    {
+     "id": "en_8a7adde233",
+     "nama": "Toshiba Energy Systems & Solutions",
+     "negara_iso2": "JP",
+     "organisasi_id": "en_8a7adde233"
+    },
+    {
+     "id": "en_eb48793c13",
+     "nama": "Andritz",
+     "negara_iso2": "AT",
+     "organisasi_id": "en_eb48793c13"
+    },
+    {
+     "id": "en_a3c5388685",
+     "nama": "Voith",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_a3c5388685"
+    },
+    {
+     "id": "en_1613e168cd",
+     "nama": "Harbin Electric",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_1613e168cd"
+    },
+    {
+     "id": "en_f3564efcaf",
+     "nama": "Dongfang Electric",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_f3564efcaf"
+    },
+    {
+     "id": "en_8e17d19435",
+     "nama": "Litostroj Power",
+     "negara_iso2": "SI",
+     "organisasi_id": "en_8e17d19435"
+    },
+    {
+     "id": "en_6f822225e2",
+     "nama": "Gilkes",
+     "negara_iso2": "GB",
+     "organisasi_id": "en_6f822225e2"
+    },
+    {
+     "id": "en_c0807beb29",
+     "nama": "Cink Hydro-Energy",
+     "negara_iso2": "CZ",
+     "organisasi_id": "en_c0807beb29"
+    }
+   ],
+   "generator": [
+    {
+     "id": "en_489bd14e4e",
+     "nama": "GE Vernova",
+     "negara_iso2": "US",
+     "organisasi_id": "en_489bd14e4e"
+    },
+    {
+     "id": "en_8a7adde233",
+     "nama": "Toshiba Energy Systems & Solutions",
+     "negara_iso2": "JP",
+     "organisasi_id": "en_8a7adde233"
+    },
+    {
+     "id": "en_eb48793c13",
+     "nama": "Andritz",
+     "negara_iso2": "AT",
+     "organisasi_id": "en_eb48793c13"
+    },
+    {
+     "id": "en_a3c5388685",
+     "nama": "Voith",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_a3c5388685"
+    },
+    {
+     "id": "en_1613e168cd",
+     "nama": "Harbin Electric",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_1613e168cd"
+    },
+    {
+     "id": "en_f3564efcaf",
+     "nama": "Dongfang Electric",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_f3564efcaf"
+    }
+   ],
+   "pltmh": [
+    {
+     "id": "en_6f822225e2",
+     "nama": "Gilkes",
+     "negara_iso2": "GB",
+     "organisasi_id": "en_6f822225e2"
+    },
+    {
+     "id": "en_c0807beb29",
+     "nama": "Cink Hydro-Energy",
+     "negara_iso2": "CZ",
+     "organisasi_id": "en_c0807beb29"
+    }
+   ]
+  },
+  "hidrogen": {
+   "stack-elektroliser": [
+    {
+     "id": "en_658261fe08",
+     "nama": "Nel",
+     "negara_iso2": "NO",
+     "organisasi_id": "en_658261fe08"
+    },
+    {
+     "id": "en_a96c8b5e73",
+     "nama": "thyssenkrupp nucera",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_a96c8b5e73"
+    },
+    {
+     "id": "en_21b8116e01",
+     "nama": "Plug Power",
+     "negara_iso2": "US",
+     "organisasi_id": "en_21b8116e01"
+    },
+    {
+     "id": "en_b4e8346115",
+     "nama": "ITM Power",
+     "negara_iso2": "GB",
+     "organisasi_id": "en_b4e8346115"
+    },
+    {
+     "id": "en_c86d682f80",
+     "nama": "LONGi Hydrogen",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_c86d682f80"
+    },
+    {
+     "id": "en_297dd3c8ec",
+     "nama": "Sungrow Hydrogen",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_297dd3c8ec"
+    },
+    {
+     "id": "en_4ec33fb017",
+     "nama": "Peric Hydrogen Technologies",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_4ec33fb017"
+    },
+    {
+     "id": "en_dd23d49bcd",
+     "nama": "John Cockerill",
+     "negara_iso2": "BE",
+     "organisasi_id": "en_dd23d49bcd"
+    },
+    {
+     "id": "en_c7c1d80082",
+     "nama": "Accelera",
+     "negara_iso2": "US",
+     "organisasi_id": "en_c7c1d80082"
+    }
+   ],
+   "bop": [],
+   "kompresor": [
+    {
+     "id": "en_a87d146e17",
+     "nama": "Siemens Energy",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_a87d146e17"
+    },
+    {
+     "id": "en_5b0d62e314",
+     "nama": "Burckhardt Compression",
+     "negara_iso2": "CH",
+     "organisasi_id": "en_5b0d62e314"
+    },
+    {
+     "id": "en_ff545e913d",
+     "nama": "Linde",
+     "negara_iso2": "IE",
+     "organisasi_id": "en_ff545e913d"
+    }
+   ],
+   "tangki": [
+    {
+     "id": "en_dd47bc7aee",
+     "nama": "Hexagon Purus",
+     "negara_iso2": "NO",
+     "organisasi_id": "en_dd47bc7aee"
+    },
+    {
+     "id": "en_ff545e913d",
+     "nama": "Linde",
+     "negara_iso2": "IE",
+     "organisasi_id": "en_ff545e913d"
+    }
+   ],
+   "sistem-lengkap": [
+    {
+     "id": "en_658261fe08",
+     "nama": "Nel",
+     "negara_iso2": "NO",
+     "organisasi_id": "en_658261fe08"
+    },
+    {
+     "id": "en_a96c8b5e73",
+     "nama": "thyssenkrupp nucera",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_a96c8b5e73"
+    },
+    {
+     "id": "en_a87d146e17",
+     "nama": "Siemens Energy",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_a87d146e17"
+    },
+    {
+     "id": "en_21b8116e01",
+     "nama": "Plug Power",
+     "negara_iso2": "US",
+     "organisasi_id": "en_21b8116e01"
+    },
+    {
+     "id": "en_b4e8346115",
+     "nama": "ITM Power",
+     "negara_iso2": "GB",
+     "organisasi_id": "en_b4e8346115"
+    },
+    {
+     "id": "en_dd23d49bcd",
+     "nama": "John Cockerill",
+     "negara_iso2": "BE",
+     "organisasi_id": "en_dd23d49bcd"
+    }
+   ]
+  },
+  "jaringan": {
+   "transformator": [
+    {
+     "id": "en_489bd14e4e",
+     "nama": "GE Vernova",
+     "negara_iso2": "US",
+     "organisasi_id": "en_489bd14e4e"
+    },
+    {
+     "id": "en_a87d146e17",
+     "nama": "Siemens Energy",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_a87d146e17"
+    },
+    {
+     "id": "en_e52b2c7f68",
+     "nama": "Hitachi Energy",
+     "negara_iso2": "CH",
+     "organisasi_id": "en_e52b2c7f68"
+    },
+    {
+     "id": "en_f265c59e51",
+     "nama": "XD Electric",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_f265c59e51"
+    },
+    {
+     "id": "en_caaca00333",
+     "nama": "TBEA",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_caaca00333"
+    },
+    {
+     "id": "en_f9a00f3de3",
+     "nama": "Hyosung Heavy Industries",
+     "negara_iso2": "KR",
+     "organisasi_id": "en_f9a00f3de3"
+    }
+   ],
+   "hvdc": [
+    {
+     "id": "en_489bd14e4e",
+     "nama": "GE Vernova",
+     "negara_iso2": "US",
+     "organisasi_id": "en_489bd14e4e"
+    },
+    {
+     "id": "en_a87d146e17",
+     "nama": "Siemens Energy",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_a87d146e17"
+    },
+    {
+     "id": "en_e52b2c7f68",
+     "nama": "Hitachi Energy",
+     "negara_iso2": "CH",
+     "organisasi_id": "en_e52b2c7f68"
+    },
+    {
+     "id": "en_c64d3fcde2",
+     "nama": "ABB",
+     "negara_iso2": "CH",
+     "organisasi_id": "en_c64d3fcde2"
+    },
+    {
+     "id": "en_69858e2e69",
+     "nama": "NARI Group",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_69858e2e69"
+    },
+    {
+     "id": "en_f9a00f3de3",
+     "nama": "Hyosung Heavy Industries",
+     "negara_iso2": "KR",
+     "organisasi_id": "en_f9a00f3de3"
+    }
+   ],
+   "switchgear": [
+    {
+     "id": "en_489bd14e4e",
+     "nama": "GE Vernova",
+     "negara_iso2": "US",
+     "organisasi_id": "en_489bd14e4e"
+    },
+    {
+     "id": "en_e52b2c7f68",
+     "nama": "Hitachi Energy",
+     "negara_iso2": "CH",
+     "organisasi_id": "en_e52b2c7f68"
+    },
+    {
+     "id": "en_eab75dcb58",
+     "nama": "Schneider Electric",
+     "negara_iso2": "FR",
+     "organisasi_id": "en_eab75dcb58"
+    },
+    {
+     "id": "en_c64d3fcde2",
+     "nama": "ABB",
+     "negara_iso2": "CH",
+     "organisasi_id": "en_c64d3fcde2"
+    },
+    {
+     "id": "en_69858e2e69",
+     "nama": "NARI Group",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_69858e2e69"
+    },
+    {
+     "id": "en_f265c59e51",
+     "nama": "XD Electric",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_f265c59e51"
+    },
+    {
+     "id": "en_0cec506e6e",
+     "nama": "LS Electric",
+     "negara_iso2": "KR",
+     "organisasi_id": "en_0cec506e6e"
+    }
+   ],
+   "bess-integrasi": [
+    {
+     "id": "en_e52b2c7f68",
+     "nama": "Hitachi Energy",
+     "negara_iso2": "CH",
+     "organisasi_id": "en_e52b2c7f68"
+    },
+    {
+     "id": "en_eab75dcb58",
+     "nama": "Schneider Electric",
+     "negara_iso2": "FR",
+     "organisasi_id": "en_eab75dcb58"
+    },
+    {
+     "id": "en_0cec506e6e",
+     "nama": "LS Electric",
+     "negara_iso2": "KR",
+     "organisasi_id": "en_0cec506e6e"
+    }
+   ]
+  },
+  "biomassa": {
+   "bahan-baku": [],
+   "pelet-briket": [
+    {
+     "id": "en_9028b85a2f",
+     "nama": "Drax",
+     "negara_iso2": "GB",
+     "organisasi_id": "en_9028b85a2f"
+    }
+   ],
+   "pengolah": [],
+   "boiler": [
+    {
+     "id": "en_eb48793c13",
+     "nama": "Andritz",
+     "negara_iso2": "AT",
+     "organisasi_id": "en_eb48793c13"
+    },
+    {
+     "id": "en_f7449221ca",
+     "nama": "Valmet",
+     "negara_iso2": "FI",
+     "organisasi_id": "en_f7449221ca"
+    },
+    {
+     "id": "en_f852bce1ed",
+     "nama": "Sumitomo SHI FW",
+     "negara_iso2": "FI",
+     "organisasi_id": "en_f852bce1ed"
+    },
+    {
+     "id": "en_8d3a3df921",
+     "nama": "Thermax",
+     "negara_iso2": "IN",
+     "organisasi_id": "en_8d3a3df921"
+    },
+    {
+     "id": "en_ea6383af3c",
+     "nama": "Doosan Enerbility",
+     "negara_iso2": "KR",
+     "organisasi_id": "en_ea6383af3c"
+    }
+   ],
+   "gasifier": [
+    {
+     "id": "en_f7449221ca",
+     "nama": "Valmet",
+     "negara_iso2": "FI",
+     "organisasi_id": "en_f7449221ca"
+    },
+    {
+     "id": "en_8d3a3df921",
+     "nama": "Thermax",
+     "negara_iso2": "IN",
+     "organisasi_id": "en_8d3a3df921"
+    }
+   ],
+   "turbin": [
+    {
+     "id": "en_eb48793c13",
+     "nama": "Andritz",
+     "negara_iso2": "AT",
+     "organisasi_id": "en_eb48793c13"
+    },
+    {
+     "id": "en_ea6383af3c",
+     "nama": "Doosan Enerbility",
+     "negara_iso2": "KR",
+     "organisasi_id": "en_ea6383af3c"
+    }
+   ],
+   "cofiring": [
+    {
+     "id": "en_9028b85a2f",
+     "nama": "Drax",
+     "negara_iso2": "GB",
+     "organisasi_id": "en_9028b85a2f"
+    }
+   ]
+  },
+  "biogas": {
+   "pemasok-pome": [],
+   "digester": [],
+   "gas-engine": [
+    {
+     "id": "en_5be2e42beb",
+     "nama": "INNIO Jenbacher",
+     "negara_iso2": "AT",
+     "organisasi_id": "en_5be2e42beb"
+    },
+    {
+     "id": "en_46452x4745",
+     "nama": "Caterpillar",
+     "negara_iso2": "US",
+     "organisasi_id": "en_46452x4745"
+    },
+    {
+     "id": "en_52536dd20c",
+     "nama": "MWM",
+     "negara_iso2": "DE",
+     "organisasi_id": "en_52536dd20c"
+    },
+    {
+     "id": "en_82a1a4fb97",
+     "nama": "Weichai Power",
+     "negara_iso2": "CN",
+     "organisasi_id": "en_82a1a4fb97"
+    }
+   ],
+   "pemurnian-biometana": [
+    {
+     "id": "en_9115ead072",
+     "nama": "Greenlane Renewables",
+     "negara_iso2": "CA",
+     "organisasi_id": "en_9115ead072"
+    }
+   ]
+  },
+  "biofuel": {
+   "bahan-baku": [],
+   "fame": [
+    {
+     "id": "en_50674f19eb",
+     "nama": "Neste",
+     "negara_iso2": "FI",
+     "organisasi_id": "en_50674f19eb"
+    },
+    {
+     "id": "en_e258813aa4",
+     "nama": "Wilmar International",
+     "negara_iso2": "SG",
+     "organisasi_id": "en_e258813aa4"
+    },
+    {
+     "id": "en_47d4add3f5",
+     "nama": "Musim Mas",
+     "negara_iso2": "ID",
+     "organisasi_id": "en_47d4add3f5"
+    }
+   ],
+   "bioavtur": [
+    {
+     "id": "en_50674f19eb",
+     "nama": "Neste",
+     "negara_iso2": "FI",
+     "organisasi_id": "en_50674f19eb"
+    }
+   ],
+   "bioetanol": [],
+   "enzim-katalis": [
+    {
+     "id": "en_bdc737b081",
+     "nama": "Novonesis",
+     "negara_iso2": "DK",
+     "organisasi_id": "en_bdc737b081"
+    },
+    {
+     "id": "en_3d0d3a25c2",
+     "nama": "Johnson Matthey",
+     "negara_iso2": "GB",
+     "organisasi_id": "en_3d0d3a25c2"
+    }
+   ]
+  }
+ },
+ "butir": [
+  {
+   "sub": [
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "regulasi",
+   "org_nama": "PLN",
+   "uraian": "Permen ESDM 12/2023 (Pemanfaatan Bahan Bakar Biomassa), ditetapkan 27 Nov 2023, diundangkan 30 Nov 2023 (BN 2023 No. 946). Harga patokan tertinggi pembelian biomassa oleh PLN dan IPP mitranya = harga rata-rata batubara FOB (acuan tahun sebelumnya) x koefisien k (paling tinggi 1,2) x faktor koreksi nilai kalor Fc; evaluasi k tiap tahun. Pihak lain memakai harga kesepakatan.",
+   "nilai": "k <= 1,2",
+   "periode": "berlaku sejak 2023",
+   "sumber_url": "https://peraturan.go.id/files/permen-esdm-no-12-tahun-2023.pdf",
+   "tanggal_sumber": "2023-11-30",
+   "tingkat_bukti": "resmi",
+   "catatan": "Regulasi tidak memuat angka Rp per ton tetap; harga per ton mengikuti formula dan kalori biomassa.",
+   "organisasi_id": "su_ed074ff5"
+  },
+  {
+   "sub": [
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "harga",
+   "org_nama": "PLN",
+   "uraian": "Harga cangkang sawit untuk co-firing PLN saat itu US$95 per ton; Jepang membeli US$110 per ton; perkiraan harga dalam negeri untuk cangkang berkalori tinggi US$65 per ton (pernyataan Wadirut PLN).",
+   "nilai": "US$95/ton (co-firing 2021); US$65/ton (perkiraan domestik)",
+   "periode": "2021",
+   "sumber_url": "https://ekonomi.republika.co.id/berita/qs5roo383/pln-minta-dmo-cangkang-sawit-untuk-proyek-cofiring-pltu",
+   "tanggal_sumber": "2021-04-26",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "catatan": "Angka lama sebelum Permen 12/2023; bukan harga berlaku sekarang.",
+   "organisasi_id": "su_ed074ff5"
+  },
+  {
+   "sub": [
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "program",
+   "org_nama": "PLN",
+   "uraian": "Co-firing biomassa PLN berjalan di 47 PLTU pada 2024 dengan target 52 PLTU akhir 2025; kebutuhan biomassa bila 52 PLTU penuh sekitar 10,2 juta ton per tahun.",
+   "nilai": "47 PLTU (2024); target 52 PLTU (2025); kebutuhan 10,2 juta ton/tahun",
+   "periode": "2024-2025",
+   "sumber_url": "https://ekonomi.bisnis.com/read/20251102/44/1925298/pln-targetkan-co-firing-52-pltu-hingga-akhir-2025",
+   "tanggal_sumber": "2025-11-02",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Media lain menyebut 48 atau 49 lokasi akhir 2025; cakupan hitung berbeda.",
+   "organisasi_id": "su_ed074ff5"
+  },
+  {
+   "sub": [
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "volume",
+   "org_nama": "PLN",
+   "uraian": "Target kebutuhan 10,2 juta ton biomassa untuk co-firing 52 PLTU pada 2025.",
+   "nilai": "10,2 juta ton",
+   "periode": "2025",
+   "sumber_url": "https://listrikindonesia.com/detail/15551/targetkan-co-firing-52-pltu-pln-butuh-102-juta-ton-biomassa-di-2025",
+   "tanggal_sumber": "2025",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Judul artikel; isi tidak dibuka.",
+   "organisasi_id": "su_ed074ff5"
+  },
+  {
+   "sub": [
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "volume",
+   "org_nama": "PLN",
+   "uraian": "Realisasi serapan biomassa co-firing 2025 sekitar 2,4 juta ton; target PLN EPI 2026 sebesar 3,65 juta ton.",
+   "nilai": "2,4 juta ton (2025); target 3,65 juta ton (2026)",
+   "periode": "2025-2026",
+   "sumber_url": "https://investortrust.id/business/110828/pln-epi-targetkan-pasokan-biomassa-3-65-juta-ton-pada-2026-percepat-co-firing-di-52-pltu",
+   "tanggal_sumber": "2026",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Sumber lain: 1,7 juta ton hingga akhir September 2025 (PLN EPI), sekitar 2,2 juta ton (Republika, Jan 2026), 1,14 juta ton limbah biomassa (PLN Indonesia Power); cakupan pelaporan berbeda.",
+   "organisasi_id": "su_ed074ff5"
+  },
+  {
+   "sub": [
+    "cofiring",
+    "pelet-briket",
+    "pengolah"
+   ],
+   "segmen": "biomassa",
+   "jenis": "volume",
+   "org_nama": "PLN",
+   "uraian": "Realisasi kumulatif pasokan biomassa co-firing 2023-2026 sebesar 4,77 juta ton, didominasi biomassa kayu: serbuk gergaji (sawdust) 54,6% dan woodchip 22,4%; target 2027 sebesar 4,07 juta ton per tahun.",
+   "nilai": "4,77 juta ton kumulatif 2023-2026; sawdust 54,6%; woodchip 22,4%",
+   "periode": "2023-2026",
+   "sumber_url": "https://industri.kontan.co.id/news/pln-epi-targetkan-pasokan-biomassa-co-firing-naik-jadi-407-juta-ton-pada-2027",
+   "tanggal_sumber": "2026-07",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Cangkang sawit bukan porsi terbesar.",
+   "organisasi_id": "su_ed074ff5"
+  },
+  {
+   "sub": [
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "unit",
+   "org_nama": "PLN",
+   "uraian": "PLTU Rembang: co-firing kisaran 5-10 persen; serapan 185 ribu ton biomassa.",
+   "nilai": "5-10%; 185 ribu ton",
+   "periode": "tidak disebut di cuplikan",
+   "sumber_url": "https://listrikindonesia.com/detail/21599/pltu-rembang-serap-185-ribu-ton-biomassa",
+   "tanggal_sumber": "2026",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Periode volume belum diverifikasi.",
+   "organisasi_id": "su_ed074ff5"
+  },
+  {
+   "sub": [
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "unit",
+   "org_nama": "PLN",
+   "uraian": "PLTU Sintang: firing biomassa 100%, pasokan harian cangkang sawit 150 ton dan woodchip 15 ton disiapkan PLN EPI.",
+   "nilai": "100% biomassa; 150 ton cangkang/hari + 15 ton woodchip/hari",
+   "periode": "2022",
+   "sumber_url": "https://listrikindonesia.com/detail/12161/pln-epi-pasok-cangkang-sawit-dan-woodchip-untuk-pltu-sintang-jalankan-100-firing-biomassa",
+   "tanggal_sumber": "2022",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Tahun terbit diperkirakan dari nomor artikel; belum diverifikasi.",
+   "organisasi_id": "su_ed074ff5"
+  },
+  {
+   "sub": [
+    "bahan-baku",
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "pemasok",
+   "org_nama": "PT Sumber Global Energy Tbk",
+   "uraian": "Memasok cangkang sawit ke PLTU Tenayan, Pekanbaru, 5.000 ton per bulan, serta woodchip, serutan, dan serbuk kayu dari pabrik pelet kayu di Jawa Timur (tanpa volume).",
+   "nilai": "5.000 ton/bulan (cangkang)",
+   "periode": "kontrak dengan PLN EPI, diumumkan Des 2023",
+   "sumber_url": "https://listrikindonesia.com/detail/12219/pln-epi-gandeng-sumber-global-energy-olah-rantai-pasok-biomassa-pertanian",
+   "tanggal_sumber": "2023-12-24",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "catatan": "",
+   "organisasi_id": "en_7aaca4416c"
+  },
+  {
+   "sub": [
+    "bahan-baku",
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "pemasok",
+   "org_nama": "PT Bumi Indawa Niaga",
+   "uraian": "Memasok cangkang sawit ke PLTU Tidore; pengiriman pertama 350 ton lewat laut, bahan dari pabrik sawit perusahaan saudara PT Gelora Mandiri Membangun.",
+   "nilai": "350 ton (pengiriman pertama)",
+   "periode": "tidak disebut di cuplikan",
+   "sumber_url": "https://listrikindonesia.com/detail/16154/pln-epi-kirim-350-ton-cangkang-sawit-ke-pltu-tidore",
+   "tanggal_sumber": "2025",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "",
+   "organisasi_id": "en_659d53839c"
+  },
+  {
+   "sub": [
+    "cofiring"
+   ],
+   "segmen": "biomassa",
+   "jenis": "unit",
+   "org_nama": "PLN",
+   "uraian": "PLTU Teluk Balikpapan menerima pengiriman perdana 6.700 ton biomassa cangkang sawit sebagai bagian target 2026.",
+   "nilai": "6.700 ton (pengiriman perdana)",
+   "periode": "Mar 2026",
+   "sumber_url": "https://listrikindonesia.com/detail/19416/pln-epi-kirim-6700-ton-biomassa-ke-pltu-balikpapan",
+   "tanggal_sumber": "2026-03",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "",
+   "organisasi_id": "su_ed074ff5"
+  },
+  {
+   "sub": [
+    "pelet-briket"
+   ],
+   "segmen": "biomassa",
+   "jenis": "kapasitas",
+   "org_nama": "",
+   "uraian": "Industri wood pellet: 35 unit, kapasitas izin produksi 3,18 juta m3 per tahun (akhir 2024); produksi riil 2024 hanya 333.971 m3; sekitar 80 persen ekspor ke Jepang (Aprebi).",
+   "nilai": "35 industri; izin 3,18 juta m3/tahun; produksi 333.971 m3 (2024)",
+   "periode": "akhir 2024",
+   "sumber_url": "https://industri.kontan.co.id/news/pengusaha-soroti-black-campaign-wood-pellet-ungkap-tantangan-peluang-biomassa",
+   "tanggal_sumber": "2025-11-05",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "catatan": "Angka industri dikutip media dari Kementerian Kehutanan; daftar produsen per perusahaan belum ada sumber lengkap.",
+   "organisasi_id": null
+  },
+  {
+   "sub": [
+    "pelet-briket"
+   ],
+   "segmen": "biomassa",
+   "jenis": "ekspor",
+   "org_nama": "PT Biomasa Jaya Abadi",
+   "uraian": "Ekspor wood pellet Indonesia naik 387 persen menjadi 121.429 ton pada 2023; Mongabay mencatat sedikitnya tujuh perusahaan eksportir pelet kayu, termasuk PT Biomasa Jaya Abadi (Gorontalo).",
+   "nilai": "121.429 ton (ekspor nasional 2023)",
+   "periode": "2023",
+   "sumber_url": "https://www.thejakartapost.com/business/2024/09/12/biomass-export-boom-brings-risks-of-deforestation.html",
+   "tanggal_sumber": "2024-09-12",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Nama perusahaan dari Mongabay (2024-09-15).",
+   "organisasi_id": "en_2b3a981f9c"
+  },
+  {
+   "sub": [
+    "pelet-briket"
+   ],
+   "segmen": "biomassa",
+   "jenis": "kapasitas",
+   "org_nama": "",
+   "uraian": "Biomassa Nusantara (Gresik, Jawa Timur) mengklaim kapasitas 120.000 ton per tahun wood pellet dan empat pabrik di tiga pulau.",
+   "nilai": "120.000 ton/tahun (klaim)",
+   "periode": "profil perusahaan",
+   "sumber_url": "https://biomassanusantara.lovable.app/about",
+   "tanggal_sumber": "2026",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Klaim sepihak pada situs bersubdomain pembangun halaman; belum diverifikasi.",
+   "organisasi_id": null
+  },
+  {
+   "sub": [
+    "fame"
+   ],
+   "segmen": "biofuel",
+   "jenis": "kebijakan",
+   "org_nama": "",
+   "uraian": "Alokasi biodiesel 2026 ditetapkan Menteri ESDM 15.646.372 kl (PSO 7.454.600 kl; non-PSO 8.191.772 kl), didukung 32 BU BBM dan 26 BU BBN.",
+   "nilai": "15.646.372 kl",
+   "periode": "2026",
+   "sumber_url": "https://www.esdm.go.id/en/media-center/news-archives/pemerintah-tetapkan-alokasi-biodiesel-tahun-2026-sebesar-1565-juta-kl",
+   "tanggal_sumber": "2025-12",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Rincian PSO/non-PSO dari ringkasan pencarian yang merujuk siaran ESDM.",
+   "organisasi_id": null
+  },
+  {
+   "sub": [
+    "fame"
+   ],
+   "segmen": "biofuel",
+   "jenis": "kapasitas",
+   "org_nama": "APROBI (Asosiasi Produsen Biofuel Indonesia)",
+   "uraian": "Kapasitas terpasang biodiesel nasional menurut APROBI: 19,6 juta kl (Mar 2025), 19,96 juta kl (Agu 2025), 17,14 juta kl untuk 32 perusahaan (Feb 2026), sekitar 22 juta kl (2026); utilisasi riil 80-85 persen. B50 butuh tambahan sekitar 2-4 juta kl.",
+   "nilai": "17,14-22 juta kl/tahun",
+   "periode": "2025-2026",
+   "sumber_url": "https://ekonomi.bisnis.com/read/20260226/44/1955837/jelang-implementasi-b50-aprobi-jumlah-badan-usaha-biodiesel-bertambah",
+   "tanggal_sumber": "2026-02-26",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Angka berbeda menurut cakupan anggota dan tanggal.",
+   "organisasi_id": "en_a12d603d3d"
+  },
+  {
+   "sub": [
+    "fame"
+   ],
+   "segmen": "biofuel",
+   "jenis": "kapasitas",
+   "org_nama": "PT Wilmar Bioenergi Indonesia",
+   "uraian": "Kapasitas pabrik biodiesel 1,6 juta kl di Riau.",
+   "nilai": "1.600.000 kl",
+   "periode": "data APROBI 2022 dikutip Agu 2023",
+   "sumber_url": "https://ekonomi.bisnis.com/read/20230811/44/1683912/para-konglomerat-penguasa-kilang-biodiesel-di-indonesia",
+   "tanggal_sumber": "2023-08-11",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Data 2022; kapasitas kini dapat berubah.",
+   "organisasi_id": "p_f9b341c0f2"
+  },
+  {
+   "sub": [
+    "fame"
+   ],
+   "segmen": "biofuel",
+   "jenis": "kapasitas",
+   "org_nama": "PT Wilmar Nabati Indonesia",
+   "uraian": "Kapasitas pabrik biodiesel 2,25 juta kl di Jawa Timur.",
+   "nilai": "2.250.000 kl",
+   "periode": "data APROBI 2022 dikutip Agu 2023",
+   "sumber_url": "https://ekonomi.bisnis.com/read/20230811/44/1683912/para-konglomerat-penguasa-kilang-biodiesel-di-indonesia",
+   "tanggal_sumber": "2023-08-11",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Data 2022.",
+   "organisasi_id": "p_6f8075d555"
+  },
+  {
+   "sub": [
+    "fame"
+   ],
+   "segmen": "biofuel",
+   "jenis": "kapasitas",
+   "org_nama": "Musim Mas",
+   "uraian": "Kapasitas biodiesel Musim Mas 459.770 kl di Medan dan 896.522 kl di Batam.",
+   "nilai": "459.770 kl (Medan); 896.522 kl (Batam)",
+   "periode": "data APROBI 2022 dikutip Agu 2023",
+   "sumber_url": "https://ekonomi.bisnis.com/read/20230811/44/1683912/para-konglomerat-penguasa-kilang-biodiesel-di-indonesia",
+   "tanggal_sumber": "2023-08-11",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Data 2022.",
+   "organisasi_id": "en_47d4add3f5"
+  },
+  {
+   "sub": [
+    "fame"
+   ],
+   "segmen": "biofuel",
+   "jenis": "kapasitas",
+   "org_nama": "PT Kutai Refinery Nusantara",
+   "uraian": "Kapasitas biodiesel 1,14 juta kl di Kalimantan Timur (anak usaha Apical, grup RGE).",
+   "nilai": "1.140.000 kl",
+   "periode": "data APROBI 2022 dikutip Agu 2023",
+   "sumber_url": "https://ekonomi.bisnis.com/read/20230811/44/1683912/para-konglomerat-penguasa-kilang-biodiesel-di-indonesia",
+   "tanggal_sumber": "2023-08-11",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Data 2022.",
+   "organisasi_id": "p_72cc04659c"
+  },
+  {
+   "sub": [
+    "fame"
+   ],
+   "segmen": "biofuel",
+   "jenis": "harga",
+   "org_nama": "",
+   "uraian": "Harga Indeks Pasar (HIP) biodiesel ESDM: Rp14.036 per liter (Nov 2025), Rp14.562 (Jul 2026), Rp14.924 (Agu 2026). Rumus: (harga CPO rata-rata KPB + US$85/ton) x 870 kg/m3 + ongkos angkut.",
+   "nilai": "Rp14.924/liter (Agu 2026)",
+   "periode": "Nov 2025 sampai Agu 2026",
+   "sumber_url": "https://finance.detik.com/energi/d-8606624/harga-indeks-biodiesel-agustus-2026-naik-jadi-rp-14-924-liter",
+   "tanggal_sumber": "2026-08",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Nov 2026: satu media (detik, d-8736184) menulis Rp14.312/liter, turun Rp758 dari Okt 2026 Rp15.072, tetapi tanggal kutipannya tak konsisten; belum terkonfirmasi sumber resmi EBTKE.",
+   "organisasi_id": null
+  },
+  {
+   "sub": [
+    "bioetanol"
+   ],
+   "segmen": "biofuel",
+   "jenis": "harga",
+   "org_nama": "",
+   "uraian": "HIP bioetanol ESDM: Rp9.013 per liter (Nov 2025), Rp10.933 per liter (Jul 2026).",
+   "nilai": "Rp10.933/liter (Jul 2026)",
+   "periode": "Nov 2025 dan Jul 2026",
+   "sumber_url": "https://ekonomi.bisnis.com/read/20260707/44/1986135/harga-bioetanol-melonjak-ke-rp10933-per-liter-pada-juli-2026",
+   "tanggal_sumber": "2026-07-07",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Nov 2025 dari infosawit (news/16760).",
+   "organisasi_id": null
+  },
+  {
+   "sub": [
+    "bioetanol"
+   ],
+   "segmen": "biofuel",
+   "jenis": "kapasitas",
+   "org_nama": "PT Energi Agro Nusantara",
+   "uraian": "Kapasitas bioetanol fuel grade 30.000 kl per tahun (bahan baku molase), berizin niaga BBN.",
+   "nilai": "30.000 kl/tahun",
+   "periode": "daftar pabrik Bloomberg Technoz",
+   "sumber_url": "https://www.bloombergtechnoz.com/detail-news/111850/menilik-kapasitas-bioetanol-fuel-grade-di-ri-jelang-mandatori-e5/2",
+   "tanggal_sumber": "2026",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "",
+   "organisasi_id": "p_1a272e3233"
+  },
+  {
+   "sub": [
+    "bioetanol"
+   ],
+   "segmen": "biofuel",
+   "jenis": "kapasitas",
+   "org_nama": "PT Molindo Raya Industrial",
+   "uraian": "Kapasitas produksi bioetanol 60.000 kl per tahun, dengan kapasitas fuel grade 10.000 kl.",
+   "nilai": "60.000 kl (total); 10.000 kl (fuel grade)",
+   "periode": "daftar pabrik Bloomberg Technoz",
+   "sumber_url": "https://www.bloombergtechnoz.com/detail-news/111850/menilik-kapasitas-bioetanol-fuel-grade-di-ri-jelang-mandatori-e5/2",
+   "tanggal_sumber": "2026",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Katadata (Jun 2026) menyebut kapasitas terpasang sekitar 10 juta liter.",
+   "organisasi_id": "p_cbc53a2908"
+  },
+  {
+   "sub": [
+    "bioetanol"
+   ],
+   "segmen": "biofuel",
+   "jenis": "rencana",
+   "org_nama": "PT Pertamina New & Renewable Energy",
+   "uraian": "Rencana pabrik bioetanol terintegrasi 60.000 kl per tahun di Lampung bersama Toyota, mulai dibangun kuartal III 2027 dan beroperasi kuartal IV 2028.",
+   "nilai": "60.000 kl/tahun (rencana)",
+   "periode": "2027-2028",
+   "sumber_url": "https://investortrust.id/business/105936/pemerintah-siap-bangun-pabrik-biofuel-kapasitas-60-juta-liter-di-lampung-gandeng-toyota-dan-pertamina",
+   "tanggal_sumber": "2026",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Rencana, belum berproduksi.",
+   "organisasi_id": "p_10e0dde689"
+  },
+  {
+   "sub": [
+    "menara"
+   ],
+   "segmen": "bayu",
+   "jenis": "pemain-lokal",
+   "org_nama": "PT Kenertec Power System",
+   "uraian": "Produsen menara turbin angin berdiri 2006, basis produksi Ciwandan, Cilegon, Banten; mengirim 30 menara untuk PLTB Sidrap, mengekspor ke AS, Afrika Selatan, Australia, Eropa, dan India.",
+   "nilai": "30 menara untuk Sidrap",
+   "periode": "rilis 27 Mar 2024",
+   "sumber_url": "https://www.kabarbursa.com/market-hari-ini/kenertec-power-system-ekspor-menara-angin.md",
+   "tanggal_sumber": "2024-03-27",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "catatan": "Kapasitas produksi tahunan tidak disebut.",
+   "organisasi_id": "en_0bab89da0f"
+  },
+  {
+   "sub": [
+    "menara"
+   ],
+   "segmen": "bayu",
+   "jenis": "pemain-lokal",
+   "org_nama": "Korindo Wind",
+   "uraian": "Pabrikan menara angin di bawah Korindo Group, pabrik sejak 2006, bersertifikat ISO 9001; telah mengirim 550 menara ke Amerika Utara dan hampir 1.000 menara di dunia.",
+   "nilai": "hampir 1.000 menara (dunia)",
+   "periode": "rilis pemasaran Amerika Utara",
+   "sumber_url": "https://www.windtech-international.com/company-news/korindo-begins-marketing-towers-as-korindo-wind-in-north-america",
+   "tanggal_sumber": "tidak diketahui",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Tahun rilis tidak terbaca di cuplikan.",
+   "organisasi_id": "en_9248dae6ff"
+  },
+  {
+   "sub": [
+    "pltmh"
+   ],
+   "segmen": "hidro",
+   "jenis": "pemain-lokal",
+   "org_nama": "",
+   "uraian": "Belum ditemukan daftar pabrikan turbin PLTMH lokal ber-sumber (hasil pencarian hanya jurnal rancang bangun turbin cross-flow 2,5-100 kW). Tidak diisi tanpa sumber; perlu data asosiasi mikrohidro atau Kementerian ESDM.",
+   "nilai": "",
+   "periode": "",
+   "sumber_url": "https://jurnal.poliupg.ac.id/index.php/Sinergi/article/download/1188/pdf",
+   "tanggal_sumber": "tidak diketahui",
+   "tingkat_bukti": "cuplikan",
+   "catatan": "Celah data, bukan temuan.",
+   "organisasi_id": null
+  }
+ ],
+ "pasar_dunia": [
+  {
+   "jenis": "bayu-pasang-2025",
+   "uraian": "GWEC Supply Side 2026: kapasitas turbin angin terpasang mekanis 2025 sebesar 178 GW (165 GW tersambung jaringan), 28.395 turbin dari 23 OEM. Peringkat OEM menurut pemasangan 2025 (GW): Goldwind 29,7; Envision 21,8; Windey 19,8; Mingyang 18,6; SANY 15,1. Di luar Tiongkok daratan: Vestas 12,9; Nordex 7,7; GE Vernova 5,8; Siemens Gamesa 5,4; Envision 4,2. Kumulatif di atas 100 GW: Vestas lebih dari 201, Goldwind 163, Siemens Gamesa 148, GE Vernova 125, Envision 103.",
+   "sumber_url": "https://www.gwec.net/news/gwec-records-sharp-rise-in-wind-turbine-installations-as-five-oems-exceed-100-gw",
+   "tanggal_sumber": "2026-05-14",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "per_pemasok": [
+    {
+     "nama": "Envision Energy",
+     "gw": 21.8,
+     "pemasok_id": "en_8f9393bb8e",
+     "pangsa_persen": 12.2
+    },
+    {
+     "nama": "Windey",
+     "gw": 19.8,
+     "pemasok_id": "en_eb6541b467",
+     "pangsa_persen": 11.1
+    },
+    {
+     "nama": "Mingyang Smart Energy",
+     "gw": 18.6,
+     "pemasok_id": "en_e955bf0d90",
+     "pangsa_persen": 10.4
+    },
+    {
+     "nama": "Sany Renewable Energy",
+     "gw": 15.1,
+     "pemasok_id": "en_99afd43f1a",
+     "pangsa_persen": 8.5
+    }
+   ],
+   "total_gw": 178,
+   "catatan": "Pangsa dihitung di sini sebagai GW OEM dibagi 178 GW terpasang mekanis; pembilang dan penyebut sama-sama dari GWEC, tetapi persentase bukan angka rilis GWEC."
+  },
+  {
+   "jenis": "elektroliser-kapasitas-pabrik",
+   "uraian": "IEA: kapasitas manufaktur elektroliser dunia 58 GW per tahun pada 2025 dengan utilisasi di bawah 10 persen; 22 GW di luar Tiongkok; kapasitas Tiongkok 35 GW per tahun saat permintaan kurang dari 2 GW. Komentar yang sama menyebut Tiongkok memegang hampir 70 persen (tidak cocok dengan 35 dari 58 GW; dasar hitungnya tidak jelas). Tidak ada kapasitas per perusahaan.",
+   "sumber_url": "https://www.iea.org/commentaries/what-explains-the-cost-advantage-of-chinese-electrolysers",
+   "tanggal_sumber": "2026-10-15",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "per_pemasok": [],
+   "total_gw": 58,
+   "catatan": "Kapasitas per pemasok (Sungrow, Peric, dll.) belum ditemukan di laporan tahunan atau siaran pers yang dibuka."
+  },
+  {
+   "jenis": "elektroliser-ekspor-peric",
+   "uraian": "Beijing Peric Hydrogen Technologies: produksi elektroliser tumbuh dari puluhan unit menjadi sekitar 350 unit (2023), kapasitas diperkirakan di atas 1.000 unit tahun berikutnya; pendapatan ekspor sekitar 70 juta yuan (2021), 170 juta (2022), hampir 300 juta (2023).",
+   "sumber_url": "https://global.chinadaily.com.cn/a/202408/22/WS66c694e0a31060630b9245bb.html",
+   "tanggal_sumber": "2024-08-22",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "per_pemasok": [],
+   "catatan": "Dikutip media (China Daily); bukan laporan tahunan perusahaan."
+  },
+  {
+   "jenis": "hidro-kapasitas-pemasok",
+   "uraian": "Belum ditemukan kapasitas produksi atau pangsa dunia pemasok turbin hidro dalam laporan tahunan atau siaran pers yang dibuka; CINK Hydro-Energy menyebut lebih dari 500 turbin terpasang di lebih dari 50 negara (klaim perusahaan).",
+   "sumber_url": "https://www.cink-hydro-energy.com/about-us",
+   "tanggal_sumber": "2026-11-08",
+   "tingkat_bukti": "situs-sendiri",
+   "per_pemasok": [],
+   "catatan": "Celah data."
+  }
+ ],
+ "baris": [
+  {
+   "id": "en_99265x2651",
+   "nama": "Vestas",
+   "negara_iso2": "DK",
+   "situs": "https://www.vestas.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "turbin-lengkap",
+    "nacelle",
+    "bilah"
+   ],
+   "organisasi_id": "en_99265x2651",
+   "tahun_berdiri": 1945,
+   "produk": [
+    "angin",
+    "bilah turbin",
+    "menara turbin",
+    "turbin angin darat",
+    "turbin angin lepas pantai"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_99265x2651.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DK",
+     "sumber_url": "https://www.wikidata.org/wiki/Q868259",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1945,
+     "sumber_url": "https://www.wikidata.org/wiki/Q868259",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin",
+      "bilah turbin",
+      "menara turbin",
+      "turbin angin darat",
+      "turbin angin lepas pantai"
+     ],
+     "sumber_url": "https://www.vestas.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Vestas is the renewable energy industry’s global partner on sustainable energy solutions. We design, manufacture, install, and service wind turbines across the globe.",
+     "sumber_url": "https://www.vestas.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.vestas.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q868259",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_9013c0f215",
+   "nama": "Siemens Gamesa",
+   "negara_iso2": "ES",
+   "situs": "https://www.siemensgamesa.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "turbin-lengkap",
+    "nacelle",
+    "bilah"
+   ],
+   "organisasi_id": "en_9013c0f215",
+   "tahun_berdiri": 1976,
+   "produk": [
+    "angin",
+    "turbin angin darat",
+    "turbin angin lepas pantai"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_9013c0f215.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "ES",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1493131",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1976,
+     "sumber_url": "https://www.wikidata.org/wiki/Q1493131",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin",
+      "turbin angin darat",
+      "turbin angin lepas pantai"
+     ],
+     "sumber_url": "https://www.siemensgamesa.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Siemens Gamesa makes real what matters by engineering, building and servicing onshore and offshore wind energy to deliver clean power for generations to come.",
+     "sumber_url": "https://www.siemensgamesa.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.siemensgamesa.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1493131",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_489bd14e4e",
+   "nama": "GE Vernova",
+   "negara_iso2": "US",
+   "situs": "https://www.gevernova.com/",
+   "segmen": [
+    "bayu",
+    "hidro",
+    "jaringan"
+   ],
+   "subsegmen": [
+    "turbin-lengkap",
+    "nacelle",
+    "turbin",
+    "generator",
+    "transformator",
+    "hvdc",
+    "switchgear"
+   ],
+   "organisasi_id": "en_489bd14e4e",
+   "tahun_berdiri": 2023,
+   "produk": [
+    "angin",
+    "bilah turbin",
+    "jaringan listrik",
+    "pembangkit hidro",
+    "turbin",
+    "turbin angin darat",
+    "turbin angin lepas pantai"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu",
+    "hidro",
+    "jaringan"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_489bd14e4e.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "US",
+     "sumber_url": "https://www.wikidata.org/wiki/Q118957699",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2023,
+     "sumber_url": "https://www.wikidata.org/wiki/Q118957699",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin",
+      "bilah turbin",
+      "jaringan listrik",
+      "pembangkit hidro",
+      "turbin",
+      "turbin angin darat",
+      "turbin angin lepas pantai"
+     ],
+     "sumber_url": "https://www.gevernova.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "GE Vernova is accelerating the path to more reliable, affordable, and sustainable energy through our innovative portfolio of electrification and decarbonization technologies.",
+     "sumber_url": "https://www.gevernova.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.gevernova.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q118957699",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_26327x1969",
+   "nama": "Goldwind",
+   "negara_iso2": "CN",
+   "situs": "https://www.goldwind.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "turbin-lengkap"
+   ],
+   "organisasi_id": "en_26327x1969",
+   "tahun_berdiri": 1998,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "bayu"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_26327x1969.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1090900",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1998,
+     "sumber_url": "https://www.wikidata.org/wiki/Q1090900",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "金风科技(股票代码: 002202)，致力于推动能源变革，让人人可负担、可靠、可持续的能源惠及全球，构建“可持续更美好”的未来。全球清洁能源和节能环保领域领跑者，中国风能风电龙头企业，风电整机制造企业，全球新能源企业500强。金风科技深度聚焦能源开发、能源装备、能源服务、能源应用四大领域。为全球客户提供风力发电综合解决方案，覆盖风力发电设备设计、制造、供应、安装、运维，海上和陆上风电项目规划和施工，清洁能源投资管理等。",
+     "sumber_url": "https://www.goldwind.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.goldwind.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1090900",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_8f9393bb8e",
+   "nama": "Envision Energy",
+   "negara_iso2": "CN",
+   "situs": "https://www.envision-energy.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "turbin-lengkap"
+   ],
+   "organisasi_id": "en_8f9393bb8e",
+   "tahun_berdiri": 2007,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "bayu"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [
+    {
+     "proyek_id": "gem_wind_L100000916656",
+     "nama": "Bantaeng wind farm",
+     "peran": "pemilik/pengembang",
+     "sumber": "proyek.json",
+     "sumber_url": "https://www.gem.wiki/Bantaeng_wind_farm",
+     "tingkat_bukti": "kajian"
+    },
+    {
+     "proyek_id": null,
+     "gem_id": "gem-wind-L100000916656",
+     "nama": "Bantaeng wind farm",
+     "peran": "pemilik/mitra (daftar pemilik GEM)",
+     "kapasitas_mw": 70,
+     "status": "pre-construction",
+     "sumber": "Global Energy Monitor (CC BY 4.0)",
+     "sumber_url": "https://www.gem.wiki/Bantaeng_wind_farm",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://en.wikipedia.org/wiki/Envision_Energy",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2007,
+     "sumber_url": "https://en.wikipedia.org/wiki/Envision_Energy",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.envision-energy.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Envision_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "kantor pusat Shanghai"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_e955bf0d90",
+   "nama": "Mingyang Smart Energy",
+   "negara_iso2": "CN",
+   "situs": "https://www.mywind.com.cn/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "turbin-lengkap"
+   ],
+   "organisasi_id": "en_e955bf0d90",
+   "tahun_berdiri": 2006,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "bayu"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://en.wikipedia.org/wiki/Ming_Yang_Smart_Energy",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2006,
+     "sumber_url": "https://en.wikipedia.org/wiki/Ming_Yang_Smart_Energy",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.mywind.com.cn/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q6864857",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Ming_Yang_Smart_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "kantor pusat Zhongshan, Guangdong; peringkat 5 produsen turbin dunia 2023 menurut artikel itu"
+    }
+   ],
+   "catatan": [
+    "beranda tak terbaca (fetch failed)"
+   ]
+  },
+  {
+   "id": "en_eb6541b467",
+   "nama": "Windey",
+   "negara_iso2": "CN",
+   "situs": "https://www.windeyenergy.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "turbin-lengkap"
+   ],
+   "organisasi_id": "en_eb6541b467",
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "bayu"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://szse.io/companies/300772-windey-energy-technology-group-coltd",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.windeyenergy.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://szse.io/companies/300772-windey-energy-technology-group-coltd",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Windey Energy Technology Group, tercatat di bursa Shenzhen (300772), Hangzhou"
+    }
+   ],
+   "catatan": [
+    "beranda tak terbaca (blokir 403)",
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_99afd43f1a",
+   "nama": "Sany Renewable Energy",
+   "negara_iso2": "CN",
+   "situs": "https://www.sanyre.com.cn/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "turbin-lengkap"
+   ],
+   "organisasi_id": "en_99afd43f1a",
+   "produk": [
+    "bilah turbin"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_99afd43f1a.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://stockanalysis.com/quote/sha/688349/company",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "bilah turbin"
+     ],
+     "sumber_url": "https://www.sanyre.com.cn/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.sanyre.com.cn/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://stockanalysis.com/quote/sha/688349/company",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "tercatat di bursa STAR Shanghai (688349), kantor pusat Beijing"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_97fda94e39",
+   "nama": "Nordex",
+   "negara_iso2": "DE",
+   "situs": "https://www.nordex-online.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "turbin-lengkap"
+   ],
+   "organisasi_id": "en_97fda94e39",
+   "tahun_berdiri": 1985,
+   "produk": [
+    "angin",
+    "turbin angin darat"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_97fda94e39.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q571700",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1985,
+     "sumber_url": "https://www.wikidata.org/wiki/Q571700",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin",
+      "turbin angin darat"
+     ],
+     "sumber_url": "https://www.nordex-online.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "The Nordex Group is one of the world´s leading OEM´s with 40 years of experience in manufacturing highly efficient wind turbines for global onshore markets.",
+     "sumber_url": "https://www.nordex-online.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.nordex-online.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q571700",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_524dca79a9",
+   "nama": "Suzlon",
+   "negara_iso2": "IN",
+   "situs": "https://www.suzlon.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "turbin-lengkap"
+   ],
+   "organisasi_id": "en_524dca79a9",
+   "tahun_berdiri": 1995,
+   "produk": [
+    "angin",
+    "turbin angin darat"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_524dca79a9.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "IN",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1402563",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1995,
+     "sumber_url": "https://www.wikidata.org/wiki/Q1402563",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin",
+      "turbin angin darat"
+     ],
+     "sumber_url": "https://www.suzlon.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Suzlon is a full-stack renewable energy partner delivering wind, solar, storage, and asset management solutions worldwide.",
+     "sumber_url": "https://www.suzlon.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.suzlon.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1402563",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_a92c58d4e6",
+   "nama": "TPI Composites",
+   "negara_iso2": "US",
+   "situs": "https://www.tpicomposites.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "bilah"
+   ],
+   "organisasi_id": "en_a92c58d4e6",
+   "tahun_berdiri": 1968,
+   "produk": [
+    "angin",
+    "bilah turbin",
+    "turbin angin darat"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_a92c58d4e6.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "US",
+     "sumber_url": "https://www.wikidata.org/wiki/Q106623027",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1968,
+     "sumber_url": "https://www.wikidata.org/wiki/Q106623027",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin",
+      "bilah turbin",
+      "turbin angin darat"
+     ],
+     "sumber_url": "https://www.tpicomposites.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Leading the future of renewable energy, TPI Composites is a global wind blade manufacturer. Discover our advanced composite solutions for sustainable wind power.",
+     "sumber_url": "https://www.tpicomposites.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.tpicomposites.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q106623027",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_edcadb340d",
+   "nama": "LM Wind Power",
+   "negara_iso2": "DK",
+   "situs": "https://www.lmwindpower.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "bilah"
+   ],
+   "organisasi_id": "en_edcadb340d",
+   "tahun_berdiri": 1952,
+   "produk": [
+    "angin",
+    "bilah turbin",
+    "turbin angin darat"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_edcadb340d.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DK",
+     "sumber_url": "https://www.wikidata.org/wiki/Q508150",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1952,
+     "sumber_url": "https://www.wikidata.org/wiki/Q508150",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin",
+      "bilah turbin",
+      "turbin angin darat"
+     ],
+     "sumber_url": "https://www.lmwindpower.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.lmwindpower.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q508150",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_41c21cff25",
+   "nama": "Titan Wind Energy",
+   "negara_iso2": "CN",
+   "situs": "https://www.titanwind.com.cn/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "menara"
+   ],
+   "organisasi_id": "en_41c21cff25",
+   "tahun_berdiri": 2005,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "bayu"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://en.wikipedia.org/wiki/Titan_Wind_Energy",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2005,
+     "sumber_url": "https://en.wikipedia.org/wiki/Titan_Wind_Energy",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "天顺风能（苏州）股份有限公司，是全球最具规模的风电装备制造龙头企业。目前，公司以新能源装备制造、零碳实业发展两大主营业务板块，实现双轮驱动。",
+     "sumber_url": "https://www.titanwind.com.cn/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.titanwind.com.cn/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Titan_Wind_Energy",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Taicang, Jiangsu; menara dan bilah turbin angin"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_35453c105a",
+   "nama": "Ormat",
+   "negara_iso2": "IL",
+   "situs": "https://www.ormat.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "binary-orc",
+    "turbin-pembangkit"
+   ],
+   "organisasi_id": "en_35453c105a",
+   "tahun_berdiri": 1994,
+   "produk": [
+    "panas bumi"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [
+    {
+     "proyek_id": "pj_0246",
+     "nama": "PLTP Ijen (FTP2)",
+     "peran": "pemilik/pengembang",
+     "sumber": "proyek.json",
+     "sumber_url": "https://www.gem.wiki/Blawan_Ijen_geothermal_project",
+     "tingkat_bukti": "resmi"
+    },
+    {
+     "proyek_id": "gem_geothermal_L100001025604",
+     "nama": "Toka Tindung geothermal power plant",
+     "peran": "pemilik/pengembang",
+     "sumber": "proyek.json",
+     "sumber_url": "https://www.gem.wiki/Toka_Tindung_geothermal_power_plant",
+     "tingkat_bukti": "kajian"
+    },
+    {
+     "proyek_id": null,
+     "gem_id": "gem-geothermal-L100000700014",
+     "nama": "Blawan Ijen geothermal project",
+     "peran": "pemilik/mitra (daftar pemilik GEM)",
+     "kapasitas_mw": 64,
+     "status": "operating",
+     "sumber": "Global Energy Monitor (CC BY 4.0)",
+     "sumber_url": "https://www.gem.wiki/Blawan_Ijen_geothermal_project",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "proyek_id": null,
+     "gem_id": "gem-geothermal-L100001025604",
+     "nama": "Toka Tindung geothermal power plant",
+     "peran": "pemilik/mitra (daftar pemilik GEM)",
+     "kapasitas_mw": 40,
+     "status": "pre-construction",
+     "sumber": "Global Energy Monitor (CC BY 4.0)",
+     "sumber_url": "https://www.gem.wiki/Toka_Tindung_geothermal_power_plant",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "logo": "/img/logo/org/en_35453c105a.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "IL",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1549511",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1994,
+     "sumber_url": "https://www.wikidata.org/wiki/Q1549511",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi"
+     ],
+     "sumber_url": "https://www.ormat.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Ormat Technologies Inc. - At Ormat Technologies, Inc. , we’re always on; delivering renewable power and energy solutions to our customers",
+     "sumber_url": "https://www.ormat.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.ormat.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1549511",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_8a7adde233",
+   "nama": "Toshiba Energy Systems & Solutions",
+   "negara_iso2": "JP",
+   "situs": "https://www.global.toshiba/",
+   "segmen": [
+    "panas-bumi",
+    "hidro"
+   ],
+   "subsegmen": [
+    "turbin-pembangkit",
+    "turbin",
+    "generator"
+   ],
+   "organisasi_id": "en_8a7adde233",
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "panas-bumi",
+    "hidro"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_8a7adde233.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "JP",
+     "sumber_url": "https://www.global.toshiba/ww/outline/corporate.html",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "東芝は、エネルギー・社会インフラ・ストレージ・ICT等、人と地球の明日を支える、社会の基盤となる事業に取り組んでいます。",
+     "sumber_url": "https://www.global.toshiba/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.global.toshiba/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.global.toshiba/ww/outline/corporate.html",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "unit usaha Toshiba Corporation (Jepang)"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_a811f09966",
+   "nama": "Fuji Electric",
+   "negara_iso2": "JP",
+   "situs": "https://www.fujielectric.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "turbin-pembangkit"
+   ],
+   "organisasi_id": "en_a811f09966",
+   "tahun_berdiri": 1923,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "panas-bumi"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "JP",
+     "sumber_url": "https://www.wikidata.org/wiki/Q498662",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1923,
+     "sumber_url": "https://www.wikidata.org/wiki/Q498662",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Fuji Electric contributes to the resolution of energy management problems, through pursuit of technological innovation in electric and thermal energy.",
+     "sumber_url": "https://www.fujielectric.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.fujielectric.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q498662",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_8f3dd6037a",
+   "nama": "Mitsubishi Power",
+   "negara_iso2": "JP",
+   "situs": "https://power.mhi.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "turbin-pembangkit"
+   ],
+   "organisasi_id": "en_8f3dd6037a",
+   "tahun_berdiri": 1934,
+   "produk": [
+    "panas bumi",
+    "turbin uap"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": "https://power.mhi.com/case/indonesia",
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_8f3dd6037a.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "JP",
+     "sumber_url": "https://www.wikidata.org/wiki/Q648280",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1934,
+     "sumber_url": "https://www.wikidata.org/wiki/Q648280",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi",
+      "turbin uap"
+     ],
+     "sumber_url": "https://power.mhi.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Mitsubishi Power is an energy solutions company committed to addressing the energy challenges of today and tomorrow.",
+     "sumber_url": "https://power.mhi.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "halaman_indonesia",
+     "nilai": "https://power.mhi.com/case/indonesia",
+     "sumber_url": "https://power.mhi.com/case/indonesia",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://power.mhi.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q648280",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_aff3374b59",
+   "nama": "Ansaldo Energia",
+   "negara_iso2": "IT",
+   "situs": "https://www.ansaldoenergia.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "turbin-pembangkit"
+   ],
+   "organisasi_id": "en_aff3374b59",
+   "tahun_berdiri": 1991,
+   "produk": [
+    "panas bumi",
+    "turbin uap"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_aff3374b59.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "IT",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2852429",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1991,
+     "sumber_url": "https://www.wikidata.org/wiki/Q2852429",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi",
+      "turbin uap"
+     ],
+     "sumber_url": "https://www.ansaldoenergia.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Our civilization is built on energy: its generation, conservation and use has driven the evolution of human kind. We have been part of this process since 1853. Ansaldo Energia know-how covers all the most important technologies that make the energy transition possible: from turbomachinery to renewab",
+     "sumber_url": "https://www.ansaldoenergia.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.ansaldoenergia.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q2852429",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_e27160fee2",
+   "nama": "Turboden",
+   "negara_iso2": "IT",
+   "situs": "https://www.turboden.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "binary-orc"
+   ],
+   "organisasi_id": "en_e27160fee2",
+   "produk": [
+    "panas bumi",
+    "siklus ORC"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_e27160fee2.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "IT",
+     "sumber_url": "https://www.wikidata.org/wiki/Q131886209",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi",
+      "siklus ORC"
+     ],
+     "sumber_url": "https://www.turboden.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Turboden is a global leader in the design and production of ORC systems, large heat pump and gas expander. Discover all products, access the website!",
+     "sumber_url": "https://www.turboden.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.turboden.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q131886209",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_a46cb9a990",
+   "nama": "Exergy",
+   "negara_iso2": "IT",
+   "situs": "https://exergyint.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "binary-orc"
+   ],
+   "organisasi_id": "en_a46cb9a990",
+   "produk": [
+    "panas bumi",
+    "siklus ORC"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_a46cb9a990.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "IT",
+     "sumber_url": "https://www.devex.com/organizations/exergy-spa-exergy-international-srl-160713",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "portofolio_terpasang",
+     "nilai": "63 pembangkit ORC, 581 MW total (panas bumi 33 unit/538 MW; pemulihan panas 23/36 MW; surya 1/1 MW; biomassa 6/6 MW)",
+     "sumber_url": "https://exergyint.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi",
+      "siklus ORC"
+     ],
+     "sumber_url": "https://exergyint.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Exergy designs ORC solutions and industrial heat pumps for heat recovery and renewable energy production. Discover our technologies.",
+     "sumber_url": "https://exergyint.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://exergyint.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.devex.com/organizations/exergy-spa-exergy-international-srl-160713",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Exergy International srl, dekat Milan (Olgiate Olona)"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_d41c4a1533",
+   "nama": "Halliburton",
+   "negara_iso2": "US",
+   "situs": "https://www.halliburton.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "pengeboran-sumur"
+   ],
+   "organisasi_id": "en_d41c4a1533",
+   "tahun_berdiri": 1919,
+   "produk": [
+    "panas bumi",
+    "pengeboran"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_d41c4a1533.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "US",
+     "sumber_url": "https://www.wikidata.org/wiki/Q656165",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1919,
+     "sumber_url": "https://www.wikidata.org/wiki/Q656165",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi",
+      "pengeboran"
+     ],
+     "sumber_url": "https://www.halliburton.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Halliburton delivers advanced products and services to meet the evolving needs of the global energy industry, driving innovation, reliability, and performance.",
+     "sumber_url": "https://www.halliburton.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.halliburton.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q656165",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_ab0a9744bd",
+   "nama": "SLB",
+   "negara_iso2": "US",
+   "situs": "https://www.slb.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "pengeboran-sumur"
+   ],
+   "organisasi_id": "en_ab0a9744bd",
+   "tahun_berdiri": 1926,
+   "produk": [
+    "panas bumi",
+    "pengeboran"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_ab0a9744bd.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "US",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1425316",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1926,
+     "sumber_url": "https://www.wikidata.org/wiki/Q1425316",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi",
+      "pengeboran"
+     ],
+     "sumber_url": "https://www.slb.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "SLB is a global technology company, driving energy innovation for a balanced planet",
+     "sumber_url": "https://www.slb.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.slb.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1425316",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_631ec58416",
+   "nama": "Baker Hughes",
+   "negara_iso2": "US",
+   "situs": "https://www.bakerhughes.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "pengeboran-sumur",
+    "turbin-pembangkit"
+   ],
+   "organisasi_id": "en_631ec58416",
+   "tahun_berdiri": 1908,
+   "produk": [
+    "panas bumi",
+    "pengeboran",
+    "turbin uap"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_631ec58416.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "US",
+     "sumber_url": "https://www.wikidata.org/wiki/Q804353",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1908,
+     "sumber_url": "https://www.wikidata.org/wiki/Q804353",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi",
+      "pengeboran",
+      "turbin uap"
+     ],
+     "sumber_url": "https://www.bakerhughes.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Baker Hughes | We are rewriting The Energy Equation™. We make energy safer, cleaner, and more efficient for people and the planet.",
+     "sumber_url": "https://www.bakerhughes.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.bakerhughes.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q804353",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_f471cbc18d",
+   "nama": "KS Orka",
+   "negara_iso2": "SG",
+   "situs": "https://ksorka-sorikmarapi.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "pengembang-operator"
+   ],
+   "organisasi_id": "en_f471cbc18d",
+   "produk": [
+    "panas bumi"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [
+    {
+     "proyek_id": "pj_0272",
+     "nama": "PLTP Sorik Marapi (FTP2)",
+     "peran": "pemilik/pengembang",
+     "sumber": "proyek.json",
+     "sumber_url": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant",
+     "tingkat_bukti": "resmi"
+    },
+    {
+     "proyek_id": "pj_0272",
+     "gem_id": "gem-geothermal-L100000700160",
+     "nama": "Sorik Marapi geothermal power plant",
+     "peran": "pemilik/mitra (daftar pemilik GEM)",
+     "kapasitas_mw": 223,
+     "status": "operating",
+     "sumber": "Global Energy Monitor (CC BY 4.0)",
+     "sumber_url": "https://www.gem.wiki/Sorik_Marapi_geothermal_power_plant",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "SG",
+     "sumber_url": "https://www.thinkgeoenergy.com/ks-orka-acquires-controlling-stake-in-240-mw-sorik-marapi-project-in-indonesia/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi"
+     ],
+     "sumber_url": "https://ksorka-sorikmarapi.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://ksorka-sorikmarapi.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.thinkgeoenergy.com/ks-orka-acquires-controlling-stake-in-240-mw-sorik-marapi-project-in-indonesia/",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "KS Orka Renewables Pte Ltd (anak Kaishan Group), pengembang PLTP Sorik Marapi 240 MW"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_eb48793c13",
+   "nama": "Andritz",
+   "negara_iso2": "AT",
+   "situs": "https://www.andritz.com/",
+   "segmen": [
+    "hidro",
+    "biomassa"
+   ],
+   "subsegmen": [
+    "turbin",
+    "generator",
+    "pintu-air",
+    "boiler"
+   ],
+   "organisasi_id": "en_eb48793c13",
+   "tahun_berdiri": 1852,
+   "produk": [
+    "biomassa",
+    "pembangkit hidro",
+    "pumped storage",
+    "turbin"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidro",
+    "biomassa"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_eb48793c13.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "AT",
+     "sumber_url": "https://www.wikidata.org/wiki/Q442018",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1852,
+     "sumber_url": "https://www.wikidata.org/wiki/Q442018",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "biomassa",
+      "pembangkit hidro",
+      "pumped storage",
+      "turbin"
+     ],
+     "sumber_url": "https://www.andritz.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Process technologies, equipment, plants and automation: ANDRITZ provides world-leading products and services for a wide range of industries.",
+     "sumber_url": "https://www.andritz.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.andritz.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q442018",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_a3c5388685",
+   "nama": "Voith",
+   "negara_iso2": "DE",
+   "situs": "https://www.voith.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "subsegmen": [
+    "turbin",
+    "generator"
+   ],
+   "organisasi_id": "en_a3c5388685",
+   "tahun_berdiri": 1867,
+   "produk": [
+    "pembangkit hidro",
+    "pumped storage"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidro"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_a3c5388685.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q126944",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1867,
+     "sumber_url": "https://www.wikidata.org/wiki/Q126944",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "pembangkit hidro",
+      "pumped storage"
+     ],
+     "sumber_url": "https://www.voith.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "As a family-owned company, we take responsibility for ensuring that progress and sustainability go hand in hand.",
+     "sumber_url": "https://www.voith.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.voith.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q126944",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_1613e168cd",
+   "nama": "Harbin Electric",
+   "negara_iso2": "CN",
+   "situs": "https://www.hec.com.cn/",
+   "segmen": [
+    "hidro"
+   ],
+   "subsegmen": [
+    "turbin",
+    "generator"
+   ],
+   "organisasi_id": "en_1613e168cd",
+   "tahun_berdiri": 1994,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "hidro"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_1613e168cd.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://www.wikidata.org/wiki/Q5654441",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1994,
+     "sumber_url": "https://www.wikidata.org/wiki/Q5654441",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "酒总集团自1992年成立以来，在上海、北京、青岛、重庆、成都、杭州、济南等多地拥有大型酒店设备、酒店用品卖场，并成为肯德基、麦当劳、宜家家居等国际连锁餐饮的主要供应商。主要销售酒店设备、厨房设备、厨房用具、前厅用品、前厅用具、耗品、一次性用品、酒店布草、客房用品、餐饮设备、餐饮用品等商品，以期为广大酒店、餐饮、企事业、机关及个人提供优质的产品及服务。-酒总易快得",
+     "sumber_url": "https://www.hec.com.cn/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.hec.com.cn/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q5654441",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_f3564efcaf",
+   "nama": "Dongfang Electric",
+   "negara_iso2": "CN",
+   "situs": "https://www.dongfang.com.cn/",
+   "segmen": [
+    "hidro"
+   ],
+   "subsegmen": [
+    "turbin",
+    "generator"
+   ],
+   "organisasi_id": "en_f3564efcaf",
+   "tahun_berdiri": 1958,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "hidro"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_f3564efcaf.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://www.wikidata.org/wiki/Q5295864",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1958,
+     "sumber_url": "https://www.wikidata.org/wiki/Q5295864",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.dongfang.com.cn/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q5295864",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": [
+    "beranda tak terbaca (robots)"
+   ]
+  },
+  {
+   "id": "en_8e17d19435",
+   "nama": "Litostroj Power",
+   "negara_iso2": "SI",
+   "situs": "https://www.litostrojpower.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "subsegmen": [
+    "turbin",
+    "pintu-air",
+    "penstock"
+   ],
+   "organisasi_id": "en_8e17d19435",
+   "tahun_berdiri": 2003,
+   "produk": [
+    "pembangkit hidro",
+    "pumped storage",
+    "turbin",
+    "turbin Pelton/Francis/Kaplan"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidro"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "SI",
+     "sumber_url": "https://www.wikidata.org/wiki/Q30299422",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2003,
+     "sumber_url": "https://www.wikidata.org/wiki/Q30299422",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "pembangkit hidro",
+      "pumped storage",
+      "turbin",
+      "turbin Pelton/Francis/Kaplan"
+     ],
+     "sumber_url": "https://www.litostrojpower.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Litostroj specializes in the design, development, testing and manufacturing of highly efficient, high-quality and reliable hydropower turbines and related equipment for medium and large hydropower plants.",
+     "sumber_url": "https://www.litostrojpower.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.litostrojpower.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q30299422",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_6f822225e2",
+   "nama": "Gilkes",
+   "negara_iso2": "GB",
+   "situs": "https://www.gilkes.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "subsegmen": [
+    "turbin",
+    "pltmh"
+   ],
+   "organisasi_id": "en_6f822225e2",
+   "produk": [
+    "pembangkit hidro",
+    "turbin"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidro"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_6f822225e2.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "GB",
+     "sumber_url": "https://www.wikidata.org/wiki/Q104918162",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "pembangkit hidro",
+      "turbin"
+     ],
+     "sumber_url": "https://www.gilkes.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Gilkes delivers complete hydropower systems and cooling pumps backed by 170 years of manufacturing expertise",
+     "sumber_url": "https://www.gilkes.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.gilkes.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q104918162",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_c0807beb29",
+   "nama": "Cink Hydro-Energy",
+   "negara_iso2": "CZ",
+   "situs": "https://www.cink-hydro-energy.com/",
+   "segmen": [
+    "hidro"
+   ],
+   "subsegmen": [
+    "turbin",
+    "pltmh"
+   ],
+   "organisasi_id": "en_c0807beb29",
+   "tahun_berdiri": 1990,
+   "produk": [
+    "pembangkit hidro",
+    "turbin",
+    "turbin Pelton/Francis/Kaplan"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidro"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_c0807beb29.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CZ",
+     "sumber_url": "https://www.cink-hydro-energy.com/about-us",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1990,
+     "sumber_url": "https://www.cink-hydro-energy.com/about-us",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "portofolio_terpasang",
+     "nilai": "lebih dari 500 turbin terpasang di lebih dari 50 negara (klaim perusahaan)",
+     "sumber_url": "https://www.cink-hydro-energy.com/about-us",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "pembangkit hidro",
+      "turbin",
+      "turbin Pelton/Francis/Kaplan"
+     ],
+     "sumber_url": "https://www.cink-hydro-energy.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "CINK Hydro - Energy k.s.",
+     "sumber_url": "https://www.cink-hydro-energy.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.cink-hydro-energy.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.cink-hydro-energy.com/about-us",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "pabrik sendiri berdiri 1990 di Karlovy Vary; turbin pertama 1983; nama sekarang sejak 2005; kini di Sadov"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_658261fe08",
+   "nama": "Nel",
+   "negara_iso2": "NO",
+   "situs": "https://nelhydrogen.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ],
+   "organisasi_id": "en_658261fe08",
+   "tahun_berdiri": 1998,
+   "produk": [
+    "elektroliser",
+    "elektroliser PEM",
+    "elektroliser alkalin",
+    "hidrogen"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_658261fe08.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "NO",
+     "sumber_url": "https://www.wikidata.org/wiki/Q30259493",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1998,
+     "sumber_url": "https://www.wikidata.org/wiki/Q30259493",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "elektroliser",
+      "elektroliser PEM",
+      "elektroliser alkalin",
+      "hidrogen"
+     ],
+     "sumber_url": "https://nelhydrogen.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Nel is a global, dedicated hydrogen company, delivering world-class solutions to produce hydrogen from renewable energy.",
+     "sumber_url": "https://nelhydrogen.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://nelhydrogen.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q30259493",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_a96c8b5e73",
+   "nama": "thyssenkrupp nucera",
+   "negara_iso2": "DE",
+   "situs": "https://thyssenkrupp-nucera.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ],
+   "organisasi_id": "en_a96c8b5e73",
+   "tahun_berdiri": 1960,
+   "produk": [
+    "elektroliser",
+    "elektroliser alkalin",
+    "hidrogen"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_a96c8b5e73.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q119781817",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1960,
+     "sumber_url": "https://www.wikidata.org/wiki/Q119781817",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "elektroliser",
+      "elektroliser alkalin",
+      "hidrogen"
+     ],
+     "sumber_url": "https://thyssenkrupp-nucera.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "thyssenkrupp nucera offers world-leading technologies for high-efficiency chlor-alkali, hydrochloric acid and alkaline water electrolysis plants.",
+     "sumber_url": "https://thyssenkrupp-nucera.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://thyssenkrupp-nucera.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q119781817",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_a87d146e17",
+   "nama": "Siemens Energy",
+   "negara_iso2": "DE",
+   "situs": "https://www.siemens-energy.com/",
+   "segmen": [
+    "hidrogen",
+    "jaringan"
+   ],
+   "subsegmen": [
+    "sistem-lengkap",
+    "transformator",
+    "hvdc",
+    "kompresor"
+   ],
+   "organisasi_id": "en_a87d146e17",
+   "tahun_berdiri": 2020,
+   "produk": [
+    "HVDC",
+    "elektroliser",
+    "gardu induk",
+    "jaringan listrik",
+    "penyimpanan baterai",
+    "switchgear",
+    "transformator"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen",
+    "jaringan"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_a87d146e17.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q89189545",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2020,
+     "sumber_url": "https://www.wikidata.org/wiki/Q89189545",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "HVDC",
+      "elektroliser",
+      "gardu induk",
+      "jaringan listrik",
+      "penyimpanan baterai",
+      "switchgear",
+      "transformator"
+     ],
+     "sumber_url": "https://www.siemens-energy.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "We support companies and countries to reduce emissions across the energy landscape – for a more reliable, affordable and sustainable energy system.",
+     "sumber_url": "https://www.siemens-energy.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.siemens-energy.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q89189545",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_21b8116e01",
+   "nama": "Plug Power",
+   "negara_iso2": "US",
+   "situs": "https://www.plugpower.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ],
+   "organisasi_id": "en_21b8116e01",
+   "tahun_berdiri": 1997,
+   "produk": [
+    "elektroliser",
+    "elektroliser PEM",
+    "hidrogen",
+    "sel bahan bakar"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_21b8116e01.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "US",
+     "sumber_url": "https://www.wikidata.org/wiki/Q7205253",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1997,
+     "sumber_url": "https://www.wikidata.org/wiki/Q7205253",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "elektroliser",
+      "elektroliser PEM",
+      "hidrogen",
+      "sel bahan bakar"
+     ],
+     "sumber_url": "https://www.plugpower.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Plug Power helps businesses achieve greater productivity and sustainability in an electrified world through hydrogen and fuel cells.",
+     "sumber_url": "https://www.plugpower.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.plugpower.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q7205253",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_b4e8346115",
+   "nama": "ITM Power",
+   "negara_iso2": "GB",
+   "situs": "https://itm-power.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ],
+   "organisasi_id": "en_b4e8346115",
+   "tahun_berdiri": 2001,
+   "produk": [
+    "elektroliser",
+    "elektroliser PEM",
+    "hidrogen"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_b4e8346115.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "GB",
+     "sumber_url": "https://www.wikidata.org/wiki/Q5974865",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2001,
+     "sumber_url": "https://www.wikidata.org/wiki/Q5974865",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "elektroliser",
+      "elektroliser PEM",
+      "hidrogen"
+     ],
+     "sumber_url": "https://itm-power.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "ITM manufacture PEM electrolysers. A pioneering technology that generates green hydrogen enabling customers to decarbonise.",
+     "sumber_url": "https://itm-power.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://itm-power.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q5974865",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_c86d682f80",
+   "nama": "LONGi Hydrogen",
+   "negara_iso2": "CN",
+   "situs": "https://www.longi.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "stack-elektroliser"
+   ],
+   "organisasi_id": "en_c86d682f80",
+   "tahun_berdiri": 2006,
+   "produk": [
+    "hidrogen"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_c86d682f80.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://www.wikidata.org/wiki/Q28207127",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2006,
+     "sumber_url": "https://www.wikidata.org/wiki/Q28207127",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "hidrogen"
+     ],
+     "sumber_url": "https://www.longi.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "LONGi, using innovative products and solutions help the world a healthier, safer and more sustainable place.",
+     "sumber_url": "https://www.longi.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.longi.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q28207127",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_297dd3c8ec",
+   "nama": "Sungrow Hydrogen",
+   "negara_iso2": "CN",
+   "situs": "https://en.sungrowpower.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "stack-elektroliser",
+    "bess-integrasi"
+   ],
+   "organisasi_id": "en_297dd3c8ec",
+   "produk": [
+    "hidrogen"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_297dd3c8ec.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://en.wikipedia.org/wiki/Sungrow",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "hidrogen"
+     ],
+     "sumber_url": "https://en.sungrowpower.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Sungrow, the global leader in solar energy, powers 800GW+ worldwide with advanced solar inverters & energy storage systems. Trusted by homes, businesses & utilities in 150+ countries.",
+     "sumber_url": "https://en.sungrowpower.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://en.sungrowpower.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q106003803",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sungrow",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "anak usaha Sungrow, Hefei, Anhui; tahun berdiri induk (1997) tidak dipakai"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_4ec33fb017",
+   "nama": "Peric Hydrogen Technologies",
+   "negara_iso2": "CN",
+   "situs": "https://www.peric.com.cn/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "stack-elektroliser"
+   ],
+   "organisasi_id": "en_4ec33fb017",
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "hidrogen"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://global.chinadaily.com.cn/a/202408/22/WS66c694e0a31060630b9245bb.html",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.peric.com.cn/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://global.chinadaily.com.cn/a/202408/22/WS66c694e0a31060630b9245bb.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Beijing Peric Hydrogen Technologies; ekspor elektroliser naik tiga tahun berturut-turut (sekitar 350 unit 2023, target di atas 1.000 unit/tahun)"
+    }
+   ],
+   "catatan": [
+    "beranda tak terbaca (fetch failed)",
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_dd23d49bcd",
+   "nama": "John Cockerill",
+   "negara_iso2": "BE",
+   "situs": "https://www.johncockerill.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "stack-elektroliser",
+    "sistem-lengkap"
+   ],
+   "organisasi_id": "en_dd23d49bcd",
+   "tahun_berdiri": 1817,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "hidrogen"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "BE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q744233",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1817,
+     "sumber_url": "https://www.wikidata.org/wiki/Q744233",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.johncockerill.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q744233",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_c7c1d80082",
+   "nama": "Accelera",
+   "negara_iso2": "US",
+   "situs": "https://www.accelerazero.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "stack-elektroliser"
+   ],
+   "organisasi_id": "en_c7c1d80082",
+   "produk": [
+    "elektroliser",
+    "elektroliser PEM",
+    "hidrogen"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_c7c1d80082.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "US",
+     "sumber_url": "https://www.wikidata.org/wiki/Q173476",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "elektroliser",
+      "elektroliser PEM",
+      "hidrogen"
+     ],
+     "sumber_url": "https://www.accelerazero.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "A leading supplier and integration partner for electric and hydrogen products and custom solutions for commercial vehicles and industrial processes.",
+     "sumber_url": "https://www.accelerazero.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.accelerazero.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q173476",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_e52b2c7f68",
+   "nama": "Hitachi Energy",
+   "negara_iso2": "CH",
+   "situs": "https://www.hitachienergy.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "subsegmen": [
+    "transformator",
+    "hvdc",
+    "switchgear",
+    "bess-integrasi"
+   ],
+   "organisasi_id": "en_e52b2c7f68",
+   "tahun_berdiri": 2018,
+   "produk": [
+    "HVDC",
+    "gardu induk",
+    "jaringan listrik",
+    "penyimpanan baterai",
+    "switchgear",
+    "transformator"
+   ],
+   "segmen_terbukti_di_situs": [
+    "jaringan"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_e52b2c7f68.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CH",
+     "sumber_url": "https://www.wikidata.org/wiki/Q107530770",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2018,
+     "sumber_url": "https://www.wikidata.org/wiki/Q107530770",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "HVDC",
+      "gardu induk",
+      "jaringan listrik",
+      "penyimpanan baterai",
+      "switchgear",
+      "transformator"
+     ],
+     "sumber_url": "https://www.hitachienergy.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "We are committed to powering the world’s energy system to be more sustainable, secure, resilient, and affordable, making electricity more accessible to all and empowering societies to thrive",
+     "sumber_url": "https://www.hitachienergy.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.hitachienergy.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q107530770",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_eab75dcb58",
+   "nama": "Schneider Electric",
+   "negara_iso2": "FR",
+   "situs": "https://www.se.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "subsegmen": [
+    "switchgear",
+    "bess-integrasi"
+   ],
+   "organisasi_id": "en_eab75dcb58",
+   "tahun_berdiri": 1836,
+   "produk": [
+    "jaringan listrik",
+    "penyimpanan baterai",
+    "switchgear",
+    "transformator"
+   ],
+   "segmen_terbukti_di_situs": [
+    "jaringan"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_eab75dcb58.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "FR",
+     "sumber_url": "https://www.wikidata.org/wiki/Q49053",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1836,
+     "sumber_url": "https://www.wikidata.org/wiki/Q49053",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "jaringan listrik",
+      "penyimpanan baterai",
+      "switchgear",
+      "transformator"
+     ],
+     "sumber_url": "https://www.se.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "As a global specialist in energy management, automation and digitalization in more than 100 countries, we offer integrated energy technology solutions across multiple market segments. | Schneider Electric",
+     "sumber_url": "https://www.se.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.se.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q49053",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_c64d3fcde2",
+   "nama": "ABB",
+   "negara_iso2": "CH",
+   "situs": "https://global.abb/",
+   "segmen": [
+    "jaringan"
+   ],
+   "subsegmen": [
+    "switchgear",
+    "hvdc"
+   ],
+   "organisasi_id": "en_c64d3fcde2",
+   "tahun_berdiri": 1988,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "jaringan"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_c64d3fcde2.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CH",
+     "sumber_url": "https://www.wikidata.org/wiki/Q52825",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1988,
+     "sumber_url": "https://www.wikidata.org/wiki/Q52825",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://global.abb/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q52825",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": [
+    "beranda tak terbaca (The operation was aborted due to timeout)"
+   ]
+  },
+  {
+   "id": "en_69858e2e69",
+   "nama": "NARI Group",
+   "negara_iso2": "CN",
+   "situs": "https://www.sgepri.sgcc.com.cn/",
+   "segmen": [
+    "jaringan"
+   ],
+   "subsegmen": [
+    "hvdc",
+    "switchgear"
+   ],
+   "organisasi_id": "en_69858e2e69",
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "jaringan"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://www.devex.com/organizations/nari-group-corporation-69549",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.sgepri.sgcc.com.cn/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.devex.com/organizations/nari-group-corporation-69549",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Nanjing; kelompok usaha State Grid Electric Power Research Institute (situs di domain SGEPRI)"
+    }
+   ],
+   "catatan": [
+    "beranda tak terbaca (http 412)",
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_f265c59e51",
+   "nama": "XD Electric",
+   "negara_iso2": "CN",
+   "situs": "https://www.xd.com.cn/",
+   "segmen": [
+    "jaringan"
+   ],
+   "subsegmen": [
+    "transformator",
+    "switchgear"
+   ],
+   "organisasi_id": "en_f265c59e51",
+   "tahun_berdiri": 1959,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "jaringan"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://en.wikipedia.org/wiki/XD_Electric_Company",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1959,
+     "sumber_url": "https://en.wikipedia.org/wiki/XD_Electric_Company",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.xd.com.cn/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/XD_Electric_Company",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Xi'an, Shaanxi"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_caaca00333",
+   "nama": "TBEA",
+   "negara_iso2": "CN",
+   "situs": "https://www.tbea.com.cn/",
+   "segmen": [
+    "jaringan"
+   ],
+   "subsegmen": [
+    "transformator"
+   ],
+   "organisasi_id": "en_caaca00333",
+   "tahun_berdiri": 1988,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "jaringan"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://en.wikipedia.org/wiki/TBEA",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1988,
+     "sumber_url": "https://www.wikidata.org/wiki/Q15831495",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.tbea.com.cn/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q15831495",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/TBEA",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Changji, Xinjiang; produsen trafo utama China"
+    }
+   ],
+   "catatan": [
+    "beranda tak terbaca (fetch failed)"
+   ]
+  },
+  {
+   "id": "en_f9a00f3de3",
+   "nama": "Hyosung Heavy Industries",
+   "negara_iso2": "KR",
+   "situs": "https://www.hyosungheavyindustries.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "subsegmen": [
+    "transformator",
+    "hvdc"
+   ],
+   "organisasi_id": "en_f9a00f3de3",
+   "produk": [
+    "HVDC",
+    "jaringan listrik"
+   ],
+   "segmen_terbukti_di_situs": [
+    "jaringan"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "KR",
+     "sumber_url": "https://www.wikidata.org/wiki/Q131886942",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "HVDC",
+      "jaringan listrik"
+     ],
+     "sumber_url": "https://www.hyosungheavyindustries.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "효성중공업 - 내일을 위한 토탈에너지 솔루션 리더",
+     "sumber_url": "https://www.hyosungheavyindustries.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.hyosungheavyindustries.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q131886942",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_0cec506e6e",
+   "nama": "LS Electric",
+   "negara_iso2": "KR",
+   "situs": "https://www.ls-electric.com/",
+   "segmen": [
+    "jaringan"
+   ],
+   "subsegmen": [
+    "switchgear",
+    "bess-integrasi"
+   ],
+   "organisasi_id": "en_0cec506e6e",
+   "tahun_berdiri": 1974,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "jaringan"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "KR",
+     "sumber_url": "https://en.wikipedia.org/wiki/LS_Electric",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1974,
+     "sumber_url": "https://en.wikipedia.org/wiki/LS_Electric",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "글로벌 스마트에너지 솔루션 기업. 전력, 자동화 산업, ICT, DC 기술, 융복합 솔루션 제공.",
+     "sumber_url": "https://www.ls-electric.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.ls-electric.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/LS_Electric",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Anyang, Gyeonggi"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_f7449221ca",
+   "nama": "Valmet",
+   "negara_iso2": "FI",
+   "situs": "https://www.valmet.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "subsegmen": [
+    "boiler",
+    "gasifier"
+   ],
+   "organisasi_id": "en_f7449221ca",
+   "tahun_berdiri": 1951,
+   "produk": [
+    "biomassa",
+    "boiler",
+    "fluidized bed",
+    "gasifikasi",
+    "waste-to-energy"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biomassa"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": "https://www.valmet.com/service/service-centers/indonesia/",
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_f7449221ca.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "FI",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1197161",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1951,
+     "sumber_url": "https://www.wikidata.org/wiki/Q1197161",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "biomassa",
+      "boiler",
+      "fluidized bed",
+      "gasifikasi",
+      "waste-to-energy"
+     ],
+     "sumber_url": "https://www.valmet.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Valmet is a global technology leader and manufacturer serving various industries. Process Performance Solutions delivers flow control technologies and automation systems ranging from individual measurements to full plant-wide solutions, complemented by lifecycle services. Biomaterial Solutions and S",
+     "sumber_url": "https://www.valmet.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "halaman_indonesia",
+     "nilai": "https://www.valmet.com/service/service-centers/indonesia/",
+     "sumber_url": "https://www.valmet.com/service/service-centers/indonesia/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.valmet.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1197161",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_f852bce1ed",
+   "nama": "Sumitomo SHI FW",
+   "negara_iso2": "FI",
+   "situs": "https://www.shi-fw.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "subsegmen": [
+    "boiler"
+   ],
+   "organisasi_id": "en_f852bce1ed",
+   "produk": [
+    "biomassa",
+    "boiler",
+    "fluidized bed",
+    "gasifikasi",
+    "waste-to-energy"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biomassa"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_f852bce1ed.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "FI",
+     "sumber_url": "https://largestcompanies.com/company/Sumitomo-SHI-FW-Energia-Oy-47328",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "biomassa",
+      "boiler",
+      "fluidized bed",
+      "gasifikasi",
+      "waste-to-energy"
+     ],
+     "sumber_url": "https://www.shi-fw.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Sumitomo SHI FW (SFW) is a global provider of solutions and services that drive the decarbonization of energy. Our solutions include energy from biomass and waste, long duration energy storage, recycling of waste to valuable end products, carbon capture, flue gas cleaning, waste heat boilers, as wel",
+     "sumber_url": "https://www.shi-fw.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.shi-fw.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://largestcompanies.com/company/Sumitomo-SHI-FW-Energia-Oy-47328",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "kantor pusat di Espoo, Finlandia; situs sendiri memakai 'sejak 1891' (warisan Foster Wheeler), bukan tahun pendirian"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_8d3a3df921",
+   "nama": "Thermax",
+   "negara_iso2": "IN",
+   "situs": "https://www.thermaxglobal.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "subsegmen": [
+    "boiler",
+    "gasifier"
+   ],
+   "organisasi_id": "en_8d3a3df921",
+   "tahun_berdiri": 1980,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "biomassa"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "IN",
+     "sumber_url": "https://www.wikidata.org/wiki/Q7783088",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1980,
+     "sumber_url": "https://www.wikidata.org/wiki/Q7783088",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.thermaxglobal.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q7783088",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": [
+    "beranda tak terbaca (blokir 403)"
+   ]
+  },
+  {
+   "id": "en_ea6383af3c",
+   "nama": "Doosan Enerbility",
+   "negara_iso2": "KR",
+   "situs": "https://www.doosanenerbility.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "subsegmen": [
+    "boiler",
+    "turbin"
+   ],
+   "organisasi_id": "en_ea6383af3c",
+   "tahun_berdiri": 1962,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "biomassa"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_ea6383af3c.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "KR",
+     "sumber_url": "https://www.wikidata.org/wiki/Q492581",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1962,
+     "sumber_url": "https://www.wikidata.org/wiki/Q492581",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Doosan Enerbility, as a leading plant expert of the power and water industry, offers energy solutions for thermal power, nuclear power and renewable energy.",
+     "sumber_url": "https://www.doosanenerbility.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.doosanenerbility.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q492581",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_26808caa67",
+   "nama": "SKF",
+   "negara_iso2": "SE",
+   "situs": "https://www.skf.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "bantalan"
+   ],
+   "organisasi_id": "en_26808caa67",
+   "tahun_berdiri": 1907,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "bayu"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_26808caa67.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "SE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q52846",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1907,
+     "sumber_url": "https://www.wikidata.org/wiki/Q52846",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.skf.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q52846",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_5eaf532db0",
+   "nama": "Schaeffler",
+   "negara_iso2": "DE",
+   "situs": "https://www.schaeffler.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "bantalan"
+   ],
+   "organisasi_id": "en_5eaf532db0",
+   "tahun_berdiri": 1946,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "bayu"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_5eaf532db0.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q459367",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1946,
+     "sumber_url": "https://www.wikidata.org/wiki/Q459367",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.schaeffler.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q459367",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_8ff249911c",
+   "nama": "ZF Friedrichshafen",
+   "negara_iso2": "DE",
+   "situs": "https://www.zf.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "gearbox"
+   ],
+   "organisasi_id": "en_8ff249911c",
+   "tahun_berdiri": 1915,
+   "produk": [
+    "angin"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_8ff249911c.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q136119",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1915,
+     "sumber_url": "https://www.wikidata.org/wiki/Q136119",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin"
+     ],
+     "sumber_url": "https://www.zf.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "ZF is a global technology company supplying highly advanced dynamic systems for passenger cars, commercial vehicles and industrial technology.",
+     "sumber_url": "https://www.zf.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.zf.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q136119",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_e2471c9eea",
+   "nama": "CS Wind",
+   "negara_iso2": "KR",
+   "situs": "https://www.cswind.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "menara"
+   ],
+   "organisasi_id": "en_e2471c9eea",
+   "tahun_berdiri": 1988,
+   "produk": [
+    "angin",
+    "menara turbin",
+    "turbin angin darat",
+    "turbin angin lepas pantai"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "KR",
+     "sumber_url": "https://en.wikipedia.org/wiki/CS_Wind",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1988,
+     "sumber_url": "https://en.wikipedia.org/wiki/CS_Wind",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin",
+      "menara turbin",
+      "turbin angin darat",
+      "turbin angin lepas pantai"
+     ],
+     "sumber_url": "https://www.cswind.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.cswind.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/CS_Wind",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Seoul; pabrik menara Pueblo, Colorado disebut terbesar di dunia menurut artikel itu"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_5c6dfc8215",
+   "nama": "Cadeler",
+   "negara_iso2": "DK",
+   "situs": "https://www.cadeler.com/",
+   "segmen": [
+    "bayu"
+   ],
+   "subsegmen": [
+    "kapal-instalasi"
+   ],
+   "organisasi_id": "en_5c6dfc8215",
+   "tahun_berdiri": 2008,
+   "produk": [
+    "angin",
+    "bilah turbin",
+    "turbin angin darat",
+    "turbin angin lepas pantai"
+   ],
+   "segmen_terbukti_di_situs": [
+    "bayu"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_5c6dfc8215.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DK",
+     "sumber_url": "https://www.wikidata.org/wiki/Q130348728",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2008,
+     "sumber_url": "https://www.wikidata.org/wiki/Q130348728",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "angin",
+      "bilah turbin",
+      "turbin angin darat",
+      "turbin angin lepas pantai"
+     ],
+     "sumber_url": "https://www.cadeler.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Cadeler is a global leader in offshore wind farm construction, maintenance, and decommissioning.",
+     "sumber_url": "https://www.cadeler.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.cadeler.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q130348728",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_2706f0355b",
+   "nama": "Tenaris",
+   "negara_iso2": "LU",
+   "situs": "https://www.tenaris.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "pipa-separator"
+   ],
+   "organisasi_id": "en_2706f0355b",
+   "tahun_berdiri": 2002,
+   "produk": [
+    "panas bumi",
+    "pengeboran"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_2706f0355b.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "LU",
+     "sumber_url": "https://www.wikidata.org/wiki/Q642106",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2002,
+     "sumber_url": "https://www.wikidata.org/wiki/Q642106",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi",
+      "pengeboran"
+     ],
+     "sumber_url": "https://www.tenaris.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Leading supplier of steel pipes and related services for the world&#x27;s energy industry",
+     "sumber_url": "https://www.tenaris.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.tenaris.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q642106",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_ba20856fbc",
+   "nama": "Vallourec",
+   "negara_iso2": "FR",
+   "situs": "https://www.vallourec.com/",
+   "segmen": [
+    "panas-bumi"
+   ],
+   "subsegmen": [
+    "pipa-separator"
+   ],
+   "organisasi_id": "en_ba20856fbc",
+   "tahun_berdiri": 1957,
+   "produk": [
+    "panas bumi"
+   ],
+   "segmen_terbukti_di_situs": [
+    "panas-bumi"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": "https://www.vallourec.com/news/supporting-indonesias-geothermal-ambitions/",
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_ba20856fbc.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "FR",
+     "sumber_url": "https://www.wikidata.org/wiki/Q2298492",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1957,
+     "sumber_url": "https://www.wikidata.org/wiki/Q2298492",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "panas bumi"
+     ],
+     "sumber_url": "https://www.vallourec.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Vallourec provides benchmark tubular solutions and pipelines for the energy sectors: oil and gas, low-carbon energy, hydrogen and industry.",
+     "sumber_url": "https://www.vallourec.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "halaman_indonesia",
+     "nilai": "https://www.vallourec.com/news/supporting-indonesias-geothermal-ambitions/",
+     "sumber_url": "https://www.vallourec.com/news/supporting-indonesias-geothermal-ambitions/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.vallourec.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q2298492",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_dd47bc7aee",
+   "nama": "Hexagon Purus",
+   "negara_iso2": "NO",
+   "situs": "https://hexagonpurus.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "tangki"
+   ],
+   "organisasi_id": "en_dd47bc7aee",
+   "produk": [
+    "hidrogen"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_dd47bc7aee.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "NO",
+     "sumber_url": "https://hexagonpurus.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "hidrogen"
+     ],
+     "sumber_url": "https://hexagonpurus.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Driving the transition to zero emission mobility",
+     "sumber_url": "https://hexagonpurus.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://hexagonpurus.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://hexagonpurus.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "alamat di situs: Haakon VII's gate 2, Oslo, Norwegia"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_5b0d62e314",
+   "nama": "Burckhardt Compression",
+   "negara_iso2": "CH",
+   "situs": "https://www.burckhardtcompression.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "kompresor"
+   ],
+   "organisasi_id": "en_5b0d62e314",
+   "tahun_berdiri": 1844,
+   "produk": [
+    "hidrogen"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_5b0d62e314.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CH",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1010409",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1844,
+     "sumber_url": "https://www.wikidata.org/wiki/Q1010409",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "hidrogen"
+     ],
+     "sumber_url": "https://www.burckhardtcompression.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "We - Burckhardt Compression - are a leading provider of reciprocating compressor systems and services. Discover our innovative solutions for various industries.",
+     "sumber_url": "https://www.burckhardtcompression.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.burckhardtcompression.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1010409",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_ff545e913d",
+   "nama": "Linde",
+   "negara_iso2": "IE",
+   "situs": "https://www.linde.com/",
+   "segmen": [
+    "hidrogen"
+   ],
+   "subsegmen": [
+    "kompresor",
+    "tangki"
+   ],
+   "organisasi_id": "en_ff545e913d",
+   "produk": [
+    "hidrogen",
+    "sel bahan bakar"
+   ],
+   "segmen_terbukti_di_situs": [
+    "hidrogen"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_ff545e913d.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "IE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q682759",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "hidrogen",
+      "sel bahan bakar"
+     ],
+     "sumber_url": "https://www.linde.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Leading global industrial gases and engineering company making customers more successful and helping to sustain, decarbonize and protect our planet.",
+     "sumber_url": "https://www.linde.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.linde.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q682759",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_5be2e42beb",
+   "nama": "INNIO Jenbacher",
+   "negara_iso2": "AT",
+   "situs": "https://www.innio.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "subsegmen": [
+    "gas-engine"
+   ],
+   "organisasi_id": "en_5be2e42beb",
+   "produk": [
+    "biometana",
+    "gas engine/CHP"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biogas"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_5be2e42beb.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "AT",
+     "sumber_url": "https://innio.com/en/imprint",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "biometana",
+      "gas engine/CHP"
+     ],
+     "sumber_url": "https://www.innio.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "With ready-for-hydrogen and renewable technology, INNIO is accelerating clean, future proof energy solutions.",
+     "sumber_url": "https://www.innio.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.innio.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://innio.com/en/imprint",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "kantor terdaftar INNIO di Jenbach, Austria; merek INNIO sejak 2018 (Jenbacher, Waukesha)"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_46452x4745",
+   "nama": "Caterpillar",
+   "negara_iso2": "US",
+   "situs": "https://www.caterpillar.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "subsegmen": [
+    "gas-engine"
+   ],
+   "organisasi_id": "en_46452x4745",
+   "tahun_berdiri": 1925,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "biogas"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_46452x4745.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "US",
+     "sumber_url": "https://www.wikidata.org/wiki/Q459965",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1925,
+     "sumber_url": "https://www.wikidata.org/wiki/Q459965",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.caterpillar.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q459965",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": [
+    "beranda tak terbaca (The operation was aborted due to timeout)"
+   ]
+  },
+  {
+   "id": "en_52536dd20c",
+   "nama": "MWM",
+   "negara_iso2": "DE",
+   "situs": "https://www.mwm.net/",
+   "segmen": [
+    "biogas"
+   ],
+   "subsegmen": [
+    "gas-engine"
+   ],
+   "organisasi_id": "en_52536dd20c",
+   "tahun_berdiri": 1922,
+   "produk": [
+    "biogas",
+    "gas engine/CHP"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biogas"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_52536dd20c.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DE",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1691513",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1922,
+     "sumber_url": "https://www.wikidata.org/wiki/Q1691513",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "biogas",
+      "gas engine/CHP"
+     ],
+     "sumber_url": "https://www.mwm.net/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "MWM steht für hocheffiziente KWK-Anlagen und Blockheizkraftwerke zur dezentralen Energieerzeugung.",
+     "sumber_url": "https://www.mwm.net/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.mwm.net/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1691513",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_82a1a4fb97",
+   "nama": "Weichai Power",
+   "negara_iso2": "CN",
+   "situs": "https://www.weichai.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "subsegmen": [
+    "gas-engine"
+   ],
+   "organisasi_id": "en_82a1a4fb97",
+   "tahun_berdiri": 2002,
+   "produk": [],
+   "segmen_terbukti_di_situs": [],
+   "segmen_belum_terbukti_di_beranda": [
+    "biogas"
+   ],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_82a1a4fb97.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CN",
+     "sumber_url": "https://www.wikidata.org/wiki/Q3567081",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2002,
+     "sumber_url": "https://www.wikidata.org/wiki/Q3567081",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "潍柴控股集团有限公司创建于1946年，已发展成为中国领先、在全球具有重要影响力的高端装备跨国集团。分子公司遍及欧洲、北美、亚洲等地区，产品远销180多个国家和地区。",
+     "sumber_url": "https://www.weichai.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.weichai.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q3567081",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_9115ead072",
+   "nama": "Greenlane Renewables",
+   "negara_iso2": "CA",
+   "situs": "https://www.greenlanerenewables.com/",
+   "segmen": [
+    "biogas"
+   ],
+   "subsegmen": [
+    "pemurnian-biometana"
+   ],
+   "organisasi_id": "en_9115ead072",
+   "produk": [
+    "biogas",
+    "biometana"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biogas"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_9115ead072.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "CA",
+     "sumber_url": "https://www.greenlanerenewables.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "portofolio_terpasang",
+     "nilai": "lebih dari 500 sistem terjual ke 32 negara (desulfurisasi dan pemurnian biogas)",
+     "sumber_url": "https://www.greenlanerenewables.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "biogas",
+      "biometana"
+     ],
+     "sumber_url": "https://www.greenlanerenewables.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Greenlane Renewables Inc. (TSX: GRN) is a leading global provider of biogas upgrading systems that are helping decarbonize natural gas",
+     "sumber_url": "https://www.greenlanerenewables.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.greenlanerenewables.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.greenlanerenewables.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "alamat di situs: Burnaby, BC, Kanada"
+    }
+   ],
+   "catatan": [
+    "tidak ada entri Wikidata yang situsnya cocok"
+   ]
+  },
+  {
+   "id": "en_9028b85a2f",
+   "nama": "Drax",
+   "negara_iso2": "GB",
+   "situs": "https://www.drax.com/",
+   "segmen": [
+    "biomassa"
+   ],
+   "subsegmen": [
+    "pelet-briket",
+    "cofiring"
+   ],
+   "organisasi_id": "en_9028b85a2f",
+   "produk": [
+    "biomassa"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biomassa"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_9028b85a2f.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "GB",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1256028",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "biomassa"
+     ],
+     "sumber_url": "https://www.drax.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Drax Group plc is a leading UK-based global renewable and flexible generation energy company, committed to enabling a zero carbon, lower cost energy future.",
+     "sumber_url": "https://www.drax.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.drax.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1256028",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_50674f19eb",
+   "nama": "Neste",
+   "negara_iso2": "FI",
+   "situs": "https://www.neste.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "subsegmen": [
+    "bioavtur",
+    "fame"
+   ],
+   "organisasi_id": "en_50674f19eb",
+   "tahun_berdiri": 1948,
+   "produk": [
+    "bioavtur",
+    "renewable diesel"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biofuel"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_50674f19eb.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "FI",
+     "sumber_url": "https://www.wikidata.org/wiki/Q616376",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1948,
+     "sumber_url": "https://www.wikidata.org/wiki/Q616376",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "bioavtur",
+      "renewable diesel"
+     ],
+     "sumber_url": "https://www.neste.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Neste is the world’s leading producer of renewable diesel and sustainable aviation fuel (SAF).",
+     "sumber_url": "https://www.neste.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.neste.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q616376",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_e258813aa4",
+   "nama": "Wilmar International",
+   "negara_iso2": "SG",
+   "situs": "https://www.wilmar-international.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "subsegmen": [
+    "fame"
+   ],
+   "organisasi_id": "en_e258813aa4",
+   "tahun_berdiri": 1991,
+   "produk": [
+    "biodiesel/FAME"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biofuel"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_e258813aa4.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "SG",
+     "sumber_url": "https://www.wikidata.org/wiki/Q1786712",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1991,
+     "sumber_url": "https://www.wikidata.org/wiki/Q1786712",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "biodiesel/FAME"
+     ],
+     "sumber_url": "https://www.wilmar-international.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.wilmar-international.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q1786712",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_47d4add3f5",
+   "nama": "Musim Mas",
+   "negara_iso2": "ID",
+   "situs": "https://www.musimmas.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "subsegmen": [
+    "fame"
+   ],
+   "organisasi_id": "en_47d4add3f5",
+   "tahun_berdiri": 1932,
+   "produk": [
+    "biodiesel/FAME",
+    "bioetanol"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biofuel"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": "https://bermadah.co.id/berita/detail/pt-musim-mas-terima-penghargaan-sahabat-anak-di-pelalawan",
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": "/img/logo/org/en_47d4add3f5.png",
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "ID",
+     "sumber_url": "https://www.wikidata.org/wiki/Q18128328",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1932,
+     "sumber_url": "https://www.wikidata.org/wiki/Q18128328",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "biodiesel/FAME",
+      "bioetanol"
+     ],
+     "sumber_url": "https://www.musimmas.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "halaman_indonesia",
+     "nilai": "https://bermadah.co.id/berita/detail/pt-musim-mas-terima-penghargaan-sahabat-anak-di-pelalawan",
+     "sumber_url": "https://bermadah.co.id/berita/detail/pt-musim-mas-terima-penghargaan-sahabat-anak-di-pelalawan",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.musimmas.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q18128328",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_bdc737b081",
+   "nama": "Novonesis",
+   "negara_iso2": "DK",
+   "situs": "https://www.novonesis.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "subsegmen": [
+    "enzim-katalis"
+   ],
+   "organisasi_id": "en_bdc737b081",
+   "tahun_berdiri": 2000,
+   "produk": [
+    "enzim"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biofuel"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "DK",
+     "sumber_url": "https://www.wikidata.org/wiki/Q45576",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 2000,
+     "sumber_url": "https://www.wikidata.org/wiki/Q45576",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "enzim"
+     ],
+     "sumber_url": "https://www.novonesis.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Novonesis is a leading global biosolutions company formed through a combination of Chr. Hansen and Novozymes.",
+     "sumber_url": "https://www.novonesis.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://www.novonesis.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q45576",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  },
+  {
+   "id": "en_3d0d3a25c2",
+   "nama": "Johnson Matthey",
+   "negara_iso2": "GB",
+   "situs": "https://matthey.com/",
+   "segmen": [
+    "biofuel"
+   ],
+   "subsegmen": [
+    "enzim-katalis"
+   ],
+   "organisasi_id": "en_3d0d3a25c2",
+   "tahun_berdiri": 1817,
+   "produk": [
+    "katalis"
+   ],
+   "segmen_terbukti_di_situs": [
+    "biofuel"
+   ],
+   "segmen_belum_terbukti_di_beranda": [],
+   "halaman_indonesia": null,
+   "kapasitas_produksi": null,
+   "pangsa_dunia": null,
+   "kantor_pabrik_asean": null,
+   "mitra_lokal": null,
+   "proyek_indonesia": [],
+   "logo": null,
+   "fakta": [
+    {
+     "medan": "negara_iso2",
+     "nilai": "GB",
+     "sumber_url": "https://www.wikidata.org/wiki/Q502470",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "tahun_berdiri",
+     "nilai": 1817,
+     "sumber_url": "https://www.wikidata.org/wiki/Q502470",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "via-pihak-ketiga"
+    },
+    {
+     "medan": "produk",
+     "nilai": [
+      "katalis"
+     ],
+     "sumber_url": "https://matthey.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    },
+    {
+     "medan": "deskripsi_situs",
+     "nilai": "Johnson Matthey is a global leader in platinum group metals (PGMs).",
+     "sumber_url": "https://matthey.com/",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "situs-sendiri"
+    }
+   ],
+   "sumber": [
+    {
+     "url": "https://matthey.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "beranda resmi"
+    },
+    {
+     "url": "https://www.wikidata.org/wiki/Q502470",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "tanggal_periksa": "2026-11-08",
+     "keterangan": "Wikidata (CC0)"
+    }
+   ],
+   "catatan": []
+  }
+ ]
+}

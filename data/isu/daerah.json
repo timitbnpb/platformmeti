@@ -1,0 +1,232 @@
+{
+ "tanggal_ambil": "2026-11-08",
+ "catatan": "Seed kurasi isu daerah (konflik lahan/adat, penolakan warga, insiden keselamatan). Kode: provinsi 2 digit, kabupaten/kota 4 digit BPS. Klaim dukungan/penolakan bersumber media dan saling bertentangan; ditandai pada posisi tiap pihak.",
+ "isu": [
+  {
+   "id": "poco-leok", "tema": "lahan", "status": "aktif", "bukti": "media",
+   "judul": "Penolakan warga adat Poco Leok terhadap perluasan PLTP Ulumbu",
+   "ringkas": "Warga dari 10 kampung adat (gendang) di Poco Leok, Manggarai, menolak perluasan PLTP Ulumbu Unit 5-6 dan menuntut pencabutan SK Bupati yang menetapkan lokasi. Mereka khawatir kehilangan ruang hidup, air, dan lahan. Pada Maret 2026 PTUN Kupang memenangkan gugatan seorang warga adat atas dugaan intimidasi saat aksi damai Juni 2025. Media lain melaporkan dukungan warga yang menguat; klaim ini tidak terverifikasi.",
+   "kata": ["poco leok", "ulumbu"],
+   "proyek": ["pj_0257", "pj_0258"], "regulasi": ["uu-21-2014"],
+   "wilayah": ["53", "5310"],
+   "linimasa": [
+    {"t": "2022-12-01", "p": "Bupati Manggarai menerbitkan SK HK/417/2022 tentang penetapan lokasi perluasan PLTP Ulumbu di Poco Leok.", "s": 0},
+    {"t": "2025-06-05", "p": "Aksi damai warga di kantor bupati; kemudian digugat ke PTUN soal dugaan intimidasi.", "s": 0},
+    {"t": "2025-09-03", "p": "Gugatan terhadap Bupati Manggarai didaftarkan ke PTUN Kupang.", "s": 1},
+    {"t": "2026-03-10", "p": "PTUN Kupang memenangkan gugatan warga.", "s": 0}
+   ],
+   "pihak": [
+    {"nama": "Masyarakat Adat Poco Leok", "peran": "warga terdampak", "posisi": "Menolak perluasan dan meminta SK lokasi dicabut.", "s": 0},
+    {"nama": "Pemerintah Kabupaten Manggarai", "peran": "pemberi SK lokasi", "posisi": "Membantah adanya tindakan represif.", "s": 0},
+    {"nama": "PLN", "org_id": "su_ed074ff5", "peran": "pengembang", "posisi": "Pemilik rencana Unit 5-6 Ulumbu.", "s": 2},
+    {"nama": "Gubernur NTT", "peran": "pemerintah provinsi", "posisi": "Menegaskan pentingnya mempertahankan kapasitas Ulumbu sebagai sumber listrik Manggarai.", "s": 0}
+   ],
+   "sumber": [
+    {"j": "PTUN Kupang menangkan gugatan warga Poco Leok", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2026/03/16/ptun-kupang-menangkan-gugatan-warga-poco-leok/", "t": "2026-03-16"},
+    {"j": "Buntut panas bumi, warga Poco Leok gugat Bupati Manggarai ke PTUN", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2025/09/22/buntut-panas-bumi-warga-poco-leok-gugat-bupati-manggarai-ke-ptun/", "t": "2025-09-22"},
+    {"j": "Mayoritas masyarakat adat Poco Leok dukung PLTP Ulumbu Unit 5 dan 6", "p": "JPNN", "u": "https://m.jpnn.com/news/mayoritas-masyarakat-adat-poco-leok-dukung-pltp-ulumbu-unit-5-dan-6"}
+   ]
+  },
+  {
+   "id": "wae-sano", "tema": "lahan", "status": "mereda", "bukti": "media",
+   "judul": "Penolakan geothermal Wae Sano, Manggarai Barat",
+   "ringkas": "Warga Wae Sano menolak titik bor di ruang hidup mereka sejak sekitar 2018 dan mengirim surat ke Bank Dunia serta Presiden. Pemerintah daerah menyebut penolak hanya kelompok kecil, sedangkan warga menyatakan penolakan nyata. Pada 2023 Bupati Manggarai Barat menyatakan Bank Dunia tak lagi terlibat membiayai.",
+   "kata": ["wae sano"],
+   "proyek": [], "regulasi": ["uu-21-2014"],
+   "wilayah": ["53", "5315"],
+   "linimasa": [
+    {"t": "2020-04-17", "p": "Liputan: ruang hidup orang Wae Sano terancam proyek panas bumi.", "s": 0},
+    {"t": "2021-11-05", "p": "Warga minta hentikan rekayasa atas sikap penolakan.", "s": 1},
+    {"t": "2023-11-03", "p": "Dilaporkan Bank Dunia keluar dari pembiayaan proyek.", "s": 2}
+   ],
+   "pihak": [
+    {"nama": "Warga Wae Sano", "peran": "warga terdampak", "posisi": "Menolak titik bor di permukiman dan ladang.", "s": 1},
+    {"nama": "World Bank", "org_id": "in_0d1892cd4f", "peran": "mantan pendana", "posisi": "Dilaporkan tak lagi terlibat membiayai.", "s": 2},
+    {"nama": "Pemerintah Kabupaten Manggarai Barat", "peran": "pemerintah daerah", "posisi": "Menyatakan penolak kelompok kecil dan banyak warga setuju (dibantah warga).", "s": 1}
+   ],
+   "sumber": [
+    {"j": "Ruang hidup orang Wae Sano terancam proyek panas bumi", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2020/04/17/ruang-hidup-orang-wae-sano-terancam-proyek-panas-bumi/", "t": "2020-04-17"},
+    {"j": "Warga Wae Sano minta hentikan rekayasa atas sikap penolakan pembangunan geothermal", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2021/11/05/warga-wae-sano-minta-hentikan-rekayasa-atas-sikap-penolakan-pembangunan-geothermal/", "t": "2021-11-05"},
+    {"j": "World Bank pulls out of Indonesia's disputed power project", "p": "Examiner (Hong Kong)", "u": "https://www.examiner.org.hk/2023/11/03/world-bank-pulls-out-of-indonesias-disputed-power-project/", "t": "2023-11-03"}
+   ]
+  },
+  {
+   "id": "mataloko", "tema": "lingkungan", "status": "aktif", "bukti": "media",
+   "judul": "Kerusakan lahan dan semburan lumpur panas di Mataloko, Ngada",
+   "ringkas": "Sumur panas bumi Mataloko dilaporkan tak tertutup sejak 2000 dan menyembur uap/lumpur panas di permukiman; warga mengeluhkan sawah dan rumah rusak serta seng cepat berlubang. Pada Juli 2026 Komisi XII DPR mendesak PLN menuntaskan masalah lama dan akan memanggil pihak terkait. Ada pandangan lain bahwa semburan lumpur di NTT belum tentu akibat eksplorasi geothermal.",
+   "kata": ["mataloko", "ngada", "lumpur panas"],
+   "proyek": ["pj_0254"], "regulasi": ["uu-21-2014"],
+   "wilayah": ["53", "5313"],
+   "linimasa": [
+    {"t": "2026-04-28", "p": "Mongabay memuat nestapa warga terdampak pembangkit panas bumi di NTT.", "s": 0},
+    {"t": "2026-07-14", "p": "Komisi XII DPR meminta PLN menuntaskan masalah lama PLTP Mataloko dan audit CSR.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Warga terdampak Mataloko", "peran": "warga terdampak", "posisi": "Melaporkan lahan, rumah, dan sungai rusak.", "s": 0},
+    {"nama": "Komisi XII DPR RI", "org_id": "l_774a8755e8", "peran": "pengawas", "posisi": "Mendesak PLN menyelesaikan masalah dan akan memanggil semua pihak.", "s": 1},
+    {"nama": "PLN", "org_id": "su_ed074ff5", "peran": "pengelola", "posisi": "Diminta menuntaskan kegagalan teknis proyek.", "s": 1}
+   ],
+   "sumber": [
+    {"j": "Nestapa warga NTT terdampak pembangkit panas bumi", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2026/04/28/nestapa-warga-ntt-terdampak-pembangkit-panas-bumi/", "t": "2026-04-28"},
+    {"j": "Komisi XII: PLN harus tuntaskan masalah lama PLTP Mataloko dan audit dana CSR", "p": "DPR RI", "u": "https://emedia.dpr.go.id/news/2026/07/14/komisi-xii-pln-harus-tuntaskan-masalah-lama-pltp-mataloko-dan-audit-dana-csr", "t": "2026-07-14"}
+   ]
+  },
+  {
+   "id": "flores-pulau-panas-bumi", "tema": "kebijakan", "status": "aktif", "bukti": "media",
+   "judul": "Gugatan Keuskupan Agung Ende atas penetapan Flores sebagai pulau panas bumi",
+   "ringkas": "Keuskupan Agung Ende mengajukan uji materi ke Mahkamah Agung (perkara 43 P/HUM/2026) terhadap tiga keputusan Menteri ESDM, termasuk penetapan Flores sebagai pulau panas bumi, dengan alasan topografi dan hak warga. Koalisi masyarakat sipil mengajukan amicus curiae pada Oktober 2026. Putusan belum ditemukan.",
+   "kata": ["flores", "pulau panas bumi", "keuskupan agung ende"],
+   "proyek": [], "regulasi": ["uu-21-2014"],
+   "wilayah": ["53", "5308"],
+   "linimasa": [
+    {"t": "2026-02-23", "p": "Keuskupan menyampaikan surat keberatan administratif ke Ditjen EBTKE.", "s": 0},
+    {"t": "2026-10-08", "p": "Koalisi masyarakat sipil mengajukan amicus curiae ke MA.", "s": 0},
+    {"t": "2026-10-12", "p": "Mongabay memuat gugatan Keuskupan Agung Ende.", "s": 0}
+   ],
+   "pihak": [
+    {"nama": "Keuskupan Agung Ende", "peran": "penggugat", "posisi": "Meminta MA membatalkan SK yang menjadikan Flores pulau panas bumi.", "s": 0},
+    {"nama": "Kementerian ESDM", "org_id": "l_7278e0528a", "peran": "tergugat", "posisi": "Ingin menjadikan Flores pusat panas bumi; Gubernur NTT meminta peninjauan bila warga resah.", "s": 1}
+   ],
+   "sumber": [
+    {"j": "Keuskupan Agung Ende gugat penetapan Flores sebagai pulau panas bumi", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2026/10/12/keuskupan-agung-ende-gugat-penetapan-flores-sebagai-pulau-panas-bumi/", "t": "2026-10-12"},
+    {"j": "Gubernur NTT: proyek geotermal di Flores harus ditinjau jika timbulkan ketidaknyamanan warga", "p": "Listrik Indonesia", "u": "https://listrikindonesia.com/detail/16188/gubernur-ntt-proyek-geotermal-di-flores-harus-ditinjau-jika-timbulkan-ketidaknyamanan-warga"}
+   ]
+  },
+  {
+   "id": "gunung-talang", "tema": "lahan", "status": "aktif", "bukti": "media",
+   "judul": "Penolakan PLTP Gunung Talang-Bukit Kili, Solok",
+   "ringkas": "Warga Kabupaten Solok menolak proyek panas bumi Gunung Talang sejak 2016 karena khawatir kehilangan lahan dan sumber air serta menganggap gunung sakral. Pemerintah Sumatera Barat berencana menggencarkan sosialisasi dan menilai penolakan akibat kurang informasi; LBH Padang dan Walhi Sumbar menilai yang kurang adalah partisipasi.",
+   "kata": ["gunung talang", "bukit kili"],
+   "proyek": [], "regulasi": ["uu-21-2014"],
+   "wilayah": ["13", "1303"],
+   "linimasa": [
+    {"t": "2016", "p": "Penolakan dimulai saat rencana pengembangan panas bumi diumumkan pemerintah nagari.", "s": 2},
+    {"t": "2017", "p": "Aksi memanas, termasuk pembakaran kendaraan perusahaan oleh oknum warga.", "s": 3},
+    {"t": "2025-12-01", "p": "Sosialisasi berujung protes; warga kukuh menolak.", "s": 0},
+    {"t": "2026-03-17", "p": "Perempuan Gunung Talang tetap menolak; Pemprov ingin mempercepat proyek.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Warga dan perempuan Gunung Talang", "peran": "warga terdampak", "posisi": "Menolak karena lahan, air, dan alasan sakral.", "s": 1},
+    {"nama": "Pemerintah Provinsi Sumatera Barat", "peran": "pemerintah", "posisi": "Menilai kurang sosialisasi dan ingin mempercepat proyek.", "s": 1},
+    {"nama": "LBH Padang dan Walhi Sumbar", "peran": "pendamping hukum", "posisi": "Menilai protes bagian dari hak sipil; menekankan partisipasi.", "s": 0}
+   ],
+   "sumber": [
+    {"j": "Mengapa warga kukuh tolak proyek PLTP Gunung Talang", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2025/12/01/mengapa-warga-kukuh-tolak-proyek-pltp-gunung-talang/", "t": "2025-12-01"},
+    {"j": "Perempuan Gunung Talang kukuh menolak proyek panas bumi", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2026/03/17/perempuan-gunung-talang-kukuh-menolak-proyek-panas-bumi/", "t": "2026-03-17"},
+    {"j": "Penolakan PLTP Gunung Talang (kajian Universitas Negeri Padang)", "p": "UNP Perspektif", "u": "https://perspektif.ppj.unp.ac.id/index.php/perspektif/article/download/187/108"},
+    {"j": "Arcandra heran ada penolakan proyek panas bumi di Sumbar", "p": "Republika", "u": "https://ekonomi.republika.co.id/berita/pj073p430/arcandra-heran-ada-penolakan-proyek-panas-bumi-di-sumbar", "t": "2018-11-30"}
+   ]
+  },
+  {
+   "id": "dieng-karangtengah", "tema": "lingkungan", "status": "mereda", "bukti": "media",
+   "judul": "Dieng: penolakan Pad-38 dan insiden gas H2S",
+   "ringkas": "Warga Desa Karangtengah, Banjarnegara, menolak Unit 2 PLTP Dieng khususnya Pad-38 yang berjarak dekat permukiman, setelah insiden gas H2S pada Maret 2022 yang meracuni pekerja. Penolakan didampingi Walhi Jateng. Riwayat kecelakaan sumur (2016) membuat kekhawatiran gas beracun nyata. Status terkini proyek belum terkonfirmasi.",
+   "kata": ["dieng", "karangtengah"],
+   "proyek": ["pj_0242", "pj_0244"], "regulasi": ["uu-21-2014"],
+   "wilayah": ["33", "3304"],
+   "linimasa": [
+    {"t": "2022-01-27", "p": "Warga sejumlah desa menolak pembangunan PLTP Dieng.", "s": 1},
+    {"t": "2022-03-13", "p": "Kebocoran gas H2S di PLTP Dieng; delapan pekerja keracunan, polisi memasang garis polisi.", "s": 0}
+   ],
+   "pihak": [
+    {"nama": "Warga Desa Karangtengah", "peran": "warga terdampak", "posisi": "Menolak Pad-38 yang dekat permukiman.", "s": 1},
+    {"nama": "PT Geo Dipa Energi (Persero)", "org_id": "p_7b70728bb7", "peran": "pengembang", "posisi": "Memberikan penjelasan kronologi keluarnya gas.", "s": 0},
+    {"nama": "Walhi Jawa Tengah", "peran": "pendamping", "posisi": "Mendampingi warga menolak.", "s": 1}
+   ],
+   "sumber": [
+    {"j": "Ancaman gas beracun di Dieng, bagaimana mitigasinya?", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2022/03/15/ancaman-gas-beracun-di-dieng-bagaimana-mitigasinya/", "t": "2022-03-15"},
+    {"j": "Warga sejumlah desa tolak pembangunan PLTP Dieng, kenapa?", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2022/01/27/warga-sejumlah-desa-tolak-pembangunan-pltp-dieng-kenapa/", "t": "2022-01-27"},
+    {"j": "Ini penjelasan Geo Dipa soal kronologi keluarnya gas beracun di Dieng", "p": "Bisnis.com", "u": "https://kabar24.bisnis.com/read/20220313/15/1509974/ini-penjelasan-geo-dipa-soal-kronologi-keluarnya-gas-beracun-di-dieng", "t": "2022-03-13"}
+   ]
+  },
+  {
+   "id": "sorik-marapi", "tema": "lingkungan", "status": "aktif", "bukti": "media",
+   "judul": "Kebocoran gas berulang PLTP Sorik Marapi, Mandailing Natal",
+   "ringkas": "Kebocoran gas H2S di wilayah kerja Sorik Marapi berulang: lima warga meninggal pada Januari 2021, lalu keracunan massal pada 2022 dan Februari 2024 (75 warga dirawat). Operasi sempat dihentikan sementara, tetapi laporan 2025 menyebut pembangkit tetap berjalan tanpa sanksi. JATAM menuntut pencabutan izin. Status 2026 belum terkonfirmasi.",
+   "kata": ["sorik marapi", "mandailing natal"],
+   "proyek": ["pj_0272"], "regulasi": ["uu-21-2014"],
+   "wilayah": ["12", "1213"],
+   "linimasa": [
+    {"t": "2021-01", "p": "Kebocoran pipa gas menewaskan lima orang.", "s": 0},
+    {"t": "2022-04", "p": "Operasi dihentikan sementara setelah 21 warga keracunan.", "s": 0},
+    {"t": "2022-09-29", "p": "Kebocoran sumur uji T-11; 79 warga dirawat.", "s": 1},
+    {"t": "2024-02", "p": "Uji pembukaan sumur menyebabkan puluhan warga keracunan, 75 dirawat; ESDM menyelidiki.", "s": 2}
+   ],
+   "pihak": [
+    {"nama": "PT Sorik Marapi Geothermal Power", "peran": "pengembang", "posisi": "Operator; menurut laporan 2025 tetap beroperasi tanpa penalti.", "s": 3},
+    {"nama": "JATAM", "peran": "masyarakat sipil", "posisi": "Menuntut pencabutan izin permanen.", "s": 3},
+    {"nama": "Kementerian ESDM", "org_id": "l_7278e0528a", "peran": "regulator", "posisi": "Menyelidiki dan sempat menghentikan operasi.", "s": 2}
+   ],
+   "sumber": [
+    {"j": "Jatuh korban berulang, berikut rekomendasi kasus panas bumi Sorik Marapi", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2022/05/27/jatuh-korban-berulang-berikut-rekomendasi-kasus-panas-bumi-sorik-marapi/", "t": "2022-05-27"},
+    {"j": "Sumur panas bumi Sorik Marapi bocor lagi, 79 warga keracunan", "p": "Bisnis.com", "u": "https://ekonomi.bisnis.com/read/20220929/44/1582440/sumur-panas-bumi-sorik-marapi-bocor-lagi-79-warga-keracunan", "t": "2022-09-29"},
+    {"j": "Ratusan warga keracunan, ESDM investigasi kebocoran gas PLTP SMGP", "p": "Katadata", "u": "https://katadata.co.id/berita/energi/65d882a706f19/ratusan-warga-keracunan-esdm-investigasi-kebocoran-gas-pltp-smgp", "t": "2024-02"},
+    {"j": "Transisi energi yang beracun: cerita pembangkit panas bumi di Indonesia", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2025/06/04/transisi-energi-yang-beracun-cerita-pembangkit-panas-bumi-di-indonesia/", "t": "2025-06-04"}
+   ]
+  },
+  {
+   "id": "batang-toru", "tema": "lingkungan", "status": "aktif", "bukti": "media",
+   "judul": "PLTA Batang Toru dan habitat orangutan Tapanuli",
+   "ringkas": "PLTA Batang Toru (510 MW) berada di ekosistem satu-satunya habitat orangutan Tapanuli. Konservasionis menilai data keanekaragaman hayati lemah dan konflik satwa-manusia meningkat di sekitar tapak; forum konservasi setempat membantah adanya konflik berarti. Banjir dan longsor November 2025 merusak sekitar 8.300 hektare habitat. Pada Juli 2026 pembangkit disebut dipercepat untuk menstabilkan jaringan Sumatera.",
+   "kata": ["batang toru", "orangutan tapanuli"],
+   "proyek": ["pj_0197"], "regulasi": ["uu-32-2009"],
+   "wilayah": ["12", "1203"],
+   "linimasa": [
+    {"t": "2025-09-11", "p": "Data kehati Batang Toru dinilai lemah; orangutan Tapanuli terdampak.", "s": 0},
+    {"t": "2026-07-31", "p": "Jakarta Post: PLTA Batang Toru dipercepat untuk menstabilkan jaringan Sumatera.", "s": 1},
+    {"t": "2026-08-14", "p": "Mongabay mengulas orangutan Tapanuli dan ancamannya.", "s": 2}
+   ],
+   "pihak": [
+    {"nama": "PT North Sumatera Hydro Energy (NSHE)", "peran": "pengembang", "posisi": "Menyatakan berkomitmen menjaga lingkungan.", "s": 3},
+    {"nama": "Lembaga konservasi dan pegiat lingkungan", "peran": "masyarakat sipil", "posisi": "Menilai habitat dan data kehati terancam.", "s": 0}
+   ],
+   "sumber": [
+    {"j": "Data kehati Batang Toru lemah, orangutan Tapanuli terdampak", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2025/09/11/data-kehati-batang-toru-lemah-orangutan-tapanuli-terdampak/", "t": "2025-09-11"},
+    {"j": "Batang Toru hydropower plant fast-tracked to stabilize Sumatra's fragile grid", "p": "The Jakarta Post", "u": "https://www.thejakartapost.com/business/2026/07/31/batang-toru-hydropower-plant-fast-tracked-to-stabilize-sumatras-fragile-grid", "t": "2026-07-31"},
+    {"j": "Kenali orangutan Tapanuli dan ancamannya", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2026/08/14/kenali-orangutan-tapanuli-dan-ancamannya/", "t": "2026-08-14"},
+    {"j": "PT NSHE komit menjaga lingkungan di tengah pengembangan EBT", "p": "Antara Sumut", "u": "https://sumut.antaranews.com/berita/620829/pt-nshe-komit-menjaga-lingkungan-di-tengah-pengembangan-ebt"}
+   ]
+  },
+  {
+   "id": "ungaran", "tema": "lahan", "status": "aktif", "bukti": "media",
+   "judul": "Penolakan warga atas eksplorasi panas bumi Gunung Ungaran",
+   "ringkas": "ESDM menugaskan PLN melanjutkan eksplorasi panas bumi Gunung Ungaran (55 MW) melalui SK 2026; target eksplorasi tuntas 2029 dan operasi 2031. Warga, termasuk Aliansi Semarang Menggugat, menolak karena sumber air, sesar aktif, dan minimnya keterbukaan. Penolakan tercatat sejak sekitar 2007; studi Undip 2019 menemukan mayoritas responden mendukung. PLN menyatakan pengeboran tidak berada di area Candi Gedong Songo.",
+   "kata": ["ungaran"],
+   "proyek": ["pj_0245"], "regulasi": ["uu-21-2014"],
+   "wilayah": ["33", "3322", "3324"],
+   "linimasa": [
+    {"t": "2026-03", "p": "SK Kementerian ESDM menugaskan PLN melanjutkan eksplorasi dan pengusahaan.", "s": 1},
+    {"t": "2026-09-17", "p": "Mongabay memuat kekhawatiran daya rusak dan penolakan warga.", "s": 0}
+   ],
+   "pihak": [
+    {"nama": "Aliansi Semarang Menggugat", "peran": "warga", "posisi": "Menolak karena air, sesar aktif, dan kurangnya keterbukaan.", "s": 0},
+    {"nama": "PLN", "org_id": "su_ed074ff5", "peran": "pengembang", "posisi": "Pengeboran tidak berada di area candi; mengkaji dampak ke sumber air.", "s": 2},
+    {"nama": "Kementerian ESDM", "org_id": "l_7278e0528a", "peran": "regulator", "posisi": "Lahan PLTP 55 MW kurang dari 1% wilayah kerja.", "s": 1}
+   ],
+   "sumber": [
+    {"j": "Khawatir daya rusak, warga tolak proyek panas bumi Ungaran", "p": "Mongabay Indonesia", "u": "https://mongabay.co.id/2026/09/17/khawatir-daya-rusak-warga-tolak-proyek-panas-bumi-ungaran/", "t": "2026-09-17"},
+    {"j": "Kementerian ESDM beri izin pengembangan PLTP Gunung Ungaran meski ditolak warga", "p": "achmadnurhidayat.id", "u": "https://achmadnurhidayat.id/izin-pengembangan-pltp-gunung-ungaran"},
+    {"j": "PLTP Gunung Ungaran 55 MW belum dibor, PLN masih kaji dampak ke sumber air", "p": "Kabar Bursa", "u": "https://www.kabarbursa.com/ekonomi-hijau/pltp-gunung-ungaran-55-mw-belum-dibor-pln-masih-kaji-dampak-ke-sumber-air"}
+   ]
+  },
+  {
+   "id": "psel-denpasar", "tema": "sampah", "status": "aktif", "bukti": "media",
+   "judul": "PSEL Denpasar: tarif US$0,20 per kWh dan target operasi 2027",
+   "ringkas": "Proyek pengolahan sampah menjadi energi Denpasar (PSN nomor 154, 1.200 ton per hari) disepakati bertarif listrik US$0,20 per kWh setelah negosiasi alot antara pemerintah, PLN, dan Danantara. Konstruksi dimulai 2026 dengan target operasi akhir 2027.",
+   "kata": ["psel denpasar", "denpasar"],
+   "proyek": ["pj_0038"], "regulasi": ["perpres-109-2025"],
+   "wilayah": ["51", "5171"],
+   "linimasa": [
+    {"t": "2026-07-08", "p": "Peletakan batu pertama PSEL Denpasar.", "s": 1}
+   ],
+   "pihak": [
+    {"nama": "Danantara", "org_id": "l_43f00f6a72", "peran": "pengembang program", "posisi": "Pengembang program PSEL.", "s": 1},
+    {"nama": "PLN", "org_id": "su_ed074ff5", "peran": "pembeli listrik", "posisi": "Negosiasi tarif US$0,20/kWh.", "s": 0}
+   ],
+   "sumber": [
+    {"j": "Tarif listrik PSEL sepakat US$20 sen per kWh, Zulhas ungkap negosiasi alot", "p": "Listrik Indonesia", "u": "https://listrikindonesia.com/detail/20588/tarif-listrik-psel-sepakat-us20-per-kwh-zulhas-ungkap-negosiasi-alot"},
+    {"j": "PSEL Denpasar ditargetkan beroperasi akhir 2027, atasi sampah di Bali", "p": "Liputan6", "u": "https://www.liputan6.com/bisnis/read/8245763/psel-denpasar-ditargetkan-beroperasi-akhir-2027-atasi-sampah-di-bali"}
+   ]
+  }
+ ]
+}

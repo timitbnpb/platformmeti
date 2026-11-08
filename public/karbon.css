@@ -1,15 +1,14 @@
 /* /karbon: registri karbon terpadu, grafik kolom SVG, pasar energi, daya saing. Token dari inti/tema.css; tanpa px pada font; tanpa huruf kapital paksa. */
 .kb-halaman{display:grid;gap:24px}
 .kb-halaman>.jm-ex{margin:0}
-/* warna sektor: satu variabel --kc per sektor, dipakai pil, segmen grafik, dan legenda */
-.kb-s-energi-terbarukan{--kc:var(--tp-surya)}.kb-s-efisiensi{--kc:var(--tp-listrik)}.kb-s-redd{--kc:var(--tp-efisiensi)}.kb-s-mangrove{--kc:var(--tp-hidrogen)}
-.kb-s-gambut{--kc:var(--tp-sampah)}.kb-s-agroforestri{--kc:var(--tp-bio)}.kb-s-limbah{--kc:var(--tp-simpan)}.kb-s-lain{--kc:var(--tp-jaringan)}.kb-s-seri{--kc:var(--brand2)}
-.jm-pil-tek.kb-sek{--tk:var(--kc)}
+/* warna sektor: satu variabel --tk per sektor, dipakai pil, segmen grafik, dan legenda */
+.kb-s-energi-terbarukan{--tk:var(--tp-surya)}.kb-s-efisiensi{--tk:var(--tp-listrik)}.kb-s-redd{--tk:var(--tp-efisiensi)}.kb-s-mangrove{--tk:var(--tp-hidrogen)}
+.kb-s-gambut{--tk:var(--tp-sampah)}.kb-s-agroforestri{--tk:var(--tp-bio)}.kb-s-limbah{--tk:var(--tp-simpan)}.kb-s-lain{--tk:var(--tp-jaringan)}.kb-s-seri{--tk:var(--brand2)}
 .kb-st-ok{--sk:var(--ok)}.kb-st-warn{--sk:var(--warn)}.kb-st-bad{--sk:var(--bad)}.kb-st-info{--sk:var(--info)}
 /* lencana registri */
 .kb-regs{display:inline-flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.kb-halaman a.kb-reg,.kb-reg{display:inline-flex;align-items:center;justify-content:center;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font);white-space:nowrap;text-decoration:none;color:var(--rc);background:color-mix(in srgb,var(--rc) 14%,var(--card));border:1px solid color-mix(in srgb,var(--rc) 40%,transparent)}
-.kb-r-verra{--rc:var(--info)}.kb-r-gs{--rc:var(--warn)}.kb-r-idx{--rc:var(--brand2)}.kb-r-srn{--rc:var(--tp-jaringan)}.kb-r-pv{--rc:var(--tp-simpan)}
+.kb-halaman a.kb-reg,.kb-reg{display:inline-flex;align-items:center;justify-content:center;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font);white-space:nowrap;text-decoration:none;color:var(--tk);background:color-mix(in srgb,var(--tk) 14%,var(--card));border:1px solid color-mix(in srgb,var(--tk) 40%,transparent)}
+.kb-r-verra{--tk:var(--info)}.kb-r-gs{--tk:var(--warn)}.kb-r-idx{--tk:var(--brand2)}.kb-r-srn{--tk:var(--tp-jaringan)}.kb-r-pv{--tk:var(--tp-simpan)}
 /* tabel */
 .kb-tabel{width:100%}
 .kb-tabel th:nth-child(1){width:44px}.kb-tabel th:nth-child(2){width:22%}.kb-tabel th:nth-child(3){width:14%}.kb-tabel th:nth-child(4){width:10%}.kb-tabel th:nth-child(5){width:15%}
@@ -37,7 +36,7 @@
 .kb-grid{stroke:var(--line);stroke-width:1}
 .kb-ref{stroke:var(--bad);stroke-width:1.5;stroke-dasharray:6 4}
 .kb-t{fill:var(--ink2);font:400 var(--t-kecil) var(--font)}
-.kb-seg{fill:var(--kc);cursor:pointer;transition:opacity .15s}
+.kb-seg{fill:var(--tk);cursor:pointer;transition:opacity .15s}
 .kb-nol{fill:var(--line)}
 .jm-gf-fokus .kb-seg:not(.jm-gf-on){opacity:.35}
 .kb-seg.jm-gf-on{stroke:var(--ink);stroke-width:1.5}
@@ -88,4 +87,4 @@
 .kb-tautan span{display:grid;gap:4px}.kb-tautan small{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
 @media (max-width:767px){.kb-tautans{grid-template-columns:minmax(0,1fr)}}
 .kb-est{display:flex;align-items:center;gap:12px;margin:0 0 16px;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
-.kb-halaman a.kb-reg{color:var(--rc);background:color-mix(in srgb,var(--rc) 14%,var(--card));border:1px solid color-mix(in srgb,var(--rc) 40%,transparent);font-weight:600;text-decoration:none}
+.kb-halaman a.kb-reg{color:var(--tk);background:color-mix(in srgb,var(--tk) 14%,var(--card));border:1px solid color-mix(in srgb,var(--tk) 40%,transparent);font-weight:600;text-decoration:none}

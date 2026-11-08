@@ -1,0 +1,711 @@
+{
+ "lapis": "keberlanjutan",
+ "dibangun_pada": "2026-11-08",
+ "catatan": "Angka dibaca dari PDF laporan resmi; PDF tidak disimpan di repo. Cakupan baru sebagian: lihat jumlah.",
+ "jumlah": 6,
+ "org": {
+  "p_dda1e51dae": {
+   "laporan": [
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2020,
+     "jenis": "keberlanjutan",
+     "url": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/2020-laporan-keberlanjutan-pge.pdf"
+    },
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2021,
+     "jenis": "keberlanjutan",
+     "url": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf"
+    },
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2022,
+     "jenis": "indeks",
+     "url": "https://www.pge.pertamina.com/en/report",
+     "judul": "Halaman laporan PGE (2022-2025 berupa tautan Google Drive)"
+    }
+   ],
+   "metrik": [
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2020,
+     "nilai": 109701.16,
+     "satuan": "tCO2e",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": 67,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "catatan": "pembanding di laporan 2021"
+    },
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2021,
+     "nilai": 106968.27,
+     "satuan": "tCO2e",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": 67,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2020,
+     "nilai": 3266.67,
+     "satuan": "tCO2e",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": 67,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2021,
+     "nilai": 2860.92,
+     "satuan": "tCO2e",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": 67,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s3",
+     "tahun": 2020,
+     "nilai": 87713.23,
+     "satuan": "tCO2e",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": 67,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "catatan": "hanya penjualan uap; rantai pasok belum dihitung"
+    },
+    {
+     "kunci": "emisi_s3",
+     "tahun": 2021,
+     "nilai": 77490.57,
+     "satuan": "tCO2e",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": 67,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "catatan": "hanya penjualan uap; rantai pasok belum dihitung"
+    },
+    {
+     "kunci": "intensitas",
+     "tahun": 2020,
+     "nilai": 0.0435,
+     "satuan": "tCO2e/MWh",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": 67,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "intensitas",
+     "tahun": 2021,
+     "nilai": 0.0402,
+     "satuan": "tCO2e/MWh",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": 67,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "kapasitas_ebt",
+     "tahun": 2021,
+     "nilai": 672,
+     "satuan": "MW",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "catatan": "operasi sendiri; 1.205 MW lain lewat Joint Operation Contract"
+    },
+    {
+     "kunci": "fatalitas",
+     "tahun": 2021,
+     "nilai": 0,
+     "satuan": "kasus",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "trir",
+     "tahun": 2020,
+     "nilai": 0.19,
+     "satuan": "skor",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "trir",
+     "tahun": 2021,
+     "nilai": 0,
+     "satuan": "skor",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "standar": [
+    {
+     "tahun": 2021,
+     "nama": "GRI Standards"
+    }
+   ],
+   "penjaminan": [
+    {
+     "tahun": 2021,
+     "pihak": "SR Asia",
+     "sumber": "https://www.pge.pertamina.com/media/Uploads/laporan-keberlanjutan/Laporan-Keberlanjutan-TB-2021.pdf"
+    }
+   ],
+   "pasar": [
+    {
+     "jenis": "ipo",
+     "tanggal": "2023-02",
+     "nilai": 9050000000000,
+     "mata_uang": "IDR",
+     "penggunaan": "sebagian untuk pelunasan utang pemegang saham (sekitar USD100 juta)",
+     "bukti": "via-pihak-ketiga",
+     "sumber": "https://market.bisnis.com/read/20230518/192/1657086/pertamina-geothermal-pgeo-siapkan-geen-bond-jilid-ii-berapa-nilainya-dan-kapan",
+     "tanggal_periksa": "2026-11-08",
+     "catatan": "nilai dan penggunaan dana dari laporan media; prospektus IDX belum dibaca"
+    },
+    {
+     "jenis": "obligasi-hijau",
+     "tanggal": "2023-04",
+     "nilai": 400000000,
+     "mata_uang": "USD",
+     "kupon": null,
+     "penggunaan": "kerangka pembiayaan hijau PGE (termasuk refinancing)",
+     "bukti": "via-pihak-ketiga",
+     "sumber": "https://market.bisnis.com/read/20230510/192/1654487/green-bond-pertamina-geothermal-pgeo-laris-manis-diburu-investor",
+     "tanggal_periksa": "2026-11-08",
+     "catatan": "terbit di pasar internasional, kelebihan permintaan 8,25 kali; kupon belum dibaca dari dokumen penawaran"
+    }
+   ]
+  },
+  "p_ff7a390a42": {
+   "laporan": [
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2023,
+     "jenis": "keberlanjutan",
+     "url": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf"
+    },
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2024,
+     "jenis": "keberlanjutan",
+     "url": "https://www.plnnusantarapower.co.id/storage/investor_sustainability_report/files/afPU5JgIIbtyWbk8VzL2YoyngU3kuoAqUAXIKpvj.pdf"
+    }
+   ],
+   "metrik": [
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2021,
+     "nilai": 39767149.68,
+     "satuan": "tCO2e",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2022,
+     "nilai": 38970988.71,
+     "satuan": "tCO2e",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2023,
+     "nilai": 49556898.19,
+     "satuan": "tCO2e",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2022,
+     "nilai": 1004.69,
+     "satuan": "tCO2e",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2023,
+     "nilai": 2217.34,
+     "satuan": "tCO2e",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s3",
+     "tahun": 2022,
+     "nilai": 126742.55,
+     "satuan": "tCO2e",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s3",
+     "tahun": 2023,
+     "nilai": 301601.26,
+     "satuan": "tCO2e",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "intensitas",
+     "tahun": 2021,
+     "nilai": 0.84,
+     "satuan": "tCO2e/MWh",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "catatan": "cakupan 1"
+    },
+    {
+     "kunci": "intensitas",
+     "tahun": 2022,
+     "nilai": 0.83,
+     "satuan": "tCO2e/MWh",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "catatan": "cakupan 1"
+    },
+    {
+     "kunci": "intensitas",
+     "tahun": 2023,
+     "nilai": 0.78,
+     "satuan": "tCO2e/MWh",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": 10,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "catatan": "cakupan 1"
+    },
+    {
+     "kunci": "tenaga_kerja",
+     "tahun": 2021,
+     "nilai": 3071,
+     "satuan": "orang",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "tenaga_kerja",
+     "tahun": 2022,
+     "nilai": 3034,
+     "satuan": "orang",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "tenaga_kerja",
+     "tahun": 2023,
+     "nilai": 4985,
+     "satuan": "orang",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2024,
+     "nilai": 52554501.83,
+     "satuan": "tCO2e",
+     "sumber": "https://www.plnnusantarapower.co.id/storage/investor_sustainability_report/files/afPU5JgIIbtyWbk8VzL2YoyngU3kuoAqUAXIKpvj.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2024,
+     "nilai": 28240.76,
+     "satuan": "tCO2e",
+     "sumber": "https://www.plnnusantarapower.co.id/storage/investor_sustainability_report/files/afPU5JgIIbtyWbk8VzL2YoyngU3kuoAqUAXIKpvj.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s3",
+     "tahun": 2024,
+     "nilai": 247458.36,
+     "satuan": "tCO2e",
+     "sumber": "https://www.plnnusantarapower.co.id/storage/investor_sustainability_report/files/afPU5JgIIbtyWbk8VzL2YoyngU3kuoAqUAXIKpvj.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "intensitas",
+     "tahun": 2024,
+     "nilai": 0.83,
+     "satuan": "tCO2e/MWh",
+     "sumber": "https://www.plnnusantarapower.co.id/storage/investor_sustainability_report/files/afPU5JgIIbtyWbk8VzL2YoyngU3kuoAqUAXIKpvj.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "catatan": "cakupan 1"
+    },
+    {
+     "kunci": "tenaga_kerja",
+     "tahun": 2024,
+     "nilai": 5077,
+     "satuan": "orang",
+     "sumber": "https://www.plnnusantarapower.co.id/storage/investor_sustainability_report/files/afPU5JgIIbtyWbk8VzL2YoyngU3kuoAqUAXIKpvj.pdf",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "target": [
+    {
+     "teks": "Selaras target nasional net zero 2060",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf"
+    }
+   ],
+   "standar": [
+    {
+     "tahun": 2023,
+     "nama": "GRI Standards"
+    },
+    {
+     "tahun": 2023,
+     "nama": "SASB"
+    },
+    {
+     "tahun": 2023,
+     "nama": "IFRS S1/S2"
+    },
+    {
+     "tahun": 2024,
+     "nama": "IFRS S1/S2"
+    }
+   ],
+   "penjaminan": [
+    {
+     "tahun": 2023,
+     "pihak": "PT SGS Indonesia (AA1000)",
+     "sumber": "https://plnnusantarapower.co.id/storage/investor_sustainability_report/files/dDTEuZPX5yztZznN5sBvCCLm7kbjrEARffARROkB.pdf"
+    },
+    {
+     "tahun": 2024,
+     "pihak": "PT SGS Indonesia",
+     "sumber": "https://www.plnnusantarapower.co.id/storage/investor_sustainability_report/files/afPU5JgIIbtyWbk8VzL2YoyngU3kuoAqUAXIKpvj.pdf"
+    }
+   ],
+   "pasar": []
+  },
+  "p_d3818e1614": {
+   "laporan": [
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2023,
+     "jenis": "keberlanjutan",
+     "url": "https://www.indikaenergy.co.id/wp-content/uploads/2024/04/2023-Indika-Energy-Sustainability-Report.pdf"
+    },
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2024,
+     "jenis": "keberlanjutan",
+     "url": "https://www.indikaenergy.co.id/wp-content/uploads/2025/04/2024-Indika-Energy-Sustainability-Report-1.pdf"
+    },
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2025,
+     "jenis": "keberlanjutan",
+     "url": "https://www.indikaenergy.co.id/wp-content/uploads/2026/04/Indika-Energy-2025-Sustainability-Report.pdf"
+    }
+   ],
+   "metrik": [
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2022,
+     "nilai": 1155280,
+     "satuan": "tCO2e",
+     "sumber": "https://www.indikaenergy.co.id/wp-content/uploads/2025/04/2024-Indika-Energy-Sustainability-Report-1.pdf",
+     "hal": 187,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2023,
+     "nilai": 1023433,
+     "satuan": "tCO2e",
+     "sumber": "https://www.indikaenergy.co.id/wp-content/uploads/2025/04/2024-Indika-Energy-Sustainability-Report-1.pdf",
+     "hal": 187,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2024,
+     "nilai": 906800,
+     "satuan": "tCO2e",
+     "sumber": "https://www.indikaenergy.co.id/wp-content/uploads/2025/04/2024-Indika-Energy-Sustainability-Report-1.pdf",
+     "hal": 187,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2022,
+     "nilai": 5482,
+     "satuan": "tCO2e",
+     "sumber": "https://www.indikaenergy.co.id/wp-content/uploads/2025/04/2024-Indika-Energy-Sustainability-Report-1.pdf",
+     "hal": 187,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2023,
+     "nilai": 6576,
+     "satuan": "tCO2e",
+     "sumber": "https://www.indikaenergy.co.id/wp-content/uploads/2025/04/2024-Indika-Energy-Sustainability-Report-1.pdf",
+     "hal": 187,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2024,
+     "nilai": 7720,
+     "satuan": "tCO2e",
+     "sumber": "https://www.indikaenergy.co.id/wp-content/uploads/2025/04/2024-Indika-Energy-Sustainability-Report-1.pdf",
+     "hal": 187,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "target": [
+    {
+     "teks": "Net zero emisi 2050",
+     "sumber": "https://www.indikaenergy.co.id/wp-content/uploads/2025/04/2024-Indika-Energy-Sustainability-Report-1.pdf"
+    }
+   ],
+   "standar": [
+    {
+     "tahun": 2024,
+     "nama": "GRI Standards"
+    }
+   ],
+   "penjaminan": [
+    {
+     "tahun": 2024,
+     "pihak": "SGS Indonesia",
+     "sumber": "https://www.indikaenergy.co.id/wp-content/uploads/2025/04/2024-Indika-Energy-Sustainability-Report-1.pdf"
+    }
+   ],
+   "pasar": []
+  },
+  "pm_129dbx35045": {
+   "laporan": [
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2023,
+     "jenis": "keberlanjutan",
+     "url": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng"
+    },
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2024,
+     "jenis": "indeks",
+     "url": "https://vale.com/indonesia/keberlanjutan",
+     "judul": "Halaman keberlanjutan Vale Indonesia (laporan per tahun)"
+    }
+   ],
+   "metrik": [
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2021,
+     "nilai": 1968544,
+     "satuan": "tCO2e",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng",
+     "hal": 35,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2022,
+     "nilai": 1745817,
+     "satuan": "tCO2e",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng",
+     "hal": 35,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "catatan": "disajikan ulang di laporan 2023"
+    },
+    {
+     "kunci": "emisi_s1",
+     "tahun": 2023,
+     "nilai": 2029486,
+     "satuan": "tCO2e",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng",
+     "hal": 35,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2021,
+     "nilai": 2530,
+     "satuan": "tCO2e",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng",
+     "hal": 35,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2022,
+     "nilai": 2735,
+     "satuan": "tCO2e",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng",
+     "hal": 35,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "emisi_s2",
+     "tahun": 2023,
+     "nilai": 2827,
+     "satuan": "tCO2e",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng",
+     "hal": 35,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "tenaga_kerja",
+     "tahun": 2021,
+     "nilai": 2966,
+     "satuan": "orang",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "tenaga_kerja",
+     "tahun": 2022,
+     "nilai": 2934,
+     "satuan": "orang",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    },
+    {
+     "kunci": "tenaga_kerja",
+     "tahun": 2023,
+     "nilai": 3023,
+     "satuan": "orang",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng",
+     "hal": null,
+     "bukti": "resmi",
+     "tanggal": "2026-11-08"
+    }
+   ],
+   "target": [
+    {
+     "teks": "Netralitas karbon 2050",
+     "sumber": "https://vale.com/documents/d/guest/pt-vale-laporan-keberlanjutan-2023-eng"
+    }
+   ],
+   "standar": [
+    {
+     "tahun": 2023,
+     "nama": "GRI Standards"
+    },
+    {
+     "tahun": 2023,
+     "nama": "SASB Metals & Mining"
+    }
+   ],
+   "penjaminan": [],
+   "pasar": []
+  },
+  "p_9de27fd5b9": {
+   "laporan": [
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2024,
+     "jenis": "indeks",
+     "url": "https://www.medcoenergi.com/en/our-sustainability/sustainability-disclosures/sustainability-report/",
+     "judul": "Halaman laporan keberlanjutan Medco"
+    },
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2024,
+     "jenis": "penjaminan",
+     "url": "https://www.medcoenergi.com/uploads/sreports/2024/Assurance_SR2024_ENG.pdf",
+     "judul": "Pernyataan penjaminan laporan keberlanjutan 2024"
+    }
+   ],
+   "metrik": [],
+   "pasar": []
+  },
+  "ix_toba": {
+   "laporan": [
+    {
+     "bukti": "resmi",
+     "tanggal": "2026-11-08",
+     "tahun": 2022,
+     "jenis": "keberlanjutan",
+     "url": "https://cop.unglobalcompact.org/2023/files/8456_TBS%20SR2022_020523_Hires_compressed.pdf"
+    }
+   ],
+   "metrik": [],
+   "pasar": []
+  }
+ }
+}

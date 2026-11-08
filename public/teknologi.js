@@ -254,6 +254,19 @@ function sBerita(D) {
   });
 }
 
+/* tautan lanjut ke halaman lain yang membahas teknologi ini (rantai global, model keuangan, panduan, energi baru, sejarah) */
+const RANTAI_TAB = { surya: "surya", bayu: "bayu", hidro: "hidro", "panas-bumi": "panas-bumi", hidrogen: "hidrogen", bioenergi: "biomassa", "biomassa-sampah": "wte" };
+function sTelusur() {
+  const tautan = [
+    RANTAI_TAB[KODE] && ["globe", `/rantai-global?tab=${RANTAI_TAB[KODE]}`, "tk.tl.rantai"],
+    KODE !== "nuklir" && ["kalkulator", `/model-keuangan?tek=${encodeURIComponent(KODE)}`, "tk.tl.model"],
+    ["buku", "/panduan", "tk.tl.panduan"],
+    ["energi-baru", "/energi-baru", "tk.tl.baru"],
+    ["linimasa", "/sejarah", "tk.tl.sejarah"],
+  ].filter(Boolean);
+  return exHtml({ id: "tk-telusur", ikon: "tautan", topik: t("tk.tl.ey"), judulHtml: esc(t("tk.tl.j", { nama: nm(KODE) })), isiHtml: `<ul class="jm-tk-telusur">${tautan.map(([ik, href, k]) => `<li>${ikon(ik, 18)}<a href="${esc(href)}">${esc(t(k))}</a></li>`).join("")}</ul>` });
+}
+
 function sCara(D) {
   const baris = ["tk.cara.1", "tk.cara.2", "tk.cara.3", "tk.cara.4"].map((k) => `<li>${esc(t(k))}</li>`).join("");
   return exHtml({ id: "tk-cara", ikon: "metode", topik: t("an.ey.metode"), judulHtml: esc(t("an.cara")), isiHtml: `<ol class="jm-tk-cara">${baris}</ol>` });
@@ -261,7 +274,7 @@ function sCara(D) {
 
 function gambarIsi() {
   const D = olah();
-  isi.innerHTML = [sPotensi(D), sRuptl(D), sProyek(D), C.rantai || C.tkdn ? sRantai() : "", C.wkp ? sWkp() : "", C.atap ? sAtap() : "", sHarga(), sReg(D), sPemain(D), sBerita(D), sCara(D)].join("");
+  isi.innerHTML = [sPotensi(D), sRuptl(D), sProyek(D), C.rantai || C.tkdn ? sRantai() : "", C.wkp ? sWkp() : "", C.atap ? sAtap() : "", sHarga(), sReg(D), sPemain(D), sBerita(D), sTelusur(), sCara(D)].join("");
   pasangBar(isi);
   terkaitHtml("teknologi", KODE).then((h) => { if (h && isi.isConnected) isi.insertAdjacentHTML("beforeend", h); });
 }

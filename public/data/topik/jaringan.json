@@ -1657,8 +1657,8 @@
     },
     {
      "nama": "Hitachi Energy",
-     "id": "in_977f02422f",
-     "url": "/o/in_977f02422f",
+     "id": "en_e52b2c7f68",
+     "url": "/o/en_e52b2c7f68",
      "peran": {
       "id": "Pemasok trafo dan konverter HVDC; tercatat di direktori METI berkepakaran jaringan",
       "en": "Supplier of transformers and HVDC converters; listed in the METI directory with grid expertise"
@@ -1668,8 +1668,8 @@
     },
     {
      "nama": "Siemens Energy",
-     "id": "in_34901d69af",
-     "url": "/o/in_34901d69af",
+     "id": "en_a87d146e17",
+     "url": "/o/en_a87d146e17",
      "peran": {
       "id": "Pemasok peralatan transmisi dan gardu; tercatat berkepakaran jaringan dan gas",
       "en": "Supplier of transmission and substation equipment; listed with grid and gas expertise"
@@ -1679,8 +1679,8 @@
     },
     {
      "nama": "ABB",
-     "id": "in_67e41e09ad",
-     "url": "/o/in_67e41e09ad",
+     "id": "en_c64d3fcde2",
+     "url": "/o/en_c64d3fcde2",
      "peran": {
       "id": "Pemasok otomasi dan peralatan jaringan; tercatat berkepakaran jaringan",
       "en": "Supplier of automation and grid equipment; listed with grid expertise"
@@ -1869,6 +1869,94 @@
      "mw": null
     },
     {
+     "nama": "Mott MacDonald",
+     "id": "en_00164ba50a",
+     "url": "/o/en_00164ba50a",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: konsultan",
+      "en": "Perusahaan Internasional di Indonesia; chain role: konsultan"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Larsen and Toubro",
+     "id": "en_18505b4c85",
+     "url": "/o/en_18505b4c85",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: EPC",
+      "en": "Perusahaan Internasional di Indonesia; chain role: EPC"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Jacobs",
+     "id": "en_346f788186",
+     "url": "/o/en_346f788186",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: konsultan",
+      "en": "Perusahaan Internasional di Indonesia; chain role: konsultan"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "SUN Cable",
+     "id": "en_7d673079d9",
+     "url": "/o/en_7d673079d9",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: IPP, pengembang",
+      "en": "Perusahaan Internasional di Indonesia; chain role: IPP, pengembang"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Fuji Electric",
+     "id": "en_a811f09966",
+     "url": "/o/en_a811f09966",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: manufaktur, panas-bumi, pemasok",
+      "en": "Perusahaan Internasional di Indonesia; chain role: manufaktur, panas-bumi, pemasok"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "WSP",
+     "id": "en_da023ea393",
+     "url": "/o/en_da023ea393",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: konsultan",
+      "en": "Perusahaan Internasional di Indonesia; chain role: konsultan"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Arup",
+     "id": "en_dbad6d8054",
+     "url": "/o/en_dbad6d8054",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: konsultan",
+      "en": "Perusahaan Internasional di Indonesia; chain role: konsultan"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
+     "nama": "Aecom",
+     "id": "en_ed768b9819",
+     "url": "/o/en_ed768b9819",
+     "peran": {
+      "id": "Perusahaan Internasional di Indonesia; peran rantai: konsultan",
+      "en": "Perusahaan Internasional di Indonesia; chain role: konsultan"
+     },
+     "rujuk": "Direktori METI",
+     "mw": null
+    },
+    {
      "nama": "Preformed Line Products",
      "id": "in_114f742f83",
      "url": "/o/in_114f742f83",
@@ -1883,17 +1971,6 @@
      "nama": "Lapp Group (JJ Lapp)",
      "id": "in_43cfaca072",
      "url": "/o/in_43cfaca072",
-     "peran": {
-      "id": "Perusahaan Internasional di Indonesia; peran rantai: pemasok",
-      "en": "Perusahaan Internasional di Indonesia; chain role: pemasok"
-     },
-     "rujuk": "Direktori METI",
-     "mw": null
-    },
-    {
-     "nama": "Fuji Electric",
-     "id": "in_63d60cac64",
-     "url": "/o/in_63d60cac64",
      "peran": {
       "id": "Perusahaan Internasional di Indonesia; peran rantai: pemasok",
       "en": "Perusahaan Internasional di Indonesia; chain role: pemasok"
@@ -1982,61 +2059,6 @@
      "nama": "CV Protel Multi Energy",
      "id": "tk_c3a6d5e4",
      "url": "/o/tk_c3a6d5e4",
-     "peran": {
-      "id": "Swasta; peran rantai: manufaktur",
-      "en": "Swasta; chain role: manufaktur"
-     },
-     "rujuk": "Direktori METI",
-     "mw": null
-    },
-    {
-     "nama": "PT Tirta Surya Cipta",
-     "id": "tk_c71f99ab",
-     "url": "/o/tk_c71f99ab",
-     "peran": {
-      "id": "Swasta; peran rantai: manufaktur",
-      "en": "Swasta; chain role: manufaktur"
-     },
-     "rujuk": "Direktori METI",
-     "mw": null
-    },
-    {
-     "nama": "PT Jetspeed Mandiri Indonesia",
-     "id": "tk_d1dcaf67",
-     "url": "/o/tk_d1dcaf67",
-     "peran": {
-      "id": "Swasta; peran rantai: manufaktur",
-      "en": "Swasta; chain role: manufaktur"
-     },
-     "rujuk": "Direktori METI",
-     "mw": null
-    },
-    {
-     "nama": "CV Sumber Tiga Jaya",
-     "id": "tk_e1ec9cb8",
-     "url": "/o/tk_e1ec9cb8",
-     "peran": {
-      "id": "Swasta; peran rantai: manufaktur",
-      "en": "Swasta; chain role: manufaktur"
-     },
-     "rujuk": "Direktori METI",
-     "mw": null
-    },
-    {
-     "nama": "PT Puncak Jaya Solusindo",
-     "id": "tk_ef000fe4",
-     "url": "/o/tk_ef000fe4",
-     "peran": {
-      "id": "Swasta; peran rantai: manufaktur",
-      "en": "Swasta; chain role: manufaktur"
-     },
-     "rujuk": "Direktori METI",
-     "mw": null
-    },
-    {
-     "nama": "PT Avia Anugrah Nusantara",
-     "id": "tk_f4342438",
-     "url": "/o/tk_f4342438",
      "peran": {
       "id": "Swasta; peran rantai: manufaktur",
       "en": "Swasta; chain role: manufaktur"

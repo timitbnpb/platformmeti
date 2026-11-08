@@ -22,8 +22,8 @@
 .mk-svg{width:100%;height:auto;display:block;font-family:var(--font);font-variant-numeric:tabular-nums}
 .mk-grid{stroke:var(--line);stroke-width:1}
 .mk-nol{stroke:var(--ink2);stroke-width:1.2;stroke-dasharray:5 4}
-.mk-sb{fill:var(--ink2);font-size:12px}
-.mk-sl{fill:var(--ink);font-size:13px;font-weight:600}
+.mk-sb{fill:var(--ink2);font-size:var(--t-kecil)}
+.mk-sl{fill:var(--ink);font-size:var(--t-tombol);font-weight:600}
 .mk-gr{fill:none;stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
 .mk-g1{stroke:var(--data1)}
 .mk-g2{stroke:var(--data3)}
@@ -33,8 +33,8 @@
 .mk-hit:hover,.mk-hit:focus-visible{fill:var(--info-bg);fill-opacity:.5}
 .mk-b1{fill:var(--info)}
 .mk-b2{fill:var(--warn)}
-.mk-b1-t{fill:var(--info);font-size:12px;font-weight:700}
-.mk-b2-t{fill:var(--warn);font-size:12px;font-weight:700}
+.mk-b1-t{fill:var(--info);font-size:var(--t-kecil);font-weight:700}
+.mk-b2-t{fill:var(--warn);font-size:var(--t-kecil);font-weight:700}
 .mk-leg{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 10px;padding:0;list-style:none;color:var(--ink);font-size:var(--t-kecil)}
 .mk-leg li{display:flex;align-items:center;gap:8px}
 .mk-leg i{width:14px;height:14px;border-radius:4px;display:inline-block}

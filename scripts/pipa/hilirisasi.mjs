@@ -40,15 +40,12 @@ export function bangun({ cp, ekspor, org, entitas, korporat, logoAda = () => fal
     const eb = (s.ebt_nama || []).map((n) => ebt.get(n)).filter(Boolean);
     const pemilik = s.pemilik.map((nama, i) => { const o = kunci.get(norm(nama)); return { nama: o?.nama || nama, negara: s.negara[Math.min(i, s.negara.length - 1)], org_id: o?.id ?? null, logo: o?.logo ?? null, korporat: kor.get(norm(nama))?.id ?? null }; });
     let ni = null, mwh_ton = null, listrik_gwh = null, mw_rata = null, ef = null, intensitas = null;
-    if (s.kapasitas) {
+    if (s.kapasitas && s.kapasitas.nilai != null) {
       if (/Ni\/tahun/.test(s.kapasitas.satuan)) ni = s.kapasitas.nilai; else if (/MHP/.test(s.kapasitas.satuan)) ni = Math.round(s.kapasitas.nilai * PARAMETER.kadar_ni_mhp); else if (/Al\//.test(s.kapasitas.satuan)) ni = s.kapasitas.nilai;
-      mwh_ton = s.jenis === 'aluminium' ? PARAMETER.mwh_per_ton.aluminium : PARAMETER.mwh_per_ton[s.jenis] ?? null;
-      if (ni && mwh_ton) {
-        listrik_gwh = Math.round((ni * mwh_ton) / 1000); mw_rata = Math.round((ni * mwh_ton) / PARAMETER.jam);
-        ef = s.listrik === 'captive-pltu' ? efZona(s.zona) : PARAMETER.faktor_emisi[s.listrik] ?? null;
-        if (ef !== null) intensitas = Number((mwh_ton * ef).toFixed(1));
-      }
     }
+    mwh_ton = PARAMETER.mwh_per_ton[s.jenis] ?? null; // intensitas per ton tak bergantung kapasitas; baris jenis belum-pasti tanpa angka
+    if (ni && mwh_ton) { listrik_gwh = Math.round((ni * mwh_ton) / 1000); mw_rata = Math.round((ni * mwh_ton) / PARAMETER.jam); }
+    if (mwh_ton) { ef = s.listrik === 'captive-pltu' ? efZona(s.zona) : PARAMETER.faktor_emisi[s.listrik] ?? null; if (ef !== null) intensitas = Number((mwh_ton * ef).toFixed(1)); }
     const eksporIso = s.jenis === 'sel' ? [] : s.rantai === 'logam' ? [] : ['cn'];
     return {
       id: s.id, nama: s.nama, rantai: s.rantai, jenis: s.jenis, produk: s.produk, kapasitas: s.kapasitas, ton_logam_tahun: ni, teknologi: s.teknologi, pemilik, status: s.status, ket_status: s.ket_status ?? null, tahun: s.tahun,

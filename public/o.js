@@ -7,7 +7,9 @@ import { hantuHtml } from "/inti/umum.js";
 import { terkaitHtml } from "/inti/komponen.js";
 import { muatSensus } from "/inti/org_sensus.js";
 import { ringkasHtml, pasangRingkas } from "/o_ringkas.js";
-import { gabungProyek, saringTerkait, bagProyek, bagBerita, bagPengurus, bagRelasi, navLoncat } from "/o_bagian.js";
+import { bagKeberlanjutan } from "/o_keberlanjutan.js";
+import { bagianOrg } from "/tertaut.js";
+import { gabungProyek, saringTerkait, bagProyek, bagBerita, bagPengurus, bagRelasi, bagRiset, navLoncat } from "/o_bagian.js";
 import { t, angka, esc, muat, norm, hlHtml, idJalur, barisProyek, seksi, tabelRegulasi, kartuProgram, petaTitik, galatHtml, pasangLogoCadangan, ringkasTgl } from "/profil.js";
 
 const akar = document.getElementById("profil");
@@ -38,9 +40,9 @@ function tabelProgram(prog, rows) {
 async function mulai() {
   akar.innerHTML = hantuHtml(6);
   const id = idJalur();
-  let org, proyek, prog, reg, berT, orang, mitra, foto;
+  let org, proyek, prog, reg, berT, orang, mitra, foto, kbl;
   try {
-    [org, proyek, prog, reg, berT, orang, mitra, foto] = await Promise.all(["organisasi", "proyek", "program", "regulasi", "berita", "orang", "mitra-meti"].map(muat).concat(muat("berita_foto").catch(() => ({}))));
+    [org, proyek, prog, reg, berT, orang, mitra, foto, kbl] = await Promise.all(["organisasi", "proyek", "program", "regulasi", "berita", "orang", "mitra-meti"].map(muat).concat(muat("berita_foto").catch(() => ({})), muat("keberlanjutan").catch(() => ({}))));
   } catch { akar.innerHTML = galatHtml("pf.galat"); return; }
   const o = org.baris.find((x) => x.id === id);
   if (!o) { akar.innerHTML = galatHtml("pf.o.tak"); return; }
@@ -69,17 +71,22 @@ async function mulai() {
   const pro = bagProyek({ rows: tampilProyek, semua: rows.length, nProv, sumber: sumberRingkas });
   const ber = bagBerita({ daftar: beritas, foto: foto || {}, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(berT.dibangun_pada) })) });
   const pen = bagPengurus({ daftar: pengurus, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(orang.dibangun_pada) })) });
+  const kb = bagKeberlanjutan({ data: kbl?.org?.[id], sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(kbl?.dibangun_pada) })) });
   const rl = bagRelasi({ o, rel, sumber: sumberRingkas, S });
 
+  const [rk, pat] = await Promise.all([muat("riset_kampus").catch(() => null), muat("paten").catch(() => null)]);
+  const kamp = rk?.baris?.find((b) => (b.organisasi_id || []).includes(id));
+  const ris = bagRiset({ k: kamp, paten: (pat?.baris || []).filter((p) => (p.organisasi_id || []).includes(id)), sumber: esc(t("rp.sumber", { nama: kamp?.nama || o.nama })) });
+  const dataBaru = await bagianOrg(id, { proyekAda: new Set(proyek.baris.map((p) => p.id)) }).catch(() => "");
   const terkait = await terkaitHtml("org", id, { kecuali: ["proyek", "berita", "regulasi", "orang", "program"] });
   akar.innerHTML = `<div class="oj">${ringkasHtml({ ...o, meti: anggotaMeti }, S, { tombolIkuti, tombolKoreksi })}</div>`
     + `<div class="pf-bagian oj-bag">${pro.html}`
     + seksi({ id: "program", ik: "analisis", topik: t("pf.ey.program"), judulHtml: hlHtml("pf.j.program", angka(progT.n)), isiHtml: progT.html, csv: false, sumber: sumberRingkas })
     + seksi({ id: "regulasi", ik: "regulasi", topik: t("pf.ey.regulasi"), judulHtml: hlHtml("pf.j.regulasi", angka(regs.length)), isiHtml: tabelRegulasi(regs), csv: true, sumber: esc(t("pf.sumber_data", { tanggal: ringkasTgl(reg.dibangun_pada) })) })
-    + ber.html + pen.html + rl.html + terkait
+    + ris.html + kb.html + dataBaru + ber.html + pen.html + rl.html + terkait
     + `</div>`;
   pasangRingkas(akar, o);
-  pro.pasang(akar); ber.pasang(akar); pen.pasang(akar); rl.pasang(akar);
+  pro.pasang(akar); ber.pasang(akar); pen.pasang(akar); kb.pasang(akar); rl.pasang(akar);
   pasangIkuti(akar); muatPembaruan("organisasi", id, akar.querySelector(".pf-bagian"));
   pasangLogoCadangan(akar);
   petaTitik(document.getElementById("pfPeta"), tampilProyek, {});

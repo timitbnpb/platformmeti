@@ -64,6 +64,7 @@ export const MATRIKS = {
   sesi_admin:      ["-", "-", "-", "-", "-", "T cabut", "T cabut"], // 8 Nov 2026: daftar semua sesi aktif + cabut per sesi + riwayat gagal masuk + matriks hak (tab Keamanan); admin tak mencabut sesi super (dijaga fungsi)
   surel_minta:     ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 8 Nov 2026: permintaan alamat @metiires.or.id; ajukan/lihat miliknya = akun masuk; antrean + putusan hanya admin, super (dijaga gerbangAdm)
   konsultasi_putus: ["-", "-", "T", "T", "-", "T", "T"], // moderasi + keputusan + kelola naskah: pengurus, kurator, admin, super
+  keyakinan:       ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 8 Nov 2026: survei triwulanan keyakinan bisnis EBT; akun masuk menjawab/membaca agregat (n >= 5); jawaban satu per akun per periode
 };
 export const AKSI = ["baca", "tambah", "ubah", "hapus", "kirim", "cabut", "tinjau", "hapus_keras"];
 
@@ -2641,5 +2642,68 @@ export async function surelPutus(env, akun, id, aksi, { alamat = null, catatan =
       if (/UNIQUE/i.test(String(e?.message) + String(e?.cause?.message))) return { terpakai: true };
       throw terjemah(e);
     }
+  });
+}
+
+/* ===================== Indeks keyakinan bisnis EBT (0031_keyakinan.sql) ===================== */
+export const BUTIR_KEYAKINAN = ["kondisi", "pipeline", "pembiayaan", "perizinan", "harga", "regulasi", "investasi", "tenaga"];
+export const N_MIN_KEYAKINAN = 5; // privasi: agregat sebuah periode tidak keluar bila penjawabnya kurang dari ini
+const gKeyakinan = (akun, aksi) => { const r = boleh(akun?.peran, aksi, "keyakinan", undefined, akun); if (!r.ok) throw tolak(r.alasan); };
+/** Murni: periode 'YYYY-Qn' menurut WIB (UTC+7). */
+export function periodeKeyakinan(waktuMs = Date.now()) {
+  const d = new Date(waktuMs + 7 * 3600 * 1000);
+  return `${d.getUTCFullYear()}-Q${Math.floor(d.getUTCMonth() / 3) + 1}`;
+}
+/** Murni: baris { periode, n, rata: {butir: rata 1-5} } -> { periode, n, tersembunyi } atau + { butir: {butir: indeks 0-100}, indeks }. n < N_MIN: nilai TIDAK ikut. Indeks butir = (rata - 1) * 25 (50 = netral). */
+export function indeksKeyakinan(baris) {
+  return baris.map((b) => {
+    if (b.n < N_MIN_KEYAKINAN) return { periode: b.periode, n: b.n, tersembunyi: true };
+    const butir = Object.fromEntries(BUTIR_KEYAKINAN.map((k) => [k, Math.round((b.rata[k] - 1) * 250) / 10]));
+    return { periode: b.periode, n: b.n, tersembunyi: false, butir, indeks: Math.round((Object.values(butir).reduce((a, x) => a + x, 0) / BUTIR_KEYAKINAN.length) * 10) / 10 };
+  });
+}
+/** Murni: { kondisi: 1..5, ... } semua delapan butir bulat 1-5, tanpa kunci lain; selain itu galat 422. */
+export function periksaJawabanKeyakinan(d) {
+  if (!d || typeof d !== "object" || Array.isArray(d)) throw salah("jawaban tidak sah");
+  const kunci = Object.keys(d);
+  if (kunci.length !== BUTIR_KEYAKINAN.length || kunci.some((k) => !BUTIR_KEYAKINAN.includes(k))) throw salah("butir tidak sah");
+  for (const k of BUTIR_KEYAKINAN) if (!Number.isInteger(d[k]) || d[k] < 1 || d[k] > 5) throw salah("nilai butir tidak sah");
+  return d;
+}
+const KOL_KEYAKINAN = BUTIR_KEYAKINAN.map((k) => "k_" + k);
+
+// Jawaban akun ini pada periode berjalan (atau null) + periode. null (bukan objek) = tabel belum dimigrasi.
+export async function keyakinanSaya(env, akun, periode = periodeKeyakinan()) {
+  gKeyakinan(akun, "baca");
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare(`SELECT ${KOL_KEYAKINAN.join(", ")}, diubah FROM keyakinan_jawab WHERE akun_id = ? AND periode = ?`).bind(akun.id, periode).first();
+    return { periode, jawaban: r ? { ...Object.fromEntries(BUTIR_KEYAKINAN.map((k) => [k, r["k_" + k]])), diubah: r.diubah } : null };
+  });
+}
+
+// Simpan/ubah jawaban periode BERJALAN (periode dari server, bukan klien): satu baris per (akun, periode), upsert + jejak (hanya periode, bukan nilai).
+export async function keyakinanJawab(env, akun, d, periode = periodeKeyakinan()) {
+  gKeyakinan(akun, "tambah");
+  periksaJawabanKeyakinan(d);
+  return tanpaTabel(async () => {
+    try {
+      const nilai = BUTIR_KEYAKINAN.map((k) => d[k]);
+      await env.DB.batch([
+        env.DB.prepare(`INSERT INTO keyakinan_jawab (akun_id, periode, ${KOL_KEYAKINAN.join(", ")}) VALUES (?, ?, ${KOL_KEYAKINAN.map(() => "?").join(", ")})
+          ON CONFLICT (akun_id, periode) DO UPDATE SET ${KOL_KEYAKINAN.map((c) => `${c} = excluded.${c}`).join(", ")}, diubah = unixepoch()`).bind(akun.id, periode, ...nilai),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, 'kirim', 'keyakinan_jawab', ?, ?)")
+          .bind(akun.id, akun.peran, periode, JSON.stringify({ ringkas: "jawab keyakinan " + periode })),
+      ]);
+      return { periode };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+// Agregat per periode (8 terakhir). Periode dengan n < N_MIN_KEYAKINAN hanya mengembalikan n (tanpa nilai); penyaringan di SINI, bukan di klien.
+export async function keyakinanAgregat(env, akun) {
+  gKeyakinan(akun, "baca");
+  return tanpaTabel(async () => {
+    const rs = (await env.DB.prepare(`SELECT periode, COUNT(*) AS n, ${KOL_KEYAKINAN.map((c) => `AVG(${c}) AS ${c}`).join(", ")} FROM keyakinan_jawab GROUP BY periode ORDER BY periode DESC LIMIT 8`).all()).results;
+    return indeksKeyakinan(rs.map((r) => ({ periode: r.periode, n: r.n, rata: Object.fromEntries(BUTIR_KEYAKINAN.map((k) => [k, r["k_" + k]])) })));
   });
 }

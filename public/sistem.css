@@ -1,0 +1,36 @@
+/* /sistem dan /sistem/<id>: warna jenis pembangkit dan komponen halaman. Token tema.css saja. */
+.sp-t-batubara{background:var(--tp-karbon)}.sp-t-gas{background:var(--tp-listrik)}.sp-t-diesel{background:var(--tp-biaya)}.sp-t-lain{background:var(--tp-industri)}
+.sp-t-hidro{background:var(--tp-hidro)}.sp-t-bayu{background:var(--tp-bayu)}.sp-t-bioenergi{background:var(--tp-bio)}.sp-t-panas-bumi{background:var(--tp-panas)}
+.sp-t-surya{background:var(--tp-surya)}.sp-t-penyimpanan{background:var(--tp-simpan)}.sp-t-nuklir{background:var(--tp-nuklir)}.sp-t-biomassa-sampah{background:var(--tp-sampah)}
+.sp-lg{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 12px;padding:0;list-style:none;color:var(--ink2);font-size:var(--t-kecil)}
+.sp-lg li{display:inline-flex;align-items:center;gap:6px}
+.sp-lg i{width:14px;height:14px;border-radius:3px;display:inline-block}
+.sp-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:var(--gap)}
+.sp-grid2>div{min-width:0}
+.sp-kartu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:12px;margin:0;padding:0;list-style:none}
+.sp-kartu>li{display:grid;gap:8px;align-content:start;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);min-width:0}
+.sp-kartu h3{margin:0;font-size:var(--t-body);color:var(--head)}
+.sp-kartu p{margin:0;color:var(--ink2);font-size:var(--t-kecil)}
+.sp-kartu a.sp-nama{color:var(--head);font-weight:600;text-decoration:none}
+.sp-kartu a.sp-nama:hover{text-decoration:underline}
+.sp-baris{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.sp-prov{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.sp-prov a{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);text-decoration:none;font-size:var(--t-kecil)}
+.sp-prov a:hover{border-color:var(--brand)}
+.sp-prov img{object-fit:contain}
+.sp-sumber{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.sp-sumber li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px;align-items:start;color:var(--ink2)}
+.sp-sumber li>svg{margin-top:2px;color:var(--accent)}
+.sp-sumber small{color:var(--ink2)}
+.sp-celah{margin:0;padding:0;list-style:none;display:grid;gap:8px;color:var(--ink2)}
+.sp-celah li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px;align-items:start}
+.sp-celah li>svg{margin-top:2px;color:var(--accent)}
+.sp-teknis{display:inline-flex;align-items:center;gap:6px}
+.sp-teknis i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.sp-bc{margin:0 0 8px;font-size:var(--t-kecil)}
+.sp-bc a{color:var(--ink2)}
+.kw-pil{display:flex;flex-wrap:wrap;gap:6px}
+.jm-seg>button{border:1px solid var(--line-ctl);border-radius:var(--r);background:var(--card);color:var(--ink);font:inherit;font-size:var(--t-kecil);cursor:pointer}
+.jm-seg>button:hover{border-color:var(--accent)}
+.jm-seg>button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.dp-fr{margin-bottom:12px}

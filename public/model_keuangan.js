@@ -10,7 +10,7 @@ import { aksiHtml } from "/inti/aksi_ex.js";
 import { buktiHtml } from "/inti/bukti.js";
 import { muatData, sumberLipat, pil, saatBahasa } from "/analisis.js";
 import { hitungModel, tornado, skenario } from "/inti/model_keuangan_rumus.js";
-import { TEK, BISNIS, bawaan, keParam } from "/model_keuangan_data.js";
+import { TEK, BISNIS, SKALA, bawaan, keParam } from "/model_keuangan_data.js";
 
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
@@ -26,7 +26,9 @@ const DESIMAL = { mw: 3, capexUsdKw: 0, opexUsdKwThn: 1, fk: 1, degr: 2, eskOpex
 const SATUAN = { mw: "MW", capexUsdKw: "USD/kW", opexUsdKwThn: "USD/kW", kurs: "Rp/USD", tarif: "Rp/kWh", tarifTahun2: "Rp/kWh", sewaRpKwp: "Rp/kWp", recRpMwh: "Rp/MWh", karbonRpT: "Rp/tCO2e", emisiTMwh: "tCO2e/MWh" };
 const SATUAN_T = new Set(["umur", "gantiTahun", "tarifGanti", "tenor", "libur", "susut"]);
 const PERSEN = new Set(["eskOpex", "gantiPersen", "fk", "degr", "eskTarif", "porsiBayar", "utang", "bunga", "pajak", "ppnPorsi", "diskonto"]);
-const S = { tek: "surya-atap-rumah", bis: "netmeter", prov: "31", lok: 1, acuan: null, gol: "", bpp: "", grid: "jawa-bali", v: {}, sum: {}, diubah: new Set(), wT: 20, wS: 10, ppnDtp: false };
+const S = { tek: "surya-atap-rumah", skala: "plts-atap-rumah", bis: "netmeter", prov: "31", lok: 1, acuan: null, gol: "", bpp: "", grid: "jawa-bali", v: {}, sum: {}, diubah: new Set(), wT: 20, wS: 10, ppnDtp: false };
+/* ?tek=<id model | teknologi patokan>: dari halaman teknologi/profil; id tak dikenal diabaikan */
+{ const q = new URLSearchParams(location.search).get("tek"), x = q && (TEK.find((e) => e.id === q) || TEK.find((e) => e.patokan === q)); if (x) { S.tek = x.id; S.skala = (SKALA[x.id] || [])[0] || ""; S.bis = x.bisnis[0]; } }
 const D = {};
 let hasil = null;
 
@@ -59,7 +61,7 @@ function konteks() {
   const bpp = D.listrik.bpp_sistem.find((b) => b.kunci === S.bpp) || D.listrik.bpp_sistem[0];
   const thBpp = Object.keys(bpp.rp_kwh).sort().at(-1);
   const lok = D.peluang.harga_patokan.faktor_lokasi[S.lok] || D.peluang.harga_patokan.faktor_lokasi[0];
-  return { tek, peluang: D.peluang, atap: D.atap, bangun: D.bangun, karbon: D.karbon, prov: tek.surya ? prov?.pvout_kwh_per_kwp_tahun : null, faktorLokasi: lok.F, grid: S.grid,
+  return { tek, skalaRow: D.bangun?.skala?.find((r) => r.id === S.skala) || null, peluang: D.peluang, atap: D.atap, bangun: D.bangun, karbon: D.karbon, prov: tek.surya ? prov?.pvout_kwh_per_kwp_tahun : null, faktorLokasi: lok.F, grid: S.grid,
     tarifPln: { tarif: gol.tarif_idr_per_kwh, bukti: "media", tanggal: gol.berlaku_sejak }, bppSistem: { tarif: bpp.rp_kwh[thBpp], tahun: thBpp, tanggal: D.listrik.dibangun_pada }, acuanPilih: S.acuan };
 }
 function terap({ simpan = true } = {}) {
@@ -76,6 +78,7 @@ const opsiBis = () => Object.entries(BISNIS).map(([k, i]) => [k, t("mk.bis." + k
 const kontrolHtml = () => `<div class="jm-saring mk-saring">
   ${pilihHtml({ id: "mkTek", ikon: "tek:surya", label: t("mk.tek"), opsi: opsiTek(), nilai: S.tek })}
   ${pilihHtml({ id: "mkBis", ikon: "transaksi", label: t("mk.bisnis"), opsi: opsiBis(), nilai: S.bis })}
+  <span id="mkSkalaW">${skalaPilih()}</span>
   <span id="mkProvW">${pilihHtml({ id: "mkProv", ikon: "peta", label: t("mk.prov"), opsi: D.atap.provinsi.map((p) => [p.kode, p.provinsi, "prov:" + p.kode]), nilai: S.prov })}</span>
   ${pilihHtml({ id: "mkAcuan", ikon: "tag", label: t("mk.acuan"), opsi: ["perpres", "pln", "bpp", "manual"].map((a) => [a, t("mk.acuan." + a), { perpres: "regulasi", pln: "petir", bpp: "tabel", manual: "ubah" }[a]]), nilai: S.acuan || "manual" })}
   <span id="mkLokW">${pilihHtml({ id: "mkLok", ikon: "lokasi", label: t("mk.lokasi"), opsi: D.peluang.harga_patokan.faktor_lokasi.map((l, i) => [i, `${l.wilayah} (F ${N(l.F, 2)})`]), nilai: S.lok })}</span>
@@ -84,10 +87,15 @@ const kontrolHtml = () => `<div class="jm-saring mk-saring">
   ${pilihHtml({ id: "mkGrid", ikon: "air-energi", label: t("mk.grid"), opsi: D.karbon.faktor_emisi.grid_est.map((g) => [g.id, `${g.nama} (${N(g.intensitas_t_per_mwh, 2)})`]), nilai: S.grid })}
 </div>`;
 function gambarAcuan() {
+  const adaSkala = (SKALA[S.tek] || []).length > 0 && !!D.bangun;
+  $("mkSkalaW").hidden = !adaSkala; $("mkTanpa").hidden = S.v.capexUsdKw !== null && S.v.capexUsdKw !== undefined;
   const a = S.acuan, tek = TEK.find((x) => x.id === S.tek);
   $("mkProvW").hidden = !tek.surya; $("mkLokW").hidden = a !== "perpres"; $("mkGolW").hidden = a !== "pln"; $("mkBppW").hidden = a !== "bpp";
   const sel = $("mkAcuan"); if (sel && sel.value !== a) { sel.value = a; }
 }
+
+const skalaPilih = () => pilihHtml({ id: "mkSkala", ikon: "tabel", label: t("mk.skala"), opsi: (SKALA[S.tek] || []).map((id) => { const r = D.bangun?.skala?.find((x) => x.id === id); return r ? [id, r.nama, { indonesia: "img:/img/bendera/id.svg", proyek: "proyek", pembanding: "globe" }[r.kelas] || "globe", "", "", r.nama] : null; }).filter(Boolean), nilai: S.skala });
+const rangkaSkala = () => { $("mkSkalaW").innerHTML = skalaPilih(); };
 
 const medan = (k) => {
   const ada = S.v[k] !== undefined, s = S.sum[k];
@@ -99,7 +107,7 @@ const medan = (k) => {
 function sumberKolom(k, s) {
   if (S.diubah.has(k)) return `<span class="jm-pil jm-pil-warn">${esc(t("mk.diubah"))}</span>`;
   if (!s) return `<span class="jm-pil jm-pil-warn">${esc(t("mk.isi_sendiri"))}</span>`;
-  return `${buktiHtml(s.bukti, { sumber: t(s.sumber), tanggal: s.tanggal || "" })}<span class="mk-sk">${esc(t(s.sumber))}</span>`;
+  return `${buktiHtml(s.bukti, { sumber: s.teks || t(s.sumber), tanggal: s.tanggal || "" })}<span class="mk-sk">${esc(s.teks || t(s.sumber))}</span>`;
 }
 function isiKolom() {
   for (const [, , ks] of GRUP) for (const k of ks) {
@@ -175,9 +183,9 @@ function chartHtml(b, umur) {
   const kolW = (W - L - R) / (n - 1);
   b.forEach((x, i) => {
     g += `<circle class="mk-t1" cx="${X(i).toFixed(1)}" cy="${Y(x.kumProyek).toFixed(1)}" r="3"/><circle class="mk-t2" cx="${X(i).toFixed(1)}" cy="${Y(x.kumEkuitas).toFixed(1)}" r="3"/>`;
-    g += `<rect class="mk-hit" x="${(X(i) - kolW / 2).toFixed(1)}" y="${T}" width="${kolW.toFixed(1)}" height="${H - T - B}"><title>${esc(t("mk.tip.tahun", { n: x.tahun }))}: ${esc(t("mk.g.proyek"))} ${esc(rp(x.kumProyek))}; ${esc(t("mk.g.ekuitas"))} ${esc(rp(x.kumEkuitas))}</title></rect>`;
+    g += `<rect class="mk-hit" x="${(X(i) - kolW / 2).toFixed(1)}" y="${T}" width="${kolW.toFixed(1)}" height="${H - T - B}"><title>${esc(t("mk.tip.tahun", { n: x.tahun }))}: ${esc(t("mk.lg.proyek"))} ${esc(rp(x.kumProyek))}; ${esc(t("mk.lg.ekuitas"))} ${esc(rp(x.kumEkuitas))}</title></rect>`;
   });
-  const leg = `<ul class="mk-leg"><li><i class="mk-sw1"></i>${esc(t("mk.g.proyek"))}</li><li><i class="mk-sw2"></i>${esc(t("mk.g.ekuitas"))}</li></ul>`;
+  const leg = `<ul class="mk-leg"><li><i class="mk-sw1"></i>${esc(t("mk.lg.proyek"))}</li><li><i class="mk-sw2"></i>${esc(t("mk.lg.ekuitas"))}</li></ul>`;
   return exHtml({ id: "mk-grafik", ikon: "grafik", topik: t("mk.gr.ey"), judulHtml: esc(t("mk.gr.j", { n: umur })), subHtml: esc(t("mk.gr.s")) + " " + pil("an.est"),
     isiHtml: `${leg}<div class="mk-svgw"><svg class="jm-gx mk-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("mk.gr.label"))}" focusable="false">${g}</svg></div>` });
 }
@@ -219,7 +227,7 @@ function rangka() {
   ]);
   $("mkIsi").innerHTML = exHtml({ id: "mk-asumsi", ikon: "kalkulator", topik: t("mk.as.ey"), judulHtml: esc(t("mk.as.j")), subHtml: esc(t("mk.as.s")) + " " + pil("an.hipotesis"),
     aksiHtml: `<a class="jm-tbl jm-tbl-kecil" href="/metode#model-keuangan">${ikon("metode", 16)}<span>${esc(t("mk.metode"))}</span></a><button type="button" class="jm-tbl jm-tbl-kecil" id="mkReset">${ikon("balik", 16)}<span>${esc(t("mk.reset"))}</span></button>`,
-    isiHtml: `${kontrolHtml()}<div class="mk-grup">${GRUP.map(([g, ik, ks]) => `<section class="mk-g"><h3 class="mk-gh">${ikon(ik, 16)}<span>${esc(t("mk.g." + g))}</span></h3><div class="mk-gb">${ks.map(medan).join("")}${g === "pajak" ? `<label class="mk-cb" for="mkDtp"><input type="checkbox" id="mkDtp"><span>${esc(t("mk.dtp"))}</span></label>` : ""}</div></section>`).join("")}</div>${sumber}` })
+    isiHtml: `${kontrolHtml()}<p class="jm-bantu mk-tanpa" id="mkTanpa" hidden>${ikon("info", 16)}<span>${esc(t("mk.tanpa_asumsi"))}</span></p><div class="mk-grup">${GRUP.map(([g, ik, ks]) => `<section class="mk-g"><h3 class="mk-gh">${ikon(ik, 16)}<span>${esc(t("mk.g." + g))}</span></h3><div class="mk-gb">${ks.map(medan).join("")}${g === "pajak" ? `<label class="mk-cb" for="mkDtp"><input type="checkbox" id="mkDtp"><span>${esc(t("mk.dtp"))}</span></label>` : ""}</div></section>`).join("")}</div>${sumber}` })
     + `<div id="mkHasil" aria-live="polite">${hantuHtml(4)}</div>`
     + exHtml({ id: "mk-cara", ikon: "metode", topik: t("mk.cara.ey"), judulHtml: esc(t("mk.cara.j")), subHtml: pil("an.hipotesis"),
       isiHtml: `<ol class="mk-cara">${[1, 2, 3, 4, 5].map((i) => `<li>${esc(t("mk.cara" + i))}</li>`).join("")}</ol><p><a class="jm-tbl jm-tbl-kecil" href="/metode#model-keuangan">${ikon("tautan", 16)}<span>${esc(t("mk.metode"))}</span></a></p>` });
@@ -242,10 +250,11 @@ function pasang() {
     const el = e.target, k = el.dataset.k;
     if (k) { el.value = S.v[k] === null || S.v[k] === undefined ? "" : tampilNilai(k, S.v[k]); return; }
     if (el.id === "mkDtp") { S.ppnDtp = el.checked; S.v.ppnDtp = el.checked; return tunda(); }
-    const peta = { mkTek: ["tek", true], mkBis: ["bis", true], mkProv: ["prov"], mkLok: ["lok"], mkGol: ["gol"], mkBpp: ["bpp"], mkGrid: ["grid"], mkAcuan: ["acuan"] }[el.id];
+    const peta = { mkSkala: ["skala", true], mkTek: ["tek", true], mkBis: ["bis", true], mkProv: ["prov"], mkLok: ["lok"], mkGol: ["gol"], mkBpp: ["bpp"], mkGrid: ["grid"], mkAcuan: ["acuan"] }[el.id];
     if (!peta) return;
     S[peta[0]] = el.id === "mkLok" ? +el.value : el.value;
-    if (el.id === "mkTek") { S.bis = TEK.find((x) => x.id === S.tek).bisnis[0]; S.acuan = null; S.diubah.clear(); const b = $("mkBis"); b.value = S.bis; }
+    if (el.id === "mkSkala") S.diubah.clear();
+    if (el.id === "mkTek") { S.skala = (SKALA[S.tek] || [])[0] || ""; rangkaSkala(); S.bis = TEK.find((x) => x.id === S.tek).bisnis[0]; S.acuan = null; S.diubah.clear(); const b = $("mkBis"); b.value = S.bis; }
     if (el.id === "mkBis") { S.acuan = null; S.diubah.delete("tarif"); S.diubah.delete("tarifTahun2"); S.diubah.delete("porsiBayar"); }
     if (el.id === "mkAcuan") { S.diubah.delete("tarif"); S.diubah.delete("tarifTahun2"); }
     terap({ simpan: true }); tunda();

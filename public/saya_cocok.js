@@ -7,7 +7,7 @@ export const SASARAN_KATEGORI = {
   pemda: ["pemerintah daerah", "pemerintah", "BUMD"], "kementerian-lembaga": ["pemerintah", "kementerian"],
   "perguruan-tinggi": ["perguruan tinggi", "lembaga riset", "peneliti", "dosen"], "think-tank": ["lembaga riset", "peneliti"],
   "lsm-yayasan": ["LSM", "masyarakat"], koperasi: ["masyarakat", "pelaku usaha"], asosiasi: ["pelaku usaha", "industri"],
-  keuangan: ["lembaga keuangan", "investor"], ormawa: ["masyarakat"], donor: [], internasional: [],
+  keuangan: ["lembaga keuangan", "investor"], ormawa: ["masyarakat"], donor: [], internasional: [], global: [],
 };
 // Kepakaran/sektor (slug data) -> id topik (public/data/topik/indeks.json). Slug tanpa topik tidak muncul di saran topik.
 export const KEPAKARAN_TOPIK = {

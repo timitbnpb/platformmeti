@@ -72,3 +72,6 @@
 .tkp-brt .tkp-pils{justify-content:flex-start;padding:0 14px}
 .tkp-md{display:flex;align-items:center;gap:6px;padding:0 14px 14px;font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
 .tkp-md img{width:16px;height:16px;object-fit:contain;border-radius:3px}
+.jm-tk-telusur{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:12px}
+.jm-tk-telusur li{display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card)}
+.jm-tk-telusur a{color:var(--accent);font-weight:600;text-decoration:none}

@@ -1,0 +1,3329 @@
+{
+ "sumber": "Wikidata (CC0), Wikipedia (CC BY-SA), beranda resmi perusahaan",
+ "diambil": "2026-11-08",
+ "lisensi": "Wikidata CC0; kalimat Wikipedia dikutip singkat dengan tautan",
+ "baris": [
+  {
+   "nama": "ACWA Power",
+   "situs": "https://acwapower.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidrogen"
+   ],
+   "iso2_seed": "SA",
+   "wikidata": {
+    "id": "Q20850809",
+    "cocok": "situs",
+    "label": "ACWA Power",
+    "deskripsi": "Saudi power and water utility company",
+    "situs": "http://acwapower.com/",
+    "tahun_berdiri": 2002,
+    "enwiki": "ACWA Power",
+    "logo_berkas": "ACWA Power logo.png",
+    "iso2": [
+     "SA"
+    ]
+   },
+   "wikipedia": {
+    "judul": "ACWA Power",
+    "url": "https://en.wikipedia.org/wiki/ACWA_Power",
+    "indonesia": [],
+    "portofolio": [
+     "Acwa (formerly ACWA Power) is a developer, investor, co-owner and operator of a portfolio of power generation and desalinated water production plants with a presence in 14 countries across the Middle East, Africa, and Central and Southeast Asia.",
+     "Acwa's portfolio of projects in operation and development has an investment value of USD 107.5 billion, and a capacity of 78.85 GW of power and produces 9.5 million m3 /day of desalinated water."
+    ],
+    "komitmen": [
+     "The Dubai Electricity and Water Authority (DEWA) signed a Power Purchase Agreement and a Shareholder Agreement with ACWA Power in March 2015 for the 200MW expansion."
+    ]
+   },
+   "beranda": {
+    "judul": "Acwa | Home",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_56f46fd9dd.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:ACWA_Power_logo.png"
+   }
+  },
+  {
+   "nama": "Masdar",
+   "situs": "https://masdar.ae/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidrogen"
+   ],
+   "iso2_seed": "AE",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Masdar | The Power of Next",
+    "deskripsi": "Masdar is one of the world’s fastest growing renewable energy companies and a green hydrogen leader, placing the UAE at the forefront of the energy transformation.",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "ENGIE",
+   "situs": "https://www.engie.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "panas-bumi",
+    "hidrogen"
+   ],
+   "iso2_seed": "FR",
+   "wikidata": {
+    "id": "Q13416787",
+    "cocok": "situs",
+    "label": "Engie",
+    "deskripsi": "French multinational energy company",
+    "situs": "https://www.engie.com",
+    "tahun_berdiri": 2008,
+    "enwiki": "Engie",
+    "logo_berkas": "Logo-engie.svg",
+    "iso2": [
+     "FR"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Engie",
+    "url": "https://en.wikipedia.org/wiki/Engie",
+    "indonesia": [
+     "In February 2016, Engie announced the selling of its stakes in the Paiton power plant located in Indonesia and in the Meenakshi power plant located in India.",
+     "Engie built its first international geothermal power generation plant in Indonesia."
+    ],
+    "portofolio": [
+     "In December 2010, GDF SUEZ became the key founding member of the 'Medgrid' company – a consortium of twenty plus utilities, grid operators, equipment makers, financing institutions and investors; which will implement the Medgrid project, a French renewable energy initiative within the framework of the Union for the Mediterranean (UfM).",
+     "The project, planned in North Africa, aims to promote and develop a Euro-Mediterranean electricity network of 20GW installed generating capacity, with 5GW being devoted for exports to Europe."
+    ],
+    "komitmen": [
+     "Despite the company's commitment to diversification, the majority of its primary activities still revolve around fossil fuels. == History == === Background (before 2006) === Prior to the GDF Suez merger plans in 2006, the company existed as two separate French multinational corporations – Suez S.A. and Gaz de France.",
+     "Engie also committed the Neptune, one of the two FSRU (floating storage and regasification units) of its fleet, to deliver LNG to the first floating LNG import terminal in Turkey."
+    ]
+   },
+   "beranda": {
+    "judul": "Agir pour la transition énergétique - ENGIE",
+    "deskripsi": "Rejoignez ENGIE dans la transition énergétique avec des solutions fiables et abordables. Découvrez nos activités et actualités.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_d9897300a3.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Logo-engie.svg"
+   }
+  },
+  {
+   "nama": "EDF",
+   "situs": "https://www.edf.fr/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidro"
+   ],
+   "iso2_seed": "FR",
+   "wikidata": {
+    "id": "Q274591",
+    "cocok": "situs",
+    "deskripsi": "French multinational electric utility company",
+    "situs": "https://www.edf.fr/",
+    "tahun_berdiri": 1946,
+    "enwiki": "Électricité de France",
+    "logo_berkas": "Électricité de France logo.svg",
+    "iso2": [
+     "FR"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Électricité de France",
+    "url": "https://en.wikipedia.org/wiki/%C3%89lectricit%C3%A9_de_France",
+    "indonesia": [],
+    "portofolio": [
+     "Headquartered in Paris, with €139.7 billion in sales in 2023, EDF operates a diverse portfolio of at least 120 gigawatts of generation capacity in Europe, South America, North America, Asia, the Middle East, and Africa.",
+     "In July 2025, EDF withdrew from bidding on new nuclear projects abroad, other than in nearby EU countries, to concentrate on a future large domestic construction programme. ==== Distribution network (RTE and Enedis) ==== The electricity network in France is composed of the following: a high- and very-high-voltage transmission system (100,000 km; 60,000 miles of lines)."
+    ],
+    "komitmen": [
+     "The French government committed to purchasing €3bn of the rights issue.",
+     "EDF is committed to spending €49.4 billion by 2025 for life extension of its French nuclear reactor fleet, which as of 2019 has an average age of 33 years, to 50 years."
+    ]
+   },
+   "beranda": {
+    "judul": "EDF France | Groupe EDF",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_1013b67428.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:%C3%89lectricit%C3%A9_de_France_logo.svg"
+   }
+  },
+  {
+   "nama": "Sembcorp Industries",
+   "situs": "https://www.sembcorp.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "SG",
+   "wikidata": {
+    "id": "Q60788291",
+    "cocok": "situs",
+    "label": "Sembcorp",
+    "deskripsi": "Energy and urban development company in Singapore",
+    "situs": "http://www.sembcorp.com/",
+    "tahun_berdiri": null,
+    "enwiki": "Sembcorp",
+    "logo_berkas": null,
+    "iso2": [
+     "SG"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Sembcorp",
+    "url": "https://en.wikipedia.org/wiki/Sembcorp",
+    "indonesia": [
+     "The merger also saw SembCorp Industries assuming one of Asia's leading industrial park developers and managers, with jurisdiction of industrial parks in Indonesia, China and Vietnam.",
+     "Sembcorp is now developing the Kendal Industrial Park in Central Java. === Australia === In December 2025, it was announced Sembcorp  would acquire Australian energy company Alinta Energy from Hong Kong-based Chow Tai Fook Enterprises for an enterprise value of A$6.5 billion."
+    ],
+    "portofolio": [
+     "Sembcorp currently has an energy portfolio of over 12,600MW, with more than 2,600MW of renewable energy capacity globally.",
+     "The same year also saw the diversification of Sembawang Shipyard Ltd into civil projects, with the firm securing the contract for the construction of Newton Circus MRT station and civil defence station (Newton MRT Station) through a joint venture with French company Dragages et Travaux Publics, valued at S$43 million."
+    ],
+    "komitmen": [
+     "In November 2023, Sembcorp announced it would acquire 200 MW of operational wind power assets from Qinzhou Yuanneng for S$130 million. === India === Despite their commitment to renewable energy in China and Singapore, Sembcorp constructed a 1,320-megawatt supercritical coal-fired power plant in Andhra Pradesh."
+    ]
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Gentari",
+   "situs": "https://gentari.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidrogen"
+   ],
+   "iso2_seed": "MY",
+   "wikidata": {
+    "id": "Q123457836",
+    "cocok": "situs",
+    "label": "Gentari",
+    "deskripsi": "Malay power investor",
+    "situs": "https://www.gentari.com/",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": []
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Gentari &#x2013; Putting Clean Energy into Action",
+    "deskripsi": "Gentari is a global clean energy company focusing on renewable energy, hydrogen and green mobility solutions to help clients achieve their decarbonisation goals.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_e966348c26.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://gentari.com/images/webclip.png"
+   }
+  },
+  {
+   "nama": "TotalEnergies",
+   "situs": "https://totalenergies.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "FR",
+   "wikidata": {
+    "id": "Q154037",
+    "cocok": "situs",
+    "label": "TotalEnergies",
+    "deskripsi": "French multinational energy and petroleum company",
+    "situs": "https://www.total.com/",
+    "tahun_berdiri": 1924,
+    "enwiki": "TotalEnergies",
+    "logo_berkas": "Total wordmark (2003-2021).svg",
+    "iso2": [
+     "FR"
+    ]
+   },
+   "wikipedia": {
+    "judul": "TotalEnergies",
+    "url": "https://en.wikipedia.org/wiki/TotalEnergies",
+    "indonesia": [
+     "Valued at $2.2 billion, the Joint venture functions as an exclusive platform for both companies to develop, build, own, and operate onshore renewable energy projects in nine key Asian markets, including South Korea, Japan, Indonesia, and Azerbaijan."
+    ],
+    "portofolio": [
+     "This purchase gave Total refining capacity, transportation, and a network of 350 service stations in 20 states. === 1985–2003: Total CFP and rebranding to Total === The company renamed itself Total CFP in 1985, to build on the popularity of its gasoline brand.",
+     "In 2006, Saudi Aramco and Total signed a memorandum of understanding to develop the Jubail Refinery and Petrochemical project in Saudi Arabia which targeted 400,000 barrels per day (bpd)."
+    ],
+    "komitmen": [
+     "TotalEnergies has agreed to buy liquefied natural gas from Qatar for 27 years, cementing the European nation's commitment to fossil fuels beyond 2050."
+    ]
+   },
+   "beranda": {
+    "judul": "TotalEnergies - integrated multi-energy company | TotalEnergies.com",
+    "deskripsi": "TotalEnergies is a global integrated energy company that produces and markets energies: oil and biofuels, natural gas and green gases, renewables and electricity.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_6802e366e5.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Total_wordmark_(2003-2021).svg"
+   }
+  },
+  {
+   "nama": "Total Eren",
+   "situs": "https://total-eren.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidro"
+   ],
+   "iso2_seed": "FR",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "ALEXISTOGEL : Rahasia Sukses Situs Togel Online Resmi Terpercaya & Data Toto From Macau Langkah Efisien",
+    "deskripsi": "ALEXISTOGEL menyediakan rahasia sukses akses situs togel online resmi dengan informasi Data terbaru Toto dari Macau Langkah Efisien. Update Data Toto setiap hari, tampilan responsif, dan informasi transaksi dapat diakses hanya dengan 1 kali klik.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_9699f6cf4b.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://kilat.digital/images/2023/12/13/067a6dbaedf867ecca980a732729ed54.png"
+   }
+  },
+  {
+   "nama": "Orsted",
+   "situs": "https://orsted.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "bayu"
+   ],
+   "iso2_seed": "DK",
+   "wikidata": {
+    "id": "Q1241260",
+    "cocok": "situs",
+    "label": "Ørsted",
+    "deskripsi": "integrated energy company based in Fredericia, Denmark",
+    "situs": "http://www.dongenergy.com/",
+    "tahun_berdiri": 2006,
+    "enwiki": "Ørsted (company)",
+    "logo_berkas": "DONG Energy logo.svg",
+    "iso2": [
+     "DK"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Ørsted (company)",
+    "url": "https://en.wikipedia.org/wiki/%C3%98rsted_(company)",
+    "indonesia": [],
+    "portofolio": [
+     "As of January 2022, the company is the world's largest developer of offshore wind power by number of built offshore wind farms. Ørsted developed approximately 30% of the global offshore wind power installed capacity, excluding mainland China.",
+     "In 2002 Elsam had installed the 160 MW Horns Rev offshore wind farm, which was the first large-scale offshore wind farm in the world."
+    ],
+    "komitmen": [
+     "The company has a goal of net zero generation by 2025 and no carbon emissions by 2040."
+    ]
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_2c8a694f89.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:DONG_Energy_logo.svg"
+   }
+  },
+  {
+   "nama": "Marubeni",
+   "situs": "https://www.marubeni.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "panas-bumi"
+   ],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q553927",
+    "cocok": "situs",
+    "label": "Marubeni",
+    "deskripsi": "Japanese trading company",
+    "situs": "https://www.marubeni.com/",
+    "tahun_berdiri": 1949,
+    "enwiki": "Marubeni",
+    "logo_berkas": "Marubeni Logo.svg",
+    "iso2": [
+     "JP"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Marubeni",
+    "url": "https://en.wikipedia.org/wiki/Marubeni",
+    "indonesia": [
+     "Two years later, and just months after its final settlement in the Nigerian case, Marubeni was charged under the FCPA for bribing Indonesian officials in order to secure a $118 million power project contract for a joint venture between Marubeni and Alstom; it agreed to pay an $88 million fine in connection with this case."
+    ],
+    "portofolio": [
+     "Power Business & Infrastructure Group - Develops power plants, environmental plants, marine projects, industrial plants and transport infrastructure.",
+     "Projects include the Westermost Rough Wind Farm in the UK, FSRU and FPSO projects in South America, and operation of the G:link light rail in Australia."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Marubeni Corporation",
+    "deskripsi": "Marubeni is a major Japanese integrated trading and investment business conglomerate that handles products and provides services in a broad range of sectors.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_cf7ca55bc2.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Marubeni_Logo.svg"
+   }
+  },
+  {
+   "nama": "Sumitomo Corporation",
+   "situs": "https://www.sumitomocorp.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi",
+    "surya"
+   ],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q4050338",
+    "cocok": "situs",
+    "label": "Sumitomo Corporation of Americas",
+    "situs": "http://www.sumitomocorp.com/",
+    "tahun_berdiri": 1952,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": []
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Sumitomo Corporation",
+    "deskripsi": "Welcome to the official website of Sumitomo Corporation, a leading integrated trading company engaged in diverse businesses based on its global network.",
+    "indonesia": "https://www.sumitomocorp.com/id/asia-oceania/"
+   },
+   "logo": {
+    "berkas": "en_ab98cb9f04.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.sumitomocorp.com/common/images/apple-touch-icon.png"
+   }
+  },
+  {
+   "nama": "Mitsubishi Corporation",
+   "situs": "https://www.mitsubishicorp.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu",
+    "hidrogen"
+   ],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q650745",
+    "cocok": "situs",
+    "label": "Mitsubishi Corporation",
+    "deskripsi": "Japanese trading company",
+    "situs": "http://www.mitsubishicorp.com/",
+    "tahun_berdiri": 1918,
+    "enwiki": "Mitsubishi Corporation",
+    "logo_berkas": "Mitsubishi-Corporation-Logo.svg",
+    "iso2": [
+     "JP"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Mitsubishi Corporation",
+    "url": "https://en.wikipedia.org/wiki/Mitsubishi_Corporation",
+    "indonesia": [],
+    "portofolio": [
+     "Starting with an investment in a liquefied natural gas field in Brunei in 1968, Mitsubishi rapidly moved towards investing directly in projects and companies overseas, rather than simply trading products.",
+     "Today, Mitsubishi holds interests in numerous large energy, mining, chemical, and infrastructure projects abroad, which generate the bulk of the company's revenue."
+    ],
+    "komitmen": [
+     "Mitsubishi's first large-scale investment outside Japan was a liquefied natural gas project in Brunei, committed to in 1968."
+    ]
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_bfe3751b62.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Mitsubishi-Corporation-Logo.svg"
+   }
+  },
+  {
+   "nama": "Kansai Electric Power",
+   "situs": "https://www.kepco.co.jp/",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi",
+    "hidro"
+   ],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q1365015",
+    "cocok": "situs",
+    "label": "Kansai Electric Power Company",
+    "deskripsi": "Japanese company",
+    "situs": "https://www.kepco.co.jp/",
+    "tahun_berdiri": 1951,
+    "enwiki": "Kansai Electric Power Company",
+    "logo_berkas": "KEPCO logo.png",
+    "iso2": [
+     "JP"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Kansai Electric Power Company",
+    "url": "https://en.wikipedia.org/wiki/Kansai_Electric_Power_Company",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_1b1a22881d.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:KEPCO_logo.png"
+   }
+  },
+  {
+   "nama": "JERA",
+   "situs": "https://www.jera.co.jp/",
+   "kelompok": "ipp",
+   "topik": [
+    "hidrogen",
+    "biomassa"
+   ],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q21013478",
+    "cocok": "situs",
+    "label": "JERA",
+    "deskripsi": "thermal power company in Japan",
+    "situs": "https://www.jera.co.jp/",
+    "tahun_berdiri": 2015,
+    "enwiki": "JERA",
+    "logo_berkas": null,
+    "iso2": [
+     "JP"
+    ]
+   },
+   "wikipedia": {
+    "judul": "JERA",
+    "url": "https://en.wikipedia.org/wiki/JERA",
+    "indonesia": [],
+    "portofolio": [
+     "The company assumed ownership and operation of all of Tokyo Electric and Chubu Electric thermal power stations, giving it a total output of approximately 67 GW (including capacity under construction), which made it Japan's largest power generation company.",
+     "Chubu Electric initially attempted to circumvent these regulations by building a new 650 MW coal-fired power generation facility on the premises of TEPCO's Hitachi Naka Thermal Power Station, with power generated by this plant to be sold by Tokyo Electric on its behalf."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "株式会社JERA",
+    "deskripsi": "JERAのホームページ。株式会社JERAは燃料上流・調達から発電までのサプライチェーン全体に係る事業を担う日本最大の発電会社です。",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Ormat Technologies",
+   "situs": "https://ormat.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q1549511",
+    "cocok": "situs",
+    "label": "Ormat Technologies",
+    "deskripsi": "Israeli American public energy company",
+    "situs": "http://www.ormat.com/",
+    "tahun_berdiri": 1994,
+    "enwiki": "Ormat Technologies",
+    "logo_berkas": null,
+    "iso2": [
+     "IL"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Ormat Technologies",
+    "url": "https://en.wikipedia.org/wiki/Ormat_Technologies",
+    "indonesia": [],
+    "portofolio": [
+     "The company has built over 190 power plants and installed over 3,200 MW of output.",
+     "As of January 2021 it owns and operates 933 MW of geothermal and recovered energy based power plants."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Ormat Technologies Inc. - Geothermal Power | Renewable Energy Expertise",
+    "deskripsi": "Ormat Technologies Inc. - At Ormat Technologies, Inc. , we’re always on; delivering renewable power and energy solutions to our customers",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_573189b250.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://ormat.cachefly.net/Warehouse/content/pics/favicon.ico"
+   }
+  },
+  {
+   "nama": "Quantum Power Asia",
+   "situs": "https://www.quantum-power.asia/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya"
+   ],
+   "iso2_seed": "SG",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Sunseap Group",
+   "situs": "https://www.sunseap.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya"
+   ],
+   "iso2_seed": "SG",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "EDP Renewables",
+   "situs": "https://www.edpr.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "PT",
+   "wikidata": {
+    "id": "Q1274362",
+    "cocok": "situs",
+    "label": "EDP Renewables",
+    "deskripsi": "company",
+    "situs": "https://www.edpr.com/",
+    "tahun_berdiri": 2007,
+    "enwiki": "EDP Renováveis",
+    "logo_berkas": "EDP Renováveis 2022.svg",
+    "iso2": [
+     "ES"
+    ]
+   },
+   "wikipedia": {
+    "judul": "EDP Renováveis",
+    "url": "https://en.wikipedia.org/wiki/EDP_Renov%C3%A1veis",
+    "indonesia": [],
+    "portofolio": [
+     "At the end of 2018, EDPR had added 11.7 GW of installed wind capacity, putting it in fourth place in terms of wind energy production worldwide.",
+     "In December 2025, it was announced that EDPR had completed the sale of its entire stake in a portfolio of five operational solar projects in Italy to Encavis."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "EDPR.com has a new home",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_bf570fbb89.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:EDP_Renov%C3%A1veis_2022.svg"
+   }
+  },
+  {
+   "nama": "Vena Energy",
+   "situs": "https://www.venaenergy.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "SG",
+   "wikidata": {
+    "id": "Q117748687",
+    "cocok": "situs",
+    "label": "Vena Energy",
+    "deskripsi": "energy investment company based in Singapore",
+    "situs": "https://www.venaenergy.com/",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": [
+     "SG"
+    ]
+   },
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "ReNew",
+   "situs": "https://www.renew.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "IN",
+   "wikidata": {
+    "id": "Q131892910",
+    "cocok": "situs",
+    "situs": "http://www.renew.com",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": [
+     "GB"
+    ]
+   },
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Adani Green Energy",
+   "situs": "https://www.adanigreenenergy.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "IN",
+   "wikidata": {
+    "id": "Q83473736",
+    "cocok": "situs",
+    "label": "Adani Green Energy",
+    "deskripsi": "Indian renewable energy company",
+    "situs": "https://www.adanigreenenergy.com/",
+    "tahun_berdiri": 2015,
+    "enwiki": "Adani Green Energy",
+    "logo_berkas": null,
+    "iso2": [
+     "IN"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Adani Green Energy",
+    "url": "https://en.wikipedia.org/wiki/Adani_Green_Energy",
+    "indonesia": [],
+    "portofolio": [
+     "The company operates Kamuthi Solar Power Project, one of the largest solar photovoltaic plants in the world. == History == The company was incorporated on 23 January 2016, as Adani Green Energy Limited under the Companies Act 2013.",
+     "During the initial days of existence, AGEL and Inox Wind together established a 20 MW capacity wind power project in Lahori, Madhya Pradesh."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "SUN Cable",
+   "situs": "https://www.suncable.energy/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "transmisi"
+   ],
+   "iso2_seed": "AU",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "SunCable",
+    "deskripsi": "Explore SunCable&#x27;s innovative solar projects as we revolutionize renewable energy in Australia and the Asia Pacific. Building a sustainable future.",
+    "indonesia": "https://www.suncable.energy/news/sun-cables-strong-partnership-with-indonesia-continues-to-grow-with-collaboration-to-realise-green-industry-opportunities-for-indonesia"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Equis Energy",
+   "situs": "https://www.equis.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "SG",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Home - Equis Development Pte. Ltd.",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Pertamina Geothermal Energy",
+   "situs": "https://pge.pertamina.com/",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi"
+   ],
+   "iso2_seed": "ID",
+   "wikidata": {
+    "id": "Q109430798",
+    "cocok": "situs",
+    "label": "Pertamina Geothermal Energy",
+    "deskripsi": "Indonesian company",
+    "situs": "https://www.pge.pertamina.com/id",
+    "tahun_berdiri": 2006,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": [
+     "ID"
+    ]
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Home - Pertamina Geothermal Energy Tbk",
+    "deskripsi": "PGE didirikan pada tahun 2006 sebagai anak perusahaan PT Pertamina (Persero) yang bergerak di bidang pemanfaatan energi panas bumi.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_8744244dd9.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://pge.pertamina.com/assets/img/favicon/apple-touch-icon.png"
+   }
+  },
+  {
+   "nama": "Star Energy Geothermal",
+   "situs": "https://www.starenergy.co.id/",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi"
+   ],
+   "iso2_seed": "ID",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Star Energy",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_32f918aa4c.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.starenergy.co.id/content/image/cropped-favicon-180x180.png"
+   }
+  },
+  {
+   "nama": "Medco Power Indonesia",
+   "situs": "https://www.medcopower.co.id/",
+   "kelompok": "ipp",
+   "topik": [
+    "panas-bumi",
+    "surya"
+   ],
+   "iso2_seed": "ID",
+   "wikidata": {
+    "id": "Q118574900",
+    "cocok": "label",
+    "label": "Medco Power Indonesia",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": [
+     "ID"
+    ]
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Home - Medco Power Indonesia",
+    "deskripsi": "July 18, 2024",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "PowerChina",
+   "situs": "https://www.powerchina.cn/",
+   "kelompok": "epc",
+   "topik": [
+    "hidro",
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "CN",
+   "wikidata": {
+    "id": "Q10873928",
+    "cocok": "situs",
+    "label": "Power China",
+    "deskripsi": "company in Beijing, China",
+    "situs": "http://www.powerchina.cn/",
+    "tahun_berdiri": 2011,
+    "enwiki": "Power Construction Corporation of China",
+    "logo_berkas": "PowerChina-logo.gif",
+    "iso2": [
+     "CN"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Power Construction Corporation of China",
+    "url": "https://en.wikipedia.org/wiki/Power_Construction_Corporation_of_China",
+    "indonesia": [],
+    "portofolio": [
+     "This proposed project would exceed the scale of the current Three Gorges Dam, already the largest hydroelectric facility in the world. == See also == List of companies of China List of largest Chinese companies == References == == External links == Official website"
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "中国电力建设集团",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_babe1b2206.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:PowerChina-logo.gif"
+   }
+  },
+  {
+   "nama": "China Energy Engineering Corporation",
+   "situs": "https://www.ceec.net.cn/",
+   "kelompok": "epc",
+   "topik": [
+    "surya",
+    "bayu",
+    "PLTU"
+   ],
+   "iso2_seed": "CN",
+   "wikidata": {
+    "id": "Q20724247",
+    "cocok": "situs",
+    "label": "China Energy Engineering",
+    "deskripsi": "Chinese company",
+    "situs": "http://en.ceec.net.cn/",
+    "tahun_berdiri": 2011,
+    "enwiki": "China Energy Engineering Corporation",
+    "logo_berkas": null,
+    "iso2": [
+     "CN"
+    ]
+   },
+   "wikipedia": {
+    "judul": "China Energy Engineering Corporation",
+    "url": "https://en.wikipedia.org/wiki/China_Energy_Engineering_Corporation",
+    "indonesia": [],
+    "portofolio": [
+     "In the years that followed, the company expanded rapidly overseas and participated in energy and infrastructure projects in Asia, Africa, the Middle East, and Europe.",
+     "Many of these projects are linked to China's Belt and Road Initiative. == Activities and Structure == The company is involved in numerous projects in the fields of fossil fuels, hydropower, nuclear energy, and renewable energy."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "中国能源建设股份有限公司",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "China National Electric Engineering",
+   "situs": "https://www.cneec.com.cn/",
+   "kelompok": "epc",
+   "topik": [
+    "surya",
+    "PLTU"
+   ],
+   "iso2_seed": "CN",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Sterling and Wilson",
+   "situs": "https://www.sterlingandwilson.com/",
+   "kelompok": "epc",
+   "topik": [
+    "surya"
+   ],
+   "iso2_seed": "IN",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Sterling and Wilson | EPC Contractor | Solar Company | MEP",
+    "deskripsi": "Sterling and Wilson is one of the leading MEP and EPC contractor companies for power, solar energy, data center, dg set, cogen plants, buildings, etc.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_6f9f390362.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.sterlingandwilson.com/images/favicon/apple-icon-180x180.png"
+   }
+  },
+  {
+   "nama": "Larsen and Toubro",
+   "situs": "https://www.larsentoubro.com/",
+   "kelompok": "epc",
+   "topik": [
+    "surya",
+    "transmisi"
+   ],
+   "iso2_seed": "IN",
+   "wikidata": {
+    "id": "Q638231",
+    "cocok": "situs",
+    "label": "Larsen & Toubro",
+    "deskripsi": "Indian multinational conglomerate company",
+    "situs": "http://www.larsentoubro.com",
+    "tahun_berdiri": 1938,
+    "enwiki": "Larsen & Toubro",
+    "logo_berkas": "Larsen-&-Toubro-Logo.svg",
+    "iso2": [
+     "IN"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Larsen & Toubro",
+    "url": "https://en.wikipedia.org/wiki/Larsen_%26_Toubro",
+    "indonesia": [],
+    "portofolio": [
+     "In 1946, they incorporated Engineering Construction & Contracts Ltd. (ECC) to focus on construction projects.",
+     "At the end of the war, large numbers of war-surplus Caterpillar equipment were available at attractive prices, but the finances required were beyond the capacity of the partners."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "L&T Corporate | EPC, Hi-Tech Manufacturing, Services",
+    "deskripsi": "Explore Larsen & Toubro’s official website for insights into construction, energy, hi-tech manufacturing, and sustainability. Discover innovation that drives growth.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_18505b4c85.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Larsen-%26-Toubro-Logo.svg"
+   }
+  },
+  {
+   "nama": "Hyundai Engineering and Construction",
+   "situs": "https://www.hdec.kr/",
+   "kelompok": "epc",
+   "topik": [
+    "PLTU",
+    "surya"
+   ],
+   "iso2_seed": "KR",
+   "wikidata": {
+    "id": "Q489809",
+    "cocok": "situs",
+    "label": "Hyundai Engineering and Construction",
+    "deskripsi": "South Korean construction company, associated with the Hyundai Group and the Hyundai Motor Group",
+    "situs": "http://www.hdec.kr/",
+    "tahun_berdiri": 1947,
+    "enwiki": "Hyundai Engineering and Construction",
+    "logo_berkas": "Hyundai Engineering & Construction logo.svg",
+    "iso2": [
+     "KR"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Hyundai Engineering and Construction",
+    "url": "https://en.wikipedia.org/wiki/Hyundai_Engineering_and_Construction",
+    "indonesia": [],
+    "portofolio": [
+     "Hyundai Construction played a major role in the importation of Korean laborers to the Middle East to work on construction projects in the 1970s and 1980s."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "현대건설",
+    "deskripsi": "현대건설에 오신것을 환영합니다.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_fd9cbcff6c.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Hyundai_Engineering_%26_Construction_logo.svg"
+   }
+  },
+  {
+   "nama": "Samsung C&T",
+   "situs": "https://www.samsungcnt.com/",
+   "kelompok": "epc",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "KR",
+   "wikidata": {
+    "id": "Q499194",
+    "cocok": "situs",
+    "label": "Samsung C&T Corporation",
+    "deskripsi": "South Korean construction and engineering company",
+    "situs": "http://www.samsungcnt.com",
+    "tahun_berdiri": 1938,
+    "enwiki": "Samsung C&T",
+    "logo_berkas": "Samsung ct logo.svg",
+    "iso2": [
+     "KR"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Samsung C&T",
+    "url": "https://en.wikipedia.org/wiki/Samsung_C%26T",
+    "indonesia": [],
+    "portofolio": [
+     "Since 1995, it has largely focused on global engineering and construction projects, trade and investments, fashion and real estate.",
+     "The construction of the third terminal of Shahjalal International Airport in Dhaka will be done by Aviation Dhaka Consortium (ADC) consisting of Japanese companies like Mitsubishi Corporation, Fujita Corporation and the Samsung C&T. ==== Civil projects ==== Civil projects by Samsung C&T's Civil Infrastructure Business Unit include construction of roads, bridges, tunnels, ports, subways, and dams."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "삼성물산",
+    "deskripsi": "Global Business Partner & Lifestyle Innovator, 삼성물산 전사 홈페이지입니다.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_5a450ee8b4.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Samsung_ct_logo.svg"
+   }
+  },
+  {
+   "nama": "Toyo Engineering",
+   "situs": "https://www.toyo-eng.com/",
+   "kelompok": "epc",
+   "topik": [
+    "hidrogen",
+    "biofuel"
+   ],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q7830625",
+    "cocok": "situs",
+    "label": "Toyo Engineering Corporation",
+    "deskripsi": "Japanese engineering, procurement and construction company",
+    "situs": "https://www.toyo-eng.com",
+    "tahun_berdiri": 1961,
+    "enwiki": "Toyo Engineering Corporation",
+    "logo_berkas": "Toyo Engineering company logo.svg",
+    "iso2": [
+     "JP"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Toyo Engineering Corporation",
+    "url": "https://en.wikipedia.org/wiki/Toyo_Engineering_Corporation",
+    "indonesia": [
+     "Most of its revenue comes from outside Japan; it has a particular presence in China, India, Indonesia, Iran and Russia."
+    ],
+    "portofolio": [
+     "September 1982 (Showa 57): Upgraded to the First Section of the Tokyo Stock Exchange. 1987 (Showa 62): Established Technofrontier Corporation, which later became Tech Project Services Corporation."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Toyo Engineering Corporation",
+    "deskripsi": "東洋エンジニアリングは、プラントエンジニアリング分野を中心に、グローバルな舞台でプラント建設を手がているエンジニアリング会社です。Corporate Profile、Corporate Philosophy、会社基本方針、社会貢献活動、安全・品質・環境への取組み、Newsなどを掲載しています。",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_20bf5c0bea.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Toyo_Engineering_company_logo.svg"
+   }
+  },
+  {
+   "nama": "JGC Holdings",
+   "situs": "https://www.jgc.com/",
+   "kelompok": "epc",
+   "topik": [
+    "hidrogen",
+    "panas-bumi"
+   ],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q5216057",
+    "cocok": "situs",
+    "label": "JGC Holdings Corporation",
+    "deskripsi": "engineering company",
+    "situs": "https://www.jgc.com/",
+    "tahun_berdiri": 1928,
+    "enwiki": "JGC Holdings Corporation",
+    "logo_berkas": "JGC Corporation company logo.png",
+    "iso2": [
+     "JP"
+    ]
+   },
+   "wikipedia": {
+    "judul": "JGC Holdings Corporation",
+    "url": "https://en.wikipedia.org/wiki/JGC_Holdings_Corporation",
+    "indonesia": [],
+    "portofolio": [
+     "JGC participates in the design and construction of large energy projects, such as Al Zour Refinery, Nigeria LNG, Pearl GTL, Ichthys LNG, Gorgon LNG, Tangguh LNG and Dolphin Gas Project and over the course of the company's history it implemented over 20,000 projects in 50 countries.",
+     "Since its establishment, the company has carried out over 20,000 projects in more than 80 countries worldwide, boasting one of the most remarkable track records in the world."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "日揮ホールディングス株式会社（JGC HOLDINGS CORPORATION）",
+    "deskripsi": "日揮ホールディングス株式会社（JGC HOLDINGS CORPORATION）のオフィシャルサイト。日揮ホールディングスはプラント・施設のEPC事業をメインビジネスとして、事業投資・運営、社会インフラの整備など幅広い事業を展開しています。",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_7b279c313b.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:JGC_Corporation_company_logo.png"
+   }
+  },
+  {
+   "nama": "Mitsui E&S",
+   "situs": "https://www.mes.co.jp/",
+   "kelompok": "epc",
+   "topik": [
+    "PLTU",
+    "hidrogen"
+   ],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q6883239",
+    "cocok": "situs",
+    "label": "Mitsui Engineering & Shipbuilding",
+    "deskripsi": "Japanese shipbuilder",
+    "situs": "https://www.mes.co.jp/",
+    "tahun_berdiri": 1917,
+    "enwiki": "Mitsui E&S",
+    "logo_berkas": "Mitsui E&S company logo.svg",
+    "iso2": [
+     "JP"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Mitsui E&S",
+    "url": "https://en.wikipedia.org/wiki/Mitsui_E%26S",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "三井E&Sグループ",
+    "deskripsi": "三井E&amp;Sグループは、海上物流の要となる船舶のエンジンや港湾クレーンをはじめ、産業機械などの製品とエンジニアリング・サービスの提供を通じて社会課題の解決に貢献し、企業価値の持続的向上を図っていきます。",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_145197e470.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Mitsui_E%26S_company_logo.svg"
+   }
+  },
+  {
+   "nama": "TUV SUD",
+   "situs": "https://www.tuvsud.com/",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "DE",
+   "wikidata": {
+    "id": "Q880718",
+    "cocok": "situs",
+    "label": "TÜV Süd",
+    "deskripsi": "German vehicular inspection and product certification services company",
+    "situs": "https://www.tuvsud.com",
+    "tahun_berdiri": 1866,
+    "enwiki": "TÜV SÜD",
+    "logo_berkas": "TÜV Süd logo.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "wikipedia": {
+    "judul": "TÜV SÜD",
+    "url": "https://en.wikipedia.org/wiki/T%C3%9CV_S%C3%9CD",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_e4b898a277.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:T%C3%9CV_S%C3%BCd_logo.svg"
+   }
+  },
+  {
+   "nama": "TUV Rheinland",
+   "situs": "https://www.tuv.com/",
+   "kelompok": "uji",
+   "topik": [
+    "surya"
+   ],
+   "iso2_seed": "DE",
+   "wikidata": {
+    "id": "Q632391",
+    "cocok": "situs",
+    "label": "TÜV Rheinland",
+    "deskripsi": "German vehicular and technical inspection and product certification services company",
+    "situs": "https://www.tuv.com",
+    "tahun_berdiri": 1872,
+    "enwiki": "TÜV Rheinland",
+    "logo_berkas": "TUEV-Rheinland-Logo1.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "wikipedia": {
+    "judul": "TÜV Rheinland",
+    "url": "https://en.wikipedia.org/wiki/T%C3%9CV_Rheinland",
+    "indonesia": [],
+    "portofolio": [
+     "TÜV Rheinland tests technical systems, products, and services, supports projects, and designs processes for companies."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "TÜV Rheinland - Home | ID | T&Uuml;V Rheinland",
+    "deskripsi": "T&Uuml;V Rheinland",
+    "indonesia": "https://www.tuv.com/en/indonesia/about_us_id/news_id/news_releases_id.jsp"
+   },
+   "logo": {
+    "berkas": "en_1828e53367.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:TUEV-Rheinland-Logo1.svg"
+   }
+  },
+  {
+   "nama": "TUV Nord",
+   "situs": "https://www.tuev-nord.de/",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "DE",
+   "wikidata": {
+    "id": "Q2463547",
+    "cocok": "situs",
+    "label": "TÜV Nord",
+    "deskripsi": "German vehicular inspection and product certification services company",
+    "situs": "https://www.tuev-nord.de",
+    "tahun_berdiri": 1869,
+    "enwiki": "TÜV Nord",
+    "logo_berkas": "TUEV-NORD Logo Dark-Blue sRGB.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "wikipedia": {
+    "judul": "TÜV Nord",
+    "url": "https://en.wikipedia.org/wiki/T%C3%9CV_Nord",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Inspired by Knowledge | TÜV NORD",
+    "deskripsi": "TÜV NORD – Ihr Partner für Sicherheit, Qualität und Nachhaltigkeit. Entdecken Sie unsere Services für Industrie, Mobilität, Zertifizierung und Weiterbildung – weltweit und zuverlässig.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_ea0965c54d.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:TUEV-NORD_Logo_Dark-Blue_sRGB.svg"
+   }
+  },
+  {
+   "nama": "DNV",
+   "situs": "https://www.dnv.com/",
+   "kelompok": "uji",
+   "topik": [
+    "bayu",
+    "surya",
+    "hidrogen"
+   ],
+   "iso2_seed": "NO",
+   "wikidata": {
+    "id": "Q18455539",
+    "cocok": "situs",
+    "label": "DNV",
+    "deskripsi": "international certification body and classification society",
+    "situs": "https://www.dnv.com/",
+    "tahun_berdiri": 2013,
+    "enwiki": "DNV",
+    "logo_berkas": "DNV GL logo.svg",
+    "iso2": [
+     "NO"
+    ]
+   },
+   "wikipedia": {
+    "judul": "DNV",
+    "url": "https://en.wikipedia.org/wiki/DNV",
+    "indonesia": [],
+    "portofolio": [
+     "DNV — Accelerator: The Accelerator operates a portfolio of units undergoing significant growth through acquisitions and partnerships. == References == == External links == Official website"
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "DNV.com - When trust matters - DNV",
+    "deskripsi": "Driven by our purpose of safeguarding life, property and the environment, DNV enables organizations to advance the safety and sustainability of their business.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_8f25170bad.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:DNV_GL_logo.svg"
+   }
+  },
+  {
+   "nama": "UL Solutions",
+   "situs": "https://www.ul.com/",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "baterai"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q123695085",
+    "cocok": "situs",
+    "label": "UL Solutions (United States)",
+    "deskripsi": "company in Northbrook, United States",
+    "situs": "https://www.ul.com",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": [
+     "US"
+    ]
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "UL Solutions",
+    "deskripsi": "UL Solutions is a global independent safety science company with more than a century of expertise innovating safety solutions.",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Bureau Veritas",
+   "situs": "https://group.bureauveritas.com/",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "bayu"
+   ],
+   "iso2_seed": "FR",
+   "wikidata": {
+    "id": "Q1974503",
+    "cocok": "situs",
+    "label": "Bureau Veritas",
+    "deskripsi": "French company",
+    "situs": "http://www.bureauveritas.com/",
+    "tahun_berdiri": 1828,
+    "enwiki": "Bureau Veritas",
+    "logo_berkas": "Bureau Veritas 1828 logo.png",
+    "iso2": [
+     "FR"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Bureau Veritas",
+    "url": "https://en.wikipedia.org/wiki/Bureau_Veritas",
+    "indonesia": [],
+    "portofolio": [
+     "Based on three pillars,  Portfolio, Performance and Human Capital. == Corporate Updates == === 2015 to 2019 Strategy === In 2015, Bureau Veritas launched a strategic plan to make the Group more resilient, and more resistant to macroeconomic fluctuations (e.g. oil, gas, primary commodities, marine).",
+     "In April 2021, the company acquires Bradley Construction Management, an American society specialized in project management and construction management services for the renewable energy sector."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Home | Bureau Veritas",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_b6d541b985.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Bureau_Veritas_1828_logo.png"
+   }
+  },
+  {
+   "nama": "SGS",
+   "situs": "https://www.sgs.com/",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "biofuel"
+   ],
+   "iso2_seed": "CH",
+   "wikidata": {
+    "id": "Q669620",
+    "cocok": "situs",
+    "label": "SGS S.A.",
+    "deskripsi": "Switzerland company",
+    "situs": "https://www.sgs.com",
+    "tahun_berdiri": 1878,
+    "enwiki": "SGS S.A.",
+    "logo_berkas": "SGS Logo.svg",
+    "iso2": [
+     "CH"
+    ]
+   },
+   "wikipedia": {
+    "judul": "SGS S.A.",
+    "url": "https://en.wikipedia.org/wiki/SGS_S.A.",
+    "indonesia": [],
+    "portofolio": [
+     "The company also joined RE100, a global group of companies convened by The Climate Group and Carbon Disclosure Project that aims to generate their energy fully from renewable sources. == Notes == == References == == External links == Official website"
+    ],
+    "komitmen": [
+     "The company also joined RE100, a global group of companies convened by The Climate Group and Carbon Disclosure Project that aims to generate their energy fully from renewable sources. == Notes == == References == == External links == Official website"
+    ]
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_7c871da63b.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:SGS_Logo.svg"
+   }
+  },
+  {
+   "nama": "Intertek",
+   "situs": "https://www.intertek.com/",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "baterai"
+   ],
+   "iso2_seed": "GB",
+   "wikidata": {
+    "id": "Q1136085",
+    "cocok": "situs",
+    "label": "Intertek",
+    "deskripsi": "British multinational assurance, inspection, product testing, and certification company",
+    "situs": "http://www.intertek.com",
+    "tahun_berdiri": 1885,
+    "enwiki": "Intertek",
+    "logo_berkas": "Logo Intertek 01.svg",
+    "iso2": [
+     "GB"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Intertek",
+    "url": "https://en.wikipedia.org/wiki/Intertek",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Intertek",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_1ea1f9d661.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Logo_Intertek_01.svg"
+   }
+  },
+  {
+   "nama": "Kiwa PVEL",
+   "situs": "https://pvel.kiwa.com/",
+   "kelompok": "uji",
+   "topik": [
+    "surya"
+   ],
+   "iso2_seed": "US",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Renewable Energy Test Center",
+   "situs": "https://retc.com/",
+   "kelompok": "uji",
+   "topik": [
+    "surya",
+    "baterai"
+   ],
+   "iso2_seed": "US",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "RETC - Real Estate Training Center",
+    "deskripsi": "Real Estate Training Center",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Balai Besar Pengujian Perangkat Telekomunikasi",
+   "situs": "https://www.bbppt.postel.go.id/",
+   "kelompok": "uji",
+   "topik": [],
+   "iso2_seed": "ID",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "B4T Kementerian Perindustrian",
+   "situs": "https://b4t.kemenperin.go.id/",
+   "kelompok": "uji",
+   "topik": [],
+   "iso2_seed": "ID",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "PLN Puslitbang",
+   "situs": "https://plnlitbang.co.id/",
+   "kelompok": "uji",
+   "topik": [
+    "jaringan",
+    "surya"
+   ],
+   "iso2_seed": "ID",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "LSPro PT PLN Persero",
+   "situs": "https://lsp.pln.co.id/",
+   "kelompok": "uji",
+   "topik": [],
+   "iso2_seed": "ID",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Tractebel",
+   "situs": "https://tractebel-engie.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "hidro",
+    "panas-bumi",
+    "surya"
+   ],
+   "iso2_seed": "BE",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Engineering a carbon-neutral future | Tractebel",
+    "deskripsi": "Tractebel is a leading global engineering company delivering innovative solutions for energy, water, infrastructure, and sustainable development. Partner with us to shape a better tomorrow.",
+    "indonesia": "https://tractebel-engie.com/en/"
+   },
+   "logo": {
+    "berkas": "en_f21ffdcc23.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://tractebel-engie.com/favicon/apple-touch-icon.png"
+   }
+  },
+  {
+   "nama": "Mott MacDonald",
+   "situs": "https://www.mottmac.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "surya",
+    "hidro",
+    "transmisi"
+   ],
+   "iso2_seed": "GB",
+   "wikidata": {
+    "id": "Q3325340",
+    "cocok": "situs",
+    "label": "Mott MacDonald",
+    "deskripsi": "multidisciplinary consultancy",
+    "situs": "http://www.mottmac.com",
+    "tahun_berdiri": 1902,
+    "enwiki": "Mott MacDonald",
+    "logo_berkas": "Mott-macdonald-new-logo.svg",
+    "iso2": [
+     "GB"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Mott MacDonald",
+    "url": "https://en.wikipedia.org/wiki/Mott_MacDonald",
+    "indonesia": [],
+    "portofolio": [
+     "Mott, Hay and Anderson was a transportation engineering consultancy responsible for projects such as the London Underground while Sir M MacDonald & Partners was a water engineering consultancy with projects that included the Aswan Dam.",
+     "Early projects included the reconstruction and extension of the City and South London Railway (C&SLR), the building and extension of the Central London Railway, the construction of lifts beneath St Mary Woolnoth church at Bank tube station, the underpinning of Clifford's Tower, the reconstruction of Southwark Bridge and the widening of Blackfriars Bridge."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Mott MacDonald | Innovative Engineering, Management & Development Solutions | Mott MacDonald",
+    "deskripsi": "Embracing complex challenges with a community of brilliant people, Mott MacDonald drives transformative client outcomes and succeeds together. Discover our innovative solutions in engineering, management, and development consultancy.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_00164ba50a.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Mott-macdonald-new-logo.svg"
+   }
+  },
+  {
+   "nama": "Ricardo",
+   "situs": "https://www.ricardo.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "baterai",
+    "hidrogen"
+   ],
+   "iso2_seed": "GB",
+   "wikidata": {
+    "id": "Q15720871",
+    "cocok": "label",
+    "label": "Ricardo",
+    "deskripsi": "male given name",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": []
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Ricardo | Leading automotive and energy engineering and manufacturing consultancy",
+    "deskripsi": "Ricardo is a global automotive engineering and manufacturing consultancy",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_d4e7430f15.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.ricardo.com/media/lqlhh2rk/ricardo_rgb_stacked.png"
+   }
+  },
+  {
+   "nama": "WSP",
+   "situs": "https://www.wsp.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "surya",
+    "transmisi"
+   ],
+   "iso2_seed": "CA",
+   "wikidata": {
+    "id": "Q1333162",
+    "cocok": "situs",
+    "label": "WSP Global",
+    "deskripsi": "Canadian-based business providing management and consultancy services",
+    "situs": "https://www.wsp.com/",
+    "tahun_berdiri": 1959,
+    "enwiki": "WSP Global",
+    "logo_berkas": "WSP logo.svg",
+    "iso2": [
+     "CA",
+     "US"
+    ]
+   },
+   "wikipedia": {
+    "judul": "WSP Global",
+    "url": "https://en.wikipedia.org/wiki/WSP_Global",
+    "indonesia": [],
+    "portofolio": [
+     "WSP is a Canadian engineering and professional services consulting firm providing technical and advisory services across the full lifecycle of built and natural environment projects."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "WSP | Global engineering and professional services firm | WSP",
+    "deskripsi": "WSP is a world-leading engineering and professional services consulting firm. Explore our expertise in designing sustainable solutions across various sectors.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_da023ea393.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:WSP_logo.svg"
+   }
+  },
+  {
+   "nama": "Arup",
+   "situs": "https://www.arup.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "transmisi",
+    "bayu"
+   ],
+   "iso2_seed": "GB",
+   "wikidata": {
+    "id": "Q716737",
+    "cocok": "situs",
+    "deskripsi": "multinational professional services firm",
+    "situs": "http://www.arup.com/",
+    "tahun_berdiri": 1946,
+    "enwiki": "Arup Group",
+    "logo_berkas": "Arup logo.svg",
+    "iso2": [
+     "GB"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Arup Group",
+    "url": "https://en.wikipedia.org/wiki/Arup_Group",
+    "indonesia": [],
+    "portofolio": [
+     "It employs about 17,000 people in over 90 offices across 35 countries, and has participated in projects in over 160 countries.",
+     "Through its involvement in high-profile projects such as the Sydney Opera House, it became well known for undertaking complex and challenging projects."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Arup - Planning, designing, engineering the future - Arup",
+    "deskripsi": "A global consultancy providing expertise across 150&#x2B; disciplines: shaping infrastructure, buildings, energy and sustainability for the built environment.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_dbad6d8054.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Arup_logo.svg"
+   }
+  },
+  {
+   "nama": "Fichtner",
+   "situs": "https://www.fichtner.de/",
+   "kelompok": "konsultan",
+   "topik": [
+    "hidro",
+    "panas-bumi"
+   ],
+   "iso2_seed": "DE",
+   "wikidata": {
+    "id": "Q17540655",
+    "cocok": "situs",
+    "label": "Fichtner",
+    "deskripsi": "German company",
+    "situs": "http://www.fichtner.de/",
+    "tahun_berdiri": 1922,
+    "enwiki": null,
+    "logo_berkas": "Fichtner Logo 2014.png",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Fichtner in Deutschland - Engineering und Consulting",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_949f198d47.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Fichtner_Logo_2014.png"
+   }
+  },
+  {
+   "nama": "Jacobs",
+   "situs": "https://www.jacobs.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "hidro",
+    "transmisi"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q1158566",
+    "cocok": "label",
+    "label": "Jacobs",
+    "deskripsi": "family name",
+    "tahun_berdiri": null,
+    "enwiki": "Jacobs (surname)",
+    "logo_berkas": null,
+    "iso2": []
+   },
+   "wikipedia": {
+    "judul": "Jacobs (surname)",
+    "url": "https://en.wikipedia.org/wiki/Jacobs_(surname)",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Jacobs | Challenging Today. Reinventing Tomorrow.",
+    "deskripsi": "We are a global professional services company delivering engineering, design, consulting and infrastructure solutions that solve complex challenges and create lasting impact. Discover Jacobs.",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "AECOM",
+   "situs": "https://aecom.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "transmisi",
+    "surya"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q2825507",
+    "cocok": "situs",
+    "label": "AECOM",
+    "deskripsi": "American multinational engineering firm",
+    "situs": "https://aecom.com/",
+    "tahun_berdiri": 1990,
+    "enwiki": "AECOM",
+    "logo_berkas": "AECOM 1c-black rgb.png",
+    "iso2": [
+     "US"
+    ]
+   },
+   "wikipedia": {
+    "judul": "AECOM",
+    "url": "https://en.wikipedia.org/wiki/AECOM",
+    "indonesia": [],
+    "portofolio": [
+     "Originally focused on military architecture projects, after World War II it had become one of the first integrated engineering and architectural firms in the western United States.",
+     "On July 14, 2010, AECOM announced its acquisition of Tishman Construction Corp., a leading provider of construction management services in the United States, whose projects include both the building of the original Twin Towers in New York City in 1973 and One World Trade Center (Freedom Tower) in the aftermath of 9/11."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "AECOM",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_ed768b9819.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:AECOM_1c-black_rgb.png"
+   }
+  },
+  {
+   "nama": "Baker McKenzie",
+   "situs": "https://www.bakermckenzie.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "hukum"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q804340",
+    "cocok": "situs",
+    "label": "Baker McKenzie",
+    "deskripsi": "multinational law firm",
+    "situs": "https://www.bakermckenzie.com/",
+    "tahun_berdiri": 1949,
+    "enwiki": "Baker McKenzie",
+    "logo_berkas": "Baker McKenzie logo (2016).svg",
+    "iso2": []
+   },
+   "wikipedia": {
+    "judul": "Baker McKenzie",
+    "url": "https://en.wikipedia.org/wiki/Baker_McKenzie",
+    "indonesia": [],
+    "portofolio": [
+     "In October 2006, Unilever chose the firm to manage its global trademark portfolio, the largest in the world, with over 160,000 registrations, marking the first time a multinational company outsourced its trademark management to a law firm on such a large scale."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Baker McKenzie – Local strength, global excellence",
+    "deskripsi": "We provide comprehensive and practical legal advice that cuts through complexity with clear, actionable guidance.",
+    "indonesia": "https://www.bakermckenzie.com/en/locations/asia-pacific/indonesia"
+   },
+   "logo": {
+    "berkas": "en_c8668edbb7.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Baker_McKenzie_logo_(2016).svg"
+   }
+  },
+  {
+   "nama": "Allen and Overy Shearman",
+   "situs": "https://www.aoshearman.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "hukum"
+   ],
+   "iso2_seed": "GB",
+   "wikidata": {
+    "id": "Q2120145",
+    "cocok": "label",
+    "label": "Allen & Overy",
+    "deskripsi": "London headquartered multinational law firm",
+    "situs": "http://www.allenovery.com",
+    "tahun_berdiri": 1930,
+    "enwiki": "Allen & Overy",
+    "logo_berkas": "Allen and Overy.svg",
+    "iso2": []
+   },
+   "wikipedia": {
+    "judul": "Allen & Overy",
+    "url": "https://en.wikipedia.org/wiki/Allen_%26_Overy",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "A&O Shearman, global law firm",
+    "deskripsi": "We’re a global law firm focused on understanding client goals, delivering practical legal solutions and advice for complex business challenges worldwide.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_a0c8d38387.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Allen_and_Overy.svg"
+   }
+  },
+  {
+   "nama": "Assegaf Hamzah and Partners",
+   "situs": "https://www.ahp.id/",
+   "kelompok": "konsultan",
+   "topik": [
+    "hukum"
+   ],
+   "iso2_seed": "ID",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Home - Assegaf Hamzah & Partners",
+    "deskripsi": "Assegaf Hamzah & Partners is a leading Indonesian law firm with 34 partners and 170+ fee earners. We provide comprehensive legal services across various practice areas. Offices in Jakarta & Surabaya. Strategic alliance with Rajah & Tann Asia for cross-border expertise.",
+    "indonesia": "https://www.ahp.id/assegaf-hamzah-partners-and-kim-chang-sign-memorandum-of-understanding-to-strengthen-indonesia-korea-cooperation/"
+   },
+   "logo": {
+    "berkas": "en_c01ab2a7d0.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.ahp.id/wp-content/uploads/2024/08/Artboard-12-copy.png"
+   }
+  },
+  {
+   "nama": "Norton Rose Fulbright",
+   "situs": "https://www.nortonrosefulbright.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "hukum"
+   ],
+   "iso2_seed": "GB",
+   "wikidata": {
+    "id": "Q3344263",
+    "cocok": "situs",
+    "label": "Norton Rose Fulbright",
+    "deskripsi": "law firm",
+    "situs": "http://www.nortonrosefulbright.com/ca/fr/",
+    "tahun_berdiri": 1794,
+    "enwiki": "Norton Rose Fulbright",
+    "logo_berkas": "Norton Rose Fulbright logo.svg",
+    "iso2": []
+   },
+   "wikipedia": {
+    "judul": "Norton Rose Fulbright",
+    "url": "https://en.wikipedia.org/wiki/Norton_Rose_Fulbright",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "gagal": "robots"
+   },
+   "logo": {
+    "berkas": "en_ab28748011.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Norton_Rose_Fulbright_logo.svg"
+   }
+  },
+  {
+   "nama": "Rothschild and Co",
+   "situs": "https://www.rothschildandco.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "penasihat-keuangan"
+   ],
+   "iso2_seed": "GB",
+   "wikidata": {
+    "id": "Q1537151",
+    "cocok": "situs",
+    "label": "Rothschild & Co",
+    "deskripsi": "financial holding company listed on Euronext Paris and controlled by the French and English branch of the Rothschild family",
+    "situs": "https://www.rothschildandco.com",
+    "tahun_berdiri": 1838,
+    "enwiki": "Rothschild & Co",
+    "logo_berkas": "Rothschild&Co.jpg",
+    "iso2": [
+     "FR"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Rothschild & Co",
+    "url": "https://en.wikipedia.org/wiki/Rothschild_%26_Co",
+    "indonesia": [],
+    "portofolio": [
+     "The providing of other innovative and complex financing for government projects formed a mainstay of the bank's business for the better part of the century."
+    ],
+    "komitmen": [
+     "After the war, the British and French banks committed themselves to further developing their new operation in the United States, which was eventually to become Rothschild Inc, and increased focus on mergers and acquisitions, asset management, and merchant-banking.",
+     "The Rothschild family committed CHF 150 million to supporting its bank in recovering from one of the then largest financial frauds in Switzerland. === NM Rothschild & Sons Ltd vs."
+    ]
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_03251d5001.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Rothschild%26Co.jpg"
+   }
+  },
+  {
+   "nama": "Lazard",
+   "situs": "https://www.lazard.com/",
+   "kelompok": "konsultan",
+   "topik": [
+    "penasihat-keuangan"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q637440",
+    "cocok": "situs",
+    "label": "Lazard",
+    "deskripsi": "Global financial advisory, private capital advisory, and asset management firm",
+    "situs": "https://lazard.com/",
+    "tahun_berdiri": 1848,
+    "enwiki": "Lazard",
+    "logo_berkas": "Lazard Corporate Logo.png",
+    "iso2": [
+     "US",
+     "GB",
+     "FR",
+     "AU",
+     "AT",
+     "BE",
+     "BR",
+     "CA",
+     "DE",
+     "HK",
+     "IE",
+     "IT",
+     "JP",
+     "LU",
+     "SA",
+     "SG",
+     "KR",
+     "ES",
+     "SE",
+     "CH",
+     "AE"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Lazard",
+    "url": "https://en.wikipedia.org/wiki/Lazard",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Lazard | Financial advisory, private capital advisory and asset management. | Lazard",
+    "deskripsi": "Founded in 1848, Lazard is the preeminent financial advisory, private capital advisory, and asset management firm for clients globally.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_859c8a6d48.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Lazard_Corporate_Logo.png"
+   }
+  },
+  {
+   "nama": "Multilateral Investment Guarantee Agency",
+   "situs": "https://www.miga.org/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q1043527",
+    "cocok": "situs",
+    "label": "Multilateral Investment Guarantee Agency",
+    "deskripsi": "International financial institution",
+    "situs": "https://www.miga.org/",
+    "tahun_berdiri": 1988,
+    "enwiki": "Multilateral Investment Guarantee Agency",
+    "logo_berkas": "Multilateral Investment Guarantee Agency logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Multilateral Investment Guarantee Agency",
+    "url": "https://en.wikipedia.org/wiki/Multilateral_Investment_Guarantee_Agency",
+    "indonesia": [
+     "In 1997, MIGA issued the inaugural contract under its Cooperative Underwriting Program to support an energy project in Indonesia."
+    ],
+    "portofolio": [
+     "MIGA's inaugural investment guarantees were issued in 1990 to cover $1.04 billion ($1.83 billion in 2012 dollars) worth of foreign direct investment (FDI) comprising four individual projects.",
+     "The agency also established the West Bank and Gaza Investment Guarantee Trust Fund with a capacity of $20 million ($29 million in 2012 dollars)."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Homepage | World Bank Group Guarantees | MIGA",
+    "deskripsi": "As part of the World Bank Group, MIGA promotes investment in developing countries by reducing risk and fostering confidence among investors and lenders.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_9f6f2809d5.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Multilateral_Investment_Guarantee_Agency_logo.svg"
+   }
+  },
+  {
+   "nama": "Indonesia Infrastructure Guarantee Fund",
+   "situs": "https://iigf.co.id/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "ID",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Japan Bank for International Cooperation",
+   "situs": "https://www.jbic.go.jp/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q1200091",
+    "cocok": "situs",
+    "label": "Japan Bank for International Cooperation",
+    "deskripsi": "company",
+    "situs": "https://www.jbic.go.jp/",
+    "tahun_berdiri": 1999,
+    "enwiki": "Japan Bank for International Cooperation",
+    "logo_berkas": "JBIC logo.svg",
+    "iso2": [
+     "JP"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Japan Bank for International Cooperation",
+    "url": "https://en.wikipedia.org/wiki/Japan_Bank_for_International_Cooperation",
+    "indonesia": [
+     "As of March 2005, the country which had access to the most loans was Indonesia, followed by China and the Philippines."
+    ],
+    "portofolio": [
+     "JBIC claims to aim at sustainable development and to be concerned about social and environmental issues, and requires environmental impact assessment studies to provide funding to any project.",
+     "The IFO operations include loans and equity participation in overseas projects of Japanese corporations, therefore contributing to Japanese activities overseas."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "JBIC 国際協力銀行",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_af29e64d67.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:JBIC_logo.svg"
+   }
+  },
+  {
+   "nama": "Nippon Export and Investment Insurance",
+   "situs": "https://www.nexi.go.jp/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "JP",
+   "wikidata": {
+    "id": "Q4045366",
+    "cocok": "situs",
+    "label": "Nippon Export and Investment Insurance",
+    "deskripsi": "administrative agency in Japan",
+    "situs": "http://nexi.go.jp/en/",
+    "tahun_berdiri": 2001,
+    "enwiki": "Nippon Export and Investment Insurance",
+    "logo_berkas": null,
+    "iso2": [
+     "JP"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Nippon Export and Investment Insurance",
+    "url": "https://en.wikipedia.org/wiki/Nippon_Export_and_Investment_Insurance",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "企業の輸出・投資・融資を保険でサポートする貿易保険｜NEXI 日本貿易保険",
+    "deskripsi": "日本貿易保険(NEXI)の公式ホームページ。100％政府出資の公的輸出信用機関。",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Sinosure",
+   "situs": "https://www.sinosure.com.cn/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "CN",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "中国出口信用保险公司",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Export-Import Bank of China",
+   "situs": "https://www.eximbank.gov.cn/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "CN",
+   "wikidata": {
+    "id": "Q1073267",
+    "cocok": "situs",
+    "label": "Exim Bank of China",
+    "deskripsi": "one of the policy banks in the PRC",
+    "situs": "http://www.eximbank.gov.cn/",
+    "tahun_berdiri": 1994,
+    "enwiki": "Export–Import Bank of China",
+    "logo_berkas": "The Export–Import Bank of China logo.svg",
+    "iso2": [
+     "CN"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Export–Import Bank of China",
+    "url": "https://en.wikipedia.org/wiki/Export%E2%80%93Import_Bank_of_China",
+    "indonesia": [],
+    "portofolio": [
+     "Its core mandate is to facilitate Chinese exports and overseas projects by extending financing to foreign governments, state-owned enterprises, and private counterparties involved in transactions with Chinese firms. == Operations == The bank's activities combine policy lending with large-scale commercial operations.",
+     "Its principal instruments include export credits, buyers' credits, and investment loans, with a concentration in capital-intensive sectors such as transportation infrastructure, power generation, oil and gas pipelines, telecommunications, and water projects."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "berkas": "en_e052307be5.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:The_Export%E2%80%93Import_Bank_of_China_logo.svg"
+   }
+  },
+  {
+   "nama": "Korea Eximbank",
+   "situs": "https://www.koreaexim.go.kr/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "KR",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Korea Trade Insurance Corporation",
+   "situs": "https://www.ksure.or.kr/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "KR",
+   "wikidata": {
+    "id": "Q12623072",
+    "cocok": "situs",
+    "label": "Korea Trade Insurance Corporation",
+    "situs": "https://www.ksure.or.kr",
+    "tahun_berdiri": 1992,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": [
+     "KR"
+    ]
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "INTRO | K-SURE 한국무역보험공사",
+    "deskripsi": "무역투자보험기관, 무역 및 해외투자 촉진, 공적 무역 신용제도 운영, 무역보험, 신용보증, 신용정보서비스, 채권추심서비스 등 안내",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Allianz Trade",
+   "situs": "https://www.allianz-trade.com/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "FR",
+   "wikidata": {
+    "id": "Q683021",
+    "cocok": "situs",
+    "label": "Allianz Trade",
+    "deskripsi": "bank",
+    "situs": "https://www.allianz-trade.com",
+    "tahun_berdiri": 1927,
+    "enwiki": "Allianz Trade",
+    "logo_berkas": "AllianzTrade.jpg",
+    "iso2": [
+     "FR"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Allianz Trade",
+    "url": "https://en.wikipedia.org/wiki/Allianz_Trade",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_f966e4220f.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:AllianzTrade.jpg"
+   }
+  },
+  {
+   "nama": "EIFO",
+   "situs": "https://eifo.dk/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "DK",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Danmarks Eksport- og Investeringsfond",
+    "deskripsi": "EIFO tilbyder risikovillig finansiering, der hj&#xE6;lper danske virksomheder med at skabe forretning i ind- og udland &#x2013; fra tidlige startups til store corporates.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_f10414c4af.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://eifo.dk/assets/favicons/apple-touch-icon-1024x1024.png"
+   }
+  },
+  {
+   "nama": "UK Export Finance",
+   "situs": "https://www.gov.uk/government/organisations/uk-export-finance",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "GB",
+   "wikidata": {
+    "id": "Q4158541",
+    "cocok": "situs",
+    "label": "UK Export Finance",
+    "deskripsi": "United Kingdom government ministerial department",
+    "situs": "https://www.gov.uk/government/organisations/uk-export-finance",
+    "tahun_berdiri": 1919,
+    "enwiki": "UK Export Finance",
+    "logo_berkas": null,
+    "iso2": [
+     "GB"
+    ]
+   },
+   "wikipedia": {
+    "judul": "UK Export Finance",
+    "url": "https://en.wikipedia.org/wiki/UK_Export_Finance",
+    "indonesia": [],
+    "portofolio": [
+     "The highest value part of UKEF's activities is the first type: underwriting long-term loans to support the sale of capital goods, principally for the export of aircraft, bridges, machinery, and services; it helps UK companies take part in major overseas projects such as the upgrading of hospitals, airports, and power stations.",
+     "Some of the projects UKEF backs go well beyond the £1 billion mark."
+    ],
+    "komitmen": [
+     "Today, its maximum commitment stands at £80 billion. == History == The department was established in 1919 to promote UK exports, lost during the submarine blockade of World War I. == Activities == === Powers === UKEF derives its powers from the Export and Investment Guarantees Act 1991 (c. 67) and undertakes its activities in accordance with specific consent from HM Treasury.",
+     "The Guardian reported that in the 2018–2019 financial year, ECGD committed nearly £2 billion in support to fossil fuel projects across the world."
+    ]
+   },
+   "beranda": {
+    "judul": "UK Export Finance - GOV.UK",
+    "deskripsi": "We advance prosperity by ensuring no viable UK export fails for lack of finance or insurance, doing that sustainably and at no net cost to the taxpayer. UKEF is a ministerial department, supported by 1 public body .",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_b66c86b2ed.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.gov.uk/assets/collections/govuk-icon-180-d45a306f0549414cfa5085f16e4a3816a77558b139e5bc226f23162d1d0decb0.png"
+   }
+  },
+  {
+   "nama": "Export-Import Bank of the United States",
+   "situs": "https://www.exim.gov/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "US",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Buy American, Build the Future | EXIM.GOV",
+    "deskripsi": "",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "US International Development Finance Corporation",
+   "situs": "https://www.dfc.gov/",
+   "kelompok": "eca",
+   "topik": [],
+   "iso2_seed": "US",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "DFC | America's Development Finance Institution",
+    "deskripsi": "The homepage of the DFC, the U.S. government's development finance institution, advancing U.S. foreign policy and strengthening national security by mobilizing private capital around the world.",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Munich Re",
+   "situs": "https://www.munichre.com/",
+   "kelompok": "asuransi",
+   "topik": [],
+   "iso2_seed": "DE",
+   "wikidata": {
+    "id": "Q166637",
+    "cocok": "situs",
+    "label": "Munich Re",
+    "deskripsi": "German reinsurance company",
+    "situs": "http://www.munichre.com",
+    "tahun_berdiri": 1880,
+    "enwiki": "Munich Re",
+    "logo_berkas": "Münchener Rück logo.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Munich Re",
+    "url": "https://en.wikipedia.org/wiki/Munich_Re",
+    "indonesia": [],
+    "portofolio": [
+     "The main activities of the foundation concentrate on four fields: knowledge accumulation and implementation, clarification and sensitisation, networking of experts as well as direct help and support of local projects.",
+     "The majority of projects fit within a global framework."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "judul": "Home | Munich Re",
+    "deskripsi": "Munich Re is a leading global provider of reinsurance, primary insurance and insurance-related risk solutions.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_2196546c15.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:M%C3%BCnchener_R%C3%BCck_logo.svg"
+   }
+  },
+  {
+   "nama": "Swiss Re",
+   "situs": "https://www.swissre.com/",
+   "kelompok": "asuransi",
+   "topik": [],
+   "iso2_seed": "CH",
+   "wikidata": {
+    "id": "Q605565",
+    "cocok": "situs",
+    "label": "Swiss Re",
+    "deskripsi": "Swiss reinsurance company",
+    "situs": "https://www.swissre.com/",
+    "tahun_berdiri": 1863,
+    "enwiki": "Swiss Re",
+    "logo_berkas": "Swiss Re 2013 logo.svg",
+    "iso2": [
+     "CH"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Swiss Re",
+    "url": "https://en.wikipedia.org/wiki/Swiss_Re",
+    "indonesia": [],
+    "portofolio": [],
+    "komitmen": []
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_114bf82c5c.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Swiss_Re_2013_logo.svg"
+   }
+  },
+  {
+   "nama": "Allianz",
+   "situs": "https://www.allianz.com/",
+   "kelompok": "asuransi",
+   "topik": [],
+   "iso2_seed": "DE",
+   "wikidata": {
+    "id": "Q487292",
+    "cocok": "situs",
+    "label": "Allianz SE",
+    "deskripsi": "European multinational insurance and financial services corporation",
+    "situs": "https://www.allianz.com/",
+    "tahun_berdiri": 1890,
+    "enwiki": "Allianz",
+    "logo_berkas": "Allianz.svg",
+    "iso2": [
+     "DE"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Allianz",
+    "url": "https://en.wikipedia.org/wiki/Allianz",
+    "indonesia": [
+     "Other places expanded into during the 1910s and 1920s included Palestine, Cyprus, Iraq, China, the Dutch Indies (now Indonesia), Ceylon (now Sri Lanka), and Siam (now Thailand). === 20th-century developments === In 1905, the company began to offer fire insurance, and in 1911 it began to sell machinery breakdown policies.",
+     "On 19 March 2025, it was agreed that Allianz would exit the joint venture for approximately €2.6bn selling its 26% stake to Bajaj Finserv. === Indonesia === Allianz started its operations in Indonesia with a representative office in 1981.",
+     "In 1989, Allianz established PT Asuransi Allianz Utama Indonesia, a general insurance company."
+    ],
+    "portofolio": [
+     "Today, Allianz in Ireland insures over 900,000 customers across the country through its portfolio of personal and commercial insurance products.",
+     "They are currently operated under the name of Allianz - PNB Life Insurance Incorporated. === Portugal === In 2018 Allianz, via Allianz Capital Partners, acquired the largest subsidy-free solar project in Portugal. === Russia === Allianz started operations in Russia in 1990, with the following acquisition of one of the largest Russian insurance companies ROSNO."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_2dcd4caea8.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Allianz.svg"
+   }
+  },
+  {
+   "nama": "Microsoft",
+   "situs": "https://www.microsoft.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya",
+    "data-center"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q2283",
+    "cocok": "situs",
+    "label": "Microsoft",
+    "deskripsi": "American multinational technology corporation",
+    "situs": "https://www.microsoft.com/",
+    "tahun_berdiri": 1975,
+    "enwiki": "Microsoft",
+    "logo_berkas": "Microsoft logo (1980).svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Microsoft",
+    "url": "https://en.wikipedia.org/wiki/Microsoft",
+    "indonesia": [
+     "Among grant recipients from the Asia-Pacific region are the Sri Lankan IT company Fortude, the Thailand-based Vulcan Coalition, and the Indonesian organization Kerjabilitas. === Controversies === Criticism of Microsoft has followed various aspects of its products and business practices, including surveillance of employees, \"Velvet Sweatshop\" practices, tax manipulation, and antitrust violations."
+    ],
+    "portofolio": [
+     "Gates retired from his role as Chief Software Architect on June 27, 2008, a decision announced in June 2006, while retaining other positions related to the company in addition to being an advisor for the company on key projects.",
+     "In June 2016, Microsoft announced a project named Microsoft Azure Information Protection."
+    ],
+    "komitmen": [
+     "Microsoft's deadline for phasing out brominated flame retardant (BFRs) and phthalates in all products was in 2012 but its commitment to phasing out PVC is not clear."
+    ]
+   },
+   "beranda": {
+    "judul": "Microsoft – AI, Cloud, Produktivitas, Komputasi, Game, dan Aplikasi",
+    "deskripsi": "Jelajahi produk dan layanan Microsoft serta dukungan untuk penggunaan bisnis dan rumahan. Beli Microsoft 365, Copilot, Teams, Xbox, Windows, Azure, dan lainnya.",
+    "indonesia": "https://news.microsoft.com/source/asia/region/indonesia/?lang=id&amp;icid=DSM_Footer_Company_CompanyNews"
+   },
+   "logo": {
+    "berkas": "en_64814a3b7f.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Microsoft_logo_(1980).svg"
+   }
+  },
+  {
+   "nama": "Google",
+   "situs": "https://about.google/",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya",
+    "data-center"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q95",
+    "cocok": "situs",
+    "label": "Google",
+    "deskripsi": "American multinational technology company, a subsidiary of Alphabet Inc.",
+    "situs": "https://about.google/",
+    "tahun_berdiri": 1998,
+    "enwiki": "Google",
+    "logo_berkas": "Google 2026 logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Google",
+    "url": "https://en.wikipedia.org/wiki/Google",
+    "indonesia": [],
+    "portofolio": [
+     "In 2007, Google launched \"AdSense for Mobile\", taking advantage of the emerging mobile advertising market. == Corporate affairs == === Founding === Google began in January 1996 as a research project by Larry Page and Sergey Brin during their time as PhD students, with additional contribution from Scott Hassan.",
+     "This purchase was made in part to help Google gain Motorola's considerable patent portfolio on mobile phones and wireless technologies, to help protect Google in its ongoing patent disputes with other companies, mainly Apple and Microsoft, and to allow it to continue to freely offer Android."
+    ],
+    "komitmen": [
+     "As part of him joining, Schmidt agreed to buy $1 million of Google preferred stocks as a way to show his commitment and to provide funds Google needed. === Initial public offering === On August 19, 2004, Google became a public company via an initial public offering.",
+     "In February 2025, Google dropped their commitment to make \"diversity, equity, and inclusion [DEI] part of everything we do\" from their annual investor report."
+    ]
+   },
+   "beranda": {
+    "judul": "About Google: Our products, technology and company information - About Google",
+    "deskripsi": "Learn more about Google. Explore our innovative AI products and services, and how we",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_759730a97e.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Google_2026_logo.svg"
+   }
+  },
+  {
+   "nama": "Amazon Web Services",
+   "situs": "https://aws.amazon.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya",
+    "data-center"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q456157",
+    "cocok": "situs",
+    "label": "Amazon Web Services",
+    "deskripsi": "subsidiary of Amazon that provides on-demand cloud computing platforms on a metered pay-as-you-go basis",
+    "situs": "https://aws.amazon.com/",
+    "tahun_berdiri": 2006,
+    "enwiki": "Amazon Web Services",
+    "logo_berkas": "Amazon Web Services Logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Amazon Web Services",
+    "url": "https://en.wikipedia.org/wiki/Amazon_Web_Services",
+    "indonesia": [
+     "Clients can interact with these APIs in various ways, including from the AWS console (a website), by using SDKs written in various languages (such as Python, Java, and JavaScript), or by making direct REST calls. == History == === Founding (2000–2005) === The genesis of AWS came in the early 2000s."
+    ],
+    "portofolio": [
+     "These cloud computing web services provide various services related to networking, compute, storage, middleware, IoT and other processing capacity, as well as software tools via AWS server farms.",
+     "Amazon markets AWS to subscribers as a way of obtaining large-scale computing capacity more quickly and cheaply than building an actual physical server farm."
+    ],
+    "komitmen": [
+     "Amazon has committed to investing up to $4 billion in Anthropic and will have a minority ownership position in the company.",
+     "In April 2022, AWS announced that the organization had committed more than $30 million over three years to early-stage start-ups led by Black, Latino, LGBTQIA+, and women founders as part of its AWS impact Accelerator."
+    ]
+   },
+   "beranda": {
+    "judul": "Cloud Computing Services - Amazon Web Services (AWS)",
+    "deskripsi": "Amazon Web Services offers reliable, scalable, and inexpensive cloud computing services. Free to join, pay only for what you use.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_42b52d4d35.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_Logo.svg"
+   }
+  },
+  {
+   "nama": "Equinix",
+   "situs": "https://www.equinix.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q851641",
+    "cocok": "situs",
+    "label": "Equinix",
+    "deskripsi": "data center and colocation infrastructure provider",
+    "situs": "https://www.equinix.com",
+    "tahun_berdiri": 1998,
+    "enwiki": "Equinix",
+    "logo_berkas": "Equinix logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Equinix",
+    "url": "https://en.wikipedia.org/wiki/Equinix",
+    "indonesia": [
+     "In 2012, the company extended its operations to the Middle East, expanding to Dubai, and in Southeast Asia, specifically Indonesia."
+    ],
+    "portofolio": [
+     "Over the next seven years, the company nearly tripled its data center portfolio.",
+     "The addition of these data centers more than doubled Equinix's capacity in Europe."
+    ],
+    "komitmen": [
+     "Later that month, Equinix opened a new data center, MD5, in Madrid, Spain, as part of a $535 million expansion. === Environmental impacts === In 2015, Equinix announced a long-term commitment to power its data centers with clean, renewable energy."
+    ]
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_db3cdddd23.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Equinix_logo.svg"
+   }
+  },
+  {
+   "nama": "DCI Indonesia",
+   "situs": "https://dci-indonesia.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ],
+   "iso2_seed": "ID",
+   "wikidata": {
+    "id": "Q114556764",
+    "cocok": "label",
+    "label": "DCI Indonesia",
+    "deskripsi": "Indonesian public company",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": [
+     "ID"
+    ]
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "DCI Indonesia - Hyperscale Data Center & Colocation",
+    "deskripsi": "Indonesia&#x27;s first and leading Tier IV data center. Scalable hyperscale colocation and interconnection with the fastest time-to-market for your business.",
+    "indonesia": "https://portalservice.dci-indonesia.com/"
+   },
+   "logo": {
+    "berkas": "en_06c40b090e.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://dci-indonesia.com/favicon.png"
+   }
+  },
+  {
+   "nama": "Nvidia",
+   "situs": "https://www.nvidia.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q182477",
+    "cocok": "situs",
+    "label": "Nvidia",
+    "deskripsi": "American multinational technology company",
+    "situs": "https://www.nvidia.com/",
+    "tahun_berdiri": 1993,
+    "enwiki": "Nvidia",
+    "logo_berkas": "NVIDIA logo.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Nvidia",
+    "url": "https://en.wikipedia.org/wiki/Nvidia",
+    "indonesia": [],
+    "portofolio": [
+     "However, the project took many of its best engineers away from other projects.",
+     "Exluna made software-rendering tools and its personnel were merged into Nvidia's Cg project."
+    ],
+    "komitmen": [
+     "Furthermore, Nvidia's acquisition of SchedMD and the release of new open-source AI models highlight its broader commitment to open-source software and the AI ecosystem.[1] Instead, Nvidia provides its own binary GeForce graphics drivers for X.Org and an open-source library that interfaces with the Linux, FreeBSD or Solaris kernels and the proprietary graphics software."
+    ]
+   },
+   "beranda": {
+    "judul": "Location and Regional Selector | NVIDIA",
+    "deskripsi": "Experience the NVIDIA website in your language, in your location.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_05f5439f98.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:NVIDIA_logo.svg"
+   }
+  },
+  {
+   "nama": "YTL Power International",
+   "situs": "https://www.ytlcommunity.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center",
+    "surya"
+   ],
+   "iso2_seed": "MY",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "robots"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "BDx Data Centers",
+   "situs": "https://bdxworld.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ],
+   "iso2_seed": "SG",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "AI-Ready Data Centers Across APAC | BDx Data Centers",
+    "deskripsi": "BDx operates AI-ready, carrier-neutral data centers across Indonesia, Singapore, Hong Kong and Taiwan. Secured power, engineered for high-density compute.",
+    "indonesia": "https://www.bdxworld.com/bdx-data-centers-secures-indonesias-largest-data-center-power-commitment-at-1-2-gw-strengthening-strategic-partnership-with-pln-across-national-ai-infrastructure-platform/"
+   },
+   "logo": {
+    "berkas": "en_98df522cd8.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.bdxworld.com/wp-content/uploads/2026/09/cropped-bdx-fav-180x180.png"
+   }
+  },
+  {
+   "nama": "Princeton Digital Group",
+   "situs": "https://www.princetondg.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "data-center"
+   ],
+   "iso2_seed": "SG",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "APAC Hyperscale Data Centers for Cloud & AI | PDG",
+    "deskripsi": "Discover Princeton Digital Group, a leading developer and operator of hyperscale data centers enabling AI and cloud growth across Asia Pacific.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_de55e4dc64.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://princetondg.com/wp-content/uploads/2024/07/cropped-cropped-favicon-32x32-1-180x180.png"
+   }
+  },
+  {
+   "nama": "RE100",
+   "situs": "https://www.there100.org/",
+   "kelompok": "pembeli",
+   "topik": [],
+   "iso2_seed": "GB",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "judul": "RE100",
+    "deskripsi": "RE100 brings together world leading businesses driving the switch to renewables. Together, we",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_5f0becbac3.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://www.theclimategroup.org/hubfs/Climate%20Group/images/flavicon.png"
+   }
+  },
+  {
+   "nama": "Unilever",
+   "situs": "https://www.unilever.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya"
+   ],
+   "iso2_seed": "GB",
+   "wikidata": {
+    "id": "Q157062",
+    "cocok": "situs",
+    "label": "Unilever",
+    "deskripsi": "British multinational consumer goods company",
+    "situs": "https://unilever.com",
+    "tahun_berdiri": 1929,
+    "enwiki": "Unilever",
+    "logo_berkas": "Unilever text logo.svg",
+    "iso2": [
+     "GB",
+     "NL"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Unilever",
+    "url": "https://en.wikipedia.org/wiki/Unilever",
+    "indonesia": [
+     "In 1933, Unilever Indonesia was established in December as Lever Zeepfabrieken N.V. and had operations in Cikarang, West Java at Rungkut, East Java and North Sumatra. === 1941–1960 === After 1945, Unilever's American businesses (Lever Brothers and T.J.",
+     "This deal excluded the Unilever tea business in India, Indonesia and Nepal, and the Lipton Ice Tea joint-venture with PepsiCo.",
+     "The deal excluded Unilever's food and tea businesses in India, Indonesia and Nepal, the Lipton Ice Tea joint-venture with PepsiCo, its Lifestyle Nutrition business, its Buavita business and the Colman's mustard manufacturer."
+    ],
+    "portofolio": [
+     "The Bestfoods acquisition increased Unilever's scale in foods in America, and added brands including Knorr, Marmite, Bovril, and Hellmann's to its portfolio."
+    ],
+    "komitmen": [
+     "On 9 September, the State of Arizona committed to totally divest from Unilever by 21 September."
+    ]
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_affc395481.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Unilever_text_logo.svg"
+   }
+  },
+  {
+   "nama": "Nestle",
+   "situs": "https://www.nestle.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya"
+   ],
+   "iso2_seed": "CH",
+   "wikidata": {
+    "id": "Q160746",
+    "cocok": "situs",
+    "label": "Nestlé",
+    "deskripsi": "Swiss multi-national food and beverage company",
+    "situs": "https://www.nestle.com/",
+    "tahun_berdiri": 1866,
+    "enwiki": "Nestlé",
+    "logo_berkas": "Nestlé textlogo.svg",
+    "iso2": [
+     "CH"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Nestlé",
+    "url": "https://en.wikipedia.org/wiki/Nestl%C3%A9",
+    "indonesia": [],
+    "portofolio": [
+     "In 1877, Anglo-Swiss added milk-based baby foods to its products; in the following year, the Nestlé Company added condensed milk to its portfolio, which made the firms direct rivals.",
+     "Schär brands, Mevalia and ComidaMed, which are used for the dietary management of IEM and cow's milk protein allergy to complement Vitaflo's existing IEM product portfolio."
+    ],
+    "komitmen": []
+   },
+   "beranda": {
+    "gagal": "blokir 403"
+   },
+   "logo": {
+    "berkas": "en_fbdc00f0a0.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Nestl%C3%A9_textlogo.svg"
+   }
+  },
+  {
+   "nama": "Apple",
+   "situs": "https://www.apple.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya"
+   ],
+   "iso2_seed": "US",
+   "wikidata": {
+    "id": "Q312",
+    "cocok": "situs",
+    "label": "Apple Inc.",
+    "deskripsi": "American multinational technology company based in Cupertino, California",
+    "situs": "https://apple.com/at/",
+    "tahun_berdiri": 1976,
+    "enwiki": "Apple Inc.",
+    "logo_berkas": "Apple logo black.svg",
+    "iso2": [
+     "US"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Apple Inc.",
+    "url": "https://en.wikipedia.org/wiki/Apple_Inc.",
+    "indonesia": [],
+    "portofolio": [
+     "Jobs was removed from the Lisa project during its early development and joined the Macintosh division in 1981.",
+     "After Wozniak stepped back following a plane crash, Jobs took over the project, transforming the Macintosh into a mouse-driven computer with a GUI similar to the Lisa."
+    ],
+    "komitmen": [
+     "In August 1997, Jobs secured a $150 million investment from Microsoft and a commitment to continue developing software for the Mac platform, an agreement widely viewed as beneficial to both companies following Microsoft's antitrust settlement with the U.S.",
+     "Facebook had, however, stated that the company would not participate directly with the lawsuit, although did commit to helping with the discovery of evidence relating to the trial of 2021."
+    ]
+   },
+   "beranda": {
+    "judul": "Apple",
+    "deskripsi": "Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment, and expert device support.",
+    "indonesia": null
+   },
+   "logo": {
+    "berkas": "en_d0be2dc421.png",
+    "sumber": "Wikidata P154 / Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Apple_logo_black.svg"
+   }
+  },
+  {
+   "nama": "Danone",
+   "situs": "https://www.danone.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "surya"
+   ],
+   "iso2_seed": "FR",
+   "wikidata": {
+    "id": "Q329426",
+    "cocok": "situs",
+    "label": "Danone",
+    "deskripsi": "French food company",
+    "situs": "https://www.danone.com/fr.html",
+    "tahun_berdiri": 1919,
+    "enwiki": "Danone",
+    "logo_berkas": null,
+    "iso2": [
+     "ES",
+     "FR"
+    ]
+   },
+   "wikipedia": {
+    "judul": "Danone",
+    "url": "https://en.wikipedia.org/wiki/Danone",
+    "indonesia": [
+     "The institutes are located in Belgium, Canada, China, the Czech Republic, France, Germany, Indonesia, Israel, Italy, Japan, Mexico, Poland, Russia, Spain, the United States, and Turkey.",
+     "An infant satiated with formula may demand less breast milk, so the mother produces less, and that can result in her losing confidence in her ability to breastfeed.\" ==== Indonesia subsidiary ==== In February 2013 The Guardian reported that up until 2011, Danone subsidiary Sari Husada had midwives sign contracts to receive financial payments for selling a certain number of boxes of baby formula.",
+     "Danone commented: \"That may still be happening, that's something we need to address.\" This same article reported that Sari Husada (Danone) had links throughout the Indonesian medical system."
+    ],
+    "portofolio": [
+     "Following Saint-Louis's withdrawal in 1996, BSN recovered its full portfolio of brands.",
+     "On 29 March, Danone announced the reorganization of its biscuit operations in Europe, aimed at rationalizing industrial capacity."
+    ],
+    "komitmen": [
+     "On 8 January 2014 Danone announced its decision to terminate its existing supply contract with Fonterra and make any further collaboration contingent on a commitment by its supplier to full transparency and compliance with the food safety procedures applied to all products supplied to Danone."
+    ]
+   },
+   "beranda": {
+    "judul": "Danone: World food company | Danone Group",
+    "deskripsi": "Danone, a world leading food and beverage company, present in over 120 countries and with the essential business lines such as Waters and Early Life Nutrition.",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Tsingshan",
+   "situs": "https://www.tsingshan.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "smelter"
+   ],
+   "iso2_seed": "CN",
+   "wikidata": null,
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Indonesia Morowali Industrial Park",
+   "situs": "https://www.imip.co.id/",
+   "kelompok": "pembeli",
+   "topik": [
+    "smelter"
+   ],
+   "iso2_seed": "ID",
+   "wikidata": {
+    "id": "Q118585229",
+    "cocok": "label",
+    "label": "Indonesia Morowali Industrial Park",
+    "deskripsi": "company",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": []
+   },
+   "wikipedia": null,
+   "beranda": {
+    "gagal": "fetch failed"
+   },
+   "logo": {
+    "tanpa": true
+   }
+  },
+  {
+   "nama": "Vale Indonesia",
+   "situs": "https://vale.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "smelter",
+    "hidro"
+   ],
+   "iso2_seed": "ID",
+   "wikidata": {
+    "id": "Q65212259",
+    "cocok": "situs",
+    "label": "Vale Indonesia",
+    "deskripsi": "public company in Indonesia",
+    "situs": "http://www.vale.com/indonesia",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": [
+     "ID"
+    ]
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Mining, Logistics, and Energy - Vale",
+    "deskripsi": "Vale is a global mining company that operates with a focus on safety and sustainability. It produces iron ore and minerals critical to the energy transition.",
+    "indonesia": "https://vale.com/en/indonesia"
+   },
+   "logo": {
+    "berkas": "en_32899d3110.png",
+    "sumber": "ikon resmi situs",
+    "url": "https://vale.com/documents/44618/57981/fav_128px/550e3a42-f32c-7356-de52-41320d095395"
+   }
+  },
+  {
+   "nama": "Harita Nickel",
+   "situs": "https://www.haritanickel.com/",
+   "kelompok": "pembeli",
+   "topik": [
+    "smelter"
+   ],
+   "iso2_seed": "ID",
+   "wikidata": {
+    "id": "Q122795358",
+    "cocok": "label",
+    "label": "Harita Nickel",
+    "deskripsi": "ship built in 1983",
+    "tahun_berdiri": null,
+    "enwiki": null,
+    "logo_berkas": null,
+    "iso2": []
+   },
+   "wikipedia": null,
+   "beranda": {
+    "judul": "Harita Nickel - Dari Obi Untuk Indonesia",
+    "deskripsi": "Pulau Obi memiliki sumber daya alam nikel yang besar di Indonesia, selain di wilayah Sulawesi. Trimegah Bangun Persada (TBP) mendapat mandat untuk melaksanakan...",
+    "indonesia": null
+   },
+   "logo": {
+    "tanpa": true
+   }
+  }
+ ]
+}

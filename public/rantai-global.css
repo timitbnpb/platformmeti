@@ -1,0 +1,221 @@
+/* /rantai-global: token tema saja (tanpa hex, tanpa px pada font). Warna seri grafik lewat kelas .rg3-s-* (currentColor), chip lewat --wc. */
+.rg3-isi{display:block}
+.rg3-panel>.jm-ex+.jm-ex{margin-top:24px}
+.rg3-panel[hidden]{display:none}
+
+/* ---- tab ujung ke ujung, terpilih = pil hijau tua ---- */
+.rg3-tab{margin:0 0 20px}
+.rg3-tab .jm-tab{display:grid!important;grid-auto-flow:column;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr);gap:4px;padding:4px;margin-bottom:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r-pil);overflow:visible}
+.rg3-tab .jm-tab>button{justify-content:center;border:0;border-radius:var(--r-pil);margin:0;padding-inline:8px;min-width:0}
+.rg3-tab .jm-tab>button[aria-selected="true"]{background:var(--brand);color:var(--on-brand)}
+.rg3-tab .jm-tab>button[aria-selected="true"]:hover{background:var(--brand)}
+@media (max-width:899px){.rg3-tab .jm-tab>button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+.rg3-ub-bukti{display:flex;margin-top:4px}
+
+/* ---- warna seri, chip, kategori ---- */
+.rg3-s-surya{color:var(--tp-surya)}.rg3-s-penyimpanan{color:var(--tp-simpan)}.rg3-s-bayu{color:var(--tp-bayu)}.rg3-s-hidro{color:var(--tp-hidro)}.rg3-s-panas-bumi{color:var(--tp-panas)}
+.rg3-s-hidrogen{color:var(--tp-hidrogen)}.rg3-s-jaringan{color:var(--tp-jaringan)}.rg3-s-bioenergi{color:var(--tp-bio)}.rg3-s-biomassa-sampah{color:var(--tp-sampah)}
+.rg3-s-dunia{color:var(--data5)}.rg3-s-id{color:var(--data1)}.rg3-s-banding{color:var(--data2)}
+.rg3-s-fob{color:var(--data1)}.rg3-s-angkut{color:var(--data5)}.rg3-s-asuransi{color:var(--data4)}.rg3-s-bm{color:var(--tp-panas)}.rg3-s-ppn{color:var(--tp-surya)}.rg3-s-pph22{color:var(--tp-industri)}.rg3-s-lokal{color:var(--tp-sampah)}
+.rg3-s-modul{color:var(--data1)}.rg3-s-sel{color:var(--data3)}.rg3-s-celah{color:var(--warn)}.rg3-s-butuh{color:var(--data5)}
+.rg3-s-pangsa{color:var(--data2)}.rg3-s-h-tinggi{color:var(--bad)}.rg3-s-h-sedang{color:var(--warn)}.rg3-s-h-rendah{color:var(--ok)}
+.rg3-s-w-insinerasi-grate{color:var(--tp-sampah)}.rg3-s-w-fluidized-bed{color:var(--tp-bio)}.rg3-s-w-gasifikasi{color:var(--tp-panas)}.rg3-s-w-biodigester-biogas{color:var(--tp-hidrogen)}.rg3-s-w-landfill-gas{color:var(--tp-simpan)}
+.rg3-s-st-beroperasi{color:var(--ok)}.rg3-s-st-konstruksi{color:var(--info)}.rg3-s-st-rencana{color:var(--warn)}.rg3-s-st-tidak-diketahui{color:var(--ink2)}
+.rg3-s-p35{color:var(--data3)}.rg3-s-p109{color:var(--accent)}
+.rg3-s-tt-perc{color:var(--tp-simpan)}.rg3-s-tt-topcon{color:var(--tp-surya)}.rg3-s-tt-hjt{color:var(--tp-bayu)}.rg3-s-tt-bc-topcon{color:var(--tp-bio)}.rg3-s-tt-bc-hjt{color:var(--tp-hidrogen)}.rg3-s-tt-bc-semua{color:var(--tp-panas)}.rg3-s-tt-tandem-si{color:var(--tp-industri)}
+.rg3-g-0{color:var(--data1)}.rg3-g-1{color:var(--tp-bayu)}.rg3-g-2{color:var(--tp-panas)}.rg3-g-3{color:var(--tp-surya)}.rg3-g-4{color:var(--tp-bio)}.rg3-g-5{color:var(--tp-industri)}.rg3-g-6{color:var(--tp-hidrogen)}.rg3-g-7{color:var(--tp-adil)}
+.rg3-chip.rg3-g-dunia{--wc:var(--data5)}.rg3-chip.rg3-g-id{--wc:var(--data1)}
+.rg3-w0{--wc:var(--data1)}.rg3-w1{--wc:var(--tp-bayu)}.rg3-w2{--wc:var(--tp-panas)}.rg3-w3{--wc:var(--tp-surya)}.rg3-w4{--wc:var(--tp-bio)}.rg3-w5{--wc:var(--tp-industri)}.rg3-w6{--wc:var(--tp-hidrogen)}.rg3-w7{--wc:var(--tp-adil)}
+.rg3-tek-surya{--wc:var(--tp-surya)}.rg3-tek-simpan{--wc:var(--tp-simpan)}.rg3-tek-bayu{--wc:var(--tp-bayu)}.rg3-tek-hidro{--wc:var(--tp-hidro)}.rg3-tek-panas{--wc:var(--tp-panas)}.rg3-tek-hidrogen{--wc:var(--tp-hidrogen)}.rg3-tek-jaringan{--wc:var(--tp-jaringan)}.rg3-tek-bio{--wc:var(--tp-bio)}.rg3-tek-sampah{--wc:var(--tp-sampah)}
+.rg3-kat-modul{--wc:var(--tp-surya)}.rg3-kat-inverter{--wc:var(--tp-industri)}.rg3-kat-bess{--wc:var(--tp-simpan)}.rg3-kat-turbin{--wc:var(--tp-bayu)}
+.rg3-st-beroperasi{--wc:var(--ok)}.rg3-st-bangun,.rg3-st-konstruksi{--wc:var(--info)}.rg3-st-rencana{--wc:var(--warn)}.rg3-st-operasi{--wc:var(--ok)}.rg3-st-tutup{--wc:var(--bad)}.rg3-st-belum-dipastikan,.rg3-st-x{--wc:var(--ink2)}
+:where(.rg3-chip){--wc:var(--info)}
+.rg3-chip{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border:1px solid color-mix(in srgb,var(--wc) 55%,transparent);border-radius:var(--r-pil);background:color-mix(in srgb,var(--wc) 14%,var(--card));color:var(--ink);font:600 var(--t-kecil)/1 var(--font);white-space:nowrap}
+.rg3-chip :is(.jm-ik,.jm-ikt){flex:none;color:var(--wc)}
+.rg3-chip-pudar{--wc:var(--ink2);opacity:.8}
+.rg3-chipb{cursor:pointer;min-height:var(--target);padding:0 14px}
+.rg3-chipb i{font-style:normal;color:var(--ink2);font-weight:600}
+.rg3-chipb[aria-pressed="true"]{background:var(--wc);color:var(--on-brand);border-color:var(--wc)}
+.rg3-chipb[aria-pressed="true"] :is(.jm-ik,i){color:inherit}
+.rg3-chipb:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.rg3-chips{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.rg3-lain{display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:600 var(--t-kecil)/1 var(--font)}
+.rg3-belum{background:var(--surface);color:var(--ink2);gap:5px}
+.rg3-ab{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* ---- bendera, logo, tautan ---- */
+.rg3-fl{border-radius:2px;vertical-align:middle;flex:none;object-fit:cover}
+.rg3-neg{display:inline-flex;align-items:center;gap:6px;min-width:0}
+.rg3-lg{display:inline-grid;place-items:center;flex:none;width:40px;height:40px;border-radius:var(--r-sm);background:var(--card);border:1px solid var(--line);overflow:hidden;position:relative}
+.rg3-lg img{grid-area:1/1;width:100%;height:100%;object-fit:contain;background:var(--card);z-index:1}
+.rg3-lg b{grid-area:1/1;color:var(--accent);font:700 var(--t-h3)/1 var(--display)}
+.rg3-lg-k{width:28px;height:28px}.rg3-lg-k b{font-size:var(--t-kecil)}
+.rg3-bdr{display:inline-grid;place-items:center;width:44px;height:44px}
+.rg3-tautan{color:var(--accent);font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.rg3-tautan:hover{text-decoration:underline;color:var(--brand2)}
+.rg3-proyek{display:inline-flex;align-items:center;gap:4px;font-size:var(--t-kecil)}
+.rg3-org{display:inline-flex;align-items:center;gap:8px}
+.rg3-teks{overflow-wrap:anywhere}
+.rg3-catat{display:block;color:var(--ink2);font-size:var(--t-kecil)}
+.rg3-sm{display:grid;gap:6px;justify-items:start}
+.rg3-sub{margin:20px 0 10px;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.rg3-kosong{margin-block:8px}
+.rg3-celah{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.rg3-celah li{display:flex;gap:10px;align-items:flex-start;color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-isi)}
+.rg3-celah .jm-ik{flex:none;margin-top:2px}
+
+/* ---- saringan ---- */
+.rg3-saring>.jm-cari{grid-column:auto}
+.rg3-saring{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px;align-items:center}
+.rg3-saring-1{grid-template-columns:minmax(0,1fr) auto}.rg3-saring-2{grid-template-columns:minmax(0,2fr) minmax(0,1fr) auto}
+.rg3-saring .pc,.rg3-saring .jm-pil-pilih{width:100%;min-width:0}
+.rg3-saring .jm-hitung,.rg3-saring .jm-hapus{grid-column:1/-1;justify-self:start}
+.rg3-saring-1 .jm-hitung,.rg3-saring-2 .jm-hitung{grid-column:auto;justify-self:end}
+@media (max-width:899px){.rg3-saring,.rg3-saring-1,.rg3-saring-2{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- kartu ---- */
+.rg3-kisi{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px;margin-bottom:16px}
+.rg3-kartu{display:grid;gap:12px;align-content:start;min-width:0;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+.rg3-pilih{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 35%,transparent)}
+.rg3-k-kep{display:flex;gap:12px;align-items:center;min-width:0}
+.rg3-k-kep>div{min-width:0}
+.rg3-k-kep h3{margin:0;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head);overflow-wrap:anywhere}
+.rg3-k-kep p{margin:2px 0 0;color:var(--ink2);font-size:var(--t-kecil)}
+.rg3-k-kaki{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--line-cell)}
+.rg3-fakta,.rg3-spek{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:0}
+.rg3-fakta>div,.rg3-spek>div{display:grid;gap:2px;padding:8px 10px;border-radius:var(--r-sm);background:var(--surface);min-width:0}
+.rg3-fakta .jm-ik{color:var(--accent)}
+.rg3-fakta dt,.rg3-spek dt{color:var(--ink2);font-size:var(--t-kecil)}
+.rg3-fakta dd,.rg3-spek dd{margin:0;font:700 var(--t-body)/var(--lh-rapat) var(--font);color:var(--ink);overflow-wrap:anywhere}
+.rg3-banding{display:inline-flex;align-items:center;gap:6px;min-height:var(--target);padding:0 14px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-tombol)/1 var(--font);cursor:pointer}
+.rg3-banding[aria-pressed="true"]{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}
+.rg3-banding:disabled{opacity:.45;cursor:not-allowed}
+.rg3-banding:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.rg3-bar{position:sticky;top:calc(var(--top) + 8px);z-index:5;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:16px;padding:10px 14px;border:1px solid var(--accent);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+.rg3-bar[hidden]{display:none}
+.rg3-bar-t{display:inline-flex;align-items:center;gap:8px;color:var(--accent)}
+.rg3-bar-c{display:flex;flex-wrap:wrap;gap:6px;flex:1}
+.rg3-bar-x{cursor:pointer;background:var(--soft-hijau)}
+.rg3-th{display:inline-flex;align-items:center;gap:8px;justify-content:center}
+.rg3-banding-tabel th[scope="row"]{text-align:left;background:var(--surface);color:var(--ink);padding:12px 14px;border-bottom:1px solid var(--line-cell);font:600 var(--t-body)/var(--lh-rapat) var(--font);white-space:normal}
+.rg3-banding-tabel th[scope="row"] small{display:block;font-weight:400}
+.rg3-banding-tabel td{text-align:center}
+.rg3-banding-tabel td.jm-num{white-space:normal}
+.rg3-terbaik{background:var(--soft-hijau)!important;color:var(--ok)}
+.rg3-terbaik .jm-ik{color:var(--ok);margin-left:6px;vertical-align:middle}
+.rg3-negara .rg3-penyedia{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rg3-penyedia li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:start;padding-top:10px;border-top:1px solid var(--line-cell)}
+.rg3-penyedia small{display:block;color:var(--ink2)}
+.rg3-pend{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin:0;color:var(--ink2);font-size:var(--t-kecil)}
+
+/* ---- ubin, info, daftar ---- */
+.rg3-ubin{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
+.rg3-ub{display:grid;gap:6px;align-content:start;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow);min-width:0}
+.rg3-ub>b{font:700 var(--t-angka)/var(--lh-rapat) var(--display);color:var(--head);overflow-wrap:anywhere}
+.rg3-ub>small{color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-isi)}
+.rg3-hhi-tinggi{border-color:var(--bad)}.rg3-hhi-sedang{border-color:var(--warn)}.rg3-hhi-rendah{border-color:var(--ok)}
+.rg3-info{display:flex;gap:10px;align-items:flex-start;margin:0 0 12px;padding:12px 14px;border-radius:var(--r-sm);background:var(--surface);color:var(--ink);line-height:var(--lh-isi)}
+.rg3-info p,.rg3-info span{margin:0}.rg3-info .jm-ik{flex:none;margin-top:2px;color:var(--ink2)}
+.rg3-info-ok{background:var(--soft-hijau)}.rg3-info-ok .jm-ik{color:var(--ok)}
+.rg3-info-bad{background:var(--bad-bg)}.rg3-info-bad .jm-ik{color:var(--bad)}
+.rg3-daftar{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:10px}
+.rg3-baris{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line-cell);border-radius:var(--r-sm);background:var(--card)}
+.rg3-baris>div{min-width:0}.rg3-baris small{display:block;color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-isi);margin-top:2px}
+.rg3-baris p{margin:2px 0 0;color:var(--ink2);font-size:var(--t-kecil)}
+.rg3-id-tanda{display:inline-flex;align-items:center;gap:6px;margin-top:4px;color:var(--bad);font:600 var(--t-kecil)/1 var(--font)}
+.rg3-pj{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.rg3-pj-k{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;border:1px solid var(--line-cell);border-radius:var(--r-sm);background:var(--card)}
+.rg3-pj-k small{display:inline-flex;gap:4px}
+
+/* ---- alur tahap ---- */
+.rg3-alur{list-style:none;margin:0 0 12px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px;counter-reset:rg3}
+.rg3-alur-3{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.rg3-tahap{position:relative;display:grid;gap:10px;align-content:start;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+.rg3-tahap-no{display:inline-flex;align-items:center;gap:8px;color:var(--accent)}
+.rg3-tahap-no i{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--brand);color:var(--on-brand);font:700 var(--t-kecil)/1 var(--font);font-style:normal}
+.rg3-tahap h3{margin:0 0 4px;font:700 var(--t-body)/var(--lh-rapat) var(--display);color:var(--head)}
+.rg3-tahap p{margin:0 0 6px;color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-isi)}
+.rg3-tahap-pelaku{color:var(--ink)!important;font-weight:600}
+.rg3-tahap-kaki{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.rg3-hari{font:700 var(--t-body)/1 var(--font);color:var(--head)}
+@media (min-width:1280px){.rg3-alur:not(.rg3-alur-3){grid-template-columns:repeat(7,minmax(0,1fr))}.rg3-alur:not(.rg3-alur-3) .rg3-tahap:not(:last-child)::after{content:"";position:absolute;right:-10px;top:26px;width:9px;height:9px;border-top:2px solid var(--line-ctl);border-right:2px solid var(--line-ctl);transform:rotate(45deg);background:transparent}}
+
+/* ---- peta ---- */
+.rg3-peta{height:480px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--soft-hijau);margin-bottom:20px}
+.rg3-mk{display:grid;place-items:center;cursor:pointer;outline-offset:3px}
+.rg3-mk img{width:26px;height:26px;border-radius:50%;object-fit:cover;border:2px solid var(--card);box-shadow:0 2px 8px rgb(0 0 0 / .25)}
+.rg3-mk b{position:absolute;top:100%;margin-top:2px;padding:1px 6px;border-radius:var(--r-pil);background:var(--card);color:var(--ink);border:1px solid var(--line);font:600 var(--t-kecil)/1.2 var(--font);white-space:nowrap;pointer-events:none}
+.rg3-mk-tujuan img{border-color:var(--accent)}
+.rg3-mk-n img{width:100%;height:100%}.rg3-mk-n{position:relative}
+.rg3-mk-n i{position:absolute;right:-6px;top:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;display:grid;place-items:center;background:var(--brand);color:var(--on-brand);font:700 var(--t-kecil)/1 var(--font);font-style:normal}
+.rg3-pin{width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--on-accent);border:2px solid var(--card);box-shadow:0 2px 8px rgb(0 0 0 / .25)}
+.rg3-tipm{display:grid;gap:6px;min-width:180px;font:400 var(--t-kecil)/var(--lh-isi) var(--font);color:var(--ink)}
+.rg3-tipm b{display:flex;align-items:center;gap:8px;font-weight:600}.rg3-tipm span{display:flex;justify-content:space-between;gap:16px}.rg3-tipm em{font-style:normal;color:var(--ink2)}
+.rg3-pop .maplibregl-popup-content{background:var(--card);color:var(--ink);border-radius:var(--r);padding:12px 14px;box-shadow:var(--shadow)}
+@media (max-width:640px){.rg3-peta{height:340px}}
+
+/* ---- kalkulator ---- */
+.rg3-kalk{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:1099px){.rg3-kalk{grid-template-columns:minmax(0,1fr)}}
+.rg3-form{display:grid;gap:12px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.rg3-form .pc,.rg3-form .jm-pil-pilih{width:100%;min-width:0}
+.rg3-fld{display:grid;gap:4px}
+.rg3-fld>span{font:600 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink)}
+.rg3-fld>small{color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-isi)}
+.rg3-fld input{width:100%;min-height:var(--target);padding:0 14px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:600 var(--t-body)/1 var(--font)}
+.rg3-fld input:focus-visible{outline:2px solid var(--fokus);outline-offset:1px}
+.rg3-cek{display:flex;gap:10px;align-items:center;min-height:var(--target);color:var(--ink);font:600 var(--t-body)/var(--lh-rapat) var(--font)}
+.rg3-cek input{width:20px;height:20px;accent-color:var(--accent)}
+.rg3-total{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px}
+.rg3-total>div:not(.rg3-total-b){display:grid;gap:6px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.rg3-total span{color:var(--ink2);font:600 var(--t-label)/var(--lh-rapat) var(--font)}
+.rg3-total b{font:700 var(--t-angka)/var(--lh-rapat) var(--display);color:var(--head)}
+.rg3-total small{color:var(--ink2);font-size:var(--t-kecil)}
+.rg3-total-b{display:flex;align-items:center}
+.rg3-pos{display:inline-flex;align-items:center;gap:8px}
+.rg3-sw{display:inline-block;width:12px;height:12px;border-radius:3px;background:currentColor;flex:none}
+.rg3-sub-t td{background:var(--soft-hijau)!important}
+.rg3-rute{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 0;color:var(--ink2);font-size:var(--t-kecil)}
+.rg3-sim{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:899px){.rg3-sim{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- peta panas simulasi TKDN ---- */
+.rg3-hm td,.rg3-hm th[scope="row"]{text-align:center}
+.rg3-hm th[scope="row"]{background:var(--surface);color:var(--ink);padding:10px 14px;border-bottom:1px solid var(--line-cell);font:600 var(--t-body)/1 var(--font)}
+.rg3-hm tbody td.rg3-hm-0{background:color-mix(in srgb,var(--ok) 18%,var(--card))}
+.rg3-hm tbody td.rg3-hm-1{background:color-mix(in srgb,var(--data4) 32%,var(--card))}
+.rg3-hm tbody td.rg3-hm-2{background:color-mix(in srgb,var(--warn) 20%,var(--card))}
+.rg3-hm tbody td.rg3-hm-3{background:color-mix(in srgb,var(--warn) 38%,var(--card))}
+.rg3-hm tbody td.rg3-hm-4{background:color-mix(in srgb,var(--bad) 34%,var(--card))}
+.rg3-hm tbody td.rg3-hm-x{background:var(--surface)}
+.rg3-hm-b{width:100%;min-height:var(--target);border:0;background:none;color:var(--ink);font:600 var(--t-body)/1 var(--font);cursor:pointer;border-radius:var(--r-sm)}
+.rg3-hm-b:hover{box-shadow:inset 0 0 0 2px var(--accent)}
+.rg3-hm-b:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+.rg3-hm td.rg3-hm-on .rg3-hm-b{box-shadow:inset 0 0 0 3px var(--brand)}
+
+/* ---- WTE dan PSEL ---- */
+.rg3-kota{list-style:none;margin:0 0 12px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:12px}
+.rg3-kota-k{display:grid;gap:8px;align-content:start;padding:12px 14px;border:1px solid var(--line);border-left:4px solid var(--wc,var(--ink2));border-radius:var(--r-sm);background:var(--card)}
+.rg3-kota-k p{margin:0;color:var(--ink2);font-size:var(--t-kecil)}
+.rg3-kota-h{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.rg3-kota-beroperasi{--wc:var(--ok)}.rg3-kota-konstruksi{--wc:var(--info)}.rg3-kota-rencana{--wc:var(--warn)}
+.rg3-st-beroperasi.jm-pil-st,.rg3-st-konstruksi.jm-pil-st,.rg3-st-rencana.jm-pil-st,.rg3-st-tidak-diketahui.jm-pil-st{border:1px solid color-mix(in srgb,var(--wc,var(--ink2)) 55%,transparent);background:color-mix(in srgb,var(--wc,var(--ink2)) 14%,var(--card));color:var(--ink)}
+.rg3-st-tidak-diketahui.jm-pil-st{--wc:var(--ink2)}
+.rg3-st-beroperasi.jm-pil-st .jm-ik,.rg3-st-konstruksi.jm-pil-st .jm-ik,.rg3-st-rencana.jm-pil-st .jm-ik,.rg3-st-tidak-diketahui.jm-pil-st .jm-ik{color:var(--wc)}
+
+/* ---- radar ---- */
+.rg3-radar-chip{margin-bottom:16px}
+.rg3-lini{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:12px}
+.rg3-lini-i{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:start;padding:14px;border:1px solid var(--line-cell);border-radius:var(--r-sm);background:var(--card)}
+.rg3-lini-ik{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--wc) 16%,var(--card));color:var(--wc);border:1px solid color-mix(in srgb,var(--wc) 55%,transparent)}
+.rg3-lini-i p{margin:0 0 6px;line-height:var(--lh-isi)}
+.rg3-lini-m{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;color:var(--ink2);font-size:var(--t-kecil)}
+@media (max-width:640px){.rg3-lini-i,.rg3-baris{grid-template-columns:auto minmax(0,1fr)}.rg3-lini-i .rg3-sm,.rg3-baris>.jm-bukti,.rg3-baris>.rg3-tautan,.rg3-baris>.rg3-chip{grid-column:2}}
+.rg3-info,.rg3-baris,.rg3-kartu{overflow-wrap:anywhere}
+
+.jm-kh-ubin{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.rg3-sub-k{margin:6px 0 0;font:600 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.rg3-idk{display:grid;gap:2px;min-width:0}
+.rg3-idk b{font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.rg3-idk small{color:var(--ink2);font-size:var(--t-kecil);white-space:normal;overflow-wrap:anywhere}
+.rg3-tg{white-space:nowrap;font-variant-numeric:tabular-nums}

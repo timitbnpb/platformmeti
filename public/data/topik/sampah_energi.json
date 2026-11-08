@@ -435,6 +435,54 @@
    "tanggal": "2026-11-08",
    "tahun": 2026,
    "bukti": "resmi"
+  },
+  "jm_p112": {
+   "judul": "Perpres 112/2022 tentang Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik (harga patokan, 90/180 hari, pasal 5 sampai 27)",
+   "penerbit": "Pemerintah RI (BPK JDIH)",
+   "url": "https://peraturan.bpk.go.id/Details/225308",
+   "tanggal": "2026-11-07",
+   "tahun": 2022,
+   "bukti": "resmi"
+  },
+  "jm_izin": {
+   "judul": "Izin dan kontrak listrik EBT: IUPTLU 30 tahun, IUPTLS 10 tahun, ambang 500 kW (public/data/izin_kontrak.json; Permen ESDM 11/2021, 2/2024)",
+   "penerbit": "Pemerintah RI via BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/Details/175261",
+   "tanggal": "2026-11-07",
+   "tahun": 2021,
+   "bukti": "resmi"
+  },
+  "jm_ed": {
+   "judul": "Kisaran lama tahap dan penilaian model bisnis: analisis METI berdasarkan pola proyek (Hipotesis; bukan angka resmi)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev/metode",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "jm_tarif": {
+   "judul": "Tarif tenaga listrik PLN triwulan dan BPP nasional (public/data/plts_atap_hitung.json, biaya_listrik.json)",
+   "penerbit": "Kementerian ESDM dan PLN",
+   "url": "https://www.esdm.go.id/",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "resmi"
+  },
+  "jm_biaya": {
+   "judul": "Biaya bangun per teknologi dan skala (public/data/biaya_bangun.json)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev/data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
+  },
+  "jm_psel": {
+   "judul": "Basis PSEL dan pemasok teknologi WTE METI (public/data/psel.json, public/data/global/pemasok_wte.json)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev/data",
+   "tanggal": "2026-11-08",
+   "tahun": 2026,
+   "bukti": "editorial"
   }
  },
  "bab": {
@@ -1621,6 +1669,15 @@
      },
      "proyek": 1,
      "u": "/o/in_cd6da9ed54",
+     "mw": 0
+    },
+    {
+     "nama": "PT PLN Energi Primer Indonesia",
+     "id": "en_9d908c0d85",
+     "kategori": "BUMN",
+     "peran": "pengadaan biomassa co-firing, operator",
+     "proyek": 0,
+     "u": "/o/en_9d908c0d85",
      "mw": 0
     },
     {
@@ -3971,6 +4028,1237 @@
      "dasar": "bekasi"
     }
    ]
+  },
+  "43": {
+   "tipe": "jalan",
+   "sumber": [
+    "jm_ed",
+    "jm_p112",
+    "jm_izin",
+    "jm_biaya",
+    "jm_psel"
+   ],
+   "intro": [
+    {
+     "id": "Bab ini memetakan jalan sebuah proyek sampah energi dari gagasan sampai operasi komersial (COD), tahap demi tahap, untuk skala: Biogas TPA dan pengolahan skala kota kecil, Pengolahan sampah menjadi energi listrik. Setiap tahap memuat kisaran lama, biaya (dari berkas biaya bangun METI bila sudah tersedia), pihak terlibat, regulasi, risiko utama, dan cara mitigasinya. Bab 44 membahas model bisnis yang mengisi tahap pendanaan dan pendapatan.",
+     "en": "This chapter maps the path of a sampah energi project from idea to commercial operation (COD), stage by stage, for these scales: Biogas TPA dan pengolahan skala kota kecil, Pengolahan sampah menjadi energi listrik. Each stage lists the duration range, cost (from the METI build-cost file when available), parties involved, regulations, main risks and mitigation. Chapter 44 covers the business models that fill the financing and revenue stages."
+    },
+    {
+     "id": "Cara membaca lama tahap: kisaran bulan berlabel Hipotesis adalah penilaian METI dari pola proyek dan belum tervalidasi per proyek; label Data berarti batas yang tertulis di peraturan (misalnya 90 atau 180 hari kalender sampai PPA menurut Perpres 112/2022); label EST berarti hitungan dari data repo. Tahap tertentu berjalan paralel sehingga total bukan penjumlahan semua tahap.",
+     "en": "How to read stage durations: month ranges labelled Hypothesis are METI judgement from project patterns and not yet validated per project; the Data label means a limit written in regulation (for example 90 or 180 calendar days to PPA under Presidential Reg. 112/2022); EST means a calculation from repository data. Some stages run in parallel so the total is not the sum of all stages."
+    },
+    {
+     "id": "Rujukan data: berkas PSEL METI memuat 23 lokasi PSEL beserta pengembangnya dan berkas pemasok teknologi WTE global memuat 29 pemasok (public/data/psel.json, public/data/global/pemasok_wte.json). Tarif di berkas PSEL adalah ketentuan regulasi, bukan harga PPA proyek; tipping fee proyek kosong sampai ada sumber.",
+     "en": "Data references: the METI PSEL file holds 23 PSEL sites with their developers and the global WTE technology supplier file holds 29 suppliers (public/data/psel.json, public/data/global/pemasok_wte.json). Tariffs in the PSEL file are regulatory provisions, not project PPA prices; project tipping fees are empty until sourced."
+    }
+   ],
+   "skala": [
+    {
+     "k": "kecil",
+     "tingkat": "S",
+     "l": {
+      "id": "Biogas TPA dan pengolahan skala kota kecil",
+      "en": "Landfill gas and small-city processing"
+     },
+     "ket": {
+      "id": "Gas TPA atau fasilitas kecil.",
+      "en": "Landfill gas or small facility."
+     }
+    },
+    {
+     "k": "psel",
+     "tingkat": "L",
+     "l": {
+      "id": "Pengolahan sampah menjadi energi listrik (PSEL, skala kota)",
+      "en": "City-scale waste-to-energy (PSEL)"
+     },
+     "ket": {
+      "id": "Insinerator atau teknologi termal lain, ratusan sampai ribuan ton per hari.",
+      "en": "Incineration or other thermal technology, hundreds to thousands of tonnes a day."
+     }
+    }
+   ],
+   "tahap": [
+    {
+     "id": "pra",
+     "nama": {
+      "id": "Pra-studi, komposisi sampah, dan pemilihan kota",
+      "en": "Pre-study, waste composition and city selection"
+     },
+     "isi": {
+      "id": "Nilai kalor dan jumlah sampah pasti menentukan layak tidaknya. Perpres 109/2025 menyusun penanganan sampah perkotaan lewat pengolahan sampah menjadi energi terbarukan berbasis teknologi ramah lingkungan; kota dan kriterianya ditetapkan pemerintah.",
+      "en": "Calorific value and guaranteed waste volume decide viability. Presidential Reg. 109/2025 organises urban waste handling through waste-to-renewable-energy using environment-friendly technology; cities and criteria are set by government."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "Konsultan studi kelayakan",
+        "en": "Feasibility consultants"
+       }
+      },
+      {
+       "nama": "ESDM",
+       "id": "l_7278e0528a",
+       "u": "/o/l_7278e0528a"
+      }
+     ],
+     "reg": [
+      {
+       "id": "perpres-109-2025",
+       "label": "Perpres 109/2025",
+       "u": "/regulasi?id=perpres-109-2025",
+       "status": "berlaku"
+      }
+     ],
+     "risiko": {
+      "id": "Sampah basah dan campur menurunkan nilai kalor; jaminan pasokan tidak pasti.",
+      "en": "Wet, mixed waste lowers calorific value; supply guarantee is uncertain."
+     },
+     "mitigasi": {
+      "id": "Audit komposisi sampah musiman; jaminan pasok minimum dari pemda dalam kontrak.",
+      "en": "Seasonal waste composition audit; municipal minimum supply guarantee in the contract."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       1,
+       2
+      ],
+      "psel": [
+       4,
+       9
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:pra",
+     "mulai": {
+      "kecil": [
+       0,
+       1,
+       2
+      ],
+      "psel": [
+       0,
+       4,
+       9
+      ]
+     }
+    },
+    {
+     "id": "data",
+     "nama": {
+      "id": "Jaminan pasok sampah dan studi teknologi",
+      "en": "Waste supply guarantee and technology study"
+     },
+     "isi": {
+      "id": "Kontrak pasok dengan pemerintah daerah (tonase minimum) dan pilihan teknologi (insinerasi, gasifikasi, biogas) sesuai karakter sampah.",
+      "en": "Supply contract with the local government (minimum tonnage) and technology choice (incineration, gasification, biogas) to fit waste character."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "Pengembang dan konsultan teknis",
+        "en": "Developer and technical consultants"
+       }
+      }
+     ],
+     "reg": [],
+     "risiko": {
+      "id": "Tonase jaminan tidak terpenuhi; sampah dipilah sebagian oleh pemulung/TPS3R.",
+      "en": "Guaranteed tonnage not met; waste partly sorted by pickers/TPS3R."
+     },
+     "mitigasi": {
+      "id": "Pembayaran jasa pengolahan (tipping fee) berbasis tonase minimum; klausul ambil-atau-bayar.",
+      "en": "Tipping-fee payment on minimum tonnage; take-or-pay clause."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       1,
+       3
+      ],
+      "psel": [
+       6,
+       12
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:data",
+     "mulai": {
+      "kecil": [
+       1,
+       2,
+       5
+      ],
+      "psel": [
+       4,
+       10,
+       21
+      ]
+     }
+    },
+    {
+     "id": "lahan",
+     "nama": {
+      "id": "Lahan dan kesesuaian ruang (KKPR)",
+      "en": "Land and spatial conformity (KKPR)"
+     },
+     "isi": {
+      "id": "Menguasai lahan (sewa, hak guna, pelepasan) dan memastikan kegiatan sesuai tata ruang lewat persetujuan kesesuaian kegiatan pemanfaatan ruang (KKPR).",
+      "en": "Securing land (lease, use right, release) and ensuring the activity conforms to spatial plans through the spatial-use conformity approval (KKPR)."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "Kementerian ATR/BPN dan pemerintah daerah",
+        "en": "Ministry of Agrarian Affairs and local governments"
+       }
+      },
+      {
+       "nama": "Kemenhut",
+       "id": "l_3d20494e0a",
+       "u": "/o/l_3d20494e0a"
+      }
+     ],
+     "reg": [
+      {
+       "id": "uu-6-2023",
+       "label": "UU 6/2023",
+       "u": "/regulasi?id=uu-6-2023",
+       "status": "diubah"
+      }
+     ],
+     "risiko": {
+      "id": "Sengketa lahan, tanah ulayat, atau status kawasan hutan menahan seluruh jadwal.",
+      "en": "Land disputes, customary land or forest-area status can stall the whole schedule."
+     },
+     "mitigasi": {
+      "id": "Uji tuntas hukum (legal due diligence) sebelum bayar uang muka lahan; persetujuan warga tertulis sejak awal.",
+      "en": "Legal due diligence before paying land deposits; written community consent from the start."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       0,
+       1
+      ],
+      "psel": [
+       4,
+       12
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:lahan",
+     "mulai": {
+      "kecil": [
+       1,
+       1,
+       3
+      ],
+      "psel": [
+       4,
+       8,
+       21
+      ]
+     }
+    },
+    {
+     "id": "lingkungan",
+     "nama": {
+      "id": "Persetujuan lingkungan (AMDAL atau UKL-UPL)",
+      "en": "Environmental approval (AMDAL or UKL-UPL)"
+     },
+     "isi": {
+      "id": "Kegiatan berdampak penting wajib AMDAL; yang lebih kecil UKL-UPL atau SPPL. Hasilnya persetujuan lingkungan yang menjadi syarat izin usaha dan konstruksi.",
+      "en": "Activities with significant impact need an AMDAL; smaller ones a UKL-UPL or SPPL. The result is the environmental approval, a precondition for the business licence and construction."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "Kementerian Lingkungan Hidup dan dinas lingkungan hidup daerah",
+        "en": "Ministry of Environment and local environment agencies"
+       }
+      }
+     ],
+     "reg": [
+      {
+       "id": "uu-32-2009",
+       "label": "UU 32/2009",
+       "u": "/regulasi?id=uu-32-2009",
+       "status": "diubah"
+      },
+      {
+       "id": "pp-28-2025",
+       "label": "PP 28/2025",
+       "u": "/regulasi?id=pp-28-2025",
+       "status": "berlaku"
+      }
+     ],
+     "risiko": {
+      "id": "Penolakan warga, emisi dioksin, dan abu terbang/dasar.",
+      "en": "Resident opposition, dioxin emissions, fly and bottom ash."
+     },
+     "mitigasi": {
+      "id": "Baku mutu emisi ketat, pemantauan kontinu terbuka, pengelolaan abu B3.",
+      "en": "Strict emission standards, open continuous monitoring, hazardous-ash management."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       2,
+       4
+      ],
+      "psel": [
+       8,
+       16
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:lingkungan",
+     "mulai": {
+      "kecil": [
+       2,
+       4,
+       9
+      ],
+      "psel": [
+       10,
+       18,
+       37
+      ]
+     }
+    },
+    {
+     "id": "izin",
+     "nama": {
+      "id": "Izin usaha dan perizinan berusaha",
+      "en": "Business licensing"
+     },
+     "isi": {
+      "id": "Izin usaha ketenagalistrikan lewat OSS berbasis risiko. Di atas 500 kW kapasitas total untuk kepentingan sendiri wajib IUPTLS (berlaku paling lama 10 tahun); menjual ke publik/PLN wajib IUPTLU (paling lama 30 tahun). Sampai 500 kW cukup lapor.",
+      "en": "Electricity business licence through risk-based OSS. Above 500 kW total own-use capacity an IUPTLS is required (valid up to 10 years); selling to the public or PLN needs an IUPTLU (up to 30 years). Up to 500 kW reporting is enough."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "Kementerian ESDM (Ditjen Ketenagalistrikan)",
+        "en": "Energy Ministry (Directorate General of Electricity)"
+       }
+      },
+      {
+       "nama": "ESDM",
+       "id": "l_7278e0528a",
+       "u": "/o/l_7278e0528a"
+      },
+      {
+       "nama": "BKPM",
+       "id": "l_05301f48a5",
+       "u": "/o/l_05301f48a5"
+      }
+     ],
+     "reg": [
+      {
+       "id": "uu-30-2009",
+       "label": "UU 30/2009",
+       "u": "/regulasi?id=uu-30-2009",
+       "status": "diubah"
+      },
+      {
+       "id": "pp-14-2012",
+       "label": "PP 14/2012",
+       "u": "/regulasi?id=pp-14-2012",
+       "status": "diubah"
+      },
+      {
+       "id": "permen-esdm-11-2021",
+       "label": "Permen ESDM 11/2021",
+       "u": "/regulasi?id=permen-esdm-11-2021",
+       "status": "berlaku"
+      },
+      {
+       "id": "permen-esdm-7-2026",
+       "label": "Permen ESDM 7/2026",
+       "u": "/regulasi?id=permen-esdm-7-2026",
+       "status": "berlaku"
+      },
+      {
+       "id": "pp-28-2025",
+       "label": "PP 28/2025",
+       "u": "/regulasi?id=pp-28-2025",
+       "status": "berlaku"
+      }
+     ],
+     "risiko": {
+      "id": "Syarat berubah di tengah jalan atau OSS menolak karena data tidak sinkron.",
+      "en": "Requirements change mid-process or OSS rejects due to unsynchronised data."
+     },
+     "mitigasi": {
+      "id": "Cek standar kegiatan usaha terbaru (Permen ESDM 7/2026) dan siapkan akta, NIB, dan KKPR lebih dulu.",
+      "en": "Check the latest business-activity standards (Energy Ministry Reg. 7/2026) and prepare deed, NIB and KKPR first."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       1,
+       2
+      ],
+      "psel": [
+       3,
+       9
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:izin",
+     "mulai": {
+      "kecil": [
+       1,
+       2,
+       5
+      ],
+      "psel": [
+       8,
+       11,
+       30
+      ]
+     }
+    },
+    {
+     "id": "pln",
+     "nama": {
+      "id": "Penunjukan pengembang, tipping fee, dan PPA",
+      "en": "Developer selection, tipping fee and PPA"
+     },
+     "isi": {
+      "id": "Pemda atau badan yang ditugaskan memilih pengembang dan menetapkan tipping fee; listrik dijual ke PLN lewat PPA. Perpres 35/2018 sudah dicabut; kerangka kini mengikuti Perpres 109/2025. Dukungan bergantung peraturan turunannya.",
+      "en": "The local government or a mandated body selects the developer and sets the tipping fee; power is sold to PLN under a PPA. Presidential Reg. 35/2018 has been revoked; the framework now follows Presidential Reg. 109/2025, with support depending on implementing rules."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "PLN",
+        "en": "PLN"
+       }
+      },
+      {
+       "nama": "PLN",
+       "id": "su_ed074ff5",
+       "u": "/o/su_ed074ff5"
+      },
+      {
+       "nama": "ESDM",
+       "id": "l_7278e0528a",
+       "u": "/o/l_7278e0528a"
+      }
+     ],
+     "reg": [
+      {
+       "id": "perpres-112-2022",
+       "label": "Perpres 112/2022",
+       "u": "/regulasi?id=perpres-112-2022",
+       "status": "berlaku"
+      },
+      {
+       "id": "perpres-109-2025",
+       "label": "Perpres 109/2025",
+       "u": "/regulasi?id=perpres-109-2025",
+       "status": "berlaku"
+      }
+     ],
+     "risiko": {
+      "id": "Kuota atau lokasi tidak ada di RUPTL; harga patokan tidak menutup biaya; klausul risiko tidak seimbang.",
+      "en": "No quota or site in the RUPTL; ceiling price does not cover cost; unbalanced risk clauses."
+     },
+     "mitigasi": {
+      "id": "Tanyakan kebutuhan sistem setempat ke PLN lebih awal; bandingkan klausul dengan PPA proyek serupa sebelum tanda tangan.",
+      "en": "Ask PLN early about local system needs; compare clauses with PPAs of similar projects before signing."
+     },
+     "bukti": "Data",
+     "dur": {
+      "kecil": [
+       1,
+       2
+      ],
+      "psel": [
+       3,
+       6
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:pln",
+     "mulai": {
+      "kecil": [
+       2,
+       3,
+       7
+      ],
+      "psel": [
+       10,
+       13,
+       27
+      ]
+     }
+    },
+    {
+     "id": "dana",
+     "nama": {
+      "id": "Pendanaan dan penutupan keuangan",
+      "en": "Financing and financial close"
+     },
+     "isi": {
+      "id": "Menyusun ekuitas, pinjaman bank atau lembaga pembangunan, atau gabungan (blended) dengan dana konsesi. Pemberi pinjaman memeriksa PPA, izin, EPC, asuransi, dan studi independen sebelum penutupan keuangan.",
+      "en": "Assembling equity, bank or development-institution loans, or blended finance with concessional funds. Lenders check the PPA, permits, EPC, insurance and independent studies before financial close."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "Bank, lembaga pembangunan, dan investor",
+        "en": "Banks, development institutions and investors"
+       }
+      },
+      {
+       "nama": "PT Sarana Multi Infrastruktur (Persero)",
+       "id": "p_a235c21f23",
+       "u": "/o/p_a235c21f23"
+      },
+      {
+       "nama": "PT Indonesia Infrastructure Finance",
+       "id": "p_15bc360dc3",
+       "u": "/o/p_15bc360dc3"
+      }
+     ],
+     "reg": [],
+     "risiko": {
+      "id": "Pemberi pinjaman menahan pencairan karena syarat belum lengkap; kurs dan suku bunga bergerak.",
+      "en": "Lenders hold disbursement because conditions are incomplete; exchange and interest rates move."
+     },
+     "mitigasi": {
+      "id": "Peta daftar syarat penutupan (CP) sejak PPA; lindung nilai kurs; libatkan penjamin atau pendanaan campuran.",
+      "en": "Map the conditions-precedent list from the PPA stage; hedge currency; bring in guarantors or blended finance."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       0,
+       1
+      ],
+      "psel": [
+       6,
+       18
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:dana",
+     "mulai": {
+      "kecil": [
+       4,
+       4,
+       10
+      ],
+      "psel": [
+       18,
+       24,
+       55
+      ]
+     }
+    },
+    {
+     "id": "epc",
+     "nama": {
+      "id": "Rekayasa, pengadaan, dan konstruksi (EPC)",
+      "en": "Engineering, procurement and construction (EPC)"
+     },
+     "isi": {
+      "id": "Kontraktor EPC merancang, membeli peralatan (modul, turbin, baterai, pipa), dan membangun. Syarat TKDN dan produk dalam negeri berlaku untuk infrastruktur ketenagalistrikan.",
+      "en": "The EPC contractor designs, procures equipment (modules, turbines, batteries, pipes) and builds. Local-content (TKDN) and domestic-product requirements apply to electricity infrastructure."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "Kontraktor EPC",
+        "en": "EPC contractors"
+       }
+      },
+      {
+       "nama": "PT Wijaya Karya (Persero) Tbk",
+       "id": "p_a363064837",
+       "u": "/o/p_a363064837"
+      }
+     ],
+     "reg": [
+      {
+       "id": "permen-kemenperin-34-2024",
+       "label": "Permen 34/2024",
+       "u": "/regulasi?id=permen-kemenperin-34-2024",
+       "status": "berlaku"
+      }
+     ],
+     "risiko": {
+      "id": "Keterlambatan peralatan, cuaca, biaya bahan, dan klaim kontraktor.",
+      "en": "Equipment delays, weather, material costs and contractor claims."
+     },
+     "mitigasi": {
+      "id": "Kontrak EPC harga tetap berjadwal dengan ganti rugi keterlambatan; cadangan kontingensi; pantau kemajuan oleh insinyur independen.",
+      "en": "Fixed-price date-certain EPC with delay damages; a contingency reserve; progress monitoring by an independent engineer."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       3,
+       8
+      ],
+      "psel": [
+       24,
+       36
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:epc",
+     "mulai": {
+      "kecil": [
+       4,
+       7,
+       18
+      ],
+      "psel": [
+       24,
+       48,
+       91
+      ]
+     }
+    },
+    {
+     "id": "inter",
+     "nama": {
+      "id": "Interkoneksi ke jaringan",
+      "en": "Grid interconnection"
+     },
+     "isi": {
+      "id": "Studi sambung, pembangunan gardu dan saluran, dan persetujuan operasi paralel oleh PLN. Berjalan bersamaan dengan konstruksi.",
+      "en": "Connection study, substation and line works and PLN approval for parallel operation. Runs alongside construction."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "PLN",
+        "en": "PLN"
+       }
+      },
+      {
+       "nama": "PLN",
+       "id": "su_ed074ff5",
+       "u": "/o/su_ed074ff5"
+      }
+     ],
+     "reg": [
+      {
+       "id": "permen-esdm-11-2021",
+       "label": "Permen ESDM 11/2021",
+       "u": "/regulasi?id=permen-esdm-11-2021",
+       "status": "berlaku"
+      },
+      {
+       "id": "permen-esdm-2-2024",
+       "label": "Permen ESDM 2/2024",
+       "u": "/regulasi?id=permen-esdm-2-2024",
+       "status": "berlaku"
+      }
+     ],
+     "risiko": {
+      "id": "Saluran atau gardu PLN terlambat sehingga pembangkit selesai tetapi tidak bisa menyalurkan.",
+      "en": "PLN line or substation delays leave a finished plant unable to deliver."
+     },
+     "mitigasi": {
+      "id": "Tetapkan tanggal dan tanggung jawab interkoneksi dalam PPA; bayar kompensasi bila pembangkit siap tetapi jaringan belum.",
+      "en": "Fix interconnection dates and responsibility in the PPA; secure compensation when the plant is ready but the grid is not."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       1,
+       2
+      ],
+      "psel": [
+       3,
+       8
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:inter",
+     "mulai": {
+      "kecil": [
+       4,
+       5,
+       12
+      ],
+      "psel": [
+       24,
+       27,
+       63
+      ]
+     }
+    },
+    {
+     "id": "uji",
+     "nama": {
+      "id": "Uji komisioning dan SLO",
+      "en": "Commissioning and SLO"
+     },
+     "isi": {
+      "id": "Pengujian kinerja dan keselamatan, lalu Sertifikat Laik Operasi (SLO) oleh lembaga inspeksi. Sistem plug and play sampai 500 kW cukup surat pernyataan keselamatan.",
+      "en": "Performance and safety tests, then the Operation Worthiness Certificate (SLO) from an inspection body. Plug-and-play systems up to 500 kW need only a safety statement."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "Lembaga inspeksi teknik terakreditasi dan PLN",
+        "en": "Accredited technical inspection bodies and PLN"
+       }
+      },
+      {
+       "nama": "PLN",
+       "id": "su_ed074ff5",
+       "u": "/o/su_ed074ff5"
+      }
+     ],
+     "reg": [
+      {
+       "id": "permen-esdm-11-2021",
+       "label": "Permen ESDM 11/2021",
+       "u": "/regulasi?id=permen-esdm-11-2021",
+       "status": "berlaku"
+      },
+      {
+       "id": "permen-esdm-2-2024",
+       "label": "Permen ESDM 2/2024",
+       "u": "/regulasi?id=permen-esdm-2-2024",
+       "status": "berlaku"
+      }
+     ],
+     "risiko": {
+      "id": "Uji kinerja gagal atau SLO tertunda karena dokumen as-built tidak lengkap.",
+      "en": "Performance test failure or SLO delay from incomplete as-built documents."
+     },
+     "mitigasi": {
+      "id": "Libatkan lembaga inspeksi sejak desain; arsipkan dokumen sepanjang konstruksi.",
+      "en": "Involve the inspection body from design; archive documents throughout construction."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       0,
+       1
+      ],
+      "psel": [
+       2,
+       4
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:uji",
+     "mulai": {
+      "kecil": [
+       7,
+       7,
+       19
+      ],
+      "psel": [
+       48,
+       50,
+       95
+      ]
+     }
+    },
+    {
+     "id": "cod",
+     "nama": {
+      "id": "COD dan operasi",
+      "en": "COD and operation"
+     },
+     "isi": {
+      "id": "Tanggal operasi komersial (COD) memulai arus pendapatan. Setelah itu operasi dan pemeliharaan, pelaporan, dan pembayaran pinjaman berjalan sepanjang umur proyek.",
+      "en": "The commercial operation date (COD) starts the revenue stream. After it, operation and maintenance, reporting and loan service run through the project life."
+     },
+     "pihak": [
+      {
+       "nama": {
+        "id": "Operator dan pemilik aset",
+        "en": "Operator and asset owner"
+       }
+      }
+     ],
+     "reg": [],
+     "risiko": {
+      "id": "Produksi di bawah rencana, tagihan terlambat dibayar, atau pemeliharaan diabaikan.",
+      "en": "Output below plan, late payment of invoices or neglected maintenance."
+     },
+     "mitigasi": {
+      "id": "Kontrak O&M berkinerja, rekening cadangan layanan utang, pemantauan jarak jauh.",
+      "en": "Performance-based O&M contract, debt-service reserve account, remote monitoring."
+     },
+     "bukti": "Hipotesis",
+     "dur": {
+      "kecil": [
+       0,
+       0
+      ],
+      "psel": [
+       0,
+       0
+      ]
+     },
+     "biaya": {
+      "kecil": null,
+      "psel": null
+     },
+     "kunciBiaya": "biaya_bangun:sampah-energi:cod",
+     "mulai": {
+      "kecil": [
+       7,
+       7,
+       19
+      ],
+      "psel": [
+       50,
+       50,
+       95
+      ]
+     }
+    }
+   ],
+   "total": {
+    "kecil": [
+     7,
+     19
+    ],
+    "psel": [
+     50,
+     95
+    ]
+   },
+   "modal": {
+    "kecil": null,
+    "psel": null
+   },
+   "bukti": [
+    "Data",
+    "EST",
+    "Hipotesis"
+   ],
+   "catatan": {
+    "id": "Biaya per tahap diambil dari public/data/biaya_bangun.json dengan kunci teknologi, skala, dan tahap. Bila berkas atau barisnya belum ada, kolom biaya kosong; METI tidak mengisi angka karangan. Urutan dan ketergantungan tahap bersifat umum; proyek nyata sering menumpuk atau menukar tahap.",
+    "en": "Costs per stage come from public/data/biaya_bangun.json by technology, scale and stage key. If the file or row is missing, the cost column stays empty; METI does not fill invented numbers. Stage order and dependencies are generic; real projects often overlap or swap stages."
+   }
+  },
+  "44": {
+   "tipe": "model",
+   "sumber": [
+    "jm_ed",
+    "jm_p112",
+    "jm_izin",
+    "jm_tarif",
+    "jm_biaya",
+    "jm_psel"
+   ],
+   "intro": [
+    {
+     "id": "Model bisnis menentukan siapa membayar apa, kapan, dan siapa menanggung risiko. Pendapatan sampah menjadi energi terdiri dari tipping fee pemda dan penjualan listrik; tanpa tipping fee yang memadai proyek tidak layak. Perpres 109/2025 mengganti kerangka lama (Perpres 35/2018 dicabut).",
+     "en": "A business model decides who pays what, when, and who carries the risk. Waste-to-energy revenue consists of the local-government tipping fee and power sales; without an adequate tipping fee the project is not viable. Presidential Reg. 109/2025 replaces the old framework (Presidential Reg. 35/2018 was revoked)."
+    },
+    {
+     "id": "Dua golongan dibahas terpisah: model pendapatan (dari mana uang proyek datang) dan model pembiayaan (dari mana modal datang). Penilaian skor 1 sampai 5 pada matriks adalah Hipotesis METI untuk perbandingan cepat, bukan ukuran statistik.",
+     "en": "Two groups are covered separately: revenue models (where project money comes from) and financing models (where capital comes from). The 1-to-5 scores in the matrix are METI Hypothesis for quick comparison, not statistical measures."
+    },
+    {
+     "id": "Rujukan data: berkas PSEL METI memuat 23 lokasi PSEL beserta pengembangnya dan berkas pemasok teknologi WTE global memuat 29 pemasok (public/data/psel.json, public/data/global/pemasok_wte.json). Tarif di berkas PSEL adalah ketentuan regulasi, bukan harga PPA proyek; tipping fee proyek kosong sampai ada sumber.",
+     "en": "Data references: the METI PSEL file holds 23 PSEL sites with their developers and the global WTE technology supplier file holds 29 suppliers (public/data/psel.json, public/data/global/pemasok_wte.json). Tariffs in the PSEL file are regulatory provisions, not project PPA prices; project tipping fees are empty until sourced."
+    }
+   ],
+   "models": [
+    {
+     "id": "kpbu",
+     "jenis": "pendapatan",
+     "nama": {
+      "id": "Kerja sama pemerintah dengan badan usaha (KPBU)",
+      "en": "Public-private partnership (KPBU)"
+     },
+     "isi": {
+      "id": "Pemerintah (pusat atau daerah) dan badan usaha berbagi risiko untuk infrastruktur: pemerintah menyediakan dukungan (jaminan, lahan, pembayaran ketersediaan) sedangkan badan usaha membangun dan mengoperasikan. Dipakai untuk proyek sampah menjadi energi dan infrastruktur multiguna.",
+      "en": "The government (central or local) and a business share risk for infrastructure: government provides support (guarantees, land, availability payments) while the business builds and operates. Used for waste-to-energy and multi-purpose infrastructure."
+     },
+     "pembeli": {
+      "id": "Pemerintah atau PLN sebagai pembayar",
+      "en": "Government or PLN as payer"
+     },
+     "kontrak": {
+      "id": "Perjanjian KPBU 20 sampai 30 tahun",
+      "en": "KPBU agreement of 20 to 30 years"
+     },
+     "status": {
+      "id": "Berlaku: kerangka KPBU; untuk sampah, Perpres 109/2025 dan aturan turunannya.",
+      "en": "In force: the KPBU framework; for waste, Presidential Reg. 109/2025 and its implementing rules."
+     },
+     "reg": [
+      {
+       "id": "perpres-109-2025",
+       "label": "Perpres 109/2025",
+       "u": "/regulasi?id=perpres-109-2025",
+       "status": "berlaku"
+      }
+     ],
+     "untung": {
+      "id": "Menarik pendanaan swasta untuk proyek publik berisiko.",
+      "en": "Attracts private funding for risky public projects."
+     },
+     "rugi": {
+      "id": "Persiapan sangat panjang dan kapasitas pemda terbatas.",
+      "en": "Very long preparation and limited local-government capacity."
+     },
+     "kas": {
+      "id": "Pendapatan: pembayaran ketersediaan, tipping fee, dan penjualan listrik; biaya: O&M dan pengembalian utang.",
+      "en": "Revenue: availability payments, tipping fee and power sales; costs: O&M and debt service."
+     },
+     "skor": {
+      "modal": 5,
+      "risiko": 4,
+      "cepat": 1,
+      "skala": 5
+     },
+     "contoh": [
+      {
+       "nama": "PLTSa Putri Cempo",
+       "id": "pj_0049",
+       "u": "/p/pj_0049"
+      },
+      {
+       "nama": "PLTSa Benowo",
+       "id": "pj_0051",
+       "u": "/p/pj_0051"
+      }
+     ],
+     "dunia": {
+      "id": "KPBU infrastruktur umum di banyak negara; PSEL skala kota di Asia memakai tipping fee pemerintah.",
+      "en": "PPPs are common for infrastructure in many countries; city-scale waste-to-energy in Asia relies on government tipping fees."
+     }
+    },
+    {
+     "id": "ipp",
+     "jenis": "pendapatan",
+     "nama": {
+      "id": "IPP jual ke PLN (BOO/BOOT/BOT)",
+      "en": "IPP selling to PLN (BOO/BOOT/BOT)"
+     },
+     "isi": {
+      "id": "Pengembang swasta (independent power producer) membangun dan memiliki pembangkit, lalu menjual listrik ke PLN lewat perjanjian jual beli listrik (PPA) berjangka panjang, umumnya take-or-pay: PLN membayar ketersediaan kapasitas atau energi yang disepakati. BOO: dimiliki selamanya; BOOT: dioperasikan lalu dialihkan ke PLN di akhir kontrak; BOT: dibangun, dioperasikan, lalu dialihkan.",
+      "en": "A private independent power producer builds and owns the plant and sells power to PLN under a long-term PPA, generally take-or-pay: PLN pays for available capacity or agreed energy. BOO: owned outright; BOOT: operated then transferred to PLN at contract end; BOT: built, operated, then transferred."
+     },
+     "pembeli": {
+      "id": "PLN (pembeli tunggal sistem publik)",
+      "en": "PLN (single buyer of the public system)"
+     },
+     "kontrak": {
+      "id": "PPA/PJBL 20 sampai 30 tahun (umumnya)",
+      "en": "PPA/PJBL of typically 20 to 30 years"
+     },
+     "status": {
+      "id": "Berlaku: Perpres 112/2022 (harga patokan, pemilihan atau penunjukan langsung).",
+      "en": "In force: Presidential Reg. 112/2022 (ceiling prices, direct selection or appointment)."
+     },
+     "reg": [
+      {
+       "id": "perpres-112-2022",
+       "label": "Perpres 112/2022",
+       "u": "/regulasi?id=perpres-112-2022",
+       "status": "berlaku"
+      },
+      {
+       "id": "uu-30-2009",
+       "label": "UU 30/2009",
+       "u": "/regulasi?id=uu-30-2009",
+       "status": "diubah"
+      }
+     ],
+     "untung": {
+      "id": "Pendapatan terprediksi dan bisa didanai proyek (project finance).",
+      "en": "Predictable revenue that can be project-financed."
+     },
+     "rugi": {
+      "id": "Satu pembeli, harga dibatasi patokan, dan proses panjang.",
+      "en": "A single buyer, price capped by ceilings, and a long process."
+     },
+     "kas": {
+      "id": "Pendapatan: kWh terjual x harga PPA; biaya: O&M, sewa lahan, asuransi; pajak penghasilan.",
+      "en": "Revenue: kWh sold x PPA price; costs: O&M, land lease, insurance; income tax."
+     },
+     "skor": {
+      "modal": 5,
+      "risiko": 3,
+      "cepat": 2,
+      "skala": 5
+     },
+     "contoh": [
+      {
+       "nama": "PLTSa Merah Putih Bantargebang",
+       "id": "pj_0046",
+       "u": "/p/pj_0046"
+      }
+     ],
+     "dunia": {
+      "id": "Model IPP dengan PPA take-or-pay umum di Asia Tenggara dan Amerika Latin; kerangka pembeli tunggal sama dengan Indonesia di banyak negara.",
+      "en": "The IPP model with take-or-pay PPAs is common in Southeast Asia and Latin America; a single-buyer framework like Indonesia is found in many countries."
+     }
+    },
+    {
+     "id": "hibah",
+     "jenis": "pembiayaan",
+     "nama": {
+      "id": "Hibah dan dana donor",
+      "en": "Grants and donor funds"
+     },
+     "isi": {
+      "id": "Hibah menutup modal awal proyek yang belum layak komersial (desa, pilot, riset). Syaratnya ketat: laporan, pengadaan, dan keberlanjutan setelah hibah habis. Tanpa pengelola dan anggaran O&M, aset terbengkalai.",
+      "en": "Grants cover upfront capital of projects not yet commercially viable (villages, pilots, research). Conditions are strict: reporting, procurement and post-grant sustainability. Without a manager and O&M budget, assets are abandoned."
+     },
+     "pembeli": {
+      "id": "Tidak berlaku (pembiayaan)",
+      "en": "Not applicable (financing)"
+     },
+     "kontrak": {
+      "id": "Perjanjian hibah",
+      "en": "Grant agreement"
+     },
+     "status": {
+      "id": "Berlaku: skema hibah dan pendanaan internasional tercatat di basis pendanaan METI.",
+      "en": "In force: grant and international funding schemes recorded in the METI funding base."
+     },
+     "reg": [],
+     "untung": {
+      "id": "Menurunkan biaya modal dan risiko awal.",
+      "en": "Lowers cost of capital and early risk."
+     },
+     "rugi": {
+      "id": "Tidak skalabel; ketergantungan pada siklus donor.",
+      "en": "Not scalable; dependence on donor cycles."
+     },
+     "kas": {
+      "id": "Arus masuk: hibah di tahun 0; arus operasi harus menutup O&M sendiri.",
+      "en": "Inflow: grant in year 0; operating flows must cover O&M themselves."
+     },
+     "skor": {
+      "modal": 1,
+      "risiko": 3,
+      "cepat": 2,
+      "skala": 2
+     },
+     "contoh": [],
+     "dunia": {
+      "id": "Hibah dan dana iklim menutup proyek akses energi di Afrika dan Asia Selatan.",
+      "en": "Grants and climate funds cover energy-access projects in Africa and South Asia."
+     }
+    },
+    {
+     "id": "bumdes",
+     "jenis": "pendapatan",
+     "nama": {
+      "id": "BUMDes dan koperasi desa",
+      "en": "Village enterprise and cooperative"
+     },
+     "isi": {
+      "id": "Badan usaha milik desa atau koperasi mengelola pembangkit kecil (PLTMH, surya desa, biogas) dan menarik iuran dari anggota. Izin sampai 500 kW cukup lapor. Banyak PLTS desa mati karena pengelola dan anggaran O&M tidak jelas.",
+      "en": "A village-owned enterprise or cooperative runs a small plant (micro-hydro, village solar, biogas) and collects fees from members. Licensing up to 500 kW needs only a report. Many village solar plants die because the operator and O&M budget are unclear."
+     },
+     "pembeli": {
+      "id": "Anggota dan warga desa",
+      "en": "Members and village residents"
+     },
+     "kontrak": {
+      "id": "Anggaran dasar, iuran, dan aturan pengelolaan",
+      "en": "Articles of association, fees and management rules"
+     },
+     "status": {
+      "id": "Berlaku: koperasi primer dibentuk minimal 20 orang (UU 25/1992); izin kelistrikan mengikuti ambang kapasitas.",
+      "en": "In force: a primary cooperative is formed by at least 20 people (Law 25/1992); electricity licensing follows capacity thresholds."
+     },
+     "reg": [
+      {
+       "id": "permen-esdm-11-2021",
+       "label": "Permen ESDM 11/2021",
+       "u": "/regulasi?id=permen-esdm-11-2021",
+       "status": "berlaku"
+      }
+     ],
+     "untung": {
+      "id": "Manfaat langsung ke desa dan kepemilikan lokal.",
+      "en": "Direct benefit to the village and local ownership."
+     },
+     "rugi": {
+      "id": "Kapasitas teknis, iuran tidak menutup biaya, dan penggantian komponen.",
+      "en": "Technical capacity, fees that do not cover cost, and component replacement."
+     },
+     "kas": {
+      "id": "Pendapatan: iuran atau tarif per kWh; biaya: operator, perbaikan, dan dana penggantian.",
+      "en": "Revenue: fees or per-kWh tariff; costs: operator, repairs and a replacement fund."
+     },
+     "skor": {
+      "modal": 2,
+      "risiko": 4,
+      "cepat": 3,
+      "skala": 1
+     },
+     "contoh": [],
+     "dunia": {
+      "id": "Koperasi energi komunitas berkembang di Jerman dan Denmark; mikrohidro desa di Nepal dan Peru.",
+      "en": "Community energy cooperatives thrive in Germany and Denmark; village micro-hydro in Nepal and Peru."
+     }
+    },
+    {
+     "id": "projfin",
+     "jenis": "pembiayaan",
+     "nama": {
+      "id": "Pembiayaan proyek (project finance)",
+      "en": "Project finance"
+     },
+     "isi": {
+      "id": "Pinjaman jangka panjang kepada perusahaan proyek (SPV) yang dijamin arus kas proyek dan asetnya, bukan neraca sponsor. Pemberi pinjaman membagi risiko lewat kontrak: PPA, EPC, O&M, dan asuransi. Rasio utang terhadap ekuitas umumnya tinggi.",
+      "en": "Long-term lending to a project company (SPV) secured by project cash flow and assets, not the sponsor balance sheet. Lenders allocate risk through contracts: PPA, EPC, O&M and insurance. Debt-to-equity is generally high."
+     },
+     "pembeli": {
+      "id": "Tidak berlaku (pembiayaan)",
+      "en": "Not applicable (financing)"
+     },
+     "kontrak": {
+      "id": "Perjanjian kredit 12 sampai 20 tahun",
+      "en": "Credit agreement of 12 to 20 years"
+     },
+     "status": {
+      "id": "Berlaku: praktik pasar; pengawasan oleh OJK untuk lembaga keuangan.",
+      "en": "In force: market practice; OJK supervises financial institutions."
+     },
+     "reg": [],
+     "untung": {
+      "id": "Ekuitas sponsor kecil; pengembalian ekuitas lebih tinggi.",
+      "en": "Small sponsor equity; higher equity returns."
+     },
+     "rugi": {
+      "id": "Syarat penutupan banyak; proyek kecil sulit.",
+      "en": "Many closing conditions; small projects struggle."
+     },
+     "kas": {
+      "id": "Arus kas ekuitas = arus proyek dikurangi layanan utang (pokok dan bunga).",
+      "en": "Equity cash flow = project flow minus debt service (principal and interest)."
+     },
+     "skor": {
+      "modal": 5,
+      "risiko": 3,
+      "cepat": 2,
+      "skala": 5
+     },
+     "contoh": [],
+     "dunia": {
+      "id": "Project finance ialah struktur standar proyek IPP terbarukan di seluruh dunia.",
+      "en": "Project finance is the standard structure for renewable IPP projects worldwide."
+     }
+    },
+    {
+     "id": "blended",
+     "jenis": "pembiayaan",
+     "nama": {
+      "id": "Pembiayaan campuran (blended finance)",
+      "en": "Blended finance"
+     },
+     "isi": {
+      "id": "Dana konsesi (hibah, pinjaman bunga rendah, jaminan) dari lembaga pembangunan dicampur dengan dana komersial sehingga proyek berisiko menjadi layak dibiayai. Program JETP dan lembaga seperti SMI, IIF, ADB, dan Bank Dunia ada di basis METI.",
+      "en": "Concessional funds (grants, low-interest loans, guarantees) from development institutions are mixed with commercial funds so risky projects become financeable. The JETP programme and institutions such as SMI, IIF, ADB and the World Bank are in the METI base."
+     },
+     "pembeli": {
+      "id": "Tidak berlaku (pembiayaan)",
+      "en": "Not applicable (financing)"
+     },
+     "kontrak": {
+      "id": "Paket pinjaman, hibah, dan jaminan",
+      "en": "Package of loans, grants and guarantees"
+     },
+     "status": {
+      "id": "Berlaku: praktik; syarat setiap lembaga berbeda.",
+      "en": "In force: practice; conditions differ per institution."
+     },
+     "reg": [],
+     "untung": {
+      "id": "Membuka proyek yang tidak layak pada bunga pasar.",
+      "en": "Opens projects that fail at market interest rates."
+     },
+     "rugi": {
+      "id": "Proses panjang dan syarat pengamanan ketat.",
+      "en": "Long process and strict safeguards."
+     },
+     "kas": {
+      "id": "Arus masuk: campuran ekuitas, pinjaman konsesi, dan komersial.",
+      "en": "Inflow: mix of equity, concessional and commercial loans."
+     },
+     "skor": {
+      "modal": 4,
+      "risiko": 2,
+      "cepat": 2,
+      "skala": 4
+     },
+     "contoh": [],
+     "dunia": {
+      "id": "Pembiayaan campuran lazim lewat bank pembangunan multilateral.",
+      "en": "Blended finance is common through multilateral development banks."
+     }
+    }
+   ],
+   "kas": {
+    "skala": null,
+    "seri": [],
+    "ringkas": [],
+    "label": {
+     "id": "Arus kas kumulatif ilustratif per model pendapatan (satuan Rp ribu per kW)",
+     "en": "Illustrative cumulative cash flow per revenue model (Rp thousand per kW)"
+    },
+    "asumsi": {
+     "id": "Harga jual per model memakai jangkar tarif repo (BPP nasional 1027.7 Rp per kWh; tarif B-2 1444.7, B-3 1114.74, R-1 1444.7 Rp per kWh, EST), diskon sewa atap 15 persen dan ESCO 10 persen (Hipotesis), degradasi 0,5 persen per tahun, tanpa pajak dan utang (arus kas proyek sebelum pajak). Biaya modal, faktor kapasitas, dan biaya operasi dari biaya_bangun.json (skala -); umur proyek - tahun adalah Hipotesis METI karena berkas tidak memuat umur. Harga adalah jangkar acuan, bukan harga PPA proyek.",
+     "en": "Selling price per model uses repository tariff anchors (national BPP 1027.7 Rp per kWh; B-2 tariff 1444.7, B-3 1114.74, R-1 1444.7 Rp per kWh, EST), a 15 percent rooftop-rental and 10 percent ESCO discount (Hypothesis), 0.5 percent per year degradation, and no tax or debt (pre-tax project cash flow). Cost inputs (capex, capacity factor, operating cost) from biaya_bangun.json scale ; project life - years is a METI Hypothesis because the file holds no life. Prices are reference anchors, not project PPA prices."
+    },
+    "menunggu": {
+     "id": "Grafik arus kas, IRR, dan payback belum dihitung karena public/data/biaya_bangun.json belum memuat biaya modal, faktor kapasitas, dan biaya operasi bersumber untuk skala utilitas teknologi ini (atau teknologinya tidak punya sumber terbuka yang terbaca). Begitu berkas itu terisi, bangun ulang topik dan angka muncul otomatis; METI tidak memasukkan angka karangan.",
+     "en": "The cash-flow chart, IRR and payback are not computed because public/data/biaya_bangun.json does not yet hold sourced capital cost, capacity factor and operating cost for the utility scale of this technology (or no open source could be read). Once the file is filled, rebuild the topic and the numbers appear automatically; METI does not enter invented figures."
+    }
+   },
+   "bukti": "Hipotesis",
+   "catatan": {
+    "id": "Contoh Indonesia dipilih dari proyek dan organisasi di basis METI dan ditautkan bila ada; status regulasi mengikuti basis regulasi METI pada 8 November 2026. Power wheeling belum berlaku penuh: periksa status terbaru sebelum memakainya dalam model.",
+    "en": "Indonesian examples are chosen from projects and organisations in the METI base and linked when present; regulatory status follows the METI regulation base as of 8 November 2026. Power wheeling is not yet fully in force: check the latest status before using it in a model."
+   }
   }
  }
 }

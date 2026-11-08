@@ -5,6 +5,7 @@ import { lihatSemuaHtml } from "/inti/komponen.js";
 import * as W from "/topik_tampil.js";
 import * as D from "/topik_data.js";
 import { pilKat, logoKotak } from "/topik_wujud.js";
+import * as JL from "/topik_jalan.js";
 
 const HARI_INI = new Date().toISOString().slice(0, 10);
 const KODE_REG = { uu: "UU", perppu: "Perppu", pp: "PP", perpres: "Perpres", keppres: "Keppres", inpres: "Inpres", permen: "Permen", perda: "Perda" };
@@ -24,6 +25,8 @@ export const TIPE = {
     const g = b.jenis === "batang" ? D.batangNegara(b) : D.grafikSeri(b, id, ctx, { mode: b.jenis === "kolom" ? "kolom" : "garis" });
     return { html: `<p class="jm-bantu">${esc(label)}${sat ? ", " + esc(sat) : ""}</p>${g}${catatan(b.catatan)}`, sumber: b.sumber };
   },
+  jalan: (b, id) => JL.jalan(b, id),
+  model: (b, id, ctx) => JL.model(b, id, ctx),
   linimasa: (b, id, ctx) => ({ html: linimasa(b.butir || [], ctx), sumber: b.sumber }),
 };
 

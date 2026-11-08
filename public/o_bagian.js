@@ -58,7 +58,7 @@ function batangSvg(baris, { label, satuan, pakaiMw }) {
   const total = baris.reduce((s, r) => s + r.v, 0), hp = kecilHp(), W = hp ? 300 : 540, L = hp ? 84 : 132, R = hp ? 46 : 70, rh = hp ? 30 : 28, H = baris.length * rh + 6, mx = Math.max(1, ...baris.map((r) => r.v));
   const g = baris.map((r, i) => {
     const y = 3 + i * rh, w = Math.max(3, (r.v / mx) * (W - L - R)), p = total ? Math.round((r.v / total) * 100) : 0;
-    const tip = pakaiMw ? t("oj2.g.tip", { nama: r.nama, v: angka(Math.round(r.v)), n: angka(r.n), p: angka(p) }) : t("oj2.g.tip_n", { nama: r.nama, n: angka(r.n), p: angka(p) });
+    const tip = r.tip || (pakaiMw ? t("oj2.g.tip", { nama: r.nama, v: angka(Math.round(r.v)), n: angka(r.n), p: angka(p) }) : t("oj2.g.tip_n", { nama: r.nama, n: angka(r.n), p: angka(p) }));
     return `<text class="jm-gf-t1" x="${L - 8}" y="${y + 17}" text-anchor="end" font-size="${hp ? 11 : 12}">${esc(r.nama.length > (hp ? 12 : 18) ? r.nama.slice(0, hp ? 11 : 17) + "…" : r.nama)}</text>`
       + `<rect class="oj-fill ${esc(r.kelas)}" x="${L}" y="${y + 3}" width="${w.toFixed(1)}" height="${rh - 8}" rx="4" tabindex="0" data-tip="${esc(tip)}"/>`
       + `<text class="jm-gf-t1 jm-gf-tb" x="${(L + w + 6).toFixed(1)}" y="${y + 17}" font-size="12">${esc(angka(Math.round(r.v)))}${pakaiMw ? "" : ""}</text>`;
@@ -266,4 +266,24 @@ export function saringTerkait(akar, idRel) {
   const tab = akar.querySelector("#trt-org"), lain = [...akar.querySelectorAll("#terkait [role=tab]")].find((x) => x !== tab);
   grup.remove(); tab.remove();
   if (lain) lain.click(); else akar.querySelector("#terkait")?.remove();
+}
+
+/* ---------- Paten & riset: karya OpenAlex per topik/tahun/negara (riset_kampus.json) + paten tertaut (paten.json) ---------- */
+export function bagRiset({ k, paten, sumber }) {
+  const pt = (paten || []).slice(0, 10);
+  if (!k && !pt.length) return { html: "", pasang() {} };
+  const fig = (kunci, baris) => (baris.length ? `<figure class="oj-fig"><figcaption>${esc(t(kunci))}</figcaption>${batangSvg(baris, { label: t(kunci), pakaiMw: false })}</figure>` : "");
+  let grafik = "";
+  if (k) {
+    const tot = Object.values(k.per_topik).reduce((s, v) => s + v, 0) || 1;
+    const topik = Object.entries(k.per_topik).filter(([, v]) => v).sort((a, b) => b[1] - a[1]).map(([x, v]) => { const nama = t("rp.tema." + x); return { nama, v, n: v, kelas: "jm-tek-" + x.replace("_", "-"), tip: t("rp.tip.topik", { nama, n: angka(v), p: angka(Math.round((v / tot) * 100)) }) }; });
+    const tren = Object.entries(k.tren_tahunan || {}).map(([y, v]) => ({ nama: y, v, n: v, kelas: "jm-tek-surya", tip: t("rp.tip.tren", { nama: y, n: angka(v) }) }));
+    const neg = (k.kolaborator_negara || []).slice(0, 8).map((c) => { const nama = new Intl.DisplayNames([document.documentElement.lang || "id"], { type: "region" }).of(c.iso2) || c.iso2; return { nama, v: c.karya, n: c.karya, kelas: "jm-tek-hidro", tip: t("rp.tip.negara", { nama, n: angka(c.karya) }) }; });
+    grafik = `<div class="oj-gfdua">${fig("rp.g.topik", topik)}${fig("rp.g.tren", tren)}${fig("rp.g.negara", neg)}</div>`;
+  }
+  const tabel = pt.length ? `<div class="jm-tbl-bungkus"><table class="jm-tabel"><thead><tr><th>${esc(t("rp.kol.judul"))}</th><th>${esc(t("rp.kol.tahun"))}</th><th>${esc(t("rp.kol.status"))}</th></tr></thead><tbody>${pt.map((p) => `<tr><td><a href="${esc(p.tautan)}" target="_blank" rel="noopener noreferrer">${esc(p.judul)}</a></td><td>${esc(p.tahun ?? "")}</td><td>${esc(p.status ?? "")}</td></tr>`).join("")}</tbody></table></div>` : "";
+  return {
+    html: exHtml({ id: "riset", ikon: "analisis", topik: t("rp.ey"), judulHtml: hlHtml("rp.j", angka(k ? k.karya_energi_2019_sekarang : pt.length)), aksiHtml: sumberHtml(sumber), isiHtml: `<div class="oj-bag-isi">${grafik}${tabel}</div>` }),
+    pasang() {},
+  };
 }
