@@ -12,7 +12,8 @@ const AKAR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const J = (f) => JSON.parse(fs.readFileSync(path.join(AKAR, f), 'utf8'));
 const ada = (f) => fs.existsSync(path.join(AKAR, f));
 const TGL = new Date().toISOString().slice(0, 10);
-const POSKO = process.env.POSKO_KAB || '/Users/priyankaalfatehan28/Documents/GitHub/poskokarhutla/public/geo/kabupaten';
+// POSKO_KAB: folder GeoJSON batas kabupaten per provinsi (<kode>.json). Wajib diisi; tanpa nilai bawaan.
+const POSKO = process.env.POSKO_KAB || '';
 export const RES = 0.01, LON0 = 94.8, LAT0 = 6.4, W = Math.ceil((141.1 - LON0) / RES), H = Math.ceil((6.4 + 11.2) / RES);
 export const LAPIS = [
   { id: 'hti', bit: 1, ikon: 'tek-bio', warna: '#2E7D32' }, { id: 'hph', bit: 2, ikon: 'tek-bio', warna: '#00796B' }, { id: 're', bit: 4, ikon: 'tek-bio', warna: '#7CB342' },
@@ -42,6 +43,7 @@ export function siap() {
   const daftar = daftarKabkota(), per = new Map(), semua = new Map(), hasil = {}, tanpa = [];
   for (const k of daftar) { const kk = (k.jenis === 'kota' ? 'kota' : '') + k.kunci; per.set(k.prov + '|' + kk, k); semua.set(kk, [...(semua.get(kk) || []), k]); }
   const pakai = new Set();
+  if (!POSKO || !fs.existsSync(POSKO)) throw new Error('POSKO_KAB belum diisi: arahkan ke folder GeoJSON batas kabupaten per provinsi (<kode>.json).');
   for (const f of fs.readdirSync(POSKO).filter((x) => /^\d+\.json$/.test(x))) {
     const pv = f.replace('.json', '');
     for (const ft of J_abs(path.join(POSKO, f)).features) {

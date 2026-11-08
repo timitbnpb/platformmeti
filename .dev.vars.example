@@ -1,2 +1,31 @@
 # Nama kunci saja, TANPA nilai. Salin ke .dev.vars (tidak dilacak git) lalu isi lokal.
+# Produksi: npx wrangler secret put <NAMA>   (jangan pernah menulis nilai ke repo)
+
+# Wajib. Garam HMAC untuk hash IP, sesi Google, dan cadangan rahasia di bawah. Acak >= 32 karakter.
+IP_SALT=
+
+# Rahasia tanda tangan tautan. Opsional: bila kosong jatuh ke ICS_RAHASIA lalu IP_SALT.
+ICS_RAHASIA=
+KTA_RAHASIA=
+PUSTAKA_RAHASIA=
+
+# Masuk dengan Google (OIDC). Kosong = tombol Google tidak tampil.
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+# Pembayaran iuran anggota (Midtrans Snap). MIDTRANS_PRODUKSI=1 untuk produksi, kosong = sandbox.
+MIDTRANS_SERVER_KEY=
+MIDTRANS_PRODUKSI=
+
+# Tarik unggahan media sosial (Meta Graph API). Kosong = fitur sosmed mati.
+META_TOKEN=
+FB_PAGE_ID=
+IG_USER_ID=
+
+# OpenAlex (riset kampus). KEY opsional; MAILTO = surel kontak untuk antrean sopan.
 OPENALEX_KEY=
+OPENALEX_MAILTO=
+
+# Lain-lain. SAMPEL_BOT = catat 1 dari N kunjungan bot (bawaan 10). VERSI = label versi di /api/sehat.
+SAMPEL_BOT=
+VERSI=

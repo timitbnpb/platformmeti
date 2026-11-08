@@ -14,7 +14,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const DP = path.join(ROOT, 'data-panen');
 const POT = path.join(DP, 'potret');
 const LAPIS = ['publik', 'anggota', 'pengurus'];
-const SUMBER_LOKAL = { 'meti-lokal': '/Users/priyankaalfatehan28/Documents/1. METI', 'arsip-zip': '/Users/priyankaalfatehan28/Downloads/METI-20261107T093342Z-1-001.zip' };
+// Sumber berkas pustaka di mesin operator (tanpa nilai bawaan): METI_LOKAL = folder arsip METI, METI_ZIP = arsip zip unduhan.
+const SUMBER_LOKAL = { 'meti-lokal': process.env.METI_LOKAL || 'METI_LOKAL', 'arsip-zip': process.env.METI_ZIP || 'METI_ZIP' };
 const JENIS = new Set(['kajian', 'paparan-konferensi', 'regulasi', 'surat', 'notulen', 'proposal', 'laporan', 'ad-art', 'panduan', 'data']);
 const K16 = { surya: 'surya', angin: 'bayu', hidro: 'hidro', panas_bumi: 'panas-bumi', bioenergi: 'bioenergi', nuklir: 'nuklir', hidrogen: 'hidrogen', penyimpanan: 'penyimpanan', jaringan: 'jaringan', efisiensi: 'efisiensi', karbon: 'karbon', harga: 'pembiayaan', insentif: 'pembiayaan', perizinan: 'kebijakan', perencanaan: 'kebijakan', energi_umum: 'kebijakan', energi_baru_umum: 'kebijakan', tkdn: 'industri' };
 const PROG = [['plts-100gw', /plts 100|100 gigawatt|100 gwp/i], ['b50', /biodiesel|bahan bakar nabati/i], ['e20', /bioetanol|etanol/i], ['wte', /sampah|pltsa/i], ['ruptl', /ruptl|rencana usaha penyediaan tenaga listrik/i], ['jetp', /jetp|just energy/i], ['ruu-ebet', /energi baru dan energi terbarukan.*(rancangan|ruu)|ruu ebet/i]];

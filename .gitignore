@@ -28,3 +28,6 @@ tests/layar/tangkapan/
 
 # Indeks "Tanya data" (turunan, dibangun ulang oleh scripts/pipa/tanya_indeks.mjs)
 data/tanya/
+
+# artefak bundle git (serah terima tidak membawanya)
+*.bundle
