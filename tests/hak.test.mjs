@@ -14,7 +14,7 @@ const KPV = {
   kontak: "- - T B B(prov) T T", terlarang: "- - - - - - -", potret_publik: "B B B B B B B", potret_anggota: "- B B B B B B",
   potret_pengurus: "- - B B - B B", akun: "- diri diri diri diri bukan-super T", sesi: "- diri diri diri diri cabut T",
   koreksi: "- kirim kirim T kirim(prov) T T", riwayat: "- - T - - T T", jejak: "- - - - - B B", daftar_tolak: "- - - - - - B",
-  agenda: "- B B B B T T",
+  agenda: "- B B B B T T", konten_meti: "- B B B B T T",
   event_atur: "- B B B B T T", event_daftar: "- daftar daftar daftar daftar T T",
   pendaftaran: "- - T - - T T",
   sesi_admin: "- - - - - cabut cabut",
@@ -28,7 +28,7 @@ const KODE_KPV = (s) => s.split(" ").map((x) => ({ "-": "-", B: "B", T: "T", "B(
 // Aksi yang diizinkan per kode sel (ditulis ulang di sini dari DT 5.2, tidak diimpor).
 const HARAP = (kode, jenis) => ({
   "-": [], B: ["baca"], "B prov": ["baca"],
-  T: ["baca", "tambah", "ubah", ...({ koreksi: ["tinjau", "kirim"], entitas: ["hapus_keras"], orang: ["hapus_keras"], riwayat: ["hapus"], agenda: ["hapus"], sesi: ["cabut"] }[jenis] ?? [])],
+  T: ["baca", "tambah", "ubah", ...({ koreksi: ["tinjau", "kirim"], entitas: ["hapus_keras"], orang: ["hapus_keras"], riwayat: ["hapus"], agenda: ["hapus"], konten_meti: ["hapus"], sesi: ["cabut"] }[jenis] ?? [])],
   "T diri": jenis === "sesi" ? ["baca", "cabut"] : ["baca", "ubah"],
   "T daftar": ["baca", "tambah", "ubah"], "T bukan-super": ["baca", "tambah", "ubah"], "T cabut": ["baca", "cabut"], "T kirim": ["kirim", "baca"], "T kirim prov": ["kirim", "baca"],
 }[kode]);

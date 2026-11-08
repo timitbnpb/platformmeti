@@ -2,12 +2,12 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, angka, tanggal } from "/i18n.js";
-import { esc, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
+import { esc, api, nanti, debounce, hantuHtml, galatHtml, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
-import { norm } from "/publik.js";
-import { JENIS, IKON_JENIS, muatSiaran, kartuHtml, topikLabel, pasangGalatFoto } from "/siaran_umum.js";
+import { norm, urlAman } from "/publik.js";
+import { JENIS, IKON_JENIS, muatSiaran, kartuHtml, topikLabel, pasangGalatFoto, jenisHtml, judulKartu, urlFoto } from "/siaran_umum.js";
 
 const PER = 12;
 const S = { jenis: "siaran_pers", q: "", tahun: "", topik: "", media: "", hal: 1 };
@@ -63,6 +63,28 @@ function tulisUrl() {
 /** Chrome sinkron, daftar berat sesudah satu bingkai tercat. */
 function ubah(sinkron) { S.hal = 1; sinkron && sinkron(); aturSaring(); tulisUrl(); nanti(gambarIsi); }
 
+/** Dialog isi butir dari admin: ringkasan langsung, isi lengkap dari GET /api/berita-meti/:ref (galat = ringkasan saja). */
+async function bukaButir(id) {
+  const r = D.baris.find((x) => x._d1 && x.id === id), dlg = document.getElementById("sp-dlg");
+  if (!r || !dlg) return;
+  const j = judulKartu(r), foto = urlFoto(r, D.foto), u = urlAman(r.url_sumber);
+  const paragraf = (teks) => String(teks || "").split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean).map((x) => `<p>${esc(x)}</p>`).join("");
+  const badan = (isi) => paragraf(isi) || paragraf(r.ringkasan);
+  dlg.innerHTML = `<div class="sp-d"><div class="sp-d-atas">${jenisHtml(r)}<button type="button" class="iconbtn" data-sp-tutup aria-label="${esc(t("jm.tutup"))}" title="${esc(t("jm.tutup"))}">${ikon("tutup", 20)}</button></div>
+    <h2 id="sp-dj">${esc(j)}</h2>
+    <p class="sp-meta"><time datetime="${esc(r.tanggal)}">${esc(tanggal(r.tanggal, { gaya: "panjang" }))}</time>${r.kota ? `<span>${esc(r.kota)}</span>` : ""}${r.penulis ? `<span>${esc(t("sp.penulis"))}: ${esc(r.penulis)}</span>` : ""}</p>
+    ${foto ? `<img class="sp-d-foto" src="${esc(foto)}" alt="" decoding="async">` : ""}
+    <div class="sp-d-isi" id="sp-di">${badan("")}</div>
+    ${u ? `<a class="jm-tbl sp-baca" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t("sp.baca", { media: r.media }))}${ikon("tautan", 16)}</a>` : ""}</div>`;
+  if (!dlg.open) dlg.showModal();
+  try {
+    const d = await api("/api/berita-meti/" + encodeURIComponent(id));
+    const isi = d && (d.isi ?? (d.baris && d.baris.isi));
+    const el = document.getElementById("sp-di");
+    if (el && dlg.open && isi) el.innerHTML = paragraf(isi);
+  } catch { /* diam: ringkasan tetap tampil */ }
+}
+
 (async () => {
   await mulaiHalaman();
   document.getElementById("sp-ex").innerHTML = exHtml({ id: "ex-sp", ikon: "siaran", topik: t("sp.ex.ey"), judulHtml: esc(t("sp.ex.j")), subHtml: esc(t("sp.ex.sub")),
@@ -83,6 +105,13 @@ function ubah(sinkron) { S.hal = 1; sinkron && sinkron(); aturSaring(); tulisUrl
     const b = e.target.closest("[data-tab]"); if (!b || b.dataset.tab === S.jenis) return;
     ubah(() => { S.jenis = b.dataset.tab; S.tahun = S.topik = S.media = ""; gambarTab(); gambarSaring(); });
   });
+  const dlg = document.getElementById("sp-dlg");
+  document.getElementById("daftar").addEventListener("click", (e) => {
+    const a = e.target.closest("[data-sp-buka]"); if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault(); bukaButir(a.dataset.spBuka);
+  });
+  dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest("[data-sp-tutup]")) dlg.close(); });
+  if (p.get("buka")) bukaButir(p.get("buka"));
   const cariTunda = debounce(() => ubah(() => {}), 120), sr = document.getElementById("saring");
   sr.addEventListener("input", (e) => { if (e.target.id === "f-q") { S.q = e.target.value; cariTunda(); } });
   sr.addEventListener("change", (e) => { const k = e.target.id.slice(2); if (e.target.id.startsWith("f-") && k in S && k !== "q") ubah(() => { S[k] = e.target.value; }); });

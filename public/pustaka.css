@@ -281,3 +281,6 @@ img.pu-lb{object-fit:contain}
 .pu-resmi-teks{flex:1;min-width:0;display:grid;gap:2px}.pu-resmi-teks strong{overflow-wrap:anywhere}
 .pu-resmi-teks small,.pu-resmi-teks>span{color:var(--ink2);font-size:var(--t-kecil)}
 .pu-resmi-teks a{color:var(--accent)}
+/* lencana dokumen unggahan METI */
+.pu-ug{background:var(--soft-hijau);color:var(--accent)}
+.pu-ug-baris{margin:0}

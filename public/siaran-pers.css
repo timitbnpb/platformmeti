@@ -76,3 +76,12 @@
 .sp-lapis .sp-jenis{background:var(--card);box-shadow:var(--shadow)}
 .sp-tgl{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-kecil)/1 var(--font);box-shadow:var(--shadow)}
 .sp-meta span{display:inline-flex;align-items:center;gap:4px}
+/* dialog isi butir dari admin (D1) */
+dialog.sp-dlg{position:fixed;inset:0;margin:auto;width:min(760px,calc(100vw - 24px));height:fit-content;max-height:92dvh;padding:0;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink);overflow:auto}
+dialog.sp-dlg::backdrop{background:color-mix(in srgb,var(--brand) 62%,transparent)}
+.sp-d{display:grid;gap:14px;padding:20px;align-items:stretch}
+.sp-d-atas{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sp-d h2{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--font);overflow-wrap:anywhere}
+.sp-d img.sp-d-foto{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-sm);background:var(--surface)}
+.sp-d-isi{display:grid;gap:12px;line-height:var(--lh-isi)}
+.sp-d-isi p{margin:0;white-space:pre-line;overflow-wrap:anywhere}

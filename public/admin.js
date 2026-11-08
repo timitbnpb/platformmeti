@@ -15,6 +15,8 @@ import { panelKesehatan } from "/admin_kesehatan.js";
 import { panelKesegaran } from "/admin_kesegaran.js";
 import { panelStatistik } from "/admin_statistik.js";
 import { panelPustaka } from "/admin_pustaka.js";
+import { panelBeritaMeti } from "/admin_berita_meti.js";
+import { panelDokPustaka } from "/admin_dok_pustaka.js";
 import { panelBeranda } from "/admin_beranda.js";
 import { panelKta } from "/admin_kta.js";
 import { panelLangganan } from "/admin_langganan.js";
@@ -56,7 +58,7 @@ function jalan() {
     ...ad(["persetujuan", "pd.tab", "daftar", "anggota"], ["akun", "admin.tab.akun", "orang", "anggota"]), ["anggota", "adm.anggota.tab", "daftar", "anggota"],
     ...ad(["kta", "adm.kta.tab", "kartu", "anggota"], ["metiwilayah", "adm.mw.tab", "wilayah", "anggota"], ["portal", "ap.tab", "centang", "anggota"], ["surel", "sm.ad.tab", "surel", "anggota"], ["keamanan", "kam.tab", "kunci", "anggota"]),
     ...ad(["beranda", "admin.tab.beranda", "beranda", "konten"], ["pustaka", "adm.pu.tab", "unduh", "konten"]), ["agenda", "adm.agenda.tab", "kalender", "konten"],
-    ...ad(["event", "adm.event.tab", "kalender-bintang", "konten"], ["sosmed", "adm.so.tab", "tautan", "konten"], ["konsultasi", "kf.ad.tab", "palu", "konten"]),
+    ...ad(["event", "adm.event.tab", "kalender-bintang", "konten"], ["sosmed", "adm.so.tab", "tautan", "konten"], ["konsultasi", "kf.ad.tab", "palu", "konten"], ["metiberita", "adm.bm.tab", "berita", "konten"], ["dokpustaka", "adm.dp.tab", "buku", "konten"]),
     ["koreksi", "admin.tab.koreksi", "ubah", "data"], ...ad(["jejak", "admin.tab.jejak", "jejak", "data"]), ["kesehatan", "admin.tab.kesehatan", "centang", "data"], ["kesegaran", "kes.tab", "jam", "data"],
     ...ad(["pesan", "admin.tab.pesan", "info", "komunikasi"], ["langganan", "admin.tab.langganan", "berita", "komunikasi"], ["statistik", "admin.tab.statistik", "analisis", "analitik"]),
   ];
@@ -169,7 +171,7 @@ function jalan() {
     const P = $("panel");
     if (k === "hariini") panelHariIni(P, { tabAda: (x) => TAB.some((y) => y[0] === x) }); else if (k === "keamanan") panelKeamanan(P, saya); else if (k === "akun") panelAkun(); else if (k === "jejak") panelAudit(P); else if (k === "koreksi") panelKoreksi(P); else if (k === "kesehatan") panelKesehatan(P);
     else if (k === "kesegaran") panelKesegaran(P);
-    else if (k === "statistik") panelStatistik(P); else if (k === "pustaka") panelPustaka(P); else if (k === "beranda") panelBeranda(P); else if (k === "agenda") panelAgenda(P, saya); else if (k === "sosmed") panelSosmed(P); else if (k === "kta") panelKta(P); else if (k === "event") panelEvent(P); else if (k === "langganan") panelLangganan(P); else if (k === "pesan") panelPesan(P); else if (k === "metiwilayah") panelMetiWilayah(P); else if (k === "portal") panelPortal(P); else if (k === "surel") panelSurel(P); else if (k === "persetujuan") panelPersetujuan(P, { boleh: adm }); else if (k === "konsultasi") panelKonsultasi(P); else panelAnggota(P, { boleh: adm, kabari });
+    else if (k === "statistik") panelStatistik(P); else if (k === "pustaka") panelPustaka(P); else if (k === "metiberita") panelBeritaMeti(P); else if (k === "dokpustaka") panelDokPustaka(P); else if (k === "beranda") panelBeranda(P); else if (k === "agenda") panelAgenda(P, saya); else if (k === "sosmed") panelSosmed(P); else if (k === "kta") panelKta(P); else if (k === "event") panelEvent(P); else if (k === "langganan") panelLangganan(P); else if (k === "pesan") panelPesan(P); else if (k === "metiwilayah") panelMetiWilayah(P); else if (k === "portal") panelPortal(P); else if (k === "surel") panelSurel(P); else if (k === "persetujuan") panelPersetujuan(P, { boleh: adm }); else if (k === "konsultasi") panelKonsultasi(P); else panelAnggota(P, { boleh: adm, kabari });
   }
 
   /* ---------- tab Akun ---------- */

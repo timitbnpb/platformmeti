@@ -3,7 +3,7 @@
    INP: nilai filter dan tombol berubah seketika; render kisi menyusul lewat nanti(), dan kartu dirender per 18 (muat lagi). */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
-import { t, angka, tanggal, tanggalSah } from "/i18n.js";
+import { t, ada, angka, tanggal, tanggalSah } from "/i18n.js";
 import { esc, api, nanti, debounce, kosongHtml, galatHtml, ikon, pesanHtml } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml, terkaitHtml } from "/inti/komponen.js";
 import { kabar, aksiHtml, hlHtml } from "/inti/aksi_ex.js";
@@ -24,7 +24,7 @@ let D = null, SAYA = null, DAFTAR = [];
 
 const norm = (s) => String(s ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 const tahunDari = (d) => (String(d.tanggal || "").match(/^\d{4}/) || [""])[0];
-const labelJenis = (j) => t("pu.jenis." + j);
+const labelJenis = (j) => (ada("pu.jenis." + j) ? t("pu.jenis." + j) : j);
 const labelTopik = (k) => t("pu.topik." + k);
 
 /* ---- penerbit: nama ringkas, logo, kelompok ---- */
@@ -58,6 +58,7 @@ function grupPen(n) {
 const GRUP_URUT = ["pusat", "daerah", "bumn", "riset", "lain"];
 const ikonTopik = (k) => (IKON_TEK[k] ? "tek:" + k : "topik");
 const pilTopik = (k) => `<span class="jm-pil pu-topik pu-t-${esc(k)}" title="${esc(labelTopik(k))}">${IKON_TEK[k] || ikon("topik", 14)}<span>${esc(labelTopik(k))}</span></span>`;
+const pilUg = (d) => (d._ug ? `<span class="jm-pil pu-ug">${ikon("lencana", 14)}<span>${esc(t("pu.ug.lencana"))}</span></span>` : "");
 const pilJenis = (d, k = "") => `<span class="jm-pil pu-jenis pu-j-${esc(d.jenis)} ${k}">${ikon(IKON_JENIS[d.jenis] || "buku", 14)}<span>${esc(labelJenis(d.jenis))}</span></span>`;
 const logoImg = (n, ukuran, kelas = "") => (logoPen(n)
   ? `<img class="jm-pen-lg pu-lb ${kelas}" src="${esc(logoPen(n))}" width="${ukuran}" height="${ukuran}" alt="" loading="lazy" decoding="async">`
@@ -78,8 +79,22 @@ async function statis(jalur) {
   if (!r.ok) throw new Error(jalur);
   return r.json();
 }
+/* dokumen unggahan admin (GET /api/pustaka-unggah): masuk ke daftar yang sama; galat API = diam. Unduh langsung lewat /api/pustaka-unggah/:ref/unduh. */
+const urlUnduhUg = (d) => "/api/pustaka-unggah/" + encodeURIComponent(d._ug) + "/unduh";
+async function unggahan() {
+  let l;
+  try { const d = await api("/api/pustaka-unggah"); l = Array.isArray(d) ? d : (d && d.baris) || []; } catch { return []; }
+  return l.filter((x) => x && x.ref && x.judul).map((x) => {
+    const tgl = String(x.tanggal_terbit || x.dibuat || "").slice(0, 10), d = {
+      id: "ug-" + x.ref, _ug: String(x.ref), judul: x.judul, penerbit: x.penerbit || "", ringkasan: x.ringkasan || "", jenis: x.jenis || "lainnya", tanggal: tgl,
+      bahasa: x.bahasa === "en" ? "en" : "id", kepakaran: [], u: {}, n: 0, bisa: true, tahun: tahunDari({ tanggal: tgl }), diperbarui: String(x.dibuat || tgl).slice(0, 10),
+      berkas: [{ id: "utama", nama: x.nama_berkas || x.judul, format: String(x.tipe || x.nama_berkas || "").split(/[./]/).pop().toLowerCase(), ukuran: x.ukuran || 0 }], ukuran: x.ukuran || 0 };
+    d.cari = norm([d.judul, d.penerbit, d.ringkasan, labelJenis(d.jenis), t("pu.ug.lencana")].join(" "));
+    return d;
+  });
+}
 async function muat() {
-  const [dasar, ulasan, peta] = await Promise.all([statis("/data/pustaka.json"), statis("/data/pustaka_ulasan.json").catch(() => ({ dokumen: [], ulasan: {} })), api("/api/pustaka")]);
+  const [dasar, ulasan, peta, ug] = await Promise.all([statis("/data/pustaka.json"), statis("/data/pustaka_ulasan.json").catch(() => ({ dokumen: [], ulasan: {} })), api("/api/pustaka"), unggahan()]);
   SAYA = peta.saya;
   const api_ = new Map(peta.dokumen.map((d) => [d.id, d]));
   const docs = [...dasar.baris, ...(ulasan.dokumen || [])].filter((d) => d.lapis === "publik" && !d.rahasia && api_.has(d.id)).map((d) => {
@@ -88,6 +103,7 @@ async function muat() {
     d2.cari = norm([d.judul, d.penerbit, d.ringkasan, d.acara, ...(d.kepakaran || []).map(labelTopik), labelJenis(d.jenis)].join(" "));
     return d2;
   });
+  docs.push(...ug);
   D = { docs, byId: new Map(docs.map((d) => [d.id, d])) };
 }
 
@@ -150,8 +166,8 @@ function kartuHtml(d) {
       ${d.penerbit ? `<span class="pu-lencana" title="${atr(d.penerbit)}">${logoImg(d.penerbit, 32)}</span>` : ""}${pilJenis(d, "pu-pojok")}</button>
     <div class="pu-badan"><h3><button type="button" data-buka="${esc(d.id)}">${esc(d.judul)}</button></h3>
       ${penBaris(d)}
-      <p class="pu-meta"><span class="pu-m" title="${esc(t("pu.i.terbit"))}">${ikon("tahun", 14)}<span>${esc(d.tahun || "-")}</span></span><span class="pu-m pu-n" title="${esc(t("pu.diunduh", { n: angka(d.n) }))}">${ikon("unduh", 14)}<span>${esc(angka(d.n))}</span></span></p>
-      ${top ? `<p class="pu-meta pu-topik-baris">${pilTopik(top)}</p>` : ""}
+      <p class="pu-meta"><span class="pu-m" title="${esc(t("pu.i.terbit"))}">${ikon("tahun", 14)}<span>${esc(d.tahun || "-")}</span></span>${d._ug ? "" : `<span class="pu-m pu-n" title="${esc(t("pu.diunduh", { n: angka(d.n) }))}">${ikon("unduh", 14)}<span>${esc(angka(d.n))}</span></span>`}</p>
+      ${top ? `<p class="pu-meta pu-topik-baris">${pilTopik(top)}</p>` : ""}${d._ug ? `<p class="pu-meta pu-ug-baris">${pilUg(d)}</p>` : ""}
       <p class="pu-ring">${esc(d.ringkasan || "")}</p></div>
     <footer class="pu-kaki"><button type="button" class="pu-lanjut" data-buka="${esc(d.id)}" aria-label="${b}">${esc(t("pu.selengkapnya"))}${ikon("panah-kanan", 16)}</button><span class="pu-m">${dok}</span></footer></article>`;
 }
@@ -212,7 +228,7 @@ const namaBerkas = (d, b) => b.nama || (b.id === "utama" ? t("pu.berkas.utama") 
 function berkasHtml(d) {
   const ada = d.bisa;
   const baris = d.berkas.map((b) => `<li><span class="pu-b-ik">${ikon("pdf", 22)}</span><span class="pu-b-nama"><b>${esc(namaBerkas(d, b))}</b><small>${esc([String(b.format).toUpperCase(), ukuranTeks(b.ukuran), b.halaman ? t("pu.hlm", { n: angka(b.halaman) }) : ""].filter(Boolean).join(", "))}</small></span>
-    <button type="button" class="jm-tbl jm-tbl-kecil" data-unduh="${esc(d.id)}" data-berkas="${esc(b.id)}"${ada ? "" : " disabled"}>${ikon("unduh", 16)}${esc(t("pu.unduh"))}</button></li>`).join("");
+    ${d._ug ? `<a class="jm-tbl jm-tbl-kecil" href="${esc(urlUnduhUg(d))}" download>${ikon("unduh", 16)}${esc(t("pu.unduh"))}</a>` : `<button type="button" class="jm-tbl jm-tbl-kecil" data-unduh="${esc(d.id)}" data-berkas="${esc(b.id)}"${ada ? "" : " disabled"}>${ikon("unduh", 16)}${esc(t("pu.unduh"))}</button>`}</li>`).join("");
   return `<section>${sh("pdf", "pu.berkas")}${ada ? "" : `<p class="pu-bantu">${esc(t("pu.berkas.belum"))}</p>`}<ul class="pu-berkas">${baris}</ul></section>`;
 }
 function detailHtml(d) {
@@ -237,10 +253,10 @@ function detailHtml(d) {
         ${info("jejak", "pu.i.diperbarui", tanggalSah(d.diperbarui) ? esc(tanggal(d.diperbarui)) : "")}
       </ul></aside>
     <div class="pu-d-kanan">
-      <header class="pu-d-kepala"><p class="pu-d-ey">${pilJenis(d)}${d.penerbit ? `<span class="pu-pen-baris">${logoImg(d.penerbit, 20)}<span>${tautOrg(d.penerbit, ringkasPen(d.penerbit))}</span></span>` : ""}${d.acara ? `<span>${esc(d.acara)}</span>` : ""}</p>
+      <header class="pu-d-kepala"><p class="pu-d-ey">${pilJenis(d)}${pilUg(d)}${d.penerbit ? `<span class="pu-pen-baris">${logoImg(d.penerbit, 20)}<span>${tautOrg(d.penerbit, ringkasPen(d.penerbit))}</span></span>` : ""}${d.acara ? `<span>${esc(d.acara)}</span>` : ""}</p>
         <h2 id="pu-dj">${esc(d.judul)}</h2>
         <p class="pu-d-meta">${[d.penerbit ? `${ikon("direktori", 14)}<span>${tautOrg(d.penerbit)}</span>` : "", `${ikon("tahun", 14)}<span>${esc(tglTerbit(d))}</span>`, d.halaman ? `${ikon("buku", 14)}<span>${esc(t("pu.hlm", { n: angka(d.halaman) }))}</span>` : "", ukuranTeks(ukuranTotal || d.ukuran) ? `${ikon("pdf", 14)}<span>${esc(ukuranTeks(ukuranTotal || d.ukuran))}</span>` : ""].filter(Boolean).map((x) => `<span class="pu-m">${x}</span>`).join("")}</p>
-        <div class="pu-aksi"><button type="button" class="jm-tbl jm-tbl-utama" data-unduh="${esc(d.id)}" data-berkas="utama"${d.bisa ? "" : " disabled"}>${ikon("unduh", 18)}${esc(t("pu.unduh"))}</button>
+        <div class="pu-aksi">${d._ug ? `<a class="jm-tbl jm-tbl-utama" href="${esc(urlUnduhUg(d))}" download>${ikon("unduh", 18)}${esc(t("pu.unduh"))}</a>` : `<button type="button" class="jm-tbl jm-tbl-utama" data-unduh="${esc(d.id)}" data-berkas="utama"${d.bisa ? "" : " disabled"}>${ikon("unduh", 18)}${esc(t("pu.unduh"))}</button>`}
           ${bagikanHtml({ url, judul: d.judul, kelas: "pu-bagi bulat", lengkap: true })}</div></header>
       <div class="jm-tab pu-tab" role="tablist" aria-label="${esc(t("pu.tab.label"))}">${tabs.map(([k, kunci], n) => `<button type="button" role="tab" id="pu-t-${k}" data-tab="${k}" aria-selected="${n === 0}" aria-controls="pu-p-${k}" tabindex="${n === 0 ? 0 : -1}">${esc(t(kunci))}</button>`).join("")}</div>
       <div id="pu-p-overview" role="tabpanel" aria-labelledby="pu-t-overview" class="pu-panel">${overviewHtml(d)}</div>
@@ -257,7 +273,7 @@ function bukaDetail(id) {
   S.id = id; tulisUrl();
   dlg.innerHTML = detailHtml(d);
   dlg.setAttribute("aria-labelledby", "pu-dj");
-  terkaitHtml("dokumen", id).then((h) => { const a = dlg.querySelector(".pu-d-kanan") || dlg; if (h && dlg.open && S.id === id && !dlg.querySelector("#terkait")) a.insertAdjacentHTML("beforeend", h); });
+  if (!d._ug) terkaitHtml("dokumen", id).then((h) => { const a = dlg.querySelector(".pu-d-kanan") || dlg; if (h && dlg.open && S.id === id && !dlg.querySelector("#terkait")) a.insertAdjacentHTML("beforeend", h); });
   if (!dlg.open) dlg.showModal();
   dlg.scrollTop = 0; dlg.querySelector(".pu-d-kanan")?.scrollTo?.(0, 0);
 }

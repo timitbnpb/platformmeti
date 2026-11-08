@@ -121,7 +121,20 @@ function adaMetadata(b, ext) {
 
 // Baca badan biner bertahap, maks 5 MB.
 async function bacaBiner(req, MAKS = MAKS_FOTO) {
-  if (Number(req.headers.get("content-length")) > MAKS) throw new Galat("terlalu_besar");
+  const cl = Number(req.headers.get("content-length"));
+  if (cl > MAKS) throw new Galat("terlalu_besar");
+  // Content-Length sah: isi satu buffer langsung (memori puncak ~1x ukuran, bukan 2x; tinjauan keamanan 8 Nov 2026)
+  if (Number.isInteger(cl) && cl > 0 && req.body) {
+    const b = new Uint8Array(cl), rd = req.body.getReader();
+    let p = 0;
+    for (;;) {
+      const { value, done } = await rd.read();
+      if (done) break;
+      if (p + value.length > cl) { rd.cancel().catch(() => {}); throw new Galat("terlalu_besar"); }
+      b.set(value, p); p += value.length;
+    }
+    return p === cl ? b : b.slice(0, p);
+  }
   const bagian = [];
   let n = 0;
   if (req.body) {
@@ -530,3 +543,6 @@ export const rute = {
     }
   },
 };
+
+// Fungsi bantu dipakai ulang oleh konten_meti.js (perilaku tidak berubah).
+export { adaMetadata, bacaBiner, CT_DOK, disposisi, teksBersih, tglSah, tipeDokumen, tipeGambar };
