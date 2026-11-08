@@ -134,6 +134,7 @@
         ".claude/agents/**",
         ".claude/hooks/**",
         "scripts/agents/**",
+        "scripts/serah/**",
         "scripts/token-ukur.mjs"
       ]
     },

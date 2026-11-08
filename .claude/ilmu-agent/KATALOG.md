@@ -22,7 +22,7 @@ Cara memakai katalog ini:
 | `pipa` | sonnet | membangun dan membetulkan panen, sambung, hubung, potret, gerbang unggah, workflow panen/potret | rute Worker; layar; migrasi; deploy atau unggah produksi; memverifikasi kerjanya sendiri | `scripts/panen/**`, `scripts/pipa/**`, `scripts/hukum/**` +5 |
 | `migrasi` | sonnet | menulis dan membetulkan migrasi D1 baru, trigger, indeks, FTS5 | menerapkan migrasi ke produksi; menyunting migrasi yang sudah jalan; kode Worker | `migrations/**` |
 | `gerbang` | sonnet | menulis uji dan gerbang, fixture, mendaftarkan cakupan | kode produksi; memverifikasi uji yang ia tulis sendiri | `tests/**` |
-| `mekanik` | sonnet | merawat package.json, wrangler.jsonc, CI uji, settings, mesin agent | kode aplikasi; dokumen perencanaan; deploy | `package.json`, `package-lock.json`, `wrangler.jsonc` +8 |
+| `mekanik` | sonnet | merawat package.json, wrangler.jsonc, CI uji, settings, mesin agent | kode aplikasi; dokumen perencanaan; deploy | `package.json`, `package-lock.json`, `wrangler.jsonc` +9 |
 
 ## Pengerja platform - kerja menyeberang wilayah (0)
 

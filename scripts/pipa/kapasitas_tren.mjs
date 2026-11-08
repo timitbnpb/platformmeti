@@ -8,8 +8,8 @@ import { ambil } from './_panen_sopan.mjs';
 
 const PX = 'https://pxweb.irena.org/api/v1/en/IRENASTAT/Power%20Capacity%20and%20Generation/';
 const SUMBER = [
-  { id: 's-irena', lisensi: 'IRENA: bebas dipakai dengan atribusi IRENASTAT (syarat penggunaan IRENA)', judul: 'IRENASTAT Renewable Energy Statistics 2026, Electricity statistics by Country/area (Indonesia)', penerbit: 'International Renewable Energy Agency (IRENA)', tahun: 2026, url: 'https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/', tingkat_bukti: 'resmi' },
-  { id: 's-irena-pangsa', lisensi: 'IRENA: bebas dipakai dengan atribusi IRENASTAT (syarat penggunaan IRENA)', judul: 'IRENASTAT RE share of electricity capacity and generation (%), Indonesia', penerbit: 'International Renewable Energy Agency (IRENA)', tahun: 2026, url: 'https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/', tingkat_bukti: 'resmi' },
+  { id: 's-irena', lisensi: 'IRENA: pemakaian nonkomersial dengan atribusi (syarat penggunaan IRENA); pemakaian komersial perlu izin tertulis', judul: 'IRENASTAT Renewable Energy Statistics 2026, Electricity statistics by Country/area (Indonesia)', penerbit: 'International Renewable Energy Agency (IRENA)', tahun: 2026, url: 'https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/', tingkat_bukti: 'resmi' },
+  { id: 's-irena-pangsa', lisensi: 'IRENA: pemakaian nonkomersial dengan atribusi (syarat penggunaan IRENA); pemakaian komersial perlu izin tertulis', judul: 'IRENASTAT RE share of electricity capacity and generation (%), Indonesia', penerbit: 'International Renewable Energy Agency (IRENA)', tahun: 2026, url: 'https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/', tingkat_bukti: 'resmi' },
   { id: 's-wb', lisensi: 'CC BY 4.0 (World Bank Open Data)', judul: 'World Development Indicators EG.ELC.RNEW.ZS: Renewable electricity output (% of total electricity output), Indonesia', penerbit: 'World Bank', tahun: 2026, url: 'https://data.worldbank.org/indicator/EG.ELC.RNEW.ZS?locations=ID', tingkat_bukti: 'resmi' } ];
 // Teknologi EBT (kode IRENA) -> kunci taksonomi METI. Total dan nonEBT hanya untuk penyebut.
 // Kunci taksonomi METI (public/taksonomi.js) per teknologi IRENA; null = tidak ada padanan (jangan dijumlahkan ke taksonomi).
@@ -46,7 +46,7 @@ export function bangunData(irena, pangsa, wb, tgl) {
   const gMax = Math.max(...baris.filter((b) => b.pembangkitan_gwh != null).map((b) => b.tahun));
   if (gMax < akhir) celah.push(`Pembangkitan GWh terisi sampai ${gMax}; ${gMax + 1}-${akhir} null (belum dirilis IRENA).`);
   celah.push('air_campuran, air_murni dan penyimpanan_pumped_hydro adalah rincian/irisan IRENA; jangan dijumlahkan dengan air. Pembangkitan GWh per teknologi tersedia hanya bila IRENA mempublikasikannya; sel kosong = tidak ada nilai di sumber. Angka IRENA mencakup on-grid dan off-grid; PLN/ESDM bisa berbeda (definisi dan cakupan).');
-  return { lapis: 'publik', dibangun_pada: tgl, jumlah: baris.length, baris, pangsa: pangsaAll, sumber: SUMBER, meta: { diperbarui: tgl, lisensi_sumber: 'IRENA: bebas dipakai dengan atribusi (terms of use IRENA); World Bank: CC BY 4.0', celah } };
+  return { lapis: 'publik', dibangun_pada: tgl, jumlah: baris.length, baris, pangsa: pangsaAll, sumber: SUMBER, meta: { diperbarui: tgl, lisensi_sumber: 'IRENA: pemakaian nonkomersial dengan atribusi (syarat penggunaan IRENA); pemakaian komersial perlu izin tertulis', celah } };
 }
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

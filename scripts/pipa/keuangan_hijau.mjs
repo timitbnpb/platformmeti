@@ -13,7 +13,7 @@ const baca = (f) => JSON.parse(fs.readFileSync(AKAR + f, 'utf8'));
 const FOSIL = new Set(['Coal', 'Natural gas', 'Oil', 'Other fossil fuels']);
 const LAIN = new Set(['Nuclear energy', 'Non-renewable waste', 'Mechanical storage']);
 export const SUMBER = [
-  { id: 's-pubfin', judul: 'IRENA Public Finance Database 2026 H2 dan OECD DAC (investasi publik, juta USD 2023), penerima Indonesia', penerbit: 'IRENA dan OECD', tahun: 2026, url: 'https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Finance/', lisensi: 'IRENA: bebas dipakai dengan atribusi', tingkat_bukti: 'resmi' },
+  { id: 's-pubfin', judul: 'IRENA Public Finance Database 2026 H2 dan OECD DAC (investasi publik, juta USD 2023), penerima Indonesia', penerbit: 'IRENA dan OECD', tahun: 2026, url: 'https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Finance/', lisensi: 'IRENA: pemakaian nonkomersial dengan atribusi (syarat penggunaan IRENA); pemakaian komersial perlu izin tertulis', tingkat_bukti: 'resmi' },
   { id: 's-djppr', judul: '2025 Green Sukuk Allocation and Impact Report', penerbit: 'DJPPR Kemenkeu', tahun: 2025, url: 'https://www.djppr.kemenkeu.go.id', lisensi: 'Publikasi pemerintah terbuka; atribusi', tingkat_bukti: 'resmi' },
   { id: 's-jetp', judul: 'JETP Indonesia Portfolio Dashboard', penerbit: 'Sekretariat JETP Indonesia', tahun: 2026, url: 'https://jetp-id.org/portfolio-sub/index', lisensi: 'Publikasi Sekretariat JETP; hanya fakta dan angka', tingkat_bukti: 'resmi' },
   { id: 's-pendanaan', judul: 'Tab Pendanaan METI (pendanaan.json): skema dan pendana', penerbit: 'Platform Jaringan METI', tahun: 2026, url: 'https://platformmeti.timitbnpb.workers.dev/direktori', lisensi: 'Data METI; sumber per baris', tingkat_bukti: 'kata-pihak' },

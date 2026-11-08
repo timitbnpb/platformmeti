@@ -17,7 +17,7 @@ const H = (id, en) => T(HIP + id, HIP_EN + en);
 /* ---------------- sumber ---------------- */
 const S = (judul, penerbit, url, tahun, bukti, lisensi = "Hak cipta penerbit; METI hanya mengutip fakta dan menautkan") => ({ judul, penerbit, url, tanggal: TGL, tahun, bukti, lisensi });
 const sumber = {
-  irena: S("IRENASTAT Renewable Energy Statistics 2026, kapasitas dan pembangkitan Indonesia (panas bumi)", "IRENA", "https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/", 2026, "resmi", "IRENA: bebas dipakai dengan atribusi IRENASTAT"),
+  irena: S("IRENASTAT Renewable Energy Statistics 2026, kapasitas dan pembangkitan Indonesia (panas bumi)", "IRENA", "https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/", 2026, "resmi", "IRENA: pemakaian nonkomersial dengan atribusi (syarat penggunaan IRENA); pemakaian komersial perlu izin tertulis"),
   perpres112: S("Perpres 112/2022 Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik, Lampiran I (harga patokan tertinggi)", "JDIH BPK", "https://peraturan.bpk.go.id/Details/225308/perpres-no-112-tahun-2022", 2022, "resmi", "Dokumen publik pemerintah"),
   uu21: S("UU 21/2014 tentang Panas Bumi", "JDIH BPK", "https://peraturan.bpk.go.id/Details/38684", 2014, "resmi", "Dokumen publik pemerintah"),
   pp7: S("PP 7/2017 tentang Panas Bumi untuk Pemanfaatan Tidak Langsung", "JDIH BPK", "https://peraturan.bpk.go.id/Details/5827", 2017, "resmi", "Dokumen publik pemerintah"),

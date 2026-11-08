@@ -1,0 +1,1436 @@
+{
+ "kelompok": [
+  {
+   "kunci": "teknologi",
+   "baris": [
+    {
+     "foto": "/img/beranda/kendaraan-listrik.webp",
+     "subjek": "Bus listrik Transjakarta di Bundaran HI, Jakarta",
+     "penulis": "Farhan S. Fadhillah",
+     "lisensi": "CC0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Transjakarta_Electric_Bus_at_Bundaran_HI.jpg",
+     "lisensi_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+     "foto": "/img/tentang/panas-bumi.webp",
+     "subjek": "Energi panas bumi",
+     "penulis": "Devanocturno",
+     "lisensi": "CC BY 4.0",
+     "lisensi_url": "https://creativecommons.org/licenses/by/4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Energi_panas_bumi.jpg"
+    },
+    {
+     "foto": "/img/beranda/sampah-psel.webp",
+     "subjek": "Fasilitas waste-to-energy Dublin (contoh pembangkit sampah jadi energi, bukan di Indonesia), dipotong 16:9, lebar 800 px",
+     "penulis": "O'Dea",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Dublin_Waste-to-Energy_Facility.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/beranda/jaringan.webp",
+     "subjek": "Gardu listrik di Sangir, Sumatera Barat",
+     "penulis": "sugeng widodo",
+     "lisensi": "CC BY-SA 3.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Electrical_substation_in_Sangir,_West_Sumatra,_Indonesia.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+     "foto": "/img/beranda/pembiayaan-hijau.webp",
+     "subjek": "Gedung Bursa Efek Indonesia (IDX), Jakarta",
+     "penulis": "Bursa Efek Indonesia",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Gedung-bursa-efek-1_(1).jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/beranda/karbon.webp",
+     "subjek": "Hutan mangrove Benoa, Bali (penyerap karbon)",
+     "penulis": "CEphoto, Uwe Aranas",
+     "lisensi": "CC BY-SA 3.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Benoa_Bali_Indonesia-Mangrove-forest-01.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+     "foto": "/img/tentang/hidro.webp",
+     "subjek": "Jatiluhur 05",
+     "penulis": "Cep Budhi Darma",
+     "lisensi": "CC BY-SA 4.0",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Jatiluhur_05.jpg"
+    },
+    {
+     "foto": "/img/beranda/bioetanol-tebu.webp",
+     "subjek": "Kebun tebu di Jawa sekitar 1920 (foto sejarah, bahan baku bioetanol), dipotong 16:9, lebar 800 px",
+     "penulis": "N.V. Photografisch Atelier Kurkdjian (koleksi KITLV)",
+     "lisensi": "Domain publik",
+     "sumber": "https://commons.wikimedia.org/wiki/File:KITLV_-_33456_-_Kurkdjian,_N.V._Photografisch_Atelier_-_Soerabaja_-_Sugarcane_field,_Java_-_circa_1920.tif",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    {
+     "foto": "/img/beranda/efisiensi.webp",
+     "subjek": "KWh meter listrik PLN, Kebumen (pengukuran konsumsi energi)",
+     "penulis": "SATELITBM",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:KWH_Meter_Listrik_PLN_Analog_1_Fasa_Kantor_UPT_Wilayah_Timur_DLHKP_Kab.Kebumen.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/beranda/nuklir-menara.webp",
+     "subjek": "Menara pendingin PLTN Gösgen, Swiss (contoh, bukan di Indonesia)",
+     "penulis": "Christian David",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Cooling_tower_of_the_G%C3%B6sgen_Nuclear_Power_Plant,_close_view,_D%C3%A4niken,_Solothurn.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/beranda/hidrogen-spbu.webp",
+     "subjek": "Pengisian hidrogen (H2) ke mobil sel bahan bakar (contoh, bukan di Indonesia)",
+     "penulis": "Ogidya",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Hydrogen_refueling.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/beranda/hidro-saguling.webp",
+     "subjek": "PLTA Saguling",
+     "penulis": "NFarras",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Saguling_Hydroelectric_Powerhouse_(West_View).jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/beranda/bayu-sidrap.webp",
+     "subjek": "PLTB Sidrap",
+     "penulis": "USAID Indonesia",
+     "lisensi": "Domain publik",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Sidrap_Wind_Farm_(26927995407).jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    {
+     "foto": "/img/beranda/panas-bumi-sibayak.webp",
+     "subjek": "PLTP dekat Berastagi, Karo",
+     "penulis": "Kenrick95",
+     "lisensi": "CC BY-SA 3.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Geothermal_power_plant_near_Berastagi,_Karo.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+     "foto": "/img/tentang/solar.webp",
+     "subjek": "PLTS Cirata Jelang Uji Coba",
+     "penulis": "indonesiagoid",
+     "lisensi": "Public domain",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "sumber": "https://commons.wikimedia.org/wiki/File:PLTS_Cirata_Jelang_Uji_Coba.jpg"
+    },
+    {
+     "foto": "/img/beranda/surya-cirata.webp",
+     "subjek": "PLTS terapung Cirata",
+     "penulis": "indonesiagoid",
+     "lisensi": "Domain publik",
+     "sumber": "https://commons.wikimedia.org/wiki/File:PLTS_Cirata_Jelang_Uji_Coba.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    {
+     "foto": "/img/beranda/transisi-berkeadilan.webp",
+     "subjek": "PLTU Suralaya, Banten",
+     "penulis": "satari",
+     "lisensi": "CC BY 3.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:PLTU_Suralaya_-_panoramio.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by/3.0/"
+    },
+    {
+     "foto": "/img/beranda/nuklir-siwabessy.webp",
+     "subjek": "Reaktor RSG G.A. Siwabessy, Serpong, dipotong 4:3 dan diperbesar dari 730 px",
+     "penulis": "Bkusmono",
+     "lisensi": "Domain publik",
+     "sumber": "https://commons.wikimedia.org/wiki/File:RSG_SIWABESSY.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    {
+     "foto": "/img/tentang/bayu.webp",
+     "subjek": "Sidrap Wind Farm (26927995407)",
+     "penulis": "USAID Indonesia",
+     "lisensi": "Public domain",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Sidrap_Wind_Farm_(26927995407).jpg"
+    },
+    {
+     "foto": "/img/beranda/penyimpanan-baterai.webp",
+     "subjek": "Sistem baterai kontainer Tesvolt, Rheineck, Swiss (contoh, bukan di Indonesia), dipotong 4:3",
+     "penulis": "Kecko",
+     "lisensi": "CC BY 2.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Tesvolt_battery_energy_storage_system_Rheineck.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by/2.0/"
+    },
+    {
+     "foto": "/img/beranda/bioenergi-sawit.webp",
+     "subjek": "Tandan buah sawit (bahan baku biodiesel), dipotong 4:3, lebar 800 px",
+     "penulis": "Ojiribeka Chidera",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Fresh_oil_palm_fruit.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/beranda/biomassa-bantargebang.webp",
+     "subjek": "TPST Bantargebang, Bekasi, dipotong 4:3, lebar 800 px",
+     "penulis": "Kuncoro Widyo Rumpoko",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Siluet_Pemulung_Bantargebang.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/beranda/energi-laut.webp",
+     "subjek": "Turbin arus pasang surut SeaGen (contoh, bukan di Indonesia)",
+     "penulis": "MyName (Fundy)",
+     "lisensi": "Domain publik",
+     "sumber": "https://commons.wikimedia.org/wiki/File:SeaGen_marine_current_turbine_HandW.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    {
+     "foto": "/img/tentang/bioenergi.webp",
+     "subjek": "Unit Daur ulang Limbah Menjadi Biogas",
+     "penulis": "Multijasasedotwc",
+     "lisensi": "CC BY-SA 3.0",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/3.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Unit_Daur_ulang_Limbah_Menjadi_Biogas.JPG"
+    }
+   ]
+  },
+  {
+   "kunci": "pengurus",
+   "baris": [
+    {
+     "foto": "/img/pengurus/elen-setiadi.webp",
+     "subjek": "Elen Setiadi",
+     "penulis": "Provinsi Sumatera Selatan",
+     "lisensi": "Public domain",
+     "sumber": "https://commons.wikimedia.org/wiki/File:PJ_Gubernur_Sumatera_Selatan_Elen_Setiadi.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    {
+     "foto": "/img/pengurus/febrio-nathan-kacaribu.webp",
+     "subjek": "Febrio Nathan Kacaribu",
+     "penulis": "Kementerian Keuangan Republik Indonesia",
+     "lisensi": "Public domain",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Kepala_Badan_Kebijakan_Fiskal_Febrio_Nathan_Kacaribu.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    },
+    {
+     "foto": "/img/pengurus/tiza-mafira.webp",
+     "subjek": "Tiza Mafira",
+     "penulis": "Lowy Institute",
+     "lisensi": "CC BY 3.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Tiza_Mafira_in_the_video_%27Does_Southeast_Asia_need_a_new_development_model%27.png",
+     "lisensi_url": "https://creativecommons.org/licenses/by/3.0/"
+    },
+    {
+     "foto": "/img/pengurus/tri-mumpuni.webp",
+     "subjek": "Tri Mumpuni",
+     "penulis": "Bogor Agricultural University",
+     "lisensi": "Public domain",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Tri_Mumpuni.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Commons:Public_domain"
+    }
+   ]
+  },
+  {
+   "kunci": "tokoh",
+   "baris": [
+    {
+     "foto": "/img/orang/o_ad49e4fd32.webp",
+     "subjek": "A.A.A. Indira Pratyaksa Yukthi",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_71032ae142.webp",
+     "subjek": "Abdi Mustakim",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_6942b6c4c3.webp",
+     "subjek": "Abdul Muhaimin Iskandar",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_839ab0e826.webp",
+     "subjek": "Abdulhameed Al Muhaidib",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://acwapower.com/en/who-we-are/management/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_e53f2c788d.webp",
+     "subjek": "Ady Purwo",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://atapsurya.id/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/agung-wicaksono.webp",
+     "subjek": "Agung Wicaksono",
+     "penulis": "Mgglputs",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Agung_Wicaksono.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/orang/o_6922994e30.webp",
+     "subjek": "Agus Harimurti Yudhoyono",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/agus-hermanto.webp",
+     "subjek": "Agus Hermanto",
+     "penulis": "Dewan Perwakilan Rakyat",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Agus_Hermanto.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_2d203e7837.webp",
+     "subjek": "Agus Sandy Widyanto",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.baritorenewables.co.id/en/board-of-directors",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/ahmad-erani-yustika.webp",
+     "subjek": "Ahmad Erani Yustika",
+     "penulis": "",
+     "lisensi": "milik PT PLN (Persero), tampil dengan atribusi",
+     "sumber": "https://www.pln.co.id/tentang-kami-id/dewan-komisaris-id",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_7fc74309e3.webp",
+     "subjek": "Ahmad Hidayat",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_ffa553a552.webp",
+     "subjek": "Airlangga Hartarto",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_15a26d6d74.webp",
+     "subjek": "Amri Siahaan",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_6ca0780a28.webp",
+     "subjek": "Anindya Novyan Bakrie",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_ac0848a077.webp",
+     "subjek": "Aradita Priyanti",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.ptsmi.co.id/management",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_8e6f73c2c8.webp",
+     "subjek": "Ardy Muawin",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_30c7a0acb5.webp",
+     "subjek": "Arief Budi Permana",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bki.co.id/company-profile",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_9eb6ab115c.webp",
+     "subjek": "Arief Budiman",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_91430190f5.webp",
+     "subjek": "Ayman AlGeer",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://acwapower.com/en/who-we-are/management/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/bambang-patijaya.webp",
+     "subjek": "Bambang Patijaya",
+     "penulis": "Hassacitto Kumaro",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Bambang_patijaya.jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/orang/o_f965e65f65.webp",
+     "subjek": "Benny Setiawan",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_e05f2b2afb.webp",
+     "subjek": "Benny Soetrisno",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_e45f072671.webp",
+     "subjek": "Bhima Yudhistira Adhinegara",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://celios.co.id/about",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_02b0410b12.webp",
+     "subjek": "Bobby Gafur Umar",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/brian-yuliarto.webp",
+     "subjek": "Brian Yuliarto",
+     "penulis": "",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Menteri_Pendidikan_Tinggi%2C_Sains%2C_dan_Teknologi_Republik_Indonesia_Brian_Yuliarto_(cropped).jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/pengurus/burhanuddin-abdullah.webp",
+     "subjek": "Burhanuddin Abdullah",
+     "penulis": "State Electricity Company (Perusahaan Listrik Negara)",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Burhanuddin_Abdullah%2C_Komisaris_Utama_PLN.png",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_71be393193.webp",
+     "subjek": "Carmelita Hartoto",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_4569762026.webp",
+     "subjek": "Catra De Thouars",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_9c4d677c0e.webp",
+     "subjek": "Catur Budi Fatayatin",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_ebebf29fc3.webp",
+     "subjek": "Daniel Ginting",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_151ee76002.webp",
+     "subjek": "Dhanu Prasetyo",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bki.co.id/company-profile",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/dody-hanggodo.webp",
+     "subjek": "Dody Hanggodo",
+     "penulis": "Kementerian Pekerjaan Umum Republik Indonesia",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Menteri_Pekerjaan_Umum_Dody_Hanggodo.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_4c6b0735fb.webp",
+     "subjek": "Dony Oskaria",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_0f8dd76ddb.webp",
+     "subjek": "Dr. Ir. Zulkipli",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://ppid.bps.go.id/app/konten/0000/Profil-BPS.html",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_5d4ea2ba31.webp",
+     "subjek": "Dr. Samir J Serhan",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://acwapower.com/en/who-we-are/management/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_b6765b88a9.webp",
+     "subjek": "Dr. Sonny Harry B Harmadi",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://ppid.bps.go.id/app/konten/0000/Profil-BPS.html",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_eec7bf71fe.webp",
+     "subjek": "Dwi Susanto",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_3808ad8b82.webp",
+     "subjek": "Eddy Abdurrachman",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bpdp.or.id/direksi-bpdp",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_3ee288406d.webp",
+     "subjek": "Effendi Hengki",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_11c27e7091.webp",
+     "subjek": "Erick Thohir",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_a69c555a3f.webp",
+     "subjek": "Ernest Gunawan",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_695debe5f6.webp",
+     "subjek": "Erwin Aksa",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_408b7ffb32.webp",
+     "subjek": "Erwin Ernanto Hoesni",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bki.co.id/company-profile",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_ddffddee1e.webp",
+     "subjek": "Faaris Pranawa",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.ptsmi.co.id/management",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/fabby-tumiwa.webp",
+     "subjek": "Fabby Tumiwa",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://aesi.or.id/tentang-kami",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/ferry-juliantono.webp",
+     "subjek": "Ferry Juliantono",
+     "penulis": "Kementerian Koperasi Republik Indonesja",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Ferry_Juliantono%2C_Wakil_Menteri_Koperasi_(2025).png",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_8c5aaa2e69.webp",
+     "subjek": "Filipus Winata",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_eb77a12a80.webp",
+     "subjek": "Furqan Kamlani",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://acwapower.com/en/who-we-are/management/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_12f24c3644.webp",
+     "subjek": "Gerhard Kossytorz",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://atapsurya.id/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/hanif-faisol-nurofiq.webp",
+     "subjek": "Hanif Faisol Nurofiq",
+     "penulis": "",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Hanif_Faisol_Nurofiq%2C_Menteri_Lingkungan_Hidup_(2024).jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_4f067be437.webp",
+     "subjek": "Hariyadi Santoso",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_370d9c44f0.webp",
+     "subjek": "Harsono Budi Santoso",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_e0e1ab9e7a.webp",
+     "subjek": "Hartono Mitra",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_d82076a9a3.webp",
+     "subjek": "Havidh Nazif",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_bec51b7659.webp",
+     "subjek": "Hendra Setiawan",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_f9f5767c0d.webp",
+     "subjek": "Hendra Soetjipto Tan",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.baritorenewables.co.id/en/board-of-directors",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_e5a517c214.webp",
+     "subjek": "Herudi Kandau Nugroho",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bki.co.id/company-profile",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_58df02167d.webp",
+     "subjek": "Hilmi Panigoro",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_f951287824.webp",
+     "subjek": "Iin Febrian",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/ilham-akbar-habibie.webp",
+     "subjek": "Ilham Akbar Habibie",
+     "penulis": "",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Ilham_Akbar_Habibie_Ketua_WANTIKNAS.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_81bad8893f.webp",
+     "subjek": "Irma Rachmania",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_a62d6c2bda.webp",
+     "subjek": "Irmawaty Habie",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bki.co.id/company-profile",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_a626b0c7f0.webp",
+     "subjek": "Ivan Ermisyam",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.inalum.id/id/tentang-kami/organisasi/direksi",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_e3f3390eb0.webp",
+     "subjek": "Ivy Santoso",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_c423673886.webp",
+     "subjek": "James T. Riady",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_737bbd1723.webp",
+     "subjek": "Jan Enno Bicker",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.recgroup.com/en/management",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_c26d85fe1e.webp",
+     "subjek": "Jeremy Goon",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.wilmar-international.com/about-us/leadership",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_bcf0b6ee4e.webp",
+     "subjek": "Jessica Rolindrowan",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://alamenergy.co.id/about-us/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_592b6271d7.webp",
+     "subjek": "John Anis",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_622a5140d7.webp",
+     "subjek": "Jonathon Allaway",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_33d3d555f9.webp",
+     "subjek": "Juan Permata Adoe",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_e34fde4171.webp",
+     "subjek": "Jummy Bismar Martua Sinaga",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_6124cff83d.webp",
+     "subjek": "Justin Mandera",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://suryanesia.com/en",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_53431023c9.webp",
+     "subjek": "Kanji Kawado",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://alamenergy.co.id/about-us/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_2eec87fb1b.webp",
+     "subjek": "Kenneth Riedel",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.baritorenewables.co.id/en/board-of-directors",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_78590a9fda.webp",
+     "subjek": "Ki Syahgolang Permata",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://adhi.co.id/tentang-adhi/manajemen/direksi/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_f9c769dceb.webp",
+     "subjek": "Kodratul Safti",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://atapsurya.id/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_0989126215.webp",
+     "subjek": "Kuok Khoon Hong",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.wilmar-international.com/about-us/leadership",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_2a18b23212.webp",
+     "subjek": "Lydia Natalia",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://alamenergy.co.id/about-us/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_1cabf6c3b2.webp",
+     "subjek": "M. Azis Syamsuddin",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_943d7abbea.webp",
+     "subjek": "M. Irwansyah Putra",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://plnnusantarapower.co.id/about-us/board-of-directors",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_2d1f779775.webp",
+     "subjek": "M. Iswahyudi",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://ptpn.id/dewan-direksi/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_78dbfa6231.webp",
+     "subjek": "Manumpak Manurung",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_58dc35919f.webp",
+     "subjek": "Mirna Wijayanti",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_68a25b39a2.webp",
+     "subjek": "Mohamad Iwan",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://atapsurya.id/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_b0153171c4.webp",
+     "subjek": "Muliaman D. Hadad",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_7bcf5383e7.webp",
+     "subjek": "Mulyadi Jayabaya",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_b057f5ea4f.webp",
+     "subjek": "Munathsir Mustaman",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_9cf1f9bce1.webp",
+     "subjek": "Mustafa Alayoubi",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://atapsurya.id/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_2c9573f328.webp",
+     "subjek": "Norman Ginting",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_b479e14c9c.webp",
+     "subjek": "Nurdin Halid",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_57020e35a4.webp",
+     "subjek": "Pahala Nugraha Mansury",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_a6d0668363.webp",
+     "subjek": "Pandu Patria Sjahrir",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/pandu-patria-sjahrir.webp",
+     "subjek": "Pandu Patria Sjahrir",
+     "penulis": "WSP",
+     "lisensi": "CC BY 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Pandu_Sjahrir_Potrait_(Shopee_wall)_(face_cropped).jpg",
+     "lisensi_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+     "foto": "/img/orang/o_d7f4bc0ff4.webp",
+     "subjek": "Pradana Murti",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.ptsmi.co.id/management",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_fd43432691.webp",
+     "subjek": "Prasetyo Hadi",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_40e421970d.webp",
+     "subjek": "Prof. Ir. Teuku Faisal Fathani",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bmkg.go.id/profil/pejabat",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_6ba09a26a8.webp",
+     "subjek": "Pua Seck Guan",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.wilmar-international.com/about-us/leadership",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_89fc5a2b60.webp",
+     "subjek": "R. Agus Doddy Dwi Sagita",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bki.co.id/company-profile",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_f684ef4d55.webp",
+     "subjek": "R. Anggakara Pratama",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_04618eab9c.webp",
+     "subjek": "R. Benny Susanto",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bki.co.id/company-profile",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/rachmat-pambudy.webp",
+     "subjek": "Rachmat Pambudy",
+     "penulis": "",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Rachmat_Pambudy%2C_Menteri_PPN_Portrait.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_e7c00e5697.webp",
+     "subjek": "Raja Juli Antoni",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.kehutanan.go.id/profile/leader",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_c6b4f49c59.webp",
+     "subjek": "Rapolo Hutabarat",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_fb467b0941.webp",
+     "subjek": "Ravi Farkhan Pratama",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_268ecfb536.webp",
+     "subjek": "Reni Mayerni",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_97948a1cd1.webp",
+     "subjek": "Reynaldi Hermansjah",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.ptsmi.co.id/management",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_97610c14db.webp",
+     "subjek": "Reza Yamora Siregar",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_c296edc192.webp",
+     "subjek": "Riad Sadikhov",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://acwapower.com/en/who-we-are/management/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_973538c595.webp",
+     "subjek": "Ricardo Irwan Rei",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_b7c1b61335.webp",
+     "subjek": "Rionald Silaban",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/rizal-calvary-marimbo.webp",
+     "subjek": "Rizal Calvary Marimbo",
+     "penulis": "",
+     "lisensi": "milik PT PLN (Persero), tampil dengan atribusi",
+     "sumber": "https://www.pln.co.id/tentang-kami-id/jajaran-direksi-id",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_ab64440035.webp",
+     "subjek": "Rohan Hafas",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_d2864882da.webp",
+     "subjek": "Rohmat Marzuki S.Hut",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.kehutanan.go.id/profile/leader",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_c150e18fd8.webp",
+     "subjek": "Ronald Gunawan",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_88c2edbb38.webp",
+     "subjek": "Ronny Ariuly Hutahayan",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://pertaminanre.com/id/tentang-kami/manajemen",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_a203f6bf28.webp",
+     "subjek": "Rosan Roeslani",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/rosan-roeslani.webp",
+     "subjek": "Rosan Roeslani",
+     "penulis": "",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Rosan_Perkasa_Roeslani%2C_Menteri_Investasi_dan_Hilirisasi_(2024).webp",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_b8133a70ee.webp",
+     "subjek": "Rozi Sparta",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://adhi.co.id/tentang-adhi/manajemen/direksi/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/rudi-margono.webp",
+     "subjek": "Rudi Margono",
+     "penulis": "Kejaksaan Agung Republik Indonesia",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Rudi_Margono_JAMWAS.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_049a6d113f.webp",
+     "subjek": "Ryo Ogawa",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://alamenergy.co.id/about-us/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_502b533e4e.webp",
+     "subjek": "Sachit Tewani",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.recgroup.com/en/management",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_6b8040dea0.webp",
+     "subjek": "Sanjay Bharwani",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_951f9a9324.webp",
+     "subjek": "Sanjeev Bansal",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.medcoenergi.com/en/about-us/our-leaders/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/satya-widya-yudha.webp",
+     "subjek": "Satya Widya Yudha",
+     "penulis": "Dyah Roro Esti Team",
+     "lisensi": "CC BY-SA 4.0",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Satya_Widya_Yudha.png",
+     "lisensi_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+     "foto": "/img/orang/o_fa586ac257.webp",
+     "subjek": "Shahnaz Yusof",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://acwapower.com/en/who-we-are/management/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_eadfd04916.webp",
+     "subjek": "Shankar Sridhara",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.recgroup.com/en/management",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_267ac590b3.webp",
+     "subjek": "Shinta W. Kamdani",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://kadin.id/tentang-kadin/struktur-organisasi-kadin/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_09299baa45.webp",
+     "subjek": "Sigit Puji Santosa",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/bpi-danantaras",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_bdc9ec787d.webp",
+     "subjek": "Sikin Hutomo",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/simon-aloysius-mantiri.webp",
+     "subjek": "Simon Aloysius Mantiri",
+     "penulis": "PT Pertamina (Persero)",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Simon_Aloysius_Mantiri_CEO_of_Pertamina.jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_fecaf7d558.webp",
+     "subjek": "Soichiro Nishimori",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://alamenergy.co.id/about-us/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_79ec677f1a.webp",
+     "subjek": "Stanley Iriawan",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bki.co.id/company-profile",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/sudaryono.webp",
+     "subjek": "Sudaryono",
+     "penulis": "Ministry of Agriculture of the Republic of Indonesia",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Sudaryono%2C_Wakil_Menteri_Pertanian_(2026).jpg",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/pengurus/suroso-isnandar.webp",
+     "subjek": "Suroso Isnandar",
+     "penulis": "State Electricity Company (Perusahaan Listrik Negara)",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Suroso_Isnandar.png",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_730af90d0c.webp",
+     "subjek": "Suwandi Winardi",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.aprobi.or.id/about-us/board-of-directors/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_9085fd2fc1.webp",
+     "subjek": "Sylvi J. Gani",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.ptsmi.co.id/management",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_cf5b6caa7e.webp",
+     "subjek": "Tahir Mahmood",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://acwapower.com/en/who-we-are/management/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_ec8758546d.webp",
+     "subjek": "TB Ardi Januar",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.bki.co.id/company-profile",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_df59eba597.webp",
+     "subjek": "TB Ari Wibawa Mukti",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://plnnusantarapower.co.id/about-us/board-of-directors",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_5dfc34a165.webp",
+     "subjek": "Teguh Widhi Harsono",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://plnnusantarapower.co.id/about-us/board-of-directors",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_9a84767c83.webp",
+     "subjek": "Teo La-Mei",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.wilmar-international.com/about-us/leadership",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/pengurus/todotua-pasaribu.webp",
+     "subjek": "Todotua Pasaribu",
+     "penulis": "Kementerian Investasi dan Hilirisasi/Badan Koordinasi Penanaman Modal Republik Indonesia",
+     "lisensi": "Public domain (PD-IDGov, Indonesia Pasal 43 UU Hak Cipta)",
+     "sumber": "https://commons.wikimedia.org/wiki/File:Wakil_Menteri_Investasi_dan_Hilirisasi_dan_Wakil_Kepala_Badan_Koordinasi_Penanaman_Modal_Todotua_Pasaribu.webp",
+     "lisensi_url": "https://commons.wikimedia.org/wiki/Template:PD-IDGov"
+    },
+    {
+     "foto": "/img/orang/o_edb30181c6.webp",
+     "subjek": "Wataru Yoshio",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://alamenergy.co.id/about-us/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_cfe162d1d9.webp",
+     "subjek": "Wee Kay Hwa",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://www.recgroup.com/en/management",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_771aff7bda.webp",
+     "subjek": "Yan Arianto",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://adhi.co.id/tentang-adhi/manajemen/direksi/",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_806858e1b4.webp",
+     "subjek": "Yusril Ihza Mahendra",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_124b61ab6f.webp",
+     "subjek": "Zidny Ilman",
+     "penulis": "",
+     "lisensi": "milik pemilik situs sumber, tampil dengan atribusi",
+     "sumber": "https://suryanesia.com/en",
+     "lisensi_url": ""
+    },
+    {
+     "foto": "/img/orang/o_44550dda0b.webp",
+     "subjek": "Zulkifli Hasan",
+     "penulis": "",
+     "lisensi": "milik perusahaan, tampil dengan atribusi",
+     "sumber": "https://www.danantaraindonesia.co.id/about/our-people/supervisory-board",
+     "lisensi_url": ""
+    }
+   ]
+  }
+ ],
+ "jumlah": 177
+}

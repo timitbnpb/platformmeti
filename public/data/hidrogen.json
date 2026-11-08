@@ -1,0 +1,1971 @@
+{
+ "lapis": "hidrogen",
+ "dibangun_pada": "2026-11-08",
+ "catatan": {
+  "id": "Benih modul /hidrogen. Data yang sudah ada dirujuk saat runtime, tidak disalin. Tiap butir membawa sumber dan tingkat bukti; angka hitungan METI ditandai.",
+  "en": "Seed for the /hidrogen module. Existing data is referenced at runtime, not copied. Every item carries a source and evidence level; METI arithmetic is marked."
+ },
+ "sumber": [
+  {
+   "id": "dpr",
+   "judul": "DPR RI Pusat Analisis, Info Singkat: Membangun ekosistem hidrogen hijau di Indonesia (Okt 2025; RHAN 2025, LCOH USD 4,3 sampai 8,3 per kg, permintaan 4 Mtpa pada 2024)",
+   "penerbit": "DPR RI",
+   "url": "https://berkas.dpr.go.id/pusaka/files/info_singkat/Info%20Singkat-XVII-19-I-P3DI-Oktober-2025-245.pdf",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "mc",
+   "judul": "Green hydrogen plant pertama di Indonesia resmi beroperasi (Muara Karang, 9 Okt 2023; 51 ton per tahun; PLTS ditambah REC dari PLTP Kamojang)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://esdm.go.id/en/media-center/news-archives/green-hydrogen-plant-pertama-di-indonesia-resmi-beroperasi",
+   "tahun": 2023,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ghp21",
+   "judul": "PLN resmikan 21 unit green hydrogen plant (sekitar 191 sampai 199 ton per tahun menurut judul dan ringkasan berbeda)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/11939/pln-resmikan-21-unit-green-hydrogen-plant-memiliki-kapasitas-191-ton",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "hrs",
+   "judul": "Indonesia's first: PLN launches green hydrogen refueling station (Senayan; 203 ton per tahun dari 22 GHP, 128 ton untuk transportasi)",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/2178/business-and-investment/indonesias-first-pln-launches-green-hydrogen-refueling-station",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ulu",
+   "judul": "Proyek pilot plant green hydrogen di Ulubelu dimulai (groundbreaking 9 Sep 2025; 100 kg per hari; sekitar USD 3 juta; target operasi 2026)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/17800/proyek-pilot-plant-green-hydrogen-di-ulubelu-dimulai",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ghes",
+   "judul": "GHES 2026 buka peluang investasi hidrogen nasional (Strategi Hidrogen Nasional diluncurkan Desember 2023)",
+   "penerbit": "Listrik Indonesia",
+   "url": "https://listrikindonesia.com/detail/19181/ghes-2026-buka-peluang-investasi-hidrogen-nasional",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ibp",
+   "judul": "Government outlines hydrogen adoption plan through 2060 (target 9,9 Mtpa pada 2060 menurut data ESDM; angka lain 11,7 juta ton dalam draf peta jalan)",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/1952/Politics/government-outlines-hydrogen-adoption-plan-through-2060",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "neom",
+   "judul": "Construction completed on USD 8.5bn Neom hydrogen project (komisioning, operasi komersial 2027)",
+   "penerbit": "MEED",
+   "url": "https://guest.meed.com/acwa-completes-construction-of-85bn-hydrogen-project/",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "neomceo",
+   "judul": "World's largest green hydrogen plant on track for 2026 launch in Saudi Arabia, CEO says (sekitar 600 ton per hari)",
+   "penerbit": "Arab News",
+   "url": "https://www.arabnews.com/node/2579284/amp",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "neom80",
+   "judul": "Saudi Arabia's NEOM green hydrogen project hits 80 percent completion (Jun 2025)",
+   "penerbit": "Solar Quarter",
+   "url": "https://solarquarter.com/2025/06/03/saudi-arabias-neom-green-hydrogen-project-hits-80-completion-paving-the-way-for-worlds-largest-carbon-free-fuel-facility-by-2026/",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kuqa",
+   "judul": "China's Sinopec says world-leading green hydrogen project will take longer than expected to ramp up (Kuqa, 260 MW, 20.000 ton per tahun)",
+   "penerbit": "South China Morning Post",
+   "url": "https://www.scmp.com/business/article/3247148/chinas-sinopec-says-world-leading-green-hydrogen-project-will-take-longer-expected-ramp",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kuqa2",
+   "judul": "Sinopec Xinjiang Kuqa green hydrogen pilot project, China (konstruksi Des 2021, operasi 30 Agu 2023)",
+   "penerbit": "Engineering News",
+   "url": "https://www.engineeringnews.co.za/article/sinopec-xinjiang-kuqa-green-hydrogen-pilot-project-china-2023-05-05",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "fh2r",
+   "judul": "Fukushima Hydrogen Energy Research Field (ringkasan Wikipedia: PLTS 10 MW, hingga 1.200 Nm3 per jam, diresmikan 2020)",
+   "penerbit": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fukushima_Hydrogen_Energy_Research_Field",
+   "tahun": 2026,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bp",
+   "judul": "BP backs out of 26 GW green hydrogen plan in Australia (28 Jul 2025; Fortescue batalkan PEM50 Gladstone dan proyek AS)",
+   "penerbit": "pv magazine",
+   "url": "https://www.pv-magazine.com/2025/07/28/bp-backs-out-of-26-gw-green-hydrogen-plan-in-australia/",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "fort",
+   "judul": "Cancelled post-FID: Fortescue abandons two green hydrogen projects it had previously signed off on",
+   "penerbit": "Hydrogen Insight",
+   "url": "https://www.hydrogeninsight.com/production/fortescue-abandons-two-green-hydrogen-projects-which-had-both-passed-a-final-investment-decision/2-1-1849742",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tville",
+   "judul": "No customers: plans for Townsville hydrogen project scrapped after failing to find buyers",
+   "penerbit": "Pulse",
+   "url": "https://www.pulse.bot/energy/news/no-customers-plans-for-townsville-hydrogen-project-scrapped-after-failing-to-find-buyers-for-the-pro-89c9063f-bdd1-4bad-87a8-2561f74d05d4/",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "repay",
+   "judul": "Albanese government tells Fortescue to repay hydrogen grant for dumped Gladstone project",
+   "penerbit": "BD Times",
+   "url": "https://www.bdtimes.com.au/business/energy/hand-it-back-albanese-government-tells-fortescue-to-repay-hydrogen-grant-for-dumped-gladstone-project-c-19468162",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ghr25",
+   "judul": "IEA, Global Hydrogen Review 2025, ringkasan eksekutif (permintaan hampir 100 Mt pada 2024; produksi rendah emisi kurang dari 1 persen; potensi 2030 turun ke 37 Mtpa; elektroliser 2 GW pada 2024; biaya pasang di luar Tiongkok USD 2.000 sampai 2.600 per kW)",
+   "penerbit": "IEA",
+   "url": "https://www.iea.org/reports/global-hydrogen-review-2025/executive-summary",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ghr25sea",
+   "judul": "IEA, Global Hydrogen Review 2025, bab Asia Tenggara (permintaan kawasan 4 Mt pada 2024; Indonesia lebih dari sepertiga; hampir separuh adalah amonia; jalur proyek rendah emisi sekitar 480 ktpa)",
+   "penerbit": "IEA",
+   "url": "https://www.iea.org/reports/global-hydrogen-review-2025/southeast-asia",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "iea-ghr25-ringkas",
+   "judul": "IEA, Global Hydrogen Review 2025, ringkasan eksekutif (elektroliser terpasang 2 GW pada 2024; Tiongkok 65 persen terpasang dan hampir 60 persen kapasitas pabrik, 20 GW per tahun; biaya terpasang USD 600 sampai 2.600 per kW)",
+   "penerbit": "IEA",
+   "url": "https://www.iea.org/reports/global-hydrogen-review-2025/executive-summary",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pmc-elektroliser",
+   "judul": "Tinjauan teknoekonomi elektroliser: rentang kWh per kg, umur stack, dan biaya stack AEL, PEM, AEM, SOEC (tabel 4)",
+   "penerbit": "PubMed Central (tinjauan ilmiah)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9332215/table/tab4",
+   "tahun": 2022,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jc-bnef",
+   "judul": "Alkaline or PEM electrolyzers: which should you choose? (merujuk BNEF: rata-rata sistem alkalin 54,6 dan PEM 55,1 kWh per kg pada 2025)",
+   "penerbit": "John Cockerill (pemasok)",
+   "url": "https://johncockerill.com/en/press-and-news/news/updated-alkaline-or-pem-electrolyzers-which-should-you-choose/",
+   "tahun": 2026,
+   "tingkat_bukti": "kata-pihak",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "li-gpi",
+   "judul": "Elektroliser GPI tawarkan solusi energi bersih untuk industri lokal (TITAN EL-MW hingga 1.071 kg hidrogen per hari; GHES 2025)",
+   "penerbit": "listrikindonesia.com",
+   "url": "https://listrikindonesia.com/detail/16296/elektroliser-gpi-tawarkan-solusi-energi-bersih-untuk-industri-lokal",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "petromindo-328",
+   "judul": "Govt targets hydrogen electrolyzer capacity to reach 328 MW in 2035 (4 Agustus 2022; hanya judul terbaca, isi berlangganan)",
+   "penerbit": "Petromindo",
+   "url": "https://petromindo.com/news/article/govt-targets-hydrogen-electrolyzer-capacity-to-reach-328-mw-in-2035",
+   "tahun": 2022,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "li-lokasi23",
+   "judul": "KESDM petakan lokasi potensial produksi hidrogen hijau (lebih dari 23 lokasi bersama PLN; Hydrogen Day 2026, ITB, 11 Oktober 2026)",
+   "penerbit": "listrikindonesia.com",
+   "url": "https://listrikindonesia.com/detail/21453/kesdm-petakan-lokasi-potensial-produksi-hidrogen-hijau",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ibp-kamojang",
+   "judul": "Kamojang plant, first green-hydrogen-based geothermal energy in ASEAN (sekitar 4,3 ton per tahun)",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/risks-opportunities/kamojang-plant-1st-green-hydrogen-based-geothermal-energy-in-asean",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pv-hyet",
+   "judul": "Pertamina and HyET sign term sheet to develop green hydrogen, e-fuels (pilot elektroliser uap p-SOEC 1 MW di Kamojang, pilot CO2 1 MW; tahap awal sampai akhir 2026)",
+   "penerbit": "pv magazine Australia",
+   "url": "https://www.pv-magazine-australia.com/press-releases/pertamina-and-hyet-sign-term-sheet-to-develop-green-hydrogen-e-fuels",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-hrs",
+   "judul": "Pertama di Indonesia, PLN operasikan SPBU hidrogen hijau (Senayan, 21 Februari 2024)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20240221/44/1742769/pertama-di-indonesia-pln-operasikan-spbu-hidrogen-hijau",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "petromindo-daan",
+   "judul": "Pertamina NRE plans the first hydrogen refueling station (SPBU Daan Mogot, Jakarta)",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/pertamina-nre-plans-the-first-hydrogen-refueling-station",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "esdm-jepang-2024",
+   "judul": "Kerja sama Indonesia-Jepang dorong pengembangan hidrogen dan amonia (5 Juni 2024; MoC JICA, ESDM, BRIN, IFHE pada 31 Mei 2024)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/kerja-sama-indonesia-jepang-dorong-pengembangan-hidrogen-dan-amonia",
+   "tahun": 2024,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "esdm-asta-cita",
+   "judul": "Sejalan dengan Asta Cita, Kementerian ESDM kebut pengembangan ekosistem hidrogen (3 Februari 2026; fase RHAN, KPI sekitar 200 ton per tahun, peta jalan HASI)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://esdm.go.id/id/media-center/arsip-berita/sejalan-dengan-program-asta-cita-kementerian-esdm-kebut-pengembangan-ekosistem-hidrogen",
+   "tahun": 2026,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "mhi-pln",
+   "judul": "MHI and PLN Indonesia Power jointly investigate co-firing with hydrogen, biomass and ammonia (1 November 2022)",
+   "penerbit": "Mitsubishi Heavy Industries",
+   "url": "https://www.mhi.com/news/221102.html",
+   "tahun": 2022,
+   "tingkat_bukti": "kata-pihak",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-mhi",
+   "judul": "PLN, Mitsubishi to launch hydrogen and ammonia co-firing trials (uji amonia PLTU Suralaya unit 5 sampai 7, hidrogen Tanjung Priok)",
+   "penerbit": "Katadata Insights",
+   "url": "https://dinsights.katadata.co.id/read/2022/11/03/pln-mitsubishi-to-launch-hydrogen-and-ammonia-co-firing-trials",
+   "tahun": 2022,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "hce-pupuk",
+   "judul": "Pertamina, PT Pupuk Indonesia and Mitsubishi Corp to develop hydrogen and ammonia business (Maret 2022)",
+   "penerbit": "Hydrocarbon Engineering",
+   "url": "https://www.hydrocarbonengineering.com/the-environment/08032022/pertamina-pt-pupuk-indonesia-and-mitsubishi-corp-to-develop-hydrogen-and-ammonia-business/amp/",
+   "tahun": 2022,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ammonia-energy",
+   "judul": "Building hydrogen and ammonia value chains in Indonesia (Pupuk Indonesia lebih dari 5 juta ton amonia per tahun; konversi biru 660.000 ton di Sulawesi Tengah)",
+   "penerbit": "Ammonia Energy Association",
+   "url": "https://ammoniaenergy.org/articles/building-hydrogen-and-ammonia-value-chains-in-indonesia",
+   "tahun": 2022,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ibp-pkt",
+   "judul": "Pupuk Kaltim invests US$ 4 billion, builds green ammonia production facility (1 juta ton per tahun; MoU Mei 2023 dengan Topsoe, Copenhagen Atomics, Aalborg CSP, Alfa Laval)",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/1386/investment-and-risk/pupuk-kaltim-invests-us-4-billion-builds-green-ammonia-production-facility",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "fortune-nh3-7jt",
+   "judul": "Pupuk Indonesia capai kapasitas produksi amonia 7 juta ton",
+   "penerbit": "Fortune Indonesia",
+   "url": "https://www.fortuneidn.com/business/pupuk-indonesia-capai-kapasitas-produksi-amonia-7-juta-ton-00-xkln4-x55cbh",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "fortune-nh3-12jt",
+   "judul": "Pupuk Indonesia dorong produksi amonia hingga 12 juta ton pada 2045 (amonia hibrida di Aceh mulai 2030)",
+   "penerbit": "Fortune Indonesia",
+   "url": "https://www.fortuneidn.com/business/pupuk-indonesia-dorong-produksi-amonia-hingga-12-juta-ton-pada-2045-00-my5jv-lmpmqv",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "argus-pupuk-2045",
+   "judul": "Pupuk Indonesia eyes green ammonia output by 2045-60 (target amonia biru 4,3 juta ton per tahun pada 2045)",
+   "penerbit": "Argus Media",
+   "url": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2435062-pupuk-indonesia-eyes-green-ammonia-output-by-2045-60",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-kaltim2",
+   "judul": "Pupuk Kaltim segera operasikan amonia pabrik-2, kapasitas capai 1.841 ton per hari (595 ribu ton amonia per tahun)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/berita/industri/6a95594a03f51/pupuk-kaltim-segera-operasikan-amonia-pabrik-2-kapasitas-capai-1841-tonhari",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "cnbc-pupuk",
+   "judul": "Pupuk Indonesia, pilar ketahanan pangan dan keberlanjutan pertanian (Pusri 660.000 ton; PIM dua pabrik 330.000 dan 396.000 ton amonia per tahun)",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/research/20250409040923-128-624413/pupuk-indonesia-pilar-ketahanan-pertanian-keberlanjutan-pertanian/2",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pertamina-krakatau-pipa",
+   "judul": "Pertamina NRE, Krakatau Steel and RAJA collaborate to develop hydrogen pipelines (Banten dan Jawa Barat, November 2022)",
+   "penerbit": "Pertamina",
+   "url": "https://pertamina.com/en/news-room/news-release/pertamina-nre-krakatau-steel-and-raja-collaborate-to-develop-hydrogen-pipelines",
+   "tahun": 2022,
+   "tingkat_bukti": "kata-pihak",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pertamina-ignis",
+   "judul": "Pertamina NRE, IGNIS Energy Holdings, Krakatau Steel joint study on clean hydrogen development (sampai 500 MWp sampai 1,5 GWp, penyimpanan CO2 61 juta ton)",
+   "penerbit": "Pertamina",
+   "url": "https://pertamina.com/en/news-room/news-release/pertamina-nre-ignis-energy-holdings-krakatau-steel-joint-study-on-clean-hydrogen-development-in-indonesia",
+   "tahun": 2022,
+   "tingkat_bukti": "kata-pihak",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bcas-krakatau",
+   "judul": "COO Krakatau Steel: energi bersih terjangkau kunci transisi baja hijau (hidrogen hijau sekitar USD 5 sampai 7 per kg; baja butuh di bawah USD 1)",
+   "penerbit": "BCA Sekuritas",
+   "url": "https://bcasekuritas.co.id/latest-news/news/coo-krakatau-steel-energi-bersih-terjangkau-kunci-transisi-baja-hijau",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jp-basic-white",
+   "judul": "Japan hydrogen basic strategy (revisi Juni 2023: 3 juta ton 2030, 12 juta ton 2040, 20 juta ton 2050; elektroliser 15 GW 2030)",
+   "penerbit": "White & Case",
+   "url": "https://whitecase.com/insight-alert/japan-hydrogen-basic-strategy",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jp-12jt",
+   "judul": "Japan aims to boost hydrogen supply to 12 million tons by 2040",
+   "penerbit": "Gas Processing News",
+   "url": "https://gasprocessingnews.com/news/2023/03/japan-aims-to-boost-hydrogen-supply-to-12-million-tons-by-2040/",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "spglobal-cfd",
+   "judul": "US delays impede low-carbon hydrogen project participation in Japan, Korea subsidy schemes (CfD Jepang 15 tahun lewat JOGMEC; UU Promosi Masyarakat Hidrogen 17 Mei 2024)",
+   "penerbit": "S&P Global",
+   "url": "https://www.spglobal.com/energy/en/news-research/latest-news/energy-transition/070224-us-delays-impede-low-carbon-hydrogen-project-participation-in-japan-s-korea-subsidy-schemes",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "joongang-chps",
+   "judul": "Korea Power Exchange bid cancellation exacerbates concerns about clean hydrogen power market (putaran pertama hanya KOEN, 750 GWh)",
+   "penerbit": "Korea JoongAng Daily",
+   "url": "https://www.koreajoongangdaily.com/business/korea-power-exchanges-bid-cancellation-exacerbates-concerns-about-clean-hydrogen-power-market/12036720",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kompas-pln-mahal",
+   "judul": "Hidrogen hijau mahal, PLN minta pemerintah tiru Jepang (lelang dengan kewajiban pabrik elektroliser di Indonesia)",
+   "penerbit": "Kompas.com",
+   "url": "https://lestari.kompas.com/read/2025/09/13/150400886/hidrogen-hijau-mahal-pln-minta-pemerintah-tiru-jepang",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "iati-pendanaan",
+   "judul": "Aktivitas pendanaan internasional terkait hidrogen di Indonesia (IATI via d-portal; public/data/pendanaan_internasional.json)",
+   "penerbit": "IATI, d-portal",
+   "url": "https://d-portal.org/",
+   "tahun": 2026,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  }
+ ],
+ "rujukan": {
+  "energi_baru": [
+   "h2-rhan",
+   "h2-pln21",
+   "h2-ulubelu",
+   "h2-gresik",
+   "h2-pertamina-mitsubishi"
+  ],
+  "pemasok_segmen": "hidrogen",
+  "topik": "hidrogen",
+  "biaya_bangun": "celah",
+  "pendanaan_internasional": [
+   "pi_KR_GOV_120_1480000_2026_005",
+   "pi_NL_KVK_27378529_CERF24ID4I",
+   "pi_NL_KVK_27378529_CERF25ID2O"
+  ],
+  "potensi_atlas": "global/potensi_atlas.json",
+  "proyek": "proyek.json"
+ },
+ "kunci": {
+  "permintaan_mt_2024": 4,
+  "pln_ton_tahun": 203,
+  "lcoh_usd_kg": [
+   4.3,
+   8.3
+  ],
+  "target_2060_mt": 9.9,
+  "kpi_2026_ton": 200,
+  "sumber_ids": {
+   "permintaan": "dpr",
+   "pln": "hrs",
+   "lcoh": "dpr",
+   "target": "ibp",
+   "kpi": "esdm-asta-cita"
+  }
+ },
+ "lokasi": [
+  {
+   "id": "ulubelu",
+   "nama": "Ulubelu, Tanggamus",
+   "prov": "18",
+   "provinsi": "Lampung",
+   "kab": "1802",
+   "sumber_listrik": [
+    "panas-bumi"
+   ],
+   "proyek_id": "pj_0249",
+   "peran": [
+    "produksi"
+   ],
+   "enb": "h2-ulubelu",
+   "org": [
+    "p_dda1e51dae"
+   ],
+   "status": "konstruksi",
+   "ket": {
+    "id": "Pilot elektrolisis berdaya listrik PLTP Ulubelu (110 MW), hingga 100 kg per hari; produksi ditargetkan akhir 2026.",
+    "en": "Electrolysis pilot powered by the Ulubelu geothermal plant (110 MW), up to 100 kg/day; production targeted end-2026."
+   },
+   "sumber_id": "ulu",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "kamojang",
+   "nama": "Kamojang, Jawa Barat",
+   "prov": "32",
+   "provinsi": "Jawa Barat",
+   "kab": null,
+   "sumber_listrik": [
+    "panas-bumi"
+   ],
+   "proyek_id": "pj_0232",
+   "peran": [
+    "produksi"
+   ],
+   "enb": "h2-pln21",
+   "org": [
+    "p_5a2e7d0c63",
+    "p_dda1e51dae"
+   ],
+   "status": "beroperasi",
+   "ket": {
+    "id": "GHP PLN di PLTP Kamojang (sekitar 4,3 ton per tahun); PGE dan Pertamina NRE merencanakan pilot elektroliser uap 1 MW (p-SOEC) sampai akhir 2026.",
+    "en": "PLN GHP at the Kamojang geothermal plant (about 4.3 t/year); PGE and Pertamina NRE plan a 1 MW steam electrolyser (p-SOEC) pilot through end-2026."
+   },
+   "sumber_id": "ibp-kamojang",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "muara-karang",
+   "nama": "Muara Karang, Jakarta Utara",
+   "prov": "31",
+   "provinsi": "DKI Jakarta",
+   "kab": "3175",
+   "sumber_listrik": [
+    "surya",
+    "panas-bumi"
+   ],
+   "proyek_id": null,
+   "peran": [
+    "produksi",
+    "permintaan"
+   ],
+   "enb": "h2-pln21",
+   "org": [
+    "p_5a2e7d0c63"
+   ],
+   "status": "beroperasi",
+   "ket": {
+    "id": "GHP pertama (9 Oktober 2023, 51 ton per tahun): PLTS ditambah sertifikat energi terbarukan dari PLTP Kamojang.",
+    "en": "First GHP (9 October 2023, 51 t/year): solar PV plus renewable energy certificates from the Kamojang geothermal plant."
+   },
+   "sumber_id": "mc",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "gresik-banyuwangi",
+   "nama": "Gresik dan Banyuwangi",
+   "prov": "35",
+   "provinsi": "Jawa Timur",
+   "kab": "3525",
+   "kab2": "3510",
+   "sumber_listrik": [
+    "surya"
+   ],
+   "proyek_id": null,
+   "peran": [
+    "produksi",
+    "permintaan"
+   ],
+   "enb": "h2-gresik",
+   "org": [
+    "su_ed074ff5",
+    "en_5455f1bbf9",
+    "p_0e6d34a26d"
+   ],
+   "status": "kerja-sama",
+   "ket": {
+    "id": "PLN, ACWA Power, dan Pupuk Indonesia: PLTS di Banyuwangi dan pabrik hidrogen di Gresik; kapasitas dan keputusan investasi belum ditemukan di sumber.",
+    "en": "PLN, ACWA Power and Pupuk Indonesia: solar in Banyuwangi and a hydrogen plant in Gresik; capacity and investment decision not found in sources."
+   },
+   "sumber_id": "ghes",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "bontang",
+   "nama": "Bontang",
+   "prov": "64",
+   "provinsi": "Kalimantan Timur",
+   "kab": "6474",
+   "sumber_listrik": [],
+   "proyek_id": null,
+   "peran": [
+    "permintaan"
+   ],
+   "enb": null,
+   "org": [
+    "en_5455f1bbf9"
+   ],
+   "status": "rencana",
+   "ket": {
+    "id": "Pupuk Kaltim: rencana amonia hijau 1 juta ton per tahun (USD 4 miliar, MoU Mei 2023). Sumber listrik terbarukan belum ditetapkan di sumber.",
+    "en": "Pupuk Kaltim: planned green ammonia of 1 Mt/year (USD 4 billion, May 2023 MoU). Renewable power source not set in the source."
+   },
+   "sumber_id": "ibp-pkt",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "cilegon",
+   "nama": "Cilegon dan Banten",
+   "prov": "36",
+   "provinsi": "Banten",
+   "kab": "3672",
+   "sumber_listrik": [
+    "bayu",
+    "surya"
+   ],
+   "proyek_id": null,
+   "peran": [
+    "permintaan"
+   ],
+   "enb": null,
+   "org": [
+    "p_10e0dde689"
+   ],
+   "status": "studi",
+   "ket": {
+    "id": "Studi Pertamina NRE, IGNIS, dan Krakatau Steel: pabrik hidrogen biru atau hijau di kawasan baja, 500 MWp sampai 1,5 GWp (surya dan angin lepas pantai).",
+    "en": "Pertamina NRE, IGNIS and Krakatau Steel study: blue or green hydrogen plant at the steel estate, 500 MWp to 1.5 GWp (solar and offshore wind)."
+   },
+   "sumber_id": "pertamina-ignis",
+   "tingkat_bukti": "kata-pihak"
+  },
+  {
+   "id": "sumba-timur",
+   "nama": "Sumba Timur",
+   "prov": "53",
+   "provinsi": "Nusa Tenggara Timur",
+   "kab": "5302",
+   "sumber_listrik": [
+    "surya",
+    "bayu"
+   ],
+   "proyek_id": null,
+   "peran": [
+    "produksi"
+   ],
+   "enb": null,
+   "org": [],
+   "status": "tak-jelas",
+   "ket": {
+    "id": "Disebut ESDM (Juni 2024) sebagai hidrogen hibrida surya dan angin; kapasitas dan status tidak dirinci.",
+    "en": "Named by ESDM (June 2024) as hybrid solar and wind hydrogen; capacity and status not detailed."
+   },
+   "sumber_id": "esdm-jepang-2024",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "kaltara",
+   "nama": "Kalimantan Utara",
+   "prov": "65",
+   "provinsi": "Kalimantan Utara",
+   "kab": null,
+   "sumber_listrik": [
+    "hidro"
+   ],
+   "proyek_id": null,
+   "peran": [
+    "produksi"
+   ],
+   "enb": null,
+   "org": [],
+   "status": "tak-jelas",
+   "ket": {
+    "id": "Disebut ESDM (Juni 2024) sebagai hidrogen berbasis PLTA; lokasi dan kapasitas tidak dirinci.",
+    "en": "Named by ESDM (June 2024) as hydropower-based hydrogen; site and capacity not detailed."
+   },
+   "sumber_id": "esdm-jepang-2024",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "papua",
+   "nama": "Papua",
+   "prov": "91",
+   "provinsi": "Papua",
+   "kab": null,
+   "sumber_listrik": [
+    "hidro"
+   ],
+   "proyek_id": null,
+   "peran": [
+    "produksi"
+   ],
+   "enb": null,
+   "org": [],
+   "status": "tak-jelas",
+   "ket": {
+    "id": "Disebut ESDM (Juni 2024) sebagai hidrogen berbasis PLTA; lokasi dan kapasitas tidak dirinci.",
+    "en": "Named by ESDM (June 2024) as hydropower-based hydrogen; site and capacity not detailed."
+   },
+   "sumber_id": "esdm-jepang-2024",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "patimban",
+   "nama": "Pelabuhan Patimban, Subang",
+   "prov": "32",
+   "provinsi": "Jawa Barat",
+   "kab": null,
+   "sumber_listrik": [],
+   "proyek_id": null,
+   "peran": [
+    "pelabuhan",
+    "permintaan"
+   ],
+   "enb": null,
+   "org": [],
+   "status": "rencana",
+   "ket": {
+    "id": "Disebut dalam Hydrogen Day 2026 sebagai calon pusat permintaan hidrogen (pelabuhan hijau); bukan lokasi produksi.",
+    "en": "Named at Hydrogen Day 2026 as a possible hydrogen demand hub (green port); not a production site."
+   },
+   "sumber_id": "li-lokasi23",
+   "tingkat_bukti": "media"
+  }
+ ],
+ "lokasi_potensial_jumlah": {
+  "n": 23,
+  "sumber_id": "li-lokasi23",
+  "tingkat_bukti": "media"
+ },
+ "elektroliser": {
+  "teknologi": [
+   {
+    "k": "ael",
+    "kwh": [
+     50,
+     78
+    ],
+    "umur_jam": [
+     50000,
+     80000
+    ],
+    "stack_usd_kw": [
+     270,
+     400
+    ],
+    "kematangan": "komersial",
+    "pangsa_bnef_2025": 54.6,
+    "ket": {
+     "id": "Alkalin cair: paling matang dan paling banyak dibangun; fleksibilitas beban lebih sempit.",
+     "en": "Liquid alkaline: most mature and most deployed; narrower load flexibility."
+    }
+   },
+   {
+    "k": "pem",
+    "kwh": [
+     50,
+     83
+    ],
+    "umur_jam": [
+     50000,
+     80000
+    ],
+    "stack_usd_kw": [
+     400,
+     400
+    ],
+    "kematangan": "komersial",
+    "pangsa_bnef_2025": 55.1,
+    "ket": {
+     "id": "Membran polimer: respons cepat terhadap listrik surya dan angin, katalis logam mulia.",
+     "en": "Polymer membrane: fast response to solar and wind power, precious-metal catalysts."
+    }
+   },
+   {
+    "k": "aem",
+    "kwh": [
+     57,
+     69
+    ],
+    "umur_jam": [
+     5000,
+     5000
+    ],
+    "stack_usd_kw": null,
+    "kematangan": "awal",
+    "pangsa_bnef_2025": null,
+    "ket": {
+     "id": "Membran anion: tanpa logam mulia pada teori; umur stack saat ini sekitar 5.000 jam (target 100.000 jam).",
+     "en": "Anion membrane: no precious metals in theory; stack life today about 5,000 h (target 100,000 h)."
+    }
+   },
+   {
+    "k": "soec",
+    "kwh": [
+     40,
+     50
+    ],
+    "umur_jam": [
+     0,
+     20000
+    ],
+    "stack_usd_kw": [
+     2000,
+     2000
+    ],
+    "kematangan": "demonstrasi",
+    "pangsa_bnef_2025": null,
+    "ket": {
+     "id": "Oksida padat suhu tinggi: paling hemat listrik jika ada panas buangan atau uap (mis. panas bumi); umur masih di bawah 20.000 jam, stack lebih dari USD 2.000 per kW.",
+     "en": "High-temperature solid oxide: most power-efficient when waste heat or steam is available (e.g. geothermal); life still under 20,000 h, stack above USD 2,000/kW."
+    }
+   }
+  ],
+  "sumber_id": "pmc-elektroliser",
+  "sumber_bnef": "jc-bnef",
+  "harga_iea": [
+   {
+    "k": "luar-cina",
+    "usd_kw": [
+     2000,
+     2600
+    ]
+   },
+   {
+    "k": "cina-lokal",
+    "usd_kw": [
+     600,
+     1200
+    ]
+   },
+   {
+    "k": "cina-ekspor",
+    "usd_kw": [
+     1500,
+     2400
+    ]
+   }
+  ],
+  "harga_sumber_id": "iea-ghr25-ringkas",
+  "pabrik_dunia": {
+   "terpasang_gw_2024": 2,
+   "pangsa_terpasang_cn": 65,
+   "kapasitas_pabrik_cn_gw": 20,
+   "pangsa_pabrik_cn_persen": 60,
+   "permintaan_gw_2024": 2,
+   "sumber_id": "iea-ghr25-ringkas",
+   "tingkat_bukti": "resmi"
+  },
+  "lokal": [
+   {
+    "nama": "PT Generator Pasifik Indonesia (GPI)",
+    "produk": {
+     "id": "Elektroliser TITAN EL-MW, hingga 1.071 kg hidrogen per hari; diperkenalkan di GHES 2025 (15 April 2025). Jenis (alkalin atau PEM), kandungan lokal, dan harga tidak disebut.",
+     "en": "TITAN EL-MW electrolyser, up to 1,071 kg of hydrogen a day; introduced at GHES 2025 (15 April 2025). Type (alkaline or PEM), local content and price not stated."
+    },
+    "kg_hari": 1071,
+    "sumber_id": "li-gpi",
+    "tingkat_bukti": "media"
+   }
+  ],
+  "target": {
+   "mw": 328,
+   "tahun": 2035,
+   "catatan": {
+    "id": "Judul berita 2022; isi berlangganan sehingga angka lain tidak terbaca. Bukan angka RHAN 2025.",
+    "en": "Headline from 2022; body is paywalled so no other figure was read. Not an RHAN 2025 figure."
+   },
+   "sumber_id": "petromindo-328",
+   "tingkat_bukti": "media"
+  }
+ },
+ "produksi": [
+  {
+   "id": "pln-ghp22",
+   "nama": {
+    "id": "PLN: 22 pabrik hidrogen hijau (GHP)",
+    "en": "PLN: 22 green hydrogen plants (GHP)"
+   },
+   "org": [
+    "su_ed074ff5",
+    "p_5a2e7d0c63",
+    "p_ff7a390a42"
+   ],
+   "prov": "31",
+   "ton_tahun": 203,
+   "status": "beroperasi",
+   "tahun": 2023,
+   "enb": "h2-pln21",
+   "sumber_id": "hrs",
+   "tingkat_bukti": "media",
+   "ket": {
+    "id": "Diresmikan 20 November 2023 (21 unit; 22 unit menurut pemberitaan lanjutan). 128 ton dialokasikan untuk transportasi.",
+    "en": "Inaugurated 20 November 2023 (21 units; 22 per later reports). 128 t allocated to transport."
+   }
+  },
+  {
+   "id": "muara-karang",
+   "nama": {
+    "id": "GHP Muara Karang (pertama)",
+    "en": "Muara Karang GHP (first)"
+   },
+   "org": [
+    "p_5a2e7d0c63"
+   ],
+   "prov": "31",
+   "ton_tahun": 51,
+   "status": "beroperasi",
+   "tahun": 2023,
+   "enb": "h2-pln21",
+   "sumber_id": "mc",
+   "tingkat_bukti": "resmi",
+   "ket": {
+    "id": "Beroperasi 9 Oktober 2023; listrik PLTS ditambah REC dari PLTP Kamojang.",
+    "en": "Operating from 9 October 2023; solar power plus RECs from the Kamojang geothermal plant."
+   }
+  },
+  {
+   "id": "kamojang-pln",
+   "nama": {
+    "id": "GHP Kamojang (PLN)",
+    "en": "Kamojang GHP (PLN)"
+   },
+   "org": [
+    "p_5a2e7d0c63"
+   ],
+   "prov": "32",
+   "ton_tahun": 4.3,
+   "status": "beroperasi",
+   "tahun": 2023,
+   "enb": "h2-pln21",
+   "sumber_id": "ibp-kamojang",
+   "tingkat_bukti": "media",
+   "ket": {
+    "id": "Pertama di ASEAN berbasis panas bumi; PLN berencana menambah kapasitas, angka tambahan tidak ditemukan.",
+    "en": "First geothermal-based plant in ASEAN; PLN plans to expand, no capacity figure for the expansion found."
+   }
+  },
+  {
+   "id": "ulubelu-pge",
+   "nama": {
+    "id": "Pilot PGE Ulubelu",
+    "en": "PGE Ulubelu pilot"
+   },
+   "org": [
+    "p_dda1e51dae",
+    "p_b1c52ad7b0"
+   ],
+   "prov": "18",
+   "ton_tahun": 36.5,
+   "hitung": true,
+   "status": "konstruksi",
+   "tahun": 2026,
+   "enb": "h2-ulubelu",
+   "sumber_id": "ulu",
+   "tingkat_bukti": "media",
+   "ket": {
+    "id": "Hingga 100 kg per hari (36,5 ton per tahun = 100 kg x 365, hitungan METI), USD 3 juta; groundbreaking 9 September 2025, target produksi akhir 2026. Calon pembeli: Toyota Indonesia sekitar 20 kg per hari dan anak usaha Pertamina sekitar 50 kg per hari.",
+    "en": "Up to 100 kg/day (36.5 t/year = 100 kg x 365, METI arithmetic), USD 3 million; groundbreaking 9 September 2025, production targeted end-2026. Prospective offtakers: Toyota Indonesia about 20 kg/day and a Pertamina subsidiary about 50 kg/day."
+   }
+  },
+  {
+   "id": "kamojang-hyet",
+   "nama": {
+    "id": "Pilot PGE dan Pertamina NRE di Kamojang (p-SOEC 1 MW)",
+    "en": "PGE and Pertamina NRE Kamojang pilot (1 MW p-SOEC)"
+   },
+   "org": [
+    "p_10e0dde689",
+    "p_dda1e51dae"
+   ],
+   "prov": "32",
+   "ton_tahun": null,
+   "status": "studi",
+   "tahun": 2026,
+   "enb": null,
+   "sumber_id": "pv-hyet",
+   "tingkat_bukti": "media",
+   "ket": {
+    "id": "Term sheet tidak mengikat dengan HyET; lokasi masih dinilai. Dimaksudkan memberi data bagi fasilitas e-chemicals 10 MW.",
+    "en": "Non-binding term sheet with HyET; site still being assessed. Meant to give data for a 10 MW e-chemicals facility."
+   }
+  },
+  {
+   "id": "gresik-acwa",
+   "nama": {
+    "id": "PLN, ACWA Power, Pupuk Indonesia: Gresik",
+    "en": "PLN, ACWA Power, Pupuk Indonesia: Gresik"
+   },
+   "org": [
+    "su_ed074ff5",
+    "en_5455f1bbf9",
+    "p_0e6d34a26d"
+   ],
+   "prov": "35",
+   "ton_tahun": null,
+   "status": "kerja-sama",
+   "tahun": null,
+   "enb": "h2-gresik",
+   "sumber_id": "ghes",
+   "tingkat_bukti": "media",
+   "ket": {
+    "id": "Kapasitas dan keputusan investasi tidak ditemukan.",
+    "en": "Capacity and investment decision not found."
+   }
+  },
+  {
+   "id": "pertamina-pupuk-mitsubishi",
+   "nama": {
+    "id": "Pertamina, Pupuk Indonesia, Mitsubishi Corporation",
+    "en": "Pertamina, Pupuk Indonesia, Mitsubishi Corporation"
+   },
+   "org": [
+    "p_b1c52ad7b0",
+    "en_5455f1bbf9",
+    "en_bfe3751b62"
+   ],
+   "prov": null,
+   "ton_tahun": null,
+   "status": "kerja-sama",
+   "tahun": 2022,
+   "enb": "h2-pertamina-mitsubishi",
+   "sumber_id": "hce-pupuk",
+   "tingkat_bukti": "media",
+   "ket": {
+    "id": "Kesepakatan Maret 2022: rantai nilai hidrogen dan amonia hijau serta CCUS; hidrogen hijau dari fasilitas Pertamina NRE dipakai untuk amonia hijau. Kapasitas tidak ditemukan.",
+    "en": "March 2022 agreement: green hydrogen and ammonia value chain plus CCUS; green hydrogen from a Pertamina NRE plant to make green ammonia. Capacity not found."
+   }
+  },
+  {
+   "id": "krakatau-ignis",
+   "nama": {
+    "id": "Studi Pertamina NRE, IGNIS, Krakatau Steel",
+    "en": "Pertamina NRE, IGNIS, Krakatau Steel study"
+   },
+   "org": [
+    "p_10e0dde689"
+   ],
+   "prov": "36",
+   "ton_tahun": null,
+   "status": "studi",
+   "tahun": 2022,
+   "enb": null,
+   "sumber_id": "pertamina-ignis",
+   "tingkat_bukti": "kata-pihak",
+   "ket": {
+    "id": "Studi pabrik hidrogen biru atau hijau di kawasan Krakatau Steel; 500 MWp sampai 1,5 GWp, potensi simpan CO2 61 juta ton (angka pihak).",
+    "en": "Study of a blue or green hydrogen plant at the Krakatau Steel estate; 500 MWp to 1.5 GWp, CO2 storage potential 61 Mt (parties' figure)."
+   }
+  },
+  {
+   "id": "sumba-kaltara-papua",
+   "nama": {
+    "id": "Hibrida surya-angin Sumba Timur; PLTA Kalimantan Utara dan Papua",
+    "en": "East Sumba solar-wind hybrid; North Kalimantan and Papua hydropower"
+   },
+   "org": [],
+   "prov": "53",
+   "ton_tahun": null,
+   "status": "tak-jelas",
+   "tahun": 2024,
+   "enb": null,
+   "sumber_id": "esdm-jepang-2024",
+   "tingkat_bukti": "resmi",
+   "ket": {
+    "id": "Disebut dalam siaran ESDM 5 Juni 2024 sebagai proyek hidrogen di Indonesia; kapasitas dan status tidak dirinci.",
+    "en": "Named in the ESDM release of 5 June 2024 as hydrogen projects in Indonesia; capacity and status not detailed."
+   }
+  }
+ ],
+ "turunan": {
+  "pabrik_amonia": [
+   {
+    "id": "pim",
+    "nama": "Pupuk Iskandar Muda (Aceh)",
+    "org": "en_5455f1bbf9",
+    "prov": "11",
+    "kt_tahun": 726,
+    "rincian": "330 + 396",
+    "sumber_id": "cnbc-pupuk",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "pusri",
+    "nama": "Pusri (Palembang)",
+    "org": "en_5455f1bbf9",
+    "prov": "16",
+    "kt_tahun": 660,
+    "rincian": null,
+    "sumber_id": "cnbc-pupuk",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "kaltim2",
+    "nama": "Pupuk Kaltim, pabrik amonia 2 (Bontang)",
+    "org": "en_5455f1bbf9",
+    "prov": "64",
+    "kt_tahun": 595,
+    "rincian": null,
+    "sumber_id": "katadata-kaltim2",
+    "tingkat_bukti": "media"
+   }
+  ],
+  "grup": {
+   "mt_tahun": 7,
+   "sumber_id": "fortune-nh3-7jt",
+   "tingkat_bukti": "media"
+  },
+  "rencana": [
+   {
+    "id": "pkt-hijau",
+    "jenis": "amonia",
+    "nama": {
+     "id": "Pupuk Kaltim: amonia hijau 1 juta ton per tahun",
+     "en": "Pupuk Kaltim: green ammonia of 1 Mt/year"
+    },
+    "org": [
+     "en_5455f1bbf9",
+     "p_10e0dde689"
+    ],
+    "mt": 1,
+    "usd_miliar": 4,
+    "tahun": 2023,
+    "status": "rencana",
+    "ket": {
+     "id": "MoU Mei 2023 dengan Topsoe, Copenhagen Atomics, Aalborg CSP, dan Alfa Laval; tanggal konstruksi tidak ada.",
+     "en": "May 2023 MoU with Topsoe, Copenhagen Atomics, Aalborg CSP and Alfa Laval; no construction date."
+    },
+    "sumber_id": "ibp-pkt",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "pupuk-12jt",
+    "jenis": "amonia",
+    "nama": {
+     "id": "Pupuk Indonesia: 12 juta ton amonia pada 2045",
+     "en": "Pupuk Indonesia: 12 Mt of ammonia by 2045"
+    },
+    "org": [
+     "en_5455f1bbf9"
+    ],
+    "mt": 12,
+    "usd_miliar": null,
+    "tahun": 2045,
+    "status": "rencana",
+    "ket": {
+     "id": "Dari 7 juta ton; amonia hibrida di Aceh (PIM) mulai 2030.",
+     "en": "From 7 Mt; hybrid ammonia in Aceh (PIM) from 2030."
+    },
+    "sumber_id": "fortune-nh3-12jt",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "pupuk-biru",
+    "jenis": "amonia",
+    "nama": {
+     "id": "Pupuk Indonesia: amonia biru 4,3 juta ton per tahun pada 2045",
+     "en": "Pupuk Indonesia: blue ammonia of 4.3 Mt/year by 2045"
+    },
+    "org": [
+     "en_5455f1bbf9"
+    ],
+    "mt": 4.3,
+    "usd_miliar": null,
+    "tahun": 2045,
+    "status": "rencana",
+    "ket": {
+     "id": "Berbasis CCS; angka target kelompok menurut Argus (versi lain menyebut 660.000 ton untuk satu pabrik Kaltim).",
+     "en": "CCS-based; group target per Argus (another version cites 660,000 t for one Kaltim plant)."
+    },
+    "sumber_id": "argus-pupuk-2045",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "sulteng-biru",
+    "jenis": "amonia",
+    "nama": {
+     "id": "Konversi biru pabrik amonia Sulawesi Tengah (660.000 ton)",
+     "en": "Blue conversion of a Central Sulawesi ammonia plant (660,000 t)"
+    },
+    "org": [],
+    "mt": 0.66,
+    "usd_miliar": null,
+    "tahun": 2021,
+    "status": "tertunda",
+    "ket": {
+     "id": "Konsorsium dipimpin Mitsubishi (Maret 2021); sumber 2022 menyebut jeda singkat, status terkini tidak jelas.",
+     "en": "Mitsubishi-led consortium (March 2021); a 2022 source mentions a brief hiatus, current status unclear."
+    },
+    "sumber_id": "ammonia-energy",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "id": "hyet-efuel",
+    "jenis": "efuel",
+    "nama": {
+     "id": "Pertamina NRE dan HyET: e-chemicals dan e-fuel",
+     "en": "Pertamina NRE and HyET: e-chemicals and e-fuels"
+    },
+    "org": [
+     "p_10e0dde689"
+    ],
+    "mt": null,
+    "usd_miliar": null,
+    "tahun": 2026,
+    "status": "studi",
+    "ket": {
+     "id": "Pilot elektroliser uap 1 MW dan elektroliser CO2 1 MW; hasilnya untuk fasilitas e-chemicals 10 MW.",
+     "en": "A 1 MW steam electrolyser and a 1 MW CO2 electrolyser pilot; results feed a 10 MW e-chemicals facility."
+    },
+    "sumber_id": "pv-hyet",
+    "tingkat_bukti": "media"
+   }
+  ]
+ },
+ "pemakaian": [
+  {
+   "k": "pupuk",
+   "ikon": "industri",
+   "angka": {
+    "id": "4 juta ton per tahun",
+    "en": "4 Mt a year"
+   },
+   "ket": {
+    "id": "Permintaan hidrogen Indonesia 2024 hampir seluruhnya hidrogen abu-abu untuk pupuk (amonia) dan kilang; di Asia Tenggara hampir separuh permintaan hidrogen adalah amonia.",
+    "en": "Indonesia's 2024 hydrogen demand is almost all grey hydrogen for fertiliser (ammonia) and refineries; in Southeast Asia nearly half of hydrogen demand is ammonia."
+   },
+   "org": [
+    "en_5455f1bbf9",
+    "p_b1c52ad7b0"
+   ],
+   "sumber_ids": [
+    "dpr",
+    "ghr25sea"
+   ],
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "k": "pltu",
+   "ikon": "petir",
+   "angka": {
+    "id": "Uji PLTU Suralaya 5 sampai 7",
+    "en": "Suralaya units 5 to 7 trial"
+   },
+   "ket": {
+    "id": "MHI dan PLN Indonesia Power (1 November 2022): tiga studi, yaitu amonia di PLTU Suralaya, biomassa Suralaya, dan hidrogen di PLTGU Tanjung Priok; uji co-firing amonia direncanakan di Suralaya unit 5 sampai 7. Hasil uji tidak ditemukan.",
+    "en": "MHI and PLN Indonesia Power (1 November 2022): three studies, ammonia at the Suralaya coal plant, Suralaya biomass, and hydrogen at the Tanjung Priok gas plant; an ammonia co-firing trial was planned at Suralaya units 5 to 7. No trial result found."
+   },
+   "org": [
+    "p_5a2e7d0c63",
+    "in_c462bee334"
+   ],
+   "sumber_ids": [
+    "mhi-pln",
+    "katadata-mhi"
+   ],
+   "tingkat_bukti": "media"
+  },
+  {
+   "k": "transportasi",
+   "ikon": "mobil",
+   "angka": {
+    "id": "128 dari 203 ton",
+    "en": "128 of 203 t"
+   },
+   "ket": {
+    "id": "SPBU hidrogen hijau PLN Senayan (21 Februari 2024) memakai hidrogen dari 22 GHP; 128 ton dari 203 ton dialokasikan untuk transportasi. Pertamina NRE merencanakan stasiun terpadu di SPBU Daan Mogot, Jakarta.",
+    "en": "PLN's Senayan green hydrogen station (21 February 2024) uses hydrogen from the 22 GHP; 128 t of 203 t is allocated to transport. Pertamina NRE plans an integrated station at the Daan Mogot fuel station, Jakarta."
+   },
+   "org": [
+    "p_5a2e7d0c63",
+    "p_10e0dde689"
+   ],
+   "sumber_ids": [
+    "hrs",
+    "bisnis-hrs",
+    "petromindo-daan"
+   ],
+   "tingkat_bukti": "media"
+  },
+  {
+   "k": "baja",
+   "ikon": "pabrik",
+   "angka": {
+    "id": "USD 5 sampai 7 lawan di bawah 1",
+    "en": "USD 5 to 7 vs under 1"
+   },
+   "ket": {
+    "id": "Krakatau Steel menilai hidrogen hijau kini sekitar USD 5 sampai 7 per kg, sedangkan baja butuh di bawah USD 1 per kg agar bersaing (kata pihak). Ada MoU pipa hidrogen dengan Pertamina NRE dan RAJA (Banten, Jawa Barat, November 2022).",
+    "en": "Krakatau Steel puts green hydrogen at about USD 5 to 7/kg now, while steel needs under USD 1/kg to compete (the company's view). There is a hydrogen pipeline MoU with Pertamina NRE and RAJA (Banten, West Java, November 2022)."
+   },
+   "org": [
+    "p_10e0dde689"
+   ],
+   "sumber_ids": [
+    "bcas-krakatau",
+    "pertamina-krakatau-pipa"
+   ],
+   "tingkat_bukti": "kata-pihak"
+  }
+ ],
+ "ekspor": {
+  "negara": [
+   {
+    "iso2": "jp",
+    "nama": {
+     "id": "Jepang",
+     "en": "Japan"
+    },
+    "target_mt": [
+     {
+      "tahun": 2024,
+      "mt": 2,
+      "ket": "pasokan saat ini"
+     },
+     {
+      "tahun": 2030,
+      "mt": 3
+     },
+     {
+      "tahun": 2040,
+      "mt": 12
+     },
+     {
+      "tahun": 2050,
+      "mt": 20
+     }
+    ],
+    "instrumen": {
+     "id": "UU Promosi Masyarakat Hidrogen (17 Mei 2024) dan kontrak selisih harga (CfD) 15 tahun lewat JOGMEC; elektroliser 15 GW pada 2030 di dalam dan luar negeri. Pembangkit listrik saja tidak memenuhi syarat CfD (sumber pasar).",
+     "en": "Hydrogen Society Promotion Act (17 May 2024) and 15-year contracts for difference (CfD) via JOGMEC; 15 GW of electrolysers by 2030 at home and abroad. Power generation alone does not qualify for the CfD (market source)."
+    },
+    "sumber_ids": [
+     "jp-basic-white",
+     "jp-12jt",
+     "spglobal-cfd"
+    ],
+    "tingkat_bukti": "media"
+   },
+   {
+    "iso2": "kr",
+    "nama": {
+     "id": "Korea Selatan",
+     "en": "South Korea"
+    },
+    "target_mt": [],
+    "instrumen": {
+     "id": "Lelang listrik hidrogen bersih (CHPS) berdasar UU Ekonomi Hidrogen 2021. Putaran pertama hanya KOEN yang memperoleh kontrak (750 GWh); pemberitahuan lelang berikutnya dibatalkan beberapa jam sebelum tenggat dan pasar mengulang.",
+     "en": "Clean hydrogen power bidding (CHPS) under the 2021 Hydrogen Economy Act. In the first round only KOEN won a contract (750 GWh); the next tender notice was cancelled hours before the deadline and the market reset."
+    },
+    "sumber_ids": [
+     "joongang-chps",
+     "spglobal-cfd"
+    ],
+    "tingkat_bukti": "media"
+   }
+  ],
+  "nota": [
+   {
+    "tgl": "2022-03",
+    "iso2": "jp",
+    "org": [
+     "p_b1c52ad7b0",
+     "en_5455f1bbf9",
+     "en_bfe3751b62"
+    ],
+    "teks": {
+     "id": "Pertamina, Pupuk Indonesia, dan Mitsubishi Corporation: rantai nilai hidrogen dan amonia hijau serta CCUS.",
+     "en": "Pertamina, Pupuk Indonesia and Mitsubishi Corporation: green hydrogen and ammonia value chain plus CCUS."
+    },
+    "sumber_id": "hce-pupuk",
+    "tingkat_bukti": "media"
+   },
+   {
+    "tgl": "2022-11-01",
+    "iso2": "jp",
+    "org": [
+     "p_5a2e7d0c63",
+     "in_c462bee334"
+    ],
+    "teks": {
+     "id": "MHI dan PLN Indonesia Power: tiga studi co-firing amonia, biomassa, dan hidrogen.",
+     "en": "MHI and PLN Indonesia Power: three studies on ammonia, biomass and hydrogen co-firing."
+    },
+    "sumber_id": "mhi-pln",
+    "tingkat_bukti": "kata-pihak"
+   },
+   {
+    "tgl": "2024-05-31",
+    "iso2": "jp",
+    "org": [
+     "l_7278e0528a"
+    ],
+    "teks": {
+     "id": "Memorandum kerja sama JICA, ESDM, BRIN, dan IFHE: kebijakan, standar, promosi, dan peningkatan kapasitas; JICA merencanakan survei rantai pasok akhir 2024.",
+     "en": "Memorandum of cooperation among JICA, ESDM, BRIN and IFHE: policy, standards, promotion and capacity building; JICA planned a supply chain survey for late 2024."
+    },
+    "sumber_id": "esdm-jepang-2024",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "tgl": "2026-02-03",
+    "iso2": "jp",
+    "org": [
+     "l_7278e0528a"
+    ],
+    "teks": {
+     "id": "Forum Percepatan Hidrogen dan Amonia Indonesia-Jepang ke-4: peta jalan kolaborasi HASI melengkapi RHAN.",
+     "en": "4th Indonesia-Japan Hydrogen Ammonia Development Acceleration Forum: the HASI collaboration roadmap complements RHAN."
+    },
+    "sumber_id": "esdm-asta-cita",
+    "tingkat_bukti": "resmi"
+   }
+  ],
+  "koridor": [
+   {
+    "id": "selat-malaka",
+    "nama": {
+     "id": "Selat Malaka",
+     "en": "Strait of Malacca"
+    },
+    "iso2": "id",
+    "ket": {
+     "id": "ESDM menyebut posisi dekat Selat Malaka strategis untuk ekspor hidrogen hijau ke Asia-Pasifik; tidak ada pelabuhan yang disebut.",
+     "en": "ESDM says the position near the Strait of Malacca is strategic for green hydrogen exports to Asia-Pacific; no port is named."
+    },
+    "sumber_id": "esdm-jepang-2024",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "id": "patimban",
+    "nama": {
+     "id": "Pelabuhan Patimban",
+     "en": "Patimban Port"
+    },
+    "iso2": "id",
+    "ket": {
+     "id": "Calon pusat permintaan hidrogen (pelabuhan hijau), bukan koridor ekspor yang terikat kontrak.",
+     "en": "Possible hydrogen demand hub (green port), not a contracted export corridor."
+    },
+    "sumber_id": "li-lokasi23",
+    "tingkat_bukti": "media"
+   }
+  ]
+ },
+ "biaya": {
+  "lcoh": [
+   {
+    "k": "dpr",
+    "usd_kg": [
+     4.3,
+     8.3
+    ],
+    "ket": {
+     "id": "Biaya produksi hidrogen hijau di Indonesia; batas bawah dari PLTS.",
+     "en": "Green hydrogen production cost in Indonesia; lower bound from solar PV."
+    },
+    "sumber_id": "dpr",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "krakatau",
+    "usd_kg": [
+     5,
+     7
+    ],
+    "ket": {
+     "id": "Harga hidrogen hijau saat ini menurut COO Krakatau Steel (Mei 2026).",
+     "en": "Current green hydrogen price per the Krakatau Steel COO (May 2026)."
+    },
+    "sumber_id": "bcas-krakatau",
+    "tingkat_bukti": "kata-pihak"
+   },
+   {
+    "k": "baja",
+    "usd_kg": [
+     0,
+     1
+    ],
+    "ket": {
+     "id": "Ambang agar hidrogen bersaing untuk baja (kata pihak: di bawah USD 1 per kg).",
+     "en": "Threshold for hydrogen to compete in steel (the company's view: under USD 1/kg)."
+    },
+    "sumber_id": "bcas-krakatau",
+    "tingkat_bukti": "kata-pihak"
+   }
+  ],
+  "listrik": {
+   "kwh_per_kg": 54.6,
+   "sumber_id": "jc-bnef",
+   "tarif_usd_kwh": [
+    0.02,
+    0.04,
+    0.06,
+    0.08
+   ]
+  },
+  "jepang_cif": {
+   "yen_nm3": {
+    "2030": 30,
+    "2050": 20
+   },
+   "sumber_id": "jp-basic-white",
+   "tingkat_bukti": "media"
+  },
+  "pendanaan_ids": [
+   "pi_KR_GOV_120_1480000_2026_005",
+   "pi_NL_KVK_27378529_CERF24ID4I",
+   "pi_NL_KVK_27378529_CERF25ID2O"
+  ]
+ },
+ "kebijakan": {
+  "linimasa": [
+   {
+    "tgl": "2007",
+    "teks": {
+     "id": "UU 30/2007 tentang Energi: hidrogen termasuk energi baru.",
+     "en": "Law 30/2007 on Energy: hydrogen counts as new energy."
+    },
+    "sumber_id": "ghes",
+    "tingkat_bukti": "media",
+    "regulasi": null
+   },
+   {
+    "tgl": "2022",
+    "teks": {
+     "id": "Perpres 112/2022: percepatan energi terbarukan untuk tenaga listrik (dasar harga patokan dan percepatan perizinan).",
+     "en": "Presidential Regulation 112/2022: accelerating renewables for power (basis for benchmark prices and faster permitting)."
+    },
+    "sumber_id": "ghes",
+    "tingkat_bukti": "media",
+    "regulasi": "perpres-112-2022"
+   },
+   {
+    "tgl": "2023-12",
+    "teks": {
+     "id": "Strategi Hidrogen Nasional diluncurkan.",
+     "en": "National Hydrogen Strategy launched."
+    },
+    "sumber_id": "ghes",
+    "tingkat_bukti": "media",
+    "regulasi": null
+   },
+   {
+    "tgl": "2024-06",
+    "teks": {
+     "id": "ESDM menyiapkan Standar Hidrogen Indonesia dan standar klasifikasi usaha hidrogen.",
+     "en": "ESDM prepares an Indonesian Hydrogen Standard and a hydrogen business classification standard."
+    },
+    "sumber_id": "esdm-jepang-2024",
+    "tingkat_bukti": "resmi",
+    "regulasi": null
+   },
+   {
+    "tgl": "2025-04-15",
+    "teks": {
+     "id": "Peta Jalan Hidrogen dan Amonia Nasional (RHAN) diluncurkan: inisiasi 2025-2034, pengembangan dan integrasi 2035-2045, akselerasi 2045-2060.",
+     "en": "National Hydrogen and Ammonia Roadmap (RHAN) launched: initiation 2025-2034, development and integration 2035-2045, acceleration 2045-2060."
+    },
+    "sumber_id": "esdm-asta-cita",
+    "tingkat_bukti": "resmi",
+    "regulasi": null
+   },
+   {
+    "tgl": "2025",
+    "teks": {
+     "id": "PP 40/2025 tentang Kebijakan Energi Nasional memasukkan hidrogen dan RHAN dalam kerangka kebijakan.",
+     "en": "Government Regulation 40/2025 on National Energy Policy puts hydrogen and RHAN in the policy framework."
+    },
+    "sumber_id": "dpr",
+    "tingkat_bukti": "resmi",
+    "regulasi": "pp-40-2025"
+   },
+   {
+    "tgl": "2025-10",
+    "teks": {
+     "id": "Kajian DPR mencatat belum ada insentif fiskal, standar sertifikasi, atau kewajiban pemanfaatan hidrogen.",
+     "en": "A DPR study notes there is no fiscal incentive, certification standard or use mandate for hydrogen yet."
+    },
+    "sumber_id": "dpr",
+    "tingkat_bukti": "resmi",
+    "regulasi": null
+   },
+   {
+    "tgl": "2026-02-03",
+    "teks": {
+     "id": "ESDM menargetkan hidrogen hijau tersedia di pasar sekitar 200 ton per tahun (KPI Dirjen EBTKE); peta jalan kolaborasi HASI dengan Jepang.",
+     "en": "ESDM targets about 200 t/year of green hydrogen on the market (DG EBTKE KPI); HASI collaboration roadmap with Japan."
+    },
+    "sumber_id": "esdm-asta-cita",
+    "tingkat_bukti": "resmi",
+    "regulasi": null
+   }
+  ],
+  "fase": [
+   {
+    "k": "inisiasi",
+    "dari": 2025,
+    "sampai": 2034
+   },
+   {
+    "k": "pengembangan",
+    "dari": 2035,
+    "sampai": 2045
+   },
+   {
+    "k": "akselerasi",
+    "dari": 2045,
+    "sampai": 2060
+   }
+  ],
+  "target_2060": {
+   "mt": 9.9,
+   "alternatif_mt": 11.7,
+   "sumber_id": "ibp",
+   "tingkat_bukti": "media"
+  },
+  "insentif": [
+   {
+    "k": "fiskal",
+    "status": "belum",
+    "ket": {
+     "id": "Belum ada insentif fiskal khusus hidrogen menurut kajian DPR Oktober 2025.",
+     "en": "No hydrogen-specific fiscal incentive yet per the DPR study of October 2025."
+    },
+    "sumber_id": "dpr",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "sertifikasi",
+    "status": "disiapkan",
+    "ket": {
+     "id": "Belum ada standar sertifikasi (DPR 2025); Standar Hidrogen Indonesia disiapkan ESDM (2024).",
+     "en": "No certification standard yet (DPR 2025); an Indonesian Hydrogen Standard is being prepared by ESDM (2024)."
+    },
+    "sumber_id": "dpr",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "mandat",
+    "status": "belum",
+    "ket": {
+     "id": "Belum ada kewajiban pemanfaatan; PLN mengusulkan meniru lelang Jepang dengan syarat pabrik elektroliser di Indonesia.",
+     "en": "No use mandate yet; PLN proposes copying Japan's auction with a condition to build electrolyser factories in Indonesia."
+    },
+    "sumber_id": "kompas-pln-mahal",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "pembiayaan",
+    "status": "disebut",
+    "ket": {
+     "id": "ESDM menyebut peningkatan pembiayaan publik dan mitigasi risiko tahap awal, tanpa nilai; kerja sama JICA.",
+     "en": "ESDM cites more public financing and early-stage risk mitigation, with no amount; JICA cooperation."
+    },
+    "sumber_id": "esdm-asta-cita",
+    "tingkat_bukti": "resmi"
+   }
+  ]
+ },
+ "dunia": {
+  "proyek": [
+   {
+    "id": "neom",
+    "iso2": "sa",
+    "nama": {
+     "id": "NEOM Green Hydrogen (ACWA Power)",
+     "en": "NEOM Green Hydrogen (ACWA Power)"
+    },
+    "status": "konstruksi",
+    "ket": {
+     "id": "Sekitar 600 ton hidrogen per hari; investasi USD 8,5 miliar; konstruksi selesai, komisioning, operasi komersial 2027.",
+     "en": "About 600 t of hydrogen a day; USD 8.5 billion; construction complete, commissioning, commercial operation 2027."
+    },
+    "kapasitas_ton_hari": 600,
+    "sumber_ids": [
+     "neom",
+     "neomceo",
+     "neom80"
+    ],
+    "tingkat_bukti": "media",
+    "org": [
+     "p_0e6d34a26d"
+    ]
+   },
+   {
+    "id": "kuqa",
+    "iso2": "cn",
+    "nama": {
+     "id": "Sinopec Kuqa, Xinjiang",
+     "en": "Sinopec Kuqa, Xinjiang"
+    },
+    "status": "beroperasi",
+    "ket": {
+     "id": "260 MW, 20.000 ton per tahun; beroperasi 30 Agustus 2023, kenaikan produksi lebih lambat dari rencana.",
+     "en": "260 MW, 20,000 t/year; operating since 30 August 2023, ramp-up slower than planned."
+    },
+    "kapasitas_ton_tahun": 20000,
+    "sumber_ids": [
+     "kuqa",
+     "kuqa2"
+    ],
+    "tingkat_bukti": "media",
+    "org": []
+   },
+   {
+    "id": "fh2r",
+    "iso2": "jp",
+    "nama": {
+     "id": "Fukushima Hydrogen Energy Research Field",
+     "en": "Fukushima Hydrogen Energy Research Field"
+    },
+    "status": "beroperasi",
+    "ket": {
+     "id": "PLTS 10 MW, hingga 1.200 Nm3 per jam; diresmikan 2020.",
+     "en": "10 MW solar, up to 1,200 Nm3/hour; opened 2020."
+    },
+    "kapasitas_ton_tahun": null,
+    "sumber_ids": [
+     "fh2r"
+    ],
+    "tingkat_bukti": "via-pihak-ketiga",
+    "org": []
+   },
+   {
+    "id": "townsville",
+    "iso2": "au",
+    "nama": {
+     "id": "Townsville (Queensland)",
+     "en": "Townsville (Queensland)"
+    },
+    "status": "dibatalkan",
+    "ket": {
+     "id": "Dibatalkan karena tidak menemukan pembeli.",
+     "en": "Cancelled after failing to find buyers."
+    },
+    "kapasitas_ton_tahun": null,
+    "sumber_ids": [
+     "tville"
+    ],
+    "tingkat_bukti": "media",
+    "org": []
+   },
+   {
+    "id": "gladstone",
+    "iso2": "au",
+    "nama": {
+     "id": "Fortescue, PEM50 Gladstone",
+     "en": "Fortescue, PEM50 Gladstone"
+    },
+    "status": "dibatalkan",
+    "ket": {
+     "id": "Dibatalkan setelah keputusan investasi; pemerintah Australia meminta hibah dikembalikan.",
+     "en": "Cancelled after the investment decision; the Australian government asked for the grant to be repaid."
+    },
+    "kapasitas_ton_tahun": null,
+    "sumber_ids": [
+     "fort",
+     "repay"
+    ],
+    "tingkat_bukti": "media",
+    "org": []
+   },
+   {
+    "id": "bp-au",
+    "iso2": "au",
+    "nama": {
+     "id": "BP, rencana 26 GW (Australia)",
+     "en": "BP, 26 GW plan (Australia)"
+    },
+    "status": "dibatalkan",
+    "ket": {
+     "id": "BP mundur dari rencana hidrogen hijau 26 GW pada 28 Juli 2025.",
+     "en": "BP backed out of its 26 GW green hydrogen plan on 28 July 2025."
+    },
+    "kapasitas_ton_tahun": null,
+    "sumber_ids": [
+     "bp"
+    ],
+    "tingkat_bukti": "media",
+    "org": []
+   }
+  ],
+  "iea": {
+   "fid_2030_mt": 4.2,
+   "diumumkan_2030_mt": 37,
+   "diumumkan_2030_mt_tahun_lalu": 49,
+   "rendah_emisi_2025_mt": 1,
+   "sumber_id": "iea-ghr25-ringkas",
+   "tingkat_bukti": "resmi"
+  }
+ },
+ "isu": [
+  {
+   "id": "i1",
+   "kat": "biaya",
+   "pihak": {
+    "id": "Krakatau Steel (COO)",
+    "en": "Krakatau Steel (COO)"
+   },
+   "ket": {
+    "id": "Hidrogen hijau sekitar USD 5 sampai 7 per kg, sedangkan baja butuh di bawah USD 1 per kg.",
+    "en": "Green hydrogen is about USD 5 to 7/kg while steel needs under USD 1/kg."
+   },
+   "sumber_id": "bcas-krakatau",
+   "tingkat_bukti": "kata-pihak"
+  },
+  {
+   "id": "i2",
+   "kat": "biaya",
+   "pihak": {
+    "id": "PLN",
+    "en": "PLN"
+   },
+   "ket": {
+    "id": "Hidrogen hijau mahal; PLN meminta pemerintah meniru lelang Jepang, termasuk kewajiban membangun pabrik elektroliser di Indonesia.",
+    "en": "Green hydrogen is expensive; PLN asks the government to copy Japan's auction, including a duty to build electrolyser factories in Indonesia."
+   },
+   "sumber_id": "kompas-pln-mahal",
+   "tingkat_bukti": "kata-pihak"
+  },
+  {
+   "id": "i3",
+   "kat": "kebijakan",
+   "pihak": {
+    "id": "Pusat Analisis DPR RI",
+    "en": "DPR RI Analysis Centre"
+   },
+   "ket": {
+    "id": "Belum ada insentif fiskal, standar sertifikasi, atau kewajiban pemanfaatan hidrogen.",
+    "en": "No fiscal incentive, certification standard or use mandate for hydrogen yet."
+   },
+   "sumber_id": "dpr",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "i4",
+   "kat": "permintaan",
+   "pihak": {
+    "id": "Pemberitaan Townsville",
+    "en": "Townsville reporting"
+   },
+   "ket": {
+    "id": "Proyek hidrogen tanpa pembeli dibatalkan; proyek dengan pembeli dekat (Kuqa, NEOM) maju. Pelajaran bagi proyek ekspor Indonesia.",
+    "en": "Hydrogen projects without buyers are cancelled; those with nearby buyers (Kuqa, NEOM) advance. A lesson for Indonesian export projects."
+   },
+   "sumber_id": "tville",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "i5",
+   "kat": "jadwal",
+   "pihak": {
+    "id": "Direktori METI (energi_baru)",
+    "en": "METI directory (energi_baru)"
+   },
+   "ket": {
+    "id": "Pilot Ulubelu semula ditargetkan 2023, kini akhir 2026; GHP PLN sekitar 203 ton per tahun setara sekitar 0,005 persen permintaan 4 juta ton.",
+    "en": "The Ulubelu pilot was first targeted for 2023, now end-2026; PLN GHPs at about 203 t/year are about 0.005 percent of the 4 Mt demand."
+   },
+   "sumber_id": "ulu",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "i6",
+   "kat": "teknologi",
+   "pihak": {
+    "id": "Tinjauan teknoekonomi",
+    "en": "Techno-economic review"
+   },
+   "ket": {
+    "id": "Umur stack SOEC masih di bawah 20.000 jam dan AEM sekitar 5.000 jam, jauh di bawah AEL dan PEM (50.000 sampai 80.000 jam).",
+    "en": "SOEC stack life is still under 20,000 h and AEM about 5,000 h, far below AEL and PEM (50,000 to 80,000 h)."
+   },
+   "sumber_id": "pmc-elektroliser",
+   "tingkat_bukti": "via-pihak-ketiga"
+  },
+  {
+   "id": "i7",
+   "kat": "rantai",
+   "pihak": {
+    "id": "IEA",
+    "en": "IEA"
+   },
+   "ket": {
+    "id": "Tiongkok memegang hampir 60 persen kapasitas pabrik elektroliser dunia; pabrikan lokal Indonesia yang ditemukan baru satu (GPI) dan data TKDN tidak ditemukan.",
+    "en": "China holds nearly 60 percent of world electrolyser manufacturing capacity; only one Indonesian maker was found (GPI) and no TKDN data."
+   },
+   "sumber_id": "iea-ghr25-ringkas",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "i8",
+   "kat": "pasar",
+   "pihak": {
+    "id": "Korea JoongAng Daily",
+    "en": "Korea JoongAng Daily"
+   },
+   "ket": {
+    "id": "Lelang listrik hidrogen bersih Korea lemah dan pemberitahuan berikutnya dibatalkan; pembeli ekspor belum pasti.",
+    "en": "Korea's clean hydrogen power auction was weak and the next notice was cancelled; export buyers are not certain."
+   },
+   "sumber_id": "joongang-chps",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "i9",
+   "kat": "data",
+   "pihak": {
+    "id": "ESDM dan media",
+    "en": "ESDM and media"
+   },
+   "ket": {
+    "id": "Dua angka kebutuhan hidrogen 2060 beredar (9,9 dan 11,7 juta ton per tahun) dan belum dipastikan mana yang resmi.",
+    "en": "Two 2060 hydrogen demand figures circulate (9.9 and 11.7 Mt/year) and which one is official is unconfirmed."
+   },
+   "sumber_id": "ibp",
+   "tingkat_bukti": "media"
+  }
+ ],
+ "celah": [
+  {
+   "id": "Harga elektroliser (USD per kW) dan LCOH untuk lokasi Indonesia belum ada sumber resmi Indonesia; rentang di sini dari IEA (global) dan DPR (Indonesia). biaya_bangun.json masih mengosongkan sel hidrogen.",
+   "en": "No Indonesian official source for electrolyser prices (USD/kW) or site-specific LCOH; ranges here come from the IEA (global) and DPR (Indonesia). biaya_bangun.json still leaves the hydrogen cell empty."
+  },
+  {
+   "id": "Kapasitas amonia per pabrik Pupuk Kujang dan Petrokimia Gresik tidak ditemukan; angka kelompok (7 juta ton) dan pabrik lain dari tahun sumber berbeda.",
+   "en": "Per-plant ammonia capacity for Pupuk Kujang and Petrokimia Gresik was not found; the group figure (7 Mt) and other plants come from different source years."
+  },
+  {
+   "id": "Metanol hijau dan e-fuel: tidak ada proyek Indonesia berkapasitas yang ditemukan selain pilot e-chemicals Pertamina NRE dan HyET.",
+   "en": "Green methanol and e-fuels: no Indonesian project with a stated capacity was found besides the Pertamina NRE and HyET e-chemicals pilot."
+  },
+  {
+   "id": "Tidak ditemukan kontrak pembelian ekspor hidrogen atau amonia hijau dari Indonesia ke Jepang atau Korea, dan tidak ada pelabuhan ekspor yang disebut sumber.",
+   "en": "No export offtake contract for Indonesian green hydrogen or ammonia to Japan or Korea was found, and no source names an export port."
+  },
+  {
+   "id": "Target Korea Selatan (permintaan hidrogen bersih 2030 dan 2050) tidak berhasil dibaca; hanya mekanisme CHPS.",
+   "en": "South Korea's clean hydrogen demand targets (2030, 2050) could not be read; only the CHPS mechanism."
+  },
+  {
+   "id": "Daftar 23 lokasi potensial PLN dan ESDM disebut jumlahnya saja; nama lokasinya tidak diumumkan di sumber.",
+   "en": "The 23 PLN and ESDM potential sites are given only as a count; site names are not published in the source."
+  },
+  {
+   "id": "Metode, kandungan lokal, dan harga elektroliser GPI tidak disebut; belum ada sumber tentang TKDN elektroliser.",
+   "en": "GPI electrolyser type, local content and price are not stated; no source on electrolyser TKDN."
+  }
+ ]
+}

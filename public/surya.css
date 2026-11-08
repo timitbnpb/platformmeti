@@ -1,0 +1,34 @@
+/* /surya: tambahan kecil di atas rantai-global.css (tab, kartu, chip, saringan, peta dipakai ulang). Token tema saja: tanpa hex, tanpa px pada font. */
+.sur-sumber{display:inline-flex;flex-wrap:wrap;gap:4px 12px;font-size:var(--t-kecil)}
+.sur-angka{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;margin:0}
+.sur-angka b{font:700 var(--t-angka)/var(--lh-rapat) var(--display);color:var(--head);overflow-wrap:anywhere}
+.sur-angka span{color:var(--ink2);font-size:var(--t-kecil)}
+.sur-ubin{align-content:start}
+.sur-baris{display:inline-flex;align-items:center;gap:8px}
+.sur-sub{display:grid;gap:12px;margin-top:20px}
+.sur-saring3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px;align-items:center}
+.sur-saring3 .pc,.sur-saring3 .jm-pil-pilih{width:100%;min-width:0}
+@media (max-width:899px){.sur-saring3{grid-template-columns:minmax(0,1fr)}}
+.sur-daftar{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.sur-daftar li{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.sur-daftar .jm-ik{flex:none;margin-top:2px;color:var(--accent)}
+.sur-daftar p{margin:4px 0 0}
+
+/* warna seri grafik: satu warna per nilai */
+.sur-s-realisasi{color:var(--tp-surya)}.sur-s-kuota{color:var(--data5)}.sur-s-hip{color:var(--tp-surya)}.sur-s-kap{color:var(--data1)}.sur-s-butuh{color:var(--warn)}
+.sur-s-pvout{color:var(--tp-surya)}.sur-s-wafer{color:var(--data3)}.sur-s-sel{color:var(--data5)}.sur-s-modul{color:var(--data1)}.sur-s-hipot{color:var(--data4)}
+.sur-st-ok{--wc:var(--ok)}.sur-st-info{--wc:var(--info)}.sur-st-warn{--wc:var(--warn)}.sur-st-bad{--wc:var(--bad)}.sur-st-x{--wc:var(--ink2)}
+.sur-it-tinggi{--wc:var(--bad)}.sur-it-sedang{--wc:var(--warn)}.sur-it-rendah{--wc:var(--ok)}
+.sur-isu-ik{display:inline-grid;place-items:center;flex:none;width:36px;height:36px;border-radius:var(--r-sm);background:color-mix(in srgb,var(--wc,var(--info)) 14%,var(--card));color:var(--wc,var(--info))}
+.sur-isu{border-left:4px solid var(--wc,var(--line))}
+
+/* pin peta */
+.sur-pin-g{background:var(--data5)}
+.sur-pin-l{background:var(--brand)}
+
+/* garis waktu tahap program */
+.sur-tl{list-style:none;margin:0;padding:0 0 0 16px;display:grid;gap:12px;border-left:2px solid var(--line)}
+.sur-tl-i{position:relative;display:grid;gap:6px;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+.sur-tl-i::before{content:"";position:absolute;left:-24px;top:20px;width:12px;height:12px;border-radius:var(--r-pil);background:var(--tp-surya);border:2px solid var(--card)}
+.sur-tl-i p{margin:0}
+.sur-tl-t{display:flex;flex-wrap:wrap;align-items:center;gap:8px}

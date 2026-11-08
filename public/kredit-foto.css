@@ -1,0 +1,7 @@
+/* Halaman /kredit-foto: hanya jarak dan thumbnail; tabel memakai .jm-tabel bersama. */
+.kf-grup { margin-block: 2rem 0; }
+.kf-grup h2 { display: flex; align-items: center; gap: .5rem; margin: 0 0 .25rem; }
+.kf-n { font-style: normal; font-size: var(--t-kecil); padding: .1em .6em; border-radius: 999px; background: var(--soft-biru); color: var(--ink); }
+.kf-cat { max-width: 68ch; margin: 0 0 .75rem; color: var(--ink); font-size: var(--t-kecil); }
+.kf-mini { display: block; width: 56px; height: 42px; object-fit: cover; border-radius: 6px; }
+.kf .jm-tabel td { vertical-align: middle; overflow-wrap: anywhere; }

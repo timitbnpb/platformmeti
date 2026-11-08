@@ -24,7 +24,7 @@ export function mulai(el) {
   el.innerHTML = [
     ex({ id: "pbm-h-harga", ikon: "tag", topik: t("pbm.h.ey.harga"), judulHtml: esc(t("pbm.h.j.harga")), subHtml: esc(t("pbm.h.s.harga")), isiHtml: `<div id="pbm-h-tab"></div><p class="jm-bantu ih-catatan">${esc(tx(P.transkripsi_catatan))} ${esc(tx(P.faktor_f))}</p>`, kakiHtml: kakiSumber([P.harga_sumber_id]) }),
     ex({ id: "pbm-h-hitung", ikon: "kalkulator", topik: t("pbm.h.ey.hitung"), judulHtml: esc(t("pbm.h.j.hitung")), subHtml: esc(t("pbm.h.s.hitung")), isiHtml: `<div class="rg3-kisi">${contoh()}${mak ? `<div class="rg3-kartu"><div class="rg3-k-kep">${ikon("grafik", 22)}<b>${esc(t("pbm.h.biaya_j"))}</b></div><p class="pbm-angka">${esc(num(mak, 0))} <small>%</small></p><p class="jm-bantu">${esc(t("pbm.h.biaya", { b: bb.basis }))}</p>${sb ? luar(sb.url, `${sb.penerbit}, ${sb.tanggal_terbit}`) : ""}</div>` : ""}</div>`, kakiHtml: kakiSumber([P.contoh.sumber_id]) }),
-    ex({ id: "pbm-h-ppa", ikon: "dokumen", topik: t("pbm.h.ey.ppa"), judulHtml: esc(t("pbm.h.j.ppa")), subHtml: esc(t("pbm.h.s.ppa")), isiHtml: `<ul class="pbm-daftar">${ppa()}</ul>${catatan("pbm.h.n.ppa")}<p class="jm-bantu"><a href="/isu#harga-patokan-112">${esc(t("pbm.h.isu"))}</a></p>`, kakiHtml: kakiSumber(P.ppa_contoh.map((x) => x.sumber_id)) }),
+    ex({ id: "pbm-h-ppa", ikon: "buku", topik: t("pbm.h.ey.ppa"), judulHtml: esc(t("pbm.h.j.ppa")), subHtml: esc(t("pbm.h.s.ppa")), isiHtml: `<ul class="pbm-daftar">${ppa()}</ul>${catatan("pbm.h.n.ppa")}<p class="jm-bantu"><a href="/isu#harga-patokan-112">${esc(t("pbm.h.isu"))}</a></p>`, kakiHtml: kakiSumber(P.ppa_contoh.map((x) => x.sumber_id)) }),
   ].join("");
   tabHarga();
   siapTautan("proyek").then(() => naikkan(el));

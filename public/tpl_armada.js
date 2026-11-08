@@ -68,7 +68,7 @@ function tabelPLTU() {
     { label: t("tpl.c.jenis"), v: (b) => (b.captive ? 1 : 0), f: (b) => pilJenis("tpl.jenis.", b.captive ? "captive" : "grid") },
     { label: t("tpl.ar.emisi") + " (Mt)", num: true, v: (b) => b.emisi_ct_t || 0, f: (b) => (b.emisi_ct_t ? esc(num(b.emisi_ct_t / 1e6, 2)) : "-") },
   ], baris: B.pltu.baris });
-  siapTautan("org", "provinsi").then(() => naikkan(el));
+  siapTautan("org").then(() => naikkan(el));
 }
 export function mulai(el) {
   if (!B.pltu) { el.innerHTML = kosongTab("tpl.kosong"); return; }

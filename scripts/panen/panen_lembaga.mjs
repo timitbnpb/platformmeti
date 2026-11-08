@@ -145,10 +145,12 @@ export function bangunSeed() {
 }
 
 // ---------- ekstraksi kontak (hanya generik lembaga) ----------
+const SURAT_BEBAS = /@(gmail|yahoo|ymail|hotmail|outlook|live|icloud|proton|protonmail)\./i; // surel pribadi tidak masuk data (M1.8)
+const PONSEL = (t) => /^(\+?62|0)\s*8/.test(t.trim()); // 08x / +628x = seluler, bisa milik perorangan
 const LOKAL_GENERIK = /^(info|humas|contact|kontak|sekretariat|secretariat|admin|office|press|media|hello|halo|layanan|redaksi|pr|ppid|cs|customer)([._-]|\d|@)/i;
 export function ekstrak(html) {
-  const surel = [...new Set([...html.matchAll(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi)].map((m) => m[0].toLowerCase()).filter((e) => LOKAL_GENERIK.test(e) && !/\.(png|jpg|svg|webp)$/.test(e)))].slice(0, 3);
-  const telepon = [...new Set([...html.matchAll(/href="tel:([+\d\s().-]{7,20})"/gi)].map((m) => m[1].trim()))].slice(0, 3);
+  const surel = [...new Set([...html.matchAll(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi)].map((m) => m[0].toLowerCase()).filter((e) => LOKAL_GENERIK.test(e) && !SURAT_BEBAS.test(e) && !/\.(png|jpg|svg|webp)$/.test(e)))].slice(0, 3);
+  const telepon = [...new Set([...html.matchAll(/href="tel:([+\d\s().-]{7,20})"/gi)].map((m) => m[1].trim()).filter((t) => !PONSEL(t)))].slice(0, 3);
   const txt = html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
   const a = txt.match(/\b(Jl\.|Jalan|Gedung)\s[^|]{8,150}?(?:\b\d{5}\b|Indonesia)/);
   const ld = html.match(/"streetAddress"\s*:\s*"([^"]{8,150})"/);
@@ -376,7 +378,7 @@ function anggotaApi() {
 
 function selftest() {
   const e = ekstrak('<title>X</title><a href="mailto:info@example.org">a</a>budi.santoso@example.org <a href="tel:+62 21 0000 0000">t</a>Jl. Merdeka No. 5, Jakarta 10110');
-  assert.deepEqual(e.surel, ['info@example.org']); assert.equal(e.telepon.length, 1); assert.match(e.alamat, /Merdeka/);
+  assert.deepEqual(e.surel, ['info@example.org']); assert.equal(e.telepon.length, 1); const p = ekstrak('info@gmail.com <a href="tel:0812 3456 7890">x</a>'); assert.deepEqual(p.surel, []); assert.deepEqual(p.telepon, []); assert.match(e.alamat, /Merdeka/);
   const s = bangunSeed(); assert.equal(new Set(s.map((x) => x.lembaga_id)).size, s.length);
   assert.ok(s.filter((x) => x.jenis === 'pemda').length === 38);
   console.log('selftest ok', s.length);

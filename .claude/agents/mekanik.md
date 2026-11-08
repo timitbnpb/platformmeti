@@ -53,6 +53,7 @@ Berkas milikmu (glob paling spesifik menang):
 - `.claude/agents/**`
 - `.claude/hooks/**`
 - `scripts/agents/**`
+- `scripts/serah/**`
 - `scripts/token-ukur.mjs`
 
 Berkas di luar wilayah: jangan sunting. Laporkan siapa pemiliknya

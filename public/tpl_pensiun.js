@@ -4,7 +4,7 @@ import { B, t, ex, num, esc, ikon, tx, bukti, buktiS, kakiSumber, tabel, kolomSv
 const K = () => B.pltu.kandidat;
 const resmi = () => K().filter((k) => k.jalur.some((j) => j === "jetp" || j === "etm"));
 function kartu() {
-  return resmi().map((k) => `<div class="rg3-kartu"><div class="rg3-k-kep">${ikon(k.status === "dibatalkan" ? "peringatan" : "linimasa", 22)}<b>${esc(k.nama)}</b></div><p class="tpl-baris">${pilJenis("tpl.pn.st.", k.status)} ${k.jalur.map((j) => pilJenis("tpl.pn.jalur.", j)).join(" ")}</p><p class="tpl-angka">${esc(num(k.mw, 0))} <small>MW</small></p><p>${esc(tx(k.catatan))}</p><p class="jm-bantu">${esc(t("tpl.pn.target", { a: k.tahun_asal ?? "-", b: k.tahun_target ?? "-" }))}</p>${buktiS((k.sumber_ids || [])[0], k.tingkat_bukti)}</div>`).join("");
+  return resmi().map((k) => `<div class="rg3-kartu"><div class="rg3-k-kep">${ikon(k.status === "dibatalkan" ? "peringatan" : "linimasa", 22)}<b>${esc(k.nama)}</b></div><p class="tpl-baris">${pilJenis("tpl.pn.st.", k.status)} ${k.jalur.map((j) => pilJenis("tpl.pn.jalur.", j)).join(" ")}</p><p class="tpl-angka">${esc(num(k.mw, 0))} <small>MW</small></p><p>${esc(tx(k.catatan))}</p><p class="jm-bantu">${esc(t("tpl.pn.target", { a: k.tahun_asal ?? k.tahun_target ?? "-", b: k.tahun_target ?? "-" }))}</p>${buktiS((k.sumber_ids || [])[0], k.tingkat_bukti)}</div>`).join("");
 }
 function biaya() {
   const el = document.getElementById("tpl-p-biaya"); if (!el) return;
@@ -28,7 +28,7 @@ export function mulai(el) {
   const bt = B.tp.pensiun.biaya.filter((b) => b.usd_juta && b.pid);
   const rata = bt.reduce((a, b) => a + b.per_mw_est.nilai, 0) / bt.length;
   el.innerHTML = [
-    ex({ id: "tpl-p-kan", ikon: "linimasa", topik: t("tpl.pn.ey.kan"), judulHtml: esc(t("tpl.pn.j.kan")), subHtml: esc(t("tpl.pn.s.kan")), isiHtml: `<div class="rg3-kisi">${kartu()}</div><p class="jm-bantu">${tautRegulasi("perpres-112-2022", "Perpres 112/2022")}</p>`, kakiHtml: kakiSumber(["jetp-cipp", "crea-jetp", "petromindo-cir1"]) }),
+    ex({ id: "tpl-p-kan", ikon: "linimasa", topik: t("tpl.pn.ey.kan"), judulHtml: esc(t("tpl.pn.j.kan")), subHtml: esc(t("tpl.pn.s.kan")), isiHtml: `<div class="tpl-kisi">${kartu()}</div><p class="jm-bantu">${tautRegulasi("perpres-112-2022", "Perpres 112/2022")}</p>`, kakiHtml: kakiSumber(["jetp-cipp", "crea-jetp", "petromindo-cir1"]) }),
     ex({ id: "tpl-p-biayaex", ikon: "tag", topik: t("tpl.pn.ey.biaya"), judulHtml: esc(t("tpl.pn.j.biaya", { n: num(rata, 2) })), subHtml: esc(t("tpl.pn.s.biaya")), isiHtml: `<div id="tpl-p-biaya"></div>${catatan("tpl.pn.n.biaya")}` }),
     ex({ id: "tpl-p-jadex", ikon: "kalender", topik: t("tpl.pn.ey.jad"), judulHtml: esc(t("tpl.pn.j.jad")), subHtml: esc(t("tpl.pn.s.jad")), isiHtml: `<div id="tpl-p-jad" class="ih-bagan"></div>${catatan("tpl.pn.n.jad")}`, kakiHtml: kakiSumber(["gem-gcpt"]) }),
     daftarCelah([tx({ id: B.tp.meta.celah[3], en: B.tp.meta.celah_en[3] })]),

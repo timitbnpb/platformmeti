@@ -1,0 +1,31 @@
+/* /hidrogen: token tema saja (tanpa hex, tanpa px pada font). Kerangka, tab, kartu, chip, saringan memakai kelas .rg3-* dari rantai-global.css. Di sini hanya warna seri grafik dan beberapa komponen kecil. */
+.h2-s-ael{color:var(--data1)}.h2-s-pem{color:var(--tp-hidrogen)}.h2-s-aem{color:var(--tp-surya)}.h2-s-soec{color:var(--tp-panas)}
+.h2-s-dasar{color:var(--data1)}.h2-s-rentang{color:var(--tp-hidrogen)}
+.h2-s-ok{color:var(--ok)}.h2-s-warn{color:var(--warn)}.h2-s-target{color:var(--data5)}.h2-s-cn{color:var(--tp-panas)}.h2-s-lain{color:var(--data1)}.h2-s-biaya{color:var(--tp-hidrogen)}
+.h2-s-pltp{color:var(--tp-panas)}.h2-s-pltm{color:var(--tp-surya)}.h2-s-plta{color:var(--tp-hidro, var(--data1))}.h2-s-bayu{color:var(--tp-bayu)}
+.h2-s-pabrik{color:var(--tp-industri, var(--data1))}.h2-s-transport{color:var(--tp-hidrogen)}.h2-s-sisa{color:var(--data5)}
+
+.h2-angka{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.h2-angka small{font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
+.h2-kaki{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:var(--t-kecil);color:var(--ink2)}
+.h2-sumber{display:inline-flex}
+.h2-org{display:inline-flex;align-items:center;gap:8px}
+.h2-orgs{display:flex;flex-wrap:wrap;gap:6px 14px}
+.h2-baris{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* linimasa kebijakan */
+.h2-tl{list-style:none;margin:0;padding:0;display:grid;gap:12px;border-left:2px solid var(--line);padding-left:16px}
+.h2-tl-i{position:relative;display:grid;gap:6px;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+.h2-tl-i::before{content:"";position:absolute;left:-24px;top:20px;width:12px;height:12px;border-radius:var(--r-pil);background:var(--brand);border:2px solid var(--card)}
+.h2-tl-i p{margin:0}
+.h2-tl-t{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+
+/* kartu sektor, negara, proyek dunia */
+.h2-kartu-kep{display:flex;align-items:center;gap:12px}
+.h2-kartu-kep .jm-ik{flex:none;color:var(--accent)}
+.h2-kartu p{margin:8px 0 0}
+.h2-fase{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+
+/* tab ujung ke ujung dalam satu baris: aturan umum jm.css menang atas .rg3-tab, jadi dikunci per id (pola jaringan.css) */
+#h2Tab .jm-tab[role="tablist"]{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}
+@media (max-width:899px){#h2Tab .jm-tab>button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}

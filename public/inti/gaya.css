@@ -98,6 +98,7 @@ em.hl{font-style:normal;color:var(--accent)}
 .jm-kaki-hub a:hover{color:var(--on-brand);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .jm-kaki-bawah{max-width:var(--maks);margin:0 auto;padding:16px var(--gut) 22px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;border-top:1px solid color-mix(in srgb,var(--on-brand) 12%,transparent);font-size:var(--t-tombol);color:color-mix(in srgb,var(--on-brand) 60%,transparent)}
 .jm-kaki-bawah p{margin:0}
+.jm-kaki-bawah a[href="/kredit-foto"]{margin-left:0}
 .jm-kaki-bawah a{margin-left:auto;color:color-mix(in srgb,var(--on-brand) 60%,transparent);text-decoration:none}
 .jm-kaki-bawah a:hover{color:var(--on-brand);text-decoration:underline;text-underline-offset:3px}
 .jm-kaki-atas{display:grid;place-items:center;width:36px;height:36px;padding:0;border-radius:50%;border:1px solid color-mix(in srgb,var(--on-brand) 22%,transparent);background:none;color:var(--on-brand);cursor:pointer}

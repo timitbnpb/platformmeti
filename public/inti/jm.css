@@ -706,7 +706,7 @@ main>:is(section,div,article)+:is(section,div,article){margin-top:max(24px,var(-
 /* judul exhibit dan semua heading rata kiri, tidak justify */
 .jm-ex-teks :is(h1,h2,h3,h4),.jm-ex .jm-ex-j,:is(h1,h2,h3,h4,h5){text-align:left!important;hyphens:manual!important;-webkit-hyphens:manual!important}
 /* tab dan segmen: ujung ke ujung, item sama lebar; kebanyakan = bungkus baris rata, bukan gulir terpotong, label tetap utuh */
-:is(.jm-tab,[role="tablist"]:not(.jm-rel):not(.ak-kelompok),.jm-seg,.jm-segmen,.ak-seg:not(.ak-segmeng)):not(.jm-subnav *,.jm-terkait-isi>*,.jm-adm-nav *){display:grid!important;grid-auto-flow:row!important;grid-auto-columns:auto;grid-template-columns:repeat(auto-fit,minmax(min(100%,128px),1fr));gap:4px;overflow:visible!important;border-radius:0}
+:is(.jm-tab,[role="tablist"]:not(.jm-rel):not(.ak-kelompok),.jm-seg,.jm-segmen,.ak-seg:not(.ak-segmeng)):not(.jm-subnav *,.jm-terkait-isi>*,.jm-adm-nav *,.rg3-tab>*){display:grid!important;grid-auto-flow:row!important;grid-auto-columns:auto;grid-template-columns:repeat(auto-fit,minmax(min(100%,128px),1fr));gap:4px;overflow:visible!important;border-radius:0}
 :is(.jm-tab,[role="tablist"]:not(.jm-rel):not(.ak-kelompok),.jm-seg,.jm-segmen,.ak-seg:not(.ak-segmeng)):not(.jm-subnav *,.jm-terkait-isi>*,.jm-adm-nav *)>:is(button,a){justify-content:center;text-align:center;width:100%;min-width:0;white-space:normal;line-height:1.2;padding-block:8px;min-height:var(--target,44px)}
 /* ubin KPI hero: label utuh, tanpa elipsis dan tanpa patah di tengah kata */
 .jm-kh-lbl{font-size:var(--t-kecil);overflow:visible;text-overflow:clip;white-space:normal;overflow-wrap:normal;word-break:normal;hyphens:manual}

@@ -32,7 +32,7 @@ function unitTabel() {
     { label: t("bn.c.pihak"), v: (u) => u.org_id, f: (u) => orgSel(u.org_id) },
     { label: t("bn.c.bukti"), v: () => "", f: () => bukti("cuplikan", { sumber: "PLN, listrikindonesia.com", tanggal: "2026" }) },
   ], baris: U() });
-  siapTautan("org", "provinsi").then(() => naikkan(el));
+  siapTautan("org").then(() => naikkan(el));
 }
 function potensi() {
   const g = document.getElementById("bn-l-pot"); if (!g) return;

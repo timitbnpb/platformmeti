@@ -27,3 +27,13 @@
 .tpl-leg{position:absolute;left:12px;bottom:12px;z-index:3;display:flex;flex-wrap:wrap;gap:6px 12px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);font-size:var(--t-kecil)}
 .tpl-leg i{display:inline-block;width:10px;height:10px;border-radius:var(--r-pil);margin-right:6px;background:var(--wc)}
 .tpl-u-a{--wc:var(--ok)}.tpl-u-b{--wc:var(--info)}.tpl-u-c{--wc:var(--warn)}.tpl-u-d{--wc:var(--bad)}
+
+/* tab ujung ke ujung dalam satu baris: penegak global di jm.css (grid-auto-flow:row!important) menang atas .rg3-tab, jadi dikalahkan dengan id */
+#tplTab .jm-tab.jm-tab-rata{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}
+#tplTab .jm-tab.jm-tab-rata>button{white-space:nowrap;width:auto}
+
+/* kartu mengisi lebar penuh (tanpa ruang kosong di kanan) */
+.tpl-kisi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;align-items:stretch}
+.tpl-kisi .rg3-kartu{height:100%}
+.tpl-kisi .jm-bantu{display:flex;flex-wrap:wrap;gap:4px 16px}
+.tpl-kisi .rg3-kartu>:is(button,.jm-pil,.jm-bukti,[class*="bukti"]){justify-self:start}

@@ -38,6 +38,7 @@ export async function tampilDetail(el, D, id) {
   if (i.regulasi_ids.length) ent.push(`<h4 class="isu-sub">${ikon("regulasi", 16)}${esc(t("isu.d.regulasi"))}</h4><ul class="isu-chips">${i.regulasi_ids.map((r) => chip(tautRegulasi(r))).join("")}</ul>`);
   if (i.proyek_ids.length) ent.push(`<h4 class="isu-sub">${ikon("proyek", 16)}${esc(t("isu.d.proyek"))}</h4><ul class="isu-chips">${i.proyek_ids.map((r) => chip(tautProyek(r))).join("")}</ul>`);
   ent.push(`<h4 class="isu-sub">${ikon("wilayah", 16)}${esc(t("isu.d.wilayah"))}</h4>${i.prov.length ? `<ul class="isu-chips">${i.prov.map((k) => chip(tautProvinsi(k) + (i.wilayah.filter((w) => w.length === 4 && w.startsWith(k)).map((w) => ` <small class="isu-bps">BPS ${esc(w)}</small>`).join("")))).join("")}</ul>` : `<p class="isu-nas">${ikon("globe", 16)}${esc(t("isu.d.nasional"))}</p>`}`);
+  if (/panas bumi|PLTP|geothermal/i.test(i.judul)) ent.push(`<p class="jm-bantu"><a class="isu-sl" href="/panas-bumi?tab=isu">${esc(t("isu.d.pb"))}</a></p>`);
   blok.push(grup("isu.d.entitas", "tautan", ent.join("")));
   if (i.prov.length) blok.push(grup("isu.d.peta", "peta", `<div id="isuPetaKecil"></div>`, esc(t("isu.d.peta.s"))));
   blok.push(grup("isu.d.berita", "berita", `<div id="isuBerita"><p class="jm-kosong-teks">${esc(t("isu.d.berita.kosong"))}</p></div>`));

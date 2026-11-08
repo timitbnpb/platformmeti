@@ -189,7 +189,7 @@ async function ambilFoto(u, orangId, pid) {
 const EMAIL_UMUM = /^(info|contact|contactus|corporate|corsec|corp|sekretariat|secretary|secretariat|investor|ir|investorrelations|customer|customercare|cs|care|humas|hello|office|admin|marketing|sales|support|csr|legal|procurement|pengadaan|layanan|callcenter|enquiry|inquiry|press|media|komunikasi|publikasi|general|mail|public|corpcom|cc|hrd|recruitment|karir|career)([._-]?[a-z]*)?$/i;
 export function surelUmum(teksHalaman) {
   const out = new Set();
-  for (const m of teksHalaman.matchAll(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi)) { const [lokal, host] = m[0].toLowerCase().split('@'); if (EMAIL_UMUM.test(lokal) && !/\.(png|jpg|svg|gif)$/.test(host)) out.add(m[0].toLowerCase()); }
+  for (const m of teksHalaman.matchAll(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi)) { const [lokal, host] = m[0].toLowerCase().split('@'); if (EMAIL_UMUM.test(lokal) && !/^(gmail|yahoo|ymail|hotmail|outlook|live|icloud|proton|protonmail)\./.test(host) && !/\.(png|jpg|svg|gif)$/.test(host)) out.add(m[0].toLowerCase()); }
   return [...out];
 }
 export function telepon(teksHalaman) {

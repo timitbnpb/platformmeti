@@ -15,7 +15,7 @@ function pltbg() {
     { label: t("bn.c.pihak"), v: (u) => u.org_ids[0], f: (u) => u.org_ids.map(orgSel).join(" ") },
     { label: t("bn.c.bukti"), v: (u) => u.tingkat_bukti, f: (u) => buktiS(u.sumber_id, u.tingkat_bukti) },
   ], baris: B.bio.biogas.pltbg });
-  siapTautan("org", "provinsi").then(() => naikkan(el));
+  siapTautan("org").then(() => naikkan(el));
 }
 export function mulai(el) {
   if (!B.bio) { el.innerHTML = kosongTab("bn.kosong"); return; }

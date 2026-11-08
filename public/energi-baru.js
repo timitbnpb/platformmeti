@@ -189,6 +189,7 @@ function rincianButir(id) {
     <div class="jm-rgh-aksi"><button type="button" class="iconbtn" data-aksi="tutup" aria-label="${esc(t("enb.m.tutup"))}">${ikon("tutup", 22)}</button></div></div>
     <div class="jm-rgb"><div class="jm-rgb-kiri">
       <p>${esc(L(b.ringkas))}</p>
+      ${b.bagian === "hidrogen" ? `<p><a class="jm-tbl" href="/hidrogen">${ikon("hidrogen", 16)}${esc(t("enb.lihat_h2"))}</a></p>` : ""}
       ${b.angka.length ? `<section><h3>${ikon("grafik", 18)}${esc(t("enb.m.angka"))}</h3><ul class="enb-angka">${b.angka.map((a) => `<li><span>${esc(L(a.label))}</span><b>${N(a.nilai, a.nilai < 10 ? 2 : 0)} ${esc(typeof a.satuan === "object" ? L(a.satuan) : a.satuan)}</b></li>`).join("")}</ul></section>` : ""}
       ${b.linimasa.length ? `<section><h3>${ikon("linimasa", 18)}${esc(t("enb.m.linimasa"))}</h3><ol class="enb-lin-daftar">${b.linimasa.map((l) => `<li><time>${esc(tglTeks(l.tgl))}</time><span>${esc(L(l.teks))}</span></li>`).join("")}</ol></section>` : ""}
       <section><h3>${ikon("buku", 18)}${esc(t("enb.m.sumber"))}</h3><ul class="enb-src">${srcs.map((s) => `<li>${bukti(s.tingkat_bukti, s.penerbit)}${httpOk(s.url) ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.judul)}</a>` : esc(s.judul)}<small>${esc(s.penerbit)}${s.tahun ? ", " + s.tahun : ""}</small></li>`).join("")}</ul></section>

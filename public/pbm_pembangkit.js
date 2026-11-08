@@ -13,7 +13,7 @@ function tabProyek() {
     { label: t("pbm.c.mw"), num: true, v: (p) => p.mw ?? -1, f: (p) => (p.mw != null ? `<b>${esc(num(p.mw, 0))}</b>` : "-") },
     { label: t("pbm.c.pemilik"), v: (p) => p.pemilik?.nama || "", f: (p) => (p.pemilik?.nama ? orgLogoSel(p.pemilik.org_id, p.pemilik.nama) : "-") },
     { label: t("pbm.c.cod"), num: true, v: (p) => p.cod_terbaru ?? p.cod_rencana ?? 0, f: (p) => (p.cod_terbaru || p.cod_rencana ? `<span class="rg3-idk"><b>${esc(String(p.cod_terbaru ?? p.cod_rencana))}</b><small>${esc(p.cod_jenis === "aktual" ? t("pbm.cod.aktual") : t("pbm.cod.rencana"))}</small></span>` : "-") },
-    { label: t("pbm.c.bukti"), v: (p) => p.status_sumber?.jenis || "", f: (p) => bukti(p.status_sumber?.jenis === "gem" || p.status_sumber?.jenis === "ruptl" ? "resmi" : "media", { sumber: t("pbm.sj." + (p.status_sumber?.jenis || "x")), tanggal: p.status_sumber?.tanggal || "" }) },
+    { label: t("pbm.c.bukti"), v: (p) => p.status_sumber?.jenis || "", f: (p) => bukti({ ruptl: "resmi", gem: "via-pihak-ketiga" }[p.status_sumber?.jenis] || "media", { sumber: t("pbm.sj." + (p.status_sumber?.jenis || "x")), tanggal: p.status_sumber?.tanggal || "" }) },
   ], baris });
 }
 export function mulai(el) {

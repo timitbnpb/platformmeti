@@ -17,7 +17,7 @@ function tabPemasok() {
 export function mulai(el) {
   if (!B.pb) { el.innerHTML = kosongTab("pbm.kosong"); return; }
   const T = B.pb.teknologi;
-  const kartu = (x) => `<div class="rg3-kartu"><div class="rg3-k-kep">${ikon(IK[x.k] || "info", 22)}<b>${esc(t("pbm.t.k." + x.k))}</b></div><p class="jm-bantu">${esc(tx(x.teks))}</p>${x.sumber_id ? buktiS(x.sumber_id, x.tingkat_bukti) : bukti("editorial", { sumber: "METI" })}</div>`;
+  const kartu = (x) => `<div class="rg3-kartu"><div class="rg3-k-kep">${ikon(IK[x.k] || "info", 22)}<b>${esc(t("pbm.t.k." + x.k))}</b></div><p class="jm-bantu">${esc(tx(x.teks))}</p>${x.sumber_id ? buktiS(x.sumber_id, x.tingkat_bukti) : bukti("kajian", { sumber: "METI", tanggal: B.pb.tanggal })}</div>`;
   el.innerHTML = [
     ex({ id: "pbm-t-jenis", ikon: "tek-panas", topik: t("pbm.t.ey.jenis"), judulHtml: esc(t("pbm.t.j.jenis")), subHtml: esc(t("pbm.t.s.jenis")), isiHtml: `<div class="rg3-kisi">${T.jenis.map(kartu).join("")}</div>`, kakiHtml: kakiSumber(["pge_kmj"]) }),
     ex({ id: "pbm-t-pem", ikon: "pabrik", topik: t("pbm.t.ey.pem"), judulHtml: esc(t("pbm.t.j.pem", { n: (T.kata_kunci || []).length })), subHtml: esc(t("pbm.t.s.pem")), isiHtml: `<div id="pbm-t-tab"></div>${catatan("pbm.t.n.pem")}`, kakiHtml: kakiSumber(["toshiba-patuha", "tge-dieng-toshiba"]) }),

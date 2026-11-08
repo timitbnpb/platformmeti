@@ -66,7 +66,7 @@ export function mulai(el) {
       isiHtml: `<div class="rg3-kisi">${angka()}</div><p class="jm-bantu ih-catatan">${esc(tx(S.catatan_beda))}</p>`, kakiHtml: kakiSumber(["irena", "metro-potensi", "cnbc-2744", "innerspace-3", "kabarbursa-24gw"]) }),
     ex({ id: "pbm-s-prov", ikon: "peta", topik: t("pbm.s.ey.prov"), judulHtml: esc(t("pbm.s.j.prov")), subHtml: esc(t("pbm.s.s.prov")), isiHtml: `<div id="pbm-s-prov-tab"></div>${catatan("pbm.s.n.prov")}`, kakiHtml: kakiSumber([S.provinsi_sumber_id]) }),
     ex({ id: "pbm-s-wkp", ikon: "kawasan", topik: t("pbm.s.ey.wkp"), judulHtml: esc(t("pbm.s.j.wkp", { n: num(nWkp, 0) })), subHtml: esc(t("pbm.s.s.wkp")), isiHtml: `<div id="pbm-s-wkp-tab"></div>${daftarCelah(B.pb.celah.slice(0, 3))}`, kakiHtml: kakiSumber(["lelang", "lelang2"]) }),
-    ex({ id: "pbm-s-petab", ikon: "peta", topik: t("pbm.s.ey.peta"), judulHtml: esc(t("pbm.s.j.peta", { n: num(nP, 0) })), subHtml: esc(t("pbm.s.s.peta")), isiHtml: `<ul class="pbm-legenda">${leg}</ul><div id="pbm-s-peta" class="rg3-peta" role="region" aria-label="${esc(t("pbm.s.peta_label"))}"></div>${catatan("pbm.s.n.peta")}` }),
+    ex({ id: "pbm-s-petab", ikon: "peta", topik: t("pbm.s.ey.peta"), judulHtml: esc(t("pbm.s.j.peta", { n: num(nP, 0) })), subHtml: esc(t("pbm.s.s.peta")), isiHtml: `<ul class="pbm-keterangan">${leg}</ul><div id="pbm-s-peta" class="rg3-peta" role="region" aria-label="${esc(t("pbm.s.peta_label"))}"></div>${catatan("pbm.s.n.peta")}` }),
   ].join("");
   tabProv(); tabWkp(); gambarPeta(el);
   siapTautan("org", "provinsi").then(() => naikkan(el));

@@ -18,7 +18,7 @@ export const bahasa = () => (document.documentElement.lang === "en" ? "en" : "id
 export const tx = (o) => (o && typeof o === "object" ? o[bahasa()] || o.id || "" : o ?? "");
 export const src = (id) => (B.pb?.sumber || []).find((s) => s.id === id) || null;
 /** Lencana bukti satu butir: tingkat dari butir, penerbit + tanggal dari sumbernya. */
-export const buktiS = (id, tingkat) => { const s = src(id); return bukti(tingkat || s?.tingkat_bukti, { sumber: s?.penerbit || "", tanggal: s?.tanggal_periksa || "", cara: s?.judul || "" }); };
+export const buktiS = (id, tingkat) => { const s = src(id), k = tingkat || s?.tingkat_bukti; return bukti(k === "editorial" ? "kajian" : k, { sumber: s?.penerbit || "", tanggal: s?.tanggal_periksa || "", cara: s?.judul || "" }); };
 export const sumberLink = (id) => { const s = src(id); return s ? luar(s.url, `${s.penerbit}, ${s.tahun}`) : ""; };
 export const kakiSumber = (ids) => `<div class="pbm-kaki">${[...new Set(ids.filter(Boolean))].map((i) => `<span class="pbm-sumber">${sumberLink(i)}</span>`).join("")}</div>`;
 export const orgBaris = (id) => (B.org?.baris || []).find((b) => b.id === id) || null;
@@ -30,7 +30,8 @@ export const orgLogoSel = (id, nama) => `<span class="rg3-org">${logoHtml(id, na
 export const proyekPB = () => (B.pt?.baris || []).filter((b) => b.tek === "panas-bumi");
 export const proyekById = (id) => (B.pt?.baris || []).find((b) => b.id === id) || null;
 export const nol = (v) => (v == null || !isFinite(v) ? "-" : v);
-/** Sel pil berwarna stabil per nilai (status, jenis). */
-export const pil = (awalan, k, ik) => chip("rg3-w" + warnaIdx(k), ik ? ikon(ik, 14) : "", ada(awalan + k) ? t(awalan + k) : String(k).replace(/[-_]/g, " "));
+/** Sel pil: warna semantik untuk status dikenal (ok/info/warn/bad), selain itu warna stabil per nilai. */
+const SEM = { beroperasi: "ok", produksi: "ok", berlaku: "ok", konstruksi: "info", izin: "info", pengembangan: "info", diubah: "warn", rencana: "warn", lelang: "warn", kajian: "warn", ditunda: "warn", aktif: "bad", mereda: "info", dibatalkan: "bad", dicabut: "bad", "tidak-diketahui": "x", x: "x" };
+export const pil = (awalan, k, ik) => chip(SEM[k] ? "pbm-sem-" + SEM[k] : "rg3-w" + warnaIdx(k), ik ? ikon(ik, 14) : "", ada(awalan + k) ? t(awalan + k) : String(k).replace(/[-_]/g, " "));
 export const jumlahMw = (arr) => arr.reduce((s, x) => s + (x.mw || 0), 0);
 export const gelap = () => (document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";

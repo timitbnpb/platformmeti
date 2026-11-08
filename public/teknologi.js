@@ -263,6 +263,9 @@ function sTelusur() {
     KODE !== "nuklir" && ["kalkulator", `/model-keuangan?tek=${encodeURIComponent(KODE)}`, "tk.tl.model"],
     ["buku", "/panduan", "tk.tl.panduan"],
     KODE === "bioenergi" && ["bioenergi", "/bioenergi", "tk.tl.bioenergi"],
+    KODE === "surya" && ["panel-surya", "/surya", "sur.dari_tek"],
+    KODE === "hidrogen" && ["hidrogen", "/hidrogen", "tk.tl.hidrogen"],
+    KODE === "panas-bumi" && ["panas-bumi", "/panas-bumi", "tk.tl.panas-bumi"],
     ["energi-baru", "/energi-baru", "tk.tl.baru"],
     ["linimasa", "/sejarah", "tk.tl.sejarah"],
   ].filter(Boolean);

@@ -132,7 +132,7 @@ export function regS(id, judul) {
   return S(judul || `${JENIS[r.jenis] || r.jenis} ${r.nomor}/${r.tahun} tentang ${r.judul}`, 'Pemerintah RI (JDIH BPK)', r.url_sumber, '2026-11-07', r.tahun, 'resmi');
 }
 export const nf = (x, d = 1) => String(Number(x.toFixed(d))).replace('.', ',');
-export const SPUBFIN = S('IRENA Public Finance Database dan OECD DAC, penerima Indonesia, juta USD 2023 (public/data/keuangan_hijau.json)', 'IRENA dan OECD', 'https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Finance/', '2026-11-08', 2026, 'resmi', 'IRENA: bebas dipakai dengan atribusi');
+export const SPUBFIN = S('IRENA Public Finance Database dan OECD DAC, penerima Indonesia, juta USD 2023 (public/data/keuangan_hijau.json)', 'IRENA dan OECD', 'https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Finance/', '2026-11-08', 2026, 'resmi', 'IRENA: pemakaian nonkomersial dengan atribusi (syarat penggunaan IRENA); pemakaian komersial perlu izin tertulis');
 
 export const nfe = (x, d = 1) => String(Number(x.toFixed(d)));
 

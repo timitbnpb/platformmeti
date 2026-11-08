@@ -29,6 +29,13 @@ const PERSEN = new Set(["eskOpex", "gantiPersen", "fk", "degr", "eskTarif", "por
 const S = { tek: "surya-atap-rumah", skala: "plts-atap-rumah", bis: "netmeter", prov: "31", lok: 1, acuan: null, gol: "", bpp: "", grid: "jawa-bali", v: {}, sum: {}, diubah: new Set(), wT: 20, wS: 10, ppnDtp: false };
 /* ?tek=<id model | teknologi patokan>: dari halaman teknologi/profil; id tak dikenal diabaikan */
 { const q = new URLSearchParams(location.search).get("tek"), x = q && (TEK.find((e) => e.id === q) || TEK.find((e) => e.patokan === q)); if (x) { S.tek = x.id; S.skala = (SKALA[x.id] || [])[0] || ""; S.bis = x.bisnis[0]; } }
+/* ?mw= &prov= &lok= &skala= (+ capex= opex= fk= bila sel biaya diisi titik tengah): dari lembar proyek /investasi; nilai tak sah diabaikan */
+{ const q = new URLSearchParams(location.search), mw = +q.get("mw"), prov = q.get("prov"), lok = q.get("lok"), sk = q.get("skala");
+  if (mw > 0 && mw < 1e5) { S.mwTetap = mw; S.v.mw = mw; S.diubah.add("mw"); }
+  if (/^\d{2}$/.test(prov || "")) S.prov = prov;
+  if (/^\d{1,2}$/.test(lok || "")) S.lok = +lok;
+  if (sk && (SKALA[S.tek] || []).includes(sk)) S.skala = sk;
+  for (const [par, k] of [["capex", "capexUsdKw"], ["opex", "opexUsdKwThn"], ["fk", "fk"]]) { const v = +q.get(par); if (q.get(par) && v > 0 && v < 1e6) { S.v[k] = v; S.diubah.add(k); } } }
 const D = {};
 let hasil = null;
 
@@ -61,7 +68,8 @@ function konteks() {
   const bpp = D.listrik.bpp_sistem.find((b) => b.kunci === S.bpp) || D.listrik.bpp_sistem[0];
   const thBpp = Object.keys(bpp.rp_kwh).sort().at(-1);
   const lok = D.peluang.harga_patokan.faktor_lokasi[S.lok] || D.peluang.harga_patokan.faktor_lokasi[0];
-  return { tek, skalaRow: D.bangun?.skala?.find((r) => r.id === S.skala) || null, peluang: D.peluang, atap: D.atap, bangun: D.bangun, karbon: D.karbon, prov: tek.surya ? prov?.pvout_kwh_per_kwp_tahun : null, faktorLokasi: lok.F, grid: S.grid,
+  const baris = D.bangun?.skala?.find((r) => r.id === S.skala) || null;
+  return { tek, skalaRow: baris && S.mwTetap ? { ...baris, mw_contoh: S.mwTetap } : baris, peluang: D.peluang, atap: D.atap, bangun: D.bangun, karbon: D.karbon, prov: tek.surya ? prov?.pvout_kwh_per_kwp_tahun : null, faktorLokasi: lok.F, grid: S.grid,
     tarifPln: { tarif: gol.tarif_idr_per_kwh, bukti: "media", tanggal: gol.berlaku_sejak }, bppSistem: { tarif: bpp.rp_kwh[thBpp], tahun: thBpp, tanggal: D.listrik.dibangun_pada }, acuanPilih: S.acuan };
 }
 function terap({ simpan = true } = {}) {
