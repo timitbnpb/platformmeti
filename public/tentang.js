@@ -133,9 +133,9 @@ function struktur(p) {
   const kb = (b, i) => ringkas(t("tn.u.bk", { n: i + 1 }) + ": " + b.nama, b.anggota, { ik: "daftar", ...SATU });
   const ket = (U.ketum || [])[0];
   const unit = [[t("tn.u.institute"), U.institute, SATU], [t("tn.u.wilayah"), U.wilayah, { ik: "wilayah", ...SATU }], [t("tn.u.muda"), U.muda, SATU], [t("tn.u.komite"), U.komite, SATU], [t("tn.u.staf"), U.staf, SATU], [t("tn.u.sdu"), U.sdu && U.sdu.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", ...SATU }]].filter(([, a]) => a);
-  /* susunan di bawah Ketua Umum (pemilik 8 Nov 2026): Waketum sejajar Direktur Eksekutif, lalu Sekretaris Jenderal, lalu Bendahara */
+  /* susunan di bawah Ketua Umum (pemilik 8 Nov 2026): Waketum sejajar Direktur Eksekutif, lalu Sekretaris Jenderal dan Bendahara sejajar satu baris, kartu dikecilkan (pemilik 9 Nov 2026) */
   const baris = (daftar) => daftar.filter(([k]) => U[k]).map(([k, j, s]) => kelompok(t(j), U[k], { ekstra: k === "sekjen" || k === "bendahara" ? "tn-baris5" : "" })).join("");
-  const rows = [[["waketum", "tn.u.waketum", true], ["eksekutif", "tn.u.eksekutif", true]], [["sekjen", "tn.u.sekjen"]], [["bendahara", "tn.u.bendahara"]]].map(baris).filter(Boolean);
+  const rows = [[["waketum", "tn.u.waketum", true], ["eksekutif", "tn.u.eksekutif", true]], [["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"]]].map(baris).filter(Boolean);
   return `<section class="tn-seksi tn-bagan-bg" id="tim" aria-labelledby="tn-struktur">${kepala("tn-struktur", "orang", t("tn.ey.struktur"), t("tn.struktur.h2"), t("tn.struktur.pengantar", { periode: p.periode }))}
   <div class="tn-pohon"><div class="tn-r tn-r0">${ringkas(t("tn.u.penasihat"), U.penasihat || [], { ik: "kompas", pimpinan: KW, hanyaPim: true })}${ringkas(t("tn.u.pengawas"), pengawas, { ik: "perisai", pimpinan: KW, hanyaPim: true })}${ringkas(t("tn.u.pakar"), pakar, { ik: "wisuda", pimpinan: KW, hanyaPim: true })}</div>
     <div class="tn-konek" aria-hidden="true"></div>
