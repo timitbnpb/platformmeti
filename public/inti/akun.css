@@ -134,7 +134,7 @@
 /* pilihan bahasa, kartu, dan kaki mengalir dalam tiga baris: tidak saling menimpa di layar pendek (pemilik 9 Nov 2026) */
 @media (min-width:900px){
   .jm-ig-kiri{grid-template-rows:auto 1fr auto;gap:20px;padding:clamp(16px,3vh,28px) clamp(20px,4vw,56px)}
-  .jm-ig-kiri>.jm-ig-atas,.jm-ig-kiri>.jm-ig-kaki{position:static;justify-self:stretch;width:auto;margin:0}
+  .jm-ig-kiri>.jm-ig-atas,.jm-ig-kiri>.jm-ig-kaki{position:relative;inset:auto;z-index:1;justify-self:stretch;width:auto;margin:0}
 }
 /* tombol halaman akun (pemilik 9 Nov 2026): utama bergradien, belum boleh ditekan tetap terbaca; dua tombol bawah ringan */
 .jm-hal-akun .jm-tbl-utama{min-height:52px;border:0;border-radius:var(--r-pil);background:linear-gradient(135deg,var(--brand),var(--brand2));color:var(--on-brand);font:700 var(--t-body)/1 var(--font);box-shadow:0 8px 20px color-mix(in srgb,var(--brand) 26%,transparent);opacity:1;transition:filter .18s ease-out,box-shadow .18s ease-out}
