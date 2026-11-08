@@ -14,3 +14,8 @@
 | ferry-juliantono.webp | Commons, Jeromi Mikhael | CC BY 4.0 (wajib kredit) |
 | elen-setiadi.webp | Commons, Pemprov Sumatera Selatan | Domain publik |
 | mutya-yustika-b.webp | Situs METI (800 px), dipotong | Hak cipta METI |
+
+## Foto pengurus berlatar asli 8 Nov 2026 (gaya kartu Brian Yuliarto, 640x640, tanpa hapus latar)
+Pemilik meminta foto struktur METI tidak dipotong latarnya. Berkas tanpa akhiran `-b` dipotong persegi dari foto asli kiriman pemilik (pengurus METI, SK 0008/SK/METI/VIII/2026): hashim-djojohadikusumo, fadli-rahman, parlindungan-purba, cindy, dicky-septriadi, yasmine-surachman, norman-ginting, teuku-agassi-harsya, erik-tarigan, priyanka-puteri-ariffia, henny-triana, herbert-lubis, anthoni-utomo.
+| hokkop-situngkir.webp | Commons, File:HokkopSitungkirProfilePicture.jpg (JimboAng) | CC0 |
+Pengurus lain di bagan memakai .jpg 256 px berlatar asli yang sudah ada. Berkas `-b.webp` yang tersisa hanya dipakai avatar direktori dan profil wilayah.

@@ -188,12 +188,12 @@
    {
     "nama": "Hashim Djojohadikusumo",
     "jabatan": "Ketua Dewan Pengawas",
-    "foto": "/img/pengurus/hashim-djojohadikusumo-b.webp"
+    "foto": "/img/pengurus/hashim-djojohadikusumo.webp"
    },
    {
     "nama": "Wiluyo Kusdiharto",
     "jabatan": "Anggota Dewan Pengawas",
-    "foto": "/img/pengurus/wiluyo-kusdiharto-b.webp",
+    "foto": "/img/pengurus/wiluyo-kusdiharto.jpg",
     "orang_id": "o_eef7649be0"
    },
    {
@@ -295,7 +295,7 @@
    {
     "nama": "Herman Darnel Ibrahim",
     "jabatan": "Ketua Dewan Pakar",
-    "foto": "/img/pengurus/herman-darnel-ibrahim-b.webp"
+    "foto": "/img/pengurus/herman-darnel-ibrahim.jpg"
    },
    {
     "nama": "Surono",
@@ -442,26 +442,26 @@
    {
     "nama": "Norman Ginting",
     "jabatan": "Ketua Umum",
-    "foto": "/img/pengurus/norman-ginting-b.webp"
+    "foto": "/img/pengurus/norman-ginting.webp"
    }
   ],
   "waketum": [
    {
     "nama": "Hokkop Situngkir",
     "jabatan": "Wakil Ketua Umum I",
-    "foto": "/img/pengurus/hokkop-situngkir-b.webp"
+    "foto": "/img/pengurus/hokkop-situngkir.webp"
    },
    {
     "nama": "Fadli Rahman",
     "jabatan": "Wakil Ketua Umum II",
-    "foto": "/img/pengurus/fadli-rahman-b.webp"
+    "foto": "/img/pengurus/fadli-rahman.webp"
    }
   ],
   "bendahara": [
    {
     "nama": "Erik Tarigan",
     "jabatan": "Bendahara Umum",
-    "foto": "/img/pengurus/erik-tarigan-b.webp"
+    "foto": "/img/pengurus/erik-tarigan.webp"
    },
    {
     "nama": "Andi Peluseni",
@@ -471,12 +471,12 @@
    {
     "nama": "Mirda Rasyid",
     "jabatan": "Wakil Bendahara Umum 2",
-    "foto": "/img/pengurus/mirda-rasyid-b.webp"
+    "foto": "/img/pengurus/mirda-rasyid.jpg"
    },
    {
     "nama": "Arief Subekti",
     "jabatan": "Wakil Bendahara Umum 3",
-    "foto": "/img/pengurus/arief-subekti-b.webp"
+    "foto": "/img/pengurus/arief-subekti.jpg"
    }
   ],
   "sekjen": [
@@ -489,34 +489,34 @@
    {
     "nama": "Lucilia Ismoyo Rukmi",
     "jabatan": "Wakil Sekretaris Jenderal 2",
-    "foto": "/img/pengurus/lucila-ismoyo-rukmi-b.webp"
+    "foto": "/img/pengurus/lucila-ismoyo-rukmi.jpg"
    },
    {
     "nama": "Cindy Nathania Salim",
     "jabatan": "Wakil Sekretaris Jenderal 3",
-    "foto": "/img/pengurus/cindy-b.webp"
+    "foto": "/img/pengurus/cindy.webp"
    },
    {
     "nama": "Dicky Septriadi",
     "jabatan": "Wakil Sekretaris Jenderal 4",
-    "foto": "/img/pengurus/dicky-septriadi-b.webp"
+    "foto": "/img/pengurus/dicky-septriadi.webp"
    },
    {
     "nama": "Teuku Agassi Harsya",
     "jabatan": "Wakil Sekretaris Jenderal 5",
-    "foto": "/img/pengurus/teuku-agassi-harsya-b.webp"
+    "foto": "/img/pengurus/teuku-agassi-harsya.webp"
    }
   ],
   "eksekutif": [
    {
     "nama": "Yasmine Surachman",
     "jabatan": "Direktur Eksekutif",
-    "foto": "/img/pengurus/yasmine-surachman-b.webp"
+    "foto": "/img/pengurus/yasmine-surachman.webp"
    },
    {
     "nama": "Mutya Yustika",
     "jabatan": "Wakil Direktur Eksekutif 1",
-    "foto": "/img/pengurus/mutya-yustika-b.webp"
+    "foto": "/img/pengurus/mutya-yustika.jpg"
    },
    {
     "nama": "Putri Anggani Oditha",
@@ -528,7 +528,7 @@
    {
     "nama": "Milton Pakpahan",
     "jabatan": "Koordinator Komite Energi Terbarukan",
-    "foto": "/img/pengurus/sumanggar-milton-pakpahan-b.webp"
+    "foto": "/img/pengurus/sumanggar-milton-pakpahan.jpg"
    },
    {
     "nama": null,
@@ -544,17 +544,17 @@
    {
     "nama": "Agung Hermawan",
     "jabatan": "Komite Energi Bayu",
-    "foto": "/img/pengurus/agung-hermawan-b.webp"
+    "foto": "/img/pengurus/agung-hermawan.jpg"
    },
    {
     "nama": "Mada Habsari",
     "jabatan": "Komite Energi Surya",
-    "foto": "/img/pengurus/mada-ayu-habsari-b.webp"
+    "foto": "/img/pengurus/mada-ayu-habsari.jpg"
    },
    {
     "nama": "Sutiyo Siswanto",
     "jabatan": "Komite Energi Air",
-    "foto": "/img/pengurus/sutiyo-siswanto-b.webp"
+    "foto": "/img/pengurus/sutiyo-siswanto.jpg"
    },
    {
     "nama": "Lastyo Kuntoaji Lukito",
@@ -572,7 +572,7 @@
    {
     "nama": "Elrika Hamdi",
     "jabatan": "Ketua METI Institute",
-    "foto": "/img/pengurus/elrika-hamdi-b.webp"
+    "foto": "/img/pengurus/elrika-hamdi.jpg"
    },
    {
     "nama": "Priambudi Pujihatma",
@@ -584,7 +584,7 @@
    {
     "nama": "Parlindungan Purba",
     "jabatan": "Ketua METI Wilayah",
-    "foto": "/img/pengurus/parlindungan-purba-b.webp"
+    "foto": "/img/pengurus/parlindungan-purba.webp"
    },
    {
     "nama": null,
@@ -604,22 +604,22 @@
    {
     "nama": "Anthoni Utomo",
     "jabatan": "Chief Strategic Delivery Unit",
-    "foto": "/img/pengurus/anthoni-utomo-b.webp"
+    "foto": "/img/pengurus/anthoni-utomo.webp"
    },
    {
     "nama": "Priyanka Puteri Ariffia",
     "jabatan": "Vice Chief SDU 1",
-    "foto": "/img/pengurus/priyanka-puteri-ariffia-b.webp"
+    "foto": "/img/pengurus/priyanka-puteri-ariffia.webp"
    },
    {
     "nama": "Henny Triana",
     "jabatan": "Vice Chief SDU 2",
-    "foto": "/img/pengurus/henny-triana-b.webp"
+    "foto": "/img/pengurus/henny-triana.webp"
    },
    {
     "nama": "Herbert Lubis",
     "jabatan": "Vice Chief SDU 3",
-    "foto": "/img/pengurus/herbert-lubis-b.webp"
+    "foto": "/img/pengurus/herbert-lubis.webp"
    },
    {
     "nama": "Rama Dinara",
@@ -679,7 +679,7 @@
    {
     "nama": "Yudha Permana Jayadikarta",
     "jabatan": "PMO Hydro Energy",
-    "foto": "/img/pengurus/yudha-permana-jayadikarta-b.webp",
+    "foto": "/img/pengurus/yudha-permana-jayadikarta.jpg",
     "pmo": true
    }
   ],
@@ -757,12 +757,12 @@
     {
      "nama": "Sim Budiman Setiawan",
      "jabatan": "Ketua Bidang Kerja 3",
-     "foto": "/img/pengurus/sim-budiman-setiawan-b.webp"
+     "foto": "/img/pengurus/sim-budiman-setiawan.jpg"
     },
     {
      "nama": "John Pantouw",
      "jabatan": "Wakil Ketua BK 3 SDM",
-     "foto": "/img/pengurus/john-paulus-pantouw-b.webp"
+     "foto": "/img/pengurus/john-paulus-pantouw.jpg"
     },
     {
      "nama": "Yudhi Satrio Nugroho",
@@ -777,7 +777,7 @@
     {
      "nama": "Delano Dalo",
      "jabatan": "Ketua Bidang Kerja 4",
-     "foto": "/img/pengurus/delano-dalo-b.webp"
+     "foto": "/img/pengurus/delano-dalo.jpg"
     },
     {
      "nama": "Tiza Mafira",
@@ -807,7 +807,7 @@
     {
      "nama": "Kuki Soejachmoen",
      "jabatan": "Ketua Bidang Kerja 6",
-     "foto": "/img/pengurus/kuki-soejachmoen-b.webp"
+     "foto": "/img/pengurus/kuki-soejachmoen.jpg"
     },
     {
      "nama": "Merdiani Aghnia",
@@ -822,7 +822,7 @@
     {
      "nama": "Arief Noerhidayat",
      "jabatan": "Ketua Bidang Kerja 7",
-     "foto": "/img/pengurus/arief-noerhidayat-b.webp"
+     "foto": "/img/pengurus/arief-noerhidayat.jpg"
     },
     {
      "nama": "Sri Nur Hidayati",
@@ -837,7 +837,7 @@
     {
      "nama": "Yudha Permana Jayadikarta",
      "jabatan": "Ketua Bidang Kerja 8",
-     "foto": "/img/pengurus/yudha-permana-jayadikarta-b.webp"
+     "foto": "/img/pengurus/yudha-permana-jayadikarta.jpg"
     },
     {
      "nama": "Stefanus Johan",
