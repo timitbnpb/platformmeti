@@ -668,7 +668,7 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-jalur-viz{display:block;height:28px;margin-top:8px}
 .jm-jalur-sp{display:block;width:100%;height:28px;fill:var(--tk);opacity:.75}
 .jm-jalur:hover .jm-jalur-sp{opacity:1}
-.jm-jalur-proyek{--tk:var(--data2)}.jm-jalur-wilayah{--tk:var(--data3)}.jm-jalur-rantai{--tk:var(--warn)}.jm-jalur-regulasi{--tk:var(--data1)}.jm-jalur-direktori{--tk:var(--data5)}.jm-jalur-pustaka{--tk:var(--data4)}.jm-jalur-kalender{--tk:var(--bad)}.jm-jalur-insight{--tk:var(--info)}
+.jm-jalur-proyek{--tk:var(--data2)}.jm-jalur-wilayah{--tk:var(--data3)}.jm-jalur-rantai{--tk:var(--warn)}.jm-jalur-regulasi{--tk:var(--data1)}.jm-jalur-direktori{--tk:var(--data5)}.jm-jalur-pustaka{--tk:var(--data4)}.jm-jalur-topik{--tk:var(--bad)}.jm-jalur-insight{--tk:var(--info)}
 @media (prefers-reduced-motion:reduce){.jm-jalur{transition:none}.jm-jalur:hover{transform:none}}
 /* kartu bauran: satuan di baris sendiri di bawah persen; label tidak tertimpa tombol sumber di ponsel */
 .jm-kpi-bauran .jm-kpi-n{flex-wrap:wrap;row-gap:2px}

@@ -152,7 +152,7 @@ const hitungPer = (arr, f, urut) => { const m = new Map(); for (const x of arr) 
 async function gambarJalur() {
   const el = document.getElementById("ekoJalur");
   try {
-    const [pr, wl, rt, kl, pk, og, rg] = await Promise.all(["proyek", "wilayah", "rantai_plts", "kalender", "pustaka", "organisasi", "regulasi"].map(muat));
+    const [pr, wl, rt, kl, pk, og, rg] = await Promise.all(["proyek", "wilayah", "rantai_plts", "topik/indeks", "pustaka", "organisasi", "regulasi"].map(muat));
     const J = [
       ["proyek", "/proyek", "proyek", pr.baris.length, "proyek", spark(hitungPer(pr.baris, (p) => p.teknologi))],
       ["wilayah", "/wilayah", "wilayah", wl.baris.length, "provinsi", spark(wl.baris.map((w) => w.terpasang_mw?.nilai).filter((x) => x != null).sort((a, b) => b - a).slice(0, 12))],
@@ -160,7 +160,8 @@ async function gambarJalur() {
       ["regulasi", "/regulasi", "regulasi", rg.baris.length, "regulasi", spark(hitungPer(rg.baris, (r) => r.tahun, true))],
       ["direktori", "/direktori", "direktori", og.baris.length, "organisasi", spark(hitungPer(og.baris, (o) => o.kategori?.kode))],
       ["pustaka", "/direktori?tampil=pustaka", "daftar", pk.baris.length, "dokumen", spark(hitungPer(pk.baris, (d) => String(d.tanggal || "").slice(0, 4), true))],
-      ["kalender", "/kalender", "kalender", kl.baris.length, "acara", spark(hitungPer(kl.baris, (a) => String(a.tanggal || "").slice(0, 7), true))],
+      /* pintu ini hanya data EBT umum (eksternal); agenda internal METI ada di /kalender (pemilik 8 Nov 2026) */
+      ["topik", "/topik", "buku", kl.topik.length, "topik", spark(kl.topik.map((x) => x.hitung?.organisasi || 0).sort((a, b) => b - a).slice(0, 12))],
       ["insight", "/insight", "insight", INSIGHT_KARTU, "kartu", spark(hitungPer(pr.baris, (p) => p.status?.[0]?.nilai))],
     ];
     el.innerHTML = J.map(([k, href, ik, n, u, sp]) => `<a class="jm-jalur jm-jalur-${k}" href="${href}"><span class="jm-jalur-ik">${ikon(ik, 28)}</span>${k === "direktori" ? `<span class="jm-pil jm-jalur-kunci">${ikon("kunci", 12)}${esc(t("beranda.j.masuk"))}</span>` : ""}<b class="jm-jalur-n">${esc(angka(n))}<small>${esc(t("beranda.jn." + u))}</small></b><strong>${esc(t("beranda.j." + k))}</strong><span class="jm-jalur-ket">${esc(t("beranda.j." + k + ".ket"))}</span><span class="jm-jalur-viz">${sp}</span></a>`).join("");
