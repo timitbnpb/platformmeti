@@ -75,7 +75,7 @@
 .jm-bb-tabel .jm-tabel{font-size:var(--t-tombol)}
 .jm-bb-tabel{overflow-x:auto}
 .jm-bb-tabel table{table-layout:auto}
-.jm-bb-tabel th{padding:9px 6px;font-size:var(--t-label);letter-spacing:0}
+.jm-bb-tabel th{padding:9px 6px;font-size:var(--t-th);letter-spacing:0}
 .jm-bb-tabel th .jm-urut{gap:4px}
 .jm-bb-tabel th:nth-child(n+4){text-align:right}
 .jm-bb-tabel th:nth-child(n+4) .jm-urut{flex-direction:row-reverse}

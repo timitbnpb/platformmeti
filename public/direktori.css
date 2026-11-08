@@ -933,7 +933,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-side .ak-cari input{min-height:38px;font-size:var(--t-tombol)}
 .ak-side-t{flex:1;overflow:auto}
 .ak-sdt{width:100%;border-collapse:collapse;font-size:var(--t-kecil)}
-.ak-sdt thead th{position:sticky;top:0;z-index:1;background:var(--brand,var(--data1));color:var(--on-brand);font-size:var(--t-label);font-weight:700;letter-spacing:normal;text-transform:none;text-align:center;padding:0;border-bottom:2px solid var(--data4)}
+.ak-sdt thead th{position:sticky;top:0;z-index:1;background:var(--brand,var(--data1));color:var(--on-brand);font-size:var(--t-th);font-weight:700;letter-spacing:normal;text-transform:none;text-align:center;padding:0;border-bottom:2px solid var(--data4)}
 .ak-sdt thead button{font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;background:none;border:0;cursor:pointer;padding:9px 8px;width:100%;text-align:inherit;display:inline-flex;gap:4px;justify-content:inherit}
 .ak-sdt thead i{font-style:normal;font-size:var(--t-label);min-width:8px}
 .ak-sdt td{padding:8px;border-bottom:1px solid color-mix(in oklch,var(--line) 60%,transparent)}
@@ -1083,7 +1083,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-bpt thead th{position:sticky;top:58px;z-index:2;background:var(--brand);color:var(--on-brand);text-align:center;padding:0;border-bottom:3px solid var(--data4);white-space:nowrap}
 .ak-bpt thead th:first-child{border-top-left-radius:12px}.ak-bpt thead th:last-child{border-top-right-radius:12px}
 .ak-bpt thead button{all:unset;display:block;box-sizing:border-box;width:100%;padding:11px 14px;font-weight:700;cursor:pointer}
-.ak-bpt thead th[aria-sort=ascending] button::after{content:" \25B2";font-size:var(--t-label)}.ak-bpt thead th[aria-sort=descending] button::after{content:" \25BC";font-size:var(--t-label)}
+.ak-bpt thead th[aria-sort=ascending] button::after{content:" \25B2";font-size:var(--t-th)}.ak-bpt thead th[aria-sort=descending] button::after{content:" \25BC";font-size:var(--t-th)}
 .ak-bpt thead th:not([data-s]){padding:11px 14px;font-weight:700}
 .ak-bpt td{padding:8px 14px;text-align:center;vertical-align:middle;border-top:1px solid var(--line)}
 .ak-bpt tbody tr:nth-child(even) td{background:var(--surface)}
@@ -1367,7 +1367,7 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 /* tabel wilayah di samping peta: lega, kepala terang berlabel */
 .ak-side-t{padding:4px 10px 10px}
 .ak-sdt{border-collapse:separate;border-spacing:0;font-size:var(--t-tombol)}
-.ak-sdt thead th{background:var(--card,var(--paper));color:var(--ink2);border-bottom:1px solid var(--line);font-size:var(--t-label);letter-spacing:.08em}
+.ak-sdt thead th{background:var(--card,var(--paper));color:var(--ink2);border-bottom:1px solid var(--line);font-size:var(--t-th);letter-spacing:.08em}
 .ak-sdt thead button{padding:10px 8px;align-items:center;gap:4px}
 .ak-sdt thead th.r button{justify-content:flex-end}
 .ak-sdt thead button .ak-ikon{width:13px;height:13px}
@@ -2581,7 +2581,7 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 /* wadah seragam dengan jm-wadah: lebar maks dan jarak tepi sama di hero, nav, dan isi */
 .ak,.ak-kepala-isi,.ak-kepala-nav{max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
 /* tabel direktori memakai .jm-tabel bersama (inti/jm.css): batalkan gaya lama .ak-t2 dan .ak-tabel */
-.jm-tabel.ak-t2 th,.jm-tabel.ak-tabel th{background:transparent;color:var(--on-brand);text-align:center;border-bottom:2px solid var(--meti-lime);text-transform:none;letter-spacing:normal;font:600 var(--t-label)/var(--lh-rapat) var(--font);padding:12px 14px;border-radius:0}
+.jm-tabel.ak-t2 th,.jm-tabel.ak-tabel th{background:transparent;color:var(--on-brand);text-align:center;border-bottom:2px solid var(--meti-lime);text-transform:none;letter-spacing:normal;font:600 var(--t-th)/var(--lh-rapat) var(--font);padding:12px 14px;border-radius:0}
 .jm-tabel.ak-t2 td,.jm-tabel.ak-tabel td{border:0;border-bottom:1px solid var(--line-cell);padding:11px 14px;background:transparent}
 .jm-tabel.ak-t2 tbody tr:nth-child(even) td,.jm-tabel.ak-tabel tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface) 55%,transparent)}
 .jm-tabel.ak-t2 tbody tr:hover td,.jm-tabel.ak-tabel tbody tr:hover td{background:var(--soft-hijau)}
@@ -2719,8 +2719,8 @@ button.ak-r[data-kh][aria-pressed="true"]{border-color:var(--w0,var(--brand2));b
 .ak-sdtab thead button{all:unset;box-sizing:border-box;display:grid;place-items:center;width:100%;height:40px;padding:0 4px;cursor:pointer;font:700 var(--t-label)/1 var(--font);letter-spacing:normal;text-transform:none}
 .ak-sdtab thead button:focus-visible{outline:2px solid var(--on-brand);outline-offset:-3px}
 .ak-sdtab thead .ak-ikon,.ak-sdtab thead svg{width:17px;height:17px}
-.ak-sdtab thead th[aria-sort="ascending"] button::after{content:"\25B2";font-size:var(--t-label);position:absolute;margin-top:28px;transform:scale(.6)}
-.ak-sdtab thead th[aria-sort="descending"] button::after{content:"\25BC";font-size:var(--t-label);position:absolute;margin-top:28px;transform:scale(.6)}
+.ak-sdtab thead th[aria-sort="ascending"] button::after{content:"\25B2";font-size:var(--t-th);position:absolute;margin-top:28px;transform:scale(.6)}
+.ak-sdtab thead th[aria-sort="descending"] button::after{content:"\25BC";font-size:var(--t-th);position:absolute;margin-top:28px;transform:scale(.6)}
 .ak-sdtab thead th:first-child{text-align:left;min-width:132px}.ak-sdtab thead th:first-child button{justify-items:start;padding-left:12px}
 .ak-sdtab tbody th,.ak-sdtab tbody td{height:48px;padding:0 4px;border-bottom:1px solid var(--line);text-align:center;background:var(--card)}
 .ak-sdtab tbody th{text-align:left;padding-left:12px;font-weight:700;position:sticky;left:0;z-index:1}

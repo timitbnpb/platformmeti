@@ -214,7 +214,7 @@ body[data-halaman="proyek"]{overflow-x:clip}
 .jm-pj-tetap{table-layout:fixed;width:100%;min-width:980px}
 @media (min-width:1100px){.jm-pj-tetap{min-width:0}}
 @media (max-width:767px){.jm-pj-tetap{min-width:0}.jm-pj-halaman .jm-gulir{background:none}.jm-pj-tetap td{overflow:visible}}
-.jm-pj-tetap th{padding:12px 6px;white-space:normal;letter-spacing:.08em;font-size:var(--t-label);line-height:var(--lh-judul)}
+.jm-pj-tetap th{padding:12px 6px;white-space:normal;letter-spacing:.08em;font-size:var(--t-th);line-height:var(--lh-judul)}
 .jm-pj-tetap td{padding:10px 8px;overflow-wrap:anywhere}
 .jm-pj-tetap th:nth-child(1){width:28%}.jm-pj-tetap th:nth-child(2){width:13%}.jm-pj-tetap th:nth-child(3){width:10%}.jm-pj-tetap th:nth-child(4){width:13%}
 .jm-pj-tetap th:nth-child(5){width:12%}.jm-pj-tetap th:nth-child(6){width:10%}.jm-pj-tetap th:nth-child(7){width:9%}.jm-pj-tetap th:nth-child(8){width:5%}
@@ -395,7 +395,7 @@ dialog.jm-pj-sheet[open]::backdrop{animation:jm-pj-pudar .22s ease-out}
 .jm-pj-tetap th:nth-child(5){width:8%}.jm-pj-tetap th:nth-child(6){width:11%}.jm-pj-tetap th:nth-child(7){width:12%}.jm-pj-tetap th:nth-child(8){width:6%}
 .jm-pj-tetap th:nth-child(9){width:6%}.jm-pj-tetap th:nth-child(10){width:4%}
 .jm-pj-tetap td{padding:8px 6px}
-.jm-pj-tetap th{padding:10px 4px;letter-spacing:.08em;font-size:var(--t-label)}
+.jm-pj-tetap th{padding:10px 4px;letter-spacing:.08em;font-size:var(--t-th)}
 .jm-tabel.jm-pj-tetap td.jm-num{padding-right:10px}
 .jm-pj-tetap .jm-pil-tek,.jm-pj-tetap .jm-pil-st,.jm-pj-tetap .jm-pil-prog{padding:3px 8px;gap:5px;font-size:var(--t-kecil)}
 .jm-pj-tetap td.jm-tengah{text-align:center}

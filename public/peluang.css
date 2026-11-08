@@ -90,7 +90,7 @@
 .jm-pel-sub h4{display:flex;align-items:center;gap:8px;margin:0;font:700 var(--t-label)/var(--lh-rapat) var(--font);color:var(--head)}
 .jm-pel-sub h4 svg{flex:none;color:var(--accent)}
 .jm-pel-ht{width:100%;border-collapse:collapse;font-size:var(--t-kecil)}
-.jm-pel-ht th{text-align:left;font:600 var(--t-label)/1 var(--font);color:var(--ink2);padding:0 0 6px}
+.jm-pel-ht th{text-align:left;font:600 var(--t-th)/1 var(--font);color:var(--ink2);padding:0 0 6px}
 .jm-pel-ht th.jm-num,.jm-pel-ht td.jm-num{text-align:right;font-variant-numeric:tabular-nums}
 .jm-pel-ht td{padding:5px 0;border-top:1px solid var(--line)}
 
@@ -161,7 +161,7 @@
 .jm-pel-sr{margin-bottom:12px}
 .jm-pel-tabel{table-layout:fixed}
 .jm-pel-tabel th{white-space:normal;padding:10px 8px;vertical-align:middle}
-.jm-pel-tabel th small{display:block;margin-top:2px;font:400 var(--t-label)/1 var(--font);color:var(--on-brand);opacity:.8}
+.jm-pel-tabel th small{display:block;margin-top:2px;font:400 var(--t-th)/1 var(--font);color:var(--on-brand);opacity:.8}
 .jm-pel-tabel td{padding:10px 8px}
 .jm-pel-c-prov{width:22%}.jm-pel-c-tek{width:14%}.jm-pel-c-pot,.jm-pel-c-ter{width:9%}.jm-pel-c-rasio{width:9%}.jm-pel-c-celah{width:10%}.jm-pel-c-harga{width:15%}.jm-pel-c-tb{width:12%}
 .jm-pel-tabel td.jm-num,.jm-pel-tabel td.jm-tengah{width:auto}

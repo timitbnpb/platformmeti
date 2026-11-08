@@ -20,6 +20,9 @@ export function sektorProyek(ps) {
   const [top, nilai] = [...ukur.entries()].sort((a, b) => b[1] - a[1])[0];
   return n.size > 1 && nilai / total < 0.6 ? "lintas" : top;
 }
+/* BUMN induk (Persero, langsung di bawah negara/Danantara) bekerja di banyak teknologi: selalu "lintas" (pemilik 8 Nov 2026).
+   Anak usaha BUMN (mis. Pertamina NRE, PLN Indonesia Power) tetap memakai sektor unggulan dari portofolionya. */
+export const bumnInduk = (o, anak) => o.kategori?.kode === "bumn" && !anak && !/\b(perum|jasa tirta)\b/i.test(o.nama) && (/\bpersero\b/i.test(o.nama) || !o.induk || /^danantara$/i.test(o.induk));
 export const sektorDari = (o) => (o.kepakaran || []).find((k) => TEK.includes(k)) || "lain";
 export const suratPeran = (o) => (o.kontak?.surel || []).filter((e) => PERAN_SURAT.test(String(e).split("@")[0]));
 export const teleponKantor = (o) => (o.kontak?.telepon || []).filter((x) => typeof x === "string" && x.trim());
@@ -44,8 +47,9 @@ export function muatSensus() {
       const ids = new Set([...(o.proyek_ids || []), ...(ke.get(o.id) || [])]), ps = [...ids].map((i) => pr.get(i)).filter(Boolean);
       const prov = new Set(ps.map((p) => p.lokasi?.provinsi).filter(Boolean));
       const yakin = skorYakin(o, ps.length);
-      return { o, id: o.id, nm: o.nama, sek: sektorProyek(ps) || sektorDari(o), ps, nProy: ps.length, mw: ps.reduce((s, p) => s + mwDari(p), 0), nProv: prov.size, aplsi: aplsi.has(NORM(o.nama)),
-        anak: (o.keanggotaan || []).some((k) => k.jenis === "bagian_dari") || (!!o.induk && nama.has(NORM(o.induk)) && nama.get(NORM(o.induk)).id !== o.id), yakin };
+      const anak = (o.keanggotaan || []).some((k) => k.jenis === "bagian_dari") || (!!o.induk && nama.has(NORM(o.induk)) && nama.get(NORM(o.induk)).id !== o.id);
+      return { o, id: o.id, nm: o.nama, sek: bumnInduk(o, anak) ? "lintas" : sektorProyek(ps) || sektorDari(o), ps, nProy: ps.length, mw: ps.reduce((s, p) => s + mwDari(p), 0), nProv: prov.size, aplsi: aplsi.has(NORM(o.nama)),
+        anak, yakin };
     });
     baris.sort((a, b) => b.nProy - a.nProy || b.mw - a.mw || b.yakin.skor - a.yakin.skor || a.nm.localeCompare(b.nm));
     baris.forEach((r, i) => { r.rank = i + 1; });

@@ -616,3 +616,6 @@ span.tn-kp-b{cursor:default}
 /* bidang kerja: kartu satu baris sama tinggi (tidak ada kartu pendek dengan ruang kosong di bawah) */
 .tn-bagan-bg .tn-kisi.tn-kisi-b{align-items:stretch!important}
 .tn-bagan-bg .tn-kisi-b>.tn-grp>.tn-fkg:not(.tn-dg){flex:1!important;align-content:center!important}
+/* SDU: Chief + tiga Vice Chief sejajar empat kolom (pemilik 8 Nov 2026); kotaknya selebar dua kolom kisi */
+.tn-bagan-bg .tn-rg[data-n="4"]>.tn-lr>.tn-kp{flex-basis:min(168px,calc((100% - 24px) / 4))}
+@media (min-width:760px){.tn-kisi>.tn-rg[data-n="4"]{grid-column:span 2}}

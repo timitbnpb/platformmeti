@@ -27,7 +27,7 @@
   --font:"Inter",Arial,system-ui,sans-serif;
   /* Skala tipografi tunggal (gerbang-tipografi): CSS lain WAJIB memakai token ini, bukan px literal.
      peran: h1/h2 Inter 700, h3 Inter 600, angka Inter 700, eyebrow Inter 700 label kapital .08em, isi Inter 400 body, bantu Inter 400 kecil, tombol/pil Inter 600 tombol. */
-  --t-display:30px; --t-h1:24px; --t-h2:18px; --t-h3:17px; --t-angka:28px; --t-body:15px; --t-tombol:13px; --t-kecil:12.5px; --t-label:11px; --t-masukan:16px; --t-presentasi:clamp(30px,4.4vw,64px); --ic:var(--ink2);
+  --t-display:30px; --t-h1:24px; --t-h2:18px; --t-h3:17px; --t-angka:28px; --t-body:15px; --t-tombol:13px; --t-kecil:12.5px; --t-label:11px; --t-th:14px; --t-masukan:16px; --t-presentasi:clamp(30px,4.4vw,64px); --ic:var(--ink2);
   --lh-judul:1.2; --lh-rapat:1.35; --lh-isi:1.5; --ls-label:.08em;
 
   /* palet topik/teknologi: tiap topik warna sendiri (pemilik 8 Nov 2026) */
