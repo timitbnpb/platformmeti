@@ -19,3 +19,6 @@
 Pemilik meminta foto struktur METI tidak dipotong latarnya. Berkas tanpa akhiran `-b` dipotong persegi dari foto asli kiriman pemilik (pengurus METI, SK 0008/SK/METI/VIII/2026): hashim-djojohadikusumo, fadli-rahman, parlindungan-purba, cindy, dicky-septriadi, yasmine-surachman, norman-ginting, teuku-agassi-harsya, erik-tarigan, priyanka-puteri-ariffia, henny-triana, herbert-lubis, anthoni-utomo.
 | hokkop-situngkir.webp | Commons, File:HokkopSitungkirProfilePicture.jpg (JimboAng) | CC0 |
 Pengurus lain di bagan memakai .jpg 256 px berlatar asli yang sudah ada. Berkas `-b.webp` yang tersisa hanya dipakai avatar direktori dan profil wilayah.
+
+## Foto baru dan pemusatan wajah 8 Nov 2026
+Foto baru kiriman pemilik: herman-darnel-ibrahim, arief-noerhidayat, yudha-permana-jayadikarta, ichsan, elrika-hamdi, delano-dalo (.webp). Semua foto bagan /tentang dipotong ulang persegi 640 px dengan wajah di tengah horizontal (deteksi wajah), latar asli dipertahankan.
