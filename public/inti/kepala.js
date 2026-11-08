@@ -3,7 +3,7 @@
    Halaman memberi <header class="top" id="kepala"></header>, opsional <div id="pita"></div> dan <footer class="jm-kaki" id="kaki"></footer>. */
 import { t, angka, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
-import { subnavHtml, diBagianInsight } from "/inti/komponen.js";
+import { subnavHtml, diBagianInsight, tabProgramHtml } from "/inti/komponen.js";
 import { pasangRel } from "/inti/rel.js";
 import { pasangPilih } from "/inti/pilih.js";
 import { pasangCari } from "/inti/cari_global.js";
@@ -27,7 +27,7 @@ const TAB = [
   { kunci: "n7.tentang", ikon: "perisai", hak: null, grup: [
     { href: "/tentang", kunci: "n7.profil", ikon: "info" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "lokasi" }, { href: "/kalender", kunci: "n7.agenda", ikon: "kalender" }, { href: "/galeri", kunci: "nav.foto", ikon: "gambar" }] },
   { kunci: "n7.ebt", ikon: "insight", hak: null, grup: [
-    { href: "/insight", kunci: "n7.gambaran", ikon: "kajian" }, { href: "/teknologi", kunci: "n7.teknologi", ikon: "tek-bio" }, { href: "/sistem", kunci: "sp2.nav", ikon: "sistem-listrik" }, { href: "/target", kunci: "n7.target", ikon: "bendera" }, { href: "/energi-baru", kunci: "enb.nav", ikon: "energi-baru" }, { href: "/program", kunci: "nav.program", ikon: "bintang" }, { href: "/psn", kunci: "n7.psn", ikon: "mahkota" }, { href: "/industri", kunci: "in3.nav", ikon: "industri" }] },
+    { href: "/insight", kunci: "n7.gambaran", ikon: "kajian" }, { href: "/teknologi", kunci: "n7.teknologi", ikon: "tek-bio" }, { href: "/sistem", kunci: "sp2.nav", ikon: "sistem-listrik" }, { href: "/target", kunci: "n7.target", ikon: "bendera" }, { href: "/energi-baru", kunci: "enb.nav", ikon: "energi-baru" }, { href: "/program", kunci: "n7.program_psn", ikon: "bintang" }, { href: "/industri", kunci: "in3.nav", ikon: "industri" }] },
   { kunci: "n7.bidang", ikon: "direktori", hak: null, grup: [
     { href: "/bidang/organisasi", kunci: "bid.n.organisasi", ikon: "gedung" }, { href: "/bidang/advokasi", kunci: "bid.n.advokasi", ikon: "parlemen" }, { href: "/bidang/sdm", kunci: "bid.n.sdm", ikon: "akademi" }, { href: "/bidang/pendanaan", kunci: "bid.n.pendanaan", ikon: "kartu" }, { href: "/bidang/umkm", kunci: "bid.n.umkm", ikon: "tag" }, { href: "/bidang/esg", kunci: "bid.n.esg", ikon: "karbon" }, { href: "/bidang/komunikasi", kunci: "bid.n.komunikasi", ikon: "presentasi" }, { href: "/bidang/internasional", kunci: "bid.n.internasional", ikon: "asean" }, { href: "/bidang/data", kunci: "bid.n.data", ikon: "tabel" }] },
   { kunci: "n7.wilayah", ikon: "wilayah", hak: null, grup: [
@@ -52,7 +52,7 @@ const temaEfektif = () => document.documentElement.dataset.theme || (matchMedia(
 
 function gambarKepala(el, saya) {
   const jalur = location.pathname;
-  const cocok = (h) => (h === "/" ? jalur === "/" || jalur === "/index.html" : jalur === h || jalur.startsWith(h + "/"));
+  const cocok = (h) => (h === "/" ? jalur === "/" || jalur === "/index.html" : jalur === h || jalur.startsWith(h + "/") || (h === "/program" && /^\/psn(\.html)?$/.test(jalur)));
   const tab = TAB.filter((x) => boleh(x.hak, saya)).map((x) => {
     if (x.grup) {
       const aktif = x.grup.some((g) => cocok(g.href)), id = "grup-" + x.kunci.replace(/\./g, "-");
@@ -177,6 +177,7 @@ export async function mulaiHalaman() {
   }
   if (kepala) { gambarKepala(kepala, saya); pasangPenangan(kepala, saya); pasangCari(kepala); if (saya.masuk) pasangAkunMenu(kepala, saya); }
   pasangBukti();
+  if (kepala && /^\/(program|psn)(\.html)?$/.test(location.pathname) && !document.getElementById("subnav")) kepala.insertAdjacentHTML("afterend", tabProgramHtml(location.pathname));
   if (kepala && diBagianInsight(location.pathname) && !document.getElementById("subnav")) { kepala.insertAdjacentHTML("afterend", subnavHtml(location.pathname, location.hash)); addEventListener("hashchange", () => { const s = document.getElementById("subnav"); if (s) s.outerHTML = subnavHtml(location.pathname, location.hash); }); }
   const pita = document.getElementById("pita");
   if (pita && PITA_DRAF) {
