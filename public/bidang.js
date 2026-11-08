@@ -2,7 +2,7 @@
    Tautan yang rumah utamanya di menu lain diberi pil "dari <menu>"; tautan ke /direktori* diberi pil "Perlu masuk".
    Tanpa kontrol berchrome: semua tautan biasa. */
 import { mulaiHalaman } from "/inti/kepala.js";
-import { t } from "/i18n.js";
+import { t, angka } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 
 const $ = (id) => document.getElementById(id);
@@ -22,13 +22,47 @@ const BIDANG = {
 };
 const SLUG = Object.keys(BIDANG);
 
+/* id alat untuk kunci bid.a.<id> */
+const SPESIAL = { "/direktori?tampil=pakar": "orang", "/direktori?tampil=lembaga": "institusi", "/direktori?tampil=pendanaan": "pendanaan", "/direktori?tampil=sistem_data": "sistem-data", "/berita?q=METI": "meti-berita" };
+const idAlat = (h) => SPESIAL[h] || h.replace(/^\//, "");
+/* satu-satunya foto (pemilik 8 Nov 2026): Pelaku orang */
+const KEG = "/img/kegiatan/audiensi-mpr-2026-10-05.webp", BR = (f) => `/img/beranda/${f}.webp`;
+/* foto berlisensi yang sudah ada di repo (kredit: data/kredit-foto.json). Satu foto hanya sekali per halaman (kemunculan pertama); tanpa padanan = gradien. */
+const FOTO = { "/direktori?tampil=pakar": KEG, "/jejaring": BR("jaringan"), "/perizinan": BR("panas-bumi-sibayak"), "/transisi": BR("transisi-berkeadilan"), "/program": BR("surya-cirata"), "/keuangan-hijau": BR("pembiayaan-hijau"), "/pasar-listrik-hijau": BR("jaringan"), "/biaya-listrik": BR("efisiensi"), "/desa-energi": BR("surya-cirata"), "/akses-energi": BR("jaringan"), "/rantai": BR("penyimpanan-baterai"), "/rantai-global": BR("penyimpanan-baterai"), "/karbon": BR("karbon"), "/air-energi": BR("hidro-saguling"), "/lokasi-hijau": BR("bayu-sidrap"), "/industri": BR("transisi-berkeadilan"), "/galeri": KEG };
+const FOTO_BIDANG = { organisasi: KEG, advokasi: BR("transisi-berkeadilan"), pendanaan: BR("pembiayaan-hijau"), umkm: BR("surya-cirata"), esg: BR("karbon") };
+let dipakai = new Set();
+const ambilFoto = (f) => { if (!f || dipakai.has(f)) return ""; dipakai.add(f); return f; };
+/* lencana angka dari data yang sudah ada: href -> [berkas, kunci i18n]; diisi sesudah render, galat = tanpa lencana */
+const ANGKA = { "/direktori?tampil=lembaga": ["organisasi", "bid.b.institusi"], "/regulasi": ["regulasi", "bid.b.regulasi"], "/program": ["program", "bid.b.program"] };
+const simpan = new Map();
+const jumlah = (n) => { if (!simpan.has(n)) simpan.set(n, fetch(`/data/${n}.json`).then((r) => { if (!r.ok) throw 0; return r.json(); }).then((d) => d.jumlah ?? d.baris?.length ?? null).catch(() => { simpan.delete(n); return null; })); return simpan.get(n); };
+const KUNCI = '<svg class="jm-ik" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+
+/* kartu bersama: visual atas (foto atau gradien + ikon), lencana, judul, penjelas, garis, "Buka" + panah. Satu <a>. */
+const kartu = ({ href, ikonNama, foto, lencana, judul, ket, pil, h }) => `<a class="jm-bd-kt" href="${esc(href)}"${h ? ` data-h="${esc(h)}"` : ""}>
+  <span class="jm-bd-vis${foto ? "" : " jm-batik"}">${foto ? `<img src="${esc(foto)}" data-foto="${esc(foto)}" alt="" width="640" height="360" loading="lazy" decoding="async">` : ikon(ikonNama, 40)}${lencana || ""}</span>
+  <span class="jm-bd-isi"><span class="jm-bd-j">${esc(judul)}</span>${pil ? `<span class="jm-bd-pil">${pil}</span>` : ""}<span class="jm-bd-ket">${esc(ket)}</span></span>
+  <span class="jm-bd-buka"><span>${esc(t("bid.buka_kt"))}</span>${ikon("panah-kanan", 18)}</span></a>`;
+const lencanaHtml = (isi) => `<span class="jm-bd-lc">${isi}</span>`;
 const kartuAlat = (a) => {
-  const pil = [a.dari ? `<span class="jm-pil">${esc(t("bid.dari", { menu: t(a.dari) }))}</span>` : "", a.h.startsWith("/direktori") ? `<span class="jm-pil jm-pil-warn">${esc(t("bid.masuk"))}</span>` : ""].join("");
-  return `<a class="jm-bd-kt" href="${esc(a.h)}"><span class="jm-bd-nama">${ikon(a.i, 28)}<span>${esc(t(a.k))}</span></span>${pil ? `<span class="jm-bd-pil">${pil}</span>` : ""}</a>`;
+  const masuk = a.h.startsWith("/direktori"), angka = ANGKA[a.h];
+  const pil = [a.dari ? `<span class="jm-pil">${esc(t("bid.dari", { menu: t(a.dari) }))}</span>` : "", masuk && angka ? `<span class="jm-pil jm-pil-warn">${esc(t("bid.masuk"))}</span>` : ""].join("");
+  const lencana = masuk && !angka ? lencanaHtml(`${KUNCI}${esc(t("bid.masuk"))}`) : angka ? lencanaHtml("") .replace('class="jm-bd-lc"', 'class="jm-bd-lc" hidden') : "";
+  return kartu({ href: a.h, ikonNama: a.i, foto: ambilFoto(FOTO[a.h]), lencana, judul: t(a.k), ket: t("bid.a." + idAlat(a.h)), pil, h: angka ? a.h : "" });
 };
-const kartuBidang = (s) => `<a class="jm-bd-kt" href="/bidang/${s}"><span class="jm-bd-nama">${ikon(BIDANG[s].ikon, 28)}<span>${esc(t("bid.n." + s))}</span></span><p class="jm-bd-ket">${esc(t("bid.d." + s))}</p></a>`;
+const kartuBidang = (s) => kartu({ href: `/bidang/${s}`, ikonNama: BIDANG[s].ikon, foto: ambilFoto(FOTO_BIDANG[s]), lencana: lencanaHtml(esc(t("bid.b.alat", { n: angka(BIDANG[s].alat.length) }))), judul: t("bid.n." + s), ket: t("bid.d." + s) });
+
+/* isi lencana angka sesudah data tiba */
+function isiLencana() {
+  document.querySelectorAll("#isi .jm-bd-kt[data-h]").forEach(async (el) => {
+    const [berkas, kunci] = ANGKA[el.dataset.h], n = await jumlah(berkas), lc = el.querySelector(".jm-bd-lc");
+    if (n == null || !lc || !el.isConnected) return;
+    lc.textContent = t(kunci, { n: angka(n) }); lc.hidden = false;
+  });
+}
 
 function gambar() {
+  dipakai = new Set();
   const slug = decodeURIComponent(location.pathname.split("/").filter(Boolean)[1] || "");
   const B = BIDANG[slug];
   if (slug && !B) { $("judul").textContent = t("bid.tak_dikenal"); $("jawab").textContent = t("bid.lead"); }
@@ -37,6 +71,20 @@ function gambar() {
   $("isi").innerHTML = B
     ? `<a class="jm-bd-balik" href="/bidang">${esc(t("bid.semua"))}</a><div class="jm-bd-kisi">${B.alat.map(kartuAlat).join("")}</div>`
     : `<div class="jm-bd-kisi">${SLUG.map(kartuBidang).join("")}</div>`;
+  isiLencana(); isiKredit();
+}
+
+/* kredit foto: baris kecil di bawah kisi, dari data/kredit-foto.json (dimuat malas; galat = baris tidak muncul) */
+let KREDIT = null;
+async function isiKredit() {
+  const wadah = $("kredit"), pakai = [...new Set([...document.querySelectorAll("#isi img[data-foto]")].map((i) => i.dataset.foto))];
+  if (!pakai.length) { wadah.hidden = true; return; }
+  try { KREDIT ||= await (await fetch("/data/kredit-foto.json")).json(); } catch { wadah.hidden = true; return; }
+  const baris = pakai.map((f) => KREDIT.baris.find((b) => b.berkas === f.split("/").pop())).filter(Boolean);
+  if (!baris.length) { wadah.hidden = true; return; }
+  const nama = (b) => (b.url && /^https:\/\//.test(b.url) ? `<a href="${esc(b.url)}" target="_blank" rel="noopener noreferrer">${esc(b.foto)}</a>` : esc(b.foto));
+  wadah.innerHTML = `<strong>${esc(t("bid.kredit"))}</strong> ${baris.map((b) => `${nama(b)}, ${esc(b.pembuat)}, ${esc(b.lisensi)}`).join("; ")}.`;
+  wadah.hidden = false;
 }
 
 await mulaiHalaman();
