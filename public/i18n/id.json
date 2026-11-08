@@ -16326,7 +16326,7 @@
  "hdr.c.sumber": "Sumber",
  "hdr.c.skenario": "Skenario",
  "hdr.c.mw_contoh": "contoh {mw} MW",
- "hdr.c.capex": "Capex US$/kW (rentang)",
+ "hdr.c.capex": "Capex (US$/kW)",
  "hdr.c.lcoe_rendah": "LCOE rendah",
  "hdr.c.lcoe_tengah": "LCOE tengah",
  "hdr.c.lcoe_tinggi": "LCOE tinggi",

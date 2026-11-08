@@ -68,7 +68,7 @@ async function mulai() {
   $("isi").innerHTML = hantuHtml(3);
   await muatSemua();
   kepala();
-  $("jawab").insertAdjacentHTML("afterend", `<p class="jm-bantu"><a href="/bioenergi?tab=pelet">${esc(t("rg3.lihat_bio"))}</a> <a href="/surya">${esc(t("sur.dari_rantai"))}</a></p>`);
+  $("jawab").insertAdjacentHTML("afterend", `<p class="jm-bantu"><a href="/bioenergi?tab=pelet">${esc(t("rg3.lihat_bio"))}</a> <a href="/surya">${esc(t("sur.dari_rantai"))}</a> <a href="/angin">${esc(t("ang.dari_rantai"))}</a></p>`);
   $("jawab").insertAdjacentHTML("afterend", `<p class="jm-bantu"><a href="/hidrogen">${esc(t("rg3.lihat_h2"))}</a></p>`);
   bangunTab();
   const semuaKosong = TAB.length && Object.entries(D).every(([k, v]) => k === "orgAda" || v == null);

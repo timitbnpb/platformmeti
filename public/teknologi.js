@@ -265,7 +265,10 @@ function sTelusur() {
     KODE === "bioenergi" && ["bioenergi", "/bioenergi", "tk.tl.bioenergi"],
     KODE === "surya" && ["panel-surya", "/surya", "sur.dari_tek"],
     KODE === "hidrogen" && ["hidrogen", "/hidrogen", "tk.tl.hidrogen"],
+    KODE === "hidro" && ["hidro", "/hidro", "tk.tl.hidro"],
     KODE === "panas-bumi" && ["panas-bumi", "/panas-bumi", "tk.tl.panas-bumi"],
+    KODE === "biomassa-sampah" && ["sampah-energi", "/sampah-energi", "swe.tk.tl"],
+    KODE === "bayu" && ["angin", "/angin", "tk.tl.bayu"],
     ["energi-baru", "/energi-baru", "tk.tl.baru"],
     ["linimasa", "/sejarah", "tk.tl.sejarah"],
   ].filter(Boolean);

@@ -97,6 +97,29 @@ export async function bagianOrg(id, { proyekAda } = {}) {
   if (peranPb.length) out.push(bagian({ id: "panas-bumi", ik: "panas-bumi", topik: "td.ey.pb", j: "td.j.pb", n: peranPb.length, tglData: pbd?.dibangun_pada, lihat: ["/panas-bumi", "td.lihat.pb2"],
     isi: tbl([["td.c.peran"], ["td.c.rantai"]], peranPb.map(([p, tab]) => `<tr>${td("td.c.peran", esc(t("td.pb.p." + p)))}${td("td.c.rantai", taut("/panas-bumi?tab=" + tab, t("pbm.tab." + tab)))}</tr>`)) }));
 
+  /* angin: pemain dan pemasok di modul /angin (rujukan angin.json, tab tujuan) */
+  const and = await ambil("angin"), peranAng = [];
+  if ((and?.pemain || []).some((p) => p.org_id === id)) peranAng.push(["pemain", "pemain"]);
+  if ((lain?.baris || []).some((b) => b.organisasi_id === id && (b.segmen || []).includes("bayu"))) peranAng.push(["pemasok", "rantai"]);
+  if (peranAng.length) out.push(bagian({ id: "angin", ik: "angin", topik: "td.ey.ang", j: "td.j.ang", n: peranAng.length, tglData: and?.dibangun_pada, lihat: ["/angin", "td.lihat.ang"],
+    isi: tbl([["td.c.peran"], ["td.c.rantai"]], peranAng.map(([p, tab]) => `<tr>${td("td.c.peran", esc(t("td.ang.p." + p)))}${td("td.c.rantai", taut("/angin?tab=" + tab, t("ang.tab." + tab)))}</tr>`)) }));
+
+  /* sampah jadi energi: pengembang/mitra PSEL (psel.json) dan pemasok WTE (pemasok_wte.json) di modul /sampah-energi, tab tujuan */
+  const psd = await ambil("psel"), peranSwe = [];
+  if ((psd?.baris || []).some((r) => (r.pengembang || []).some((p) => p.organisasi_id === id))) peranSwe.push(["pengembang", "konsorsium"]);
+  if ((wte?.baris || []).some((b) => b.id === id || b.organisasi_id_ada === id)) peranSwe.push(["pemasok", "pemasok"]);
+  if (peranSwe.length) out.push(bagian({ id: "sampah-energi", ik: "sampah-energi", topik: "swe.td.ey", j: "swe.td.j", n: peranSwe.length, tglData: psd?.dibangun_pada, lihat: ["/sampah-energi", "swe.td.lihat"],
+    isi: tbl([["td.c.peran"], ["td.c.rantai"]], peranSwe.map(([p, tab]) => `<tr>${td("td.c.peran", esc(t("swe.td.p." + p)))}${td("td.c.rantai", taut("/sampah-energi?tab=" + tab, t("swe.tab." + tab)))}</tr>`)) }));
+
+  /* hidro: pemilik, pemasok, kontraktor, dan pendana di modul /hidro (rujukan hidro.json dan proyek_terpadu.json, tab tujuan) */
+  const [hdd, ptd] = await Promise.all([ambil("hidro"), ambil("proyek_terpadu")]), peranHd = [];
+  if ((ptd?.baris || []).some((b) => b.tek === "hidro" && b.pemilik?.org_id === id)) peranHd.push(["pemilik", "pembangkit"]);
+  if ((lain?.baris || []).some((b) => b.organisasi_id === id && (b.segmen || []).includes("hidro"))) peranHd.push(["pemasok", "pemasok"]);
+  if ((hdd?.pemasok?.kontraktor || []).some((k) => k.org_id === id)) peranHd.push(["kontraktor", "pemasok"]);
+  if ((hdd?.pendanaan?.butir || []).some((k) => k.org_id === id)) peranHd.push(["pendana", "pendanaan"]);
+  if (peranHd.length) out.push(bagian({ id: "hidro", ik: "hidro", topik: "td.ey.hdr", j: "td.j.hdr", n: peranHd.length, tglData: hdd?.dibangun_pada, lihat: ["/hidro", "td.lihat.hdr"],
+    isi: tbl([["td.c.peran"], ["td.c.rantai"]], peranHd.map(([p, tab]) => `<tr>${td("td.c.peran", esc(t("td.hdr.p." + p)))}${td("td.c.rantai", taut("/hidro?tab=" + tab, t("hdr.tab." + tab)))}</tr>`)) }));
+
   /* hidrogen: peran organisasi di rantai hidrogen (rujukan hidrogen.json, tab tujuan) */
   const peranH2 = [];
   if (h2) {

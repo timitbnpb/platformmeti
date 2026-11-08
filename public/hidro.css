@@ -56,3 +56,6 @@
 .hdr-s-mw{color:var(--tp-hidro)}.hdr-s-lcoe{color:var(--data1)}.hdr-s-sipil{color:var(--tp-hidro)}.hdr-s-mekanis{color:var(--data5)}.hdr-s-listrik{color:var(--warn)}
 .hdr-s-op{color:var(--ok)}.hdr-s-kon{color:var(--info)}.hdr-s-izin{color:var(--data5)}.hdr-s-ren{color:var(--warn)}.hdr-s-lain{color:var(--ink2)}
 .hdr-grafik{min-height:200px;margin-bottom:12px}
+
+/* sel dua baris: keterangan kecil tidak patah */
+#p-pembangkit .rg3-idk small,#p-biaya .rg3-idk small,#p-ruptl .rg3-idk small{white-space:nowrap}

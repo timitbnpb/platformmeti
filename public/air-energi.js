@@ -146,6 +146,7 @@ function metodeHtml() {
   const langkah = [["tampungan", "ae2.m1"], ["enso", "ae2.m2"], ["spi", "ae2.m3"], ["tekanan", "ae2.m4"]];
   return `<ol class="ae2-metode">${langkah.map(([k, kunci], n) => `<li><span class="ae2-m-no">${svg(IKK[k])}</span><div><b>${esc(t(kunci + ".j"))}</b><p>${esc(t(kunci))}</p></div></li>`).join("")}</ol>
     <div class="ae2-m-aksi"><a class="jm-tbl jm-tbl-kecil" href="/metode">${ikon("metode", 16)}<span>${esc(t("ae2.metode.tautan"))}</span></a>
+    <a class="jm-tbl jm-tbl-kecil ae2-tp" href="/hidro">${ikon("hidro", 16)}<span>${esc(t("hdr.dari_air"))}</span></a>
     ${[["hidro", "ae2.tp.hidro"], ["panas-bumi", "ae2.tp.panas"], ["hidrogen", "ae2.tp.hidrogen"]].map(([id, kunci]) => `<a class="jm-tbl jm-tbl-kecil ae2-tp" href="/topik?id=${id}">${pilTek(id)}<span>${esc(t(kunci))}</span></a>`).join("")}</div>`;
 }
 function judulEx(id, j, s) { const ex = $(id); if (!ex) return; ex.querySelector(".jm-ex-j").innerHTML = j; ex.querySelector(".jm-ex-sub").innerHTML = s; }

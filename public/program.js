@@ -244,7 +244,7 @@ function sIndikator(g) {
 
 function sLain(g) {
   const li = [...D.baris].sort((a, z) => a.urut - z.urut).map((x) => `<li><a href="/program/${esc(x.kode)}"${x.kode === g.kode ? ' aria-current="page"' : ""}>${ikonTek(x.ikon)}<span>${esc(L(x.nama))}</span></a></li>`).join("");
-  return exHtml({ id: "pg-lain", ikon: "proyek", topik: t("pg.s.lain.ey"), judulHtml: esc(t("pg.s.lain.j")), isiHtml: `<ul class="jm-pg-lain">${li}</ul>${g.kode === "plts-100gw" ? `<p class="jm-bantu"><a href="/surya?tab=proyek">${esc(t("sur.dari_program"))}</a></p>` : ""}` });
+  return exHtml({ id: "pg-lain", ikon: "proyek", topik: t("pg.s.lain.ey"), judulHtml: esc(t("pg.s.lain.j")), isiHtml: `<ul class="jm-pg-lain">${li}</ul>${g.kode === "wte" ? `<p class="jm-bantu"><a href="/sampah-energi?tab=kota">${esc(t("swe.ln.program"))}</a></p>` : g.kode === "plts-100gw" ? `<p class="jm-bantu"><a href="/surya?tab=proyek">${esc(t("sur.dari_program"))}</a></p>` : ""}` });
 }
 
 function sCara() {

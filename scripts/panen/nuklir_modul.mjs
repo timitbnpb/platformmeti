@@ -239,6 +239,7 @@ export function bangun() {
       'Daya reaktor Kartini dan Bandung tidak seragam antar-sumber (Kartini 50 atau 100 kW, TRIGA Bandung 250 kW sampai 2 MW); masa berlaku izin operasi ketiga reaktor juga berbeda antar-sumber dan tidak ditampilkan.',
       'Survei opini nasional independen sesudah 2024 tidak ditemukan; survei Bangka Belitung 2025 melibatkan pengembang proyek.',
       'Status nuklir Malaysia, Singapura, Myanmar, Kamboja, dan Laos tidak ditemukan dalam sumber yang dapat diverifikasi; hanya Vietnam, Filipina, dan Thailand yang ditampilkan.',
+      'Volume dan kapasitas penyimpanan limbah radioaktif nasional serta status strategi nasional pengelolaan limbah dan bahan bakar bekas tidak ditemukan sebagai angka; hanya pernyataan perlunya menambah kapasitas.',
       'Fasilitas pengayaan atau fabrikasi bahan bakar komersial tidak ditemukan; rantai pasok nuklir belum ada di global/pemasok_lain.json.',
       'Beberapa butir hanya terbaca dari ringkasan hasil pencarian atau judul (bertingkat bukti cuplikan atau judulnya berketerangan); teks penuh belum dibaca. Halaman Bapeten dan Enerdata tertentu tidak dapat dibuka (403), sehingga tidak dipaksa.',
     ],
