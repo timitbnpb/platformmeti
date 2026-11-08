@@ -15,7 +15,7 @@ const b = (j, s, u, x, o = {}) => bersih({ j: String(j ?? "").trim(), s, u, x: A
 const tanggalPendek = (t) => String(t || "").slice(0, 10);
 
 // halaman situs: judul dari kamus (kunci disimpan, klien memakai t(k) agar mengikuti bahasa)
-const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai", "nav.rantai"], ["/rantai-global", "rg3.nav"], ["/baterai-ev", "bev.nav"], ["/jaringan", "jr.nav"], ["/bioenergi", "bn.nav"], ["/asean", "nav.asean"], ["/jejaring", "nav.jejaring"], ["/metode", "nav.sub.metode"],
+const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai", "nav.rantai"], ["/rantai-global", "rg3.nav"], ["/lelang", "lel.nav"], ["/baterai-ev", "bev.nav"], ["/jaringan", "jr.nav"], ["/bioenergi", "bn.nav"], ["/asean", "nav.asean"], ["/jejaring", "nav.jejaring"], ["/metode", "nav.sub.metode"],
   ["/proyek", "nav.proyek"], ["/wilayah", "nav.wilayah"], ["/regulasi", "nav.regulasi"], ["/berita", "nav.berita"], ["/kalender", "nav.kalender"], ["/tentang", "nav.tentang"],
   ["/pustaka", "nav.pustaka"], ["/program", "nav.program"], ["/topik", "nav.topik"], ["/peluang", "nav.peluang"], ["/indeks", "nav.indeks"], ["/strategi", "nav.strategi"],
   ["/direktori", "nav.direktori"], ["/transisi", "nav.transisi"], ["/pelacak", "nav.pelacak"], ["/kuadran", "nav.kuadran"], ["/rapor", "nav.rapor"], ["/kerja", "nav.kerja"],

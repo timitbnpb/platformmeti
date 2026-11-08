@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import { bangun } from '../scripts/pipa/keuangan_hijau.mjs';
 
 const D = JSON.parse(fs.readFileSync(new URL('../public/data/keuangan_hijau.json', import.meta.url), 'utf8'));
-const TINGKAT = new Set(['resmi', 'via-pihak-ketiga', 'kata-pihak', 'media']);
+const TINGKAT = new Set(['resmi', 'via-pihak-ketiga', 'kata-pihak', 'media', 'situs-sendiri']);
 
 test('berkas sama dengan hasil bangun()', () => assert.deepEqual(JSON.parse(JSON.stringify(bangun())), D));
 test('tiap baris bersumber terdaftar, bertanggal, bertingkat bukti', () => {

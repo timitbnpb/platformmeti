@@ -108,6 +108,11 @@ export async function bagianOrg(id, { proyekAda } = {}) {
   out.push(bagian({ id: "pembiayaan-luar", ik: "berlian", topik: "td.ey.biaya", j: "td.j.biaya", n: idb.size ? pbs.length : 0, tglData: pb?.dibangun_pada,
     isi: tbl([["td.c.proyek"], ["td.c.pemberi"], ["td.c.tahun"], ["td.c.teknologi"], ["td.c.nilai", "jm-num"]], pbs.map((b) => `<tr>${td("td.c.proyek", b.proyek_id ? taut("/p/" + encodeURIComponent(b.proyek_id), b.nama) : esc(b.nama))}${td("td.c.pemberi", esc(b.pemberi || "-"))}${td("td.c.tahun", esc(String(b.tahun || "-")))}${td("td.c.teknologi", esc(slug(b.teknologi)))}${td("td.c.nilai", esc(usd(b.nilai_usd_juta)), "jm-num")}</tr>`)) }));
 
+  /* lelang dan pengadaan EBT (tertaut dua arah dengan /lelang) */
+  const lel = await ambil("lelang");
+  const ll = urut((lel?.putaran || []).filter((p) => [...(p.pemenang || []), ...(p.peserta || []), p.penyelenggara].some((o) => o.org_id === id)), (p) => Date.parse(p.tanggal.length === 4 ? p.tanggal + "-01-01" : p.tanggal.length === 7 ? p.tanggal + "-01" : p.tanggal) || 0);
+  out.push(bagian({ id: "lelang", ik: "lelang", topik: "td.ey.lelang", j: "td.j.lelang", n: ll.length, tglData: lel?.dibangun_pada, lihat: ["/lelang", "td.lihat.lelang"],
+    isi: tbl([["lel.c.tgl"], ["lel.c.putaran"], ["lel.c.tahap"], ["lel.c.skema"]], ll.map((p) => `<tr>${td("lel.c.tgl", esc(p.tanggal))}${td("lel.c.putaran", taut("/lelang#putaran", p.nama))}${td("lel.c.tahap", esc(t("lel.tahap." + p.tahap)))}${td("lel.c.skema", esc(t("lel.skema." + p.skema)))}</tr>`)) }));
   return out.join("");
 }
 
@@ -141,6 +146,11 @@ export async function bagianProyek(id) {
   const rk = (rs?.baris || []).filter((b) => b.id === id && b.skor != null);
   out.push(bagian({ id: "risiko", ik: "peringatan", topik: "td.ey.risiko", j: "td.j.risiko", n: rk.length, tglData: rs?.dibangun_pada, lihat: ["/risiko", "td.lihat.risiko"],
     isi: tbl([["td.c.skor", "jm-num"], ["td.c.kelas"], ["td.c.hutan"], ["td.c.gambut"], ["td.c.bahaya"]], rk.map((b) => `<tr>${td("td.c.skor", esc(angka(b.skor)), "jm-num")}${td("td.c.kelas", esc(slug(b.kelas)))}${td("td.c.hutan", esc(b.komponen?.hutan?.ket || "-"))}${td("td.c.gambut", esc(b.komponen?.gambut?.ket || "-"))}${td("td.c.bahaya", esc(b.komponen?.bahaya?.ket || "-"))}</tr>`)) }));
+  /* lelang dan pengadaan EBT (tertaut dua arah dengan /lelang) */
+  const lel = await ambil("lelang");
+  const ll = urut((lel?.putaran || []).filter((p) => (p.proyek_id || []).includes(id)), (p) => Date.parse(p.tanggal.length === 4 ? p.tanggal + "-01-01" : p.tanggal.length === 7 ? p.tanggal + "-01" : p.tanggal) || 0);
+  out.push(bagian({ id: "lelang", ik: "lelang", topik: "td.ey.lelang", j: "td.j.p_lelang", n: ll.length, tglData: lel?.dibangun_pada, lihat: ["/lelang", "td.lihat.lelang"],
+    isi: tbl([["lel.c.tgl"], ["lel.c.putaran"], ["lel.c.tahap"], ["lel.c.skema"]], ll.map((p) => `<tr>${td("lel.c.tgl", esc(p.tanggal))}${td("lel.c.putaran", taut("/lelang#putaran", p.nama))}${td("lel.c.tahap", esc(t("lel.tahap." + p.tahap)))}${td("lel.c.skema", esc(t("lel.skema." + p.skema)))}</tr>`)) }));
   return out.join("");
 }
 

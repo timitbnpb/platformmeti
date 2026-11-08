@@ -14518,5 +14518,10 @@
  "lel.tip.indonesia": "Indonesia (PPA)",
  "lel.tip.dimenangkan": "Dimenangkan",
  "lel.tip.ditawar": "Ditawar",
- "lel.tip.badan": "Badan lelang"
+ "lel.tip.badan": "Badan lelang",
+ "lel.nav": "Lelang EBT",
+ "td.ey.lelang": "Lelang dan pengadaan",
+ "td.j.lelang": "Terlibat dalam putaran pengadaan EBT",
+ "td.j.p_lelang": "Muncul dalam putaran pengadaan",
+ "td.lihat.lelang": "Lihat semua lelang"
 }

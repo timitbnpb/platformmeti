@@ -38,7 +38,7 @@ function daftar() {
 export async function mulai(panel) {
   E = kumpul();
   const tahun = [...new Set(E.map((x) => tahunDari(x.tanggal)))].sort((a, b) => b - a);
-  tahunPilih = String(tahun[0]);
+  tahunPilih = String(tahun.find((y) => y <= new Date().getFullYear()) ?? tahun[0]);
   const ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: false }), tingkat: "h2" });
   const kebijakan = E.filter((x) => x.jenis === "kebijakan").length;
   panel.innerHTML = [

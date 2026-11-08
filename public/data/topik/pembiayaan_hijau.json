@@ -2005,6 +2005,15 @@
      "id": "pd_ob_iif_pub_2023_nov2025"
     },
     {
+     "penerbit": "PT Pertamina Geothermal Energy Tbk",
+     "instrumen": "Green bond global USD 400 juta (jatuh tempo 2028)",
+     "nilai": "400 juta USD",
+     "tahun": "2023",
+     "tautan": "Sumber",
+     "url": "https://investasi.kontan.co.id/news/green-bond-pertamina-geothermal-pgeo-oversubscribed-825-kali",
+     "id": null
+    },
+    {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
      "instrumen": "Agregat Global Sovereign Green Sukuk (SNI) 2018-2024",
      "nilai": "6.600 juta USD",
@@ -2060,6 +2069,33 @@
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk wholesale PBSG001 (penerbitan 2022)",
+     "nilai": "6.730 IDR miliar",
+     "tahun": "2022",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk wholesale PBSG001 (penerbitan 2023)",
+     "nilai": "15.490 IDR miliar",
+     "tahun": "2023",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk wholesale PBSG001 (penerbitan 2024)",
+     "nilai": "8.950 IDR miliar",
+     "tahun": "2024",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
      "instrumen": "Green Sukuk wholesale PBSG002 (reopening)",
      "nilai": "-",
      "tahun": "2026",
@@ -2068,12 +2104,120 @@
      "id": "pd_ob_ri_pbsg002_2026"
     },
     {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk Ritel ST006",
+     "nilai": "1.460 IDR miliar",
+     "tahun": "2019",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk Ritel ST007",
+     "nilai": "5.420 IDR miliar",
+     "tahun": "2020",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk Ritel ST008",
+     "nilai": "5.000 IDR miliar",
+     "tahun": "2021",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk Ritel ST009",
+     "nilai": "10.000 IDR miliar",
+     "tahun": "2022",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk Ritel ST010T4 (tranche hijau)",
+     "nilai": "3.300 IDR miliar",
+     "tahun": "2023",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk Ritel ST011T4",
+     "nilai": "5.500 IDR miliar",
+     "tahun": "2023",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk Ritel ST012T4 (ISIN IDJ000030903)",
+     "nilai": "5.080 IDR miliar",
+     "tahun": "2024",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
+     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
+     "instrumen": "Green Sukuk Ritel ST013T4 (ISIN IDJ000033709)",
+     "nilai": "4.840 IDR miliar",
+     "tahun": "2024",
+     "tautan": "Sumber",
+     "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
+     "id": null
+    },
+    {
      "penerbit": "Pemerintah Indonesia (Kemenkeu)",
      "instrumen": "Total sukuk hijau negara sampai 2025",
      "nilai": "185.600 IDR miliar",
      "tahun": "2025",
      "tautan": "Sumber",
      "url": "https://www.antaranews.com/berita/4895069",
+     "id": null
+    },
+    {
+     "penerbit": "PT Sarana Multi Infrastruktur (Persero)",
+     "instrumen": "Green Bond Berkelanjutan I Tahap I 2018, Seri A",
+     "nilai": "251,5 IDR miliar",
+     "tahun": "2018",
+     "tautan": "Sumber",
+     "url": "https://www.ptsmi.co.id/green-bonds",
+     "id": null
+    },
+    {
+     "penerbit": "PT Sarana Multi Infrastruktur (Persero)",
+     "instrumen": "Green Bond Berkelanjutan I Tahap I 2018, Seri B",
+     "nilai": "248,5 IDR miliar",
+     "tahun": "2018",
+     "tautan": "Sumber",
+     "url": "https://www.ptsmi.co.id/green-bonds",
+     "id": null
+    },
+    {
+     "penerbit": "Star Energy Geothermal Salak Ltd dan Star Energy Geothermal Darajat II Ltd (Barito Pacific)",
+     "instrumen": "Senior green bond USD, tranche 1 (3,25%, jatuh tempo April 2029)",
+     "nilai": "320 juta USD",
+     "tahun": "2020",
+     "tautan": "Sumber",
+     "url": "https://www.thinkgeoenergy.com/star-energy-geothermal-salak-darajat-successfully-raise-1-1bn-green-bond-funding/",
+     "id": null
+    },
+    {
+     "penerbit": "Star Energy Geothermal Salak Ltd dan Star Energy Geothermal Darajat II Ltd (Barito Pacific)",
+     "instrumen": "Senior green bond USD, tranche 2 (4,85%, jatuh tempo Oktober 2038)",
+     "nilai": "790 juta USD",
+     "tahun": "2020",
+     "tautan": "Sumber",
+     "url": "https://www.thinkgeoenergy.com/star-energy-geothermal-salak-darajat-successfully-raise-1-1bn-green-bond-funding/",
      "id": null
     }
    ],
