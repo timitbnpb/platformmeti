@@ -19,10 +19,11 @@ const R2 = {
   get: async (k) => (BERKAS.has(k) ? { body: BERKAS.get(k) } : null),
   delete: async (k) => { BERKAS.delete(k); },
 };
+const PDF = new TextEncoder().encode("%PDF-1.4\n1 0 obj<<>>endobj\n%%EOF");
 const JPEG = new Uint8Array([0xff, 0xd8, 0xff, 0xe0, 0, 16, 0x4a, 0x46, 0x49, 0x46, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0xff, 0xd9]);
 const PERAN_SEMUA = ["anggota", "pengurus", "wilayah", "kurator", "admin", "super"];
-const PERAN_TULIS = ["kurator", "admin", "super"];
-const PERAN_TOLAK_TULIS = ["anggota", "pengurus", "wilayah"];
+const PERAN_TULIS = ["admin", "super"];
+const PERAN_TOLAK_TULIS = ["anggota", "pengurus", "wilayah", "kurator"];
 
 let E, tutup;
 const COOKIE = {};
@@ -57,22 +58,25 @@ const json = async (res) => res.json();
 const SEMUA_RUTE = [
   ["GET", "/api/agenda"], ["GET", "/api/agenda/ac_029"], ["PUT", "/api/agenda/ac_029", {}],
   ["POST", "/api/agenda/ac_029/foto", JPEG], ["PATCH", "/api/agenda/foto/1", {}], ["DELETE", "/api/agenda/foto/1"], ["GET", "/api/agenda/foto/1"],
+  ["GET", "/api/agenda/sumber-resmi"], ["POST", "/api/agenda/kegiatan", {}], ["PATCH", "/api/agenda/kegiatan/k-1", {}], ["DELETE", "/api/agenda/kegiatan/k-1"],
+  ["GET", "/api/agenda/dokumen/1"], ["PATCH", "/api/agenda/dokumen/1", {}], ["DELETE", "/api/agenda/dokumen/1"],
+  ["POST", "/api/agenda/ac_029/dokumen?asal=meti&nama=a.pdf", PDF],
 ];
 
-test("modul mengekspor tepat 7 rute agenda", () => {
-  assert.equal(Object.keys(rute).length, 7);
+test("modul mengekspor tepat 15 rute agenda", () => {
+  assert.equal(Object.keys(rute).length, 15);
 });
 
-test("publik DITOLAK 401 di semua 7 rute (kode belum_masuk)", async () => {
+test("publik DITOLAK 401 di semua rute (kode belum_masuk)", async () => {
   for (const [m, j, b] of SEMUA_RUTE) {
     const res = await panggil(m, j, { badan: b });
     assert.equal(res.status, 401, `${m} ${j}`);
   }
 });
 
-test("pengurus/anggota/wilayah DITOLAK 403 untuk PUT, POST foto, PATCH, DELETE", async () => {
+test("pengurus/anggota/wilayah/kurator DITOLAK 403 untuk semua rute tulis agenda", async () => {
   const tulis = SEMUA_RUTE.filter(([m]) => m !== "GET");
-  assert.equal(tulis.length, 4);
+  assert.equal(tulis.length, 10);
   const jejak0 = await cacah("jejak"), bukti0 = await cacah("agenda_bukti");
   for (const peran of PERAN_TOLAK_TULIS) for (const [m, j, b] of tulis) {
     assert.equal((await panggil(m, j, { peran, badan: b })).status, 403, `${peran} ${m} ${j}`);
@@ -96,8 +100,8 @@ test("semua peran login boleh GET (200): daftar, ref sah, ref belum berbukti", a
 test("ref tak dikenal, ref regulasi, dan ref berpola salah: 404 (baca dan tulis)", async () => {
   for (const ref of ["tidak_ada", "reg_001", "ADA", "a".repeat(41)]) {
     assert.equal((await panggil("GET", `/api/agenda/${ref}`, { peran: "anggota" })).status, 404, `GET ${ref}`);
-    assert.equal((await panggil("PUT", `/api/agenda/${ref}`, { peran: "kurator", badan: { tempat: "x" } })).status, 404, `PUT ${ref}`);
-    assert.equal((await panggil("POST", `/api/agenda/${ref}/foto`, { peran: "kurator", badan: JPEG })).status, 404, `POST ${ref}`);
+    assert.equal((await panggil("PUT", `/api/agenda/${ref}`, { peran: "admin", badan: { tempat: "x" } })).status, 404, `PUT ${ref}`);
+    assert.equal((await panggil("POST", `/api/agenda/${ref}/foto`, { peran: "admin", badan: JPEG })).status, 404, `POST ${ref}`);
   }
   assert.equal(await cacah("agenda_bukti"), 0);
   assert.equal(BERKAS.size, 0);
@@ -112,7 +116,7 @@ test("tulis tanpa x-pb: 403 walau peran berhak, tanpa efek", async () => {
   assert.equal(await cacah("agenda_bukti"), 0);
 });
 
-test("PUT: kurator/admin/super tambah lalu ubah; tiap tulis = satu jejak agenda_bukti; null mengosongkan", async () => {
+test("PUT: admin/super tambah lalu ubah; tiap tulis = satu jejak agenda_bukti; null mengosongkan", async () => {
   for (const peran of PERAN_TULIS) {
     const j0 = await cacah("jejak", "WHERE tabel = 'agenda_bukti'");
     const res = await panggil("PUT", "/api/agenda/ac_029", { peran, badan: { tempat: `Jakarta ${peran}`, notulensi: `Catatan ${peran}` } });
@@ -144,23 +148,23 @@ let FOTO_ID, KUNCI;
 test("unggah: bukan gambar (magic byte salah) 422 walau content-type image/jpeg; kosong 422", async () => {
   const j0 = await cacah("jejak"), f0 = await cacah("agenda_foto");
   const palsu = new TextEncoder().encode("<html>bukan gambar</html>");
-  let res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "kurator", badan: palsu, header: { "content-type": "image/jpeg" } });
+  let res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "admin", badan: palsu, header: { "content-type": "image/jpeg" } });
   assert.equal(res.status, 422);
-  res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "kurator", badan: new Uint8Array(0) });
+  res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "admin", badan: new Uint8Array(0) });
   assert.equal(res.status, 422);
   assert.equal(await cacah("agenda_foto"), f0); assert.equal(await cacah("jejak"), j0); assert.equal(BERKAS.size, 0);
 });
 
 test("unggah: lebih dari 5 MB 413 tanpa objek R2 dan tanpa baris", async () => {
   const besar = new Uint8Array(5 * 1024 * 1024 + 1); besar.set(JPEG);
-  const res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "kurator", badan: besar });
+  const res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "admin", badan: besar });
   assert.equal(res.status, 413);
   assert.equal(await cacah("agenda_foto"), 0); assert.equal(BERKAS.size, 0);
 });
 
 test("unggah JPEG sah: tersimpan, jejak agenda_foto, GET foto = byte sama, image/jpeg, private no-store", async () => {
   const j0 = await cacah("jejak", "WHERE tabel = 'agenda_foto'");
-  const res = await panggil("POST", "/api/agenda/ac_029/foto?keterangan=Peserta%20rapat", { peran: "kurator", badan: JPEG });
+  const res = await panggil("POST", "/api/agenda/ac_029/foto?keterangan=Peserta%20rapat", { peran: "admin", badan: JPEG });
   assert.ok([200, 201].includes(res.status), "status " + res.status);
   FOTO_ID = (await json(res)).id;
   const baris = await satu("SELECT kunci_r2, tipe, ukuran, keterangan, oleh FROM agenda_foto WHERE id = ?", FOTO_ID);
@@ -182,15 +186,15 @@ test("unggah JPEG sah: tersimpan, jejak agenda_foto, GET foto = byte sama, image
   assert.ok(!("kunci_r2" in det.foto[0]), "kunci R2 tak bocor ke klien");
 });
 
-test("PATCH foto: kurator ubah keterangan/urutan + jejak; masukan salah 422; id tak ada 404", async () => {
+test("PATCH foto: admin ubah keterangan/urutan + jejak; masukan salah 422; id tak ada 404", async () => {
   const j0 = await cacah("jejak", "WHERE tabel = 'agenda_foto'");
-  assert.equal((await panggil("PATCH", `/api/agenda/foto/${FOTO_ID}`, { peran: "kurator", badan: { keterangan: "Baru", urutan: 3 } })).status, 200);
+  assert.equal((await panggil("PATCH", `/api/agenda/foto/${FOTO_ID}`, { peran: "admin", badan: { keterangan: "Baru", urutan: 3 } })).status, 200);
   const b = await satu("SELECT keterangan, urutan FROM agenda_foto WHERE id = ?", FOTO_ID);
   assert.deepEqual([b.keterangan, b.urutan], ["Baru", 3]);
   assert.equal(await cacah("jejak", "WHERE tabel = 'agenda_foto'"), j0 + 1);
-  assert.equal((await panggil("PATCH", `/api/agenda/foto/${FOTO_ID}`, { peran: "kurator", badan: { urutan: 1000 } })).status, 422);
-  assert.equal((await panggil("PATCH", `/api/agenda/foto/${FOTO_ID}`, { peran: "kurator", badan: { kunci_r2: "agenda/x.jpg" } })).status, 422);
-  assert.equal((await panggil("PATCH", "/api/agenda/foto/99999", { peran: "kurator", badan: { urutan: 1 } })).status, 404);
+  assert.equal((await panggil("PATCH", `/api/agenda/foto/${FOTO_ID}`, { peran: "admin", badan: { urutan: 1000 } })).status, 422);
+  assert.equal((await panggil("PATCH", `/api/agenda/foto/${FOTO_ID}`, { peran: "admin", badan: { kunci_r2: "agenda/x.jpg" } })).status, 422);
+  assert.equal((await panggil("PATCH", "/api/agenda/foto/99999", { peran: "admin", badan: { urutan: 1 } })).status, 404);
 });
 
 test("DELETE foto: baris D1 dan objek R2 hilang, jejak hapus; GET sesudahnya 404", async () => {
@@ -222,7 +226,7 @@ test("bila D1 gagal setelah R2 ditulis, objek R2 dibersihkan (batas 40 foto lewa
   let n = await cacah("agenda_foto", `WHERE bukti_id = ${bukti.id}`);
   for (; n < 40; n++) await q("INSERT INTO agenda_foto (bukti_id, kunci_r2, tipe, ukuran) VALUES (?,?,?,1)", bukti.id, `agenda/${n.toString(16).padStart(32, "0")}.jpg`, "image/jpeg").run();
   const r2Sebelum = BERKAS.size;
-  const res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "kurator", badan: JPEG });
+  const res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "admin", badan: JPEG });
   assert.ok(res.status >= 400, "status " + res.status);
   assert.equal(BERKAS.size, r2Sebelum, "tidak ada objek R2 yatim");
   assert.equal(await cacah("agenda_foto", `WHERE bukti_id = ${bukti.id}`), 40);
@@ -316,7 +320,7 @@ const POLOS = {
 test("unggah bermetadata (EXIF/XMP/APP13, per format) DITOLAK 422 tanpa baris, jejak, atau objek R2", async () => {
   const f0 = await cacah("agenda_foto"), j0 = await cacah("jejak"), r0 = BERKAS.size;
   for (const [nama, b] of Object.entries(BERMETADATA)) {
-    assert.equal((await panggil("POST", "/api/agenda/ac_029/foto", { peran: "kurator", badan: b })).status, 422, nama);
+    assert.equal((await panggil("POST", "/api/agenda/ac_029/foto", { peran: "admin", badan: b })).status, 422, nama);
   }
   assert.equal(await cacah("agenda_foto"), f0); assert.equal(await cacah("jejak"), j0); assert.equal(BERKAS.size, r0);
 });
@@ -325,7 +329,7 @@ test("unggah polos (JPEG/PNG/WebP tanpa metadata) tetap lolos", async () => {
   const bukti = await satu("SELECT id FROM agenda_bukti WHERE kegiatan_ref = 'ac_029'");
   await q("DELETE FROM agenda_foto WHERE bukti_id = ?", bukti.id).run(); // kosongkan slot dari uji batas 40
   for (const [nama, b] of Object.entries(POLOS)) {
-    const res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "kurator", badan: b });
+    const res = await panggil("POST", "/api/agenda/ac_029/foto", { peran: "admin", badan: b });
     assert.ok([200, 201].includes(res.status), `${nama}: ${res.status}`);
   }
 });
@@ -347,4 +351,154 @@ test("path dengan %E0 (UTF-8 rusak) di rute agenda: 404, bukan 500", async () =>
     const res = await panggil(m, j, { peran: "admin", badan: m === "PUT" ? {} : m === "POST" ? JPEG : undefined });
     assert.equal(res.status, 404, `${m} ${j}`);
   }
+});
+
+// ---- Kegiatan admin (k-*) dan dokumen (0032) ----
+const zip = (...bagian) => new Uint8Array([0x50, 0x4b, 3, 4, ...new TextEncoder().encode(bagian.join(" "))]);
+const PPTX = zip("[Content_Types].xml", "ppt/slides/slide1.xml");
+const DOCX = zip("[Content_Types].xml", "word/document.xml");
+const KEG = { judul: "Audiensi dengan Kementerian", tanggal: "2026-11-20", jenis: "audiensi", tempat: "Jakarta" };
+let REF, DOK_ANGGOTA, DOK_PENGURUS, DOK_RESMI;
+const dok = (ref, qs, badan, peran = "admin") => panggil("POST", `/api/agenda/${ref}/dokumen?${qs}`, { peran, badan });
+
+test("kegiatan: kurator/anggota 403; admin buat 201 {ref k-angka} + jejak; validasi CHECK 422", async () => {
+  for (const peran of ["kurator", "anggota"]) assert.equal((await panggil("POST", "/api/agenda/kegiatan", { peran, badan: KEG })).status, 403, peran);
+  assert.equal(await cacah("agenda_kegiatan"), 0);
+  for (const salah of [{}, { ...KEG, judul: "ab" }, { ...KEG, tanggal: "20-11-2026" }, { ...KEG, tanggal: "2026-13-45" }, { ...KEG, jenis: "pesta" },
+    { ...KEG, tanggal_selesai: "2026-11-19" }, { ...KEG, tempat: "x".repeat(201) }, { ...KEG, ref: "k-1" }]) {
+    assert.equal((await panggil("POST", "/api/agenda/kegiatan", { peran: "admin", badan: salah })).status, 422, JSON.stringify(salah));
+  }
+  const j0 = await cacah("jejak", "WHERE tabel = 'agenda_kegiatan'");
+  const res = await panggil("POST", "/api/agenda/kegiatan", { peran: "admin", badan: KEG });
+  assert.equal(res.status, 201);
+  REF = (await json(res)).ref;
+  assert.match(REF, /^k-\d+$/);
+  assert.equal(await cacah("jejak", "WHERE tabel = 'agenda_kegiatan'"), j0 + 1);
+  assert.equal((await satu("SELECT judul FROM agenda_kegiatan WHERE ref = ?", REF)).judul, KEG.judul);
+});
+
+test("kegiatan: PATCH sebagian (kurator 403, rentang salah 422, ref arsip 404) lalu tampil di daftar dan detail", async () => {
+  assert.equal((await panggil("PATCH", `/api/agenda/kegiatan/${REF}`, { peran: "kurator", badan: { tempat: "x" } })).status, 403);
+  assert.equal((await panggil("PATCH", `/api/agenda/kegiatan/${REF}`, { peran: "admin", badan: { tanggal_selesai: "2026-11-01" } })).status, 422);
+  assert.equal((await panggil("PATCH", `/api/agenda/kegiatan/${REF}`, { peran: "admin", badan: {} })).status, 422);
+  assert.equal((await panggil("PATCH", "/api/agenda/kegiatan/ac_029", { peran: "admin", badan: { tempat: "x" } })).status, 404);
+  assert.equal((await panggil("PATCH", `/api/agenda/kegiatan/${REF}`, { peran: "super", badan: { tempat: "Bandung", tanggal_selesai: "2026-11-21" } })).status, 200);
+  const d = await json(await panggil("GET", "/api/agenda", { peran: "anggota" }));
+  const b = d.kegiatan.find((x) => x.ref === REF);
+  assert.deepEqual(b, { ref: REF, judul: KEG.judul, tanggal: "2026-11-20", tanggal_selesai: "2026-11-21", jenis: "audiensi", tempat: "Bandung", sumber: "admin", foto_n: 0, dok_n: 0, ada_notulensi: false });
+  assert.equal(d.kegiatan.find((x) => x.ref === "ac_029").sumber, "arsip");
+  assert.ok(Array.isArray(d.bukti), "kunci lama tetap ada");
+  const g = await json(await panggil("GET", `/api/agenda/${REF}`, { peran: "anggota" }));
+  assert.equal(g.kegiatan.judul, KEG.judul); assert.deepEqual(g.dokumen, []);
+  assert.equal((await panggil("PUT", `/api/agenda/${REF}`, { peran: "admin", badan: { notulensi: "Hasil audiensi" } })).status, 200);
+  assert.equal((await panggil("PUT", `/api/agenda/${REF}`, { peran: "kurator", badan: { notulensi: "x" } })).status, 403);
+  assert.equal((await panggil("GET", "/api/agenda/k-999", { peran: "anggota" })).status, 404);
+});
+
+test("dokumen: PDF dan PPTX sah diterima; bawaan akses (meti->anggota, eksternal->pengurus); R2 kunci agenda-dok/", async () => {
+  let res = await dok(REF, "asal=meti&nama=Materi%20Paparan.pptx&keterangan=Slide", PPTX);
+  assert.equal(res.status, 201); DOK_ANGGOTA = (await json(res)).id;
+  res = await dok(REF, "asal=eksternal&nama=Surat%20Resmi.pdf&dari=Kementerian", PDF);
+  assert.equal(res.status, 201); DOK_PENGURUS = (await json(res)).id;
+  res = await dok(REF, "asal=eksternal&nama=Peraturan.pdf", PDF);
+  assert.equal(res.status, 201); DOK_RESMI = (await json(res)).id;
+  assert.equal((await satu("SELECT akses, tipe, ukuran FROM agenda_dokumen WHERE id = ?", DOK_ANGGOTA)).akses, "anggota");
+  assert.equal((await satu("SELECT akses, tipe FROM agenda_dokumen WHERE id = ?", DOK_PENGURUS)).akses, "pengurus");
+  assert.match((await satu("SELECT kunci_r2 FROM agenda_dokumen WHERE id = ?", DOK_ANGGOTA)).kunci_r2, /^agenda-dok\/[0-9a-f]{32}\.pptx$/);
+  assert.equal((await dok(REF, "asal=meti&nama=Naskah.docx", DOCX)).status, 201);
+  assert.ok(await cacah("jejak", "WHERE tabel = 'agenda_dokumen'") >= 4);
+  assert.equal((await dok(REF, "asal=meti&nama=a.pdf", PDF, "kurator")).status, 403);
+});
+
+test("dokumen: EXE, zip asing, ekstensi tak cocok, tanpa marka OOXML 415; kosong/asal salah 422; > 20 MB 413", async () => {
+  const n0 = await cacah("agenda_dokumen"), r2 = BERKAS.size;
+  const exe = new Uint8Array([0x4d, 0x5a, 0x90, 0, 3, 0]);
+  assert.equal((await dok(REF, "asal=meti&nama=a.exe", exe)).status, 415);
+  assert.equal((await dok(REF, "asal=meti&nama=a.pdf", exe)).status, 415);
+  assert.equal((await dok(REF, "asal=meti&nama=a.zip", zip("[Content_Types].xml", "ppt/"))).status, 415);
+  assert.equal((await dok(REF, "asal=meti&nama=a.pptx", zip("[Content_Types].xml", "word/"))).status, 415);
+  assert.equal((await dok(REF, "asal=meti&nama=a.pptx", PDF)).status, 415);
+  assert.equal((await dok(REF, "asal=meti&nama=a.pdf", new Uint8Array(0))).status, 422);
+  assert.equal((await dok(REF, "asal=lain&nama=a.pdf", PDF)).status, 422);
+  assert.equal((await dok(REF, "asal=meti", PDF)).status, 422);
+  const besar = new Uint8Array(20 * 1024 * 1024 + 1); besar.set(PDF);
+  assert.equal((await dok(REF, "asal=meti&nama=besar.pdf", besar)).status, 413);
+  assert.equal(await cacah("agenda_dokumen"), n0); assert.equal(BERKAS.size, r2);
+  assert.equal((await dok("k-12345", "asal=meti&nama=a.pdf", PDF)).status, 404);
+});
+
+test("dokumen: anggota tidak melihat akses pengurus (daftar, detail, unduhan 404); pengurus/kurator melihat", async () => {
+  const idPengurus = (g) => g.dokumen.map((d) => d.id).includes(DOK_PENGURUS);
+  assert.equal(idPengurus(await json(await panggil("GET", `/api/agenda/${REF}`, { peran: "anggota" }))), false);
+  for (const peran of ["pengurus", "kurator", "wilayah", "admin", "super"]) {
+    assert.equal(idPengurus(await json(await panggil("GET", `/api/agenda/${REF}`, { peran }))), true, peran);
+    assert.equal((await panggil("GET", `/api/agenda/dokumen/${DOK_PENGURUS}`, { peran })).status, 200, peran);
+  }
+  assert.equal((await panggil("GET", `/api/agenda/dokumen/${DOK_PENGURUS}`, { peran: "anggota" })).status, 404);
+  assert.equal((await panggil("GET", `/api/agenda/dokumen/${DOK_ANGGOTA}`, { peran: "anggota" })).status, 200);
+  const dA = (await json(await panggil("GET", "/api/agenda", { peran: "anggota" }))).kegiatan.find((x) => x.ref === REF);
+  const dP = (await json(await panggil("GET", "/api/agenda", { peran: "pengurus" }))).kegiatan.find((x) => x.ref === REF);
+  assert.equal(dA.dok_n, 2); assert.equal(dP.dok_n, 4);
+  const g = await json(await panggil("GET", `/api/agenda/${REF}`, { peran: "pengurus" }));
+  assert.deepEqual(Object.keys(g.dokumen[0]).sort(), ["akses", "asal", "dari", "dibuat", "id", "keterangan", "nama_berkas", "penerbit", "sumber_resmi", "tanggal_terbit", "tipe", "ukuran"]);
+});
+
+test("dokumen: header unduh (attachment ASCII + filename* UTF-8, content-type, nosniff, private no-store) dan isi sama", async () => {
+  const id = (await json(await panggil("POST", `/api/agenda/${REF}/dokumen?asal=meti&nama=${encodeURIComponent('Rapat "Kerja" é.pdf')}`, { peran: "admin", badan: PDF }))).id;
+  const res = await panggil("GET", `/api/agenda/dokumen/${id}`, { peran: "anggota" });
+  assert.equal(res.status, 200);
+  assert.equal(res.headers.get("content-type"), "application/pdf");
+  const cd = res.headers.get("content-disposition");
+  assert.match(cd, /^attachment; filename="Rapat _Kerja_ _\.pdf"; filename\*=UTF-8''Rapat%20%22Kerja%22%20%C3%A9\.pdf$/);
+  assert.equal(res.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(res.headers.get("cache-control"), "private, no-store");
+  assert.deepEqual(new Uint8Array(await res.arrayBuffer()), PDF);
+  const p = await panggil("GET", `/api/agenda/dokumen/${DOK_ANGGOTA}`, { peran: "anggota" });
+  assert.match(p.headers.get("content-type"), /presentationml\.presentation$/);
+  assert.equal((await panggil("GET", "/api/agenda/dokumen/99999", { peran: "anggota" })).status, 404);
+  await panggil("DELETE", `/api/agenda/dokumen/${id}`, { peran: "admin" });
+});
+
+test("sumber_resmi: tanpa penerbit 422; asal meti 422; dengan penerbit memaksa akses anggota dan muncul di sumber-resmi", async () => {
+  const patch = (id, badan, peran = "admin") => panggil("PATCH", `/api/agenda/dokumen/${id}`, { peran, badan });
+  assert.equal((await patch(DOK_RESMI, { sumber_resmi: 1 })).status, 422);
+  assert.equal((await patch(DOK_RESMI, { sumber_resmi: 1, penerbit: "K" })).status, 422);
+  assert.equal((await patch(DOK_ANGGOTA, { sumber_resmi: 1, penerbit: "Kementerian ESDM" })).status, 422, "hanya asal eksternal");
+  assert.equal((await patch(DOK_RESMI, { sumber_resmi: 1, penerbit: "Kementerian ESDM" }, "kurator")).status, 403);
+  assert.equal((await patch(DOK_RESMI, { keterangan: "x".repeat(301) })).status, 422);
+  assert.equal((await patch(DOK_RESMI, { sumber_resmi: 1, penerbit: "Kementerian ESDM", tanggal_terbit: "2026-10-01", akses: "pengurus" })).status, 200);
+  const r = await satu("SELECT akses, sumber_resmi FROM agenda_dokumen WHERE id = ?", DOK_RESMI);
+  assert.deepEqual({ ...r }, { akses: "anggota", sumber_resmi: 1 });
+  assert.equal((await patch(DOK_RESMI, { akses: "pengurus" })).status, 200); // tetap dipaksa anggota
+  assert.equal((await satu("SELECT akses FROM agenda_dokumen WHERE id = ?", DOK_RESMI)).akses, "anggota");
+  const s = await json(await panggil("GET", "/api/agenda/sumber-resmi", { peran: "anggota" }));
+  assert.equal(s.dokumen.length, 1);
+  assert.deepEqual(s.dokumen[0], { id: DOK_RESMI, nama_berkas: "Peraturan.pdf", tipe: "pdf", penerbit: "Kementerian ESDM", tanggal_terbit: "2026-10-01", keterangan: null,
+    kegiatan: { ref: REF, judul: KEG.judul, tanggal: "2026-11-20" } });
+  assert.equal((await panggil("GET", `/api/agenda/dokumen/${DOK_RESMI}`, { peran: "anggota" })).status, 200);
+  assert.equal((await panggil("GET", "/api/agenda/sumber-resmi", { peran: null })).status, 401);
+});
+
+test("hapus dokumen: baris dan objek R2 hilang; hapus kegiatan: bukti, foto, dokumen, R2 hilang; ref arsip 404", async () => {
+  const kunci = (await satu("SELECT kunci_r2 FROM agenda_dokumen WHERE id = ?", DOK_ANGGOTA)).kunci_r2;
+  assert.ok(BERKAS.has(kunci));
+  assert.equal((await panggil("DELETE", `/api/agenda/dokumen/${DOK_ANGGOTA}`, { peran: "kurator" })).status, 403);
+  assert.equal((await panggil("DELETE", `/api/agenda/dokumen/${DOK_ANGGOTA}`, { peran: "admin" })).status, 200);
+  assert.ok(!BERKAS.has(kunci)); assert.equal(await satu("SELECT 1 AS x FROM agenda_dokumen WHERE id = ?", DOK_ANGGOTA), null);
+  assert.equal((await panggil("POST", `/api/agenda/${REF}/foto`, { peran: "admin", badan: JPEG })).status, 201);
+  assert.equal((await panggil("DELETE", "/api/agenda/kegiatan/ac_029", { peran: "admin" })).status, 404);
+  assert.equal((await panggil("DELETE", `/api/agenda/kegiatan/${REF}`, { peran: "kurator" })).status, 403);
+  const r2 = BERKAS.size;
+  assert.equal((await panggil("DELETE", `/api/agenda/kegiatan/${REF}`, { peran: "admin" })).status, 200);
+  assert.equal(await satu("SELECT 1 AS x FROM agenda_kegiatan WHERE ref = ?", REF), null);
+  assert.equal(await satu("SELECT 1 AS x FROM agenda_bukti WHERE kegiatan_ref = ?", REF), null);
+  assert.equal(await cacah("agenda_dokumen"), 0);
+  assert.equal(await cacah("agenda_foto", "WHERE keterangan IS NULL AND bukti_id NOT IN (SELECT id FROM agenda_bukti)"), 0);
+  assert.equal(BERKAS.size, r2 - 4, "3 dokumen + 1 foto hilang dari R2");
+  assert.equal((await panggil("GET", `/api/agenda/${REF}`, { peran: "admin" })).status, 404);
+});
+
+test("tinjauan keamanan: PDF hanya dengan ekstensi .pdf (nama unduhan tak bisa menyamar)", async () => {
+  const src = (await import("node:fs")).readFileSync("src/agenda.js", "utf8");
+  assert.match(src, /"%PDF-"\) return ext === "pdf" \? "pdf" : null/);
 });

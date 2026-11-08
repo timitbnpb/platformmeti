@@ -14,7 +14,7 @@ const KPV = {
   kontak: "- - T B B(prov) T T", terlarang: "- - - - - - -", potret_publik: "B B B B B B B", potret_anggota: "- B B B B B B",
   potret_pengurus: "- - B B - B B", akun: "- diri diri diri diri bukan-super T", sesi: "- diri diri diri diri cabut T",
   koreksi: "- kirim kirim T kirim(prov) T T", riwayat: "- - T - - T T", jejak: "- - - - - B B", daftar_tolak: "- - - - - - B",
-  agenda: "- B B T B T T",
+  agenda: "- B B B B T T",
   event_atur: "- B B B B T T", event_daftar: "- daftar daftar daftar daftar T T",
   pendaftaran: "- - T - - T T",
   sesi_admin: "- - - - - cabut cabut",

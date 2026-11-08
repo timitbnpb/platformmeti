@@ -12,6 +12,7 @@ import { muat, label, urlAman } from "/publik.js";
 
 const IKON_JENIS = { seminar: "video", konferensi: "orang", audiensi: "perisai", lokakarya: "metode", regulasi: "regulasi", tenggat: "linimasa" };
 const JENIS = ["seminar", "konferensi", "audiensi", "lokakarya", "regulasi", "tenggat"];
+const IKON_ADMIN = { rapat: "orang", kunjungan: "lokasi", lainnya: "kalender" }; // jenis tambahan dari kegiatan yang ditambahkan admin
 const HP = matchMedia("(max-width:639px)");
 const S = { tampil: "bulan", jenis: "", bulan: "" }; // bulan = "YYYY-MM"
 let D = null, KINI = "", ROWS = [], OPENER = null;
@@ -30,6 +31,7 @@ const efektif = () => (HP.matches ? "agenda" : S.tampil);
 
 /** Rentang hanya ada di judul ("COP31 Antalya 9-20 Nov"); ambil bila hari awal sama dengan tanggal. */
 function akhirDari(b) {
+  if (b.tanggal_selesai && b.tanggal_selesai >= b.tanggal) return b.tanggal_selesai;
   const m = /\b(\d{1,2})\s*-\s*(\d{1,2})\s+(jan|feb|mar|apr|mei|jun|jul|agu|agt|sep|okt|nov|des)\w*/i.exec(b.judul);
   if (!m || +m[1] !== +b.tanggal.slice(8) || +m[2] <= +m[1]) return b.tanggal;
   return BLN[m[3].toLowerCase()] === +b.tanggal.slice(5, 7) ? `${bulanDari(b.tanggal)}-${m[2].padStart(2, "0")}` : b.tanggal;
@@ -131,9 +133,9 @@ function barisHtml(b) {
 }
 function buktiHtml(b) {
   const x = BUKTI.get(b.id);
-  if (!x || (!x.jumlah_foto && !x.ada_notulensi)) return "";
+  if (!x || (!x.jumlah_foto && !x.ada_notulensi && !x.dok_n)) return "";
   const tb = (a, ik, kunci, n) => `<button type="button" class="jm-tbl jm-tbl-kecil" data-bukti="${a}" data-ref="${esc(b.id)}">${ikon(ik, 16)}<span>${esc(t(kunci, n ? { n: angka(n) } : undefined))}</span></button>`;
-  return `<div class="kal-bukti">${x.jumlah_foto ? tb("foto", "gambar", "kal.bukti.foto", x.jumlah_foto) : ""}${x.ada_notulensi ? tb("notulen", "berita", "kal.bukti.notulen") : ""}</div>`;
+  return `<div class="kal-bukti">${x.jumlah_foto ? tb("foto", "gambar", "kal.bukti.foto", x.jumlah_foto) : ""}${x.ada_notulensi ? tb("notulen", "berita", "kal.bukti.notulen") : ""}${x.dok_n ? tb("dok", "pdf", "kal.bukti.dok", x.dok_n) : ""}</div>`;
 }
 
 /* ---------- dialog bukti (hanya yang login; publik tidak pernah melihatnya) ---------- */
@@ -152,6 +154,12 @@ function notulenHtml(teks) {
     tutup();
   }
   return keluar.join("");
+}
+const IK_DOK = { pdf: "pdf", pptx: "presentasi", docx: "teks", xlsx: "tabel" };
+function dokumenHtml(dok) {
+  if (!dok.length) return "";
+  return `<section class="kal-bk-dok" aria-label="${esc(t("kal.bukti.dok", { n: angka(dok.length) }))}"><h3>${esc(t("kal.bukti.dok_h"))}</h3><ul>${dok.map((d) => `<li>${ikon(IK_DOK[String(d.nama_berkas).split(".").pop().toLowerCase()] || "pdf", 20)}<span><b>${esc(d.nama_berkas)}</b>${d.dari ? `<small>${esc(t("kal.bukti.dok_dari", { nama: d.dari }))}</small>` : ""}${d.keterangan ? `<small>${esc(d.keterangan)}</small>` : ""}</span>
+    <a class="jm-tbl jm-tbl-kecil" href="/api/agenda/dokumen/${encodeURIComponent(d.id)}" download>${ikon("unduh", 16)}<span>${esc(t("adm.agenda.dok.unduh"))}</span></a></li>`).join("")}</ul></section>`;
 }
 function dialog() {
   if (DL.el) return DL.el;
@@ -188,6 +196,7 @@ function gambarBukti() {
       <p class="jm-bantu">${esc(t("kal.bukti.n_dari", { n: angka(DL.foto + 1), total: angka(foto.length) }))}${f.keterangan ? ": " + esc(f.keterangan) : ""}</p></div>`;
   } else {
     isi = (foto.length ? `<section aria-label="${esc(t("kal.bukti.foto", { n: angka(foto.length) }))}"><div class="kal-bk-kisi">${foto.map((f, i) => `<figure><button type="button" data-bk="foto" data-i="${i}" aria-label="${esc(f.keterangan || t("kal.bukti.foto_alt", { n: angka(i + 1) }))}"><img src="/api/agenda/foto/${encodeURIComponent(f.id)}" alt="" loading="lazy" decoding="async"></button>${f.keterangan ? `<figcaption>${esc(f.keterangan)}</figcaption>` : ""}</figure>`).join("")}</div></section>` : "")
+      + dokumenHtml(DL.det.dokumen || [])
       + (bukti && bukti.notulensi ? `<section class="kal-bk-notulen"><h3>${esc(t("kal.bukti.notulen"))}</h3>${notulenHtml(bukti.notulensi)}</section>` : "");
   }
   d.innerHTML = kepala + (isi || kosongHtml("kal.bukti.kosong"));
@@ -201,15 +210,23 @@ async function bukaBukti(ref, fokus) {
   if (!d.open) d.showModal();
   try { DL.det = await api("/api/agenda/" + encodeURIComponent(ref), { signal: DL.ctl.signal }); } catch (e) { if (e.name !== "AbortError") d.innerHTML = galatHtml(e.kode || "umum"); return; }
   DL.det.foto = DL.det.foto || [];
-  nanti(() => { gambarBukti(); const k = fokus === "notulen" && d.querySelector(".kal-bk-notulen"); if (k) k.scrollIntoView({ block: "start" }); });
+  nanti(() => { gambarBukti(); const k = (fokus === "notulen" && d.querySelector(".kal-bk-notulen")) || (fokus === "dok" && d.querySelector(".kal-bk-dok")); if (k) k.scrollIntoView({ block: "start" }); });
 }
-/** Diam bila 401/403/galat: publik tidak melihat apa pun yang baru (DS prinsip 5). */
+/** Diam bila 401/403/galat: publik tidak melihat apa pun yang baru (DS prinsip 5). Kegiatan sumber "admin" digabung sebagai acara METI. */
 async function muatBukti() {
-  try {
-    const d = await api("/api/agenda");
-    BUKTI = new Map(((d && d.bukti) || []).map((b) => [b.kegiatan_ref, b]));
-  } catch (e) { BUKTI = new Map(); }
-  if (BUKTI.size) nanti(gambarIsi);
+  let d = null;
+  try { d = await api("/api/agenda"); } catch (e) { BUKTI = new Map(); }
+  const butir = (Array.isArray(d) ? d : (d && (d.daftar || d.kegiatan || d.items)) || []).map((x) => ({ ...x, ref: x.ref || x.kegiatan_ref }));
+  const lama = (d && Array.isArray(d.bukti) ? d.bukti : []).map((x) => ({ ...x, ref: x.kegiatan_ref }));
+  BUKTI = new Map([...lama, ...butir].map((x) => [x.ref, { ref: x.ref, ada_notulensi: !!x.ada_notulensi, jumlah_foto: x.foto_n ?? x.jumlah_foto ?? 0, dok_n: x.dok_n ?? 0 }]));
+  const ada = new Set(D.baris.map((b) => b.id));
+  const tambah = butir.filter((x) => (x.sumber === "admin" || /^k-/.test(x.ref)) && x.tanggal && !ada.has(x.ref))
+    .map((x) => ({ id: x.ref, judul: x.judul, tanggal: x.tanggal, tanggal_selesai: x.tanggal_selesai || "", jenis: x.jenis || "lainnya", lokasi: x.tempat || "", penyelenggara: ["METI"], sumber: { label: "admin" } }));
+  if (tambah.length) {
+    D = { ...D, baris: [...D.baris, ...tambah].sort((a, c) => a.tanggal.localeCompare(c.tanggal)) };
+    for (const x of tambah) if (!JENIS.includes(x.jenis)) { JENIS.push(x.jenis); IKON_JENIS[x.jenis] = IKON_ADMIN[x.jenis] || "kalender"; }
+    nanti(() => { gambarKepala(); gambarIsi(); });
+  } else if (BUKTI.size) nanti(gambarIsi);
 }
 function kelompokHtml(rows, turun) {
   const g = new Map();

@@ -58,3 +58,4 @@ Berkas yang diperiksa (read-only, lapor tanpa auto-fix):
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-08 · Dokumen agenda: tipeDokumen menerima PDF dengan ekstensi sembarang (mis. .bat/.exe) karena hanya cek ekstensi OOXML; nama unduhan ikut nama klien. Cek: ext harus == tipe.

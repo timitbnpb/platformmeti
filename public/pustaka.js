@@ -13,6 +13,7 @@ import { IKON_TEK } from "/inti/ikon_tek.js";
 import { bagikanHtml } from "/inti/komponen.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { tautOrg } from "/inti/tautan.js";
+import { pasangResmi } from "/pustaka_resmi.js";
 
 const PER = 10; // 2 baris x 5 kartu
 const TUJUAN = ["riset", "kebijakan", "bisnis", "media", "lainnya"];
@@ -372,5 +373,6 @@ function pasang() {
   try { await muat(); } catch (e) { isi.innerHTML = galatHtml(e.kode || "umum"); isi.addEventListener("click", (x) => { if (x.target.closest("[data-aksi=ulang]")) location.reload(); }); return; }
   document.getElementById("puAksi").innerHTML = aksiHtml();
   ubin(); gambarSaring(); gambarKisi(); pasang();
+  nanti(pasangResmi);
   if (S.id && D.byId.has(S.id)) bukaDetail(S.id);
 })();

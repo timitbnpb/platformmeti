@@ -271,3 +271,13 @@ img.pu-lb{object-fit:contain}
 .pu-kisi .pu-topik-baris .pu-topik{max-width:100%;white-space:normal;line-height:1.25;padding-block:4px}
 .pu-kisi .pu-topik-baris .pu-topik>span{white-space:normal;overflow:visible;text-overflow:clip}
 .pu-ex .pu-lagi{margin:0}.pu-ex .pu-lagi .jm-pag{margin:0}
+
+/* dokumen resmi dari kegiatan METI */
+.pu-resmi{margin-top:18px}
+.pu-resmi-daftar{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+@media (min-width:900px){.pu-resmi-daftar{grid-template-columns:1fr 1fr}}
+.pu-resmi-k{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);min-width:0}
+.pu-resmi-k>.jm-ik{flex:none;color:var(--accent)}
+.pu-resmi-teks{flex:1;min-width:0;display:grid;gap:2px}.pu-resmi-teks strong{overflow-wrap:anywhere}
+.pu-resmi-teks small,.pu-resmi-teks>span{color:var(--ink2);font-size:var(--t-kecil)}
+.pu-resmi-teks a{color:var(--accent)}

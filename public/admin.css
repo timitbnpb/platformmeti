@@ -387,3 +387,19 @@ dialog.jm-dlg.pd-dlg{width:min(980px,calc(100vw - 24px));max-height:calc(100dvh 
 @media (min-width:640px){.jm-adm-ubin>.jm-adm-s:last-child:nth-child(odd){grid-column:auto}}
 .jm-adm-u{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:10px;row-gap:4px;align-items:center;text-align:left}
 .jm-adm-u .jm-kpi-ik{grid-row:1}.jm-adm-u strong{grid-column:2;grid-row:1;justify-self:start}.jm-adm-u small{grid-column:1/-1;white-space:normal}
+/* agenda: kegiatan ditambahkan admin, kartu dokumen (JM-F11) */
+.jm-ag-kaki-satu{grid-template-columns:1fr}
+.jm-ag-dua{display:grid;gap:10px;align-items:end}
+@media (min-width:640px){.jm-ag-dua{grid-template-columns:1fr 1fr}}
+.jm-ag-tambah{margin-left:10px;min-height:var(--target)}
+.jm-ag-dok .jm-adm-isi,.jm-ag-dok-atas{display:grid;gap:12px}
+.jm-ag-dok-daftar{display:grid;gap:10px}
+.jm-ag-dk{display:grid;gap:8px;padding:10px;border:1px solid var(--line);border-radius:var(--r-sm);min-width:0}
+.jm-ag-dk[aria-busy="true"]{opacity:.5}
+.jm-ag-dk-kepala{display:flex;gap:10px;align-items:center;min-width:0}
+.jm-ag-dk-kepala .jm-ik{flex:none;color:var(--accent)}
+.jm-ag-dk-kepala div{flex:1;min-width:0}.jm-ag-dk-kepala b{overflow-wrap:anywhere}
+.jm-ag-dk-kepala small{display:block;color:var(--ink2);font-size:var(--t-kecil)}
+.jm-ag-dk .jm-tbl{justify-self:start}
+.jm-ag-cek{display:flex;gap:8px;align-items:center;min-height:var(--target);cursor:pointer}
+.jm-ag-cek input{width:20px;height:20px;accent-color:var(--accent)}

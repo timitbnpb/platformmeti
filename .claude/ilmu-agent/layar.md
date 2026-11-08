@@ -112,3 +112,4 @@ Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
 - 2026-11-08 · Hover istilah membungkus teks di label KPI dan membuat tata letak patah; hanya blok p/li/td/dd tanpa anak blok dan teks >= 60 huruf yang dipindai. Bukti: tangkapan /topik?id=surya.
 - 2026-11-08 · Prefix kelas ps- dipakai pesan.css dan profil-saya.css: bentrok runtime. Pesan sekarang psn-; profil-saya tetap ps-. Grid/flex dengan gap var(--gap) menembus aturan sibling margin 24px; pakai row-gap lewat :has(>.jm-ex+.jm-ex).
 - 2026-11-08 · Nav 7 menu (8 Nov 2026): gerbang-ikon-nav menuntut ikon unik di seluruh TAB; item baru perlu ikon bebas. /bidang/<slug> dilayani satu bidang.html; slug dibaca dari pathname.
+- 2026-11-08 · Select baru wajib data-ikon (gerbang-pilih); GET /api/agenda dibaca longgar (array atau {daftar|bukti}) lewat butirAgenda/petaBukti

@@ -306,3 +306,15 @@ dialog.jm-dlg-lebar{width:min(920px,calc(100vw - 24px));max-height:calc(100dvh -
 .kal-th-lg{width:40px;height:40px;object-fit:contain;border-radius:var(--r-sm);background:var(--card);padding:3px}
 .kal-th-f{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .kal-trk .kal-th-lg{display:none}.kal-trk .kal-th .jm-ik{width:24px;height:24px}
+
+/* jenis tambahan dari kegiatan yang ditambahkan admin */
+.kal-titik i.kal-t-rapat,.kal-rt.kal-t-rapat,.kal-pil.kal-t-rapat::before,.kal-ev.kal-t-rapat i{background:var(--data4)}
+.kal-pil.kal-t-rapat,.kal-ev.kal-t-rapat{background:var(--surface)}
+.kal-titik i.kal-t-kunjungan,.kal-rt.kal-t-kunjungan,.kal-pil.kal-t-kunjungan::before,.kal-ev.kal-t-kunjungan i{background:var(--ok)}
+.kal-pil.kal-t-kunjungan,.kal-ev.kal-t-kunjungan{background:var(--ok-bg)}
+.kal-titik i.kal-t-lainnya,.kal-rt.kal-t-lainnya,.kal-pil.kal-t-lainnya::before,.kal-ev.kal-t-lainnya i{background:var(--ink2)}
+.kal-pil.kal-t-lainnya,.kal-ev.kal-t-lainnya{background:var(--surface)}
+.kal-bk-dok{margin-bottom:16px}.kal-bk-dok ul{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.kal-bk-dok li{display:flex;gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-sm);min-width:0}
+.kal-bk-dok li .jm-ik{flex:none;color:var(--accent)}.kal-bk-dok li>span{flex:1;min-width:0;display:grid}
+.kal-bk-dok b{overflow-wrap:anywhere}.kal-bk-dok small{color:var(--ink2);font-size:var(--t-kecil)}
