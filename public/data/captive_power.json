@@ -415,7 +415,7 @@
     {
      "nama": "PT Indonesia Weda Bay Industrial Park",
      "org_id": "en_aac574f476",
-     "logo": null
+     "logo": "/img/logo/org/en_aac574f476.png"
     }
    ],
    "status": "operasi",
@@ -731,8 +731,8 @@
    "pemilik_org": [
     {
      "nama": "PT Indah Kiat Pulp & Paper Tbk",
-     "org_id": null,
-     "logo": null
+     "org_id": "en_e24cba2d21",
+     "logo": "/img/logo/org/en_e24cba2d21.png"
     }
    ],
    "status": "operasi",
@@ -901,8 +901,8 @@
    "pemilik_org": [
     {
      "nama": "PT Asahimas Chemical",
-     "org_id": null,
-     "logo": null
+     "org_id": "en_ef8aa692a9",
+     "logo": "/img/logo/org/en_ef8aa692a9.png"
     }
    ],
    "status": "operasi",
@@ -944,7 +944,7 @@
     {
      "nama": "PT Cikarang Listrindo Tbk",
      "org_id": "en_0430061f85",
-     "logo": null
+     "logo": "/img/logo/org/en_0430061f85.png"
     }
    ],
    "status": "operasi",
@@ -1076,7 +1076,7 @@
    "pemilik_org": [
     {
      "nama": "Krakatau Posco Energy PT",
-     "org_id": null,
+     "org_id": "en_7401544e6d",
      "logo": null
     }
    ],
@@ -1118,7 +1118,7 @@
    "pemilik_org": [
     {
      "nama": "PT Freeport Indonesia",
-     "org_id": null,
+     "org_id": "en_cc83afac5e",
      "logo": null
     }
    ],
@@ -1206,8 +1206,8 @@
    "pemilik_org": [
     {
      "nama": "PT Indah Kiat Pulp & Paper Tbk",
-     "org_id": null,
-     "logo": null
+     "org_id": "en_e24cba2d21",
+     "logo": "/img/logo/org/en_e24cba2d21.png"
     }
    ],
    "status": "operasi",
@@ -1416,8 +1416,8 @@
    "pemilik_org": [
     {
      "nama": "PT Amman Mineral Nusa Tenggara",
-     "org_id": null,
-     "logo": null
+     "org_id": "en_5523a34681",
+     "logo": "/img/logo/org/en_5523a34681.png"
     }
    ],
    "status": "operasi",
@@ -1852,8 +1852,8 @@
    "pemilik_org": [
     {
      "nama": "PT Cemindo Gemilang Tbk",
-     "org_id": null,
-     "logo": null
+     "org_id": "en_c675f10bf2",
+     "logo": "/img/logo/org/en_c675f10bf2.png"
     }
    ],
    "status": "operasi",
@@ -1894,8 +1894,8 @@
    "pemilik_org": [
     {
      "nama": "PT Fajar Surya Wisesa Tbk",
-     "org_id": null,
-     "logo": null
+     "org_id": "en_4a4ef5d63f",
+     "logo": "/img/logo/org/en_4a4ef5d63f.png"
     }
    ],
    "status": "operasi",
@@ -1936,8 +1936,8 @@
    "pemilik_org": [
     {
      "nama": "PT Toba Pulp Lestari Tbk",
-     "org_id": null,
-     "logo": null
+     "org_id": "en_835bbfc83d",
+     "logo": "/img/logo/org/en_835bbfc83d.png"
     }
    ],
    "status": "operasi",
@@ -2064,8 +2064,8 @@
    "pemilik_org": [
     {
      "nama": "PT Panasia Indo Resources Tbk",
-     "org_id": null,
-     "logo": null
+     "org_id": "en_1410e8ef6b",
+     "logo": "/img/logo/org/en_1410e8ef6b.png"
     }
    ],
    "status": "operasi",
@@ -2308,9 +2308,9 @@
    ],
    "pemilik_org": [
     {
-     "nama": "PT Tambang Batubara Bukit Asam",
-     "org_id": null,
-     "logo": null
+     "nama": "PT Bukit Asam Tbk",
+     "org_id": "en_e375586366",
+     "logo": "/img/logo/org/en_e375586366.png"
     },
     {
      "nama": "PT Guna Darma Integra",
@@ -2354,7 +2354,7 @@
     {
      "nama": "Xinyi Glass Holdings",
      "org_id": "in_6a4065f8d3",
-     "logo": null
+     "logo": "/img/logo/org/in_6a4065f8d3.png"
     }
    ],
    "status": "rencana",
@@ -2431,7 +2431,7 @@
    "pemilik_org": [
     {
      "nama": "Hongshi Holding Group Co Ltd",
-     "org_id": null,
+     "org_id": "en_885e56b555",
      "logo": null
     }
    ],
@@ -2470,8 +2470,8 @@
    "pemilik_org": [
     {
      "nama": "PT Bukit Asam Tbk",
-     "org_id": null,
-     "logo": null
+     "org_id": "en_e375586366",
+     "logo": "/img/logo/org/en_e375586366.png"
     }
    ],
    "status": "rencana",

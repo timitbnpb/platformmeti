@@ -1043,7 +1043,7 @@
      "nama": "PT Harita Nickel Tbk",
      "negara": "id",
      "org_id": "en_f99309c07b",
-     "logo": null,
+     "logo": "/img/logo/org/en_f99309c07b.png",
      "korporat": null
     }
    ],
@@ -1117,7 +1117,7 @@
      "nama": "PT Harita Nickel Tbk",
      "negara": "id",
      "org_id": "en_f99309c07b",
-     "logo": null,
+     "logo": "/img/logo/org/en_f99309c07b.png",
      "korporat": null
     },
     {
@@ -1194,7 +1194,7 @@
      "nama": "Nickel Industries Limited",
      "negara": "au",
      "org_id": "en_7f029af89a",
-     "logo": null,
+     "logo": "/img/logo/org/en_7f029af89a.png",
      "korporat": null
     }
    ],
@@ -1255,7 +1255,7 @@
      "nama": "Nickel Industries Limited",
      "negara": "au",
      "org_id": "en_7f029af89a",
-     "logo": null,
+     "logo": "/img/logo/org/en_7f029af89a.png",
      "korporat": null
     }
    ],
@@ -1320,7 +1320,7 @@
      "nama": "Nickel Industries Limited",
      "negara": "au",
      "org_id": "en_7f029af89a",
-     "logo": null,
+     "logo": "/img/logo/org/en_7f029af89a.png",
      "korporat": null
     }
    ],
@@ -1446,7 +1446,7 @@
      "nama": "Tsingshan",
      "negara": "cn",
      "org_id": "in_abdca05a83",
-     "logo": null,
+     "logo": "/img/logo/org/in_abdca05a83.png",
      "korporat": null
     },
     {
@@ -1666,7 +1666,7 @@
      "nama": "PT Indonesia Weda Bay Industrial Park",
      "negara": "cn",
      "org_id": "en_aac574f476",
-     "logo": null,
+     "logo": "/img/logo/org/en_aac574f476.png",
      "korporat": null
     }
    ],
@@ -1731,7 +1731,7 @@
      "nama": "LG Energy Solution",
      "negara": "kr",
      "org_id": "en_e1421af365",
-     "logo": null,
+     "logo": "/img/logo/org/en_e1421af365.png",
      "korporat": null
     },
     {
@@ -1804,8 +1804,8 @@
     {
      "nama": "Contemporary Amperex Technology (CATL)",
      "negara": "cn",
-     "org_id": "in_b50ac2a3e1",
-     "logo": "/img/logo/org/in_b50ac2a3e1.png",
+     "org_id": null,
+     "logo": null,
      "korporat": null
     },
     {
@@ -1845,7 +1845,7 @@
    "intensitas_tco2e_per_ton": null,
    "pembeli": [],
    "ekspor_utama": [],
-   "org_id": "in_b50ac2a3e1",
+   "org_id": null,
    "tingkat_bukti": "laporan-publik",
    "sumber": [
     {
@@ -1876,7 +1876,7 @@
      "nama": "LG Energy Solution",
      "negara": "kr",
      "org_id": "en_e1421af365",
-     "logo": null,
+     "logo": "/img/logo/org/en_e1421af365.png",
      "korporat": null
     },
     {
@@ -2064,7 +2064,7 @@
     {
      "nama": "PT Freeport Indonesia",
      "negara": "us",
-     "org_id": null,
+     "org_id": "en_cc83afac5e",
      "logo": null,
      "korporat": null
     }
