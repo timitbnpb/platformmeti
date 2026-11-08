@@ -635,3 +635,14 @@ span.tn-kp-b{cursor:default}
 @media (min-width:1001px){.tn-bagan-bg .tn-r2>.tn-baris5{width:auto!important;flex:1 1 calc(50% - 10px)!important;max-width:calc(50% - 10px)}
 .tn-bagan-bg .tn-r2>.tn-baris5>.tn-fkg:not(.tn-dg)>li{width:calc((100% - 36px) / 4)!important}}
 @media (max-width:760px){.tn-bagan-bg .tn-r2>.tn-grp>.tn-fkg:not(.tn-dg){display:flex!important;flex-wrap:wrap;justify-content:center;gap:12px}.tn-bagan-bg .tn-r2>.tn-grp>.tn-fkg:not(.tn-dg)>li{flex:none;width:calc((100% - 12px) / 2)!important}}
+
+/* angka kunci di dalam hero, sebaris, bergaya statistik kaki situs (pemilik 9 Nov 2026) */
+.tn-hero-isi .tn-angka{grid-template-columns:repeat(4,auto);justify-content:start;width:auto;margin:20px 0 0;padding:0;border:0;border-radius:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.tn-hero-isi .tn-angka>div{column-gap:12px;row-gap:2px;padding:4px clamp(16px,2.4vw,32px)}
+.tn-hero-isi .tn-angka>div:first-child{padding-left:0}
+.tn-hero-isi .tn-angka>div+div{border-left:1px solid color-mix(in srgb,var(--on-brand) 18%,transparent)}
+.tn-hero-isi .tn-angka-ik{width:40px;height:40px;background:color-mix(in srgb,var(--meti-lime) 18%,transparent);color:var(--meti-lime)}
+.tn-hero-isi .tn-angka-ik .jm-ik{width:20px;height:20px;padding:0;background:none;color:var(--meti-lime);stroke:currentColor}
+.tn-hero-isi .tn-angka dd{color:var(--meti-lime);line-height:1}
+.tn-hero-isi .tn-angka dt{color:color-mix(in srgb,var(--on-brand) 78%,transparent);opacity:1}
+@media (max-width:760px){.tn-hero-isi .tn-angka{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:14px;width:100%}.tn-hero-isi .tn-angka>div:nth-child(3){border-left:0;padding-left:0}}
