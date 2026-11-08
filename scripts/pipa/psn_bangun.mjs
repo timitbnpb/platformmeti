@@ -99,6 +99,19 @@ function indeksWilayah() {
   return { adm2, adm1, rata(kode) { const a = adm2.filter((x) => kodeProv(x.provinsi) === kode); return a.length ? { lat: a.reduce((u, x) => u + x.lat, 0) / a.length, lng: a.reduce((u, x) => u + x.lng, 0) / a.length } : null; }, cariKab(n) { const t = adm2.find((x) => x.asli === n); if (!t) return null; const kode = kodeNama.get(norm('Kabupaten ' + n)) || kodeNama.get(norm(n)) || kodeKab.get(norm(n)) || null; return { lat: t.lat, lng: t.lng, kode, prov: kodeProv(t.provinsi) }; } };
 }
 
+/** Saringan energi (keputusan pemilik 9 Nov 2026: hanya Energi dan EBT). Masuk: sektor energi (J), Program Ketenagalistrikan, butir yang memuat
+ *  komponen pembangkit/energi bersumber (listrik_ebt terisi), dan butir yang namanya di lampiran resmi menyatakan energi/biofuel (daftar eksplisit). */
+export const MASUK_NAMA = { 'psn-113': 'nama resmi lampiran memuat Green Renewable Energy', 'psn-126': 'nama resmi lampiran memuat Multi Energi', 'psn-221': 'biofuel: bensin sawit dan IVO' };
+export const adalahEnergi = (b) => b.sektor === 'energi' || /^psn-p01/.test(b.id) || !!b.listrik_ebt || b.id in MASUK_NAMA;
+const ALASAN = {
+  jalan: 'jalan, jembatan, atau tol; bukan energi', pelabuhan: 'pelabuhan; bukan energi', bandara: 'bandar udara; bukan energi', kereta: 'kereta atau transit; bukan energi',
+  kawasan: 'kawasan industri tanpa komponen pembangkit atau energi bersumber', perumahan: 'perumahan; bukan energi', bendungan: 'bendungan atau irigasi tanpa komponen PLTA bersumber',
+  air: 'air bersih atau sanitasi; bukan energi', tanggul: 'tanggul pantai; bukan energi', teknologi: 'teknologi non-energi', pendidikan: 'pendidikan; bukan energi',
+  pariwisata: 'pariwisata; bukan energi', pertanian: 'pertanian atau perkebunan; bukan energi', smelter: 'smelter murni (pengolahan mineral); bukan energi', program: 'program non-energi',
+};
+const ALASAN_KHUSUS = { 'psn-093': 'kawasan metanol dan amonia (petrokimia); komponen energi tidak bersumber', 'psn-p23': 'rincian lampiran hanya pangan (sawah, sawit, peternakan); komponen energi tidak bersumber', 'psn-p07-17': 'baterai dan smelter; bukan pembangkit atau bahan bakar' };
+const alasanKeluar = (b) => ALASAN_KHUSUS[b.id] || ALASAN[b.sektor] || 'bukan energi';
+
 export function bangun(tglDibuat) {
   const teks = fs.readFileSync(path.join(ROOT, 'data/psn/permenko-16-2025.txt'), 'utf8');
   const { proyek, program } = uraiLampiran(teks);
@@ -156,11 +169,17 @@ export function bangun(tglDibuat) {
   const pj = baca('public/data/proyek.json').baris.filter((b) => /\(PSN nomor \d+\)/.test(b.nama)).map((b) => b.id);
   const psel = baris.find((b) => b.id === 'psn-p22'); if (psel) { psel.proyek_meti = pj; psel.dasar_hukum.push('perpres-109-2025'); psel.listrik_ebt = 'Pengolahan sampah menjadi energi listrik di kota besar; lihat 11 baris PSEL di pelacak proyek'; }
   const merauke = baris.find((b) => b.id === 'psn-p23'); if (merauke) merauke.dasar_hukum.push('inpres-16-2025');
+  const masuk = baris.filter(adalahEnergi), keluar = baris.filter((b) => !adalahEnergi(b));
+  const keluarPer = {}; for (const b of keluar) keluarPer[b.sektor] = (keluarPer[b.sektor] || 0) + 1;
   return {
     lapis: 'publik', dibangun_pada: tglDibuat,
     meta: {
       dasar: 'Permenko Perekonomian 16/2025 (Perubahan Kedelapan atas Permenko 7/2021), ditetapkan dan diundangkan 24 September 2025',
-      jumlah_proyek: proyek.filter((p) => !/^dihapus$/i.test(p.nama)).length, jumlah_program: program.filter((p) => !/^dihapus$/i.test(p.nama)).length,
+      jumlah_proyek: masuk.filter((b) => b.tipe === 'proyek').length, jumlah_program: masuk.filter((b) => b.tipe === 'program').length,
+      jumlah_resmi_proyek: proyek.filter((p) => !/^dihapus$/i.test(p.nama)).length, jumlah_resmi_program: program.filter((p) => !/^dihapus$/i.test(p.nama)).length,
+      saringan: 'Hanya energi dan EBT (keputusan pemilik 9 Nov 2026): sektor energi, Program Ketenagalistrikan, butir yang memuat komponen pembangkit atau energi bersumber, dan butir berbiofuel atau bernama energi di lampiran. Butir lain dikeluarkan.',
+      dikeluarkan_per_sektor: keluarPer,
+      dikeluarkan: keluar.map((b) => ({ id: b.id, nama: b.nama, sektor: b.sektor, alasan: alasanKeluar(b) })),
       catatan: 'Daftar resmi memuat nama dan lokasi saja. Nilai, status, progres, kapasitas, dan pihak diisi hanya bila ada sumber terbaca (kolom lengkap=1); sisanya sengaja kosong. Titik peta = pusat kabupaten atau provinsi, bukan batas proyek.',
       terbaru_dicek: 'Permenko 20/2025 hanya tata cara perubahan daftar; belum ditemukan perubahan kesembilan sampai 2026-11-08.',
     },
@@ -173,7 +192,7 @@ export function bangun(tglDibuat) {
       { id: 'perpres-109-2025', judul: 'Perpres 109/2025 tentang Penanganan Sampah Perkotaan melalui Pengolahan Sampah menjadi Energi Terbarukan', tanggal: '2025', url: null, bukti: 'resmi' },
       { id: 'inpres-16-2025', judul: 'Inpres 16/2025 tentang Penguatan Percepatan Pembangunan Kawasan Swasembada Pangan, Energi, dan Air', tanggal: '2025', url: null, bukti: 'resmi' },
     ],
-    baris,
+    baris: masuk,
   };
 }
 

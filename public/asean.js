@@ -2,10 +2,11 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
+import { pasangProfil } from "/asean_profil.js";
 import { muatData, tampilGalat, pasangAksi, sumberHtml, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, num, saatBahasa } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
-let d = null, metrik = "bauran", pilih = null;
+let d = null, metrik = "bauran", pilih = null, profil = null;
 const M = {
   bauran: { nilai: "bauran_persen", tren: "tren_bauran", satuan: "%", d: 1, sumber: "bauran" },
   kapasitas: { nilai: "kapasitas_ebt_mw", tren: "tren_kapasitas", satuan: "MW", d: 0, sumber: "kapasitas" },
@@ -48,6 +49,7 @@ function band() {
   });
   $("grafik-band").innerHTML = batangHtml(baris, { label: t("as.m." + m), aksi: true, satuan: M[m].satuan === "%" ? "%" : "MW" })  + sumber(m);
   pasangBar($("grafik-band"));
+  for (const b of $("grafik-band").querySelectorAll("button[data-id]")) { b.setAttribute("aria-haspopup", "dialog"); b.setAttribute("aria-label", t("asp.buka", { nama: namaN(d.baris.find((n) => n.iso3 === b.dataset.id)) })); }
 }
 
 function tren() {
@@ -76,7 +78,7 @@ function tren() {
   const ubah = (s) => { const a = s[0], b = s[s.length - 1]; return m === "kapasitas" ? (a.nilai ? `${num(((b.nilai - a.nilai) / a.nilai) * 100, 0)}%` : "-") : `${num(b.nilai - a.nilai, 1)} ${t("as.pp")}`; };
   $("tabel-tren").innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>${esc(t("as.col.negara"))}</th><th>${esc(t("as.col.awal"))}</th><th>${esc(t("as.col.akhir"))}</th><th>${esc(t("as.col.ubah"))} ${pil("an.est")}</th></tr></thead><tbody>${seri.map((n) => {
     const s = n[M[m].tren], a = s[0], b = s[s.length - 1];
-    return `<tr class="${n.iso3 === "IDN" ? "jm-an-baris-id" : ""}"><td data-label="${esc(t("as.col.negara"))}"><span class="jm-bd-n">${bendera(n, n.iso3 === "IDN" ? 32 : 20)}<span>${esc(namaN(n))}</span></span></td><td data-label="${esc(t("as.col.awal"))}" class="jm-num">${esc(num(a.nilai, M[m].d))} ${esc(M[m].satuan)} (${a.tahun})</td><td data-label="${esc(t("as.col.akhir"))}" class="jm-num">${esc(num(b.nilai, M[m].d))} ${esc(M[m].satuan)} (${b.tahun})</td><td data-label="${esc(t("as.col.ubah"))}" class="jm-num">${esc(ubah(s))}</td></tr>`;
+    return `<tr class="${n.iso3 === "IDN" ? "jm-an-baris-id" : ""}" data-iso="${n.iso3}"><td data-label="${esc(t("as.col.negara"))}"><button type="button" class="jm-asp-buka jm-bd-n" data-iso="${n.iso3}" aria-haspopup="dialog" aria-label="${esc(t("asp.buka", { nama: namaN(n) }))}">${bendera(n, n.iso3 === "IDN" ? 32 : 20)}<span>${esc(namaN(n))}</span></button></td><td data-label="${esc(t("as.col.awal"))}" class="jm-num">${esc(num(a.nilai, M[m].d))} ${esc(M[m].satuan)} (${a.tahun})</td><td data-label="${esc(t("as.col.akhir"))}" class="jm-num">${esc(num(b.nilai, M[m].d))} ${esc(M[m].satuan)} (${b.tahun})</td><td data-label="${esc(t("as.col.ubah"))}" class="jm-num">${esc(ubah(s))}</td></tr>`;
   }).join("")}</tbody></table></div>`;
 }
 
@@ -85,13 +87,14 @@ function cara() {
   $("kutip").textContent = t("as.kutip", { tanggal: tanggal(d.dibangun_pada, { gaya: "panjang" }) });
 }
 
-function gambar() { jawab(); kartu(); band(); tren(); cara(); }
+function gambar() { jawab(); kartu(); band(); tren(); cara(); profil?.segar(); }
 
 async function mulai() {
   await mulaiHalaman();
   $("kartu").innerHTML = hantuHtml(2);
   try { d = await muatData("asean.json"); } catch (e) { tampilGalat($("kartu"), mulai); return; }
   pasangAksi(["aksi-tren"]);
+  profil = pasangProfil({ data: () => d, M, iso2: ISO2, namaN, sumber });
   gambar();
   saatBahasa(gambar);
   document.querySelector(".jm-tab").addEventListener("click", (e) => {
@@ -101,17 +104,17 @@ async function mulai() {
     metrik = b.dataset.m;
     nanti(() => { band(); tren(); });
   });
-  $("grafik-band").addEventListener("click", (e) => {
-    const b = e.target.closest("button[data-id]"); if (!b) return;
-    pilih = pilih === b.dataset.id ? null : b.dataset.id;
+  /* klik negara di mana pun membuka profilnya; sorotan tren menyusul (urgent dulu, berat dideferred) */
+  const buka = (iso, el) => {
+    pilih = iso;
     for (const x of $("grafik-band").querySelectorAll("button[data-id]")) x.setAttribute("aria-pressed", String(x.dataset.id === pilih));
+    profil.buka(iso, el);
     nanti(tren);
-  });
-  $("grafik-tren").addEventListener("click", (e) => {
-    const g = e.target.closest("g[data-iso]"); if (!g) return;
-    pilih = pilih === g.dataset.iso ? null : g.dataset.iso;
-    for (const x of $("grafik-band").querySelectorAll("button[data-id]")) x.setAttribute("aria-pressed", String(x.dataset.id === pilih));
-    nanti(tren);
-  });
+  };
+  $("grafik-band").addEventListener("click", (e) => { const b = e.target.closest("button[data-id]"); if (b) buka(b.dataset.id, b); });
+  $("grafik-tren").addEventListener("click", (e) => { const g = e.target.closest("g[data-iso]"); if (g) buka(g.dataset.iso, g.querySelector("circle")); });
+  $("grafik-tren").addEventListener("keydown", (e) => { const g = e.key === "Enter" || e.key === " " ? e.target.closest("g[data-iso]") : null; if (g) { e.preventDefault(); buka(g.dataset.iso, e.target); } });
+  $("tabel-tren").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-iso]"); if (tr) buka(tr.dataset.iso, tr.querySelector("button")); });
+  profil.dariUrl();
 }
 mulai();

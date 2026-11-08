@@ -133,8 +133,8 @@ export async function bagianWilayah(kode, namaProv) {
     isi: `<dl class="pf-satu"><div><dt>${esc(t("td.sawit"))}</dt><dd>${esc(angka(bm.luas_sawit_ha))} ha</dd></div><div><dt>CPO</dt><dd>${esc(angka(bm.cpo_ton))} t</dd></div><div><dt>${esc(t("td.energi"))}</dt><dd>${esc(angka(bm.energi_tj_per_tahun_est))} TJ/${esc(t("td.tahun"))} (${esc(t("td.est"))})</dd></div><div><dt>RUPTL / RUEN</dt><dd>${esc(angka(bm.ruptl_bioenergi_mw ?? 0))} / ${esc(angka(bm.ruen_bioenergi_mw ?? 0))} MW</dd></div></dl>` }));
 
   const ps = (psn?.baris || []).filter((b) => (b.prov_kode || []).map(String).includes(k));
-  out.push(bagian({ id: "psn", ik: "mahkota", topik: "td.ey.psn", j: "td.j.psn", n: ps.length, tglData: psn?.dibangun_pada, lihat: ["/psn", "td.lihat.psn"],
-    isi: tbl([["td.c.proyek"], ["td.c.sektor"], ["td.c.status"], ["td.c.cod"]], ps.slice(0, 20).map((b) => `<tr>${td("td.c.proyek", taut("/psn#" + encodeURIComponent(b.id), b.nama))}${td("td.c.sektor", esc(slug(b.sektor)))}${td("td.c.status", esc(slug(b.status)))}${td("td.c.cod", esc(String(b.cod || "-")))}</tr>`)) }));
+  out.push(bagian({ id: "psn", ik: "mahkota", topik: "td.ey.psn", j: "td.j.psn", n: ps.length, tglData: psn?.dibangun_pada, lihat: ["/program#psn", "td.lihat.psn"],
+    isi: tbl([["td.c.proyek"], ["td.c.sektor"], ["td.c.status"], ["td.c.cod"]], ps.slice(0, 20).map((b) => `<tr>${td("td.c.proyek", taut("/program#" + encodeURIComponent(b.id), b.nama))}${td("td.c.sektor", esc(slug(b.sektor)))}${td("td.c.status", esc(slug(b.status)))}${td("td.c.cod", esc(String(b.cod || "-")))}</tr>`)) }));
 
   const kw = (kaw?.baris || []).filter((b) => String(b.provinsi || "").toLowerCase() === nm);
   out.push(bagian({ id: "kawasan", ik: "kawasan", topik: "td.ey.kawasan", j: "td.j.kawasan", n: kw.length, tglData: kaw?.meta?.diperbarui, lihat: ["/kawasan", "td.lihat.kawasan"],

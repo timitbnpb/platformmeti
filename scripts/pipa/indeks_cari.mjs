@@ -85,7 +85,7 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
 
   // entitas modul baru: isu, PSN, PLTU, sistem PLN, kawasan, pemasok global (tiap butir menunjuk halaman modulnya)
   for (const r of baris(data("isu"))) tambah("isu", b(r.judul, [r.tema, r.status].filter(Boolean).join(", "), "/isu#" + encodeURIComponent(r.id), [r.tema, r.ringkas?.slice(0, 120)], { b: r.bukti }));
-  for (const r of baris(data("psn"))) tambah("psn", b(r.nama, [r.sektor, r.lokasi].filter(Boolean).join(", "), "/psn#" + encodeURIComponent(r.id), [r.sektor, r.lokasi], { b: "resmi" }));
+  for (const r of baris(data("psn"))) tambah("psn", b(r.nama, [r.sektor, r.lokasi].filter(Boolean).join(", "), "/program#" + encodeURIComponent(r.id), [r.sektor, r.lokasi], { b: "resmi" }));
   for (const r of baris(data("pltu"))) tambah("pltu", b(r.nama, [r.mw_operasi ? r.mw_operasi + " MW" : "", r.kab, r.pulau].filter(Boolean).join(", "), `/peta?l=pltu&v=${r.lng},${r.lat},9`, [r.pemilik?.nama, r.prov, "PLTU", "batubara"], { b: "kajian" }));
   for (const r of baris(data("sistem_pln"))) tambah("sistem", b(r.nama?.id || r.singkat, "Sistem kelistrikan PLN", "/sistem", [r.singkat, r.nama?.en, ...(r.provinsi || []).map((x) => x.nama)], { b: "resmi" }));
   for (const r of baris(data("kawasan"))) tambah("kawasan", b(r.nama, [String(r.jenis || "").toUpperCase(), r.provinsi].filter(Boolean).join(", "), "/kawasan#" + encodeURIComponent(r.id), [r.sektor, r.pengelola], { b: r.tingkat_bukti }));

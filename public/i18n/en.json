@@ -13334,5 +13334,6 @@
  "adm.dp.terhapus": "Document deleted.",
  "pu.ug.lencana": "METI upload",
  "pu.jenis.paparan": "Presentation",
- "pu.jenis.lainnya": "Other"
+ "pu.jenis.lainnya": "Other",
+ "asp.invest.teks": "{a} RE, {b} non-RE"
 }

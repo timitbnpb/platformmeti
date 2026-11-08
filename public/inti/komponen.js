@@ -54,12 +54,6 @@ export function subnavHtml(jalur, hash = "") {
         : jalur === x.href || jalur.startsWith(x.href + "/");
   return `<nav class="jm-subnav" id="subnav" aria-label="${esc(t("nav.insight"))}">${tabTautan(BAGIAN_INSIGHT.map((x) => ({ href: x.href, ikon: x.ikon, label: t(x.kunci), aktif: aktif(x) })))}</nav>`;
 }
-/** Subnav Program nasional dan PSN: satu menu, dua tab (pemilik 9 Nov 2026). */
-export const tabProgramHtml = (jalur) =>
-  `<nav class="jm-subnav" id="subnav" aria-label="${esc(t("n7.program_psn"))}">${tabTautan([
-    { href: "/program", ikon: "bintang", label: t("nav.program"), aktif: /^\/program(\.html)?$/.test(jalur) },
-    { href: "/psn", ikon: "mahkota", label: t("n7.psn"), aktif: /^\/psn(\.html)?$/.test(jalur) },
-  ])}</nav>`;
 export const diBagianInsight = (jalur) =>
   BAGIAN_INSIGHT.some(
     (x) =>

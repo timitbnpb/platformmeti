@@ -41,6 +41,8 @@ function isi(el) {
 }
 function tampil(el) {
   if (!tip) buat();
+  const rumah = el.closest("dialog") || document.body; /* modal di lapisan atas: tooltip ikut di dalamnya */
+  if (tip.parentNode !== rumah) rumah.append(tip);
   jangkar = el; tip.innerHTML = isi(el); tip.hidden = false;
   const r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
   const x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8);

@@ -1,10 +1,10 @@
 /* /program (indeks kartu) dan /program/<kode> (analisis satu program). Data = potret statis /data/program_analisis.json
-   (scripts/pipa/program_analisis.mjs). Teks data dwibahasa {id, en}; teks layar dari kamus. Bagian tanpa isi tidak dirender.
+   (scripts/pipa/program_analisis.mjs); /program#psn memuat bagian PSN energi dari psn.js. Teks data dwibahasa {id, en}; teks layar dari kamus. Bagian tanpa isi tidak dirender.
    INP: chrome filter (cari, tahap) berubah seketika, kartu menyusul lewat nanti(); peta dan tabel panjang dibuat sesudah bingkai tercat. */
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
 import { navLokal, pasangLokal } from "/inti/paginasi.js";
-import { esc, nanti, ikon, hantuHtml } from "/inti/umum.js";
+import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
 import { exHtml, sumberHtml, pilihHtml, cariHtml, hapusHtml, hitungHtml, unduhRegHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { ubinHtml, tampilGalat, saatBahasa } from "/analisis.js";
@@ -26,7 +26,7 @@ const WARNA_ST = { rencana: "--info", izin: "--data5", pendanaan: "--data1", kon
 const BATAS_PROYEK = 20;
 const segmen = decodeURIComponent(location.pathname.split("/").filter(Boolean)[1] || "");
 const HARI_INI = new Date().toISOString().slice(0, 10);
-let D;
+let D, PSN = null;
 let peta = null, popup = null;
 
 /* ---------- pembantu ---------- */
@@ -69,13 +69,20 @@ function gambarIndeks() {
     { ikon: "proyek", nilai: num(semua.length), satuan: "", label: t("pg.u.program"), href: "#pgDaftar" },
     { ikon: "peta", nilai: num(idProyek.size), satuan: "", label: t("pg.u.proyek"), href: "#pgDaftar" },
     { ikon: "peringatan", nilai: num(nBerat), satuan: "", label: t("pg.u.isu"), href: "#pgDaftar" },
-  ]);
+    PSN && { ikon: "bendera", nilai: num(PSN.baris.length), satuan: "", label: t("pg.u.psn"), href: "#psn" },
+  ].filter(Boolean));
+  $("ubin").style.gridTemplateColumns = "repeat(2, minmax(0, 1fr))"; /* 4 ubin = 2x2, tanpa ubin yatim */
   const cacah = (k) => semua.filter((g) => g.tahap === k).length;
   const saring = `<div class="jm-saring" role="group" aria-label="${esc(t("pg.f.grup"))}">${cariHtml({ id: "pgQ", label: t("pg.cari") })}${pilihHtml({ id: "pgT", ikon: "status", label: t("pg.f.tahap"), opsi: [["", t("pg.f.semua")], ...TAHAP.map((k) => [k, t("pg.tahap." + k), "st:" + ST_IK[k], cacah(k)])] })}${hapusHtml({ id: "pgHapus", label: t("jm.kosong.reset") })}${hitungHtml({ id: "pgHitung", teks: "" })}</div>`;
   $("pgIsi").innerHTML = exHtml({
     id: "pgDaftar", ikon: "proyek", topik: t("pg.s.daftar.ey"), judulHtml: hlHtml("pg.s.daftar.j", num(semua.length), { tinggi: num(nBerat) }), subHtml: esc(t("pg.s.daftar.sub")),
     aksiHtml: aksiHtml({}), isiHtml: `${saring}<div class="jm-pk-grid" id="pgGrid"></div>`,
-  });
+  }) + `<section class="psn-bagian" id="psn" aria-labelledby="psnJ"><div class="psn-judul"><h2 id="psnJ">${ikon("bendera", 22)}<span>${esc(t("pg.psn.j"))}</span></h2><p>${esc(t("pg.psn.sub"))}</p></div><div id="psnIsi" class="psn-isi">${hantuHtml(4)}</div></section>`;
+  if (PSN) {
+    /* bagian PSN energi (psn.js) dimuat sesudah kartu program tercat; #psn atau #psn-NNN menggulir ke sini */
+    if (location.hash.startsWith("#psn")) $("psn").scrollIntoView();
+    nanti(() => import("/psn.js").then(() => { if (location.hash.startsWith("#psn")) $("psn").scrollIntoView(); }).catch(() => { $("psnIsi").innerHTML = galatHtml("jaringan"); $("psnIsi").querySelector("[data-aksi=ulang]")?.addEventListener("click", () => location.reload()); }));
+  } else $("psn").remove();
   const q = $("pgQ"), tp = $("pgT"), hapus = $("pgHapus"), hitung = $("pgHitung");
   const isi = () => {
     const kata = norm(q.value.trim());
@@ -331,6 +338,7 @@ const isi = $("pgIsi");
 isi.innerHTML = hantuHtml(6);
 try {
   D = await muat("program_analisis");
+  PSN = segmen ? null : await fetch("/data/psn.json", { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
 } catch (e) { D = null; }
 if (!D) { isi.innerHTML = ""; tampilGalat(isi, () => location.reload()); } else {
   const g = segmen ? D.baris.find((x) => x.kode === segmen) : null;

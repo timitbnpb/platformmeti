@@ -40,6 +40,8 @@ function tampil(e) {
   const b = document.createElement("b"); b.textContent = sisa.length ? judul : e.dataset.tip; k.append(b);
   if (sisa.length) { const s = document.createElement("span"); s.textContent = sisa.join(" "); k.append(s); }
   const c = banding(e); if (c) { const i = document.createElement("small"); i.textContent = c; k.append(i); }
+  const rumah = e.closest("dialog") || document.body; /* modal ada di lapisan atas: tooltip harus ikut di dalamnya */
+  if (k.parentNode !== rumah) rumah.append(k);
   k.hidden = false;
   const r = e.getBoundingClientRect(), w = k.offsetWidth, h = k.offsetHeight;
   const x = Math.min(Math.max(r.left + r.width / 2 - w / 2, 8), innerWidth - w - 8), y = r.top - h - 10 < 8 ? r.bottom + 10 : r.top - h - 10;

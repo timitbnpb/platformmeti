@@ -3,7 +3,7 @@
    Halaman memberi <header class="top" id="kepala"></header>, opsional <div id="pita"></div> dan <footer class="jm-kaki" id="kaki"></footer>. */
 import { t, angka, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
-import { subnavHtml, diBagianInsight, tabProgramHtml } from "/inti/komponen.js";
+import { subnavHtml, diBagianInsight } from "/inti/komponen.js";
 import { pasangRel } from "/inti/rel.js";
 import { pasangPilih } from "/inti/pilih.js";
 import { pasangCari } from "/inti/cari_global.js";
@@ -52,7 +52,7 @@ const temaEfektif = () => document.documentElement.dataset.theme || (matchMedia(
 
 function gambarKepala(el, saya) {
   const jalur = location.pathname;
-  const cocok = (h) => (h === "/" ? jalur === "/" || jalur === "/index.html" : jalur === h || jalur.startsWith(h + "/") || (h === "/program" && /^\/psn(\.html)?$/.test(jalur)));
+  const cocok = (h) => (h === "/" ? jalur === "/" || jalur === "/index.html" : jalur === h || jalur.startsWith(h + "/"));
   const tab = TAB.filter((x) => boleh(x.hak, saya)).map((x) => {
     if (x.grup) {
       const aktif = x.grup.some((g) => cocok(g.href)), id = "grup-" + x.kunci.replace(/\./g, "-");
@@ -177,7 +177,6 @@ export async function mulaiHalaman() {
   }
   if (kepala) { gambarKepala(kepala, saya); pasangPenangan(kepala, saya); pasangCari(kepala); if (saya.masuk) pasangAkunMenu(kepala, saya); }
   pasangBukti();
-  if (kepala && /^\/(program|psn)(\.html)?$/.test(location.pathname) && !document.getElementById("subnav")) kepala.insertAdjacentHTML("afterend", tabProgramHtml(location.pathname));
   if (kepala && diBagianInsight(location.pathname) && !document.getElementById("subnav")) { kepala.insertAdjacentHTML("afterend", subnavHtml(location.pathname, location.hash)); addEventListener("hashchange", () => { const s = document.getElementById("subnav"); if (s) s.outerHTML = subnavHtml(location.pathname, location.hash); }); }
   const pita = document.getElementById("pita");
   if (pita && PITA_DRAF) {
