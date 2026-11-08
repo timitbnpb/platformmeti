@@ -136,3 +136,12 @@
   .jm-ig-kiri{grid-template-rows:auto 1fr auto;gap:20px;padding:clamp(16px,3vh,28px) clamp(20px,4vw,56px)}
   .jm-ig-kiri>.jm-ig-atas,.jm-ig-kiri>.jm-ig-kaki{position:static;justify-self:stretch;width:auto;margin:0}
 }
+/* tombol halaman akun (pemilik 9 Nov 2026): utama bergradien, belum boleh ditekan tetap terbaca; dua tombol bawah ringan */
+.jm-hal-akun .jm-tbl-utama{min-height:52px;border:0;border-radius:var(--r-pil);background:linear-gradient(135deg,var(--brand),var(--brand2));color:var(--on-brand);font:700 var(--t-body)/1 var(--font);box-shadow:0 8px 20px color-mix(in srgb,var(--brand) 26%,transparent);opacity:1;transition:filter .18s ease-out,box-shadow .18s ease-out}
+.jm-hal-akun .jm-tbl-utama:hover{filter:brightness(1.08)}
+.jm-hal-akun .jm-tbl-utama[aria-disabled=true]{background:var(--soft-hijau);color:var(--accent);box-shadow:none;opacity:1;filter:none;cursor:not-allowed}
+.jm-hal-akun .jm-aksi2 .jm-tbl{min-height:46px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-tombol)/1 var(--font);transition:border-color .18s ease-out,background .18s ease-out,color .18s ease-out}
+.jm-hal-akun .jm-aksi2 .jm-tbl svg{color:var(--accent)}
+.jm-hal-akun .jm-aksi2 .jm-tbl:hover{border-color:var(--accent);background:var(--soft-hijau);color:var(--accent)}
+.jm-hal-akun [aria-disabled="true"].jm-tbl-utama:hover{background:var(--soft-hijau);color:var(--accent);filter:none}
+.jm-hal-akun #kirim{flex-direction:row-reverse}
