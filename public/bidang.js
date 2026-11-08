@@ -4,6 +4,7 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
+import { lihatSemuaHtml } from "/inti/komponen.js";
 
 const $ = (id) => document.getElementById(id);
 const EBT = "n7.ebt", PUS = "nav.pustaka", TNT = "n7.tentang", PEN = "bid.n.pendanaan";
@@ -71,7 +72,25 @@ function gambar() {
   $("isi").innerHTML = B
     ? `<a class="jm-bd-balik" href="/bidang">${esc(t("bid.semua"))}</a><div class="jm-bd-kisi">${B.alat.map(kartuAlat).join("")}</div>`
     : `<div class="jm-bd-kisi">${SLUG.map(kartuBidang).join("")}</div>`;
-  isiLencana(); isiKredit();
+  isiLencana(); isiKredit(); isiPengurus(B ? SLUG.indexOf(slug) + 1 : 0);
+}
+
+/* pemilik 9 Nov 2026: tiap bidang menampilkan ketua dan anggotanya (SK METI 0008/2026, pengurus-meti.json; urutan bidang = Bidang Kerja 1-9) */
+let PENGURUS = null;
+const inisialNama = (n) => String(n).split(/\s+/).filter((w) => /^\p{L}/u.test(w)).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+const avatarP = (o, u) => (o.foto ? `<img src="${esc(o.foto)}" alt="" width="${u}" height="${u}" loading="lazy" decoding="async">` : `<span aria-hidden="true">${esc(inisialNama(o.nama))}</span>`);
+async function isiPengurus(no) {
+  const el = $("pengurusBid");
+  if (!no) { el.hidden = true; return; }
+  try { PENGURUS ||= await (await fetch("/data/pengurus-meti.json")).json(); } catch { el.hidden = true; return; }
+  const bid = PENGURUS.bidang.find((b) => b.anggota.some((o) => new RegExp(`(Bidang Kerja|BK) ${no}\\b`).test(o.jabatan)));
+  if (!bid || !el.isConnected) { el.hidden = true; return; }
+  const [ketua, ...lain] = bid.anggota;
+  el.innerHTML = `<div class="bd-png-k"><span class="bd-png-ey">${ikon("orang", 16)}${esc(t("bid.png.ey"))}</span><small>${esc(t("bid.png.sk", { periode: PENGURUS.periode }))}</small></div>
+  <div class="bd-png-ketua"><span class="bd-png-av bd-png-av-b">${avatarP(ketua, 72)}</span><span class="bd-png-n"><small>${esc(t("bid.png.ketua"))}</small><b>${esc(ketua.nama)}</b><span>${esc(ketua.jabatan)}</span></span></div>
+  ${lain.length ? `<ul class="bd-png-ag">${lain.map((o) => `<li><span class="bd-png-av">${avatarP(o, 44)}</span><span class="bd-png-n"><b>${esc(o.nama)}</b><span>${esc(o.jabatan)}</span></span></li>`).join("")}</ul>` : ""}
+  ${lihatSemuaHtml("/tentang", t("bid.png.semua"))}`;
+  el.hidden = false;
 }
 
 /* kredit foto: baris kecil di bawah kisi, dari data/kredit-foto.json (dimuat malas; galat = baris tidak muncul) */
