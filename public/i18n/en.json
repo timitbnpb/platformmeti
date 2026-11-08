@@ -180,6 +180,7 @@
  "e404.beranda": "Back to home",
  "akun.merek": "METI Directory",
  "akun.merek_sub": "Indonesia's renewable energy ecosystem",
+ "masuk.sudah_keluar": "You have signed out. Sign in again to open the directory.",
  "masuk.lupa": "Forgot password?",
  "masuk.lupa_judul": "Forgot your password?",
  "masuk.lupa_isi": "Contact the METI Directory Admin to request a new activation link. You can then set a new password.",

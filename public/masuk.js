@@ -153,6 +153,7 @@ if (halaman === "masuk") {
   });
   // Masuk dengan Google: tampil hanya bila server menyatakan aktif; galat balik dari Google lewat ?galat=
   const galatG = params.get("galat");
+  if (params.get("keluar") === "1") tampilPesan("ok", t("masuk.sudah_keluar"));
   if (/^google_[a-z_]+$/.test(galatG || "") && t("masuk." + galatG) !== "masuk." + galatG) tampilPesan("galat", t("masuk." + galatG));
   fetch("/api/status").then((r) => r.json()).then((s) => {
     const sep = document.querySelector(".jm-atau");

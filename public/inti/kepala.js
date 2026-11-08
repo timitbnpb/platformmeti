@@ -99,7 +99,8 @@ function pasangPenangan(el, saya) {
       try { localStorage.setItem("jm-tema", baru); } catch (err) {}
     } else if (tbl.id === "keluar") {
       tbl.setAttribute("aria-busy", "true");
-      api("/api/keluar", { metode: "POST" }).catch(() => {}).finally(() => location.assign("/"));
+      /* langsung ke /masuk dan GANTI riwayat: tombol Back tidak bisa membuka lagi halaman privat dari cache (pemilik 9 Nov 2026) */
+      api("/api/keluar", { metode: "POST" }).catch(() => {}).finally(() => location.replace("/masuk?keluar=1"));
     }
   });
 }
@@ -164,6 +165,17 @@ function lencanaAdmin(kepala, saya) {
   api("/api/admin/pesan-belum").then((d) => tanda(d.belum || 0)).catch(() => {});
 }
 
+/* halaman yang dipulihkan dari cache riwayat (bfcache, mis. tombol Back sesudah keluar) bisa menampilkan keadaan masuk yang sudah basi:
+   periksa ulang sesi, dan bila sudah keluar alihkan ke /masuk. */
+if (typeof window !== "undefined" && !window.__jmPageshow) {
+  window.__jmPageshow = true;
+  addEventListener("pageshow", (e) => {
+    if (!e.persisted || /^\/(masuk|aktivasi|ganti-sandi|daftar|berhenti|langganan|kta\/v\/)/.test(location.pathname)) return;
+    fetch("/api/saya", { credentials: "same-origin", cache: "no-store" }).then((r) => r.json()).then((s) => {
+      if (s && s.masuk === false) location.replace("/masuk?ke=" + encodeURIComponent(location.pathname + location.search));
+    }).catch(() => {});
+  });
+}
 export async function mulaiHalaman() {
   const saya = await ambilSaya();
   await mulaiBahasa(saya.bahasa);
