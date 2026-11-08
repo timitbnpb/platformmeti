@@ -99,6 +99,8 @@ export function bangun(D, tanggal) {
       if (o) return tambahSimpul({ k: 'org:' + o.id, j: jenis, id: o.id, nama: o.nama, ...(o.logo ? { logo: o.logo } : {}), ...(o.kategori?.label ? { info: o.kategori.label } : {}), ...extra });
       return tambahSimpul({ k: 'org:~' + slug(nama), j: jenis, nama, ...extra });
     };
+    /* nama anggota singkat ("Tianjin", "Pertamina NRE"): cocokkan awalan nama utama atau singkatan unik */
+    const orgAwalan = (n) => { const k = norm(n).replace(/\bnre\b/, 'new renewable energy'); if (k.length < 5) return null; const c = org.filter((o) => { const a = norm(o.nama).replace(/^pt /, ''); return a === k || a.startsWith(k + ' '); }); return c.length === 1 ? c[0].id : null; };
     const orgDariNama = (n) => { const i = orgNama.get(norm(n)); return i && orgById.get(i) ? i : null; };
     const adaGem = gemById.get(terpaduById.get(pid)?.gem_id || pid.replace(/^gem_([a-z]+)_L/, 'gem-$1-L'));
     const sumberProyek = (p.sumber || []).find((s) => httpOk(s.url));
@@ -208,6 +210,18 @@ export function bangun(D, tanggal) {
     for (const b of bk) for (const oi of b.organisasi_ids || []) {
       const e = sisi.find((q) => q.b === 'org:' + oi && q.a === pusat); if (!e) continue;
       const s = e.s || (e.s = []); if (s.length < 3 && httpOk(b.url) && !s.some((q) => q.u === b.url)) s.push({ u: b.url, n: b.media || null });
+    }
+    /* 11. konsorsium "X (A, B, C)": anggota jadi simpul organisasi asli, bergaris dari konsorsium */
+    for (const kn of [...simpul.values()]) {
+      if (kn.j !== 'org' || !kn.k.startsWith('org:~')) continue;
+      const m = /\(([^()]+,[^()]+)\)/.exec(kn.nama); if (!m) continue;
+      const e0 = sisi.find((q) => q.a === pusat && q.b === kn.k); if (!e0) continue;
+      for (const nm of pecahNama(m[1])) {
+        const n = simpulOrg(orgDariNama(nm) || orgAwalan(nm), nm);
+        if (n.k === kn.k) continue;
+        if (!sisi.some((q) => q.a === pusat && q.b === n.k)) tambahSisi(e0.p, n.k, e0.t, e0.s, 'anggota ' + kn.nama.replace(/\s*\(.*$/, ''));
+        tambahSisi(e0.p, n.k, e0.t, e0.s, 'anggota konsorsium', kn.k);
+      }
     }
     if (sisi.length) hasil.set(pid, { id: pid, nama: p.nama, tek, tanggal, jumlah: simpul.size - 1, berita: bk.length, simpul: [...simpul.values()], sisi: sisi.sort((x, y) => PERAN.indexOf(x.p) - PERAN.indexOf(y.p) || URUT_T[x.t] - URUT_T[y.t]) });
   }

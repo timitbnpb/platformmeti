@@ -1,0 +1,2309 @@
+{
+ "lapis": "publik",
+ "dibangun_pada": "2026-11-08",
+ "sumber": [
+  {
+   "id": "esdm-dmo-2023",
+   "penerbit": "Kementerian ESDM",
+   "judul": "DMO terpenuhi, produksi batubara lampaui target 2023 (tabel 2020-2023: produksi, DMO, ekspor)",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/dmo-terpenuhi-produksi-batubara-lampaui-target-2023-",
+   "tahun": 2024,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-prod-2024",
+   "penerbit": "Bisnis.com (data MODI ESDM)",
+   "judul": "RI produksi batu bara 813,05 juta ton, ESDM: lewati target 2024",
+   "url": "https://ekonomi.bisnis.com/read/20250111/44/1830804/ri-produksi-batu-bara-81305-juta-ton-esdm-lewati-target-2024",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-prod-2025",
+   "penerbit": "Bisnis.com",
+   "judul": "Produksi batu bara Indonesia anjlok pada 2025, pemerintah kendalikan pasokan",
+   "url": "https://ekonomi.bisnis.com/read/20251230/44/1940504/produksi-batu-bara-indonesia-anjlok-pada-2025-pemerintah-kendalikan-pasokan",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "iesr-pensiun",
+   "penerbit": "Kontan (kajian IESR)",
+   "judul": "IESR perkirakan biaya pensiun dini PLTU hingga 2050 capai US$ 27,5 miliar",
+   "url": "https://industri.kontan.co.id/news/iesr-perkirakan-biaya-pensiun-dini-pltu-hingga-2050-capai-us-275-miliar",
+   "tahun": 2025,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-cir1-2022",
+   "penerbit": "Bisnis.com",
+   "judul": "Wow! Biaya suntik mati PLTU Cirebon-1 bisa tembus Rp4,65 triliun",
+   "url": "https://ekonomi.bisnis.com/read/20221114/44/1597978/wow-biaya-suntik-mati-pltu-cirebon-1-bisa-tembus-rp465-triliun",
+   "tahun": 2022,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-jetp-18t",
+   "penerbit": "Databoks Katadata",
+   "judul": "JETP targets retirement of two coal plants but the cost requires IDR 18 trillion",
+   "url": "https://databoks.katadata.co.id/en/trade/statistics/753a9cc0039d0a7/jetps-target-is-to-retire-two-coal-fired-power-plants-but-the-cost-requires-idr-18-trillion",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jakpost-jetp-2023",
+   "penerbit": "The Jakarta Post",
+   "judul": "Early coal retirement anyone? Program draws minimal JETP funding",
+   "url": "https://www.thejakartapost.com/business/2023/11/13/early-coal-retirement-anyone-program-draws-minimal-jetp-funding.html",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "enerdata-cipp",
+   "penerbit": "Enerdata",
+   "judul": "Indonesia launches US$21.6bn renewable energy investment plan under JETP",
+   "url": "https://www.enerdata.net/publications/daily-energy-news/indonesia-launches-us216bn-renewable-energy-investment-plan-under-jetp.html",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jakpost-jetp-2025",
+   "penerbit": "The Jakarta Post",
+   "judul": "Airlangga says others won't follow US exit from JETP",
+   "url": "https://www.thejakartapost.com/business/2025/03/25/airlangga-says-others-wont-follow-us-exit-from-jetp-",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ima-rkab",
+   "penerbit": "Indonesian Mining Association (IMA)",
+   "judul": "Penambang: tiap potongan RKAB 1 juta ton, 500 pekerja dirumahkan",
+   "url": "https://ima-api.org/penambang-tiap-potongan-rkab-1-juta-ton-500-pekerja-dirumahkan/",
+   "tahun": 2025,
+   "tingkat_bukti": "kata-pihak",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-ember-2024",
+   "penerbit": "Katadata (kajian Ember)",
+   "judul": "3 provinsi ini bisa ciptakan 96 ribu lapangan kerja dengan transisi energi",
+   "url": "https://katadata.co.id/ekonomi-hijau/energi-baru/66bc4b5cd1a0a/3-provinsi-ini-bisa-ciptakan-96-ribu-lapangan-kerja-dengan-transisi-energi",
+   "tahun": 2024,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "perpres-112",
+   "penerbit": "Pemerintah RI",
+   "judul": "Perpres 112/2022 Pasal 3 (larangan PLTU baru dan pengecualiannya, peta jalan pengakhiran PLTU)",
+   "url": "https://peraturan.go.id/files/Salinan+Perpres+Nomor+112+Tahun+2022.pdf",
+   "tahun": 2022,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  }
+ ],
+ "tambang": {
+  "produksi": [
+   {
+    "tahun": 2020,
+    "produksi": 564,
+    "dmo": 132,
+    "ekspor": 405,
+    "sumber_id": "esdm-dmo-2023",
+    "tingkat_bukti": "resmi",
+    "tanggal": "2026-11-08"
+   },
+   {
+    "tahun": 2021,
+    "produksi": 614,
+    "dmo": 133,
+    "ekspor": 435,
+    "sumber_id": "esdm-dmo-2023",
+    "tingkat_bukti": "resmi",
+    "tanggal": "2026-11-08"
+   },
+   {
+    "tahun": 2022,
+    "produksi": 687,
+    "dmo": 216,
+    "ekspor": 465,
+    "sumber_id": "esdm-dmo-2023",
+    "tingkat_bukti": "resmi",
+    "tanggal": "2026-11-08"
+   },
+   {
+    "tahun": 2023,
+    "produksi": 775,
+    "dmo": 213,
+    "ekspor": 518,
+    "sumber_id": "esdm-dmo-2023",
+    "tingkat_bukti": "resmi",
+    "tanggal": "2026-11-08"
+   },
+   {
+    "tahun": 2024,
+    "produksi": 815.05,
+    "dmo": 209.93,
+    "ekspor": 434.11,
+    "sumber_id": "bisnis-prod-2024",
+    "tingkat_bukti": "media",
+    "catatan": {
+     "id": "Data MODI awal 2025; ekspor dan DMO tidak berjumlah produksi (sisa = stok dan penjualan lain).",
+     "en": "Early-2025 MODI data; export and DMO do not sum to production (remainder = stock and other sales)."
+    },
+    "tanggal": "2026-11-08"
+   }
+  ],
+  "rujukan": {
+   "hba": "pasar_listrik.json#hba",
+   "dmo": "pasar_listrik.json#dmo",
+   "analisis": "pasar_listrik.json#analisis"
+  }
+ },
+ "armada": {
+  "rujukan": "pltu.json",
+  "captive": "captive_power.json"
+ },
+ "pensiun": {
+  "biaya": [
+   {
+    "id": "cir1-cipp",
+    "label": {
+     "id": "Cirebon-1 (JETP CIPP)",
+     "en": "Cirebon-1 (JETP CIPP)"
+    },
+    "mw": 660,
+    "usd_juta": 300,
+    "sumber_id": "katadata-jetp-18t",
+    "tingkat_bukti": "media",
+    "pid": "L100000102814",
+    "tanggal": "2026-11-08",
+    "per_mw_est": {
+     "nilai": 0.45,
+     "satuan": "juta USD per MW"
+    }
+   },
+   {
+    "id": "pelra-cipp",
+    "label": {
+     "id": "Pelabuhan Ratu (JETP CIPP)",
+     "en": "Pelabuhan Ratu (JETP CIPP)"
+    },
+    "mw": 1050,
+    "usd_juta": 870,
+    "sumber_id": "katadata-jetp-18t",
+    "tingkat_bukti": "media",
+    "pid": "L100000102819",
+    "catatan": {
+     "id": "Kapasitas 1.050 MW menurut CREA; GEM mencatat tiga unit 350 MW.",
+     "en": "Capacity 1,050 MW per CREA; GEM lists three 350 MW units."
+    },
+    "tanggal": "2026-11-08",
+    "per_mw_est": {
+     "nilai": 0.83,
+     "satuan": "juta USD per MW"
+    }
+   },
+   {
+    "id": "cir1-bisnis",
+    "label": {
+     "id": "Cirebon-1 (taksiran 2022)",
+     "en": "Cirebon-1 (2022 estimate)"
+    },
+    "mw": 660,
+    "idr_triliun": 4.65,
+    "sumber_id": "bisnis-cir1-2022",
+    "tingkat_bukti": "media",
+    "pid": "L100000102814",
+    "tanggal": "2026-11-08",
+    "per_mw_est": {
+     "nilai": 7.05,
+     "satuan": "miliar Rp per MW"
+    }
+   },
+   {
+    "id": "iesr-2030",
+    "label": {
+     "id": "IESR, 18 PLTU 2025-2030 (sistem)",
+     "en": "IESR, 18 plants 2025-2030 (system)"
+    },
+    "mw": 9200,
+    "usd_juta": 4600,
+    "sumber_id": "iesr-pensiun",
+    "tingkat_bukti": "kajian",
+    "catatan": {
+     "id": "8 PLTU PLN (5 GW) + 10 swasta (4,2 GW); biaya sampai 2030.",
+     "en": "8 PLN plants (5 GW) + 10 private (4.2 GW); cost through 2030."
+    },
+    "tanggal": "2026-11-08",
+    "per_mw_est": {
+     "nilai": 0.5,
+     "satuan": "juta USD per MW"
+    }
+   }
+  ],
+  "kandidat": "pltu.json#kandidat",
+  "jetp": "jetp_cipp.json"
+ },
+ "pengganti": {
+  "param": {
+   "fk_batubara": 0.85,
+   "bauran": {
+    "surya": 0.45,
+    "bayu": 0.15,
+    "firm": 0.4
+   },
+   "fk_ebt": {
+    "surya": 0.17,
+    "bayu": 0.28,
+    "firm": 0.6
+   },
+   "jam": 8760,
+   "tingkat_bukti": "hipotesis",
+   "dari": "captive_power.json#parameter",
+   "celah_dari": "radar_kabupaten.json#provinsi.mentah.celah"
+  },
+  "baris": [
+   {
+    "pid": "L100000102699",
+    "prov": "36",
+    "mw": 6025,
+    "captive": false,
+    "mwh_tahun_est": 44862150,
+    "sepadan_mw": {
+     "surya": 13556,
+     "bayu": 2744,
+     "firm": 3414,
+     "total": 19714
+    }
+   },
+   {
+    "pid": "L100000102714",
+    "prov": "33",
+    "mw": 4640,
+    "captive": false,
+    "mwh_tahun_est": 34549440,
+    "sepadan_mw": {
+     "surya": 10440,
+     "bayu": 2113,
+     "firm": 2629,
+     "total": 15182
+    }
+   },
+   {
+    "pid": "L100000104613",
+    "prov": "82",
+    "mw": 4540,
+    "captive": true,
+    "mwh_tahun_est": 33804840,
+    "sepadan_mw": {
+     "surya": 10215,
+     "bayu": 2067,
+     "firm": 2573,
+     "total": 14855
+    }
+   },
+   {
+    "pid": "L100000104846",
+    "prov": "72",
+    "mw": 3360,
+    "captive": true,
+    "mwh_tahun_est": 25018560,
+    "sepadan_mw": {
+     "surya": 7560,
+     "bayu": 1530,
+     "firm": 1904,
+     "total": 10994
+    }
+   },
+   {
+    "pid": "L100000102711",
+    "prov": "33",
+    "mw": 2260,
+    "captive": false,
+    "mwh_tahun_est": 16827960,
+    "sepadan_mw": {
+     "surya": 5085,
+     "bayu": 1029,
+     "firm": 1281,
+     "total": 7395
+    }
+   },
+   {
+    "pid": "L100000102722",
+    "prov": "72",
+    "mw": 2080,
+    "captive": true,
+    "mwh_tahun_est": 15487680,
+    "sepadan_mw": {
+     "surya": 4680,
+     "bayu": 947,
+     "firm": 1179,
+     "total": 6806
+    }
+   },
+   {
+    "pid": "L100000102703",
+    "prov": "36",
+    "mw": 1982,
+    "captive": false,
+    "mwh_tahun_est": 14757972,
+    "sepadan_mw": {
+     "surya": 4460,
+     "bayu": 903,
+     "firm": 1123,
+     "total": 6486
+    }
+   },
+   {
+    "pid": "L100000102709",
+    "prov": "33",
+    "mw": 1900,
+    "captive": false,
+    "mwh_tahun_est": 14147400,
+    "sepadan_mw": {
+     "surya": 4275,
+     "bayu": 865,
+     "firm": 1077,
+     "total": 6217
+    }
+   },
+   {
+    "pid": "L100000105022",
+    "prov": "74",
+    "mw": 1840,
+    "captive": true,
+    "mwh_tahun_est": 13700640,
+    "sepadan_mw": {
+     "surya": 4140,
+     "bayu": 838,
+     "firm": 1043,
+     "total": 6021
+    }
+   },
+   {
+    "pid": "L100000104831",
+    "prov": "82",
+    "mw": 1630,
+    "captive": true,
+    "mwh_tahun_est": 12136980,
+    "sepadan_mw": {
+     "surya": 3668,
+     "bayu": 742,
+     "firm": 924,
+     "total": 5334
+    }
+   },
+   {
+    "pid": "L100000102814",
+    "prov": "32",
+    "mw": 1584,
+    "captive": false,
+    "mwh_tahun_est": 11794464,
+    "sepadan_mw": {
+     "surya": 3564,
+     "bayu": 721,
+     "firm": 898,
+     "total": 5183
+    }
+   },
+   {
+    "pid": "L100000102794",
+    "prov": "16",
+    "mw": 1320,
+    "captive": false,
+    "mwh_tahun_est": 9828720,
+    "sepadan_mw": {
+     "surya": 2970,
+     "bayu": 601,
+     "firm": 748,
+     "total": 4319
+    }
+   },
+   {
+    "pid": "L100000102729",
+    "prov": "35",
+    "mw": 1320,
+    "captive": false,
+    "mwh_tahun_est": 9828720,
+    "sepadan_mw": {
+     "surya": 2970,
+     "bayu": 601,
+     "firm": 748,
+     "total": 4319
+    }
+   },
+   {
+    "pid": "L100000102697",
+    "prov": "36",
+    "mw": 1260,
+    "captive": false,
+    "mwh_tahun_est": 9381960,
+    "sepadan_mw": {
+     "surya": 2835,
+     "bayu": 574,
+     "firm": 714,
+     "total": 4123
+    }
+   },
+   {
+    "pid": "L100000102728",
+    "prov": "35",
+    "mw": 1230,
+    "captive": false,
+    "mwh_tahun_est": 9158580,
+    "sepadan_mw": {
+     "surya": 2768,
+     "bayu": 560,
+     "firm": 697,
+     "total": 4025
+    }
+   },
+   {
+    "pid": "L100000102819",
+    "prov": "32",
+    "mw": 1050,
+    "captive": false,
+    "mwh_tahun_est": 7818300,
+    "sepadan_mw": {
+     "surya": 2363,
+     "bayu": 478,
+     "firm": 595,
+     "total": 3436
+    }
+   },
+   {
+    "pid": "L100000102815",
+    "prov": "32",
+    "mw": 990,
+    "captive": false,
+    "mwh_tahun_est": 7371540,
+    "sepadan_mw": {
+     "surya": 2228,
+     "bayu": 451,
+     "firm": 561,
+     "total": 3240
+    }
+   },
+   {
+    "pid": "L100000102769",
+    "prov": "12",
+    "mw": 840,
+    "captive": false,
+    "mwh_tahun_est": 6254640,
+    "sepadan_mw": {
+     "surya": 1890,
+     "bayu": 383,
+     "firm": 476,
+     "total": 2749
+    }
+   },
+   {
+    "pid": "L100000102730",
+    "prov": "35",
+    "mw": 815,
+    "captive": false,
+    "mwh_tahun_est": 6068490,
+    "sepadan_mw": {
+     "surya": 1834,
+     "bayu": 371,
+     "firm": 462,
+     "total": 2667
+    }
+   },
+   {
+    "pid": "L100000104841",
+    "prov": "72",
+    "mw": 810,
+    "captive": true,
+    "mwh_tahun_est": 6031260,
+    "sepadan_mw": {
+     "surya": 1823,
+     "bayu": 369,
+     "firm": 459,
+     "total": 2651
+    }
+   },
+   {
+    "pid": "L100000102731",
+    "prov": "35",
+    "mw": 800,
+    "captive": false,
+    "mwh_tahun_est": 5956800,
+    "sepadan_mw": {
+     "surya": 1800,
+     "bayu": 364,
+     "firm": 453,
+     "total": 2617
+    }
+   },
+   {
+    "pid": "L100000102779",
+    "prov": "14",
+    "mw": 790,
+    "captive": true,
+    "mwh_tahun_est": 5882340,
+    "sepadan_mw": {
+     "surya": 1778,
+     "bayu": 360,
+     "firm": 448,
+     "total": 2586
+    }
+   },
+   {
+    "pid": "L100000102804",
+    "prov": "16",
+    "mw": 700,
+    "captive": false,
+    "mwh_tahun_est": 5212200,
+    "sepadan_mw": {
+     "surya": 1575,
+     "bayu": 319,
+     "firm": 397,
+     "total": 2291
+    }
+   },
+   {
+    "pid": "L100000102732",
+    "prov": "35",
+    "mw": 700,
+    "captive": false,
+    "mwh_tahun_est": 5212200,
+    "sepadan_mw": {
+     "surya": 1575,
+     "bayu": 319,
+     "firm": 397,
+     "total": 2291
+    }
+   },
+   {
+    "pid": "L100000102690",
+    "prov": "11",
+    "mw": 670,
+    "captive": false,
+    "mwh_tahun_est": 4988820,
+    "sepadan_mw": {
+     "surya": 1508,
+     "bayu": 305,
+     "firm": 380,
+     "total": 2193
+    }
+   },
+   {
+    "pid": "L100000102708",
+    "prov": "33",
+    "mw": 660,
+    "captive": false,
+    "mwh_tahun_est": 4914360,
+    "sepadan_mw": {
+     "surya": 1485,
+     "bayu": 301,
+     "firm": 374,
+     "total": 2160
+    }
+   },
+   {
+    "pid": "L100000102698",
+    "prov": "36",
+    "mw": 660,
+    "captive": false,
+    "mwh_tahun_est": 4914360,
+    "sepadan_mw": {
+     "surya": 1485,
+     "bayu": 301,
+     "firm": 374,
+     "total": 2160
+    }
+   },
+   {
+    "pid": "L100000102727",
+    "prov": "35",
+    "mw": 660,
+    "captive": false,
+    "mwh_tahun_est": 4914360,
+    "sepadan_mw": {
+     "surya": 1485,
+     "bayu": 301,
+     "firm": 374,
+     "total": 2160
+    }
+   },
+   {
+    "pid": "L100000102726",
+    "prov": "35",
+    "mw": 630,
+    "captive": false,
+    "mwh_tahun_est": 4690980,
+    "sepadan_mw": {
+     "surya": 1418,
+     "bayu": 287,
+     "firm": 357,
+     "total": 2062
+    }
+   },
+   {
+    "pid": "L100000102713",
+    "prov": "33",
+    "mw": 630,
+    "captive": false,
+    "mwh_tahun_est": 4690980,
+    "sepadan_mw": {
+     "surya": 1418,
+     "bayu": 287,
+     "firm": 357,
+     "total": 2062
+    }
+   },
+   {
+    "pid": "L100000102696",
+    "prov": "36",
+    "mw": 600,
+    "captive": false,
+    "mwh_tahun_est": 4467600,
+    "sepadan_mw": {
+     "surya": 1350,
+     "bayu": 273,
+     "firm": 340,
+     "total": 1963
+    }
+   },
+   {
+    "pid": "L100000104617",
+    "prov": "74",
+    "mw": 530,
+    "captive": true,
+    "mwh_tahun_est": 3946380,
+    "sepadan_mw": {
+     "surya": 1193,
+     "bayu": 241,
+     "firm": 300,
+     "total": 1734
+    }
+   },
+   {
+    "pid": "L100000102789",
+    "prov": "73",
+    "mw": 520,
+    "captive": false,
+    "mwh_tahun_est": 3871920,
+    "sepadan_mw": {
+     "surya": 1170,
+     "bayu": 237,
+     "firm": 295,
+     "total": 1702
+    }
+   },
+   {
+    "pid": "L100000102783",
+    "prov": "63",
+    "mw": 460,
+    "captive": false,
+    "mwh_tahun_est": 3425160,
+    "sepadan_mw": {
+     "surya": 1035,
+     "bayu": 209,
+     "firm": 261,
+     "total": 1505
+    }
+   },
+   {
+    "pid": "L100000102691",
+    "prov": "51",
+    "mw": 426,
+    "captive": false,
+    "mwh_tahun_est": 3171996,
+    "sepadan_mw": {
+     "surya": 958,
+     "bayu": 194,
+     "firm": 241,
+     "total": 1393
+    }
+   },
+   {
+    "pid": "L100001000402",
+    "prov": "72",
+    "mw": 350,
+    "captive": true,
+    "mwh_tahun_est": 2606100,
+    "sepadan_mw": {
+     "surya": 788,
+     "bayu": 159,
+     "firm": 198,
+     "total": 1145
+    }
+   },
+   {
+    "pid": "L100001026019",
+    "prov": "72",
+    "mw": 330,
+    "captive": true,
+    "mwh_tahun_est": 2457180,
+    "sepadan_mw": {
+     "surya": 743,
+     "bayu": 150,
+     "firm": 187,
+     "total": 1080
+    }
+   },
+   {
+    "pid": "L100000102695",
+    "prov": "36",
+    "mw": 300,
+    "captive": true,
+    "mwh_tahun_est": 2233800,
+    "sepadan_mw": {
+     "surya": 675,
+     "bayu": 137,
+     "firm": 170,
+     "total": 982
+    }
+   },
+   {
+    "pid": "L100000102802",
+    "prov": "16",
+    "mw": 300,
+    "captive": false,
+    "mwh_tahun_est": 2233800,
+    "sepadan_mw": {
+     "surya": 675,
+     "bayu": 137,
+     "firm": 170,
+     "total": 982
+    }
+   },
+   {
+    "pid": "L100000102806",
+    "prov": "16",
+    "mw": 300,
+    "captive": false,
+    "mwh_tahun_est": 2233800,
+    "sepadan_mw": {
+     "surya": 675,
+     "bayu": 137,
+     "firm": 170,
+     "total": 982
+    }
+   },
+   {
+    "pid": "L100000102813",
+    "prov": "32",
+    "mw": 280,
+    "captive": true,
+    "mwh_tahun_est": 2084880,
+    "sepadan_mw": {
+     "surya": 630,
+     "bayu": 127,
+     "firm": 159,
+     "total": 916
+    }
+   },
+   {
+    "pid": "L100000102798",
+    "prov": "16",
+    "mw": 270,
+    "captive": false,
+    "mwh_tahun_est": 2010420,
+    "sepadan_mw": {
+     "surya": 608,
+     "bayu": 123,
+     "firm": 153,
+     "total": 884
+    }
+   },
+   {
+    "pid": "L100000102797",
+    "prov": "16",
+    "mw": 260,
+    "captive": false,
+    "mwh_tahun_est": 1935960,
+    "sepadan_mw": {
+     "surya": 585,
+     "bayu": 118,
+     "firm": 147,
+     "total": 850
+    }
+   },
+   {
+    "pid": "L100000102767",
+    "prov": "12",
+    "mw": 230,
+    "captive": false,
+    "mwh_tahun_est": 1712580,
+    "sepadan_mw": {
+     "surya": 518,
+     "bayu": 105,
+     "firm": 130,
+     "total": 753
+    }
+   },
+   {
+    "pid": "L100000104805",
+    "prov": "35",
+    "mw": 230,
+    "captive": true,
+    "mwh_tahun_est": 1712580,
+    "sepadan_mw": {
+     "surya": 518,
+     "bayu": 105,
+     "firm": 130,
+     "total": 753
+    }
+   },
+   {
+    "pid": "L100000102835",
+    "prov": "13",
+    "mw": 224,
+    "captive": false,
+    "mwh_tahun_est": 1667904,
+    "sepadan_mw": {
+     "surya": 504,
+     "bayu": 102,
+     "firm": 127,
+     "total": 733
+    }
+   },
+   {
+    "pid": "L100000102795",
+    "prov": "16",
+    "mw": 220,
+    "captive": false,
+    "mwh_tahun_est": 1638120,
+    "sepadan_mw": {
+     "surya": 495,
+     "bayu": 100,
+     "firm": 125,
+     "total": 720
+    }
+   },
+   {
+    "pid": "L100000102737",
+    "prov": "64",
+    "mw": 220,
+    "captive": false,
+    "mwh_tahun_est": 1638120,
+    "sepadan_mw": {
+     "surya": 495,
+     "bayu": 100,
+     "firm": 125,
+     "total": 720
+    }
+   },
+   {
+    "pid": "L100000102778",
+    "prov": "14",
+    "mw": 220,
+    "captive": false,
+    "mwh_tahun_est": 1638120,
+    "sepadan_mw": {
+     "surya": 495,
+     "bayu": 100,
+     "firm": 125,
+     "total": 720
+    }
+   },
+   {
+    "pid": "L100000102745",
+    "prov": "15",
+    "mw": 211,
+    "captive": true,
+    "mwh_tahun_est": 1571106,
+    "sepadan_mw": {
+     "surya": 475,
+     "bayu": 96,
+     "firm": 120,
+     "total": 691
+    }
+   },
+   {
+    "pid": "L100000102787",
+    "prov": "73",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102707",
+    "prov": "17",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102823",
+    "prov": "61",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102715",
+    "prov": "62",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102736",
+    "prov": "64",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102719",
+    "prov": "64",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102754",
+    "prov": "18",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102834",
+    "prov": "13",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102785",
+    "prov": "63",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102792",
+    "prov": "73",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102756",
+    "prov": "18",
+    "mw": 200,
+    "captive": false,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100001082958",
+    "prov": "36",
+    "mw": 200,
+    "captive": true,
+    "mwh_tahun_est": 1489200,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113,
+     "total": 654
+    }
+   },
+   {
+    "pid": "L100000102773",
+    "prov": "94",
+    "mw": 195,
+    "captive": true,
+    "mwh_tahun_est": 1451970,
+    "sepadan_mw": {
+     "surya": 439,
+     "bayu": 89,
+     "firm": 111,
+     "total": 639
+    }
+   },
+   {
+    "pid": "L100000104619",
+    "prov": "21",
+    "mw": 180,
+    "captive": true,
+    "mwh_tahun_est": 1340280,
+    "sepadan_mw": {
+     "surya": 405,
+     "bayu": 82,
+     "firm": 102,
+     "total": 589
+    }
+   },
+   {
+    "pid": "L100000104834",
+    "prov": "36",
+    "mw": 175,
+    "captive": true,
+    "mwh_tahun_est": 1303050,
+    "sepadan_mw": {
+     "surya": 394,
+     "bayu": 80,
+     "firm": 99,
+     "total": 573
+    }
+   },
+   {
+    "pid": "L100000104614",
+    "prov": "82",
+    "mw": 152,
+    "captive": true,
+    "mwh_tahun_est": 1131792,
+    "sepadan_mw": {
+     "surya": 342,
+     "bayu": 69,
+     "firm": 86,
+     "total": 497
+    }
+   },
+   {
+    "pid": "L100000104615",
+    "prov": "82",
+    "mw": 150,
+    "captive": true,
+    "mwh_tahun_est": 1116900,
+    "sepadan_mw": {
+     "surya": 338,
+     "bayu": 68,
+     "firm": 85,
+     "total": 491
+    }
+   },
+   {
+    "pid": "L100000102782",
+    "prov": "21",
+    "mw": 130,
+    "captive": false,
+    "mwh_tahun_est": 967980,
+    "sepadan_mw": {
+     "surya": 293,
+     "bayu": 59,
+     "firm": 74,
+     "total": 426
+    }
+   },
+   {
+    "pid": "L100000104616",
+    "prov": "72",
+    "mw": 130,
+    "captive": true,
+    "mwh_tahun_est": 967980,
+    "sepadan_mw": {
+     "surya": 293,
+     "bayu": 59,
+     "firm": 74,
+     "total": 426
+    }
+   },
+   {
+    "pid": "L100000104847",
+    "prov": "72",
+    "mw": 130,
+    "captive": true,
+    "mwh_tahun_est": 967980,
+    "sepadan_mw": {
+     "surya": 293,
+     "bayu": 59,
+     "firm": 74,
+     "total": 426
+    }
+   },
+   {
+    "pid": "L100000102828",
+    "prov": "52",
+    "mw": 124,
+    "captive": true,
+    "mwh_tahun_est": 923304,
+    "sepadan_mw": {
+     "surya": 279,
+     "bayu": 56,
+     "firm": 70,
+     "total": 405
+    }
+   },
+   {
+    "pid": "L100000102717",
+    "prov": "62",
+    "mw": 120,
+    "captive": false,
+    "mwh_tahun_est": 893520,
+    "sepadan_mw": {
+     "surya": 270,
+     "bayu": 55,
+     "firm": 68,
+     "total": 393
+    }
+   },
+   {
+    "pid": "L100000102704",
+    "prov": "36",
+    "mw": 120,
+    "captive": true,
+    "mwh_tahun_est": 893520,
+    "sepadan_mw": {
+     "surya": 270,
+     "bayu": 55,
+     "firm": 68,
+     "total": 393
+    }
+   },
+   {
+    "pid": "L100000102810",
+    "prov": "74",
+    "mw": 100,
+    "captive": false,
+    "mwh_tahun_est": 744600,
+    "sepadan_mw": {
+     "surya": 225,
+     "bayu": 46,
+     "firm": 57,
+     "total": 328
+    }
+   },
+   {
+    "pid": "L100000102788",
+    "prov": "72",
+    "mw": 100,
+    "captive": false,
+    "mwh_tahun_est": 744600,
+    "sepadan_mw": {
+     "surya": 225,
+     "bayu": 46,
+     "firm": 57,
+     "total": 328
+    }
+   },
+   {
+    "pid": "L100000102742",
+    "prov": "75",
+    "mw": 100,
+    "captive": false,
+    "mwh_tahun_est": 744600,
+    "sepadan_mw": {
+     "surya": 225,
+     "bayu": 46,
+     "firm": 57,
+     "total": 328
+    }
+   },
+   {
+    "pid": "L100000102762",
+    "prov": "71",
+    "mw": 100,
+    "captive": false,
+    "mwh_tahun_est": 744600,
+    "sepadan_mw": {
+     "surya": 225,
+     "bayu": 46,
+     "firm": 57,
+     "total": 328
+    }
+   },
+   {
+    "pid": "L100000102763",
+    "prov": "71",
+    "mw": 100,
+    "captive": false,
+    "mwh_tahun_est": 744600,
+    "sepadan_mw": {
+     "surya": 225,
+     "bayu": 46,
+     "firm": 57,
+     "total": 328
+    }
+   },
+   {
+    "pid": "L100000102740",
+    "prov": "53",
+    "mw": 100,
+    "captive": false,
+    "mwh_tahun_est": 744600,
+    "sepadan_mw": {
+     "surya": 225,
+     "bayu": 46,
+     "firm": 57,
+     "total": 328
+    }
+   },
+   {
+    "pid": "L100000104826",
+    "prov": "61",
+    "mw": 100,
+    "captive": false,
+    "mwh_tahun_est": 744600,
+    "sepadan_mw": {
+     "surya": 225,
+     "bayu": 46,
+     "firm": 57,
+     "total": 328
+    }
+   },
+   {
+    "pid": "L100001080962",
+    "prov": "61",
+    "mw": 75,
+    "captive": true,
+    "mwh_tahun_est": 558450,
+    "sepadan_mw": {
+     "surya": 169,
+     "bayu": 34,
+     "firm": 43,
+     "total": 246
+    }
+   },
+   {
+    "pid": "L100000102793",
+    "prov": "73",
+    "mw": 70,
+    "captive": true,
+    "mwh_tahun_est": 521220,
+    "sepadan_mw": {
+     "surya": 158,
+     "bayu": 32,
+     "firm": 40,
+     "total": 230
+    }
+   },
+   {
+    "pid": "L100000102820",
+    "prov": "32",
+    "mw": 60.4,
+    "captive": true,
+    "mwh_tahun_est": 449738,
+    "sepadan_mw": {
+     "surya": 136,
+     "bayu": 28,
+     "firm": 34,
+     "total": 198
+    }
+   },
+   {
+    "pid": "L100000102759",
+    "prov": "71",
+    "mw": 60,
+    "captive": false,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000102693",
+    "prov": "19",
+    "mw": 60,
+    "captive": false,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000102735",
+    "prov": "64",
+    "mw": 60,
+    "captive": false,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000102826",
+    "prov": "61",
+    "mw": 60,
+    "captive": true,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000102801",
+    "prov": "74",
+    "mw": 60,
+    "captive": true,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000102786",
+    "prov": "63",
+    "mw": 60,
+    "captive": true,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000104400",
+    "prov": "12",
+    "mw": 60,
+    "captive": true,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000104398",
+    "prov": "32",
+    "mw": 60,
+    "captive": true,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000104535",
+    "prov": "71",
+    "mw": 60,
+    "captive": false,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000104575",
+    "prov": "36",
+    "mw": 60,
+    "captive": true,
+    "mwh_tahun_est": 446760,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34,
+     "total": 196
+    }
+   },
+   {
+    "pid": "L100000104975",
+    "prov": "32",
+    "mw": 55,
+    "captive": true,
+    "mwh_tahun_est": 409530,
+    "sepadan_mw": {
+     "surya": 124,
+     "bayu": 25,
+     "firm": 31,
+     "total": 180
+    }
+   },
+   {
+    "pid": "L100001082982",
+    "prov": "12",
+    "mw": 50,
+    "captive": true,
+    "mwh_tahun_est": 372300,
+    "sepadan_mw": {
+     "surya": 113,
+     "bayu": 23,
+     "firm": 28,
+     "total": 164
+    }
+   },
+   {
+    "pid": "L100000104397",
+    "prov": "36",
+    "mw": 40,
+    "captive": true,
+    "mwh_tahun_est": 297840,
+    "sepadan_mw": {
+     "surya": 90,
+     "bayu": 18,
+     "firm": 23,
+     "total": 131
+    }
+   },
+   {
+    "pid": "L100000104584",
+    "prov": "32",
+    "mw": 36.6,
+    "captive": true,
+    "mwh_tahun_est": 272524,
+    "sepadan_mw": {
+     "surya": 82,
+     "bayu": 17,
+     "firm": 21,
+     "total": 120
+    }
+   },
+   {
+    "pid": "L100000102812",
+    "prov": "32",
+    "mw": 30,
+    "captive": true,
+    "mwh_tahun_est": 223380,
+    "sepadan_mw": {
+     "surya": 68,
+     "bayu": 14,
+     "firm": 17,
+     "total": 99
+    }
+   },
+   {
+    "pid": "L100001082970",
+    "prov": "32",
+    "mw": 30,
+    "captive": true,
+    "mwh_tahun_est": 223380,
+    "sepadan_mw": {
+     "surya": 68,
+     "bayu": 14,
+     "firm": 17,
+     "total": 99
+    }
+   }
+  ],
+  "provinsi": [
+   {
+    "kode": "36",
+    "mw": 11422,
+    "n": 11,
+    "sepadan_mw": {
+     "surya": 25700,
+     "bayu": 5203,
+     "firm": 6472
+    },
+    "celah_mw": {
+     "surya": 2369,
+     "bayu": 1753,
+     "firm": 983
+    },
+    "rasio": {
+     "surya": 0.09,
+     "bayu": 0.34,
+     "firm": 0.15
+    }
+   },
+   {
+    "kode": "33",
+    "mw": 10090,
+    "n": 5,
+    "sepadan_mw": {
+     "surya": 22703,
+     "bayu": 4595,
+     "firm": 5718
+    },
+    "celah_mw": {
+     "surya": 8644,
+     "bayu": 5213,
+     "firm": 3916
+    },
+    "rasio": {
+     "surya": 0.38,
+     "bayu": 1.13,
+     "firm": 0.68
+    }
+   },
+   {
+    "kode": "72",
+    "mw": 7290,
+    "n": 8,
+    "sepadan_mw": {
+     "surya": 16405,
+     "bayu": 3319,
+     "firm": 4132
+    },
+    "celah_mw": {
+     "surya": 6186,
+     "bayu": 908,
+     "firm": 998
+    },
+    "rasio": {
+     "surya": 0.38,
+     "bayu": 0.27,
+     "firm": 0.24
+    }
+   },
+   {
+    "kode": "82",
+    "mw": 6472,
+    "n": 4,
+    "sepadan_mw": {
+     "surya": 14563,
+     "bayu": 2946,
+     "firm": 3668
+    },
+    "celah_mw": {
+     "surya": 3030,
+     "bayu": 504,
+     "firm": 741
+    },
+    "rasio": {
+     "surya": 0.21,
+     "bayu": 0.17,
+     "firm": 0.2
+    }
+   },
+   {
+    "kode": "35",
+    "mw": 6385,
+    "n": 8,
+    "sepadan_mw": {
+     "surya": 14368,
+     "bayu": 2908,
+     "firm": 3618
+    },
+    "celah_mw": {
+     "surya": 10158,
+     "bayu": 7907,
+     "firm": 4723
+    },
+    "rasio": {
+     "surya": 0.71,
+     "bayu": 2.72,
+     "firm": 1.31
+    }
+   },
+   {
+    "kode": "32",
+    "mw": 4176,
+    "n": 10,
+    "sepadan_mw": {
+     "surya": 9398,
+     "bayu": 1902,
+     "firm": 2367
+    },
+    "celah_mw": {
+     "surya": 8468,
+     "bayu": 7036,
+     "firm": 6276
+    },
+    "rasio": {
+     "surya": 0.9,
+     "bayu": 3.7,
+     "firm": 2.65
+    }
+   },
+   {
+    "kode": "16",
+    "mw": 3370,
+    "n": 7,
+    "sepadan_mw": {
+     "surya": 7583,
+     "bayu": 1535,
+     "firm": 1910
+    },
+    "celah_mw": {
+     "surya": 17219,
+     "bayu": 301,
+     "firm": 2531
+    },
+    "rasio": {
+     "surya": 2.27,
+     "bayu": 0.2,
+     "firm": 1.33
+    }
+   },
+   {
+    "kode": "74",
+    "mw": 2530,
+    "n": 4,
+    "sepadan_mw": {
+     "surya": 5693,
+     "bayu": 1152,
+     "firm": 1434
+    },
+    "celah_mw": {
+     "surya": 3913,
+     "bayu": 1414,
+     "firm": 467
+    },
+    "rasio": {
+     "surya": 0.69,
+     "bayu": 1.23,
+     "firm": 0.33
+    }
+   },
+   {
+    "kode": "12",
+    "mw": 1180,
+    "n": 4,
+    "sepadan_mw": {
+     "surya": 2656,
+     "bayu": 538,
+     "firm": 668
+    },
+    "celah_mw": {
+     "surya": 11834,
+     "bayu": 356,
+     "firm": 6079
+    },
+    "rasio": {
+     "surya": 4.46,
+     "bayu": 0.66,
+     "firm": 9.1
+    }
+   },
+   {
+    "kode": "14",
+    "mw": 1010,
+    "n": 2,
+    "sepadan_mw": {
+     "surya": 2273,
+     "bayu": 460,
+     "firm": 573
+    },
+    "celah_mw": {
+     "surya": 706,
+     "bayu": 22,
+     "firm": 3344
+    },
+    "rasio": {
+     "surya": 0.31,
+     "bayu": 0.05,
+     "firm": 5.84
+    }
+   },
+   {
+    "kode": "73",
+    "mw": 990,
+    "n": 4,
+    "sepadan_mw": {
+     "surya": 2228,
+     "bayu": 451,
+     "firm": 561
+    },
+    "celah_mw": {
+     "surya": 7573,
+     "bayu": 4042,
+     "firm": 1465
+    },
+    "rasio": {
+     "surya": 3.4,
+     "bayu": 8.96,
+     "firm": 2.61
+    }
+   },
+   {
+    "kode": "63",
+    "mw": 720,
+    "n": 3,
+    "sepadan_mw": {
+     "surya": 1620,
+     "bayu": 327,
+     "firm": 408
+    },
+    "celah_mw": {
+     "surya": 6010,
+     "bayu": 1006,
+     "firm": 1309
+    },
+    "rasio": {
+     "surya": 3.71,
+     "bayu": 3.08,
+     "firm": 3.21
+    }
+   },
+   {
+    "kode": "64",
+    "mw": 680,
+    "n": 4,
+    "sepadan_mw": {
+     "surya": 1530,
+     "bayu": 309,
+     "firm": 385
+    },
+    "celah_mw": {
+     "surya": 13399,
+     "bayu": 212,
+     "firm": 32
+    },
+    "rasio": {
+     "surya": 8.76,
+     "bayu": 0.69,
+     "firm": 0.08
+    }
+   },
+   {
+    "kode": "11",
+    "mw": 670,
+    "n": 1,
+    "sepadan_mw": {
+     "surya": 1508,
+     "bayu": 305,
+     "firm": 380
+    },
+    "celah_mw": {
+     "surya": 7880,
+     "bayu": 894,
+     "firm": 7204
+    },
+    "rasio": {
+     "surya": 5.23,
+     "bayu": 2.93,
+     "firm": 18.96
+    }
+   },
+   {
+    "kode": "61",
+    "mw": 435,
+    "n": 4,
+    "sepadan_mw": {
+     "surya": 979,
+     "bayu": 198,
+     "firm": 247
+    },
+    "celah_mw": {
+     "surya": 20106,
+     "bayu": 554,
+     "firm": 5947
+    },
+    "rasio": {
+     "surya": 20.54,
+     "bayu": 2.8,
+     "firm": 24.08
+    }
+   },
+   {
+    "kode": "51",
+    "mw": 426,
+    "n": 1,
+    "sepadan_mw": {
+     "surya": 958,
+     "bayu": 194,
+     "firm": 241
+    },
+    "celah_mw": {
+     "surya": 1212,
+     "bayu": 1018,
+     "firm": 527
+    },
+    "rasio": {
+     "surya": 1.27,
+     "bayu": 5.25,
+     "firm": 2.19
+    }
+   },
+   {
+    "kode": "13",
+    "mw": 424,
+    "n": 2,
+    "sepadan_mw": {
+     "surya": 954,
+     "bayu": 193,
+     "firm": 240
+    },
+    "celah_mw": {
+     "surya": 5895,
+     "bayu": 428,
+     "firm": 2434
+    },
+    "rasio": {
+     "surya": 6.18,
+     "bayu": 2.22,
+     "firm": 10.14
+    }
+   },
+   {
+    "kode": "18",
+    "mw": 400,
+    "n": 2,
+    "sepadan_mw": {
+     "surya": 900,
+     "bayu": 182,
+     "firm": 226
+    },
+    "celah_mw": {
+     "surya": 2230,
+     "bayu": 1137,
+     "firm": 2925
+    },
+    "rasio": {
+     "surya": 2.48,
+     "bayu": 6.25,
+     "firm": 12.94
+    }
+   },
+   {
+    "kode": "62",
+    "mw": 320,
+    "n": 2,
+    "sepadan_mw": {
+     "surya": 720,
+     "bayu": 146,
+     "firm": 181
+    },
+    "celah_mw": {
+     "surya": 8456,
+     "bayu": 681,
+     "firm": 1057
+    },
+    "rasio": {
+     "surya": 11.74,
+     "bayu": 4.66,
+     "firm": 5.84
+    }
+   },
+   {
+    "kode": "71",
+    "mw": 320,
+    "n": 4,
+    "sepadan_mw": {
+     "surya": 720,
+     "bayu": 146,
+     "firm": 182
+    },
+    "celah_mw": {
+     "surya": 2090,
+     "bayu": 1214,
+     "firm": 979
+    },
+    "rasio": {
+     "surya": 2.9,
+     "bayu": 8.32,
+     "firm": 5.38
+    }
+   },
+   {
+    "kode": "21",
+    "mw": 310,
+    "n": 2,
+    "sepadan_mw": {
+     "surya": 698,
+     "bayu": 141,
+     "firm": 176
+    },
+    "celah_mw": {
+     "surya": 7735,
+     "bayu": 922,
+     "firm": 21
+    },
+    "rasio": {
+     "surya": 11.08,
+     "bayu": 6.54,
+     "firm": 0.12
+    }
+   },
+   {
+    "kode": "15",
+    "mw": 211,
+    "n": 1,
+    "sepadan_mw": {
+     "surya": 475,
+     "bayu": 96,
+     "firm": 120
+    },
+    "celah_mw": {
+     "surya": 8845,
+     "bayu": 37,
+     "firm": 2494
+    },
+    "rasio": {
+     "surya": 18.62,
+     "bayu": 0.39,
+     "firm": 20.78
+    }
+   },
+   {
+    "kode": "17",
+    "mw": 200,
+    "n": 1,
+    "sepadan_mw": {
+     "surya": 450,
+     "bayu": 91,
+     "firm": 113
+    },
+    "celah_mw": {
+     "surya": 3475,
+     "bayu": 1513,
+     "firm": 1464
+    },
+    "rasio": {
+     "surya": 7.72,
+     "bayu": 16.63,
+     "firm": 12.96
+    }
+   },
+   {
+    "kode": "94",
+    "mw": 195,
+    "n": 1,
+    "sepadan_mw": {
+     "surya": 439,
+     "bayu": 89,
+     "firm": 111
+    },
+    "celah_mw": {
+     "surya": 0,
+     "bayu": 0,
+     "firm": 0
+    },
+    "rasio": {
+     "surya": 0,
+     "bayu": 0,
+     "firm": 0
+    }
+   },
+   {
+    "kode": "52",
+    "mw": 124,
+    "n": 1,
+    "sepadan_mw": {
+     "surya": 279,
+     "bayu": 56,
+     "firm": 70
+    },
+    "celah_mw": {
+     "surya": 9880,
+     "bayu": 2605,
+     "firm": 472
+    },
+    "rasio": {
+     "surya": 35.41,
+     "bayu": 46.52,
+     "firm": 6.74
+    }
+   },
+   {
+    "kode": "53",
+    "mw": 100,
+    "n": 1,
+    "sepadan_mw": {
+     "surya": 225,
+     "bayu": 46,
+     "firm": 57
+    },
+    "celah_mw": {
+     "surya": 7247,
+     "bayu": 10188,
+     "firm": 1411
+    },
+    "rasio": {
+     "surya": 32.21,
+     "bayu": 221.48,
+     "firm": 24.75
+    }
+   },
+   {
+    "kode": "75",
+    "mw": 100,
+    "n": 1,
+    "sepadan_mw": {
+     "surya": 225,
+     "bayu": 46,
+     "firm": 57
+    },
+    "celah_mw": {
+     "surya": 1205,
+     "bayu": 137,
+     "firm": 289
+    },
+    "rasio": {
+     "surya": 5.36,
+     "bayu": 2.98,
+     "firm": 5.07
+    }
+   },
+   {
+    "kode": "19",
+    "mw": 60,
+    "n": 1,
+    "sepadan_mw": {
+     "surya": 135,
+     "bayu": 27,
+     "firm": 34
+    },
+    "celah_mw": {
+     "surya": 2807,
+     "bayu": 1787,
+     "firm": 143
+    },
+    "rasio": {
+     "surya": 20.79,
+     "bayu": 66.19,
+     "firm": 4.21
+    }
+   }
+  ]
+ },
+ "cofiring": {
+  "energi_baru_ids": [
+   "cf-nasional",
+   "cf-bangka",
+   "cf-kendari"
+  ],
+  "hidrogen_amonia_ids": [
+   "h2-rhan",
+   "h2-pln21",
+   "h2-ulubelu",
+   "h2-gresik",
+   "h2-pertamina-mitsubishi"
+  ],
+  "bioenergi": "bioenergi.json#cofiring"
+ },
+ "pekerja": {
+  "faktor": [
+   {
+    "id": "faktor-ton",
+    "label": {
+     "id": "Pekerja terancam per 1 juta ton pemangkasan produksi",
+     "en": "Jobs at risk per 1 Mt production cut"
+    },
+    "nilai": 1425,
+    "satuan": "orang",
+    "sumber_id": "ima-rkab",
+    "tingkat_bukti": "kata-pihak",
+    "catatan": {
+     "id": "Dikutip asosiasi dari Dinas ESDM Kalimantan Timur; versi lain menyebut 500 pekerja per juta ton. Berlaku untuk tambang di satu provinsi, bukan faktor nasional.",
+     "en": "Association quote of the East Kalimantan ESDM office; another version says 500 workers per Mt. Applies to mines in one province, not a national factor."
+    },
+    "tanggal": "2026-11-08"
+   },
+   {
+    "id": "faktor-alt",
+    "label": {
+     "id": "Pembanding: pekerja dirumahkan per 1 juta ton RKAB dipotong",
+     "en": "Alternative: workers laid off per 1 Mt RKAB cut"
+    },
+    "nilai": 500,
+    "satuan": "orang",
+    "sumber_id": "ima-rkab",
+    "tingkat_bukti": "kata-pihak",
+    "tanggal": "2026-11-08"
+   },
+   {
+    "id": "ember-96k",
+    "label": {
+     "id": "Lapangan kerja baru di Kaltim, Kalsel, Sumsel bila PLTU baru dibatalkan dan diganti EBT",
+     "en": "New jobs in E. Kalimantan, S. Kalimantan, S. Sumatra if new coal is cancelled for renewables"
+    },
+    "nilai": 96000,
+    "satuan": "pekerjaan",
+    "sumber_id": "katadata-ember-2024",
+    "tingkat_bukti": "kajian",
+    "catatan": {
+     "id": "50.000 dari 2,7 GW EBT terencana + 46.000 bila 2,33 GW PLTU baru diganti 5,8 GW PLTS; tanpa rincian per provinsi.",
+     "en": "50,000 from 2.7 GW planned renewables + 46,000 if 2.33 GW new coal is replaced by 5.8 GW solar; no per-province split."
+    },
+    "tanggal": "2026-11-08"
+   }
+  ],
+  "faktor_ebt": "riset/tenaga_kerja.json",
+  "skenario_ton": {
+   "dasar": "pasar_listrik.json#analisis.tahunan.volume_pembangkit_juta_t",
+   "tingkat_bukti": "hipotesis"
+  }
+ },
+ "pendanaan": {
+  "angka": [
+   {
+    "id": "jetp-total",
+    "label": {
+     "id": "Komitmen JETP Indonesia",
+     "en": "Indonesia JETP commitment"
+    },
+    "nilai": 21.6,
+    "satuan": "miliar USD",
+    "sumber_id": "enerdata-cipp",
+    "tingkat_bukti": "media",
+    "catatan": {
+     "id": "CIPP dirilis November 2023; sebagian sumber menyebut 21,4 miliar (Reuters, Des 2025).",
+     "en": "CIPP released November 2023; some sources cite 21.4 billion (Reuters, Dec 2025)."
+    },
+    "tanggal": "2026-11-08"
+   },
+   {
+    "id": "jetp-pensiun",
+    "label": {
+     "id": "Untuk pensiun dini dan penghentian terkelola PLTU (draf CIPP)",
+     "en": "For early retirement and managed phase-out (CIPP draft)"
+    },
+    "nilai": 1.5,
+    "satuan": "miliar USD",
+    "sumber_id": "jakpost-jetp-2023",
+    "tingkat_bukti": "media",
+    "tanggal": "2026-11-08"
+   },
+   {
+    "id": "jetp-as",
+    "label": {
+     "id": "Amerika Serikat menarik diri dari JETP (awal 2025)",
+     "en": "United States withdrew from JETP (early 2025)"
+    },
+    "nilai": null,
+    "satuan": "",
+    "sumber_id": "jakpost-jetp-2025",
+    "tingkat_bukti": "media",
+    "catatan": {
+     "id": "Sekretariat JETP menyatakan total komitmen tidak berubah.",
+     "en": "The JETP secretariat said the total pledge is unchanged."
+    },
+    "tanggal": "2026-11-08"
+   }
+  ],
+  "rujukan": [
+   "jetp_cipp.json",
+   "global/pembiayaan_luar.json",
+   "pendanaan_internasional.json"
+  ]
+ },
+ "kebijakan": {
+  "pasal3": [
+   {
+    "k": "larang",
+    "teks": {
+     "id": "Pembangunan PLTU baru dilarang, kecuali yang sudah tercantum dalam RUPTL sebelum Perpres terbit.",
+     "en": "New coal plants are banned except those already in the RUPTL before the regulation took effect."
+    }
+   },
+   {
+    "k": "captive",
+    "teks": {
+     "id": "PLTU untuk industri yang berkaitan dengan hilirisasi (proyek strategis nasional) boleh dengan syarat: pengurangan emisi GRK 35% dalam 10 tahun sejak beroperasi dan berhenti paling lambat 2050.",
+     "en": "Plants tied to downstream industry (national strategic projects) are allowed on condition of 35% GHG cut within 10 years of operation and closure by 2050 at the latest."
+    }
+   },
+   {
+    "k": "peta",
+    "teks": {
+     "id": "Menteri ESDM menyusun peta jalan percepatan pengakhiran masa operasi PLTU; PLN dan pemilik lain didukung pendanaan dan alih teknologi.",
+     "en": "The Energy Minister prepares a roadmap to accelerate coal plant retirement, with funding and technology-transfer support."
+    }
+   }
+  ],
+  "sumber_id": "perpres-112",
+  "tingkat_bukti": "resmi",
+  "regulasi_ids": [
+   "perpres-112-2022",
+   "pp-40-2025",
+   "permen-esdm-12-2023",
+   "permen-esdm-19-2017",
+   "uu-30-2009",
+   "perpres-110-2025"
+  ]
+ },
+ "isu_ids": [
+  "pensiun-dini-pltu",
+  "pltu-captive",
+  "jetp-cipp",
+  "co-firing-biomassa",
+  "dmo-harga-batubara",
+  "oversupply-take-or-pay",
+  "harga-patokan-112"
+ ],
+ "meta": {
+  "diperbarui": "2026-11-08",
+  "celah": [
+   "Produksi batubara per provinsi dan tenaga kerja tambang per provinsi (Sakernas BPS, Minerba One Data) tidak ditemukan dalam bentuk terbuka yang bisa dibaca; tab Pekerja memakai faktor per juta ton dan proksi MW PLTU per provinsi.",
+   "Ketergantungan PAD/DBH batubara per kabupaten tidak diterbitkan sebagai tabel terbuka; hanya total DBH Kaltim (semua jenis) yang terlihat di siaran DJPb, jadi tidak ditampilkan sebagai angka batubara.",
+   "Produksi 2025 penuh belum dirujuk: sumber media menyebut turun tetapi angka semester I berbeda antar media (317,7 vs 357,6 juta ton).",
+   "Biaya pensiun dini per MW dihitung dari total dan MW yang dilaporkan (EST); ruang lingkup tiap taksiran berbeda (kompensasi kontrak, pembiayaan ulang, dukungan pekerja).",
+   "MW EBT pengganti memakai nameplate x faktor kapasitas dan bauran yang sama dengan captive_power.json (Hipotesis): tanpa baterai, transmisi, atau lahan; satu titik potensi tidak sama dengan lokasi tapak."
+  ],
+  "celah_en": [
+   "Coal output and mining jobs by province (BPS Sakernas, Minerba One Data) were not found in an openly readable form; the Workers tab uses a per-megatonne factor and plant MW per province as a proxy.",
+   "Coal PAD/DBH dependence per regency is not published as an open table; only total East Kalimantan DBH (all types) appears in DJPb releases, so it is not shown as a coal figure.",
+   "Full-year 2025 output is not cited: media report a fall but the H1 figures differ (317.7 vs 357.6 Mt).",
+   "Early-retirement cost per MW is derived from reported totals and MW (EST); scope differs across estimates (contract compensation, refinancing, worker support).",
+   "Replacement renewable MW uses nameplate x capacity factor and the same mix as captive_power.json (Hypothesis): no storage, transmission or land; a potential point is not a site."
+  ]
+ }
+}

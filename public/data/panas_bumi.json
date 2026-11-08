@@ -1,0 +1,1349 @@
+{
+ "lapis": "panas_bumi",
+ "dibangun_pada": "2026-11-08",
+ "tanggal": "2026-11-08",
+ "keterangan": "Modul panas bumi ujung ke ujung. Berkas ini hanya memuat rujukan id ke data yang sudah ada dan butir baru bersumber; angka WKP, proyek, pemasok, isu, regulasi dibaca dari berkas aslinya saat runtime.",
+ "sumber": [
+  {
+   "id": "irena",
+   "judul": "IRENASTAT Renewable Energy Statistics 2026, kapasitas dan pembangkitan Indonesia (panas bumi)",
+   "penerbit": "IRENA",
+   "url": "https://pxweb.irena.org/pxweb/en/IRENASTAT/IRENASTAT__Power%20Capacity%20and%20Generation/",
+   "tahun": 2026,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "perpres112",
+   "judul": "Perpres 112/2022 Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik, Lampiran I (harga patokan tertinggi)",
+   "penerbit": "JDIH BPK",
+   "url": "https://peraturan.bpk.go.id/Details/225308/perpres-no-112-tahun-2022",
+   "tahun": 2022,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "uu21",
+   "judul": "UU 21/2014 tentang Panas Bumi",
+   "penerbit": "JDIH BPK",
+   "url": "https://peraturan.bpk.go.id/Details/38684",
+   "tahun": 2014,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pp7",
+   "judul": "PP 7/2017 tentang Panas Bumi untuk Pemanfaatan Tidak Langsung",
+   "penerbit": "JDIH BPK",
+   "url": "https://peraturan.bpk.go.id/Details/5827",
+   "tahun": 2017,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pp49",
+   "judul": "PP 49/2022 (Bab V, Pasal 25), PPN dibebaskan atas impor barang kontraktor panas bumi",
+   "penerbit": "JDIH BPK",
+   "url": "https://peraturan.bpk.go.id/Details/232943/pp-no-49-tahun-2022",
+   "tahun": 2022,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "lelang",
+   "judul": "Investasi capai US$ 1,99 miliar, Kementerian ESDM lelang 3 WKP Panas Bumi dan 7 PSP",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/investasi-capai-us-199-miliar-kementerian-esdm-lelang-3-wkp-panas-bumi-dan-7-psp",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "lelang2",
+   "judul": "Bahlil Lelang 10 Wilayah Panas Bumi RI Tahun 2025, Ini Daftarnya",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/news/20250917184934-4-667921/bahlil-lelang-10-wilayah-panas-bumi-ri-tahun-2025-ini-daftarnya",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "esmap",
+   "judul": "ESMAP, Harding-Newman, data pengeboran panas bumi (presentasi 2012)",
+   "penerbit": "ESMAP / Bank Dunia",
+   "url": "https://esmap.org/sites/esmap.org/files/Harding_Drilling%20data_%28Day%203%29.pdf",
+   "tahun": 2012,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "stanford",
+   "judul": "Sanyal dkk., catatan tingkat sukses pengeboran panas bumi Indonesia (IGA standard db)",
+   "penerbit": "Stanford Geothermal / IGA",
+   "url": "https://pangea.stanford.edu/ERE/db/IGAstandard/record_detail.php?id=7163",
+   "tahun": 2011,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "lemigas",
+   "judul": "Lemigas, studi kasus biaya sumur panas bumi (Scientific Contributions Oil & Gas)",
+   "penerbit": "Lemigas / ESDM",
+   "url": "https://journal.lemigas.esdm.go.id/index.php/SCOG/article/download/1591/pdf",
+   "tahun": 2023,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "smi",
+   "judul": "PISP Fund Management Reports",
+   "penerbit": "PT Sarana Multi Infrastruktur",
+   "url": "https://www.ptsmi.co.id/pisp-fund-management-reports",
+   "tahun": 2024,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pmk80",
+   "judul": "PMK 80/2022 tentang Dana PISP",
+   "penerbit": "KBLI.co.id (salinan peraturan)",
+   "url": "https://kbli.co.id/regulations/other-80-pmk-08-2022-2022",
+   "tahun": 2022,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "wbpisp",
+   "judul": "World Bank, dokumen proyek PISP/Geothermal Resource Risk Mitigation (P155047)",
+   "penerbit": "Bank Dunia",
+   "url": "https://ewsdata.rightsindevelopment.org/files/documents/47/WB-P155047.pdf",
+   "tahun": 2016,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tgefund",
+   "judul": "New funding schemes in Jakarta, Indonesia to fund geothermal exploration",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/new-funding-schemes-in-jarkarta-indonesia-to-fund-geothermal-exploration/",
+   "tahun": 2016,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "waesano",
+   "judul": "SMI to provide $30m fund for Waesano geothermal exploration project",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/smi-to-provide-30m-fund-for-waesano-geothermal-exploration-project",
+   "tahun": 2017,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jica",
+   "judul": "JICA, siaran pers perjanjian pinjaman PLTP Hululais",
+   "penerbit": "JICA",
+   "url": "https://www.jica.go.jp/english/information/press/2025/20260330_11.html",
+   "tahun": 2026,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ruptl",
+   "judul": "RUPTL PT PLN (Persero) 2025-2034 (lampiran Kepmen ESDM 188.K/TL.03/MEM.L/2025)",
+   "penerbit": "PT PLN (Persero); Kementerian ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "medco",
+   "judul": "Medco Energi, transisi ke energi rendah karbon (PLTP Ijen 35 MW beroperasi komersial Feb 2025)",
+   "penerbit": "Medco Energi",
+   "url": "https://www.medcoenergi.com/en/our-sustainability/climate-change/transition-to-low-carbon-energy/",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pge_1gw",
+   "judul": "PGE mempercepat ekspansi panas bumi menuju kapasitas 1 GW",
+   "penerbit": "PT Pertamina Geothermal Energy Tbk",
+   "url": "https://www.pge.pertamina.com/en/press-release/maintaining-strong-financial-fundamentals-pge-accelerates-geothermal-expansion-to-1-gw-capacity",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pge_q3",
+   "judul": "PGE, pendapatan US$318,86 juta s.d. Q3 2025, tambahan kapasitas Lumut Balai Unit 2",
+   "penerbit": "PT Pertamina Geothermal Energy Tbk",
+   "url": "https://www.pge.pertamina.com/en/press-release/pge-posts-us318-86-million-in-revenue-through-q3-2025-with-additional-capacity-at-lumut-balai-unit-2-a-key-driver",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pge_kmj",
+   "judul": "PGE, Lapangan Kamojang",
+   "penerbit": "PT Pertamina Geothermal Energy Tbk",
+   "url": "https://pge.pertamina.com/en/own-operation/kamojang",
+   "tahun": 2026,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "laboh_sc",
+   "judul": "Sumitomo Corporation, Muara Laboh mulai beroperasi komersial 16 Desember 2019",
+   "penerbit": "Sumitomo Corporation",
+   "url": "https://www.sumitomocorp.com/en/jp/news/release/2019/group/12770",
+   "tahun": 2019,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "laboh_jbic",
+   "judul": "JBIC interview 62 (pinjaman ekspansi Muara Laboh, Januari 2025)",
+   "penerbit": "JBIC",
+   "url": "https://www.jbic.go.jp/en/image/JBIC_interview62_en.pdf",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "dedap_se",
+   "judul": "PT Supreme Energy Rantau Dedap starts commercial operation",
+   "penerbit": "PT Supreme Energy",
+   "url": "https://www.supreme-energy.com/id/publication_/pt-supreme-energy-rantau-dedap-starts-commercial-operation-rantau-dedap-geothermal-power-plant-development",
+   "tahun": 2021,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "sarulla",
+   "judul": "Sarulla project secures $1.17 billion project financing",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/sarulla-project-secures-1-7-billion-project-financing/",
+   "tahun": 2014,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "wayang",
+   "judul": "Star Energy starts operations of W. Java geothermal plant 2nd unit",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/star-energy-starts-operations-of-w-java-geothermal-plant-2nd-unit",
+   "tahun": 2008,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tge25",
+   "judul": "ThinkGeoEnergy, Global Top 10 geothermal power countries at year-end 2025 (terbit 12 Jan 2026; total dunia 17.173 MW, 35 negara)",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/global-top-10-geothermal-power-countries-at-year-end-2025/",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jetp",
+   "judul": "JETP Indonesia, portofolio (hibah PLTP Patuha Unit 2)",
+   "penerbit": "Sekretariat JETP Indonesia",
+   "url": "https://jetp-id.org/",
+   "tahun": 2026,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "metro-potensi",
+   "judul": "Produksi 2.744 MW, Indonesia posisi 2 dunia sebagai produsen listrik panas bumi (potensi 23.742 MW)",
+   "penerbit": "Metro TV News",
+   "url": "https://www.metrotvnews.com/read/ba4CzJYx-produksi-2-744-mw-indonesia-posisi-2-dunia-sebagai-produsen-listrik-panas-bumi",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "cnbc-2744",
+   "judul": "Indonesia siap jadi negara produsen listrik panas bumi terbesar dunia (Bahlil, 17 September 2025: 2.744 MW, sekitar 10% potensi)",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/news/20250917204935-4-667935/indonesia-siap-jadi-negara-produsen-listrik-panas-bumi-terbesar-dunia",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "esdm-terbesar",
+   "judul": "Indonesia siap jadi negara produsen listrik panas bumi terbesar dunia",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/indonesia-siap-jadi-negara-produsen-listrik-panas-bumi-terbesar-dunia",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "innerspace-3",
+   "judul": "Project InnerSpace, Laporan Indonesia, Bab 3 (2.653 MW pada 19 lapangan bersuhu tinggi yang beroperasi komersial)",
+   "penerbit": "Project InnerSpace",
+   "url": "https://projectinnerspace.org/resources/Indonesia-Report-Bahasa/Chapter-3-Indonesia_INA.pdf",
+   "tahun": 2025,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kabarbursa-24gw",
+   "judul": "Indonesia incar posisi raja geothermal dunia, potensi 24 GW (368 lokasi; dokumen Ditjen EBTKE 2.776 MW)",
+   "penerbit": "KabarBursa",
+   "url": "https://www.kabarbursa.com/makro/indonesia-incar-posisi-raja-geothermal-dunia-potensi-24-gw-jadi-modal-utama",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "esdm-gd",
+   "judul": "Government drilling panas bumi diapresiasi (slim hole; pemerintah menanggung risiko eksplorasi, biaya sekali bukan 30 tahun)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://esdm.go.id/id/media-center/arsip-berita/government-drilling-panas-bumi-diapresiasi",
+   "tahun": 2021,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "esdm-cisolok",
+   "judul": "Menteri ESDM resmikan tajak pengeboran panas bumi Cisolok, proyek eksplorasi deep slim hole pertama APBN",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/menteri-esdm-resmikan-tajak-pengeboran-panas-bumi-cisolok-proyek-eksplorasi-deep-slim-hole-pertama-apbn",
+   "tahun": 2021,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-450",
+   "judul": "ESDM siapkan Rp450 miliar untuk eksplorasi panas bumi (12 Januari 2021; hanya judul dibaca, isi tidak dapat diakses)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20210112/44/1341802/esdm-siapkan-rp450-miliar-untuk-eksplorasi-panas-bumi",
+   "tahun": 2021,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "toshiba-patuha",
+   "judul": "Toshiba wins another equipment order for Patuha geothermal power plant (Sarulla 239 MW; Patuha 1; Lumut Balai 1; total 311 MW; Patuha 2 60,3 MW)",
+   "penerbit": "Toshiba Energy Systems & Solutions",
+   "url": "https://asia.toshiba.com/press-release/english/toshiba-wins-another-equipment-order-for-patuha-geothermal-power-plant-in-indonesia/",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tge-dieng-toshiba",
+   "judul": "Toshiba wins contract for Dieng small-scale geothermal plant in Indonesia (set turbin-generator kelas 10 MW)",
+   "penerbit": "ThinkGeoEnergy",
+   "url": "https://www.thinkgeoenergy.com/toshiba-wins-contract-for-dieng-small-scale-geothermal-plant-in-indonesia/",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "li-langsung",
+   "judul": "Dirjen EBTKE: panas bumi dorong ekonomi lokal (pemanfaatan langsung; rancangan Permen ESDM; percontohan Patuha 2024)",
+   "penerbit": "listrikindonesia.com",
+   "url": "https://listrikindonesia.com/detail/17303/dirjen-ebtke-panas-bumi-dorong-ekonomi-lokal",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ugm-lahendong",
+   "judul": "Taman edukasi panas bumi Lahendong: panas untuk pengolahan gula aren",
+   "penerbit": "Universitas Gadjah Mada",
+   "url": "https://ugm.ac.id/?p=22150",
+   "tahun": 2024,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "unpad-langsung",
+   "judul": "Kajian pemanfaatan langsung panas bumi Indonesia (merujuk Lund dan Toth 2021: sekitar 2,3 MWt, terbesar untuk kolam pemandian)",
+   "penerbit": "Jurnal FOCUS, Universitas Padjadjaran",
+   "url": "https://journals.unpad.ac.id/focus/article/download/65313/26043",
+   "tahun": 2023,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bsdg-dieng",
+   "judul": "Buletin Sumber Daya Geologi 19(3), 2024: pemanfaatan langsung manifestasi mata air panas di WKP Dieng",
+   "penerbit": "Badan Geologi, Kementerian ESDM",
+   "url": "https://buletinsdg.geologi.esdm.go.id/index.php/bsdg/article/download/BSDG_VOL_19_NO_3_2024_5/349",
+   "tahun": 2024,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  }
+ ],
+ "rujukan": {
+  "wkp_ids": [
+   "wkp_telaga_ranau",
+   "wkp_songgoriti",
+   "wkp_danau_ranau",
+   "pspe_bandar_baru_sepa",
+   "pspe_jenawi",
+   "pspe_gunung_tampomas",
+   "pspe_kadidia",
+   "pspe_cubudak_panti",
+   "pspe_cisurupan_kertasari",
+   "pspe_tuang",
+   "wkp_gunung_ungaran",
+   "wkp_hulu_lais",
+   "wkp_bora_pulu",
+   "wkp_mataloko",
+   "wkp_ulumbu",
+   "wkp_patuha",
+   "wkp_kamojang",
+   "wkp_ulubelu",
+   "wkp_lahendong"
+  ],
+  "proyek_ids": [
+   "pj_0267",
+   "pj_0244",
+   "gem_geothermal_L100000700157",
+   "pj_0232",
+   "pj_0241",
+   "gem_geothermal_L100000700146",
+   "gem-geothermal-L100000700202",
+   "pj_0243",
+   "rp_a01a061f",
+   "gem_geothermal_L100000700144",
+   "gem-geothermal-L100000700200",
+   "pj_0229",
+   "pj_0272",
+   "pj_0230",
+   "pj_0222",
+   "pj_0265",
+   "pj_0231",
+   "gem-geothermal-L100000700207",
+   "pj_0247",
+   "pj_0233",
+   "pj_0239",
+   "pj_0266",
+   "pj_0240",
+   "gem-geothermal-L100000700008",
+   "pj_0224",
+   "pj_0246",
+   "pj_0223",
+   "gem_geothermal_L100000700209",
+   "gem-geothermal-L100000700213",
+   "pj_0249",
+   "pj_0268",
+   "gem-geothermal-L100001025666",
+   "wkp25_jenawi",
+   "pj_0260",
+   "gem-geothermal-L100000700014",
+   "pj_0236",
+   "pj_0242",
+   "gem-geothermal-L100001025884",
+   "pj_0228",
+   "gem-geothermal-L100000700201",
+   "gem-geothermal-L100001062660",
+   "pj_0225",
+   "pj_0226",
+   "pj_0269",
+   "pj_0270",
+   "pj_0271",
+   "pj_0227",
+   "pj_0245",
+   "gem_geothermal_L100000700147",
+   "gem-geothermal-L100000700216",
+   "gem-geothermal-L100000700005",
+   "gem_geothermal_L100001025662",
+   "gem-geothermal-L100001025665",
+   "gem-geothermal-L100001025883",
+   "gem-geothermal-L100000700112",
+   "gem-geothermal-L100001025607",
+   "pj_0235",
+   "pj_0238",
+   "wkp25_cubudak_panti",
+   "wkp25_kadidia",
+   "gem_geothermal_L100001025604",
+   "wkp25_danau_ranau",
+   "wkp25_songgoriti",
+   "wkp25_telaga_ranau",
+   "gem-geothermal-L100000700059",
+   "wkp25_gunung_tampomas",
+   "pj_0256",
+   "pj_0261",
+   "pj_0262",
+   "pj_0263",
+   "pj_0264",
+   "pj_0254",
+   "pj_0251",
+   "pj_0257",
+   "pj_0258",
+   "wkp25_cisurupan_kertasari",
+   "wkp25_tuang",
+   "gem_geothermal_L100001063268",
+   "pj_0259",
+   "gem_geothermal_L100001063273",
+   "pj_0237",
+   "pj_0273",
+   "gem_geothermal_L100001042931",
+   "pj_0252",
+   "pj_0234",
+   "pj_0255",
+   "pj_0250",
+   "gem_geothermal_L100000700215",
+   "gem_geothermal_L100000700211",
+   "pj_0253",
+   "pj_0221",
+   "pjb_012",
+   "jica_hululais",
+   "pjb_013",
+   "wkp25_bandar_baru_sepa"
+  ],
+  "pemasok_segmen": "panas-bumi",
+  "isu_ids": [
+   "konflik-panas-bumi",
+   "poco-leok",
+   "dieng-karangtengah",
+   "gunung-talang",
+   "wae-sano",
+   "sorik-marapi",
+   "ungaran",
+   "mataloko",
+   "flores-pulau-panas-bumi",
+   "harga-patokan-112",
+   "perizinan-lahan"
+  ],
+  "regulasi_ids": [
+   "uu-21-2014",
+   "pp-7-2017",
+   "pp-28-2016",
+   "perpres-112-2022",
+   "permen-esdm-17-2014",
+   "permen-klhk-28-2025",
+   "keppres-76-2000"
+  ],
+  "biaya_bangun_id": "pltp-eksplorasi",
+  "pembangkit_status_urut": [
+   "beroperasi",
+   "konstruksi",
+   "izin",
+   "rencana",
+   "ditunda",
+   "tidak-diketahui",
+   "dibatalkan"
+  ]
+ },
+ "sumber_daya": {
+  "potensi_mw": [
+   {
+    "nilai": 23742,
+    "tahun": 2025,
+    "sumber_id": "metro-potensi",
+    "tingkat_bukti": "media",
+    "ket": {
+     "id": "Potensi gabungan sumber daya dan cadangan (Badan Geologi/ESDM, dikutip media).",
+     "en": "Combined resources and reserves (Geological Agency/ESDM, quoted by media)."
+    }
+   }
+  ],
+  "lokasi": {
+   "nilai": 368,
+   "sumber_id": "kabarbursa-24gw",
+   "tingkat_bukti": "media",
+   "ket": {
+    "id": "Jumlah lokasi potensi, bukan jumlah WKP.",
+    "en": "Number of potential sites, not the number of WKP."
+   }
+  },
+  "terpasang_mw": [
+   {
+    "nilai": 2743.76,
+    "tahun": 2025,
+    "sumber_id": "irena",
+    "tingkat_bukti": "resmi",
+    "ket": {
+     "id": "IRENASTAT: dipakai sebagai angka utama (selaras topik panas bumi).",
+     "en": "IRENASTAT: used as the headline figure (consistent with the geothermal topic)."
+    }
+   },
+   {
+    "nilai": 2744,
+    "tahun": 2025,
+    "sumber_id": "cnbc-2744",
+    "tingkat_bukti": "media",
+    "ket": {
+     "id": "Pernyataan Menteri ESDM, sekitar 10% dari potensi.",
+     "en": "Statement by the Minister of ESDM, around 10% of potential."
+    }
+   },
+   {
+    "nilai": 2653,
+    "tahun": 2025,
+    "sumber_id": "innerspace-3",
+    "tingkat_bukti": "kajian",
+    "ket": {
+     "id": "19 lapangan bersuhu tinggi beroperasi komersial.",
+     "en": "19 high-temperature fields in commercial operation."
+    }
+   },
+   {
+    "nilai": 2776,
+    "tahun": 2026,
+    "sumber_id": "kabarbursa-24gw",
+    "tingkat_bukti": "media",
+    "ket": {
+     "id": "Dokumen Ditjen EBTKE yang dikutip media.",
+     "en": "A Directorate General of EBTKE document quoted by media."
+    }
+   }
+  ],
+  "provinsi": [
+   {
+    "kode": "11",
+    "provinsi": "Aceh",
+    "potensi_mw": 1031,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "12",
+    "provinsi": "Sumatera Utara",
+    "potensi_mw": 1866,
+    "terpasang_mw": 711
+   },
+   {
+    "kode": "13",
+    "provinsi": "Sumatera Barat",
+    "potensi_mw": 1648,
+    "terpasang_mw": 89
+   },
+   {
+    "kode": "14",
+    "provinsi": "Riau",
+    "potensi_mw": 45,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "15",
+    "provinsi": "Jambi",
+    "potensi_mw": 779,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "16",
+    "provinsi": "Sumatera Selatan",
+    "potensi_mw": 1450,
+    "terpasang_mw": 158
+   },
+   {
+    "kode": "17",
+    "provinsi": "Bengkulu",
+    "potensi_mw": 838,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "18",
+    "provinsi": "Lampung",
+    "potensi_mw": 1732,
+    "terpasang_mw": 229
+   },
+   {
+    "kode": "19",
+    "provinsi": "Kepulauan Bangka Belitung",
+    "potensi_mw": 46,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "21",
+    "provinsi": "Kepulauan Riau",
+    "potensi_mw": 7,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "31",
+    "provinsi": "DKI Jakarta",
+    "potensi_mw": 0,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "32",
+    "provinsi": "Jawa Barat",
+    "potensi_mw": 4420,
+    "terpasang_mw": 1231
+   },
+   {
+    "kode": "33",
+    "provinsi": "Jawa Tengah",
+    "potensi_mw": 1341,
+    "terpasang_mw": 73
+   },
+   {
+    "kode": "34",
+    "provinsi": "DI Yogyakarta",
+    "potensi_mw": 10,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "35",
+    "provinsi": "Jawa Timur",
+    "potensi_mw": 1299,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "36",
+    "provinsi": "Banten",
+    "potensi_mw": 518,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "51",
+    "provinsi": "Bali",
+    "potensi_mw": 335,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "52",
+    "provinsi": "Nusa Tenggara Barat",
+    "potensi_mw": 78,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "53",
+    "provinsi": "Nusa Tenggara Timur",
+    "potensi_mw": 1195,
+    "terpasang_mw": 24
+   },
+   {
+    "kode": "61",
+    "provinsi": "Kalimantan Barat",
+    "potensi_mw": 65,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "62",
+    "provinsi": "Kalimantan Tengah",
+    "potensi_mw": 0,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "63",
+    "provinsi": "Kalimantan Selatan",
+    "potensi_mw": 50,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "64",
+    "provinsi": "Kalimantan Timur",
+    "potensi_mw": 32,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "65",
+    "provinsi": "Kalimantan Utara",
+    "potensi_mw": 43,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "71",
+    "provinsi": "Sulawesi Utara",
+    "potensi_mw": 939,
+    "terpasang_mw": 124
+   },
+   {
+    "kode": "72",
+    "provinsi": "Sulawesi Tengah",
+    "potensi_mw": 688,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "73",
+    "provinsi": "Sulawesi Selatan",
+    "potensi_mw": 525,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "74",
+    "provinsi": "Sulawesi Tenggara",
+    "potensi_mw": 316,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "75",
+    "provinsi": "Gorontalo",
+    "potensi_mw": 160,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "76",
+    "provinsi": "Sulawesi Barat",
+    "potensi_mw": 378,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "81",
+    "provinsi": "Maluku",
+    "potensi_mw": 564,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "82",
+    "provinsi": "Maluku Utara",
+    "potensi_mw": 706,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "91",
+    "provinsi": "Papua",
+    "potensi_mw": 0,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "92",
+    "provinsi": "Papua Barat",
+    "potensi_mw": 50,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "93",
+    "provinsi": "Papua Selatan",
+    "potensi_mw": 0,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "94",
+    "provinsi": "Papua Tengah",
+    "potensi_mw": 0,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "95",
+    "provinsi": "Papua Pegunungan",
+    "potensi_mw": 0,
+    "terpasang_mw": 0
+   },
+   {
+    "kode": "96",
+    "provinsi": "Papua Barat Daya",
+    "potensi_mw": 50,
+    "terpasang_mw": 0
+   }
+  ],
+  "provinsi_sumber_id": "irena",
+  "catatan_beda": {
+   "id": "Angka terpasang berbeda menurut definisi dan tanggal data; semua versi ditampilkan, tidak ada yang dipilih diam-diam.",
+   "en": "Installed capacity differs by definition and data date; all versions are shown, none chosen silently."
+  }
+ },
+ "eksplorasi": {
+  "risiko": [
+   {
+    "k": "sukses_eksplorasi",
+    "nilai": 59,
+    "satuan": "%",
+    "sumber_id": "esmap",
+    "tingkat_bukti": "kajian"
+   },
+   {
+    "k": "sukses_pengembangan",
+    "nilai": 74,
+    "satuan": "%",
+    "sumber_id": "esmap",
+    "tingkat_bukti": "kajian"
+   },
+   {
+    "k": "sukses_operasi",
+    "nilai": 83,
+    "satuan": "%",
+    "sumber_id": "esmap",
+    "tingkat_bukti": "kajian"
+   },
+   {
+    "k": "biaya_sumur",
+    "nilai": 5,
+    "satuan": "US$ juta",
+    "sumber_id": "lemigas",
+    "tingkat_bukti": "kajian"
+   },
+   {
+    "k": "porsi_bor",
+    "nilai": "35-40",
+    "satuan": "% biaya proyek",
+    "sumber_id": "esmap",
+    "tingkat_bukti": "kajian"
+   },
+   {
+    "k": "usd_per_mw",
+    "nilai": "300.000-400.000",
+    "satuan": "US$/MW",
+    "sumber_id": "stanford",
+    "tingkat_bukti": "kajian"
+   }
+  ],
+  "program": [
+   {
+    "k": "gd",
+    "tahun": 2021,
+    "teks": {
+     "id": "Government drilling: pemerintah membor slim hole untuk memastikan sumber panas dan menanggung risiko eksplorasi, sehingga biaya eksplorasi sekali bayar dan tidak terbawa selama 30 tahun.",
+     "en": "Government drilling: the state drills slim holes to confirm the heat source and carries exploration risk, so exploration cost is paid once instead of over 30 years."
+    },
+    "sumber_id": "esdm-gd",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "cisolok",
+    "tahun": 2021,
+    "teks": {
+     "id": "Cisolok (Jawa Barat): tajak deep slim hole pertama yang dibiayai APBN.",
+     "en": "Cisolok (West Java): the first APBN-funded deep slim hole spud."
+    },
+    "sumber_id": "esdm-cisolok",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "rp450",
+    "tahun": 2021,
+    "teks": {
+     "id": "Anggaran Rp450 miliar untuk eksplorasi panas bumi disebut dalam judul laporan Bisnis.com; rincian belum dibaca.",
+     "en": "A Rp450 billion allocation for geothermal exploration appears in a Bisnis.com headline; details not read."
+    },
+    "sumber_id": "bisnis-450",
+    "tingkat_bukti": "via-pihak-ketiga"
+   }
+  ],
+  "pendanaan": [
+   {
+    "k": "pisp",
+    "teks": {
+     "id": "Dana PISP (Pembiayaan Infrastruktur Sektor Panas Bumi) diatur PMK 80/2022 dan dikelola PT SMI.",
+     "en": "The PISP fund (geothermal infrastructure financing) is set by PMK 80/2022 and managed by PT SMI."
+    },
+    "sumber_id": "pmk80",
+    "tingkat_bukti": "via-pihak-ketiga",
+    "sumber_id2": "smi"
+   },
+   {
+    "k": "grem",
+    "teks": {
+     "id": "Geothermal Resource Risk Mitigation (GREM): proyek Bank Dunia P155047 yang mendanai mitigasi risiko sumber daya lewat PISP.",
+     "en": "Geothermal Resource Risk Mitigation (GREM): World Bank project P155047 funding resource-risk mitigation through PISP."
+    },
+    "sumber_id": "wbpisp",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "tgefund",
+    "teks": {
+     "id": "Skema pendanaan baru untuk eksplorasi panas bumi diumumkan pada 2016.",
+     "en": "New funding schemes for geothermal exploration were announced in 2016."
+    },
+    "sumber_id": "tgefund",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "waesano",
+    "teks": {
+     "id": "SMI menyediakan US$30 juta untuk eksplorasi Wae Sano.",
+     "en": "SMI to provide US$30 million for Wae Sano exploration."
+    },
+    "sumber_id": "waesano",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "jica",
+    "teks": {
+     "id": "JICA: perjanjian pinjaman PLTP Hululais (30 Maret 2026).",
+     "en": "JICA: Hululais PLTP loan agreement (30 March 2026)."
+    },
+    "sumber_id": "jica",
+    "tingkat_bukti": "resmi"
+   }
+  ],
+  "pemasok_subsegmen": [
+   "pengeboran-sumur",
+   "pipa-separator"
+  ]
+ },
+ "teknologi": {
+  "jenis": [
+   {
+    "k": "uap-kering",
+    "teks": {
+     "id": "Uap kering: uap langsung memutar turbin; contoh klasik Kamojang.",
+     "en": "Dry steam: steam drives the turbine directly; Kamojang is the classic case."
+    },
+    "sumber_id": "pge_kmj",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "flash",
+    "teks": {
+     "id": "Flash: air panas bertekanan diuapkan mendadak (flash) di separator, uapnya memutar turbin.",
+     "en": "Flash: pressurised hot water is flashed to steam in a separator and the steam drives the turbine."
+    },
+    "tingkat_bukti": "editorial"
+   },
+   {
+    "k": "binary",
+    "teks": {
+     "id": "Binari (ORC): panas reservoir memanasi fluida kerja bertitik didih rendah; menjangkau reservoir bersuhu lebih rendah dan dipakai sebagai bottoming unit.",
+     "en": "Binary (ORC): reservoir heat warms a low-boiling working fluid; reaches lower-temperature reservoirs and is used as a bottoming unit."
+    },
+    "tingkat_bukti": "editorial"
+   }
+  ],
+  "pemasok_subsegmen": [
+   "turbin-pembangkit",
+   "binary-orc"
+  ],
+  "unit_pemasok": [
+   {
+    "org_pemasok": "en_8a7adde233",
+    "unit": {
+     "id": "Sarulla (239 MW turbin uap), Patuha Unit 1, Lumut Balai Unit 1",
+     "en": "Sarulla (239 MW steam turbines), Patuha Unit 1, Lumut Balai Unit 1"
+    },
+    "sumber_id": "toshiba-patuha",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "org_pemasok": "en_8a7adde233",
+    "unit": {
+     "id": "Patuha Unit 2: turbin uap dan generator 60,3 MW (pesanan 2025, COD terjadwal 2027)",
+     "en": "Patuha Unit 2: 60.3 MW steam turbine and generator (2025 order, COD scheduled 2027)"
+    },
+    "sumber_id": "toshiba-patuha",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "org_pemasok": "en_8a7adde233",
+    "unit": {
+     "id": "Dieng: set turbin-generator skala kecil kelas 10 MW",
+     "en": "Dieng: small-scale 10 MW-class turbine-generator set"
+    },
+    "sumber_id": "tge-dieng-toshiba",
+    "tingkat_bukti": "media"
+   }
+  ],
+  "kata_kunci": [
+   "Fuji Electric",
+   "Toshiba",
+   "Mitsubishi Power",
+   "Ansaldo Energia",
+   "Ormat"
+  ]
+ },
+ "ppa": {
+  "harga_patokan": [
+   {
+    "varian": "listrik",
+    "kelas": "s.d. 10 MW",
+    "tahun1_10": 9.76,
+    "tahun11_30": 8.3
+   },
+   {
+    "varian": "listrik",
+    "kelas": ">10-50 MW",
+    "tahun1_10": 9.41,
+    "tahun11_30": 8
+   },
+   {
+    "varian": "listrik",
+    "kelas": ">50-100 MW",
+    "tahun1_10": 8.64,
+    "tahun11_30": 7.35
+   },
+   {
+    "varian": "listrik",
+    "kelas": ">100 MW",
+    "tahun1_10": 7.65,
+    "tahun11_30": 6.5
+   },
+   {
+    "varian": "uap",
+    "kelas": "s.d. 10 MW",
+    "tahun1_10": 6.6,
+    "tahun11_30": 5.6
+   },
+   {
+    "varian": "uap",
+    "kelas": ">10-50 MW",
+    "tahun1_10": 6.25,
+    "tahun11_30": 5.31
+   },
+   {
+    "varian": "uap",
+    "kelas": ">50-100 MW",
+    "tahun1_10": 5.48,
+    "tahun11_30": 4.65
+   },
+   {
+    "varian": "uap",
+    "kelas": ">100 MW",
+    "tahun1_10": 4.48,
+    "tahun11_30": 3.91
+   }
+  ],
+  "harga_sumber_id": "perpres112",
+  "faktor_f": {
+   "id": "Faktor lokasi F ada di Lampiran II Perpres 112/2022 dan tidak ditranskripsi; hitungan di halaman memakai F = 1.",
+   "en": "The location factor F is in Annex II of Perpres 112/2022 and is not transcribed; the page calculation uses F = 1."
+  },
+  "transkripsi_catatan": {
+   "id": "Transkripsi METI dari PDF yang dibaca OCR; angka uap kelas >100 MW tahun 11-30 (3,91) terbaca samar.",
+   "en": "METI transcription from an OCR-read PDF; the steam >100 MW years 11-30 figure (3.91) is faint."
+  },
+  "contoh": {
+   "mw": 55,
+   "faktor_kapasitas": 72.5,
+   "kelas": ">50-100 MW",
+   "f": 1,
+   "sumber_id": "irena",
+   "ket": {
+    "id": "Faktor kapasitas 72,5% = rata-rata nasional 2024 (EST).",
+    "en": "Capacity factor 72.5% = 2024 national average (EST)."
+   }
+  },
+  "ppa_contoh": [
+   {
+    "proyek_id": "pj_0224",
+    "teks": {
+     "id": "Hululais (PGE, 110 MW): pinjaman JICA ditandatangani 30 Maret 2026; pembeli listrik PLN.",
+     "en": "Hululais (PGE, 110 MW): JICA loan signed 30 March 2026; PLN is the electricity buyer."
+    },
+    "sumber_id": "jica",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "proyek_id": "pj_0265",
+    "teks": {
+     "id": "Muara Laboh: pinjaman ekspansi JBIC Januari 2025.",
+     "en": "Muara Laboh: JBIC expansion loan, January 2025."
+    },
+    "sumber_id": "laboh_jbic",
+    "tingkat_bukti": "resmi"
+   }
+  ]
+ },
+ "langsung": {
+  "skala": {
+   "nilai": 2.3,
+   "satuan": "MWt",
+   "sumber_id": "unpad-langsung",
+   "tingkat_bukti": "cuplikan",
+   "ket": {
+    "id": "Pemanfaatan langsung tercatat sekitar 2,3 MWt, sebagian besar kolam pemandian; datanya buruk terdokumentasi.",
+    "en": "Recorded direct use is about 2.3 MWt, mostly bathing pools; data is poorly documented."
+   }
+  },
+  "butir": [
+   {
+    "k": "pertanian",
+    "ikon": "desa",
+    "lokasi": "Lahendong, Sulawesi Utara",
+    "teks": {
+     "id": "Panas dipakai mengolah gula aren di taman edukasi panas bumi Lahendong.",
+     "en": "Heat is used to process palm sugar at the Lahendong geothermal education park."
+    },
+    "sumber_id": "ugm-lahendong",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "k": "pengeringan",
+    "ikon": "tek-panas",
+    "lokasi": "Patuha, Jawa Barat",
+    "teks": {
+     "id": "Percontohan 2024: pengering daun, rumah kaca, dan kolam ikan memakai panas bumi (dilaporkan dalam wawancara Dirjen EBTKE).",
+     "en": "A 2024 pilot: leaf dryers, a greenhouse and fish ponds using geothermal heat (reported in a Director General of EBTKE interview)."
+    },
+    "sumber_id": "li-langsung",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "k": "wisata",
+    "ikon": "lokasi",
+    "lokasi": "Dieng, Jawa Tengah",
+    "teks": {
+     "id": "Manifestasi mata air panas di WKP Dieng dapat dimanfaatkan langsung (kajian Badan Geologi 2024).",
+     "en": "Hot-spring manifestations in the Dieng WKP can be used directly (Geological Agency study, 2024)."
+    },
+    "sumber_id": "bsdg-dieng",
+    "tingkat_bukti": "cuplikan"
+   }
+  ],
+  "regulasi": {
+   "teks": {
+    "id": "Kementerian ESDM menyiapkan rancangan Permen ESDM tentang pemanfaatan langsung panas bumi; pemanfaatan langsung diatur UU 21/2014.",
+    "en": "The Ministry of ESDM is preparing a draft regulation on direct use of geothermal energy; direct use is governed by Law 21/2014."
+   },
+   "sumber_id": "li-langsung",
+   "tingkat_bukti": "cuplikan"
+  }
+ },
+ "pemain": [
+  {
+   "org_id": "p_dda1e51dae",
+   "peran": [
+    "pengembang",
+    "operator"
+   ],
+   "proyek_ids": [
+    "pj_0224",
+    "gem-geothermal-L100001025666",
+    "gem-geothermal-L100001062660",
+    "pj_0269",
+    "pj_0227"
+   ],
+   "wkp_ids": [
+    "wkp_ulubelu",
+    "wkp_lahendong"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Target kapasitas kelolaan sendiri 1 GW pada 2028 dan 1,8 GW pada 2034 (siaran pers PGE).",
+      "en": "Self-operated capacity targets of 1 GW by 2028 and 1.8 GW by 2034 (PGE press release)."
+     },
+     "sumber_id": "pge_1gw",
+     "tingkat_bukti": "resmi"
+    },
+    {
+     "teks": {
+      "id": "Pendapatan US$318,86 juta sampai kuartal III 2025; Lumut Balai Unit 2 menambah kapasitas.",
+      "en": "Revenue of US$318.86 million through Q3 2025; Lumut Balai Unit 2 added capacity."
+     },
+     "sumber_id": "pge_q3",
+     "tingkat_bukti": "resmi"
+    },
+    {
+     "teks": {
+      "id": "Lapangan Kamojang: lima unit, 235 MW terpasang.",
+      "en": "Kamojang field: five units, 235 MW installed."
+     },
+     "sumber_id": "pge_kmj",
+     "tingkat_bukti": "resmi"
+    }
+   ]
+  },
+  {
+   "org_id": "p_7a803f3b71",
+   "peran": [
+    "pengembang",
+    "IPP"
+   ],
+   "proyek_ids": [
+    "pj_0239",
+    "gem_geothermal_L100001063273"
+   ],
+   "wkp_ids": [],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Unit kedua Wayang Windu mulai beroperasi (laporan Petromindo).",
+      "en": "Wayang Windu second unit started operating (Petromindo report)."
+     },
+     "sumber_id": "wayang",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "org_id": "p_c6c4e478c0",
+   "peran": [
+    "pengembang"
+   ],
+   "proyek_ids": [
+    "pj_0265",
+    "pj_0266",
+    "gem_geothermal_L100000700146"
+   ],
+   "wkp_ids": [],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Muara Laboh beroperasi komersial 16 Desember 2019 (siaran Sumitomo Corporation, mitra proyek).",
+      "en": "Muara Laboh entered commercial operation on 16 December 2019 (Sumitomo Corporation release, project partner)."
+     },
+     "sumber_id": "laboh_sc",
+     "tingkat_bukti": "resmi"
+    },
+    {
+     "teks": {
+      "id": "Rantau Dedap memulai operasi komersial (siaran PT Supreme Energy).",
+      "en": "Rantau Dedap started commercial operation (PT Supreme Energy release)."
+     },
+     "sumber_id": "dedap_se",
+     "tingkat_bukti": "resmi"
+    },
+    {
+     "teks": {
+      "id": "JBIC menandatangani pinjaman ekspansi Muara Laboh pada Januari 2025.",
+      "en": "JBIC signed the Muara Laboh expansion loan in January 2025."
+     },
+     "sumber_id": "laboh_jbic",
+     "tingkat_bukti": "resmi"
+    }
+   ]
+  },
+  {
+   "org_id": "p_9de27fd5b9",
+   "peran": [
+    "pengembang"
+   ],
+   "proyek_ids": [
+    "pj_0246",
+    "gem-geothermal-L100000700014"
+   ],
+   "wkp_ids": [],
+   "fakta": [
+    {
+     "teks": {
+      "id": "PLTP Ijen 35 MW beroperasi komersial Februari 2025.",
+      "en": "The 35 MW Ijen PLTP entered commercial operation in February 2025."
+     },
+     "sumber_id": "medco",
+     "tingkat_bukti": "resmi"
+    }
+   ]
+  },
+  {
+   "org_id": "en_8d7c565560",
+   "peran": [
+    "operator",
+    "IPP"
+   ],
+   "proyek_ids": [
+    "gem_geothermal_L100000700157"
+   ],
+   "wkp_ids": [],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Proyek Sarulla memperoleh pembiayaan proyek US$1,17 miliar.",
+      "en": "The Sarulla project secured US$1.17 billion in project financing."
+     },
+     "sumber_id": "sarulla",
+     "tingkat_bukti": "media"
+    },
+    {
+     "teks": {
+      "id": "Turbin uap Toshiba untuk Sarulla berkapasitas 239 MW (siaran Toshiba).",
+      "en": "Toshiba steam turbines for Sarulla total 239 MW (Toshiba release)."
+     },
+     "sumber_id": "toshiba-patuha",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ]
+  }
+ ],
+ "celah": [
+  "Luas WKP (hektare) tidak tersedia: Geoportal ESDM melarang semua robot dan situs EBTKE tidak punya daftar WKP yang dapat dipanen; kolom luas ditampilkan kosong sampai ada sumber yang boleh dibaca.",
+  "Daftar WKP nasional lengkap (SK penetapan, pemegang izin) belum tersedia; basis memuat 19 WKP/PSPE kurasi (wkp.json), bukan seluruhnya.",
+  "Pemenang lelang 2025 (3 WKP dan 7 PSPE) belum ditemukan; pemegang dibiarkan kosong.",
+  "Koordinat proyek berpresisi provinsi atau titik GEM; sebaran peta bukan batas WKP.",
+  "Pemasok turbin per unit hanya Toshiba yang tertaut siaran; Fuji, Mitsubishi, Ansaldo, dan Ormat terdaftar sebagai pemasok panas bumi di basis tetapi unit yang dipasoknya belum terverifikasi.",
+  "Anggaran government drilling tahunan dan hasil sumur belum ditemukan dalam sumber yang boleh dibaca; hanya program dan lokasi awal."
+ ]
+}

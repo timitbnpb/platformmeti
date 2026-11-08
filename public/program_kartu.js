@@ -17,6 +17,7 @@ const FOTO = { "plts-100gw": "surya-cirata", wte: "sampah-psel", b50: "bioenergi
 const WARNA = { surya: "surya", "biomassa-sampah": "sampah", bioenergi: "bio", jaringan: "jaringan", "panas-bumi": "panas", penyimpanan: "simpan", hidrogen: "hidrogen", nuklir: "nuklir" };
 
 const kecil = (svg) => svg.replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"');
+export const fotoProgram = (g) => { const f = FOTO[g.kode] || g.gambar; return f ? `/img/beranda/${f}.webp` : ""; };
 export const pilTahap = (k) => `<span class="jm-pil-st jm-st-${ST_IK[k]}">${kecil(ikonStatus(ST_IK[k]))}<span>${esc(t("pg.tahap." + k))}</span></span>`;
 export const teratas = (g) => [...g.isu].sort((a, z) => BOBOT[a.tingkat] - BOBOT[z.tingkat])[0] || null;
 export const berat = (g) => g.isu.filter((x) => x.tingkat === "tinggi").length;

@@ -735,7 +735,68 @@
    ],
    "sumber_url": "https://openalex.org/I11855966",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 108,
+    "2020": 127,
+    "2021": 145,
+    "2022": 120,
+    "2023": 128,
+    "2024": 152,
+    "2025": 184,
+    "2026": 156
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 52
+    },
+    {
+     "iso2": "TH",
+     "karya": 21
+    },
+    {
+     "iso2": "CN",
+     "karya": 19
+    },
+    {
+     "iso2": "IN",
+     "karya": 19
+    },
+    {
+     "iso2": "KR",
+     "karya": 19
+    },
+    {
+     "iso2": "JP",
+     "karya": 17
+    },
+    {
+     "iso2": "VN",
+     "karya": 14
+    },
+    {
+     "iso2": "AU",
+     "karya": 13
+    },
+    {
+     "iso2": "SA",
+     "karya": 13
+    },
+    {
+     "iso2": "AT",
+     "karya": 10
+    },
+    {
+     "iso2": "PK",
+     "karya": 10
+    },
+    {
+     "iso2": "BN",
+     "karya": 6
+    }
+   ],
+   "sitasi_min": 8035
   },
   {
    "openalex_id": "I119896790",
@@ -828,7 +889,68 @@
    ],
    "sumber_url": "https://openalex.org/I119896790",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 83,
+    "2020": 121,
+    "2021": 112,
+    "2022": 117,
+    "2023": 136,
+    "2024": 141,
+    "2025": 139,
+    "2026": 144
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 65
+    },
+    {
+     "iso2": "JP",
+     "karya": 52
+    },
+    {
+     "iso2": "KR",
+     "karya": 22
+    },
+    {
+     "iso2": "TW",
+     "karya": 17
+    },
+    {
+     "iso2": "TH",
+     "karya": 13
+    },
+    {
+     "iso2": "US",
+     "karya": 12
+    },
+    {
+     "iso2": "GB",
+     "karya": 10
+    },
+    {
+     "iso2": "CN",
+     "karya": 9
+    },
+    {
+     "iso2": "VN",
+     "karya": 8
+    },
+    {
+     "iso2": "SA",
+     "karya": 6
+    },
+    {
+     "iso2": "AU",
+     "karya": 5
+    },
+    {
+     "iso2": "IQ",
+     "karya": 5
+    }
+   ],
+   "sitasi_min": 8419
   },
   {
    "openalex_id": "I102893293",
@@ -921,7 +1043,68 @@
    ],
    "sumber_url": "https://openalex.org/I102893293",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 52,
+    "2020": 76,
+    "2021": 54,
+    "2022": 48,
+    "2023": 99,
+    "2024": 115,
+    "2025": 131,
+    "2026": 149
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 180
+    },
+    {
+     "iso2": "JP",
+     "karya": 39
+    },
+    {
+     "iso2": "IN",
+     "karya": 38
+    },
+    {
+     "iso2": "TH",
+     "karya": 29
+    },
+    {
+     "iso2": "TW",
+     "karya": 17
+    },
+    {
+     "iso2": "CN",
+     "karya": 11
+    },
+    {
+     "iso2": "IQ",
+     "karya": 11
+    },
+    {
+     "iso2": "CZ",
+     "karya": 10
+    },
+    {
+     "iso2": "RU",
+     "karya": 10
+    },
+    {
+     "iso2": "GB",
+     "karya": 8
+    },
+    {
+     "iso2": "PL",
+     "karya": 8
+    },
+    {
+     "iso2": "SG",
+     "karya": 8
+    }
+   ],
+   "sitasi_min": 3554
   },
   {
    "openalex_id": "I177055848",
@@ -1014,7 +1197,68 @@
    ],
    "sumber_url": "https://openalex.org/I177055848",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 60,
+    "2020": 76,
+    "2021": 73,
+    "2022": 66,
+    "2023": 68,
+    "2024": 118,
+    "2025": 129,
+    "2026": 125
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 56
+    },
+    {
+     "iso2": "GB",
+     "karya": 29
+    },
+    {
+     "iso2": "JP",
+     "karya": 22
+    },
+    {
+     "iso2": "TW",
+     "karya": 15
+    },
+    {
+     "iso2": "US",
+     "karya": 15
+    },
+    {
+     "iso2": "AU",
+     "karya": 13
+    },
+    {
+     "iso2": "IN",
+     "karya": 11
+    },
+    {
+     "iso2": "SA",
+     "karya": 11
+    },
+    {
+     "iso2": "CN",
+     "karya": 7
+    },
+    {
+     "iso2": "SG",
+     "karya": 7
+    },
+    {
+     "iso2": "DE",
+     "karya": 6
+    },
+    {
+     "iso2": "NL",
+     "karya": 5
+    }
+   ],
+   "sitasi_min": 4183
   },
   {
    "openalex_id": "I254887060",
@@ -1107,7 +1351,68 @@
    ],
    "sumber_url": "https://openalex.org/I254887060",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 53,
+    "2020": 73,
+    "2021": 68,
+    "2022": 64,
+    "2023": 79,
+    "2024": 109,
+    "2025": 100,
+    "2026": 80
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 50
+    },
+    {
+     "iso2": "JP",
+     "karya": 32
+    },
+    {
+     "iso2": "TW",
+     "karya": 19
+    },
+    {
+     "iso2": "IN",
+     "karya": 17
+    },
+    {
+     "iso2": "SA",
+     "karya": 15
+    },
+    {
+     "iso2": "TH",
+     "karya": 14
+    },
+    {
+     "iso2": "IQ",
+     "karya": 13
+    },
+    {
+     "iso2": "AU",
+     "karya": 12
+    },
+    {
+     "iso2": "IR",
+     "karya": 11
+    },
+    {
+     "iso2": "US",
+     "karya": 10
+    },
+    {
+     "iso2": "DZ",
+     "karya": 7
+    },
+    {
+     "iso2": "KR",
+     "karya": 7
+    }
+   ],
+   "sitasi_min": 3982
   },
   {
    "openalex_id": "I21881038",
@@ -1202,7 +1507,68 @@
    ],
    "sumber_url": "https://openalex.org/I21881038",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 50,
+    "2020": 56,
+    "2021": 62,
+    "2022": 55,
+    "2023": 70,
+    "2024": 73,
+    "2025": 95,
+    "2026": 119
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "JP",
+     "karya": 32
+    },
+    {
+     "iso2": "CN",
+     "karya": 15
+    },
+    {
+     "iso2": "MY",
+     "karya": 15
+    },
+    {
+     "iso2": "TH",
+     "karya": 9
+    },
+    {
+     "iso2": "IN",
+     "karya": 8
+    },
+    {
+     "iso2": "OM",
+     "karya": 7
+    },
+    {
+     "iso2": "PL",
+     "karya": 7
+    },
+    {
+     "iso2": "US",
+     "karya": 7
+    },
+    {
+     "iso2": "AU",
+     "karya": 6
+    },
+    {
+     "iso2": "FR",
+     "karya": 6
+    },
+    {
+     "iso2": "GB",
+     "karya": 5
+    },
+    {
+     "iso2": "KR",
+     "karya": 5
+    }
+   ],
+   "sitasi_min": 3659
   },
   {
    "openalex_id": "I187494767",
@@ -1295,7 +1661,68 @@
    ],
    "sumber_url": "https://openalex.org/I187494767",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 55,
+    "2020": 44,
+    "2021": 76,
+    "2022": 48,
+    "2023": 60,
+    "2024": 79,
+    "2025": 93,
+    "2026": 48
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 73
+    },
+    {
+     "iso2": "AU",
+     "karya": 15
+    },
+    {
+     "iso2": "CN",
+     "karya": 7
+    },
+    {
+     "iso2": "JP",
+     "karya": 6
+    },
+    {
+     "iso2": "IR",
+     "karya": 5
+    },
+    {
+     "iso2": "GB",
+     "karya": 4
+    },
+    {
+     "iso2": "SA",
+     "karya": 4
+    },
+    {
+     "iso2": "DE",
+     "karya": 3
+    },
+    {
+     "iso2": "IN",
+     "karya": 3
+    },
+    {
+     "iso2": "AT",
+     "karya": 2
+    },
+    {
+     "iso2": "EG",
+     "karya": 2
+    },
+    {
+     "iso2": "NL",
+     "karya": 2
+    }
+   ],
+   "sitasi_min": 4338
   },
   {
    "openalex_id": "I98301867",
@@ -1388,7 +1815,68 @@
    ],
    "sumber_url": "https://openalex.org/I98301867",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 46,
+    "2020": 55,
+    "2021": 38,
+    "2022": 34,
+    "2023": 51,
+    "2024": 63,
+    "2025": 83,
+    "2026": 77
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 14
+    },
+    {
+     "iso2": "AU",
+     "karya": 12
+    },
+    {
+     "iso2": "JP",
+     "karya": 10
+    },
+    {
+     "iso2": "US",
+     "karya": 5
+    },
+    {
+     "iso2": "GB",
+     "karya": 4
+    },
+    {
+     "iso2": "IQ",
+     "karya": 4
+    },
+    {
+     "iso2": "MA",
+     "karya": 4
+    },
+    {
+     "iso2": "SA",
+     "karya": 4
+    },
+    {
+     "iso2": "CN",
+     "karya": 3
+    },
+    {
+     "iso2": "PK",
+     "karya": 3
+    },
+    {
+     "iso2": "ES",
+     "karya": 2
+    },
+    {
+     "iso2": "IN",
+     "karya": 2
+    }
+   ],
+   "sitasi_min": 1868
   },
   {
    "openalex_id": "I92961808",
@@ -1481,7 +1969,68 @@
    ],
    "sumber_url": "https://openalex.org/I92961808",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 28,
+    "2020": 54,
+    "2021": 64,
+    "2022": 49,
+    "2023": 58,
+    "2024": 58,
+    "2025": 70,
+    "2026": 63
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 58
+    },
+    {
+     "iso2": "IQ",
+     "karya": 21
+    },
+    {
+     "iso2": "AU",
+     "karya": 15
+    },
+    {
+     "iso2": "BD",
+     "karya": 9
+    },
+    {
+     "iso2": "CN",
+     "karya": 7
+    },
+    {
+     "iso2": "JP",
+     "karya": 6
+    },
+    {
+     "iso2": "TW",
+     "karya": 5
+    },
+    {
+     "iso2": "US",
+     "karya": 5
+    },
+    {
+     "iso2": "VN",
+     "karya": 5
+    },
+    {
+     "iso2": "KR",
+     "karya": 4
+    },
+    {
+     "iso2": "NL",
+     "karya": 4
+    },
+    {
+     "iso2": "SA",
+     "karya": 4
+    }
+   ],
+   "sitasi_min": 3050
   },
   {
    "openalex_id": "I91819753",
@@ -1574,7 +2123,68 @@
    ],
    "sumber_url": "https://openalex.org/I91819753",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 51,
+    "2020": 41,
+    "2021": 36,
+    "2022": 32,
+    "2023": 65,
+    "2024": 60,
+    "2025": 72,
+    "2026": 70
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "JP",
+     "karya": 33
+    },
+    {
+     "iso2": "MY",
+     "karya": 26
+    },
+    {
+     "iso2": "TW",
+     "karya": 16
+    },
+    {
+     "iso2": "GB",
+     "karya": 15
+    },
+    {
+     "iso2": "AU",
+     "karya": 9
+    },
+    {
+     "iso2": "CN",
+     "karya": 8
+    },
+    {
+     "iso2": "IN",
+     "karya": 8
+    },
+    {
+     "iso2": "US",
+     "karya": 5
+    },
+    {
+     "iso2": "TH",
+     "karya": 4
+    },
+    {
+     "iso2": "NL",
+     "karya": 3
+    },
+    {
+     "iso2": "VN",
+     "karya": 3
+    },
+    {
+     "iso2": "KR",
+     "karya": 2
+    }
+   ],
+   "sitasi_min": 2006
   },
   {
    "openalex_id": "I55892964",
@@ -1667,7 +2277,68 @@
    ],
    "sumber_url": "https://openalex.org/I55892964",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 29,
+    "2020": 28,
+    "2021": 49,
+    "2022": 38,
+    "2023": 62,
+    "2024": 61,
+    "2025": 89,
+    "2026": 69
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 37
+    },
+    {
+     "iso2": "JP",
+     "karya": 9
+    },
+    {
+     "iso2": "GB",
+     "karya": 5
+    },
+    {
+     "iso2": "IN",
+     "karya": 3
+    },
+    {
+     "iso2": "NL",
+     "karya": 3
+    },
+    {
+     "iso2": "AU",
+     "karya": 2
+    },
+    {
+     "iso2": "BR",
+     "karya": 2
+    },
+    {
+     "iso2": "FR",
+     "karya": 2
+    },
+    {
+     "iso2": "NO",
+     "karya": 2
+    },
+    {
+     "iso2": "PL",
+     "karya": 2
+    },
+    {
+     "iso2": "TH",
+     "karya": 2
+    },
+    {
+     "iso2": "TW",
+     "karya": 2
+    }
+   ],
+   "sitasi_min": 1784
   },
   {
    "openalex_id": "I245308123",
@@ -1760,7 +2431,68 @@
    ],
    "sumber_url": "https://openalex.org/I245308123",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 23,
+    "2020": 34,
+    "2021": 27,
+    "2022": 31,
+    "2023": 58,
+    "2024": 64,
+    "2025": 92,
+    "2026": 78
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 40
+    },
+    {
+     "iso2": "IN",
+     "karya": 30
+    },
+    {
+     "iso2": "IQ",
+     "karya": 22
+    },
+    {
+     "iso2": "SA",
+     "karya": 17
+    },
+    {
+     "iso2": "PK",
+     "karya": 12
+    },
+    {
+     "iso2": "JP",
+     "karya": 11
+    },
+    {
+     "iso2": "TW",
+     "karya": 9
+    },
+    {
+     "iso2": "EC",
+     "karya": 5
+    },
+    {
+     "iso2": "PH",
+     "karya": 5
+    },
+    {
+     "iso2": "IR",
+     "karya": 4
+    },
+    {
+     "iso2": "OM",
+     "karya": 4
+    },
+    {
+     "iso2": "TH",
+     "karya": 4
+    }
+   ],
+   "sitasi_min": 1663
   },
   {
    "openalex_id": "I12833781",
@@ -1853,7 +2585,68 @@
    ],
    "sumber_url": "https://openalex.org/I12833781",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 30,
+    "2020": 39,
+    "2021": 47,
+    "2022": 36,
+    "2023": 48,
+    "2024": 64,
+    "2025": 70,
+    "2026": 68
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 8
+    },
+    {
+     "iso2": "JP",
+     "karya": 6
+    },
+    {
+     "iso2": "AE",
+     "karya": 4
+    },
+    {
+     "iso2": "SA",
+     "karya": 4
+    },
+    {
+     "iso2": "CZ",
+     "karya": 3
+    },
+    {
+     "iso2": "KR",
+     "karya": 3
+    },
+    {
+     "iso2": "BR",
+     "karya": 2
+    },
+    {
+     "iso2": "IN",
+     "karya": 2
+    },
+    {
+     "iso2": "TW",
+     "karya": 2
+    },
+    {
+     "iso2": "CN",
+     "karya": 1
+    },
+    {
+     "iso2": "DK",
+     "karya": 1
+    },
+    {
+     "iso2": "HU",
+     "karya": 1
+    }
+   ],
+   "sitasi_min": 1221
   },
   {
    "openalex_id": "I205133468",
@@ -1946,7 +2739,68 @@
    ],
    "sumber_url": "https://openalex.org/I205133468",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 18,
+    "2020": 23,
+    "2021": 35,
+    "2022": 45,
+    "2023": 48,
+    "2024": 75,
+    "2025": 85,
+    "2026": 71
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 98
+    },
+    {
+     "iso2": "JP",
+     "karya": 26
+    },
+    {
+     "iso2": "KR",
+     "karya": 26
+    },
+    {
+     "iso2": "IN",
+     "karya": 21
+    },
+    {
+     "iso2": "TW",
+     "karya": 21
+    },
+    {
+     "iso2": "SA",
+     "karya": 16
+    },
+    {
+     "iso2": "TH",
+     "karya": 13
+    },
+    {
+     "iso2": "GB",
+     "karya": 12
+    },
+    {
+     "iso2": "BD",
+     "karya": 11
+    },
+    {
+     "iso2": "CN",
+     "karya": 11
+    },
+    {
+     "iso2": "NG",
+     "karya": 11
+    },
+    {
+     "iso2": "AU",
+     "karya": 10
+    }
+   ],
+   "sitasi_min": 4410
   },
   {
    "openalex_id": "I4405261658",
@@ -2039,7 +2893,48 @@
    ],
    "sumber_url": "https://openalex.org/I4405261658",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 21,
+    "2020": 58,
+    "2021": 59,
+    "2022": 50,
+    "2023": 55,
+    "2024": 51,
+    "2025": 57,
+    "2026": 35
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 11
+    },
+    {
+     "iso2": "JP",
+     "karya": 4
+    },
+    {
+     "iso2": "KR",
+     "karya": 1
+    },
+    {
+     "iso2": "TL",
+     "karya": 1
+    },
+    {
+     "iso2": "TW",
+     "karya": 1
+    },
+    {
+     "iso2": "US",
+     "karya": 1
+    },
+    {
+     "iso2": "ZW",
+     "karya": 1
+    }
+   ],
+   "sitasi_min": 881
   },
   {
    "openalex_id": "I271888150",
@@ -2132,7 +3027,68 @@
    ],
    "sumber_url": "https://openalex.org/I271888150",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 34,
+    "2020": 29,
+    "2021": 30,
+    "2022": 39,
+    "2023": 45,
+    "2024": 64,
+    "2025": 63,
+    "2026": 75
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 32
+    },
+    {
+     "iso2": "AU",
+     "karya": 10
+    },
+    {
+     "iso2": "CN",
+     "karya": 5
+    },
+    {
+     "iso2": "SA",
+     "karya": 5
+    },
+    {
+     "iso2": "JP",
+     "karya": 3
+    },
+    {
+     "iso2": "KR",
+     "karya": 3
+    },
+    {
+     "iso2": "BR",
+     "karya": 2
+    },
+    {
+     "iso2": "DE",
+     "karya": 2
+    },
+    {
+     "iso2": "IN",
+     "karya": 2
+    },
+    {
+     "iso2": "IQ",
+     "karya": 2
+    },
+    {
+     "iso2": "US",
+     "karya": 2
+    },
+    {
+     "iso2": "CA",
+     "karya": 1
+    }
+   ],
+   "sitasi_min": 1469
   },
   {
    "openalex_id": "I148158369",
@@ -2225,7 +3181,68 @@
    ],
    "sumber_url": "https://openalex.org/I148158369",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 20,
+    "2020": 33,
+    "2021": 31,
+    "2022": 40,
+    "2023": 35,
+    "2024": 53,
+    "2025": 64,
+    "2026": 78
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 35
+    },
+    {
+     "iso2": "TH",
+     "karya": 10
+    },
+    {
+     "iso2": "AU",
+     "karya": 4
+    },
+    {
+     "iso2": "JP",
+     "karya": 4
+    },
+    {
+     "iso2": "KR",
+     "karya": 4
+    },
+    {
+     "iso2": "AE",
+     "karya": 3
+    },
+    {
+     "iso2": "DZ",
+     "karya": 3
+    },
+    {
+     "iso2": "HU",
+     "karya": 3
+    },
+    {
+     "iso2": "BN",
+     "karya": 2
+    },
+    {
+     "iso2": "CN",
+     "karya": 2
+    },
+    {
+     "iso2": "IN",
+     "karya": 2
+    },
+    {
+     "iso2": "SG",
+     "karya": 2
+    }
+   ],
+   "sitasi_min": 1263
   },
   {
    "openalex_id": "I3129486149",
@@ -2318,7 +3335,68 @@
    ],
    "sumber_url": "https://openalex.org/I3129486149",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 27,
+    "2020": 31,
+    "2021": 34,
+    "2022": 37,
+    "2023": 61,
+    "2024": 52,
+    "2025": 49,
+    "2026": 33
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 20
+    },
+    {
+     "iso2": "JP",
+     "karya": 8
+    },
+    {
+     "iso2": "TH",
+     "karya": 6
+    },
+    {
+     "iso2": "TW",
+     "karya": 4
+    },
+    {
+     "iso2": "IN",
+     "karya": 3
+    },
+    {
+     "iso2": "KR",
+     "karya": 3
+    },
+    {
+     "iso2": "NL",
+     "karya": 3
+    },
+    {
+     "iso2": "CA",
+     "karya": 2
+    },
+    {
+     "iso2": "CN",
+     "karya": 2
+    },
+    {
+     "iso2": "GB",
+     "karya": 2
+    },
+    {
+     "iso2": "AU",
+     "karya": 1
+    },
+    {
+     "iso2": "LV",
+     "karya": 1
+    }
+   ],
+   "sitasi_min": 1209
   },
   {
    "openalex_id": "I126826664",
@@ -2413,7 +3491,68 @@
    ],
    "sumber_url": "https://openalex.org/I126826664",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 35,
+    "2020": 28,
+    "2021": 42,
+    "2022": 39,
+    "2023": 58,
+    "2024": 46,
+    "2025": 33,
+    "2026": 36
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "IN",
+     "karya": 13
+    },
+    {
+     "iso2": "JP",
+     "karya": 11
+    },
+    {
+     "iso2": "IQ",
+     "karya": 9
+    },
+    {
+     "iso2": "KR",
+     "karya": 4
+    },
+    {
+     "iso2": "TH",
+     "karya": 4
+    },
+    {
+     "iso2": "US",
+     "karya": 4
+    },
+    {
+     "iso2": "AU",
+     "karya": 3
+    },
+    {
+     "iso2": "CO",
+     "karya": 3
+    },
+    {
+     "iso2": "IR",
+     "karya": 3
+    },
+    {
+     "iso2": "RU",
+     "karya": 3
+    },
+    {
+     "iso2": "TW",
+     "karya": 3
+    },
+    {
+     "iso2": "CN",
+     "karya": 2
+    }
+   ],
+   "sitasi_min": 1240
   },
   {
    "openalex_id": "I862893732",
@@ -2506,7 +3645,68 @@
    ],
    "sumber_url": "https://openalex.org/I862893732",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 57,
+    "2020": 42,
+    "2021": 38,
+    "2022": 19,
+    "2023": 23,
+    "2024": 32,
+    "2025": 47,
+    "2026": 59
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 21
+    },
+    {
+     "iso2": "SA",
+     "karya": 8
+    },
+    {
+     "iso2": "KR",
+     "karya": 6
+    },
+    {
+     "iso2": "TW",
+     "karya": 3
+    },
+    {
+     "iso2": "AT",
+     "karya": 2
+    },
+    {
+     "iso2": "CN",
+     "karya": 2
+    },
+    {
+     "iso2": "FR",
+     "karya": 2
+    },
+    {
+     "iso2": "GB",
+     "karya": 2
+    },
+    {
+     "iso2": "IN",
+     "karya": 2
+    },
+    {
+     "iso2": "JP",
+     "karya": 2
+    },
+    {
+     "iso2": "CZ",
+     "karya": 1
+    },
+    {
+     "iso2": "IQ",
+     "karya": 1
+    }
+   ],
+   "sitasi_min": 921
   },
   {
    "openalex_id": "I130218214",
@@ -2599,7 +3799,68 @@
    ],
    "sumber_url": "https://openalex.org/I130218214",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 11,
+    "2020": 17,
+    "2021": 41,
+    "2022": 23,
+    "2023": 38,
+    "2024": 47,
+    "2025": 64,
+    "2026": 47
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 48
+    },
+    {
+     "iso2": "JP",
+     "karya": 19
+    },
+    {
+     "iso2": "CN",
+     "karya": 14
+    },
+    {
+     "iso2": "IN",
+     "karya": 11
+    },
+    {
+     "iso2": "GB",
+     "karya": 9
+    },
+    {
+     "iso2": "SG",
+     "karya": 9
+    },
+    {
+     "iso2": "SA",
+     "karya": 8
+    },
+    {
+     "iso2": "TH",
+     "karya": 7
+    },
+    {
+     "iso2": "UZ",
+     "karya": 5
+    },
+    {
+     "iso2": "FR",
+     "karya": 4
+    },
+    {
+     "iso2": "OM",
+     "karya": 4
+    },
+    {
+     "iso2": "TR",
+     "karya": 4
+    }
+   ],
+   "sitasi_min": 4011
   }
  ],
  "meta": {
@@ -2608,8 +3869,7 @@
    "Hanya 25 kampus teratas menurut karya energi; kampus lain dan lembaga riset non-pendidikan (BRIN, LIPI) tidak diambil.",
    "Tanpa kunci API dan tanpa parameter mailto (tidak ada alamat generik METI ditetapkan); anggaran gratis harian bersama.",
    "Kueri kata kunci bahasa Inggris saja; karya berbahasa Indonesia terlewat. Tidak memakai klasifikasi topik OpenAlex.",
-   "organisasi_id memetakan kampus ke unit pusat studi di organisasi.json berdasarkan nama kampus pada nama unit; kosong bila tidak ada.",
-   "Tren/kolaborator/sitasi baru untuk 4 dari 25 kampus (429 https://api.openalex.org/works?filter=authorships.institutions.id:I11855966,); anggaran gratis OpenAlex dibagi per IP. Jalankan ulang untuk melanjutkan."
+   "organisasi_id memetakan kampus ke unit pusat studi di organisasi.json berdasarkan nama kampus pada nama unit; kosong bila tidak ada."
   ],
   "catatan_tambahan": "tren_tahunan = karya energi per tahun terbit; kolaborator_negara = karya energi kampus yang juga berafiliasi di negara lain (iso2, tanpa ID); sitasi_min = jumlah sitasi dari 200 kelompok sitasi terbesar (batas bawah, ekor panjang terpotong)."
  }

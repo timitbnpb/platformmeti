@@ -12,7 +12,7 @@ import { ikonTek, ikonStatus, pilStatus, pilTek } from "/inti/ikon_tek.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { muat, urlAman, kelasStatus, norm } from "/publik.js";
 import { muatMapLibre } from "/inti/maplibre.js";
-import { kartuProgram, pilTahap, teratas, berat, angkaTampil } from "/program_kartu.js";
+import { kartuProgram, fotoProgram, pilTahap, teratas, berat, angkaTampil } from "/program_kartu.js";
 import { geserPanel } from "/inti/panel_geser.js";
 
 const $ = (id) => document.getElementById(id);
@@ -217,11 +217,13 @@ function sHukum(g) {
 
 function sBerita(g) {
   if (!g.berita.length && !g.siaran_pers.length) return "";
+  /* tanpa foto atau foto gagal dimuat: foto program sebagai pengganti (galat_gambar.js, data-ganti) */
+  const cad = fotoProgram(g), img = (src) => `<img class="jm-pg-bf" src="${esc(src)}"${cad && src !== cad ? ` data-ganti="${esc(cad)}"` : ""} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
   const k1 = g.berita.slice(0, 8).map((b) => {
     const f = b.foto && b.id ? `/api/foto-berita/${encodeURIComponent(b.id)}` : "";
-    return `<li><a href="${esc(urlAman(b.url) || "#")}" target="_blank" rel="noopener noreferrer">${f ? `<img class="jm-pg-bf" src="${esc(f)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : `<span class="jm-pg-bk">${ikon("berita", 32)}</span>`}<span class="jm-pg-bt">${esc(b.judul)}</span><small>${esc(b.media)}, ${esc(tglTampil(b.terbit))}</small></a></li>`;
+    return `<li><a href="${esc(urlAman(b.url) || "#")}" target="_blank" rel="noopener noreferrer">${f || cad ? img(f || cad) : `<span class="jm-pg-bk">${ikon("berita", 32)}</span>`}<span class="jm-pg-bt">${esc(b.judul)}</span><small>${esc(b.media)}, ${esc(tglTampil(b.terbit))}</small></a></li>`;
   }).join("");
-  const k2 = g.siaran_pers.map((s) => `<li><a href="/siaran-pers/${encodeURIComponent(s.id)}">${s.foto ? `<img class="jm-pg-bf" src="${esc(s.foto)}" alt="" loading="lazy" decoding="async">` : `<span class="jm-pg-bk">${ikon("siaran", 32)}</span>`}<span class="jm-pg-bt">${esc(s.judul)}</span><small>${esc(tglTampil(s.tanggal))}</small></a></li>`).join("");
+  const k2 = g.siaran_pers.map((s) => `<li><a href="/siaran-pers/${encodeURIComponent(s.id)}">${s.foto || cad ? img(s.foto || cad) : `<span class="jm-pg-bk">${ikon("siaran", 32)}</span>`}<span class="jm-pg-bt">${esc(s.judul)}</span><small>${esc(tglTampil(s.tanggal))}</small></a></li>`).join("");
   return bagian("pg-berita", "berita", "berita", {
     judulHtml: hlHtml("pg.s.berita.j", num(g.berita.length)), sub: esc(t("pg.s.berita.sub")),
     isiHtml: (k1 ? `<ul class="jm-pg-berita">${k1}</ul>` : "") + (k2 ? `<h3 class="jm-pg-sub">${esc(t("pg.sub.siaran"))}</h3><ul class="jm-pg-berita">${k2}</ul>` : ""),

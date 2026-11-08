@@ -607,12 +607,16 @@ span.tn-kp-b{cursor:default}
 .tn-av-b{display:grid;place-items:center;width:100%;height:100%;padding:0;border:0;border-radius:50%;background:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
 .tn-av-b:hover,.tn-av-b:focus-visible{transform:scale(1.08);box-shadow:0 0 0 3px var(--accent)}
 @media (prefers-reduced-motion:reduce){.tn-av-b{transition:none}}
-/* kompartemen bidang/unit: tinggi mengikuti isi, isi rapat dari atas (pemilik 8 Nov 2026 "banyak whitespace") */
-.tn-bagan-bg .tn-kisi{align-items:start!important}
+/* kompartemen bidang/unit: sama tinggi per baris, isi rapat dari atas, tombol "Lihat semua" di dasar kartu (pemilik 9 Nov 2026) */
+.tn-bagan-bg .tn-kisi{align-items:stretch!important}
 .tn-bagan-bg .tn-kisi>.tn-grp{height:auto!important;min-height:0!important;align-content:start!important;justify-content:flex-start!important}
 .tn-bagan-bg .tn-kisi>.tn-grp>.tn-fkg:not(.tn-dg){align-content:start!important;flex:none!important;margin-top:4px}
 .tn-bagan-bg .tn-kisi>.tn-grp>.tn-av-kisi,.tn-bagan-bg .tn-kisi>.tn-grp>.tn-lr+.tn-av-kisi{margin-top:12px!important;align-content:start;justify-content:center}
 .tn-bagan-bg .tn-kisi>.tn-grp>.tn-av-kisi:first-of-type{margin-top:4px!important}
+.tn-bagan-bg .tn-kisi>.tn-rg>.tn-semua{margin-top:auto!important}
+.tn-bagan-bg .tn-kisi>.tn-rg>.tn-av-kisi+.tn-semua{margin-top:auto!important}
+.tn-bagan-bg .tn-kisi>.tn-rg>.tn-lr:last-child{margin-block:auto}
+.tn-bagan-bg .tn-kisi>.tn-rg>.tn-av-kisi{margin-bottom:12px}
 /* bidang kerja: kartu satu baris sama tinggi (tidak ada kartu pendek dengan ruang kosong di bawah) */
 .tn-bagan-bg .tn-kisi.tn-kisi-b{align-items:stretch!important}
 .tn-bagan-bg .tn-kisi-b>.tn-grp>.tn-fkg:not(.tn-dg){flex:1!important;align-content:center!important}
@@ -620,3 +624,11 @@ span.tn-kp-b{cursor:default}
 .tn-bagan-bg .tn-rg[data-n="4"]>.tn-lr>.tn-kp{flex-basis:min(168px,calc((100% - 24px) / 4))}
 @media (min-width:760px){.tn-kisi>.tn-rg[data-n="4"]{grid-column:span 2}}
 .tn-bagan-bg .tn-rg>.tn-av-kisi{grid-template-columns:repeat(auto-fit,56px)!important;justify-content:center}
+
+/* Sekretaris Jenderal dan Bendahara: ketua + wakil satu baris foto lebar sama, 5 per baris di desktop, 2 di ponsel (pemilik 9 Nov 2026) */
+.tn-bagan-bg .tn-r2>.tn-baris5{width:100%!important;flex:1 1 100%!important}
+.tn-bagan-bg .tn-r2>.tn-baris5>.tn-fkg:not(.tn-dg){display:flex!important;flex-wrap:wrap;justify-content:center;gap:12px}
+.tn-bagan-bg .tn-r2>.tn-baris5>.tn-fkg:not(.tn-dg)>li{flex:none;width:calc((100% - 48px) / 5)!important}
+@media (max-width:1000px){.tn-bagan-bg .tn-r2>.tn-baris5>.tn-fkg:not(.tn-dg)>li{width:calc((100% - 24px) / 3)!important}}
+@media (max-width:760px){.tn-bagan-bg .tn-r2>.tn-baris5>.tn-fkg:not(.tn-dg)>li{width:calc((100% - 12px) / 2)!important}}
+@media (max-width:760px){.tn-bagan-bg .tn-r2>.tn-grp>.tn-fkg:not(.tn-dg){display:flex!important;flex-wrap:wrap;justify-content:center;gap:12px}.tn-bagan-bg .tn-r2>.tn-grp>.tn-fkg:not(.tn-dg)>li{flex:none;width:calc((100% - 12px) / 2)!important}}

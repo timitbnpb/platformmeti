@@ -1,0 +1,29 @@
+/* /transisi-pltu: token tema saja (tanpa hex, tanpa px pada font). Kerangka, tab, kartu, chip, saringan memakai kelas .rg3-* dari rantai-global.css. */
+.tpl-s-dmo{color:var(--data1)}.tpl-s-ekspor{color:var(--data5)}.tpl-s-lain{color:var(--ink2)}.tpl-s-hba{color:var(--tp-panas)}.tpl-s-vol{color:var(--data1)}
+.tpl-s-surya{color:var(--tp-surya)}.tpl-s-bayu{color:var(--tp-bayu)}.tpl-s-firm{color:var(--tp-hidro)}.tpl-s-celah{color:var(--ok)}
+.tpl-s-mati{color:var(--bad)}.tpl-s-emisi{color:var(--tp-karbon)}.tpl-s-mw{color:var(--data1)}.tpl-s-pln{color:var(--data1)}.tpl-s-swasta{color:var(--tp-industri)}
+.tpl-s-tahun{color:var(--warn)}
+.tpl-kaki{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:var(--t-kecil);color:var(--ink2)}
+.tpl-sumber{display:inline-flex}
+.tpl-angka{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.tpl-angka small{font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
+.tpl-baris{display:inline-flex;align-items:center;gap:8px}
+.tpl-daftar{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.tpl-daftar li{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.tpl-daftar .jm-ik{flex:none;margin-top:2px;color:var(--accent)}
+.tpl-daftar p{margin:4px 0 0}
+.tpl-st-batal{--wc:var(--bad)}.tpl-st-calon{--wc:var(--warn)}.tpl-st-tercatat{--wc:var(--info)}.tpl-st-pengamatan{--wc:var(--ink2)}
+.tpl-cukup{--wc:var(--ok)}.tpl-kurang{--wc:var(--bad)}.tpl-sebagian{--wc:var(--warn)}
+
+/* peta armada: panel penuh, tip melayang */
+.tpl-peta{position:relative;height:max(520px,70vh);border-radius:var(--r);background:var(--surface);overflow:clip}
+.tpl-kanvas{position:absolute;inset:0}
+.tpl-tip{position:absolute;z-index:4;max-width:min(300px,calc(100% - 16px));padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);box-shadow:var(--shadow-lg);pointer-events:none;display:grid;gap:8px;font-size:var(--t-kecil)}
+.tpl-tip strong{font:700 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
+.tpl-tip small,.tpl-tip p{margin:0;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.tpl-tip ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.tpl-tip li{display:flex;justify-content:space-between;gap:12px}
+.tpl-tip li b{font-variant-numeric:tabular-nums;color:var(--head)}
+.tpl-leg{position:absolute;left:12px;bottom:12px;z-index:3;display:flex;flex-wrap:wrap;gap:6px 12px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);font-size:var(--t-kecil)}
+.tpl-leg i{display:inline-block;width:10px;height:10px;border-radius:var(--r-pil);margin-right:6px;background:var(--wc)}
+.tpl-u-a{--wc:var(--ok)}.tpl-u-b{--wc:var(--info)}.tpl-u-c{--wc:var(--warn)}.tpl-u-d{--wc:var(--bad)}

@@ -118,7 +118,7 @@ export async function bagianOrg(id, { proyekAda } = {}) {
 
 /* ================= /p/<id> ================= */
 export async function bagianProyek(id) {
-  const [pg, pb, ps, kp, rs] = await Promise.all(["global/pelaku_global", "global/pembiayaan_luar", "psel", "karbon_proyek", "risiko_proyek"].map(ambil));
+  const [pg, pb, ps, kp] = await Promise.all(["global/pelaku_global", "global/pembiayaan_luar", "psel", "karbon_proyek"].map(ambil));
   const out = [];
 
   /* pemangku global */
@@ -142,10 +142,6 @@ export async function bagianProyek(id) {
   out.push(bagian({ id: "karbon", ik: "karbon", topik: "td.ey.karbon", j: "td.j.p_karbon", n: kb.length, tglData: kp?.dibangun_pada, lihat: ["/karbon", "td.lihat.karbon"],
     isi: tbl([["td.c.proyek"], ["td.c.registri"], ["td.c.pengembang"], ["td.c.status"]], kb.map((b) => `<tr>${td("td.c.proyek", esc(b.nama))}${td("td.c.registri", b.sumber_url ? `<a href="${esc(b.sumber_url)}" target="_blank" rel="noopener noreferrer">${esc(slug(b.registri))}</a>` : esc(slug(b.registri)))}${td("td.c.pengembang", b.organisasi_id ? taut("/o/" + encodeURIComponent(b.organisasi_id), b.pengembang) : esc(b.pengembang || "-"))}${td("td.c.status", esc(slug(b.status)))}</tr>`)) }));
 
-  /* risiko */
-  const rk = (rs?.baris || []).filter((b) => b.id === id && b.skor != null);
-  out.push(bagian({ id: "risiko", ik: "peringatan", topik: "td.ey.risiko", j: "td.j.risiko", n: rk.length, tglData: rs?.dibangun_pada, lihat: ["/risiko", "td.lihat.risiko"],
-    isi: tbl([["td.c.skor", "jm-num"], ["td.c.kelas"], ["td.c.hutan"], ["td.c.gambut"], ["td.c.bahaya"]], rk.map((b) => `<tr>${td("td.c.skor", esc(angka(b.skor)), "jm-num")}${td("td.c.kelas", esc(slug(b.kelas)))}${td("td.c.hutan", esc(b.komponen?.hutan?.ket || "-"))}${td("td.c.gambut", esc(b.komponen?.gambut?.ket || "-"))}${td("td.c.bahaya", esc(b.komponen?.bahaya?.ket || "-"))}</tr>`)) }));
   /* lelang dan pengadaan EBT (tertaut dua arah dengan /lelang) */
   const lel = await ambil("lelang");
   const ll = urut((lel?.putaran || []).filter((p) => (p.proyek_id || []).includes(id)), (p) => Date.parse(p.tanggal.length === 4 ? p.tanggal + "-01-01" : p.tanggal.length === 7 ? p.tanggal + "-01" : p.tanggal) || 0);
