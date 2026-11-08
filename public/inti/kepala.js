@@ -25,7 +25,7 @@ const TAB = [
   /* Navigasi 7 menu (pemilik 8 Nov 2026, desain disetujui): Beranda, Tentang METI, EBT Indonesia, Bidang, Kewilayahan, Pustaka, Media. Ikon unik di seluruh nav (gerbang-ikon-nav). */
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
   { kunci: "n7.tentang", ikon: "perisai", hak: null, grup: [
-    { href: "/tentang", kunci: "n7.profil", ikon: "info" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "lokasi" }, { href: "/kalender", kunci: "n7.agenda", ikon: "kalender" }, { href: "/galeri", kunci: "nav.foto", ikon: "gambar" }] },
+    { href: "/tentang", kunci: "n7.profil", ikon: "info" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "lokasi" }, { href: "/kalender", kunci: "n7.agenda", ikon: "kalender" }, { href: "/galeri", kunci: "nav.foto", ikon: "gambar" }, { href: "/siaran-pers", kunci: "n7.meti_berita", ikon: "mikrofon" }] },
   { kunci: "n7.ebt", ikon: "insight", hak: null, grup: [
     { href: "/insight", kunci: "n7.gambaran", ikon: "kajian" }, { href: "/teknologi", kunci: "n7.teknologi", ikon: "tek-bio" }, { href: "/sistem", kunci: "sp2.nav", ikon: "sistem-listrik" }, { href: "/target", kunci: "n7.target", ikon: "bendera" }, { href: "/energi-baru", kunci: "enb.nav", ikon: "energi-baru" }, { href: "/program", kunci: "n7.program_psn", ikon: "bintang" }, { href: "/industri", kunci: "in3.nav", ikon: "industri" }] },
   { kunci: "n7.bidang", ikon: "direktori", hak: null, grup: [
@@ -34,8 +34,8 @@ const TAB = [
     { href: "/peta", kunci: "nav.peta_nasional", ikon: "globe" }, { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" }, { href: "/kawasan", kunci: "kw2.nav", ikon: "kawasan" }, { href: "/cek-lokasi", kunci: "cl.nav", ikon: "sasaran" }] },
   { kunci: "nav.pustaka", ikon: "buku", hak: null, grup: [
     { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }, { href: "/direktori?tampil=riset", kunci: "nav.d_riset", ikon: "wisuda" }, { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }, { href: "/topik", kunci: "nav.topik", ikon: "topik" }, { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/hukum", kunci: "nav.hukum", ikon: "palu" }, { href: "/sejarah", kunci: "sjr.nav", ikon: "linimasa" }, { href: "/panduan", kunci: "pdu.nav", ikon: "daftar2" }] },
-  { kunci: "nav.media", ikon: "kamera", hak: null, grup: [
-    { href: "/berita", kunci: "nav.berita", ikon: "berita" }, { href: "/siaran-pers", kunci: "n7.siaran", ikon: "siaran" }] },
+  // Media = kabar EBT umum (/berita); siaran pers dan liputan METI ada di Tentang METI (pemilik 8 Nov 2026)
+  { href: "/berita", kunci: "nav.media", ikon: "kamera", hak: null },
 ];
 
 const BENDERA = {
