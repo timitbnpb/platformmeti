@@ -131,3 +131,8 @@
 .jm-hal-akun .jm-setuju a:hover{text-decoration:none;color:var(--ink)}
 .jm-hal-akun [aria-disabled="true"].jm-tbl{opacity:.5}
 .jm-hal-akun [aria-disabled="true"].jm-tbl-utama:hover{background:var(--brand);box-shadow:none}
+/* pilihan bahasa, kartu, dan kaki mengalir dalam tiga baris: tidak saling menimpa di layar pendek (pemilik 9 Nov 2026) */
+@media (min-width:900px){
+  .jm-ig-kiri{grid-template-rows:auto 1fr auto;gap:20px;padding:clamp(16px,3vh,28px) clamp(20px,4vw,56px)}
+  .jm-ig-kiri>.jm-ig-atas,.jm-ig-kiri>.jm-ig-kaki{position:static;justify-self:stretch;width:auto;margin:0}
+}
