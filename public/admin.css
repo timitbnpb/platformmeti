@@ -403,3 +403,9 @@ dialog.jm-dlg.pd-dlg{width:min(980px,calc(100vw - 24px));max-height:calc(100dvh 
 .jm-ag-dk .jm-tbl{justify-self:start}
 .jm-ag-cek{display:flex;gap:8px;align-items:center;min-height:var(--target);cursor:pointer}
 .jm-ag-cek input{width:20px;height:20px;accent-color:var(--accent)}
+/* tab METI dalam berita dan Dokumen Pustaka */
+.jm-bm-label{font-weight:600;color:var(--ink)}
+.jm-bm-ring{min-height:72px}
+.jm-bm-foto{display:grid;gap:8px;justify-items:start}
+.jm-bm-foto:empty{display:none}
+.jm-bm-foto img{display:block;width:min(100%,320px);aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-sm);background:var(--surface)}

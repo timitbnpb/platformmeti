@@ -6,7 +6,7 @@ import { bagikanHtml, sumberHtml, terkaitHtml } from "/inti/komponen.js";
 import { urlAman, muat } from "/publik.js";
 import { khSisi } from "/inti/kh.js";
 import { logoLokal } from "/inti/nama_media.js";
-import { muatSiaran, sampulHtml, jenisHtml, judulKartu, urlRinci, topikLabel, pasangGalatFoto, urlFoto } from "/siaran_umum.js";
+import { muatSiaran, sampulHtml, jenisHtml, judulKartu, urlRinci, atrTaut, topikLabel, pasangGalatFoto, urlFoto } from "/siaran_umum.js";
 
 const id = decodeURIComponent(location.pathname.split("/").filter(Boolean)[1] || "");
 
@@ -29,7 +29,7 @@ const chips = (r, orgNama) => [
 ].join("");
 
 function barisKecil(r, foto) {
-  return `<li class="sp-mini" data-sp-id="${esc(r.id)}"><a href="${esc(urlRinci(r))}">${sampulHtml(r, foto, "sp-mini-foto")}<span><b>${esc(judulKartu(r))}</b><time datetime="${esc(r.tanggal)}">${esc(tanggal(r.tanggal))}</time></span></a></li>`;
+  return `<li class="sp-mini" data-sp-id="${esc(r.id)}"><a href="${esc(urlRinci(r))}"${atrTaut(r)}>${sampulHtml(r, foto, "sp-mini-foto")}<span><b>${esc(judulKartu(r))}</b><time datetime="${esc(r.tanggal)}">${esc(tanggal(r.tanggal))}</time></span></a></li>`;
 }
 function gambar(r, D, orgNama) {
   const j = judulKartu(r), href = urlRinci(r);
