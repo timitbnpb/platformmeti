@@ -1,14 +1,14 @@
 {
  "lapis": "publik",
- "dibangun_pada": "2026-11-08",
+ "dibangun_pada": "2026-11-07",
  "metode": "Target: bauran energi primer EBT 2025 menurut Perda RUED. Realisasi: pangsa kapasitas terpasang EBT 2024 (Statistik Ketenagalistrikan). Rasio = realisasi dibagi target; ukuran berbeda, maka Hipotesis. Tercapai bila rasio 1 atau lebih, di jalur bila 0,75 atau lebih, tertinggal bila kurang.",
  "ambang_jalur": 0.75,
- "jumlah": 27,
- "dengan_status": 21,
+ "jumlah": 30,
+ "dengan_status": 24,
  "ringkas": {
-  "tercapai": 7,
+  "tercapai": 8,
   "di-jalur": 2,
-  "tertinggal": 12
+  "tertinggal": 14
  },
  "baris": [
   {
@@ -31,7 +31,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/124395",
    "url_pdf": "https://peraturan.bpk.go.id/Download/115352/Perda%20Nomor%203%20Tahun%202019%20tentang%20RUED-dikompresi.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "75",
@@ -56,7 +56,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/132147",
    "url_pdf": "https://peraturan.bpk.go.id/Download/122940/PERDA%20Gorontalo%20No%207%20th%202019%20ttg%20Rencana%20Umum%20Energi%20Daerah.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "65",
@@ -78,7 +78,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/134981",
    "url_pdf": "https://peraturan.bpk.go.id/Download/254568/PERDA-3%20Tahun%202019_1.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "15",
@@ -103,7 +103,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/138377",
    "url_pdf": "https://peraturan.bpk.go.id/Download/129567/8399PERDANo.13Tahun2019.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "72",
@@ -128,7 +128,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/139262",
    "url_pdf": "https://peraturan.bpk.go.id/Download/130561/PERDA_NOMOR_10_TAHUN_2019.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "19",
@@ -153,7 +153,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/139887",
    "url_pdf": "https://peraturan.bpk.go.id/Download/131254/Perda%20Prov%20Babel%2013-2019.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "34",
@@ -175,7 +175,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/146550",
    "url_pdf": "https://peraturan.bpk.go.id/Download/138377/Perda%20DIY%20No.6%20Tahun%202020%20ttg%20Rencana%20Umum%20Energi%20Daerah%20Daerah%20Istimewa%20Yogyakarta%20Tahun%202020%20%E2%80%93%202050.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "51",
@@ -200,7 +200,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/148301",
    "url_pdf": "https://peraturan.bpk.go.id/Download/252196/Perda-9-Prov-2020.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "17",
@@ -222,7 +222,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/149415",
    "url_pdf": "https://peraturan.bpk.go.id/Download/141455/Perda%202019-7%20Rencana%20Umum%20Energi%20Daerah.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "53",
@@ -247,7 +247,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/168752",
    "url_pdf": "https://peraturan.bpk.go.id/Download/161796/Perda%20Nomor%2010%20Tahun%202019%20tentang%20Pedoman%20RUED_compressed.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "63",
@@ -269,7 +269,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/168814",
    "url_pdf": "https://peraturan.bpk.go.id/Download/161881/PERDA%20PROV%20KALSEL%201%20TAHUN%202020%20RENCANA%20UMUM%20ENERGI%20DAERAH.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "76",
@@ -294,7 +294,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/171067",
    "url_pdf": "https://peraturan.bpk.go.id/Download/164229/PERDA%20NOMOR%202%20TAHUN%202021.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "64",
@@ -319,7 +319,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/185167",
    "url_pdf": "https://peraturan.bpk.go.id/Download/178625/Perda%20Provinsi%208-2019%20ttg%20Rencana%20Umum%20Energi%20Daerah.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "61",
@@ -341,7 +341,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/205023",
    "url_pdf": "https://peraturan.bpk.go.id/Download/274657/Perda%20No%209%20Tahun%202021%20ocr.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "14",
@@ -366,7 +366,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/216543",
    "url_pdf": "https://peraturan.bpk.go.id/Download/210857/1657161128perda-no-2-tahun-2022-salin.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "73",
@@ -391,7 +391,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/219399",
    "url_pdf": "https://peraturan.bpk.go.id/Download/213806/Perda%20Sulsel%20Nomor%202%20Tahun%202022.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "12",
@@ -416,7 +416,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/226292",
    "url_pdf": "https://peraturan.bpk.go.id/Download/220948/Perda%20No.%204%20Tahun%202022.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "81",
@@ -441,7 +441,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/235396",
    "url_pdf": "https://peraturan.bpk.go.id/Download/288773/PERDA%20NO.1%20TAHUN%202022.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "36",
@@ -466,7 +466,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/243729",
    "url_pdf": "https://peraturan.bpk.go.id/Download/329537/2022pd0036007.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "62",
@@ -491,7 +491,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/250531",
    "url_pdf": "https://peraturan.bpk.go.id/Download/307068/Peraturan%20Daerah%20Kalteng%20No.%201%20Tahun%202022.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "74",
@@ -516,7 +516,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/263132",
    "url_pdf": "https://peraturan.bpk.go.id/Download/320215/PERDA%20NO%202%20TAHUN%202021.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "31",
@@ -541,7 +541,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/274973",
    "url_pdf": "https://peraturan.bpk.go.id/Download/333441/PERDA%20Prov.%20DKI%20Jakarta%20No.%205%20Th.%202023.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "71",
@@ -566,7 +566,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/301216",
    "url_pdf": "https://peraturan.bpk.go.id/Download/361023/Perda%20No.%208%20Tahun%202022.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "92",
@@ -591,7 +591,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/308381",
    "url_pdf": "https://peraturan.bpk.go.id/Download/368831/PERDA%20PROVINSI%20PAPUA%20BARAT%20No%202%20Tahun%202024%20Tentang%20Rencana%20Umum%20Energi%20Daerah.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "18",
@@ -616,7 +616,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/318660",
    "url_pdf": "https://peraturan.bpk.go.id/Download/380157/Perda%20Nomor%209%20Tahun%202019.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "35",
@@ -641,7 +641,7 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/321801",
    "url_pdf": "https://peraturan.bpk.go.id/Download/383559/Perda%20Prov%20Jawa%20Timur%20Nomor%203%20Tahun%202024.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
   },
   {
    "kode": "65",
@@ -666,7 +666,82 @@
    "sumber_url": "https://peraturan.bpk.go.id/Details/356665",
    "url_pdf": "https://peraturan.bpk.go.id/Download/420655/Perda%20Provinsi%208-2025.pdf",
    "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
-   "tanggal_periksa": "2026-11-08"
+   "tanggal_periksa": "2026-11-07"
+  },
+  {
+   "kode": "11",
+   "provinsi": "Aceh",
+   "perda": "4/2019",
+   "target_2025_persen": 25.5,
+   "target_akhir": {
+    "tahun": 2050,
+    "persen": 41.3
+   },
+   "jenis_target": "pemodelan",
+   "realisasi_persen": 3.9,
+   "realisasi_tahun": 2024,
+   "ebt_mw": 56,
+   "total_mw": 1426,
+   "selisih_poin": -21.6,
+   "rasio_persen": 15,
+   "status": "tertinggal",
+   "hipotesis": true,
+   "perlu_tinjau": true,
+   "alasan_kosong": null,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/143000",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/286496/Qanun%20No%204%20Thn%202019%20Ttg%20Rencana%20Umum%20Energi%20Aceh.pdf",
+   "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07"
+  },
+  {
+   "kode": "32",
+   "provinsi": "Jawa Barat",
+   "perda": "2/2019",
+   "target_2025_persen": 17,
+   "target_akhir": {
+    "tahun": 2050,
+    "persen": 20
+   },
+   "jenis_target": "lampiran",
+   "realisasi_persen": 27.4,
+   "realisasi_tahun": 2024,
+   "ebt_mw": 3880,
+   "total_mw": 14148,
+   "selisih_poin": 10.4,
+   "rasio_persen": 161,
+   "status": "tercapai",
+   "hipotesis": true,
+   "perlu_tinjau": null,
+   "alasan_kosong": null,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/174175",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/167372/2019pd0032002.pdf",
+   "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07"
+  },
+  {
+   "kode": "33",
+   "provinsi": "Jawa Tengah",
+   "perda": "12/2018",
+   "target_2025_persen": 21.32,
+   "target_akhir": {
+    "tahun": 2050,
+    "persen": 28.82
+   },
+   "jenis_target": "pasal",
+   "realisasi_persen": 4.1,
+   "realisasi_tahun": 2024,
+   "ebt_mw": 527,
+   "total_mw": 12954,
+   "selisih_poin": -17.2,
+   "rasio_persen": 19,
+   "status": "tertinggal",
+   "hipotesis": true,
+   "perlu_tinjau": null,
+   "alasan_kosong": null,
+   "sumber_url": "https://peraturan.bpk.go.id/Details/194929",
+   "url_pdf": "https://peraturan.bpk.go.id/Download/188743/perda_12_th_2018.pdf",
+   "realisasi_sumber_url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/91fa8-buku-statistik-ketenagalistrikan-2024.pdf",
+   "tanggal_periksa": "2026-11-07"
   }
  ]
 }

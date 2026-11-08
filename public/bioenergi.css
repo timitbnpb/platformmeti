@@ -1,0 +1,25 @@
+/* /bioenergi: token tema saja (tanpa hex, tanpa px pada font). Kerangka, tab, kartu, chip, saringan memakai kelas .rg3-* dari rantai-global.css. Di sini hanya warna seri grafik dan beberapa komponen kecil. */
+.bn-s-cpo{color:var(--tp-bio)}.bn-s-luas{color:var(--data1)}.bn-s-tkks{color:var(--tp-sampah)}.bn-s-cangkang{color:var(--tp-panas)}.bn-s-pome{color:var(--tp-hidrogen)}
+.bn-s-alokasi{color:var(--data1)}.bn-s-realisasi{color:var(--ok)}.bn-s-hip{color:var(--tp-surya)}.bn-s-rencana{color:var(--warn)}.bn-s-target{color:var(--data5)}
+.bn-s-biomassa{color:var(--tp-bio)}.bn-s-biogas{color:var(--tp-hidrogen)}.bn-s-energi{color:var(--tp-bio)}.bn-s-pangan{color:var(--tp-surya)}.bn-s-sisa{color:var(--data5)}
+.bn-k0{color:var(--tp-panas)}.bn-k1{color:var(--tp-bio)}.bn-k2{color:var(--ink2)}
+.bn-m0{color:var(--data1)}.bn-m1{color:var(--tp-surya)}.bn-m2{color:var(--tp-bayu)}.bn-m3{color:var(--tp-panas)}.bn-m4{color:var(--tp-hidrogen)}.bn-m9{color:var(--ink2)}
+
+.bn-angka{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.bn-angka small{font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
+.bn-baris{display:inline-flex;align-items:center;gap:8px}
+.bn-kaki{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:var(--t-kecil);color:var(--ink2)}
+.bn-sumber{display:inline-flex}
+
+/* linimasa SAF */
+.bn-tl{list-style:none;margin:0;padding:0;display:grid;gap:12px;border-left:2px solid var(--line);padding-left:16px}
+.bn-tl-i{position:relative;display:grid;gap:6px;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+.bn-tl-i::before{content:"";position:absolute;left:-24px;top:20px;width:12px;height:12px;border-radius:var(--r-pil);background:var(--brand);border:2px solid var(--card)}
+.bn-tl-i p{margin:0}
+.bn-tl-t{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+
+/* daftar regulasi */
+.bn-daftar{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.bn-daftar li{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.bn-daftar .jm-ik{flex:none;margin-top:2px;color:var(--accent)}
+.bn-daftar p{margin:4px 0 0}

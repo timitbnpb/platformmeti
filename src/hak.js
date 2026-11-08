@@ -1485,6 +1485,67 @@ export async function ringkasAdmin(env, akun, sekarang = Date.now()) {
   };
 }
 
+/* ========================= Kotak masuk kurasi terpadu (0034) ========================= */
+// Satu antrean untuk butir D1 yang menunggu putusan admin. Hanya BACA tabel yang sudah ada + penugasan (kotak_tugas). Putusan tetap di alat masing-masing.
+// Kolom seragam: id (teks), judul, ref ("tipe:id" entitas tertaut atau null), sub, dibuat (detik), status. Tabel belum ada = jenis itu kosong.
+const KOTAK = {
+  koreksi: "SELECT 'k' || id AS id, kolom AS judul, entitas || ':' || entitas_id AS ref, entitas AS sub, dibuat_pada AS dibuat, status FROM koreksi_usul WHERE status = 'baru'",
+  portal: "SELECT 'k' || id AS id, organisasi_id AS judul, 'organisasi:' || organisasi_id AS ref, 'klaim' AS sub, dibuat, status FROM org_klaim WHERE status = 'baru' " +
+    "UNION ALL SELECT 'a' || id, jenis, 'organisasi:' || organisasi_id, 'ajuan', dibuat, status FROM org_ajuan WHERE status = 'baru' " +
+    "UNION ALL SELECT 'w' || id, jenis, 'wilayah:' || kode_prov, 'wilayah', dibuat, status FROM wilayah_ajuan WHERE status = 'baru'",
+  surel: "SELECT CAST(id AS TEXT) AS id, nama_lokal AS judul, NULL AS ref, organisasi AS sub, dibuat, status FROM surel_minta WHERE status IN ('diajukan','disetujui')",
+  pendaftaran: "SELECT CAST(id AS TEXT) AS id, nama AS judul, NULL AS ref, jenis AS sub, dibuat, status FROM pendaftaran WHERE status = 'menunggu'",
+  lowongan: "SELECT CAST(id AS TEXT) AS id, judul, 'organisasi:' || organisasi_id AS ref, organisasi_nama AS sub, dibuat, status FROM lowongan WHERE status = 'menunggu'",
+};
+export const KOTAK_JENIS = [...Object.keys(KOTAK), "statis"];
+const KOTAK_BATAS = 300;
+const RE_BUTIR = /^[A-Za-z0-9_.:\/-]{1,120}$/;
+
+export async function kotakAdmin(env, akun) {
+  gerbangAdm(akun);
+  const per = await Promise.all(Object.entries(KOTAK).map(async ([jenis, sql]) => {
+    const [b, c] = (await tanpaTabel(() => env.DB.batch([
+      env.DB.prepare(`SELECT * FROM (${sql}) ORDER BY dibuat ASC LIMIT ${KOTAK_BATAS}`),
+      env.DB.prepare(`SELECT COUNT(*) AS n FROM (${sql})`),
+    ]))) ?? [{ results: [] }, { results: [{ n: 0 }] }];
+    return { jenis, baris: b.results.map((r) => ({ ...r, jenis })), n: c.results[0].n };
+  }));
+  const tugas = (await tanpaTabel(async () => (await env.DB.prepare("SELECT t.jenis, t.butir, t.akun_id, a.nama FROM kotak_tugas t JOIN akun a ON a.id = t.akun_id").all()).results)) ?? [];
+  return {
+    saya: akun.id,
+    hitung: Object.fromEntries(per.map((x) => [x.jenis, x.n])),
+    butir: per.flatMap((x) => x.baris),
+    tugas: tugas.map((x) => ({ jenis: x.jenis, butir: x.butir, akun_id: x.akun_id, nama: x.nama })),
+  };
+}
+
+// Ambil butir (penangan = pemanggil). Butir yang sudah diambil orang lain tidak diambil alih (ubah=0); ambil ulang milik sendiri aman.
+export async function kotakAmbil(env, akun, jenis, butir) {
+  gerbangAdm(akun);
+  if (!KOTAK_JENIS.includes(jenis) || !RE_BUTIR.test(String(butir))) throw salah("butir tidak sah");
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare("INSERT INTO kotak_tugas (jenis, butir, akun_id) VALUES (?, ?, ?) ON CONFLICT (jenis, butir) DO UPDATE SET dibuat = unixepoch() WHERE kotak_tugas.akun_id = excluded.akun_id").bind(jenis, butir, akun.id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', 'kotak_tugas', ?, ? WHERE changes() > 0")
+        .bind(akun.id, akun.peran, String(`${jenis}:${butir}`).slice(0, 80), JSON.stringify({ ringkas: "ambil butir kotak masuk" })),
+    ]);
+    return { ubah: r.meta.changes };
+  });
+}
+// Lepas butir: pemilik tugas atau super.
+export async function kotakLepas(env, akun, jenis, butir) {
+  gerbangAdm(akun);
+  if (!KOTAK_JENIS.includes(jenis) || !RE_BUTIR.test(String(butir))) throw salah("butir tidak sah");
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare("DELETE FROM kotak_tugas WHERE jenis = ? AND butir = ? AND (akun_id = ? OR ? = 'super')").bind(jenis, butir, akun.id, akun.peran),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', 'kotak_tugas', ?, ? WHERE changes() > 0")
+        .bind(akun.id, akun.peran, String(`${jenis}:${butir}`).slice(0, 80), JSON.stringify({ ringkas: "lepas butir kotak masuk" })),
+    ]);
+    return { ubah: r.meta.changes };
+  });
+}
+
 const gerbangSesiAdm = (akun, aksi) => { const i = boleh(akun?.peran, aksi, "sesi_admin", undefined, akun); if (!i.ok) throw tolak(i.alasan); };
 
 // Semua sesi aktif (maks 300, terbaru dulu). sid = 16 hex pertama hash token (pegangan cabut; tak cukup memalsukan sesi). Hash penuh tak keluar.

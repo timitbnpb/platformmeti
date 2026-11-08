@@ -25,3 +25,6 @@ data/hukum/seed*.sql
 Claude outputs/
 tests/layar/tangkapan/
 .playwright-cli/
+
+# Indeks "Tanya data" (turunan, dibangun ulang oleh scripts/pipa/tanya_indeks.mjs)
+data/tanya/

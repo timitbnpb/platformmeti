@@ -1,0 +1,44 @@
+{
+ "lapis": "resmi",
+ "jenis": "produksi_listrik_2025",
+ "judul": "Produksi listrik 2025 menurut kelompok pemilik dan jenis pembangkit (GWh)",
+ "sumber": "Handbook of Energy & Economic Statistics of Indonesia (HEESI) 2025, Pusdatin Kementerian ESDM",
+ "tabel": "HEESI 6.4.2B, hlm 108-109",
+ "url": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+ "tanggal_ambil": "2026-11-08",
+ "tingkat_bukti": "resmi",
+ "lisensi": "Publikasi pemerintah terbuka; atribusi Kementerian ESDM (Pusdatin / Ditjen Ketenagalistrikan)",
+ "satuan": "GWh",
+ "pln": {
+  "plta": 13904.0,
+  "plts": 14.0,
+  "pltp": 4336.0,
+  "bioenergi": 6031.0,
+  "pltu": 112840.0,
+  "pltd": 9615.0,
+  "pltg": 44230.0,
+  "subtotal": 190970.0
+ },
+ "iuptls_ppu": {
+  "plta": 6288.0,
+  "plts": 1008.0,
+  "bioenergi": 21331.0,
+  "pltu": 101720.0,
+  "pltd": 751.0,
+  "pltg": 13372.0,
+  "subtotal": 144470.0
+ },
+ "total_gwh": 494353.0,
+ "pembelian_pln_dari_ipp_captive_ppu": {
+  "plta": 10544.0,
+  "plts": 500.0,
+  "pltp": 13404.0,
+  "bioenergi": 666.0,
+  "pltb": 382.0,
+  "pltu": 119786.0,
+  "pltd": 1079.0,
+  "pltg": 12552.0,
+  "subtotal": 158913.0
+ },
+ "catatan": "Sejak 2025 klasifikasi berdasar kepemilikan pembangkit (catatan 5 sumber). Total = PLN + IUPTLS/PPU."
+}

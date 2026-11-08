@@ -103,6 +103,20 @@ export const rute = {
   // Beranda admin: semua hitungan antrean dalam satu panggilan (COUNT terindeks).
   "GET /api/admin/ringkas": async (req, env, ctx, p) => json(await hak.ringkasAdmin(env, perlu(p, ADM)), 200, PRIVAT),
 
+  // Kotak masuk kurasi terpadu (0034): butir D1 yang menunggu + penugasan. Butir statis dibaca klien dari JSON publik.
+  "GET /api/admin/kotak": async (req, env, ctx, p) => json(await hak.kotakAdmin(env, perlu(p, ADM)), 200, PRIVAT),
+  "PUT /api/admin/kotak/tugas": async (req, env, ctx, p) => {
+    const akun = perlu(p, ADM), b = await bacaBody(req, 1024);
+    if (typeof b.jenis !== "string" || typeof b.butir !== "string") return gagal("masukan_salah", 422);
+    const r = await hak.kotakAmbil(env, akun, b.jenis, b.butir);
+    return r?.ubah ? json({ ok: true }, 200, PRIVAT) : gagal("konflik");
+  },
+  "DELETE /api/admin/kotak/tugas": async (req, env, ctx, p) => {
+    const akun = perlu(p, ADM), q = new URL(req.url).searchParams;
+    const r = await hak.kotakLepas(env, akun, q.get("jenis") ?? "", q.get("butir") ?? "");
+    return r?.ubah ? json({ ok: true }, 200, PRIVAT) : gagal("tidak_ditemukan");
+  },
+
   // Keamanan akun (0025): sesi aktif semua akun, cabut per sesi, riwayat gagal masuk 30 hari, matriks hak (hanya baca).
   "GET /api/admin/keamanan/sesi": async (req, env, ctx, p) => json({ baris: await hak.sesiAdminDaftar(env, perlu(p, ADM), p.sesi.idHash) }, 200, PRIVAT),
   "DELETE /api/admin/keamanan/sesi/:sid": async (req, env, ctx, p) => {

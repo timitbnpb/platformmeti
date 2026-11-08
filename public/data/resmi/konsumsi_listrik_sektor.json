@@ -1,0 +1,257 @@
+{
+ "lapis": "resmi",
+ "jenis": "konsumsi_listrik_sektor",
+ "judul": "Konsumsi listrik per sektor/segmen tarif, PLN dan non-PLN, 2015-2025 (GWh)",
+ "sumber": "Handbook of Energy & Economic Statistics of Indonesia (HEESI) 2025, Pusdatin Kementerian ESDM",
+ "tabel": "HEESI 6.4.4, hlm 112-113",
+ "url": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+ "tanggal_ambil": "2026-11-08",
+ "tingkat_bukti": "resmi",
+ "lisensi": "Publikasi pemerintah terbuka; atribusi Kementerian ESDM (Pusdatin / Ditjen Ketenagalistrikan)",
+ "satuan": "GWh",
+ "baris": [
+  {
+   "tahun": 2015,
+   "pln_gwh": {
+    "rumah_tangga": 88682.0,
+    "bisnis": 36773.0,
+    "industri": 64079.0,
+    "penerangan_jalan": 3448.0,
+    "sosial": 5941.0,
+    "pemerintah": 3717.0,
+    "transportasi": 205.0,
+    "total": 202846.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 0.0,
+    "bisnis": 26.0,
+    "industri": 27231.0,
+    "publik": 2.0,
+    "transportasi": 0.0,
+    "total": 27259.0
+   },
+   "total_gwh": 230105.0
+  },
+  {
+   "tahun": 2016,
+   "pln_gwh": {
+    "rumah_tangga": 93635.0,
+    "bisnis": 39852.0,
+    "industri": 68145.0,
+    "penerangan_jalan": 3498.0,
+    "sosial": 6631.0,
+    "pemerintah": 4022.0,
+    "transportasi": 223.0,
+    "total": 216004.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 12.0,
+    "bisnis": 47.0,
+    "industri": 31926.0,
+    "publik": 6.0,
+    "transportasi": 0.0,
+    "total": 31991.0
+   },
+   "total_gwh": 247995.0
+  },
+  {
+   "tahun": 2017,
+   "pln_gwh": {
+    "rumah_tangga": 94457.0,
+    "bisnis": 41459.0,
+    "industri": 72238.0,
+    "penerangan_jalan": 3527.0,
+    "sosial": 7095.0,
+    "pemerintah": 4121.0,
+    "transportasi": 236.0,
+    "total": 223134.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 12.0,
+    "bisnis": 47.0,
+    "industri": 35517.0,
+    "publik": 10.0,
+    "transportasi": 0.0,
+    "total": 35585.0
+   },
+   "total_gwh": 258718.0
+  },
+  {
+   "tahun": 2018,
+   "pln_gwh": {
+    "rumah_tangga": 97832.0,
+    "bisnis": 43753.0,
+    "industri": 76947.0,
+    "penerangan_jalan": 3627.0,
+    "sosial": 7781.0,
+    "pemerintah": 4403.0,
+    "transportasi": 274.0,
+    "total": 234618.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 12.0,
+    "bisnis": 50.0,
+    "industri": 39340.0,
+    "publik": 11.0,
+    "transportasi": 0.0,
+    "total": 39412.0
+   },
+   "total_gwh": 274030.0
+  },
+  {
+   "tahun": 2019,
+   "pln_gwh": {
+    "rumah_tangga": 103733.0,
+    "bisnis": 46600.0,
+    "industri": 77879.0,
+    "penerangan_jalan": 3633.0,
+    "sosial": 8622.0,
+    "pemerintah": 4750.0,
+    "transportasi": 301.0,
+    "total": 245518.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 16.0,
+    "bisnis": 56.0,
+    "industri": 43709.0,
+    "publik": 12.0,
+    "transportasi": 0.0,
+    "total": 43793.0
+   },
+   "total_gwh": 289311.0
+  },
+  {
+   "tahun": 2020,
+   "pln_gwh": {
+    "rumah_tangga": 112156.0,
+    "bisnis": 42527.0,
+    "industri": 72240.0,
+    "penerangan_jalan": 3635.0,
+    "sosial": 8098.0,
+    "pemerintah": 4635.0,
+    "transportasi": 292.0,
+    "total": 243583.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 16.0,
+    "bisnis": 57.0,
+    "industri": 49287.0,
+    "publik": 11.0,
+    "transportasi": 0.0,
+    "total": 49371.0
+   },
+   "total_gwh": 292953.0
+  },
+  {
+   "tahun": 2021,
+   "pln_gwh": {
+    "rumah_tangga": 115370.0,
+    "bisnis": 44124.0,
+    "industri": 80904.0,
+    "penerangan_jalan": 3545.0,
+    "sosial": 8666.0,
+    "pemerintah": 4708.0,
+    "transportasi": 317.0,
+    "total": 257634.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 10.0,
+    "bisnis": 62.0,
+    "industri": 56406.0,
+    "publik": 10.0,
+    "transportasi": 0.0,
+    "total": 56489.0
+   },
+   "total_gwh": 314123.0
+  },
+  {
+   "tahun": 2022,
+   "pln_gwh": {
+    "rumah_tangga": 116095.0,
+    "bisnis": 50188.0,
+    "industri": 88483.0,
+    "penerangan_jalan": 3582.0,
+    "sosial": 10073.0,
+    "pemerintah": 4995.0,
+    "transportasi": 344.0,
+    "total": 273761.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 11.0,
+    "bisnis": 70.0,
+    "industri": 66787.0,
+    "publik": 13.0,
+    "transportasi": 0.0,
+    "total": 66881.0
+   },
+   "total_gwh": 340642.0
+  },
+  {
+   "tahun": 2023,
+   "pln_gwh": {
+    "rumah_tangga": 122340.0,
+    "bisnis": 56726.0,
+    "industri": 88588.0,
+    "penerangan_jalan": 3615.0,
+    "sosial": 11496.0,
+    "pemerintah": 5285.0,
+    "transportasi": 386.0,
+    "total": 288436.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 11.0,
+    "bisnis": 75.0,
+    "industri": 81185.0,
+    "publik": 13.0,
+    "transportasi": 1.0,
+    "total": 81286.0
+   },
+   "total_gwh": 369722.0
+  },
+  {
+   "tahun": 2024,
+   "pln_gwh": {
+    "rumah_tangga": 130433.0,
+    "bisnis": 61577.0,
+    "industri": 92196.0,
+    "penerangan_jalan": 3528.0,
+    "sosial": 12679.0,
+    "pemerintah": 5412.0,
+    "transportasi": 394.0,
+    "total": 306219.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 13.0,
+    "bisnis": 81.0,
+    "industri": 103273.0,
+    "publik": 14.0,
+    "transportasi": 5.0,
+    "total": 103386.0
+   },
+   "total_gwh": 409605.0
+  },
+  {
+   "tahun": 2025,
+   "pln_gwh": {
+    "rumah_tangga": 134564.0,
+    "bisnis": 65437.0,
+    "industri": 95103.0,
+    "penerangan_jalan": 3503.0,
+    "sosial": 13193.0,
+    "pemerintah": 5359.0,
+    "transportasi": 533.0,
+    "total": 317692.0
+   },
+   "non_pln_gwh": {
+    "rumah_tangga": 13.0,
+    "bisnis": 82.0,
+    "industri": 137174.0,
+    "publik": 15.0,
+    "transportasi": 26.0,
+    "total": 137309.0
+   },
+   "total_gwh": 455001.0
+  }
+ ],
+ "catatan": "Transportasi sejak 2020 termasuk transaksi SPKLU. Non-PLN = konsumsi listrik captive/izin usaha sendiri."
+}

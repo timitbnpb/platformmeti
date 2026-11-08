@@ -39,12 +39,12 @@ const adaKunciKontak = (x, dalam = 0) => {
   return Object.entries(x).some(([k, v]) => (KUNCI_KONTAK.test(k) && v != null && v !== '' && !(Array.isArray(v) && !v.length)) || adaKunciKontak(v, dalam + 1));
 };
 const kunciNama = (s) => String(s || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
-function daftarTolak() {
+export function daftarTolak() {
   const f = path.join(AKAR, 'data-panen/orang/daftar-tolak-calon.jsonl');
   if (!fs.existsSync(f)) return null;
   return new Set(fs.readFileSync(f, 'utf-8').split('\n').filter(Boolean).map((g) => { try { return kunciNama(JSON.parse(g).nama); } catch { return ''; } }).filter((k) => k.split(' ').length >= 2));
 }
-function memuatNamaTolak(teks, tolak) {
+export function memuatNamaTolak(teks, tolak) {
   if (!tolak?.size) return false;
   const bersih = ' ' + kunciNama(teks.replace(/\\u[0-9a-f]{4}/gi, ' ')) + ' ';
   for (const k of tolak) if (bersih.includes(' ' + k + ' ')) return true;

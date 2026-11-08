@@ -37,6 +37,9 @@ const T = [
   ['perda-b318660-9-2019', 36, 47, 2050, 'pasal', 'sebesar 36 Yo tahun 2025 dan sebesar 47 oh'],
   ['perda-b321801-3-2024', 12.15, 23.76, 2050, 'pasal', '12,15% (dua belas koma satu lima persen) sampai dengan tahun 2025 … 23,76% (dua puluh tiga koma tujuh enam persen)', false, { catatan: 'Perda 3/2024 mengubah Pasal 6 RUED sebelumnya' }],
   ['perda-b356665-8-2025', 14, 25, 2034, 'lampiran', 'pangsa energi baru terbarukan sebesar 14% persen di tahun 2025', true, { catatan: 'RUED 2025-2034; teks OCR kacau ("persen di tahun 25% 2034"): 25% pada 2034 dibaca dari urutan, TINJAU manusia; model lampiran: EBT 47,7% (2030) dan 55,67% (2034)' }],
+  ['perda-b143000-4-2019', 25.5, 41.3, 2050, 'pemodelan', 'Skenario RUEA menunjukkan angka bauran EBT sebesar 25,5% pada tahun 2025 dan 41,3 % pada tahun 2050', true, { catatan: 'Qanun Aceh 4/2019 (RUEA, 8 Nov 2026); tabel pemodelan lain di teks yang sama menyebut 33,9% (2025) dan 43,3% (2050): angka dalam dokumen tidak konsisten, TINJAU manusia' }],
+  ['perda-b174175-2-2019', 17, 20, 2050, 'lampiran', 'EBT paling sedikit 17% pada tahun 2025 dan paling sedikit 20% pada tahun 2050'],
+  ['perda-b194929-12-2018', 21.32, 28.82, 2050, 'pasal', 'tahun 2025 sebesar 21,32% … tahun 2050 sebesar 28,82%'],
 ];
 
 export const TARGET = T;
@@ -69,7 +72,7 @@ export function bangun() {
       celah: [
         `${baris.filter(b => !b.target).length} perda tanpa angka persentase di PDF (lampiran RUED-P tidak ikut atau hanya mengutip target nasional): ${baris.filter(b => !b.target).map(b => b.provinsi).join(', ')}.`,
         'Kapasitas per teknologi (MW) per provinsi TIDAK diekstrak: tabelnya berupa gambar/tabel lampiran dengan layout tidak seragam; hanya PLTS DKI (20/200 MW) yang tertulis di pasal.',
-        'Perda RUED hanya 26 provinsi + Kaltara 2025 (27 dokumen); provinsi lain belum ada di regulasi.json (termasuk 4 provinsi Papua baru).',
+        'Perda RUED 30 dokumen (29 provinsi; Kaltara dua perda). Belum ada: Sumatera Barat (Perda 11/2019 ada metadatanya tetapi PDF di esdm.sumbarprov.go.id kini membalas HTML SPA, tidak terunduh; tidak ada di peraturan.bpk.go.id), Sumatera Selatan, Kepulauan Riau, Maluku Utara, Papua, dan 4 provinsi Papua baru (Selatan, Tengah, Pegunungan, Barat Daya): perda tidak ditemukan di BPK maupun hasil cari web.',
         'Riau 2050 = 46,64 (teks perda, huruf "empat puluh enam koma enam puluh empat"); panen lama memuat 44,63. Dikoreksi di wilayah.json lewat potret_wilayah.mjs (koreksiKandidat memakai rued.json). Kalimantan Utara: rued.json memuat Perda 3/2019 (tanpa angka, digantikan) dan Perda 8/2025 (berlaku, perlu_tinjau); wilayah.json memakai 8/2025.',
         'Banyak PDF hasil OCR (Riau, NTT, Lampung, Sultra): kolom perlu_tinjau menandai bacaan yang rentan.',
       ],

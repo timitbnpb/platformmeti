@@ -1,0 +1,218 @@
+{
+ "lapis": "resmi",
+ "jenis": "spklu_provinsi",
+ "judul": "SPKLU dan stasiun penukaran baterai umum (SPBKLU) per provinsi, 2025",
+ "sumber": "Handbook of Energy & Economic Statistics of Indonesia (HEESI) 2025, Pusdatin Kementerian ESDM",
+ "tabel": "HEESI 6.4.5-6.4.6, hlm 114-115",
+ "url": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+ "tanggal_ambil": "2026-11-08",
+ "tingkat_bukti": "resmi",
+ "lisensi": "Publikasi pemerintah terbuka; atribusi Kementerian ESDM (Pusdatin / Ditjen Ketenagalistrikan)",
+ "tahun": 2025,
+ "satuan": "unit",
+ "total": {
+  "spklu": 4778.0,
+  "penukaran_baterai": 1936.0
+ },
+ "transaksi_spklu_gwh": {
+  "2020": 0.02,
+  "2021": 0.07,
+  "2022": 0.37,
+  "2023": 2.21,
+  "2024": 8.35,
+  "2025": 46.69
+ },
+ "baris": [
+  {
+   "provinsi": "Aceh",
+   "spklu": 36.0,
+   "penukaran_baterai": 15.0
+  },
+  {
+   "provinsi": "Sumatera Utara",
+   "spklu": 114.0,
+   "penukaran_baterai": 140.0
+  },
+  {
+   "provinsi": "Sumatera Barat",
+   "spklu": 95.0,
+   "penukaran_baterai": 1.0
+  },
+  {
+   "provinsi": "Riau",
+   "spklu": 49.0,
+   "penukaran_baterai": 13.0
+  },
+  {
+   "provinsi": "Kepulauan Riau",
+   "spklu": 5.0,
+   "penukaran_baterai": 30.0
+  },
+  {
+   "provinsi": "Jambi",
+   "spklu": 25.0,
+   "penukaran_baterai": 25.0
+  },
+  {
+   "provinsi": "Bengkulu",
+   "spklu": 13.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Kepulauan Bangka Belitung",
+   "spklu": 33.0,
+   "penukaran_baterai": 7.0
+  },
+  {
+   "provinsi": "Sumatera Selatan",
+   "spklu": 64.0,
+   "penukaran_baterai": 5.0
+  },
+  {
+   "provinsi": "Lampung",
+   "spklu": 72.0,
+   "penukaran_baterai": 2.0
+  },
+  {
+   "provinsi": "Banten",
+   "spklu": 473.0,
+   "penukaran_baterai": 327.0
+  },
+  {
+   "provinsi": "Jawa Barat",
+   "spklu": 827.0,
+   "penukaran_baterai": 390.0
+  },
+  {
+   "provinsi": "DKI Jakarta",
+   "spklu": 1438.0,
+   "penukaran_baterai": 588.0
+  },
+  {
+   "provinsi": "Jawa Tengah",
+   "spklu": 335.0,
+   "penukaran_baterai": 38.0
+  },
+  {
+   "provinsi": "DI Yogyakarta",
+   "spklu": 48.0,
+   "penukaran_baterai": 34.0
+  },
+  {
+   "provinsi": "Jawa Timur",
+   "spklu": 446.0,
+   "penukaran_baterai": 98.0
+  },
+  {
+   "provinsi": "Bali",
+   "spklu": 197.0,
+   "penukaran_baterai": 122.0
+  },
+  {
+   "provinsi": "Nusa Tenggara Barat",
+   "spklu": 41.0,
+   "penukaran_baterai": 1.0
+  },
+  {
+   "provinsi": "Nusa Tenggara Timur",
+   "spklu": 38.0,
+   "penukaran_baterai": 1.0
+  },
+  {
+   "provinsi": "Kalimantan Barat",
+   "spklu": 55.0,
+   "penukaran_baterai": 8.0
+  },
+  {
+   "provinsi": "Kalimantan Tengah",
+   "spklu": 25.0,
+   "penukaran_baterai": 1.0
+  },
+  {
+   "provinsi": "Kalimantan Selatan",
+   "spklu": 53.0,
+   "penukaran_baterai": 2.0
+  },
+  {
+   "provinsi": "Kalimantan Timur",
+   "spklu": 80.0,
+   "penukaran_baterai": 9.0
+  },
+  {
+   "provinsi": "Kalimantan Utara",
+   "spklu": 7.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Sulawesi Utara",
+   "spklu": 32.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Gorontalo",
+   "spklu": 8.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Sulawesi Tengah",
+   "spklu": 21.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Sulawesi Tenggara",
+   "spklu": 13.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Sulawesi Barat",
+   "spklu": 8.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Sulawesi Selatan",
+   "spklu": 71.0,
+   "penukaran_baterai": 79.0
+  },
+  {
+   "provinsi": "Maluku",
+   "spklu": 15.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Maluku Utara",
+   "spklu": 9.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Papua Barat",
+   "spklu": 9.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Papua Barat Daya",
+   "spklu": 0.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Papua",
+   "spklu": 23.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Papua Tengah",
+   "spklu": 0.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Papua Selatan",
+   "spklu": 0.0,
+   "penukaran_baterai": 0.0
+  },
+  {
+   "provinsi": "Papua Pegunungan",
+   "spklu": 0.0,
+   "penukaran_baterai": 0.0
+  }
+ ],
+ "catatan": "Nama provinsi mengikuti tabel sumber (mis. Papua Barat Daya); dicocokkan ke kode BPS di keluaran lewat peta nama."
+}

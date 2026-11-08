@@ -1,0 +1,356 @@
+{
+ "lapis": "resmi",
+ "jenis": "harga_bbm_lpg",
+ "judul": "Harga energi di titik jual resmi per satuan energi (BBM, LPG), 2015-2025",
+ "sumber": "Handbook of Energy & Economic Statistics of Indonesia (HEESI) 2025, Pusdatin Kementerian ESDM",
+ "tabel": "HEESI 4.4, hlm 40-41",
+ "url": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+ "tanggal_ambil": "2026-11-08",
+ "tingkat_bukti": "resmi",
+ "lisensi": "Publikasi pemerintah terbuka; atribusi Kementerian ESDM (Pusdatin / Ditjen Ketenagalistrikan)",
+ "satuan": "ribu Rp/BOE dan US$/BOE",
+ "baris": [
+  {
+   "tahun": 2015,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1238.0,
+    "usd_per_boe": 90.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 1562.0,
+    "usd_per_boe": 113.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 31.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 1052.0,
+    "usd_per_boe": 76.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 36.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 1440.0,
+    "usd_per_boe": 104.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 1428.0,
+    "usd_per_boe": 104.0
+   }
+  },
+  {
+   "tahun": 2016,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1129.0,
+    "usd_per_boe": 84.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 1227.0,
+    "usd_per_boe": 91.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 31.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 815.0,
+    "usd_per_boe": 61.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 37.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 1361.0,
+    "usd_per_boe": 101.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 1247.0,
+    "usd_per_boe": 93.0
+   }
+  },
+  {
+   "tahun": 2017,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1110.0,
+    "usd_per_boe": 82.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 1418.0,
+    "usd_per_boe": 105.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 31.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 794.0,
+    "usd_per_boe": 59.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 37.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 1410.0,
+    "usd_per_boe": 104.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 1461.0,
+    "usd_per_boe": 108.0
+   }
+  },
+  {
+   "tahun": 2018,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1110.0,
+    "usd_per_boe": 76.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 1713.0,
+    "usd_per_boe": 118.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 29.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 794.0,
+    "usd_per_boe": 55.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 34.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 1457.0,
+    "usd_per_boe": 100.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 1612.0,
+    "usd_per_boe": 111.0
+   }
+  },
+  {
+   "tahun": 2019,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1110.0,
+    "usd_per_boe": 80.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 1664.0,
+    "usd_per_boe": 120.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 30.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 794.0,
+    "usd_per_boe": 57.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 36.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 1457.0,
+    "usd_per_boe": 105.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 1330.0,
+    "usd_per_boe": 96.0
+   }
+  },
+  {
+   "tahun": 2020,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1110.0,
+    "usd_per_boe": 79.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 1553.0,
+    "usd_per_boe": 110.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 30.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 794.0,
+    "usd_per_boe": 56.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 35.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 1457.0,
+    "usd_per_boe": 103.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 1333.0,
+    "usd_per_boe": 95.0
+   }
+  },
+  {
+   "tahun": 2021,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1110.0,
+    "usd_per_boe": 78.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 2136.0,
+    "usd_per_boe": 150.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 30.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 794.0,
+    "usd_per_boe": 56.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 35.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 1867.0,
+    "usd_per_boe": 131.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 2238.0,
+    "usd_per_boe": 157.0
+   }
+  },
+  {
+   "tahun": 2022,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1716.0,
+    "usd_per_boe": 109.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 3212.0,
+    "usd_per_boe": 204.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 27.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 879.0,
+    "usd_per_boe": 56.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 32.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 2361.0,
+    "usd_per_boe": 150.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 2289.0,
+    "usd_per_boe": 145.0
+   }
+  },
+  {
+   "tahun": 2023,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1716.0,
+    "usd_per_boe": 111.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 2856.0,
+    "usd_per_boe": 185.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 27.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 1048.0,
+    "usd_per_boe": 68.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 32.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 2361.0,
+    "usd_per_boe": 153.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 2261.0,
+    "usd_per_boe": 147.0
+   }
+  },
+  {
+   "tahun": 2024,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1716.0,
+    "usd_per_boe": 106.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 2619.0,
+    "usd_per_boe": 162.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 26.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 1048.0,
+    "usd_per_boe": 65.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 31.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 2258.0,
+    "usd_per_boe": 140.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 2261.0,
+    "usd_per_boe": 140.0
+   }
+  },
+  {
+   "tahun": 2025,
+   "bensin_ron90": {
+    "ribu_rp_per_boe": 1716.0,
+    "usd_per_boe": 102.0
+   },
+   "avtur": {
+    "ribu_rp_per_boe": 2525.0,
+    "usd_per_boe": 150.0
+   },
+   "minyak_tanah": {
+    "ribu_rp_per_boe": 422.0,
+    "usd_per_boe": 25.0
+   },
+   "solar_cn48": {
+    "ribu_rp_per_boe": 1048.0,
+    "usd_per_boe": 62.0
+   },
+   "lpg_3kg": {
+    "ribu_rp_per_boe": 499.0,
+    "usd_per_boe": 30.0
+   },
+   "lpg_12kg": {
+    "ribu_rp_per_boe": 2156.0,
+    "usd_per_boe": 128.0
+   },
+   "lpg_50kg": {
+    "ribu_rp_per_boe": 2261.0,
+    "usd_per_boe": 135.0
+   }
+  }
+ ],
+ "catatan": "Harga per BOE (barel setara minyak), bukan per liter. Bensin RON 88 sebelum 2022, RON 90 sesudahnya. Catatan sumber: 2018 data revisi, 2024 revisi untuk batubara."
+}

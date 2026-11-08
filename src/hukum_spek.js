@@ -1,5 +1,5 @@
 /* Fungsi murni Pustaka hukum EBT (tanpa impor worker.js; ditiru dari Posko src/hukum_spek.js). Dipakai src/hukum.js dan uji. */
-const STOP = new Set(("yang dan di ke dari untuk pada dengan atau adalah itu ini apa apakah siapa bagaimana berapa kapan mengapa kenapa dalam oleh sebagai akan dapat bisa harus tentang " +
+export const STOP = new Set(("yang dan di ke dari untuk pada dengan atau adalah itu ini apa apakah siapa bagaimana berapa kapan mengapa kenapa dalam oleh sebagai akan dapat bisa harus tentang " +
   "saya kami kita anda ada tidak tak para suatu setiap serta bagi saat jika maka agar sudah telah sedang ya").split(" "));
 
 const kata = s => String(s ?? "").normalize("NFKC").match(/[\p{L}\p{N}]+/gu) || [];

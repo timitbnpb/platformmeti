@@ -111,7 +111,68 @@
    ],
    "sumber_url": "https://openalex.org/I134635517",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 179,
+    "2020": 151,
+    "2021": 185,
+    "2022": 165,
+    "2023": 210,
+    "2024": 301,
+    "2025": 426,
+    "2026": 226
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "JP",
+     "karya": 132
+    },
+    {
+     "iso2": "MY",
+     "karya": 61
+    },
+    {
+     "iso2": "CN",
+     "karya": 40
+    },
+    {
+     "iso2": "SG",
+     "karya": 40
+    },
+    {
+     "iso2": "TW",
+     "karya": 38
+    },
+    {
+     "iso2": "GB",
+     "karya": 34
+    },
+    {
+     "iso2": "AU",
+     "karya": 29
+    },
+    {
+     "iso2": "KR",
+     "karya": 27
+    },
+    {
+     "iso2": "US",
+     "karya": 27
+    },
+    {
+     "iso2": "FR",
+     "karya": 26
+    },
+    {
+     "iso2": "DE",
+     "karya": 24
+    },
+    {
+     "iso2": "SA",
+     "karya": 23
+    }
+   ],
+   "sitasi_min": 14721
   },
   {
    "openalex_id": "I166843116",
@@ -206,7 +267,68 @@
    ],
    "sumber_url": "https://openalex.org/I166843116",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 165,
+    "2020": 153,
+    "2021": 201,
+    "2022": 129,
+    "2023": 189,
+    "2024": 247,
+    "2025": 300,
+    "2026": 294
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "MY",
+     "karya": 141
+    },
+    {
+     "iso2": "JP",
+     "karya": 70
+    },
+    {
+     "iso2": "TW",
+     "karya": 45
+    },
+    {
+     "iso2": "TH",
+     "karya": 30
+    },
+    {
+     "iso2": "BN",
+     "karya": 26
+    },
+    {
+     "iso2": "AU",
+     "karya": 22
+    },
+    {
+     "iso2": "GB",
+     "karya": 20
+    },
+    {
+     "iso2": "CN",
+     "karya": 19
+    },
+    {
+     "iso2": "US",
+     "karya": 19
+    },
+    {
+     "iso2": "DE",
+     "karya": 18
+    },
+    {
+     "iso2": "SA",
+     "karya": 17
+    },
+    {
+     "iso2": "SG",
+     "karya": 14
+    }
+   ],
+   "sitasi_min": 7994
   },
   {
    "openalex_id": "I29617571",
@@ -301,7 +423,68 @@
    ],
    "sumber_url": "https://openalex.org/I29617571",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 182,
+    "2020": 231,
+    "2021": 166,
+    "2022": 109,
+    "2023": 164,
+    "2024": 221,
+    "2025": 244,
+    "2026": 228
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "JP",
+     "karya": 76
+    },
+    {
+     "iso2": "MY",
+     "karya": 68
+    },
+    {
+     "iso2": "KR",
+     "karya": 38
+    },
+    {
+     "iso2": "AU",
+     "karya": 28
+    },
+    {
+     "iso2": "FR",
+     "karya": 21
+    },
+    {
+     "iso2": "GB",
+     "karya": 20
+    },
+    {
+     "iso2": "US",
+     "karya": 20
+    },
+    {
+     "iso2": "TW",
+     "karya": 17
+    },
+    {
+     "iso2": "SA",
+     "karya": 16
+    },
+    {
+     "iso2": "NL",
+     "karya": 14
+    },
+    {
+     "iso2": "SG",
+     "karya": 13
+    },
+    {
+     "iso2": "TH",
+     "karya": 13
+    }
+   ],
+   "sitasi_min": 10423
   },
   {
    "openalex_id": "I165230279",
@@ -396,7 +579,68 @@
    ],
    "sumber_url": "https://openalex.org/I165230279",
    "tanggal_periksa": "2026-11-07",
-   "tingkat_bukti": "via-pihak-ketiga"
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tren_tahunan": {
+    "2019": 105,
+    "2020": 138,
+    "2021": 148,
+    "2022": 121,
+    "2023": 146,
+    "2024": 235,
+    "2025": 250,
+    "2026": 231
+   },
+   "kolaborator_negara": [
+    {
+     "iso2": "JP",
+     "karya": 66
+    },
+    {
+     "iso2": "MY",
+     "karya": 44
+    },
+    {
+     "iso2": "KR",
+     "karya": 34
+    },
+    {
+     "iso2": "TW",
+     "karya": 25
+    },
+    {
+     "iso2": "TH",
+     "karya": 19
+    },
+    {
+     "iso2": "GB",
+     "karya": 18
+    },
+    {
+     "iso2": "CN",
+     "karya": 16
+    },
+    {
+     "iso2": "US",
+     "karya": 14
+    },
+    {
+     "iso2": "AU",
+     "karya": 13
+    },
+    {
+     "iso2": "NL",
+     "karya": 13
+    },
+    {
+     "iso2": "IN",
+     "karya": 12
+    },
+    {
+     "iso2": "DK",
+     "karya": 11
+    }
+   ],
+   "sitasi_min": 8733
   },
   {
    "openalex_id": "I11855966",
@@ -2365,8 +2609,7 @@
    "Tanpa kunci API dan tanpa parameter mailto (tidak ada alamat generik METI ditetapkan); anggaran gratis harian bersama.",
    "Kueri kata kunci bahasa Inggris saja; karya berbahasa Indonesia terlewat. Tidak memakai klasifikasi topik OpenAlex.",
    "organisasi_id memetakan kampus ke unit pusat studi di organisasi.json berdasarkan nama kampus pada nama unit; kosong bila tidak ada.",
-   "Tren/kolaborator/sitasi baru untuk 0 dari 25 kampus (HTTP 503 https://api.openalex.org/works?filter=authorships.institutions.id:I1346); anggaran gratis OpenAlex dibagi per IP. Jalankan ulang untuk melanjutkan.",
-   "Tren/kolaborator/sitasi belum terisi untuk 25 kampus: OpenAlex anonim membalas HTTP 503 (pencarian anonim dijeda, 8 Nov 2026) dan anggaran gratis per IP nyaris habis. Jalankan node scripts/panen/openalex_kampus.mjs setelah pulih (atau dengan kunci API gratis); cache dipakai ulang."
+   "Tren/kolaborator/sitasi baru untuk 4 dari 25 kampus (429 https://api.openalex.org/works?filter=authorships.institutions.id:I11855966,); anggaran gratis OpenAlex dibagi per IP. Jalankan ulang untuk melanjutkan."
   ],
   "catatan_tambahan": "tren_tahunan = karya energi per tahun terbit; kolaborator_negara = karya energi kampus yang juga berafiliasi di negara lain (iso2, tanpa ID); sitasi_min = jumlah sitasi dari 200 kelompok sitasi terbesar (batas bawah, ekor panjang terpotong)."
  }

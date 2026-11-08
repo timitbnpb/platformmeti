@@ -1,0 +1,2290 @@
+{
+ "lapis": "publik",
+ "tema": "jaringan_modul",
+ "dibangun_pada": "2026-11-08",
+ "sumber": [
+  {
+   "id": "ruptl-2025",
+   "judul": "RUPTL PT PLN (Persero) 2025-2034 (Kepmen ESDM 188.K/TL.03/MEM.L/2025)",
+   "penerbit": "PT PLN (Persero); Kementerian ESDM",
+   "tahun": 2025,
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "esdm-sarawak-2016",
+   "judul": "Indonesia - Malaysia kerja sama perkuat kelistrikan di perbatasan (ESDM, 22 Jan 2016)",
+   "penerbit": "Kementerian ESDM",
+   "tahun": 2016,
+   "url": "https://esdm.go.id/id/media-center/arsip-berita/indonesia-malaysia-kerja-sama-perkuat-kelistrikan-di-perbatasan",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "ema-singa-2025",
+   "judul": "Singapore Grants Conditional Licence to Singa Renewables for Electricity Imports from Indonesia (30 May 2025)",
+   "penerbit": "Energy Market Authority (EMA) Singapore",
+   "tahun": 2025,
+   "url": "https://www.ema.gov.sg/news-events/news/media-releases/2025/sg-grants-conditional-licence-to-singa-renewables-for-electricity-imports-from-indonesia",
+   "tingkat_bukti": "resmi"
+  },
+  {
+   "id": "solarquarter-2024",
+   "judul": "Singapore and Indonesia boost low-carbon electricity imports with new licences and approvals (9 Sep 2024)",
+   "penerbit": "SolarQuarter",
+   "tahun": 2024,
+   "url": "https://solarquarter.com/2024/09/09/singapore-and-indonesia-boost-low-carbon-electricity-imports-with-new-licences-and-approvals/",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "ecobusiness-sg-2024",
+   "judul": "Indonesia and Singapore advance low-carbon energy deals",
+   "penerbit": "Eco-Business",
+   "tahun": 2024,
+   "url": "https://www.eco-business.com/news/indonesia-and-singapore-advance-low-carbon-energy-deals/",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "businesstoday-2023",
+   "judul": "Singapore approves to import 2GW low carbon electricity from Indonesia (8 Sep 2023)",
+   "penerbit": "Business Today Malaysia",
+   "tahun": 2023,
+   "url": "https://www.businesstoday.com.my/2023/09/08/singapore-approves-to-import-2gw-low-carbon-electricity-from-indonesia/",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "fmt-ltms-2025",
+   "judul": "Multidirectional power trade under LTMS-PIP now fully operational (16 Oct 2025)",
+   "penerbit": "Free Malaysia Today",
+   "tahun": 2025,
+   "url": "https://fmtv5.freemalaysiatoday.com/category/nation/2025/10/16/multidirectional-power-trade-under-ltms-pip-now-fully-operational",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "ecobusiness-grid-2024",
+   "judul": "Huge financing gap for grid infrastructure as investors see unattractive returns: Indonesia's state utility (11 Jun 2024)",
+   "penerbit": "Eco-Business",
+   "tahun": 2024,
+   "url": "https://www.eco-business.com/news/huge-financing-gap-for-grid-infrastructure-as-investors-see-unattractive-returns-indonesias-state-utility/",
+   "tingkat_bukti": "media"
+  },
+  {
+   "id": "iati-pendanaan",
+   "judul": "Pendanaan internasional (IATI): public/data/pendanaan_internasional.json",
+   "penerbit": "IATI Registry (ADB, IsDB, FCDO)",
+   "tahun": 2026,
+   "url": "https://iatiregistry.org/",
+   "tingkat_bukti": "resmi"
+  }
+ ],
+ "meta": {
+  "tingkat_bukti_kamus": {
+   "resmi": "dokumen resmi pemerintah atau regulator",
+   "media": "berita atau sumber sekunder",
+   "est": "turunan hitung"
+  },
+  "rujukan_data": [
+   "riset/jaringan.json",
+   "riset/curtailment.json",
+   "riset/pumped_storage_offshore.json",
+   "keandalan.json",
+   "pendanaan_internasional.json",
+   "organisasi.json",
+   "global/pemasok_lain.json",
+   "../geo/transmisi.json",
+   "../geo/gardu.json"
+  ],
+  "celah": [
+   "Garis rencana dan lintas negara pada peta bersifat skematik (garis lurus antar titik acuan), BUKAN trase; RUPTL tidak menerbitkan koordinat trase.",
+   "Peta jaringan eksisting berasal dari OpenStreetMap (sukarelawan, ODbL) pada enam ubin bbox; tidak lengkap dan bukan data PLN.",
+   "Tabel rencana mengikuti skenario RE Base RUPTL 2025-2034; skenario ARED berbeda tipis (47.758 kms nasional).",
+   "Proyek impor listrik Singapura: EMA tidak dapat dibaca langsung (penantang bot), angka per perusahaan dari media; status setelah Mei 2025 tidak terverifikasi.",
+   "SAIDI dan SAIFI hanya nasional (keandalan.json); pasar_listrik.json belum terbit di repo sehingga tidak ada rincian per wilayah."
+  ]
+ },
+ "rencana": {
+  "skenario": "RE Base",
+  "tahun": [
+   2025,
+   2026,
+   2027,
+   2028,
+   2029,
+   2030,
+   2031,
+   2032,
+   2033,
+   2034
+  ],
+  "sistem": [
+   {
+    "id": "indonesia",
+    "nama": {
+     "id": "Indonesia",
+     "en": "Indonesia"
+    },
+    "tabel": {
+     "kms": "5.187",
+     "mva": "5.189"
+    },
+    "kms": {
+     "tipe": "kms",
+     "tegangan": {
+      "70": {
+       "tahun": [
+        0,
+        108,
+        142,
+        310,
+        0,
+        26,
+        30,
+        0,
+        40,
+        0
+       ],
+       "jumlah": 655
+      },
+      "150": {
+       "tahun": [
+        7625,
+        5193,
+        5875,
+        4800,
+        1287,
+        2241,
+        1379,
+        2085,
+        1561,
+        159
+       ],
+       "jumlah": 32204
+      },
+      "275": {
+       "tahun": [
+        582,
+        1830,
+        73,
+        1216,
+        980,
+        43,
+        1096,
+        40,
+        195,
+        0
+       ],
+       "jumlah": 6055
+      },
+      "500": {
+       "tahun": [
+        549,
+        542,
+        220,
+        1225,
+        15,
+        324,
+        1649,
+        311,
+        1618,
+        0
+       ],
+       "jumlah": 6453
+      },
+      "500 DC": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1616,
+        516,
+        0,
+        300
+       ],
+       "jumlah": 2432
+      }
+     },
+     "total": {
+      "tahun": [
+       8756,
+       7673,
+       6310,
+       7551,
+       2282,
+       2633,
+       5770,
+       2952,
+       3415,
+       459
+      ],
+      "jumlah": 47800
+     }
+    },
+    "mva": {
+     "tipe": "mva",
+     "tegangan": {
+      "150": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        60
+       ],
+       "jumlah": 60
+      },
+      "500": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4000,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 4000
+      },
+      "500/275": {
+       "tahun": [
+        500,
+        0,
+        1500,
+        2500,
+        1000,
+        500,
+        0,
+        1500,
+        500,
+        0
+       ],
+       "jumlah": 8000
+      },
+      "500/150": {
+       "tahun": [
+        7000,
+        6000,
+        8000,
+        8500,
+        0,
+        3000,
+        3500,
+        1250,
+        1000,
+        0
+       ],
+       "jumlah": 38250
+      },
+      "500 DC": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3000,
+        3000,
+        0,
+        0
+       ],
+       "jumlah": 6000
+      },
+      "275/150": {
+       "tahun": [
+        2500,
+        1250,
+        2500,
+        4500,
+        1000,
+        250,
+        2500,
+        250,
+        250,
+        0
+       ],
+       "jumlah": 15000
+      },
+      "150/115": {
+       "tahun": [
+        0,
+        0,
+        250,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 250
+      },
+      "150/70": {
+       "tahun": [
+        380,
+        100,
+        220,
+        0,
+        0,
+        0,
+        0,
+        0,
+        60,
+        0
+       ],
+       "jumlah": 760
+      },
+      "150/66": {
+       "tahun": [
+        60,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 60
+      },
+      "150/20": {
+       "tahun": [
+        5880,
+        3630,
+        5790,
+        3120,
+        3310,
+        2600,
+        2550,
+        1800,
+        3240,
+        2670
+       ],
+       "jumlah": 34590
+      },
+      "70/20": {
+       "tahun": [
+        180,
+        60,
+        50,
+        210,
+        30,
+        0,
+        150,
+        60,
+        60,
+        180
+       ],
+       "jumlah": 980
+      }
+     },
+     "total": {
+      "tahun": [
+       16500,
+       11040,
+       18310,
+       18830,
+       5340,
+       6350,
+       15700,
+       7860,
+       5110,
+       2910
+      ],
+      "jumlah": 107950
+     }
+    }
+   },
+   {
+    "id": "sumatera",
+    "nama": {
+     "id": "Sumatera",
+     "en": "Sumatra"
+    },
+    "tabel": {
+     "kms": "5.191",
+     "mva": "5.192"
+    },
+    "kms": {
+     "tipe": "kms",
+     "tegangan": {
+      "70": {
+       "tahun": [
+        0,
+        0,
+        140,
+        70,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 210
+      },
+      "150": {
+       "tahun": [
+        954,
+        1244,
+        997,
+        974,
+        275,
+        50,
+        72,
+        287,
+        418,
+        0
+       ],
+       "jumlah": 5272
+      },
+      "275": {
+       "tahun": [
+        582,
+        862,
+        20,
+        240,
+        0,
+        3,
+        0,
+        40,
+        195,
+        0
+       ],
+       "jumlah": 1942
+      },
+      "500": {
+       "tahun": [
+        0,
+        480,
+        0,
+        1000,
+        0,
+        0,
+        0,
+        182,
+        736,
+        0
+       ],
+       "jumlah": 2398
+      },
+      "500 DC": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        516,
+        516,
+        0,
+        300
+       ],
+       "jumlah": 1332
+      }
+     },
+     "total": {
+      "tahun": [
+       1536,
+       2586,
+       1157,
+       2284,
+       275,
+       53,
+       588,
+       1025,
+       1349,
+       300
+      ],
+      "jumlah": 11155
+     }
+    },
+    "mva": {
+     "tipe": "mva",
+     "tegangan": {
+      "500/275": {
+       "tahun": [
+        500,
+        0,
+        500,
+        1500,
+        0,
+        500,
+        0,
+        1500,
+        500,
+        0
+       ],
+       "jumlah": 5000
+      },
+      "500/150": {
+       "tahun": [
+        0,
+        0,
+        0,
+        500,
+        0,
+        0,
+        1500,
+        250,
+        0,
+        0
+       ],
+       "jumlah": 2250
+      },
+      "500 DC": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3000,
+        3000,
+        0,
+        0
+       ],
+       "jumlah": 6000
+      },
+      "275/150": {
+       "tahun": [
+        1750,
+        500,
+        1500,
+        750,
+        0,
+        250,
+        0,
+        250,
+        250,
+        0
+       ],
+       "jumlah": 5250
+      },
+      "150/115": {
+       "tahun": [
+        0,
+        0,
+        250,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 250
+      },
+      "150/20": {
+       "tahun": [
+        1410,
+        660,
+        1470,
+        450,
+        810,
+        930,
+        600,
+        810,
+        1080,
+        1170
+       ],
+       "jumlah": 9390
+      },
+      "70/20": {
+       "tahun": [
+        90,
+        0,
+        0,
+        90,
+        0,
+        0,
+        30,
+        0,
+        0,
+        60
+       ],
+       "jumlah": 270
+      }
+     },
+     "total": {
+      "tahun": [
+       3750,
+       1160,
+       3720,
+       3290,
+       810,
+       1680,
+       5130,
+       5810,
+       1830,
+       1230
+      ],
+      "jumlah": 28410
+     }
+    }
+   },
+   {
+    "id": "jawabali",
+    "nama": {
+     "id": "Jawa, Madura, Bali",
+     "en": "Java, Madura, Bali"
+    },
+    "tabel": {
+     "kms": "5.195",
+     "mva": "5.196"
+    },
+    "kms": {
+     "tipe": "kms",
+     "tegangan": {
+      "150": {
+       "tahun": [
+        1385,
+        2168,
+        2105,
+        1937,
+        674,
+        527,
+        443,
+        363,
+        344,
+        65
+       ],
+       "jumlah": 10010
+      },
+      "275": {
+       "tahun": [
+        0,
+        0,
+        53,
+        20,
+        28,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 101
+      },
+      "500": {
+       "tahun": [
+        549,
+        62,
+        220,
+        225,
+        15,
+        324,
+        262,
+        129,
+        882,
+        0
+       ],
+       "jumlah": 2668
+      },
+      "500 DC": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1100,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 1100
+      }
+     },
+     "total": {
+      "tahun": [
+       1934,
+       2230,
+       2378,
+       2182,
+       717,
+       851,
+       1805,
+       492,
+       1226,
+       65
+      ],
+      "jumlah": 13879
+     }
+    },
+    "mva": {
+     "tipe": "mva",
+     "tegangan": {
+      "500/150": {
+       "tahun": [
+        7000,
+        6000,
+        8000,
+        8000,
+        0,
+        3000,
+        2000,
+        1000,
+        1000,
+        0
+       ],
+       "jumlah": 36000
+      },
+      "500/275": {
+       "tahun": [
+        0,
+        0,
+        1000,
+        1000,
+        1000,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 3000
+      },
+      "275/150": {
+       "tahun": [
+        0,
+        0,
+        1000,
+        1000,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 2000
+      },
+      "150/70": {
+       "tahun": [
+        200,
+        100,
+        100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 400
+      },
+      "150/20": {
+       "tahun": [
+        3480,
+        2430,
+        3540,
+        1740,
+        1800,
+        900,
+        1200,
+        600,
+        1380,
+        1200
+       ],
+       "jumlah": 18270
+      },
+      "70/20": {
+       "tahun": [
+        60,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 60
+      }
+     },
+     "total": {
+      "tahun": [
+       10740,
+       8530,
+       13640,
+       11740,
+       2800,
+       3900,
+       3200,
+       1600,
+       2380,
+       1200
+      ],
+      "jumlah": 59730
+     }
+    }
+   },
+   {
+    "id": "kalimantan",
+    "nama": {
+     "id": "Kalimantan",
+     "en": "Kalimantan"
+    },
+    "tabel": {
+     "kms": "5.199",
+     "mva": "5.200"
+    },
+    "kms": {
+     "tipe": "kms",
+     "tegangan": {
+      "150": {
+       "tahun": [
+        1565,
+        1420,
+        1174.6,
+        1095.9,
+        11,
+        748,
+        406,
+        1313,
+        650,
+        93.8
+       ],
+       "jumlah": 8477.3
+      },
+      "275": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 0
+      },
+      "500": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1387,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 1387
+      }
+     },
+     "total": {
+      "tahun": [
+       1565,
+       1420,
+       1174.6,
+       1095.9,
+       11,
+       748,
+       1793,
+       1313,
+       650,
+       93.8
+      ],
+      "jumlah": 9864.3
+     }
+    },
+    "mva": {
+     "tipe": "mva",
+     "tegangan": {
+      "500": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4000,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 4000
+      },
+      "150/20": {
+       "tahun": [
+        450,
+        360,
+        300,
+        720,
+        510,
+        540,
+        360,
+        240,
+        300,
+        300
+       ],
+       "jumlah": 4080
+      },
+      "500/275": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 0
+      }
+     },
+     "total": {
+      "tahun": [
+       450,
+       360,
+       300,
+       720,
+       510,
+       540,
+       4360,
+       240,
+       300,
+       300
+      ],
+      "jumlah": 8080
+     }
+    }
+   },
+   {
+    "id": "sulawesi",
+    "nama": {
+     "id": "Sulawesi",
+     "en": "Sulawesi"
+    },
+    "tabel": {
+     "kms": "5.203",
+     "mva": "5.205"
+    },
+    "kms": {
+     "tipe": "kms",
+     "tegangan": {
+      "70": {
+       "tahun": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 6
+      },
+      "150": {
+       "tahun": [
+        2648,
+        261,
+        952,
+        581,
+        52,
+        54,
+        367,
+        82,
+        4,
+        0
+       ],
+       "jumlah": 5001
+      },
+      "275": {
+       "tahun": [
+        0,
+        968,
+        0,
+        956,
+        952,
+        40,
+        1096,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 4012
+      }
+     },
+     "total": {
+      "tahun": [
+       2648,
+       1229,
+       952,
+       1537,
+       1004,
+       100,
+       1463,
+       82,
+       4,
+       0
+      ],
+      "jumlah": 9019
+     }
+    },
+    "mva": {
+     "tipe": "mva",
+     "tegangan": {
+      "275/150": {
+       "tahun": [
+        750,
+        750,
+        0,
+        2750,
+        1000,
+        0,
+        2500,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 7750
+      },
+      "150/70": {
+       "tahun": [
+        60,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "jumlah": 60
+      },
+      "150/20": {
+       "tahun": [
+        390,
+        150,
+        150,
+        120,
+        120,
+        120,
+        330,
+        120,
+        300,
+        60
+       ],
+       "jumlah": 1860
+      }
+     },
+     "total": {
+      "tahun": [
+       1200,
+       900,
+       150,
+       2870,
+       1120,
+       120,
+       2830,
+       120,
+       300,
+       60
+      ],
+      "jumlah": 9670
+     }
+    }
+   },
+   {
+    "id": "mpnt",
+    "nama": {
+     "id": "Maluku, Papua, Nusa Tenggara",
+     "en": "Maluku, Papua, Nusa Tenggara"
+    },
+    "tabel": {
+     "kms": "5.207",
+     "mva": "5.209"
+    },
+    "kms": {
+     "tipe": "kms",
+     "tegangan": {
+      "70": {
+       "tahun": [
+        0,
+        108,
+        2,
+        240,
+        0,
+        20,
+        30,
+        0,
+        40,
+        0
+       ],
+       "jumlah": 440
+      },
+      "150": {
+       "tahun": [
+        1073,
+        100,
+        646,
+        212,
+        275,
+        862,
+        90,
+        40,
+        145,
+        0
+       ],
+       "jumlah": 3443
+      }
+     },
+     "total": {
+      "tahun": [
+       1073,
+       208,
+       648,
+       452,
+       275,
+       882,
+       120,
+       40,
+       185,
+       0
+      ],
+      "jumlah": 3883
+     }
+    },
+    "mva": {
+     "tipe": "mva",
+     "tegangan": {
+      "150/70": {
+       "tahun": [
+        180,
+        0,
+        120,
+        0,
+        0,
+        0,
+        0,
+        0,
+        60,
+        0
+       ],
+       "jumlah": 360
+      },
+      "150/20": {
+       "tahun": [
+        150,
+        30,
+        330,
+        90,
+        70,
+        110,
+        60,
+        30,
+        180,
+        0
+       ],
+       "jumlah": 1050
+      },
+      "70/20": {
+       "tahun": [
+        30,
+        60,
+        50,
+        120,
+        30,
+        0,
+        120,
+        60,
+        60,
+        120
+       ],
+       "jumlah": 650
+      }
+     },
+     "total": {
+      "tahun": [
+       360,
+       90,
+       500,
+       210,
+       100,
+       110,
+       180,
+       90,
+       300,
+       120
+      ],
+      "jumlah": 2060
+     }
+    }
+   }
+  ],
+  "ruas": [
+   {
+    "id": "sumatera-500",
+    "wilayah": "sumatera",
+    "ikon": "petir",
+    "nama": {
+     "id": "Backbone 500 kV Sumatera (sisi timur)",
+     "en": "Sumatra 500 kV backbone (east side)"
+    },
+    "kms": 2398,
+    "kv": 500,
+    "cod": "2025-2033",
+    "ket": {
+     "id": "Muara Enim-New Aur Duri-Peranap-Perawang-Rantau Prapat-Galang; Rantau Prapat-Perawang 560 kms COD 2028 (rencana). Muara Enim-New Aur Duri terlambat dan diadakan ulang.",
+     "en": "Muara Enim-New Aur Duri-Peranap-Perawang-Rantau Prapat-Galang; Rantau Prapat-Perawang 560 kms COD 2028 (planned). Muara Enim-New Aur Duri is delayed and being re-procured."
+    },
+    "tabel": "5.191, A3.14"
+   },
+   {
+    "id": "sumatera-hvdc",
+    "wilayah": "sumatera",
+    "ikon": "petir",
+    "nama": {
+     "id": "HVDC 500 kV Sumatera (2031-2034)",
+     "en": "Sumatra 500 kV HVDC (2031-2034)"
+    },
+    "kms": 1332,
+    "kv": 500,
+    "cod": "2031-2034",
+    "ket": {
+     "id": "Termasuk Peranap-Landing Point Sungai Guntung 360 kms (2031 dan 2032) dan Perawang-Semenanjung Malaysia 300 kms (2034); level tegangan dapat berubah menurut kajian.",
+     "en": "Includes Peranap-Sungai Guntung Landing Point 360 kms (2031 and 2032) and Perawang-Peninsular Malaysia 300 kms (2034); the voltage level may change after study."
+    },
+    "tabel": "5.191, A3.14"
+   },
+   {
+    "id": "sumatera-275",
+    "wilayah": "sumatera",
+    "ikon": "petir",
+    "nama": {
+     "id": "SUTET 275 kV Sumatera",
+     "en": "Sumatra 275 kV lines"
+    },
+    "kms": 1942,
+    "kv": 275,
+    "cod": "2025-2033",
+    "ket": {
+     "id": "Termasuk Betung-Palembang Utara (target 2025) dan Sigli-Ulee Kareng yang sudah beroperasi untuk Banda Aceh.",
+     "en": "Includes Betung-Palembang Utara (2025 target) and the operating Sigli-Ulee Kareng for Banda Aceh."
+    },
+    "tabel": "5.191"
+   },
+   {
+    "id": "jawabali-500",
+    "wilayah": "jawabali",
+    "ikon": "petir",
+    "nama": {
+     "id": "Backbone 500 kV Jawa-Bali",
+     "en": "Java-Bali 500 kV backbone"
+    },
+    "kms": 2668,
+    "kv": 500,
+    "cod": "2025-2033",
+    "ket": {
+     "id": "Penguatan backbone utara-selatan (mis. SUTET Ungaran-Pedan #2), GITET baru di Banten, Jakarta, Jawa Barat, Tengah, dan Timur, serta Jawa-Bali Connection Paiton-Antosari. Gardu 500/150 kV 36.000 MVA.",
+     "en": "North-south backbone reinforcement (e.g. Ungaran-Pedan #2), new extra-high-voltage substations in Banten, Jakarta, West, Central and East Java, and the Paiton-Antosari Java-Bali Connection. 500/150 kV substations of 36,000 MVA."
+    },
+    "tabel": "5.195, 5.196"
+   },
+   {
+    "id": "jawabali-hvdc",
+    "wilayah": "jawabali",
+    "ikon": "petir",
+    "nama": {
+     "id": "Sisi Jawa interkoneksi HVDC Sumatera-Jawa",
+     "en": "Java end of the Sumatra-Java HVDC link"
+    },
+    "kms": 1100,
+    "kv": 500,
+    "cod": "2031",
+    "ket": {
+     "id": "500 kV DC sepanjang 1.100 kms pada 2031 di Jawa-Bali; mendukung 2,6 GW dari Sumatera pada 2033.",
+     "en": "1,100 kms of 500 kV DC in Java-Bali in 2031; supports 2.6 GW from Sumatra by 2033."
+    },
+    "tabel": "5.195"
+   },
+   {
+    "id": "kalimantan-500",
+    "wilayah": "kalimantan",
+    "ikon": "petir",
+    "nama": {
+     "id": "SUTET 500 kV Kalimantan (Grid Borneo)",
+     "en": "Kalimantan 500 kV lines (Borneo Grid)"
+    },
+    "kms": 1387,
+    "kv": 500,
+    "cod": "2031",
+    "ket": {
+     "id": "Dari Kalimantan Utara ke Kalimantan Timur untuk mengevakuasi PLTA Kalseltengtimra; jangka panjang seluruh Kalimantan menjadi satu Grid Borneo. Gardu 500 kV 4.000 MVA.",
+     "en": "From North Kalimantan to East Kalimantan to evacuate Kalseltengtimra hydro; long term the whole of Kalimantan becomes one Borneo Grid. 4,000 MVA of 500 kV substations."
+    },
+    "tabel": "5.199, 5.200"
+   },
+   {
+    "id": "sulawesi-275",
+    "wilayah": "sulawesi",
+    "ikon": "petir",
+    "nama": {
+     "id": "Backbone 275 kV Sulawesi (Green Energy Corridor)",
+     "en": "Sulawesi 275 kV backbone (Green Energy Corridor)"
+    },
+    "kms": 4012,
+    "kv": 275,
+    "cod": "2026-2031",
+    "ket": {
+     "id": "Jalur Tenggara Wotu-Bungku-Andowia-Kendari 968 kms (2026); jalur Selatan Palopo-Bakaru 2-Sidrap-Daya Baru-Bantaeng 956 kms (2028); looping Wotu-Malili-Kolaka-Kendari 952 kms (2029); looping Barat Tentena-Lariang-Seko-Mamuju Baru 1.096 kms (2031).",
+     "en": "Southeast route Wotu-Bungku-Andowia-Kendari 968 kms (2026); south route Palopo-Bakaru 2-Sidrap-Daya Baru-Bantaeng 956 kms (2028); Wotu-Malili-Kolaka-Kendari loop 952 kms (2029); west loop Tentena-Lariang-Seko-Mamuju Baru 1,096 kms (2031)."
+    },
+    "tabel": "5.203, 5.205"
+   }
+  ],
+  "sumber_id": "ruptl-2025",
+  "bukti": "resmi"
+ },
+ "antar_pulau": [
+  {
+   "id": "sumatera-jawa",
+   "kelompok": "super-grid",
+   "nama": {
+    "id": "Interkoneksi Sumatera-Jawa (HVDC 500 kV)",
+    "en": "Sumatra-Java interconnection (HVDC 500 kV)"
+   },
+   "dari": "Sumatera",
+   "ke": "Jawa-Bali",
+   "tegangan_kv": 500,
+   "teknologi": "HVDC",
+   "status": "kajian-lanjut",
+   "cod": 2031,
+   "kapasitas_mw": 2600,
+   "ket": {
+    "id": "RUPTL menargetkan selesai 2031 dan menyalurkan bertahap hingga 2,6 GW pada 2033 (energi air dan panas bumi Sumatera); titik koneksi dan teknologi HVDC atau HVAC masih membutuhkan kajian. Tabel rencana mencatat 1.100 kms HVDC 500 kV di Jawa dan 6.000 MVA gardu 500 kV DC.",
+    "en": "RUPTL targets completion in 2031 with up to 2.6 GW delivered gradually by 2033 (Sumatran hydro and geothermal); connection point and HVDC or HVAC technology still need study. The plan tables list 1,100 kms of 500 kV HVDC in Java and 6,000 MVA of 500 kV DC substations."
+   },
+   "garis": [
+    [
+     105.6,
+     -5.5
+    ],
+    [
+     106.1,
+     -6.1
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "rencana"
+  },
+  {
+   "id": "kalimantan-jawa",
+   "kelompok": "super-grid",
+   "nama": {
+    "id": "Interkoneksi Kalimantan-Jawa (500 kV)",
+    "en": "Kalimantan-Java interconnection (500 kV)"
+   },
+   "dari": "Kalimantan",
+   "ke": "Jawa",
+   "tegangan_kv": 500,
+   "teknologi": "SKLTET HVDC (opsi)",
+   "status": "kajian",
+   "cod": 2040,
+   "kapasitas_mw": 5000,
+   "ket": {
+    "id": "Dalam kajian green enabling transmission: potensi EBT Kalimantan 14,0 GW (hidro 13,8 GW), diproyeksikan menyalurkan 5 GW ke Jawa mulai 2040. Titik koneksi dan teknologi belum ditetapkan.",
+    "en": "Under the green enabling transmission study: Kalimantan renewable potential of 14.0 GW (hydro 13.8 GW), projected to deliver 5 GW to Java from 2040. Connection point and technology are not yet fixed."
+   },
+   "garis": [
+    [
+     115,
+     -3.4
+    ],
+    [
+     110.6,
+     -6.8
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "kajian"
+  },
+  {
+   "id": "sumba-bali-jawa",
+   "kelompok": "super-grid",
+   "nama": {
+    "id": "Interkoneksi Sumba-Bali-Jawa (HVDC 500 kV)",
+    "en": "Sumba-Bali-Java interconnection (HVDC 500 kV)"
+   },
+   "dari": "Sumba",
+   "ke": "Bali-Jawa",
+   "tegangan_kv": 500,
+   "teknologi": "HVDC (kabel laut + saluran udara)",
+   "status": "kajian",
+   "cod": null,
+   "kapasitas_mw": 2000,
+   "ket": {
+    "id": "Mengevakuasi potensi PLTS Sumba sekitar 2 GW; RUPTL memperkirakan biaya lebih dari Rp70 triliun sehingga perlu kajian kelayakan komprehensif.",
+    "en": "Evacuates about 2 GW of Sumba solar potential; RUPTL puts the cost above Rp70 trillion, so a comprehensive feasibility study is still needed."
+   },
+   "garis": [
+    [
+     119.9,
+     -9.7
+    ],
+    [
+     115.2,
+     -8.65
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "kajian"
+  },
+  {
+   "id": "jawa-bali",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Jawa-Bali Connection (Paiton-Antosari 500 kV)",
+    "en": "Java-Bali Connection (Paiton-Antosari 500 kV)"
+   },
+   "dari": "Jawa",
+   "ke": "Bali",
+   "tegangan_kv": 500,
+   "teknologi": "Multi Column Tower dan/atau SKLTET 500 kV",
+   "status": "rencana",
+   "cod": null,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "Untuk pertumbuhan beban dan keandalan Bali; pilihan penyelesaian menara multi kolom dan kabel laut 500 kV. Sistem Jawa-Madura-Bali sudah satu sistem; persilangan 500 kV Jawa-Bali juga pernah dibiayai ADB (lihat tab pendanaan).",
+    "en": "For load growth and reliability in Bali; options are multi-column towers and 500 kV submarine cable. The Java-Madura-Bali system is already one grid; a Java-Bali 500 kV crossing was also financed by ADB (see the funding tab)."
+   },
+   "garis": [
+    [
+     113.58,
+     -7.72
+    ],
+    [
+     115.05,
+     -8.45
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "rencana"
+  },
+  {
+   "id": "bali-lombok",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Bali-Lombok (150 kV)",
+    "en": "Bali-Lombok interconnection (150 kV)"
+   },
+   "dari": "Bali",
+   "ke": "Lombok",
+   "tegangan_kv": 150,
+   "teknologi": "SKLT 150 kV",
+   "status": "kajian",
+   "cod": null,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "Memperkuat keandalan kedua sistem; titik koneksi indikatif Amlapura-Ampenan atau Gianyar-Sekotong; masih perlu kajian.",
+    "en": "Strengthens reliability of both systems; indicative connection points Amlapura-Ampenan or Gianyar-Sekotong; still needs study."
+   },
+   "garis": [
+    [
+     115.2,
+     -8.65
+    ],
+    [
+     116.1,
+     -8.6
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "kajian"
+  },
+  {
+   "id": "lombok-sumbawa",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Lombok-Sumbawa (150 kV)",
+    "en": "Lombok-Sumbawa interconnection (150 kV)"
+   },
+   "dari": "Lombok",
+   "ke": "Sumbawa",
+   "tegangan_kv": 150,
+   "teknologi": "kabel laut 150 kV",
+   "status": "kajian",
+   "cod": null,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "Dikaji ulang setelah interkoneksi Bali-Lombok beroperasi; Lombok diperkirakan kelebihan pasokan.",
+    "en": "To be revisited once the Bali-Lombok link operates; Lombok is expected to have surplus supply."
+   },
+   "garis": [
+    [
+     116.1,
+     -8.6
+    ],
+    [
+     117.4,
+     -8.5
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "kajian"
+  },
+  {
+   "id": "sumatera-bengkalis",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Sumatera-Bengkalis (150 kV)",
+    "en": "Sumatra-Bengkalis interconnection (150 kV)"
+   },
+   "dari": "Sumatera",
+   "ke": "Bengkalis",
+   "tegangan_kv": 150,
+   "teknologi": "SUTT dan kabel laut 150 kV",
+   "status": "pra-konstruksi",
+   "cod": 2026,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "Menyalurkan energi murah ke Bengkalis (dedieselisasi); proses pembebasan lahan dan perizinan. Tabel rencana: Pakning-Bengkalis 14 kms (pengadaan, COD 2026).",
+    "en": "Brings cheaper energy to Bengkalis (diesel displacement); land acquisition and permitting under way. Plan table: Pakning-Bengkalis 14 kms (procurement, COD 2026)."
+   },
+   "garis": [
+    [
+     101.9,
+     1.3
+    ],
+    [
+     102.1,
+     1.45
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "rencana"
+  },
+  {
+   "id": "sumatera-karimun",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Sumatera-Selat Panjang-Tanjung Balai Karimun (150 kV)",
+    "en": "Sumatra-Selat Panjang-Tanjung Balai Karimun interconnection (150 kV)"
+   },
+   "dari": "Sumatera",
+   "ke": "Karimun",
+   "tegangan_kv": 150,
+   "teknologi": "SUTT dan kabel laut 150 kV",
+   "status": "pra-konstruksi",
+   "cod": 2026,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "Sumatera-Selat Panjang pada tahap pra-konstruksi; Selat Panjang-Tanjung Balai Karimun masih perencanaan. Tabel rencana memuat ruas COD 2026.",
+    "en": "Sumatra-Selat Panjang is in pre-construction; Selat Panjang-Tanjung Balai Karimun is still in planning. The plan table lists segments with 2026 COD."
+   },
+   "garis": [
+    [
+     101.6,
+     0.5
+    ],
+    [
+     102.7,
+     1
+    ],
+    [
+     103.4,
+     1
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "rencana"
+  },
+  {
+   "id": "sumatera-batam-bintan",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Sumatera-Batam-Bintan (500 kV AC atau DC)",
+    "en": "Sumatra-Batam-Bintan interconnection (500 kV AC or DC)"
+   },
+   "dari": "Sumatera",
+   "ke": "Batam-Bintan",
+   "tegangan_kv": 500,
+   "teknologi": "AC atau DC (terbuka)",
+   "status": "kajian",
+   "cod": null,
+   "kapasitas_mw": 3000,
+   "ket": {
+    "id": "Menyalurkan EBT Sumatera (14,5 GW potensi) untuk permintaan Batam dan Bintan hingga sekitar 3 GW, termasuk pusat data; juga dapat menjangkau KEK di Bintan dan sistem lain. Teknologi, tegangan, dan skema bisnis masih dikaji.",
+    "en": "Delivers Sumatran renewables (14.5 GW potential) to Batam and Bintan demand growing to about 3 GW, including data centres; could also reach SEZ load on Bintan and other systems. Technology, voltage and business scheme are still under study."
+   },
+   "garis": [
+    [
+     101.6,
+     0.5
+    ],
+    [
+     104,
+     1.08
+    ],
+    [
+     104.5,
+     1
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "kajian"
+  },
+  {
+   "id": "dabo-lingga-selayar",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Dabo Singkep-Selayar-Lingga",
+    "en": "Dabo Singkep-Selayar-Lingga interconnection"
+   },
+   "dari": "Dabo Singkep",
+   "ke": "Lingga",
+   "tegangan_kv": null,
+   "teknologi": "kabel laut",
+   "status": "beroperasi",
+   "cod": 2023,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "RUPTL mencatat proyek interkoneksi ketiga sistem pulau ini sudah beroperasi pada akhir 2023.",
+    "en": "RUPTL records that the interconnection of these three island systems was operating by the end of 2023."
+   },
+   "garis": [
+    [
+     104.5,
+     -0.5
+    ],
+    [
+     104.6,
+     -0.2
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "beroperasi"
+  },
+  {
+   "id": "kalimantan-tarakan",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Kalimantan-Pulau Tarakan (150 kV)",
+    "en": "Kalimantan-Tarakan Island interconnection (150 kV)"
+   },
+   "dari": "Kalimantan",
+   "ke": "Tarakan",
+   "tegangan_kv": 150,
+   "teknologi": "kabel laut 150 kV",
+   "status": "konstruksi",
+   "cod": 2026,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "Dedieselisasi dan penurunan BPP sistem isolated Tarakan; dalam konstruksi dengan target selesai 2026.",
+    "en": "Diesel displacement and lower BPP for the isolated Tarakan system; under construction, targeted for 2026."
+   },
+   "garis": [
+    [
+     117.35,
+     2.85
+    ],
+    [
+     117.6,
+     3.3
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "konstruksi"
+  },
+  {
+   "id": "kalimantan-nunukan",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Kalimantan-Pulau Nunukan (150 kV)",
+    "en": "Kalimantan-Nunukan Island interconnection (150 kV)"
+   },
+   "dari": "Kalimantan",
+   "ke": "Nunukan",
+   "tegangan_kv": 150,
+   "teknologi": "kabel laut 150 kV",
+   "status": "rencana",
+   "cod": null,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "Menyatukan sistem isolated Nunukan ke sistem Kalimantan; masih perencanaan.",
+    "en": "Joins the isolated Nunukan system to the Kalimantan grid; still in planning."
+   },
+   "garis": [
+    [
+     117.6,
+     3.3
+    ],
+    [
+     117.65,
+     4.1
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "rencana"
+  },
+  {
+   "id": "sulbagsel-baubau-raha",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Sulbagsel-Baubau-Raha (150 kV)",
+    "en": "South Sulawesi-Baubau-Raha interconnection (150 kV)"
+   },
+   "dari": "Sulawesi",
+   "ke": "Baubau-Raha",
+   "tegangan_kv": 150,
+   "teknologi": "tower penyeberangan (GI Andolo-GI Raha)",
+   "status": "kajian",
+   "cod": null,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "Opsi 2 terpilih (tower penyeberangan di Pulau Groot Tobea dan Groot Muna); masih perlu kajian perairan dan kedalaman untuk floating tower.",
+    "en": "Option 2 selected (crossing towers on Groot Tobea and Groot Muna islands); water conditions and depth still need study for floating towers."
+   },
+   "garis": [
+    [
+     122.5,
+     -3.95
+    ],
+    [
+     122.7,
+     -4.85
+    ],
+    [
+     122.6,
+     -5.45
+    ]
+   ],
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "kajian"
+  },
+  {
+   "id": "bangka-belitung",
+   "kelompok": "antar-pulau",
+   "nama": {
+    "id": "Interkoneksi Bangka-Belitung",
+    "en": "Bangka-Belitung interconnection"
+   },
+   "dari": "Bangka",
+   "ke": "Belitung",
+   "tegangan_kv": null,
+   "teknologi": "SKLTM dan SUTM, 130 km antar-landing point",
+   "status": "tidak-layak",
+   "cod": null,
+   "kapasitas_mw": null,
+   "ket": {
+    "id": "Kajian kelayakan menilai proyek tidak layak secara finansial; dikembangkan terpisah dalam RUPTL ini.",
+    "en": "The feasibility study finds the project financially unviable; the two systems are developed separately in this RUPTL."
+   },
+   "garis": null,
+   "skematik": true,
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "jenis_catatan": "kajian"
+  }
+ ],
+ "lintas_negara": {
+  "negara": [
+   {
+    "id": "kalbar-sarawak",
+    "negara": "my",
+    "mitra": {
+     "id": "Sarawak (SESCO / Sarawak Energy)",
+     "en": "Sarawak (SESCO / Sarawak Energy)"
+    },
+    "nama": {
+     "id": "Kalimantan Barat-Sarawak 275 kV",
+     "en": "West Kalimantan-Sarawak 275 kV"
+    },
+    "tegangan_kv": 275,
+    "teknologi": "SUTET AC 275 kV, GITET Bengkayang-GITET Mambong",
+    "status": "beroperasi",
+    "tahun": 2016,
+    "kapasitas_mw": 230,
+    "panjang_km": 127,
+    "ket": {
+     "id": "Tersambung 20 Januari 2016. Perjanjian pertukaran listrik 25 tahun: tahap impor 50 MW di luar beban puncak dan 230 MW saat puncak, lalu tahap ekspor-impor dua arah. RUPTL 2025 mencatat skema power-exchange sebagai opsi perpanjangan dan menyebut interkoneksi ini sudah beroperasi.",
+     "en": "Connected on 20 January 2016. A 25-year power exchange agreement: import of 50 MW off-peak and 230 MW at peak, then two-way export-import. RUPTL 2025 lists a power-exchange scheme as the extension option and confirms the link is operating."
+    },
+    "garis": [
+     [
+      109.48,
+      0.92
+     ],
+     [
+      110.33,
+      1.05
+     ]
+    ],
+    "skematik": true,
+    "sumber_id": "esdm-sarawak-2016",
+    "sumber_tambahan": [
+     "ruptl-2025"
+    ],
+    "bukti": "resmi",
+    "pihak": [
+     "PLN",
+     "SESCO"
+    ]
+   },
+   {
+    "id": "sumatera-semenanjung",
+    "negara": "my",
+    "mitra": {
+     "id": "Semenanjung Malaysia (TNB)",
+     "en": "Peninsular Malaysia (TNB)"
+    },
+    "nama": {
+     "id": "Sumatera-Semenanjung Malaysia (HVDC 500 kV)",
+     "en": "Sumatra-Peninsular Malaysia (HVDC 500 kV)"
+    },
+    "tegangan_kv": 500,
+    "teknologi": "HVDC 500 kV dari Perawang",
+    "status": "studi",
+    "tahun": 2034,
+    "kapasitas_mw": 300,
+    "kapasitas_potensi_gw": [
+     0.6,
+     2.1
+    ],
+    "panjang_km": 300,
+    "ket": {
+     "id": "Potensi 0,6-2,1 GW menurut AIMS III; PLN dan Tenaga Nasional Berhad menyusun studi rinci difasilitasi ASEAN Centre for Energy. Lampiran RUPTL mencatat ruas Perawang (HVDC)-Peninsular 500 kV 300 kms dengan COD 2034, status rencana. Kapasitas 300 MW pada kolom lampiran adalah angka lampiran, bukan keputusan investasi.",
+     "en": "Potential of 0.6-2.1 GW per AIMS III; PLN and Tenaga Nasional Berhad are preparing a detailed study facilitated by the ASEAN Centre for Energy. The RUPTL annex lists a Perawang (HVDC)-Peninsular 500 kV segment of 300 kms with 2034 COD, status planned. The 300 MW in the annex column is an annex figure, not an investment decision."
+    },
+    "garis": [
+     [
+      101.6,
+      0.55
+     ],
+     [
+      102.25,
+      2.2
+     ]
+    ],
+    "skematik": true,
+    "sumber_id": "ruptl-2025",
+    "bukti": "resmi",
+    "pihak": [
+     "PLN",
+     "TNB"
+    ]
+   },
+   {
+    "id": "sumatera-singapura",
+    "negara": "sg",
+    "mitra": {
+     "id": "Singapura (EMA)",
+     "en": "Singapore (EMA)"
+    },
+    "nama": {
+     "id": "Sumatera/Riau/Batam-Singapura (kabel laut ekspor listrik hijau)",
+     "en": "Sumatra/Riau/Batam-Singapore (subsea cable for green power export)"
+    },
+    "tegangan_kv": null,
+    "teknologi": "kabel laut HVDC (jalur dikaji Pushidrosal)",
+    "status": "studi",
+    "tahun": 2028,
+    "kapasitas_mw": 2000,
+    "kapasitas_potensi_gw": [
+     0.6,
+     1.1
+    ],
+    "panjang_km": null,
+    "ket": {
+     "id": "RUPTL: PLN ditugaskan menjadi integrator interkoneksi ke Singapura (rapat koordinasi 26 April 2024); koridor kabel laut dibahas dengan Pushidrosal dan dapat dipakai PLN maupun swasta; rencana transfer 2 GW dari PLTS pemegang conditional approval EMA. AIMS III menilai potensi 0,6-1,1 GW. Lihat daftar proyek ekspor di bawah.",
+     "en": "RUPTL: PLN has been assigned as integrator of the interconnection to Singapore (coordination meeting of 26 April 2024); the subsea corridor was discussed with Pushidrosal and may be used by PLN or private parties; planned transfer of 2 GW from solar plants held by EMA conditional approval holders. AIMS III sees 0.6-1.1 GW potential. See the export project list below."
+    },
+    "garis": [
+     [
+      104,
+      1.08
+     ],
+     [
+      103.85,
+      1.3
+     ]
+    ],
+    "skematik": true,
+    "sumber_id": "ruptl-2025",
+    "bukti": "resmi",
+    "pihak": [
+     "PLN",
+     "EMA"
+    ]
+   },
+   {
+    "id": "kalimantan-sabah",
+    "negara": "my",
+    "mitra": {
+     "id": "Sabah (SESB)",
+     "en": "Sabah (SESB)"
+    },
+    "nama": {
+     "id": "Kalimantan-Sabah",
+     "en": "Kalimantan-Sabah"
+    },
+    "tegangan_kv": null,
+    "teknologi": "belum ditetapkan",
+    "status": "studi",
+    "tahun": null,
+    "kapasitas_mw": null,
+    "kapasitas_potensi_gw": [
+     0.1,
+     0.2
+    ],
+    "panjang_km": null,
+    "ket": {
+     "id": "Potensi 0,1-0,2 GW (AIMS III); inisiatif keketuaan ASEAN Indonesia 2023; PLN dan Sabah Electricity Sdn Bhd menyusun studi rinci difasilitasi ACE.",
+     "en": "Potential of 0.1-0.2 GW (AIMS III); an initiative of Indonesia's 2023 ASEAN chairmanship; PLN and Sabah Electricity Sdn Bhd are preparing a detailed study facilitated by ACE."
+    },
+    "garis": [
+     [
+      117,
+      3
+     ],
+     [
+      116.1,
+      5.9
+     ]
+    ],
+    "skematik": true,
+    "sumber_id": "ruptl-2025",
+    "bukti": "resmi",
+    "pihak": [
+     "PLN",
+     "SESB"
+    ]
+   }
+  ],
+  "apg": {
+   "ket": {
+    "id": "ASEAN Power Grid (APG) menghubungkan jaringan negara ASEAN. Satu-satunya perdagangan listrik multilateral yang tercatat berjalan adalah LTMS-PIP (Laos-Thailand-Malaysia-Singapura), belum melibatkan Indonesia; interkoneksi Indonesia dengan Malaysia dan Singapura dibahas di tab ini.",
+    "en": "The ASEAN Power Grid (APG) links ASEAN national grids. The only multilateral power trade on record is LTMS-PIP (Laos-Thailand-Malaysia-Singapore), which does not yet involve Indonesia; Indonesian links with Malaysia and Singapore are covered in this tab."
+   },
+   "ltms": {
+    "mw_awal": 100,
+    "mw_2025": 200,
+    "mulai": "2022-06",
+    "pernyataan": "2025-10-16",
+    "jalur": [
+     "la",
+     "th",
+     "my",
+     "sg"
+    ],
+    "sumber_id": "fmt-ltms-2025",
+    "bukti": "media",
+    "ket": {
+     "id": "Dimulai Juni 2022 dengan 100 MW Laos ke Singapura lewat jaringan Thailand dan Malaysia; Pernyataan Bersama ke-6 (Oktober 2025) menggandakan menjadi hingga 200 MW dengan arus Malaysia ke Singapura. Realisasi aliran penuh 200 MW dan status perjanjian transmisi tidak terverifikasi.",
+     "en": "Started June 2022 with 100 MW from Laos to Singapore via the Thai and Malaysian grids; the 6th Joint Statement (October 2025) doubled it to up to 200 MW by adding Malaysia-to-Singapore flows. Actual full 200 MW flows and the transmission agreement status are unverified."
+    }
+   },
+   "aims3": {
+    "sumber_id": "ruptl-2025",
+    "bukti": "resmi",
+    "ket": {
+     "id": "ASEAN Interconnection Masterplan Study (AIMS) III, dikutip RUPTL 2025-2034: Sumatera-Semenanjung 0,6-2,1 GW; Sumatera-Singapura 0,6-1,1 GW; Kalimantan-Sabah 0,1-0,2 GW.",
+     "en": "ASEAN Interconnection Masterplan Study (AIMS) III as cited in RUPTL 2025-2034: Sumatra-Peninsular 0.6-2.1 GW; Sumatra-Singapore 0.6-1.1 GW; Kalimantan-Sabah 0.1-0.2 GW."
+    }
+   }
+  },
+  "ekspor_singapura": {
+   "target_sg_gw_2035": 6,
+   "target_awal_gw": 4,
+   "tonggak": [
+    {
+     "tanggal": "2023-09-08",
+     "teks": {
+      "id": "EMA memberi conditional approval 2 GW impor listrik rendah karbon dari Indonesia kepada lima perusahaan.",
+      "en": "EMA grants conditional approvals for 2 GW of low-carbon electricity imports from Indonesia to five companies."
+     },
+     "sumber_id": "businesstoday-2023",
+     "bukti": "media"
+    },
+    {
+     "tanggal": "2024-09-05",
+     "teks": {
+      "id": "Lima pemegang conditional approval naik menjadi conditional licence (2 GW); dua proyek baru (1,4 GW) mendapat conditional approval. Diumumkan di Indonesia International Sustainability Forum, Jakarta; pengumuman EMA tertanggal 5 September 2024 menurut Eco-Business.",
+      "en": "The five approval holders are upgraded to conditional licences (2 GW); two new projects (1.4 GW) receive conditional approval. Announced at the Indonesia International Sustainability Forum, Jakarta; EMA announcement dated 5 September 2024 per Eco-Business."
+     },
+     "sumber_id": "ecobusiness-sg-2024",
+     "bukti": "media"
+    },
+    {
+     "tanggal": "2025-05-30",
+     "teks": {
+      "id": "Singa Renewables (TotalEnergies dan RGE) mendapat conditional licence 1 GW, lisensi ke-6; target operasi komersial mulai 2029. Target impor Singapura sekitar 6 GW pada 2035.",
+      "en": "Singa Renewables (TotalEnergies and RGE) receives a 1 GW conditional licence, the sixth; commercial operation targeted from 2029. Singapore's import target is about 6 GW by 2035."
+     },
+     "sumber_id": "ema-singa-2025",
+     "bukti": "resmi"
+    }
+   ],
+   "proyek": [
+    {
+     "id": "pacific-medco",
+     "pengembang": "Pacific Medco Solar Energy Pte Ltd",
+     "gw": 0.6,
+     "izin": "conditional-licence",
+     "tanggal": "2024-09-05",
+     "sumber_id": "solarquarter-2024",
+     "bukti": "media",
+     "org_id": [
+      "p_9de27fd5b9"
+     ]
+    },
+    {
+     "id": "adaro-solar",
+     "pengembang": "Adaro Solar International Pte Ltd",
+     "gw": 0.4,
+     "izin": "conditional-licence",
+     "tanggal": "2024-09-05",
+     "sumber_id": "solarquarter-2024",
+     "bukti": "media",
+     "org_id": [
+      "p_7f829f524e"
+     ]
+    },
+    {
+     "id": "edpr-apac",
+     "pengembang": "EDP Renewables APAC",
+     "gw": 0.4,
+     "izin": "conditional-licence",
+     "tanggal": "2024-09-05",
+     "sumber_id": "solarquarter-2024",
+     "bukti": "media",
+     "org_id": [
+      "en_bf570fbb89"
+     ]
+    },
+    {
+     "id": "vanda-re",
+     "pengembang": "Vanda RE Pte Ltd",
+     "gw": 0.3,
+     "izin": "conditional-licence",
+     "tanggal": "2024-09-05",
+     "sumber_id": "solarquarter-2024",
+     "bukti": "media",
+     "org_id": []
+    },
+    {
+     "id": "keppel-energy",
+     "pengembang": "Keppel Energy Pte Ltd",
+     "gw": 0.3,
+     "izin": "conditional-licence",
+     "tanggal": "2024-09-05",
+     "sumber_id": "solarquarter-2024",
+     "bukti": "media",
+     "org_id": [
+      "in_568bb2c518"
+     ]
+    },
+    {
+     "id": "singa-renewables",
+     "pengembang": "Singa Renewables Pte Ltd",
+     "mitra": "TotalEnergies, RGE (Royal Golden Eagle)",
+     "gw": 1,
+     "izin": "conditional-licence",
+     "tanggal": "2025-05-30",
+     "cod_target": 2029,
+     "sumber_id": "ema-singa-2025",
+     "bukti": "resmi",
+     "org_id": [
+      "p_a6be6e993f"
+     ]
+    },
+    {
+     "id": "shell-vena",
+     "pengembang": "Shell Eastern Trading (Pte.) Ltd",
+     "mitra": "Vena Energy",
+     "gw": 0.4,
+     "gw_turunan": true,
+     "izin": "conditional-approval",
+     "tanggal": "2024-09-05",
+     "sumber_id": "solarquarter-2024",
+     "bukti": "media",
+     "org_id": [
+      "in_b87ab519c7",
+      "p_ef20787d46"
+     ]
+    }
+   ],
+   "catatan": {
+    "id": "Kapasitas per perusahaan dari SolarQuarter (9 Sep 2024); EMA tidak dapat dibaca langsung karena situs dilindungi penantang bot, jadi angka per perusahaan berstatus media. Keadaan setelah Mei 2025 (lisensi importir, konstruksi, kabel) tidak terverifikasi. Lima pemegang conditional licence disebut berekspor mulai 2028 (Eco-Business).",
+    "en": "Per-company capacities are from SolarQuarter (9 Sep 2024); the EMA site could not be read directly because it sits behind a bot challenge, so per-company figures carry media-level evidence. Status after May 2025 (importer licence, construction, cable) is unverified. The five conditional-licence holders are said to export from 2028 (Eco-Business)."
+   }
+  }
+ },
+ "penyimpanan": {
+  "ps_ruptl_mw": {
+   "total": 4243,
+   "tahun": {
+    "2028": 1040,
+    "2031": 760,
+    "2032": 943,
+    "2033": 1500
+   },
+   "sumber_id": "ruptl-2025",
+   "bukti": "resmi",
+   "ket": {
+    "id": "Tabel 5.80 skenario RE Base: pumped storage (PLTA PS) 4.243 MW pada 2028-2033 (2028: 1.040 MW; 2031: 760; 2032: 943; 2033: 1.500; rincian nama proyek ada di riset pumped storage).",
+    "en": "Table 5.80, RE Base scenario: pumped storage (PLTA PS) of 4,243 MW over 2028-2033 (2028: 1,040 MW; 2031: 760; 2032: 943; 2033: 1,500; project names are in the pumped storage research file)."
+   }
+  },
+  "rujukan": {
+   "bess_per_sistem": "riset/jaringan.json#baris[].penyimpanan_ruptl_mw",
+   "pumped_storage": "riset/pumped_storage_offshore.json#baris[jenis=pumped-storage]"
+  }
+ },
+ "pendanaan": {
+  "ids_iati": [
+   "pi_XM_DAC_46004_41074_013_GRNT0354",
+   "pi_XM_DAC_46004_41074_013_LN3015",
+   "pi_XM_DAC_46004_42362_013_LN3083",
+   "pi_XM_DAC_46004_49080_001_LN3339",
+   "pi_XM_DAC_46004_50016_001_LN3560",
+   "pi_XM_DAC_46004_51114_001_LN4009",
+   "pi_XM_DAC_46025_IDN1007",
+   "pi_GB_GOV_1_400400_402"
+  ],
+  "pernyataan_pln": [
+   {
+    "id": "kebutuhan-supergrid",
+    "usd_miliar": 25,
+    "teks": {
+     "id": "Estimasi PLN: jaringan antar-wilayah untuk menyambung sumber EBT membutuhkan sekitar US$25 miliar.",
+     "en": "PLN estimate: an inter-regional grid to connect renewable sources needs about US$25 billion."
+    },
+    "sumber_id": "ecobusiness-grid-2024",
+    "bukti": "media"
+   },
+   {
+    "id": "jetp-mobilisasi",
+    "usd_miliar": 20,
+    "teks": {
+     "id": "JETP: sekitar US$20 miliar dimobilisasi untuk transisi energi (bukan khusus transmisi).",
+     "en": "JETP: about US$20 billion mobilised for the energy transition (not transmission-specific)."
+    },
+    "sumber_id": "ecobusiness-grid-2024",
+    "bukti": "media"
+   },
+   {
+    "id": "adb-etm",
+    "usd_miliar": 4,
+    "teks": {
+     "id": "Energy Transition Mechanism ADB: lebih dari US$4 miliar (bukan khusus transmisi).",
+     "en": "ADB Energy Transition Mechanism: over US$4 billion (not transmission-specific)."
+    },
+    "sumber_id": "ecobusiness-grid-2024",
+    "bukti": "media"
+   }
+  ],
+  "pemberi_org": {
+   "Asian Development Bank": "in_9a375db244",
+   "Islamic Development Bank": "in_41e3e0c573"
+  },
+  "donor_rujukan": [
+   "in_9a375db244",
+   "in_0d1892cd4f",
+   "in_eb327fef3a",
+   "in_41e3e0c573",
+   "l_c455b2f724"
+  ],
+  "celah": [
+   {
+    "id": "World Bank dan JICA: tidak ada pinjaman transmisi PLN yang terverifikasi di berkas IATI repo maupun di sumber terbuka yang dibaca; tidak diisi, tidak dikarang.",
+    "en": "World Bank and JICA: no verified PLN transmission loan in the repo IATI file or in the open sources read; left empty, not invented."
+   },
+   {
+    "id": "Pernyataan PLN (Juni 2024): investasi transmisi lebih sulit dibiayai daripada pembangkit karena imbal hasilnya lebih rendah, sehingga sebagian besar jatuh ke sektor publik.",
+    "en": "PLN statement (June 2024): transmission is harder to finance than generation because returns are lower, so it falls largely to the public sector."
+   }
+  ]
+ },
+ "pemain": {
+  "pln": [
+   "su_ed074ff5",
+   "p_e0f3886341"
+  ],
+  "epc": [
+   "p_1848d9c52b",
+   "p_a363064837"
+  ],
+  "kabel": [
+   "en_8b675ac024",
+   "en_28323x5315",
+   "en_338e1a0bef",
+   "en_8baf2db693",
+   "en_cfd1e6172d",
+   "en_e6bf020c42",
+   "en_bc7a3bb97c",
+   "p_05568287bd"
+  ],
+  "global_dari": "global/pemasok_lain.json#baris[segmen~jaringan]",
+  "peran_ruptl": {
+   "id": "Proyek transmisi umumnya dilaksanakan PLN dengan pola EPC; transmisi milik IPP dapat dibangun pengembang IPP; skema kemitraan swasta, KPBU, PMN, dan pembiayaan syariah juga dibuka (RUPTL Bab II.3).",
+   "en": "Transmission projects are generally executed by PLN under EPC; IPP-related transmission may be built by the IPP developer; private partnerships, PPP, state capital injection and sharia financing are also opened (RUPTL Chapter II.3)."
+  },
+  "unit_pln_ket": {
+   "id": "Unit PLN pelaksana transmisi (UIP, UIT, UP3B) belum ada sebagai entri organisasi tersendiri; yang tercatat adalah PLN dan PLN Icon Plus.",
+   "en": "PLN executing units for transmission (UIP, UIT, UP3B) are not separate organisation entries; PLN and PLN Icon Plus are on record."
+  }
+ }
+}

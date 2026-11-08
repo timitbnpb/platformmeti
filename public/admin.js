@@ -25,6 +25,7 @@ import { panelMetiWilayah } from "/admin_meti_wilayah.js";
 import { panelPersetujuan } from "/admin_daftar.js";
 import { panelKonsultasi } from "/admin_konsultasi.js";
 import { panelHariIni } from "/admin_hariini.js";
+import { panelKotak } from "/admin_kotak.js";
 import { panelKeamanan } from "/admin_keamanan.js";
 import { teksLencana } from "/inti/pesan_umum.js";
 
@@ -54,7 +55,7 @@ function jalan() {
   // [kunci, kunci i18n label, ikon, menu]. Hak per tab sama seperti sebelum dikelompokkan; server tetap menolak.
   const ad = (...x) => (adm ? x : []);
   const TAB = [
-    ...ad(["hariini", "adm.hi.tab", "lonceng", "hariini"]),
+    ...ad(["hariini", "adm.hi.tab", "lonceng", "hariini"], ["kotak", "kt.tab", "daftar", "hariini"]),
     ...ad(["persetujuan", "pd.tab", "daftar", "anggota"], ["akun", "admin.tab.akun", "orang", "anggota"]), ["anggota", "adm.anggota.tab", "daftar", "anggota"],
     ...ad(["kta", "adm.kta.tab", "kartu", "anggota"], ["metiwilayah", "adm.mw.tab", "wilayah", "anggota"], ["portal", "ap.tab", "centang", "anggota"], ["surel", "sm.ad.tab", "surel", "anggota"], ["keamanan", "kam.tab", "kunci", "anggota"]),
     ...ad(["beranda", "admin.tab.beranda", "beranda", "konten"], ["pustaka", "adm.pu.tab", "unduh", "konten"]), ["agenda", "adm.agenda.tab", "kalender", "konten"],
@@ -169,7 +170,7 @@ function jalan() {
     kabari("ok", "");
     $("panel").setAttribute("aria-labelledby", "tab-" + k);
     const P = $("panel");
-    if (k === "hariini") panelHariIni(P, { tabAda: (x) => TAB.some((y) => y[0] === x) }); else if (k === "keamanan") panelKeamanan(P, saya); else if (k === "akun") panelAkun(); else if (k === "jejak") panelAudit(P); else if (k === "koreksi") panelKoreksi(P); else if (k === "kesehatan") panelKesehatan(P);
+    if (k === "hariini") panelHariIni(P, { tabAda: (x) => TAB.some((y) => y[0] === x) }); else if (k === "kotak") panelKotak(P); else if (k === "keamanan") panelKeamanan(P, saya); else if (k === "akun") panelAkun(); else if (k === "jejak") panelAudit(P); else if (k === "koreksi") panelKoreksi(P); else if (k === "kesehatan") panelKesehatan(P);
     else if (k === "kesegaran") panelKesegaran(P);
     else if (k === "statistik") panelStatistik(P); else if (k === "pustaka") panelPustaka(P); else if (k === "metiberita") panelBeritaMeti(P); else if (k === "dokpustaka") panelDokPustaka(P); else if (k === "beranda") panelBeranda(P); else if (k === "agenda") panelAgenda(P, saya); else if (k === "sosmed") panelSosmed(P); else if (k === "kta") panelKta(P); else if (k === "event") panelEvent(P); else if (k === "langganan") panelLangganan(P); else if (k === "pesan") panelPesan(P); else if (k === "metiwilayah") panelMetiWilayah(P); else if (k === "portal") panelPortal(P); else if (k === "surel") panelSurel(P); else if (k === "persetujuan") panelPersetujuan(P, { boleh: adm }); else if (k === "konsultasi") panelKonsultasi(P); else panelAnggota(P, { boleh: adm, kabari });
   }

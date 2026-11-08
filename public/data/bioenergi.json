@@ -1,0 +1,1644 @@
+{
+ "lapis": "bioenergi",
+ "dibangun_pada": "2026-11-08",
+ "rujukan": {
+  "note": "Berkas ini merujuk, tidak menyalin. Pembaca (public/bio_*.js) membuka berkas rujukan saat runtime.",
+  "biomassa_provinsi": "riset/biomassa.json",
+  "pemasok": "global/pemasok_lain.json",
+  "cofiring": [
+   "cf-nasional",
+   "cf-bangka",
+   "cf-kendari"
+  ],
+  "energi_baru": "energi_baru.json",
+  "topik": "bioenergi",
+  "program": "b50",
+  "regulasi_id": [
+   "permen-esdm-12-2023",
+   "perpres-112-2022"
+  ],
+  "produsen_fame": [
+   "p_f9b341c0f2",
+   "p_6f8075d555",
+   "en_47d4add3f5",
+   "p_72cc04659c"
+  ],
+  "produsen_etanol": [
+   "p_1a272e3233",
+   "p_cbc53a2908",
+   "p_10e0dde689"
+  ],
+  "pemasok_biomassa": [
+   "en_7aaca4416c",
+   "en_659d53839c",
+   "en_2b3a981f9c"
+  ],
+  "operator": [
+   "su_ed074ff5",
+   "p_ff7a390a42"
+  ],
+  "asosiasi": [
+   "en_a12d603d3d"
+  ],
+  "pabrikan_global": [
+   "en_50674f19eb",
+   "en_e258813aa4"
+  ],
+  "provinsi_sawit": 26
+ },
+ "sumber": [
+  {
+   "id": "bps-jagung-2024",
+   "judul": "Luas panen jagung pipilan 2024 sekitar 2,55 juta ha, produksi 15,14 juta ton (KA 14%)",
+   "penerbit": "Badan Pusat Statistik",
+   "url": "https://www.bps.go.id/id/pressrelease/2025/02/03/2412",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kementan-ubikayu",
+   "judul": "Statistik Pertanian 2025: produksi ubi kayu nasional 2024 sekitar 16,71 juta ton",
+   "penerbit": "Kementerian Pertanian",
+   "url": "https://repository.pertanian.go.id/bitstreams/18d86d4e-c3da-4686-81cb-4d29f5a7cfc3/download",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "satudata-ubikayu",
+   "judul": "Analisis kinerja perdagangan ubi kayu 2025: Lampung 47,32% produksi 2024",
+   "penerbit": "Pusdatin Kementan (Satu Data)",
+   "url": "https://satudata.pertanian.go.id/details/publikasi/938",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "databoks-tebu",
+   "judul": "Produksi tebu seluruh Indonesia 2024 (Kementan, via Databoks)",
+   "penerbit": "Databoks Katadata",
+   "url": "https://databoks.katadata.co.id/en/demographics/multiple/bfa98644c7be700/sugar-cane-production-20132024-period",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jawapos-sawit",
+   "judul": "Luas sawit 2024 16.005,1 ribu ha (BPS): kebun besar 9.222, rakyat 6.783,1 ribu ha",
+   "penerbit": "Jawa Pos",
+   "url": "https://www.jawapos.com/nasional/2512110055/5-wilayah-dengan-lahan-sawit-paling-luas-di-indonesia-bukan-sumatera-justru-didominasi-pulau-kalimantan",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "esdm-alokasi-2023",
+   "judul": "Penetapan alokasi biodiesel 2023 sebesar 13,15 juta kiloliter",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://esdm.go.id/id/media-center/arsip-berita/penetapan-alokasi-biodiesel-tahun-2023-sebesar-1315-juta-kiloliter",
+   "tahun": 2023,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ibp-alokasi-2024",
+   "judul": "ESDM sets B35 biodiesel quota at 13.41 million for 2024",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/1460/Politics/esdm-sets-b35-biodiesel-quota-at-1341-million-for-2024",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "cnbc-b40-2025",
+   "judul": "Mandatori 1 Januari 2025, kuota biodiesel B40 ditetapkan 15,6 juta kl",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/news/20250103144325-4-600557/mandatori-1-januari-2025-kuota-biodiesel-b40-ditetapkan-156-juta-kl",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "li-tren-bd",
+   "judul": "Tren implementasi biodiesel selama empat tahun terakhir (realisasi 2020-2024)",
+   "penerbit": "listrikindonesia.com",
+   "url": "https://listrikindonesia.com/detail/19046/tren-implementasi-biodiesel-selama-empat-tahun-terakhir-ini-angkanya",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-b40-sem1",
+   "judul": "Konsumsi biodiesel B40 RI 6,8 juta KL pada semester I 2025",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/berita/energi/689abd5f65f48/konsumsi-biodiesel-b40-ri-6-8-juta-kl-pada-semester-i-setengah-target-2025/",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kontan-hip-jan",
+   "judul": "Harga biodiesel naik jadi Rp13.631 pada Januari 2026 (Desember 2025 Rp13.381)",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/harga-biodiesel-naik-jadi-rp-13631-pada-januari-2026",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "gnfi-hip-feb",
+   "judul": "Harga biodiesel dan bioetanol Februari 2026 ditetapkan",
+   "penerbit": "Good News from Indonesia",
+   "url": "https://www.goodnewsfromindonesia.id/2026/02/11/harga-biodiesel-dan-bioetanol-februari-2026-ditetapkan-ini-rinciannya",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-hip-mar",
+   "judul": "Harga biodiesel naik jadi Rp13.980 per liter pada Maret 2026",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260307/44/1958588/harga-biodiesel-naik-jadi-rp13980-per-liter-pada-maret-2026",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-hip-apr",
+   "judul": "Harga biodiesel dan bioetanol kompak naik pada April 2026",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260404/44/1964210/harga-biodiesel-dan-bioetanol-kompak-naik-pada-april-2026",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-hip-mei",
+   "judul": "Harga biodiesel dan bioetanol kompak naik pada Mei 2026",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260510/44/1972718/harga-biodiesel-dan-bioetanol-kompak-naik-pada-mei-2026",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "it-hip-jun",
+   "judul": "Harga biodiesel naik ke Rp14.643 per liter, bioetanol Rp8.062 pada Juni 2026",
+   "penerbit": "Investortrust",
+   "url": "https://investortrust.id/business/105177/harga-biodiesel-naik-ke-rp-14643-per-liter-bioetanol-dipatok-rp-8062-pada-juni-2026",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "li-hip-jul",
+   "judul": "Harga biodiesel Juli 2026 ditetapkan Rp14.562 per liter",
+   "penerbit": "listrikindonesia.com",
+   "url": "https://listrikindonesia.com/detail/20556/harga-biodiesel-juli-2026-ditetapkan-rp14562-per-liter-ini-faktor-penentunya",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-etanol-jul",
+   "judul": "Harga bioetanol melonjak ke Rp10.933 per liter pada Juli 2026",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260707/44/1986135/harga-bioetanol-melonjak-ke-rp10933-per-liter-pada-juli-2026",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "it-hip-agu",
+   "judul": "ESDM tetapkan harga biodiesel Agustus 2026 Rp14.924 per liter",
+   "penerbit": "Investortrust",
+   "url": "https://investortrust.id/business/112032/esdm-tetapkan-harga-biodiesel-agustus-2026-rp-14924-per-liter",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-e10-1_4",
+   "judul": "Mandatori E10 mulai 2027, Bahlil: butuh etanol 1,4 juta kiloliter",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20251024/44/1923128/mandatori-e10-mulai-2027-bahlil-butuh-etanol-14-juta-kiloliter",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-e10-molase",
+   "judul": "ESDM pastikan kebijakan bioetanol E10 tak ganggu produksi gula (bahan baku molase tebu)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20251030/44/1924837/esdm-pastikan-kebijakan-bioetanol-e10-tak-ganggu-produksi-gula",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-e10-e20",
+   "judul": "Bahlil: pemerintah fokus terapkan E10 hingga 2027, E20 menunggu kesiapan industri etanol",
+   "penerbit": "Bisnis.com",
+   "url": "https://kabar24.bisnis.com/read/20260728/15/1991787/bahlil-pemerintah-fokus-terapkan-e10-hingga-2027-e20-menunggu-kesiapan-industri-etanol",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "it-e10-2028",
+   "judul": "Bahlil pastikan mandatori E10 paling lambat jalan 2028",
+   "penerbit": "Investortrust",
+   "url": "https://investortrust.id/business/90846/bahlil-pastikan-mandatori-e10-paling-lambat-jalan-2028",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kontan-e10-roadmap",
+   "judul": "Kementerian ESDM siapkan roadmap mandatori bioetanol E10 pada 2027 (pasokan 70.500 kl vs kebutuhan 400-500 ribu kl menurut Dirjen EBTKE)",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/kementerian-esdm-siapkan-roadmap-mandatori-bioetanol-e10-pada-2027",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "gnfi-saf-2023",
+   "judul": "Pertamina dan Garuda Indonesia sukses uji terbang bioavtur (4 Oktober 2023, Boeing 737-800 PK-GFX)",
+   "penerbit": "Good News from Indonesia",
+   "url": "https://www.goodnewsfromindonesia.id/2023/10/10/pertamina-garuda-indonesia-sukses-uji-terbang-pakai-bioavtur",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "cnn-saf-2023",
+   "judul": "SAF mengangkasa, bioavtur Pertamina bawa Garuda Indonesia terbang",
+   "penerbit": "CNN Indonesia",
+   "url": "https://www.cnnindonesia.com/ekonomi/20231027175459-625-1016858/saf-mengangkasa-bioavtur-pertamina-bawa-garuda-indonesia-terbang",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "we-saf-uco",
+   "judul": "Pertamina kirim perdana bahan bakar pesawat dari minyak jelantah",
+   "penerbit": "Warta Ekonomi",
+   "url": "https://wartaekonomi.co.id/read578619/pertamina-kirim-perdana-bahan-bakar-pesawat-dari-minyak-jelantah",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-saf-2027",
+   "judul": "Pertamina genjot ekosistem bioavtur jelang mandatori SAF 1% mulai 2027",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260724/44/1990683/pertamina-genjot-ekosistem-bioavtur-jelang-mandatori-saf-1-mulai-2027",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "li-uco-6000",
+   "judul": "Kilang Pertamina Internasional siap olah minyak jelantah 6.000 barel per hari",
+   "penerbit": "listrikindonesia.com",
+   "url": "https://listrikindonesia.com/detail/15029/kilang-pertamina-internasional-siap-olah-minyak-jelantah-6000-barel-per-hari",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "it-biorefinery",
+   "judul": "Investasi US$1,1 miliar, biorefinery Cilacap ditargetkan produksi 887 KL biofuel per hari",
+   "penerbit": "Investortrust",
+   "url": "https://investortrust.id/business/115854/investasi-us-1-1-miliar-biorefinery-cilacap-ditargetkan-produksi-887-kl-biofuel-per-hari",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-biorefinery",
+   "judul": "Pertamina targetkan proyek biorefinery Cilacap Rp19 triliun beroperasi 2029",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/berita/energi/6aa338c250f04/pertamina-targetkan-proyek-biorefinery-cilacap-rp19-triliun-beroperasi-2029",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kontan-cofiring",
+   "judul": "Pasokan biomassa co-firing PLN EPI (rujukan butir pemasok_lain)",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/pln-epi-targetkan-pasokan-biomassa-co-firing-naik-jadi-407-juta-ton-pada-2027",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "gnfi-pltbg",
+   "judul": "PLTBg Sei Mangkei olah limbah POME jadi energi hijau (Pertamina NRE dan PTPN III)",
+   "penerbit": "Good News from Indonesia",
+   "url": "https://www.goodnewsfromindonesia.id/2025/12/30/pltbg-sei-mangkei-24-mw-olah-limbah-pome-jadi-energi-hijau",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-biogas",
+   "judul": "Penggunaan biogas RI 28,5 juta meter kubik, 40% dari limbah sawit; potensi POME 5,2 miliar m3 per tahun",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/berita/energi/64e86e6b0008b/penggunaan-biogas-ri-28-5-juta-metrik-kubik-40-dari-limbah-sawit",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "li-biocng",
+   "judul": "PLN EPI bidik pengembangan bio-CNG dari limbah sawit (untuk PLTGU Belawan 1.184 MW)",
+   "penerbit": "listrikindonesia.com",
+   "url": "https://listrikindonesia.com/detail/20271/pln-epi-bidik-pengembangan-bio-cng-dari-limbah-sawit",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "comtrade",
+   "judul": "UN Comtrade, ekspor tahunan Indonesia (reporter 360) HS 440131 pelet kayu dan HS 230660 bungkil inti sawit",
+   "penerbit": "United Nations Statistics Division",
+   "url": "https://comtradeplus.un.org/",
+   "tahun": 2026,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kontan-pks-jepang",
+   "judul": "Produk biomassa asal Indonesia raup transaksi Rp10,4 triliun di Jepang (PKS 4,5 juta ton per tahun)",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/produk-biomassa-asal-indonesia-raup-transaksi-rp-104-triliun-di-jepang",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "mongabay-pelet",
+   "judul": "Hutan Indonesia di tengah ambisi biomassa Jepang dan Korsel (pelet kayu 2021-2024: Korsel 67,2%, Jepang 32,5%)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2025/03/16/hutan-indonesia-di-tengah-ambisi-biomassa-jepang-dan-korsel/",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kontan-pelet",
+   "judul": "Pengusaha soroti black campaign wood pellet, ungkap tantangan dan peluang biomassa",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/pengusaha-soroti-black-campaign-wood-pellet-ungkap-tantangan-peluang-biomassa",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "it-pungutan-hist",
+   "judul": "Penerimaan pungutan ekspor sawit terus turun: Rp71 T (2021), Rp51 T (2022), Rp34 T (2023)",
+   "penerbit": "Investortrust",
+   "url": "https://investortrust.id/business/30857/penerimaan-pungutan-ekspor-sawit-terus-turun-ini-sebabnya",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "it-pungutan-2024",
+   "judul": "BPDPKS pangkas penerimaan pungutan ekspor sawit jadi Rp24 triliun",
+   "penerbit": "Investortrust",
+   "url": "https://investortrust.id/business/48488/bpdks-pangkas-peneriman-punguntan-ekspor-sawit-jadi-rp-24-triliun-ternyata-ini-pemicunya",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "cnn-pungutan-2026",
+   "judul": "BPDP ungkap penerimaan dari ekspor sawit tembus Rp22,7 T (hingga 30 Juni 2026)",
+   "penerbit": "CNN Indonesia",
+   "url": "https://cnnindonesia.com/ekonomi/20260803102632-92-1387900/bpdp-ungkap-penerimaan-dari-ekspor-sawit-tembus-rp227-t",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-b40-47t",
+   "judul": "Implementasi biodiesel B40 diproyeksi butuh dana Rp47 triliun pada 2025",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20241107/44/1814182/implementasi-biodiesel-b40-diproyeksi-butuh-dana-rp47-triliun-pada-2025",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-subsidi-51t",
+   "judul": "ESDM ungkap alasan alokasi dana subsidi biodiesel B40 bertambah Rp16 triliun (total Rp51 triliun)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20250812/44/1901454/esdm-ungkap-alasan-alokasi-dana-subsidi-biodiesel-b40-bertambah-rp16-triliun/1",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-insentif-2023",
+   "judul": "Biodiesel B35 sedot dana sawit Rp4,04 triliun pada semester I 2023",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20230809/44/1683069/biodiesel-b35-sedot-dana-sawit-rp404-triliun-siapa-penikmatnya",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kontan-pmk30",
+   "judul": "Mulai 17 Mei 2025 pungutan ekspor CPO naik jadi 10% (PMK 30/2025)",
+   "penerbit": "Kontan",
+   "url": "https://nasional.kontan.co.id/news/mulai-17-mei-2025-pungutan-ekspor-cpo-naik-jadi-10",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "metro-pangan",
+   "judul": "Bahlil pastikan B50 tak bikin stok minyak goreng jebol (kebutuhan CPO minyak goreng sekitar 4,99 juta ton per tahun)",
+   "penerbit": "Metro TV",
+   "url": "https://www.metrotvnews.com/read/K5nC7VeY-bahlil-pastikan-b50-tak-bikin-stok-minyak-goreng-jebol",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "metro-b50",
+   "judul": "Kebijakan B50 diyakini tak ganggu pasokan CPO untuk minyak goreng (B50 sekitar 5,3 juta ton CPO; kajian BPDP 20,1 juta kl atau 18,69 juta ton CPO)",
+   "penerbit": "Metro TV",
+   "url": "https://www.metrotvnews.com/read/koGCdMdv-kebijakan-b50-diyakini-tak-ganggu-pasokan-cpo-untuk-minyak-goreng",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-b50-migor",
+   "judul": "Program B50 dinilai berisiko mengerek harga minyak goreng",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260504/12/1971204/program-b50-dinilai-berisiko-mengerek-harga-minyak-goreng-ini-sebabnya",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "mongabay-b50",
+   "judul": "Menyoal mandatori biodiesel B50 (lahan tambahan 3,2 juta ha hingga 2035; Madani lebih dari 6 juta ha)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2026/07/11/menyoal-mandatori-biodiesel-b50",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "greenpeace-b50",
+   "judul": "Kebijakan B50 berpotensi memicu deforestasi dan kenaikan harga pangan nasional",
+   "penerbit": "Greenpeace Indonesia",
+   "url": "https://www.greenpeace.org/indonesia/siaran-pers/66050/kebijakan-b50-berpotensi-memicu-deforestasi-dan-kenaikan-harga-pangan-nasional/",
+   "tahun": 2026,
+   "tingkat_bukti": "kata-pihak",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kontan-gapki",
+   "judul": "GAPKI: kenaikan tarif pungutan ekspor tekan harga TBS petani",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/gapki-kenaikan-tarif-ekspor-cpo-tekan-harga-tbs-petani",
+   "tahun": 2025,
+   "tingkat_bukti": "kata-pihak",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-peremajaan",
+   "judul": "Alasan di balik lambatnya peremajaan sawit rakyat (2023: Rp1,7 T untuk peremajaan dari Rp32,4 T)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20240829/12/1795102/alasan-di-balik-lambatnya-peremajaan-sawit-rakyat",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  }
+ ],
+ "mandat": [
+  {
+   "id": "b30",
+   "kode": "B30",
+   "jenis": "biodiesel",
+   "persen": 30,
+   "mulai": "2020-01",
+   "sumber_ids": [
+    "li-tren-bd"
+   ],
+   "tingkat_bukti": "cuplikan",
+   "ket": {
+    "id": "Realisasi 2020 sampai 2022 mengikuti B30 (8,4; 9,3; 10,4 juta kl).",
+    "en": "Actual 2020 to 2022 followed B30 (8.4, 9.3, 10.4 million kl)."
+   }
+  },
+  {
+   "id": "b35",
+   "kode": "B35",
+   "jenis": "biodiesel",
+   "persen": 35,
+   "mulai": "2023-02",
+   "sumber_ids": [
+    "esdm-alokasi-2023",
+    "li-tren-bd"
+   ],
+   "tingkat_bukti": "resmi",
+   "ket": {
+    "id": "Alokasi 2023 13,15 juta kl; realisasi 2023 sekitar 12,2-12,3 juta kl.",
+    "en": "2023 allocation 13.15 million kl; actual about 12.2-12.3 million kl."
+   }
+  },
+  {
+   "id": "b40",
+   "kode": "B40",
+   "jenis": "biodiesel",
+   "persen": 40,
+   "mulai": "2025-01",
+   "sumber_ids": [
+    "cnbc-b40-2025"
+   ],
+   "tingkat_bukti": "cuplikan",
+   "ket": {
+    "id": "Berlaku 1 Januari 2025; kuota 2025 15,6 juta kl (PSO 7,55; non-PSO 8,07).",
+    "en": "In force 1 January 2025; 2025 quota 15.6 million kl (PSO 7.55; non-PSO 8.07)."
+   }
+  },
+  {
+   "id": "b50",
+   "kode": "B50",
+   "jenis": "biodiesel",
+   "persen": 50,
+   "mulai": "2026-07",
+   "sumber_ids": [
+    "metro-b50"
+   ],
+   "tingkat_bukti": "cuplikan",
+   "ket": {
+    "id": "Berlaku 1 Juli 2026 dengan masa transisi (rujukan: program b50 pada kebijakan_info). Kajian BPDP: 20,1 juta kl.",
+    "en": "In force 1 July 2026 with a transition (see program b50 in kebijakan_info). BPDP study: 20.1 million kl."
+   }
+  },
+  {
+   "id": "e5",
+   "kode": "E5",
+   "jenis": "bioetanol",
+   "persen": 5,
+   "mulai": null,
+   "sumber_ids": [
+    "bisnis-e10-e20"
+   ],
+   "tingkat_bukti": "cuplikan",
+   "ket": {
+    "id": "Kontan/Bloomberg Technoz menyebut persiapan mandatori E5; tanggal berlaku belum terkonfirmasi di sumber yang dibaca.",
+    "en": "Reports mention E5 preparation; the in-force date is not confirmed in the sources read."
+   }
+  },
+  {
+   "id": "e10",
+   "kode": "E10",
+   "jenis": "bioetanol",
+   "persen": 10,
+   "mulai": "2027",
+   "sumber_ids": [
+    "bisnis-e10-1_4",
+    "it-e10-2028"
+   ],
+   "tingkat_bukti": "cuplikan",
+   "ket": {
+    "id": "Target 2027, paling lambat 2028; kebutuhan etanol 1,4 juta kl.",
+    "en": "Target 2027, no later than 2028; ethanol need 1.4 million kl."
+   }
+  },
+  {
+   "id": "saf1",
+   "kode": "SAF 1%",
+   "jenis": "saf",
+   "persen": 1,
+   "mulai": "2027",
+   "sumber_ids": [
+    "bisnis-saf-2027"
+   ],
+   "tingkat_bukti": "cuplikan",
+   "ket": {
+    "id": "Mandat SAF 1% dijadwalkan mulai 2027.",
+    "en": "A 1% SAF mandate is scheduled from 2027."
+   }
+  }
+ ],
+ "alokasi": [
+  {
+   "tahun": 2020,
+   "alokasi_kl": null,
+   "realisasi_kl": 8400000,
+   "sumber_alokasi": null,
+   "sumber_realisasi": "li-tren-bd",
+   "catatan": "B30"
+  },
+  {
+   "tahun": 2021,
+   "alokasi_kl": null,
+   "realisasi_kl": 9300000,
+   "sumber_alokasi": null,
+   "sumber_realisasi": "li-tren-bd",
+   "catatan": "B30"
+  },
+  {
+   "tahun": 2022,
+   "alokasi_kl": null,
+   "realisasi_kl": 10400000,
+   "sumber_alokasi": null,
+   "sumber_realisasi": "li-tren-bd",
+   "catatan": "B30"
+  },
+  {
+   "tahun": 2023,
+   "alokasi_kl": 13148594,
+   "realisasi_kl": 12300000,
+   "sumber_alokasi": "esdm-alokasi-2023",
+   "sumber_realisasi": "li-tren-bd",
+   "catatan": "B35"
+  },
+  {
+   "tahun": 2024,
+   "alokasi_kl": 13410000,
+   "realisasi_kl": 13200000,
+   "sumber_alokasi": "ibp-alokasi-2024",
+   "sumber_realisasi": "li-tren-bd",
+   "catatan": "B35"
+  },
+  {
+   "tahun": 2025,
+   "alokasi_kl": 15600000,
+   "realisasi_kl": null,
+   "sumber_alokasi": "cnbc-b40-2025",
+   "sumber_realisasi": null,
+   "catatan": "B40; semester I 2025 terpakai 6,8 juta kl (Katadata)"
+  },
+  {
+   "tahun": 2026,
+   "alokasi_kl": 15646372,
+   "realisasi_kl": null,
+   "sumber_alokasi": null,
+   "sumber_realisasi": null,
+   "catatan": "B40/B50; alokasi dari butir pemasok_lain (siaran ESDM)",
+   "rujuk_butir": {
+    "segmen": "biofuel",
+    "jenis": "kebijakan",
+    "org": null,
+    "cocok": "15.646.372"
+   }
+  }
+ ],
+ "hip": [
+  {
+   "bulan": "2025-12",
+   "biodiesel_rp_l": 13381,
+   "bioetanol_rp_l": null,
+   "sumber_id": "kontan-hip-jan",
+   "sumber_etanol": null,
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "bulan": "2026-01",
+   "biodiesel_rp_l": 13631,
+   "bioetanol_rp_l": null,
+   "sumber_id": "kontan-hip-jan",
+   "sumber_etanol": null,
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "bulan": "2026-02",
+   "biodiesel_rp_l": 13856,
+   "bioetanol_rp_l": null,
+   "sumber_id": "gnfi-hip-feb",
+   "sumber_etanol": null,
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "bulan": "2026-03",
+   "biodiesel_rp_l": 13980,
+   "bioetanol_rp_l": null,
+   "sumber_id": "bisnis-hip-mar",
+   "sumber_etanol": null,
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "bulan": "2026-04",
+   "biodiesel_rp_l": 14262,
+   "bioetanol_rp_l": null,
+   "sumber_id": "bisnis-hip-apr",
+   "sumber_etanol": null,
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "bulan": "2026-05",
+   "biodiesel_rp_l": 14917,
+   "bioetanol_rp_l": null,
+   "sumber_id": "bisnis-hip-mei",
+   "sumber_etanol": null,
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "bulan": "2026-06",
+   "biodiesel_rp_l": 14643,
+   "bioetanol_rp_l": 8062,
+   "sumber_id": "it-hip-jun",
+   "sumber_etanol": "it-hip-jun",
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "bulan": "2026-07",
+   "biodiesel_rp_l": 14562,
+   "bioetanol_rp_l": 10933,
+   "sumber_id": "li-hip-jul",
+   "sumber_etanol": "bisnis-etanol-jul",
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "bulan": "2026-08",
+   "biodiesel_rp_l": 14924,
+   "bioetanol_rp_l": null,
+   "sumber_id": "it-hip-agu",
+   "sumber_etanol": null,
+   "tingkat_bukti": "cuplikan"
+  }
+ ],
+ "hip_rujuk": {
+  "rumus": "global/pemasok_lain butir fame jenis harga (HIP biodiesel: (CPO KPB + US$85/ton) x 870 kg/m3 + ongkos angkut); Nov 2025 Rp14.036 dan HIP bioetanol Nov 2025 Rp9.013 ada di butir itu."
+ },
+ "bioetanol": {
+  "kebutuhan_e10_kl": 1400000,
+  "sumber_kebutuhan": "bisnis-e10-1_4",
+  "pasokan_kl": 70500,
+  "kebutuhan_awal_kl": [
+   400000,
+   500000
+  ],
+  "sumber_pasokan": "kontan-e10-roadmap",
+  "bahan_baku": [
+   {
+    "k": "molase-tebu",
+    "sumber_id": "bisnis-e10-molase"
+   },
+   {
+    "k": "singkong",
+    "sumber_id": "kontan-e10-roadmap"
+   },
+   {
+    "k": "jagung",
+    "sumber_id": "kontan-e10-roadmap"
+   }
+  ],
+  "kendala": [
+   {
+    "k": "pasokan",
+    "ket": {
+     "id": "Pasokan etanol fuel grade sekitar 70.500 kl berbanding kebutuhan awal 400-500 ribu kl (pernyataan Dirjen EBTKE); kebutuhan E10 penuh 1,4 juta kl.",
+     "en": "Fuel-grade ethanol supply is about 70,500 kl against an initial need of 400-500 thousand kl; full E10 needs 1.4 million kl."
+    },
+    "sumber_id": "kontan-e10-roadmap",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "k": "molase",
+    "ket": {
+     "id": "ESDM menyatakan E10 hanya memakai molase tebu (hasil samping gula) agar tidak mengganggu produksi gula.",
+     "en": "ESDM says E10 will use only sugar-cane molasses (a sugar by-product) so sugar output is not disturbed."
+    },
+    "sumber_id": "bisnis-e10-molase",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "k": "industri",
+    "ket": {
+     "id": "E20 menunggu kesiapan industri etanol; persiapan pabrik disebut butuh 1-2 tahun.",
+     "en": "E20 awaits ethanol industry readiness; plant preparation is said to take 1-2 years."
+    },
+    "sumber_id": "bisnis-e10-e20",
+    "tingkat_bukti": "cuplikan"
+   }
+  ]
+ },
+ "saf": {
+  "linimasa": [
+   {
+    "tgl": "2021",
+    "jenis": "uji",
+    "ket": {
+     "id": "Uji darat dan terbang J2.4 (minyak inti sawit RBDPKO) pada pesawat CN-235 PT Dirgantara Indonesia.",
+     "en": "Ground and flight test of J2.4 (RBDPKO palm kernel oil) on a PT Dirgantara Indonesia CN-235."
+    },
+    "sumber_id": "gnfi-saf-2023",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "tgl": "2023-10-04",
+    "jenis": "uji",
+    "ket": {
+     "id": "Uji terbang komersial Garuda Indonesia (Boeing 737-800 PK-GFX) dengan SAF dari Kilang Cilacap, jalur co-processing.",
+     "en": "Garuda Indonesia commercial test flight (Boeing 737-800 PK-GFX) with SAF from the Cilacap refinery, co-processing route."
+    },
+    "sumber_id": "gnfi-saf-2023",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "tgl": "2023-10-27",
+    "jenis": "komersial",
+    "ket": {
+     "id": "Penerbangan komersial berbahan SAF (liputan CNN Indonesia).",
+     "en": "Commercial flight on SAF (CNN Indonesia coverage)."
+    },
+    "sumber_id": "cnn-saf-2023",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "tgl": "2025",
+    "jenis": "pasokan",
+    "ket": {
+     "id": "KPI Cilacap mengirim perdana bioavtur berbahan minyak jelantah (UCO); UCO dapat diolah sampai 3% bersama minyak bumi.",
+     "en": "KPI Cilacap made its first shipment of used-cooking-oil (UCO) bio-jet; UCO can be processed up to 3% with crude."
+    },
+    "sumber_id": "we-saf-uco",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "tgl": "2027",
+    "jenis": "mandat",
+    "ket": {
+     "id": "Mandat SAF 1% dijadwalkan; co-processing juga diuji di Dumai dan Balongan.",
+     "en": "A 1% SAF mandate is scheduled; co-processing is also tested at Dumai and Balongan."
+    },
+    "sumber_id": "bisnis-saf-2027",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "tgl": "2029",
+    "jenis": "kapasitas",
+    "ket": {
+     "id": "Biorefinery Cilacap (sekitar US$1,1 miliar, Rp19 triliun) ditargetkan beroperasi 2029: sekitar 887 kl biofuel per hari (desain SAF ~860 kl atau HVO ~870 kl per hari).",
+     "en": "Cilacap biorefinery (about US$1.1 billion, Rp19 trillion) targeted for 2029: about 887 kl of biofuel per day (design SAF ~860 kl or HVO ~870 kl per day)."
+    },
+    "sumber_id": "it-biorefinery",
+    "tingkat_bukti": "cuplikan"
+   }
+  ],
+  "kapasitas": [
+   {
+    "k": "uco",
+    "nilai": 6000,
+    "satuan": "bph",
+    "ket": {
+     "id": "Kapasitas olah minyak jelantah KPI yang disiapkan (barel per hari).",
+     "en": "KPI used-cooking-oil processing capacity prepared (barrels per day)."
+    },
+    "sumber_id": "li-uco-6000",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "k": "biorefinery",
+    "nilai": 887,
+    "satuan": "kl/hari",
+    "ket": {
+     "id": "Target biorefinery Cilacap 2029.",
+     "en": "Cilacap biorefinery target, 2029."
+    },
+    "sumber_id": "it-biorefinery",
+    "tingkat_bukti": "cuplikan"
+   }
+  ],
+  "org_ids": [
+   "p_10e0dde689"
+  ]
+ },
+ "cofiring": {
+  "unit": [
+   {
+    "id": "bangka",
+    "nama": {
+     "id": "PLTU Bangka Baru",
+     "en": "Bangka Baru coal plant"
+    },
+    "prov": "19",
+    "persen": "5-25",
+    "volume_ton": 16340,
+    "periode": "2025-04",
+    "org_id": "p_ff7a390a42",
+    "rujuk": "energi_baru#cf-bangka"
+   },
+   {
+    "id": "kendari",
+    "nama": {
+     "id": "PLTU Kendari",
+     "en": "Kendari coal plant"
+    },
+    "prov": "74",
+    "persen": null,
+    "volume_ton": 4323,
+    "periode": "2025-04",
+    "org_id": "p_ff7a390a42",
+    "rujuk": "energi_baru#cf-kendari"
+   },
+   {
+    "id": "belitung",
+    "nama": {
+     "id": "PLTU Belitung",
+     "en": "Belitung coal plant"
+    },
+    "prov": "19",
+    "persen": null,
+    "volume_ton": 3115,
+    "periode": "2025-04",
+    "org_id": "p_ff7a390a42",
+    "rujuk": "energi_baru#cf-kendari"
+   },
+   {
+    "id": "ropa",
+    "nama": {
+     "id": "PLTU Ropa",
+     "en": "Ropa coal plant"
+    },
+    "prov": "53",
+    "persen": null,
+    "volume_ton": 273,
+    "periode": "2025-04",
+    "org_id": "p_ff7a390a42",
+    "rujuk": "energi_baru#cf-kendari"
+   },
+   {
+    "id": "rembang",
+    "nama": {
+     "id": "PLTU Rembang",
+     "en": "Rembang coal plant"
+    },
+    "prov": "33",
+    "persen": "5-10",
+    "volume_ton": 185000,
+    "periode": null,
+    "org_id": "su_ed074ff5",
+    "rujuk": "pemasok_lain#PLTU Rembang"
+   },
+   {
+    "id": "sintang",
+    "nama": {
+     "id": "PLTU Sintang",
+     "en": "Sintang coal plant"
+    },
+    "prov": "61",
+    "persen": "100",
+    "volume_ton": null,
+    "periode": "2022",
+    "org_id": "su_ed074ff5",
+    "rujuk": "pemasok_lain#PLTU Sintang"
+   },
+   {
+    "id": "balikpapan",
+    "nama": {
+     "id": "PLTU Teluk Balikpapan",
+     "en": "Teluk Balikpapan coal plant"
+    },
+    "prov": "64",
+    "persen": null,
+    "volume_ton": 6700,
+    "periode": "2026-03",
+    "org_id": "su_ed074ff5",
+    "rujuk": "pemasok_lain#PLTU Teluk Balikpapan"
+   },
+   {
+    "id": "tenayan",
+    "nama": {
+     "id": "PLTU Tenayan",
+     "en": "Tenayan coal plant"
+    },
+    "prov": "14",
+    "persen": null,
+    "volume_ton": 5000,
+    "periode": "per bulan",
+    "org_id": "en_7aaca4416c",
+    "rujuk": "pemasok_lain#PLTU Tenayan"
+   }
+  ],
+  "komposisi": [
+   {
+    "k": "sawdust",
+    "persen": 54.6
+   },
+   {
+    "k": "woodchip",
+    "persen": 22.4
+   },
+   {
+    "k": "lain",
+    "persen": 23
+   }
+  ],
+  "komposisi_rujuk": "pemasok_lain#serbuk gergaji (sawdust) 54,6%",
+  "komposisi_catatan": "lain = sisa (100 - 54,6 - 22,4), dihitung; bukan angka sumber.",
+  "tahunan": [
+   {
+    "tahun": 2023,
+    "volume_juta_t": null
+   },
+   {
+    "tahun": 2025,
+    "volume_juta_t": 2.4,
+    "target": 10.2
+   },
+   {
+    "tahun": 2026,
+    "target": 3.65
+   },
+   {
+    "tahun": 2027,
+    "target": 4.07
+   }
+  ],
+  "tahunan_rujuk": "pemasok_lain#Realisasi serapan biomassa co-firing 2025"
+ },
+ "biogas": {
+  "pltbg": [
+   {
+    "id": "sei-mangkei",
+    "nama": {
+     "id": "PLTBg Sei Mangkei (POME)",
+     "en": "Sei Mangkei biogas plant (POME)"
+    },
+    "prov": "12",
+    "mw": 2.4,
+    "org_ids": [
+     "p_10e0dde689"
+    ],
+    "sumber_id": "gnfi-pltbg",
+    "tingkat_bukti": "cuplikan",
+    "catatan": {
+     "id": "Alamat artikel menulis 24 MW, isi artikel 2,4 MW; dipakai 2,4 MW, perlu verifikasi.",
+     "en": "The URL says 24 MW, the article text 2.4 MW; 2.4 MW used, to be verified."
+    }
+   }
+  ],
+  "nasional": [
+   {
+    "k": "pemanfaatan",
+    "nilai": 28.5,
+    "satuan": "juta m3",
+    "ket": {
+     "id": "Pemanfaatan biogas nasional (2023), 40% dari limbah sawit.",
+     "en": "National biogas use (2023), 40% from palm waste."
+    },
+    "sumber_id": "katadata-biogas",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "k": "potensi",
+    "nilai": 5.2,
+    "satuan": "miliar m3/tahun",
+    "ket": {
+     "id": "Potensi biogas dari POME.",
+     "en": "Biogas potential from POME."
+    },
+    "sumber_id": "katadata-biogas",
+    "tingkat_bukti": "cuplikan"
+   }
+  ],
+  "biocng": {
+   "ket": {
+    "id": "PLN EPI membidik POME menjadi biometana lalu bio-CNG untuk PLTGU Belawan (1.184 MW terpasang); kapasitas fasilitas bio-CNG belum disebut sumber.",
+    "en": "PLN EPI targets POME to biomethane then bio-CNG for the Belawan combined-cycle plant (1,184 MW installed); the bio-CNG facility capacity is not stated."
+   },
+   "sumber_id": "li-biocng",
+   "tingkat_bukti": "cuplikan",
+   "org_ids": [
+    "su_ed074ff5"
+   ]
+  }
+ },
+ "pelet": {
+  "comtrade": [
+   {
+    "hs": "440131",
+    "tahun": 2022,
+    "usd": 62626107,
+    "ton": 506468,
+    "mitra": [
+     {
+      "iso": "kr",
+      "ton": 456701
+     },
+     {
+      "iso": "jp",
+      "ton": 48979
+     }
+    ]
+   },
+   {
+    "hs": "440131",
+    "tahun": 2023,
+    "usd": 74676074,
+    "ton": 615491,
+    "mitra": [
+     {
+      "iso": "kr",
+      "ton": 535248
+     },
+     {
+      "iso": "jp",
+      "ton": 77583
+     }
+    ]
+   },
+   {
+    "hs": "440131",
+    "tahun": 2024,
+    "usd": 96446229,
+    "ton": 840731,
+    "mitra": [
+     {
+      "iso": "kr",
+      "ton": 676776
+     },
+     {
+      "iso": "jp",
+      "ton": 161729
+     }
+    ]
+   },
+   {
+    "hs": "230660",
+    "tahun": 2022,
+    "usd": 1067160792,
+    "ton": 5463377,
+    "mitra": [
+     {
+      "iso": "nl",
+      "ton": 1751625
+     },
+     {
+      "iso": "nz",
+      "ton": 1376655
+     },
+     {
+      "iso": "cn",
+      "ton": 579270
+     },
+     {
+      "iso": "kr",
+      "ton": 647891
+     },
+     {
+      "iso": "vn",
+      "ton": 569486
+     }
+    ]
+   },
+   {
+    "hs": "230660",
+    "tahun": 2023,
+    "usd": 854954600,
+    "ton": null,
+    "mitra": [
+     {
+      "iso": "nl",
+      "ton": 1799687
+     },
+     {
+      "iso": "nz",
+      "ton": 1063220
+     },
+     {
+      "iso": "cn",
+      "ton": 786340
+     },
+     {
+      "iso": "kr",
+      "ton": 677273
+     },
+     {
+      "iso": "vn",
+      "ton": 616934
+     }
+    ]
+   },
+   {
+    "hs": "230660",
+    "tahun": 2024,
+    "usd": 622024238,
+    "ton": null,
+    "mitra": [
+     {
+      "iso": "nl",
+      "ton": 1486396
+     },
+     {
+      "iso": "nz",
+      "ton": 1157381
+     },
+     {
+      "iso": "vn",
+      "ton": 551974
+     },
+     {
+      "iso": "cn",
+      "ton": 457953
+     },
+     {
+      "iso": "kr",
+      "ton": 434481
+     }
+    ]
+   }
+  ],
+  "comtrade_catatan": {
+   "id": "Nilai dunia 2023 dan 2024 untuk HS 230660 tanpa berat bersih agregat; mitra teratas memakai berat bersih per mitra. HS 230660 adalah bungkil inti sawit (pakan), BUKAN cangkang; cangkang (PKS) tidak punya subpos HS sendiri yang terbaca.",
+   "en": "World totals for 2023 and 2024 for HS 230660 lack aggregate net weight; top partners use per-partner net weight. HS 230660 is palm kernel cake (feed), NOT kernel shells; shells (PKS) have no clear HS subheading of their own."
+  },
+  "industri": [
+   {
+    "k": "pks_jepang",
+    "nilai": 4.5,
+    "satuan": "juta t/tahun",
+    "ket": {
+     "id": "Ekspor cangkang sawit (PKS) ke Jepang; produksi PKS nasional sekitar 14 juta ton, sekitar 35% diekspor.",
+     "en": "Palm kernel shell (PKS) exports to Japan; national PKS output is about 14 million t, about 35% exported."
+    },
+    "sumber_id": "kontan-pks-jepang",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "k": "pelet_porsi",
+    "nilai": 67.2,
+    "satuan": "% Korsel",
+    "ket": {
+     "id": "Pembagian ekspor pelet kayu 2021-2024: Korea Selatan 67,2%, Jepang 32,5% (riset yang dikutip Mongabay); sumber industri menyebut Jepang sekitar 80%.",
+     "en": "Wood pellet export split 2021-2024: South Korea 67.2%, Japan 32.5% (research cited by Mongabay); an industry source says Japan about 80%."
+    },
+    "sumber_id": "mongabay-pelet",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "k": "pelet_izin",
+    "nilai": 35,
+    "satuan": "industri",
+    "ket": {
+     "id": "35 industri pelet kayu berizin 3,18 juta m3; produksi riil 2024 hanya 333.971 m3 (rujukan butir pemasok_lain).",
+     "en": "35 licensed wood-pellet plants with 3.18 million m3 of permits; actual 2024 output only 333,971 m3 (see pemasok_lain item)."
+    },
+    "sumber_id": "kontan-pelet",
+    "tingkat_bukti": "cuplikan"
+   }
+  ],
+  "org_ids": [
+   "en_2b3a981f9c",
+   "en_7aaca4416c",
+   "en_659d53839c"
+  ]
+ },
+ "dana": {
+  "tarif": [
+   {
+    "berlaku": "2025-05-17",
+    "cpo_persen": 10,
+    "sebelum_persen": 7.5,
+    "dasar": "PMK 30/2025",
+    "sumber_id": "kontan-pmk30",
+    "tingkat_bukti": "cuplikan",
+    "ket": {
+     "id": "Turunan CPO 4,75-9,5% (sebelumnya 3-6%).",
+     "en": "CPO derivatives 4.75-9.5% (previously 3-6%)."
+    }
+   }
+  ],
+  "penerimaan": [
+   {
+    "tahun": 2021,
+    "triliun": 71,
+    "sumber_id": "it-pungutan-hist",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "tahun": 2022,
+    "triliun": 51,
+    "sumber_id": "it-pungutan-hist",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "tahun": 2023,
+    "triliun": 34,
+    "sumber_id": "it-pungutan-hist",
+    "tingkat_bukti": "cuplikan",
+    "catatan": {
+     "id": "Bisnis.com menyebut Rp32,4 triliun.",
+     "en": "Bisnis.com says Rp32.4 trillion."
+    }
+   },
+   {
+    "tahun": 2024,
+    "triliun": 24,
+    "target": true,
+    "sumber_id": "it-pungutan-2024",
+    "tingkat_bukti": "cuplikan",
+    "catatan": {
+     "id": "Target revisi setelah PMK 62/2024, bukan realisasi.",
+     "en": "Revised target after PMK 62/2024, not an outturn."
+    }
+   },
+   {
+    "tahun": 2026,
+    "triliun": 22.7,
+    "parsial": "semester I",
+    "sumber_id": "cnn-pungutan-2026",
+    "tingkat_bukti": "cuplikan",
+    "catatan": {
+     "id": "Hingga 30 Juni 2026; Kontan menyebut sekitar Rp21 triliun.",
+     "en": "To 30 June 2026; Kontan says about Rp21 trillion."
+    }
+   }
+  ],
+  "kebutuhan": [
+   {
+    "tahun": 2025,
+    "k": "proyeksi",
+    "triliun": 47,
+    "ket": {
+     "id": "Proyeksi kebutuhan dana B40 2025 (BPDPKS, Nov 2024); proyeksi pungutan hanya sekitar Rp21,5 T.",
+     "en": "Projected B40 funding need for 2025 (BPDPKS, Nov 2024); projected levy only about Rp21.5 T."
+    },
+    "sumber_id": "bisnis-b40-47t",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "tahun": 2025,
+    "k": "subsidi",
+    "triliun": 51,
+    "ket": {
+     "id": "Alokasi subsidi B40 2025 menjadi Rp51 T setelah tambahan Rp16 T (menutup utang 2024).",
+     "en": "B40 2025 subsidy allocation rose to Rp51 T after an extra Rp16 T (covering 2024 carry-over)."
+    },
+    "sumber_id": "bisnis-subsidi-51t",
+    "tingkat_bukti": "cuplikan"
+   },
+   {
+    "tahun": 2023,
+    "k": "insentif-sem1",
+    "triliun": 4.04,
+    "ket": {
+     "id": "Insentif biodiesel B35 semester I 2023.",
+     "en": "B35 biodiesel incentive, H1 2023."
+    },
+    "sumber_id": "bisnis-insentif-2023",
+    "tingkat_bukti": "cuplikan"
+   }
+  ],
+  "regulasi": [
+   {
+    "id": "permen-esdm-12-2023",
+    "teks": {
+     "id": "Permen ESDM 12/2023 Pemanfaatan Biomassa sebagai Bahan Bakar PLTU: harga patokan = harga batubara FOB x k (maks 1,2) x Fc.",
+     "en": "Energy Ministry Reg. 12/2023 on biomass for coal plants: benchmark price = FOB coal price x k (max 1.2) x Fc."
+    }
+   },
+   {
+    "id": "perpres-112-2022",
+    "teks": {
+     "id": "Perpres 112/2022 Percepatan Pengembangan Energi Terbarukan untuk Penyediaan Tenaga Listrik.",
+     "en": "Presidential Reg. 112/2022 on accelerating renewables for electricity supply."
+    }
+   },
+   {
+    "id": null,
+    "nama": "PMK 30/2025",
+    "teks": {
+     "id": "Tarif pungutan ekspor CPO 10% sejak 17 Mei 2025.",
+     "en": "CPO export levy 10% from 17 May 2025."
+    },
+    "sumber_id": "kontan-pmk30"
+   },
+   {
+    "id": null,
+    "nama": "Kepmen ESDM 3.K/EK.05/DJE/2024",
+    "teks": {
+     "id": "Rumus HIP biodiesel: (harga CPO KPB + US$85/ton) x 870 kg/m3 + ongkos angkut.",
+     "en": "Biodiesel HIP formula: (KPB CPO price + US$85/t) x 870 kg/m3 + freight."
+    },
+    "sumber_id": "it-hip-agu"
+   }
+  ]
+ },
+ "neraca": {
+  "cpo_sumber": "bps-sawit-2023 (rujukan riset/biomassa)",
+  "pangan_ton": 4990000,
+  "sumber_pangan": "metro-pangan",
+  "energi_b50_kl": 20100000,
+  "energi_b50_cpo_ton": 18690000,
+  "sumber_b50": "metro-b50",
+  "b50_pemerintah_cpo_ton": 5300000,
+  "alokasi_2026_kl": 15646372,
+  "faktor_cpo_per_kl": 0.93,
+  "catatan": {
+   "id": "Faktor CPO per kl biodiesel = 18,69 juta t / 20,1 juta kl (turunan dari kajian BPDP, Hipotesis). Energi B40 = alokasi 2026 x faktor. Sisa = produksi 2023 - pangan - energi, mengabaikan oleokimia, stok, dan tahun yang berbeda.",
+   "en": "CPO per kl of biodiesel = 18.69 million t / 20.1 million kl (derived from the BPDP study, Hypothesis). B40 energy = 2026 allocation x factor. Remainder = 2023 output - food - energy, ignoring oleochemicals, stocks and year mismatch."
+  }
+ },
+ "bahan_baku": {
+  "komoditas": [
+   {
+    "k": "jagung",
+    "luas_ha": 2550000,
+    "produksi_ton": 15140000,
+    "tahun": 2024,
+    "satuan_catatan": "pipilan kering KA 14%",
+    "sumber_id": "bps-jagung-2024",
+    "tingkat_bukti": "resmi",
+    "pakai": {
+     "id": "Bahan baku etanol alternatif (dibahas pemerintah); bersaing dengan pakan.",
+     "en": "Alternative ethanol feedstock (discussed by government); competes with feed."
+    }
+   },
+   {
+    "k": "singkong",
+    "luas_ha": null,
+    "produksi_ton": 16710000,
+    "tahun": 2024,
+    "sentra": "Lampung 47,32%",
+    "sumber_id": "kementan-ubikayu",
+    "tingkat_bukti": "resmi",
+    "pakai": {
+     "id": "Bahan baku etanol, jenis tidak bersaing dengan pangan (mukibat) dipertimbangkan; pabrik belum ada.",
+     "en": "Ethanol feedstock; non-food varieties (mukibat) considered; plant not yet built."
+    }
+   },
+   {
+    "k": "tebu",
+    "luas_ha": null,
+    "produksi_ton": 2465530,
+    "tahun": 2024,
+    "sumber_id": "databoks-tebu",
+    "tingkat_bukti": "via-pihak-ketiga",
+    "perlu_tinjau": true,
+    "pakai": {
+     "id": "Molase hasil samping gula = satu-satunya bahan baku E10 versi ESDM. Satuan angka perlu dicek (tampak produksi gula, bukan batang tebu).",
+     "en": "Molasses from sugar is the only E10 feedstock per ESDM. Unit needs checking (looks like sugar output, not cane stalks)."
+    }
+   },
+   {
+    "k": "sawit-luas",
+    "luas_ha": 16005100,
+    "produksi_ton": null,
+    "tahun": 2024,
+    "sumber_id": "jawapos-sawit",
+    "tingkat_bukti": "cuplikan",
+    "pakai": {
+     "id": "Luas sawit 2024 (BPS via Jawa Pos): kebun besar 9,22 juta ha, rakyat 6,78 juta ha. Produksi per provinsi: tabel BPS 2023 dari riset/biomassa.",
+     "en": "Oil palm area 2024 (BPS via Jawa Pos): estates 9.22 million ha, smallholders 6.78 million ha. Output by province: BPS 2023 table in riset/biomassa."
+    }
+   }
+  ]
+ },
+ "isu": [
+  {
+   "id": "deforestasi",
+   "kat": "deforestasi",
+   "pihak": {
+    "id": "Koalisi masyarakat sipil dan FWI",
+    "en": "Civil-society coalition and FWI"
+   },
+   "ket": {
+    "id": "Perkiraan tambahan lahan sekitar 5,36 juta ha hingga 2039 dengan potensi deforestasi 1,5 juta ha bila B50 dipenuhi dari sawit baru.",
+    "en": "Estimated extra land of about 5.36 million ha to 2039 with up to 1.5 million ha of deforestation if B50 is met from new plantations."
+   },
+   "sumber_id": "greenpeace-b50",
+   "tingkat_bukti": "kata-pihak"
+  },
+  {
+   "id": "lahan",
+   "kat": "deforestasi",
+   "pihak": {
+    "id": "Peneliti dan Madani",
+    "en": "Researchers and Madani"
+   },
+   "ket": {
+    "id": "Tambahan sekitar 3,2 juta ha kebun sawit hingga 2035 (satu peneliti); Madani menyebut lebih dari 6 juta ha.",
+    "en": "About 3.2 million ha of extra plantation to 2035 (one researcher); Madani says more than 6 million ha."
+   },
+   "sumber_id": "mongabay-b50",
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "id": "iluc",
+   "kat": "iluc",
+   "pihak": {
+    "id": "Catatan platform",
+    "en": "Platform note"
+   },
+   "ket": {
+    "id": "Kajian ILUC (perubahan guna lahan tidak langsung) yang baku tidak ditemukan di sumber yang dibaca; angka lahan di atas adalah perkiraan dampak, bukan hasil kajian ILUC.",
+    "en": "No standard ILUC (indirect land-use change) study was found in the sources read; the land figures above are impact estimates, not ILUC results."
+   },
+   "sumber_id": "mongabay-b50",
+   "tingkat_bukti": "hipotesis"
+  },
+  {
+   "id": "migor-risiko",
+   "kat": "minyak-goreng",
+   "pihak": {
+    "id": "Pengamat (Bisnis.com)",
+    "en": "Analysts (Bisnis.com)"
+   },
+   "ket": {
+    "id": "B50 dinilai berisiko mengerek harga minyak goreng; satu proyeksi menempatkan MinyaKita dari Rp15.700 (2025) ke sekitar Rp19.110 per liter (2035) bila produktivitas tidak membaik.",
+    "en": "B50 is seen as a risk to cooking-oil prices; one projection puts MinyaKita from Rp15,700 (2025) to about Rp19,110 per litre (2035) if yields do not improve."
+   },
+   "sumber_id": "bisnis-b50-migor",
+   "tingkat_bukti": "kata-pihak"
+  },
+  {
+   "id": "migor-jamin",
+   "kat": "minyak-goreng",
+   "pihak": {
+    "id": "Pemerintah (ESDM)",
+    "en": "Government (ESDM)"
+   },
+   "ket": {
+    "id": "Pemerintah menyatakan pasokan CPO cukup: kebutuhan minyak goreng sekitar 4,99 juta ton CPO per tahun, tambahan B50 sekitar 5,3 juta ton CPO.",
+    "en": "Government says CPO supply suffices: cooking oil needs about 4.99 million t of CPO a year, B50 adds about 5.3 million t."
+   },
+   "sumber_id": "metro-pangan",
+   "tingkat_bukti": "kata-pihak"
+  },
+  {
+   "id": "petani-tbs",
+   "kat": "petani",
+   "pihak": {
+    "id": "GAPKI",
+    "en": "GAPKI"
+   },
+   "ket": {
+    "id": "Kenaikan pungutan ekspor menurunkan harga TBS di tingkat petani; pungutan mendanai subsidi biodiesel.",
+    "en": "A higher export levy lowers farm-gate FFB prices; the levy funds the biodiesel subsidy."
+   },
+   "sumber_id": "kontan-gapki",
+   "tingkat_bukti": "kata-pihak"
+  },
+  {
+   "id": "petani-psr",
+   "kat": "petani",
+   "pihak": {
+    "id": "Bisnis.com",
+    "en": "Bisnis.com"
+   },
+   "ket": {
+    "id": "Pada 2023 hanya sekitar Rp1,7 triliun dari dana pungutan Rp32,4 triliun dipakai untuk peremajaan sawit rakyat; insentif biodiesel mengambil sekitar Rp18,5 triliun.",
+    "en": "In 2023 only about Rp1.7 trillion of the Rp32.4 trillion levy went to smallholder replanting; the biodiesel incentive took about Rp18.5 trillion."
+   },
+   "sumber_id": "bisnis-peremajaan",
+   "tingkat_bukti": "cuplikan"
+  },
+  {
+   "id": "biomassa-hutan",
+   "kat": "deforestasi",
+   "pihak": {
+    "id": "Mongabay, FWI",
+    "en": "Mongabay, FWI"
+   },
+   "ket": {
+    "id": "Ekspor pelet kayu ke Jepang dan Korea dikaitkan dengan deforestasi hutan alam; pengusaha menyebutnya kampanye hitam.",
+    "en": "Wood-pellet exports to Japan and Korea are linked to natural-forest loss; businesses call it a black campaign."
+   },
+   "sumber_id": "mongabay-pelet",
+   "tingkat_bukti": "cuplikan"
+  }
+ ],
+ "celah": [
+  {
+   "id": "Luas dan produksi per kabupaten (Ditjenbun) tidak terbuka; modul memakai tingkat provinsi (BPS 2023, riset/biomassa).",
+   "en": "Area and output by district (Ditjenbun) are not open; the module uses province level (BPS 2023, riset/biomassa)."
+  },
+  {
+   "id": "Produksi tebu (batang), sekam padi, dan limbah kayu per tahun belum ditemukan dari BPS; singkong hanya dari Kementan.",
+   "en": "Cane stalk output, rice husk and wood waste by year were not found from BPS; cassava only from Kementan."
+  },
+  {
+   "id": "Alokasi biodiesel 2020-2022 dan realisasi 2025 penuh tidak ditemukan dengan tautan sumber; kolom dibiarkan kosong, tidak diisi tebakan.",
+   "en": "Biodiesel allocation for 2020-2022 and full-year 2025 actuals were not found with a source link; cells are left blank, not guessed."
+  },
+  {
+   "id": "Ekspor biodiesel (HS 3826) dan HIP September sampai November 2026 tidak terkonfirmasi (satu media memberi Rp15.072 untuk Oktober dan Rp14.312 untuk November, tanggalnya tidak konsisten).",
+   "en": "Biodiesel exports (HS 3826) and HIP for September to November 2026 are unconfirmed (one outlet gives Rp15,072 for October and Rp14,312 for November, with inconsistent dating)."
+  },
+  {
+   "id": "Kapasitas PLTBm (biomassa) terpasang nasional dan daftar lengkap PLTU co-firing (48-52 lokasi) dengan persen campuran belum ada; hanya unit yang terbaca.",
+   "en": "National installed biomass-plant capacity and the complete co-firing list (48-52 sites) with blend percentages are missing; only readable units are shown."
+  },
+  {
+   "id": "Kapasitas HVO Cilacap yang berjalan beredar dengan angka berbeda antarsumber (3.000 hingga 9.000 barel per hari); tidak dimuat sebagai angka.",
+   "en": "Running HVO capacity at Cilacap differs across sources (3,000 to 9,000 barrels per day); not shown as a number."
+  }
+ ]
+}

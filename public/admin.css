@@ -409,3 +409,13 @@ dialog.jm-dlg.pd-dlg{width:min(980px,calc(100vw - 24px));max-height:calc(100dvh 
 .jm-bm-foto{display:grid;gap:8px;justify-items:start}
 .jm-bm-foto:empty{display:none}
 .jm-bm-foto img{display:block;width:min(100%,320px);aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-sm);background:var(--surface)}
+
+/* Kotak masuk kurasi: warna jenis dari token tema; ubin saring memakai .jm-hi-u */
+.jm-kt-ubin{margin-bottom:12px}.jm-kt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:768px){.jm-kt-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+button.jm-kt-j.jm-hi-u{font:inherit;text-align:left;cursor:pointer;color:var(--ink)}
+button.jm-kt-j.jm-hi-u .jm-ik{color:var(--kt)}button.jm-kt-j.jm-hi-u[aria-pressed="true"]{border-color:var(--kt);box-shadow:inset 3px 0 0 var(--kt)}
+.jm-pil.jm-kt-j{display:inline-flex;gap:6px;align-items:center;color:var(--kt);background:color-mix(in srgb,var(--kt) 14%,transparent)}
+.jm-kt-j-koreksi{--kt:var(--info)}.jm-kt-j-portal{--kt:var(--ok)}.jm-kt-j-surel{--kt:var(--accent)}.jm-kt-j-pendaftaran{--kt:color-mix(in srgb,var(--ok) 55%,var(--info))}
+.jm-kt-j-lowongan{--kt:var(--warn)}.jm-kt-j-logo{--kt:color-mix(in srgb,var(--warn) 55%,var(--ink2))}.jm-kt-j-belum{--kt:var(--bad)}.jm-kt-j-pemasok{--kt:color-mix(in srgb,var(--bad) 55%,var(--warn))}
+.jm-kt-j-psn{--kt:color-mix(in srgb,var(--info) 55%,var(--ink2))}.jm-kt-j-kawasan{--kt:color-mix(in srgb,var(--accent) 55%,var(--info))}.jm-kt-j-dedup{--kt:color-mix(in srgb,var(--bad) 45%,var(--info))}.jm-kt-j-tautan{--kt:var(--ink2)}
