@@ -51,16 +51,18 @@ const kelompok = (judul, a, { ik = "orang", besar = "", ekstra = "" } = {}) => `
 
 /* kelompok ringkas: kartu pimpinan + deret avatar + tombol "Lihat semua" yang membuka popup berisi seluruh anggota */
 const GR = new Map();
+const KW = /^(Ketua|Wakil Ketua)\b/;
 const PIM = /^(Ketua|Wakil Ketua|Sekretaris|Chief|Vice Chief|Koordinator)\b/;
-function ringkas(judul, a, { ik = "orang", pimpinan = PIM, maksPim = 3 } = {}) {
+function ringkas(judul, a, { ik = "orang", pimpinan = PIM, maksPim = 3, hanyaPim = false } = {}) {
   /* tiga kartu foto seragam: pimpinan dulu, dilengkapi anggota berfoto bila pimpinan kurang dari tiga */
-  const nyata = a.filter(ada), pim = nyata.filter((o) => pimpinan.test(o.jabatan || "")).slice(0, maksPim);
-  for (const o of nyata.filter((x) => x.foto && !pim.includes(x))) { if (pim.length >= 3) break; pim.push(o); }
+  /* hanyaPim: kartu besar hanya Ketua dan Wakil Ketua (termasuk kursi lowong), tanpa diisi anggota berfoto (pemilik 8 Nov 2026) */
+  const nyata = a.filter(ada), pim = (hanyaPim ? a : nyata).filter((o) => pimpinan.test(o.jabatan || "")).slice(0, maksPim);
+  if (!hanyaPim) for (const o of nyata.filter((x) => x.foto && !pim.includes(x))) { if (pim.length >= 3) break; pim.push(o); }
   const sisa = a.filter((o) => !pim.includes(o)), avat = sisa.filter((o) => o.nama && !o.kosong);
   const id = "g" + GR.size; GR.set(id, { judul, ik, a });
   const lr = pim.length ? `<ul class="tn-lr">${pim.map((o) => orang(o)).join("")}</ul>` : "";
   /* kotak selebar isinya: n kartu pimpinan (maks 3) berukuran tetap; avatar 56px maks 2 baris lalu "+n" */
-  const n = Math.min(maksPim, Math.max(2, pim.length)), maks = { 2: 10, 3: 16, 4: 22 }[n];
+  const n = Math.min(maksPim, Math.max(hanyaPim ? 1 : 2, pim.length)), maks = { 1: 10, 2: 10, 3: 16, 4: 22 }[n];
   const tampil = avat.length > maks ? avat.slice(0, maks - 1) : avat, lebih = avat.length - tampil.length;
   const bawah = avat.length ? `<ul class="tn-av-kisi">${tampil.map((o) => { const k = o.orang_id || slug(o.nama); PERS.set(k, o); return `<li><button type="button" class="tn-av-b" data-p="${esc(k)}" title="${esc(o.nama)}, ${esc(o.jabatan)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}">${avatar(o)}</button></li>`; }).join("")}${lebih ? `<li><button type="button" class="tn-av-b tn-plus" data-grup="${id}" title="${esc(TX("tn.anggota_plus", "+{n} anggota", { n: lebih }))}">+${angka(lebih)}</button></li>` : ""}</ul>
     ${lebih ? `<button type="button" class="tn-semua" data-grup="${id}">${ikon("orang", 16)}<span>${esc(TX("tn.lihat_semua", "Lihat semua {n} anggota", { n: nyata.length }))}</span></button>` : ""}` : "";
@@ -130,7 +132,7 @@ function struktur(p) {
   const unit = [[t("tn.u.institute"), U.institute], [t("tn.u.wilayah"), U.wilayah, { ik: "wilayah" }], [t("tn.u.muda"), U.muda], [t("tn.u.komite"), U.komite], [t("tn.u.staf"), U.staf], [t("tn.u.sdu"), U.sdu && U.sdu.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", pimpinan: /^(Chief|Vice Chief)\b/, maksPim: 4 }]].filter(([, a]) => a);
   const baris2 = [["waketum", "tn.u.waketum", true], ["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"], ["eksekutif", "tn.u.eksekutif", true]].filter(([k]) => U[k]).map(([k, j, s]) => kelompok(t(j), U[k])).join("");
   return `<section class="tn-seksi tn-bagan-bg" id="tim" aria-labelledby="tn-struktur">${kepala("tn-struktur", "orang", t("tn.ey.struktur"), t("tn.struktur.h2"), t("tn.struktur.pengantar", { periode: p.periode }))}
-  <div class="tn-pohon"><div class="tn-r tn-r0">${ringkas(t("tn.u.penasihat"), U.penasihat || [], { ik: "kompas" })}${ringkas(t("tn.u.pengawas"), pengawas, { ik: "perisai" })}${ringkas(t("tn.u.pakar"), pakar, { ik: "wisuda" })}</div>
+  <div class="tn-pohon"><div class="tn-r tn-r0">${ringkas(t("tn.u.penasihat"), U.penasihat || [], { ik: "kompas", pimpinan: KW, hanyaPim: true })}${ringkas(t("tn.u.pengawas"), pengawas, { ik: "perisai", pimpinan: KW, hanyaPim: true })}${ringkas(t("tn.u.pakar"), pakar, { ik: "wisuda", pimpinan: KW, hanyaPim: true })}</div>
     <div class="tn-konek" aria-hidden="true"></div>
     ${ket ? `<div class="tn-r tn-r1"><section class="tn-grp tn-ketum">${kepalaGrup("orang", t("tn.u.ketum"))}${ul([ket], "besar")}</section></div><div class="tn-konek" aria-hidden="true"></div>` : ""}
     <div class="tn-r tn-r2">${baris2}</div></div>
