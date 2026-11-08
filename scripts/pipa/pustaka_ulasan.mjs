@@ -5,6 +5,7 @@
 //   - salinan berkas untuk R2 -> data-panen/pustaka/berkas/ (diabaikan git) + data-panen/pustaka/unggah_r2.json (daftar untuk unggah_pustaka.mjs)
 // Tidak mengunggah apa pun. Berkas sumber: env PANEN_BARU (bawaan ~/Developer/panen-baru) dan METI_LOKAL (bawaan ~/Documents/1. METI).
 //   node scripts/pipa/pustaka_ulasan.mjs [--paksa]     |     node scripts/pipa/pustaka_ulasan.mjs --selftest
+import { rumahTek, rumahTopik } from "../../public/inti/rumah_tek.js";
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -47,7 +48,7 @@ export function periksaUlasan(id, u, ref) {
   return galat;
 }
 
-const HREF = { regulasi: (id) => `/regulasi?id=${encodeURIComponent(id)}`, proyek: (id) => `/p/${id}`, organisasi: (id) => `/o/${id}`, provinsi: (id) => `/wilayah/${id}`, teknologi: (id) => `/teknologi/${id}` };
+const HREF = { regulasi: (id) => `/regulasi?id=${encodeURIComponent(id)}`, proyek: (id) => `/p/${id}`, organisasi: (id) => `/o/${id}`, provinsi: (id) => `/wilayah/${id}`, teknologi: (id) => rumahTek(id) };
 export function lengkapiTautan(tautan, ref) {
   return (tautan || []).map((t) => ({ jenis: t.jenis, id: t.id, href: HREF[t.jenis](t.id), label: t.label || ref.nama[`${t.jenis}:${t.id}`] || t.id }));
 }

@@ -83,16 +83,16 @@ test("fungsi murni: kelas umur, tingkat, provinsi dari koordinat", () => {
 
 test("layar: kunci i18n id dan en lengkap, menu ada, lapisan peta terdaftar, tanpa gaya inline", () => {
   const id = j("public/i18n/id.json"), en = j("public/i18n/en.json");
-  const js = readFileSync("public/energi-baru.js", "utf8");
+  const js = readFileSync("public/tpl_enb.js", "utf8");
   const pakai = new Set([...js.matchAll(/\bt\("(enb\.[\w.-]+)"/g)].map((m) => m[1]).filter((k) => !k.endsWith(".")));
   for (const m of js.matchAll(/hlHtml\("(enb\.[\w.-]+)"/g)) pakai.add(m[1]);
-  for (const k of ["enb.title", "enb.eyebrow", "enb.judul", "enb.lead", "enb.nav", "pn2.l.pltu", "pn2.l.pltu.d"]) pakai.add(k);
+  for (const k of ["pn2.l.pltu", "pn2.l.pltu.d"]) pakai.add(k);
   const dinamis = { "enb.bag.": BAGIAN, "enb.st.": STATUS, "enb.ku.": ["u0", "u10", "u20", "u30", "tak-diketahui"], "enb.jl.": ["jetp", "etm", "gem", "usia"], "enb.neg.": E.meta.negara, "enb.pst.": ["operasi", "konstruksi", "pra-konstruksi", "rencana", "ditunda", "pensiun"], "enb.ks.": ["dibatalkan", "calon", "tercatat", "pengamatan"] };
   for (const [p, l] of Object.entries(dinamis)) for (const x of l) pakai.add(p + x);
   for (const k of [...pakai]) assert.ok(id[k] && en[k], `kamus: ${k}`);
-  assert.match(readFileSync("public/inti/kepala.js", "utf8"), /href: "\/energi-baru", kunci: "enb\.nav"/);
+  assert.doesNotMatch(readFileSync("public/inti/kepala.js", "utf8"), /href: "\/energi-baru"/); // digabung ke /transisi-pltu, tab "Energi baru lain"
   assert.ok(j("public/data/peta_lapisan.json").lapisan.some((l) => l.id === "pltu" && l.berkas === "/data/pltu.json"));
-  const html = readFileSync("public/energi-baru.html", "utf8");
+  const html = readFileSync("public/transisi-pltu.html", "utf8");
   assert.doesNotMatch(html + js, /\sstyle\s*=|\sonclick\s*=/);
   assert.doesNotMatch(readFileSync("public/energi-baru.css", "utf8"), /#[0-9a-fA-F]{3,8}\b/);
 });

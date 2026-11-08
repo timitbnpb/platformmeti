@@ -67,7 +67,7 @@ export function bangun() {
         { id: 'gambut', judul: 'Global peatland extent (gfw_peatlands v20230302)', penerbit: 'Global Forest Watch / Greifswald Mire Centre dan mitra', url: mentah.lapis.gambut.url, lisensi: mentah.lapis.gambut.lisensi },
         { id: 'adat', judul: 'Indigenous Peoples and local communities lands (LandMark)', penerbit: 'LandMark', url: mentah.lapis.adat.url, lisensi: mentah.lapis.adat.lisensi },
         { id: 'bahaya', judul: 'Indeks bahaya multi-bencana dan lapisan bahaya (InaRISK)', penerbit: 'BNPB', url: 'https://inarisk.bnpb.go.id/', lisensi: 'data publik BNPB; layanan ArcGIS terbuka, robots mengizinkan' },
-        { id: 'proyek', judul: 'Pelacak proyek terpadu METI (RUPTL, Global Energy Monitor CC BY 4.0)', penerbit: 'METI', url: '/pelacak-proyek', lisensi: 'CC BY 4.0 (GEM)' },
+        { id: 'proyek', judul: 'Pelacak proyek terpadu METI (RUPTL, Global Energy Monitor CC BY 4.0)', penerbit: 'METI', url: '/proyek#terpadu', lisensi: 'CC BY 4.0 (GEM)' },
       ],
       celah: ['Wilayah adat: BRWA tidak menyediakan unduhan publik yang dapat dipanen; dipakai LandMark (agregat, belum lengkap).', 'Gambut: peta KLHK/BRG tidak terjangkau dari jaringan panen; dipakai peta gambut global GFW (piksel sekitar 150 m).', 'Rawan bencana: indeks InaRISK raster 100 m; bukan penilaian tapak.'],
     },

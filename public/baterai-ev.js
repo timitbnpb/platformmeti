@@ -8,6 +8,7 @@ import { X, muat, t, esc, ikon, num, bukti, urlGet, kosongTab, tahapData, buktiB
 const TAB = [
   { k: "tambang", ikon: "beliung" }, { k: "olah", ikon: "pabrik" }, { k: "prekursor", ikon: "labu" }, { k: "sel", ikon: "baterai" },
   { k: "kendaraan", ikon: "mobil" }, { k: "pengisian", ikon: "colokan" }, { k: "bess", ikon: "sistem-listrik" }, { k: "daur", ikon: "daur" },
+  { k: "ringkasan", ikon: "analisis" }, { k: "dasar", ikon: "buku" },
 ];
 const siap = new Set(), qsTab = {};
 let kini = "";

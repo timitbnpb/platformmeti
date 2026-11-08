@@ -1,7 +1,6 @@
 /* /target: pelacak target resmi pemerintah vs realisasi. Data: target_realisasi.json (dirakit scripts/pipa/target_realisasi.mjs dari target.json,
    ember_bulanan.json, program_analisis.json, rued_capaian.json, berita.json). Status = turunan EST (laju historis vs laju dibutuhkan).
    INP: saringan kategori mengubah chrome seketika; isi kisi menyusul lewat nanti(). Grafik SVG tanpa pustaka, tooltip crosshair satu pendengar bersama. */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { t, bahasa, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml } from "/inti/umum.js";
 import { exHtml, sumberHtml, unduhRegHtml, pasangUrutTabel } from "/inti/komponen.js";
@@ -151,7 +150,7 @@ function modal(d) {
   const pejabat = d.pejabat.length
     ? `<ol class="tg-pj">${d.pejabat.map((p) => `<li><time datetime="${esc(p.tanggal)}">${esc(tanggal(p.tanggal))}</time>${amanUrl(p.url) ? `<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">${esc(p.judul)}</a>` : esc(p.judul)}<small>${esc(p.media)}</small></li>`).join("")}</ol>`
     : `<p class="jm-bantu">${esc(t("tg2.m.pj_kosong"))}</p>`;
-  const lihat = [["/transisi", "nav.transisi", "tg2.lj.transisi", "tek-panas"], ["/strategi", "nav.strategi", "tg2.lj.strategi", "analisis"], ["/pelacak", "nav.pelacak", "tg2.lj.pelacak", "tingkat"]];
+  const lihat = [["/target#transisi", "nav.transisi", "tg2.lj.transisi", "tek-panas"], ["/target#strategi", "nav.strategi", "tg2.lj.strategi", "analisis"], ["/pelacak", "nav.pelacak", "tg2.lj.pelacak", "tingkat"]];
   return `<header class="tg-m-hd"><div class="tg-m-pil">${pilKat(d.kat)}${pilSt(d.status)}</div><button type="button" class="tg-tutup" data-tutup aria-label="${esc(t("tg2.m.tutup"))}">${ikon("silang", 20)}</button></header>
   <h2 id="tgMJ" class="tg-m-j">${esc(L(d.nama))}</h2>
   <div class="tg-fks tg-fks-m">${fakta(t("tg2.target") + " " + thn(d), nt(d.satuan, d.nilai) + (d.maks ? " - " + nt(d.satuan, d.maks) : ""))}${fakta(t("tg2.real") + " (" + tglTeks(d.terbaru?.tanggal) + ")", nt(d.satuan, d.terbaru?.v))}${fakta(t("tg2.capai_k"), d.capaianPersen == null ? "-" : num(d.capaianPersen, 1) + "%")}${fakta(t("tg2.m.rasio"), d.rasioLaju == null ? "-" : num(d.rasioLaju, 2) + "x")}</div>
@@ -186,15 +185,15 @@ function tabelRued() {
 const seg = () => `<div class="jm-tab" role="tablist" aria-label="${esc(t("tg2.saring"))}" data-seg="kat">${["semua", ...KAT, "daerah"].map((v) => `<button type="button" role="tab" data-v="${v}" aria-selected="${v === ST.kat}">${ikon(IK_KAT[v], 18)}<span>${esc(t("tg2.kat." + v))}</span></button>`).join("")}</div>`;
 function tampil() {
   const o = D.o, a = o.target, baik = a.filter((x) => BAIK.has(x.status)).length, lag = a.filter((x) => x.status === "tertinggal" || x.status === "jauh-tertinggal").length;
-  $("jawab").textContent = t("tg2.lead");
-  khSisi(".jm-kh", { ubin: [
+  $("tgJawab").textContent = t("tg2.lead");
+  khSisi("#tgKh", { ubin: [
     { ikon: "bendera", nilai: num(a.length), label: t("tg2.u1") },
     { ikon: "centang", nilai: num(baik), label: t("tg2.u2") },
     { ikon: "peringatan", nilai: num(lag), label: t("tg2.u3") },
   ] });
   const cara = sumberHtml(`${esc(o.metode)}`, t("tg2.cara"));
-  const lj = [["/transisi", "nav.transisi", "tg2.lj.transisi", "tek-panas"], ["/strategi", "nav.strategi", "tg2.lj.strategi", "analisis"], ["/pelacak", "nav.pelacak", "tg2.lj.pelacak", "tingkat"], ["/rapor", "nav.rapor", "tg2.lj.rapor", "presentasi"], ["/indeks", "nav.indeks", "tg2.lj.indeks", "grafik"]];
-  $("isi").innerHTML =
+  const lj = [["/target#transisi", "nav.transisi", "tg2.lj.transisi", "tek-panas"], ["/target#strategi", "nav.strategi", "tg2.lj.strategi", "analisis"], ["/pelacak", "nav.pelacak", "tg2.lj.pelacak", "tingkat"], ["/target#rapor", "nav.rapor", "tg2.lj.rapor", "presentasi"], ["/indeks", "nav.indeks", "tg2.lj.indeks", "grafik"]];
+  $("tgIsi").innerHTML =
     exHtml({ id: "tgTarget", ikon: "bendera", topik: t("tg2.ex.topik"), judulHtml: hlHtml("tg2.ex.judul", String(a.length)), subHtml: esc(t("tg2.ex.sub")), aksiHtml: aksiHtml({ csv: false }) + cara,
       isiHtml: `${seg()}<p id="tgHit" class="jm-hitung" role="status" aria-live="polite"></p><div id="tgKisi" class="tg-kisi"></div>` }) +
     exHtml({ id: "tgRued", ikon: "wilayah", topik: t("tg2.kat.daerah"), judulHtml: hlHtml("tg2.rued.judul", String(o.rued.filter((r) => r.status !== "tidak-ada-data").length), { n: o.rued.length }), subHtml: esc(t("tg2.rued.sub")), aksiHtml: aksiHtml({ csv: true }), isiHtml: tabelRued(), kakiHtml: `<p class="jm-bantu">${esc(o.ruedMetode)}</p>` }) +
@@ -228,9 +227,8 @@ function pasang() {
   document.addEventListener("close", (e) => { if (e.target.id === "tgModal") { e.target.innerHTML = ""; sembunyiTip(); terakhir?.focus?.(); } }, true);
 }
 async function mulai() {
-  await mulaiHalaman();
-  $("isi").innerHTML = hantuHtml(4);
-  try { D.o = await muatData("target_realisasi.json"); } catch (e) { tampilGalat($("isi"), mulai); return; }
+  $("tgIsi").innerHTML = hantuHtml(4);
+  try { D.o = await muatData("target_realisasi.json"); } catch (e) { tampilGalat($("tgIsi"), mulai); return; }
   tampil();
   pasang();
   saatBahasa(() => { const buka2 = $("tgModal")?.open; if (buka2) $("tgModal").close(); tampil(); });

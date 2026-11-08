@@ -33,15 +33,15 @@ test("CSS dan modul: tanpa hex, tanpa px pada font, tanpa style=, tanpa toLocale
   for (const f of ["public/sampah-energi.html", ...TAB.map((k) => `public/swe_${k}.js`), "public/swe_umum.js", "public/sampah-energi.js"]) { const s = baca(f); assert.doesNotMatch(s, /\sstyle=/, f); assert.doesNotMatch(s, /toLocaleString/, f); }
 });
 test("tautan dua arah: menu, metode, cari, profil org, teknologi, topik, isu, program, energi baru", () => {
-  assert.match(baca("public/inti/kepala.js"), /href: "\/sampah-energi"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/sampah-energi"/); /* menu: modul tak lagi di menu, rumahnya hub /teknologi (rute-gabung.test.mjs) */
   assert.match(baca("public/metode_halaman.js"), /id: "sampah-energi"/);
   assert.match(baca("scripts/pipa/indeks_cari.mjs"), /\["\/sampah-energi", "swe\.nav"\]/);
   assert.match(baca("public/tertaut.js"), /\/sampah-energi/);
-  assert.match(baca("public/teknologi.js"), /"\/sampah-energi"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/sampah-energi"/);
   assert.match(baca("public/topik_tampil.js"), /href="\/sampah-energi"/);
   assert.match(baca("public/isu_detail.js"), /\/sampah-energi\?tab=isu/);
   assert.match(baca("public/program.js"), /\/sampah-energi\?tab=kota/);
-  assert.match(baca("public/energi-baru.js"), /\/sampah-energi\?tab=jalur/);
+  assert.match(baca("public/tpl_enb.js"), /\/sampah-energi\?tab=jalur/);
 });
 test("kamus id dan en memuat semua kunci swe.* (statis dan dinamis)", () => {
   const id = json("public/i18n/id.json"), en = json("public/i18n/en.json"), d = json("public/data/sampah_energi.json"), w = json("public/data/global/pemasok_wte.json"), hilang = [];

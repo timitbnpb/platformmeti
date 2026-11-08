@@ -233,7 +233,7 @@ function judulSebaran() {
 }
 
 /* ---------- metode ---------- */
-const TAUT = { potensi: "/peluang", terpasang: "/peluang", elektrifikasi: "/wilayah", bpp: "/peluang", ruptl: "/peluang", proyek: "/proyek", organisasi: "/direktori", rued: "/regulasi", plts_atap: "/peluang", wkp: "/teknologi/panas-bumi" };
+const TAUT = { potensi: "/peluang", terpasang: "/peluang", elektrifikasi: "/wilayah", bpp: "/peluang", ruptl: "/peluang", proyek: "/proyek", organisasi: "/direktori", rued: "/regulasi", plts_atap: "/peluang", wkp: "/panas-bumi?tab=ringkasan" };
 const NORMA = { persentil: ["grafik", "jm-pil"], minmax: ["analisis", "jm-pil jm-pil-ok"], biner: ["centang", "jm-pil jm-pil-warn"] };
 function metode() {
   const m = S.d.metode, kom = m.provinsi.komponen;

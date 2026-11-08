@@ -163,7 +163,7 @@ async function gambarJalur() {
     const J = [
       ["proyek", "/proyek", "proyek", pr.baris.length, "proyek", spark(hitungPer(pr.baris, (p) => p.teknologi))],
       ["wilayah", "/wilayah", "wilayah", wl.baris.length, "provinsi", spark(wl.baris.map((w) => w.terpasang_mw?.nilai).filter((x) => x != null).sort((a, b) => b - a).slice(0, 12))],
-      ["rantai", "/rantai", "rantai", rt.pabrikan.length, "pabrikan", spark([...rt.pabrikan].map((p) => p.mwp).sort((a, b) => b - a).slice(0, 12))],
+      ["rantai", "/rantai-global?tab=tkdn", "rantai", rt.pabrikan.length, "pabrikan", spark([...rt.pabrikan].map((p) => p.mwp).sort((a, b) => b - a).slice(0, 12))],
       ["regulasi", "/regulasi", "regulasi", rg.baris.length, "regulasi", spark(hitungPer(rg.baris, (r) => r.tahun, true))],
       ["direktori", "/direktori", "direktori", og.baris.length, "organisasi", spark(hitungPer(og.baris, (o) => o.kategori?.kode))],
       ["pustaka", "/direktori?tampil=pustaka", "daftar", pk.baris.length, "dokumen", spark(hitungPer(pk.baris, (d) => String(d.tanggal || "").slice(0, 4), true))],

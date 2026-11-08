@@ -8,7 +8,8 @@ import { B, muat, t, esc, ikon, num, urlGet, kosongTab, bukti, proyekPB, jumlahM
 const TAB = [
   { k: "sumber", ikon: "peta" }, { k: "eksplorasi", ikon: "sasaran" }, { k: "pembangkit", ikon: "petir" }, { k: "teknologi", ikon: "pabrik" }, { k: "ppa", ikon: "tag" },
   { k: "langsung", ikon: "desa" }, { k: "pemain", ikon: "gedung" }, { k: "kebijakan", ikon: "palu" }, { k: "isu", ikon: "peringatan" },
-].map((d) => ({ ...d, mod: "/pbm_" + d.k + ".js" }));
+  { k: "ringkasan", ikon: "analisis" }, { k: "dasar", ikon: "buku" },
+].map((d) => ({ ...d, mod: d.k === "ringkasan" || d.k === "dasar" ? "/tek_" + d.k + ".js?k=" + ({ ringkasan: "panas-bumi", dasar: "panas-bumi" })[d.k] : "/pbm_" + d.k + ".js" }));
 const siap = new Set(), qsTab = {};
 let kini = "";
 const $ = (id) => document.getElementById(id);

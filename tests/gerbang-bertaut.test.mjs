@@ -12,11 +12,11 @@ test("modul tautan mengekspor sembilan fungsi taut", () => {
 });
 
 // Halaman yang sudah memakai modul tautan (langsung atau lewat profil.js / terkaitHtml).
-const PAKAI = ["profil.js", "p.js", "teknologi.js", "jejaring.js", "inti/komponen.js"];
+const PAKAI = ["profil.js", "p.js", "tek_ringkasan.js", "jejaring.js", "inti/komponen.js"];
 for (const f of PAKAI) test(`memakai modul tautan: ${f}`, () => assert.match(baca(f), /\/inti\/tautan\.js"/));
 
 // Profil dan detail wajib memasang panel Terkait.
-const PANEL = ["o.js", "p.js", "wilayah_profil.js", "teknologi.js", "regulasi.js", "event_detail.js", "pustaka.js", "siaran-pers-rinci.js"];
+const PANEL = ["o.js", "p.js", "wilayah_profil.js", "tek_ringkasan.js", "regulasi.js", "event_detail.js", "pustaka.js", "siaran-pers-rinci.js"];
 for (const f of PANEL) test(`panel Terkait terpasang: ${f}`, () => assert.match(baca(f), /terkaitHtml\(/));
 
 // Pola terlarang: nama pemilik/penerbit/provinsi dicetak dengan esc() tanpa taut. Pengecualian eksplisit (alasan wajib).

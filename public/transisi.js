@@ -1,7 +1,6 @@
 /* /transisi: halaman informasi target dan skenario, kesehatan sistem kelistrikan, dan karbon. Hanya data yang ada + olahan (turunan berpil EST).
    Sumber: target.json, transisi.json (neraca daya RUPTL), ember_bulanan.json, statistik_pln.json, ruptl.json, karbon.json, karbon_proyek.json, program_analisis.json.
    INP: kontrol (segmen, urut, halaman) mengubah chrome seketika; isi menyusul lewat nanti(). Tanpa kalkulator: tidak ada masukan angka dari pengguna. */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { t, ada, bahasa, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml } from "/inti/umum.js";
 import { exHtml, tabTautan, lihatSemuaHtml, unduhRegHtml } from "/inti/komponen.js";
@@ -487,14 +486,14 @@ function grup(id, ik, kunci, isi) {
 function gambar() {
   olah();
   const u = D.celahBaris.find((x) => x.id === "ruptl-2034-kapasitas"), jb = D.sisById["jawa-bali"], b = bursa().at(-1);
-  $("jawab").textContent = t("tr.lead");
-  khSisi(".jm-kh", { ubin: [
+  $("trJawab").textContent = t("tr.lead");
+  khSisi("#trKh", { ubin: [
     { ikon: "kompas", nilai: num(u.kali, 1), satuan: "x", label: t("tr.u1") },
     { ikon: "perisai", nilai: num(jb.rm0, 1), satuan: "%", label: t("tr.u2") },
     { ikon: "kartu", nilai: num(b.harga_rata_idr_per_tco2e), satuan: "Rp/tCO2e", label: t("tr.u3", { bln: BLN(b.periode) }) },
   ] });
   TB.clear();
-  $("isi").innerHTML = `<nav class="jm-tr-nav" aria-label="${esc(t("tr.nav"))}">${tabTautan([{ href: "#target", ikon: "analisis", label: t("tr.n.target") }, { href: "#sistem", ikon: "rantai", label: t("tr.n.sistem") }, { href: "#karbon", ikon: "tek-bio", label: t("tr.n.karbon") }])}</nav>
+  $("trIsi").innerHTML = `<nav class="jm-tr-nav" aria-label="${esc(t("tr.nav"))}">${tabTautan([{ href: "#target", ikon: "analisis", label: t("tr.n.target") }, { href: "#sistem", ikon: "rantai", label: t("tr.n.sistem") }, { href: "#karbon", ikon: "tek-bio", label: t("tr.n.karbon") }])}</nav>
     <div id="target">${grup("target", "analisis", "target", [tCelah(), tTambah(), tSkenario(), tRukn(), tDekomp(), tPapan()])}</div>
     <div id="sistem">${grup("sistem", "rantai", "sistem", [tPeta(), tSistem(), tBeban(), tKapasitas(), tVre()])}</div>
     <div id="karbon">${grup("karbon", "tek-bio", "karbon", [tBursa(), tEmisi(), tSrn(), tKredit()])}</div>
@@ -534,12 +533,11 @@ function pilihSistem(id) {
 }
 
 async function mulai() {
-  await mulaiHalaman();
-  $("isi").innerHTML = hantuHtml(4);
+  $("trIsi").innerHTML = hantuHtml(4);
   try {
     const [target, tr, ember, karbon, kp, stat, program, ruptl] = await Promise.all(["target", "transisi", "ember_bulanan", "karbon", "karbon_proyek", "statistik_pln", "program_analisis", "ruptl"].map((n) => muatData(n + ".json")));
     Object.assign(D, { target, tr, ember, karbon, kp, stat, program, ruptl });
-  } catch (e) { tampilGalat($("isi"), mulai); return; }
+  } catch (e) { tampilGalat($("trIsi"), mulai); return; }
   gambar();
   pasang();
   saatBahasa(gambar);

@@ -38,11 +38,11 @@ test("CSS dan modul panas bumi: tanpa hex, tanpa px pada font, tanpa style=", ()
   for (const f of ["public/panas-bumi.html", ...TAB.map((k) => `public/pbm_${k}.js`), "public/pbm_umum.js", "public/panas-bumi.js"]) assert.doesNotMatch(baca(f), /\sstyle=/, f);
 });
 test("tautan dua arah: menu, metode, cari, profil org, teknologi, topik, isu", () => {
-  assert.match(baca("public/inti/kepala.js"), /href: "\/panas-bumi"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/panas-bumi"/); /* menu: modul tak lagi di menu, rumahnya hub /teknologi (rute-gabung.test.mjs) */
   assert.match(baca("public/metode_halaman.js"), /id: "panas-bumi"/);
   assert.match(baca("scripts/pipa/indeks_cari.mjs"), /\["\/panas-bumi", "pbm\.nav"\]/);
   assert.match(baca("public/tertaut.js"), /\/panas-bumi/);
-  assert.match(baca("public/teknologi.js"), /"\/panas-bumi"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/panas-bumi"/);
   assert.match(baca("public/topik_tampil.js"), /href="\/panas-bumi"/);
   assert.match(baca("public/isu_detail.js"), /\/panas-bumi\?tab=isu/);
 });

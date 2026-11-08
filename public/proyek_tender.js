@@ -112,6 +112,9 @@ export function pasangTender() {
   if (!host) return;
   tabHalaman("pjTab", { label: "pj.tab.label", tab: [
     { k: "proyek", ikon: "peta", teks: "pj.tab.proyek", panel: "pnProyek", muat: async () => {} },
+    { k: "terpadu", ikon: "petir", teks: "pj.tab.terpadu", panel: "pnTerpadu", muat: () => import("/pelacak-proyek.js") },
+    { k: "besar", ikon: "analisis", teks: "pj.tab.besar", panel: "pnBesar", muat: () => import("/proyek_besar.js") },
+    { k: "henti", ikon: "blokir", teks: "pj.tab.henti", panel: "pnHenti", muat: () => import("/proyek_henti.js") },
     { k: "tender", ikon: "palu", teks: "pj.tab.tender", panel: "pnTender", muat: muatTender },
   ] });
 }

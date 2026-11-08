@@ -1,0 +1,1808 @@
+{
+ "lapis": "gas",
+ "dibangun_pada": "2026-11-08",
+ "tanggal": "2026-11-08",
+ "keterangan": "Modul gas jembatan transisi ujung ke ujung. Berkas ini hanya memuat rujukan id ke data yang sudah ada (organisasi, regulasi, isu, energi baru) dan butir baru bersumber; tidak ada pembangkit gas di proyek_terpadu.json atau gem_pembangkit.json sehingga semua butir pembangkit, terminal, pipa, dan harga di sini baru.",
+ "sumber": [
+  {
+   "id": "kontan-6529",
+   "judul": "PLN targetkan tambahan kapasitas pembangkit gas 6.529 MW hingga 2034 (PLTG dan PLTMG; proyek bernama; target 2027 941 MW)",
+   "penerbit": "Kontan",
+   "url": "https://industri.kontan.co.id/news/pln-targetkan-tambahan-kapasitas-pembangkit-gas-6529-mw-hingga-2034",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ibp-ieefa",
+   "judul": "Gas power expansion in RI's RUPTL could cost the State US$60 billion: IEEFA (10,3 GW gas; faktor kapasitas gas 2024 30%; 6,3 GW gas ditambah 2018-2024)",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/4590/energy-and-resources/gas-power-expansion-in-ri-s-ruptl-could-cost-the-state-us-60-billion-ieefa",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ibp-cerah",
+   "judul": "Gas-fired power plants expansion could cost Indonesia up to Rp155.8 T yearly (CERAH; hanya judul dan ringkasan hasil pencarian dibaca)",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/4956/society-environment-and-culture/gas-fired-power-plants-expansion-could-cost-indonesia-up-to-rp155-8-t-yearly",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-pltg10",
+   "judul": "Tambahan PLTG 10 GW bisa bebani negara hingga Rp155 triliun per tahun (hanya judul dibaca, situs menolak akses otomatis)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20250809/44/1900730/tambahan-pltg-10-gw-bisa-bebani-negara-hingga-rp155-triliun-per-tahun",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tanahair-gas",
+   "judul": "Gas supply, a key challenge amid gas-fired power plants dominance in 2025-2034 electricity plan (kumulatif PLTG sekitar 10,5 GW; hanya cuplikan hasil pencarian dibaca)",
+   "penerbit": "Tanah Air",
+   "url": "https://tanahair.net/?p=11784",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "hukumonline-ruptl",
+   "judul": "Bahlil resmi umumkan RUPTL tahun 2025-2034 (hanya judul dibaca)",
+   "penerbit": "Hukumonline",
+   "url": "https://www.hukumonline.com/berita/a/bahlil-resmi-umumkan-ruptl-tahun-2025-2034-lt68344d6f0dc8a",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "cat-indonesia",
+   "judul": "Climate Action Tracker, Indonesia: policies and action (kritik RUPTL 2025-2034: tambahan EBT ditunda ke setelah 2030, gas dan batubara bertambah; cuplikan hasil pencarian)",
+   "penerbit": "Climate Action Tracker",
+   "url": "https://climateactiontracker.org/countries/indonesia/2025-12-08/policies-action/",
+   "tahun": 2025,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "mitsubishi-bisnis",
+   "judul": "Bidik PLTGU Jawa, Mitsubishi Power lirik proyek baru di RUPTL teranyar (hanya judul dibaca)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260214/44/1952967/bidik-pltu-jawa-mitsubishi-power-lirik-proyek-baru-di-ruptl-teranyar",
+   "tahun": 2026,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "baird-jawa1",
+   "judul": "FSRU begins operations for gas-to-power project in West Java, Indonesia (PLTGU Jawa-1 1.760 MW; FSRU dioperasikan Mitsui OSK Lines; operasi komersial dilaporkan 6 April 2024)",
+   "penerbit": "Baird Maritime",
+   "url": "https://www.bairdmaritime.com/amp/story/offshore/refining-processing/offshore-processing-storage/fsru-begins-operations-for-gas-to-power-project-in-west-java-indonesia",
+   "tahun": 2024,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "tenggara-jawa1",
+   "judul": "Tenggara Backgrounder 26 Mei 2023: turbin gas GE di PLTGU Jawa-1 (pemilik 40/40/20, turbin GE 9HA.02, COD meleset 2021 dan 2022; banyak klaim bersumber anonim)",
+   "penerbit": "Tenggara Strategics",
+   "url": "https://asset.tenggara.id/backgrounder/tenggara-backgrounder-may-26-2023/general-electrics-gas-turbines-fail-jawa1-ccgt",
+   "tahun": 2023,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pertamina-jawa1",
+   "judul": "Reducing carbon emissions by 3.3 million tons per year, Jawa-1 PLTGU, the largest in Southeast Asia, is ready to operate (hanya judul dibaca)",
+   "penerbit": "Pertamina",
+   "url": "https://pertamina.com/en/news-room/news-release/reducing-carbon-emissions-by-3.3-million-tons-per-year-jawa-1-pltgu-the-largest-in-southeast-asia-is-ready-to-operate",
+   "tahun": 2024,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "petromindo-gasif",
+   "judul": "PLN EPI advances power plant gasification projects; two clusters pending (20 PLTD, 2.278 MW, enam klaster; 151 BBTUD)",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/pln-epi-advances-power-plant-gasification-projects-two-clusters-pending",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "pgj-minilng",
+   "judul": "Indonesia's US$1.5 billion LNG push aims to displace diesel in power sector (41 pembangkit, 2.148 MW, empat klaster; biaya rantai pasok LNG skala kecil 30-40% harga serah)",
+   "penerbit": "Pipeline & Gas Journal",
+   "url": "https://pgjonline.com/news/2025/march/indonesia-s-15-billion-lng-push-aims-to-displace-diesel-in-power-sector",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "petromindo-6lng",
+   "judul": "Indonesia targets six mini-LNG terminals by 2026 to support nickel clusters (Ternate, Kendari, Bau-Bau, Pomalaa, Gorontalo, Ambon; 10 pembangkit, 660 MW)",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/indonesia-targets-six-mini-lng-terminals-by-2026-to-support-nickel-clusters",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "voi-lampung",
+   "judul": "FSRU Lampung receives 20th LNG cargo with a capacity of 130,000 m3 (penyimpanan 170.000 m3, regasifikasi 240 MMSCFD; cuplikan hasil pencarian)",
+   "penerbit": "VOI",
+   "url": "https://voi.id/en/amp/534822",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "migas-lampung",
+   "judul": "FSRU Lampung pasok gas untuk listrik (hanya judul dibaca)",
+   "penerbit": "Ditjen Migas, Kementerian ESDM",
+   "url": "https://migas.esdm.go.id/post/fsru-lampung-pasok-gas-untuk-listrik",
+   "tahun": 2014,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "woodmac-arun",
+   "judul": "Asset report: Arun regas LNG regasification terminal (3,0 mtpa nominal; penyimpanan 636.000 m3 dalam 5 tangki; cuplikan hasil pencarian)",
+   "penerbit": "Wood Mackenzie",
+   "url": "https://www.woodmac.com/reports/lng-arun-regas-lng-regas-terminal-13895599/",
+   "tahun": null,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jakpost-nrs",
+   "judul": "PLN receives first gas floating terminal (FSRU pertama RI, Nusantara Regas Satu; rencana 400 MMSCFD untuk Muara Karang; sumber 2012)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/news/2012/05/26/pln-receives-first-gas-floating-terminal.html",
+   "tahun": 2012,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jakpost-badak",
+   "judul": "Badak plant and the future of Indonesia's LNG industry (Bontang delapan train, 22,5 mtpa; 2021 hanya dua train beroperasi; cuplikan hasil pencarian)",
+   "penerbit": "The Jakarta Post",
+   "url": "https://www.thejakartapost.com/paper/2021/07/19/badak-plant-and-the-future-of-indonesias-lng-industry.html",
+   "tahun": 2021,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "porttech-lng",
+   "judul": "The changing face of Indonesian LNG and LPG markets (Tangguh 7,6 mtpa, ekspansi menuju 11,4 mtpa; Donggi-Senoro 2 mtpa sejak 2014; pasokan swap ke Arun dan FSRU Jawa Barat; cuplikan hasil pencarian)",
+   "penerbit": "Port Technology International",
+   "url": "https://www.porttechnology.org/technical-papers/the_changing_face_of_indonesian_lng_and_lpg_markets/",
+   "tahun": null,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "cnbc-cisem",
+   "judul": "Proyek pipa Rp2,7 triliun di Jawa resmi beroperasi, ini pembeli gasnya (Cisem II sekitar 242 km, gas Jambaran Tiung Biru, Kepmen ESDM 125.K/MG.01/MEM.M/2026)",
+   "penerbit": "CNBC Indonesia",
+   "url": "https://www.cnbcindonesia.com/news/20260318220138-4-720180/proyek-pipa-rp27-triliun-di-jawa-resmi-beroperasi-ini-pembeli-gasnya/amp",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-cisem-ops",
+   "judul": "Pipa gas transmisi Cisem II resmi beroperasi penuh (Pertagas disebut operator, April 2026; tanggal terbit artikel tidak konsisten)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/berita/energi/6a2765f9d5cc4/pipa-gas-transmisi-cisem-ii-resmi-beroperasi-penuh",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-cisem-86",
+   "judul": "Pipa gas Cisem tahap 2 ditargetkan rampung Maret 2026, progres sudah 86% (cuplikan hasil pencarian)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/berita/industri/68da284a3c8d0/pipa-gas-cisem-tahap-2-ditargetkan-rampung-maret-2026-progres-sudah-86/",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "migas-jembatan",
+   "judul": "Gas bumi sebagai jembatan transisi energi: strategi pemerintah (Investor Daily Summit, 9 Oktober 2025; pemanfaatan domestik 69%; Dumai-Sei Mangkei 428 km dalam tender)",
+   "penerbit": "Ditjen Migas, Kementerian ESDM",
+   "url": "https://migas.esdm.go.id/post/Gas-Bumi-sebagai-Jembatan-Transisi-Energi-Strategi-Pemerintah-Wujudkan-Energi-yang-Lebih-Bersih-dan-Murah-Bagi-Masyarakat",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "esdm-hgbt",
+   "judul": "Skema baru HGBT: perkuat daya saing industri dan efisiensi anggaran negara (Kepmen ESDM 76.K dan 77.K/MG.01/MEM.M/2025, 28 Februari 2025)",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://esdm.go.id/en/media-center/news-archives/skema-baru-hgbt-perkuat-daya-saing-industri-dan-efisiensi-anggaran-negara",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-hgbt5",
+   "judul": "Kemenperin lega HGBT dilanjut 5 tahun meski harga naik (hanya judul dibaca)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20250123/257/1834367/kemenperin-lega-hgbt-dilanjut-5-tahun-meski-harga-naik",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-hgbt2027",
+   "judul": "Bahlil pastikan pasokan gas murah industri (HGBT) terpenuhi pada 2027 (hanya judul dibaca)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20251028/44/1924002/bahlil-pastikan-pasokan-gas-murah-industri-hgbt-terpenuhi-pada-2027",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "fortune-ekspor",
+   "judul": "ESDM bakal pangkas kuota ekspor gas secara bertahap (pemanfaatan Januari-September 2025: 5.594 BBTUD; domestik 3.895; ekspor LNG 1.285,82; ekspor pipa 412,82; kelistrikan 740,17)",
+   "penerbit": "Fortune Indonesia",
+   "url": "https://www.fortuneidn.com/news/esdm-bakal-pangkas-kuota-ekspor-gas-secara-bertahap-00-my5jv-7802lx/amp",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "detik-defisit",
+   "judul": "RI diramal defisit gas hingga 2035 (proyeksi PGN di DPR 28 April 2025; pasokan domestik diprioritaskan, impor hanya darurat)",
+   "penerbit": "detikFinance",
+   "url": "https://finance.detik.com/energi/d-7895712/ri-diramal-defisit-gas-hingga-2035-ini-penyebabnya",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-pgn",
+   "judul": "PGN andalkan pasokan LNG domestik di tengah defisit gas nasional (defisit hingga 513 MMSCFD pada 2035; produksi sekitar 6.600 MMSCFD)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/berita/energi/687898f14c394/pgn-andalkan-pasokan-lng-domestik-di-tengah-defisit-gas-nasional/",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "migas-alokasi",
+   "judul": "Kebijakan pengalokasian gas bumi ke depan (Dirjen Migas, 29 November 2011: DMO mencakup bagian pemerintah; ekspor bila ada kelebihan)",
+   "penerbit": "Ditjen Migas, Kementerian ESDM",
+   "url": "https://migas.esdm.go.id/post/Kebijakan-Pengalokasian-Gas-Bumi-Ke-Depan",
+   "tahun": 2011,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-dmo-gas",
+   "judul": "Pengusaha usul DMO gas demi penuhi kebutuhan domestik (hanya judul dibaca)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20250717/257/1894119/pengusaha-usul-dmo-gas-demi-penuhi-kebutuhan-domestik",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "petromindo-dmo-lng",
+   "judul": "Strengthening domestic gas supply, Aspebindo pushes government to implement LNG DMO (hanya judul dibaca)",
+   "penerbit": "Petromindo",
+   "url": "https://www.petromindo.com/news/article/strengthening-domestic-gas-supply-aspebindo-pushes-government-to-implement-lng-dmo",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "warta-lng2026",
+   "judul": "Prioritas domestik, pemerintah atur ulang alokasi ekspor LNG 2026 (hanya judul dibaca)",
+   "penerbit": "Warta Ekonomi",
+   "url": "https://wartaekonomi.co.id/read595083/prioritas-domestik-pemerintah-atur-ulang-alokasi-ekspor-lng-2026",
+   "tahun": 2026,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "detik-mhi-h2",
+   "judul": "PLN gandeng Mitsubishi uji coba amonia-hidrogen di pembangkit listrik (studi co-firing hidrogen PLTGU Tanjung Priok, 2022)",
+   "penerbit": "detikFinance",
+   "url": "https://finance.detik.com/energi/d-6387041/pln-gandeng-mitsubishi-uji-coba-amonia-hidrogen-di-pembangkit-listrik",
+   "tahun": 2022,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ifrf-mhi-mk",
+   "judul": "MHI and PLN Nusantara Power to jointly investigate co-firing with hydrogen, ammonia and biomass in Indonesia (dua studi, PLTG Muara Karang, Maret 2023)",
+   "penerbit": "International Flame Research Foundation",
+   "url": "https://ifrf.net/ifrf-blog/mhi-and-pln-nusantara-power-to-jointly-investigate-co-firing-with-hydrogen-ammonia-and-biomass-in-indonesia/",
+   "tahun": 2023,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jawapos-h2",
+   "judul": "Co-firing hidrogen berpotensi pangkas emisi 9.600 ton per tahun (PLTDG Pesanggaran: campuran hidrogen 2% pada 2022, 7% pada 2024, 23% pada 2025; tiga uji)",
+   "penerbit": "Jawa Pos",
+   "url": "https://www.jawapos.com/energi/2610290193/co-firing-hidrogen-berpotensi-pangkas-emisi-9600-ton-per-tahun",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "li-h2-pln",
+   "judul": "Hidrogen jadi andalan baru PLN (PLTGU Priok menunggu pasokan hidrogen skala besar; cuplikan hasil pencarian)",
+   "penerbit": "listrikindonesia.com",
+   "url": "https://listrikindonesia.com/detail/16621/hidrogen-jadi-andalan-baru-pln",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  }
+ ],
+ "rujukan": {
+  "org_ids": [
+   "su_ed074ff5",
+   "en_9d908c0d85",
+   "p_5a2e7d0c63",
+   "p_ff7a390a42",
+   "p_b1c52ad7b0",
+   "p_10e0dde689",
+   "p_4322497a63",
+   "en_489bd14e4e",
+   "in_c462bee334",
+   "en_8f3dd6037a",
+   "l_7278e0528a",
+   "en_5455f1bbf9",
+   "en_0430061f85",
+   "l_a63f1fe4b8"
+  ],
+  "regulasi_ids": [
+   "perpres-5-2006",
+   "perpres-22-2017",
+   "pp-14-2012",
+   "perpres-89-2025",
+   "perpres-110-2025",
+   "perpres-14-2024"
+  ],
+  "isu_ids": [
+   "oversupply-take-or-pay",
+   "subsidi-tarif-listrik",
+   "jetp-cipp",
+   "karbon-pajak-bursa"
+  ],
+  "energi_baru_ids": [
+   "h2-rhan",
+   "h2-pln21",
+   "h2-pertamina-mitsubishi"
+  ],
+  "pendanaan_ids": [
+   "pi_US_GOV_12_128650"
+  ],
+  "status_proyek_urut": [
+   "beroperasi",
+   "konstruksi",
+   "rencana",
+   "tender",
+   "ditetapkan",
+   "belum",
+   "tidak-diketahui"
+  ]
+ },
+ "pembangkit": {
+  "angka": [
+   {
+    "k": "ieefa",
+    "nilai": 10.3,
+    "satuan": "GW",
+    "sumber_id": "ibp-ieefa",
+    "tingkat_bukti": "via-pihak-ketiga",
+    "ket": {
+     "id": "Tambahan pembangkit gas RUPTL 2025-2034 menurut IEEFA (angka yang paling sering dikutip).",
+     "en": "Gas capacity additions in RUPTL 2025-2034 according to IEEFA (the most quoted figure)."
+    }
+   },
+   {
+    "k": "tanahair",
+    "nilai": 10.5,
+    "satuan": "GW",
+    "sumber_id": "tanahair-gas",
+    "tingkat_bukti": "via-pihak-ketiga",
+    "ket": {
+     "id": "Kumulatif tambahan PLTG pada 2034 menurut kutipan dokumen RUPTL (cuplikan; dokumen asli belum dibaca).",
+     "en": "Cumulative PLTG additions by 2034 per a quote of the RUPTL document (snippet; original not read)."
+    }
+   },
+   {
+    "k": "lima_tahun",
+    "nilai": 9.3,
+    "satuan": "GW",
+    "sumber_id": "ibp-ieefa",
+    "tingkat_bukti": "via-pihak-ketiga",
+    "ket": {
+     "id": "Gas dalam 12,7 GW tambahan fosil periode 2025-2029 (45% dari tambahan lima tahun pertama).",
+     "en": "Gas within the 12.7 GW of fossil additions in 2025-2029 (45% of first-five-year additions)."
+    }
+   },
+   {
+    "k": "pltg_pltmg",
+    "nilai": 6.529,
+    "satuan": "GW",
+    "sumber_id": "kontan-6529",
+    "tingkat_bukti": "media",
+    "ket": {
+     "id": "Hanya PLTG dan PLTMG hingga 2034 (PLN, 6 November 2026); cakupan berbeda dari 10,3 GW, yang memuat juga PLTGU.",
+     "en": "PLTG and PLTMG only through 2034 (PLN, 6 November 2026); different scope from 10.3 GW, which also includes PLTGU."
+    }
+   }
+  ],
+  "fk_2024": {
+   "nilai": 30,
+   "satuan": "%",
+   "sumber_id": "ibp-ieefa",
+   "tingkat_bukti": "via-pihak-ketiga",
+   "ket": {
+    "id": "Faktor kapasitas rata-rata pembangkit gas 2024; 6,3 GW gas ditambah sejak 2018 tidak menaikkan keluaran.",
+    "en": "Average gas-plant capacity factor in 2024; the 6.3 GW of gas added since 2018 did not lift output."
+   }
+  },
+  "proyek": [
+   {
+    "id": "gs_jawa1",
+    "nama": "PLTGU Jawa-1",
+    "jenis": "PLTGU",
+    "mw": 1760,
+    "status": "beroperasi",
+    "lokasi": "Karawang",
+    "prov": "Jawa Barat",
+    "pemilik": [
+     {
+      "nama": "Pertamina NRE (40%)",
+      "org_id": "p_10e0dde689"
+     },
+     {
+      "nama": "Marubeni (40%)",
+      "org_id": "p_4322497a63"
+     },
+     {
+      "nama": "Sojitz (20%)",
+      "org_id": null
+     }
+    ],
+    "cod": "2024",
+    "cod_jenis": "aktual",
+    "ket": {
+     "id": "Dua turbin gas GE 9HA.02; listrik dijual ke PLN lewat kontrak 25 tahun; COD asli akhir 2021 meleset. FSRU Jawa Satu dioperasikan Mitsui OSK Lines.",
+     "en": "Two GE 9HA.02 gas turbines; power sold to PLN under a 25-year contract; the original end-2021 COD slipped. The Jawa Satu FSRU is operated by Mitsui OSK Lines."
+    },
+    "sumber_id": "tenggara-jawa1",
+    "tingkat_bukti": "via-pihak-ketiga",
+    "sumber_id2": "baird-jawa1"
+   },
+   {
+    "id": "gs_riau_peaker",
+    "nama": "PLTMG Riau Peaker",
+    "jenis": "PLTMG",
+    "mw": 200,
+    "status": "konstruksi",
+    "lokasi": "Riau",
+    "prov": "Riau",
+    "pemilik": [
+     {
+      "nama": "PLN",
+      "org_id": "su_ed074ff5"
+     }
+    ],
+    "cod": "",
+    "cod_jenis": "",
+    "ket": {
+     "id": "2 x 100 MW; salah satu dari sekitar 11 proyek PLTG/PLTMG skala kecil-menengah yang dibangun.",
+     "en": "2 x 100 MW; one of about 11 small-to-medium PLTG/PLTMG projects being built."
+    },
+    "sumber_id": "kontan-6529",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "gs_nunukan2",
+    "nama": "PLTMG Nunukan 2",
+    "jenis": "PLTMG",
+    "mw": 10,
+    "status": "konstruksi",
+    "lokasi": "Nunukan",
+    "prov": "Kalimantan Utara",
+    "pemilik": [
+     {
+      "nama": "PLN",
+      "org_id": "su_ed074ff5"
+     }
+    ],
+    "cod": "",
+    "cod_jenis": "",
+    "ket": {
+     "id": "Proyek kecil di Kalimantan.",
+     "en": "A small project in Kalimantan."
+    },
+    "sumber_id": "kontan-6529",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "gs_ambon2",
+    "nama": "PLTMG Ambon 2",
+    "jenis": "PLTMG",
+    "mw": 50,
+    "status": "konstruksi",
+    "lokasi": "Ambon",
+    "prov": "Maluku",
+    "pemilik": [
+     {
+      "nama": "PLN",
+      "org_id": "su_ed074ff5"
+     }
+    ],
+    "cod": "",
+    "cod_jenis": "",
+    "ket": {
+     "id": "2 x 25 MW di Indonesia timur.",
+     "en": "2 x 25 MW in eastern Indonesia."
+    },
+    "sumber_id": "kontan-6529",
+    "tingkat_bukti": "media"
+   }
+  ],
+  "ringkas_plnt": [
+   {
+    "k": "beroperasi_pltmg",
+    "nilai": 160,
+    "satuan": "MW",
+    "sumber_id": "kontan-6529",
+    "tingkat_bukti": "media",
+    "ket": {
+     "id": "Kapasitas PLTMG yang beroperasi saat ini (angka PLN).",
+     "en": "PLTMG capacity operating today (PLN figure)."
+    }
+   },
+   {
+    "k": "target_2027",
+    "nilai": 941,
+    "satuan": "MW",
+    "sumber_id": "kontan-6529",
+    "tingkat_bukti": "media",
+    "ket": {
+     "id": "Tambahan 2027: 741 MW PLTMG dan 200 MW PLTG.",
+     "en": "2027 additions: 741 MW PLTMG and 200 MW PLTG."
+    }
+   },
+   {
+    "k": "persiapan",
+    "nilai": 3.3,
+    "satuan": "GW",
+    "sumber_id": "kontan-6529",
+    "tingkat_bukti": "media",
+    "ket": {
+     "id": "Proyek gas dalam persiapan: studi kelayakan dan penyelesaian skema pengembangan.",
+     "en": "Gas projects in preparation: feasibility studies and finalising development schemes."
+    }
+   }
+  ],
+  "gasifikasi": {
+   "klaster": [
+    {
+     "k": "sulmal",
+     "plta": 6,
+     "konsorsium": "PT AGP Indonesia Utama, PT Suasa Benua Sukses, PT KPM Oil & Gas",
+     "status": "ditetapkan"
+    },
+    {
+     "k": "nusra",
+     "plta": 6,
+     "konsorsium": "PT Prima Osean Nusantara, PT Enviromate Technology International, PT APCA Tirta Engineering, Korea Gas Technologies Corporation",
+     "status": "ditetapkan"
+    },
+    {
+     "k": "papua_utara",
+     "plta": 4,
+     "konsorsium": "PT Pertamina International Shipping, PT PGN LNG Indonesia, PT Enviromate Technology International, PT APCA Tirta Engineering",
+     "status": "ditetapkan"
+    },
+    {
+     "k": "nias",
+     "plta": 1,
+     "konsorsium": "PT Berkat Samudra Gemilang Lines",
+     "status": "ditetapkan"
+    },
+    {
+     "k": "papua_selatan",
+     "plta": 2,
+     "konsorsium": "",
+     "status": "belum"
+    },
+    {
+     "k": "kalimantan",
+     "plta": 1,
+     "konsorsium": "",
+     "status": "belum"
+    }
+   ],
+   "klaster_sumber_id": "petromindo-gasif",
+   "klaster_bukti": "media",
+   "angka": [
+    {
+     "k": "pltd",
+     "nilai": 20,
+     "satuan": "PLTD",
+     "sumber_id": "petromindo-gasif",
+     "tingkat_bukti": "media",
+     "ket": {
+      "id": "Dua puluh lokasi PLTD di Indonesia tengah dan timur, 2.278 MW terpasang; kebutuhan gas sekitar 151 BBTUD (sekitar 18 kargo LNG standar per tahun); mengurangi solar sekitar 1,7 juta kiloliter per tahun.",
+      "en": "Twenty diesel sites in central and eastern Indonesia, 2,278 MW installed; gas need about 151 BBTUD (about 18 standard LNG cargoes a year); cuts diesel by about 1.7 million kilolitres a year."
+     }
+    },
+    {
+     "k": "pgj",
+     "nilai": 41,
+     "satuan": "PLTD",
+     "sumber_id": "pgj-minilng",
+     "tingkat_bukti": "media",
+     "ket": {
+      "id": "Sumber lain menyebut 41 pembangkit (2.148 MW) dalam empat klaster, investasi US$1,5 miliar, solar tergantikan sekitar 2,3 juta kiloliter (sekitar US$300 juta per tahun); operasi ditargetkan akhir 2026 sampai 2027. Cakupan dan tahun berbeda dari angka di atas, keduanya ditampilkan.",
+      "en": "Another source cites 41 plants (2,148 MW) in four clusters, US$1.5 billion investment, about 2.3 million kilolitres of diesel displaced (about US$300 million a year); operations targeted for late 2026 to 2027. Scope and year differ from the figure above; both are shown."
+     }
+    },
+    {
+     "k": "minilng",
+     "nilai": 660,
+     "satuan": "MW",
+     "sumber_id": "petromindo-6lng",
+     "tingkat_bukti": "media",
+     "ket": {
+      "id": "Enam terminal mini-LNG Sulawesi-Maluku (Ternate, Kendari, Bau-Bau, Pomalaa, Gorontalo, Ambon) melayani 10 pembangkit PLTG/PLTMG; kesiapan operasi ditargetkan 2026.",
+      "en": "Six Sulawesi-Maluku mini-LNG terminals (Ternate, Kendari, Bau-Bau, Pomalaa, Gorontalo, Ambon) serve 10 PLTG/PLTMG plants; operational readiness targeted for 2026."
+     }
+    }
+   ]
+  }
+ },
+ "lng": {
+  "terminal": [
+   {
+    "id": "lng_lampung",
+    "nama": "FSRU Lampung",
+    "jenis": "fsru",
+    "lokasi": "Lampung",
+    "status": "beroperasi",
+    "pemilik": {
+     "nama": "PGN LNG Indonesia",
+     "org_id": null
+    },
+    "penyimpanan_m3": 170000,
+    "regas_mmscfd": 240,
+    "mtpa": null,
+    "ket": {
+     "id": "Kargo LNG ke-20 diterima pada laporan November 2025; melayani pembangkit dan pelanggan gas di Sumatra bagian selatan dan Jawa Barat.",
+     "en": "Received its 20th LNG cargo in a November 2025 report; serves power plants and gas customers in southern Sumatra and West Java."
+    },
+    "sumber_id": "voi-lampung",
+    "tingkat_bukti": "via-pihak-ketiga",
+    "sumber_id2": "migas-lampung"
+   },
+   {
+    "id": "lng_jawa_satu",
+    "nama": "FSRU Jawa Satu",
+    "jenis": "fsru",
+    "lokasi": "Karawang, Jawa Barat",
+    "status": "beroperasi",
+    "pemilik": {
+     "nama": "Jawa Satu Regas (Mitsui OSK Lines, Pertamina, Marubeni, Sojitz)",
+     "org_id": null
+    },
+    "penyimpanan_m3": null,
+    "regas_mmscfd": null,
+    "mtpa": null,
+    "ket": {
+     "id": "Melayani hanya PLTGU Jawa-1; operasi komersial dilaporkan 6 April 2024. Kapasitas belum terbaca dari sumber yang dapat dibuka.",
+     "en": "Serves only the Jawa-1 PLTGU; commercial operation reported 6 April 2024. Capacity is not readable from sources that could be opened."
+    },
+    "sumber_id": "baird-jawa1",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "lng_nrs",
+    "nama": "FSRU Nusantara Regas Satu",
+    "jenis": "fsru",
+    "lokasi": "Teluk Jakarta",
+    "status": "tidak-diketahui",
+    "pemilik": {
+     "nama": "Nusantara Regas",
+     "org_id": null
+    },
+    "penyimpanan_m3": null,
+    "regas_mmscfd": 400,
+    "mtpa": null,
+    "ket": {
+     "id": "FSRU pertama Indonesia, konversi kapal LNG; 400 MMSCFD adalah angka rencana dari laporan 2012 untuk PLN Muara Karang. Status terkini belum diverifikasi.",
+     "en": "Indonesia's first FSRU, converted from an LNG carrier; 400 MMSCFD is the 2012 planning figure for PLN Muara Karang. Current status not verified."
+    },
+    "sumber_id": "jakpost-nrs",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "lng_arun",
+    "nama": "Terminal regasifikasi Arun",
+    "jenis": "darat",
+    "lokasi": "Lhokseumawe, Aceh",
+    "status": "tidak-diketahui",
+    "pemilik": {
+     "nama": "Pertamina",
+     "org_id": "p_b1c52ad7b0"
+    },
+    "penyimpanan_m3": 636000,
+    "regas_mmscfd": null,
+    "mtpa": 3,
+    "ket": {
+     "id": "Bekas kilang ekspor yang dialihfungsikan menjadi terminal impor; lima tangki, 3,0 mtpa kapasitas regasifikasi nominal. LNG Donggi-Senoro juga dikirim ke sini lewat swap. Status operasi terkini belum diverifikasi.",
+     "en": "Former export plant converted to an import terminal; five tanks, 3.0 mtpa nominal regasification capacity. Donggi-Senoro LNG is also routed here by swap. Current operating status not verified."
+    },
+    "sumber_id": "woodmac-arun",
+    "tingkat_bukti": "via-pihak-ketiga",
+    "sumber_id2": "porttech-lng"
+   },
+   {
+    "id": "lng_bontang",
+    "nama": "Kilang LNG Bontang (Badak)",
+    "jenis": "ekspor",
+    "lokasi": "Bontang, Kalimantan Timur",
+    "status": "tidak-diketahui",
+    "pemilik": {
+     "nama": "",
+     "org_id": null
+    },
+    "penyimpanan_m3": null,
+    "regas_mmscfd": null,
+    "mtpa": 22.5,
+    "ket": {
+     "id": "Delapan train, 22,5 mtpa kapasitas nominal; laporan 2021 menyebut hanya dua train beroperasi.",
+     "en": "Eight trains, 22.5 mtpa nameplate; a 2021 report said only two trains were operating."
+    },
+    "sumber_id": "jakpost-badak",
+    "tingkat_bukti": "media"
+   },
+   {
+    "id": "lng_tangguh",
+    "nama": "Kilang LNG Tangguh",
+    "jenis": "ekspor",
+    "lokasi": "Teluk Bintuni, Papua Barat",
+    "status": "beroperasi",
+    "pemilik": {
+     "nama": "",
+     "org_id": null
+    },
+    "penyimpanan_m3": null,
+    "regas_mmscfd": null,
+    "mtpa": 7.6,
+    "ket": {
+     "id": "7,6 mtpa sejak 2009; ekspansi diharapkan menambah 3,8 mtpa (total 11,4). Sumber lama, status ekspansi belum diverifikasi.",
+     "en": "7.6 mtpa since 2009; expansion expected to add 3.8 mtpa (11.4 total). An older source; expansion status not verified."
+    },
+    "sumber_id": "porttech-lng",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "id": "lng_dsl",
+    "nama": "Kilang LNG Donggi-Senoro",
+    "jenis": "ekspor",
+    "lokasi": "Luwuk, Sulawesi Tengah",
+    "status": "beroperasi",
+    "pemilik": {
+     "nama": "",
+     "org_id": null
+    },
+    "penyimpanan_m3": null,
+    "regas_mmscfd": null,
+    "mtpa": 2,
+    "ket": {
+     "id": "2 mtpa sejak 2014; karena permintaan ekspor turun, sebagian kargo dialihkan ke Arun dan FSRU Jawa Barat.",
+     "en": "2 mtpa since 2014; as export demand fell, some cargoes go to Arun and the West Java FSRU."
+    },
+    "sumber_id": "porttech-lng",
+    "tingkat_bukti": "via-pihak-ketiga"
+   }
+  ],
+  "mini": [
+   {
+    "k": "Ternate",
+    "status": "rencana",
+    "sumber_id": "petromindo-6lng",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "Kendari",
+    "status": "rencana",
+    "sumber_id": "petromindo-6lng",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "Bau-Bau",
+    "status": "rencana",
+    "sumber_id": "petromindo-6lng",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "Pomalaa",
+    "status": "rencana",
+    "sumber_id": "petromindo-6lng",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "Gorontalo",
+    "status": "rencana",
+    "sumber_id": "petromindo-6lng",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "Ambon",
+    "status": "rencana",
+    "sumber_id": "petromindo-6lng",
+    "tingkat_bukti": "media"
+   }
+  ],
+  "mini_ket": {
+   "id": "Enam terminal mini-LNG (hub dan spoke) untuk 10 pembangkit dengan total 660 MW dan peleburan nikel; target kesiapan 2026. Biaya rantai pasok LNG skala kecil diperkirakan analis 30-40% harga serah (proyek LNG biasa 10-20%).",
+   "en": "Six mini-LNG terminals (hub and spoke) for 10 plants totalling 660 MW and nickel smelting; readiness targeted for 2026. An analyst puts small-scale LNG supply-chain cost at 30-40% of delivered price (10-20% for a typical LNG project)."
+  },
+  "pendanaan_ids": [
+   "pi_US_GOV_12_128650"
+  ],
+  "kargo": {
+   "k": "epi_kargo",
+   "teks": {
+    "id": "PLN EPI menerima sekitar 60 kargo LNG jangka panjang per tahun, tetapi butuh 84 kargo tahun lalu; selisihnya dipenuhi spot. Program gasifikasi menambah sedikitnya 29 kargo (sekitar 2 juta ton) per tahun.",
+    "en": "PLN EPI receives about 60 long-term LNG cargoes a year but needed 84 last year, with the gap filled on the spot market. The gasification programme adds at least 29 cargoes (about 2 million tonnes) a year."
+   },
+   "sumber_id": "pgj-minilng",
+   "tingkat_bukti": "media"
+  }
+ },
+ "pipa": {
+  "ruas": [
+   {
+    "id": "pp_cisem2",
+    "nama": "Cisem II (Batang - Cirebon - Kandang Haur Timur)",
+    "lokasi": "Jawa Tengah - Jawa Barat",
+    "km": 242,
+    "km_alt": 245,
+    "biaya_rp_t": 2.7,
+    "status": "beroperasi",
+    "operator": {
+     "nama": "LEMIGAS (Kepmen ESDM 125.K/2026); Pertagas disebut sumber lain",
+     "org_id": null
+    },
+    "ket": {
+     "id": "Gas awal dari lapangan Jambaran Tiung Biru; komitmen awal pembeli Kilang Balongan, Cikarang Listrindo dikabarkan akan memakai pipa. Diresmikan di KIT Batang pada 18 Maret 2026. Panjang 242 km (CNBC) atau 245 km (Ditjen Migas); sumber berbeda tentang operator.",
+     "en": "Initial gas from the Jambaran Tiung Biru field; Balongan refinery has a preliminary commitment and Cikarang Listrindo is reported to use the line. Launched at KIT Batang on 18 March 2026. Length 242 km (CNBC) or 245 km (Ditjen Migas); sources differ on the operator."
+    },
+    "sumber_id": "cnbc-cisem",
+    "tingkat_bukti": "media",
+    "sumber_id2": "katadata-cisem-ops"
+   },
+   {
+    "id": "pp_dusem",
+    "nama": "Dumai - Sei Mangkei",
+    "lokasi": "Riau - Sumatra Utara",
+    "km": 428,
+    "km_alt": null,
+    "biaya_rp_t": null,
+    "status": "tender",
+    "operator": {
+     "nama": "",
+     "org_id": null
+    },
+    "ket": {
+     "id": "Dalam proses tender per Oktober 2025.",
+     "en": "In the tender process as of October 2025."
+    },
+    "sumber_id": "migas-jembatan",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "id": "pp_jawa1_fsru",
+    "nama": "Pipa FSRU Jawa Satu - PLTGU Jawa-1",
+    "lokasi": "Karawang, Jawa Barat",
+    "km": 20,
+    "km_alt": null,
+    "biaya_rp_t": null,
+    "status": "beroperasi",
+    "operator": {
+     "nama": "",
+     "org_id": null
+    },
+    "ket": {
+     "id": "Pipa bawah laut sekitar 20 km; menurut laporan Tenggara 2023 sekitar 14 km terangkat ke permukaan (klaim bersumber anonim).",
+     "en": "About 20 km subsea line; per a 2023 Tenggara report about 14 km floated to the surface (anonymously sourced claim)."
+    },
+    "sumber_id": "tenggara-jawa1",
+    "tingkat_bukti": "via-pihak-ketiga"
+   }
+  ]
+ },
+ "harga": {
+  "kebijakan": [
+   {
+    "k": "perpres121",
+    "teks": {
+     "id": "Perpres 121/2020 menjadi dasar penetapan harga gas bumi tertentu (HGBT) untuk pengguna terpilih.",
+     "en": "Presidential Regulation 121/2020 is the basis for setting the specified natural gas price (HGBT) for selected users."
+    },
+    "sumber_id": "esdm-hgbt",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "kepmen76",
+    "teks": {
+     "id": "Kepmen ESDM 76.K/MG.01/MEM.M/2025 (perubahan kedua Kepmen 91.K/2023): bahan bakar US$7 per MMBTU dan bahan baku US$6,5; tujuh sektor, 253 pengguna; sebelumnya pengguna ini membayar US$6,75-7,75. Beberapa pengguna lama dikeluarkan.",
+     "en": "ESDM Decree 76.K/MG.01/MEM.M/2025 (second amendment of 91.K/2023): US$7 per MMBTU for fuel and US$6.5 for feedstock; seven sectors, 253 users; these users previously paid US$6.75-7.75. Some earlier users were dropped."
+    },
+    "sumber_id": "esdm-hgbt",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "kepmen77",
+    "teks": {
+     "id": "Kepmen ESDM 77.K/MG.01/MEM.M/2025 (26 Februari 2025) mengatur pengguna dan harga HGBT di bidang penyediaan tenaga listrik untuk kepentingan umum; pemerintah berencana menaikkan porsi gas dalam bauran pembangkitan.",
+     "en": "ESDM Decree 77.K/MG.01/MEM.M/2025 (26 February 2025) sets the users and HGBT prices for public electricity supply; the government plans to raise gas in the generation mix."
+    },
+    "sumber_id": "esdm-hgbt",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "manfaat",
+    "teks": {
+     "id": "Klaim pemerintah: manfaat ekonomi HGBT 2020-2023 sebesar Rp247,26 triliun; penghematan biaya pokok penyediaan pada beban puncak sektor listrik Rp16,06 triliun pada 2022.",
+     "en": "Government claim: HGBT economic benefit in 2020-2023 of Rp247.26 trillion; peak-load supply cost savings in the power sector of Rp16.06 trillion in 2022."
+    },
+    "sumber_id": "esdm-hgbt",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "lima_tahun",
+    "teks": {
+     "id": "Media memberitakan HGBT dilanjutkan lima tahun dengan harga lebih tinggi (hanya judul dibaca); lama berlaku tidak tertulis dalam siaran ESDM.",
+     "en": "Media report HGBT continuing for five years at a higher price (headline only); the duration is not stated in the ESDM release."
+    },
+    "sumber_id": "bisnis-hgbt5",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "k": "pasokan2027",
+    "teks": {
+     "id": "Menteri ESDM disebut memastikan pasokan HGBT terpenuhi pada 2027 (hanya judul dibaca).",
+     "en": "The Minister of ESDM is reported to assure HGBT supply will be met in 2027 (headline only)."
+    },
+    "sumber_id": "bisnis-hgbt2027",
+    "tingkat_bukti": "via-pihak-ketiga"
+   }
+  ],
+  "kontrak": [
+   {
+    "k": "jawa1_ppa",
+    "teks": {
+     "id": "Jawa-1: listrik dijual ke PLN dengan kontrak 25 tahun.",
+     "en": "Jawa-1: power sold to PLN under a 25-year contract."
+    },
+    "sumber_id": "baird-jawa1",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "epi_kargo",
+    "teks": {
+     "id": "PLN EPI: sekitar 60 kargo LNG jangka panjang per tahun, butuh 84 kargo tahun lalu, selisih dipenuhi spot.",
+     "en": "PLN EPI: about 60 long-term LNG cargoes a year, needed 84 last year, gap filled spot."
+    },
+    "sumber_id": "pgj-minilng",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "gasif_kargo",
+    "teks": {
+     "id": "Gasifikasi 20 PLTD butuh sekitar 151 BBTUD, setara sekitar 18 kargo LNG standar per tahun.",
+     "en": "Gasifying 20 diesel plants needs about 151 BBTUD, about 18 standard LNG cargoes a year."
+    },
+    "sumber_id": "petromindo-gasif",
+    "tingkat_bukti": "media"
+   }
+  ],
+  "hitung": {
+   "heat_rate_mmbtu_mwh": 7,
+   "skenario": [
+    {
+     "k": "hgbt",
+     "harga": 7,
+     "tingkat_bukti": "resmi",
+     "sumber_id": "esdm-hgbt"
+    },
+    {
+     "k": "sedang",
+     "harga": 9,
+     "tingkat_bukti": "hipotesis"
+    },
+    {
+     "k": "tinggi",
+     "harga": 12,
+     "tingkat_bukti": "hipotesis"
+    }
+   ],
+   "ket": {
+    "id": "Biaya bahan bakar gas per MWh = laju kalor x harga gas. Laju kalor 7,0 MMBTU/MWh adalah asumsi METI untuk PLTGU modern (Hipotesis); harga US$7 adalah HGBT bahan bakar, US$9 dan US$12 skenario ilustrasi. Bukan angka kontrak PLN.",
+    "en": "Gas fuel cost per MWh = heat rate x gas price. A heat rate of 7.0 MMBTU/MWh is a METI assumption for a modern combined cycle (Hypothesis); US$7 is the HGBT fuel price, US$9 and US$12 are illustrative scenarios. Not a PLN contract figure."
+   }
+  }
+ },
+ "neraca": {
+  "pemanfaatan": {
+   "periode": {
+    "id": "Januari-September 2025",
+    "en": "January-September 2025"
+   },
+   "satuan": "BBTUD",
+   "sumber_id": "fortune-ekspor",
+   "tingkat_bukti": "media",
+   "baris": [
+    {
+     "k": "domestik",
+     "nilai": 3895
+    },
+    {
+     "k": "ekspor_lng",
+     "nilai": 1285.82
+    },
+    {
+     "k": "ekspor_pipa",
+     "nilai": 412.82
+    },
+    {
+     "k": "kelistrikan",
+     "nilai": 740.17
+    }
+   ],
+   "total": 5594
+  },
+  "sektor_domestik": {
+   "periode": {
+    "id": "Juli 2025, persen dari total pemanfaatan",
+    "en": "July 2025, percent of total utilisation"
+   },
+   "sumber_id": "migas-jembatan",
+   "tingkat_bukti": "resmi",
+   "domestik_total": 69,
+   "baris": [
+    {
+     "k": "industri",
+     "nilai": 25.32
+    },
+    {
+     "k": "produksi_lng",
+     "nilai": 13.06
+    },
+    {
+     "k": "kelistrikan",
+     "nilai": 12.91
+    },
+    {
+     "k": "pupuk",
+     "nilai": 12.2
+    }
+   ]
+  },
+  "defisit": {
+   "satuan": "MMSCFD",
+   "sumber_id": "detik-defisit",
+   "tingkat_bukti": "media",
+   "ket": {
+    "id": "Proyeksi PGN di DPR (28 April 2025). Angka dalam berita tidak sepenuhnya konsisten antarparagraf; deret tahunan ditampilkan apa adanya.",
+    "en": "PGN projection to the House (28 April 2025). Figures in the article are not fully consistent across paragraphs; the yearly series is shown as reported."
+   },
+   "baris": [
+    {
+     "tahun": 2025,
+     "nilai": 177
+    },
+    {
+     "tahun": 2026,
+     "nilai": 239
+    },
+    {
+     "tahun": 2027,
+     "nilai": 369
+    },
+    {
+     "tahun": 2028,
+     "nilai": 390
+    },
+    {
+     "tahun": 2029,
+     "nilai": 259
+    },
+    {
+     "tahun": 2030,
+     "nilai": 349
+    },
+    {
+     "tahun": 2031,
+     "nilai": 465
+    },
+    {
+     "tahun": 2032,
+     "nilai": 516
+    },
+    {
+     "tahun": 2033,
+     "nilai": 524
+    },
+    {
+     "tahun": 2034,
+     "nilai": 534
+    },
+    {
+     "tahun": 2035,
+     "nilai": 513
+    }
+   ]
+  },
+  "produksi": {
+   "nilai": 6600,
+   "satuan": "MMSCFD",
+   "sumber_id": "katadata-pgn",
+   "tingkat_bukti": "media",
+   "ket": {
+    "id": "Produksi gas nasional sekitar 6.600 MMSCFD; alokasi domestik 3.300-3.500 MMSCFD; PGN mengandalkan LNG domestik.",
+    "en": "National gas production of about 6,600 MMSCFD; domestic allocation of 3,300-3,500 MMSCFD; PGN relies on domestic LNG."
+   }
+  },
+  "alokasi": [
+   {
+    "teks": {
+     "id": "Dirjen Migas (2011): DMO gas mencakup bagian pemerintah, bukan hanya bagian kontraktor; ekspor diizinkan bila ada kelebihan. Sumber lama, nomor Permen tidak tercantum.",
+     "en": "Director General of Oil and Gas (2011): the gas DMO covers the government share, not only the contractors'; export is allowed when there is surplus. An old source; no regulation number given."
+    },
+    "sumber_id": "migas-alokasi",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "teks": {
+     "id": "Pemerintah mengalihkan sebagian jatah ekspor LNG ke kebutuhan domestik dan mengevaluasi kontrak ekspor secara berkala (hanya judul dibaca).",
+     "en": "The government is diverting part of LNG export allocations to domestic needs and reviewing export contracts periodically (headline only)."
+    },
+    "sumber_id": "warta-lng2026",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "teks": {
+     "id": "Kementerian ESDM memangkas kuota ekspor gas bumi secara bertahap; belum ada persentase atau volume tertulis.",
+     "en": "The Ministry of ESDM is cutting gas export quotas in stages; no percentage or volume is stated."
+    },
+    "sumber_id": "fortune-ekspor",
+    "tingkat_bukti": "media"
+   },
+   {
+    "teks": {
+     "id": "Pengusaha (HIPMI) dan asosiasi (Aspebindo) mengusulkan DMO gas formal pada pertengahan 2025 (hanya judul dibaca), yang menandakan DMO gas belum berlaku sebagai kewajiban formal pada saat itu.",
+     "en": "Businesses (HIPMI) and an association (Aspebindo) proposed a formal gas DMO in mid-2025 (headlines only), implying a gas DMO was not yet in force as a formal obligation."
+    },
+    "sumber_id": "bisnis-dmo-gas",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "teks": {
+     "id": "Menteri ESDM: tidak ada impor gas, produksi domestik diprioritaskan, impor hanya untuk keadaan darurat, dan lifting diperkirakan naik pada 2026-2027.",
+     "en": "Minister of ESDM: no gas imports, domestic output is prioritised, imports only in serious emergencies, and lifting is expected to rise in 2026-2027."
+    },
+    "sumber_id": "detik-defisit",
+    "tingkat_bukti": "media"
+   }
+  ]
+ },
+ "transisi": {
+  "posisi": [
+   {
+    "k": "pemerintah",
+    "pihak": {
+     "id": "Pemerintah (Ditjen Migas)",
+     "en": "Government (Ditjen Migas)"
+    },
+    "teks": {
+     "id": "Gas dinilai cukup tersedia dan relatif lebih bersih dari minyak bumi; infrastruktur pipa dan konversi pembangkit memperluas akses serta mendukung industri dan listrik; masuk kerangka ketahanan energi 4A.",
+     "en": "Gas is judged sufficiently available and relatively cleaner than oil; pipelines and power-plant conversion widen access and support industry and power; part of the 4A energy-security framework."
+    },
+    "sumber_id": "migas-jembatan",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "ieefa",
+    "pihak": {
+     "id": "IEEFA",
+     "en": "IEEFA"
+    },
+    "teks": {
+     "id": "Ekspansi gas RUPTL bisa membebani negara hingga US$60 miliar (2025-2034); pembangkit gas hanya berjalan 30% kapasitas pada 2024; gas sekitar dua kali lebih mahal dari batubara menurut laporan keuangan PLN; subsidi dan kompensasi PLN 2024 Rp177 triliun.",
+     "en": "The RUPTL gas expansion could cost the state up to US$60 billion (2025-2034); gas plants ran at only 30% of capacity in 2024; gas costs about twice coal per PLN financial reports; PLN subsidies and compensation in 2024 were Rp177 trillion."
+    },
+    "sumber_id": "ibp-ieefa",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "k": "cerah",
+    "pihak": {
+     "id": "CERAH",
+     "en": "CERAH"
+    },
+    "teks": {
+     "id": "Tambahan 10,3 GW gas dapat menambah biaya hingga Rp155,8 triliun per tahun (ringkasan hasil pencarian; analisis asli belum dibaca).",
+     "en": "The extra 10.3 GW of gas could add up to Rp155.8 trillion a year (search summary; original analysis not read)."
+    },
+    "sumber_id": "ibp-cerah",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "k": "cat",
+    "pihak": {
+     "id": "Climate Action Tracker",
+     "en": "Climate Action Tracker"
+    },
+    "teks": {
+     "id": "RUPTL menunda sebagian besar tambahan EBT hingga setelah 2030 sambil menambah batubara dan gas lima tahun ke depan, sehingga memperbesar risiko kelebihan pasokan, aset terdampar, dan keterkungkungan jangka panjang (cuplikan).",
+     "en": "The RUPTL back-loads most renewable additions beyond 2030 while expanding coal and gas in the next five years, raising risks of oversupply, stranded assets and long-term lock-in (snippet)."
+    },
+    "sumber_id": "cat-indonesia",
+    "tingkat_bukti": "kajian"
+   }
+  ],
+  "hitung": {
+   "gw": 10.3,
+   "jam": 8.76,
+   "fk": [
+    {
+     "k": "fk_2024",
+     "nilai": 30,
+     "tingkat_bukti": "via-pihak-ketiga",
+     "sumber_id": "ibp-ieefa"
+    },
+    {
+     "k": "fk_hip",
+     "nilai": 60,
+     "tingkat_bukti": "hipotesis"
+    }
+   ],
+   "ppa_tahun": 25,
+   "ppa_sumber_id": "baird-jawa1",
+   "target_nol": 2060,
+   "ket": {
+    "id": "Energi tahunan = GW x 8,76 x faktor kapasitas (TWh). Faktor kapasitas 30% adalah rata-rata armada gas 2024 (IEEFA); 60% adalah skenario ilustrasi METI (Hipotesis). Umur kontrak 25 tahun mengikuti kontrak Jawa-1; COD 2034 berarti kontrak berakhir 2059.",
+    "en": "Annual energy = GW x 8.76 x capacity factor (TWh). The 30% factor is the 2024 gas-fleet average (IEEFA); 60% is an illustrative METI scenario (Hypothesis). The 25-year contract life follows Jawa-1; a 2034 COD means the contract ends in 2059."
+   }
+  },
+  "hidrogen": [
+   {
+    "teks": {
+     "id": "PLN dan Mitsubishi Heavy Industries sepakat pada 2022 mengkaji pemakaian hidrogen sebagai pengganti sebagian gas alam di PLTGU, termasuk turbin M701F di Tanjung Priok (PLN Indonesia Power).",
+     "en": "In 2022 PLN and Mitsubishi Heavy Industries agreed to study hydrogen as a partial replacement for natural gas in combined-cycle plants, including the M701F turbines at Tanjung Priok (PLN Indonesia Power)."
+    },
+    "sumber_id": "detik-mhi-h2",
+    "tingkat_bukti": "media"
+   },
+   {
+    "teks": {
+     "id": "Maret 2023: MoU MHI dengan PLN Nusantara Power untuk dua studi co-firing hidrogen, amonia, dan biomassa, termasuk PLTG Muara Karang.",
+     "en": "March 2023: an MHI MoU with PLN Nusantara Power for two studies on co-firing hydrogen, ammonia and biomass, including the Muara Karang PLTG."
+    },
+    "sumber_id": "ifrf-mhi-mk",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "teks": {
+     "id": "PLTDG Pesanggaran (PLN Indonesia Power) menguji campuran hidrogen dengan gas alam sebanyak tiga kali: 2% (2022), 7% (2024), 23% (2025); potensi pengurangan emisi 9.600 ton CO2 per tahun. Asal hidrogen uji tidak disebut.",
+     "en": "PLN Indonesia Power's Pesanggaran PLTDG ran three hydrogen-natural gas blend tests: 2% (2022), 7% (2024), 23% (2025); potential cut of 9,600 tonnes of CO2 a year. The source of the test hydrogen is not stated."
+    },
+    "sumber_id": "jawapos-h2",
+    "tingkat_bukti": "media"
+   },
+   {
+    "teks": {
+     "id": "PLTGU Priok dilaporkan tinggal menunggu pasokan hidrogen skala besar (cuplikan hasil pencarian); hasil uji di Priok dan Muara Karang tidak ditemukan.",
+     "en": "The Priok combined-cycle plant is reported to be waiting only for large-scale hydrogen supply (search snippet); test results at Priok and Muara Karang were not found."
+    },
+    "sumber_id": "li-h2-pln",
+    "tingkat_bukti": "via-pihak-ketiga"
+   }
+  ],
+  "energi_baru_ids": [
+   "h2-rhan",
+   "h2-pln21",
+   "h2-pertamina-mitsubishi"
+  ]
+ },
+ "pemain": [
+  {
+   "nama": "PLN",
+   "org_id": "su_ed074ff5",
+   "peran": [
+    "pembeli",
+    "pengembang"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Menargetkan tambahan 6.529 MW PLTG dan PLTMG hingga 2034; sekitar 11 proyek kecil-menengah sedang dibangun.",
+      "en": "Targets 6,529 MW of added PLTG and PLTMG by 2034; about 11 small-to-medium projects are under construction."
+     },
+     "sumber_id": "kontan-6529",
+     "tingkat_bukti": "media"
+    },
+    {
+     "teks": {
+      "id": "Pembeli tunggal listrik Jawa-1 lewat kontrak 25 tahun.",
+      "en": "Sole buyer of Jawa-1 power under a 25-year contract."
+     },
+     "sumber_id": "baird-jawa1",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "nama": "PLN Energi Primer Indonesia",
+   "org_id": "en_9d908c0d85",
+   "peran": [
+    "pemasok_lng",
+    "pengembang"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Memimpin gasifikasi PLTD (20 lokasi, 2.278 MW) dan mini-LNG Sulawesi-Maluku; menggantikan rencana awal yang dipimpin Pertamina.",
+      "en": "Leads diesel-plant gasification (20 sites, 2,278 MW) and the Sulawesi-Maluku mini-LNG; replaced an earlier Pertamina-led plan."
+     },
+     "sumber_id": "petromindo-gasif",
+     "tingkat_bukti": "media"
+    },
+    {
+     "teks": {
+      "id": "Menerima sekitar 60 kargo LNG jangka panjang per tahun dari kebutuhan 84.",
+      "en": "Receives about 60 long-term LNG cargoes a year against a need of 84."
+     },
+     "sumber_id": "pgj-minilng",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "nama": "PLN Indonesia Power",
+   "org_id": "p_5a2e7d0c63",
+   "peran": [
+    "operator"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Menguji co-firing hidrogen di PLTDG Pesanggaran (2% sampai 23%).",
+      "en": "Tested hydrogen co-firing at Pesanggaran PLTDG (2% to 23%)."
+     },
+     "sumber_id": "jawapos-h2",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "nama": "PLN Nusantara Power",
+   "org_id": "p_ff7a390a42",
+   "peran": [
+    "operator"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "MoU dengan MHI untuk dua studi co-firing hidrogen, amonia, dan biomassa (PLTG Muara Karang).",
+      "en": "MoU with MHI for two co-firing studies on hydrogen, ammonia and biomass (Muara Karang PLTG)."
+     },
+     "sumber_id": "ifrf-mhi-mk",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ]
+  },
+  {
+   "nama": "Pertamina NRE",
+   "org_id": "p_10e0dde689",
+   "peran": [
+    "pengembang"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Memegang 40% PT Jawa Satu Power, pemilik PLTGU Jawa-1 (1.760 MW).",
+      "en": "Holds 40% of PT Jawa Satu Power, owner of the Jawa-1 PLTGU (1,760 MW)."
+     },
+     "sumber_id": "tenggara-jawa1",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ]
+  },
+  {
+   "nama": "Marubeni",
+   "org_id": "p_4322497a63",
+   "peran": [
+    "pengembang"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Memegang 40% PT Jawa Satu Power; Sojitz memegang 20%.",
+      "en": "Holds 40% of PT Jawa Satu Power; Sojitz holds 20%."
+     },
+     "sumber_id": "tenggara-jawa1",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ]
+  },
+  {
+   "nama": "GE Vernova (GE Gas Power)",
+   "org_id": "en_489bd14e4e",
+   "peran": [
+    "pemasok_turbin"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Memasok dua turbin gas 9HA.02 untuk Jawa-1; keterlambatan COD dikaitkan sumber anonim dengan masalah turbin (klaim belum terverifikasi).",
+      "en": "Supplied the two 9HA.02 gas turbines for Jawa-1; COD delays were linked to turbine problems by anonymous sources (unverified claim)."
+     },
+     "sumber_id": "tenggara-jawa1",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ]
+  },
+  {
+   "nama": "Mitsubishi Heavy Industries",
+   "org_id": "in_c462bee334",
+   "peran": [
+    "pemasok_turbin"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Mitra studi co-firing hidrogen dengan PLN untuk turbin M701F.",
+      "en": "Partner in hydrogen co-firing studies with PLN for M701F turbines."
+     },
+     "sumber_id": "detik-mhi-h2",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "nama": "Mitsubishi Power",
+   "org_id": "en_8f3dd6037a",
+   "peran": [
+    "pemasok_turbin"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Membidik tiga hingga empat proyek PLTGU di Jawa dalam RUPTL terbaru (hanya judul dan ringkasan dibaca).",
+      "en": "Eyeing three to four combined-cycle projects in Java under the latest RUPTL (headline and summary only)."
+     },
+     "sumber_id": "mitsubishi-bisnis",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ]
+  },
+  {
+   "nama": "PGN dan PGN LNG Indonesia",
+   "org_id": null,
+   "peran": [
+    "pemasok_lng",
+    "operator"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Memproyeksikan defisit gas hingga 513 MMSCFD pada 2035; mengoperasikan FSRU Lampung (240 MMSCFD).",
+      "en": "Projects a gas deficit of up to 513 MMSCFD by 2035; operates the Lampung FSRU (240 MMSCFD)."
+     },
+     "sumber_id": "katadata-pgn",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "nama": "Mitsui OSK Lines",
+   "org_id": null,
+   "peran": [
+    "operator"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Mengoperasikan FSRU Jawa Satu untuk PLTGU Jawa-1.",
+      "en": "Operates the Jawa Satu FSRU for the Jawa-1 PLTGU."
+     },
+     "sumber_id": "baird-jawa1",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "nama": "Pupuk Indonesia",
+   "org_id": "en_5455f1bbf9",
+   "peran": [
+    "pengguna"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Sektor pupuk termasuk tujuh sektor penerima HGBT dan menyerap 12,2% pemanfaatan gas (Juli 2025).",
+      "en": "Fertiliser is one of the seven HGBT sectors and takes 12.2% of gas utilisation (July 2025)."
+     },
+     "sumber_id": "migas-jembatan",
+     "tingkat_bukti": "resmi"
+    }
+   ]
+  },
+  {
+   "nama": "PT Cikarang Listrindo",
+   "org_id": "en_0430061f85",
+   "peran": [
+    "pengguna"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Dikabarkan akan memanfaatkan pipa Cisem II (belum ada konfirmasi kontrak).",
+      "en": "Reported to plan to use the Cisem II pipeline (no contract confirmed)."
+     },
+     "sumber_id": "cnbc-cisem",
+     "tingkat_bukti": "media"
+    }
+   ]
+  },
+  {
+   "nama": "Kementerian ESDM",
+   "org_id": "l_7278e0528a",
+   "peran": [
+    "regulator"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Menerbitkan Kepmen 76.K dan 77.K/2025 (HGBT) dan menetapkan operator Cisem II lewat Kepmen 125.K/2026.",
+      "en": "Issued Decrees 76.K and 77.K/2025 (HGBT) and designated the Cisem II operator via Decree 125.K/2026."
+     },
+     "sumber_id": "esdm-hgbt",
+     "tingkat_bukti": "resmi"
+    }
+   ]
+  },
+  {
+   "nama": "Yayasan Indonesia Cerah (CERAH)",
+   "org_id": "l_a63f1fe4b8",
+   "peran": [
+    "pengkritik"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Menilai tambahan gas RUPTL bisa menambah biaya hingga Rp155,8 triliun per tahun.",
+      "en": "Assesses the RUPTL gas additions could add up to Rp155.8 trillion a year in costs."
+     },
+     "sumber_id": "ibp-cerah",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ]
+  },
+  {
+   "nama": "IEEFA",
+   "org_id": null,
+   "peran": [
+    "pengkritik"
+   ],
+   "fakta": [
+    {
+     "teks": {
+      "id": "Menilai ekspansi gas RUPTL berisiko membebani negara hingga US$60 miliar.",
+      "en": "Assesses the RUPTL gas expansion could burden the state with up to US$60 billion."
+     },
+     "sumber_id": "ibp-ieefa",
+     "tingkat_bukti": "via-pihak-ketiga"
+    }
+   ]
+  }
+ ],
+ "kebijakan": {
+  "regulasi_ids": [
+   "perpres-5-2006",
+   "perpres-22-2017",
+   "pp-14-2012",
+   "perpres-89-2025",
+   "perpres-110-2025",
+   "perpres-14-2024"
+  ],
+  "baru": [
+   {
+    "k": "perpres121",
+    "nomor": "Perpres 121/2020",
+    "teks": {
+     "id": "Dasar penetapan harga gas bumi tertentu (HGBT).",
+     "en": "Basis for setting the specified natural gas price (HGBT)."
+    },
+    "tahun": 2020,
+    "sumber_id": "esdm-hgbt",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "kepmen91",
+    "nomor": "Kepmen ESDM 91.K/MG.01/MEM.M/2023",
+    "teks": {
+     "id": "Pengguna dan harga gas bumi tertentu; diubah kedua oleh Kepmen 76.K/2025.",
+     "en": "Specified gas users and prices; amended a second time by Decree 76.K/2025."
+    },
+    "tahun": 2023,
+    "sumber_id": "esdm-hgbt",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "kepmen76",
+    "nomor": "Kepmen ESDM 76.K/MG.01/MEM.M/2025",
+    "teks": {
+     "id": "Perubahan kedua: US$7 bahan bakar, US$6,5 bahan baku, tujuh sektor.",
+     "en": "Second amendment: US$7 fuel, US$6.5 feedstock, seven sectors."
+    },
+    "tahun": 2025,
+    "sumber_id": "esdm-hgbt",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "kepmen77",
+    "nomor": "Kepmen ESDM 77.K/MG.01/MEM.M/2025",
+    "teks": {
+     "id": "Pengguna dan harga HGBT di bidang penyediaan tenaga listrik untuk kepentingan umum.",
+     "en": "Users and HGBT prices in public electricity supply."
+    },
+    "tahun": 2025,
+    "sumber_id": "esdm-hgbt",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "ruptl",
+    "nomor": "RUPTL PLN 2025-2034",
+    "teks": {
+     "id": "Rencana usaha penyediaan tenaga listrik periode 2025-2034 yang diumumkan Menteri ESDM; memuat tambahan gas sekitar 10,3 GW menurut kutipan.",
+     "en": "The 2025-2034 electricity supply business plan announced by the Minister of ESDM; contains about 10.3 GW of added gas by quoted figures."
+    },
+    "tahun": 2025,
+    "sumber_id": "hukumonline-ruptl",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "kepmen125",
+    "nomor": "Kepmen ESDM 125.K/MG.01/MEM.M/2026",
+    "teks": {
+     "id": "Menetapkan LEMIGAS sebagai operator pipa Cisem II (menurut CNBC Indonesia).",
+     "en": "Designates LEMIGAS as operator of the Cisem II pipeline (per CNBC Indonesia)."
+    },
+    "tahun": 2026,
+    "sumber_id": "cnbc-cisem",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "alokasi",
+    "nomor": "Kebijakan alokasi gas bumi",
+    "teks": {
+     "id": "Prioritas pemanfaatan domestik; ekspor bila ada kelebihan. Nomor Permen tidak tercantum di sumber.",
+     "en": "Domestic utilisation priority; exports when there is surplus. The regulation number is not given in the source."
+    },
+    "tahun": 2011,
+    "sumber_id": "migas-alokasi",
+    "tingkat_bukti": "resmi"
+   }
+  ]
+ },
+ "isu": {
+  "isu_ids": [
+   "oversupply-take-or-pay",
+   "subsidi-tarif-listrik",
+   "jetp-cipp",
+   "karbon-pajak-bursa"
+  ],
+  "baru": [
+   {
+    "k": "lock_in",
+    "status": "aktif",
+    "tingkat": "nasional",
+    "judul": {
+     "id": "Risiko keterkungkungan dan aset terdampar pembangkit gas",
+     "en": "Gas power lock-in and stranded-asset risk"
+    },
+    "ringkas": {
+     "id": "IEEFA, CERAH, dan Climate Action Tracker menilai tambahan gas RUPTL 2025-2034 berisiko membebani keuangan negara dan mengunci sistem pada bahan bakar fosil, sementara pembangkit gas yang ada hanya terpakai sekitar 30%. Pemerintah memandang gas sebagai jembatan transisi.",
+     "en": "IEEFA, CERAH and Climate Action Tracker judge the RUPTL 2025-2034 gas additions a risk to public finances and a lock-in to fossil fuel, while existing gas plants ran at about 30%. The government sees gas as a transition bridge."
+    },
+    "sumber_id": "ibp-ieefa",
+    "tingkat_bukti": "via-pihak-ketiga"
+   },
+   {
+    "k": "defisit",
+    "status": "aktif",
+    "tingkat": "nasional",
+    "judul": {
+     "id": "Defisit pasokan gas regional hingga 2035",
+     "en": "Regional gas supply deficit through 2035"
+    },
+    "ringkas": {
+     "id": "PGN memproyeksikan defisit 177 MMSCFD pada 2025 naik hingga 534 MMSCFD pada 2034, terutama Sumatra dan Jawa. Menteri ESDM menilai defisit berasal dari konsumsi domestik yang tidak terhitung penuh dan memperkirakan lifting naik pada 2026-2027.",
+     "en": "PGN projects a deficit of 177 MMSCFD in 2025 rising to 534 MMSCFD in 2034, mainly Sumatra and Java. The Minister of ESDM attributes it to domestic consumption not fully counted and expects lifting to rise in 2026-2027."
+    },
+    "sumber_id": "detik-defisit",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "jawa1",
+    "status": "mereda",
+    "tingkat": "nasional",
+    "judul": {
+     "id": "Jawa-1: COD meleset, klaim masalah turbin dan pipa",
+     "en": "Jawa-1: COD slipped, claimed turbine and pipeline problems"
+    },
+    "ringkas": {
+     "id": "COD Desember 2021 dan akhir 2022 terlewat; laporan Tenggara 2023 mengutip sumber anonim soal kegagalan first-fire turbin dan pipa FSRU yang terangkat. Klaim ini belum terverifikasi independen; pembangkit dilaporkan siap beroperasi penuh pada 2024.",
+     "en": "The December 2021 and end-2022 CODs were missed; a 2023 Tenggara report cites anonymous sources on first-fire failures and a floated FSRU pipeline. These claims are not independently verified; the plant was reported ready for full operation in 2024."
+    },
+    "sumber_id": "tenggara-jawa1",
+    "tingkat_bukti": "via-pihak-ketiga",
+    "sumber_id2": "pertamina-jawa1"
+   },
+   {
+    "k": "hgbt",
+    "status": "berlaku",
+    "tingkat": "nasional",
+    "judul": {
+     "id": "HGBT naik dari rentang lama ke US$7 dan pasokan belum penuh",
+     "en": "HGBT price moves to US$7 and supply is not yet full"
+    },
+    "ringkas": {
+     "id": "Skema 2025 menetapkan US$7 (bahan bakar) dan US$6,5 (bahan baku) dan mengeluarkan sebagian pengguna lama; media memberitakan pasokan HGBT baru terpenuhi pada 2027.",
+     "en": "The 2025 scheme sets US$7 (fuel) and US$6.5 (feedstock) and drops some earlier users; media report HGBT supply will be met only in 2027."
+    },
+    "sumber_id": "esdm-hgbt",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "minilng",
+    "status": "aktif",
+    "tingkat": "nasional",
+    "judul": {
+     "id": "Keekonomian rantai LNG skala kecil dan utilisasi infrastruktur",
+     "en": "Small-scale LNG chain economics and infrastructure utilisation"
+    },
+    "ringkas": {
+     "id": "Biaya rantai pasok LNG skala kecil diperkirakan 30-40% harga serah; risiko termasuk infrastruktur kurang terpakai bila permintaan listrik lemah atau pasokan tidak stabil. Program yang dulu dipimpin Pertamina tersendat soal risiko harga LNG.",
+     "en": "Small-scale LNG supply-chain cost is estimated at 30-40% of delivered price; risks include underused infrastructure if power demand is weak or supply unsteady. The earlier Pertamina-led programme stalled over LNG price risk."
+    },
+    "sumber_id": "pgj-minilng",
+    "tingkat_bukti": "media"
+   }
+  ]
+ },
+ "celah": [
+  "Daftar proyek PLTG, PLTMG, dan PLTGU RUPTL 2025-2034 per nama, lokasi, dan tahun COD (lampiran dokumen) belum terbaca; hanya angka agregat dan empat proyek bernama (Jawa-1, Riau Peaker, Nunukan 2, Ambon 2) yang bersumber.",
+  "Angka 10,3 GW (IEEFA), 10,5 GW (kutipan), dan 6,529 GW (PLN, PLTG+PLTMG) belum dicocokkan dengan dokumen RUPTL asli.",
+  "Kontrak jual beli gas pembangkit (harga, volume, take-or-pay) tidak ditemukan di sumber publik; yang tercatat hanya kontrak listrik 25 tahun Jawa-1 dan angka kargo PLN EPI.",
+  "Kapasitas FSRU Jawa Satu, terminal Benoa, dan FSRU Jawa Tengah (Cilacap) tidak ditemukan dalam sumber yang dapat dibuka; status terkini Nusantara Regas Satu dan Arun juga belum diverifikasi.",
+  "Panjang total jaringan pipa transmisi dan distribusi nasional serta status ruas Sumatra lain tidak ditemukan; hanya Cisem II, Dumai-Sei Mangkei, dan pipa FSRU Jawa-1.",
+  "Dokumen resmi Neraca Gas Bumi 2025-2034 tidak ditemukan; yang dipakai proyeksi PGN dan pernyataan Menteri ESDM. Situs Bisnis.com menolak akses otomatis (403) sehingga sejumlah sumbernya hanya terbaca judulnya.",
+  "Status hukum DMO gas formal (nomor dan tahun Permen) tidak terverifikasi.",
+  "Hasil uji co-firing hidrogen di PLTGU Priok dan PLTG Muara Karang tidak ditemukan; satu-satunya uji terdokumentasi di PLTDG Pesanggaran, dengan asal hidrogen tidak disebut.",
+  "Emisi metana rantai pasok gas Indonesia tidak ditemukan dalam sumber yang boleh dibaca, sehingga perbandingan emisi daur hidup gas dengan batubara tidak ditampilkan."
+ ]
+}

@@ -1,6 +1,7 @@
 /* /saya: dasbor anggota "METI untuk saya" (PLAN-UTAMA G3). Tanpa rute server baru: memakai /api/profil/saya, /api/ikuti (+ /ringkasan, /lihat),
    /api/kerja, /api/konsultasi dan potret /data/*.json. Logika cocok murni ada di /saya_cocok.js (diuji tests/saya.test.mjs).
    INP: klik tab/halaman = chrome urgent sinkron (aria-selected, nomor), isi berat dirender sesudahnya lewat nanti(). */
+import { rumahTopik } from "/inti/rumah_tek.js";
 import { t, tanggal, tanggalDariUnix, angka } from "/i18n.js";
 import { api, esc, ikon, nanti } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
@@ -48,7 +49,7 @@ function entitas(jenis, ref) {
   if (jenis === "organisasi") { const o = ORG.get(ref); return { nama: o?.nama || ref, href: "/o/" + encodeURIComponent(ref), lead: lead("gedung", o ? logoOrg(o.id, o.nama, o.logo)[0] : "") }; }
   if (jenis === "proyek") { const p = PROY.get(ref); return { nama: p ? namaProyek(p) : ref, href: "/p/" + encodeURIComponent(ref), lead: `<span class="sy-lead">${ikonTek(p?.teknologi)}</span>` }; }
   if (jenis === "provinsi") { const n = D.provNama.get(ref); return { nama: n || ref, href: "/wilayah/" + encodeURIComponent(ref), lead: lead("peta", `/img/provinsi/${encodeURIComponent(ref)}.png`) }; }
-  if (jenis === "topik") return { nama: labelTopik(ref), href: "/topik?id=" + encodeURIComponent(ref), lead: `<span class="sy-lead">${ikonTek(C.SEKTOR_TOPIK[ref] || ref)}</span>` };
+  if (jenis === "topik") return { nama: labelTopik(ref), href: rumahTopik(ref), lead: `<span class="sy-lead">${ikonTek(C.SEKTOR_TOPIK[ref] || ref)}</span>` };
   if (ref.startsWith("kons:")) { const k = KONS.get(ref.slice(5)); return { nama: k?.judul || ref.slice(5), href: "/regulasi?kd=" + encodeURIComponent(ref.slice(5)) + "#konsultasi", lead: lead("palu") }; }
   const r = REG.get(ref);
   return { nama: r?.judul || ref, href: "/regulasi?id=" + encodeURIComponent(ref), lead: lead("regulasi") };
@@ -140,7 +141,7 @@ function seksiUntuk() {
 /* ---------- seksi: saran ikuti ---------- */
 function seksiSaran() {
   const org = D.saranOrg.map((r) => `<li class="sy-ent">${lead("gedung", logoOrg(r.x.id, r.x.nama, r.x.logo)[0])}<span class="sy-ent-nama"><a href="/o/${encodeURIComponent(r.x.id)}">${esc(r.x.nama)}</a><span class="sy-meta">${r.x.kategori?.label ? pil("gedung", r.x.kategori.label, warna(r.x.kategori.kode)) : ""}${r.bersama.slice(0, 2).map(pilTek).join("")}</span></span>${tombolIkuti({ jenis: "organisasi", id: r.x.id, nama: r.x.nama })}</li>`).join("");
-  const tpk = D.saranTopik.map((id) => `<li class="sy-ent"><span class="sy-lead">${ikonTek(C.SEKTOR_TOPIK[id] || id)}</span><span class="sy-ent-nama"><a href="/topik?id=${encodeURIComponent(id)}">${esc(labelTopik(id))}</a><span class="sy-meta">${pilTek(C.SEKTOR_TOPIK[id] || id)}</span></span>${tombolIkuti({ jenis: "topik", id, nama: labelTopik(id) })}</li>`).join("");
+  const tpk = D.saranTopik.map((id) => `<li class="sy-ent"><span class="sy-lead">${ikonTek(C.SEKTOR_TOPIK[id] || id)}</span><span class="sy-ent-nama"><a href="${esc(rumahTopik(id))}">${esc(labelTopik(id))}</a><span class="sy-meta">${pilTek(C.SEKTOR_TOPIK[id] || id)}</span></span>${tombolIkuti({ jenis: "topik", id, nama: labelTopik(id) })}</li>`).join("");
   const isi = org || tpk
     ? `<div class="sy-dua">${org ? `<div><h3 class="sy-sub">${ikon("gedung", 18)}<span>${esc(t("sy2.saran.org"))}</span></h3><ul class="sy-daftar">${org}</ul></div>` : ""}${tpk ? `<div><h3 class="sy-sub">${ikon("topik", 18)}<span>${esc(t("sy2.saran.topik"))}</span></h3><ul class="sy-daftar">${tpk}</ul></div>` : ""}</div>`
     : kosong("orang", "sy2.saran.kosong", "/profil-saya", "sy2.lengkapi");

@@ -182,7 +182,7 @@ async function bagGender() {
 
 /* ---------- bawah: metode, celah, tautan ---------- */
 function bagBawah() {
-  const tautan = [["/desa-energi", "tek-listrik", "akn.t.desa"], ["/kerja", "koper", "akn.t.kerja"], ["/topik?id=kendaraan-listrik", "petir", "akn.t.ev"], ["/topik?id=efisiensi", "buku", "akn.t.efis"], ["/peta", "peta", "akn.t.peta"], ["/regulasi#hukum", "palu", "akn.t.hukum"], ["/data", "csv", "akn.t.data"]];
+  const tautan = [["/desa-energi", "tek-listrik", "akn.t.desa"], ["/kerja", "koper", "akn.t.kerja"], ["/baterai-ev?tab=dasar&topik=kendaraan-listrik", "petir", "akn.t.ev"], ["/topik?id=efisiensi", "buku", "akn.t.efis"], ["/peta", "peta", "akn.t.peta"], ["/regulasi#hukum", "palu", "akn.t.hukum"], ["/data", "csv", "akn.t.data"]];
   $("pnBawah").innerHTML =
     seksi({ id: "ak-metode", ik: "metode", topik: t("akn.m.t"), judul: t("akn.m.j"), turunan: false, sub: t("akn.m.s"), isi: `${narasi(L(d.metode))}<ul class="akn-celah">${d.celah.map((c) => `<li>${ikon("info", 18)}<span>${esc(L(c))}</span></li>`).join("")}</ul>` }) +
     seksi({ id: "ak-terkait", ik: "tautan", topik: t("akn.r.t"), judul: t("akn.r.j"), turunan: false, sub: t("akn.r.s"), isi: `<div class="akn-terkait">${tautan.map(([h, ik, k]) => `<a class="jm-tbl" href="${h}">${ikon(ik, 16)}<span>${esc(t(k))}</span></a>`).join("")}</div>` });

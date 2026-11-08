@@ -1,5 +1,6 @@
 /* /diikuti: daftar yang diikuti + "Ringkasan minggu ini" (7 hari: ajuan lembaga dan koreksi yang disetujui, berita, regulasi baru).
    Data: /api/ikuti, /api/ikuti/ringkasan; nama dari /data/*.json. Membuka halaman ini menandai ringkasan sudah dilihat (lonceng turun). */
+import { rumahTopik } from "/inti/rumah_tek.js";
 import { t, tanggal, tanggalDariUnix } from "/i18n.js";
 import { api, esc, ikon, galatTeks, kosongHtml, pesanHtml } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
@@ -12,7 +13,7 @@ await mulaiHalaman();
 const akar = document.getElementById("isi");
 const IK = { proyek: "proyek", organisasi: "direktori", provinsi: "wilayah", regulasi: "regulasi", tender: "peluang" };
 const BERKAS = { proyek: "proyek", organisasi: "organisasi", regulasi: "regulasi" };
-const tautan = (jenis, ref) => (jenis === "proyek" ? "/p/" : jenis === "organisasi" ? "/o/" : jenis === "provinsi" ? "/wilayah/" : jenis === "regulasi" ? "/regulasi?id=" : jenis === "topik" ? "/topik?id=" : "") + (jenis === "tender" ? "/proyek#tender" : encodeURIComponent(ref));
+const tautan = (jenis, ref) => jenis === "topik" ? rumahTopik(ref) : (jenis === "proyek" ? "/p/" : jenis === "organisasi" ? "/o/" : jenis === "provinsi" ? "/wilayah/" : jenis === "regulasi" ? "/regulasi?id=" : jenis === "topik" ? "/topik?id=" : "") + (jenis === "tender" ? "/proyek#tender" : encodeURIComponent(ref));
 const muatData = (n) => fetch(`/data/${n}.json`).then((r) => r.json()).then((d) => new Map(d.baris.map((x) => [x.id, x]))).catch(() => new Map());
 
 let NAMA = {};

@@ -1,7 +1,6 @@
 /* /ringkasan: ringkasan eksekutif nasional, satu halaman siap cetak, dari /data/ringkasan_eksekutif.json (scripts/pipa/ringkasan_eksekutif.mjs).
    Delapan angka kunci berlabel bukti dan sumber, perubahan bulan ini, lima temuan bernomor, peta mini provinsi; cetak/PDF dan bagikan.
    Semua teks dari kamus (re2.*). Angka tanpa sumber tidak tampil. INP: cetak hanya menandai kelas lalu memanggil print. */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import "/inti/tip_grafik.js";
 import { t, angka, tanggal } from "/i18n.js";
@@ -75,7 +74,7 @@ function petaHtml() {
 
 function gambar() {
   const d = S.d, n = d.angka.length;
-  khUbin("ubin", [
+  khUbin("reUbin", [
     { ikon: "grafik", nilai: fmt(n), label: t("re2.u.angka") },
     { ikon: "kajian", nilai: fmt(d.temuan.length), label: t("re2.u.temuan") },
     { ikon: "info", nilai: fmt(new Set(d.angka.map((a) => a.sumber.judul)).size), label: t("re2.u.sumber") },
@@ -85,10 +84,10 @@ function gambar() {
   const temuanEx = exHtml({ id: "re-temuan", ikon: "kajian", topik: t("re2.ey.temuan"), judulHtml: hlHtml("re2.j.temuan", fmt(d.temuan.length)), subHtml: esc(t("re2.sub.temuan")), aksiHtml: aksiHtml({ png: true, pdf: false, bagi: false }),
     isiHtml: `<ol class="re-temuan">${d.temuan.map((f, i) => `<li class="re-t"><span class="re-t-no">${i + 1}</span><span class="re-t-ik">${ikon(f.ikon, 18)}</span>${temuanHtml(f)}</li>`).join("")}</ol>` });
   const kop = `<div class="re-kop"><img src="/img/logo-meti-tanda.png" width="44" height="42" alt=""><div><b>${esc(t("jm.merek"))}</b><span>${esc(t("re2.judul"))}</span></div><span class="re-kop-tgl">${esc(tanggal(d.dibangun_pada))}</span></div>`;
-  $("isi").innerHTML = `<div class="re-lembar" id="reLembar">${kop}${angkaEx}<div class="re-dua">${temuanEx}${petaHtml()}</div>${berubahHtml(d.perubahan)}
+  $("reIsi").innerHTML = `<div class="re-lembar" id="reLembar">${kop}${angkaEx}<div class="re-dua">${temuanEx}${petaHtml()}</div>${berubahHtml(d.perubahan)}
     <div class="re-sc"><h2>${esc(t("re2.sumber_cetak"))}</h2><ol>${d.angka.map((a) => `<li>${sumberIsi(a)}</li>`).join("")}</ol></div>
     <p class="re-kaki">${esc(t("re2.kaki", { tanggal: tanggal(d.dibangun_pada), host: location.host }))}</p></div>`;
-  $("reAksi").innerHTML = `<button type="button" class="jm-tbl jm-tbl-utama" data-re="cetak">${ikon("pdf", 18)}<span>${esc(t("re2.pdf"))}</span></button><button type="button" class="jm-tbl" data-re="cetak">${ikon("tabel", 18)}<span>${esc(t("re2.cetak"))}</span></button>${bagikanHtml({ url: "/ringkasan", judul: t("re2.judul"), lengkap: true })}`;
+  $("reAksi").innerHTML = `<button type="button" class="jm-tbl jm-tbl-utama" data-re="cetak">${ikon("pdf", 18)}<span>${esc(t("re2.pdf"))}</span></button><button type="button" class="jm-tbl" data-re="cetak">${ikon("tabel", 18)}<span>${esc(t("re2.cetak"))}</span></button>${bagikanHtml({ url: "/insight#ringkasan", judul: t("re2.judul"), lengkap: true })}`;
 }
 
 function cetak() {
@@ -101,11 +100,10 @@ function cetak() {
 }
 
 async function mulai() {
-  await mulaiHalaman();
-  $("isi").innerHTML = hantuHtml(6);
+  $("reIsi").innerHTML = hantuHtml(6);
   try {
     [S.d, S.geo] = await Promise.all([muatData("ringkasan_eksekutif.json"), fetch("/geo/provinsi.json").then((r) => (r.ok ? r.json() : null)).catch(() => null)]);
-  } catch (e) { return tampilGalat($("isi"), mulai); }
+  } catch (e) { return tampilGalat($("reIsi"), mulai); }
   document.title = `${t("re2.judul")} | ${t("jm.merek")}`;
   gambar();
   $("reAksi").addEventListener("click", (e) => { if (e.target.closest("[data-re=cetak]")) cetak(); });

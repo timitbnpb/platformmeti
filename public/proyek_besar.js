@@ -1,7 +1,6 @@
 /* /proyek-besar: proyek >= 100 MW dipisah menurut kekuatan bukti. Data = /data/proyek_besar.json (scripts/pipa/proyek_besar.mjs). */
 import { t, tanggal } from "/i18n.js";
 import { esc, galatHtml, ikon } from "/inti/umum.js";
-import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { exHtml, sumberHtml } from "/inti/komponen.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
@@ -10,7 +9,6 @@ import { siapTautan } from "/inti/tautan.js";
 import { num, labTek, hl, estPil, muatPotret, selProv, selNamaProyek, selPemilik, selSumber, pasangTabel } from "/proyek_besar_umum.js";
 
 const $ = (id) => document.getElementById(id);
-await mulaiHalaman();
 siapTautan("org");
 let D;
 try { D = await muatPotret(); } catch (e) {

@@ -15,7 +15,7 @@ function kartuProyek(u) {
     <dl class="ang-prof">${baris(t("ang.pr.p.mw"), `<b>${esc(p?.mw != null ? num(p.mw, 0) + " MW" : "-")}</b>`)}${baris(t("ang.pr.p.turbin"), esc(turbin))}${u.menara_m ? baris(t("ang.pr.p.dimensi"), esc(t("ang.pr.dim", { m: u.menara_m, b: u.bilah_m }))) : ""}${prof.map((x) => baris(tx(x.label), esc(typeof x.nilai === "object" ? tx(x.nilai) : String(x.nilai) + (x.satuan ? " " + tx(x.satuan) : "")))).join("")}</dl>
     <div>${u.pemasok_org ? orgLogoSel(u.pemasok_org) : ""}</div>
     <div class="rg3-ab">${p ? bukti({ ruptl: "resmi", gem: "via-pihak-ketiga" }[p.status_sumber?.jenis] || "media", { sumber: p.status_sumber?.jenis || "", tanggal: p.status_sumber?.tanggal || "" }) : ""}${u.sumber_ids.slice(0, 2).map((s) => buktiS(s)).join("")}</div>
-    <p class="jm-bantu"><a class="rg3-tautan" href="/topik?id=bayu#bab-${u.kasus === "tanah-laut" ? 40 : 39}">${esc(t("ang.pr.kasus"))}</a> ${p ? `<a class="rg3-tautan" href="/p/${esc(p.id)}">${esc(t("ang.pr.profil"))}</a>` : ""}</p></article>`;
+    <p class="jm-bantu"><a class="rg3-tautan" href="/angin?tab=dasar#bab-${u.kasus === "tanah-laut" ? 40 : 39}">${esc(t("ang.pr.kasus"))}</a> ${p ? `<a class="rg3-tautan" href="/p/${esc(p.id)}">${esc(t("ang.pr.profil"))}</a>` : ""}</p></article>`;
 }
 function tabProyek() {
   const el = document.getElementById("ang-pr-tab"); if (!el) return;

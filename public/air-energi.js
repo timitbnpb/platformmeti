@@ -1,6 +1,7 @@
 /* /air-energi: nexus air dan energi. Data /data/air_energi.json + /data/geo/das_hidro.geojson (scripts/pipa/air_energi.mjs).
    Pembangkit hidro -> sub-DAS HydroBASINS -> skor kerentanan air (bobot Hipotesis); tren produksi hidro vs ONI vs hujan; kebutuhan air pembangkit lain.
    INP: saringan menyalakan chrome seketika, peta, grafik, tabel menyusul lewat nanti(). */
+import { rumahTopik } from "/inti/rumah_tek.js";
 import { t, angka } from "/i18n.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
@@ -147,7 +148,7 @@ function metodeHtml() {
   return `<ol class="ae2-metode">${langkah.map(([k, kunci], n) => `<li><span class="ae2-m-no">${svg(IKK[k])}</span><div><b>${esc(t(kunci + ".j"))}</b><p>${esc(t(kunci))}</p></div></li>`).join("")}</ol>
     <div class="ae2-m-aksi"><a class="jm-tbl jm-tbl-kecil" href="/metode">${ikon("metode", 16)}<span>${esc(t("ae2.metode.tautan"))}</span></a>
     <a class="jm-tbl jm-tbl-kecil ae2-tp" href="/hidro">${ikon("hidro", 16)}<span>${esc(t("hdr.dari_air"))}</span></a>
-    ${[["hidro", "ae2.tp.hidro"], ["panas-bumi", "ae2.tp.panas"], ["hidrogen", "ae2.tp.hidrogen"]].map(([id, kunci]) => `<a class="jm-tbl jm-tbl-kecil ae2-tp" href="/topik?id=${id}">${pilTek(id)}<span>${esc(t(kunci))}</span></a>`).join("")}</div>`;
+    ${[["hidro", "ae2.tp.hidro"], ["panas-bumi", "ae2.tp.panas"], ["hidrogen", "ae2.tp.hidrogen"]].map(([id, kunci]) => `<a class="jm-tbl jm-tbl-kecil ae2-tp" href="${esc(rumahTopik(id))}">${pilTek(id)}<span>${esc(t(kunci))}</span></a>`).join("")}</div>`;
 }
 function judulEx(id, j, s) { const ex = $(id); if (!ex) return; ex.querySelector(".jm-ex-j").innerHTML = j; ex.querySelector(".jm-ex-sub").innerHTML = s; }
 function gambarKepala() {

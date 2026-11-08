@@ -55,12 +55,12 @@ test("CSS surya dan HTML: tanpa hex, tanpa px pada font, tanpa style=", () => {
   for (const f of ["surya", "sy_umum", "sy_tab", ...Object.keys(TAB).map((k) => "sy_" + k), "sy_program"]) assert.doesNotMatch(baca(`public/${f}.js`), /\sstyle="|\.style\./, f);
 });
 test("tautan dua arah: menu, metode, cari, profil org, program, teknologi, topik, rantai global, ikon unik", () => {
-  assert.match(baca("public/inti/kepala.js"), /href: "\/surya"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/surya"/); /* menu: modul tak lagi di menu, rumahnya hub /teknologi (rute-gabung.test.mjs) */
   assert.match(baca("public/metode_halaman.js"), /id: "surya"/);
   assert.match(baca("scripts/pipa/indeks_cari.mjs"), /\["\/surya", "sur\.nav"\]/);
   assert.match(baca("public/tertaut.js"), /\/surya/);
   assert.match(baca("public/program.js"), /\/surya/);
-  assert.match(baca("public/teknologi.js"), /"\/surya"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/surya"/);
   assert.match(baca("public/topik_tampil.js"), /href="\/surya"/);
   assert.match(baca("public/rantai-global.js"), /\/surya/);
   assert.match(baca("public/img/ikon.svg"), /id="i-panel-surya"/);

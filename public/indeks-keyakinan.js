@@ -15,7 +15,7 @@ await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
 const IK_BUTIR = { kondisi: "insight", pipeline: "proyek", pembiayaan: "kartu", perizinan: "lencana", harga: "tag", regulasi: "regulasi", investasi: "transaksi", tenaga: "koper" };
-const TAUT_BUTIR = { kondisi: "/insight", pipeline: "/pelacak-proyek", pembiayaan: "/keuangan-hijau", perizinan: "/perizinan", harga: "/biaya-listrik", regulasi: "/regulasi", investasi: "/transaksi", tenaga: "/kerja" };
+const TAUT_BUTIR = { kondisi: "/insight", pipeline: "/proyek#terpadu", pembiayaan: "/keuangan-hijau", perizinan: "/perizinan", harga: "/biaya-listrik", regulasi: "/regulasi", investasi: "/transaksi", tenaga: "/kerja" };
 const SKALA = [[1, "silang"], [2, "peringatan"], [3, "info"], [4, "centang"], [5, "bintang"]]; // ikon per opsi
 const hip = () => buktiHtml("hipotesis");
 const ex = (o) => exHtml({ tingkat: "h2", ...o });

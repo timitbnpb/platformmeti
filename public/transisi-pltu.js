@@ -7,8 +7,9 @@ import { B, muat, t, esc, ikon, num, urlGet, kosongTab, bukti, juta } from "/tpl
 
 const TAB = [
   { k: "tambang", ikon: "beliung" }, { k: "armada", ikon: "industri" }, { k: "emisi", ikon: "karbon" }, { k: "pensiun", ikon: "linimasa" }, { k: "ganti", ikon: "tek-surya" },
-  { k: "cofiring", ikon: "tek-bio" }, { k: "pekerja", ikon: "orang" }, { k: "dana", ikon: "kartu" }, { k: "kebijakan", ikon: "regulasi" }, { k: "isu", ikon: "peringatan" },
-].map((d) => ({ ...d, mod: "/tpl_" + d.k + ".js" }));
+  { k: "cofiring", ikon: "tek-bio" }, { k: "pekerja", ikon: "orang" }, { k: "dana", ikon: "kartu" }, { k: "kebijakan", ikon: "regulasi" }, { k: "isu", ikon: "peringatan" }, { k: "enb", ikon: "tek-panas" },
+  { k: "dasar", ikon: "buku" },
+].map((d) => ({ ...d, mod: d.k === "ringkasan" || d.k === "dasar" ? "/tek_" + d.k + ".js?k=" + ({ ringkasan: "", dasar: "transisi-berkeadilan" })[d.k] : "/tpl_" + d.k + ".js" }));
 const siap = new Set(), qsTab = {};
 let kini = "";
 const $ = (id) => document.getElementById(id);

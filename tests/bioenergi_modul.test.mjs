@@ -28,11 +28,11 @@ test("CSS bioenergi: tanpa hex dan tanpa px pada font", () => {
   assert.doesNotMatch(c, /font[^;{}]*\d+px/);
 });
 test("tautan dua arah: menu, metode, cari, profil org, wilayah, teknologi, topik, rantai global", () => {
-  assert.match(baca("public/inti/kepala.js"), /href: "\/bioenergi"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/bioenergi"/); /* menu: modul tak lagi di menu, rumahnya hub /teknologi (rute-gabung.test.mjs) */
   assert.match(baca("public/metode_halaman.js"), /id: "bioenergi"/);
   assert.match(baca("scripts/pipa/indeks_cari.mjs"), /\["\/bioenergi", "bn\.nav"\]/);
   assert.match(baca("public/tertaut.js"), /\/bioenergi/);
-  assert.match(baca("public/teknologi.js"), /"\/bioenergi"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/bioenergi"/);
   assert.match(baca("public/topik_tampil.js"), /href="\/bioenergi"/);
   assert.match(baca("public/rantai-global.js"), /\/bioenergi/);
   assert.match(baca("public/img/ikon.svg"), /id="i-bioenergi"/);

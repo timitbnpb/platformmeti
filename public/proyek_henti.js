@@ -1,7 +1,6 @@
 /* /proyek-berhenti: proyek berhenti, batal, atau lewat target COD. Hanya baris bersumber (url) yang masuk. Data = /data/proyek_besar.json. */
 import { t, tanggal } from "/i18n.js";
 import { esc, galatHtml, ikon } from "/inti/umum.js";
-import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { exHtml, sumberHtml } from "/inti/komponen.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
@@ -10,11 +9,10 @@ import { tombolKoreksi } from "/inti/koreksi.js";
 import { num, labTek, hl, estPil, muatPotret, selProv, selNamaProyek, tgl, urlAman, pasangTabel } from "/proyek_besar_umum.js";
 
 const $ = (id) => document.getElementById(id);
-await mulaiHalaman();
 let D;
 try { D = await muatPotret(); } catch (e) {
-  $("pbIsi").innerHTML = galatHtml("jaringan");
-  $("pbIsi").querySelector("[data-aksi=ulang]")?.addEventListener("click", () => location.reload());
+  $("phIsi").innerHTML = galatHtml("jaringan");
+  $("phIsi").querySelector("[data-aksi=ulang]")?.addEventListener("click", () => location.reload());
   throw e;
 }
 const B = D.berhenti, rows = B.baris;
@@ -22,7 +20,7 @@ const mwTotal = rows.reduce((a, r) => a + (r.mw || 0), 0), media = rows.filter((
 const puncak = B.per_tahun.slice().sort((a, b) => b.jumlah - a.jumlah)[0];
 const sumber = sumberHtml(esc(t("ph.sumber", { tgl: tanggal(D.dibangun_pada, { gaya: "panjang" }) })));
 
-khUbin("pbAngka", [
+khUbin("phAngka", [
   { ikon: "proyek", nilai: num(rows.length), label: t("ph.k.total") },
   { ikon: "analisis", nilai: num(mwTotal), satuan: "MW", label: t("ph.k.mw") },
   { ikon: "kalender", nilai: puncak ? String(puncak.tahun) : "-", label: t("ph.k.puncak") },
@@ -38,7 +36,7 @@ const sumberSel = (r) => { const u = urlAman(r.sumber_url); return u ? `<a href=
 const kotak = `<aside class="pb-kotak" aria-labelledby="phJawab"><h2 id="phJawab">${ikon("surel", 18)}<span>${esc(t("ph.jawab.j"))}</span></h2><p>${esc(t("ph.jawab.isi"))}</p><p>${esc(t("ph.jawab.cara"))}</p></aside>`;
 const tahunEx = exHtml({ id: "ph-tahun", ikon: "kalender", topik: t("ph.tahun.ey"), judulHtml: `${hl(num(B.per_tahun.length))} ${esc(t("ph.tahun.j"))}`, subHtml: esc(t("ph.tahun.s")), aksiHtml: aksiHtml({ csv: false }) + sumber, isiHtml: `<div id="phTahun"></div>` });
 const besarEx = exHtml({ id: "ph-besar", ikon: "blokir", topik: t("ph.besar.ey"), judulHtml: `${hl(num(rows.length))} ${esc(t("ph.besar.j"))}`, subHtml: esc(t("ph.besar.s")), aksiHtml: aksiHtml({ csv: true }) + sumber, isiHtml: `<div id="phBesar"></div>` });
-$("pbIsi").innerHTML = kotak + tahunEx + besarEx;
+$("phIsi").innerHTML = kotak + tahunEx + besarEx;
 
 pasangTabel($("phTahun"), [["tahun", "ph.c.tahun", (r) => String(r.tahun), "jm-tengah"], ["jumlah", "pb.c.proyek", (r) => num(r.jumlah), "jm-num"], ["mw", "pj.c.kap", (r) => `${num(r.mw)} <span class="jm-pj-sat">MW</span>`, "jm-num"]],
   B.per_tahun, { k: "tahun", arah: -1, hal: 1, turun: ["tahun", "jumlah", "mw"] });

@@ -49,5 +49,5 @@ export const enbKartu = (b) => {
   if (!b) return "";
   const sm = (B.enb?.sumber || []).find((x) => x.id === b.sumber_ids?.[0]);
   const lin = b.linimasa?.length ? `<ol class="nkl-lin">${b.linimasa.map((l) => `<li><time>${esc(tglTeks(l.tgl))}</time><span>${esc(tx(l.teks))}</span></li>`).join("")}</ol>` : "";
-  return `<article class="nkl-enb"><header><b>${esc(tx(b.nama))}</b>${pil("nkl.st.", b.status)}</header><p>${esc(tx(b.ringkas))}</p>${lin}<div class="nkl-enb-k">${bukti(b.tingkat_bukti, { sumber: sm?.penerbit || "", tanggal: b.tanggal_periksa })}<a class="rg3-tautan" href="/energi-baru">${esc(t("nkl.enb.lihat"))}</a></div></article>`;
+  return `<article class="nkl-enb"><header><b>${esc(tx(b.nama))}</b>${pil("nkl.st.", b.status)}</header><p>${esc(tx(b.ringkas))}</p>${lin}<div class="nkl-enb-k">${bukti(b.tingkat_bukti, { sumber: sm?.penerbit || "", tanggal: b.tanggal_periksa })}<a class="rg3-tautan" href="/transisi-pltu?tab=enb">${esc(t("nkl.enb.lihat"))}</a></div></article>`;
 };

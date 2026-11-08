@@ -1,7 +1,6 @@
 /* /strategi: Kajian strategis EBT Indonesia. Analisis turunan deterministik (bukan AI) dari data yang sudah terkumpul; hitungan di strategi_hitung.js.
    Tiap angka bersumber (ikon info per kepala), tiap turunan berpil EST, kesimpulan berlabel "Analisis METI (Hipotesis)", metode terbuka di bagian akhir.
    Tanpa kalkulator: tidak ada masukan angka dari pengguna. INP: kontrol (urut, halaman, segmen, klik sel) mengubah chrome seketika; isi berat lewat nanti(). */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { t, bahasa, tanggal } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml } from "/inti/umum.js";
 import { exHtml, tabTautan } from "/inti/komponen.js";
@@ -406,7 +405,7 @@ function eMetode() {
 /* ---------- rakit halaman ---------- */
 function ubin() {
   const K = A.kes, ru = K.kapasitas.find((x) => x.id === "ruptl-2034-kapasitas"), b34 = K.bauran.find((x) => x.id === "ruptl-2034"), top = A.peta.top[0];
-  khSisi(".jm-kh", { ubin: [
+  khSisi("#stKh", { ubin: [
     { ikon: "kompas", nilai: n1(ru.kali) + "x", label: t("st.u1") },
     { ikon: "linimasa", nilai: String(b34.tahun_capai ?? "-"), label: t("st.u2", { target: pct(b34.target), tahun: b34.tahun }) },
     { ikon: "peringatan", nilai: n0(A.radar.per.tinggi.n), label: t("st.u3", { total: n0(A.radar.baris.length) }) },
@@ -415,10 +414,10 @@ function ubin() {
 }
 function gambar() {
   bersihTabel();
-  $("jawab").textContent = t("st.lead");
+  $("stJawab").textContent = t("st.lead");
   ubin();
   const nav = [["ringkasan", "kajian"], ["kesenjangan", "kompas"], ["peta", "peta"], ["radar", "peringatan"], ["konsentrasi", "tingkat"], ["uang", "kartu"], ["sinyal", "berita"], ["metode", "metode"]];
-  $("isi").innerHTML = `<nav class="jm-st-nav" aria-label="${esc(t("st.nav"))}">${tabTautan(nav.map(([k, ik]) => ({ href: "#" + k, ikon: ik, label: t("st.n." + k) })))}</nav>
+  $("stIsi").innerHTML = `<nav class="jm-st-nav" aria-label="${esc(t("st.nav"))}">${tabTautan(nav.map(([k, ik]) => ({ href: "#" + k, ikon: ik, label: t("st.n." + k) })))}</nav>
     ${eRingkasan()}
     ${grup("kesenjangan", "kompas", [eBauran(), eKapasitas(), eTek()])}
     ${grup("peta", "peta", [ePeta()])}
@@ -468,15 +467,14 @@ function pasang() {
   }, true);
 }
 async function mulai() {
-  await mulaiHalaman();
-  $("isi").innerHTML = hantuHtml(4);
+  $("stIsi").innerHTML = hantuHtml(4);
   try {
     const nama = { target: "target", ruptl: "ruptl", proyek: "proyek", peluang: "peluang", kapasitas_tren: "kapasitas_tren", pendanaan: "pendanaan", pendanaan_int: "pendanaan_internasional", jetp: "jetp_cipp", keuangan_hijau: "keuangan_hijau", indeks: "indeks", berita: "berita", peristiwa: "peristiwa_ebt", rued: "rued", transisi: "transisi" };
     const hasil = await Promise.all(Object.values(nama).map((n) => muatData(n + ".json")));
     Object.keys(nama).forEach((k, i) => (D[k] = hasil[i]));
     REF = { tahun: Number(D.target.meta.diperbarui.slice(0, 4)) };
     A = H.analisis(D, REF);
-  } catch (e) { tampilGalat($("isi"), mulai); return; }
+  } catch (e) { tampilGalat($("stIsi"), mulai); return; }
   gambar();
   pasang();
   saatBahasa(gambar);

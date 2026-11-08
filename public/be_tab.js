@@ -12,7 +12,8 @@ import { ex, esc } from "/be_umum.js";
 const IKON_PIN = { tambang: "beliung", olah: "pabrik", prekursor: "labu", sel: "baterai", kendaraan: "mobil", pengisian: "colokan", bess: "sistem-listrik", daur: "daur" };
 const pindah = (k) => ex({ id: "bev-bess-ke-neraca", ikon: "banding", topik: t("bev.ey.neraca"), judulHtml: esc(t("bev.j.ke_neraca")), subHtml: esc(t("bev.s.ke_neraca")), isiHtml: `<button type="button" class="jm-tbl" data-pindah="sel">${esc(t("bev.nr.buka"))}</button>` });
 
-export function mulai(el, id) {
+export async function mulai(el, id) {
+  if (id === "ringkasan" || id === "dasar") { await (await import(`/tek_${id}.js?k=penyimpanan`)).mulai(el); return; }
   if (!X.be || !tahapData(id)) { el.innerHTML = kosongTab("bev.kosong_data"); return; }
   const dulu = { tambang: [E.bagianImporKritis()], olah: [E.bagianCaptive()], sel: [bagianNeraca()], kendaraan: [E.bagianPenjualan()], pengisian: [E.bagianSpklu()], bess: [pindah()], daur: [] }[id] || [];
   const stlh = { sel: [E.bagianTkdn("sel"), E.bagianJejak()], bess: [E.bagianTkdn("bess")] }[id] || [];

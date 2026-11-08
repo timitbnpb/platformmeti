@@ -1,5 +1,5 @@
 /* Penjelasan istilah di seluruh situs: pindai teks isi halaman (p, li, td, dd di dalam main) untuk singkatan/istilah dalam /data/istilah_hover.json,
-   bungkus kemunculan PERTAMA per bagian dengan span bergaris titik, popover definisi singkat + "Selengkapnya" ke /istilah#id.
+   bungkus kemunculan PERTAMA per bagian dengan span bergaris titik, popover definisi singkat + "Selengkapnya" ke /panduan#istilah-id.
    Ringan: hanya saat idle, potongan kecil, batas jumlah per halaman, MutationObserver bertahan (throttle). Dimatikan pengguna lewat localStorage "jm.istilah".
    Dimuat dari inti/kepala.js (side effect); data diunduh sesudah halaman tercat dan hanya bila ada teks yang layak dipindai. */
 import { t, bahasa } from "/i18n.js";
@@ -18,7 +18,7 @@ export function aturHover(hidup) {
   try { hidup ? localStorage.removeItem(KUNCI) : localStorage.setItem(KUNCI, "mati"); } catch (e) { /* mode privat */ }
   if (hidup) mulai(); else berhenti();
 }
-const halamanLayak = () => !/^\/(istilah|admin|masuk|aktivasi|ganti-sandi|404)(\/|$|\.)/.test(location.pathname);
+const halamanLayak = () => !/^\/(panduan|admin|masuk|aktivasi|ganti-sandi|404)(\/|$|\.)/.test(location.pathname);
 
 /* ---------- indeks ---------- */
 const lolos = (s) => s.replace(/[.*+?^${}()|[\]\\\/]/g, "\\$&");
@@ -120,7 +120,7 @@ function tampil(el) {
   const rek = D?.d?.[el.dataset.ist]; if (!rek) return;
   clearTimeout(tutup);
   const p = buatPop(), b = bahasa();
-  p.innerHTML = `<p class="jm-ist-n"><b>${esc(rek[0])}</b>${rek[3] ? `<span class="jm-pil jm-pil-ok">${esc(t("is2.h.resmi"))}</span>` : ""}</p><p class="jm-ist-a">${esc(b === "en" ? rek[2] || rek[1] : rek[1])}</p><p class="jm-ist-aksi"><a href="/istilah#${encodeURIComponent(el.dataset.ist)}">${esc(t("is2.h.selengkapnya"))}</a><button type="button" data-ist-mati>${esc(t("is2.h.matikan"))}</button></p>`;
+  p.innerHTML = `<p class="jm-ist-n"><b>${esc(rek[0])}</b>${rek[3] ? `<span class="jm-pil jm-pil-ok">${esc(t("is2.h.resmi"))}</span>` : ""}</p><p class="jm-ist-a">${esc(b === "en" ? rek[2] || rek[1] : rek[1])}</p><p class="jm-ist-aksi"><a href="/panduan#istilah-${encodeURIComponent(el.dataset.ist)}">${esc(t("is2.h.selengkapnya"))}</a><button type="button" data-ist-mati>${esc(t("is2.h.matikan"))}</button></p>`;
   p.hidden = false;
   if (pemicu && pemicu !== el) pemicu.removeAttribute("aria-describedby");
   pemicu = el; el.setAttribute("aria-describedby", p.id);

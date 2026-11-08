@@ -55,8 +55,8 @@ test("fakta tiap soal tertulis di sumbernya (soal dari konten bersumber)", () =>
 });
 
 test("hrefSumber: tiap jenis dan penolakan jalur tak aman", () => {
-  assert.equal(hrefSumber({ jenis: "topik", ref: "panas-bumi" }), "/topik?id=panas-bumi");
-  assert.equal(hrefSumber({ jenis: "istilah", ref: "ppa" }), "/istilah#ppa");
+  assert.equal(hrefSumber({ jenis: "topik", ref: "panas-bumi" }), "/panas-bumi?tab=dasar");
+  assert.equal(hrefSumber({ jenis: "istilah", ref: "ppa" }), "/panduan#istilah-ppa");
   assert.equal(hrefSumber({ jenis: "metode", ref: "plts-atap" }), "/metode#plts-atap");
   assert.equal(hrefSumber({ jenis: "izin", ref: "iuptlu" }), "/perizinan");
   assert.equal(hrefSumber({ jenis: "halaman", ref: "/biaya-listrik" }), "/biaya-listrik");

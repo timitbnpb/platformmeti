@@ -9,6 +9,7 @@ const TAB = [
   { k: "pemasok", ikon: "gedung", mod: "/rg3_pemasok.js" }, { k: "produk", ikon: "daftar2", mod: "/rg3_produk.js" }, { k: "harga", ikon: "tag", mod: "/rg3_harga.js" },
   { k: "logistik", ikon: "kapal", mod: "/rg3_logistik.js" }, { k: "kebijakan", ikon: "palu", mod: "/rg3_kebijakan.js" }, { k: "pabrik", ikon: "pabrik", mod: "/rg3_pabrik.js" },
   { k: "risiko", ikon: "peringatan", mod: "/rg3_risiko.js" }, { k: "wte", ikon: "tek-bio", mod: "/rg3_wte.js" },
+  { k: "tkdn", ikon: "bendera", mod: "/rantai_tkdn.js" },
 ];
 const siap = new Set(), qsTab = {};
 let kini = "";

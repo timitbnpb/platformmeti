@@ -1,0 +1,132 @@
+/* Laporan satu topik (bab 1..44): dipakai /topik?id=<id> (topik.js) dan tab "Dasar" modul teknologi (tek_dasar.js, tanam = elemen tab).
+   Skema data: docs/perencanaan/TOPIK-SKEMA.md, kerangka bab: TOPIK-MENDALAM.md. Data: data/topik/dasar-<id>.json (irisan otomatis), <id>.json (naskah), luar_karbon.json. */
+import { t } from "/i18n.js";
+import { nanti } from "/inti/umum.js";
+import { khSisi } from "/inti/kh.js";
+import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
+import { S, L, u, num, tok, esc, ikon, tanggal, muat, eksibit, sumberHtml } from "/topik_umum.js";
+import * as B from "/topik_bab.js";
+import * as KB from "/topik_karbon.js";
+import * as W from "/topik_tampil.js";
+import * as D from "/topik_data.js";
+import { pasangJalan } from "/topik_jalan.js";
+import { isiK } from "/topik_wujud.js";
+import { pasangBar } from "/analisis.js";
+
+const IKUTI_TOPIK = true;
+const $ = (id) => document.getElementById(id);
+const berkas = (id) => id.replace(/-/g, "_");
+const KONTEKS = {};
+
+function kunciGenerik(ctx) {
+  const h = ctx.dasar.hitung, a = [];
+  const tambah = (k, v, ik) => { if (v > 0) a.push({ ikon: ik, label: u("kartu.angka." + k), nilai: num(v), satuan: "", sub: "", src: ["dasar"] }); };
+  tambah("proyek", h.proyek, "proyek"); tambah("mw", h.mw, "tek-listrik"); tambah("regulasi", h.regulasi, "regulasi"); tambah("organisasi", h.organisasi, "gedung"); tambah("pakar", h.pakar, "orang"); tambah("riset", h.riset, "buku"); tambah("berita", h.berita, "berita"); tambah("inovasi", h.inovasi, "tek-surya");
+  return a.slice(0, 5);
+}
+function kunciNaskah(ctx) {
+  return (ctx.naskah.kunci || []).map((x) => ({ ikon: "analisis", label: L(x.label), nilai: typeof x.nilai === "number" ? num(x.nilai, x.d || 0) : tok(x.nilai), satuan: x.satuan ? L(x.satuan) : "", sub: "", src: x.sumber ? [x.sumber] : [], est: !!x.est }));
+}
+function bab1(ctx) {
+  const adaNaskah = !!ctx.naskah, k = adaNaskah ? (ctx.id === "karbon" ? KB.kunci(ctx) : kunciNaskah(ctx)) : kunciGenerik(ctx);
+  if (!k.length) return null;
+  let h = W.ringkasanHtml(k, ctx);
+  if (!adaNaskah) h += `<p class="jm-bantu">${esc(u("ringkas.dasar", { tanggal: tanggal(ctx.dasar.dibangun_pada) }))}</p>`;
+  return { html: h, sumber: adaNaskah ? [] : ["dasar"], diperbarui: adaNaskah ? ctx.naskah.diperbarui : ctx.dasar.dibangun_pada, ubin: k.slice(0, 3) };
+}
+
+function hasil(ctx, n) {
+  const nb = ctx.naskah?.bab?.[n], T = nb && B.TIPE[nb.tipe], karbon = ctx.id === "karbon", d = ctx.dasar;
+  ctx.n = n;
+  const dasar = (r) => (r ? { ...r, sumber: ["dasar"] } : null);
+  if (n === 1) return bab1(ctx);
+  if (karbon && KB.KHUSUS[n]) { const r = KB.KHUSUS[n](ctx); return r; }
+  if (n === 12 && karbon) { const g = B.regulasi(d.regulasi), tb = nb ? B.TIPE.tabel(nb, "reg-tercatat", ctx) : null; return g ? { html: g.html + (tb ? `<h3 class="jm-tp-h3">${esc(L(nb.judul))}</h3>` + tb.html : ""), csv: true, sumber: ["dasar", ...(nb ? ["celah"] : [])] } : null; }
+  if (n === 13 && nb?.tipe === "linimasa") return B.TIPE.linimasa(nb, "", ctx);
+  if (n === 39 || n === 40) return nb ? B.kasus(nb, ctx) : null;
+  if (n === 41) return nb ? B.pola(nb, ctx) : null;
+  if (n === 42) return nb ? B.periksa(nb) : null;
+  if (nb && T) { const r = T(nb, "bab-" + n + "-" + ctx.id, ctx); return r; }
+  if (n === 9) return d.pemain.length ? dasar({ html: B.pemain(d.pemain, { tambahan: karbon ? pengembangKarbon(ctx) : "" }) }) : null;
+  if (n === 10) return dasar(B.proyek(d.proyek, ctx));
+  if (n === 12) return dasar(B.regulasi(d.regulasi));
+  if (n === 18) return dasar(B.inovasi(d.inovasi));
+  if (n === 33) return dasar(B.pakar(d));
+  if (n === 34) return dasar(B.acara(d.acara));
+  if (n === 35) return dasar(B.berita(d.berita));
+  if (n === 36) return dasar(B.pustaka(d.pustaka));
+  return null;
+}
+function pengembangKarbon(ctx) {
+  const m = new Map();
+  for (const p of ctx.d.kredit.daftar) if (p.pengembang) m.set(p.pengembang, (m.get(p.pengembang) || 0) + 1);
+  const a = [...m].sort((x, y) => y[1] - x[1]).slice(0, 12);
+  return `<h3 class="jm-tp-h3">${esc(u("pemain.pengembang"))}</h3><ul class="jm-tp-etiket">${a.map(([nm, c]) => `<li>${esc(nm)} <b>${esc(num(c))}</b></li>`).join("")}</ul>`;
+}
+
+function susun(ctx) {
+  const out = [], urutan = Array.from({ length: 44 }, (_, i) => i + 1).filter((n) => n !== 37 && n !== 38);
+  let diperbarui = ctx.naskah?.diperbarui || ctx.dasar.dibangun_pada, ubin = [];
+  const csvBab = [];
+  for (const n of urutan) {
+    let r = null;
+    try { r = hasil(ctx, n); } catch (e) { console.error("bab", n, e); r = null; }
+    if (!r || !r.html) continue;
+    if (n === 1) { ubin = r.ubin; diperbarui = r.diperbarui; }
+    out.push({ n, html: eksibit(n, r.html, { csv: !!r.csv, sumber: sumberHtml(r.sumber || [], r.tambah || []), judul: ctx.naskah?.bab?.[n]?.judul ? L(ctx.naskah.bab[n].judul) : "" }) });
+    if (r.csv) csvBab.push(n);
+    if (r.celah) ctx.celah.push(...r.celah);
+  }
+  if (csvBab.length) {
+    const li = csvBab.map((n) => `<li><a href="#bab-${n}">${esc(L(S.ui.bab[n].j))}</a></li>`).join("");
+    out.push({ n: 37, html: eksibit(37, `<p class="jm-tp-p">${esc(u("unduh.ket"))}</p><ul class="jm-tp-etiket jm-tp-etiket-tautan">${li}</ul><p class="jm-bantu">${esc(u("unduh.kutip", { topik: L(S.ui.topik[ctx.id].nama), tanggal: tanggal(new Date().toISOString().slice(0, 10)) }))}</p>`) });
+  }
+  const ns = ctx.naskah?.celah || [];
+  out.push({ n: 38, html: eksibit(38, B.sumberMetode([...ns, ...ctx.celah]).html) });
+  out.sort((a, b) => a.n - b.n);
+  return { out, diperbarui, ubin };
+}
+
+function tocHtml(out, id) {
+  const ada = new Set(out.map((x) => x.n));
+  const grup = Object.keys(S.ui.grup).map((g) => {
+    const ns = Object.keys(S.ui.bab).filter((n) => S.ui.bab[n].g === g && ada.has(+n));
+    return ns.length ? `<li><b>${esc(g)}. ${esc(L(S.ui.grup[g]))}</b><ol>${ns.map((n) => `<li><a href="#bab-${n}" data-toc="${n}">${esc(L(S.ui.bab[n].j))}</a></li>`).join("")}</ol></li>` : "";
+  }).join("");
+  const ikuti = IKUTI_TOPIK ? `<div class="jm-tp-toc-aksi">${tombolIkuti({ jenis: "topik", id, nama: L(S.ui.topik[id].nama) })}</div>` : "";
+  return `<aside class="jm-tp-toc" aria-label="${esc(u("toc"))}"><details${innerWidth >= 900 ? " open" : ""}><summary>${ikon("daftar", 18)}<span>${esc(u("toc"))}</span></summary><nav><ul>${grup}</ul>${ikuti}<a class="jm-tp-semua" href="/topik">${ikon("topik", 16)}<span>${esc(u("toc.hub"))}</span></a></nav></details></aside>`;
+}
+
+export async function halaman(id, tanam = null) {
+  const ISI = tanam || $("isi");
+  if (!S.ui.topik[id]) { if (tanam) { tanam.innerHTML = ""; return; } $("judul").textContent = u("kosong.judul"); $("jawab").textContent = u("kosong.isi"); khSisi("#kh", { fakta: [{ ikon: "topik", label: u("toc.hub"), nilai: u("toc.hub"), href: "/topik" }] }); ISI.innerHTML = ""; return; }
+  const [dasar, naskah, luar, org, rantai, ind] = await Promise.all([muat(`/data/topik/dasar-${id}.json`), muat(`/data/topik/${berkas(id)}.json`), id === "karbon" ? muat("/data/topik/luar_karbon.json") : null, muat("/data/organisasi.json"), muat("/data/rantai_pasok.json"), muat("/data/topik/indeks.json")]);
+  if (!dasar) throw new Error("data");
+  S.id = id; S.dipakai = new Set(); S.tabel.clear(); S.sumber = { ...(naskah?.sumber || {}), dasar: { judul: u("src.dasar"), penerbit: "METI", tanggal: dasar.dibangun_pada, bukti: "editorial" } };
+  const ctx = { id, dasar, naskah, luar, celah: [], rantai, foto: ind?.topik?.find((x) => x.id === id)?.foto || "" };
+  isiK(ctx, org);
+  Object.assign(KONTEKS, ctx);
+  if (id === "karbon") { if (!naskah || !luar) throw new Error("data"); KB.siap(ctx); ctx.selesaikan = KB.selesaikan(ctx); }
+  const { out, diperbarui, ubin } = susun(ctx);
+  const nama = L(S.ui.topik[id].nama);
+  if (!tanam) {
+    $("judul").textContent = nama;
+    $("jawab").textContent = naskah?.lead ? tok(naskah.lead) : L(S.ui.topik[id].ket);
+    khSisi("#kh", { ubin: ubin?.length ? ubin.map((x) => ({ ikon: x.ikon, nilai: x.nilai, satuan: x.satuan.length > 6 ? "" : x.satuan, label: x.satuan.length > 6 ? `${x.label} (${x.satuan})` : x.label })) : [{ ikon: "info", nilai: num(out.length), label: u("kartu.bab") }], aksi: `<span class="jm-tp-tgl">${esc(u("diperbarui", { tanggal: tanggal(diperbarui) }))}</span>` });
+    document.title = `${nama} | ${u("ey")} | ${t("jm.merek")}`;
+  }
+  ISI.innerHTML = `<div class="jm-tp">${tocHtml(out, id)}<div class="jm-tp-isi">${out.map((x) => x.html).join("")}</div></div>`;
+  pasangScroll(out);
+  B.pasangPeriksa();
+  D.pasangGrafik(); pasangJalan(); W.pasangTampil(); W.awalTampil(ISI); pasangBar(ISI);
+  nanti(() => D.pasangPeta(ISI));
+  if (IKUTI_TOPIK) pasangIkuti(ISI);
+  if (location.hash) $(location.hash.slice(1))?.scrollIntoView();
+}
+function pasangScroll(out) {
+  if (!("IntersectionObserver" in window)) return;
+  const nav = document.querySelector(".jm-tp-toc"), tautan = new Map([...nav.querySelectorAll("[data-toc]")].map((a) => [a.dataset.toc, a]));
+  const io = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) { tautan.forEach((a) => a.removeAttribute("aria-current")); tautan.get(e.target.id.slice(4))?.setAttribute("aria-current", "true"); } }, { rootMargin: "-80px 0px -70% 0px" });
+  out.forEach((x) => { const el = $("bab-" + x.n); if (el) io.observe(el); });
+}
+

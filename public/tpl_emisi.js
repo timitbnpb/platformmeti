@@ -28,7 +28,7 @@ export function mulai(el) {
   const m = B.pltu.meta, t20 = B.pltu.dampak.toxic20_nama;
   el.innerHTML = [
     ex({ id: "tpl-e-nas", ikon: "peringatan", topik: t("tpl.em.ey.nas"), judulHtml: esc(t("tpl.em.j.nas", { n: num(B.pltu.dampak.nasional[0].nilai, 0) })), subHtml: esc(t("tpl.em.s.nas")), isiHtml: `<div class="tpl-kisi">${kartu()}</div>`, kakiHtml: kakiSumber(["crea-2023", "crea-t20", "crea-captive", "crea-jetp"]) }),
-    ex({ id: "tpl-e-provex", ikon: "karbon", topik: t("tpl.em.ey.prov"), judulHtml: esc(t("tpl.em.j.prov_n", { n: num(m.emisi_ct_total_t / 1e6, 0) })), subHtml: esc(t("tpl.em.s.prov")), isiHtml: `<div id="tpl-e-prov" class="ih-bagan"></div><div id="tpl-e-tab"></div>${catatan("tpl.em.n.prov")}`, kakiHtml: kakiSumber(["ct"]) + `<span class="tpl-sumber"><a class="rg3-tautan" href="/transisi">${esc(t("tpl.em.lihat"))}</a></span>` }),
+    ex({ id: "tpl-e-provex", ikon: "karbon", topik: t("tpl.em.ey.prov"), judulHtml: esc(t("tpl.em.j.prov_n", { n: num(m.emisi_ct_total_t / 1e6, 0) })), subHtml: esc(t("tpl.em.s.prov")), isiHtml: `<div id="tpl-e-prov" class="ih-bagan"></div><div id="tpl-e-tab"></div>${catatan("tpl.em.n.prov")}`, kakiHtml: kakiSumber(["ct"]) + `<span class="tpl-sumber"><a class="rg3-tautan" href="/target#transisi">${esc(t("tpl.em.lihat"))}</a></span>` }),
     ex({ id: "tpl-e-t20", ikon: "peringatan", topik: t("tpl.em.ey.t20"), judulHtml: esc(t("tpl.em.j.t20", { n: B.pltu.baris.filter((b) => b.toxic20).length })), subHtml: esc(t("tpl.em.s.t20")), isiHtml: `<p>${t20.map((x) => `<span class="rg3-chip rg3-w5"><span>${esc(x)}</span></span>`).join(" ")}</p>${catatan("tpl.em.n.t20")}`, kakiHtml: kakiSumber(["crea-t20"]) }),
   ].join("");
   emisiProv(); tabProv();

@@ -97,6 +97,13 @@ export async function bagianOrg(id, { proyekAda } = {}) {
   if (peranPb.length) out.push(bagian({ id: "panas-bumi", ik: "panas-bumi", topik: "td.ey.pb", j: "td.j.pb", n: peranPb.length, tglData: pbd?.dibangun_pada, lihat: ["/panas-bumi", "td.lihat.pb2"],
     isi: tbl([["td.c.peran"], ["td.c.rantai"]], peranPb.map(([p, tab]) => `<tr>${td("td.c.peran", esc(t("td.pb.p." + p)))}${td("td.c.rantai", taut("/panas-bumi?tab=" + tab, t("pbm.tab." + tab)))}</tr>`)) }));
 
+  /* gas: pemain di modul /gas (rujukan gas.json, tab tujuan) */
+  const gsd = await ambil("gas"), peranGs = [];
+  if ((gsd?.pemain || []).some((p) => p.org_id === id)) peranGs.push("pemain");
+  if ((gsd?.pembangkit?.proyek || []).some((p) => p.pemilik.some((o) => o.org_id === id))) peranGs.push("pembangkit");
+  if (peranGs.length) out.push(bagian({ id: "gas", ik: "gas", topik: "td.ey.gas", j: "td.j.gas", n: peranGs.length, tglData: gsd?.dibangun_pada, lihat: ["/gas", "td.lihat.gas"],
+    isi: tbl([["td.c.peran"], ["td.c.rantai"]], peranGs.map((tab) => `<tr>${td("td.c.peran", esc(t("td.gas.p." + tab)))}${td("td.c.rantai", taut("/gas?tab=" + tab, t("gsj.tab." + tab)))}</tr>`)) }));
+
   /* angin: pemain dan pemasok di modul /angin (rujukan angin.json, tab tujuan) */
   const and = await ambil("angin"), peranAng = [];
   if ((and?.pemain || []).some((p) => p.org_id === id)) peranAng.push(["pemain", "pemain"]);
@@ -119,6 +126,14 @@ export async function bagianOrg(id, { proyekAda } = {}) {
   if ((hdd?.pendanaan?.butir || []).some((k) => k.org_id === id)) peranHd.push(["pendana", "pendanaan"]);
   if (peranHd.length) out.push(bagian({ id: "hidro", ik: "hidro", topik: "td.ey.hdr", j: "td.j.hdr", n: peranHd.length, tglData: hdd?.dibangun_pada, lihat: ["/hidro", "td.lihat.hdr"],
     isi: tbl([["td.c.peran"], ["td.c.rantai"]], peranHd.map(([p, tab]) => `<tr>${td("td.c.peran", esc(t("td.hdr.p." + p)))}${td("td.c.rantai", taut("/hidro?tab=" + tab, t("hdr.tab." + tab)))}</tr>`)) }));
+
+  /* nuklir: lembaga, pengelola reaktor riset, dan mitra teknologi di modul /nuklir (rujukan nuklir.json, tab tujuan) */
+  const nkd = await ambil("nuklir"), peranNk = [];
+  if ((nkd?.lembaga?.peta || []).some((p) => p.org_id === id)) peranNk.push(["lembaga", "lembaga"]);
+  if ((nkd?.riset?.org_ids || []).includes(id)) peranNk.push(["riset", "riset"]);
+  if ((nkd?.teknologi?.vendor || []).some((v) => v.org_id === id || (v.org_tambahan || []).includes(id))) peranNk.push(["teknologi", "teknologi"]);
+  if (peranNk.length) out.push(bagian({ id: "nuklir", ik: "nuklir", topik: "td.ey.nkl", j: "td.j.nkl", n: peranNk.length, tglData: nkd?.dibangun_pada, lihat: ["/nuklir", "td.lihat.nkl"],
+    isi: tbl([["td.c.peran"], ["td.c.rantai"]], peranNk.map(([p, tab]) => `<tr>${td("td.c.peran", esc(t("td.nkl.p." + p)))}${td("td.c.rantai", taut("/nuklir?tab=" + tab, t("nkl.tab." + tab)))}</tr>`)) }));
 
   /* hidrogen: peran organisasi di rantai hidrogen (rujukan hidrogen.json, tab tujuan) */
   const peranH2 = [];
@@ -185,7 +200,7 @@ export async function bagianProyek(id) {
 
   /* PSEL */
   const pl = (ps?.baris || []).filter((b) => b.proyek_id === id);
-  out.push(bagian({ id: "psel", ik: "energi-baru", topik: "td.ey.psel", j: "td.j.psel", n: pl.length, tglData: ps?.dibangun_pada, lihat: ["/energi-baru", "td.lihat.eb"],
+  out.push(bagian({ id: "psel", ik: "energi-baru", topik: "td.ey.psel", j: "td.j.psel", n: pl.length, tglData: ps?.dibangun_pada, lihat: ["/transisi-pltu?tab=enb", "td.lihat.eb"],
     isi: tbl([["td.c.kota"], ["td.c.kap"], ["td.c.status"], ["td.c.pengembang"]], pl.map((b) => `<tr>${td("td.c.kota", esc([b.kota, b.provinsi].filter(Boolean).join(", ")))}${td("td.c.kap", b.kapasitas_ton_hari?.[0] != null ? esc(t("td.ton_hari", { n: angka(b.kapasitas_ton_hari[0]) })) : "-")}${td("td.c.status", esc(slug(b.status)))}${td("td.c.pengembang", (b.pengembang || []).map((x) => (x.organisasi_id ? taut("/o/" + encodeURIComponent(x.organisasi_id), x.nama) : esc(x.nama))).join("; ") || "-")}</tr>`)) }));
 
   /* karbon */

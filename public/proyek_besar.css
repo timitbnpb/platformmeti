@@ -1,6 +1,6 @@
 /* /proyek-besar, /proyek-berhenti, dan bagian "Apa isi angka" di /metode. Token tema.css saja. */
-#pbIsi{display:grid;gap:var(--gap);min-width:0}
-#pbIsi>*{min-width:0}
+#pbIsi,#phIsi{display:grid;gap:var(--gap);min-width:0}
+#pbIsi>*,#phIsi>*{min-width:0}
 .pb-kotak{background:var(--soft-biru);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:var(--r);padding:16px 20px;display:grid;gap:8px}
 .pb-kotak h2{display:flex;align-items:center;gap:8px;font-size:var(--t-h3);margin:0;color:var(--ink)}
 .pb-kotak ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--ink)}

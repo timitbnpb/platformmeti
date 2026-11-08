@@ -44,11 +44,11 @@ test("CSS dan modul angin: tanpa hex, tanpa px pada font, tanpa style=, tanpa em
   }
 });
 test("tautan dua arah: menu, metode, cari, profil org, teknologi, topik, isu, rantai global", () => {
-  assert.match(baca("public/inti/kepala.js"), /href: "\/angin"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/angin"/); /* menu: modul tak lagi di menu, rumahnya hub /teknologi (rute-gabung.test.mjs) */
   assert.match(baca("public/metode_halaman.js"), /id: "angin"/);
   assert.match(baca("scripts/pipa/indeks_cari.mjs"), /\["\/angin", "ang\.nav"\]/);
   assert.match(baca("public/tertaut.js"), /\/angin/);
-  assert.match(baca("public/teknologi.js"), /"\/angin"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/angin"/);
   assert.match(baca("public/topik_tampil.js"), /href="\/angin"/);
   assert.match(baca("public/isu_detail.js"), /\/angin\?tab=isu/);
   assert.match(baca("public/rantai-global.js"), /href="\/angin"/);

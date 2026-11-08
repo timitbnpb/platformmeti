@@ -42,12 +42,12 @@ test("CSS transisi-pltu: tanpa hex dan tanpa px pada font; HTML tanpa style=", (
   assert.doesNotMatch(baca("public/transisi-pltu.html").replace(/<meta name="theme-color"[^>]*>/, ""), /style=/);
 });
 test("tautan dua arah: menu, metode, cari, profil org, topik, energi-baru, industri, isu, ikon", () => {
-  assert.match(baca("public/inti/kepala.js"), /href: "\/transisi-pltu"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/transisi-pltu"/); /* menu: modul tak lagi di menu, rumahnya hub /teknologi (rute-gabung.test.mjs) */
   assert.match(baca("public/metode_halaman.js"), /id: "transisi-pltu"/);
   assert.match(baca("scripts/pipa/indeks_cari.mjs"), /\["\/transisi-pltu", "tpl\.nav"\]/);
   assert.match(baca("public/tertaut.js"), /\/transisi-pltu/);
   assert.match(baca("public/topik_tampil.js"), /\/transisi-pltu/);
-  for (const h of ["energi-baru", "industri", "isu"]) assert.match(baca(`public/${h}.html`), /\/transisi-pltu/);
+  for (const h of ["industri", "isu"]) assert.match(baca(`public/${h}.html`), /\/transisi-pltu/);
   assert.match(baca("public/img/ikon.svg"), /id="i-pltu"/);
 });
 test("kamus id dan en memuat semua kunci tpl.* statis", () => {

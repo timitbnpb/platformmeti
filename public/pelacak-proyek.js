@@ -2,7 +2,6 @@
    Peta titik berwarna status (MapLibre), lapisan opsional jaringan OSM (/data/geo/jaringan_osm.geojson, ODbL), grafik selisih COD per teknologi,
    tabel urut berpaginasi. INP: saringan menyalakan chrome seketika, isi berat (peta, grafik, tabel) menyusul lewat nanti(). */
 import { t, ada, angka, tanggal } from "/i18n.js";
-import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
 import { khUbin } from "/inti/kh.js";
 import { exHtml, sumberHtml, cariHtml, pilihHtml, hapusHtml } from "/inti/komponen.js";
@@ -29,7 +28,6 @@ const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue
 const gelap = () => document.documentElement.dataset.theme === "dark" || (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme:dark)").matches);
 const gaya = () => "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron");
 
-await mulaiHalaman();
 siapTautan("org");
 const isi = $("ptIsi");
 isi.innerHTML = hantuHtml(6);

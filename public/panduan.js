@@ -2,13 +2,14 @@
    biaya dibaca dari biaya_bangun.json lewat kunci skala (tidak ada angka biaya baru di sini); durasi izin dari izin_kontrak.json;
    pelajaran gagal dari desa_energi_mandiri.json. Teks /data/teks_panduan.json. Informasi umum, bukan nasihat hukum. */
 import { mulaiHalaman } from "/inti/kepala.js";
+import { tabHalaman } from "/inti/tab_halaman.js";
 import { esc, ikon, hantuHtml, nanti } from "/inti/umum.js";
 import { tanggal } from "/i18n.js";
 import { muatData, tampilGalat, ubinHtml, batangHtml, pasangBar, pil } from "/analisis.js";
 import { muatTeks, tt, L, num, tautan, seksi, catatan, narasi, sumber, saatBahasa } from "/info_kerangka.js";
 
 const $ = (id) => document.getElementById(id);
-const HREF = { regulasi: (x) => `/regulasi?id=${encodeURIComponent(x.id)}`, org: (x) => `/o/${encodeURIComponent(x.id)}`, istilah: (x) => `/istilah#${encodeURIComponent(x.id)}` };
+const HREF = { regulasi: (x) => `/regulasi?id=${encodeURIComponent(x.id)}`, org: (x) => `/o/${encodeURIComponent(x.id)}`, istilah: (x) => `/panduan#istilah-${encodeURIComponent(x.id)}` };
 const IK_TAUT = { regulasi: "regulasi", org: "gedung", istilah: "kamus" };
 const VONIS = { salah: ["bad", "silang"], sebagian: ["warn", "info"], kedaluwarsa: ["info", "jam"] };
 let d = null, biaya = null, izin = null, desa = null, tren = null, sel = "";
@@ -142,6 +143,12 @@ function pasang() {
 }
 (async () => {
   await mulaiHalaman();
+  /* Belajar: Panduan (halaman ini), Akademi (akademi.js) dan Istilah (istilah.js), dua terakhir dimuat malas; jangkar istilah #istilah-<id> */
+  tabHalaman("tabHal", { label: "bel.tab", tab: [
+    { k: "panduan", ikon: "daftar2", teks: "bel.tab.panduan", panel: "pnPanduan", cocok: (h) => !/^#(akademi|istilah)/.test(h), muat: async () => {} },
+    { k: "akademi", ikon: "akademi", teks: "bel.tab.akademi", panel: "pnAkademi", muat: () => import("/akademi.js") },
+    { k: "istilah", ikon: "kamus", teks: "bel.tab.istilah", panel: "pnIstilah", cocok: (h) => /^#istilah/.test(h), muat: () => import("/istilah.js") },
+  ] });
   $("isi").innerHTML = hantuHtml(6);
   try { [d, biaya, izin, desa, tren] = await Promise.all([muatData("panduan.json"), muatData("biaya_bangun.json"), muatData("izin_kontrak.json"), muatData("desa_energi_mandiri.json"), muatData("kapasitas_tren.json"), muatTeks("panduan")]); } catch (e) { tampilGalat($("isi"), () => location.reload()); return; }
   const h = location.hash.replace(/^#g-/, "");

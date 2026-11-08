@@ -3,6 +3,7 @@
    Privasi (KEAMANAN-PRIVASI 3.5): tanpa lapis pengurus/kontak/pribadi (berkas tak terdaftar di SUMBER + berkas ber-"lapis" terlarang),
    kunci kontak/orang dibuang dari teks, potongan yang memuat surel/telepon atau nama di daftar tolak lokal dibuang.
    Pakai: node scripts/pipa/tanya_indeks.mjs   (lalu: node scripts/pipa/tanya_unggah.mjs --kering) */
+import { rumahTek, rumahTopik } from "../../public/inti/rumah_tek.js";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
@@ -25,7 +26,7 @@ export const SUMBER = [
   { f: "kawasan", jenis: "Kawasan", url: (r) => "/kawasan#" + enc(r.id) },
   { f: "sistem_pln", jenis: "Sistem PLN", url: () => "/sistem" },
   { f: "pustaka", jenis: "Pustaka", url: (r) => "/pustaka?id=" + enc(r.id) },
-  { f: "istilah", jenis: "Istilah", rows: (d) => d.istilah, url: (r) => "/istilah#" + enc(r.id) },
+  { f: "istilah", jenis: "Istilah", rows: (d) => d.istilah, url: (r) => "/panduan#istilah-" + enc(r.id) },
   { f: "pasar_hijau", jenis: "Pasar listrik hijau", rows: (d) => d.pemilik_pembangkit, judul: (r) => r.pemilik, url: () => "/pasar-listrik-hijau" },
   { f: "pasar_hijau", jenis: "Pasar listrik hijau", rows: (d) => d.proyek_wilayah, judul: (r) => r.provinsi, url: () => "/pasar-listrik-hijau" },
   { f: "global/pemasok_surya", jenis: "Pemasok global", url: () => "/rantai-global?tab=surya" },
@@ -105,7 +106,7 @@ export function potongTopik(d, tolak = null) {
   const butir = [L(d.lead), ...(d.kunci || []).map((k) => `${L(k.label)}: ${k.nilai} ${L(k.satuan) ?? ""}`.trim()), ...(d.penting || []).map(L)];
   for (const b of Object.values(d.bab || {})) for (const q of b?.butir || []) if (q?.t) butir.push(`${L(q.t)} ${L(q.j) ?? ""}`);
   return potongButir(butir.filter(Boolean).map(rapi), `Topik ${judul}`, 14)
-    .map((teks, n) => ({ id: idPotongan(`topik:${d.id}:${n}`), jenis: "Topik", judul, teks: netral(teks), url: "/topik?id=" + enc(d.id), sumber: "", tanggal: String(d.diperbarui || "").slice(0, 10) }))
+    .map((teks, n) => ({ id: idPotongan(`topik:${d.id}:${n}`), jenis: "Topik", judul, teks: netral(teks), url: rumahTopik(d.id), sumber: "", tanggal: String(d.diperbarui || "").slice(0, 10) }))
     .filter((p) => !POLA_KONTAK.test(p.teks) && !memuatNamaTolak(p.teks + " " + p.judul, tolak));
 }
 

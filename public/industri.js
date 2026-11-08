@@ -372,7 +372,7 @@ function pilihSM(id, terbang) {
     <dl class="in3-fakta">${fakta.map(([k, v]) => `<div><dt>${esc(t(k))}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
     ${ketKap(s)}<h4>${esc(t("in3.pemilik"))}</h4><div class="in3-chip">${s.pemilik.map(orgChip).join("")}</div>
     <h4>${esc(t("in3.alir"))}</h4>${alirHtml(s)}
-    <div class="in3-tautans"><a class="in3-tautan" href="/rantai?cari=${encodeURIComponent(s.nama)}">${ikon("rantai", 14)}${esc(t("in3.rantai"))}</a><a class="in3-tautan" href="/korporat">${ikon("pabrik", 14)}${esc(t("in3.korporat"))}</a>${s.kawasan_id ? `<a class="in3-tautan" href="/lokasi-hijau">${ikon("lokasi", 14)}${esc(t("in3.hijau"))}</a>` : ""}<a class="in3-tautan" href="/topik?id=karbon">${ikon("tek-panas", 14)}${esc(t("in3.karbon"))}</a></div>
+    <div class="in3-tautans"><a class="in3-tautan" href="/rantai-global?tab=tkdn&cari=${encodeURIComponent(s.nama)}">${ikon("rantai", 14)}${esc(t("in3.rantai"))}</a><a class="in3-tautan" href="/korporat">${ikon("pabrik", 14)}${esc(t("in3.korporat"))}</a>${s.kawasan_id ? `<a class="in3-tautan" href="/lokasi-hijau">${ikon("lokasi", 14)}${esc(t("in3.hijau"))}</a>` : ""}<a class="in3-tautan" href="/topik?id=karbon">${ikon("tek-panas", 14)}${esc(t("in3.karbon"))}</a></div>
     <p class="in3-cat">${sumberLink(s.sumber)}${s.tingkat_bukti === "perlu-verifikasi" ? ` <span class="jm-pil jm-pil-warn">${esc(t("in3.verifikasi"))}</span>` : ""}</p>
     <button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="daftarH">${ikon("daftar2", 16)}<span>${esc(t("in3.kembali.h"))}</span></button>`;
 }

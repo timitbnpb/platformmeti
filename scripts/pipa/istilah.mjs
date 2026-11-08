@@ -1,6 +1,7 @@
 // public/data/istilah.json: kamus istilah gabungan (glosarium 16 topik, definisi Pasal 1 pustaka hukum, glosarium /metode, singkatan umum EBT).
 //   node scripts/pipa/istilah.mjs        (tanpa jaringan; membaca public/data/topik/*.json, public/data/hukum/katalog.json bila ada, public/i18n/*.json)
 // Urutan kuasa definisi: resmi (pasal) > singkatan umum tulisan tangan > glosarium topik terpanjang. Duplikat digabung lewat alias bersama.
+import { rumahTek, rumahTopik } from "../../public/inti/rumah_tek.js";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -104,7 +105,7 @@ function dariTopik() {
       for (const x of b.butir || []) {
         const aid = bersih(x.arti?.id), aen = bersih(x.arti?.en || x.arti?.id), nm = bersih(x.istilah?.id);
         if (!nm || !aid) continue;
-        keluar.push({ nama: nm, id: aid, en: aen, kat: katTebak(nm, aid), sumber: { jenis: "topik", ref: tid, judul: d.judul, bab: Number(n), href: `/topik?id=${tid}#bab-${n}` } });
+        keluar.push({ nama: nm, id: aid, en: aen, kat: katTebak(nm, aid), sumber: { jenis: "topik", ref: tid, judul: d.judul, bab: Number(n), href: rumahTopik(tid, n) } });
       }
     }
   }

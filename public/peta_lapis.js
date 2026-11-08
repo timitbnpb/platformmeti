@@ -53,7 +53,7 @@ function popupProyek(r) {
   const pem = r.pem ? (r.pemId ? `<a href="/o/${esc(r.pemId)}">${esc(r.pem)}</a>` : esc(r.pem)) : "";
   const cod = r.cod && (r.cod[0] || r.cod[1]) ? `${esc(r.cod[0] ?? "-")} / ${esc(r.cod[1] ?? "-")}` : "";
   const telat = r.telat > 0 ? ` <small class="jm-bantu">${esc(t("pn2.telat", { n: N(r.telat) }))}</small>` : "";
-  const links = [r.profil ? taut("/p/" + r.id, "pn2.t.profil", "proyek") : "", linkProv(r.pk), taut(`/pelacak-proyek?${r.pk ? "prov=" + r.pk + "&" : ""}tek=${encodeURIComponent(r.tek)}`, "pn2.t.pelacak", "petir"), r.url ? taut(urlAman(r.url), "pn2.t.sumber", "tautan", true) : ""].join("");
+  const links = [r.profil ? taut("/p/" + r.id, "pn2.t.profil", "proyek") : "", linkProv(r.pk), taut(`/proyek?${r.pk ? "prov=" + r.pk + "&" : ""}tek=${encodeURIComponent(r.tek)}#terpadu`, "pn2.t.pelacak", "petir"), r.url ? taut(urlAman(r.url), "pn2.t.sumber", "tautan", true) : ""].join("");
   return kartu({
     logo: lg, judul: r.profil ? `<a href="/p/${esc(r.id)}">${esc(r.nama)}</a>` : esc(r.nama), sub: provSub(r.pk, r.prov),
     pil: pilTekK(r.tek) + pilStatus(r.st), links,
@@ -92,7 +92,7 @@ const TITIK = {
     popup: (r) => kartu({
       logo: ikon("pabrik", 24), judul: esc(r.nama), sub: esc(t("pn2.gem.sub")), pil: pilTekK(r.tek) + pilStatus(r.st),
       rows: baris("pj.c.kap", mwTeks(r) && `<b>${esc(mwTeks(r))}</b>`) + baris("pn2.unit", r.unit && N(r.unit)) + baris("pn2.tahun", r.tahun && esc(r.tahun)) + baris("pj.c.pemilik", r.pem && esc(r.pem)),
-      links: [taut("/pelacak-proyek?tek=" + encodeURIComponent(r.tek), "pn2.t.pelacak", "petir"), r.url ? taut(urlAman(r.url), "pn2.t.gem", "tautan", true) : ""].join(""),
+      links: [taut("/proyek?tek=" + encodeURIComponent(r.tek) + "#terpadu", "pn2.t.pelacak", "petir"), r.url ? taut(urlAman(r.url), "pn2.t.gem", "tautan", true) : ""].join(""),
     }),
     tip: tipProyek,
   },
@@ -138,7 +138,7 @@ const TITIK = {
       const w = ["tinggi", "sedang", "rendah"].includes(b.tingkat) ? b.tingkat : "umum";
       return { id: b.id, nama: b.nama || b.perusahaan || b.id, tek: b.tek || "", st: "", w, skor: b.skor, pk: String(b.prov_kode || b.kode_prov || ""), lat: b.lat ?? b.koordinat.lat, lng: b.lng ?? b.lon ?? b.koordinat.lon, ket: b.keterangan };
     }),
-    popup: (r) => kartu({ logo: ikon("peringatan", 24), judul: esc(r.nama), sub: provSub(r.pk), rows: baris("pn2.tingkat", t("pn2.tingkat." + r.w)) + baris("pn2.skor", r.skor != null && N(r.skor, 1)) + baris("pn2.ket", r.ket && esc(r.ket)), links: linkProv(r.pk) + taut("/pelacak-proyek", "pn2.t.pelacak", "petir") }),
+    popup: (r) => kartu({ logo: ikon("peringatan", 24), judul: esc(r.nama), sub: provSub(r.pk), rows: baris("pn2.tingkat", t("pn2.tingkat." + r.w)) + baris("pn2.skor", r.skor != null && N(r.skor, 1)) + baris("pn2.ket", r.ket && esc(r.ket)), links: linkProv(r.pk) + taut("/proyek#terpadu", "pn2.t.pelacak", "petir") }),
     tip: (r) => `<b>${esc(r.nama)}</b><span>${esc(t("pn2.tingkat." + r.w))}</span>`,
   },
 };
@@ -250,4 +250,4 @@ export const kosongKoro = (k) => !k.peta.size;
 export const ADAPTER = { titik: TITIK, garis: GARIS, poligon: POLIGON, koroplet: KORO };
 export const adapterDari = (L) => ADAPTER[L.jenis] && ADAPTER[L.jenis][L.adapter];
 export const teksNilai = fmtV;
-export const popupProvinsiTanpaNilai = (kode) => kartu({ logo: lambang(kode), judul: esc(namaProv(kode) || kode), sub: esc(t("pn2.provinsi")), links: linkProv(kode) + taut("/peluang?prov=" + kode, "pn2.t.peluang", "kompas") + taut("/pelacak-proyek?prov=" + kode, "pn2.t.pelacak", "petir") });
+export const popupProvinsiTanpaNilai = (kode) => kartu({ logo: lambang(kode), judul: esc(namaProv(kode) || kode), sub: esc(t("pn2.provinsi")), links: linkProv(kode) + taut("/peluang?prov=" + kode, "pn2.t.peluang", "kompas") + taut("/proyek?prov=" + kode + "#terpadu", "pn2.t.pelacak", "petir") });

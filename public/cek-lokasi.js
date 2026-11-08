@@ -175,12 +175,12 @@ function kartuWilayah(kode) {
 }
 function kartuSumber(kode) {
   const a = ATLAS_PROV.get(kode);
-  if (!a) return kartu("sumber", "tek-surya", t("cl.kom.sumber"), kosongKartu("cl.tanpa_data"), tautan("/topik?id=surya", "topik", "cl.taut.surya"));
+  if (!a) return kartu("sumber", "tek-surya", t("cl.kom.sumber"), kosongKartu("cl.tanpa_data"), tautan("/surya?tab=dasar", "topik", "cl.taut.surya"));
   return kartu("sumber", "tek-surya", t("cl.kom.sumber"),
     `<p class="cl-angka"><b>${N(a.pvout_kwh_per_kwp_tahun)}</b><span>${esc(t("cl.sat.pvout"))}</span></p>
      <dl class="cl-d">${baris(t("cl.f.ghi"), N(a.ghi_kwh_per_m2_tahun) + " kWh/m2")}${baris(t("cl.f.sudut"), N(a.sudut_optimal_derajat) + " derajat")}${baris(t("cl.f.angin"), esc(t("cl.f.angin.tanpa")))}</dl>
      <p class="cl-bantu">${ikon("info", 14)}<span>${esc(t("cl.catatan.atlas"))}</span></p>`,
-    tautan("/topik?id=surya", "topik", "cl.taut.surya") + tautan("/biaya-listrik", "kalkulator", "cl.taut.biaya"), buktiHtml("kajian"));
+    tautan("/surya?tab=dasar", "topik", "cl.taut.surya") + tautan("/biaya-listrik", "kalkulator", "cl.taut.biaya"), buktiHtml("kajian"));
 }
 function kartuJaringan(j) {
   if (j.galat) return kartu("jaringan", "petir", t("cl.kom.jaringan"), galatKartu());
@@ -213,7 +213,7 @@ function kartuBpp(kode) {
     `<p class="cl-angka"><b>${N(p.bpp.rp_kwh)}</b><span>Rp/kWh</span></p>
      <dl class="cl-d">${baris(t("cl.f.sistem"), esc((p.bpp.sistem || []).join(", ") || "-"))}${baris(t("cl.f.tahun"), N(p.bpp.tahun))}${r?.harga != null ? baris(t("cl.f.faktor"), N(r.harga, 1)) : ""}</dl>
      <p class="cl-bantu">${ikon("info", 14)}<span>${esc(t("cl.catatan.bpp"))}</span></p>`,
-    tautan("/biaya-listrik", "kalkulator", "cl.taut.biaya") + tautan("/istilah#bpp", "kamus", "cl.taut.istilah_bpp") + tautan("/perizinan", "lencana", "cl.taut.izin"), buktiHtml("resmi"));
+    tautan("/biaya-listrik", "kalkulator", "cl.taut.biaya") + tautan("/panduan#istilah-bpp", "kamus", "cl.taut.istilah_bpp") + tautan("/perizinan", "lencana", "cl.taut.izin"), buktiHtml("resmi"));
 }
 function kartuProyek(p) {
   if (p.galat) return kartu("proyek", "proyek", t("cl.kom.proyek"), galatKartu());
@@ -223,7 +223,7 @@ function kartuProyek(p) {
   }).join("");
   return kartu("proyek", "proyek", t("cl.kom.proyek"),
     p.daftar.length ? `<ul class="cl-pjs">${baris2}</ul>` : kosongKartu("cl.proyek.tanpa"),
-    tautan("/proyek", "proyek", "cl.taut.proyek") + tautan("/pelacak-proyek", "petir", "cl.taut.pelacak"), est());
+    tautan("/proyek", "proyek", "cl.taut.proyek") + tautan("/proyek#terpadu", "petir", "cl.taut.pelacak"), est());
 }
 
 function kartuSkor(r, kode) {

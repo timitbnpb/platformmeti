@@ -6,7 +6,7 @@ function grafikSurvei() {
   const g = document.getElementById("nkl-o-g"), l = document.getElementById("nkl-o-l"); if (!g) return;
   l.innerHTML = legendaHtml(["nasional", "lokal", "pengembang"].map((k) => ({ kelas: "nkl-s-" + k, label: t("nkl.o.s." + k) })));
   g.innerHTML = batangSvg({ el: g, d: 1, satuan: "%", label: t("nkl.o.j.g"), seri: ["nasional", "lokal", "pengembang"].map((k) => ({ k, kelas: "nkl-s-" + k })),
-    baris: [...B.nk.opini.survei].sort((a, z) => z.nilai - a.nilai).map((s) => { const lab = `${tx(s.populasi)}, ${s.tahun}`; return { label: lab, bagian: [{ k: SERI[s.k], nilai: s.nilai }], tip: lab, th: tipHtml(lab, [[t("nkl.o.setuju"), `${num(s.nilai, 2)}%`], [t("nkl.c.tahun"), String(s.tahun)]], { extra: `<span class="ih-tr">${esc(tx(s.ket))}</span>` }) }; }) });
+    baris: [...B.nk.opini.survei].sort((a, z) => z.nilai - a.nilai).map((s) => { const lab = t("nkl.o.k." + s.k); return { label: lab, bagian: [{ k: SERI[s.k], nilai: s.nilai }], tip: lab, th: tipHtml(lab, [[t("nkl.o.setuju"), `${num(s.nilai, 2)}%`], [t("nkl.c.tahun"), String(s.tahun)]], { extra: `<span class="ih-tr">${esc(tx(s.ket))}</span>` }) }; }) });
 }
 function grafikPersepsi() {
   const g = document.getElementById("nkl-o-pg"); if (!g) return;

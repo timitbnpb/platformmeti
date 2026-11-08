@@ -1,5 +1,6 @@
 /* Bagian beranda di bawah lipatan: sensus per teknologi, halaman lain, cara data dibuat, akses data.
    Dirender saat mendekati layar (IntersectionObserver); angka dari public/data/*.json. */
+import { rumahTek } from "/inti/rumah_tek.js";
 import { t, ada, angka, tanggal } from "/i18n.js";
 import { esc, hantuHtml, nanti, ikon } from "/inti/umum.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
@@ -62,7 +63,7 @@ async function teknologi() {
     const pro = await muat("proyek");
     const kartu = TEK.map((k) => {
       const ps = pro.baris.filter((p) => p.teknologi === k), mw = jml(ps, mwDari);
-      return `<a class="jm-bb-foto" href="/teknologi/${k}"><img src="/img/beranda/${FOTO[k][0]}.webp" width="800" height="600" loading="lazy" alt=""><span class="jm-bb-foto-ik jm-bb-t-${k}" aria-hidden="true">${IKON_TEK[k] || IKON[k]}</span><span class="jm-bb-foto-isi"><span class="jm-pil">${esc(angka(ps.length))} ${esc(t("beranda.tek.n"))}</span><strong>${esc(label("beranda.tek.", k))}</strong><small>${esc(t("beranda.foto." + k))}</small><b>${mw ? esc(angka(mw)) + " MW" : "-"}</b></span></a>`;
+      return `<a class="jm-bb-foto" href="${esc(rumahTek(k))}"><img src="/img/beranda/${FOTO[k][0]}.webp" width="800" height="600" loading="lazy" alt=""><span class="jm-bb-foto-ik jm-bb-t-${k}" aria-hidden="true">${IKON_TEK[k] || IKON[k]}</span><span class="jm-bb-foto-isi"><span class="jm-pil">${esc(angka(ps.length))} ${esc(t("beranda.tek.n"))}</span><strong>${esc(label("beranda.tek.", k))}</strong><small>${esc(t("beranda.foto." + k))}</small><b>${mw ? esc(angka(mw)) + " MW" : "-"}</b></span></a>`;
     }).join("");
     const daftar = TEK.map((k) => `${t(ada("beranda.foto.cr." + k) ? "beranda.foto.cr." + k : "beranda.foto." + k)} (${FOTO[k][1]}, ${LISENSI[FOTO[k][2]].startsWith("beranda") ? t(LISENSI[FOTO[k][2]]) : LISENSI[FOTO[k][2]]})`).join("; ");
     foto.innerHTML = exHtml({ ikon: "tek-surya", topik: t("beranda.s05.l"), judulHtml: jud("beranda.ex.tek.j", angka(pro.baris.length), { k: angka(TEK.length) }), subHtml: esc(t("beranda.ex.tek.s")), aksiHtml: aksiHtml() + sumberHtml(`${esc(t("beranda.sensus.sumber", { tanggal: tanggal(pro.dibangun_pada) }))} ${esc(t("beranda.foto.kredit", { daftar }))}`), isiHtml: `<div class="jm-bb-foto-kisi">${kartu}</div>` });
@@ -91,7 +92,7 @@ async function bento() {
     const r = rt.ringkas, noReg = reg.baris.filter((x) => !x.url_pdf).length;
     const kartu = (href, ik, judul, nomor, satuan, rows) => `<a class="jm-bb-ov" href="${href}"><span class="jm-bb-ov-h"><span class="jm-bb-ov-ik">${IKON[ik]}</span><strong>${esc(judul)}</strong></span><span class="jm-bb-ov-n"><b>${esc(nomor)}</b> <small>${esc(satuan)}</small></span>${rows.map(([a, n]) => `<span class="jm-bb-ov-r"><span>${esc(a)}</span><b>${esc(angka(n))}</b></span>`).join("")}</a>`;
     const kisi = [
-      kartu("/rantai", "pabrik", t("beranda.bt.rantai"), angka(r.total_mwp / 1000, { desimal: 1 }), "GWp", [[t("beranda.ds.l.lokal"), r.lokal_mwp], [t("beranda.ds.l.ekspor"), r.ekspor_mwp]]),
+      kartu("/rantai-global?tab=tkdn", "pabrik", t("beranda.bt.rantai"), angka(r.total_mwp / 1000, { desimal: 1 }), "GWp", [[t("beranda.ds.l.lokal"), r.lokal_mwp], [t("beranda.ds.l.ekspor"), r.ekspor_mwp]]),
       kartu("/proyek#terlambat", "waktu", t("beranda.bt.lewat"), angka(lewat.length), t("beranda.tek.n"), top(perTek).map(([k, n]) => [k === "lain" ? t("beranda.peta.lain") : label("beranda.tek.", k), n])),
       kartu("/direktori?tampil=pustaka", "buku", t("beranda.bt.riset"), angka(pk.baris.length), t("beranda.ds.l.dok"), top(jenis).map(([k, n]) => [label("beranda.bt.j.", k), n])),
       kartu("/tentang#metode", "lapis", t("beranda.bt.cakupan"), angka(pro.baris.length + org.baris.length + reg.baris.length), t("beranda.bt.cakupan.u"), [[t("beranda.bt.c.pro"), pro.baris.length - loc.length], [t("beranda.bt.c.org"), org.baris.length - og.length]]),

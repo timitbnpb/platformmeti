@@ -409,3 +409,4 @@ a.jm-tp-ent:hover,.jm-tp-ent a:hover{color:var(--accent)}
 .jm-jl-n{color:var(--accent);letter-spacing:1px;white-space:nowrap}
 .jm-jl-n i{font-style:normal;color:var(--line)}
 @media (max-width:560px){.jm-jl-dl{grid-template-columns:minmax(0,1fr)}.jm-jl-kartu{grid-template-columns:minmax(0,1fr)}}
+.jm-tp-pilih-topik{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}

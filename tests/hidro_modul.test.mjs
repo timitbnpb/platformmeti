@@ -47,11 +47,11 @@ test("CSS dan modul hidro: tanpa hex, tanpa px pada font, tanpa style=, tanpa em
   for (const f of ["public/hidro.html", ...JS, "scripts/panen/hidro_modul.mjs"]) { const s = baca(f); assert.doesNotMatch(s, /\sstyle=/, f); assert.doesNotMatch(s, /—/, f); assert.doesNotMatch(s, /toLocaleString/, f); }
 });
 test("tautan dua arah: menu, metode, cari, profil org, teknologi, topik, isu, air-energi", () => {
-  assert.match(baca("public/inti/kepala.js"), /href: "\/hidro"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/hidro"/); /* menu: modul tak lagi di menu, rumahnya hub /teknologi (rute-gabung.test.mjs) */
   assert.match(baca("public/metode_halaman.js"), /id: "hidro"/);
   assert.match(baca("scripts/pipa/indeks_cari.mjs"), /\["\/hidro", "hdr\.nav"\]/);
   assert.match(baca("public/tertaut.js"), /\/hidro/);
-  assert.match(baca("public/teknologi.js"), /"\/hidro"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/hidro"/);
   assert.match(baca("public/topik_tampil.js"), /href="\/hidro"/);
   assert.match(baca("public/isu_detail.js"), /\/hidro\?tab=isu/);
   assert.match(baca("public/air-energi.js"), /href="\/hidro"/);

@@ -35,13 +35,13 @@ test("CSS dan JS hidrogen: tanpa hex, tanpa px pada font, tanpa style= tertanam"
   for (const f of JS.concat(["public/hidrogen.html"])) assert.doesNotMatch(baca(f), /\sstyle=/, f);
 });
 test("tautan dua arah: menu, metode, cari, profil org, teknologi, topik, energi baru, rantai global, ikon", () => {
-  assert.match(baca("public/inti/kepala.js"), /href: "\/hidrogen"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/hidrogen"/); /* menu: modul tak lagi di menu, rumahnya hub /teknologi (rute-gabung.test.mjs) */
   assert.match(baca("public/metode_halaman.js"), /id: "hidrogen"/);
   assert.match(baca("scripts/pipa/indeks_cari.mjs"), /\["\/hidrogen", "h2\.nav"\]/);
   assert.match(baca("public/tertaut.js"), /\/hidrogen/);
-  assert.match(baca("public/teknologi.js"), /"\/hidrogen"/);
+  assert.match(baca("public/inti/rumah_tek.js"), /"\/hidrogen"/);
   assert.match(baca("public/topik_tampil.js"), /href="\/hidrogen"/);
-  assert.match(baca("public/energi-baru.js"), /href="\/hidrogen"/);
+  assert.match(baca("public/tpl_enb.js"), /href="\/hidrogen"/);
   assert.match(baca("public/rantai-global.js"), /\/hidrogen/);
   assert.match(baca("public/img/ikon.svg"), /id="i-hidrogen"/);
 });

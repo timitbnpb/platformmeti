@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title data-i18n="tg2.title">Target pemerintah vs realisasi | Direktori METI</title>
-<meta name="description" content="Pelacak target resmi energi (KEN, RUKN, RUPTL, NDC, JETP, B50, kendaraan listrik, PLTS 100 GW, RUED) dibanding realisasi terbaru, dengan jalur yang dibutuhkan, laju historis, dan sumber di setiap angka." data-i18n-attr="content:tg2.deskripsi">
+<title data-i18n="tgh.title">Target, transisi, strategi, dan rapor | Direktori METI</title>
+<meta name="description" content="Target resmi energi dibanding realisasi, transisi listrik, kajian strategis, dan rapor berkala EBT Indonesia dalam satu halaman bertab." data-i18n-attr="content:tgh.deskripsi">
 <meta name="theme-color" content="#122B4A">
 <link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -13,24 +13,70 @@
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
 <link rel="stylesheet" href="/inti/kh.css">
+
 <link rel="stylesheet" href="/analisis.css">
 <link rel="stylesheet" href="/grafik.css">
 <link rel="stylesheet" href="/target.css">
+<link rel="stylesheet" href="/transisi.css">
+<link rel="stylesheet" href="/peristiwa_komitmen.css">
+<link rel="stylesheet" href="/strategi.css">
+<link rel="stylesheet" href="/rapor.css">
 <script src="/tema.js"></script>
 </head>
 <body data-halaman="target">
 <header class="top" id="kepala"></header>
-<main class="jm-halaman jm-wadah jm-an" id="main">
-<section class="jm-kh" aria-labelledby="judul">
+<main class="jm-halaman jm-wadah jm-an">
+<section class="jm-kh jm-kh-satu" aria-labelledby="judul"><div class="jm-kh-teks">
+  <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-bendera"/></svg><span data-i18n="tgh.eyebrow">Target dan kemajuan</span></p>
+  <h1 id="judul" data-i18n="tgh.judul">Target, transisi, strategi, dan rapor</h1>
+  <p class="jm-kh-lead" data-i18n="tgh.lead">Seberapa jauh target resmi energi tercapai, seberapa siap sistem dan pasar karbon, ke mana arah strategi, dan rapor berkala yang dibekukan tiap periode.</p>
+</div></section>
+<div id="tabHal"></div>
+<div id="pnRealisasi">
+<section id="tgKh" class="jm-kh" aria-labelledby="tgKhJ">
   <div class="jm-kh-teks">
     <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-bendera"/></svg><span data-i18n="tg2.eyebrow">Pelacak target</span></p>
-    <h1 id="judul" data-i18n="tg2.judul">Target pemerintah vs realisasi</h1>
-    <p id="jawab" class="jm-kh-lead" data-i18n="tg2.lead">Seberapa jauh target resmi energi sudah tercapai, jalur yang dibutuhkan tiap tahun, dan laju yang sebenarnya terjadi.</p>
+    <h2 id="tgKhJ" data-i18n="tg2.judul">Target pemerintah vs realisasi</h2>
+    <p id="tgJawab" class="jm-kh-lead" data-i18n="tg2.lead">Seberapa jauh target resmi energi sudah tercapai, jalur yang dibutuhkan tiap tahun, dan laju yang sebenarnya terjadi.</p>
   </div>
 </section>
-<div id="isi"></div>
+<div id="tgIsi"></div>
+</div>
+<div id="pnTransisi" hidden>
+<section id="trKh" class="jm-kh" aria-labelledby="trKhJ">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-analisis"/></svg><span data-i18n="tr.eyebrow">Transisi listrik</span></p>
+    <h2 id="trKhJ" data-i18n="tr.judul">Target, sistem, dan karbon</h2>
+    <p id="trJawab" class="jm-kh-lead" data-i18n="tr.lead">Seberapa jauh target EBT, seberapa siap sistem kelistrikan, dan seberapa hidup pasar karbon, dari dokumen resmi dan data yang sudah terkumpul.</p>
+  </div>
+  <div class="jm-kh-ubin" id="trUbin" aria-live="polite"></div>
+</section>
+<div id="trIsi"></div>
+</div>
+<div id="pnStrategi" hidden>
+<section id="stKh" class="jm-kh" aria-labelledby="stKhJ">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-analisis"/></svg><span data-i18n="st.eyebrow">Kajian strategis</span></p>
+    <h2 id="stKhJ" data-i18n="st.judul">Kajian strategis EBT Indonesia</h2>
+    <p id="stJawab" class="jm-kh-lead" data-i18n="st.lead">Analisis turunan dari data yang sudah terkumpul: seberapa jauh target, di mana peluangnya, proyek mana yang rawan, siapa menguasai pasar, ke mana uang mengalir, dan ke mana arah pemberitaan. Bukan AI, bukan kalkulator: rumus tetap, sumber terbuka.</p>
+  </div>
+</section>
+<div id="stIsi"></div>
+</div>
+<div id="pnRapor" hidden>
+<section id="rpKh" class="jm-kh" aria-labelledby="rpKhJ">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-presentasi"/></svg><span data-i18n="rp.eyebrow">Rapor berkala</span></p>
+    <h2 id="rpKhJ" data-i18n="rp.judul">Kondisi EBT Indonesia</h2>
+    <p id="rpJawab" class="jm-kh-lead" data-i18n="rp.lead">Rapor bulanan dan tahunan dari data yang ada di direktori ini, dibekukan pada tanggal tertentu dan siap dibagikan.</p>
+    <div class="rp-kh-aksi" id="rpAksi"></div>
+  </div>
+  <div class="jm-kh-ubin" id="rpUbin" aria-live="polite"></div>
+</section>
+<div id="rpIsi"></div>
+</div>
 </main>
 <footer class="jm-kaki" id="kaki"></footer>
-<script type="module" src="/target.js"></script>
+<script type="module" src="/target_halaman.js"></script>
 </body>
 </html>

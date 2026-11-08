@@ -1,12 +1,13 @@
 /* /akademi: fungsi murni (tanpa DOM) untuk jalur belajar, nilai kuis, status modul, dan lencana. Dipakai layar dan uji.
    Progres = { langkah: { "<modul>/<indeks>": 1 }, kuis: { "<modul>": { terbaik: 0-100, waktu: ms } } }, disimpan di peramban (localStorage), BUKAN di server.
    Lencana = lencana partisipasi platform, bukan sertifikat resmi. */
+import { rumahTopik } from "./inti/rumah_tek.js";
 export const KUNCI = "meti-akademi-v1";
 
 /** Tautan sebuah langkah/sumber: topik, istilah, metode, izin (tanya jawab perizinan), halaman (jalur situs). */
 export function hrefSumber({ jenis, ref }) {
-  if (jenis === "topik") return "/topik?id=" + encodeURIComponent(ref);
-  if (jenis === "istilah") return "/istilah#" + encodeURIComponent(ref);
+  if (jenis === "topik") return rumahTopik(ref);
+  if (jenis === "istilah") return "/panduan#istilah-" + encodeURIComponent(ref);
   if (jenis === "metode") return "/metode#" + encodeURIComponent(ref);
   if (jenis === "izin") return "/perizinan";
   if (jenis === "halaman" && /^\/(?!\/)[\w\-/?=&#.]*$/.test(ref)) return ref;

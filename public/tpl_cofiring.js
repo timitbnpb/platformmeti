@@ -17,7 +17,7 @@ export function mulai(el) {
   el.innerHTML = [
     ex({ id: "tpl-c-cf", ikon: "tek-bio", topik: t("tpl.cf.ey.cf"), judulHtml: esc(t("tpl.cf.j.cf", { n: num((nas?.angka || [])[0]?.nilai || 0, 0) })), subHtml: esc(t("tpl.cf.s.cf")),
       isiHtml: `<div class="tpl-kisi">${cf.map(kartu).join("")}</div><p class="jm-bantu">${tautRegulasi("permen-esdm-12-2023", "Permen ESDM 12/2023")} <a class="rg3-tautan" href="/bioenergi?tab=listrik">${esc(t("tpl.cf.lihat_bio"))}</a></p>${catatan("tpl.cf.n.cf")}` }),
-    ex({ id: "tpl-c-am", ikon: "petir", topik: t("tpl.cf.ey.am"), judulHtml: esc(t("tpl.cf.j.am")), subHtml: esc(t("tpl.cf.s.am")), isiHtml: `<div class="tpl-kisi">${am.map(kartu).join("")}</div><p class="jm-bantu"><a class="rg3-tautan" href="/energi-baru">${esc(t("tpl.cf.lihat_enb"))}</a></p>${catatan("tpl.cf.n.am")}` }),
+    ex({ id: "tpl-c-am", ikon: "petir", topik: t("tpl.cf.ey.am"), judulHtml: esc(t("tpl.cf.j.am")), subHtml: esc(t("tpl.cf.s.am")), isiHtml: `<div class="tpl-kisi">${am.map(kartu).join("")}</div><p class="jm-bantu"><a class="rg3-tautan" href="/transisi-pltu?tab=enb">${esc(t("tpl.cf.lihat_enb"))}</a> <a class="rg3-tautan" href="/gas?tab=transisi">${esc(t("tpl.cf.lihat_gas"))}</a></p>${catatan("tpl.cf.n.am")}` }),
   ].join("");
   siapTautan("regulasi").then(() => naikkan(el));
 }

@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 const PUB = new URL("../../public/", import.meta.url);
 const ASAL = "https://direktori.metiires.or.id";
-const UTAMA = ["/", "/proyek", "/regulasi", "/wilayah", "/berita", "/siaran-pers", "/insight", "/rantai", "/asean", "/kalender", "/metode", "/tentang"];
+const UTAMA = ["/", "/proyek", "/regulasi", "/wilayah", "/berita", "/siaran-pers", "/insight", "/rantai-global", "/asean", "/kalender", "/metode", "/tentang"];
 const baca = (n) => JSON.parse(readFileSync(new URL(`data/${n}.json`, PUB), "utf8"));
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[c]);
 

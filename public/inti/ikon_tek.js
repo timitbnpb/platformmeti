@@ -1,3 +1,4 @@
+import { rumahTek } from "/inti/rumah_tek.js";
 import { t, ada } from "/i18n.js";
 import { esc } from "/inti/umum.js";
 /* Ikon teknologi EBT (garis, currentColor). Satu sumber untuk /proyek; jalur salinan dari beranda_bawah.js IKON. */
@@ -36,7 +37,7 @@ export const pilTek = (kode) => {
 };
 
 /* Pil teknologi sebagai tautan ke /teknologi/<kode> (hanya di sel/baris yang tidak berada di dalam <a> lain) */
-export const pilTekTaut = (kode) => (kode && TEK_ADA.has(kode) ? `<a class="jm-pil-taut" href="/teknologi/${esc(kode)}">${pilTek(kode)}</a>` : pilTek(kode));
+export const pilTekTaut = (kode) => (kode && TEK_ADA.has(kode) ? `<a class="jm-pil-taut" href="${esc(rumahTek(kode))}">${pilTek(kode)}</a>` : pilTek(kode));
 
 /* Pil status proyek dengan ikon (rencana, konstruksi, beroperasi, dibatalkan, tidak-diketahui) */
 const IK_ST = {

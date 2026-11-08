@@ -30,7 +30,7 @@ export const TEK = [
   { id: "daur-ulang", pemilik: true, ik: "daur", warna: "karbon", p: (p) => /daur ulang|recycl/i.test(p.nama), rb: /daur ulang|limbah panel|recycl|limbah baterai/i, rr: /daur ulang|limbah b3|limbah panel/i, ind: { rt: ["daur ulang"], tkdn: [], pt: "daur ulang" } },
 ];
 export const tekById = (id) => TEK.find((x) => x.id === id);
-export const TEK_AWAL = "plts-atap";
+export const TEK_AWAL = "hibrida"; /* teknologi bermodul dialihkan ke modulnya (src/alih_tek.js); awal = yang tanpa modul */
 
 const normNama = (s) => String(s ?? "").toLowerCase().replace(/^pt\.?\s+/, "").replace(/[^a-z0-9]+/g, " ").trim();
 /* Saringan murni, dipisah agar bisa diuji di Node. */

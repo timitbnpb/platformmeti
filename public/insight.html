@@ -20,6 +20,8 @@
 <link rel="stylesheet" href="/analisis.css">
 <link rel="stylesheet" href="/grafik.css">
 <link rel="stylesheet" href="/insight.css">
+<link rel="stylesheet" href="/analisis.css">
+<link rel="stylesheet" href="/ringkasan.css">
 <script src="/tema.js"></script>
 </head>
 <body>
@@ -32,6 +34,7 @@
   </div>
   <div class="jm-ins-ubin" id="ubin" aria-label="Angka utama" data-i18n-attr="aria-label:ins.hero.ubin"></div>
 </section>
+<div id="pnTemuan">
 <section aria-labelledby="h-temuan">
   <div class="jm-ins-kepala">
     <span class="jm-ins-kep-ik"><svg class="jm-ik" width="20" height="20" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-insight"/></svg></span><span class="jm-ins-kep-tk"><h2 id="h-temuan" data-i18n="ins.temuan">Temuan</h2><small data-i18n="ins.temuan_sub">Angka yang paling layak dibaca lebih dulu, dari data yang termuat.</small></span>
@@ -46,6 +49,19 @@
   </div>
   <div id="tren-isi" class="jm-ins-grid"></div>
 </section>
+</div>
+<div id="pnRingkasan" hidden>
+<section id="reKh" class="jm-kh" aria-labelledby="reKhJ">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-ringkasan"/></svg><span data-i18n="re2.eyebrow">Ringkasan eksekutif</span></p>
+    <h2 id="reKhJ" data-i18n="re2.judul">Energi terbarukan Indonesia dalam satu halaman</h2>
+    <p id="reJawab" class="jm-kh-lead" data-i18n="re2.lead">Delapan angka kunci, apa yang berubah bulan ini, dan temuan utama, tiap angka dengan sumbernya. Siap dicetak atau disimpan sebagai PDF untuk pejabat dan direksi.</p>
+    <div class="re-aksi" id="reAksi"></div>
+  </div>
+  <div class="jm-kh-ubin" id="reUbin" aria-live="polite"></div>
+</section>
+<div id="reIsi"></div>
+</div>
 </main>
 <footer class="jm-kaki" id="kaki"></footer>
 <script type="module" src="/insight.js"></script>

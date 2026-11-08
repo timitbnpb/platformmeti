@@ -39,7 +39,9 @@ export async function tampilDetail(el, D, id) {
   if (i.proyek_ids.length) ent.push(`<h4 class="isu-sub">${ikon("proyek", 16)}${esc(t("isu.d.proyek"))}</h4><ul class="isu-chips">${i.proyek_ids.map((r) => chip(tautProyek(r))).join("")}</ul>`);
   ent.push(`<h4 class="isu-sub">${ikon("wilayah", 16)}${esc(t("isu.d.wilayah"))}</h4>${i.prov.length ? `<ul class="isu-chips">${i.prov.map((k) => chip(tautProvinsi(k) + (i.wilayah.filter((w) => w.length === 4 && w.startsWith(k)).map((w) => ` <small class="isu-bps">BPS ${esc(w)}</small>`).join("")))).join("")}</ul>` : `<p class="isu-nas">${ikon("globe", 16)}${esc(t("isu.d.nasional"))}</p>`}`);
   if (/PLTA|hidro|hydro|Batang Toru|Kayan|Mentarang|Cisokan|bendungan/i.test(i.judul)) ent.push(`<p class="jm-bantu"><a class="isu-sl" href="/hidro?tab=isu">${esc(t("isu.d.hdr"))}</a></p>`);
+  if (/nuklir|PLTN/i.test(i.judul)) ent.push(`<p class="jm-bantu"><a class="isu-sl" href="/nuklir?tab=opini">${esc(t("nkl.k.opini_taut"))}</a></p>`);
   if (/panas bumi|PLTP|geothermal/i.test(i.judul)) ent.push(`<p class="jm-bantu"><a class="isu-sl" href="/panas-bumi?tab=isu">${esc(t("isu.d.pb"))}</a></p>`);
+  if (/take-or-pay|subsidi dan kompensasi|JETP/i.test(i.judul)) ent.push(`<p class="jm-bantu"><a class="isu-sl" href="/gas?tab=isu">${esc(t("isu.d.gas"))}</a></p>`);
   if (/bayu|angin|PLTB|wind/i.test(i.judul)) ent.push(`<p class="jm-bantu"><a class="isu-sl" href="/angin?tab=isu">${esc(t("isu.d.ang"))}</a></p>`);
   if (/sampah|PSEL|PLTSa|RDF|insinerator/i.test(i.judul)) ent.push(`<p class="jm-bantu"><a class="isu-sl" href="/sampah-energi?tab=isu">${esc(t("swe.isu.d"))}</a></p>`);
   blok.push(grup("isu.d.entitas", "tautan", ent.join("")));

@@ -2,6 +2,7 @@
    Butir ringkas: j judul, s sub, u tautan, x teks cari tambahan (alias, singkatan, nomor), b tingkat bukti, e=1 tautan luar,
    l=1 logo organisasi, p kode lambang provinsi, t teknologi, st status, k kunci i18n (halaman). Normalisasi + peringkat ada di public/inti/cari_rumus.js.
    Pakai: node scripts/pipa/indeks_cari.mjs   (hukum: public/data/hukum/katalog.json dipakai bila ada) */
+import { rumahTek, rumahTopik } from "../../public/inti/rumah_tek.js";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -15,10 +16,10 @@ const b = (j, s, u, x, o = {}) => bersih({ j: String(j ?? "").trim(), s, u, x: A
 const tanggalPendek = (t) => String(t || "").slice(0, 10);
 
 // halaman situs: judul dari kamus (kunci disimpan, klien memakai t(k) agar mengikuti bahasa)
-const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai", "nav.rantai"], ["/rantai-global", "rg3.nav"], ["/lelang", "lel.nav"], ["/baterai-ev", "bev.nav"], ["/jaringan", "jr.nav"], ["/bioenergi", "bn.nav"], ["/surya", "sur.nav"], ["/hidrogen", "h2.nav"], ["/transisi-pltu", "tpl.nav"], ["/panas-bumi", "pbm.nav"], ["/sampah-energi", "swe.nav"], ["/angin", "ang.nav"], ["/hidro", "hdr.nav"], ["/asean", "nav.asean"], ["/jejaring", "nav.jejaring"], ["/metode", "nav.sub.metode"],
+const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai-global?tab=tkdn", "nav.rantai"], ["/rantai-global", "rg3.nav"], ["/lelang", "lel.nav"], ["/baterai-ev", "bev.nav"], ["/jaringan", "jr.nav"], ["/bioenergi", "bn.nav"], ["/surya", "sur.nav"], ["/hidrogen", "h2.nav"], ["/transisi-pltu", "tpl.nav"], ["/panas-bumi", "pbm.nav"], ["/gas", "gsj.nav"], ["/nuklir", "nkl.nav"], ["/sampah-energi", "swe.nav"], ["/angin", "ang.nav"], ["/hidro", "hdr.nav"], ["/asean", "nav.asean"], ["/jejaring", "nav.jejaring"], ["/metode", "nav.sub.metode"],
   ["/proyek", "nav.proyek"], ["/wilayah", "nav.wilayah"], ["/regulasi", "nav.regulasi"], ["/berita", "nav.berita"], ["/kalender", "nav.kalender"], ["/tentang", "nav.tentang"],
-  ["/pustaka", "nav.pustaka"], ["/program", "nav.program"], ["/topik", "nav.topik"], ["/peluang", "nav.peluang"], ["/indeks", "nav.indeks"], ["/strategi", "nav.strategi"],
-  ["/direktori", "nav.direktori"], ["/transisi", "nav.transisi"], ["/pelacak", "nav.pelacak"], ["/kuadran", "nav.kuadran"], ["/rapor", "nav.rapor"], ["/kerja", "nav.kerja"],
+  ["/pustaka", "nav.pustaka"], ["/program", "nav.program"], ["/topik", "nav.topik"], ["/peluang", "nav.peluang"], ["/indeks", "nav.indeks"], ["/target#strategi", "nav.strategi"],
+  ["/direktori", "nav.direktori"], ["/target#transisi", "nav.transisi"], ["/pelacak", "nav.pelacak"], ["/kuadran", "nav.kuadran"], ["/target#rapor", "nav.rapor"], ["/kerja", "nav.kerja"],
   ["/radar", "nav.radar"], ["/investasi", "iv.nav"], ["/biaya-listrik", "nav.biaya_listrik"], ["/keuangan-hijau", "nav.keuangan_hijau"], ["/pasar-listrik-hijau", "nav.pasar_hijau"], ["/dokumen-data", "nav.dokumen_data"],
   ["/kelayakan", "nav.kelayakan"], ["/cari", "cari.judul"]];
 
@@ -57,7 +58,7 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
     if (/^(dasar-|indeks|ui\.|luar_)/.test(f) || !f.endsWith(".json")) continue;
     const tp = JSON.parse(readFileSync(join(dirTopik, f), "utf8")), tid = tp.id || f.replace(/\.json$/, "").replace(/_/g, "-");
     if (!tp.bab) continue;
-    const url = (bab) => `/topik?id=${encodeURIComponent(tid)}${bab ? "#bab-" + bab : ""}`, nm = tp.judul?.id || nmTopik(tid);
+    const url = (bab) => rumahTopik(tid, bab), nm = tp.judul?.id || nmTopik(tid);
     tambah("topik", b(nm, "Topik mendalam", url(), [tp.lead?.id], { b: "kajian" }));
     for (const [no, bb] of Object.entries(tp.bab)) {
       const jb = ui.bab?.[no]?.j?.id;
@@ -106,7 +107,7 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
   }
 
   // istilah nasional (G5): nama, alias, arti
-  for (const i of data("istilah")?.istilah || []) tambah("istilah", b(i.nama, i.arti?.id ? String(i.arti.id).slice(0, 90) : "", "/istilah#" + encodeURIComponent(i.id), [i.panjang, ...(i.alias || []), i.arti?.id, i.arti?.en], { b: i.resmi ? "resmi" : "" }));
+  for (const i of data("istilah")?.istilah || []) tambah("istilah", b(i.nama, i.arti?.id ? String(i.arti.id).slice(0, 90) : "", "/panduan#istilah-" + encodeURIComponent(i.id), [i.panjang, ...(i.alias || []), i.arti?.id, i.arti?.en], { b: i.resmi ? "resmi" : "" }));
   return out;
 }
 

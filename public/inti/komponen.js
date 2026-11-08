@@ -41,24 +41,24 @@ export const tabTautan = (items) =>
 export const BAGIAN_INSIGHT = [
   { href: "/insight", ikon: "kajian", kunci: "nav.sub.ringkasan" },
   { href: "/insight#tren", ikon: "linimasa", kunci: "nav.sub.tren" },
-  { href: "/rantai", ikon: "rantai", kunci: "nav.rantai" },
+  { href: "/insight#ringkasan", ikon: "ringkasan", kunci: "ins.tab.ringkasan" },
+  { href: "/rantai-global?tab=tkdn", ikon: "rantai", kunci: "nav.rantai" },
   { href: "/asean", ikon: "asean", kunci: "nav.asean" },
   { href: "/metode", ikon: "metode", kunci: "nav.sub.metode" },
 ];
 export function subnavHtml(jalur, hash = "") {
-  const aktif = (x) =>
-    x.href === "/insight"
-      ? jalur === "/insight" && hash !== "#tren"
-      : x.href === "/insight#tren"
-        ? jalur === "/insight" && hash === "#tren"
-        : jalur === x.href || jalur.startsWith(x.href + "/");
+  const aktif = (x) => {
+    const [dasar, h] = x.href.split("#"), p = dasar.split("?")[0];
+    if (p === "/insight") return jalur === "/insight" && (h ? hash === "#" + h : hash !== "#tren" && hash !== "#ringkasan");
+    return jalur === p || jalur.startsWith(p + "/");
+  };
   return `<nav class="jm-subnav" id="subnav" aria-label="${esc(t("nav.insight"))}">${tabTautan(BAGIAN_INSIGHT.map((x) => ({ href: x.href, ikon: x.ikon, label: t(x.kunci), aktif: aktif(x) })))}</nav>`;
 }
 export const diBagianInsight = (jalur) =>
   BAGIAN_INSIGHT.some(
     (x) =>
       !x.href.includes("#") &&
-      (jalur === x.href || jalur.startsWith(x.href + "/")),
+      (jalur === x.href.split("?")[0] || jalur.startsWith(x.href.split("?")[0] + "/")),
   );
 
 /* Sumber: ikon "!" dalam lingkaran, klik membuka catatan sumber (permintaan pemilik 7 Nov 2026).

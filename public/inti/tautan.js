@@ -1,8 +1,9 @@
 /* Tautan entitas bersama: tautProyek, tautOrg, tautOrang, tautRegulasi, tautProvinsi, tautTeknologi, tautProgram, tautEvent, tautDokumen.
    Semua sinkron dan mengembalikan HTML. Indeks nama->id dimuat malas dari /data/*.json; selama belum siap, fungsi mengembalikan
    <span data-taut-j data-taut-k> berisi teks polos, lalu dinaikkan jadi <a> begitu indeks datang. Tak cocok = teks polos (di-escape).
-   Rute: /p/<id>, /o/<id>, orang -> /o/<organisasi>, /regulasi?id=, /wilayah/<kode>, /teknologi/<kode>, /program/<kode>, /event/<slug>, /pustaka?id=.
+   Rute: /p/<id>, /o/<id>, orang -> /o/<organisasi>, /regulasi?id=, /wilayah/<kode>, modul teknologi (rumahTek), /program/<kode>, /event/<slug>, /pustaka?id=.
    hubungan(jenis, id) memberi entitas yang tersambung lewat id silang di data (dipakai panel Terkait di inti/komponen.js). */
+import { rumahTek } from "/inti/rumah_tek.js";
 import { t, ada } from "/i18n.js";
 import { esc } from "/inti/umum.js";
 import { PROV } from "/penerbit.js";
@@ -13,7 +14,7 @@ export { tautkanOrg } from "/inti/tautan_org.js";
 const norm = (s) => String(s ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 export const TEKNOLOGI = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "penyimpanan", "hidrogen", "nuklir"];
 const SUMBER = { proyek: "proyek", org: "organisasi", orang: "orang", regulasi: "regulasi", event: "kalender", dokumen: "pustaka", program: "program", siaran: "siaran_pers", berita: "berita", isu: "isu" };
-const RUTE = { isu: (k) => "/isu#" + encodeURIComponent(k), proyek: (k) => "/p/" + k, org: (k) => "/o/" + k, regulasi: (k) => "/regulasi?id=" + encodeURIComponent(k), provinsi: (k) => "/wilayah/" + k, teknologi: (k) => "/teknologi/" + k, program: (k) => "/program/" + k, event: (k) => "/event/" + k, dokumen: (k) => "/pustaka?id=" + encodeURIComponent(k), siaran: (k) => "/siaran-pers/" + k };
+const RUTE = { isu: (k) => "/isu#" + encodeURIComponent(k), proyek: (k) => "/p/" + k, org: (k) => "/o/" + k, regulasi: (k) => "/regulasi?id=" + encodeURIComponent(k), provinsi: (k) => "/wilayah/" + k, teknologi: (k) => rumahTek(k), program: (k) => "/program/" + k, event: (k) => "/event/" + k, dokumen: (k) => "/pustaka?id=" + encodeURIComponent(k), siaran: (k) => "/siaran-pers/" + k };
 
 /* ---------- indeks malas ---------- */
 const data = {}; // jenis -> Promise<json>

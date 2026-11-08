@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Panduan praktis energi terbarukan | Direktori METI</title>
+<title data-i18n="bel.title">Belajar: panduan, akademi, dan istilah | Direktori METI</title>
 <meta name="description" content="Panduan langkah demi langkah energi terbarukan: PLTS atap rumah, usaha, sekolah dan rumah ibadah, izin pembangkit, pendanaan, PLTMH desa, templat studi kelayakan dan term sheet PPA, serta mitos dan fakta.">
 <meta name="theme-color" content="#122B4A">
 <link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
@@ -17,11 +17,15 @@
 <link rel="stylesheet" href="/info.css">
 <link rel="stylesheet" href="/grafik.css">
 <link rel="stylesheet" href="/panduan.css">
+<link rel="stylesheet" href="/akademi.css">
+<link rel="stylesheet" href="/istilah.css">
 <script src="/tema.js"></script>
 </head>
 <body>
 <header class="top" id="kepala"></header>
 <main class="jm-halaman jm-wadah jm-an">
+<div id="tabHal"></div>
+<div id="pnPanduan">
 <section class="jm-kh" aria-labelledby="judul">
   <div class="jm-kh-teks">
     <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-daftar2"/></svg><span data-k="kh.ey">Panduan</span></p>
@@ -31,7 +35,31 @@
   <div class="jm-kh-ubin" id="ubin" aria-live="polite"></div>
 </section>
 <div id="isi" class="inf-isi"></div>
+</div>
+<div id="pnAkademi" hidden>
+<section id="adKh" class="jm-kh" aria-labelledby="adKhJ">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-akademi"/></svg><span data-i18n="ad.eyebrow">Akademi METI</span></p>
+    <h2 id="adKhJ" data-i18n="ad.judul">Belajar EBT langkah demi langkah</h2>
+    <p class="jm-kh-lead" data-i18n="ad.lead">Enam modul ringkas yang merangkai topik, istilah, dan metode di wiki ini menjadi jalur belajar berurutan. Tiap modul ditutup kuis pilihan ganda dari konten bersumber. Lencana adalah penanda partisipasi, bukan sertifikat resmi.</p>
+  </div>
+  <div class="jm-kh-ubin" id="adUbin" aria-live="polite"></div>
+</section>
+<div id="adIsi" class="ad-isi"></div>
+</div>
+<div id="pnIstilah" hidden>
+<section id="isKh" class="jm-kh" aria-labelledby="isKhJ">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-kamus"/></svg><span data-i18n="is2.eyebrow">Kamus istilah</span></p>
+    <h2 id="isKhJ" data-i18n="is2.judul">Istilah dan singkatan energi</h2>
+    <p id="isJawab" class="jm-kh-lead" data-i18n="is2.lead">Arti singkatan dan istilah teknis yang dipakai di seluruh situs: dari 16 topik, pasal definisi regulasi, metode, dan singkatan umum EBT. Definisi resmi dari pasal diutamakan.</p>
+  </div>
+  <div class="jm-kh-ubin" id="isUbin" aria-live="polite"></div>
+</section>
+<div id="isIsi"></div>
+</div>
 </main>
+<dialog class="jm-dlg ad-dlg" id="adDlg" aria-labelledby="adDlgJ"></dialog>
 <footer class="jm-kaki" id="kaki"></footer>
 <script type="module" src="/panduan.js"></script>
 </body>

@@ -1,10 +1,11 @@
 // sematan.js: GET /sematan/<jenis>/<id> = kartu ringkas publik untuk <iframe> di situs lain (tanpa JS, tanpa navbar).
 // Data = pembangun kartu OG (og.js): hanya angka ringkas publik. Satu-satunya rute yang boleh dibingkai pihak luar; sisanya tetap DENY.
+import { MODUL_TOPIK } from "./alih_tek.js";
 import { HEADER_KEAMANAN } from "./util.js";
 import { PEMBANGUN } from "./og.js";
 
 const RE = /^\/sematan\/(organisasi|proyek|orang|provinsi|topik|program|beranda)\/([A-Za-z0-9_-]{1,80})$/;
-const BALIK = { organisasi: (i) => "/o/" + i, proyek: (i) => "/p/" + i, provinsi: (i) => "/wilayah/" + i, topik: (i) => "/teknologi/" + i, program: (i) => "/program/" + i, orang: () => "/direktori", beranda: () => "/" };
+const BALIK = { organisasi: (i) => "/o/" + i, proyek: (i) => "/p/" + i, provinsi: (i) => "/wilayah/" + i, topik: (i) => (Object.hasOwn(MODUL_TOPIK, i) ? MODUL_TOPIK[i] + "?tab=dasar" : "/topik?id=" + encodeURIComponent(i)), program: (i) => "/program/" + i, orang: () => "/direktori", beranda: () => "/" };
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 /** Header keamanan global dengan SATU kelonggaran: boleh dibingkai. */

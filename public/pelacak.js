@@ -16,6 +16,7 @@ import { logoOrgSatu } from "/inti/logo_org.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { muat, namaRegulasi, kelasStatus, label } from "/publik.js";
 import { TEK, TEK_AWAL, tekById, saring, ikonPelacak } from "/pelacak_cfg.js";
+import { MODUL_PELACAK } from "/inti/rumah_tek.js";
 import { tabelHtml, pasangTabel, gambarSemua } from "/pelacak_tabel.js";
 import { industriHtml, logoHtml, gantiMonogram } from "/pelacak_industri.js";
 
@@ -286,7 +287,7 @@ if (!proyek || !target) { isi.innerHTML = ""; tampilGalat(isi, () => location.re
   D.rup = ruptl || { baris: [], sumber: [], meta: {} }; D.ruptl = D.rup.baris;
   gambarIsi();
   pasangTabel(isi);
-  $("plSeg").addEventListener("click", (e) => { const b = e.target.closest("button[data-tek]"); if (b && b.dataset.tek !== cfg.id) pilih(b.dataset.tek); });
+  $("plSeg").addEventListener("click", (e) => { const b = e.target.closest("button[data-tek]"); if (!b || b.dataset.tek === cfg.id) return; if (MODUL_PELACAK[b.dataset.tek]) location.assign(MODUL_PELACAK[b.dataset.tek]); else pilih(b.dataset.tek); });
   saatBahasa(() => { segmen(); gambarIsi(); });
   isi.addEventListener("error", (e) => {
     const im = e.target;

@@ -420,9 +420,12 @@ function sorotHash() {
   setTimeout(() => a.classList.remove("jm-ins-sorot"), 3000);
 }
 
-/* Tab Ringkasan (Temuan) dan Tren (#tren) adalah dua tampilan terpisah, bukan satu halaman bergulir. */
+/* Temuan, Tren (#tren) dan Ringkasan eksekutif (#ringkasan, modul ringkasan.js dimuat malas) adalah tampilan terpisah, dipilih lewat subnav Insight. */
+let eksekutif = false;
 function bagian() {
   const h = decodeURIComponent(location.hash.slice(1));
+  $("pnRingkasan").hidden = h !== "ringkasan"; $("pnTemuan").hidden = h === "ringkasan";
+  if (h === "ringkasan" && !eksekutif) { eksekutif = true; import("/ringkasan.js"); }
   const kartu = h.startsWith("ins-") ? document.getElementById(h) : null;
   const tren = h === "tren" || !!(kartu && $("tren-isi").contains(kartu));
   $("temuan").closest("section").hidden = tren;

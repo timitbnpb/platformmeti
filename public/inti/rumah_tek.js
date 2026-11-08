@@ -1,0 +1,8 @@
+/* Rumah tunggal tiap teknologi = modul ujung ke ujung. Cermin src/alih_tek.js (uji tests/rute-gabung.test.mjs menjaga keduanya sama). */
+export const MODUL_TEK = { surya: "/surya", bayu: "/angin", hidro: "/hidro", "panas-bumi": "/panas-bumi", bioenergi: "/bioenergi", "biomassa-sampah": "/sampah-energi", sampah: "/sampah-energi", wte: "/sampah-energi", penyimpanan: "/baterai-ev", hidrogen: "/hidrogen", nuklir: "/nuklir", gas: "/gas", pltu: "/transisi-pltu" };
+export const MODUL_TOPIK = { surya: "/surya", bayu: "/angin", hidro: "/hidro", "panas-bumi": "/panas-bumi", bioenergi: "/bioenergi", hidrogen: "/hidrogen", penyimpanan: "/baterai-ev", "kendaraan-listrik": "/baterai-ev", nuklir: "/nuklir", "transisi-berkeadilan": "/transisi-pltu", "sampah-energi": "/sampah-energi" };
+export const MODUL_PELACAK = { "plts-atap": "/surya", "plts-terapung": "/surya", bayu: "/angin", "panas-bumi": "/panas-bumi", plta: "/hidro", bioenergi: "/bioenergi", psel: "/sampah-energi", baterai: "/baterai-ev", "kendaraan-listrik": "/baterai-ev", hidrogen: "/hidrogen", nuklir: "/nuklir" };
+/* Tujuan tautan teknologi: modul bila ada (tab Ringkasan), selain itu /teknologi/<kode>. */
+export const rumahTek = (k) => (MODUL_TEK[k] ? MODUL_TEK[k] + "?tab=ringkasan" : "/teknologi/" + encodeURIComponent(k));
+/* Tujuan tautan topik: tab Dasar modul (id topik ikut agar baterai-ev memilih penyimpanan/kendaraan-listrik), selain itu /topik?id=. */
+export const rumahTopik = (id, bab) => (MODUL_TOPIK[id] ? `${MODUL_TOPIK[id]}?tab=dasar${id === "kendaraan-listrik" ? "&topik=" + id : ""}${bab ? "#bab-" + bab : ""}` : `/topik?id=${encodeURIComponent(id)}${bab ? "#bab-" + bab : ""}`);

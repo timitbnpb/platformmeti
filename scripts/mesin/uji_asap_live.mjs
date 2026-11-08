@@ -18,8 +18,10 @@ const ambil = (p, opsi = {}) => fetch(basis + p, {redirect: "manual", ...opsi});
 const PUBLIK_HALAMAN = new Set(["masuk", "aktivasi", "ganti-sandi", "langganan", "daftar", "404"]);
 const halaman = readdirSync(path.join(akar, "public")).filter(f => f.endsWith(".html")).map(f => f.slice(0, -5))
   .filter(n => !PUBLIK_HALAMAN.has(n)).map(n => n === "index" ? "/" : "/" + n);
-const rincian = ["/o/x", "/p/x", "/wilayah/11", "/program/psn", "/sistem/x", "/kawasan/x", "/teknologi/surya"];
-const ALIH = {"/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum"};
+const rincian = ["/o/x", "/p/x", "/wilayah/11", "/program/psn", "/sistem/x", "/kawasan/x", "/teknologi/surya", "/topik?id=surya", "/pelacak?tek=bayu"];
+/* satu teknologi, satu rumah (src/alih_tek.js): tautan lama dialihkan 301 ke modul */
+const ALIH_TEK = {"/teknologi/surya": "/surya?tab=ringkasan", "/teknologi/bayu": "/angin?tab=ringkasan", "/topik?id=hidro": "/hidro?tab=dasar", "/pelacak?tek=plta": "/hidro"};
+const ALIH = {"/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum", "/pelacak-proyek": "/proyek#terpadu", "/proyek-besar": "/proyek#besar", "/proyek-berhenti": "/proyek#henti", "/energi-baru": "/transisi-pltu?tab=enb", "/transisi": "/target#transisi", "/strategi": "/target#strategi", "/rapor": "/target#rapor", "/ringkasan": "/insight#ringkasan", "/rantai": "/rantai-global?tab=tkdn", "/akademi": "/panduan#akademi", "/istilah": "/panduan#istilah"};
 
 /* (b) tamu: semua rute halaman 302 ke /masuk */
 async function tamu() {
@@ -27,7 +29,7 @@ async function tamu() {
     const r = await ambil(p), ke = r.headers.get("location") || "";
     catat("tamu-302", p, r.status === 302 && ke.startsWith("/masuk"), `${r.status} ${ke}`);
   }
-  for (const [p, tujuan] of Object.entries(ALIH)) {
+  for (const [p, tujuan] of Object.entries({...ALIH, ...ALIH_TEK})) {
     const r = await ambil(p), ke = r.headers.get("location") || "";
     /* tamu: gerbang masuk menang atas alih (302 /masuk); alih sejati (301) hanya terlihat setelah masuk */
     catat("alih", p, r.status === 302 && ke.startsWith("/masuk"), `tamu ${r.status} ${ke} (alih ${tujuan} diuji bersesi)`);

@@ -1,5 +1,6 @@
 /* Halaman /tentang (publik): hero berfoto warna asli, tentang METI dan Direktori, teknologi (panel bergambar), struktur organisasi (kartu foto penuh wajah), mitra, FAQ, kontak.
    Teks dari kamus (tn.*); data statis /data/pengurus-meti.json, mitra-meti.json, tentang-kredit.json, ringkas.json. */
+import { rumahTek } from "/inti/rumah_tek.js";
 import "/inti/tautan_org.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, tanggal, angka } from "/i18n.js";
@@ -12,7 +13,7 @@ const muat = (n) => fetch(`/data/${n}.json`).then((r) => { if (!r.ok) throw new 
 const MI = "https://metiires.or.id";
 const SURELP = "meti.ires@gmail.com";
 const KONTAK = [["jm.kaki.surel", SURELP, "berita"], ["jm.kaki.situs", "www.meti.or.id", "tautan"], ["jm.kaki.kantor", "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340", "wilayah"]];
-/* kode teknologi sama dengan /teknologi/<kode>; topik regulasi sama dengan CFG.reg di teknologi.js; foto dari /img/beranda */
+/* kode teknologi sama dengan rumahTek (modul ujung ke ujung); topik regulasi sama dengan CFG.reg di teknologi.js; foto dari /img/beranda */
 const TEK = [["surya", ["surya"], "surya-cirata"], ["bayu", ["angin"], "bayu-sidrap"], ["hidro", ["hidro"], "hidro-saguling"], ["panas-bumi", ["panas_bumi"], "panas-bumi-sibayak"], ["bioenergi", ["bioenergi"], "bioenergi-sawit"], ["biomassa-sampah", ["bioenergi"], "biomassa-bantargebang"], ["penyimpanan", ["penyimpanan"], "penyimpanan-baterai"], ["hidrogen", ["hidrogen"], "hidrogen-spbu"], ["nuklir", ["nuklir"], "nuklir-menara"]];
 /* ponytail: logo lebar (wordmark) diganti lambang kecil + label; ganti lewat data bila daftar bertambah */
 const LAMBANG = { "Ditjen EBTKE ESDM": ["/img/logo/ebtke.png", "Ditjen EBTKE"], "Kementerian ESDM": ["/img/logo/esdm.png", "Kementerian ESDM"] };
@@ -114,7 +115,7 @@ function teknologi(D) {
     const pj = D.proyek.filter((p) => p.teknologi === k), mw = pj.reduce((a, p) => a + (Number(p.kapasitas?.[0]?.nilai) || 0), 0);
     const n = [["proyek", angka(pj.length)], ["mw", mw ? angka(Math.round(mw)) : "-"], ["reg", angka(D.reg.filter((r) => reg.some((x) => r.topik.includes(x))).length)], ["op", angka(pj.filter((p) => p.status?.[0]?.nilai === "beroperasi").length)]];
     const nama = t("tn.tek." + k);
-    return `<li><a class="tn-tp" href="/teknologi/${k}" aria-label="${esc(t("tn.foto.buka", { nama }))}"><span class="tn-tp-f"><img src="/img/beranda/${foto}.webp" alt="" width="800" height="600" loading="lazy"><span class="tn-tp-t"><i class="tn-tp-ik">${ikonTek(k)}</i><b>${esc(nama)}</b></span></span><span class="tn-tp-n">${n.map(([c, v], i) => `<span><i>${ikon(["proyek", "analisis", "regulasi", "centang"][i], 16)}</i><b>${esc(v)}</b><small>${esc(t("tn.tek.n." + c))}</small></span>`).join("")}</span></a></li>`;
+    return `<li><a class="tn-tp" href="${esc(rumahTek(k))}" aria-label="${esc(t("tn.foto.buka", { nama }))}"><span class="tn-tp-f"><img src="/img/beranda/${foto}.webp" alt="" width="800" height="600" loading="lazy"><span class="tn-tp-t"><i class="tn-tp-ik">${ikonTek(k)}</i><b>${esc(nama)}</b></span></span><span class="tn-tp-n">${n.map(([c, v], i) => `<span><i>${ikon(["proyek", "analisis", "regulasi", "centang"][i], 16)}</i><b>${esc(v)}</b><small>${esc(t("tn.tek.n." + c))}</small></span>`).join("")}</span></a></li>`;
   }).join("");
   const j = esc(t("tn.tek.h2", { n: TEK.length })).replace(String(TEK.length), `<span class="jm-hl">${TEK.length}</span>`);
   return `<section class="tn-seksi tn-pita-bg" id="teknologi" aria-labelledby="tn-tek"><div class="jm-ex"><header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey">${ikon("proyek", 14)}${esc(t("tn.ey.teknologi"))}</span><h2 class="jm-ex-j" id="tn-tek">${j}</h2><p class="jm-ex-sub">${esc(t("tn.tek.lead"))}</p></div></header>

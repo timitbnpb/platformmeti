@@ -1,5 +1,4 @@
 /* /rantai: kebutuhan PLTS 100 GWp per tahun vs kapasitas 40 pabrikan modul (ESDM DJEBTKE). Data statis /data/rantai_plts.json. */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml, debounce, ikon } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, hitungHtml, exHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
@@ -49,7 +48,7 @@ function barisTek() {
 
 function jawab() {
   const T = dTek(), B = barisTek(), tk = B.map((x) => x.tkdn).filter((x) => x != null), mw = B.reduce((n, x) => n + (x.mwp || 0), 0);
-  $("jawab").textContent = t("rt.kh.lead");
+  $("rtJawab").textContent = t("rt.kh.lead");
   $("gbr-tek").src = `/img/beranda/${GBR[tek]}.webp`;
   const u = [
     { ikon: "gedung", nilai: num(B.length), satuan: "", label: t("rt.kh.u1"), href: "#h-tabel" },
@@ -58,7 +57,7 @@ function jawab() {
     { ikon: "tingkat", nilai: tk.length ? num(median0(tk), 1) : "-", satuan: tk.length ? "%" : "", label: t("rt.kh.u3"), href: "#h-tabel", turunan: tk.length > 0 },
     { ikon: "peringatan", nilai: num(T.celah.length), satuan: t("rt.dari_n", { n: T.komponen.length }), label: t("rt.kh.u4"), href: "#h-komp" },
   ];
-  $("ubin").innerHTML = ubinHtml(u);
+  $("rtUbin").innerHTML = ubinHtml(u);
 }
 
 function kartu() {
@@ -497,7 +496,6 @@ function pasang() {
 }
 
 async function mulai() {
-  await mulaiHalaman();
   $("kartu").innerHTML = hantuHtml(2);
   try { [d, dp] = await Promise.all([muatData("rantai_plts.json"), muatData("rantai_pasok.json")]); tkdn2 = await muatData("tkdn_produk.json").catch(() => ({ baris: [], sumber: [], meta: {} })); } catch (e) { tampilGalat($("kartu"), mulai); return; }
   pasangAksi(["aksi-peta", "aksi-tabel"]);

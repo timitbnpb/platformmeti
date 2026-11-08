@@ -1,7 +1,6 @@
 /* /rapor: rapor bulanan dan tahunan "Kondisi EBT Indonesia" dari /data/rapor/<periode>.json (scripts/pipa/rapor_bulanan.mjs).
    Kepala standar (judul, 4 ubin, segmen jenis, pilih periode, PNG/PDF), kartu perbandingan hanya metrik sebanding, empat bagian bernomor dengan logo dan nama yang digabung (rapor_nama.js),
    kartu regulasi dan berita, arsip, kutipan. Sel kosong "-" bertooltip alasan. Teks layar dari kamus. */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
 import { esc, ikon, hantuHtml } from "/inti/umum.js";
@@ -159,7 +158,7 @@ function daftarKartu(judulKunci, ik, baris, kartu, tambah = "") {
 
 /* ---------- badan rapor ---------- */
 function kutipHtml(r, nama) {
-  const kutip = t("rp.kutip.isi", { nama, tgl: tanggal(r.dibekukan), url: `${location.origin}/rapor#${r.periode}` });
+  const kutip = t("rp.kutip.isi", { nama, tgl: tanggal(r.dibekukan), url: `${location.origin}/target#${r.periode}` });
   return `<section class="rp-bag rp-kutip-k no-cetak"><span class="rp-kutip-ik">${ikon("salin", 20)}</span><div class="rp-kutip-t"><b>${esc(t("rp.kutip"))}</b><p class="rp-kutip" id="rpKutip">${esc(kutip)}</p></div><button type="button" class="jm-tbl" data-aksi="salin">${ikon("salin", 16)}<span>${esc(t("rp.salin"))}</span></button><details class="rp-info"><summary aria-label="${esc(t("rp.info"))}" title="${esc(t("rp.info"))}">${ikon("info", 18)}</summary><div class="rp-pop"><p>${esc(t("rp.beku", { tgl: tanggal(r.dibekukan) }))}</p><p>${esc(t("rp.catatan_data", { sejak: r.cakupan.berita_sejak || "-" }))}</p></div></details></section>`;
 }
 function badanRapor(r) {
@@ -186,7 +185,7 @@ function unduhPng() {
   const g = dataGrafik(r), maks = Math.max(1, ...g.kol.map((k) => k.v)), lebar = Math.min(110, (W - 96) / g.kol.length - 24);
   x.fillStyle = ink; x.font = "700 26px Inter, Arial, sans-serif"; x.fillText(g.judul, 48, 335);
   g.kol.forEach((k, i) => { const h = Math.max(2, k.v / maks * 260), px = 48 + i * ((W - 96) / g.kol.length) + 12; x.fillStyle = brand; x.fillRect(px, 680 - h, lebar, h); x.fillStyle = ink; x.font = "700 20px Inter, Arial, sans-serif"; x.fillText(num(k.v, k.v % 1 ? 1 : 0), px, 670 - h); x.fillStyle = ink2; x.font = "400 18px Inter, Arial, sans-serif"; x.fillText(k.label.slice(0, 14), px, 708); });
-  x.fillStyle = ink2; x.font = "400 18px Inter, Arial, sans-serif"; x.fillText(`${t("rp.kutip.isi", { nama, tgl: tanggal(r.dibekukan), url: location.origin + "/rapor" })}`.slice(0, 120), 48, 742);
+  x.fillStyle = ink2; x.font = "400 18px Inter, Arial, sans-serif"; x.fillText(`${t("rp.kutip.isi", { nama, tgl: tanggal(r.dibekukan), url: location.origin + "/target#rapor" })}`.slice(0, 120), 48, 742);
   c.toBlob((blob) => { const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `rapor-ebt-${r.periode}.png`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); }, "image/png");
 }
 
@@ -199,8 +198,8 @@ function arsipHtml() {
 }
 function kepala(r, jenis, periode) {
   const nama = namaPeriode(jenis, periode), daftar = S.idx[jenis];
-  $("judul").textContent = t("rp.h1", { nama });
-  $("jawab").textContent = t(jenis === "tahunan" ? "rp.lead_th" : "rp.lead_bl", { nama, tgl: tanggal(r.dibekukan) });
+  $("rpKhJ").textContent = t("rp.h1", { nama });
+  $("rpJawab").textContent = t(jenis === "tahunan" ? "rp.lead_th" : "rp.lead_bl", { nama, tgl: tanggal(r.dibekukan) });
   $("rpAksi").innerHTML = `<div class="rp-seg" role="group" aria-label="${esc(t("rp.jenis"))}"><button type="button" data-j="bulanan" aria-pressed="${jenis === "bulanan"}">${ikon("kalender", 16)}<span>${esc(t("rp.bulanan"))}</span></button><button type="button" data-j="tahunan" aria-pressed="${jenis === "tahunan"}">${ikon("tahun", 16)}<span>${esc(t("rp.tahunan"))}</span></button></div>${pilihHtml({ id: "rpPeriode", ikon: "kalender", label: t("rp.periode"), nilai: periode, opsi: daftar.map((p) => [p, namaPeriode(jenis, p)]) })}<span class="rp-tombol"><button type="button" class="jm-tbl" data-aksi="png">${ikon("gambar", 16)}<span>${esc(t("rp.png"))}</span></button><button type="button" class="jm-tbl" data-aksi="cetak">${ikon("pdf", 16)}<span>${esc(t("rp.pdf"))}</span></button></span>`;
 }
 
@@ -213,10 +212,10 @@ async function referensi() {
 
 async function tampil(jenis, periode) {
   S.jenis = jenis; S.periode = periode;
-  const isi = $("isi");
+  const isi = $("rpIsi");
   isi.innerHTML = hantuHtml(6);
   try { S.r = await muatData(`rapor/${periode}.json`); await referensi(); } catch (e) { return tampilGalat(isi, () => tampil(jenis, periode)); }
-  khUbin("ubin", ubinData(S.r).filter((u) => u.nilai !== "-")); /* ubin tanpa nilai disembunyikan */
+  khUbin("rpUbin", ubinData(S.r).filter((u) => u.nilai !== "-")); /* ubin tanpa nilai disembunyikan */
   TB.clear();
   kepala(S.r, jenis, periode);
   isi.innerHTML = badanRapor(S.r) + arsipHtml();
@@ -224,9 +223,8 @@ async function tampil(jenis, periode) {
 }
 
 async function mulai() {
-  await mulaiHalaman();
-  $("isi").innerHTML = hantuHtml(6);
-  try { S.idx = await muatData("rapor/indeks.json"); } catch (e) { return tampilGalat($("isi"), mulai); }
+  $("rpIsi").innerHTML = hantuHtml(6);
+  try { S.idx = await muatData("rapor/indeks.json"); } catch (e) { return tampilGalat($("rpIsi"), mulai); }
   const h = decodeURIComponent(location.hash.slice(1)), jenis = S.idx.tahunan.includes(h) ? "tahunan" : "bulanan";
   await tampil(jenis, S.idx[jenis].includes(h) ? h : S.idx.bulanan[0]);
   const klik = (e) => {
@@ -239,9 +237,9 @@ async function mulai() {
     else if (b.dataset.aksi === "cetak") window.print();
     else if (b.dataset.aksi === "salin") navigator.clipboard?.writeText($("rpKutip").textContent);
   };
-  $("isi").addEventListener("click", klik); $("rpAksi").addEventListener("click", klik);
+  $("rpIsi").addEventListener("click", klik); $("rpAksi").addEventListener("click", klik);
   $("rpAksi").addEventListener("change", (e) => { if (e.target.id === "rpPeriode") { history.replaceState(null, "", "#" + e.target.value); tampil(S.jenis, e.target.value); } });
-  $("isi").addEventListener("error", (e) => { const im = e.target; if (im.tagName === "IMG" && im.dataset.ini !== undefined) im.replaceWith(document.createTextNode(im.dataset.ini)); }, true);
+  $("rpIsi").addEventListener("error", (e) => { const im = e.target; if (im.tagName === "IMG" && im.dataset.ini !== undefined) im.replaceWith(document.createTextNode(im.dataset.ini)); }, true);
   document.addEventListener("click", (e) => document.querySelectorAll("details.rp-info[open]").forEach((p) => { if (!p.contains(e.target)) p.open = false; }));
 }
 saatBahasa(() => { if (S.r) tampil(S.jenis, S.periode); });

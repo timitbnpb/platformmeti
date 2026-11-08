@@ -8,7 +8,8 @@ import { B, muat, t, esc, ikon, num, urlGet, kosongTab, bukti, juta } from "/bio
 const TAB = [
   { k: "bahan", ikon: "desa" }, { k: "biodiesel", ikon: "pabrik" }, { k: "bioetanol", ikon: "air-energi" }, { k: "saf", ikon: "kapal" }, { k: "listrik", ikon: "petir" },
   { k: "biogas", ikon: "tek-listrik" }, { k: "pelet", ikon: "koper" }, { k: "dana", ikon: "kartu" }, { k: "neraca", ikon: "grafik" }, { k: "isu", ikon: "peringatan" },
-].map((d) => ({ ...d, mod: "/bio_" + d.k + ".js" }));
+  { k: "ringkasan", ikon: "analisis" }, { k: "dasar", ikon: "buku" },
+].map((d) => ({ ...d, mod: d.k === "ringkasan" || d.k === "dasar" ? "/tek_" + d.k + ".js?k=" + ({ ringkasan: "bioenergi", dasar: "bioenergi" })[d.k] : "/bio_" + d.k + ".js" }));
 const siap = new Set(), qsTab = {};
 let kini = "";
 const $ = (id) => document.getElementById(id);

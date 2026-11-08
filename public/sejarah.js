@@ -1,5 +1,6 @@
 /* /sejarah: linimasa energi terbarukan Indonesia per dekade + grafik kapasitas terpasang (IRENA). Data /data/sejarah.json
    (scripts/pipa/sejarah_bangun.mjs), teks /data/teks_sejarah.json. Tiap peristiwa bertaut ke proyek, organisasi, regulasi, istilah, topik. */
+import { rumahTopik } from "/inti/rumah_tek.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, ikon, hantuHtml, nanti } from "/inti/umum.js";
 import { tanggal } from "/i18n.js";
@@ -10,7 +11,7 @@ import { muatTeks, tt, L, num, tautan, seksi, catatan, narasi, sumber, saatBahas
 const $ = (id) => document.getElementById(id);
 const IK_KAT = { proyek: "proyek", regulasi: "regulasi", kelembagaan: "gedung", teknologi: "petir", pendanaan: "kartu" };
 const IK_TAUT = { proyek: "proyek", org: "gedung", regulasi: "regulasi", istilah: "kamus", topik: "topik" };
-const HREF = { proyek: (x) => `/p/${encodeURIComponent(x.id)}`, org: (x) => `/o/${encodeURIComponent(x.id)}`, regulasi: (x) => `/regulasi?id=${encodeURIComponent(x.id)}`, istilah: (x) => `/istilah#${encodeURIComponent(x.id)}`, topik: (x) => `/topik?id=${encodeURIComponent(x.id)}` };
+const HREF = { proyek: (x) => `/p/${encodeURIComponent(x.id)}`, org: (x) => `/o/${encodeURIComponent(x.id)}`, regulasi: (x) => `/regulasi?id=${encodeURIComponent(x.id)}`, istilah: (x) => `/panduan#istilah-${encodeURIComponent(x.id)}`, topik: (x) => rumahTopik(x.id) };
 const IK_BUKTI = { resmi: "lencana", media: "berita", ensiklopedia: "buku" };
 let d = null;
 const st = { kat: new Set(), dek: 0 };

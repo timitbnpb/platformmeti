@@ -210,7 +210,7 @@ function kartuHtml(e) {
   const ada = e.di_direktori;
   return `<div class="kq-kartu-atas"><div class="kq-kartu-id">${ik}<div><h2 id="kqKartuJudul">${esc(e.nama)}</h2><p class="kq-meta"><span class="jm-pil kq-pk-${e.kategori}">${esc(k("sek." + e.kategori))}</span>${e.teknologi.map((x) => `<span class="jm-pil kq-pt">${ikonTek(x)}${esc(t("tk.nama." + x))}</span>`).join("")}</p></div></div>
     <button type="button" class="kq-tutup" data-aksi="tutup" aria-label="${esc(k("kartu.tutup"))}">${ikon("tutup", 20)}</button></div>
-    <div class="kq-aksi">${ada ? tombolIkuti({ jenis: "organisasi", id: e.id, nama: e.nama }) + `<a class="jm-tbl jm-tbl-kecil" href="/o/${esc(e.id)}">${ikon("orang", 16)}<span>${esc(k("kartu.profil"))}</span></a><a class="jm-tbl jm-tbl-kecil" href="/rantai?cari=${encodeURIComponent(e.nama)}">${ikon("rantai", 16)}<span>${esc(k("kartu.rantai"))}</span></a>` : `<span class="jm-bantu">${esc(k("kartu.diluar"))}</span>`}</div>
+    <div class="kq-aksi">${ada ? tombolIkuti({ jenis: "organisasi", id: e.id, nama: e.nama }) + `<a class="jm-tbl jm-tbl-kecil" href="/o/${esc(e.id)}">${ikon("orang", 16)}<span>${esc(k("kartu.profil"))}</span></a><a class="jm-tbl jm-tbl-kecil" href="/rantai-global?tab=tkdn&cari=${encodeURIComponent(e.nama)}">${ikon("rantai", 16)}<span>${esc(k("kartu.rantai"))}</span></a>` : `<span class="jm-bantu">${esc(k("kartu.diluar"))}</span>`}</div>
     <section class="kq-bag"><h3>${esc(k("kartu.skor"))}</h3><ul class="kq-skors">${skorHtml}</ul></section>
     <section class="kq-bag"><h3>${esc(k("kartu.keuangan"))}</h3><dl class="kq-fins">${fin}</dl></section>
     ${aliran(e)}

@@ -52,7 +52,7 @@ export async function mulai(el) {
     X.simulasi?.sertifikat ? ex({ id: "sur-k-tkdn", ikon: "kalkulator", topik: t("sur.k.ey.tkdn"), judulHtml: esc(t("sur.k.j.tkdn", { n: num(X.simulasi.sertifikat.modul.jumlah) })), subHtml: esc(t("sur.k.s.tkdn")),
       isiHtml: `<p class="rg3-info">${ikon("tanya", 18)}<span>${esc(t("sur.k.hip"))} ${bukti("hipotesis", { cara: t("sur.k.cara_tkdn") })}</span></p><div id="sur-k-tk"></div>${daftarCelah((X.simulasi.celah || []).slice(0, 2))}<p class="jm-bantu"><a class="rg3-tautan" href="/rantai-global?tab=kebijakan">${esc(t("sur.k.ke_sim"))}</a></p>` }) : "",
     ex({ id: "sur-k-reg", ikon: "regulasi", topik: t("sur.k.ey.reg"), judulHtml: esc(t("sur.k.j.reg")), subHtml: esc(t("sur.k.s.reg")),
-      isiHtml: `<ul class="sur-daftar">${regulasi()}<li>${ikon("palu", 18)}<div><b>${esc(L(a.dasar.nama))}</b><p class="jm-bantu">${esc(a.dasar.tanggal)}</p></div></li></ul><p class="jm-bantu"><a class="rg3-tautan" href="/regulasi?topik=surya">${esc(t("sur.k.ke_reg"))}</a> <a class="rg3-tautan" href="/topik?id=surya#bab-12">${esc(t("sur.k.ke_topik"))}</a></p>` }),
+      isiHtml: `<ul class="sur-daftar">${regulasi()}<li>${ikon("palu", 18)}<div><b>${esc(L(a.dasar.nama))}</b><p class="jm-bantu">${esc(a.dasar.tanggal)}</p></div></li></ul><p class="jm-bantu"><a class="rg3-tautan" href="/regulasi?topik=surya">${esc(t("sur.k.ke_reg"))}</a> <a class="rg3-tautan" href="/surya?tab=dasar#bab-12">${esc(t("sur.k.ke_topik"))}</a></p>` }),
   ].join("");
   nanti(() => { tabelKebijakan(); dampak(); tkdn(); });
 }

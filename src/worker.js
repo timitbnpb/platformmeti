@@ -24,6 +24,7 @@ import { rute as ruteKonsultasi } from "./konsultasi.js";
 import { rute as ruteKerja } from "./kerja.js";
 import { rute as ruteSurel } from "./surel.js";
 import { rute as ruteHukum } from "./hukum.js";
+import { tujuanAlihTek } from "./alih_tek.js";
 import { rute as ruteTanya } from "./tanya.js";
 import { rute as ruteKeyakinan } from "./keyakinan.js";
 import { catatHit, perbaruiRentang } from "./lalin.js";
@@ -149,7 +150,7 @@ const NAMA_BIDANG = { organisasi: "Organisasi & antarlembaga", advokasi: "Advoka
 const TIDAK_ADA = () => new Response("Tidak ditemukan", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
 const LANGSUNG_404 = /^\/(direktori|admin)\.html$/;
 // Halaman yang digabung (Peluang+Kelayakan, Kalender+Event, Galeri+Video+Podcast): tautan lama dialihkan 301 ke tab barunya, query dipertahankan.
-const ALIH_GABUNG = { "/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum" };
+const ALIH_GABUNG = { "/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum", "/pelacak-proyek": "/proyek#terpadu", "/proyek-besar": "/proyek#besar", "/proyek-berhenti": "/proyek#henti", "/energi-baru": "/transisi-pltu?tab=enb", "/transisi": "/target#transisi", "/strategi": "/target#strategi", "/rapor": "/target#rapor", "/ringkasan": "/insight#ringkasan", "/rantai": "/rantai-global?tab=tkdn", "/akademi": "/panduan#akademi", "/istilah": "/panduan#istilah" };
 
 function halamanPrivat(res) {
   const r = new Response(res.body, res);
@@ -191,8 +192,15 @@ async function halaman(req, env, url, akun) {
     return new Response(null, { status: 302, headers: { location: "/masuk?ke=" + encodeURIComponent(path + url.search), ...PRIVAT } });
   }
   if (ALIH_GABUNG[path] && (req.method === "GET" || req.method === "HEAD")) {
-    const [ke, hash] = ALIH_GABUNG[path].split("#");
-    return new Response(null, { status: 301, headers: { location: ke + url.search + "#" + hash } });
+    const [dasar, hash] = ALIH_GABUNG[path].split("#"), [ke, qsBaru = ""] = dasar.split("?");
+    const q = new URLSearchParams(url.search); for (const [k, v] of new URLSearchParams(qsBaru)) q.set(k, v);
+    return new Response(null, { status: 301, headers: { location: ke + (q.size ? "?" + q : "") + "#" + hash } });
+  }
+  // /sektor?id=<id> (rincian satu sektor) dialihkan ke /direktori; /sektor tanpa id tetap peta sektor.
+  if (path === "/sektor" && url.searchParams.has("id") && (req.method === "GET" || req.method === "HEAD")) return new Response(null, { status: 301, headers: { location: "/direktori" } });
+  if (req.method === "GET" || req.method === "HEAD") {
+    const ke = tujuanAlihTek(url);
+    if (ke) return new Response(null, { status: 301, headers: { location: ke } });
   }
   for (const k of TERKUNCI) {
     if (!k.re.test(path)) continue;
