@@ -14,7 +14,7 @@ const BUKTI = new Set(['kata-pihak', 'cuplikan', 'dokumen-resmi', 'primer']);
 const sumberSah = (s) => Array.isArray(s) && s.length > 0 && s.every((x) => x && x.url && x.tanggal_periksa && BUKTI.has(x.tingkat_bukti));
 // ponytail: langit-langit bukti (media maks cuplikan; situs-* maks kata-pihak) dicek di sini; samakan dengan taksonomi.js bila daftarnya berubah.
 const langit = (s) => s.every((x) => !(x.label === 'media' && x.tingkat_bukti !== 'cuplikan') && !(/^situs-/.test(x.label) && !['kata-pihak', 'cuplikan'].includes(x.tingkat_bukti)));
-const KUNCI = ['deskripsi', 'lokasi', 'penyelenggara', 'mitra', 'organisasi_ids', 'keterbukaan', 'daftar_url', 'instagram', 'youtube', 'situs', 'tema', 'video_ids', 'berita', 'kapasitas', 'tanggal_catatan', 'jam', 'seri', 'kata_kunci', 'sumber'];
+const KUNCI = ['deskripsi', 'sorotan', 'lokasi', 'penyelenggara', 'mitra', 'organisasi_ids', 'keterbukaan', 'daftar_url', 'instagram', 'youtube', 'situs', 'tema', 'video_ids', 'berita', 'kapasitas', 'tanggal_catatan', 'jam', 'seri', 'kata_kunci', 'sumber'];
 export const bisaTayang = (g) => !!(g && g.file && /\bMETI\b/.test(g.hak || '') && !/antara/i.test(`${g.hak} ${g.url_gambar || ''}`));
 export const slugDari = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60).replace(/-+$/, '');
 const EVENT = (b) => !['regulasi', 'tenggat'].includes(b.jenis);

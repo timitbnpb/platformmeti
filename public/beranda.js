@@ -207,23 +207,23 @@ async function cari(q) {
   hasil.innerHTML = grup.length ? grup.map(({ g, cocok }) => `<div><h3>${esc(t("beranda.cari." + g[0]))} (${esc(angka(cocok.length))})</h3><ul>${cocok.slice(0, 4).map(({ x }) => `<li><a href="${esc(g[4](x))}">${esc(g[2](x))}<small>${esc(g[3](x) || "")}</small></a></li>`).join("")}</ul></div>`).join("") : `<p>${esc(t("jm.kosong.cocok"))}</p>`;
 }
 
-/* Sorotan agenda METI: data/agenda-sorotan.json diisi admin lewat berkas (belum ada UI admin).
-   Format: {"dibangun_pada":"YYYY-MM-DD","baris":[{"nama":"...","tanggal_mulai":"YYYY-MM-DD","tanggal_selesai":"YYYY-MM-DD",
-   "tempat":"...","deskripsi":"...","poster":"/img/...webp (opsional)","url_daftar":"https://... (opsional)","url_info":"https://... (opsional)"}]}.
-   Baris tampil bila tanggal_selesai >= hari ini (zona perangkat); tanpa baris tampil, bagian tetap tersembunyi. Tautan luar hanya http(s), rel noopener. */
+/* Sorotan agenda METI: satu sumber dengan Kalender. Baris kalender.json bertanda "sorotan": true (isi lewat data/kalender_perkaya.json)
+   tampil di sini selama tanggal_selesai (atau tanggal) >= hari ini; tanpa baris, bagian tersembunyi. Tautan luar hanya http(s), rel noopener. */
 async function gambarSorotan() {
   const el = document.getElementById("sorotan");
   if (!el) return;
   let d;
-  try { d = await muat("agenda-sorotan"); } catch (e) { el.hidden = true; return; }
+  try { d = await muat("kalender"); } catch (e) { el.hidden = true; return; }
   const n = new Date(), hari = `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, "0")}-${String(n.getDate()).padStart(2, "0")}`;
-  const baris = (d.baris || []).filter((r) => r && r.nama && String(r.tanggal_selesai || r.tanggal_mulai || "") >= hari).sort((a, b) => String(a.tanggal_mulai).localeCompare(String(b.tanggal_mulai)));
+  const baris = (d.baris || []).filter((r) => r && r.sorotan === true && r.judul && String(r.tanggal_selesai || r.tanggal || "") >= hari).sort((a, b) => String(a.tanggal).localeCompare(String(b.tanggal)));
   if (!baris.length) { el.hidden = true; el.innerHTML = ""; return; }
   const luar = (u, kunci, kelas) => { const h = urlAman(u); return h ? `<a class="${kelas}" href="${esc(h)}" target="_blank" rel="noopener noreferrer">${esc(t(kunci))}</a>` : ""; };
   el.innerHTML = baris.map((r) => {
-    const mulai = r.tanggal_mulai ? tanggal(r.tanggal_mulai) : "", akhir = r.tanggal_selesai && r.tanggal_selesai !== r.tanggal_mulai ? tanggal(r.tanggal_selesai) : "";
-    const poster = r.poster && String(r.poster).startsWith("/") && !String(r.poster).startsWith("//") ? `<img class="jm-sorotan-poster" src="${esc(r.poster)}" alt="${esc(t("beranda.sorotan.poster", { nama: r.nama }))}" loading="lazy" decoding="async">` : "";
-    return `<article class="jm-sorotan-kt">${poster}<div class="jm-sorotan-isi"><span class="jm-pil">${esc(t("beranda.sorotan.label"))}</span><h2>${esc(r.nama)}</h2><p class="jm-sorotan-meta">${esc(mulai)}${akhir ? " - " + esc(akhir) : ""}${r.tempat ? " | " + esc(r.tempat) : ""}</p>${r.deskripsi ? `<p>${esc(r.deskripsi)}</p>` : ""}<div class="jm-sorotan-aksi">${luar(r.url_daftar, "beranda.sorotan.daftar", "jm-tbl")}${luar(r.url_info, "beranda.sorotan.info", "jm-sorotan-info")}</div></div></article>`;
+    const mulai = r.tanggal ? tanggal(r.tanggal) : "", akhir = r.tanggal_selesai && r.tanggal_selesai !== r.tanggal ? tanggal(r.tanggal_selesai) : "";
+    const tempat = [r.lokasi?.tempat, r.jam].filter(Boolean).join(", "), pf = r.poster?.file;
+    const poster = pf && String(pf).startsWith("/") && !String(pf).startsWith("//") ? `<img class="jm-sorotan-poster" src="${esc(pf)}" alt="${esc(t("beranda.sorotan.poster", { nama: r.judul }))}" loading="lazy" decoding="async">` : "";
+    const info = r.slug ? `<a class="jm-sorotan-info" href="/event/${encodeURIComponent(r.slug)}">${esc(t("beranda.sorotan.info"))}</a>` : "";
+    return `<article class="jm-sorotan-kt">${poster}<div class="jm-sorotan-isi"><span class="jm-pil">${esc(t("beranda.sorotan.label"))}</span><h2>${esc(r.judul)}</h2><p class="jm-sorotan-meta">${esc(mulai)}${akhir ? " - " + esc(akhir) : ""}${tempat ? " | " + esc(tempat) : ""}</p>${r.deskripsi ? `<p>${esc(r.deskripsi)}</p>` : ""}<div class="jm-sorotan-aksi">${luar(r.daftar_url, "beranda.sorotan.daftar", "jm-tbl")}${info}</div></div></article>`;
   }).join("");
   el.hidden = false;
 }

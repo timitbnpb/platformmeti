@@ -335,6 +335,16 @@ function bukaAcara(id, opener) {
         <div class="kal-bagi" hidden><a class="kal-bulat" href="${esc(bagi.wa)}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">${ikon("whatsapp", 20)}</a><a class="kal-bulat" href="${esc(bagi.x)}" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">${ikon("x", 20)}</a><a class="kal-bulat" href="${esc(bagi.li)}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">${ikon("linkedin", 20)}</a><button type="button" class="kal-bulat" data-pop="salin" data-url="${esc(url)}" aria-label="${esc(t("kal.pop.salin"))}" title="${esc(t("kal.pop.salin"))}">${ikon("salin", 20)}</button></div>
         ${u ? `<a class="jm-tbl" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 18)}<span>${esc(t("kal.pop.buka"))}</span></a>` : ""}${buktiHtml(b)}</div></aside></div></div>`, opener);
   history.replaceState(null, "", `${location.pathname}${location.search}#acara-${b.id}`);
+  bannerBukti(b.id, g);
+}
+/* Satu sumber: acara tanpa poster memakai foto pertama bukti Agenda (D1, diunggah admin) sebagai banner popup. */
+async function bannerBukti(ref, g) {
+  if (g || !(BUKTI?.get(ref)?.jumlah_foto > 0)) return;
+  let det;
+  try { det = await api("/api/agenda/" + encodeURIComponent(ref)); } catch (e) { return; }
+  const f = (det?.foto || [])[0], ban = document.querySelector(".kal-pop-ban");
+  if (!f || !ban || ban.querySelector("img")) return;
+  ban.insertAdjacentHTML("afterbegin", `<img src="/api/agenda/foto/${encodeURIComponent(f.id)}" alt="" decoding="async" data-galat="hapus">`);
 }
 function bukaHari(h, opener) {
   const r = ROWS.filter((b) => b.tanggal <= h && b.akhir >= h), lanjut = ROWS.filter((b) => b.tanggal > h).sort((a, c) => a.tanggal.localeCompare(c.tanggal))[0];

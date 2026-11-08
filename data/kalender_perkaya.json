@@ -523,6 +523,48 @@
      "tingkat_bukti": "primer"
     }
    ]
+  },
+  {
+   "kandidat_id": "kd_webinar_3t_2026",
+   "tanda": "kandidat-mendatang",
+   "judul": "Webinar Nasional: Elektrifikasi Daerah 3T, Perbatasan, dan Fasilitas Vital Terpencil (Sistem Microgrid/Hybrid)",
+   "jenis": "seminar",
+   "tanggal": "2026-11-12",
+   "deskripsi": "Webinar nasional tentang elektrifikasi daerah 3T, perbatasan, dan fasilitas vital terpencil dengan sistem microgrid/hybrid, berfokus pada mandat pemerintah untuk keadilan energi di daerah yang belum terjangkau atau berjaringan PLN tidak stabil. Mewakili Ketua Umum METI: Adrian Lembong (Ketua Bidang Advokasi dan Regulasi) dan Dr. Parlindungan Purba (Ketua METI Wilayah). Keynote Amarullah Ramadhan (Onesia), moderator Lananda Arsy Jovansyah.",
+   "lokasi": {
+    "tempat": "Daring via Zoom",
+    "kota": null,
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "Techminar",
+    "METI",
+    "Onesia"
+   ],
+   "organisasi_ids": [
+    "l_41bf1f0b41"
+   ],
+   "keterbukaan": "umum",
+   "daftar_url": "https://event.onesia.id/index.php?event=elektrifikasi_daerah",
+   "gambar": {
+    "file": "img/acara/webinar-elektrifikasi-3t-2026.webp",
+    "hak": "Poster penyelenggara Techminar bersama METI dan Onesia; dipakai untuk promosi acara",
+    "url_sumber": "https://event.onesia.id/index.php?event=elektrifikasi_daerah"
+   },
+   "instagram": [],
+   "youtube": null,
+   "sumber": [
+    {
+     "url": "https://event.onesia.id/index.php?event=elektrifikasi_daerah",
+     "label": "situs-penyelenggara",
+     "tanggal_periksa": "2026-11-08",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ],
+   "slug": "webinar-elektrifikasi-daerah-3t-2026",
+   "jam": "09.30 WIB",
+   "sorotan": true
   }
  ]
 }
