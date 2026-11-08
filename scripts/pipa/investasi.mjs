@@ -55,9 +55,11 @@ export function bangun(D) {
   const amdal = new Map(D.izin.lead_time.daftar.filter((x) => x.proyek_id).map((x) => [x.proyek_id, x]));
   const lelang = new Map(); for (const p of D.lelang.putaran) for (const i of p.proyek_id || []) lelang.set(i, [...(lelang.get(i) || []), p]);
   const pendana = bangunPendana({ pendanaan: D.pendanaan, pelaku: D.pelaku });
-  const kandidat = D.terpadu.baris.filter((x) => STATUS_DIPAKAI.includes(x.status) && x.mw >= MW_MIN && TEK_DIPAKAI.includes(x.tek));
+  const semua = D.terpadu.baris.filter((x) => STATUS_DIPAKAI.includes(x.status) && x.mw >= MW_MIN && TEK_DIPAKAI.includes(x.tek));
+  /* tanpa provinsi terverifikasi tidak ada faktor lokasi harga patokan, sumber daya, maupun izin provinsi: dikeluarkan, jumlahnya dicatat */
+  const kandidat = semua.filter((x) => x.prov_kode && radar[x.prov_kode]);
   const baris = kandidat.map((x) => {
-    const prov = x.prov_kode && radar[x.prov_kode] ? x.prov_kode : null;
+    const prov = x.prov_kode;
     const m = modelProyek(x, D);
     const rk = risiko.get(x.id), iz = izinProv.get(x.prov_kode);
     const garduOk = prov && ['titik_persis', 'kabupaten'].includes(x.presisi) && Number.isFinite(x.lat);
@@ -95,9 +97,10 @@ export function bangun(D) {
     metode: {
       status_bobot: 'Hipotesis', bobot: BOBOT, min_komponen: MIN_KOMPONEN, ambang: AMBANG, batas_gardu_km: BATAS_GARDU_KM, rasio_harga: RASIO_HARGA, bukti_dana: BUKTI_DANA, band_tiket: BAND_TIKET, bobot_cocok: BOBOT_COCOK,
       kelas_ukuran: KELAS_UKURAN.map(([k, b]) => [k, b === Infinity ? null : b]),
-      saringan: { status: STATUS_DIPAKAI, tek: TEK_DIPAKAI, mw_min: MW_MIN },
+      saringan: { status: STATUS_DIPAKAI, tek: TEK_DIPAKAI, mw_min: MW_MIN, tanpa_provinsi: semua.length - kandidat.length },
       model: 'Model keuangan bawaan /model-keuangan: model bisnis IPP, harga patokan Perpres 112/2022 (tingkat menurut MW dan faktor lokasi), biaya dari biaya_bangun.json, tanpa utang, pajak 22 persen. Sel biaya yang kosong diisi titik tengah rentang bersumber dan ditandai.',
       celah: [
+        'Proyek yang provinsinya tidak terverifikasi di sumbernya dikeluarkan: tanpa provinsi tidak ada faktor lokasi harga patokan, sumber daya, maupun skor izin.',
         'Penyimpanan, nuklir, dan sampah (WtE) tidak masuk: tidak ada dasar biaya dan harga patokan bersumber untuk model otomatis.',
         'Bioenergi masuk daftar tanpa model keuangan: biaya operasi tidak tersedia di biaya_bangun.json.',
         'Lokasi proyek berpresisi provinsi (titik pusat wilayah) tidak dipakai untuk jarak ke gardu; gardu OSM hanya terpanen di sebagian pulau.',
