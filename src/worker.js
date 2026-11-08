@@ -149,7 +149,7 @@ const NAMA_BIDANG = { organisasi: "Organisasi & antarlembaga", advokasi: "Advoka
 const TIDAK_ADA = () => new Response("Tidak ditemukan", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
 const LANGSUNG_404 = /^\/(direktori|admin)\.html$/;
 // Halaman yang digabung (Peluang+Kelayakan, Kalender+Event, Galeri+Video+Podcast): tautan lama dialihkan 301 ke tab barunya, query dipertahankan.
-const ALIH_GABUNG = { "/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn" };
+const ALIH_GABUNG = { "/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum" };
 
 function halamanPrivat(res) {
   const r = new Response(res.body, res);

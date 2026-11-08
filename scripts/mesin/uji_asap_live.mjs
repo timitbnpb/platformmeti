@@ -19,7 +19,7 @@ const PUBLIK_HALAMAN = new Set(["masuk", "aktivasi", "ganti-sandi", "langganan",
 const halaman = readdirSync(path.join(akar, "public")).filter(f => f.endsWith(".html")).map(f => f.slice(0, -5))
   .filter(n => !PUBLIK_HALAMAN.has(n)).map(n => n === "index" ? "/" : "/" + n);
 const rincian = ["/o/x", "/p/x", "/wilayah/11", "/program/psn", "/sistem/x", "/kawasan/x", "/teknologi/surya"];
-const ALIH = {"/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn"};
+const ALIH = {"/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum"};
 
 /* (b) tamu: semua rute halaman 302 ke /masuk */
 async function tamu() {

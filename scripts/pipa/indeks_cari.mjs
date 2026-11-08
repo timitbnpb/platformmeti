@@ -46,8 +46,8 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
   const hk = data("hukum/katalog");
   for (const it of baris(hk?.baris ? hk : hk?.regulasi || hk?.katalog || hk)) {
     const nama = it.judul || it.nama, idr = it.id || it.regulasi_id; if (!nama || !idr) continue;
-    tambah("hukum", b(nama, [it.nomor && it.tahun ? `${it.nomor}/${it.tahun}` : "", it.jenis].filter(Boolean).join(" "), "/hukum?id=" + encodeURIComponent(idr), [it.nomor, it.tahun], { b: "resmi" }));
-    for (const ps of it.pasal || []) { const no = ps.nomor ?? ps.no; if (no == null) continue; tambah("hukum", b(`${nama}, Pasal ${no}`, ps.judul || String(ps.isi || "").slice(0, 90), `/hukum?id=${encodeURIComponent(idr)}#pasal-${encodeURIComponent(no)}`, [`pasal ${no}`, ps.isi ? String(ps.isi).slice(0, 400) : ""], { b: "resmi" })); }
+    tambah("hukum", b(nama, [it.nomor && it.tahun ? `${it.nomor}/${it.tahun}` : "", it.jenis].filter(Boolean).join(" "), "/regulasi#hd=" + encodeURIComponent(idr), [it.nomor, it.tahun], { b: "resmi" }));
+    for (const ps of it.pasal || []) { const no = ps.nomor ?? ps.no; if (no == null) continue; tambah("hukum", b(`${nama}, Pasal ${no}`, ps.judul || String(ps.isi || "").slice(0, 90), `/regulasi#hd=${encodeURIComponent(idr)}`, [`pasal ${no}`, ps.isi ? String(ps.isi).slice(0, 400) : ""], { b: "resmi" })); }
   }
 
   // topik: judul topik + judul bab + FAQ + glosarium (16 naskah); judul bab dari topik/ui.json

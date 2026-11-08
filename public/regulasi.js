@@ -335,15 +335,11 @@ function gambarSemua() {
 
 async function main() {
   await mulaiHalaman();
-  /* dua tab: Daftar (isi halaman ini, sudah dimuat main) dan Konsultasi (konsultasi.js, dimuat malas) */
+  /* tiga tab: Daftar (isi halaman ini), Diskusi (konsultasi.js) dan Pustaka hukum (hukum_isi.js), dua terakhir dimuat malas */
   tabHalaman("tabHal", { label: "reg.tab", tab: [
     { k: "daftar", ikon: "daftar2", teks: "reg.tab.daftar", panel: "panelDaftar", muat: async () => {} },
     { k: "konsultasi", ikon: "palu", teks: "reg.tab.konsultasi", panel: "panelKonsultasi", muat: () => import("/konsultasi.js") },
-    { k: "hukum", ikon: "buku", teks: "reg.tab.hukum", panel: "panelHukum", muat: async () => {
-      const p = document.getElementById("panelHukum");
-      if (!p.firstElementChild) p.innerHTML = exHtml({ id: "ex-hukum", ikon: "palu", topik: t("reg.hukum.ey"), judulHtml: esc(t("reg.hukum.j")), subHtml: esc(t("reg.hukum.sub")),
-        isiHtml: `<a class="jm-tbl jm-tbl-utama" href="/hukum">${ikon("palu", 16)}${esc(t("reg.hukum.buka"))}</a>` });
-    } },
+    { k: "hukum", ikon: "buku", teks: "reg.tab.hukum", panel: "panelHukum", cocok: (h) => /^#(hukum|hdokumen|hd=|htanya|hrelasi)/.test(h), muat: () => import("/hukum_isi.js") },
   ] });
   document.getElementById("daftar-reg").innerHTML = exHtml({ id: "ex-reg", ikon: "regulasi", topik: t("reg.ex.ey.daftar"), judulHtml: "", subHtml: " ", aksiHtml: " ",
     isiHtml: `<div class="jm-saring" id="saring"></div><div class="jm-alat"><div class="jm-tab" role="tablist" id="tampil"></div><p class="jm-hitung sr" id="hitung" role="status"></p></div><div id="isi"></div><div class="jm-hal" id="hal"></div>` });

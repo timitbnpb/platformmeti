@@ -19,7 +19,7 @@ function kepala() {
   const ubin = [
     { ikon: "angin", nilai: A ? num(pot, 0) : "-", satuan: "GW", label: t("ang.u.potensi") },
     { ikon: "petir", nilai: terp ? num(terp.nilai, 0) : "-", satuan: "MW", label: t("ang.u.terpasang", { th: terp?.tahun || "" }) },
-    { ikon: "tabel", nilai: P.length ? num(P.length, 0) : "-", satuan: t("ang.u.proyek_k"), label: t("ang.u.proyek", { mw: num(jumlahMw(op), 0) }) },
+    { ikon: "tabel", nilai: P.length ? num(P.length, 0) : "-", satuan: t("ang.u.proyek_k"), label: t("ang.u.proyek_l", { mw: num(jumlahMw(op), 0) }) },
     { ikon: "bendera", nilai: rup ? num(rup.nilai_mw / 1000, 1) : "-", satuan: "GW", label: t("ang.u.ruptl", { th: rup?.tahun || "" }) },
   ];
   const sisi = khSisi(".jm-kh", { ubin });

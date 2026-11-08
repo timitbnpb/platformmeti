@@ -201,12 +201,12 @@ export function bangunPasar(m, tgl, registri) {
       { id: 's-ct', judul: 'Climate TRACE v6: emisi aset ketenagalistrikan Indonesia 2024', penerbit: 'Climate TRACE', tahun: 2024, url: 'https://api.climatetrace.org/v6/assets', tingkat_bukti: 'via-pihak-ketiga', tanggal: tgl },
     ] };
 }
-/* pustaka hukum (katalog dibangun agen lain): hanya dokumen NEK yang ada di katalog -> tautan /hukum#d=<id>; sisanya tautan /regulasi */
+/* pustaka hukum (katalog dibangun agen lain): hanya dokumen NEK yang ada di katalog -> tautan /regulasi#hd=<id>; sisanya tautan /regulasi */
 const ID_NEK = ['permen-esdm-16-2022', 'pojk-10-2026', 'permen-esdm-2-2023', 'permen-esdm-16-2024'];
 const hukumNek = (katalog) => ({
-  pustaka: (katalog?.dok || []).filter((d) => ID_NEK.includes(d.id)).map((d) => ({ id: d.id, jenis: d.jenis, nomor: d.nomor, tahun: d.tahun, judul: d.judul, status: d.status || null, url: d.url, pdf: d.pdf?.[0] || null, href: '/hukum#d=' + encodeURIComponent(d.id) })),
+  pustaka: (katalog?.dok || []).filter((d) => ID_NEK.includes(d.id)).map((d) => ({ id: d.id, jenis: d.jenis, nomor: d.nomor, tahun: d.tahun, judul: d.judul, status: d.status || null, url: d.url, pdf: d.pdf?.[0] || null, href: '/regulasi#hd=' + encodeURIComponent(d.id) })),
   regulasi: [{ id: 'perpres-110-2025', judul: 'Perpres 110/2025 tentang Penyelenggaraan Instrumen Nilai Ekonomi Karbon dan Pengendalian Emisi GRK Nasional', href: '/regulasi?id=perpres-110-2025' }],
-  catatan: katalog ? 'tautan per dokumen; pasal dibuka dari halaman dokumen di /hukum' : 'katalog /data/hukum/katalog.json belum ada saat bangun; semua tautan ke /regulasi',
+  catatan: katalog ? 'tautan per dokumen; pasal dibuka dari halaman dokumen di /regulasi (tab Pustaka hukum)' : 'katalog /data/hukum/katalog.json belum ada saat bangun; semua tautan ke /regulasi',
 });
 const tahunEbt = (rs) => { const o = {}; for (const r of rs) for (const [y, v] of Object.entries(r.kredit.per_tahun || {})) { (o[y] ||= { t: 0, p: 0 }).t += v.t; o[y].p += v.p; } return Object.fromEntries(Object.entries(o).sort()); };
 

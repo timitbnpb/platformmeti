@@ -267,7 +267,7 @@ function panelHukum() {
   const n = h.pustaka.length + h.regulasi.length;
   const tautan = (href, ik, j, s) => `<a class="kb-tautan" href="${href}">${ikon(ik, 22)}<span><b>${esc(t(j))}</b><small>${esc(t(s))}</small></span></a>`;
   document.getElementById("panelHukum").innerHTML = exHtml({ id: "ex-hukum", ikon: "palu", topik: t("kb2.hk.ey"), judulHtml: hlHtml("kb2.hk.j", angka(n)), subHtml: esc(t("kb2.hk.sub")), aksiHtml: sumber,
-    isiHtml: `<ul class="kb-hk-daftar">${h.pustaka.map(kartu).join("")}${reg.join("")}</ul><div class="kb-tautans">${tautan("/topik?id=karbon", "topik", "kb2.hk.topik", "kb2.hk.topik_s")}${tautan("/regulasi", "regulasi", "kb2.hk.regulasi", "kb2.hk.regulasi_s")}${tautan("/hukum", "palu", "kb2.hk.baca", "kb2.hk.sub")}</div>` });
+    isiHtml: `<ul class="kb-hk-daftar">${h.pustaka.map(kartu).join("")}${reg.join("")}</ul><div class="kb-tautans">${tautan("/topik?id=karbon", "topik", "kb2.hk.topik", "kb2.hk.topik_s")}${tautan("/regulasi", "regulasi", "kb2.hk.regulasi", "kb2.hk.regulasi_s")}${tautan("/regulasi#hukum", "palu", "kb2.hk.baca", "kb2.hk.sub")}</div>` });
 }
 
 /* ---------- mulai ---------- */

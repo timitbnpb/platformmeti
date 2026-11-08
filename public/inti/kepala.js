@@ -33,7 +33,7 @@ const TAB = [
   { kunci: "n7.wilayah", ikon: "wilayah", hak: null, grup: [
     { href: "/peta", kunci: "nav.peta_nasional", ikon: "globe" }, { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" }, { href: "/kawasan", kunci: "kw2.nav", ikon: "kawasan" }, { href: "/cek-lokasi", kunci: "cl.nav", ikon: "sasaran" }] },
   { kunci: "nav.pustaka", ikon: "buku", hak: null, grup: [
-    { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }, { href: "/direktori?tampil=riset", kunci: "nav.d_riset", ikon: "wisuda" }, { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }, { href: "/topik", kunci: "nav.topik", ikon: "topik" }, { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/hukum", kunci: "nav.hukum", ikon: "palu" }, { href: "/sejarah", kunci: "sjr.nav", ikon: "linimasa" }, { href: "/panduan", kunci: "pdu.nav", ikon: "daftar2" }] },
+    { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }, { href: "/direktori?tampil=riset", kunci: "nav.d_riset", ikon: "wisuda" }, { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }, { href: "/topik", kunci: "nav.topik", ikon: "topik" }, { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/sejarah", kunci: "sjr.nav", ikon: "linimasa" }, { href: "/panduan", kunci: "pdu.nav", ikon: "daftar2" }] },
   // Media = kabar EBT umum (/berita); siaran pers dan liputan METI ada di Tentang METI (pemilik 8 Nov 2026)
   { href: "/berita", kunci: "nav.media", ikon: "kamera", hak: null },
 ];

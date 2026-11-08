@@ -1,6 +1,4 @@
-/* /hukum: Pustaka hukum EBT. Empat tab (hash): cari, dokumen (#d=<id>&s=<segmen>), tanya, relasi. Data dari /api/hukum/* dan /data/hukum/katalog.json. */
-import { mulaiHalaman } from "/inti/kepala.js";
-import { khUbin } from "/inti/kh.js";
+/* Tab "Pustaka hukum" di /regulasi (dimuat malas). Empat subtab (hash): #hukum (cari), #hdokumen / #hd=<id>&s=<segmen>, #htanya, #hrelasi. Data dari /api/hukum/* dan /data/hukum/katalog.json. */
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, judulHuruf, ikon, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml } from "/inti/umum.js";
 import { cariHtml, pilihHtml, exHtml, sumberHtml } from "/inti/komponen.js";
@@ -22,8 +20,8 @@ const pilJenis = (s) => s ? `<span class="jm-pil hk-j" data-j="${esc(s)}">${ikon
 const IK_ST = { berlaku: "centang", diubah: "ubah", dicabut: "silang" };
 const pilStatus = (s) => s ? `<span class="jm-pil ${{ berlaku: "jm-pil-ok", diubah: "jm-pil-warn", dicabut: "jm-pil-bad" }[s] || ""}">${ikon(IK_ST[s] || "info", 14)}${esc(label("reg.status.", s))}</span>` : `<span class="jm-pil">${ikon("info", 14)}${esc(t("hk.status.tak"))}</span>`;
 const nama = (d) => `${label("hk.j.", d.singkatan)} ${d.nomor ?? ""}/${d.tahun ?? ""}`.trim();
-const bukaHref = (id, seg) => `#d=${encodeURIComponent(id)}${seg ? "&s=" + seg : ""}`;
-const haluan = () => new URLSearchParams(location.hash.replace(/^#/, ""));
+const bukaHref = (id, seg) => `#hd=${encodeURIComponent(id)}${seg ? "&s=" + seg : ""}`;
+const haluan = () => new URLSearchParams(location.hash.replace(/^#h/, ""));
 
 /* teks aman lewat DOM: cuplikan "[[sorot]]" jadi <mark>, paragraf dari baris baru */
 function cuplikanEl(str, tag = "p", kelas = "hk-cup") {
@@ -51,13 +49,6 @@ async function muatKatalog() {
   KAT = r.ok ? await r.json() : { dok: [], relasi: [], definisi: [] };
   KAT.byId = new Map(KAT.dok.map((d) => [d.id, d]));
   return KAT;
-}
-
-/* ---------- kepala ---------- */
-async function gambarKepala() {
-  RINGKAS = await ambil("/api/hukum/ringkas").catch(() => null);
-  const r = RINGKAS || { dok: 0, segmen: 0, relasi: 0 };
-  khUbin("khUbin", [{ ikon: "buku", nilai: angka(r.dok), label: t("hk.kh.dok") }, { ikon: "daftar2", nilai: angka(r.segmen), label: t("hk.kh.pasal") }, { ikon: "rantai", nilai: angka(r.relasi), label: t("hk.kh.relasi") }]);
 }
 
 /* ---------- tab cari ---------- */
@@ -166,7 +157,7 @@ function pasangDokumen() {
   w.addEventListener("input", (e) => { if (e.target.id === "hdq") { L.q = e.target.value; L.hal = 1; tundaDaftar(); } });
   w.addEventListener("change", (e) => { if (e.target.id === "hdjenis") { L.jenis = e.target.value; L.hal = 1; tundaDaftar(); } });
   w.addEventListener("click", (e) => {
-    if (e.target.closest("[data-aksi=balik]")) { location.hash = "#dokumen"; return; }
+    if (e.target.closest("[data-aksi=balik]")) { location.hash = "#hdokumen"; return; }
     const b = e.target.closest("[data-hal]"); if (b && !b.disabled) { L.hal = +b.dataset.hal; sorotHalaman(b, L.hal); tundaDaftar(); return; }
     const k = e.target.closest("[data-buka]"); if (k) location.hash = bukaHref(k.dataset.buka);
   });
@@ -234,16 +225,12 @@ async function muatRelasi() {
 }
 
 /* ---------- main ---------- */
-async function main() {
-  await mulaiHalaman();
-  bentukCari(); pasangCari(); pasangDokumen(); bentukTanya();
-  gambarKepala();
-  tabHalaman("tabHal", { label: "hk.tab", tab: [
-    { k: "cari", ikon: "cari2", teks: "hk.tab.cari", panel: "panelCari", muat: async () => { if (!el("hsaring").children.length) saringHtml(null); if (S.q) await jalankanCari(); else el("hhasil").innerHTML = kosongHtml("hk.cari.mulai"); } },
-    { k: "dokumen", ikon: "buku", teks: "hk.tab.dokumen", panel: "panelDokumen", cocok: (h) => h === "#dokumen" || h.startsWith("#d="), muat: muatDokumen },
-    { k: "tanya", ikon: "tanya", teks: "hk.tab.tanya", panel: "panelTanya", muat: async () => {} },
-    { k: "relasi", ikon: "rantai", teks: "hk.tab.relasi", panel: "panelRelasi", muat: muatRelasi },
-  ] });
-  document.addEventListener("jm:bahasa", () => nanti(() => { gambarKepala(); }));
-}
-main();
+const akar = el("panelHukum");
+akar.innerHTML = '<div id="tabHalH"></div><div id="panelCari"></div><div id="panelDokumen" hidden></div><div id="panelTanya" hidden></div><div id="panelRelasi" hidden></div>';
+bentukCari(); pasangCari(); pasangDokumen(); bentukTanya();
+tabHalaman("tabHalH", { label: "hk.tab", tab: [
+  { k: "hcari", hash: "hukum", ikon: "cari2", teks: "hk.tab.cari", panel: "panelCari", muat: async () => { if (!el("hsaring").children.length) saringHtml(null); if (S.q) await jalankanCari(); else el("hhasil").innerHTML = kosongHtml("hk.cari.mulai"); } },
+  { k: "hdokumen", ikon: "buku", teks: "hk.tab.dokumen", panel: "panelDokumen", cocok: (h) => h === "#hdokumen" || h.startsWith("#hd="), muat: muatDokumen },
+  { k: "htanya", ikon: "tanya", teks: "hk.tab.tanya", panel: "panelTanya", muat: async () => {} },
+  { k: "hrelasi", ikon: "rantai", teks: "hk.tab.relasi", panel: "panelRelasi", muat: muatRelasi },
+] });

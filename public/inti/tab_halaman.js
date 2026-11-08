@@ -3,7 +3,7 @@
 import { t } from "/i18n.js";
 import { esc, ikon, nanti, galatHtml } from "/inti/umum.js";
 
-/** tab: [{ k, ikon, teks (kunci i18n), panel (id elemen), muat: () => Promise, cocok?: (hash) => boolean }]. Mengembalikan { buka(k) }. */
+/** tab: [{ k, hash?, ikon, teks (kunci i18n), panel (id elemen), muat: () => Promise, cocok?: (hash) => boolean }]. Mengembalikan { buka(k) }. */
 export function tabHalaman(wadah, { label, tab }) {
   const el = typeof wadah === "string" ? document.getElementById(wadah) : wadah;
   el.className = "jm-tab jm-tab-rata";
@@ -13,7 +13,7 @@ export function tabHalaman(wadah, { label, tab }) {
   el.innerHTML = tab.map((d) => `<button type="button" role="tab" id="tab-${d.k}" data-tab="${d.k}" aria-selected="false" tabindex="-1">${ikon(d.ikon, 18)}<span data-i18n="${d.teks}">${esc(t(d.teks))}</span></button>`).join("");
   const dariHash = () => {
     const h = location.hash;
-    return tab.find((d) => (d.cocok ? d.cocok(h) : h === "#" + d.k)) || tab[0];
+    return tab.find((d) => (d.cocok ? d.cocok(h) : h === "#" + (d.hash || d.k))) || tab[0];
   };
   const buka = (k) => {
     const d = tab.find((x) => x.k === k) || tab[0];
@@ -27,7 +27,8 @@ export function tabHalaman(wadah, { label, tab }) {
   };
   el.addEventListener("click", (e) => {
     const b = e.target.closest("[data-tab]"); if (!b) return;
-    history.replaceState(null, "", location.pathname + location.search + (b.dataset.tab === tab[0].k ? "" : "#" + b.dataset.tab));
+    const d = tab.find((x) => x.k === b.dataset.tab);
+    history.replaceState(null, "", location.pathname + location.search + (d.hash ? "#" + d.hash : d === tab[0] ? "" : "#" + d.k));
     buka(b.dataset.tab);
   });
   el.addEventListener("keydown", (e) => {

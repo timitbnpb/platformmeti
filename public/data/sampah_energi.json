@@ -1,0 +1,1066 @@
+{
+ "lapis": "publik",
+ "dibangun_pada": "2026-11-08",
+ "tanggal": "2026-11-08",
+ "keterangan": "Sampah jadi energi ujung ke ujung. Rujukan lewat id ke psel.json, global/pemasok_wte.json, proyek_terpadu.json, regulasi.json, isu.json, organisasi.json; butir baru bersumber dan bertingkat bukti; yang tidak ditemukan ada di celah.",
+ "sumber": [
+  {
+   "id": "ashurst",
+   "judul": "Accelerating waste-to-energy in Indonesia: Presidential Regulation 109/2025 (USD 0,20 per kWh tetap 30 tahun, minimum 1.000 ton per hari, cabut Perpres 35/2018)",
+   "penerbit": "Ashurst Perkins Coie",
+   "url": "https://www.ashurstperkinscoie.com/en/insights/accelerating-waste-to-energy-in-indonesia-presidential-regulation-109-2025/",
+   "tahun": 2025,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2025-10-29"
+  },
+  {
+   "id": "metro109",
+   "judul": "Presiden Prabowo terbitkan Perpres tentang olah sampah jadi energi (8 bab, 33 pasal)",
+   "penerbit": "Metro TV",
+   "url": "https://www.metrotvnews.com/read/kWDCnaVw-presiden-prabowo-terbitkan-perpres-tentang-olah-sampah-jadi-energi",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2025-10-10"
+  },
+  {
+   "id": "subs",
+   "judul": "Pemerintah gelontorkan subsidi kompensasi untuk PLN dalam program WTE",
+   "penerbit": "Warta Ekonomi",
+   "url": "https://wartaekonomi.co.id/read584565/pemerintah-gelontorkan-subsidi-kompensasi-untuk-pln-dalam-program-wte",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2025-09-30"
+  },
+  {
+   "id": "empat",
+   "judul": "Danantara ungkap progres tender proyek WTE, baru 4 kota yang siap (19 Nov 2025)",
+   "penerbit": "Bisnis.com",
+   "url": "https://market.bisnis.com/read/20251119/192/1930120/danantara-ungkap-progres-tender-proyek-wte-baru-4-kota-yang-siap",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2025-11-19"
+  },
+  {
+   "id": "tgr",
+   "judul": "Pembatalan proyek PSEL Tangerang dan Tangsel pukul harga saham OASA cs (28 Okt 2025)",
+   "penerbit": "Bisnis.com",
+   "url": "https://market.bisnis.com/read/20251028/192/1923968/pembatalan-proyek-psel-tangerang-tangsel-pukul-harga-saham-oasa-cs",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2025-10-28"
+  },
+  {
+   "id": "bogor",
+   "judul": "Danantara tetapkan Zhejiang Weiming jadi mitra operator PSEL di Bogor Raya (13 Mar 2026)",
+   "penerbit": "Bisnis.com",
+   "url": "https://ekonomi.bisnis.com/read/20260313/44/1960340/danantara-tetapkan-zhejiang-weiming-jadi-mitra-operator-psel-di-bogor-raya",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-03-13"
+  },
+  {
+   "id": "bali",
+   "judul": "Atasi darurat sampah, Danantara groundbreaking proyek PSEL Bali Rp3 triliun (8 Jul 2026; lebih dari 500.000 ton per tahun)",
+   "penerbit": "Investor Trust",
+   "url": "https://www.investortrust.id/business/108816/atasi-darurat-sampah-danantara-groundbreaking-proyek-psel-bali-rp-3-triliun",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-07-08"
+  },
+  {
+   "id": "bekasi",
+   "judul": "Danantara mulai groundbreaking proyek PSEL Bekasi senilai Rp3 triliun, target beroperasi 2028 (26 Agu 2026; 1.500 ton per hari)",
+   "penerbit": "Investor Trust",
+   "url": "https://investortrust.id/business/114145/danantara-mulai-groundbreaking-proyek-psel-bekasi-senilai-rp-3-triliun-target-beroperasi-2028",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-08-26"
+  },
+  {
+   "id": "tahap2",
+   "judul": "Danantara tunjuk 8 konsorsium pengembang PSEL tahap II (21 Jul 2026)",
+   "penerbit": "Investor Trust",
+   "url": "https://investortrust.id/business/110165/danantara-tunjuk-8-konsorsium-pengembang-psel-tahap-ii",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-07-21"
+  },
+  {
+   "id": "teknologi",
+   "judul": "Danantara pastikan proyek PSEL pakai teknologi lebih canggih dari China (22 Jan 2026)",
+   "penerbit": "Kompas.com Lestari",
+   "url": "https://lestari.kompas.com/read/2026/01/22/114604286/danantara-pastikan-proyek-psel-pakai-teknologi-lebih-canggih-dari-china",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-01-22"
+  },
+  {
+   "id": "kisi",
+   "judul": "Kisi-kisi nilai investasi jumbo proyek waste to energy Danantara (sekitar Rp91 triliun)",
+   "penerbit": "Bisnis.com",
+   "url": "https://market.bisnis.com/read/20250930/192/1916066/kisi-kisi-nilai-investasi-jumbo-proyek-waste-to-energy-danantara",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2025-09-30"
+  },
+  {
+   "id": "tenggara",
+   "judul": "Diseminasi naskah kebijakan waste to energy (Sunter dan Gedebage batal beroperasi; bantuan tipping fee pusat maksimum Rp500.000 per ton)",
+   "penerbit": "Tenggara Strategics",
+   "url": "https://asset.tenggara.id/assets/source/file-research/2026-wte/Diseminasi%20Naskah%20Kebijakan%20Waste%20to%20Energy%20-%20Tenggara%20Strategics.pdf",
+   "tahun": 2026,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-01-01"
+  },
+  {
+   "id": "apsn",
+   "judul": "Costly, dirty and unfair: Indonesia at the crossroads of embracing incinerators (sudut pandang kritik)",
+   "penerbit": "Asia Pacific Solidarity Network",
+   "url": "https://www.asia-pacific-solidarity.net/news/2020-05-01/costly-dirty-and-unfair-indonesia-crossroads-embracing-incinerators.html",
+   "tahun": 2020,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2020-05-01"
+  },
+  {
+   "id": "sgnea",
+   "judul": "NEA Singapura, waste management (insinerasi mengurangi volume hingga 90 persen; abu ke Semakau)",
+   "penerbit": "National Environment Agency Singapura",
+   "url": "https://www.nea.gov.sg/our-services/waste-management/",
+   "tahun": 2026,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "wekdm",
+   "judul": "PLTSa jalan di tempat 7 tahun, KESDM ungkap biang masalah dan solusinya (Rakornas PSEL 30 Sep 2025: 15 proyek di 12 kota, 2 COD; Benowo 9 MW dan Putri Cempo 5 MW)",
+   "penerbit": "Warta Ekonomi",
+   "url": "https://wartaekonomi.co.id/read584694/pltsa-jalan-ditempat-7-tahun-kesdm-ungkap-biang-masalah-dan-solusinya",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2025-09-30"
+  },
+  {
+   "id": "ombud",
+   "judul": "Ombudsman ungkap penyebab banyak pembangkit listrik sampah mangkrak (29 Des 2023; harga beli USD 13,35 sen, Sunter Rp5,2 triliun)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/agustiyanti/berita/658ea2fdb4626/ombudsman-ungkap-penyebab-banyak-pembangkit-listrik-sampah-mangkrak",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2023-12-29"
+  },
+  {
+   "id": "katmang",
+   "judul": "Mayoritas proyek PLTSa di Indonesia mangkrak, hanya dua yang beroperasi (13 Mar 2025; 12 kota menurut Perpres 35/2018)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/ekonomi-hijau/ekonomi-sirkular/67d26893c5c42/mayoritas-proyek-pltsa-di-indonesia-mangkrak-hanya-dua-yang-beroperasi",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2025-03-13"
+  },
+  {
+   "id": "ruptl",
+   "judul": "RUPTL PT PLN (Persero) 2025-2034, lampiran Kepmen ESDM 188.K/TL.03/MEM.L/2025 (diolah repo: public/data/ruptl.json)",
+   "penerbit": "PLN, ESDM",
+   "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/b967d-ruptl-pln-2025-2034-pub-.pdf",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2025-05-26"
+  },
+  {
+   "id": "kap",
+   "judul": "IRENA, kapasitas terpasang dan pembangkitan Indonesia (diolah repo: public/data/kapasitas_tren.json)",
+   "penerbit": "IRENA",
+   "url": "https://www.irena.org/Data",
+   "tahun": 2026,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "uu18",
+   "judul": "UU 18/2008 tentang Pengelolaan Sampah (dasar hukum pengelolaan sampah nasional)",
+   "penerbit": "BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/",
+   "tahun": 2008,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2008-05-07"
+  },
+  {
+   "id": "iea_wte",
+   "judul": "IEA Bioenergy Task 36, Integrating Energy Recovery into Solid Waste Management (kisaran umum efisiensi dan teknologi WtE)",
+   "penerbit": "IEA Bioenergy",
+   "url": "https://www.ieabioenergy.com/",
+   "tahun": 2026,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "jm_psel",
+   "judul": "Basis PSEL dan pemasok teknologi WTE METI (public/data/psel.json, public/data/global/pemasok_wte.json)",
+   "penerbit": "METI",
+   "url": "https://platformmeti.timitbnpb.workers.dev/data",
+   "tahun": 2026,
+   "tingkat_bukti": "editorial",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "klh-rakornas",
+   "judul": "KLH/BPLH: arah baru menuju Indonesia bebas sampah 2029, Rakornas Pengelolaan Sampah 2025 (timbulan 2023 56,63 juta ton; 39,01 persen terkelola; 343 dari 550 TPA open dumping; revisi Perpres 35/2018)",
+   "penerbit": "Kementerian Lingkungan Hidup",
+   "url": "https://www.kemenlh.go.id/news/detail/klh-bplh-tegaskan-arah-baru-menuju-indonesia-bebas-sampah-2029-dalam-rakornas-pengelolaan-sampah-2025",
+   "tahun": 2025,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "detik-33",
+   "judul": "Danantara investasi proyek sulap sampah jadi listrik di 33 kota Rp91 T",
+   "penerbit": "detikFinance",
+   "url": "https://finance.detik.com/energi/d-8154315/danantara-investasi-proyek-sulap-sampah-jadi-listrik-di-33-kota-rp-91-t",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-10kota",
+   "judul": "Danantara rilis proyek energi sampah awal November 2025 di 10 kota",
+   "penerbit": "Bisnis.com",
+   "url": "https://market.bisnis.com/read/20251010/192/1919167/danantara-rilis-proyek-energi-sampah-awal-november-2025-di-10-kota",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "bisnis-asing",
+   "judul": "Asing dominasi tender proyek energi sampah, Danantara buka suara (3 November 2025; hanya judul dibaca)",
+   "penerbit": "Bisnis.com",
+   "url": "https://market.bisnis.com/read/20251103/192/1925761/asing-dominasi-tender-proyek-energi-sampah-danantara-buka-suara",
+   "tahun": 2025,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-85",
+   "judul": "85 perusahaan ikut tender WtE Danantara gelombang II, ada dari Jepang dan Eropa (29 Mei 2026)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/finansial/bursa/6a18d90294434/85-perusahaan-ikut-tender-wte-danantara-gelombang-ii-ada-dari-jepang-dan-eropa",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kabar-18t",
+   "judul": "Danantara kucurkan Rp18 triliun PSEL tahap II garap 8 lokasi (hanya judul dibaca)",
+   "penerbit": "KabarBursa",
+   "url": "https://www.kabarbursa.com/makro/danantara-kucurkan-rp18-triliun-psel-tahap-ii-garap-8-lokasi",
+   "tahun": 2026,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kabar-6mitra",
+   "judul": "Danantara bidik enam mitra PSEL lagi, investasi tahap II capai USD1 miliar (hanya judul dibaca)",
+   "penerbit": "KabarBursa",
+   "url": "https://www.kabarbursa.com/makro/danantara-bidik-enam-mitra-psel-lagi-investasi-tahap-ii-capai-usd1-miliar",
+   "tahun": 2026,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "it-5groundbreaking",
+   "judul": "Pemerintah groundbreaking 5 proyek PSEL Juni 2026, olah 7.000 ton limbah per hari jadi listrik",
+   "penerbit": "Investor Trust",
+   "url": "https://investortrust.id/esg/101002/pemerintah-groundbreaking-5-proyek-psel-juni-2026-olah-7000-ton-limbah-per-hari-jadi-listrik",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "mongabay-rdf-cilacap",
+   "judul": "Pertama di Indonesia, sampah RDF jadi pengganti batu bara (RDF Plant Jeruklegi, Cilacap; 120 ton per hari)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2020/07/27/pertama-di-indonesia-sampah-rdf-jadi-pengganti-batu-bara/",
+   "tahun": 2020,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "detik-cilacap",
+   "judul": "Proyek TPST canggih di Cilacap nilainya Rp84 M, ada sumbangan Denmark Rp44 M",
+   "penerbit": "detikFinance",
+   "url": "https://finance.detik.com/infrastruktur/d-7120608/proyek-tpst-canggih-di-cilacap-nilainya-rp-84-m-ada-sumbangan-denmark-rp-44-m",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "industry-cilacap",
+   "judul": "Kementerian PUPR bangun tempat pengolahan sampah RDF di Kabupaten Cilacap (judul dibaca; kapasitas mesin 200 ton per hari menurut ringkasan pencarian)",
+   "penerbit": "Industry.co.id",
+   "url": "https://www.industry.co.id/read/51362/kementerian-pupr-bangun-tempat-pengolahan-sampah-rdf-di-kabupaten-cilacap",
+   "tahun": 2023,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "kompas-sbi-rdf",
+   "judul": "SBI beli refused derived fuel, sampah kota yang diolah jadi bahan bakar",
+   "penerbit": "Kompas.com Lestari",
+   "url": "https://lestari.kompas.com/read/2023/06/28/150358986/sbi-beli-refused-derived-fuel-sampah-kota-yang-diolah-jadi-bahan-bakar",
+   "tahun": 2023,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "idx-rorotan",
+   "judul": "Siap beroperasi, RDF Plant Rorotan mampu kelola 2.500 ton sampah Jakarta",
+   "penerbit": "IDX Channel",
+   "url": "https://www.idxchannel.com/news/siap-beroperasi-rdf-plant-rorotan-mampu-kelola-2500-ton-sampah-jakarta/all",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "metro-rorotan",
+   "judul": "Timbulkan bau, kapasitas sampah uji coba RDF Rorotan bakal dikurangi",
+   "penerbit": "Metro TV News",
+   "url": "https://www.metrotvnews.com/read/NnjCeG2y-timbulkan-bau-kapasitas-sampah-uji-coba-rdf-rorotan-bakal-dikurangi",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-rorotan",
+   "judul": "Warga keluhkan bau busuk dari pengolahan sampah RDF Rorotan Jakarta",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/amp/ekonomi-hijau/ekonomi-sirkular/67d8e5863c416/warga-keluhkan-bau-busuk-dari-pengolahan-sampah-rdf-rorotan-jakarta/",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "mongabay-rorotan",
+   "judul": "Warga protes polusi pembangkit listrik sampah Rorotan",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2025/04/06/warga-protes-polusi-pembangkit-listrik-sampah-rorotan/",
+   "tahun": 2025,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "esdm-lfg",
+   "judul": "Jurnal Swara Patra (PPSDM Migas, ESDM): gas metana TPA Bantargebang sekitar 3 MW dari rencana sekitar 26 MW; tiga mesin gas masing-masing 1 MW; PLN membeli Rp850 per kWh",
+   "penerbit": "PPSDM Migas, Kementerian ESDM",
+   "url": "https://ejurnal.ppsdmmigas.esdm.go.id/sp/index.php/swarapatra/article/download/123/109/120",
+   "tahun": 2023,
+   "tingkat_bukti": "kajian",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "idx-metana",
+   "judul": "TPST Bantargebang disebut penyumbang metana terbesar kedua, Pemprov DKI siapkan skema pengolahan",
+   "penerbit": "IDX Channel",
+   "url": "https://www.idxchannel.com/news/tpst-bantargebang-disebut-penyumbang-metana-terbesar-kedua-pemprov-dki-siapkan-skema-pengolahan/all",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "katadata-bantar",
+   "judul": "Masa depan Bantargebang di tengah proyek energi dan bom waktu gas metana (judul dibaca)",
+   "penerbit": "Katadata",
+   "url": "https://katadata.co.id/indepth/telaah/6a0efa5c9254f/masa-depan-bantargebang-di-tengah-proyek-energi-dan-bom-waktu-gas-metana",
+   "tahun": 2026,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "p70-2016",
+   "judul": "Permen LHK P.70/MENLHK/SETJEN/KUM.1/8/2016 tentang baku mutu emisi usaha dan/atau kegiatan pengolahan sampah secara termal (BN 2016 No. 1311)",
+   "penerbit": "Kementerian LHK via peraturan.go.id",
+   "url": "https://peraturan.go.id/files/bn1311-2016.pdf",
+   "tahun": 2016,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "p26-2020",
+   "judul": "Permen LHK P.26/MENLHK/SETJEN/KUM.1/12/2020 tentang penanganan abu dasar dan abu terbang (insinerasi)",
+   "penerbit": "BPK JDIH",
+   "url": "https://peraturan.bpk.go.id/Download/156198/Permen%20LHK%20Nomor%2026%20Tahun%202020.pdf",
+   "tahun": 2020,
+   "tingkat_bukti": "resmi",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "mongabay-makassar",
+   "judul": "Mengapa warga Makassar tolak pembangkit listrik sampah (22 Januari 2026)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2026/01/22/mengapa-warga-makassar-tolak-pembangkit-listrik-sampah/",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "nu-makassar",
+   "judul": "Warga Makassar desak pemerintah batalkan PSEL (judul dibaca)",
+   "penerbit": "NU Online",
+   "url": "https://nu.or.id/daerah/warga-makassar-desak-pemerintah-batalkan-psel-jangan-tukar-kesehatan-kami-dengan-proyek-berisiko-tinggi-hEKDo",
+   "tahun": 2026,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "antara-bali-tolak",
+   "judul": "Wagub Giri Prasta respons warga Bali yang tolak PSEL: ini aman (warga Pesanggaran, 18 Mei 2026)",
+   "penerbit": "ANTARA Bali (teks dibaca; tanpa foto)",
+   "url": "https://bali.antaranews.com/berita/405915/wagub-giri-prasta-respons-warga-bali-yang-tolak-psel-ini-aman",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "mongabay-risiko",
+   "judul": "Para pihak ingatkan risiko proyek energi sampah pemerintah (29 April 2026; Walhi, Greenpeace, AZWI, Nexus3)",
+   "penerbit": "Mongabay Indonesia",
+   "url": "https://mongabay.co.id/2026/04/29/para-pihak-ingatkan-risiko-proyek-energi-sampah-pemerintah/",
+   "tahun": 2026,
+   "tingkat_bukti": "media",
+   "tanggal_periksa": "2026-11-08"
+  },
+  {
+   "id": "ibp-walhi",
+   "judul": "WALHI rejects government push for waste-to-energy projects, calls it a policy failure (judul dibaca)",
+   "penerbit": "Indonesia Business Post",
+   "url": "https://indonesiabusinesspost.com/5928/society-environment-and-culture/walhi-rejects-government-push-for-waste-to-energy-projects-calls-it-a-policy-failure",
+   "tahun": 2026,
+   "tingkat_bukti": "via-pihak-ketiga",
+   "tanggal_periksa": "2026-11-08"
+  }
+ ],
+ "rujukan": {
+  "psel_ids": [
+   "psel_pj_0038",
+   "psel_pj_0039",
+   "psel_pj_0040",
+   "psel_pj_0041",
+   "psel_pj_0043",
+   "psel_pj_0044",
+   "psel_pj_0046",
+   "psel_pj_0047",
+   "psel_pj_0048",
+   "psel_pj_0049",
+   "psel_pj_0050",
+   "psel_pj_0051",
+   "psel_pj_0052",
+   "psel_pj_0053",
+   "psel_pj_0054",
+   "psel_pjb_001",
+   "psel_pjb_002",
+   "psel_pjb_003",
+   "psel_pjb_004",
+   "psel_pjb_005",
+   "psel_pjb_006",
+   "psel_pjb_007",
+   "psel_pjb_008"
+  ],
+  "proyek_ids": [
+   "pj_0038",
+   "pj_0039",
+   "pj_0040",
+   "pj_0041",
+   "pj_0043",
+   "pj_0044",
+   "pj_0046",
+   "pj_0047",
+   "pj_0048",
+   "pj_0049",
+   "pj_0050",
+   "pj_0051",
+   "pj_0052",
+   "pj_0053",
+   "pj_0054",
+   "pjb_001",
+   "pjb_002",
+   "pjb_003",
+   "pjb_004",
+   "pjb_005",
+   "pjb_006",
+   "pjb_007",
+   "pjb_008"
+  ],
+  "regulasi_ids": [
+   "perpres-109-2025",
+   "perpres-35-2018",
+   "perpres-18-2016"
+  ],
+  "isu_ids": [
+   "psel-tipping-fee",
+   "psel-denpasar",
+   "psel-12",
+   "psel-16",
+   "psel-18",
+   "psel-31",
+   "psel-32",
+   "psel-33",
+   "psel-34",
+   "psel-35",
+   "psel-36",
+   "psel-71",
+   "psel-73"
+  ],
+  "pemasok_wte_berkas": "global/pemasok_wte.json",
+  "status_urut": [
+   "beroperasi",
+   "konstruksi",
+   "rencana",
+   "tidak-diketahui"
+  ]
+ },
+ "timbulan": {
+  "timbulan": {
+   "nilai": 56.63,
+   "satuan": {
+    "id": "juta ton per tahun",
+    "en": "million tonnes a year"
+   },
+   "tahun": 2023,
+   "sumber_id": "klh-rakornas",
+   "tingkat_bukti": "resmi",
+   "ket": {
+    "id": "Timbulan sampah nasional 2023 menurut KLH/BPLH (SIPSN).",
+    "en": "National waste generation in 2023 per the Environment Ministry (SIPSN)."
+   }
+  },
+  "terkelola": {
+   "nilai": 22.09,
+   "persen": 39.01,
+   "satuan": {
+    "id": "juta ton per tahun",
+    "en": "million tonnes a year"
+   },
+   "tahun": 2023,
+   "sumber_id": "klh-rakornas",
+   "tingkat_bukti": "resmi",
+   "ket": {
+    "id": "Sampah terkelola secara layak.",
+    "en": "Waste managed properly."
+   }
+  },
+  "tpa": {
+   "open_dumping": 343,
+   "total": 550,
+   "sumber_id": "klh-rakornas",
+   "tingkat_bukti": "resmi",
+   "ket": {
+    "id": "TPA open dumping yang diawasi untuk dihentikan, dari 550 TPA.",
+    "en": "Open-dumping landfills being supervised toward closure, out of 550 landfills."
+   }
+  },
+  "target": {
+   "tahun": 2029,
+   "persen": 100,
+   "sumber_id": "klh-rakornas",
+   "tingkat_bukti": "resmi",
+   "ket": {
+    "id": "Target pengelolaan sampah 100 persen pada 2029; UU 18/2008 sudah melarang open dumping.",
+    "en": "Target of 100 percent waste management by 2029; Law 18/2008 already bans open dumping."
+   }
+  },
+  "revisi": {
+   "teks": {
+    "id": "KLH/BPLH menyatakan sedang merevisi Perpres 35/2018 untuk mempercepat PSEL (dana APBN, perizinan, jaminan pembelian listrik); revisi itu kini menjadi Perpres 109/2025.",
+    "en": "The ministry said it was revising Perpres 35/2018 to speed up PSEL (state budget funds, licensing, power purchase guarantee); that revision is now Perpres 109/2025."
+   },
+   "sumber_id": "klh-rakornas",
+   "tingkat_bukti": "resmi"
+  },
+  "catatan_beda": {
+   "id": "Pemberitaan angka 2024 berbeda: sekitar 32,6 sampai 34,2 juta ton dari 301 sampai 318 kabupaten/kota (cakupan lebih sempit dari angka 2023). Halaman memakai satu angka resmi 2023 dan tidak mencampur cakupan.",
+   "en": "Press figures for 2024 differ: about 32.6 to 34.2 million tonnes from 301 to 318 regencies/cities (narrower coverage than the 2023 figure). The page uses one official 2023 figure and does not mix coverage."
+  }
+ },
+ "jalur": {
+  "jenis": [
+   {
+    "k": "psel",
+    "ikon": "petir",
+    "teks": {
+     "id": "PSEL (PLTSa): sampah kota dibakar (insinerasi) atau digasifikasi untuk uap dan listrik; skala program baru minimal 1.000 ton per hari per fasilitas. Insinerasi dapat mengurangi volume hingga 90 persen tetapi menyisakan abu.",
+     "en": "PSEL (WtE plant): city waste is burned (incineration) or gasified for steam and power; the new programme needs at least 1,000 tonnes a day per facility. Incineration can cut volume by up to 90 percent but leaves ash."
+    },
+    "sumber_id": "sgnea",
+    "tingkat_bukti": "resmi"
+   },
+   {
+    "k": "rdf",
+    "ikon": "pabrik",
+    "teks": {
+     "id": "RDF/SRF: sampah dipilah dan dikeringkan menjadi bahan bakar padat pengganti batu bara, terutama untuk kiln pabrik semen; listrik bukan produk utamanya.",
+     "en": "RDF/SRF: waste is sorted and dried into a solid fuel replacing coal, mainly for cement kilns; electricity is not the main product."
+    },
+    "sumber_id": "mongabay-rdf-cilacap",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "biogas",
+    "ikon": "tek-bio",
+    "teks": {
+     "id": "Biogas TPA (gas metana landfill) dan biodigester: gas dari timbunan sampah organik menggerakkan mesin gas. Di Bantargebang keluaran nyata jauh di bawah rencana.",
+     "en": "Landfill biogas (methane) and biodigesters: gas from organic waste piles drives gas engines. At Bantargebang actual output is far below plan."
+    },
+    "sumber_id": "esdm-lfg",
+    "tingkat_bukti": "kajian"
+   },
+   {
+    "k": "insinerator",
+    "ikon": "peringatan",
+    "teks": {
+     "id": "Insinerator termal (termasuk skala kecil): wajib memenuhi baku mutu emisi Permen LHK P.70/2016; hanya sampah rumah tangga tanpa B3, PVC, kaca, atau aluminium foil; abu diatur P.26/2020. Pegiat lingkungan menilai pengawasan belum siap.",
+     "en": "Thermal incinerators (including small ones): must meet emission standards under MoEF Reg. P.70/2016; only household waste without hazardous waste, PVC, glass or aluminium foil; ash is governed by P.26/2020. Environmental groups say oversight is not ready."
+    },
+    "sumber_id": "p70-2016",
+    "tingkat_bukti": "resmi",
+    "sumber_id2": "p26-2020"
+   }
+  ],
+  "fasilitas": [
+   {
+    "k": "rdf",
+    "nama": "RDF Plant Jeruklegi (TPST Cilacap)",
+    "lokasi": "Desa Tritih Lor, Jeruklegi, Cilacap, Jawa Tengah",
+    "kapasitas_ton_hari": [
+     120,
+     160,
+     200
+    ],
+    "kapasitas_ket": {
+     "id": "Rancangan awal 120 ton per hari (pengolahan mekanis-biologis); angka lain 160 dan 200 ton per hari muncul di sumber berbeda dan tidak disatukan.",
+     "en": "Initial design 120 tonnes a day (mechanical-biological treatment); other figures of 160 and 200 tonnes a day appear in different sources and are not merged."
+    },
+    "produk": {
+     "id": "RDF untuk kiln semen PT Solusi Bangun Indonesia (SBI)",
+     "en": "RDF for the cement kilns of PT Solusi Bangun Indonesia (SBI)"
+    },
+    "nilai": {
+     "id": "Rp84 miliar, termasuk hibah Denmark Rp44 miliar (laporan 2023)",
+     "en": "IDR 84 billion, including a Danish grant of IDR 44 billion (2023 report)"
+    },
+    "sumber_ids": [
+     "mongabay-rdf-cilacap",
+     "detik-cilacap",
+     "industry-cilacap",
+     "kompas-sbi-rdf"
+    ],
+    "tingkat_bukti": "media",
+    "status": "beroperasi"
+   },
+   {
+    "k": "rdf",
+    "nama": "RDF Plant Rorotan (Jakarta Utara)",
+    "lokasi": "Rorotan, Jakarta Utara, DKI Jakarta",
+    "kapasitas_ton_hari": [
+     2500
+    ],
+    "kapasitas_ket": {
+     "id": "Rancangan 2.500 ton per hari; kapasitas uji coba dikurangi karena keluhan bau warga. Kapasitas efektif per tanggal tidak disatukan.",
+     "en": "Design 2,500 tonnes a day; trial capacity was cut after residents complained of odour. Effective capacity by date is not merged."
+    },
+    "produk": {
+     "id": "RDF untuk pembeli industri (pembeli belum bersumber)",
+     "en": "RDF for industrial buyers (buyer not sourced)"
+    },
+    "nilai": null,
+    "sumber_ids": [
+     "idx-rorotan",
+     "metro-rorotan",
+     "katadata-rorotan"
+    ],
+    "tingkat_bukti": "via-pihak-ketiga",
+    "status": "konstruksi"
+   },
+   {
+    "k": "biogas",
+    "nama": "Gas metana TPST Bantargebang",
+    "lokasi": "Bantargebang, Bekasi, Jawa Barat",
+    "kapasitas_ton_hari": [],
+    "kapasitas_ket": {
+     "id": "Sekitar 3 MW terpasang dari tiga mesin gas 1 MW, dari rencana sekitar 26 MW (kajian 2023).",
+     "en": "About 3 MW from three 1 MW gas engines, against a plan of about 26 MW (2023 study)."
+    },
+    "produk": {
+     "id": "Listrik dijual ke PLN Rp850 per kWh",
+     "en": "Electricity sold to PLN at IDR 850 per kWh"
+    },
+    "nilai": null,
+    "sumber_ids": [
+     "esdm-lfg",
+     "idx-metana",
+     "katadata-bantar"
+    ],
+    "tingkat_bukti": "kajian",
+    "status": "beroperasi"
+   }
+  ]
+ },
+ "program": {
+  "ringkas": {
+   "kota": 33,
+   "investasi_triliun": 91,
+   "ket": {
+    "id": "Program Danantara disebut mencakup 33 kota dengan perkiraan investasi sekitar Rp91 triliun (pemberitaan, bukan nilai kontrak).",
+    "en": "The Danantara programme is said to cover 33 cities with estimated investment of about IDR 91 trillion (press reports, not contract value)."
+   },
+   "sumber_id": "detik-33",
+   "tingkat_bukti": "media",
+   "sumber_id2": "kisi"
+  },
+  "tahap": [
+   {
+    "k": "t1",
+    "teks": {
+     "id": "Tahap I: tender dibuka untuk tujuh kota pada November 2025, tetapi pada 19 November 2025 baru empat kota siap. Groundbreaking: Denpasar Raya (8 Juli 2026), Kota Bekasi (26 Agustus 2026), Bogor Raya 1 (17 September 2026).",
+     "en": "Phase I: the tender opened for seven cities in November 2025, but on 19 November 2025 only four were ready. Groundbreakings: Greater Denpasar (8 July 2026), Bekasi City (26 August 2026), Greater Bogor 1 (17 September 2026)."
+    },
+    "sumber_id": "empat",
+    "tingkat_bukti": "media",
+    "sumber_id2": "bali"
+   },
+   {
+    "k": "dpt",
+    "teks": {
+     "id": "Daftar penyedia terseleksi gelombang II: 85 entitas lolos, berasal dari tujuh negara (Indonesia, China, Jepang, Prancis, India, Korea Selatan, Singapura); nama per negara tidak dipetakan sumber.",
+     "en": "Phase II shortlist: 85 entities qualified, from seven countries (Indonesia, China, Japan, France, India, South Korea, Singapore); the source does not map names to countries."
+    },
+    "sumber_id": "katadata-85",
+    "tingkat_bukti": "media",
+    "sumber_id2": "tahap2"
+   },
+   {
+    "k": "t2",
+    "teks": {
+     "id": "Tahap II: delapan konsorsium ditetapkan pada 21 Juli 2026 untuk delapan lokasi di 20 kabupaten/kota; nilai disebut sekitar Rp18 triliun, dan Danantara masih mencari enam mitra lagi.",
+     "en": "Phase II: eight consortia were named on 21 July 2026 for eight locations covering 20 regencies/cities; the value is said to be about IDR 18 trillion, and Danantara is still seeking six more partners."
+    },
+    "sumber_id": "tahap2",
+    "tingkat_bukti": "media",
+    "sumber_id2": "kabar-18t"
+   },
+   {
+    "k": "lima",
+    "teks": {
+     "id": "Target lima groundbreaking pada Juni 2026 (Kota Bekasi, Bogor Raya, Bandung Raya, Denpasar Raya, Yogyakarta) dengan total sekitar 7.000 ton sampah per hari.",
+     "en": "Target of five groundbreakings in June 2026 (Bekasi City, Greater Bogor, Greater Bandung, Greater Denpasar, Yogyakarta) with about 7,000 tonnes of waste a day in total."
+    },
+    "sumber_id": "it-5groundbreaking",
+    "tingkat_bukti": "media"
+   }
+  ],
+  "konsorsium": [
+   {
+    "psel_id": "psel_pjb_003",
+    "nama": "Nusantara Energi Hijau Consortium",
+    "anggota": "BGE Sentosa Utama",
+    "sumber_id": "tahap2",
+    "tingkat_bukti": "media"
+   },
+   {
+    "psel_id": "psel_pjb_004",
+    "nama": "Consortium Everbright Cemerlang Energy",
+    "anggota": "Everbright Harmoni",
+    "sumber_id": "tahap2",
+    "tingkat_bukti": "media"
+   },
+   {
+    "psel_id": "psel_pjb_005",
+    "nama": "Bumi Biru Indonesia",
+    "anggota": "SUS Indoplas",
+    "sumber_id": "tahap2",
+    "tingkat_bukti": "media"
+   },
+   {
+    "psel_id": "psel_pjb_006",
+    "nama": "Masa Depan Energi Indonesia",
+    "anggota": "Chandra Waste Energy, BGE",
+    "sumber_id": "tahap2",
+    "tingkat_bukti": "media"
+   },
+   {
+    "psel_id": "psel_pj_0047",
+    "nama": "Veolia Environmental Services Asia Pte. Ltd.",
+    "anggota": "Veolia",
+    "sumber_id": "tahap2",
+    "tingkat_bukti": "media"
+   },
+   {
+    "psel_id": "psel_pjb_007",
+    "nama": "Consortium Mentari Citra Lestari",
+    "anggota": "Bakrie Power, SUS",
+    "sumber_id": "tahap2",
+    "tingkat_bukti": "media"
+   },
+   {
+    "psel_id": "psel_pjb_008",
+    "nama": "MPM-CEVIA Consortium",
+    "anggota": "Mega Power, CEVIA",
+    "sumber_id": "tahap2",
+    "tingkat_bukti": "media"
+   },
+   {
+    "psel_id": "psel_pjb_002",
+    "nama": "Cakra Energi Lestari Consortium",
+    "anggota": "Pertamina NRE, Tianjin CITICC",
+    "sumber_id": "tahap2",
+    "tingkat_bukti": "media"
+   }
+  ]
+ },
+ "aturan": {
+  "butir": [
+   {
+    "k": "harga",
+    "teks": {
+     "id": "Harga beli PLN tetap USD 0,20 per kWh untuk semua kapasitas selama 30 tahun tanpa eskalasi (hanya pembangkitan); kompensasi negara untuk PLN.",
+     "en": "PLN purchase price fixed at USD 0.20 per kWh for all capacities over 30 years without escalation (generation only); state compensation to PLN."
+    },
+    "sumber_id": "ashurst",
+    "tingkat_bukti": "kajian",
+    "sumber_id2": "subs"
+   },
+   {
+    "k": "pasokan",
+    "teks": {
+     "id": "Pemda menyalurkan sampah paling sedikit 1.000 ton per hari selama masa operasi (Pasal 4 ayat 1 huruf a).",
+     "en": "Local governments must deliver at least 1,000 tonnes a day throughout operation (Article 4(1)(a))."
+    },
+    "sumber_id": "metro109",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "izin",
+    "teks": {
+     "id": "Persetujuan AMDAL otomatis dalam dua bulan; PLN wajib menandatangani PPA dalam 10 hari kerja setelah izin prakonstruksi.",
+     "en": "Automatic AMDAL approval within two months; PLN must sign the PPA within 10 working days after pre-construction licences."
+    },
+    "sumber_id": "ashurst",
+    "tingkat_bukti": "kajian"
+   },
+   {
+    "k": "turunan",
+    "teks": {
+     "id": "Aturan turunan untuk teknologi di luar PSEL dan rincian kompensasi PLN belum ditetapkan; Perpres memuat 8 bab dan 33 pasal.",
+     "en": "Implementing rules for technologies beyond PSEL and for PLN compensation details are not yet set; the Perpres has 8 chapters and 33 articles."
+    },
+    "sumber_id": "ashurst",
+    "tingkat_bukti": "kajian",
+    "sumber_id2": "metro109"
+   },
+   {
+    "k": "emisi",
+    "teks": {
+     "id": "Pengolahan termal tunduk pada baku mutu emisi P.70/2016 dan penanganan abu P.26/2020; angka batas per parameter ada di lampiran dan tidak ditranskripsi di sini.",
+     "en": "Thermal treatment is subject to emission standards in P.70/2016 and ash handling in P.26/2020; limit values per parameter are in the annex and not transcribed here."
+    },
+    "sumber_id": "p70-2016",
+    "tingkat_bukti": "resmi",
+    "sumber_id2": "p26-2020"
+   }
+  ],
+  "tarif_35": {
+   "id": "Perpres 35/2018 (dicabut): USD 13,35 sen per kWh sampai 20 MW; di atas itu 14,54 dikurangi 0,076 kali MW. Ombudsman menilai harga ini terlalu rendah sehingga banyak proyek mangkrak.",
+   "en": "Perpres 35/2018 (revoked): USD 13.35 cents per kWh up to 20 MW; above that 14.54 minus 0.076 times MW. The Ombudsman judged the price too low, leaving many projects stalled."
+  }
+ },
+ "tarif": {
+  "contoh": {
+   "psel_id": "psel_pj_0043",
+   "faktor_kapasitas": 85,
+   "harga_usd_sen": 20,
+   "sumber_id": "ashurst",
+   "ket": {
+    "id": "Faktor kapasitas 85% adalah Hipotesis METI untuk contoh hitung; harga 20 sen dari Perpres 109/2025.",
+    "en": "The 85% capacity factor is a METI Hypothesis for the worked example; the 20-cent price comes from Perpres 109/2025."
+   }
+  },
+  "tipping_fee": {
+   "teks": {
+    "id": "Perpres 109/2025 menghapus tipping fee yang dulu ditanggung APBD; pemerintah menilai beban daerah diganti kompensasi/subsidi untuk PLN. Kompensasi itu belum rinci dan dikhawatirkan menjadi beban fiskal dan tarif.",
+    "en": "Perpres 109/2025 removes the tipping fee formerly borne by regional budgets; the government says the regional burden is replaced by compensation/subsidy for PLN. That compensation is not detailed and may become a fiscal and tariff burden."
+   },
+   "sumber_id": "subs",
+   "tingkat_bukti": "media",
+   "sumber_id2": "ashurst"
+  },
+  "investasi": [
+   {
+    "k": "program",
+    "label": {
+     "id": "Program 33 kota",
+     "en": "33-city programme"
+    },
+    "nilai": {
+     "id": "sekitar Rp91 triliun",
+     "en": "about IDR 91 trillion"
+    },
+    "sumber_id": "kisi",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "tahap2",
+    "label": {
+     "id": "Tahap II, 8 lokasi",
+     "en": "Phase II, 8 locations"
+    },
+    "nilai": {
+     "id": "sekitar Rp18 triliun (USD 1 miliar menurut judul lain)",
+     "en": "about IDR 18 trillion (USD 1 billion per another headline)"
+    },
+    "sumber_id": "kabar-18t",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "bali",
+    "label": {
+     "id": "PSEL Denpasar Raya",
+     "en": "Greater Denpasar PSEL"
+    },
+    "nilai": {
+     "id": "Rp3 triliun",
+     "en": "IDR 3 trillion"
+    },
+    "sumber_id": "bali",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "bekasi",
+    "label": {
+     "id": "PSEL Kota Bekasi",
+     "en": "Bekasi City PSEL"
+    },
+    "nilai": {
+     "id": "Rp3 triliun",
+     "en": "IDR 3 trillion"
+    },
+    "sumber_id": "bekasi",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "sunter",
+    "label": {
+     "id": "Sunter (proyek lama)",
+     "en": "Sunter (old project)"
+    },
+    "nilai": {
+     "id": "Rp5,2 triliun",
+     "en": "IDR 5.2 trillion"
+    },
+    "sumber_id": "ombud",
+    "tingkat_bukti": "media"
+   }
+  ]
+ },
+ "pemasok": {
+  "butir": [
+   {
+    "k": "china",
+    "teks": {
+     "id": "Danantara menyatakan proyek barunya memakai teknologi yang lebih canggih daripada yang dipakai di Tiongkok; pemberitaan tender menyebut peserta asing dominan.",
+     "en": "Danantara says its new projects use technology more advanced than that used in China; tender reports say foreign bidders dominate."
+    },
+    "sumber_id": "teknologi",
+    "tingkat_bukti": "media",
+    "sumber_id2": "bisnis-asing"
+   },
+   {
+    "k": "dpt",
+    "teks": {
+     "id": "Peserta tender gelombang II berasal dari tujuh negara; pemetaan nama ke negara tidak disediakan sumber.",
+     "en": "Phase II bidders come from seven countries; the source gives no name-to-country mapping."
+    },
+    "sumber_id": "katadata-85",
+    "tingkat_bukti": "media"
+   }
+  ]
+ },
+ "penolakan": {
+  "butir": [
+   {
+    "k": "makassar",
+    "lokasi": "Kelurahan Bira, Tamalanrea, Makassar",
+    "tanggal": "2026-01-22",
+    "status": "aktif",
+    "pihak": {
+     "id": "Warga dan WALHI Sulsel",
+     "en": "Residents and WALHI South Sulawesi"
+    },
+    "klaim": {
+     "id": "Khawatir dioksin dan furan, abu berlogam berat, ISPA, dan banjir; lokasi berbatasan dengan permukiman dan sekolah; Amdal dinilai tidak partisipatif. Pengembang disebut PT Sarana Utama Synergy.",
+     "en": "Concerns over dioxins and furans, heavy-metal ash, respiratory illness and flooding; the site borders housing and a school; the Amdal is called non-participatory. The developer is named as PT Sarana Utama Synergy."
+    },
+    "sumber_id": "mongabay-makassar",
+    "tingkat_bukti": "media",
+    "sumber_id2": "nu-makassar"
+   },
+   {
+    "k": "bali",
+    "lokasi": "Pesanggaran, Denpasar, Bali",
+    "tanggal": "2026-05-18",
+    "status": "aktif",
+    "pihak": {
+     "id": "Warga Pesanggaran",
+     "en": "Pesanggaran residents"
+    },
+    "klaim": {
+     "id": "Menolak PSEL di kawasan Pelindo dan meminta pengolahan dilakukan di TPA Suwung. Wakil Gubernur Bali menyatakan teknologi aman dan pembatalan tidak lagi mungkin karena perjanjian kerja sama lahan sudah diputuskan (klaim pemerintah).",
+     "en": "Reject a PSEL in the Pelindo area and ask for processing at Suwung landfill. Bali's Deputy Governor says the technology is safe and cancellation is no longer possible because the land agreement is settled (government claim)."
+    },
+    "sumber_id": "antara-bali-tolak",
+    "tingkat_bukti": "media"
+   },
+   {
+    "k": "rorotan",
+    "lokasi": "Rorotan, Jakarta Utara",
+    "tanggal": "2025-04-06",
+    "status": "aktif",
+    "pihak": {
+     "id": "Warga sekitar RDF Plant Rorotan",
+     "en": "Residents near the Rorotan RDF plant"
+    },
+    "klaim": {
+     "id": "Mengeluhkan bau busuk dan polusi sejak masa uji coba; kapasitas uji coba dikurangi. Ini fasilitas RDF, bukan PSEL pembakar.",
+     "en": "Complain of foul odour and pollution since the trial run; trial capacity was cut. This is an RDF facility, not an incinerating PSEL."
+    },
+    "sumber_id": "mongabay-rorotan",
+    "tingkat_bukti": "media",
+    "sumber_id2": "katadata-rorotan"
+   },
+   {
+    "k": "nasional",
+    "lokasi": "Nasional",
+    "tanggal": "2026-04-29",
+    "status": "aktif",
+    "pihak": {
+     "id": "WALHI, Greenpeace Indonesia, AZWI, Nexus3 Foundation",
+     "en": "WALHI, Greenpeace Indonesia, AZWI, Nexus3 Foundation"
+    },
+    "klaim": {
+     "id": "Pembakaran dapat membentuk dioksin dan furan; insinerasi dinilai tidak cocok untuk sampah organik basah; studi Nexus3 menemukan POPs pada abu insinerator; pengawasan dan infrastruktur limbah B3 dinilai belum siap. Mereka mengusulkan peninjauan ulang kebijakan PSEL dan penguatan pemilahan dari hulu.",
+     "en": "Burning can form dioxins and furans; incineration is judged unsuited to wet organic waste; a Nexus3 study found POPs in incinerator ash; oversight and hazardous-waste infrastructure are judged not ready. They propose reviewing PSEL policy and strengthening source separation."
+    },
+    "sumber_id": "mongabay-risiko",
+    "tingkat_bukti": "media",
+    "sumber_id2": "ibp-walhi"
+   }
+  ]
+ },
+ "celah": [
+  "Daftar lengkap 33 kota program Danantara tidak ditemukan dalam sumber yang boleh dibaca; basis memuat 23 proyek PSEL (psel.json), sisanya dibiarkan kosong.",
+  "Status Yogyakarta berbeda antar sumber (pemenang tahap I menurut sebagian ringkasan, konsorsium tahap II menurut pemberitaan 21 Juli 2026); halaman mengikuti psel.json.",
+  "Tipping fee per ton dan harga PPA per proyek belum ada di sumber terbuka; yang tampil hanya tarif regulasi Perpres.",
+  "Komposisi sampah, nilai kalor, dan kadar air per kota belum tersedia; angka ini menentukan kecocokan teknologi.",
+  "Biaya bangun PSEL per kapasitas tidak ada di biaya_bangun.json; hitungan Rp per ton per hari memakai nilai investasi pemberitaan dan berlabel EST.",
+  "Alur impor komponen (grate, boiler, FGT, turbin) dan peran pemasok per konsorsium tahap II belum terverifikasi; negara pemasok mengikuti pemasok_wte.json.",
+  "Angka timbulan 2024 berbeda antar pemberitaan (32,6 sampai 34,2 juta ton); angka resmi yang dipakai adalah 2023.",
+  "Kapasitas efektif RDF Rorotan berubah-ubah menurut tanggal laporan; hanya rancangan dan fakta pembatasan yang dicatat.",
+  "Data pemulung terdampak, uji emisi cerobong, dan pemantauan dioksin proyek berjalan belum ditemukan."
+ ]
+}
