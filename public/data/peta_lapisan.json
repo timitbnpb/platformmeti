@@ -35,14 +35,6 @@
    "nyala": true
   },
   {
-   "id": "proyek_meti",
-   "kelompok": "proyek",
-   "jenis": "titik",
-   "adapter": "proyek",
-   "berkas": "/data/proyek.json",
-   "ikon": "bintang"
-  },
-  {
    "id": "gem",
    "kelompok": "proyek",
    "jenis": "titik",
