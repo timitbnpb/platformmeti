@@ -2,7 +2,7 @@
   "_catatan": "Pemilik/operator/induk GEM yang belum ada di organisasi.json (nama ternormalisasi + alias). KANDIDAT saja: tinjau kurator sebelum masuk direktori; tidak dimuat potret.",
   "sumber": "Global Energy Monitor (CC BY 4.0)",
   "tanggal": "2026-11-08",
-  "jumlah": 314,
+  "jumlah": 301,
   "baris": [
     {
       "nama": "to be determined",
@@ -19,24 +19,6 @@
         "Jawa-11 power station",
         "Jawa-12 power station",
         "Jawa-13 power station"
-      ]
-    },
-    {
-      "nama": "PT Bukit Asam Tbk",
-      "peran": [
-        "induk",
-        "pemilik"
-      ],
-      "tracker": [
-        "coal",
-        "solar"
-      ],
-      "jumlah_baris": 36,
-      "kapasitas_pemilik_mw": 4580,
-      "contoh_proyek": [
-        "Ombilin solar farm",
-        "Tanjung Enim solar farm",
-        "Bantuas solar farm"
       ]
     },
     {
@@ -79,22 +61,6 @@
       "kapasitas_pemilik_mw": 3030,
       "contoh_proyek": [
         "Nanshan Industrial Park power station"
-      ]
-    },
-    {
-      "nama": "PT Indah Kiat Pulp & Paper Tbk",
-      "peran": [
-        "induk",
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 24,
-      "kapasitas_pemilik_mw": 965,
-      "contoh_proyek": [
-        "Perawang Mill power station",
-        "Indah Kiat Serang power station"
       ]
     },
     {
@@ -713,20 +679,6 @@
       ]
     },
     {
-      "nama": "PT Amman Mineral Nusa Tenggara",
-      "peran": [
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 6,
-      "kapasitas_pemilik_mw": 424,
-      "contoh_proyek": [
-        "Batu Hijau power station"
-      ]
-    },
-    {
       "nama": "PT Satya Abadi Semesta",
       "peran": [
         "induk"
@@ -755,21 +707,6 @@
       "contoh_proyek": [
         "Sulawesi Mining power station",
         "Sulawesi Labota power station"
-      ]
-    },
-    {
-      "nama": "PT Tambang Batubara Bukit Asam",
-      "peran": [
-        "induk",
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 6,
-      "kapasitas_pemilik_mw": 150,
-      "contoh_proyek": [
-        "East Halmahera power station"
       ]
     },
     {
@@ -1350,21 +1287,6 @@
       ]
     },
     {
-      "nama": "PT Toba Pulp Lestari Tbk",
-      "peran": [
-        "induk",
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 4,
-      "kapasitas_pemilik_mw": 80,
-      "contoh_proyek": [
-        "Toba Pulp Lestari power station"
-      ]
-    },
-    {
       "nama": "Sunseap Group Pte Ltd",
       "peran": [
         "pemilik"
@@ -1593,20 +1515,6 @@
       "kapasitas_pemilik_mw": 650,
       "contoh_proyek": [
         "Sumsel-5 power station"
-      ]
-    },
-    {
-      "nama": "PT Freeport Indonesia",
-      "peran": [
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 3,
-      "kapasitas_pemilik_mw": 195,
-      "contoh_proyek": [
-        "Amamapare Port power station"
       ]
     },
     {
@@ -1957,21 +1865,6 @@
       ]
     },
     {
-      "nama": "Hongshi Holding Group Co Ltd",
-      "peran": [
-        "induk",
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 2,
-      "kapasitas_pemilik_mw": 2000,
-      "contoh_proyek": [
-        "Hongshi Silikon power station"
-      ]
-    },
-    {
       "nama": "IMPSA Malaysia Sdn Bhd",
       "peran": [
         "pemilik"
@@ -2028,20 +1921,6 @@
       "kapasitas_pemilik_mw": 0,
       "contoh_proyek": [
         "Central Java Power Project"
-      ]
-    },
-    {
-      "nama": "Krakatau Posco Energy PT",
-      "peran": [
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 2,
-      "kapasitas_pemilik_mw": 200,
-      "contoh_proyek": [
-        "PT Krakatau Posco Energy power station"
       ]
     },
     {
@@ -2255,20 +2134,6 @@
       ]
     },
     {
-      "nama": "PT Asahimas Chemical",
-      "peran": [
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 2,
-      "kapasitas_pemilik_mw": 300,
-      "contoh_proyek": [
-        "Asahimas Chemical power station"
-      ]
-    },
-    {
       "nama": "PT Bakrie Indo Infrastructure",
       "peran": [
         "pemilik"
@@ -2382,21 +2247,6 @@
       ]
     },
     {
-      "nama": "PT Cemindo Gemilang Tbk",
-      "peran": [
-        "induk",
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 2,
-      "kapasitas_pemilik_mw": 60,
-      "contoh_proyek": [
-        "Cemindo Gemilang power station"
-      ]
-    },
-    {
       "nama": "PT D&C Engineering Co",
       "peran": [
         "induk"
@@ -2464,21 +2314,6 @@
       "kapasitas_pemilik_mw": 0,
       "contoh_proyek": [
         "Shenhua Guohua power station"
-      ]
-    },
-    {
-      "nama": "PT Fajar Surya Wisesa Tbk",
-      "peran": [
-        "induk",
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 2,
-      "kapasitas_pemilik_mw": 55,
-      "contoh_proyek": [
-        "FAJAR power station"
       ]
     },
     {
@@ -4029,20 +3864,6 @@
       ]
     },
     {
-      "nama": "PT Panasia Indo Resources Tbk",
-      "peran": [
-        "pemilik"
-      ],
-      "tracker": [
-        "coal"
-      ],
-      "jumlah_baris": 1,
-      "kapasitas_pemilik_mw": 30,
-      "contoh_proyek": [
-        "Bandung Indosyntec power station"
-      ]
-    },
-    {
       "nama": "PT Panasia Synthetic Abadi",
       "peran": [
         "induk"
@@ -4152,20 +3973,6 @@
       "kapasitas_pemilik_mw": 100,
       "contoh_proyek": [
         "Indarung Cement power station"
-      ]
-    },
-    {
-      "nama": "PT Siemens Indonesia",
-      "peran": [
-        "operator"
-      ],
-      "tracker": [
-        "wind"
-      ],
-      "jumlah_baris": 1,
-      "kapasitas_pemilik_mw": 0,
-      "contoh_proyek": [
-        "Tolo wind farm"
       ]
     },
     {

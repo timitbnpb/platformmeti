@@ -204,3 +204,14 @@ Logo hanya untuk mengenali perusahaan; merek dagang milik pemiliknya. Diambil da
 | en_c675f10bf2.png | PT Cemindo Gemilang Tbk | ikon resmi situs: https://www.cemindo.com/ | 2026-11-08 |
 | en_e375586366.png | PT Bukit Asam Tbk | favicon situs resmi: https://www.ptba.co.id/ | 2026-11-08 |
 | in_6a4065f8d3.png | Xinyi Glass Holdings | Wikidata Q3674725 P154 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Xinyi_Glass_logo.png | 2026-11-08 |
+| en_338e1a0bef.png | PT Sutrakabel Intimandiri | logo kepala situs resmi: https://sutrakabel.com/ | 2026-11-08 |
+| en_28323x5315.png | PT Sumi Indo Kabel Tbk | ikon resmi situs: https://www.sikabel.com/ | 2026-11-08 |
+| en_2a7fdc9ac6.png | PT Gotion Green Energy Solutions Indonesia | ikon resmi situs induk (gotion.com): https://www.gotion.com/ | 2026-11-08 |
+| en_8b675ac024.png | PT Prysmian Cables Indonesia | logo kepala situs resmi grup (prysmian.com): https://www.prysmian.com/en | 2026-11-08 |
+| en_07829d2270.png | PT Symphos Electric | favicon situs resmi: https://www.symphoselectric.com/ | 2026-11-08 |
+| en_8baf2db693.png | PT Kabelindo Murni Tbk | ikon resmi situs: https://www.kabelindo.co.id/ | 2026-11-08 |
+| en_bc7a3bb97c.png | PT Magnakabel Nusantara | logo kepala situs resmi: https://magnakabel.com/ | 2026-11-08 |
+| en_9589eebc35.png | PT Siemens Indonesia | favicon situs resmi grup (siemens.com): https://www.siemens.com/ | 2026-11-08 |
+| en_c1bc33af16.png | PT KMI Wire and Cable Tbk | logo kepala situs resmi: https://www.kmicable.com/ | 2026-11-08 |
+| en_cfd1e6172d.png | PT Voksel Electric Tbk | logo kepala situs resmi: https://www.voksel.co.id/ | 2026-11-08 |
+| en_e6bf020c42.png | PT Jembo Cable Company Tbk | logo kepala situs resmi: https://jembo.co.id/ | 2026-11-08 |

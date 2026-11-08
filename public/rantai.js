@@ -551,18 +551,34 @@ function rt2Sisa() {
   rt2Tabel();
 }
 
+/* satu baris per pabrikan (varian penulisan nama disatukan), bukan per sertifikat */
+const kunciPab = (n) => String(n || "").toLowerCase().replace(/\b(pt|cv|tbk)\b\.?/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+function kelompokPab(B) {
+  const m = new Map();
+  for (const r of B) {
+    const k = r.pabrikan_org_id || kunciPab(r.pabrikan), o = m.get(k) || { nama: namaBaku(r.pabrikan).nama, id: r.pabrikan_org_id, n: 0, aktif: 0, kat: new Set(), tk: null, sd: "", lok: "", produk: [] };
+    o.id = o.id || r.pabrikan_org_id; o.n++; if (r.aktif) o.aktif++; o.kat.add(r.kategori);
+    if (r.tkdn_persen != null && (o.tk == null || r.tkdn_persen > o.tk)) o.tk = r.tkdn_persen;
+    if (r.berlaku_sampai && r.berlaku_sampai > o.sd) o.sd = r.berlaku_sampai;
+    if (!o.lok) o.lok = [r.lokasi, r.provinsi].filter(Boolean).join(", ");
+    if (!o.produk.includes(r.produk)) o.produk.push(r.produk);
+    m.set(k, o);
+  }
+  return [...m.values()];
+}
 function rt2Tabel() {
   const q = cariS.trim().toLowerCase();
-  const B = tkdn2.baris.filter((r) => (!fKat || r.kategori === fKat) && (!q || `${r.pabrikan} ${r.produk} ${r.merk || ""} ${r.provinsi || ""}`.toLowerCase().includes(q)));
-  $("rt2-hitung").textContent = t("rt2.info", { n: B.length, total: tkdn2.baris.length });
+  const S = tkdn2.baris.filter((r) => (!fKat || r.kategori === fKat) && (!q || `${r.pabrikan} ${r.produk} ${r.merk || ""} ${r.provinsi || ""}`.toLowerCase().includes(q)));
+  const B = kelompokPab(S), total = kelompokPab(tkdn2.baris).length;
+  $("rt2-hitung").textContent = t("rt2.info_pab", { n: B.length, total, s: S.length });
   $("rt2-hapus").hidden = !(fKat || q);
-  const nm = (r) => namaBaku(r.pabrikan).nama;
-  tabelIh($("rt2-tabel"), { satuan: "rt2.u.sertifikat", per: 10, urutAwal: 3, kolom: [
-    { label: t("rt.col.nama"), v: nm, f: (r) => { const lg = logoHtml({ id: r.pabrikan_org_id, nama: nm(r), logo: r.pabrikan_org_id }), isi = `${lg}<span class="jm-id"><b>${esc(nm(r))}</b><small>${esc([r.lokasi, r.provinsi].filter(Boolean).join(", ") || "-")}</small></span>`; return r.pabrikan_org_id ? `<a class="jm-an-nama" href="/o/${esc(r.pabrikan_org_id)}">${isi}</a>` : `<span class="jm-an-nama">${isi}</span>`; } },
-    { label: t("rt2.c.produk"), v: (r) => r.produk, f: (r) => `<span class="rt2-prod"><b>${esc(r.produk)}</b>${r.merk ? `<small>${esc(r.merk)}</small>` : ""}</span>` },
-    { label: t("rt2.c.kat"), v: (r) => t("rt2.kat." + r.kategori), f: (r) => `<span class="rt2-pils">${pilKat(r.kategori)}${pilUmum(r.kategori)}</span>` },
-    { label: t("rt.col.tkdn"), num: true, v: (r) => r.tkdn_persen, f: (r) => (r.tkdn_persen == null ? "-" : `<span class="rt2-nilai${r.tkdn_persen >= 40 ? " rt2-ok" : ""}">${esc(n1(r.tkdn_persen, 2))}</span>`) },
-    { label: t("rt2.c.sampai"), num: true, v: (r) => r.berlaku_sampai, f: (r) => (r.berlaku_sampai ? esc(tanggal(r.berlaku_sampai)) : "-") },
-    { label: t("rt2.c.status"), v: (r) => (r.aktif ? 1 : 0), f: (r) => `<span class="jm-pil ${r.aktif ? "jm-pil-ok" : "jm-pil-bad"}">${ikon(r.aktif ? "centang" : "silang", 14)}${esc(t(r.aktif ? "rt2.aktif" : "rt2.lewat"))}</span>` },
+  tabelIh($("rt2-tabel"), { satuan: "rt2.u.pabrikan", per: 10, urutAwal: 3, kolom: [
+    { label: t("rt.col.nama"), v: (r) => r.nama, f: (r) => { const lg = logoHtml({ id: r.id, nama: r.nama, logo: r.id }), isi = `${lg}<span class="jm-id"><b>${esc(r.nama)}</b><small>${esc(r.lok || "-")}</small></span>`; return r.id ? `<a class="jm-an-nama" href="/o/${esc(r.id)}">${isi}</a>` : `<span class="jm-an-nama">${isi}</span>`; } },
+    { label: t("rt2.c.produk"), v: (r) => r.produk[0], f: (r) => `<span class="rt2-prod"><b>${esc(r.produk[0])}</b>${r.produk.length > 1 ? `<small>${esc(t("rt2.lain", { n: r.produk.length - 1 }))}</small>` : ""}</span>` },
+    { label: t("rt2.c.kat"), v: (r) => r.kat.size, f: (r) => `<span class="rt2-pils">${[...r.kat].map((k) => pilKat(k)).join("")}</span>` },
+    { label: t("rt2.c.jumlah"), num: true, v: (r) => r.n, f: (r) => esc(num(r.n)) },
+    { label: t("rt.col.tkdn"), num: true, v: (r) => r.tk, f: (r) => (r.tk == null ? "-" : `<span class="rt2-nilai${r.tk >= 40 ? " rt2-ok" : ""}">${esc(n1(r.tk, 2))}</span>`) },
+    { label: t("rt2.c.sampai"), num: true, v: (r) => r.sd, f: (r) => (r.sd ? esc(tanggal(r.sd)) : "-") },
+    { label: t("rt2.c.status"), v: (r) => r.aktif, f: (r) => `<span class="jm-pil ${r.aktif ? "jm-pil-ok" : "jm-pil-bad"}">${ikon(r.aktif ? "centang" : "silang", 14)}${esc(t(r.aktif ? "rt2.aktif" : "rt2.lewat"))}${r.aktif ? ` ${esc(num(r.aktif))}/${esc(num(r.n))}` : ""}</span>` },
   ], baris: B });
 }
