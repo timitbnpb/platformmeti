@@ -1,0 +1,28 @@
+/* "Tanya data": kartu jawaban (halaman /tanya dan tab Tanya di palet cari). Hanya token tema. */
+.tny-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;margin-bottom:12px}
+.tny-form .jm-cari{width:100%}
+.tny-contoh{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.tny-contoh button,.tny-lalu{font:500 var(--t-kecil)/1.3 var(--font);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-pil);padding:8px 14px;min-height:var(--target);cursor:pointer;text-align:left}
+.tny-contoh button:hover,.tny-lalu:hover{border-color:var(--accent);color:var(--accent)}
+.tny-riwayat-kepala{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:20px 0 8px}
+.tny-riwayat-kepala h3{margin:0;font:700 var(--t-body)/1.3 var(--font);color:var(--ink)}
+.tny-hasil{display:grid;gap:16px}
+.tny-kartu{display:grid;gap:12px;padding:18px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink)}
+.tny-q{margin:0;font:700 var(--t-body)/1.4 var(--font);color:var(--ink)}
+.tny-mesin{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.tny-jawab{display:grid;gap:8px}
+.tny-klaim{margin:0;font:400 var(--t-body)/1.6 var(--font);color:var(--ink)}
+.tny-sit{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/1 var(--font);vertical-align:text-top}
+.tny-h{display:flex;align-items:center;gap:8px;margin:4px 0 0;font:700 var(--t-label)/1.3 var(--font);color:var(--ink2)}
+.tny-daftar{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.tny-sum{display:grid;gap:6px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface)}
+.tny-sum-kepala{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.tny-sum-kepala a{color:var(--accent)}
+.tny-no{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:var(--r-pil);background:var(--accent);color:var(--on-brand);font:700 var(--t-kecil)/1 var(--font)}
+.tny-sum blockquote{margin:0;padding-left:12px;border-left:3px solid var(--line);color:var(--ink2);font:400 var(--t-kecil)/1.55 var(--font);overflow-wrap:anywhere}
+.tny-meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0;font:400 var(--t-kecil)/1.3 var(--font);color:var(--ink2)}
+.tny-meta a{display:inline-flex;align-items:center;gap:4px;color:var(--accent)}
+.tny-info{display:flex;align-items:flex-start;gap:10px;margin:0;color:var(--ink2);font:400 var(--t-body)/1.5 var(--font)}
+.tny-kosong{flex-direction:column;align-items:center;padding:24px 8px;text-align:center}
+.jm-cari-tanya .tny-kartu{padding:14px}
+@media (max-width:640px){.tny-form{grid-template-columns:minmax(0,1fr)}}

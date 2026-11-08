@@ -10,14 +10,14 @@ import { HS_TAMBAH, ringkas, DIR_BAWAAN } from './baterai_ev_comtrade.mjs';
 const AKAR = fileURLToPath(new URL('../../', import.meta.url));
 const baca = (f) => JSON.parse(fs.readFileSync(AKAR + f, 'utf8'));
 export const TAHAP = [
-  { id: 'tambang', ikon: 'peta', hs: ['2604', '260200', '810520'] },
+  { id: 'tambang', ikon: 'beliung', hs: ['2604', '260200', '810520'] },
   { id: 'olah', ikon: 'pabrik', hs: ['7501', '7502', '7202', '283324'] },
-  { id: 'prekursor', ikon: 'industri', hs: ['282520', '283691'] },
-  { id: 'sel', ikon: 'petir', hs: ['850760'] },
-  { id: 'kendaraan', ikon: 'kartu', hs: ['870380'] },
-  { id: 'pengisian', ikon: 'lokasi', hs: [] },
+  { id: 'prekursor', ikon: 'labu', hs: ['282520', '283691'] },
+  { id: 'sel', ikon: 'baterai', hs: ['850760'] },
+  { id: 'kendaraan', ikon: 'mobil', hs: ['870380'] },
+  { id: 'pengisian', ikon: 'colokan', hs: [] },
   { id: 'bess', ikon: 'sistem-listrik', hs: ['850760'] },
-  { id: 'daur', ikon: 'karbon', hs: [] },
+  { id: 'daur', ikon: 'daur', hs: [] },
 ];
 
 /** Murni: gabungkan kurasi + ringkasan Comtrade jadi berkas. Mengembalikan {data, galat}. */

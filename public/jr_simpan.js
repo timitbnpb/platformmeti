@@ -1,6 +1,6 @@
 /* /jaringan, tab Penyimpanan dan fleksibilitas: BESS dan penyimpanan per sistem (riset/jaringan.json), kebutuhan menurut ambang /keandalan, pumped storage.
    Hanya dirujuk lewat id sistem; MWh per sistem tidak terbit di RUPTL yang diurai (celah). INP: tabel urut/paginasi lewat tabel(), grafik lewat nanti(). */
-import { D, ex, t, esc, ikon, num, bukti, L, chip, catatan, daftarCelah, kosongTab, sumberBerkas, buktiSumber, lbl, luar } from "/jr_umum.js";
+import { D, ex, t, esc, ikon, num, bukti, L, chip, catatan, daftarCelah, kosongTab, sumberBerkas, buktiSumber, lbl } from "/jr_umum.js";
 import { simpanPerSistem, pumpedStorage, butuhPenyimpanan } from "/jaringan_hitung.js";
 import { nanti } from "/inti/umum.js";
 import { batangSvg, kolomSvg, legendaHtml, tabel, tipHtml } from "/info_hijau.js";
@@ -41,7 +41,7 @@ export function mulai(el) {
   const B = simpanPerSistem(D.riset);
   if (!B.length && !D.m?.penyimpanan) { el.innerHTML = kosongTab("jr.kosong_data"); return; }
   const total = B.reduce((a, b) => a + b.mw, 0), butuh = butuhPenyimpanan(D.ke).filter((s) => s.butuh), ps = D.m.penyimpanan.ps_ruptl_mw;
-  const ub = [[t("jr.s.u_bess"), `${num(total)} MW`], [t("jr.s.u_ps"), `${num(ps.total)} MW`], [t("jr.s.u_butuh"), num(butuh.length)], [t("jr.s.u_sistem"), num(B.length)]];
+  const ub = [[t("jr.s.u_bess"), `${num(total)} MW`], [t("jr.s.ub_ps"), `${num(ps.total)} MW`], [t("jr.s.u_butuh"), num(butuh.length)], [t("jr.s.u_sistem"), num(B.length)]];
   el.innerHTML = [
     `<ul class="rg3-ubin">${ub.map(([l, v]) => `<li class="rg3-ub"><b>${esc(v)}</b><small>${esc(l)}</small></li>`).join("")}</ul>`,
     ex({ id: "jr-s-sistem", ikon: "baterai", topik: t("jr.s.ey.sistem"), judulHtml: esc(t("jr.s.j.sistem", { mw: num(total) })), subHtml: esc(t("jr.s.s.sistem")), isiHtml: `<div id="jr-s-l"></div><div id="jr-s-g" class="ih-bagan"></div><div id="jr-s-tb"></div>${catatan("jr.s.n.sistem", { rm: D.ke?.ambang_penyimpanan?.rm_persen_maks ?? 35, ebt: D.ke?.ambang_penyimpanan?.ebt_rasio_persen_min ?? 50 })}${daftarCelah(D.riset?.meta?.celah?.slice(0, 1))}<p class="jm-bantu ih-catatan"><a class="rg3-tautan" href="/keandalan">${esc(t("jr.s.ke_keandalan"))}</a></p>`, kakiHtml: sumberBerkas(D.riset) }),
@@ -49,4 +49,3 @@ export function mulai(el) {
   ].join("");
   nanti(perSistem); nanti(tabelSistem); nanti(psTahun); nanti(tabelPs);
 }
-void luar;

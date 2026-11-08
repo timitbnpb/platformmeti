@@ -14,7 +14,7 @@ const namaW = (s) => L(s.nama);
 
 function grafikTahun() {
   const s = cari(wil), { kunci, kategori } = tumpukTegangan(s, uk, D.m.rencana.tahun), el = document.getElementById("jr-r-g");
-  document.getElementById("jr-r-l").innerHTML = legendaHtml(kunci.map((k, i) => ({ kelas: "jr-s-p" + (i % 8), label: k + (uk === "kms" ? " kV" : " kV"), })));
+  document.getElementById("jr-r-l").innerHTML = legendaHtml(kunci.map((k, i) => ({ kelas: "jr-s-p" + (i % 8), label: k + " kV", })));
   el.innerHTML = kolomSvg({ el, satuan: satuan(), label: namaW(s), seri: kunci.map((k, i) => ({ k, kelas: "jr-s-p" + (i % 8) })),
     kategori: kategori.map((c) => ({ label: String(c.tahun), nilai: c.nilai, tip: String(c.tahun),
       th: tipHtml(String(c.tahun), [...kunci.filter((k) => c.nilai[k] > 0).map((k) => [k + " kV", `${num(c.nilai[k], c.nilai[k] % 1 ? 1 : 0)} ${satuan()}`]), [t("jr.r.total"), `${num(Object.values(c.nilai).reduce((a, b) => a + b, 0), 0)} ${satuan()}`]]) })) });

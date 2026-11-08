@@ -109,16 +109,16 @@ export const PEMAIN = {
 
 export const KAPASITAS = {
   tambang: [
-    { id: 'produksi-2025', label: B('Produksi nikel tertambang 2025 (isi logam)', 'Mined nickel 2025 (metal content)'), nilai: 2.6, satuan: 'Mt Ni', tahun: 2025, sumber_id: 's-cmn-usgs', catatan: B('sekitar 67 persen dari 3,9 Mt dunia; tabel USGS asli belum terbaca (403)', 'about 67 percent of 3.9 Mt world; original USGS table not readable (403)') },
-    { id: 'cadangan', label: B('Cadangan bijih nikel nasional', 'National nickel ore reserves'), nilai: 5.9, satuan: 'miliar ton bijih', tahun: 2024, sumber_id: 's-bgl-cnbc', catatan: B('terkira 3,81 dan terbukti 2,09; sumber daya 19,15 miliar ton (status Des 2024)', 'probable 3.81 and proved 2.09; resources 19.15 bn t (Dec 2024)') },
-    { id: 'rkab-2026', label: B('Kuota RKAB nikel 2026 (revisi)', 'RKAB nickel quota 2026 (revised)'), nilai: 295, satuan: 'juta ton bijih', tahun: 2026, sumber_id: 's-rkab-revisi', catatan: B('rentang 290 sampai 300; awal 2026 sekitar 270; 2025: 379', 'range 290 to 300; early 2026 about 270; 2025: 379') },
+    { id: 'produksi-2025', label: B('Produksi nikel tertambang 2025 (isi logam)', 'Mined nickel 2025 (metal content)'), nilai: 2.6, satuan: 'Mt Ni', tahun: 2025, sumber_id: 's-cmn-usgs', catatan: B('Sekitar 67 persen dari 3,9 Mt dunia; tabel USGS asli belum terbaca (403)', 'About 67 percent of 3.9 Mt world; original USGS table not readable (403)') },
+    { id: 'cadangan', label: B('Cadangan bijih nikel nasional', 'National nickel ore reserves'), nilai: 5.9, satuan: 'miliar ton bijih', tahun: 2024, sumber_id: 's-bgl-cnbc', catatan: B('Terkira 3,81 dan terbukti 2,09; sumber daya 19,15 miliar ton (status Des 2024)', 'Probable 3.81 and proved 2.09; resources 19.15 bn t (Dec 2024)') },
+    { id: 'rkab-2026', label: B('Kuota RKAB nikel 2026 (revisi)', 'RKAB nickel quota 2026 (revised)'), nilai: 295, satuan: 'juta ton bijih', tahun: 2026, sumber_id: 's-rkab-revisi', catatan: B('Rentang 290 sampai 300; awal 2026 sekitar 270; 2025: 379', 'Range 290 to 300; early 2026 about 270; 2025: 379') },
   ],
   olah: [
-    { id: 'lebur', label: B('Kapasitas lebur nikel nasional (perkiraan)', 'National nickel smelting capacity (estimate)'), nilai: 2.5, satuan: 'Mt Ni/tahun', tahun: 2025, sumber_id: 's-petromindo-ni', catatan: B('lebih dari 50 smelter', 'more than 50 smelters') },
-    { id: 'mhp-prod', label: B('Produksi MHP 2025 (proyeksi)', 'MHP output 2025 (projection)'), nilai: 445.5, satuan: 'kt Ni', tahun: 2025, sumber_id: 's-smm-mhp', catatan: B('produksi, bukan kapasitas', 'output, not capacity') },
+    { id: 'lebur', label: B('Kapasitas lebur nikel nasional (perkiraan)', 'National nickel smelting capacity (estimate)'), nilai: 2.5, satuan: 'Mt Ni/tahun', tahun: 2025, sumber_id: 's-petromindo-ni', catatan: B('Lebih dari 50 smelter', 'More than 50 smelters') },
+    { id: 'mhp-prod', label: B('Produksi MHP 2025 (proyeksi)', 'MHP output 2025 (projection)'), nilai: 445.5, satuan: 'kt Ni', tahun: 2025, sumber_id: 's-smm-mhp', catatan: B('Produksi, bukan kapasitas', 'Output, not capacity') },
   ],
   prekursor: [], sel: [], kendaraan: [], pengisian: [], bess: [], daur: [
-    { id: 'eol-2030', label: B('Baterai bekas pakai 2030 (proyeksi asosiasi)', 'End-of-life batteries 2030 (association forecast)'), nilai: 120, satuan: 'kt', tahun: 2030, sumber_id: 's-smm-daur', catatan: B('lebih dari 70 persen kini lewat daur ulang informal', 'over 70 percent currently via informal recycling') },
+    { id: 'eol-2030', label: B('Baterai bekas pakai 2030 (proyeksi asosiasi)', 'End-of-life batteries 2030 (association forecast)'), nilai: 120, satuan: 'kt', tahun: 2030, sumber_id: 's-smm-daur', catatan: B('Lebih dari 70 persen kini lewat daur ulang informal', 'Over 70 percent currently via informal recycling') },
   ],
 };
 

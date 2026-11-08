@@ -197,3 +197,8 @@ body header.top{gap:12px;padding-inline:var(--tepi)}
   .jm-sisi #cari .jm-cari-kotak-k kbd{padding:2px 5px;border:1px solid currentColor;border-radius:5px;font:600 var(--t-label)/1 var(--font);opacity:.8}
 }
 @media (max-width:480px){.jm-cari-chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* tab Tanya di palet cari */
+.jm-cari-mode{display:flex;gap:8px;padding:0 16px 8px}
+.jm-cari-mode button{display:inline-flex;align-items:center;gap:6px;min-height:var(--target);padding:0 14px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--surface);color:var(--ink);font:600 var(--t-kecil)/1 var(--font);cursor:pointer}
+.jm-cari-mode button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-brand)}
+.jm-cari-tanya{flex:1;display:grid;align-content:start;gap:12px;padding:8px 16px 16px;overflow-y:auto;overscroll-behavior:contain}

@@ -26,6 +26,7 @@ const bppTeks = (s) => { const r = bppRentang(s); return r ? (r[0] === r[1] ? nu
 const lgJenis = (arr) => legendaHtml(arr.map((j) => ({ kelas: "sp-t-" + j.replace(/^t:/, ""), teks: j.startsWith("t:") ? teksTek(j.slice(2)) : namaJenis(j) })));
 const celahHtml = () => `<ul class="sp-celah">${d.meta.celah.map((_, i) => `<li>${ikon("info", 18)}<p>${esc(t("sp2.celah." + (i + 1)))}</p></li>`).join("")}</ul>`;
 const sumberHtml = () => sumberKartu(d.sumber, d.dibangun_pada);
+const keJaringan = () => `<p class="jm-bantu inf-cat"><a class="jm-tbl" href="/jaringan?tab=antar-pulau">${ikon("sambung", 16)}<span>${esc(t("jr.dari.sistem"))}</span></a></p>`;
 const interHtml = (ids) => `<ul class="sp-kartu">${d.interkoneksi.filter((x) => ids.includes(x.id)).map((x) => `<li><h3>${ikon("petir", 16)} ${esc(L(x.nama, bahasa()))}</h3><p>${esc(L(x.ket, bahasa()))}</p><div class="sp-baris"><span class="jm-pil jm-pil-warn">${esc(t("sp2.cod_null"))}</span>${tautan(x.url, t("sp2.sumber"))}</div></li>`).join("")}</ul>`;
 
 function indeks() {
@@ -57,7 +58,7 @@ function indeks() {
   pasangBar($("bar-bauran"));
   $("s-tabel").innerHTML = seksi({ id: "tabel", ik: "tabel", topik: t("sp2.tabel.topik"), judul: t("sp2.tabel.judul", { n: num(S.length) }), sub: t("sp2.tabel.sub"), turunan: false, csv: true, isi: `<div id="t-sp"></div>` });
   tabelUrut($("t-sp"), { kolom: kol, baris: S, per: 10, urut: { k: "kap", arah: -1 }, label: t("sp2.tabel.label") });
-  $("s-inter").innerHTML = seksi({ id: "inter", ik: "petir", topik: t("sp2.inter.topik"), judul: t("sp2.inter.judul", { n: num(d.interkoneksi.length) }), sub: t("sp2.inter.sub"), turunan: false, isi: `${narasi(t("sp2.inter.narasi"))}${interHtml(d.interkoneksi.map((x) => x.id))}` });
+  $("s-inter").innerHTML = seksi({ id: "inter", ik: "petir", topik: t("sp2.inter.topik"), judul: t("sp2.inter.judul", { n: num(d.interkoneksi.length) }), sub: t("sp2.inter.sub"), turunan: false, isi: `${narasi(t("sp2.inter.narasi"))}${interHtml(d.interkoneksi.map((x) => x.id))}${keJaringan()}` });
   $("s-celah").innerHTML = seksi({ id: "metode", ik: "metode", topik: t("sp2.metode.topik"), judul: t("sp2.metode.judul"), sub: t("sp2.metode.sub"), turunan: false, isi: `${celahHtml()}${catatan(t("sp2.metode.tanggal", { tanggal: d.dibangun_pada }))}${sumberHtml()}` });
 }
 
@@ -101,7 +102,7 @@ function profil(s) {
     isi: `<ul class="kw-daftar">${rs.batas_penetrasi.map((x) => li(esc(t("sp2.riset.batas", { l: x.lingkup, v: num(x.batas_persen, 2), m: x.metrik, y: x.tahun })))).join("")}${rs.penyimpanan_ruptl_mw ? li(esc(t("sp2.riset.simpan", { mw: num(rs.penyimpanan_ruptl_mw) }))) : ""}${rs.curtailment.length ? rs.curtailment.map((x) => li(esc(t("sp2.riset.curt", { v: num(x.persen, 1), y: x.tahun })))).join("") : li(esc(t("sp2.riset.curt_kosong")))}${li(esc(pbr.butir ? t("sp2.riset.pb", { n: num(pbr.butir), mva: num(pbr.mva_akhir) }) : t("sp2.riset.pb_kosong")))}</ul>${tabPb}${rs.bersama_sumatera ? catatan(t("sp2.riset.bersama")) : ""}` });
   $("p-kaw").innerHTML = kk.length ? seksi({ id: "kaw", ik: "kawasan", topik: t("sp2.kaw.topik"), judul: t("sp2.kaw.judul", { n: num(kk.length) }), sub: t("sp2.kaw.sub"), turunan: false,
     isi: `<ul class="kw-daftar">${kk.sort((a, z) => (z.diriset ? 1 : 0) - (a.diriset ? 1 : 0) || a.nama.localeCompare(z.nama)).map((r) => `<li>${ikon("gedung", 16)}<span><a href="/kawasan/${esc(r.id)}">${esc(r.nama)}</a> <small>${esc(t("kw2.jenis." + r.jenis))}${r.diriset ? "" : ", " + esc(t("kw2.belum"))}</small></span></li>`).join("")}</ul>` }) : "";
-  $("p-inter").innerHTML = s.interkoneksi.length ? seksi({ id: "inter", ik: "petir", topik: t("sp2.inter.topik"), judul: t("sp2.interp.judul", { n: num(s.interkoneksi.length) }), sub: t("sp2.inter.sub"), turunan: false, isi: interHtml(s.interkoneksi) }) : "";
+  $("p-inter").innerHTML = s.interkoneksi.length ? seksi({ id: "inter", ik: "petir", topik: t("sp2.inter.topik"), judul: t("sp2.interp.judul", { n: num(s.interkoneksi.length) }), sub: t("sp2.inter.sub"), turunan: false, isi: interHtml(s.interkoneksi) + keJaringan() }) : "";
   $("p-celah").innerHTML = seksi({ id: "metode", ik: "metode", topik: t("sp2.metode.topik"), judul: t("sp2.metode.judul"), sub: t("sp2.metode.sub"), turunan: false, isi: `${celahHtml()}${catatan(t("sp2.metode.tanggal", { tanggal: d.dibangun_pada }))}${sumberHtml()}` });
   for (const id of ["b-kap", "b-prod", "b-ruptl"]) if ($(id)) pasangBar($(id));
 }

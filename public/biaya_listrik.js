@@ -6,6 +6,7 @@ import { t } from "/i18n.js";
 import { exHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { muatData, tampilGalat, sumberLipat, ubinHtml, pil, num, saatBahasa } from "/analisis.js";
+import { pasangPasar } from "/pasar_listrik.js";
 import { kolomSvg, garisSvg, batangSvg, legendaHtml, tabel, n1, tipHtml, selisih, pilUbah, sparkSvg } from "/info_hijau.js";
 
 const $ = (id) => document.getElementById(id);
@@ -151,6 +152,7 @@ async function mulai() {
   const gambar = () => { ubin(); rangka(); bagan(); };
   gambar();
   saatBahasa(gambar);
+  pasangPasar();
   $("isi").addEventListener("click", (e) => {
     const b = e.target.closest("button[data-tek],button[data-skala],button[data-bth]"); if (!b || b.getAttribute("aria-selected") === "true") return;
     for (const x of b.parentElement.children) x.setAttribute("aria-selected", String(x === b));

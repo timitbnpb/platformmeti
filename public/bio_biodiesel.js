@@ -7,9 +7,9 @@ const mulaiTeks = (m) => (m.mulai ? m.mulai : t("bn.belum"));
 function alokasi() {
   const el = document.getElementById("bn-d-alok"); if (!el) return;
   const baris = B.bio.alokasi.map((a) => ({ ...a, kapasitas: a.alokasi_kl ?? (a.rujuk_butir ? klDari((butir((b) => b.uraian?.includes(a.rujuk_butir.cocok))[0] || {}).nilai) : null) }));
-  document.getElementById("bn-d-alok-l").innerHTML = legendaHtml([{ kelas: "bn-s-alokasi", label: t("bn.bd.alokasi") }, { kelas: "bn-s-realisasi", label: t("bn.bd.realisasi") }]);
-  el.innerHTML = kolomSvg({ el, satuan: t("bn.u.juta_kl"), label: t("bn.bd.j.alok"), seri: [{ k: "alokasi", kelas: "bn-s-alokasi" }, { k: "realisasi", kelas: "bn-s-realisasi" }],
-    kategori: baris.map((a) => ({ label: String(a.tahun), nilai: { alokasi: (a.kapasitas || 0) / 1e6, realisasi: (a.realisasi_kl || 0) / 1e6 }, tip: String(a.tahun),
+  document.getElementById("bn-d-alok-l").innerHTML = legendaHtml([{ kelas: "bn-s-realisasi", label: t("bn.bd.realisasi") }, { kelas: "bn-s-alokasi", label: t("bn.bd.sisa") }]);
+  el.innerHTML = kolomSvg({ el, satuan: t("bn.u.juta_kl"), label: t("bn.bd.j.alok"), seri: [{ k: "realisasi", kelas: "bn-s-realisasi" }, { k: "alokasi", kelas: "bn-s-alokasi" }],
+    kategori: baris.map((a) => ({ label: String(a.tahun), nilai: { alokasi: Math.max(0, (a.kapasitas || 0) - (a.realisasi_kl || 0)) / 1e6, realisasi: (a.realisasi_kl || 0) / 1e6 }, tip: String(a.tahun),
       th: tipHtml(String(a.tahun), [[t("bn.bd.alokasi"), a.kapasitas ? `${juta(a.kapasitas, 2)} ${t("bn.u.juta_kl")}` : t("bn.belum")], [t("bn.bd.realisasi"), a.realisasi_kl ? `${juta(a.realisasi_kl, 1)} ${t("bn.u.juta_kl")}` : t("bn.belum")], [t("bn.bd.mandat"), a.catatan]]) })) });
 }
 function hip() {

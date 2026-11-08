@@ -175,11 +175,14 @@ function tabelTabel() {
     { label: t("kg.c.semua"), num: true, v: (r) => r.semua, f: (r) => num(r.semua, 1) },
   ], baris: ref.map((x) => { const rs = d.investasi_publik.filter((r) => r.teknologi === x); return { t: x, kel: rs[0].kelompok, jml: rs.filter((r) => r.tahun > z - 10).reduce((a, r) => a + r.usd_juta_2023, 0), semua: rs.reduce((a, r) => a + r.usd_juta_2023, 0) }; }) });
   tabel($("tb-obligasi"), { satuan: "ih.u.instrumen", per: 6, urutAwal: 4, kolom: [
-    { label: t("kg.c.penerbit"), v: (r) => r.penerbit, f: (r) => orgHtml(NAMA_PEN[r.penerbit] || r.penerbit, { penuh: !ORG.some((o) => o[0].test(r.penerbit)) }) },
+    { label: t("kg.c.penerbit"), v: (r) => r.penerbit, f: (r) => { const h = orgHtml(NAMA_PEN[r.penerbit] || r.penerbit, { penuh: !ORG.some((o) => o[0].test(r.penerbit)) }); return r.penerbit_org_id ? `<a href="/o/${encodeURIComponent(r.penerbit_org_id)}">${h}</a>` : h; } },
     { label: t("kg.c.instrumen"), v: (r) => r.instrumen, f: (r) => esc(r.instrumen) },
     { label: t("kg.c.jenis"), v: (r) => jenisInstr(r.instrumen), f: (r) => pilInstr(r.instrumen) },
     { label: t("kg.c.nilai"), num: true, v: nilaiRp, f: uangInstr },
     { label: t("kg.c.tahun"), num: true, v: (r) => r.tahun, f: (r) => String(r.tahun) },
+    { label: t("kg.c.kupon"), num: true, v: (r) => r.kupon_persen, f: (r) => (r.kupon_persen == null ? '<span class="kg-nol">-</span>' : `${num(r.kupon_persen, 2)}%`) },
+    { label: t("kg.c.tenor"), num: true, v: (r) => r.tenor_tahun, f: (r) => (r.tenor_tahun == null ? '<span class="kg-nol">-</span>' : t("kg.tenor_th", { n: num(r.tenor_tahun, r.tenor_tahun % 1 ? 1 : 0) })) },
+    { label: t("kg.c.sertif"), v: (r) => (r.sertifikasi ? 1 : 0), f: (r) => (r.sertifikasi ? `<span class="jm-pil" title="${esc(r.sertifikasi)}">${esc(t("kg.sertif.spo"))}</span>` : '<span class="kg-nol">-</span>') },
     { label: t("kg.c.bukti"), v: (r) => r.tingkat_bukti, f: (r) => pilBukti(r.tingkat_bukti) },
   ], baris: d.instrumen_hijau });
   const lj = (nm) => LOGO_JETP.find((x) => x[0].test(nm));

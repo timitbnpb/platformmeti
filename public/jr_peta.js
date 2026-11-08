@@ -7,7 +7,7 @@ import { nanti } from "/inti/umum.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { geserPanel } from "/inti/panel_geser.js";
 
-let peta = null, ketemu = null;
+let peta = null;
 const LAPIS = [
   { k: "transmisi", ik: "menara", lapisan: ["jr-tr"] },
   { k: "gardu", ik: "petir", lapisan: ["jr-gi"] },
@@ -15,7 +15,7 @@ const LAPIS = [
   { k: "lintas", ik: "asean", lapisan: ["jr-ln"] },
 ];
 const SEMUA = () => [...(D.m.antar_pulau || []), ...(D.m.lintas_negara?.negara || [])];
-const warnaStatus = () => ({ beroperasi: token("--ok"), konstruksi: token("--info"), "pra-konstruksi": token("--info"), rencana: token("--warn"), studi: token("--warn"), kajian: token("--warn"), "kajian-lanjut": token("--warn"), "tidak-layak": token("--bad") });
+const warnaStatus = () => ({ beroperasi: token("--ok"), konstruksi: token("--info"), "pra-konstruksi": token("--info"), rencana: token("--warn"), studi: token("--data3"), kajian: token("--tp-hidrogen"), "kajian-lanjut": token("--tp-industri"), "tidak-layak": token("--bad") });
 const exprStatus = () => ["match", ["get", "status"], ...Object.entries(warnaStatus()).flat(), token("--ink2")];
 
 function detail(id) {
@@ -32,11 +32,9 @@ function sorot(id) {
 }
 
 function pasangGeo(skem) {
-  const warna = warnaStatus();
   peta.addSource("jr-skem", { type: "geojson", data: skem });
   for (const [idL, jenis, lebar] of [["jr-rc", "antar-pulau", 2.5], ["jr-ln", "lintas", 3.5]])
     peta.addLayer({ id: idL, type: "line", source: "jr-skem", filter: ["==", ["get", "jenis"], jenis], layout: { "line-cap": "round" }, paint: { "line-color": exprStatus(), "line-width": lebar, "line-dasharray": [2, 1.6], "line-opacity": 0.9 } });
-  void warna;
   const pop = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10, className: "rg3-pop", maxWidth: "300px" });
   for (const idL of ["jr-rc", "jr-ln"]) {
     peta.on("mousemove", idL, (e) => {
@@ -87,10 +85,13 @@ function nyala(k, on) {
 async function bangunPeta() {
   const el = document.getElementById("jr-kanvas"); if (!el) return;
   try { await muatMapLibre(); } catch { el.textContent = t("jr.peta.gagal"); return; }
-  peta = new maplibregl.Map({ container: el, style: "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron"), center: [108, -2.2], zoom: 4.1, minZoom: 3, maxZoom: 11, dragRotate: false, pitchWithRotate: false, attributionControl: false });
+  const gaya = "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron");
+  /* peta dasar gagal dimuat (luring, diblokir): lapis jaringan tetap tampil di atas latar polos */
+  const style = await fetch(gaya).then((r) => (r.ok ? gaya : null)).catch(() => null) || { version: 8, sources: {}, layers: [{ id: "latar", type: "background", paint: { "background-color": token("--soft-hijau") } }] };
+  peta = new maplibregl.Map({ container: el, style, center: [108, -2.2], zoom: 4.1, minZoom: 3, maxZoom: 11, dragRotate: false, pitchWithRotate: false, attributionControl: false });
   peta.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: "© OpenStreetMap (ODbL)" }), "bottom-right");
   peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-left");
-  peta.on("load", () => { pasangGeo(fiturSkematik(D.m)); nanti(pasangOsm); });
+  peta.once("style.load", () => { pasangGeo(fiturSkematik(D.m)); nanti(pasangOsm); });
 }
 
 export function mulai(el) {
@@ -117,4 +118,3 @@ export function mulai(el) {
   const q = new URLSearchParams(location.search).get("ruas");
   nanti(async () => { await bangunPeta(); if (q) detail(q); });
 }
-void ketemu;

@@ -39,7 +39,7 @@ function komoditas() {
 }
 export function mulai(el) {
   if (!BM().length && !B.bio) { el.innerHTML = kosongTab("bn.kosong"); return; }
-  const f = B.biomassa?.faktor || {}, n = B.biomassa?.meta?.cpo_ton_total;
+  const f = B.biomassa?.faktor || {}, n = B.biomassa?.ringkasan?.cpo_ton_total;
   const residu = [["tkks", f.tkks_t_per_t_tbs, "tek-bio"], ["cangkang", f.cangkang_t_per_t_tbs, "industri"], ["serat", f.serat_t_per_t_tbs, "tabel"]];
   el.innerHTML = [
     BM().length ? ex({ id: "bn-b-peta", ikon: "desa", topik: t("bn.bh.ey.prov"), judulHtml: esc(t("bn.bh.j.prov", { cpo: num((n || 0) / 1e6, 1), p: num(BM().length) })), subHtml: esc(t("bn.bh.s.prov")),

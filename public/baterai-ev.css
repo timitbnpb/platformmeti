@@ -1,0 +1,23 @@
+/* /baterai-ev: tambahan kecil di atas rantai-global.css (tab, chip, kartu, peta dipakai ulang). Token tema saja: tanpa hex, tanpa px pada font. */
+.bev-sumber{display:inline-flex;flex-wrap:wrap;gap:4px 8px;font-size:var(--t-kecil)}
+.bev-ubin{align-content:start}
+.bev-angka{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;margin:0}
+.bev-angka b{font:700 var(--t-angka)/var(--lh-rapat) var(--display);color:var(--head);overflow-wrap:anywhere}
+.bev-angka span{color:var(--ink2);font-size:var(--t-kecil)}
+.bev-pem{display:grid;gap:6px}
+.bev-pem-i{display:inline-flex;align-items:center;gap:8px;min-width:0}
+.bev-saring4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:20px;align-items:center}
+.bev-saring4 .pc,.bev-saring4 .jm-pil-pilih{width:100%;min-width:0}
+@media (max-width:899px){.bev-saring4{grid-template-columns:minmax(0,1fr)}}
+
+/* status pemain, status kebijakan, tingkat isu: satu warna per nilai */
+.bev-st-ok{--wc:var(--ok)}.bev-st-info{--wc:var(--info)}.bev-st-warn{--wc:var(--warn)}.bev-st-bad{--wc:var(--bad)}.bev-st-x{--wc:var(--ink2)}
+.bev-ks-ok{--wc:var(--ok)}.bev-ks-warn{--wc:var(--warn)}.bev-ks-bad{--wc:var(--bad)}.bev-ks-x{--wc:var(--ink2)}
+.bev-it-tinggi{--wc:var(--bad)}.bev-it-sedang{--wc:var(--warn)}.bev-it-rendah{--wc:var(--ok)}
+.bev-isu-ik{display:inline-grid;place-items:center;flex:none;width:36px;height:36px;border-radius:var(--r-sm);background:color-mix(in srgb,var(--wc,var(--info)) 14%,var(--card));color:var(--wc,var(--info))}
+.bev-isu-tinggi{--wc:var(--bad)}.bev-isu-sedang{--wc:var(--warn)}.bev-isu-rendah{--wc:var(--ok)}
+.bev-isu{border-left:4px solid var(--wc,var(--line))}
+
+/* pin peta: global = aksen, lokal = hijau merek */
+.bev-pin-g{background:var(--data5)}
+.bev-pin-l{background:var(--brand)}

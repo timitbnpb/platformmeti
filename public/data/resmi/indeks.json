@@ -1,0 +1,86 @@
+{
+ "lapis": "resmi",
+ "jenis": "indeks",
+ "tanggal_ambil": "2026-11-08",
+ "tingkat_bukti": "resmi",
+ "lisensi": "Publikasi pemerintah terbuka; atribusi Kementerian ESDM",
+ "sumber": "HEESI 2025 (Pusdatin ESDM), esdm.go.id; ekstraksi scripts/panen/resmi_heesi.py",
+ "dataset": [
+  {
+   "id": "harga_bbm_lpg",
+   "judul": "Harga energi di titik jual resmi per satuan energi (BBM, LPG), 2015-2025",
+   "tabel": "HEESI 4.4, hlm 40-41",
+   "url_sumber": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+   "tahun_data": null,
+   "satuan": "ribu Rp/BOE dan US$/BOE"
+  },
+  {
+   "id": "kapasitas_pembangkit_provinsi",
+   "judul": "Kapasitas terpasang pembangkit per provinsi menurut jenis, 2025 (MW)",
+   "tabel": "HEESI 6.4.9, hlm 118-119",
+   "url_sumber": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+   "tahun_data": 2025,
+   "satuan": "MW"
+  },
+  {
+   "id": "konsumsi_energi_final_sektor",
+   "judul": "Konsumsi energi final per sektor (termasuk biomassa tradisional), 2015-2025",
+   "tabel": "HEESI 3.2.1, hlm 26-27",
+   "url_sumber": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+   "tahun_data": null,
+   "satuan": "ribu BOE"
+  },
+  {
+   "id": "konsumsi_listrik_sektor",
+   "judul": "Konsumsi listrik per sektor/segmen tarif, PLN dan non-PLN, 2015-2025 (GWh)",
+   "tabel": "HEESI 6.4.4, hlm 112-113",
+   "url_sumber": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+   "tahun_data": null,
+   "satuan": "GWh"
+  },
+  {
+   "id": "pasokan_energi_primer",
+   "judul": "Pasokan energi primer per sumber, 2015-2025",
+   "tabel": "HEESI 3.1, hlm 24-25",
+   "url_sumber": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+   "tahun_data": null,
+   "satuan": "ribu BOE"
+  },
+  {
+   "id": "penjualan_bbm_domestik",
+   "judul": "Penjualan BBM domestik per jenis, 2015-2025",
+   "tabel": "HEESI 6.2.4, hlm 80-81",
+   "url_sumber": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+   "tahun_data": null,
+   "satuan": "kiloliter"
+  },
+  {
+   "id": "produksi_listrik_2025",
+   "judul": "Produksi listrik 2025 menurut kelompok pemilik dan jenis pembangkit (GWh)",
+   "tabel": "HEESI 6.4.2B, hlm 108-109",
+   "url_sumber": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+   "tahun_data": null,
+   "satuan": "GWh"
+  },
+  {
+   "id": "spklu_provinsi",
+   "judul": "SPKLU dan stasiun penukaran baterai umum (SPBKLU) per provinsi, 2025",
+   "tabel": "HEESI 6.4.5-6.4.6, hlm 114-115",
+   "url_sumber": "https://esdm.go.id/assets/media/content/content-handbook-of-energy-and-economic-statistics-of-indonesia-2025.pdf",
+   "tahun_data": 2025,
+   "satuan": "unit"
+  }
+ ],
+ "tautan": {
+  "wilayah": "kapasitas_pembangkit_provinsi.baris[].kode = kode Kemendagri, halaman /wilayah/<kode>",
+  "spklu_provinsi": "dicocokkan menurut nama provinsi"
+ },
+ "celah": [
+  "satudata.esdm.go.id dan data.esdm.go.id tidak resolve di DNS (8 Nov 2026): tidak ada portal Satu Data ESDM yang bisa diambil. Jalur terbuka yang dipakai: buku HEESI 2025 di esdm.go.id (PDF resmi, 172 hlm) dan Statistik Ketenagalistrikan 2024 (sudah ada di desa_listrik.json, statistik_pln.json, kelistrikan.json).",
+  "data.go.id sudah bukan CKAN (api/3/action/package_search menjawab 404); portal baru (Next.js) tidak punya API terbuka. Katalognya memuat tabel BPS lama (kapasitas terpasang per provinsi s.d. 2020) dengan tautan unduh ke alamat jaringan internal (10.42.0.15), tidak dapat diunduh; tidak diambil.",
+  "BPS WebAPI (webapi.bps.go.id) memerlukan kunci aplikasi: PEMILIK perlu mendaftar dan menyediakan kunci (jangan masuk repo). Tabel BPS terbuka tanpa kunci tidak diambil karena halaman statistik BPS dirender klien dan tidak punya tautan data stabil.",
+  "Rasio elektrifikasi per provinsi dan PLTS atap terpasang sudah ada (akses_energi.json, plts_atap.json); HEESI 2025 tidak memuat keduanya per provinsi.",
+  "Produksi listrik per provinsi tidak ada di HEESI (hanya nasional 2025); harga BBM dalam HEESI adalah harga per BOE di titik jual resmi, bukan harga per liter per jenis (Pertalite, Pertamax): harga per liter perlu sumber Pertamina/ESDM.",
+  "Angka 2024 pada tabel produksi listrik HEESI memakai pemisah titik yang ambigu (11.656 vs 11,656), sehingga deret produksi 2015-2024 tidak diekstrak; hanya 2025 (tabel 6.4.2B) yang masuk."
+ ]
+}

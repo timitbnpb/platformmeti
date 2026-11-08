@@ -1,0 +1,74 @@
+/* /jaringan: token tema saja (tanpa hex, tanpa px pada font). Dipasang di atas rantai-global.css (rg3-*) dan pelacak-proyek.css (pt2-*).
+   Warna seri grafik lewat kelas .jr-s-* (currentColor), chip lewat --wc. */
+.jr-s-p0{color:var(--data1)}.jr-s-p1{color:var(--data2)}.jr-s-p2{color:var(--data3)}.jr-s-p3{color:var(--data4)}.jr-s-p4{color:var(--data5)}
+.jr-s-p5{color:var(--tp-bayu)}.jr-s-p6{color:var(--tp-panas)}.jr-s-p7{color:var(--tp-surya)}
+.jr-s-beroperasi{color:var(--ok)}.jr-s-konstruksi,.jr-s-pra-konstruksi{color:var(--info)}.jr-s-rencana{color:var(--warn)}.jr-s-studi{color:var(--data3)}.jr-s-kajian{color:var(--tp-hidrogen)}.jr-s-kajian-lanjut{color:var(--tp-industri)}.jr-s-tidak-layak{color:var(--bad)}
+.jr-s-bess{color:var(--tp-simpan)}.jr-s-ps{color:var(--tp-hidro)}.jr-s-batas{color:var(--data1)}.jr-s-curt{color:var(--warn)}
+.jr-s-conditional-licence{color:var(--ok)}.jr-s-conditional-approval{color:var(--warn)}
+
+/* ---- chip: status, izin, keandalan, IATI (satu warna per nilai) ---- */
+.jr-st-beroperasi,.jr-k-ok,.jr-izin-conditional-licence,.jr-iati-selesai{--wc:var(--ok)}
+.jr-st-konstruksi,.jr-st-pra-konstruksi,.jr-iati-berjalan{--wc:var(--info)}
+.jr-st-rencana,.jr-k-warn,.jr-izin-conditional-approval{--wc:var(--warn)}
+.jr-st-studi{--wc:var(--data3)}.jr-st-kajian{--wc:var(--tp-hidrogen)}.jr-st-kajian-lanjut{--wc:var(--tp-industri)}
+.jr-st-tidak-layak,.jr-k-bad{--wc:var(--bad)}
+.jr-iati-tidak,.jr-st-semua{--wc:var(--ink2)}
+.jr-filter{margin-bottom:16px}
+
+/* ---- kartu dan kisi ---- */
+.jr-kisi,.jr-ruas,.jr-orgs{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr))}
+.jr-kartu{display:grid;gap:10px;align-content:start;min-width:0;padding:16px;border:1px solid var(--line);border-left:4px solid var(--ink2);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow);overflow-wrap:anywhere}
+.jr-kartu-ok{border-left-color:var(--ok)}.jr-kartu-info{border-left-color:var(--info)}.jr-kartu-warn{border-left-color:var(--warn)}.jr-kartu-bad{border-left-color:var(--bad)}
+.jr-ruas .jr-kartu{border-left-color:var(--accent)}
+.jr-kartu-kep{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.jr-kartu-kep>div{min-width:0}
+.jr-kartu-kep h3{margin:0 0 6px;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.jr-kartu-kep p{margin:0;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.jr-ik{display:inline-grid;place-items:center;flex:none;width:40px;height:40px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
+.jr-ik-w500{background:color-mix(in srgb,var(--bad) 14%,var(--card));color:var(--bad)}
+.jr-ik-w275{background:color-mix(in srgb,var(--warn) 16%,var(--card));color:var(--warn)}
+.jr-ik-w150{background:color-mix(in srgb,var(--data1) 14%,var(--card));color:var(--data1)}
+.jr-bdr{display:inline-grid;place-items:center;flex:none;width:44px;height:44px}
+.jr-kartu-t{margin:0;color:var(--ink);line-height:var(--lh-isi)}
+.jr-kartu-r{margin:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center;color:var(--ink2);font-size:var(--t-kecil)}
+.jr-kartu-b{margin:0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding-top:10px;border-top:1px solid var(--line-cell)}
+
+/* ---- garis waktu, rute bendera, dua kolom ---- */
+.jr-waktu{list-style:none;margin:0 0 12px;padding:0 0 0 16px;display:grid;gap:14px;border-left:2px solid var(--line)}
+.jr-waktu li{display:grid;gap:6px;justify-items:start}
+.jr-waktu-t{display:inline-flex;align-items:center;gap:8px;color:var(--accent)}
+.jr-waktu p{margin:0;line-height:var(--lh-isi)}
+.jr-rute{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
+.jr-dua{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:899px){.jr-dua{grid-template-columns:minmax(0,1fr)}}
+.jr-pj{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+
+/* ---- pemain: kartu logo ---- */
+.jr-orgs{grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:12px}
+.jr-org-a{display:flex;gap:12px;align-items:center;min-height:var(--target);padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);text-decoration:none}
+.jr-org-a:hover{border-color:var(--accent);background:var(--soft-hijau)}
+.jr-org-a:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jr-org-a span{display:grid;gap:2px;min-width:0}
+.jr-org-a b{font-weight:600;overflow-wrap:anywhere}
+.jr-org-a small{color:var(--ink2)}
+
+/* ---- peta: panel, legenda, marker bendera ---- */
+.jr-petawrap{height:max(560px,78vh)}
+.jr-lapis .pt2-leg svg{flex:none;color:var(--accent)}
+.jr-lapis .pt2-leg[aria-pressed="true"] svg{color:inherit}
+.jr-leg{display:flex;align-items:center;gap:8px;font-size:var(--t-kecil);color:var(--ink2)}
+.jr-sw{display:inline-block;width:22px;height:4px;border-radius:2px;background:currentColor;flex:none}
+.jr-sw-500{color:var(--bad)}.jr-sw-275{color:var(--warn)}.jr-sw-150{color:var(--data1)}.jr-sw-lain{color:var(--ink2)}
+.jr-pn-j{margin:0;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.jr-pn-m{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.jr-pn-t{margin:0;color:var(--ink);line-height:var(--lh-isi)}
+.jr-pn-b{margin:0}
+.jr-bd{display:grid;place-items:center;padding:0;width:32px;height:32px;border:2px solid var(--card);border-radius:50%;background:var(--card);box-shadow:0 2px 8px rgb(0 0 0 / .25);cursor:pointer;overflow:hidden}
+.jr-bd img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.jr-bd:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jr-bd[hidden]{display:none}
+@media (max-width:640px){.jr-petawrap{height:auto}}
+
+/* ---- tab ujung ke ujung: aturan umum jm.css (grid auto-fit) lebih spesifik daripada .rg3-tab, jadi dikunci per id ---- */
+#jrTab .jm-tab[role="tablist"]{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}
+@media (max-width:899px){#jrTab .jm-tab>button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}

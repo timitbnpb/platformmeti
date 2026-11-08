@@ -33,8 +33,10 @@ function pasang() {
   const chip = (g, label, ik) => `<button type="button" class="jm-cari-chip" data-fil="${g}" aria-pressed="${g === "semua"}">${ikon(ik, 14)}<span>${esc(label)}</span><b data-n></b></button>`;
   const kbd = (...k) => k.map((x) => `<kbd>${x}</kbd>`).join("");
   dlg.innerHTML = `<div class="jm-cari-atas">${ikon("cari", 22)}<input type="search" class="jm-cari-isi" role="combobox" aria-expanded="true" aria-controls="jm-cari-daftar" autocomplete="off" spellcheck="false" placeholder="${esc(t("cari.placeholder"))}" aria-label="${esc(t("cari.placeholder"))}"><button type="button" class="iconbtn jm-cari-tutup" aria-label="${esc(t("cari.tutup"))}" title="${esc(t("cari.tutup"))}">${ikon("tutup", 20)}</button></div>
+    <div class="jm-cari-mode" role="group" aria-label="${esc(t("tny.mode"))}"><button type="button" data-mode="cari" aria-pressed="true">${ikon("cari", 14)}<span>${esc(t("tny.mode.cari"))}</span></button><button type="button" data-mode="tanya" aria-pressed="false">${ikon("bintang", 14)}<span>${esc(t("tny.mode.tanya"))}</span></button></div>
     <div class="jm-cari-chips" role="group" aria-label="${esc(t("cari.saring"))}">${chip("semua", t("cari.chip.semua"), "cari2")}${GRUP.filter(([g]) => g !== "halaman").map(([g, k, ik]) => chip(g, t(k), ik)).join("")}</div>
     <div class="jm-cari-hasil" id="jm-cari-daftar" role="listbox" aria-label="${esc(t("cari.judul"))}"></div>
+    <div class="jm-cari-tanya" id="jm-cari-tanya" hidden></div>
     <a class="jm-cari-penuh" href="/cari">${ikon("cari2", 16)}<span>${esc(t("cari.penuh"))}</span>${ikon("panah-kanan", 14)}</a>
     <div class="jm-cari-kaki" aria-hidden="true"><span>${kbd("↑", "↓")}${esc(t("cari.k.pilih"))}</span><span>${kbd("↵")}${esc(t("cari.k.buka"))}</span><span>${kbd("Esc")}${esc(t("cari.k.tutup"))}</span><span class="jm-cari-kaki-k">${kbd(MAC ? "⌘" : "Ctrl", "K")}</span></div>`;
   document.body.append(dlg);
@@ -55,8 +57,32 @@ function pasang() {
       <section class="jm-cari-bag"><h3>${ikon("bintang", 16)}<span>${esc(t("cari.coba"))}</span></h3><div class="jm-cari-contoh">${CONTOH.map((k) => `<button type="button" data-q="${esc(t(k))}">${esc(t(k))}</button>`).join("")}</div></section>`;
     isi.removeAttribute("aria-activedescendant"); aktif = -1;
   };
-  const penuh = dlg.querySelector(".jm-cari-penuh");
-  let tCatat = 0;
+  const penuh = dlg.querySelector(".jm-cari-penuh"), panelT = dlg.querySelector(".jm-cari-tanya"), chipsEl = dlg.querySelector(".jm-cari-chips");
+  let tCatat = 0, mode = "cari", kartu = null, ctl = null;
+  /* Tab Tanya: Enter mengirim pertanyaan ke /api/tanya (modul dimuat malas); hasil = kartu jawaban bersitasi. */
+  const awalTanya = () => {
+    panelT.innerHTML = `<p class="jm-cari-info">${ikon("bintang", 28)}<span>${esc(t("tny.petunjuk"))}</span></p><div class="jm-cari-contoh">${["tny.c1", "tny.c2", "tny.c3"].map((k) => `<button type="button" data-tq="${esc(t(k))}">${esc(t(k))}</button>`).join("")}</div>`;
+  };
+  const aturMode = (m) => {
+    mode = m;
+    dlg.querySelectorAll("[data-mode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+    const ph = t(m === "tanya" ? "tny.placeholder" : "cari.placeholder");
+    isi.placeholder = ph; isi.setAttribute("aria-label", ph);
+    const tn = m === "tanya";
+    chipsEl.hidden = hasil.hidden = penuh.hidden = tn; panelT.hidden = !tn;
+    if (tn) { if (!kartu) awalTanya(); } else if (norm(isi.value)) gambar(); else awal();
+    isi.focus();
+  };
+  const kirimTanya = async () => {
+    const q = isi.value.trim(); if (q.length < 5) return;
+    ctl?.abort(); ctl = new AbortController();
+    panelT.innerHTML = `<div class="jm-hantu" role="status" aria-label="${esc(t("jm.memuat"))}"><i></i><i></i><i></i></div>`;
+    try {
+      const m = await import("/inti/tanya_kartu.js"); m.muatGayaTanya();
+      try { kartu = m.kartuJawab(await m.tanyaKirim(q, ctl.signal)); panelT.replaceChildren(kartu); }
+      catch (e) { if (e.name !== "AbortError") panelT.innerHTML = m.tanyaRusak(e); }
+    } catch { panelT.innerHTML = `<p class="jm-cari-info" role="alert">${esc(t("cari.galat"))}</p>`; }
+  };
   const gambar = () => {
     const q = isi.value, ada = !!norm(q), per = ada ? cari(indeks, q, Infinity) : new Map();
     dlg.classList.toggle("jm-cari-ada", ada);
@@ -81,20 +107,23 @@ function pasang() {
     pilih(0);
   };
   hasil.addEventListener("error", (e) => { if (e.target.tagName === "IMG" && logo && !e.target.dataset.cad) { e.target.dataset.cad = "1"; e.target.src = logo.GEDUNG; } }, true);
-  isi.addEventListener("input", () => { clearTimeout(tunda); tunda = setTimeout(() => nanti(gambar), 120); });
+  isi.addEventListener("input", () => { if (mode === "tanya") return; clearTimeout(tunda); tunda = setTimeout(() => nanti(gambar), 120); });
   isi.addEventListener("keydown", (e) => {
     if (e.key === "ArrowDown") { e.preventDefault(); pilih(aktif + 1); }
     else if (e.key === "ArrowUp") { e.preventDefault(); pilih(aktif - 1); }
+    else if (e.key === "Enter" && mode === "tanya") { e.preventDefault(); kirimTanya(); }
     else if (e.key === "Enter") { const o = opsi()[aktif]; if (o && !e.shiftKey) { e.preventDefault(); o.click(); } else if (norm(isi.value)) { e.preventDefault(); simpan(isi.value); location.href = penuh.href; } }
   });
   dlg.addEventListener("click", (e) => {
-    const c = e.target, f = c.closest?.("[data-fil]"), s = c.closest?.("[data-semua]"), q = c.closest?.("[data-q]");
+    const c = e.target, md = c.closest?.("[data-mode]"), tq = c.closest?.("[data-tq]"), f = c.closest?.("[data-fil]"), s = c.closest?.("[data-semua]"), q = c.closest?.("[data-q]");
     if (c === dlg || c.closest(".jm-cari-tutup")) dlg.close();
+    else if (md) aturMode(md.dataset.mode);
+    else if (tq) { isi.value = tq.dataset.tq; kirimTanya(); }
     else if (f) { fil = f.dataset.fil; buka.clear(); chips.forEach((x) => x.setAttribute("aria-pressed", String(x === f))); nanti(gambar); }
     else if (s) { buka.add(s.dataset.semua); nanti(gambar); }
     else if (q) { isi.value = q.dataset.q; isi.focus(); gambar(); }
     else if (c.closest("[data-hapus]")) { lupa(); gambar(); }
-    else if (c.closest("a")) { simpan(isi.value); dlg.close(); }
+    else if (c.closest("a")) { if (mode === "cari") simpan(isi.value); dlg.close(); }
   });
   dlg.addEventListener("close", () => { document.documentElement.classList.remove("jm-cari-buka"); });
   let sedangMuat = true;

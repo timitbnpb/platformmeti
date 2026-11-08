@@ -31,7 +31,8 @@ function bagian({ id, ik, topik, j, n, hl, isi, tglData, lihat, sub }) {
 
 /* ================= /o/<id> ================= */
 export async function bagianOrg(id, { proyekAda } = {}) {
-  const [pg, wte, lain, sur, trx, kar, plt, pb] = await Promise.all(["global/pelaku_global", "global/pemasok_wte", "global/pemasok_lain", "global/pemasok_surya", "transaksi", "karbon_registri", "pltu", "global/pembiayaan_luar"].map(ambil));
+  const [pg, wte, lain, sur, trx, kar, plt, pb, ob] = await Promise.all(["global/pelaku_global", "global/pemasok_wte", "global/pemasok_lain", "global/pemasok_surya", "transaksi", "karbon_registri", "pltu", "global/pembiayaan_luar", "obligasi_hijau"].map(ambil));
+  const bn = await ambil("bioenergi");
   const out = [];
 
   /* peran global */
@@ -49,6 +50,16 @@ export async function bagianOrg(id, { proyekAda } = {}) {
     out.push(bagian({ id: "peran-global", ik: "globe", topik: "td.ey.global", j: "td.j.global", n: gl.length, isi: kartu, tglData: pg.dibangun_pada, lihat: ["/rantai-global", "td.lihat.rantai"] }));
   }
 
+  /* ekosistem baterai dan kendaraan listrik */
+  const [be, hili] = await Promise.all(["baterai_ev", "hilirisasi"].map(ambil));
+  const bt = [];
+  for (const th of be?.tahap || []) for (const p of th.pemain || []) if ([p.org_id, ...(p.org_lain || [])].includes(id)) bt.push({ tab: th.id, nama: p.nama, st: p.status });
+  for (const b of hili?.baris || []) if ((b.pemilik || []).some((p) => p.org_id === id)) { const tab = b.rantai === "sel" ? "sel" : b.rantai === "smelter" || b.jenis === "hpal" ? "olah" : ""; if (tab) bt.push({ tab, nama: b.nama, st: b.status }); }
+  if (bt.length) {
+    const baris = bt.map((p) => `<tr>${td("td.c.tahap", taut("/baterai-ev?tab=" + encodeURIComponent(p.tab), t("bev.tab." + p.tab)))}${td("td.c.proyek", esc(p.nama))}${td("td.c.status", ada("bev.st." + p.st) ? esc(t("bev.st." + p.st)) : "-")}</tr>`);
+    out.push(bagian({ id: "baterai-ev", ik: "baterai", topik: "td.ey.baterai", j: "td.j.baterai", n: bt.length, isi: tbl([["td.c.tahap"], ["td.c.proyek"], ["td.c.status"]], baris), tglData: be?.dibangun_pada, lihat: ["/baterai-ev", "td.lihat.baterai"] }));
+  }
+
   /* pemasok (surya / sampah-energi / rantai lain) */
   const pas = [];
   for (const b of (sur?.baris || []).filter((x) => x.id === id)) pas.push({ tab: "surya", neg: b.negara_iso2, seg: b.segmen, prod: b.segmen, ind: (b.proyek_indonesia || []).length });
@@ -58,6 +69,15 @@ export async function bagianOrg(id, { proyekAda } = {}) {
     const baris = pas.map((p) => `<tr>${td("td.c.rantai", taut("/rantai-global?tab=" + encodeURIComponent(p.tab), slug(p.tab)))}${td("td.c.negara", bendera(p.neg))}${td("td.c.segmen", daftarSlug(p.seg))}${td("td.c.produk", daftarSlug(p.prod, 6))}${td("td.c.ind", p.ind ? esc(angka(p.ind)) : "-", "jm-num")}</tr>`);
     out.push(bagian({ id: "pemasok", ik: "pabrik", topik: "td.ey.pemasok", j: "td.j.pemasok", n: pas.length, isi: tbl([["td.c.rantai"], ["td.c.negara"], ["td.c.segmen"], ["td.c.produk"], ["td.c.ind", "jm-num"]], baris), tglData: lain?.dibangun_pada || wte?.dibangun_pada, lihat: ["/rantai-global", "td.lihat.rantai"] }));
   }
+
+  /* bioenergi: peran pemain di rantai bioenergi (rujukan bioenergi.json, tab tujuan) */
+  const R = bn?.rujukan || {}, peranBio = [["produsen_fame", "fame", "biodiesel"], ["produsen_etanol", "etanol", "bioetanol"], ["pemasok_biomassa", "biomassa", "listrik"], ["operator", "cofiring", "listrik"], ["asosiasi", "asosiasi", "biodiesel"], ["pabrikan_global", "pabrikan", "biodiesel"]]
+    .filter(([k]) => (R[k] || []).includes(id)).map(([, p, tab]) => [p, tab]);
+  if ((bn?.saf?.org_ids || []).includes(id)) peranBio.push(["saf", "saf"]);
+  if ((bn?.pelet?.org_ids || []).includes(id)) peranBio.push(["pelet", "pelet"]);
+  if ((bn?.biogas?.pltbg || []).some((u) => (u.org_ids || []).includes(id))) peranBio.push(["biogas", "biogas"]);
+  out.push(bagian({ id: "bioenergi", ik: "bioenergi", topik: "td.ey.bio", j: "td.j.bio", n: peranBio.length, tglData: bn?.dibangun_pada, lihat: ["/bioenergi", "td.lihat.bio2"],
+    isi: tbl([["td.c.peran"], ["td.c.rantai"]], peranBio.map(([p, tab]) => `<tr>${td("td.c.peran", esc(t("td.bio.p." + p)))}${td("td.c.rantai", taut("/bioenergi?tab=" + tab, t("bn.tab." + tab)))}</tr>`)) }));
 
   /* transaksi */
   const tr = urut((trx?.baris || []).filter((b) => (b.pihak || []).some((p) => p.org_id === id)), (b) => Date.parse(b.tanggal) || 0);
@@ -71,6 +91,11 @@ export async function bagianOrg(id, { proyekAda } = {}) {
       const r = Array.isArray(b.registri) ? b.registri[0] : null;
       return `<tr>${td("td.c.proyek", esc(b.nama))}${td("td.c.registri", r?.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.nama + " " + r.id)}</a>` : esc(r ? r.nama : "-"))}${td("td.c.sektor", esc(slug(b.sektor)))}${td("td.c.status", esc(slug(b.status)))}</tr>`;
     })) }));
+
+  /* obligasi dan sukuk hijau yang diterbitkan */
+  const og = urut((ob?.baris || []).filter((b) => b.penerbit_org_id === id), (b) => b.tahun || 0);
+  out.push(bagian({ id: "obligasi-hijau", ik: "kartu", topik: "td.ey.obligasi", j: "td.j.obligasi", n: og.length, tglData: ob?.dibangun_pada, lihat: ["/keuangan-hijau#obligasi", "td.lihat.obligasi"],
+    isi: tbl([["td.c.instrumen"], ["td.c.tahun"], ["td.c.nilai", "jm-num"], ["td.c.kupon", "jm-num"], ["td.c.tenor", "jm-num"], ["td.c.bukti"]], og.map((b) => `<tr>${td("td.c.instrumen", b.sumber_url ? `<a href="${esc(b.sumber_url)}" target="_blank" rel="noopener noreferrer">${esc(b.instrumen)}</a>` : esc(b.instrumen))}${td("td.c.tahun", esc(String(b.tahun || "-")))}${td("td.c.nilai", b.nilai == null ? "-" : esc(angka(b.nilai, { desimal: b.nilai % 1 ? 1 : 0 }) + " " + (b.satuan_nilai || "")), "jm-num")}${td("td.c.kupon", b.kupon_persen == null ? "-" : esc(angka(b.kupon_persen, { desimal: 2 }) + "%"), "jm-num")}${td("td.c.tenor", b.tenor_tahun == null ? "-" : esc(t("td.tenor_th", { n: angka(b.tenor_tahun, { desimal: b.tenor_tahun % 1 ? 1 : 0 }) })), "jm-num")}${td("td.c.bukti", esc(slug(b.tingkat_bukti)))}</tr>`)) }));
 
   /* PLTU milik */
   const pl = urut((plt?.baris || []).filter((b) => b.pemilik?.org_id === id), (b) => b.mw_operasi || 0);
@@ -129,7 +154,7 @@ export async function bagianWilayah(kode, namaProv) {
     isi: `<dl class="pf-satu"><div><dt>${esc(t("td.pvout"))}</dt><dd>${esc(angka(a.pvout_kwh_per_kwp_tahun))} kWh/kWp</dd></div><div><dt>GHI</dt><dd>${esc(angka(a.ghi_kwh_per_m2_tahun))} kWh/m²</dd></div><div><dt>DNI</dt><dd>${esc(angka(a.dni_kwh_per_m2_tahun))} kWh/m²</dd></div><div><dt>${esc(t("td.suhu"))}</dt><dd>${esc(angka(a.suhu_udara_c))} °C</dd></div></dl>`, lihat: ["/peluang", "td.lihat.peluang"] }));
 
   const bm = (bio?.baris || []).find((b) => String(b.kode_prov) === k);
-  if (bm) out.push(bagian({ id: "biomassa", ik: "tek-bio", topik: "td.ey.biomassa", j: "td.j.biomassa", n: bm.mw_termal_setara_est ? 1 : 0, hl: angka(Math.round(bm.mw_termal_setara_est || 0)), tglData: bio.dibangun_pada, lihat: ["/teknologi/bioenergi", "td.lihat.bio"],
+  if (bm) out.push(bagian({ id: "biomassa", ik: "tek-bio", topik: "td.ey.biomassa", j: "td.j.biomassa", n: bm.mw_termal_setara_est ? 1 : 0, hl: angka(Math.round(bm.mw_termal_setara_est || 0)), tglData: bio.dibangun_pada, lihat: ["/bioenergi?tab=bahan", "td.lihat.bio"],
     isi: `<dl class="pf-satu"><div><dt>${esc(t("td.sawit"))}</dt><dd>${esc(angka(bm.luas_sawit_ha))} ha</dd></div><div><dt>CPO</dt><dd>${esc(angka(bm.cpo_ton))} t</dd></div><div><dt>${esc(t("td.energi"))}</dt><dd>${esc(angka(bm.energi_tj_per_tahun_est))} TJ/${esc(t("td.tahun"))} (${esc(t("td.est"))})</dd></div><div><dt>RUPTL / RUEN</dt><dd>${esc(angka(bm.ruptl_bioenergi_mw ?? 0))} / ${esc(angka(bm.ruen_bioenergi_mw ?? 0))} MW</dd></div></dl>` }));
 
   const ps = (psn?.baris || []).filter((b) => (b.prov_kode || []).map(String).includes(k));

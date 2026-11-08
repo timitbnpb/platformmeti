@@ -74,7 +74,7 @@ export function potongButir(butir, awalan, maks = 3) {
     cur = cur ? cur + "; " + bagian : bagian;
   }
   if (cur) hasil.push(cur);
-  return hasil.slice(0, maks).map((t) => `${awalan}. ${t}`);
+  return hasil.slice(0, maks).map((t) => `${awalan.slice(0, 120)}. ${t}`.slice(0, 700));
 }
 
 export const idPotongan = (ref) => "t" + createHash("sha1").update(ref).digest("hex").slice(0, 15);

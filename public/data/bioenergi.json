@@ -583,8 +583,8 @@
    ],
    "tingkat_bukti": "cuplikan",
    "ket": {
-    "id": "Berlaku 1 Juli 2026 dengan masa transisi (rujukan: program b50 pada kebijakan_info). Kajian BPDP: 20,1 juta kl.",
-    "en": "In force 1 July 2026 with a transition (see program b50 in kebijakan_info). BPDP study: 20.1 million kl."
+    "id": "Berlaku 1 Juli 2026 dengan masa transisi tiga bulan. Kajian BPDP: kebutuhan 20,1 juta kl.",
+    "en": "In force 1 July 2026 with a three-month transition. BPDP study: need of 20.1 million kl."
    }
   },
   {
@@ -1432,6 +1432,7 @@
   ]
  },
  "neraca": {
+  "cpo_ton_2023": 47084302,
   "cpo_sumber": "bps-sawit-2023 (rujukan riset/biomassa)",
   "pangan_ton": 4990000,
   "sumber_pangan": "metro-pangan",

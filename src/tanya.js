@@ -54,20 +54,23 @@ async function muatIndeks(env) {
 }
 export async function cariKata(env, q, n = MAKS_KATA) {
   const qk = kataKunci(q).map(norm).filter(Boolean); if (!qk.length) return [];
-  const minim = Math.max(1, Math.ceil(qk.length / 2)), hit = [];
-  for (const it of await muatIndeks(env)) {
-    let m = 0, s = 0;
-    for (const w of qk) { const v = skor([w], it.h, it.n, null, 12); if (v) { m++; s += v; } }
-    if (m >= minim) hit.push({ it, s: s * (m / qk.length) });
+  const minim = Math.max(1, Math.ceil(qk.length / 2)), indeks = await muatIndeks(env), df = qk.map(() => 0), kena = [];
+  for (const it of indeks) {
+    const v = qk.map((w) => skor([w], it.h, it.n, null, 12)), m = v.filter(Boolean).length;
+    v.forEach((x, i) => { if (x) df[i]++; });
+    if (m >= minim) kena.push({ it, v });
   }
-  return hit.sort((a, b) => b.s - a.s).slice(0, n).map(({ it }) => potongan({ jenis: it.g, judul: it.j, url: it.u }, [it.j, it.s, it.x].filter(Boolean).join(". ").slice(0, 400)));
+  // kata langka lebih berharga (idf): "suralaya" mengalahkan "kapasitas" yang ada di mana-mana
+  const idf = df.map((d) => Math.log((indeks.length + 1) / (d + 1)) + 0.1);
+  return kena.map(({ it, v }) => ({ it, s: v.reduce((a, x, i) => a + x * idf[i], 0) })).sort((a, b) => b.s - a.s).slice(0, n)
+    .map(({ it }) => potongan({ jenis: it.g, judul: it.j, url: it.u }, [it.j, it.s, it.x].filter(Boolean).join(". ").slice(0, 400)));
 }
 
 const bersih = (p) => { const s = typeof p === "string" ? p.replace(/[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim() : ""; if (s.length < 5 || s.length > 300) throw new Galat("masukan_salah"); return s; };
 
 export async function tanya(env, akun, pertanyaan) {
   const q = bersih(pertanyaan);
-  if ((await hak.catatLaju(env, "tanya:ty" + akun.id, 3600)) > BATAS_JAM) throw new Galat("laju_terlampaui");
+  if ((await hak.catatLaju(env, "ringkasan-ai:ty" + akun.id, 3600)) > BATAS_JAM) throw new Galat("laju_terlampaui");
   const [vek, kat] = await Promise.all([cariVektor(env, q), cariKata(env, q)]);
   const lihat = new Set(), semua = [];
   for (const x of [...vek, ...kat]) { const k = x.url + "|" + x.judul; if (!lihat.has(k) && semua.length < MAKS_TOTAL) { lihat.add(k); semua.push({ ...x, n: semua.length + 1 }); } }
@@ -78,7 +81,8 @@ export async function tanya(env, akun, pertanyaan) {
     out = uraiJson(await env.AI.run(MODEL_TANYA, { max_tokens: 900, temperature: 0.1, response_format: { type: "json_schema", json_schema: SKEMA },
       messages: [{ role: "system", content: SISTEM }, { role: "user", content: `PERTANYAAN: ${q}\n\n` + semua.map((x) => `[POTONGAN ${x.n}] ${x.jenis}: ${x.judul}\n${x.teks}`).join("\n\n") }] }));
   } catch (e) { console.error("tanya AI", e?.message); return dasar; }
-  const { sah, dibuang } = verifikasiJawaban(out?.klaim, new Map(semua.map((x) => [x.n, x.teks])));
+  if (!Array.isArray(out?.klaim)) return dasar;   // keluaran model tak berbentuk: potongan saja, bukan "tidak ditemukan"
+  const { sah, dibuang } = verifikasiJawaban(out.klaim, new Map(semua.map((x) => [x.n, x.teks])));
   if (!sah.length) return dibuang ? { ...dasar, dibuang, model: MODEL_TANYA } : { ...dasar, status: "kosong", potongan: [], model: MODEL_TANYA };   // klaim kosong dari model = tidak ditemukan
   return { ...dasar, status: "jawab", jawaban: sah.map((k) => k.pernyataan).join(" "), klaim: sah, dibuang, model: MODEL_TANYA };
 }

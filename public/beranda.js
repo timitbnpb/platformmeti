@@ -220,10 +220,18 @@ async function gambarSorotan() {
   const luar = (u, kunci, kelas) => { const h = urlAman(u); return h ? `<a class="${kelas}" href="${esc(h)}" target="_blank" rel="noopener noreferrer">${esc(t(kunci))}</a>` : ""; };
   el.innerHTML = baris.map((r) => {
     const mulai = r.tanggal ? tanggal(r.tanggal) : "", akhir = r.tanggal_selesai && r.tanggal_selesai !== r.tanggal ? tanggal(r.tanggal_selesai) : "";
-    const tempat = [r.lokasi?.tempat, r.jam].filter(Boolean).join(", "), pf = r.poster?.file;
-    const poster = pf && String(pf).startsWith("/") && !String(pf).startsWith("//") ? `<img class="jm-sorotan-poster" src="${esc(pf)}" alt="${esc(t("beranda.sorotan.poster", { nama: r.judul }))}" loading="lazy" decoding="async">` : "";
-    const info = r.slug ? `<a class="jm-sorotan-info" href="/event/${encodeURIComponent(r.slug)}">${esc(t("beranda.sorotan.info"))}</a>` : "";
-    return `<article class="jm-sorotan-kt">${poster}<div class="jm-sorotan-isi"><span class="jm-pil">${esc(t("beranda.sorotan.label"))}</span><h2>${esc(r.judul)}</h2><p class="jm-sorotan-meta">${esc(mulai)}${akhir ? " - " + esc(akhir) : ""}${tempat ? " | " + esc(tempat) : ""}</p>${r.deskripsi ? `<p>${esc(r.deskripsi)}</p>` : ""}<div class="jm-sorotan-aksi">${luar(r.daftar_url, "beranda.sorotan.daftar", "jm-tbl")}${info}</div></div></article>`;
+    /* pemilik 9 Nov 2026 "jelek banget": poster utuh, chip info berikon, hitung mundur, deskripsi ringkas tanpa hover istilah, tombol Daftar menonjol */
+    const pf = r.poster?.file, sisa = Math.round((Date.parse(r.tanggal) - Date.parse(hari)) / 864e5);
+    const poster = pf && String(pf).startsWith("/") && !String(pf).startsWith("//") ? `<div class="jm-sorotan-gb"><img class="jm-sorotan-poster" src="${esc(pf)}" alt="${esc(t("beranda.sorotan.poster", { nama: r.judul }))}" loading="lazy" decoding="async"></div>` : "";
+    const hariNama = r.tanggal ? new Date(r.tanggal + "T00:00:00").toLocaleDateString(t("jm.lokal") === "jm.lokal" ? "id-ID" : t("jm.lokal"), { weekday: "long" }) : "";
+    const daring = /daring|zoom|online|virtual/i.test(r.lokasi?.tempat || "");
+    const chip = (ik, isi) => (isi ? `<li>${ikon(ik, 18)}<span>${esc(isi)}</span></li>` : "");
+    const pil = (kls, ik, isi) => `<span class="jm-sorotan-pl ${kls}">${ikon(ik, 14)}${esc(isi)}</span>`;
+    const atas = [pil("jm-sorotan-pl-utama", "kalender-bintang", t("beranda.sorotan.label")), r.jenis ? pil("", "mikrofon", t("beranda.sorotan.j." + r.jenis) === "beranda.sorotan.j." + r.jenis ? r.jenis : t("beranda.sorotan.j." + r.jenis)) : "", daring ? pil("", "video", t("beranda.sorotan.daring")) : "", sisa >= 0 ? pil("jm-sorotan-pl-hitung", "jam", sisa === 0 ? t("beranda.sorotan.hari_ini") : t("beranda.sorotan.lagi", { n: sisa })) : ""].join("");
+    const fakta = `<ul class="jm-sorotan-fakta">${chip("kalender", [hariNama, mulai + (akhir ? " - " + akhir : "")].filter(Boolean).join(", "))}${chip("jam", r.jam)}${chip(daring ? "video" : "lokasi", [r.lokasi?.tempat, r.lokasi?.kota].filter(Boolean).join(", "))}${chip("orang", (r.penyelenggara || []).join(", "))}</ul>`;
+    const daftar = urlAman(r.daftar_url) ? `<a class="jm-sorotan-daftar" href="${esc(urlAman(r.daftar_url))}" target="_blank" rel="noopener noreferrer">${esc(t("beranda.sorotan.daftar"))}${ikon("panah-kanan", 18)}</a>` : "";
+    const info = r.slug ? `<a class="jm-sorotan-info" href="/event/${encodeURIComponent(r.slug)}">${ikon("tautan", 16)}${esc(t("beranda.sorotan.info"))}</a>` : "";
+    return `<article class="jm-sorotan-kt">${poster}<div class="jm-sorotan-isi"><div class="jm-sorotan-pls">${atas}</div><h2>${esc(r.judul)}</h2>${fakta}${r.deskripsi ? `<p class="jm-sorotan-desk" data-no-ist>${esc(r.deskripsi)}</p>` : ""}<div class="jm-sorotan-aksi">${daftar}${info}</div></div></article>`;
   }).join("");
   el.hidden = false;
 }

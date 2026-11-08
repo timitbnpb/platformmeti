@@ -111,6 +111,7 @@ export function pasangProfil({ data, M, iso2, namaN, sumber }) {
     const bagian = [];
     if (b) bagian.push(kapasitas(b, S), bag("status", t("asp.s.target"), daftar(b.target)), bag("kalkulator", t("asp.s.skema"), daftar(b.skema)), bag("gedung", t("asp.s.lc"), daftar(b.local_content)), bag("kalkulator", t("asp.s.harga"), daftar(b.harga_ppa_fit)), bag("kalkulator", t("asp.s.biaya"), daftar(b.biaya_rata2)), investasi(b, S));
     bagian.push(lelang(L, kode));
+    if (n.iso3 === "MYS" || n.iso3 === "SGP") bagian.push(bag("sambung", t("jr.dari.asean"), `<p class="jm-asp-lagi"><a class="jm-tbl" href="/jaringan?tab=lintas&amp;ln=${iso2[n.iso3]}">${ikon("menara", 16)}<span>${esc(t("jr.l.ey.daftar"))}</span></a></p>`));
     const isi = bagian.filter(Boolean).join("");
     const el = dlg.querySelector("#aspGlobal");
     if (el) { el.innerHTML = isi; el.hidden = !isi; pasangBar(el); }

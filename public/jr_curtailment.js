@@ -1,6 +1,6 @@
 /* /jaringan, tab Curtailment dan batas penetrasi: batas serap EBT variabel hasil studi (riset/jaringan.json) dan satu-satunya angka curtailment (model IEA, riset/curtailment.json).
    Kejadian curtailment terukur TIDAK ditemukan: ditulis sebagai celah, bukan dikarang. INP: grafik lewat nanti(). */
-import { D, ex, t, esc, ikon, num, bukti, cariSumber, chip, catatan, daftarCelah, kosongTab, sumberBerkas, luar } from "/jr_umum.js";
+import { D, ex, t, esc, ikon, num, bukti, cariSumber, catatan, daftarCelah, kosongTab, sumberBerkas, luar } from "/jr_umum.js";
 import { nanti } from "/inti/umum.js";
 import { batangSvg, legendaHtml, tipHtml, tabel } from "/info_hijau.js";
 
@@ -36,4 +36,3 @@ export function mulai(el) {
   ].join("");
   nanti(grafik); nanti(tabelStudi);
 }
-void chip;

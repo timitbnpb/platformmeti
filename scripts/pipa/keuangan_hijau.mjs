@@ -45,7 +45,7 @@ export function bangun() {
     investasi.push({ tahun: +y, teknologi: nama, kelompok: FOSIL.has(nama) ? 'fosil' : LAIN.has(nama) ? 'lain' : 'ebt', usd_juta_2023: v, sumber_id: 's-pubfin', tingkat_bukti: 'resmi', tanggal: TGL });
   }));
   const og = baca('public/data/obligasi_hijau.json');
-  const instrumen = og.baris.map((b) => ({ penerbit: b.penerbit, instrumen: b.instrumen, pemerintah: !!b.penerbit_pemerintah, nilai: b.nilai, satuan: b.satuan_nilai, tahun: b.tahun, tenor_tahun: b.tenor_tahun, kupon_persen: b.kupon_persen, penggunaan_dana: b.penggunaan_dana, sumber_url: b.sumber_url, sumber_id: b.sumber_id === 's-djppr' ? 's-djppr' : 's-pendanaan', tingkat_bukti: b.tingkat_bukti, tanggal: b.tanggal }));
+  const instrumen = og.baris.map((b) => ({ id: b.id, penerbit: b.penerbit, penerbit_org_id: b.penerbit_org_id, instrumen: b.instrumen, pemerintah: !!b.penerbit_pemerintah, nilai: b.nilai, satuan: b.satuan_nilai, tahun: b.tahun, tenor_tahun: b.tenor_tahun, kupon_persen: b.kupon_persen, tanggal_terbit: b.tanggal_terbit, sertifikasi: b.sertifikasi, penggunaan_dana: b.penggunaan_dana, sumber_url: b.sumber_url, sumber_id: b.sumber_id === 's-djppr' ? 's-djppr' : 's-pendanaan', tingkat_bukti: b.tingkat_bukti, tanggal: b.tanggal }));
   const kj = baca('public/data/keuangan.json').baris;
   const alokasi = kj.filter((b) => b.kelompok === 'green_finance' && b.jenis === 'alokasi_kumulatif_2018_2024' && b.sektor).map((b) => ({ sektor: b.sektor, usd: b.usd, porsi_persen: b.porsi_persen, sumber_id: 's-djppr', tingkat_bukti: 'resmi', tanggal: b.tanggal }));
   const jc = baca('public/data/jetp_cipp.json');

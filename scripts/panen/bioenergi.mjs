@@ -92,7 +92,7 @@ export function bangun() {
       { id: 'b30', kode: 'B30', jenis: 'biodiesel', persen: 30, mulai: '2020-01', sumber_ids: ['li-tren-bd'], tingkat_bukti: 'cuplikan', ket: L('Realisasi 2020 sampai 2022 mengikuti B30 (8,4; 9,3; 10,4 juta kl).', 'Actual 2020 to 2022 followed B30 (8.4, 9.3, 10.4 million kl).') },
       { id: 'b35', kode: 'B35', jenis: 'biodiesel', persen: 35, mulai: '2023-02', sumber_ids: ['esdm-alokasi-2023', 'li-tren-bd'], tingkat_bukti: 'resmi', ket: L('Alokasi 2023 13,15 juta kl; realisasi 2023 sekitar 12,2-12,3 juta kl.', '2023 allocation 13.15 million kl; actual about 12.2-12.3 million kl.') },
       { id: 'b40', kode: 'B40', jenis: 'biodiesel', persen: 40, mulai: '2025-01', sumber_ids: ['cnbc-b40-2025'], tingkat_bukti: 'cuplikan', ket: L('Berlaku 1 Januari 2025; kuota 2025 15,6 juta kl (PSO 7,55; non-PSO 8,07).', 'In force 1 January 2025; 2025 quota 15.6 million kl (PSO 7.55; non-PSO 8.07).') },
-      { id: 'b50', kode: 'B50', jenis: 'biodiesel', persen: 50, mulai: '2026-07', sumber_ids: ['metro-b50'], tingkat_bukti: 'cuplikan', ket: L('Berlaku 1 Juli 2026 dengan masa transisi (rujukan: program b50 pada kebijakan_info). Kajian BPDP: 20,1 juta kl.', 'In force 1 July 2026 with a transition (see program b50 in kebijakan_info). BPDP study: 20.1 million kl.') },
+      { id: 'b50', kode: 'B50', jenis: 'biodiesel', persen: 50, mulai: '2026-07', sumber_ids: ['metro-b50'], tingkat_bukti: 'cuplikan', ket: L('Berlaku 1 Juli 2026 dengan masa transisi tiga bulan. Kajian BPDP: kebutuhan 20,1 juta kl.', 'In force 1 July 2026 with a three-month transition. BPDP study: need of 20.1 million kl.') },
       { id: 'e5', kode: 'E5', jenis: 'bioetanol', persen: 5, mulai: null, sumber_ids: ['bisnis-e10-e20'], tingkat_bukti: 'cuplikan', ket: L('Kontan/Bloomberg Technoz menyebut persiapan mandatori E5; tanggal berlaku belum terkonfirmasi di sumber yang dibaca.', 'Reports mention E5 preparation; the in-force date is not confirmed in the sources read.') },
       { id: 'e10', kode: 'E10', jenis: 'bioetanol', persen: 10, mulai: '2027', sumber_ids: ['bisnis-e10-1_4', 'it-e10-2028'], tingkat_bukti: 'cuplikan', ket: L('Target 2027, paling lambat 2028; kebutuhan etanol 1,4 juta kl.', 'Target 2027, no later than 2028; ethanol need 1.4 million kl.') },
       { id: 'saf1', kode: 'SAF 1%', jenis: 'saf', persen: 1, mulai: '2027', sumber_ids: ['bisnis-saf-2027'], tingkat_bukti: 'cuplikan', ket: L('Mandat SAF 1% dijadwalkan mulai 2027.', 'A 1% SAF mandate is scheduled from 2027.') },
@@ -200,7 +200,7 @@ export function bangun() {
       ],
     },
     neraca: {
-      cpo_ton_2023: bio.meta.cpo_ton_total, cpo_sumber: 'bps-sawit-2023 (rujukan riset/biomassa)',
+      cpo_ton_2023: bio.ringkasan.cpo_ton_total, cpo_sumber: 'bps-sawit-2023 (rujukan riset/biomassa)',
       pangan_ton: 4990000, sumber_pangan: 'metro-pangan',
       energi_b50_kl: 20100000, energi_b50_cpo_ton: 18690000, sumber_b50: 'metro-b50',
       b50_pemerintah_cpo_ton: 5300000, alokasi_2026_kl: 15646372,

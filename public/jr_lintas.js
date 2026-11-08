@@ -1,10 +1,10 @@
 /* /jaringan, tab ASEAN Power Grid dan lintas negara: Sumatera-Semenanjung Malaysia, Kalimantan Barat-Sarawak (beroperasi), Kalimantan-Sabah,
    Sumatera/Batam-Singapura, ditambah proyek impor listrik Singapura (EMA). Bendera negara di setiap kartu.
    Sumber: jaringan_modul.json (lintas_negara). Angka per perusahaan ekspor berstatus media (EMA tidak terbaca langsung). INP: filter seketika, grafik lewat nanti(). */
-import { D, ex, t, esc, ikon, num, L, chipStatus, buktiSumber, catatan, daftarCelah, kosongTab, urlGet, urlSet, sumberBerkas, bendera, namaNegara, namaOrg, logoHtml, chip, sumberLink, bukti } from "/jr_umum.js";
+import { D, ex, t, esc, ikon, num, L, chipStatus, buktiSumber, catatan, daftarCelah, kosongTab, urlGet, urlSet, sumberBerkas, bendera, namaNegara, namaOrg, logoHtml, chip, sumberLink } from "/jr_umum.js";
 import { ringkasEkspor } from "/jaringan_hitung.js";
 import { nanti } from "/inti/umum.js";
-import { batangSvg, kolomSvg, legendaHtml, tabel, tipHtml } from "/info_hijau.js";
+import { batangSvg, legendaHtml, tabel, tipHtml } from "/info_hijau.js";
 
 const LN = () => D.m.lintas_negara;
 const EKS = () => LN().ekspor_singapura;
@@ -62,4 +62,3 @@ export function mulai(el) {
     nanti(daftar);
   });
 }
-void kolomSvg; void bukti;

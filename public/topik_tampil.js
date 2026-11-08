@@ -83,7 +83,7 @@ export function rumus(b, id, ctx) {
   const kalk = ctx.id === "surya" && rows.length >= 10 && (b.rumus || []).length ? kalkulator(rows, ctx) : "";
   const rm = `<div class="jm-tp-rumus">${(b.rumus || []).map((r) => `<p>${ikon("kalkulator", 20)}<span>${rapi(tok(r))}</span></p>`).join("")}</div>`;
   const contoh = kalk || ((b.contoh || []).length ? `<h3 class="jm-tp-h3">${esc(u("contoh"))}</h3><ol class="jm-tp-langkah jm-tp-contoh">${b.contoh.map((c) => `<li>${rapi(tok(c))}</li>`).join("")}</ol>` : "");
-  const tautan = `<div class="jm-tp-rumus-ke"><a class="jm-tp-cta" href="/metode">${ikon("metode", 16)}<span>${esc(t("tp.cara_hitung"))}</span></a>${ctx.id === "surya" ? `<a class="jm-tp-cta" href="/peluang#plts-atap">${ikon("kalkulator", 16)}<span>${esc(t("tp.kalkulator_atap"))}</span></a>` : ""}</div>`;
+  const tautan = `<div class="jm-tp-rumus-ke"><a class="jm-tp-cta" href="/metode">${ikon("metode", 16)}<span>${esc(t("tp.cara_hitung"))}</span></a>${ctx.id === "bioenergi" ? `<a class="jm-tp-cta" href="/bioenergi">${ikon("bioenergi", 16)}<span>${esc(t("tp.modul_bioenergi"))}</span></a>` : ""}${ctx.id === "jaringan" ? `<a class="jm-tp-cta" href="/jaringan">${ikon("menara", 16)}<span>${esc(t("jr.dari.topik"))}</span></a>` : ""}${ctx.id === "surya" ? `<a class="jm-tp-cta" href="/peluang#plts-atap">${ikon("kalkulator", 16)}<span>${esc(t("tp.kalkulator_atap"))}</span></a>` : ""}</div>`;
   return { html: rm + contoh + catatan(b.catatan) + tautan, sumber: b.sumber };
 }
 function kalkulator(rows, ctx) {

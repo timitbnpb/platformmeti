@@ -162,6 +162,7 @@ function sRantai() {
     h += `<h3 class="jm-tk-sub">${esc(t("tk.tkdn.j", { n: tk.length }))}</h3>` + tabel(["tk.c.produsen", "tk.c.produk", "tk.c.tkdn", "tk.c.berlaku"], tk.slice(0, 20).map((r) => `<tr>${sel("tk.c.produsen", esc(r.produsen))}${sel("tk.c.produk", esc([r.produk, r.merk].filter(Boolean).join(", ")))}${sel("tk.c.tkdn", mw(r.tkdn_persen, 1) + "%", "jm-num")}${sel("tk.c.berlaku", esc(r.berlaku_sampai || "-"))}</tr>`).join(""));
     sumber.push({ sumber: TKDN.sumber[0].judul, url: TKDN.sumber[0].url, tanggal: TKDN.dibangun_pada });
   }
+  if (KODE === "penyimpanan") h += `<p class="jm-bantu"><a href="/baterai-ev?tab=bess">${esc(t("bev.lihat_bess"))}</a></p>`;
   return bagian("tk-rantai", "rantai", "rantai", { judulHtml: esc(t("tk.s.rantai.j")), sub: esc(t("tk.s.rantai.sub")), isiHtml: h, sumber: sumberLipat(sumber), csv: true });
 }
 
@@ -261,6 +262,7 @@ function sTelusur() {
     RANTAI_TAB[KODE] && ["globe", `/rantai-global?tab=${RANTAI_TAB[KODE]}`, "tk.tl.rantai"],
     KODE !== "nuklir" && ["kalkulator", `/model-keuangan?tek=${encodeURIComponent(KODE)}`, "tk.tl.model"],
     ["buku", "/panduan", "tk.tl.panduan"],
+    KODE === "bioenergi" && ["bioenergi", "/bioenergi", "tk.tl.bioenergi"],
     ["energi-baru", "/energi-baru", "tk.tl.baru"],
     ["linimasa", "/sejarah", "tk.tl.sejarah"],
   ].filter(Boolean);

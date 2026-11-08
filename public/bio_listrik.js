@@ -12,9 +12,9 @@ function volume() {
 function tahunan() {
   const g = document.getElementById("bn-l-thn"); if (!g) return;
   const T = B.bio.cofiring.tahunan.filter((x) => x.volume_juta_t || x.target);
-  document.getElementById("bn-l-thn-l").innerHTML = legendaHtml([{ kelas: "bn-s-realisasi", label: t("bn.bd.realisasi") }, { kelas: "bn-s-target", label: t("bn.li.target") }]);
+  document.getElementById("bn-l-thn-l").innerHTML = legendaHtml([{ kelas: "bn-s-realisasi", label: t("bn.bd.realisasi") }, { kelas: "bn-s-target", label: t("bn.li.sisa") }]);
   g.innerHTML = kolomSvg({ el: g, satuan: t("bn.u.juta_t"), label: t("bn.li.j.thn"), seri: [{ k: "real", kelas: "bn-s-realisasi" }, { k: "tgt", kelas: "bn-s-target" }],
-    kategori: T.map((x) => ({ label: String(x.tahun), nilai: { real: x.volume_juta_t || 0, tgt: x.target || 0 }, tip: String(x.tahun), th: tipHtml(String(x.tahun), [[t("bn.bd.realisasi"), x.volume_juta_t ? `${num(x.volume_juta_t, 2)} ${t("bn.u.juta_t")}` : t("bn.belum")], [t("bn.li.target"), x.target ? `${num(x.target, 2)} ${t("bn.u.juta_t")}` : t("bn.belum")]]) })) });
+    kategori: T.map((x) => ({ label: String(x.tahun), nilai: { real: x.volume_juta_t || 0, tgt: Math.max(0, (x.target || 0) - (x.volume_juta_t || 0)) }, tip: String(x.tahun), th: tipHtml(String(x.tahun), [[t("bn.bd.realisasi"), x.volume_juta_t ? `${num(x.volume_juta_t, 2)} ${t("bn.u.juta_t")}` : t("bn.belum")], [t("bn.li.target"), x.target ? `${num(x.target, 2)} ${t("bn.u.juta_t")}` : t("bn.belum")]]) })) });
 }
 function komposisi() {
   const g = document.getElementById("bn-l-kom"); if (!g) return;
