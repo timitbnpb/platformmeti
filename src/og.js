@@ -1,5 +1,6 @@
 // og.js: kartu bagikan otomatis GET /og/<jenis>/<id>.svg (1200x630) dari JSON ringkas publik di aset + penyisip meta og:*.
 // Hanya angka ringkas publik; tanpa foto wajah, tanpa kolom pribadi. PNG: berkas statis pra-render (scripts/pipa/og_render.mjs), bila ada.
+import { OG_PNG } from "./og_png.js";
 import { HEADER_KEAMANAN, sha } from "./util.js";
 import { namaProyek } from "../public/inti/nama_proyek.js";
 
@@ -149,13 +150,14 @@ export async function sisipOg(res, req, url) {
   if (html.includes('property="og:image"')) return new Response(html, res);
   let jenis = "beranda", id = "utama";
   for (const [re, j] of NAMA_KARTU) { const m = url.pathname.match(re); if (m) { jenis = j; id = m[1]; break; } }
-  const img = `${url.origin}/og/${jenis}/${id}.svg`;
+  const png = OG_PNG.has(`${jenis}/${id}`);
+  const img = `${url.origin}/og/${jenis}/${id}.${png ? "png" : "svg"}`;
   const judul = (html.match(/<title[^>]*>([^<]*)<\/title>/) || [])[1] || SITUS;
   const desk = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
   const tag = [
     html.includes('property="og:title"') ? "" : `<meta property="og:title" content="${judul}">`,
     desk && !html.includes('property="og:description"') ? `<meta property="og:description" content="${desk}">` : "",
-    `<meta property="og:image" content="${esc(img)}">`, `<meta property="og:image:type" content="image/svg+xml">`, `<meta property="og:image:width" content="1200">`, `<meta property="og:image:height" content="630">`,
+    `<meta property="og:image" content="${esc(img)}">`, `<meta property="og:image:type" content="${png ? "image/png" : "image/svg+xml"}">`, `<meta property="og:image:width" content="1200">`, `<meta property="og:image:height" content="630">`,
     `<meta name="twitter:image" content="${esc(img)}">`,
     /name="twitter:card"/.test(html) ? "" : `<meta name="twitter:card" content="summary_large_image">`,
   ].join("\n");
