@@ -79,10 +79,12 @@
 .psn-celah ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .psn-celah li{display:flex;gap:8px;font:400 var(--t-kecil)/var(--lh-isi) var(--font);color:var(--ink2)}
 
-/* panel rinci: lembar geser dari kanan */
-dialog.psn-dlg{position:fixed;inset:0 0 0 auto;margin:0;width:min(520px,100vw);max-width:100vw;height:100dvh;max-height:100dvh;padding:0;border:0;border-left:1px solid var(--line);border-radius:0;overflow:auto;background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg)}
-dialog.psn-dlg[open]{display:grid;align-content:start;gap:16px;padding:20px;animation:psn-masuk .22s ease-out}
-@keyframes psn-masuk{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+/* rincian butir PSN: pop-up besar di tengah (aturan pemilik: rincian program/proyek = pop-up tengah, bukan panel samping) */
+dialog.psn-dlg{position:fixed;inset:0;margin:auto;width:min(880px,calc(100vw - 32px));max-width:calc(100vw - 32px);height:auto;max-height:min(88dvh,920px);padding:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:auto;background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg)}
+dialog.psn-dlg::backdrop{background:rgb(6 38 29/.55);backdrop-filter:blur(2px)}
+dialog.psn-dlg[open]{display:grid;align-content:start;gap:16px;padding:28px 32px;animation:psn-masuk .2s ease-out}
+@keyframes psn-masuk{from{transform:translateY(12px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:639px){dialog.psn-dlg{width:calc(100vw - 16px);max-height:92dvh}dialog.psn-dlg[open]{padding:20px 16px}}
 @media (prefers-reduced-motion:reduce){dialog.psn-dlg[open]{animation:none}}
 .psn-r-h{display:flex;gap:12px;align-items:flex-start}
 .psn-r-h>div{flex:1;min-width:0;display:grid;gap:8px}

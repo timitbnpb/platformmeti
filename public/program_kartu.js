@@ -13,7 +13,7 @@ export const KAT = { "plts-100gw": "pembangkit", wte: "pembangkit", dedieselisas
   b50: "bahan", e20: "bahan", "co-firing": "bahan", "hidrogen-hijau": "bahan", ruptl: "jaringan", "super-grid": "jaringan", psn: "jaringan", "kendaraan-listrik": "kendaraan", jetp: "dana" };
 export const KAT_DAFTAR = [["semua", "daftar2", "jm-tek-lain"], ["pembangkit", "surya", "jm-tek-surya"], ["bahan", "bioenergi", "jm-tek-bioenergi"], ["jaringan", "jaringan", "jm-tek-jaringan"], ["kendaraan", "penyimpanan", "jm-tek-penyimpanan"], ["dana", "pembiayaan", "jm-tek-pembiayaan"]];
 /* foto hanya bila benar-benar sesuai programnya; selain itu ilustrasi ikon bergradien --tp-* */
-const FOTO = { "plts-100gw": "surya-cirata", wte: "sampah-psel", b50: "bioenergi-sawit", e20: "bioetanol-tebu", ruptl: "hidro-saguling", "panas-bumi": "panas-bumi-sibayak", nuklir: "nuklir-siwabessy", "hidrogen-hijau": "hidrogen-spbu" };
+const FOTO = { "plts-100gw": "surya-cirata", wte: "sampah-psel", b50: "bioenergi-sawit", e20: "bioetanol-tebu", ruptl: "hidro-saguling", "panas-bumi": "panas-bumi-sibayak", nuklir: "nuklir-siwabessy", "hidrogen-hijau": "hidrogen-spbu", dedieselisasi: "penyimpanan-baterai", psn: "bayu-sidrap", jetp: "pembiayaan-hijau", "pensiun-dini-pltu": "transisi-berkeadilan", "plts-atap": "efisiensi", "kendaraan-listrik": "kendaraan-listrik", "co-firing": "biomassa-bantargebang", "super-grid": "jaringan" };
 const WARNA = { surya: "surya", "biomassa-sampah": "sampah", bioenergi: "bio", jaringan: "jaringan", "panas-bumi": "panas", penyimpanan: "simpan", hidrogen: "hidrogen", nuklir: "nuklir" };
 
 const kecil = (svg) => svg.replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"');
