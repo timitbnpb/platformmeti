@@ -75,3 +75,15 @@
 .jm-tk-telusur{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:12px}
 .jm-tk-telusur li{display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card)}
 .jm-tk-telusur a{color:var(--accent);font-weight:600;text-decoration:none}
+/* indeks /teknologi */
+.jm-tk-idx{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-bottom:24px}
+@media (min-width:560px){.jm-tk-idx{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1024px){.jm-tk-idx{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.jm-tk-kt{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);text-decoration:none}
+.jm-tk-kt:hover{border-color:var(--accent)}
+.jm-tk-kt:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-tk-kt img{display:block;width:100%;aspect-ratio:4/3;max-height:180px;object-fit:cover}
+.jm-tk-kt-ik{display:flex;align-items:center;justify-content:center;height:120px;background:var(--surface);color:var(--accent)}
+.jm-tk-kt-ik svg{width:48px;height:48px}
+.jm-tk-kt-n{display:flex;align-items:center;gap:10px;min-height:var(--target);padding:12px 16px;font:600 var(--t-body)/1.2 var(--font)}
+.jm-tk-kt-n svg{flex:none;width:24px;height:24px;color:var(--accent)}

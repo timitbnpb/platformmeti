@@ -207,6 +207,27 @@ async function cari(q) {
   hasil.innerHTML = grup.length ? grup.map(({ g, cocok }) => `<div><h3>${esc(t("beranda.cari." + g[0]))} (${esc(angka(cocok.length))})</h3><ul>${cocok.slice(0, 4).map(({ x }) => `<li><a href="${esc(g[4](x))}">${esc(g[2](x))}<small>${esc(g[3](x) || "")}</small></a></li>`).join("")}</ul></div>`).join("") : `<p>${esc(t("jm.kosong.cocok"))}</p>`;
 }
 
+/* Sorotan agenda METI: data/agenda-sorotan.json diisi admin lewat berkas (belum ada UI admin).
+   Format: {"dibangun_pada":"YYYY-MM-DD","baris":[{"nama":"...","tanggal_mulai":"YYYY-MM-DD","tanggal_selesai":"YYYY-MM-DD",
+   "tempat":"...","deskripsi":"...","poster":"/img/...webp (opsional)","url_daftar":"https://... (opsional)","url_info":"https://... (opsional)"}]}.
+   Baris tampil bila tanggal_selesai >= hari ini (zona perangkat); tanpa baris tampil, bagian tetap tersembunyi. Tautan luar hanya http(s), rel noopener. */
+async function gambarSorotan() {
+  const el = document.getElementById("sorotan");
+  if (!el) return;
+  let d;
+  try { d = await muat("agenda-sorotan"); } catch (e) { el.hidden = true; return; }
+  const n = new Date(), hari = `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, "0")}-${String(n.getDate()).padStart(2, "0")}`;
+  const baris = (d.baris || []).filter((r) => r && r.nama && String(r.tanggal_selesai || r.tanggal_mulai || "") >= hari).sort((a, b) => String(a.tanggal_mulai).localeCompare(String(b.tanggal_mulai)));
+  if (!baris.length) { el.hidden = true; el.innerHTML = ""; return; }
+  const luar = (u, kunci, kelas) => { const h = urlAman(u); return h ? `<a class="${kelas}" href="${esc(h)}" target="_blank" rel="noopener noreferrer">${esc(t(kunci))}</a>` : ""; };
+  el.innerHTML = baris.map((r) => {
+    const mulai = r.tanggal_mulai ? tanggal(r.tanggal_mulai) : "", akhir = r.tanggal_selesai && r.tanggal_selesai !== r.tanggal_mulai ? tanggal(r.tanggal_selesai) : "";
+    const poster = r.poster && String(r.poster).startsWith("/") && !String(r.poster).startsWith("//") ? `<img class="jm-sorotan-poster" src="${esc(r.poster)}" alt="${esc(t("beranda.sorotan.poster", { nama: r.nama }))}" loading="lazy" decoding="async">` : "";
+    return `<article class="jm-sorotan-kt">${poster}<div class="jm-sorotan-isi"><span class="jm-pil">${esc(t("beranda.sorotan.label"))}</span><h2>${esc(r.nama)}</h2><p class="jm-sorotan-meta">${esc(mulai)}${akhir ? " - " + esc(akhir) : ""}${r.tempat ? " | " + esc(r.tempat) : ""}</p>${r.deskripsi ? `<p>${esc(r.deskripsi)}</p>` : ""}<div class="jm-sorotan-aksi">${luar(r.url_daftar, "beranda.sorotan.daftar", "jm-tbl")}${luar(r.url_info, "beranda.sorotan.info", "jm-sorotan-info")}</div></div></article>`;
+  }).join("");
+  el.hidden = false;
+}
+
 async function main() {
   await mulaiHalaman();
   document.getElementById("kartu").innerHTML = hantuHtml(2);
@@ -215,6 +236,7 @@ async function main() {
     try { const g = await muat("regulasi"); R.hitung.regulasi = g.jumlah; const k = R.kartu.find((x) => x.kode === "regulasi"); if (k) k.nilai = g.jumlah; } catch (e) { /* tetap pakai angka ringkasan */ }
     gambarKartu(); nanti(() => { gambarEkosistem(); gambarJalur(); gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); });
   };
+  nanti(gambarSorotan);
   await mulai();
   nanti(() => pasangPita(document.getElementById("pitaRiwayat")));
   pasangBawah(R);
@@ -226,6 +248,6 @@ async function main() {
   input.addEventListener("input", () => tunda(input.value));
   document.getElementById("cariTbl").addEventListener("click", () => cari(input.value));
   input.addEventListener("keydown", (e) => e.key === "Enter" && cari(input.value));
-  document.addEventListener("jm:bahasa", () => nanti(() => { R && gambarKartu(); gambarEkosistem(); gambarJalur(); R && gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); pasangPita(document.getElementById("pitaRiwayat")); input.value && cari(input.value); }));
+  document.addEventListener("jm:bahasa", () => nanti(() => { gambarSorotan(); R && gambarKartu(); gambarEkosistem(); gambarJalur(); R && gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); pasangPita(document.getElementById("pitaRiwayat")); input.value && cari(input.value); }));
 }
 main();

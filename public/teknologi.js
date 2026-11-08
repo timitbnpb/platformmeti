@@ -284,9 +284,14 @@ function gambarIsi() {
 await mulaiHalaman();
 isi = $("tkIsi");
 if (!C) {
-  $("judul").textContent = t("tk.tak_dikenal");
-  $("jawab").textContent = t("tk.tak_dikenal.ket"); $("ubin").hidden = true; /* hero tidak kosong; daftar teknologi sebagai ubin */
-  isi.innerHTML = `<div class="jm-tk-pilih">${SEMUA.map((k) => `<a class="jm-tk-pilih-a" href="/teknologi/${esc(k)}">${ikonTek(k)}<span>${esc(t("tk.nama." + k))}</span></a>`).join("")}</div>`;
+  /* indeks: sembilan kartu teknologi (foto bila ada) + tautan lintas teknologi */
+  document.title = t("tk.idx.judul") + " | " + t("jm.merek");
+  $("judul").textContent = segmen ? t("tk.tak_dikenal") : t("tk.idx.judul");
+  $("jawab").textContent = segmen ? t("tk.tak_dikenal.ket") : t("tk.idx.lead"); $("ubin").hidden = true;
+  const LINTAS = [["/pelacak", "nav.pelacak", "tingkat"], ["/pelacak-proyek", "pt2.nav", "petir"], ["/kinerja", "kn2.nav", "medali"], ["/keandalan", "kd2.nav", "jam"], ["/rantai", "nav.rantai", "rantai"], ["/rantai-global", "rg3.nav", "kapal"], ["/harga-komponen", "hk2.nav", "tag"], ["/kuadran", "nav.kuadran", "status"]];
+  const kartu = SEMUA.map((k) => { const f = CFG[k].foto; return `<a class="jm-tk-kt" href="/teknologi/${esc(k)}">${f ? `<img src="/img/beranda/${esc(f[0])}.webp" width="400" height="300" alt="" loading="lazy" decoding="async">` : `<span class="jm-tk-kt-ik">${ikonTek(k)}</span>`}<span class="jm-tk-kt-n">${f ? ikonTek(k) : ""}<span>${esc(t("tk.nama." + k))}</span></span></a>`; }).join("");
+  const lintas = LINTAS.map(([h, k, i]) => `<a class="jm-tk-pilih-a" href="${h}">${ikon(i, 28)}<span>${esc(t(k))}</span></a>`).join("");
+  isi.innerHTML = `<div class="jm-tk-idx">${kartu}</div>` + exHtml({ id: "tk-lintas", ikon: "analisis", topik: t("tk.idx.ey"), judulHtml: esc(t("tk.lintas")), subHtml: esc(t("tk.lintas.sub")), isiHtml: `<div class="jm-tk-pilih">${lintas}</div>` });
 } else {
   isi.innerHTML = hantuHtml(6);
   const ambil = (n) => muat(n).catch(() => null);

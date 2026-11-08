@@ -119,7 +119,8 @@ test('layar: tanpa style=, tanpa hex, modul bersama dipakai, menu Insight dan gr
   }
   const js = teks('public/isu.js') + teks('public/isu_daerah.js') + teks('public/isu_detail.js');
   for (const m of ['/inti/tab_halaman.js', '/inti/panel_geser.js', '/inti/maplibre.js', '/peta_koroplet.js', '/inti/tautan.js', '/inti/komponen.js']) assert.ok(js.includes(m), m);
-  assert.match(teks('public/inti/kepala.js'), /href: "\/isu", kunci: "isu\.nav"/);
+  // menu tujuh (8 Nov 2026): /isu ada di ruang Bidang Advokasi & regulasi
+  assert.match(teks('public/bidang.js'), /A\("\/isu", "isu\.nav"/);
   assert.match(teks('public/inti/tautan.js'), /isu: "isu"/);
   assert.match(teks('public/inti/komponen.js'), /\["isu", "peringatan"\]/);
   assert.match(teks('public/isu.html'), /<h1 id="judul"/);

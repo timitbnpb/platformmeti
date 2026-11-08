@@ -143,6 +143,7 @@ const TERKUNCI = [
   { re: /^\/admin(\/.*)?$/, aset: "/admin", peran: ["admin", "super"], ke: "/admin" },
 ];
 const NAMA_TEKNOLOGI = { surya: "Energi surya", bayu: "Energi bayu", hidro: "Hidro", "panas-bumi": "Panas bumi", bioenergi: "Bioenergi", "biomassa-sampah": "Sampah menjadi energi", sampah: "Sampah menjadi energi", penyimpanan: "Penyimpanan energi", hidrogen: "Hidrogen", nuklir: "Nuklir" };
+const NAMA_BIDANG = { organisasi: "Organisasi & antarlembaga", advokasi: "Advokasi & regulasi", sdm: "SDM & sertifikasi", pendanaan: "Pendanaan & investasi", umkm: "UMKM & koperasi", esg: "ESG", komunikasi: "Komunikasi publik", internasional: "Kerja sama internasional", data: "Data & digital" };
 const TIDAK_ADA = () => new Response("Tidak ditemukan", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
 const LANGSUNG_404 = /^\/(direktori|admin)\.html$/;
 // Halaman yang digabung (Peluang+Kelayakan, Kalender+Event, Galeri+Video+Podcast): tautan lama dialihkan 301 ke tab barunya, query dipertahankan.
@@ -233,6 +234,15 @@ async function halaman(req, env, url, akun) {
     const nama = NAMA_TEKNOLOGI[m[1]];
     if (!nama) return TIDAK_ADA();
     const res = await env.ASSETS.fetch(new Request(new URL("/teknologi", url), req));
+    if (!res.ok || req.method === "HEAD") return res;
+    const html = (await res.text()).replace(/<title>[^<]*<\/title>/, () => `<title>${nama} | Direktori METI</title>`);
+    return halamanHtml(html, res);
+  }
+  // Ruang bidang METI (menu Bidang): satu cangkang statis /bidang, isi dari public/bidang.js menurut slug.
+  if ((m = path.match(/^\/bidang\/([a-z]{2,20})$/))) {
+    const nama = NAMA_BIDANG[m[1]];
+    if (!nama) return TIDAK_ADA();
+    const res = await env.ASSETS.fetch(new Request(new URL("/bidang", url), req));
     if (!res.ok || req.method === "HEAD") return res;
     const html = (await res.text()).replace(/<title>[^<]*<\/title>/, () => `<title>${nama} | Direktori METI</title>`);
     return halamanHtml(html, res);

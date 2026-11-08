@@ -232,6 +232,8 @@ test("R13 halaman dinamis: slug dan kode provinsi divalidasi, halaman publik lew
   assert.equal((await kirim(minta("/p/Bukan Slug!", { cookie: c }))).status, 404);
   assert.equal((await kirim(minta("/wilayah/3", { cookie: c }))).status, 404);
   assert.equal((await kirim(minta("/wilayah/32", { cookie: c }))).status, 200);
+  assert.equal((await kirim(minta("/bidang/bukan", { cookie: c }))).status, 404);
+  assert.equal((await kirim(minta("/bidang/advokasi", { cookie: c }))).status, 200);
   assert.equal((await kirim(minta("/", { cookie: c }))).status, 200);
 });
 

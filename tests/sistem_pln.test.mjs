@@ -76,5 +76,6 @@ test("halaman: berkas ada, tanpa style= dan tanpa hex di CSS/JS, rute worker ter
   const w = readFileSync(new URL("../src/worker.js", import.meta.url), "utf8");
   assert.match(w, /\(sistem\|kawasan\)/);
   const kepala = teks("inti/kepala.js");
-  for (const h of ["/sistem", "/kawasan", "/dpr-energi"]) assert.ok(kepala.includes(`href: "${h}"`), h);
+  for (const h of ["/sistem", "/kawasan"]) assert.ok(kepala.includes(`href: "${h}"`), h);
+  assert.ok(teks("bidang.js").includes('A("/dpr-energi"'), "/dpr-energi di ruang Bidang");
 });
