@@ -16,7 +16,6 @@ import { geserPanel } from "/inti/panel_geser.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
 import { pasangKeputusan } from "/proyek_keputusan.js";
 import { pasangTender } from "/proyek_tender.js";
-import { segmenProgram, pasangProgram } from "/program_kartu.js";
 import { peristiwaPopupHtml } from "/peristiwa_komitmen.js";
 
 const $ = (id) => document.getElementById(id);
@@ -134,7 +133,6 @@ function ex(id, d) {
 function kepalaSeksi() {
   const dok = dokSumber();
   if ($("exGb")) ex("exGb", { ikon: "analisis", topik: t("pj.ex.gb"), judulHtml: esc(t("pj.ex.gb.j")), subHtml: esc(t("pj.ex.gb.s")), aksiHtml: aksiHtml() + sumberHtml(`${esc(t("pj.sumber", { tgl: tanggal(DATA.dibangun_pada, { gaya: "panjang" }), dok }))}<br>${esc(t("pj.sumber.rinci"))}`) });
-  ex("exProg", { ikon: "topik", topik: t("pj.ex.prog"), judulHtml: `${hl(num(ANAL ? ANAL.length : PROG.baris.length))} ${esc(t("pj.ex.prog.j"))}`, subHtml: esc(t("pj.ex.prog.s")), aksiHtml: aksiHtml() });
   kepalaTabel();
 }
 function kepalaTabel() {
@@ -228,7 +226,7 @@ const PROG_PIL = { ruptl: "RUPTL", "plts-100gw": "PLTS 100 GWp", wte: "WtE", psn
 const selProg = (r) => {
   const a = progIds(r);
   if (!a.length) return "-";
-  return `<span class="jm-pj-progsel"><a class="jm-pil-prog" href="#program-${esc(a[0])}" title="${esc(progNama(a[0]))}">${ikProg(a[0]).replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(PROG_PIL[a[0]] || progNamaPendek(a[0]))}</span></a>${a.length > 1 ? `<small>+${a.length - 1}</small>` : ""}</span>`;
+  return `<span class="jm-pj-progsel"><a class="jm-pil-prog" href="/program/${esc(a[0])}" title="${esc(progNama(a[0]))}">${ikProg(a[0]).replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(PROG_PIL[a[0]] || progNamaPendek(a[0]))}</span></a>${a.length > 1 ? `<small>+${a.length - 1}</small>` : ""}</span>`;
 };
 const selPeng = (r) => {
   const x = r.peng;
@@ -543,18 +541,6 @@ function tekBaris(id) {
   const c = hitung(SEMUA.filter((r) => r.prog.includes(id) && r.tek), (r) => r.tek), ks = Object.keys(c).sort((a, b) => c[b] - c[a]);
   return ks.length ? `<ul class="jm-pj-pk-tek">${ks.map((k) => `<li>${pilTek(k)}<b>${num(c[k])}</b></li>`).join("")}</ul>` : "";
 }
-/* kisi program nasional: 16 program (program_analisis.json, memuat 7 program nasional program.json dengan kode sama), kartu bersama program_kartu.js */
-let ANAL = null;
-async function gambarProg() {
-  const wadah = $("pjProg");
-  wadah.innerHTML = hantuHtml(3);
-  try { ANAL = ANAL || (await lazy("/data/program_analisis.json")).baris; } catch (e) { wadah.innerHTML = galatHtml("jaringan"); wadah.querySelector("[data-aksi=ulang]")?.addEventListener("click", () => location.reload()); return; }
-  kepalaSeksi();
-  const baris = [...ANAL].sort((a, z) => a.urut - z.urut);
-  wadah.className = "";
-  wadah.innerHTML = `${segmenProgram(baris)}<div class="jm-pk-grid"></div>`;
-  pasangProgram(wadah, baris, nanti);
-}
 /* ---------- profil: lembar dari kanan (gaya lembar direktori), tautan dalam #id ---------- */
 const dlg = $("pjProfil");
 let petaMini = null;
@@ -598,7 +584,7 @@ function profilHtml(r) {
     return `<li><span class="jm-pj-av" aria-hidden="true">${esc(inisial(x.nilai))}</span><span class="jm-pj-pn">${x.organisasi_id ? `<a href="/o/${esc(x.organisasi_id)}" data-org="${esc(x.organisasi_id)}"><b>${esc(x.nilai)}</b></a>` : `<b>${esc(x.nilai)}</b>`}<small>${esc(lab("pj.p.", peran))}</small></span>${ref(x.sumber_id)}</li>`;
   }).join("")}</ul>`));
   const pg = progIds(r);
-  if (pg.length) kiri.push(laci("program", `<ul class="jm-pj-progl">${pg.map((id) => `<li><a class="jm-pil-prog" href="#program-${esc(id)}">${ikProg(id).replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(progNama(id))}</span></a></li>`).join("")}</ul>`));
+  if (pg.length) kiri.push(laci("program", `<ul class="jm-pj-progl">${pg.map((id) => `<li><a class="jm-pil-prog" href="/program/${esc(id)}">${ikProg(id).replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"')}<span>${esc(progNama(id))}</span></a></li>`).join("")}</ul>`));
   kiri.push(`<section class="jm-pj-bag" id="pjRelBag" hidden></section>`);
   /* lokasi */
   if (r.ada || r.prov) kanan.push(laci("lokasi", `${r.ada ? `<div id="pjMini" class="jm-pj-mini"></div>` : ""}<div class="jm-pj-lokbaris"><span>${provHtmlSel(r)}</span>${r.ada ? `<span class="jm-pj-pilpeta2">${esc(presisiTeks(r))}</span>` : ""}</div>`));
@@ -842,7 +828,7 @@ addEventListener("hashchange", dariHash);
 
 /* ---------- kerangka + pemasangan ---------- */
 function semua() {
-  gambarHero(); isiPilihan(); gambarProg(); terapkan();
+  gambarHero(); isiPilihan(); terapkan();
   if (dlg.open && dlg.dataset.id) { const id = dlg.dataset.id; delete dlg.dataset.id; if (petaMini) { petaMini.remove(); petaMini = null; } id.startsWith("program-") ? bukaProgram(id.slice(8)) : bukaProfil(id); }
 }
 const cariTunda = debounce(() => { F.q = $("fq").value.trim().toLowerCase(); terapkan(); }, 120);
