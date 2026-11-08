@@ -25,26 +25,20 @@
   <section class="jm-hero2" aria-labelledby="judul">
     <div class="jm-hero2-kiri">
       <h1 id="judul" data-i18n="beranda.judul">Direktori Energi Terbarukan Indonesia</h1>
-      <p class="jm-hero2-sub" data-i18n="beranda.pengantar">Daftar proyek, perusahaan, lembaga, tokoh, dan regulasi energi terbarukan. Angka disertai sumber dan tanggal.</p>
+      <p class="jm-hero2-sub" data-i18n="beranda.pengantar">Proyek, perusahaan, lembaga, tokoh, regulasi, program nasional, rantai pasok, harga, pendanaan, dan isu energi terbarukan dalam satu tempat. Angka disertai sumber dan tanggal.</p>
       <div class="jm-hero-cari">
-        <div class="jm-cari2"><label class="sr" for="cariBeranda" data-i18n="beranda.cari">Cari proyek, institusi, tokoh, atau regulasi</label>
+        <div class="jm-cari2"><svg class="jm-ik" width="20" height="20" aria-hidden="true" focusable="false"><use href="/img/ikon.svg?v=2#i-cari"/></svg><label class="sr" for="cariBeranda" data-i18n="beranda.cari">Cari proyek, institusi, tokoh, atau regulasi</label>
           <input class="jm-isian" type="search" id="cariBeranda" autocomplete="off" data-i18n-attr="placeholder:beranda.cari" placeholder="Cari proyek, institusi, tokoh, atau regulasi">
           <button type="button" class="jm-cari2-tbl" id="cariTbl" data-i18n="beranda.cari_tbl">Cari</button></div>
-        <div class="jm-hasil" id="hasil" role="region" aria-live="polite" hidden></div>
       </div>
     </div>
     <div class="jm-hero2-kanan"><div class="jm-logo-grid" id="ekoLogo"></div><a class="jm-lihat" id="ekoSemua" href="/direktori?tampil=lembaga"></a></div>
-    <ul class="jm-hitung-hero" id="heroHitung"></ul>
   </section>
   <section class="jm-sorotan" id="sorotan" aria-label="Sorotan agenda METI" data-i18n-attr="aria-label:beranda.sorotan" hidden></section>
 </div>
 <nav class="jm-isi" aria-label="Di halaman ini" data-i18n-attr="aria-label:beranda.isi"><a href="#s01"><b>01</b><span class="jm-isi-l" data-i18n="beranda.s01.l">Kondisi sekarang</span></a><a href="#s02"><b>02</b><span class="jm-isi-l" data-i18n="beranda.s02.l">Ekosistem</span></a><a href="#s03"><b>03</b><span class="jm-isi-l" data-i18n="beranda.s03.l">Dataset</span></a><a href="#s04"><b>04</b><span class="jm-isi-l" data-i18n="beranda.s04.l">Proyek dan emisi</span></a><a href="#s05"><b>05</b><span class="jm-isi-l" data-i18n="beranda.s05.l">Teknologi</span></a><a href="#s06"><b>06</b><span class="jm-isi-l" data-i18n="beranda.s06.l">Halaman lain</span></a><a href="#s08"><b>08</b><span class="jm-isi-l" data-i18n="beranda.s08.l">Akses data</span></a></nav>
-<section class="jm-bagian" id="s01" aria-labelledby="s01-h"><div class="jm-wadah">
-    <header class="jm-sh jm-sh-s"><span class="jm-sh-src" id="srcS01"></span>
-      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-analisis"/></svg><span data-i18n="beranda.s01.ey">Kondisi terkini</span></p><h2 id="s01-h" data-i18n="beranda.s01.h">Angka terbaru</h2><p class="jm-sh-lead" data-i18n="beranda.s01.p">Lima angka utama, masing-masing dengan sumber dan tanggal.</p>
-      <details class="jm-cara-hit"><summary><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-metode"/></svg><span data-i18n="beranda.cara">Cara menghitung</span></summary><p data-i18n="beranda.cara_isi">Angka berasal dari baris data yang punya sumber publik. Jumlah proyek, institusi, tokoh, dan regulasi adalah hitungan baris. Kapasitas menjumlah nilai pertama tiap proyek (MW dan MWp dicampur), rencana maupun terpasang, sehingga berlabel EST.</p></details></header>
+<section class="jm-bagian" id="s01" aria-label="Kondisi terkini" data-i18n-attr="aria-label:beranda.s01.ey"><div class="jm-wadah">
     <div class="jm-kisi" id="kartu"></div>
-    <div id="pitaRiwayat" hidden></div>
     <div class="jm-dua jm-terbaru">
       <section class="jm-ex"><header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-berita"/></svg><span data-i18n="beranda.berita.ey">Berita</span></span><h3 class="jm-ex-j" data-i18n="beranda.berita">Berita terbaru</h3><p class="jm-ex-sub" data-i18n="beranda.berita.sub">Pilihan dari media energi, terbuka di tab baru.</p></div><div class="jm-ex-aksi"><span id="srcBerita"></span></div></header><div class="jm-ex-bd"><div id="berita"></div></div></section>
       <section class="jm-ex"><header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-proyek"/></svg><span data-i18n="beranda.proyek.ey">Katalog</span></span><h3 class="jm-ex-j" data-i18n="beranda.proyek">Proyek terbaru di katalog</h3><p class="jm-ex-sub" data-i18n="beranda.proyek.sub">Enam proyek yang baru masuk atau diperbarui.</p></div><div class="jm-ex-aksi"><span id="srcProyek"></span></div></header><div class="jm-ex-bd"><div id="proyek"></div></div></section>

@@ -85,6 +85,8 @@ function pasang() {
   };
   const gambar = () => {
     const q = isi.value, ada = !!norm(q), per = ada ? cari(indeks, q, Infinity) : new Map();
+    /* satu tokoh bisa tercatat dua kali (direktori + pengurus): tampilkan sekali */
+    if (per.has("orang")) { const lihat = new Set(); per.set("orang", per.get("orang").filter((x) => { const k = norm(x.judul); return !lihat.has(k) && lihat.add(k); })); }
     dlg.classList.toggle("jm-cari-ada", ada);
     penuh.href = ada ? "/cari?q=" + encodeURIComponent(q.trim()) : "/cari";
     const tot = (g) => (per.get(g) || []).length;

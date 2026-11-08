@@ -1,6 +1,6 @@
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
-import { esc, nanti, debounce, hantuHtml, kosongHtml, ikon, fotoBerita } from "/inti/umum.js";
+import { esc, nanti, hantuHtml, kosongHtml, ikon, fotoBerita } from "/inti/umum.js";
 import { gambarDataset, LOGO_ORG, ubinProyek, lokasiHtml } from "/beranda_data.js";
 import { pilTek, pilStatus } from "/inti/ikon_tek.js";
 import { namaMedia, logoLokal } from "/inti/nama_media.js";
@@ -10,7 +10,6 @@ import { pasangBawah, IKON } from "/beranda_bawah.js";
 import { sumberHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { kontenBeranda, daftarKonten } from "/inti/konten_beranda.js";
 import { muat, label, urlAman, norm, namaRegulasi, sembunyi } from "/publik.js";
-import { pasangPita } from "/inti/riwayat.js";
 
 const KARTU = ["kapasitas", "proyek", "regulasi", "organisasi"];
 /* Bauran energi primer EBT: angka resmi tahunan Kementerian ESDM, ditulis tangan; perbarui saat capaian tahunan baru dirilis.
@@ -21,6 +20,7 @@ const namaPendek = (n) => { for (const [re, a] of ALIAS) if (re.test(n)) return 
 const URUT_ASOSIASI = [/metiires|masyarakat energi terbarukan/i, /surya/i, /biofuel/i, /panas bumi/i, /apamsi|modul surya/i, /applta|hidro/i, /aeski/i, /mki|ketenagalistrikan/i];
 const URUT_LEMBAGA = [/energi dan sumber daya mineral/i, /dewan energi/i, /bappenas|perencanaan pembangunan/i, /riset dan inovasi/i, /kementerian keuangan/i, /perindustrian/i, /lingkungan hidup|kehutanan/i, /danantara|investasi/i];
 const KAT_EKO = [["bumn", 1], ["swasta", 2], ["asosiasi", 3], ["lembaga", 4]];
+const IK_EKO = { bumn: "gedung", swasta: "pabrik", asosiasi: "tautan", lembaga: "parlemen" };
 const INSIGHT_KARTU = 17; // ponytail: jumlah kartu /insight ditulis tetap; hitung dari halaman itu bila kartunya sering berubah
 /** 8 teratas per kategori: daftar sematan (id atau nama) lebih dulu, sisanya menurut total MW proyek terkait. Nama baru di data masuk otomatis. */
 const PIN = {
@@ -45,7 +45,6 @@ function delapan(org, pro) {
   return hasil;
 }
 let R = null; // ringkas
-let indeks = null; // korpus cari
 
 const IK = (d) => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${d}</svg>`;
 const IKON_KPI = {
@@ -76,12 +75,10 @@ function gambarKartu() {
     <div class="jm-kpi-n"><b>${esc(angka(b.nilai, { desimal: 2 }))}%</b><small>${esc(t("beranda.u.bauran", { tahun: b.tahun }))}</small></div>
     <div class="jm-kpi-ctx">${esc(t("beranda.kpi.bauran_target", { target: angka(b.target), tahun: b.tahun_target, sisa }))}</div></div>`;
   el.innerHTML = bauran + kartu.map((k, i) => `<div class="jm-kpi jm-w${((i + 1) % 5) + 1}"><div class="jm-kpi-ik">${IKON_KPI[k.kode]}</div><span class="jm-kpi-src">${sumberHtml(esc(t("beranda.src." + k.kode, { tanggal: tgl, total: angka(R.hitung.regulasi) })))}</span>
-    <div class="jm-kpi-lab"><span>${esc(t("beranda.kk." + k.kode))}</span>${k.kode === "kapasitas" ? `<span class="jm-pil jm-pil-est">EST</span>` : ""}</div>
-    <div class="jm-kpi-n"><b>${esc(angka(k.nilai))}</b><small>${esc(t("beranda.u." + k.satuan))}</small></div>
+    <div class="jm-kpi-lab"><span>${esc(t("beranda.kk." + k.kode))}</span></div>
+    <div class="jm-kpi-n"><b>${esc(angka(k.nilai))}</b><small>${esc(t("beranda.u." + k.satuan))}</small>${k.kode === "kapasitas" ? `<span class="jm-pil jm-pil-est">EST</span>` : ""}</div>
     <div class="jm-kpi-ctx">${k.ctx ? esc(k.ctx) : ""}</div></div>`).join("");
   pasangSumber(tgl);
-  const IKH = { proyek: "proyek", organisasi: "direktori", regulasi: "regulasi", berita: "berita" };
-  document.getElementById("heroHitung").innerHTML = ["proyek", "organisasi", "regulasi", "berita"].map((k, i) => `<li class="jm-w${(i % 5) + 1}"><span class="jm-hh-ik" aria-hidden="true">${ikon(IKH[k], 20)}</span><span class="jm-hh-t"><b>${esc(angka(R.hitung[k]))}</b><span>${esc(t("beranda.hero.h." + k))}</span></span></li>`).join("") + `<li class="jm-hitung-src">${sumberHtml(esc(t("beranda.sumber", { tanggal: tgl })))}</li>`;
 }
 
 async function gambarBerita() {
@@ -139,9 +136,9 @@ async function gambarEkosistem() {
         const nama = namaPendek(o.nama), slug = LOGO_ORG[o.id];
         return `<a class="jm-logo" href="/direktori?tampil=lembaga" title="${esc(o.nama)}">${slug ? `<img src="/img/logo/${slug}.png" width="26" height="26" alt="" loading="lazy">` : `<span class="jm-logo-ini jm-w${w}" aria-hidden="true">${esc(inisial(nama))}</span>`}<span>${esc(nama)}</span></a>`;
       });
-      return `<div class="jm-logo-kol"><h3><span class="jm-kotak jm-w${w}" aria-hidden="true"></span>${esc(t("beranda.eko.k." + kat))}</h3>${tiles.join("")}</div>`;
+      return `<div class="jm-logo-kol"><h3>${ikon(IK_EKO[kat], 18)}${esc(t("beranda.eko.k." + kat))}</h3>${tiles.join("")}</div>`;
     }).join("");
-    document.getElementById("ekoSemua").innerHTML = `${ikon("daftar2", 16)}<span>${esc(t("beranda.eko.semua", { n: angka(org.baris.length) }))}</span>`;
+    document.getElementById("ekoSemua").innerHTML = `<span>${esc(t("beranda.eko.semua", { n: angka(org.baris.length) }))}</span>${ikon("panah-kanan", 18)}`;
   } catch (e) { sembunyi(kisi, e); }
 }
 
@@ -184,29 +181,6 @@ async function gambarAkses() {
 }
 
 /* ---------- cari global ---------- */
-const GRUP = [
-  ["proyek", (x) => `${x.nama} ${x.lokasi?.provinsi || ""} ${x.teknologi || ""}`, (x) => x.nama, (x) => x.lokasi?.provinsi, () => "/direktori?tampil=proyek"],
-  ["organisasi", (x) => `${x.nama} ${x.singkatan || ""}`, (x) => x.nama, (x) => x.kategori?.label, () => "/direktori?tampil=lembaga"],
-  ["orang", (x) => `${x.nama} ${x.jabatan_terkini || ""} ${x.organisasi_terkini || ""}`, (x) => x.nama, (x) => x.organisasi_terkini, () => "/direktori?tampil=pakar"],
-  ["regulasi", (x) => `${x.judul} ${namaRegulasi(x)} ${x.nomor} tahun ${x.tahun}`, (x) => namaRegulasi(x), (x) => x.judul, (x) => `/regulasi?id=${encodeURIComponent(x.id)}`],
-];
-async function siapkanIndeks() {
-  indeks ??= Promise.all(GRUP.map(([k]) => muat(k))).then((d) => GRUP.map((g, i) => ({ g, baris: d[i].baris.map((x) => ({ x, c: norm(g[1](x)) })) })));
-  return indeks;
-}
-let giliran = 0;
-async function cari(q) {
-  const hasil = document.getElementById("hasil"), ini = ++giliran, kunci = norm(q.trim());
-  if (kunci.length < 2) { hasil.hidden = true; return; }
-  hasil.hidden = false;
-  let idx;
-  try { hasil.innerHTML = hantuHtml(3); idx = await siapkanIndeks(); } catch (e) { indeks = null; hasil.hidden = true; console.warn("cari:", e); return; }
-  if (ini !== giliran) return;
-  const kata = kunci.split(/\s+/);
-  const grup = idx.map(({ g, baris }) => ({ g, cocok: baris.filter((b) => kata.every((k) => b.c.includes(k))) })).filter((o) => o.cocok.length);
-  hasil.innerHTML = grup.length ? grup.map(({ g, cocok }) => `<div><h3>${esc(t("beranda.cari." + g[0]))} (${esc(angka(cocok.length))})</h3><ul>${cocok.slice(0, 4).map(({ x }) => `<li><a href="${esc(g[4](x))}">${esc(g[2](x))}<small>${esc(g[3](x) || "")}</small></a></li>`).join("")}</ul></div>`).join("") : `<p>${esc(t("jm.kosong.cocok"))}</p>`;
-}
-
 /* Sorotan agenda METI: satu sumber dengan Kalender. Baris kalender.json bertanda "sorotan": true (isi lewat data/kalender_perkaya.json)
    tampil di sini selama tanggal_selesai (atau tanggal) >= hari ini; tanpa baris, bagian tersembunyi. Tautan luar hanya http(s), rel noopener. */
 async function gambarSorotan() {
@@ -224,7 +198,7 @@ async function gambarSorotan() {
     const mulai = r.tanggal ? tanggal(r.tanggal) : "", akhir = r.tanggal_selesai && r.tanggal_selesai !== r.tanggal ? tanggal(r.tanggal_selesai) : "";
     /* pemilik 9 Nov 2026 "jelek banget": poster utuh, chip info berikon, hitung mundur, deskripsi ringkas tanpa hover istilah, tombol Daftar menonjol */
     const pf = r.poster?.file, sisa = Math.round((Date.parse(r.tanggal) - Date.parse(hari)) / 864e5);
-    const poster = pf && String(pf).startsWith("/") && !String(pf).startsWith("//") ? `<div class="jm-sorotan-gb"><img class="jm-sorotan-poster" src="${esc(pf)}" alt="${esc(t("beranda.sorotan.poster", { nama: r.judul }))}" loading="lazy" decoding="async"></div>` : "";
+    const poster = pf && String(pf).startsWith("/") && !String(pf).startsWith("//") ? (r.slug ? `<a class="jm-sorotan-gb" href="/event/${encodeURIComponent(r.slug)}" aria-label="${esc(r.judul)}"><img class="jm-sorotan-poster" src="${esc(pf)}" alt="${esc(t("beranda.sorotan.poster", { nama: r.judul }))}" loading="lazy" decoding="async"></a>` : `<div class="jm-sorotan-gb"><img class="jm-sorotan-poster" src="${esc(pf)}" alt="${esc(t("beranda.sorotan.poster", { nama: r.judul }))}" loading="lazy" decoding="async"></div>`) : "";
     const daring = /daring|zoom|online|virtual/i.test(r.lokasi?.tempat || "");
     const chip = (ik, isi) => (isi ? `<li>${ikon(ik, 18)}<span>${esc(isi)}</span></li>` : "");
     const pil = (kls, ik, isi) => `<span class="jm-sorotan-pl ${kls}">${ikon(ik, 14)}${esc(isi)}</span>`;
@@ -232,7 +206,7 @@ async function gambarSorotan() {
     const fakta = `<ul class="jm-sorotan-fakta">${chip("kalender", mulai + (akhir ? " - " + akhir : ""))}${chip("jam", r.jam)}${chip(daring ? "video" : "lokasi", [r.lokasi?.tempat, r.lokasi?.kota].filter(Boolean).join(", "))}${chip("orang", (r.penyelenggara || []).join(", "))}</ul>`;
     const daftar = urlAman(r.daftar_url) ? `<a class="jm-sorotan-daftar" href="${esc(urlAman(r.daftar_url))}" target="_blank" rel="noopener noreferrer">${esc(t("beranda.sorotan.daftar"))}${ikon("panah-kanan", 18)}</a>` : "";
     const info = r.slug ? `<a class="jm-sorotan-info" href="/event/${encodeURIComponent(r.slug)}">${ikon("tautan", 16)}${esc(t("beranda.sorotan.info"))}</a>` : "";
-    return `<article class="jm-sorotan-kt">${poster}<div class="jm-sorotan-isi"><div class="jm-sorotan-pls">${atas}</div><h2>${esc(r.judul)}</h2>${fakta}${r.deskripsi ? `<p class="jm-sorotan-desk" data-no-ist>${esc(r.deskripsi)}</p>` : ""}<div class="jm-sorotan-aksi">${daftar}${info}</div></div></article>`;
+    return `<article class="jm-sorotan-kt">${poster}<div class="jm-sorotan-isi"><div class="jm-sorotan-pls">${atas}</div><h2>${r.slug ? `<a href="/event/${encodeURIComponent(r.slug)}">${esc(r.judul)}</a>` : esc(r.judul)}</h2>${fakta}${r.deskripsi ? `<p class="jm-sorotan-desk" data-no-ist>${esc(r.deskripsi)}</p>` : ""}<div class="jm-sorotan-aksi">${daftar}${info}</div></div></article>`;
   }).join("");
   el.hidden = false;
 }
@@ -247,15 +221,21 @@ async function main() {
   };
   nanti(gambarSorotan);
   await mulai();
-  nanti(() => pasangPita(document.getElementById("pitaRiwayat")));
   pasangBawah(R);
   addEventListener("error", (e) => { if (e.target.tagName !== "IMG") return; if (e.target.closest(".jm-feed-th")) e.target.remove(); }, true);
   document.getElementById("kartu").addEventListener("click", (e) => e.target.closest("[data-aksi=ulang]") && mulai());
+  /* kotak cari beranda membuka panel cari global (ikon, logo, saringan jenis), satu mesin dengan tombol cari di kepala */
   const input = document.getElementById("cariBeranda");
-  input.addEventListener("focus", () => siapkanIndeks().catch(() => { indeks = null; }), { once: true });
-  const tunda = debounce((q) => cari(q));
-  input.addEventListener("input", () => tunda(input.value));
-  document.getElementById("cariTbl").addEventListener("click", () => cari(input.value));
+  const bukaPanel = () => {
+    document.getElementById("cari")?.click();
+    const isi = document.querySelector("dialog.jm-cari .jm-cari-isi");
+    if (isi && input.value) { isi.value = input.value; isi.dispatchEvent(new Event("input", { bubbles: true })); }
+    input.value = "";
+  };
+  input.addEventListener("click", bukaPanel);
+  input.addEventListener("input", bukaPanel);
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); bukaPanel(); } });
+  document.getElementById("cariTbl").addEventListener("click", bukaPanel);
   input.addEventListener("keydown", (e) => e.key === "Enter" && cari(input.value));
   document.addEventListener("jm:bahasa", () => nanti(() => { gambarSorotan(); R && gambarKartu(); gambarEkosistem(); gambarJalur(); R && gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); pasangPita(document.getElementById("pitaRiwayat")); input.value && cari(input.value); }));
 }

@@ -60,12 +60,6 @@ dialog.jm-lembar::backdrop{background:rgb(11 23 38/.55)}
 @media (min-width:900px){.jm-dua{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 .jm-hero-cari{max-width:640px}
 .jm-hero-cari input{min-height:52px;border-radius:var(--r-pil);border:0}
-.jm-hasil{position:relative;margin-top:8px;display:grid;gap:10px;max-width:640px;padding:12px;border-radius:var(--r);background:var(--card);color:var(--ink)}
-.jm-hasil h3{font-size:var(--t-tombol);color:var(--ink2);margin-bottom:4px}
-.jm-hasil ul{list-style:none;margin:0;padding:0;display:grid}
-.jm-hasil a{display:block;padding:8px 6px;border-radius:var(--r-sm);color:var(--ink);text-decoration:none}
-.jm-hasil a:hover{background:var(--surface)}
-.jm-hasil small{display:block;color:var(--ink2)}
 .jm-hero .jm-sumber{color:var(--on-brand)}
 
 .jm-dua-baris{display:grid;gap:var(--gap)}
@@ -172,8 +166,7 @@ a.jm-bento:hover{border-color:var(--accent)}
 .jm-cari2-tbl:hover{filter:brightness(1.1)}
 .jm-hitung-hero{font-size:var(--t-body)}
 .jm-hitung-hero b{font:700 var(--t-body)/1 var(--display)}
-.jm-hero2 .jm-hasil{border:1px solid var(--line);border-radius:0}
-.jm-hero2 .jm-logo-grid{border:1px solid var(--ink);border-radius:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.jm-hero2 .jm-hero2 .jm-logo-grid{border:1px solid var(--ink);border-radius:0;grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (min-width:1000px){.jm-hero2 .jm-logo-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .jm-hero2 .jm-logo{flex-direction:column;align-items:flex-start;gap:8px;min-height:92px;padding:12px;font-size:var(--t-kecil)}
 .jm-hero2 .jm-logo-kol h3{padding:10px 12px}
@@ -677,3 +670,26 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 
 /* judul beranda dua baris (pemilik 9 Nov 2026) */
 .jm-hero2 h1{max-width:none;text-wrap:balance}
+
+/* kotak cari beranda: satu pil, ikon di kiri, tombol di dalam (pemilik 9 Nov 2026) */
+.jm-cari2{align-items:center;gap:8px;min-height:60px;padding:6px 6px 6px 18px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);box-shadow:var(--shadow)}
+.jm-cari2:focus-within{border-color:var(--accent)}
+.jm-cari2>.jm-ik{flex:none;color:var(--accent)}
+.jm-cari2 .jm-isian,.jm-cari2 .jm-isian:focus-visible{min-height:46px;padding:0 4px;border:0;border-radius:0;background:none;outline:none;box-shadow:none}
+.jm-cari2-tbl{min-height:46px;min-width:96px;border:0;border-radius:var(--r-pil);background:var(--brand);font-size:var(--t-body)}
+/* kisi institusi dan tombol lihat semua */
+.jm-hero2 .jm-logo-grid{border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow)}
+.jm-logo-kol h3 .jm-ik{flex:none;color:var(--accent)}
+.jm-hero2 #ekoSemua{display:flex;justify-content:center;gap:10px;width:100%;min-height:48px;margin:12px 0 0;border-radius:var(--r-pil);background:var(--brand);color:var(--on-brand);font:600 var(--t-body)/1 var(--font)}
+.jm-hero2 #ekoSemua:hover{background:var(--brand);filter:brightness(1.12)}
+.jm-hero2 #ekoSemua .jm-ik{transition:transform .18s ease-out}.jm-hero2 #ekoSemua:hover .jm-ik{transform:translateX(3px)}
+.jm-sorotan-kt h2 a{color:inherit;text-decoration:none}.jm-sorotan-kt h2 a:hover{color:var(--accent)}
+a.jm-sorotan-gb{cursor:pointer}
+/* kartu angka beranda: ikon, label, angka selalu sejajar antar kartu (pemilik 9 Nov 2026) */
+#kartu .jm-kpi{align-content:start;grid-template-rows:44px auto auto;row-gap:14px;padding:20px}
+#kartu .jm-kpi-ik{width:44px;height:44px}
+#kartu .jm-kpi-lab{align-self:center;min-height:0;padding-right:32px;font-size:var(--t-body)}
+#kartu .jm-kpi-n{flex-wrap:wrap;column-gap:8px;row-gap:2px}
+#kartu .jm-kpi-n .jm-pil{align-self:center}
+#kartu .jm-kpi-ctx{line-height:1.45}
+@media (max-width:640px){#kartu .jm-kpi{grid-template-rows:auto auto auto}}
