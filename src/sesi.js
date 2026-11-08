@@ -47,7 +47,8 @@ async function masuk(req, env) {
 
 async function keluar(req, env, ctx, p) {
   perlu(p);
-  await hak.hapusSesi(env, p.sesi.idHash);
+  // Kuki selalu dibersihkan: galat D1 tidak boleh membuat orang tetap masuk setelah menekan Keluar.
+  try { await hak.hapusSesi(env, p.sesi.idHash); } catch (e) { console.error("keluar: hapus sesi gagal", e?.message); }
   return json({ ok: true }, 200, { "set-cookie": cookie("", 0) });
 }
 

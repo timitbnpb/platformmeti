@@ -135,7 +135,10 @@ if (halaman === "masuk") {
   setuju.addEventListener("change", segarkan);
   document.addEventListener("click", (e) => { if (!setuju.checked && e.target.closest(".jm-tbl-google")) { e.preventDefault(); tampilPesan("galat", t("masuk.setuju_perlu")); } });
   segarkan();
-  if (saya.masuk) {
+  if (saya.masuk && params.get("keluar") === "1") { // tombol Keluar gagal di tengah jalan: ulangi sekali, jangan tampilkan "sudah masuk"
+    await api("/api/keluar", { metode: "POST" }).catch(() => {});
+    location.replace("/masuk?keluar=2");
+  } else if (saya.masuk) {
     form.hidden = true;
     $("sudah").hidden = false;
     $("lanjut").href = ke;
@@ -153,7 +156,7 @@ if (halaman === "masuk") {
   });
   // Masuk dengan Google: tampil hanya bila server menyatakan aktif; galat balik dari Google lewat ?galat=
   const galatG = params.get("galat");
-  if (params.get("keluar") === "1") tampilPesan("ok", t("masuk.sudah_keluar"));
+  if (params.get("keluar")) tampilPesan("ok", t("masuk.sudah_keluar"));
   if (/^google_[a-z_]+$/.test(galatG || "") && t("masuk." + galatG) !== "masuk." + galatG) tampilPesan("galat", t("masuk." + galatG));
   fetch("/api/status").then((r) => r.json()).then((s) => {
     const sep = document.querySelector(".jm-atau");

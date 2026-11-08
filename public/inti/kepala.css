@@ -128,7 +128,7 @@ dialog.jm-cari::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent
   nav.tabs>a,nav.tabs .jm-grup-tbl{justify-content:center;min-width:0;padding:0 8px;overflow:hidden}
   nav.tabs>a span,nav.tabs .jm-grup-tbl span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
-@media (min-width:1200px) and (max-width:1599px){nav.tabs>a .jm-ik,nav.tabs .jm-grup-tbl .jm-ik{display:none}nav.tabs>a,nav.tabs .jm-grup-tbl{font-size:var(--t-tombol)}}
+@media (min-width:1200px) and (max-width:1599px){nav.tabs>a,nav.tabs .jm-grup-tbl{font-size:var(--t-tombol)}}
 
 /* menu akun: avatar bulat (foto atau inisial) membuka menu turun; kanan kepala, menggantikan tombol keluar */
 .jm-akunwrap{position:relative;display:flex}
@@ -181,7 +181,7 @@ body header.top{gap:12px;padding-inline:var(--tepi)}
   .jm-caret{width:14px;height:14px;margin-left:0}
 }
 /* 1200-1439: ikon menu disembunyikan, merek tinggal logo agar muat */
-@media (min-width:1200px) and (max-width:1439px){nav.tabs>a .jm-ik,nav.tabs .jm-grup-tbl .jm-ik:not(.jm-caret){display:none}nav.tabs>a,nav.tabs .jm-grup-tbl{padding:0 12px!important;font-size:var(--t-tombol)}nav.tabs{gap:2px}}
+@media (min-width:1200px) and (max-width:1439px){nav.tabs>a,nav.tabs .jm-grup-tbl{padding:0 8px!important;font-size:var(--t-tombol)}nav.tabs{gap:2px}}
 
 /* G2: label bukti di baris, tautan "semua hasil" di palet */
 .jm-cari-bukti{flex:none;display:inline-flex}

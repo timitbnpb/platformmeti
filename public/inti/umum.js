@@ -21,7 +21,7 @@ export function debounce(fn, ms = 120) {
   return (...a) => { clearTimeout(h); h = setTimeout(() => fn(...a), ms); };
 }
 
-export const ikon = (nama, ukuran = 20) => `<svg class="jm-ik" width="${ukuran}" height="${ukuran}" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-${nama}"/></svg>`;
+export const ikon = (nama, ukuran = 20) => `<svg class="jm-ik" width="${ukuran}" height="${ukuran}" aria-hidden="true" focusable="false"><use href="/img/ikon.svg?v=2#i-${nama}"/></svg>`;
 
 /** Hanya jalur relatif di situs sendiri (cegah pengalihan terbuka, KPV §4). */
 export function amanKe(ke) {

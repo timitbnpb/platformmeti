@@ -674,3 +674,6 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-kpi-bauran .jm-kpi-n{flex-wrap:wrap;row-gap:2px}
 .jm-kpi-bauran .jm-kpi-n small{flex-basis:100%}
 @media (max-width:640px){.jm-kpi{grid-template-columns:minmax(0,1fr);grid-template-areas:"lab" "n" "ctx"}.jm-kpi-ik{display:none}.jm-kpi-lab{padding-right:40px;flex-wrap:wrap;min-height:32px}.jm-kpi-lab span:first-child{white-space:normal;overflow:visible}}
+
+/* judul beranda dua baris (pemilik 9 Nov 2026) */
+.jm-hero2 h1{max-width:none;text-wrap:balance}

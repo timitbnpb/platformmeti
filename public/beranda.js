@@ -215,7 +215,9 @@ async function gambarSorotan() {
   let d;
   try { d = await muat("kalender"); } catch (e) { el.hidden = true; return; }
   const n = new Date(), hari = `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, "0")}-${String(n.getDate()).padStart(2, "0")}`;
-  const baris = (d.baris || []).filter((r) => r && r.sorotan === true && r.judul && String(r.tanggal_selesai || r.tanggal || "") >= hari).sort((a, b) => String(a.tanggal).localeCompare(String(b.tanggal)));
+  /* sama dengan Kalender: semua agenda METI yang akan datang, terdekat lebih dulu (pemilik 9 Nov 2026), bukan hanya yang ditandai sorotan */
+  const agendaMeti = (r) => r.sorotan === true || [].concat(r.penyelenggara || []).some((x) => /^METI\b/.test(String(x)));
+  const baris = (d.baris || []).filter((r) => r && agendaMeti(r) && r.judul && String(r.tanggal_selesai || r.tanggal || "") >= hari).sort((a, b) => String(a.tanggal).localeCompare(String(b.tanggal))).slice(0, 3);
   if (!baris.length) { el.hidden = true; el.innerHTML = ""; return; }
   const luar = (u, kunci, kelas) => { const h = urlAman(u); return h ? `<a class="${kelas}" href="${esc(h)}" target="_blank" rel="noopener noreferrer">${esc(t(kunci))}</a>` : ""; };
   el.innerHTML = baris.map((r) => {

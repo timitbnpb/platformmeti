@@ -33,6 +33,9 @@
   Cache-Control: public, max-age=2592000, immutable
 /img/*
   Cache-Control: public, max-age=2592000
+/img/ikon.svg
+  ! Cache-Control
+  Cache-Control: public, max-age=0, must-revalidate
 /inti/*
   Cache-Control: public, max-age=300, must-revalidate
 /data/*

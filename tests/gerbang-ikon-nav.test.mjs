@@ -15,3 +15,8 @@ test("ikon navigasi unik", () => {
 test("ikon navigasi ada di ikon.svg", () => {
   assert.deepEqual(ikon.filter((k) => !svg.includes(`id="i-${k}"`)), []);
 });
+test("sprite ikon: id tidak ganda, tidak dicache panjang (ikon baru harus langsung tampil di peramban lama)", () => {
+  const id = [...svg.matchAll(/<symbol id="([^"]+)"/g)].map((m) => m[1]);
+  assert.deepEqual(id.filter((k, i) => id.indexOf(k) !== i), []);
+  assert.match(readFileSync("public/_headers", "utf8"), /\/img\/ikon\.svg\n\s+! Cache-Control\n\s+Cache-Control: public, max-age=0, must-revalidate/);
+});
