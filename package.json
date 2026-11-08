@@ -9,6 +9,7 @@
   },
   "scripts": {
     "uji": "node --test",
+    "uji:live": "node scripts/mesin/uji_asap_live.mjs",
     "dev": "wrangler dev",
     "agents:build": "node scripts/agents/build.mjs",
     "agents:check": "node scripts/agents/build.mjs --cek",

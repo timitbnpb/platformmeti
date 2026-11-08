@@ -110,6 +110,7 @@ Pengulas melapor, tidak auto-fix. Pengerja pemiliknya yang membetulkan.
 
 ## 9. Batas mati
 
+- Deploy belum dianggap tayang sebelum `npm run uji:live` lulus (uji asap live, keputusan pemilik 9 Nov 2026).
 - Subagent tidak deploy, tidak push, tidak commit; sesi induk yang commit. Migrasi D1 produksi dan unggah R2 produksi dijalankan pemilik.
 - Gerbang, ambang, dan uji haram dilemahkan untuk meloloskan kerjaan sendiri.
 - Tidak ada rahasia, data pribadi, atau `account_id` di repo (KPV §9).

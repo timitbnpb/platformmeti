@@ -292,7 +292,7 @@ JM-G01 sampai JM-G04 menunggu C-01 dan C-09.
 - Subagent tanpa riwayat membandingkan kode dengan paket; menulis `PENYELARASAN.md`. **Ukuran:** M
 
 #### JM-H04 `[induk]` `[manusia]` Rilis
-- Commit path spesifik, `wrangler d1 migrations apply --remote` oleh pemilik, deploy, cek `/api/status`. **Ukuran:** S
+- Commit path spesifik, `wrangler d1 migrations apply --remote` oleh pemilik, deploy, cek `/api/status`. Deploy belum dianggap tayang sebelum `npm run uji:live` lulus (bersesi bila `SESI_UJI` ada). **Ukuran:** S
 
 ## 4. Grafik dependensi
 
