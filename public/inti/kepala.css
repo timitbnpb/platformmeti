@@ -202,3 +202,11 @@ body header.top{gap:12px;padding-inline:var(--tepi)}
 .jm-cari-mode button{display:inline-flex;align-items:center;gap:6px;min-height:var(--target);padding:0 14px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--surface);color:var(--ink);font:600 var(--t-kecil)/1 var(--font);cursor:pointer}
 .jm-cari-mode button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-brand)}
 .jm-cari-tanya{flex:1;display:grid;align-content:start;gap:12px;padding:8px 16px 16px;overflow-y:auto;overscroll-behavior:contain}
+/* panel cari: mode ringkas, jalan pintas 4 kolom sama tinggi, ikon terbaca (pemilik 9 Nov 2026) */
+.jm-cari-mode{gap:6px;padding:0 16px 10px}
+.jm-cari-mode button{min-height:36px;padding:0 14px}
+.jm-cari .jm-cari-mode button[aria-pressed=true] .jm-ik{color:inherit}
+.jm-cari-pintas{grid-auto-rows:1fr}
+.jm-cari-pintas a{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;min-height:84px;padding:12px;border-radius:var(--r-sm);background:var(--card)}
+.jm-cari-pintas .jm-ik{box-sizing:content-box;width:18px;height:18px;padding:7px;border-radius:50%;background:var(--soft-hijau)}
+@media (min-width:601px){.jm-cari-pintas{grid-template-columns:repeat(4,minmax(0,1fr))}}

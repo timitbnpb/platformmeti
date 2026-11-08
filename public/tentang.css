@@ -646,3 +646,23 @@ span.tn-kp-b{cursor:default}
 .tn-hero-isi .tn-angka dd{color:var(--meti-lime);line-height:1}
 .tn-hero-isi .tn-angka dt{color:color-mix(in srgb,var(--on-brand) 78%,transparent);opacity:1}
 @media (max-width:760px){.tn-hero-isi .tn-angka{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:14px;width:100%}.tn-hero-isi .tn-angka>div:nth-child(3){border-left:0;padding-left:0}}
+/* kartu foto: nama di bawah foto, tidak menutupi wajah; avatar anggota lebih kecil (pemilik 9 Nov 2026) */
+.tn-bagan-bg .tn-fk,.tn-bagan-bg .tn-fk.besar,.tn-bagan-bg .tn-fk.kecil{display:grid;aspect-ratio:auto;height:100%}
+.tn-bagan-bg .tn-fk-b{position:relative;inset:auto;display:grid;grid-template-rows:auto 1fr;width:100%;height:100%}
+.tn-bagan-bg .tn-fk-bg{position:relative;inset:auto;aspect-ratio:1/1;overflow:hidden}
+.tn-bagan-bg .tn-fk-ini{padding-bottom:0}
+.tn-bagan-bg .tn-fk::after{display:none}
+.tn-bagan-bg .tn-fk-t,.tn-bagan-bg .tn-fk.besar .tn-fk-t{position:static;align-content:start;padding:10px 12px 12px;background:var(--brand);text-align:center}
+.tn-bagan-bg .tn-fk-t b{overflow-wrap:break-word}
+.tn-bagan-bg .tn-fk-kosong .tn-fk-t{background:none}
+.tn-av-kisi{grid-template-columns:repeat(auto-fill,40px)!important}
+.tn-av-kisi li,.tn-av-kisi .tn-av,.tn-av-kisi .tn-plus{width:40px;height:40px}
+.tn-av-kisi .tn-ini,.tn-av-kisi .tn-plus{font-size:var(--t-label)}
+/* kartu orang: nama di bawah foto, wajah tidak tertutup (pemilik 9 Nov 2026) */
+.tn-kp{aspect-ratio:auto;background:var(--brand)}
+.tn-kp-b,.tn-lr .tn-kp-b{position:relative;inset:auto;display:grid;grid-template-rows:auto 1fr}
+.tn-kp-f{position:relative;inset:auto;aspect-ratio:1/1}
+.tn-kp-f::after{display:none}
+.tn-kp-n,.tn-lr .tn-kp-n{position:static;inset:auto;align-content:start;min-height:64px;padding:8px 10px 10px;background:var(--brand);text-align:center}
+.tn-kp-n b,.tn-lr .tn-kp-n b{color:var(--on-brand);-webkit-line-clamp:unset;line-clamp:unset;display:block}
+.tn-kp-n small,.tn-lr .tn-kp-n small{color:color-mix(in srgb,var(--on-brand) 85%,transparent);-webkit-line-clamp:unset;line-clamp:unset;display:block}

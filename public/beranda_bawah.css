@@ -242,3 +242,26 @@
 .jm-sorotan-daftar:focus-visible,.jm-sorotan-info:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .jm-sorotan-info{display:inline-flex;align-items:center;gap:6px;min-height:var(--target);padding:0 18px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);color:var(--accent);font:600 var(--t-tombol)/1 var(--font);text-decoration:none}
 @media (max-width:767px){.jm-sorotan-isi{padding:20px 16px}.jm-sorotan-isi h2{font-size:var(--t-h2)}.jm-sorotan-poster{max-height:360px}}
+/* kartu agenda: pembicara dari poster, teks rata kanan-kiri (pemilik 9 Nov 2026) */
+.jm-sorotan-isi h2,.jm-sorotan-desk{text-align:justify;text-wrap:wrap}
+.jm-sorotan-isi h2 a{display:block}
+.jm-sorotan-desk{-webkit-line-clamp:2}
+.jm-sorotan-orang{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:1100px){.jm-sorotan-orang{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:480px){.jm-sorotan-orang{grid-template-columns:minmax(0,1fr)}}
+.jm-sorotan-orang li{display:flex;align-items:flex-start;gap:10px;min-width:0;padding:10px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card)}
+.jm-sorotan-orang .jm-ik{flex:none;margin-top:2px;color:var(--accent)}
+.jm-sorotan-orang span{display:grid;gap:2px;min-width:0}
+.jm-sorotan-orang b{font:600 var(--t-tombol)/1.3 var(--font);color:var(--ink)}
+.jm-sorotan-orang small{font-size:var(--t-kecil);line-height:1.3;color:var(--ink2)}
+.jm-sorotan-orang small:first-child{color:var(--accent);font-weight:600}
+/* agenda bulan berjalan: kepala bulan, kartu berposter selebar penuh, tanpa poster dua kolom */
+.jm-sorotan{grid-template-columns:repeat(2,minmax(0,1fr))}
+.jm-sorotan-hd{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.jm-sorotan-hd h2{margin:0;font:700 var(--t-h1)/1.2 var(--display);color:var(--head)}
+.jm-sorotan-hd .jm-lihat{margin:0}
+.jm-sorotan-kt:has(.jm-sorotan-gb){grid-column:1/-1}
+.jm-sorotan-kt:not(:has(.jm-sorotan-gb)) .jm-sorotan-isi{justify-content:flex-start;padding:20px}
+.jm-sorotan-kt:not(:has(.jm-sorotan-gb)) h2{font-size:var(--t-h2)}
+.jm-sorotan-kt:not(:has(.jm-sorotan-gb)) .jm-sorotan-fakta{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:767px){.jm-sorotan{grid-template-columns:minmax(0,1fr)}}

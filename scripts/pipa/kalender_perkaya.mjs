@@ -14,7 +14,7 @@ const BUKTI = new Set(['kata-pihak', 'cuplikan', 'dokumen-resmi', 'primer']);
 const sumberSah = (s) => Array.isArray(s) && s.length > 0 && s.every((x) => x && x.url && x.tanggal_periksa && BUKTI.has(x.tingkat_bukti));
 // ponytail: langit-langit bukti (media maks cuplikan; situs-* maks kata-pihak) dicek di sini; samakan dengan taksonomi.js bila daftarnya berubah.
 const langit = (s) => s.every((x) => !(x.label === 'media' && x.tingkat_bukti !== 'cuplikan') && !(/^situs-/.test(x.label) && !['kata-pihak', 'cuplikan'].includes(x.tingkat_bukti)));
-const KUNCI = ['deskripsi', 'sorotan', 'lokasi', 'penyelenggara', 'mitra', 'organisasi_ids', 'keterbukaan', 'daftar_url', 'instagram', 'youtube', 'situs', 'tema', 'video_ids', 'berita', 'kapasitas', 'tanggal_catatan', 'jam', 'seri', 'kata_kunci', 'sumber'];
+const KUNCI = ['pembicara', 'fasilitas', 'deskripsi', 'sorotan', 'lokasi', 'penyelenggara', 'mitra', 'organisasi_ids', 'keterbukaan', 'daftar_url', 'instagram', 'youtube', 'situs', 'tema', 'video_ids', 'berita', 'kapasitas', 'tanggal_catatan', 'jam', 'seri', 'kata_kunci', 'sumber'];
 export const bisaTayang = (g) => !!(g && g.file && /\bMETI\b/.test(g.hak || '') && !/antara/i.test(`${g.hak} ${g.url_gambar || ''}`));
 export const slugDari = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60).replace(/-+$/, '');
 const EVENT = (b) => !['regulasi', 'tenggat'].includes(b.jenis);
@@ -38,6 +38,7 @@ export function gabung(kalender, perkaya) {
     if (!k.tanggal || !sumberSah(k.sumber) || !langit(k.sumber)) { tolak++; continue; }
     const b = { id: k.kandidat_id, tanggal: k.tanggal, judul: k.judul, mitra: (k.penyelenggara || []).join(', '), jenis: k.jenis, sumber: { label: k.sumber[0].label, url: k.sumber[0].url, tanggal: k.sumber[0].tanggal_periksa }, kandidat: k.tanda };
     tempel(b, k);
+    for (let i = baris.length - 1; i >= 0; i--) if (baris[i].id === b.id) baris.splice(i, 1); // idempoten: skrip membaca berkas terbitnya sendiri
     baris.push(b);
   }
   baris.sort((x, y) => x.tanggal.localeCompare(y.tanggal) || x.judul.localeCompare(y.judul));

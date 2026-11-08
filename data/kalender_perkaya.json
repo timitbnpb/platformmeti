@@ -546,6 +546,13 @@
     "l_41bf1f0b41"
    ],
    "keterbukaan": "umum",
+   "pembicara": [
+    { "peran": "keynote", "nama": "Amarullah Ramadhan, S.Tr.T", "ket": "Installer Solar Panel" },
+    { "peran": "narasumber", "nama": "Adrian Lembong", "ket": "Ketua Bidang Advokasi dan Regulasi METI" },
+    { "peran": "narasumber", "nama": "Dr. Parlindungan Purba, SH., MM", "ket": "Ketua METI Wilayah" },
+    { "peran": "moderator", "nama": "Lananda Arsy Jovansyah" }
+   ],
+   "fasilitas": "Doorprize dan E-Certificate",
    "daftar_url": "https://event.onesia.id/index.php?event=elektrifikasi_daerah",
    "gambar": {
     "file": "img/acara/webinar-elektrifikasi-3t-2026.webp",

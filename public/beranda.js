@@ -20,6 +20,7 @@ const namaPendek = (n) => { for (const [re, a] of ALIAS) if (re.test(n)) return 
 const URUT_ASOSIASI = [/metiires|masyarakat energi terbarukan/i, /surya/i, /biofuel/i, /panas bumi/i, /apamsi|modul surya/i, /applta|hidro/i, /aeski/i, /mki|ketenagalistrikan/i];
 const URUT_LEMBAGA = [/energi dan sumber daya mineral/i, /dewan energi/i, /bappenas|perencanaan pembangunan/i, /riset dan inovasi/i, /kementerian keuangan/i, /perindustrian/i, /lingkungan hidup|kehutanan/i, /danantara|investasi/i];
 const KAT_EKO = [["bumn", 1], ["swasta", 2], ["asosiasi", 3], ["lembaga", 4]];
+const TOKOH_EKO = ["o_2c9573f328", "o_58df02167d", "o_f9f5767c0d", "o_6ca0780a28", "o_97948a1cd1", "o_5d4ea2ba31", "o_f9c769dceb", "o_737bbd1723"];
 const IK_EKO = { bumn: "gedung", swasta: "pabrik", asosiasi: "tautan", lembaga: "parlemen" };
 const INSIGHT_KARTU = 17; // ponytail: jumlah kartu /insight ditulis tetap; hitung dari halaman itu bila kartunya sering berubah
 /** 8 teratas per kategori: daftar sematan (id atau nama) lebih dulu, sisanya menurut total MW proyek terkait. Nama baru di data masuk otomatis. */
@@ -69,6 +70,11 @@ function gambarKartu() {
   const kartu = R.kartu.filter((k) => KARTU.includes(k.kode)).sort((a, b) => urut(a) - urut(b)).map((k) => ({ kode: k.kode, nilai: k.nilai, satuan: k.satuan }));
   const konstruksi = R.proyek_per_status?.konstruksi, pr = kartu.find((k) => k.kode === "proyek");
   if (pr && Number.isFinite(konstruksi)) pr.ctx = t("beranda.kpi.konstruksi", { n: angka(konstruksi) });
+  for (const k of kartu) {
+    if (k.kode === "kapasitas") k.ctx = t("beranda.kpi.kapasitas");
+    if (k.kode === "regulasi") k.ctx = t("beranda.kpi.regulasi", { n: angka(R.hitung.regulasi) });
+    if (k.kode === "organisasi") k.ctx = t("beranda.kpi.organisasi");
+  }
   const b = BAURAN, sisa = angka(b.target - b.nilai, { desimal: 2 });
   const bauran = `<div class="jm-kpi jm-kpi-bauran jm-w1"><div class="jm-kpi-ik">${IKON_KPI.bauran}</div><span class="jm-kpi-src">${sumberHtml(`${esc(t("beranda.src.bauran", { tahun: b.tahun }))} <a href="${esc(b.url)}" target="_blank" rel="noopener noreferrer">katadata.co.id</a>`)}</span>
     <div class="jm-kpi-lab"><span>${esc(t("beranda.kk.bauran"))}</span></div>
@@ -76,8 +82,8 @@ function gambarKartu() {
     <div class="jm-kpi-ctx">${esc(t("beranda.kpi.bauran_target", { target: angka(b.target), tahun: b.tahun_target, sisa }))}</div></div>`;
   el.innerHTML = bauran + kartu.map((k, i) => `<div class="jm-kpi jm-w${((i + 1) % 5) + 1}"><div class="jm-kpi-ik">${IKON_KPI[k.kode]}</div><span class="jm-kpi-src">${sumberHtml(esc(t("beranda.src." + k.kode, { tanggal: tgl, total: angka(R.hitung.regulasi) })))}</span>
     <div class="jm-kpi-lab"><span>${esc(t("beranda.kk." + k.kode))}</span></div>
-    <div class="jm-kpi-n"><b>${esc(angka(k.nilai))}</b><small>${esc(t("beranda.u." + k.satuan))}</small>${k.kode === "kapasitas" ? `<span class="jm-pil jm-pil-est">EST</span>` : ""}</div>
-    <div class="jm-kpi-ctx">${k.ctx ? esc(k.ctx) : ""}</div></div>`).join("");
+    <div class="jm-kpi-n"><b>${esc(angka(k.nilai))}</b><small>${esc(t("beranda.u." + k.satuan))}</small></div>
+    <div class="jm-kpi-ctx">${k.kode === "kapasitas" ? `<span class="jm-pil jm-pil-est">EST</span> ` : ""}${k.ctx ? esc(k.ctx) : ""}</div></div>`).join("");
   pasangSumber(tgl);
 }
 
@@ -132,12 +138,16 @@ async function gambarEkosistem() {
     const d = delapan(org.baris, pro);
     kisi.innerHTML = KAT_EKO.map(([kat, w]) => {
       const { daftar } = d[kat];
-      const tiles = daftar.map((o) => {
+      const tiles = daftar.slice(0, 6).map((o) => {
         const nama = namaPendek(o.nama), slug = LOGO_ORG[o.id];
         return `<a class="jm-logo" href="/direktori?tampil=lembaga" title="${esc(o.nama)}">${slug ? `<img src="/img/logo/${slug}.png" width="26" height="26" alt="" loading="lazy">` : `<span class="jm-logo-ini jm-w${w}" aria-hidden="true">${esc(inisial(nama))}</span>`}<span>${esc(nama)}</span></a>`;
       });
       return `<div class="jm-logo-kol"><h3>${ikon(IK_EKO[kat], 18)}${esc(t("beranda.eko.k." + kat))}</h3>${tiles.join("")}</div>`;
     }).join("");
+    const tokoh = await muat("orang"), byId = new Map(tokoh.baris.map((o) => [o.id, o]));
+    const tileTokoh = TOKOH_EKO.map((id) => byId.get(id)).filter(Boolean).map((o) => `<a class="jm-logo jm-logo-orang" href="/direktori?pakar=${encodeURIComponent(o.id)}" title="${esc(o.nama)}"><img src="/img/orang/${esc(o.id)}.webp" width="40" height="40" alt="" loading="lazy" data-galat="hapus"><span><b>${esc(o.nama)}</b><small>${esc(o.organisasi_terkini ? namaPendek(o.organisasi_terkini) : "")}</small></span></a>`).join("");
+    kisi.insertAdjacentHTML("beforeend", `<div class="jm-logo-tokoh"><h3>${ikon("orang", 18)}${esc(t("beranda.eko.k.tokoh"))}</h3><div>${tileTokoh}</div></div>`);
+    document.getElementById("ekoTokoh").innerHTML = `<span>${esc(t("beranda.eko.tokoh_semua", { n: angka(new Set(tokoh.baris.map((o) => norm(o.nama))).size) }))}</span>${ikon("panah-kanan", 18)}`;
     document.getElementById("ekoSemua").innerHTML = `<span>${esc(t("beranda.eko.semua", { n: angka(org.baris.length) }))}</span>${ikon("panah-kanan", 18)}`;
   } catch (e) { sembunyi(kisi, e); }
 }
@@ -189,12 +199,15 @@ async function gambarSorotan() {
   let d;
   try { d = await muat("kalender"); } catch (e) { el.hidden = true; return; }
   const n = new Date(), hari = `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, "0")}-${String(n.getDate()).padStart(2, "0")}`;
-  /* sama dengan Kalender: semua agenda METI yang akan datang, terdekat lebih dulu (pemilik 9 Nov 2026), bukan hanya yang ditandai sorotan */
-  const agendaMeti = (r) => r.sorotan === true || [].concat(r.penyelenggara || []).some((x) => /^METI\b/.test(String(x)));
-  const baris = (d.baris || []).filter((r) => r && agendaMeti(r) && r.judul && String(r.tanggal_selesai || r.tanggal || "") >= hari).sort((a, b) => String(a.tanggal).localeCompare(String(b.tanggal))).slice(0, 3);
+  /* sama dengan Kalender: semua agenda pada bulan agenda terdekat, tanggal urut (pemilik 9 Nov 2026) */
+  const akanDatang = (d.baris || []).filter((r) => r && r.judul && r.jenis !== "regulasi" && String(r.tanggal_selesai || r.tanggal || "") >= hari).sort((a, b) => String(a.tanggal).localeCompare(String(b.tanggal)));
+  const bulanIni = akanDatang[0] ? String(akanDatang[0].tanggal < hari ? hari : akanDatang[0].tanggal).slice(0, 7) : "";
+  const baris = akanDatang.filter((r) => String(r.tanggal).slice(0, 7) <= bulanIni);
   if (!baris.length) { el.hidden = true; el.innerHTML = ""; return; }
   const luar = (u, kunci, kelas) => { const h = urlAman(u); return h ? `<a class="${kelas}" href="${esc(h)}" target="_blank" rel="noopener noreferrer">${esc(t(kunci))}</a>` : ""; };
-  el.innerHTML = baris.map((r) => {
+  const judulBulan = tanggal(bulanIni + "-01", { gaya: "panjang" }).split(" ").slice(1, -1).join(" ");
+  const kepalaAgenda = `<header class="jm-sorotan-hd"><h2>${esc(t("beranda.sorotan.bulan", { bulan: judulBulan }))}</h2><a class="jm-lihat" href="/kalender">${ikon("kalender", 16)}<span>${esc(t("beranda.sorotan.kalender"))}</span></a></header>`;
+  el.innerHTML = kepalaAgenda + baris.map((r) => {
     const mulai = r.tanggal ? tanggal(r.tanggal) : "", akhir = r.tanggal_selesai && r.tanggal_selesai !== r.tanggal ? tanggal(r.tanggal_selesai) : "";
     /* pemilik 9 Nov 2026 "jelek banget": poster utuh, chip info berikon, hitung mundur, deskripsi ringkas tanpa hover istilah, tombol Daftar menonjol */
     const pf = r.poster?.file, sisa = Math.round((Date.parse(r.tanggal) - Date.parse(hari)) / 864e5);
@@ -202,11 +215,13 @@ async function gambarSorotan() {
     const daring = /daring|zoom|online|virtual/i.test(r.lokasi?.tempat || "");
     const chip = (ik, isi) => (isi ? `<li>${ikon(ik, 18)}<span>${esc(isi)}</span></li>` : "");
     const pil = (kls, ik, isi) => `<span class="jm-sorotan-pl ${kls}">${ikon(ik, 14)}${esc(isi)}</span>`;
-    const atas = [pil("jm-sorotan-pl-utama", "kalender-bintang", t("beranda.sorotan.label")), r.jenis ? pil("", "mikrofon", t("beranda.sorotan.j." + r.jenis) === "beranda.sorotan.j." + r.jenis ? r.jenis : t("beranda.sorotan.j." + r.jenis)) : "", daring ? pil("", "video", t("beranda.sorotan.daring")) : "", sisa >= 0 ? pil("jm-sorotan-pl-hitung", "jam", sisa === 0 ? t("beranda.sorotan.hari_ini") : t("beranda.sorotan.lagi", { n: sisa })) : ""].join("");
+    const atas = [pil("jm-sorotan-pl-utama", "kalender-bintang", t("beranda.sorotan.label")), r.jenis ? pil("", "mikrofon", t("beranda.sorotan.j." + r.jenis) === "beranda.sorotan.j." + r.jenis ? r.jenis : t("beranda.sorotan.j." + r.jenis)) : "", daring ? pil("", "video", t("beranda.sorotan.daring")) : "", sisa >= 0 ? pil("jm-sorotan-pl-hitung", "jam", sisa === 0 ? t("beranda.sorotan.hari_ini") : t("beranda.sorotan.lagi", { n: sisa })) : "", r.fasilitas ? pil("", "medali", r.fasilitas) : ""].join("");
     const fakta = `<ul class="jm-sorotan-fakta">${chip("kalender", mulai + (akhir ? " - " + akhir : ""))}${chip("jam", r.jam)}${chip(daring ? "video" : "lokasi", [r.lokasi?.tempat, r.lokasi?.kota].filter(Boolean).join(", "))}${chip("orang", (r.penyelenggara || []).join(", "))}</ul>`;
+    const IK_P = { keynote: "mikrofon", narasumber: "orang", moderator: "orang" };
+    const orang = r.pembicara?.length ? `<ul class="jm-sorotan-orang">${r.pembicara.map((p) => `<li>${ikon(IK_P[p.peran] || "orang", 18)}<span><small>${esc(t("beranda.sorotan.p." + p.peran))}</small><b>${esc(p.nama)}</b>${p.ket ? `<small>${esc(p.ket)}</small>` : ""}</span></li>`).join("")}</ul>` : "";
     const daftar = urlAman(r.daftar_url) ? `<a class="jm-sorotan-daftar" href="${esc(urlAman(r.daftar_url))}" target="_blank" rel="noopener noreferrer">${esc(t("beranda.sorotan.daftar"))}${ikon("panah-kanan", 18)}</a>` : "";
     const info = r.slug ? `<a class="jm-sorotan-info" href="/event/${encodeURIComponent(r.slug)}">${ikon("tautan", 16)}${esc(t("beranda.sorotan.info"))}</a>` : "";
-    return `<article class="jm-sorotan-kt">${poster}<div class="jm-sorotan-isi"><div class="jm-sorotan-pls">${atas}</div><h2>${r.slug ? `<a href="/event/${encodeURIComponent(r.slug)}">${esc(r.judul)}</a>` : esc(r.judul)}</h2>${fakta}${r.deskripsi ? `<p class="jm-sorotan-desk" data-no-ist>${esc(r.deskripsi)}</p>` : ""}<div class="jm-sorotan-aksi">${daftar}${info}</div></div></article>`;
+    return `<article class="jm-sorotan-kt">${poster}<div class="jm-sorotan-isi"><div class="jm-sorotan-pls">${atas}</div><h2>${r.slug ? `<a href="/event/${encodeURIComponent(r.slug)}">${esc(r.judul)}</a>` : esc(r.judul)}</h2>${fakta}${orang}${r.deskripsi ? `<p class="jm-sorotan-desk" data-no-ist>${esc(r.deskripsi)}</p>` : ""}<div class="jm-sorotan-aksi">${daftar}${info}</div></div></article>`;
   }).join("");
   el.hidden = false;
 }
