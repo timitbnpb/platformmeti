@@ -12,7 +12,10 @@ import { kontenBeranda, daftarKonten } from "/inti/konten_beranda.js";
 import { muat, label, urlAman, norm, namaRegulasi, sembunyi } from "/publik.js";
 import { pasangPita } from "/inti/riwayat.js";
 
-const KARTU = ["proyek", "kapasitas", "organisasi", "orang", "regulasi"];
+const KARTU = ["kapasitas", "proyek", "regulasi", "organisasi"];
+/* Bauran energi primer EBT: angka resmi tahunan Kementerian ESDM, ditulis tangan; perbarui saat capaian tahunan baru dirilis.
+   Target menurut KEN (PP 40/2025): 23% pada 2030 (KEN lama PP 79/2014: 23% pada 2025). */
+const BAURAN = { nilai: 15.75, tahun: 2025, target: 23, tahun_target: 2030, url: "https://katadata.co.id/berita/energi/695f76f7412bc/bauran-ebt-capai-15-75-pada-akhir-2025-plta-masih-yang-terbesar" };
 const ALIAS = [[/pertamina power indonesia|pertamina nre/i, "Pertamina NRE"], [/kementerian energi dan sumber daya mineral/i, "Kementerian ESDM"], [/masyarakat energi terbarukan/i, "METI"], [/badan riset dan inovasi nasional/i, "BRIN"], [/asosiasi energi surya/i, "AESI"], [/asosiasi produsen biofuel/i, "APROBI"], [/asosiasi panas bumi/i, "API (panas bumi)"], [/kementerian investasi/i, "Kementerian Investasi/BKPM"], [/direktorat jenderal energi baru/i, "Ditjen EBTKE"], [/^pln$/i, "PLN"], [/otoritas jasa keuangan/i, "OJK"], [/medco energi internasional/i, "Medco Energi"], [/sumitomo/i, "Sumitomo"], [/barito renewables/i, "Barito Renewables"], [/pertamina geothermal/i, "Pertamina Geothermal"], [/badan usaha milik negara/i, "Kementerian BUMN"], [/kementerian investasi/i, "Kementerian Investasi"], [/pln nusantara power/i, "PLN Nusantara Power"], [/asosiasi panas bumi/i, "API Panas Bumi"]];
 const namaPendek = (n) => { for (const [re, a] of ALIAS) if (re.test(n)) return a; return n.replace(/^PT\.?\s+/i, "").replace(/\s*\((Persero)\)/i, "").replace(/\s+Tbk$/i, ""); };
 const URUT_ASOSIASI = [/metiires|masyarakat energi terbarukan/i, /surya/i, /biofuel/i, /panas bumi/i, /apamsi|modul surya/i, /applta|hidro/i, /aeski/i, /mki|ketenagalistrikan/i];
@@ -51,6 +54,7 @@ const IKON_KPI = {
   organisasi: IK('<path d="M4 21V5l9-2v18M13 8h7v13M7 8h3M7 12h3M7 16h3M3 21h18"/>'),
   orang: IK('<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M15 14c4-1 6 1 6 5"/>'),
   regulasi: IK('<path d="M12 3v18M6 21h12M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/>'),
+  bauran: IK('<circle cx="12" cy="12" r="9"/><path d="M12 3v9l6.4 6.4"/>'),
   konstruksi: IK('<path d="M3 21h18M6 21V9h5v12M11 9 4 6M8 3l8 6M16 9v7l-2 2"/>'),
 };
 /** Ikon info bulat di pojok kanan atas tiap bagian (isi: catatan sumber). */
@@ -62,16 +66,22 @@ function pasangSumber(tgl) {
 }
 function gambarKartu() {
   const el = document.getElementById("kartu"), tgl = tanggal(R.dibangun_pada);
-  const kartu = R.kartu.filter((k) => KARTU.includes(k.kode)).map((k) => ({ kode: k.kode, nilai: k.nilai, satuan: k.satuan }));
-  const konstruksi = R.proyek_per_status?.konstruksi;
-  if (Number.isFinite(konstruksi)) kartu.push({ kode: "konstruksi", nilai: konstruksi, satuan: "proyek", dari: R.hitung.proyek });
-  el.innerHTML = kartu.map((k, i) => `<div class="jm-kpi jm-w${(i % 5) + 1}"><div class="jm-kpi-ik">${IKON_KPI[k.kode]}</div><span class="jm-kpi-src">${sumberHtml(esc(t("beranda.src." + k.kode, { tanggal: tgl, total: angka(R.hitung.regulasi) })))}</span>
+  const urut = (k) => KARTU.indexOf(k.kode);
+  const kartu = R.kartu.filter((k) => KARTU.includes(k.kode)).sort((a, b) => urut(a) - urut(b)).map((k) => ({ kode: k.kode, nilai: k.nilai, satuan: k.satuan }));
+  const konstruksi = R.proyek_per_status?.konstruksi, pr = kartu.find((k) => k.kode === "proyek");
+  if (pr && Number.isFinite(konstruksi)) pr.ctx = t("beranda.kpi.konstruksi", { n: angka(konstruksi) });
+  const b = BAURAN, sisa = angka(b.target - b.nilai, { desimal: 2 });
+  const bauran = `<div class="jm-kpi jm-kpi-bauran jm-w1"><div class="jm-kpi-ik">${IKON_KPI.bauran}</div><span class="jm-kpi-src">${sumberHtml(`${esc(t("beranda.src.bauran", { tahun: b.tahun }))} <a href="${esc(b.url)}" target="_blank" rel="noopener noreferrer">katadata.co.id</a>`)}</span>
+    <div class="jm-kpi-lab"><span>${esc(t("beranda.kk.bauran"))}</span></div>
+    <div class="jm-kpi-n"><b>${esc(angka(b.nilai, { desimal: 2 }))}%</b><small>${esc(t("beranda.u.bauran", { tahun: b.tahun }))}</small></div>
+    <div class="jm-kpi-ctx">${esc(t("beranda.kpi.bauran_target", { target: angka(b.target), tahun: b.tahun_target, sisa }))}</div></div>`;
+  el.innerHTML = bauran + kartu.map((k, i) => `<div class="jm-kpi jm-w${((i + 1) % 5) + 1}"><div class="jm-kpi-ik">${IKON_KPI[k.kode]}</div><span class="jm-kpi-src">${sumberHtml(esc(t("beranda.src." + k.kode, { tanggal: tgl, total: angka(R.hitung.regulasi) })))}</span>
     <div class="jm-kpi-lab"><span>${esc(t("beranda.kk." + k.kode))}</span>${k.kode === "kapasitas" ? `<span class="jm-pil jm-pil-est">EST</span>` : ""}</div>
     <div class="jm-kpi-n"><b>${esc(angka(k.nilai))}</b><small>${esc(t("beranda.u." + k.satuan))}</small></div>
-    <div class="jm-kpi-ctx">${k.dari ? esc(t("beranda.dari", { n: angka(k.nilai), total: angka(k.dari) })) : ""}</div></div>`).join("");
+    <div class="jm-kpi-ctx">${k.ctx ? esc(k.ctx) : ""}</div></div>`).join("");
   pasangSumber(tgl);
-  const IKH = { proyek: "proyek", organisasi: "direktori", orang: "orang", regulasi: "regulasi", berita: "berita" };
-  document.getElementById("heroHitung").innerHTML = ["proyek", "organisasi", "orang", "regulasi", "berita"].map((k, i) => `<li class="jm-w${(i % 5) + 1}"><span class="jm-hh-ik" aria-hidden="true">${ikon(IKH[k], 20)}</span><span class="jm-hh-t"><b>${esc(angka(R.hitung[k]))}</b><span>${esc(t("beranda.hero.h." + k))}</span></span></li>`).join("") + `<li class="jm-hitung-src">${sumberHtml(esc(t("beranda.sumber", { tanggal: tgl })))}</li>`;
+  const IKH = { proyek: "proyek", organisasi: "direktori", regulasi: "regulasi", berita: "berita" };
+  document.getElementById("heroHitung").innerHTML = ["proyek", "organisasi", "regulasi", "berita"].map((k, i) => `<li class="jm-w${(i % 5) + 1}"><span class="jm-hh-ik" aria-hidden="true">${ikon(IKH[k], 20)}</span><span class="jm-hh-t"><b>${esc(angka(R.hitung[k]))}</b><span>${esc(t("beranda.hero.h." + k))}</span></span></li>`).join("") + `<li class="jm-hitung-src">${sumberHtml(esc(t("beranda.sumber", { tanggal: tgl })))}</li>`;
 }
 
 async function gambarBerita() {

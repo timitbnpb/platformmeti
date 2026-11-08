@@ -670,3 +670,7 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 .jm-jalur:hover .jm-jalur-sp{opacity:1}
 .jm-jalur-proyek{--tk:var(--data2)}.jm-jalur-wilayah{--tk:var(--data3)}.jm-jalur-rantai{--tk:var(--warn)}.jm-jalur-regulasi{--tk:var(--data1)}.jm-jalur-direktori{--tk:var(--data5)}.jm-jalur-pustaka{--tk:var(--data4)}.jm-jalur-kalender{--tk:var(--bad)}.jm-jalur-insight{--tk:var(--info)}
 @media (prefers-reduced-motion:reduce){.jm-jalur{transition:none}.jm-jalur:hover{transform:none}}
+/* kartu bauran: satuan di baris sendiri di bawah persen; label tidak tertimpa tombol sumber di ponsel */
+.jm-kpi-bauran .jm-kpi-n{flex-wrap:wrap;row-gap:2px}
+.jm-kpi-bauran .jm-kpi-n small{flex-basis:100%}
+@media (max-width:640px){.jm-kpi{grid-template-columns:minmax(0,1fr);grid-template-areas:"lab" "n" "ctx"}.jm-kpi-ik{display:none}.jm-kpi-lab{padding-right:40px;flex-wrap:wrap;min-height:32px}.jm-kpi-lab span:first-child{white-space:normal;overflow:visible}}
