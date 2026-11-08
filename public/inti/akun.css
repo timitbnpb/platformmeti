@@ -144,4 +144,3 @@
 .jm-hal-akun .jm-aksi2 .jm-tbl svg{color:var(--accent)}
 .jm-hal-akun .jm-aksi2 .jm-tbl:hover{border-color:var(--accent);background:var(--soft-hijau);color:var(--accent)}
 .jm-hal-akun [aria-disabled="true"].jm-tbl-utama:hover{background:var(--soft-hijau);color:var(--accent);filter:none}
-.jm-hal-akun #kirim{flex-direction:row-reverse}
