@@ -1,4 +1,5 @@
 // Kartu OG: SVG valid per jenis, tanpa data di luar ringkas publik, header keamanan, ETag/304, meta disisipkan.
+import { OG_PNG } from "../src/og_png.js";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -57,7 +58,7 @@ test("nama berkarakter khusus di-escape", async () => {
 
 test("halaman masuk (terbuka) dan /o/<id> (masuk) memuat og:image + summary_large_image", async () => {
   const m = await (await tamu("/masuk")).text();
-  assert.ok(m.includes('property="og:image" content="https://uji.example/og/beranda/utama.svg"') && m.includes('summary_large_image'));
+  assert.ok(m.includes(`property="og:image" content="https://uji.example/og/beranda/utama.${OG_PNG.has("beranda/utama") ? "png" : "svg"}"`) && m.includes('summary_large_image'));
   const o = await (await tamu("/o/" + org.id, { cookie: COOKIE_PALSU })).text();
-  assert.ok(o.includes(`og/organisasi/${org.id}.svg`) && o.includes('content="summary_large_image"') && !o.includes('content="summary"'));
+  assert.ok(o.includes(`og/organisasi/${org.id}.${OG_PNG.has(`organisasi/${org.id}`) ? "png" : "svg"}`) && o.includes('content="summary_large_image"') && !o.includes('content="summary"'));
 });
