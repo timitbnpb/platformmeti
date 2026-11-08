@@ -2,7 +2,7 @@
    Perhitungan di /inti/org_sensus.js (dipakai juga profil /o/<id>). Chrome kontrol berubah sinkron; tabel dirender sesudah satu bingkai (nanti). */
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, ikon, nanti, debounce, hantuHtml } from "/inti/umum.js";
-import { exHtml } from "/inti/komponen.js";
+import { exHtml, pilihHtml } from "/inti/komponen.js";
 import { logoOrg } from "/inti/logo_org.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
@@ -54,9 +54,9 @@ export async function bangunSensus(akar) {
       ${ubin("tautan", angka(nSitus), t("so.u.situs"), t("so.dari", { x: angka(nSitus), n: angka(N) }), "", "so-u5")}
     </ul>
     <div class="so-alat">
-      <label class="so-cari">${ikon("cari", 18)}<input type="search" id="soQ" placeholder="${esc(t("so.cari"))}" aria-label="${esc(t("so.cari"))}" autocomplete="off" maxlength="80"><span class="so-hitung" id="soHitung" aria-live="polite"></span></label>
-      <div class="so-seg" id="soSek" role="group" aria-label="${esc(t("so.sektor_label"))}"></div>
-      <div class="so-seg" id="soJenis" role="group" aria-label="${esc(t("so.jenis_label"))}"></div>
+      <div class="so-baris1"><label class="so-cari">${ikon("cari", 18)}<input type="search" id="soQ" placeholder="${esc(t("so.cari"))}" aria-label="${esc(t("so.cari"))}" autocomplete="off" maxlength="80"><span class="so-hitung" id="soHitung" aria-live="polite"></span></label>
+      <div class="so-pilih" id="soSek"></div>
+      <div class="so-pilih" id="soJenis"></div></div>
       <div class="so-seg so-seg-f" id="soF" role="group" aria-label="${esc(t("so.saring_label"))}"></div>
     </div>
     <div class="so-tab" id="soTab"></div>
@@ -68,12 +68,13 @@ export async function bangunSensus(akar) {
   const cocokQ = (r) => !st.q || NORM(r.nm + " " + (r.o.singkatan || "") + " " + (r.o.nama_lain || []).join(" ")).includes(st.q);
   const cocokF = (r) => [...st.f].every((k) => saringFn[k](r));
   const cocok = (r) => cocokQ(r) && cocokF(r) && (!st.sek || r.sek === st.sek) && (!st.jenis || jenisDari(r.o) === st.jenis);
-  const seg = (atr, kini, k, ik, kls, label, n) => `<button type="button" class="so-sg ${kls}" data-${atr}="${esc(k)}" aria-pressed="${kini === k}">${ik}<span class="so-sl">${esc(label)}</span><span class="so-n">${esc(angka(n))}</span></button>`;
   function hitungChip() {
     const dasar = S.baris.filter((r) => cocokQ(r) && cocokF(r));
     const sj = dasar.filter((r) => !st.jenis || jenisDari(r.o) === st.jenis), ss = dasar.filter((r) => !st.sek || r.sek === st.sek);
-    $("soSek").innerHTML = seg("sek", st.sek, "", ikon("tabel", 16), "so-w-semua", t("so.semua"), sj.length) + sekAda.map((k) => seg("sek", st.sek, k, ikSek(k), "so-w-" + k, namaSegSek(k), sj.filter((r) => r.sek === k).length)).join("");
-    $("soJenis").innerHTML = seg("jenis", st.jenis, "", ikon("jenis", 16), "so-j0", t("so.j.semua"), ss.length) + Object.keys(JENIS).map((k, i) => seg("jenis", st.jenis, k, ikon(IKJ[k], 16), "so-j" + (i + 1), t("so.j." + k), ss.filter((r) => jenisDari(r.o) === k).length)).join("");
+    /* pemilik 9 Nov 2026: deretan pil sektor dan jenis diganti pemilih berikon (pilih.js), hitungan per opsi */
+    const ikSekSpec = (k) => (IKON_TEK[k] ? "tek:" + k : k === "lintas" ? "analisis" : "gedung");
+    $("soSek").innerHTML = pilihHtml({ id: "soPilSek", ikon: "tabel", label: t("so.sektor_label"), nilai: st.sek, opsi: [["", t("so.semua"), "tabel", angka(sj.length)], ...sekAda.map((k) => [k, namaSegSek(k), ikSekSpec(k), angka(sj.filter((r) => r.sek === k).length)])] });
+    $("soJenis").innerHTML = pilihHtml({ id: "soPilJenis", ikon: "jenis", label: t("so.jenis_label"), nilai: st.jenis, opsi: [["", t("so.j.semua"), "jenis", angka(ss.length)], ...Object.keys(JENIS).map((k) => [k, t("so.j." + k), IKJ[k], angka(ss.filter((r) => jenisDari(r.o) === k).length)])] });
     const f0 = S.baris.filter((r) => cocokQ(r) && (!st.sek || r.sek === st.sek) && (!st.jenis || jenisDari(r.o) === st.jenis));
     $("soF").innerHTML = SARING.map((k) => `<button type="button" class="so-sg so-f${SARING.indexOf(k) + 1}" data-f="${k}" aria-pressed="${st.f.has(k)}">${ikon(IKF[k], 16)}<span class="so-sl">${esc(t("so.f." + k))}</span><span class="so-n">${esc(angka(f0.filter(saringFn[k]).length))}</span></button>`).join("");
   }
@@ -142,6 +143,10 @@ export async function bangunSensus(akar) {
   const bukaLaci = (id) => { idx = Math.max(0, hasil.findIndex((r) => r.id === id)); isiLaci(); if (!laci.open) laci.showModal(); muatX().then((d) => { if (!X.d) { X.d = d; } if (laci.open) isiLaci(); }); };
 
   /* ---- peristiwa ---- */
+  akar.addEventListener("change", (e) => {
+    if (e.target.id === "soPilSek") { st.sek = e.target.value; st.hal = 1; nanti(() => { hitungChip(); render(); }); }
+    else if (e.target.id === "soPilJenis") { st.jenis = e.target.value; st.hal = 1; nanti(() => { hitungChip(); render(); }); }
+  });
   akar.addEventListener("click", (e) => {
     const sel = (s) => e.target.closest(s);
     let b;

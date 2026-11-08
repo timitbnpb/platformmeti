@@ -62,7 +62,6 @@ function gambarKepala() {
   document.getElementById("kepalaKal").innerHTML = `
     <div class="kal-kiri">
       <div class="kal-seg" role="group" aria-label="${esc(t("kal.agenda"))}">${tombolTampil("bulan", "tabel")}${tombolTampil("agenda", "daftar2")}</div>
-      <button type="button" class="kal-hariini" data-hariini>${ikon("kalender", 18)}<span>${esc(t("kal.hariini"))}</span></button>
     </div>
     <div class="kal-nav">
       <button type="button" class="kal-bulat" data-geser="-1" aria-label="${esc(t("kal.sebelumnya"))}">${ikon("panah-kiri", 20)}</button>
@@ -414,7 +413,6 @@ export async function pasang(saya) {
       ulang();
     } else if ((b = q("[data-geser]"))) { S.bulan = geser(S.bulan, +b.dataset.geser); judulBulan(); ulang(); }
     else if ((b = q("[data-salin-ical]"))) navigator.clipboard?.writeText(icsUrl()).then(() => { b.title = t("kal.pop.disalin"); b.setAttribute("aria-label", t("kal.pop.disalin")); setTimeout(() => { b.title = t("kal.salin_ical"); b.setAttribute("aria-label", t("kal.salin_ical")); }, 1600); }, () => {});
-    else if (q("[data-hariini]")) { S.bulan = KINI.slice(0, 7); judulBulan(); ulang(); }
     else if ((b = q("[data-acara]")) && akar.contains(b)) bukaAcara(b.dataset.acara, b);
     else if ((b = q("[data-hari]")) && akar.contains(b)) bukaHari(b.dataset.hari, b.closest("button") || b);
   });

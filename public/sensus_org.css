@@ -157,3 +157,8 @@
 @media (max-width:899px){.so-seg.so-seg-f{grid-template-columns:repeat(2,minmax(0,1fr));border-radius:var(--r)}.so-seg-f .so-sg:nth-child(odd){border-left:0}.so-seg-f .so-sg:nth-child(n+3){border-top:1px solid var(--line-cell)}}
 .so-seg-f .so-sl{white-space:normal}
 @media (max-width:899px){.so-seg-f .so-sg{flex-wrap:wrap;padding:8px 10px;gap:4px 6px}}
+/* baris alat: cari lebar + dua pemilih (pemilik 9 Nov 2026) */
+.so-baris1{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:center}
+.so-pilih{min-width:0}.so-pilih .jm-pil-pilih{width:100%}
+@media (max-width:899px){.so-baris1{grid-template-columns:repeat(2,minmax(0,1fr))}.so-baris1 .so-cari{grid-column:1/-1}}
+@media (max-width:479px){.so-baris1{grid-template-columns:minmax(0,1fr)}}
