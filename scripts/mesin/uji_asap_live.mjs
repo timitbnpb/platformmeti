@@ -39,6 +39,9 @@ async function tamu() {
   for (const p of aset) { const r = await ambil(p); catat("aset", p, r.status === 200, String(r.status)); }
   const r = await ambil("/og/beranda/utama.png");
   catat("og", "/og/beranda/utama.png", r.status === 200 && /image\/png/.test(r.headers.get("content-type") || ""), `${r.status} ${r.headers.get("content-type")}`);
+  /* jalur masuk menulis D1: akun fiktif harus 401, bukan 500 (9 Nov 2026 kuota tulis D1 habis dan login semua orang gagal, halaman tetap 200) */
+  const m = await ambil("/api/masuk", {method: "POST", headers: {"x-pb": "1", origin: basis, "content-type": "application/json"}, body: JSON.stringify({surel: "uji.asap@example.org", sandi: "bukan-sandi-sungguhan"})});
+  catat("masuk", "/api/masuk", m.status === 401, String(m.status));
 }
 
 /* (a) halaman publik termuat di Chrome tanpa galat konsol; dengan sesi: semua halaman, 1440 dan 390 */
