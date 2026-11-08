@@ -28,7 +28,7 @@ const bernilai = (r) => r.status === "selesai" && r.nilai && !r.nilai.batas;
 const usd = (r) => r.nilai?.usd_juta || 0;
 const tekKode = (r) => r.teknologi || "campuran";
 const asing = (p) => p.negara && p.negara !== "id";
-const teksUsd = (jt) => (jt >= 1000 ? `US$ ${num(jt / 1000, jt >= 10000 ? 0 : 1)} ${t("tr3.u2s")}` : `US$ ${num(jt, 0)} ${document.documentElement.lang === "en" ? "million" : "juta"}`);
+const teksUsd = (jt) => (jt >= 1000 ? `US$ ${num(jt / 1000, jt >= 10000 ? 0 : 1)} ${t("tr3.u2s")}` : `US$ ${num(jt, 0)} ${document.documentElement.lang !== "id" ? "million" : "juta"}`);
 const bendera = (iso, w = 18) => (iso ? `<img class="tr3-fl" src="/img/bendera/${esc(iso)}.svg" alt="" width="${w}" height="${Math.round(w * 0.75)}" loading="lazy">` : ikon("globe", w));
 const jenisKelas = (j) => "tr3-j-" + j;
 const pilJenis = (j) => `<span class="jm-pil-st tr3-jn tr3-jn-${j}">${ikon(IK_JENIS[j], 14).replace('class="jm-ik"', 'class="jm-ik jm-ikt-s"')}<span>${esc(t("tr3.j." + j))}</span></span>`;
@@ -36,7 +36,7 @@ const pilSt = (s) => `<span class="jm-pil-st tr3-st tr3-st-${s}">${ikon(IK_ST[s]
 const pilTekBaris = (r) => (r.teknologi ? pilTek(r.teknologi) : `<span class="jm-pil-tek jm-tek-lain">${esc(t("tr3.tek.campuran_s"))}</span>`);
 const kosong = '<span class="ih-kosong" title="-">-</span>';
 const tglTeks = (r) => {
-  const l = document.documentElement.lang === "en" ? "en" : "id", [y, m, h] = r.tanggal.split("-").map(Number);
+  const l = document.documentElement.lang !== "id" ? "en" : "id", [y, m, h] = r.tanggal.split("-").map(Number);
   if (r.presisi === "tahun") return String(y);
   const f = new Intl.DateTimeFormat(l, r.presisi === "hari" ? { day: "numeric", month: "short", year: "numeric" } : { month: "short", year: "numeric" });
   return f.format(new Date(Date.UTC(y, m - 1, h || 1)));
@@ -197,8 +197,8 @@ const dipilih = () => baris().filter(lolos);
 const nilaiSel = (r) => {
   if (!r.nilai) return kosong;
   const n = r.nilai, est = t("tr3.est"), pre = n.batas ? t("tr3.maks") + " " : "";
-  const utama = n.mu === "IDR" ? uangHtml("Rp", `${pre}${num(n.jumlah, n.jumlah < 100 ? 1 : 0)} ${document.documentElement.lang === "en" ? "bn" : "miliar"}`, "") : uangHtml("US$", `${pre}${num(n.jumlah, n.jumlah % 1 ? 1 : 0)} ${document.documentElement.lang === "en" ? "m" : "juta"}`, "");
-  const lain = n.mu === "IDR" ? uangHtml("US$", `${num(n.usd_juta, 1)} ${document.documentElement.lang === "en" ? "m" : "juta"} ${est}`, "") : n.idr_miliar >= 1000 ? uangHtml("Rp", `${num(n.idr_miliar / 1000, 1)} ${document.documentElement.lang === "en" ? "tn" : "triliun"} ${n.est_idr ? est : ""}`, "") : uangHtml("Rp", `${num(n.idr_miliar, 0)} ${document.documentElement.lang === "en" ? "bn" : "miliar"} ${n.est_idr ? est : ""}`, "");
+  const utama = n.mu === "IDR" ? uangHtml("Rp", `${pre}${num(n.jumlah, n.jumlah < 100 ? 1 : 0)} ${document.documentElement.lang !== "id" ? "bn" : "miliar"}`, "") : uangHtml("US$", `${pre}${num(n.jumlah, n.jumlah % 1 ? 1 : 0)} ${document.documentElement.lang !== "id" ? "m" : "juta"}`, "");
+  const lain = n.mu === "IDR" ? uangHtml("US$", `${num(n.usd_juta, 1)} ${document.documentElement.lang !== "id" ? "m" : "juta"} ${est}`, "") : n.idr_miliar >= 1000 ? uangHtml("Rp", `${num(n.idr_miliar / 1000, 1)} ${document.documentElement.lang !== "id" ? "tn" : "triliun"} ${n.est_idr ? est : ""}`, "") : uangHtml("Rp", `${num(n.idr_miliar, 0)} ${document.documentElement.lang !== "id" ? "bn" : "miliar"} ${n.est_idr ? est : ""}`, "");
   return `<span class="tr3-nl">${utama}<small>${lain}</small></span>`;
 };
 const transaksiSel = (r) => {

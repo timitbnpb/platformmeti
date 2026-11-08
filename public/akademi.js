@@ -1,7 +1,7 @@
 /* /akademi: jalur belajar EBT (6 modul) yang merangkai konten wiki yang ada, kuis pilihan ganda bersumber, lencana partisipasi.
    Data /data/akademi.json; fungsi murni akademi_hitung.js. Progres disimpan di peramban (localStorage), tanpa server: tidak ada data pribadi yang dikirim.
    INP: centang langkah dan pilihan jawaban berubah seketika; ubin, grafik, dan lencana menyusul lewat nanti(). */
-import { t, angka, bahasa } from "/i18n.js";
+import { t, angka, bahasa, bahasaData } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
 import { khUbin } from "/inti/kh.js";
 import { exHtml } from "/inti/komponen.js";
@@ -12,7 +12,7 @@ import { KUNCI, hrefSumber, nilaiKuis, statusModul, berikutnya, lencana, bersihk
 
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
-const L = (o) => o?.[bahasa()] ?? o?.id ?? "";
+const L = (o) => o?.[bahasaData()] ?? o?.id ?? "";
 const IK_LANGKAH = { topik: "topik", istilah: "kamus", metode: "metode", izin: "lencana", halaman: "tautan" };
 const IK_TAHAP = { baru: "jam", jalan: "linimasa", siap: "survei", lulus: "medali" };
 const PIL_TAHAP = { baru: "", jalan: "jm-pil-info", siap: "jm-pil-warn", lulus: "jm-pil-ok" };

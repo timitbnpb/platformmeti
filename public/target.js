@@ -1,7 +1,7 @@
 /* /target: pelacak target resmi pemerintah vs realisasi. Data: target_realisasi.json (dirakit scripts/pipa/target_realisasi.mjs dari target.json,
    ember_bulanan.json, program_analisis.json, rued_capaian.json, berita.json). Status = turunan EST (laju historis vs laju dibutuhkan).
    INP: saringan kategori mengubah chrome seketika; isi kisi menyusul lewat nanti(). Grafik SVG tanpa pustaka, tooltip crosshair satu pendengar bersama. */
-import { t, bahasa, tanggal } from "/i18n.js";
+import { t, bahasa, tanggal, bahasaData } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml } from "/inti/umum.js";
 import { exHtml, sumberHtml, unduhRegHtml, pasangUrutTabel } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
@@ -11,7 +11,7 @@ import { num, saatBahasa, tampilGalat, muatData, sumberLipat, amanUrl } from "/a
 const $ = (id) => document.getElementById(id);
 const D = {};
 const ST = { kat: "semua" };
-const L = (o) => (o && (o[bahasa()] ?? o.id)) ?? "";
+const L = (o) => (o && (o[bahasaData()] ?? o.id)) ?? "";
 const KAT = ["bauran", "kapasitas", "emisi", "bahan-bakar", "kendaraan"];
 const IK_KAT = { semua: "bendera", bauran: "grafik", kapasitas: "tek-surya", emisi: "pabrik", "bahan-bakar": "tek-bio", kendaraan: "petir", daerah: "wilayah" };
 const IK_ST = { tercapai: "piala", "di-jalur": "centang", tertinggal: "peringatan", "jauh-tertinggal": "silang", "tidak-ada-data": "tanya" };

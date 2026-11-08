@@ -26,7 +26,7 @@ export const PANDUAN = [
     ],
     dokumen: [T("KTP pemilik dan ID pelanggan PLN", "Owner ID and PLN customer number"), T("Tagihan listrik 12 bulan terakhir", "Last 12 months of electricity bills"), T("Foto atap dan denah penempatan modul", "Roof photos and module layout"), T("Penawaran dengan spesifikasi modul dan inverter, serta diagram satu garis", "Quote with module and inverter specs plus a single-line diagram"), T("Sertifikat Laik Operasi (SLO)", "Operation-worthiness certificate (SLO)")],
     regulasi: ["permen-esdm-2-2024", "permen-esdm-26-2021", "permen-kemenperin-34-2024"], org: ["su_ed074ff5", "l_dd90c88f59", "l_7278e0528a"], istilah: ["plts-atap", "net-metering", "slo"],
-    halaman: [{ href: "/peluang#hitung", ikon: "kalkulator", label: T("Kalkulator PLTS atap", "Rooftop solar calculator") }, { href: "/biaya-listrik", ikon: "tag", label: T("Biaya listrik per provinsi", "Electricity cost by province") }],
+    halaman: [{ href: "/investasi#hitung", ikon: "kalkulator", label: T("Kalkulator PLTS atap", "Rooftop solar calculator") }, { href: "/investasi#biaya", ikon: "tag", label: T("Biaya listrik per provinsi", "Electricity cost by province") }],
     faq: [
       { q: T("Bisakah saya menjual kelebihan listrik ke PLN?", "Can I sell surplus power to PLN?"), a: T("Untuk pemasangan baru di bawah Permen ESDM 2/2024, kelebihan energi tidak diperhitungkan dalam tagihan (ekspor-impor dihapus). Pelanggan yang sudah disetujui sebelum aturan itu masih memakai skema lama sampai 10 tahun sejak persetujuan.", "For new installs under Ministerial Reg. 2/2024 surplus energy no longer counts toward the bill (export-import scrapped). Customers approved before the rule keep the old scheme for up to 10 years from approval.") },
       { q: T("Apakah ada baterai?", "Do I need a battery?"), a: T("Tidak wajib untuk sistem on-grid; tanpa baterai sistem berhenti saat jaringan padam demi keselamatan. Baterai menambah biaya besar, lihat kunci bess-global di data biaya.", "Not required for on-grid systems; without a battery the system stops during a grid outage for safety. Batteries add large cost, see the bess-global key in the cost data.") },
@@ -47,7 +47,7 @@ export const PANDUAN = [
     ],
     dokumen: [T("NIB dan identitas usaha", "Business registration (NIB) and company ID"), T("Data beban per jam atau tagihan 12 bulan", "Hourly load data or 12 months of bills"), T("Gambar struktur atap dan denah modul", "Roof-structure drawings and module layout"), T("Penawaran, kontrak, dan SLO", "Quote, contract and SLO")],
     regulasi: ["permen-esdm-2-2024", "permen-kemenperin-34-2024"], org: ["su_ed074ff5", "l_dd90c88f59"], istilah: ["plts-atap", "slo", "nib", "ppa"],
-    halaman: [{ href: "/peluang#hitung", ikon: "kalkulator", label: T("Kalkulator PLTS atap", "Rooftop solar calculator") }, { href: "/harga-komponen", ikon: "tag", label: T("Harga komponen", "Component prices") }],
+    halaman: [{ href: "/investasi#hitung", ikon: "kalkulator", label: T("Kalkulator PLTS atap", "Rooftop solar calculator") }, { href: "/investasi#harga-komponen", ikon: "tag", label: T("Harga komponen", "Component prices") }],
     faq: [{ q: T("Apakah angka biaya di sini pasti?", "Are the cost figures here firm?"), a: T("Tidak. Kunci skala 'atap komersial/industri' berlaku untuk sistem di atas 100 kWp dan berstatus hipotesis; untuk sistem lebih kecil minta penawaran nyata.", "No. The 'commercial/industrial roof' scale key applies to systems above 100 kWp and is a hypothesis; for smaller systems get real quotes.") }],
     sumber: [SUMBER_2_2024] },
 
@@ -65,7 +65,7 @@ export const PANDUAN = [
     ],
     dokumen: [T("Surat tugas/izin kepala sekolah dan pengelola", "Authorisation from the head teacher and school owner"), T("Tagihan listrik dan daya tersambung", "Electricity bills and contracted power"), T("Kajian kekuatan atap", "Roof-strength check"), T("Proposal pendanaan", "Funding proposal")],
     regulasi: ["permen-esdm-2-2024"], org: ["su_ed074ff5", "l_7278e0528a"], istilah: ["plts-atap", "slo"],
-    halaman: [{ href: "/peluang#hitung", ikon: "kalkulator", label: T("Kalkulator PLTS atap", "Rooftop solar calculator") }, { href: "/keuangan-hijau", ikon: "kartu", label: T("Keuangan hijau", "Green finance") }],
+    halaman: [{ href: "/investasi#hitung", ikon: "kalkulator", label: T("Kalkulator PLTS atap", "Rooftop solar calculator") }, { href: "/investasi#pembiayaan", ikon: "kartu", label: T("Keuangan hijau", "Green finance") }],
     faq: [{ q: T("Siapa yang merawat setelah selesai?", "Who maintains it afterwards?"), a: T("Pelajaran dari kasus desa: sistem yang tidak punya petugas dan dana perawatan paling sering mati. Tulis penanggung jawab dalam kontrak.", "Lesson from village cases: systems with no caretaker or upkeep budget die most often. Write the owner into the contract.") }],
     sumber: [] },
 
@@ -82,7 +82,7 @@ export const PANDUAN = [
     ],
     dokumen: [T("Akta/SK yayasan atau takmir", "Foundation or board deed/decree"), T("Tagihan listrik dan ID pelanggan", "Bills and customer number"), T("Gambar atap", "Roof drawings"), T("Penawaran dan SLO", "Quote and SLO")],
     regulasi: ["permen-esdm-2-2024"], org: ["su_ed074ff5", "l_dd90c88f59"], istilah: ["plts-atap", "slo"],
-    halaman: [{ href: "/peluang#hitung", ikon: "kalkulator", label: T("Kalkulator PLTS atap", "Rooftop solar calculator") }],
+    halaman: [{ href: "/investasi#hitung", ikon: "kalkulator", label: T("Kalkulator PLTS atap", "Rooftop solar calculator") }],
     faq: [{ q: T("Apakah boleh memakai dana sosial?", "May social funds be used?"), a: T("Itu kebijakan pengelola dana dan pemuka agama setempat; tanyakan sebelum menyusun anggaran.", "That is for the fund managers and local religious leaders to decide; ask before drawing up a budget.") }],
     sumber: [] },
 
@@ -119,7 +119,7 @@ export const PANDUAN = [
     ],
     dokumen: [T("Proposal dan ringkasan eksekutif", "Proposal and executive summary"), T("Studi kelayakan dan rencana anggaran", "Feasibility study and budget"), T("Profil dan legalitas pemohon", "Applicant profile and legal papers"), T("Izin lokasi dan lingkungan bila ada", "Site and environmental permits where applicable")],
     regulasi: ["permen-kemenkeu-5-2025", "perpres-112-2022"], org: ["p_a235c21f23", "l_c455b2f724", "in_9a375db244", "in_0d1892cd4f", "in_935a274434", "in_4227ab3084", "l_15e21f04fa"], istilah: ["jetp", "lcoe", "studi-kelayakan"],
-    halaman: [{ href: "/direktori?tampil=pendanaan", ikon: "kartu", label: T("Direktori pendanaan", "Funding directory") }, { href: "/keuangan-hijau", ikon: "tek-bio", label: T("Keuangan hijau", "Green finance") }, { href: "/model-keuangan", ikon: "piala", label: T("Model keuangan", "Financial model") }],
+    halaman: [{ href: "/direktori?tampil=pendanaan", ikon: "kartu", label: T("Direktori pendanaan", "Funding directory") }, { href: "/investasi#pembiayaan", ikon: "tek-bio", label: T("Keuangan hijau", "Green finance") }, { href: "/investasi#model", ikon: "piala", label: T("Model keuangan", "Financial model") }],
     faq: [{ q: T("Apakah ada jaminan dana cair?", "Is disbursement guaranteed?"), a: T("Tidak. Setiap pemberi dana punya kriteria dan siklusnya sendiri; panduan ini tidak menjamin hasil.", "No. Each funder has its own criteria and cycle; this guide guarantees nothing.") }],
     sumber: [] },
 

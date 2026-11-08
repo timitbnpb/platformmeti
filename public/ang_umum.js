@@ -15,7 +15,7 @@ const janji = {};
 export function muat(kunci) {
   return Promise.all(kunci.map((k) => (janji[k] ||= fetch("/data/" + BERKAS[k], { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null).then((v) => { B[k] = v; if (k === "org") R.orgAda = new Set((v?.baris || []).map((b) => b.id)); return v; }))));
 }
-export const bahasa = () => (document.documentElement.lang === "en" ? "en" : "id");
+export const bahasa = () => (document.documentElement.lang !== "id" ? "en" : "id");
 export const tx = (o) => (o && typeof o === "object" ? o[bahasa()] || o.id || "" : o ?? "");
 export const src = (id) => (B.ang?.sumber || []).find((s) => s.id === id) || null;
 /** Lencana bukti satu butir: tingkat dari butir, penerbit + tanggal dari sumbernya. */

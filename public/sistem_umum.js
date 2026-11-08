@@ -5,7 +5,7 @@ import { esc, ikon, nanti } from "/inti/umum.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 
 export const num = (v, n = 0) => (v == null ? "-" : angka(v, { desimal: n }));
-export const L = (o, b) => (o && typeof o === "object" ? o[b] ?? o.id ?? "" : o ?? "");
+export const L = (o, b) => (o && typeof o === "object" ? o[b === "zh" ? "en" : b] ?? o.id ?? "" : o ?? "");
 export const urlAman = (u) => (/^https:\/\//.test(u || "") ? u : null);
 export const tautan = (u, teks) => (urlAman(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(teks)}</a>` : esc(teks));
 export const pilBukti = (tb) => `<span class="jm-pil jm-pil-${tb === "resmi" ? "ok" : "warn"}">${esc(t("sp2.bukti." + (tb || "media")))}</span>`;

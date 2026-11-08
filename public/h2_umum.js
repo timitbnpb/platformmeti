@@ -14,7 +14,7 @@ export async function muat() {
   R.orgAda = new Set((H.org?.baris || []).map((b) => b.id));
   return H;
 }
-export const bahasa = () => (document.documentElement.lang === "en" ? "en" : "id");
+export const bahasa = () => (document.documentElement.lang !== "id" ? "en" : "id");
 export const tx = (o) => (o && typeof o === "object" ? o[bahasa()] || o.id || "" : o ?? "");
 export const src = (id) => (H.h2?.sumber || []).find((s) => s.id === id) || null;
 /** Lencana bukti satu butir: tingkat = tingkat butir, sumber = penerbit. */

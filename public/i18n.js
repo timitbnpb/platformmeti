@@ -2,17 +2,22 @@
    ES module; fungsi murni bisa diuji di Node, bagian DOM hanya jalan di peramban.
    Satu-satunya pintu format angka dan tanggal: tidak ada toLocaleString di berkas lain (gerbang-teks). */
 
-export const BAHASA = ["id", "en"];
+export const BAHASA = ["id", "zh", "en"]; // urutan tombol: Indonesia, Mandarin, Inggris
 const KUNCI_SIMPAN = "jm-bahasa";
-const kamus = { id: {}, en: {} };
+const kamus = { id: {}, en: {}, zh: {} };
 let aktif = "id";
 export const hilang = new Set(); // kunci yang diminta t() tapi tak ada; dibaca uji dan konsol
 
 export const bahasa = () => aktif;
-export const ada = (kunci) => kunci in kamus[aktif] || kunci in kamus.id;
+/** Sumbu data dwibahasa {id,en}: zh tidak punya cabang sendiri, pakai Inggris. Pakai ini, jangan bahasa(), untuk o[...] ?? o.id. */
+export const bahasaData = () => (aktif === "zh" ? "en" : aktif);
+// rantai cadangan teks: zh -> en -> id
+const RANTAI = { id: ["id"], en: ["en", "id"], zh: ["zh", "en", "id"] };
+const cari = (kunci) => { for (const b of RANTAI[aktif]) if (kunci in kamus[b]) return kamus[b][kunci]; };
+export const ada = (kunci) => cari(kunci) !== undefined;
 
 export function t(kunci, param) {
-  const s = kamus[aktif][kunci] ?? kamus.id[kunci];
+  const s = cari(kunci);
   if (s === undefined) { hilang.add(kunci); return kunci; }
   return param ? s.replace(/\{(\w+)\}/g, (m, n) => (param[n] !== undefined ? param[n] : m)) : s;
 }
@@ -30,7 +35,7 @@ export function bulat(n, d = 0) {
 const penyusun = {};
 function format(b, d) {
   const kunci = b + d;
-  return (penyusun[kunci] ??= new Intl.NumberFormat(b === "en" ? "en-US" : "id-ID", { useGrouping: true, minimumFractionDigits: d, maximumFractionDigits: d }));
+  return (penyusun[kunci] ??= new Intl.NumberFormat(b === "id" ? "id-ID" : "en-US", { useGrouping: true, minimumFractionDigits: d, maximumFractionDigits: d }));
 }
 
 /** angka(1234567.891, {desimal: 2}) -> ID "1.234.567,89", EN "1,234,567.89". null/NaN/Infinity -> "-". */
@@ -45,10 +50,12 @@ export function angka(n, { desimal = 0, bahasa: b = aktif } = {}) {
 const BULAN = {
   id: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
   en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  zh: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
 };
 const BULAN_PANJANG = {
   id: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
   en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  zh: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
 };
 
 export function tanggalSah(s) {
@@ -60,10 +67,11 @@ export function tanggalSah(s) {
   return h <= [31, kabisat ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][b - 1];
 }
 
-/** tanggal("2026-11-07") -> "7 Nov 2026"; gaya "panjang" -> "7 November 2026"; tidak sah -> "-". */
+/** tanggal("2026-11-07") -> "7 Nov 2026", zh "2026年11月7日"; gaya "panjang" -> "7 November 2026"; tidak sah -> "-". */
 export function tanggal(s, { gaya = "pendek", bahasa: b = aktif } = {}) {
   if (!tanggalSah(s)) return "-";
   const [y, bln, h] = String(s).split("-").map(Number);
+  if (b === "zh") return `${y}年${bln}月${h}日`; // pendek dan panjang sama: 2026年11月12日
   return `${h} ${(gaya === "panjang" ? BULAN_PANJANG : BULAN)[b === "en" ? "en" : "id"][bln - 1]} ${y}`;
 }
 
@@ -80,6 +88,8 @@ export function jam(unix) {
 }
 
 /* ---------- bahasa aktif (peramban) ---------- */
+
+const LANG_HTML = { id: "id", en: "en", zh: "zh-Hans" };
 
 /** Prioritas: ?lang= > localStorage (try/catch) > akun.bahasa > "id". */
 export function pilihBahasa(akunBahasa) {
@@ -109,19 +119,20 @@ export function terapkanDom(akar = document) {
 /** Dipanggil sekali per halaman sebelum render. */
 export async function mulaiBahasa(akunBahasa) {
   const b = pilihBahasa(akunBahasa);
-  await Promise.all([muat("id"), b === "en" ? muat("en") : null]);
+  await Promise.all([muat("id"), b !== "id" ? muat("en") : null, b === "zh" ? muat("zh") : null]);
   aktif = b;
-  document.documentElement.lang = b;
+  document.documentElement.lang = LANG_HTML[b];
   terapkanDom();
   return b;
 }
 
-/** Ganti bahasa dari tombol ID/EN: simpan, rapikan ?lang=, terapkan, kabari halaman. */
+/** Ganti bahasa dari tombol ID/ZH/EN: simpan, rapikan ?lang=, terapkan, kabari halaman. */
 export async function gantiBahasa(b, { masuk = false } = {}) {
   if (!BAHASA.includes(b)) return;
+  if (b !== "id") await muat("en");
   await muat(b);
   aktif = b;
-  document.documentElement.lang = b;
+  document.documentElement.lang = LANG_HTML[b];
   try { localStorage.setItem(KUNCI_SIMPAN, b); } catch (e) {}
   try {
     const u = new URL(location.href);
@@ -129,7 +140,8 @@ export async function gantiBahasa(b, { masuk = false } = {}) {
   } catch (e) {}
   terapkanDom();
   document.dispatchEvent(new CustomEvent("jm:bahasa", { detail: b }));
-  if (masuk) {
+  // ponytail: akun.bahasa di D1 ber-CHECK ('id','en') dan tanpa migrasi; zh hanya di localStorage. Naikkan lewat migrasi bila zh perlu ikut akun.
+  if (masuk && b !== "zh") {
     fetch("/api/saya", { method: "PATCH", credentials: "same-origin", headers: { "x-pb": "1", "content-type": "application/json" }, body: JSON.stringify({ bahasa: b }) }).catch(() => {});
   }
 }

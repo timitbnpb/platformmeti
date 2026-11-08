@@ -1,13 +1,13 @@
 /* Kartu program nasional: SATU pola dipakai /proyek (bagian Program nasional) dan /program (indeks).
    Data = baris program_analisis.json (16 program; 7 di antaranya program nasional di program.json, kode sama jadi tak ganda). */
-import { t, angka, bahasa } from "/i18n.js";
+import { t, angka, bahasa, bahasaData } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 import { ikonTek, ikonStatus } from "/inti/ikon_tek.js";
 
 export const ST_IK = { rencana: "rencana", lelang: "izin", konstruksi: "konstruksi", berjalan: "beroperasi" };
 const BOBOT = { tinggi: 0, sedang: 1, rendah: 2 };
 const num = (n, d = 0) => angka(n, { desimal: d });
-export const L = (x) => (x && (x[bahasa()] ?? x.id)) || "";
+export const L = (x) => (x && (x[bahasaData()] ?? x.id)) || "";
 /* kategori untuk segmen saring */
 export const KAT = { "plts-100gw": "pembangkit", wte: "pembangkit", dedieselisasi: "pembangkit", "panas-bumi": "pembangkit", "plts-atap": "pembangkit", nuklir: "pembangkit", "pensiun-dini-pltu": "pembangkit",
   b50: "bahan", e20: "bahan", "co-firing": "bahan", "hidrogen-hijau": "bahan", ruptl: "jaringan", "super-grid": "jaringan", psn: "jaringan", "kendaraan-listrik": "kendaraan", jetp: "dana" };

@@ -2,7 +2,7 @@
    Cari + huruf A-Z + kategori berikon warna + kartu + paginasi standar. #id langsung membuka halaman kartunya.
    INP: nilai kontrol berubah seketika; daftar kartu dirender sesudahnya lewat nanti(). */
 import { khUbin } from "/inti/kh.js";
-import { t, angka, bahasa } from "/i18n.js";
+import { t, angka, bahasa, bahasaData } from "/i18n.js";
 import { esc, ikon, nanti, debounce, hantuHtml, kosongHtml } from "/inti/umum.js";
 import { cariHtml } from "/inti/komponen.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
@@ -15,7 +15,7 @@ const IK_SUMBER = { topik: "topik", pasal: "palu", metode: "metode", umum: "info
 const S = { d: null, q: "", h: "", k: "", hal: 1, sorot: "" };
 const $ = (id) => document.getElementById(id);
 const norm = (s) => String(s ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
-const L = (o) => (o && typeof o === "object" ? o[bahasa()] || o.id || "" : o || "");
+const L = (o) => (o && typeof o === "object" ? o[bahasaData()] || o.id || "" : o || "");
 const huruf = (x) => { const c = norm(x.nama).charAt(0).toUpperCase(); return /[A-Z]/.test(c) ? c : "#"; };
 
 function siapkan(d) {

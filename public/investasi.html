@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="referrer" content="no-referrer">
-<title data-i18n="iv.title">Ruang investasi proyek EBT | Direktori METI</title>
-<meta name="description" content="Proyek EBT yang paling siap didanai: skor kesiapan Hipotesis, model keuangan otomatis, pendana yang cocok, risiko utama, dan status perizinan. Bukan rekomendasi investasi." data-i18n-attr="content:iv.deskripsi">
+<title data-i18n="ivh.title">Investasi EBT: proyek, model keuangan, peluang, pembiayaan, dan biaya | Direktori METI</title>
+<meta name="description" content="Satu tempat untuk investasi energi terbarukan: proyek yang paling siap didanai, model keuangan, peluang per provinsi, pembiayaan hijau, dan biaya listrik serta komponen. Bukan rekomendasi investasi." data-i18n-attr="content:ivh.deskripsi">
 <meta name="theme-color" content="#0A5C47">
 <link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -15,26 +15,119 @@
 <link rel="stylesheet" href="/inti/gaya.css">
 <link rel="stylesheet" href="/inti/jm.css">
 <link rel="stylesheet" href="/inti/kh.css">
+<link rel="stylesheet" href="/publik.css">
+<link rel="stylesheet" href="/analisis.css">
+<link rel="stylesheet" href="/info_hijau.css">
+<link rel="stylesheet" href="/kelayakan.css">
+<link rel="stylesheet" href="/peluang.css">
+<link rel="stylesheet" href="/model_keuangan.css">
+<link rel="stylesheet" href="/keuangan_hijau.css">
+<link rel="stylesheet" href="/harga_komponen.css">
 <link rel="stylesheet" href="/investasi.css">
 </head>
 <body data-halaman="investasi">
 <header class="top" id="kepala"></header>
 <main class="jm-wadah iv-halaman" id="isi">
-  <section class="jm-kh" aria-labelledby="judul">
+  <section class="jm-kh jm-kh-satu" aria-labelledby="judul">
     <div class="jm-kh-teks">
-      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-medali"/></svg><span data-i18n="iv.eyebrow">Ruang investasi</span></p>
-      <h1 id="judul" data-i18n="iv.judul">Ruang investasi: proyek EBT yang paling siap didanai</h1>
-      <p class="jm-kh-lead" data-i18n="iv.lead">Proyek rencana dan berizin dengan skor kesiapan, model keuangan otomatis, pendana yang cocok, risiko utama, dan status perizinan. Setiap skor menunjukkan komponennya.</p>
+      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-medali"/></svg><span data-i18n="ivh.eyebrow">Investasi</span></p>
+      <h1 id="judul" data-i18n="ivh.judul">Investasi EBT: proyek, model keuangan, peluang, pembiayaan, dan biaya</h1>
+      <p class="jm-kh-lead" data-i18n="ivh.lead">Proyek yang paling siap didanai, model keuangan yang bisa diubah asumsinya, peluang per provinsi dengan kalkulator kelayakan, pembiayaan hijau, dan biaya listrik serta komponen. Setiap angka bersumber dan bertanggal.</p>
     </div>
-    <div class="jm-kh-ubin" id="ivAngka" aria-live="polite"></div>
   </section>
   <aside class="iv-penafian" role="note"><svg class="jm-ik" width="22" height="22" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-peringatan"/></svg><p><b data-i18n="iv.penafian.j">Bukan rekomendasi investasi.</b> <span data-i18n="iv.penafian">Skor dan model di halaman ini adalah Hipotesis terbuka dari data publik untuk menjajaki proyek. Ini bukan saran investasi, penawaran efek, atau jaminan hasil. Lakukan uji tuntas dan konsultasi dengan penasihat berlisensi sebelum mengambil keputusan.</span></p></aside>
-  <div id="ivIsi"></div>
+  <div id="tabInv"></div>
+
+  <div id="pnProyek" class="iv-panel">
+    <section class="jm-kh" aria-labelledby="ivKhJ">
+      <div class="jm-kh-teks">
+        <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-medali"/></svg><span data-i18n="iv.eyebrow">Ruang investasi</span></p>
+        <h2 id="ivKhJ" data-i18n="iv.judul">Ruang investasi: proyek EBT yang paling siap didanai</h2>
+        <p class="jm-kh-lead" data-i18n="iv.lead">Proyek rencana dan berizin dengan skor kesiapan, model keuangan otomatis, pendana yang cocok, risiko utama, dan status perizinan. Setiap skor menunjukkan komponennya.</p>
+      </div>
+      <div class="jm-kh-ubin" id="ivAngka" aria-live="polite"></div>
+    </section>
+    <div id="ivIsi"></div>
+  </div>
+
+  <div id="pnModel" class="iv-panel" hidden>
+    <section class="jm-kh" aria-labelledby="mkKhJ">
+      <div class="jm-kh-teks">
+        <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-kalkulator"/></svg><span data-i18n="mk.eyebrow">Pemodelan keuangan</span></p>
+        <h2 id="mkKhJ" data-i18n="mk.judul">Pemodelan keuangan proyek EBT</h2>
+        <p class="jm-kh-lead" data-i18n="mk.lead">Pilih teknologi dan model bisnis, ubah asumsi, lalu baca arus kas, IRR, NPV, LCOE, DSCR, dan sensitivitasnya. Semua asumsi bawaan bersumber dan bisa diubah.</p>
+      </div>
+      <div class="jm-kh-ubin" id="mkAngka" aria-live="polite"></div>
+    </section>
+    <div id="mkIsi"></div>
+  </div>
+
+  <div id="pnPeluang" class="jm-pel-halaman" hidden>
+    <section class="jm-kh" aria-labelledby="pelKhJ"><div class="jm-kh-teks">
+      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-analisis"/></svg><span data-i18n="pel.eyebrow">Peluang investasi</span></p>
+      <h2 id="pelKhJ" data-i18n="pel.judul">Peluang energi terbarukan per provinsi</h2>
+      <p class="jm-kh-lead" data-i18n="pel.lead">Di mana potensi masih jauh dari termanfaatkan, proyek apa yang belum punya pengembang, dan berapa harga patokannya. Setiap angka bersumber dan bertanggal.</p>
+    </div><div class="jm-kh-ubin" id="pelAngka" aria-live="polite"></div></section>
+    <div id="tabHal"></div>
+    <div id="panelPeta">
+      <div class="jm-pel-seg" id="pelSeg" role="group" data-i18n-attr="aria-label:pel.seg"></div>
+      <div id="pelIsi"></div>
+    </div>
+    <div id="panelHitung" hidden>
+      <p class="jm-bantu" data-i18n="kl.lead">Klik satu titik di peta atau pilih provinsi, lalu pilih teknologi. Hasilnya perkiraan awal berdasarkan data iklim NASA POWER, bukan studi kelayakan.</p>
+      <section class="jm-kl-petaw jm-pel-penuh" aria-label="Lokasi" data-i18n-attr="aria-label:kl.peta">
+        <div id="klPeta" class="jm-pel-kanvas" role="application" data-i18n-attr="aria-label:kl.peta.petunjuk"></div>
+        <div id="klTip" class="jm-pel-tip" role="status" hidden></div>
+        <details class="jm-pel-lapis jm-kl-lapis" id="klKontrol" open><summary><span data-i18n="kl.kontrol">Teknologi dan lokasi</span></summary><div class="jm-kl-kp" id="klKontrolIsi"></div></details>
+        <details class="jm-pel-panel jm-kl-panel" id="klPanel" open><summary id="klPanelJ"><span data-i18n="kl.pandu">Panduan</span></summary><div id="kelayakanHasil" class="jm-pel-panel-isi" aria-live="polite"></div></details>
+      </section>
+    </div>
+    <div id="panelPlts" hidden><div id="pltsIsi" class="jm-pa"></div></div>
+  </div>
+
+  <div id="pnPembiayaan" class="iv-panel" hidden>
+    <section class="jm-kh" aria-labelledby="kgKhJ">
+      <div class="jm-kh-teks">
+        <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-kartu"/></svg><span data-i18n="kg.eyebrow">Keuangan hijau</span></p>
+        <h2 id="kgKhJ" data-i18n="kg.judul">Keuangan hijau</h2>
+        <p id="kgJawab" class="jm-kh-lead"></p>
+      </div>
+      <div class="jm-kh-ubin" id="kgUbin" aria-live="polite"></div>
+    </section>
+    <div id="kgIsi"></div>
+  </div>
+
+  <div id="pnBiaya" class="iv-panel" hidden>
+    <div id="tabBiaya"></div>
+    <div id="panelBiayaListrik" class="iv-panel">
+      <section class="jm-kh" aria-labelledby="blKhJ">
+        <div class="jm-kh-teks">
+          <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-grafik"/></svg><span data-i18n="bl.eyebrow">Biaya dan harga</span></p>
+          <h2 id="blKhJ" data-i18n="bl.judul">Biaya dan harga listrik</h2>
+          <p id="blJawab" class="jm-kh-lead"></p>
+        </div>
+        <div class="jm-kh-ubin" id="blUbin" aria-live="polite"></div>
+      </section>
+      <div id="blIsi"></div>
+      <div id="blPasar"></div>
+    </div>
+    <div id="panelHargaKomponen" class="iv-panel" hidden>
+      <section class="jm-kh" aria-labelledby="hkKhJ">
+        <div class="jm-kh-teks">
+          <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tag"/></svg><span data-i18n="hk2.eyebrow">Harga dan perdagangan</span></p>
+          <h2 id="hkKhJ" data-i18n="hk2.judul">Pelacak harga komponen</h2>
+          <p id="hkJawab" class="jm-kh-lead"></p>
+        </div>
+        <div class="jm-kh-ubin" id="hkUbin" aria-live="polite"></div>
+      </section>
+      <div id="hkIsi"></div>
+    </div>
+  </div>
 </main>
 <footer class="jm-kaki" id="kaki"></footer>
 <div class="iv-tray" id="ivTray" hidden></div>
 <dialog class="iv-dlg" id="ivDlg" aria-labelledby="ivDlgJ"></dialog>
 <article class="iv-cetak" id="ivCetak" aria-hidden="true"></article>
-<script type="module" src="/investasi.js"></script>
+<script type="module" src="/investasi_halaman.js"></script>
 </body>
 </html>

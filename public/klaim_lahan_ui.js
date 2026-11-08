@@ -7,7 +7,7 @@ export const IKON = { hti: "tek-bio", hph: "tek-bio", re: "tek-bio", sawit: "pab
 export const TINGKAT = { tinggi: ["--bad", "--bad-bg", "peringatan"], perhatian: ["--warn", "--warn-bg", "peringatan"], info: ["--info", "--info-bg", "info"] };
 const cache = {};
 export const muatJson = (u) => (cache[u] ||= fetch(u).then((r) => (r.ok ? r.json() : Promise.reject(new Error(u + " " + r.status)))));
-export const fmt = (n) => new Intl.NumberFormat(document.documentElement.lang === "en" ? "en-US" : "id-ID").format(Math.round(n));
+export const fmt = (n) => new Intl.NumberFormat(document.documentElement.lang !== "id" ? "en-US" : "id-ID").format(Math.round(n));
 export const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 export const pilLapis = (id) => `<span class="kl2-pil" data-l="${esc(id)}">${ikon(IKON[id] || "info", 14)}${esc(t("kl2.l." + id))}</span>`;
 export const pilTingkat = (tk, teks) => `<span class="kl2-pil kl2-t-${TINGKAT[tk] ? tk : "info"}">${ikon((TINGKAT[tk] || TINGKAT.info)[2], 14)}${esc(teks)}</span>`;

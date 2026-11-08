@@ -169,7 +169,7 @@ function kajianHtml(k, n) {
     <ul class="ix-kj-al">${c.alasan.map(ceklis).join("")}</ul>
     ${c.risiko ? `<p class="ix-kj-rs">${ikon("peringatan", 16)}<span>${esc(t(c.risiko.k, { komp: t("ix.k." + c.risiko.id), skor: num(c.risiko.p.skor, 1) }))}</span></p>` : ""}
     ${c.tek ? `<p class="ix-kj-tk">${pilTek(tekKode(c.tek.tek))}<span>${esc(t("ix.kj.tek", { tek: t("ix.kj.tk." + c.tek.tek), sisa: num(c.tek.sisa), persen: num(c.tek.persen_sisa, 1) }))}</span></p>` : ""}
-    <footer><a class="ix-btn" href="/wilayah/${esc(c.kode)}">${ikon("wilayah", 16)}<span>${esc(t("ix.kj.l.profil"))}</span></a><a class="ix-btn ix-btn-pinggir" href="/peluang">${ikon("insight", 16)}<span>${esc(t("ix.kj.l.peluang"))}</span></a></footer></article>`).join("");
+    <footer><a class="ix-btn" href="/wilayah/${esc(c.kode)}">${ikon("wilayah", 16)}<span>${esc(t("ix.kj.l.profil"))}</span></a><a class="ix-btn ix-btn-pinggir" href="/investasi#peluang">${ikon("insight", 16)}<span>${esc(t("ix.kj.l.peluang"))}</span></a></footer></article>`).join("");
   return `<div class="ix-kj"><div class="ix-kj-kartu">${kartu}</div></div>`;
 }
 function tekHtml(k) {
@@ -233,7 +233,7 @@ function judulSebaran() {
 }
 
 /* ---------- metode ---------- */
-const TAUT = { potensi: "/peluang", terpasang: "/peluang", elektrifikasi: "/wilayah", bpp: "/peluang", ruptl: "/peluang", proyek: "/proyek", organisasi: "/direktori", rued: "/regulasi", plts_atap: "/peluang", wkp: "/panas-bumi?tab=ringkasan" };
+const TAUT = { potensi: "/investasi#peluang", terpasang: "/investasi#peluang", elektrifikasi: "/wilayah", bpp: "/investasi#peluang", ruptl: "/investasi#peluang", proyek: "/proyek", organisasi: "/direktori", rued: "/regulasi", plts_atap: "/investasi#plts-atap", wkp: "/panas-bumi?tab=ringkasan" };
 const NORMA = { persentil: ["grafik", "jm-pil"], minmax: ["analisis", "jm-pil jm-pil-ok"], biner: ["centang", "jm-pil jm-pil-warn"] };
 function metode() {
   const m = S.d.metode, kom = m.provinsi.komponen;
@@ -243,7 +243,7 @@ function metode() {
   const rumus = [["skor", "kalkulator"], ["pers", "grafik"], ["mm", "analisis"]].map(([id, ik]) => `<article class="ix-fm"><h4>${ikon(ik, 20)}<span>${esc(t("ix.m.f." + id + ".j"))}</span></h4><code class="ix-fm-r">${esc(t("ix.m.f." + id))}</code><p>${esc(t("ix.m.f." + id + ".n"))}</p></article>`).join("");
   const tbl = kom.map((k, i) => {
     const [ikN, klsN] = NORMA[k.normalisasi] || NORMA.persentil, nm = t("ix.k." + k.id);
-    return `<tr><td data-label="${esc(t("ix.m.c.komp"))}"><span class="ix-ik-k"><i class="ix-sw ix-c${i}"></i>${ikon(IKX[k.id] || "info", 16)}<span>${esc(nm)}</span></span><span class="jm-bantu ix-kd">${esc(t("ix.kd." + k.id))}</span></td><td class="jm-tengah" data-label="${esc(t("ix.p.bobot"))}" data-urut="${k.bobot}"><span class="jm-pil jm-pil-ok">${esc(num(k.bobot))}%</span></td><td class="jm-tengah" data-label="${esc(t("ix.m.c.norma"))}"><span class="${klsN} ix-pil-ik">${ikon(ikN, 14)}${esc(t("ix.norma." + k.normalisasi))}</span></td><td data-label="${esc(t("ix.m.c.sumber"))}"><a class="ix-src" href="${TAUT[k.id] || "/peluang"}" aria-label="${esc(t("ix.m.taut"))}: ${esc(nm)}">${ikon("tautan", 16)}<span>${esc(t("ix.m.src." + k.id))}</span></a></td></tr>`;
+    return `<tr><td data-label="${esc(t("ix.m.c.komp"))}"><span class="ix-ik-k"><i class="ix-sw ix-c${i}"></i>${ikon(IKX[k.id] || "info", 16)}<span>${esc(nm)}</span></span><span class="jm-bantu ix-kd">${esc(t("ix.kd." + k.id))}</span></td><td class="jm-tengah" data-label="${esc(t("ix.p.bobot"))}" data-urut="${k.bobot}"><span class="jm-pil jm-pil-ok">${esc(num(k.bobot))}%</span></td><td class="jm-tengah" data-label="${esc(t("ix.m.c.norma"))}"><span class="${klsN} ix-pil-ik">${ikon(ikN, 14)}${esc(t("ix.norma." + k.normalisasi))}</span></td><td data-label="${esc(t("ix.m.c.sumber"))}"><a class="ix-src" href="${TAUT[k.id] || "/investasi#peluang"}" aria-label="${esc(t("ix.m.taut"))}: ${esc(nm)}">${ikon("tautan", 16)}<span>${esc(t("ix.m.src." + k.id))}</span></a></td></tr>`;
   }).join("");
   const tblP = [...Object.entries(m.proyek.bobot), ...Object.entries(m.proyek.bobot_kelengkapan)].map(([k, b]) => `<tr><td data-label="${esc(t("ix.p.sinyal"))}">${esc(t("ix.s." + k))}</td><td class="jm-tengah" data-label="${esc(t("ix.p.bobot"))}" data-urut="${b}"><span class="jm-pil jm-pil-ok">${esc(num(b))}</span></td></tr>`).join("");
   return `<div class="ix-metode"><p class="ix-m-lead">${ikon("info", 18)}<span>${esc(t("ix.m.ringkas"))} ${pil("ix.hipotesis")}</span></p>

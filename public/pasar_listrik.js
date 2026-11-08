@@ -26,7 +26,7 @@ function rangka() {
   const est = " " + pil("an.est");
   const ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: !!o.csv }), tingkat: "h2" });
   const tabThn = `<div class="jm-tab" role="tablist" aria-label="${esc(t("psl.pilih_th"))}">${A.tahunan.map((r) => `<button type="button" role="tab" data-pth="${r.tahun}" aria-selected="${r.tahun === thIni()}">${r.tahun}</button>`).join("")}</div>`;
-  $("pasar").innerHTML = [
+  $("blPasar").innerHTML = [
     ex({ id: "hba", ikon: "grafik", topik: t("psl.ey.hba"), judulHtml: hlHtml("psl.t.hba", `USD ${n1(h24.usd_ton, 2)}`, { tahun: h24.tahun, puncak: n1(puncak.usd_ton, 2), tp: puncak.tahun }), subHtml: esc(t("psl.s.hba")), csv: true,
       isiHtml: `${legendaHtml([{ id: "hba", kelas: "ih-fosil", label: t("psl.l.hba") }, { id: "dmo", kelas: "ih-ebt", label: t("psl.l.dmo") }])}<div id="g-hba" class="ih-bagan"></div><div id="tb-hba" class="ih-tabel"></div><h3 class="jm-ex-sj">${esc(t("psl.j.periode"))}</h3><div id="tb-periode" class="ih-tabel"></div><p class="jm-bantu ih-catatan">${esc(t("psl.n.hba"))}</p>${src("hessi-2024", "esdm-hba-2015", "esdm-hba-2025-05", "esdm-hba-2025-07", "cnbc-hba-2025-11")}` }),
     ex({ id: "dmo", ikon: "tabel", topik: t("psl.ey.dmo"), judulHtml: hlHtml("psl.t.dmo", "USD 70", { th: d.dmo.tidak_berubah_sejak, mt: n1(v1.ke_pembangkit_listrik_t / 1e6, 0), tahun: v1.tahun }), subHtml: esc(t("psl.s.dmo")), csv: true,
@@ -145,7 +145,7 @@ function gBbm() {
 }
 
 export async function pasangPasar() {
-  const el = $("pasar"); if (!el) return;
+  const el = $("blPasar"); if (!el) return;
   el.innerHTML = hantuHtml(2);
   try { d = await muatData("pasar_listrik.json"); } catch (e) { tampilGalat(el, pasangPasar); return; }
   const gambar = () => { rangka(); bagan(); };

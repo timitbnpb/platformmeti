@@ -195,3 +195,7 @@ dialog.iv-dlg[open]::backdrop{animation:iv-pudar .22s ease-out}
 
 #ivSkor .jm-tabel th:nth-child(2),#ivSkor .jm-tabel th:nth-child(3){width:84px}
 #ivSkor .jm-tabel th:first-child{width:130px}
+
+/* induk lima tab (investasi_halaman.js): tiap panel memakai jarak antarblok yang sama; panel Peluang tanpa padding halaman sendiri */
+.iv-panel{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);min-width:0;align-content:start}
+.iv-halaman>.jm-pel-halaman{padding-block:0}

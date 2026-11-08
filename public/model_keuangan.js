@@ -2,7 +2,6 @@
    asumsi bawaan bersumber: /model_keuangan_data.js. INP: pilihan dan kolom isian menyalakan chrome seketika, hitung ulang + grafik + tabel
    menyusul lewat nanti() dengan debounce 120 ms. Hasil selalu Hipotesis; turunan berpil EST. */
 import { t, angka } from "/i18n.js";
-import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, nanti, ikon, hantuHtml, debounce, galatHtml } from "/inti/umum.js";
 import { khUbin } from "/inti/kh.js";
 import { exHtml, pilihHtml } from "/inti/komponen.js";
@@ -271,7 +270,6 @@ function pasang() {
 }
 
 /* ---- mulai ---- */
-await mulaiHalaman();
 try {
   const [peluang, atap, karbon, listrik] = await Promise.all(["peluang.json", "plts_atap_hitung.json", "karbon_pasar.json", "biaya_listrik.json"].map(muatData));
   Object.assign(D, { peluang, atap, karbon, listrik, bangun: await muatData("biaya_bangun.json").catch(() => null) });

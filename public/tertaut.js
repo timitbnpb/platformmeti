@@ -160,7 +160,7 @@ export async function bagianOrg(id, { proyekAda } = {}) {
 
   /* obligasi dan sukuk hijau yang diterbitkan */
   const og = urut((ob?.baris || []).filter((b) => b.penerbit_org_id === id), (b) => b.tahun || 0);
-  out.push(bagian({ id: "obligasi-hijau", ik: "kartu", topik: "td.ey.obligasi", j: "td.j.obligasi", n: og.length, tglData: ob?.dibangun_pada, lihat: ["/keuangan-hijau#obligasi", "td.lihat.obligasi"],
+  out.push(bagian({ id: "obligasi-hijau", ik: "kartu", topik: "td.ey.obligasi", j: "td.j.obligasi", n: og.length, tglData: ob?.dibangun_pada, lihat: ["/investasi#obligasi", "td.lihat.obligasi"],
     isi: tbl([["td.c.instrumen"], ["td.c.tahun"], ["td.c.nilai", "jm-num"], ["td.c.kupon", "jm-num"], ["td.c.tenor", "jm-num"], ["td.c.bukti"]], og.map((b) => `<tr>${td("td.c.instrumen", b.sumber_url ? `<a href="${esc(b.sumber_url)}" target="_blank" rel="noopener noreferrer">${esc(b.instrumen)}</a>` : esc(b.instrumen))}${td("td.c.tahun", esc(String(b.tahun || "-")))}${td("td.c.nilai", b.nilai == null ? "-" : esc(angka(b.nilai, { desimal: b.nilai % 1 ? 1 : 0 }) + " " + (b.satuan_nilai || "")), "jm-num")}${td("td.c.kupon", b.kupon_persen == null ? "-" : esc(angka(b.kupon_persen, { desimal: 2 }) + "%"), "jm-num")}${td("td.c.tenor", b.tenor_tahun == null ? "-" : esc(t("td.tenor_th", { n: angka(b.tenor_tahun, { desimal: b.tenor_tahun % 1 ? 1 : 0 }) })), "jm-num")}${td("td.c.bukti", esc(slug(b.tingkat_bukti)))}</tr>`)) }));
 
   /* PLTU milik */
@@ -227,7 +227,7 @@ export async function bagianWilayah(kode, namaProv) {
 
   const a = (atlas?.baris || []).find((b) => String(b.kode) === k);
   if (a) out.push(bagian({ id: "atlas", ik: "kompas", topik: "td.ey.atlas", j: "td.j.atlas", n: 1, hl: angka(a.pvout_kwh_per_kwp_tahun), tglData: String(a.tahun), sub: "td.sub.atlas",
-    isi: `<dl class="pf-satu"><div><dt>${esc(t("td.pvout"))}</dt><dd>${esc(angka(a.pvout_kwh_per_kwp_tahun))} kWh/kWp</dd></div><div><dt>GHI</dt><dd>${esc(angka(a.ghi_kwh_per_m2_tahun))} kWh/m²</dd></div><div><dt>DNI</dt><dd>${esc(angka(a.dni_kwh_per_m2_tahun))} kWh/m²</dd></div><div><dt>${esc(t("td.suhu"))}</dt><dd>${esc(angka(a.suhu_udara_c))} °C</dd></div></dl>`, lihat: ["/peluang", "td.lihat.peluang"] }));
+    isi: `<dl class="pf-satu"><div><dt>${esc(t("td.pvout"))}</dt><dd>${esc(angka(a.pvout_kwh_per_kwp_tahun))} kWh/kWp</dd></div><div><dt>GHI</dt><dd>${esc(angka(a.ghi_kwh_per_m2_tahun))} kWh/m²</dd></div><div><dt>DNI</dt><dd>${esc(angka(a.dni_kwh_per_m2_tahun))} kWh/m²</dd></div><div><dt>${esc(t("td.suhu"))}</dt><dd>${esc(angka(a.suhu_udara_c))} °C</dd></div></dl>`, lihat: ["/investasi#peluang", "td.lihat.peluang"] }));
 
   const bm = (bio?.baris || []).find((b) => String(b.kode_prov) === k);
   if (bm) out.push(bagian({ id: "biomassa", ik: "tek-bio", topik: "td.ey.biomassa", j: "td.j.biomassa", n: bm.mw_termal_setara_est ? 1 : 0, hl: angka(Math.round(bm.mw_termal_setara_est || 0)), tglData: bio.dibangun_pada, lihat: ["/bioenergi?tab=bahan", "td.lihat.bio"],
@@ -243,7 +243,7 @@ export async function bagianWilayah(kode, namaProv) {
 
   const si = (sis?.baris || []).filter((b) => (b.provinsi || []).some((x) => String(x.kode) === k));
   out.push(bagian({ id: "sistem", ik: "sistem-listrik", topik: "td.ey.sistem", j: "td.j.sistem", n: si.length, tglData: sis?.dibangun_pada, lihat: ["/sistem", "td.lihat.sistem"],
-    isi: tbl([["td.c.sistem"], ["td.c.kap", "jm-num"], ["td.c.beban", "jm-num"], ["td.c.ebt", "jm-num"]], si.map((b) => `<tr>${td("td.c.sistem", taut("/sistem", b.nama?.[document.documentElement.lang] || b.nama?.id || b.singkat))}${td("td.c.kap", b.kapasitas_mw?.total != null ? esc(angka(b.kapasitas_mw.total) + " MW") : "-", "jm-num")}${td("td.c.beban", b.beban_puncak_mw?.[0] != null ? esc(angka(b.beban_puncak_mw[0]) + " MW") : "-", "jm-num")}${td("td.c.ebt", b.bauran_ebt_persen != null ? esc(angka(b.bauran_ebt_persen) + "%") : "-", "jm-num")}</tr>`)) }));
+    isi: tbl([["td.c.sistem"], ["td.c.kap", "jm-num"], ["td.c.beban", "jm-num"], ["td.c.ebt", "jm-num"]], si.map((b) => `<tr>${td("td.c.sistem", taut("/sistem", b.nama?.[document.documentElement.lang === "id" ? "id" : "en"] || b.nama?.id || b.singkat))}${td("td.c.kap", b.kapasitas_mw?.total != null ? esc(angka(b.kapasitas_mw.total) + " MW") : "-", "jm-num")}${td("td.c.beban", b.beban_puncak_mw?.[0] != null ? esc(angka(b.beban_puncak_mw[0]) + " MW") : "-", "jm-num")}${td("td.c.ebt", b.bauran_ebt_persen != null ? esc(angka(b.bauran_ebt_persen) + "%") : "-", "jm-num")}</tr>`)) }));
 
   const pl = urut((plt?.baris || []).filter((b) => String(b.prov_kode ?? b.prov) === k), (b) => b.mw_operasi || 0);
   out.push(bagian({ id: "pltu", ik: "industri", topik: "td.ey.pltu", j: "td.j.w_pltu", n: pl.length, tglData: plt?.dibangun_pada, lihat: ["/transisi-pltu?tab=armada", "td.lihat.pltu_modul"],

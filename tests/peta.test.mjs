@@ -30,8 +30,8 @@ test("adapter terdaftar untuk tiap lapisan", async () => {
   for (const l of IDX.lapisan) assert.ok(new RegExp(`\\b${l.adapter}: \\{`).test(s), `${l.id}: adapter ${l.adapter}`);
 });
 test("menu inti memuat /peta dengan ikon unik", () => {
-  assert.match(readFileSync(new URL("../public/inti/kepala.js", import.meta.url), "utf8"), /href: "\/peta", kunci: "nav\.peta_nasional", ikon: "globe"/);
-  assert.ok(ID["nav.peta_nasional"] && EN["nav.peta_nasional"]);
+  assert.match(readFileSync(new URL("../public/inti/kepala.js", import.meta.url), "utf8"), /href: "\/peta", kunci: "nav\.peta", ikon: "globe"/);
+  assert.ok(ID["nav.peta"] && EN["nav.peta"]);
 });
 test("peta.js memakai panel geser dan tanpa teks tertanam", () => {
   const j = readFileSync(new URL("../public/peta.js", import.meta.url), "utf8");

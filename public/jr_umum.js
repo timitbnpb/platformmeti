@@ -20,7 +20,7 @@ export async function muatSemua() {
 }
 export const berisi = (k, f = "baris") => Array.isArray(D[k]?.[f]) && D[k][f].length > 0;
 /** Teks dua bahasa {id,en} milik data -> bahasa halaman. */
-export const L = (o) => (o == null ? "" : typeof o === "string" ? o : o[document.documentElement.lang === "en" ? "en" : "id"] || o.id || "");
+export const L = (o) => (o == null ? "" : typeof o === "string" ? o : o[document.documentElement.lang !== "id" ? "en" : "id"] || o.id || "");
 export const sumberId = (id) => (D.m?.sumber || []).find((s) => s.id === id) || null;
 /** Lencana bukti dari sumber kurasi: tingkat dari butir, sumber/tanggal dari daftar sumber modul. */
 export function buktiSumber(raw, sid, o = {}) {

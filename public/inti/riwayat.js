@@ -28,7 +28,7 @@ export function hrefEntitas(jenis, id, u = "") {
   if (jenis === "proyek") return "/p/" + e;
   if (jenis === "regulasi") return "/regulasi?id=" + e;
   if (jenis === "program") return "/program/" + e;
-  if (jenis === "pendanaan") return "/peluang";
+  if (jenis === "pendanaan") return "/investasi#peluang";
   if (jenis === "inovasi") return "/teknologi";
   if (jenis === "berita") return urlAman(u);
   return "";

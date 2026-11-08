@@ -21,7 +21,7 @@ const halaman = readdirSync(path.join(akar, "public")).filter(f => f.endsWith(".
 const rincian = ["/o/x", "/p/x", "/wilayah/11", "/program/psn", "/sistem/x", "/kawasan/x", "/teknologi/surya", "/topik?id=surya", "/pelacak?tek=bayu"];
 /* satu teknologi, satu rumah (src/alih_tek.js): tautan lama dialihkan 301 ke modul */
 const ALIH_TEK = {"/teknologi/surya": "/surya?tab=ringkasan", "/teknologi/bayu": "/angin?tab=ringkasan", "/topik?id=hidro": "/hidro?tab=dasar", "/pelacak?tek=plta": "/hidro"};
-const ALIH = {"/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum", "/pelacak-proyek": "/proyek#terpadu", "/proyek-besar": "/proyek#besar", "/proyek-berhenti": "/proyek#henti", "/energi-baru": "/transisi-pltu?tab=enb", "/transisi": "/target#transisi", "/strategi": "/target#strategi", "/rapor": "/target#rapor", "/ringkasan": "/insight#ringkasan", "/rantai": "/rantai-global?tab=tkdn", "/akademi": "/panduan#akademi", "/istilah": "/panduan#istilah"};
+const ALIH = {"/kelayakan": "/investasi#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum", "/pelacak-proyek": "/proyek#terpadu", "/proyek-besar": "/proyek#besar", "/proyek-berhenti": "/proyek#henti", "/energi-baru": "/transisi-pltu?tab=enb", "/transisi": "/target#transisi", "/strategi": "/target#strategi", "/rapor": "/target#rapor", "/ringkasan": "/insight#ringkasan", "/rantai": "/rantai-global?tab=tkdn", "/akademi": "/panduan#akademi", "/istilah": "/panduan#istilah", "/peluang": "/investasi#peluang", "/model-keuangan": "/investasi#model", "/keuangan-hijau": "/investasi#pembiayaan", "/harga-komponen": "/investasi#harga-komponen", "/biaya-listrik": "/investasi#biaya", "/lokasi-hijau": "/cek-lokasi#kawasan-hijau"};
 
 /* (b) tamu: semua rute halaman 302 ke /masuk */
 async function tamu() {
@@ -35,7 +35,7 @@ async function tamu() {
     catat("alih", p, r.status === 302 && ke.startsWith("/masuk"), `tamu ${r.status} ${ke} (alih ${tujuan} diuji bersesi)`);
   }
   const inti = readdirSync(path.join(akar, "public/inti")).filter(f => /\.(js|css)$/.test(f));
-  const aset = ["/tema.js", "/i18n.js", "/i18n/id.json", "/i18n/en.json", "/masuk.js", ...inti.slice(0, 5).map(f => "/inti/" + f)];
+  const aset = ["/tema.js", "/i18n.js", "/i18n/id.json", "/i18n/en.json", "/i18n/zh.json", "/masuk.js", ...inti.slice(0, 5).map(f => "/inti/" + f)];
   for (const p of aset) { const r = await ambil(p); catat("aset", p, r.status === 200, String(r.status)); }
   const r = await ambil("/og/beranda/utama.png");
   catat("og", "/og/beranda/utama.png", r.status === 200 && /image\/png/.test(r.headers.get("content-type") || ""), `${r.status} ${r.headers.get("content-type")}`);

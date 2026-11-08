@@ -2,7 +2,7 @@
    (scripts/pipa/program_analisis.mjs); /program#psn memuat bagian PSN energi dari psn.js. Teks data dwibahasa {id, en}; teks layar dari kamus. Bagian tanpa isi tidak dirender.
    INP: chrome filter (cari, tahap) berubah seketika, kartu menyusul lewat nanti(); peta dan tabel panjang dibuat sesudah bingkai tercat. */
 import { mulaiHalaman } from "/inti/kepala.js";
-import { t, ada, angka, tanggal, bahasa } from "/i18n.js";
+import { t, ada, angka, tanggal, bahasa, bahasaData } from "/i18n.js";
 import { navLokal, pasangLokal } from "/inti/paginasi.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
 import { exHtml, sumberHtml, pilihHtml, cariHtml, hapusHtml, hitungHtml, unduhRegHtml, lihatSemuaHtml } from "/inti/komponen.js";
@@ -31,7 +31,7 @@ let peta = null, popup = null;
 
 /* ---------- pembantu ---------- */
 
-const L = (x) => (x && (x[bahasa()] ?? x.id)) || "";
+const L = (x) => (x && (x[bahasaData()] ?? x.id)) || "";
 const num = (n, d = 0) => angka(n, { desimal: d });
 const kecil = (svg) => svg.replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"');
 function tglTampil(s) {

@@ -1,7 +1,6 @@
 /* /lokasi-hijau: pencocok kawasan industri dan KEK untuk perusahaan bertarget RE100 atau net zero.
    Data = potret statis /data/lokasi_hijau.json (scripts/pipa/lokasi_hijau.mjs) + korporat.json. Skor dihitung di sini (lokasi_hijau_hitung.js),
    semua bobot Hipotesis. INP: chip dan isian berubah seketika; peringkat, peta, dan daftar menyusul lewat nanti(). */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml, debounce } from "/inti/umum.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
@@ -16,7 +15,6 @@ import { ikonTek } from "/inti/ikon_tek.js";
 import { pasangPilih } from "/inti/pilih.js";
 import { TEKNOLOGI, PULAU, SEKTOR, BOBOT, AMBANG, peringkat, alasan, sektorDariGrup } from "/lokasi_hijau_hitung.js";
 
-await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
 const KOM = Object.keys(BOBOT);
@@ -160,7 +158,7 @@ function barisHtml(r) {
     <div class="lh-nama">${lambang(k.kode, 36)}<div><button type="button" class="lh-nama-b" data-buka="${esc(k.id)}">${esc(k.nama)}</button><small>${jenisPil(k)} <span>${esc(k.provinsi)}</span></small></div></div>
     <div class="lh-skor"><span class="jm-pil lh-skor-p ${kelasSkor(r.skor)}"><b>${N(r.skor)}</b></span><small>${esc(t("lh2.dasar", { p: N(r.dasar) }))}</small></div>
     <ul class="lh-alasan">${a.length ? a.map((x) => pilAlasan(x, r)).join("") : `<li class="lh-bantu">${esc(t("lh2.alasan.netral"))}</li>`}</ul>
-    <div class="lh-aksi"><a class="jm-tbl" href="/radar" title="${esc(t("lh2.radar"))}">${ikon("berlian", 16)}<span>${esc(t("lh2.radar"))}</span></a><a class="jm-tbl" href="/peluang?prov=${esc(k.kode)}" title="${esc(t("lh2.peluang"))}">${ikon("kompas", 16)}<span>${esc(t("lh2.peluang"))}</span></a></div></li>`;
+    <div class="lh-aksi"><a class="jm-tbl" href="/radar" title="${esc(t("lh2.radar"))}">${ikon("berlian", 16)}<span>${esc(t("lh2.radar"))}</span></a><a class="jm-tbl" href="/investasi?prov=${esc(k.kode)}#peluang" title="${esc(t("lh2.peluang"))}">${ikon("kompas", 16)}<span>${esc(t("lh2.peluang"))}</span></a></div></li>`;
 }
 const PER = 10;
 function gambarDaftar() {
@@ -257,7 +255,7 @@ function bukaRincian(id) {
     <h3>${esc(t("lh2.m.komponen"))}</h3><ul class="lh-m-daftar">${baris}</ul>
     <div class="lh-m-dua"><section><h3>${ikon("proyek", 16)}<span>${esc(t("lh2.m.proyek", { km: D.radius_km }))}</span></h3>${dekat.length ? `<ul class="lh-m-l">${dekat.map((p) => `<li><span class="lh-tki lh-tek-${esc(p.tek)}">${ikonTek(p.tek)}</span><b>${esc(p.nama)}</b><small>${esc(labTek(p.tek))}, ${p.mw != null ? N(p.mw) + " MW, " : ""}${N(p.km, 1)} km</small></li>`).join("")}</ul>` : `<p class="lh-bantu">${esc(t(k.titik_tepat ? "lh2.m.proyek0" : "lh2.m.proyek_tt"))}</p>`}</section>
       <section><h3>${ikon("kartu", 16)}<span>${esc(t("lh2.m.ppa"))}</span></h3>${ppa.length ? `<ul class="lh-m-l">${ppa.map((p) => `<li><b>${esc(p.pembeli)}</b><small>${esc(p.skema)}${p.mw ? ", " + N(p.mw, 1) + " MW" : ""}, ${esc(p.lokasi)}${urlAman(p.url) ? ` <a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">${esc(t("lh2.m.sumber"))}</a>` : ""}</small></li>`).join("")}</ul>` : `<p class="lh-bantu">${esc(t("lh2.m.ppa0"))}</p>`}</section></div>
-    <footer class="lh-m-k"><a class="jm-tbl jm-tbl-utama" href="/peluang?prov=${esc(k.kode)}">${ikon("kompas", 16)}<span>${esc(t("lh2.peluang"))}</span></a><a class="jm-tbl" href="/radar">${ikon("berlian", 16)}<span>${esc(t("lh2.radar"))}</span></a><a class="jm-tbl" href="/wilayah/${esc(k.kode)}">${ikon("wilayah", 16)}<span>${esc(t("lh2.m.profil"))}</span></a>${urlAman(k.url) ? `<a class="jm-tbl" href="${esc(k.url)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}<span>${esc(t("lh2.m.sumber_k"))}</span></a>` : ""}</footer>`;
+    <footer class="lh-m-k"><a class="jm-tbl jm-tbl-utama" href="/investasi?prov=${esc(k.kode)}#peluang">${ikon("kompas", 16)}<span>${esc(t("lh2.peluang"))}</span></a><a class="jm-tbl" href="/radar">${ikon("berlian", 16)}<span>${esc(t("lh2.radar"))}</span></a><a class="jm-tbl" href="/wilayah/${esc(k.kode)}">${ikon("wilayah", 16)}<span>${esc(t("lh2.m.profil"))}</span></a>${urlAman(k.url) ? `<a class="jm-tbl" href="${esc(k.url)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}<span>${esc(t("lh2.m.sumber_k"))}</span></a>` : ""}</footer>`;
   if (!dlg.open) dlg.showModal();
   dlg.scrollTop = 0;
   for (const el of $("lhDaftar").querySelectorAll(".lh-baris-sel")) el.classList.remove("lh-baris-sel");

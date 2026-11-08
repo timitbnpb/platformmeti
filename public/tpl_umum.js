@@ -14,7 +14,7 @@ export async function muat() {
   R.orgAda = new Set((B.org?.baris || []).map((b) => b.id));
   return B;
 }
-export const bahasa = () => (document.documentElement.lang === "en" ? "en" : "id");
+export const bahasa = () => (document.documentElement.lang !== "id" ? "en" : "id");
 export const tx = (o) => (o && typeof o === "object" ? o[bahasa()] || o.id || "" : o ?? "");
 export const src = (id) => (B.tp?.sumber || []).find((s) => s.id === id) || (B.pltu?.sumber || []).find((s) => s.id === id) || (B.pasar?.sumber || []).find((s) => s.id === id) || (B.enb?.sumber || []).find((s) => s.id === id) || null;
 export const buktiS = (id, tingkat) => { const s = src(id); return bukti(tingkat || s?.tingkat_bukti, { sumber: s?.penerbit || "", tanggal: s?.tanggal_periksa || s?.tanggal || "" }); };

@@ -7,15 +7,15 @@ const src = readFileSync("src/worker.js", "utf8");
 const peta = JSON.parse(src.match(/const ALIH_GABUNG = (\{[^}]*\});/)[1]);
 
 test("ALIH_GABUNG memetakan halaman lama ke tab baru", () => {
-  assert.deepEqual(peta, { "/kelayakan": "/peluang#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum", "/pelacak-proyek": "/proyek#terpadu", "/proyek-besar": "/proyek#besar", "/proyek-berhenti": "/proyek#henti", "/energi-baru": "/transisi-pltu?tab=enb", "/transisi": "/target#transisi", "/strategi": "/target#strategi", "/rapor": "/target#rapor", "/ringkasan": "/insight#ringkasan", "/rantai": "/rantai-global?tab=tkdn", "/akademi": "/panduan#akademi", "/istilah": "/panduan#istilah" });
+  assert.deepEqual(peta, { "/kelayakan": "/investasi#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum", "/pelacak-proyek": "/proyek#terpadu", "/proyek-besar": "/proyek#besar", "/proyek-berhenti": "/proyek#henti", "/energi-baru": "/transisi-pltu?tab=enb", "/transisi": "/target#transisi", "/strategi": "/target#strategi", "/rapor": "/target#rapor", "/ringkasan": "/insight#ringkasan", "/rantai": "/rantai-global?tab=tkdn", "/akademi": "/panduan#akademi", "/istilah": "/panduan#istilah", "/peluang": "/investasi#peluang", "/model-keuangan": "/investasi#model", "/keuangan-hijau": "/investasi#pembiayaan", "/harga-komponen": "/investasi#harga-komponen", "/biaya-listrik": "/investasi#biaya", "/lokasi-hijau": "/cek-lokasi#kawasan-hijau" });
 });
 test("alihan berstatus 301 dan mempertahankan query", () => {
   assert.match(src, /status: 301, headers: \{ location: ke \+ \(q\.size \? "\?" \+ q : ""\) \+ "#" \+ hash \}/);
   assert.match(src, /path === "\/sektor" && url\.searchParams\.has\("id"\)/);
 });
 test("halaman lama tidak lagi berkas statis; halaman gabungan memuat tabnya", () => {
-  for (const f of ["kelayakan", "event", "video", "podcast", "tender", "psn", "hukum", "pelacak-proyek", "proyek-besar", "proyek-berhenti", "energi-baru", "transisi", "strategi", "rapor", "ringkasan", "rantai", "akademi", "istilah"]) assert.throws(() => readFileSync(`public/${f}.html`), /ENOENT/);
-  assert.match(readFileSync("public/peluang_halaman.js", "utf8"), /"hitung"/);
+  for (const f of ["kelayakan", "event", "video", "podcast", "tender", "psn", "hukum", "pelacak-proyek", "proyek-besar", "proyek-berhenti", "energi-baru", "transisi", "strategi", "rapor", "ringkasan", "rantai", "akademi", "istilah", "peluang", "model-keuangan", "keuangan-hijau", "harga-komponen", "biaya-listrik", "lokasi-hijau"]) assert.throws(() => readFileSync(`public/${f}.html`), /ENOENT/);
+  assert.match(readFileSync("public/peluang_halaman.js", "utf8"), /"hitung"[\s\S]*"plts-atap"/);
   assert.match(readFileSync("public/kalender_halaman.js", "utf8"), /"daftar"[\s\S]*"arsip"/);
   assert.match(readFileSync("public/galeri_halaman.js", "utf8"), /"video"[\s\S]*"sosmed"/);
 });

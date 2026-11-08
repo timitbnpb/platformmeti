@@ -98,3 +98,6 @@
   .cl-skor-p{min-width:0;min-height:88px}
   .cl-peta{height:60vh}
 }
+
+/* induk dua tab (cek_lokasi_halaman.js): tiap panel memakai jarak antarblok yang sama */
+.cl-panel{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);min-width:0;align-content:start}

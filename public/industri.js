@@ -185,7 +185,7 @@ function pilihPL(id, terbang) {
     <div class="in3-angka"><div class="in3-an"><span>${esc(t("in3.mw.op"))}</span><b>${N(p.mw_operasi)}</b><small>MW</small></div><div class="in3-an"><span>${esc(t("in3.mw.kon"))}</span><b>${N(p.mw_konstruksi + p.mw_rencana)}</b><small>MW</small></div>
     <div class="in3-an"><span>${esc(t("in3.emisi", { y: p.emisi_tahun || "" }))}</span><b>${p.emisi_tco2e ? N(p.emisi_tco2e / 1e6, 2) : "-"}</b><small>Mt CO2e</small></div><div class="in3-an"><span>${esc(t("in3.tahun"))}</span><b>${p.tahun_mulai ? p.tahun_mulai[0] : "-"}</b><small>${esc(t("in3.bakar"))}</small></div></div>
     <h4>${esc(t("in3.pemilik"))}</h4><div class="in3-chip">${p.pemilik_org.map((o) => orgChip({ ...o, negara: "" })).join("")}</div>
-    ${z ? `<h4>${esc(t("in3.kawasan"))}</h4><p class="in3-p">${lambang(z.kode)} <b>${esc(z.nama)}</b> ${z.kawasan_id ? `<a class="in3-tautan" href="/lokasi-hijau">${esc(t("in3.hijau"))}</a>` : ""}</p>` : ""}
+    ${z ? `<h4>${esc(t("in3.kawasan"))}</h4><p class="in3-p">${lambang(z.kode)} <b>${esc(z.nama)}</b> ${z.kawasan_id ? `<a class="in3-tautan" href="/cek-lokasi#kawasan-hijau">${esc(t("in3.hijau"))}</a>` : ""}</p>` : ""}
     <p class="in3-cat">${sumberUnit(p)} ${p.emisi_tco2e ? `<a class="in3-tautan" href="/topik?id=karbon">${esc(t("in3.karbon"))}</a>` : ""}</p>
     <button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="zona">${ikon("peta", 16)}<span>${esc(t("in3.kembali"))}</span></button>`;
 }
@@ -279,7 +279,7 @@ function zonaDetail(z) {
   const b = BAURAN[SK.bauran], e = ebt(z.mwh_tahun, b);
   const sm = SM.filter((s) => s.zona === z.id);
   $("inCPanelJ").firstElementChild.textContent = z.nama; $("inCPanel").open = true;
-  $("inCPanelIsi").innerHTML = `<p class="in3-p">${lambang(z.kode, 28)} <b>${esc(z.prov)}</b> ${z.kawasan_id ? `<a class="in3-tautan" href="/lokasi-hijau">${esc(t("in3.hijau"))}</a>` : ""}</p>
+  $("inCPanelIsi").innerHTML = `<p class="in3-p">${lambang(z.kode, 28)} <b>${esc(z.prov)}</b> ${z.kawasan_id ? `<a class="in3-tautan" href="/cek-lokasi#kawasan-hijau">${esc(t("in3.hijau"))}</a>` : ""}</p>
     <div class="in3-angka"><div class="in3-an"><span>${esc(t("in3.mw.op"))}</span><b>${N(z.mw_operasi)}</b><small>MW</small></div><div class="in3-an"><span>${esc(t("in3.th.emisi"))}</span><b>${N(z.emisi_tco2e / 1e6, 1)}</b><small>Mt CO2e</small></div>
     <div class="in3-an"><span>${esc(t("in3.th.ebt"))}</span><b>${N(e.total)}</b><small>MW ${esc(t("pj.est"))}</small></div><div class="in3-an"><span>${esc(t("in3.th.rasio"))}</span><b>${z.mw_operasi ? N(e.total / z.mw_operasi, 1) : "-"}x</b><small>MW/MW</small></div></div>
     ${sm.length ? `<h4>${esc(t("in3.smelter.kawasan"))}</h4><ul class="in3-daftar">${sm.map((s) => `<li>${pilRt(s.rantai)} <span>${esc(s.nama)}</span></li>`).join("")}</ul>` : ""}
@@ -372,7 +372,7 @@ function pilihSM(id, terbang) {
     <dl class="in3-fakta">${fakta.map(([k, v]) => `<div><dt>${esc(t(k))}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
     ${ketKap(s)}<h4>${esc(t("in3.pemilik"))}</h4><div class="in3-chip">${s.pemilik.map(orgChip).join("")}</div>
     <h4>${esc(t("in3.alir"))}</h4>${alirHtml(s)}
-    <div class="in3-tautans"><a class="in3-tautan" href="/rantai-global?tab=tkdn&cari=${encodeURIComponent(s.nama)}">${ikon("rantai", 14)}${esc(t("in3.rantai"))}</a><a class="in3-tautan" href="/korporat">${ikon("pabrik", 14)}${esc(t("in3.korporat"))}</a>${s.kawasan_id ? `<a class="in3-tautan" href="/lokasi-hijau">${ikon("lokasi", 14)}${esc(t("in3.hijau"))}</a>` : ""}<a class="in3-tautan" href="/topik?id=karbon">${ikon("tek-panas", 14)}${esc(t("in3.karbon"))}</a></div>
+    <div class="in3-tautans"><a class="in3-tautan" href="/rantai-global?tab=tkdn&cari=${encodeURIComponent(s.nama)}">${ikon("rantai", 14)}${esc(t("in3.rantai"))}</a><a class="in3-tautan" href="/korporat">${ikon("pabrik", 14)}${esc(t("in3.korporat"))}</a>${s.kawasan_id ? `<a class="in3-tautan" href="/cek-lokasi#kawasan-hijau">${ikon("lokasi", 14)}${esc(t("in3.hijau"))}</a>` : ""}<a class="in3-tautan" href="/topik?id=karbon">${ikon("tek-panas", 14)}${esc(t("in3.karbon"))}</a></div>
     <p class="in3-cat">${sumberLink(s.sumber)}${s.tingkat_bukti === "perlu-verifikasi" ? ` <span class="jm-pil jm-pil-warn">${esc(t("in3.verifikasi"))}</span>` : ""}</p>
     <button type="button" class="jm-tbl jm-tbl-kecil" data-aksi="daftarH">${ikon("daftar2", 16)}<span>${esc(t("in3.kembali.h"))}</span></button>`;
 }

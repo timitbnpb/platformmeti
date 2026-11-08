@@ -82,7 +82,7 @@ export function pasangAkunMenu(kepala, saya) {
     if (!b) { if (e.target.closest("a")) buka(false); return; }
     if (b.dataset.am === "pesan") { buka(false); document.getElementById("psFab")?.click(); }
     else if (b.dataset.am === "surel") { buka(false); import("/inti/surel_minta.js").then((m) => m.bukaMintaSurel()); }
-    else if (b.dataset.am === "bahasa") { const baru = bahasa() === "id" ? "en" : "id"; buka(false); nanti(() => gantiBahasa(baru, { masuk: true })); }
+    else if (b.dataset.am === "bahasa") { const baru = { id: "zh", zh: "en", en: "id" }[bahasa()]; /* urutan tombol: Indonesia, Mandarin, Inggris */ buka(false); nanti(() => gantiBahasa(baru, { masuk: true })); }
   });
   tombol.addEventListener("keydown", (e) => { if (e.key === "ArrowDown") { buka(true); menu.querySelector('[role="menuitem"]')?.focus(); e.preventDefault(); } });
 }

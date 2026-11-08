@@ -1,7 +1,7 @@
 /* /transisi-pltu, tab "Energi baru lain" (menggantikan /energi-baru): butir energi baru dari energi_baru.json (nuklir, hidrogen dan amonia, CBM, DME, co-firing)
    dengan status, linimasa, pihak, regulasi, sumber. Inventaris PLTU dan dampaknya ada di tab Armada dan Emisi. Dimuat malas oleh transisi-pltu.js (mulai(panel)).
    Data /data/energi_baru.json dan /data/pltu.json dibaca lewat tpl_umum.js. INP: saringan menyalakan chrome seketika, isi berat menyusul lewat nanti(). */
-import { t, angka, tanggal, bahasa } from "/i18n.js";
+import { t, angka, tanggal, bahasa, bahasaData } from "/i18n.js";
 import { esc, ikon, nanti, debounce, kosongHtml, galatHtml, hantuHtml } from "/inti/umum.js";
 import { cariHtml, pilihHtml, hapusHtml, exHtml, sumberHtml } from "/inti/komponen.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
@@ -20,7 +20,7 @@ import { B } from "/tpl_umum.js";
 let PAN, E, P, SUMBER_E, PL;
 const $ = (id) => PAN.querySelector("#" + id);
 const N = (n, d = 0) => angka(n, { desimal: d });
-const L = (o) => (o && (o[bahasa()] ?? o.id)) || "";
+const L = (o) => (o && (o[bahasaData()] ?? o.id)) || "";
 const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim() || "gray";
 const gelap = () => document.documentElement.dataset.theme === "dark" || (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme:dark)").matches);
 const gaya = () => "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron");

@@ -120,7 +120,7 @@ function tampil(el) {
   const rek = D?.d?.[el.dataset.ist]; if (!rek) return;
   clearTimeout(tutup);
   const p = buatPop(), b = bahasa();
-  p.innerHTML = `<p class="jm-ist-n"><b>${esc(rek[0])}</b>${rek[3] ? `<span class="jm-pil jm-pil-ok">${esc(t("is2.h.resmi"))}</span>` : ""}</p><p class="jm-ist-a">${esc(b === "en" ? rek[2] || rek[1] : rek[1])}</p><p class="jm-ist-aksi"><a href="/panduan#istilah-${encodeURIComponent(el.dataset.ist)}">${esc(t("is2.h.selengkapnya"))}</a><button type="button" data-ist-mati>${esc(t("is2.h.matikan"))}</button></p>`;
+  p.innerHTML = `<p class="jm-ist-n"><b>${esc(rek[0])}</b>${rek[3] ? `<span class="jm-pil jm-pil-ok">${esc(t("is2.h.resmi"))}</span>` : ""}</p><p class="jm-ist-a">${esc(b === "id" ? rek[1] : rek[2] || rek[1])}</p><p class="jm-ist-aksi"><a href="/panduan#istilah-${encodeURIComponent(el.dataset.ist)}">${esc(t("is2.h.selengkapnya"))}</a><button type="button" data-ist-mati>${esc(t("is2.h.matikan"))}</button></p>`;
   p.hidden = false;
   if (pemicu && pemicu !== el) pemicu.removeAttribute("aria-describedby");
   pemicu = el; el.setAttribute("aria-describedby", p.id);

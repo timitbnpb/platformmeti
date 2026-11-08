@@ -2,7 +2,6 @@
    Skor, model keuangan, dan kecocokan pendana adalah Hipotesis terbuka (rumus: /inti/investasi_rumus.js, dijelaskan di /metode#investasi); bukan rekomendasi investasi.
    INP: saringan, urut, dan banding menyalakan chrome seketika (aria-pressed, hitungan); grid kartu dan lembar menyusul lewat nanti(). */
 import { t, angka } from "/i18n.js";
-import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, nanti, debounce, ikon, galatHtml, hantuHtml } from "/inti/umum.js";
 import { khUbin } from "/inti/kh.js";
 import { exHtml, cariHtml, pilihHtml, hapusHtml, hitungHtml, sumberHtml, pasangUrutTabel } from "/inti/komponen.js";
@@ -157,6 +156,7 @@ function pasang() {
 
 function bacaUrl() {
   const q = new URLSearchParams(location.search);
+  if (q.has("mw")) return; // tautan "Buka di Pemodelan keuangan" (?tek= &prov= &mw=) milik tab Model, bukan saringan proyek
   for (const [p, k] of [["tek", "tek"], ["prov", "prov"], ["ukuran", "ukuran"], ["skor", "skor"], ["q", "q"], ["urut", "uk"]]) { const v = q.get(p); if (v) S[k] = v; }
   if (!URUT[S.uk]) S.uk = "skor";
 }
@@ -170,7 +170,6 @@ function hero() {
   ]);
 }
 
-await mulaiHalaman();
 isi = $("ivIsi");
 isi.innerHTML = hantuHtml(3);
 try { D = await fetch("/data/investasi.json", { credentials: "same-origin" }).then((r) => { if (!r.ok) throw new Error("data"); return r.json(); }); } catch {

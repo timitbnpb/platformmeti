@@ -1,7 +1,7 @@
 /* /transisi: halaman informasi target dan skenario, kesehatan sistem kelistrikan, dan karbon. Hanya data yang ada + olahan (turunan berpil EST).
    Sumber: target.json, transisi.json (neraca daya RUPTL), ember_bulanan.json, statistik_pln.json, ruptl.json, karbon.json, karbon_proyek.json, program_analisis.json.
    INP: kontrol (segmen, urut, halaman) mengubah chrome seketika; isi menyusul lewat nanti(). Tanpa kalkulator: tidak ada masukan angka dari pengguna. */
-import { t, ada, bahasa, tanggal } from "/i18n.js";
+import { t, ada, bahasa, tanggal, bahasaData } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml } from "/inti/umum.js";
 import { exHtml, tabTautan, lihatSemuaHtml, unduhRegHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
@@ -21,7 +21,7 @@ const $ = (id) => document.getElementById(id);
 const D = {};
 const ST = { segmen: "rm", sistem: "jawa-bali", bursa: "volume" };
 const TB = new Map();
-const L = (o) => (o && (o[bahasa()] ?? o.id)) ?? "";
+const L = (o) => (o && (o[bahasaData()] ?? o.id)) ?? "";
 const mw = (v, d = 0) => (v == null ? "-" : num(v, d));
 const pct = (v, d = 1) => (v == null ? "-" : num(v, d) + "%");
 const rp = (v) => "Rp" + num(v);

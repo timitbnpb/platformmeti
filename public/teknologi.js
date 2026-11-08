@@ -18,7 +18,7 @@ const KARTU = [
   { kode: "biomassa-sampah", foto: "biomassa-bantargebang" }, { kode: "penyimpanan", foto: "penyimpanan-baterai" }, { kode: "hidrogen", foto: "hidrogen-spbu" },
   { kode: "nuklir", foto: "nuklir-siwabessy" }, { kode: "gas", ik: "gas" }, { kode: "pltu", foto: "transisi-berkeadilan", ik: "industri" },
 ];
-const LINTAS = [["/pelacak", "nav.pelacak", "tingkat"], ["/proyek#terpadu", "pt2.nav", "petir"], ["/kinerja", "kn2.nav", "medali"], ["/keandalan", "kd2.nav", "jam"], ["/rantai-global?tab=tkdn", "nav.rantai", "rantai"], ["/rantai-global", "rg3.nav", "kapal"], ["/harga-komponen", "hk2.nav", "tag"], ["/kuadran", "nav.kuadran", "status"]];
+const LINTAS = [["/pelacak", "nav.pelacak", "tingkat"], ["/proyek#terpadu", "pt2.nav", "petir"], ["/kinerja", "kn2.nav", "medali"], ["/keandalan", "kd2.nav", "jam"], ["/rantai-global?tab=tkdn", "nav.rantai", "rantai"], ["/rantai-global", "rg3.nav", "kapal"], ["/investasi#harga-komponen", "hk2.nav", "tag"], ["/kuadran", "nav.kuadran", "status"]];
 let PEL;
 
 const terpasang = (kunci) => (PEL ? PEL.baris.reduce((s, b) => s + (b.terpasang[kunci]?.mw || 0), 0) : 0);

@@ -391,12 +391,12 @@ function komp() {
   if (!B.length) {
     $("komp").innerHTML = `<div class="jm-rt-kosong"><span class="jm-rt-ik jm-rt-w3">${ikon("peringatan", 26)}</span><div><h3>${esc(t("rt.kosong.j", { tek: t("rt.tek." + tek) }))}</h3><p>${esc(t("rt.kosong.ajak"))}</p>
       <p class="jm-rt-pilcelah">${T.komponen.map((k) => `<span class="jm-pil jm-pil-warn">${esc(t("rt.komp." + k.id))}</span>`).join("")}</p>
-      <p class="jm-rt-lain"><a class="jm-tbl" href="/peluang">${esc(t("rt.peluang"))}</a>${TEK.filter((k) => k !== tek).map((k) => `<button type="button" class="jm-rt-lnk" data-tek="${k}">${esc(t("rt.tek." + k))}</button>`).join("")}</p></div></div>`;
+      <p class="jm-rt-lain"><a class="jm-tbl" href="/investasi#peluang">${esc(t("rt.peluang"))}</a>${TEK.filter((k) => k !== tek).map((k) => `<button type="button" class="jm-rt-lnk" data-tek="${k}">${esc(t("rt.tek." + k))}</button>`).join("")}</p></div></div>`;
     return;
   }
   $("komp").innerHTML = `<div class="jm-rt-komp">${T.komponen.map((k, i) => {
       const tk = k.pemasok.map((p) => p.tkdn).filter((v) => v != null), ada = k.pemasok.length > 0;
-      if (!ada) return `<a class="jm-rt-kk jm-rt-celah" href="/peluang"><span class="jm-rt-ik jm-rt-w3">${ikon("peringatan", 22)}</span><b>${esc(t("rt.komp." + k.id))}</b><span class="jm-rt-n"><span class="jm-pil jm-pil-warn">${esc(t("rt.celah"))}</span></span><small>${esc(t("rt.celah_cat"))}</small><span class="jm-rt-ajak">${esc(t("rt.peluang"))}</span></a>`;
+      if (!ada) return `<a class="jm-rt-kk jm-rt-celah" href="/investasi#peluang"><span class="jm-rt-ik jm-rt-w3">${ikon("peringatan", 22)}</span><b>${esc(t("rt.komp." + k.id))}</b><span class="jm-rt-n"><span class="jm-pil jm-pil-warn">${esc(t("rt.celah"))}</span></span><small>${esc(t("rt.celah_cat"))}</small><span class="jm-rt-ajak">${esc(t("rt.peluang"))}</span></a>`;
       const top = [...k.pemasok].sort((a, b) => (b.mwp ?? -1) - (a.mwp ?? -1)).slice(0, 3).map((p) => logoHtml({ ...(peta.get(p.id) || p), nama: namaBaku(p.nama).nama }, "jm-rt-lgk")).join(""), lebih = k.pemasok.length - 3;
       return `<button type="button" class="jm-rt-kk" data-komp="${esc(k.id)}" aria-pressed="${fKomp === k.id}">${kompIk(k.id, i)}<b>${esc(t("rt.komp." + k.id))}</b>
         <span class="jm-rt-n"><strong>${esc(num(k.pemasok.length))}</strong><span>${esc(t("rt.kk.label"))}</span>${tk.length ? `<span class="jm-pil ${median(tk) >= 40 ? "jm-pil-ok" : "jm-pil-warn"}">${esc(t("rt.kk.tkdn", { v: num(median(tk), 1) }))}</span>${tk.length ? `<span class="jm-pil jm-pil-info">${esc(t("rt2.kk.maks", { v: num(Math.max(...tk), 1) }))}</span>` : ""}` : ""}</span>

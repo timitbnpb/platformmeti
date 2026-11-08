@@ -18,7 +18,7 @@ const MIN = 12, MAKS = 128;
 const MI = "https://metiires.or.id";
 // kerangka bersama tiga halaman akun: logo + bahasa, panggung kanan, kaki tipis (teks lewat data-i18n)
 document.querySelector(".jm-ig-isi").insertAdjacentHTML("afterbegin", `<a href="${MI}" class="jm-ig-logo" aria-label="METI"><img src="/img/logo/meti-vertikal-611.png" alt="METI" width="611" height="835"></a>`);
-$("atas").innerHTML = `<div class="jm-ig-bahasa" role="group" aria-label="${t("masuk.bahasa")}">${[["id", "Bahasa Indonesia", "id"], ["en", "English", "gb"]].map(([b, n, f]) => `<button type="button" data-b="${b}" aria-label="${n}" title="${n}" aria-pressed="${bahasa() === b}"><img src="/img/bendera/${f}.svg" alt="" width="24" height="24"></button>`).join("")}</div>`;
+$("atas").innerHTML = `<div class="jm-ig-bahasa" role="group" aria-label="${t("masuk.bahasa")}">${[["id", "Bahasa Indonesia", "id"], ["zh", "中文", "cn"], ["en", "English", "gb"]].map(([b, n, f]) => `<button type="button" data-b="${b}" aria-label="${n}" title="${n}" aria-pressed="${bahasa() === b}"><img src="/img/bendera/${f}.svg" alt="" width="24" height="24"></button>`).join("")}</div>`;
 $("atas").addEventListener("click", (e) => {
   const b = e.target.closest("button[data-b]"); if (!b) return;
   for (const x of $("atas").querySelectorAll("button[data-b]")) x.setAttribute("aria-pressed", String(x === b));

@@ -1,6 +1,5 @@
 /* /keuangan-hijau: investasi publik EBT vs fosil, obligasi dan sukuk hijau, JETP, skema hibah, pembanding ASEAN. Informasi saja. Data statis /data/keuangan_hijau.json. Tab Pendanaan tidak digandakan, hanya ditautkan. */
 import { buktiHtml } from "/inti/bukti.js";
-import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml, debounce, ikon } from "/inti/umum.js";
 import { t } from "/i18n.js";
 import { exHtml, unduhRegHtml } from "/inti/komponen.js";
@@ -130,8 +129,8 @@ function batang(el, baris, { ref = null, kelasRef = "" } = {}) {
 function ubin() {
   const th = TAHUN(), z = th.at(-1), k = jumlahKel(z - 9, z), pers = (k.ebt / (k.ebt + k.fosil)) * 100;
   const sukuk = d.instrumen_hijau.find((r) => r.nilai === 185600);
-  $("jawab").textContent = t("kg.lead");
-  $("ubin").innerHTML = ubinHtml([
+  $("kgJawab").textContent = t("kg.lead");
+  $("kgUbin").innerHTML = ubinHtml([
     { ikon: "grafik", nilai: num(pers, 0), satuan: "%", label: t("kg.u1", { a: z - 9, b: z }), href: "#investasi", turunan: true },
     { ikon: "kartu", nilai: sukuk ? `Rp${num(sukuk.nilai / 1000, 1)}` : "-", satuan: t("kg.triliun"), label: t("kg.u2"), href: "#obligasi" },
     { ikon: "bintang", nilai: num(d.jetp.komitmen_usd_miliar, 0), satuan: t("kg.miliar_usd"), label: t("kg.u3"), href: "#jetp" },
@@ -147,7 +146,7 @@ function rangka() {
   const jp = d.jetp.proyek, ebtMw = jp.reduce((a, r) => a + (r.kapasitas_mw || 0), 0);
   const cap = (id, kunci) => `<p class="jm-bantu" id="${id}">${esc(t(kunci))}</p>`;
   const legJenis = ["multi", "bi", "pasar", "dom"].map((x) => `<li class="kg-leg-i kg-lm-${x}"><i class="ih-sw"></i><span class="kg-nm">${esc(t("kg.lm." + x))}</span></li>`).join("");
-  $("isi").innerHTML = [
+  $("kgIsi").innerHTML = [
     ex({ id: "investasi", ikon: "grafik", topik: t("kg.ey.investasi"), judulHtml: hlHtml("kg.t.investasi", `${num(pers, 0)}%`, { a: z - 9, b: z }) + est, subHtml: esc(t("kg.s.investasi")), csv: true,
       isiHtml: `<ul class="kg-leg" id="leg-inv">${KEL.map((x) => `<li><button type="button" class="kg-leg-b" data-seri="${x}" aria-pressed="${!HID.has(x)}" title="${esc(t("kg.leg.klik"))}"><i class="ih-sw ${KLS[x]}"></i>${esc(t("kg." + "kel." + x))}</button></li>`).join("")}</ul><p class="jm-bantu">${esc(t("kg.sat_usd"))}</p><div id="g-investasi" class="ih-bagan"></div><div id="tb-investasi" class="ih-tabel kg-tb"></div>${src("kg.n.investasi", "s-pubfin")}` }),
     ex({ id: "obligasi", ikon: "kartu", topik: t("kg.ey.obligasi"), judulHtml: hlHtml("kg.t.obligasi", `${g.length} ${t("kg.penerbitan")}`, { usd: num(g.reduce((a, r) => a + r.nilai, 0), 0) }), subHtml: esc(t("kg.s.obligasi")), csv: true,
@@ -244,16 +243,15 @@ function jetpBaris() {
 }
 
 async function mulai() {
-  await mulaiHalaman();
-  $("isi").innerHTML = hantuHtml(3);
-  try { d = await muatData("keuangan_hijau.json"); } catch (e) { tampilGalat($("isi"), mulai); return; }
+  $("kgIsi").innerHTML = hantuHtml(3);
+  try { d = await muatData("keuangan_hijau.json"); } catch (e) { tampilGalat($("kgIsi"), mulai); return; }
   try { kurs = (await muatData("pendanaan.json")).kurs?.usd_idr || 0; } catch { kurs = 0; }
   try { [dIf, dTk, dReg] = await Promise.all([muatData("insentif_fiskal.json"), muatData("taksonomi_ojk.json"), muatData("regulasi.json")]); } catch { dIf = dTk = null; }
   const gambar = () => { ubin(); rangka(); if (dIf && dTk) rangka2(); jetpBaris(); bagan(); };
   gambar();
   saatBahasa(gambar);
   /* legenda kolom: chrome (aria-pressed) sinkron, grafik digambar ulang sesudah satu bingkai */
-  $("isi").addEventListener("click", (e) => {
+  $("kgIsi").addEventListener("click", (e) => {
     const b = e.target.closest(".kg-leg-b"); if (!b) return;
     const k = b.dataset.seri, mati = !HID.has(k);
     if (mati && HID.size >= KEL.length - 1) return;
@@ -287,7 +285,7 @@ function rangka2() {
   const urut = [...B].sort((a, b) => (b.status_berlaku === "berlaku") - (a.status_berlaku === "berlaku"));
   const leg = (kunci, arr, kls) => `<div class="kg2-lg"><small>${esc(t(kunci))}</small><span class="kg2-lgp">${arr.map((x) => `<span class="jm-pil-tek kg-pil ${kls}">${esc(x)}</span>`).join("")}</span></div>`;
   const hasil = (kr.hasil_penilaian || []).map((x) => `<span class="jm-pil-tek kg-pil ${/^Hijau/.test(x) ? "kg2-h" : /^Transisi/.test(x) ? "kg2-t" : "kg2-0"}">${esc(x)}</span>`).join("");
-  $("isi").insertAdjacentHTML("beforeend",
+  $("kgIsi").insertAdjacentHTML("beforeend",
     ex({ id: "insentif", ikon: "kalkulator", topik: t("kg2.ey.insentif"), judulHtml: hlHtml("kg2.t.insentif", String(B.length), { n: ber }), subHtml: esc(t("kg2.s.insentif")),
       isiHtml: `<ul class="kg2-kartu">${urut.map(kartuIf).join("")}</ul>${srcDari(dIf, t("kg2.cat.insentif"))}` }) +
     ex({ id: "taksonomi", ikon: "perisai", topik: t("kg2.ey.taks"), judulHtml: hlHtml("kg2.t.taks", String(TB.length), { h: hj }), subHtml: esc(t("kg2.s.taks")),
@@ -303,4 +301,4 @@ function rangka2() {
   ], baris: TB });
 }
 
-mulai();
+await mulai();

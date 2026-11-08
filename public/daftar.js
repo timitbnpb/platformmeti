@@ -1,6 +1,6 @@
 /* /daftar (terbuka untuk tamu): formulir bertahap pendaftaran anggota. /daftar/lacak#<token>: status, iuran, rekening, unggah bukti.
    Tanpa NIK/KTP dan data keuangan. Token dikirim di BADAN permintaan. Teks lewat kamus i18n. */
-import { t, angka, tanggal, tanggalDariUnix, bahasa } from "/i18n.js";
+import { t, angka, tanggal, tanggalDariUnix, bahasa, bahasaData } from "/i18n.js";
 import { api, galatTeks, esc, pesanHtml, ikon } from "/inti/umum.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { pilihHtml } from "/inti/komponen.js";
@@ -15,7 +15,7 @@ const isi = $("dft-isi");
 // Tarif resmi bersumber (public/data/keanggotaan.json): 6 kategori, manfaat, dokumen.
 const D = await fetch("/data/keanggotaan.json").then((r) => (r.ok ? r.json() : null)).catch(() => null) || { kategori: [], manfaat: [], dokumen: [], sumber: {} };
 const KAT = D.kategori, kat = (k) => KAT.find((x) => x.kode === k);
-const L = (o) => (o && (o[bahasa()] ?? o.id)) || "";
+const L = (o) => (o && (o[bahasaData()] ?? o.id)) || "";
 const IK_LANGKAH = ["topik", "ubah", "kartu", "unduh", "perisai"];
 const ukuran = (b) => (b >= 1048576 ? angka(b / 1048576, { desimal: 1 }) + " MB" : angka(Math.round(b / 1024)) + " KB");
 const centang = '<svg class="dft-cek" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';

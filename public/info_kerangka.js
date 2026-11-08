@@ -1,7 +1,7 @@
 /* Kerangka halaman informasi (paket pemda, kebijakan, desa energi, izin dan kontrak): kamus teks per halaman (/data/teks_<nama>.json,
    id+en), seksi exhibit, tabel urut berpaginasi bernomor, peta provinsi berlambang, kartu "butuh unduhan pemilik", sumber bertanggal.
    Hanya informasi: tidak ada kalkulator atau alat. Teks UI tinggal di kamus JSON, bukan di JS. */
-import { bahasa, angka, tanggal } from "/i18n.js";
+import { bahasa, angka, tanggal, bahasaData } from "/i18n.js";
 import { esc, ikon, nanti } from "/inti/umum.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { exHtml } from "/inti/komponen.js";
@@ -15,11 +15,11 @@ export async function muatTeks(nama) {
   kamus = await r.json();
 }
 export function tt(k, p) {
-  const s = kamus[bahasa()]?.[k] ?? kamus.id[k];
+  const s = kamus[bahasaData()]?.[k] ?? kamus.id[k];
   if (s === undefined) return k;
   return p ? s.replace(/\{(\w+)\}/g, (m, n) => (p[n] !== undefined ? p[n] : m)) : s;
 }
-export const L = (o) => (o && typeof o === "object" ? o[bahasa()] ?? o.id ?? "" : o ?? "");
+export const L = (o) => (o && typeof o === "object" ? o[bahasaData()] ?? o.id ?? "" : o ?? "");
 export const num = (v, d = 0) => angka(v, { desimal: d });
 export const tgl = (s) => tanggal(s);
 export const url = (u) => (/^https:\/\//.test(u || "") ? u : null);

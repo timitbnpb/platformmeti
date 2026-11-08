@@ -3,7 +3,7 @@
    Teks antarmuka khusus halaman ini ada di /i18n/kuadran.json (fungsi k()); teks bersama lewat t().
    INP: klik chip/sumbu mengubah chrome (aria-pressed) seketika; plot dan tabel digambar ulang sesudahnya lewat nanti(). */
 import { mulaiHalaman } from "/inti/kepala.js";
-import { t, bahasa, angka, tanggal, tanggalSah } from "/i18n.js";
+import { t, bahasa, bahasaData, angka, tanggal, tanggalSah } from "/i18n.js";
 import { esc, nanti, ikon } from "/inti/umum.js";
 import { khUbin } from "/inti/kh.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
@@ -14,7 +14,7 @@ import "/inti/tip_grafik.js";
 const $ = (id) => document.getElementById(id);
 const KAM = { id: {}, en: {} };
 const k = (kunci, p) => {
-  const s = KAM[bahasa()]?.[kunci] ?? KAM.id[kunci] ?? kunci;
+  const s = KAM[bahasaData()]?.[kunci] ?? KAM.id[kunci] ?? kunci;
   return p ? s.replace(/\{(\w+)\}/g, (m, n) => (p[n] !== undefined ? p[n] : m)) : s;
 };
 const tgl = (s) => (tanggalSah(s) ? tanggal(s) : String(s));
@@ -203,7 +203,7 @@ function kartuHtml(e) {
   const skorHtml = UK.map((u) => {
     const s = e.skor[u];
     return `<li class="kq-skor"><div class="kq-skor-kepala"><span class="kq-skor-nm">${esc(k("u." + u))}</span>${pilSkor(u, s)}${s.skor != null ? `<span class="kq-rank">${esc(k("kartu.peringkat", { k: s.peringkat, n: s.dari }))}</span>` : ""}${s.est ? `<span class="jm-pil">${esc(k("kartu.est"))}</span>` : ""}</div>
-      <p class="kq-alasan">${esc(s.alasan[bahasa()] || s.alasan.id)}${ARAH_BURUK.has(u) ? " " + esc(k("kartu.buruk")) : ""}</p>${s.sumber.length ? `<ul class="kq-sum">${sumberHtml(s.sumber)}</ul>` : ""}</li>`;
+      <p class="kq-alasan">${esc(s.alasan[bahasaData()] || s.alasan.id)}${ARAH_BURUK.has(u) ? " " + esc(k("kartu.buruk")) : ""}</p>${s.sumber.length ? `<ul class="kq-sum">${sumberHtml(s.sumber)}</ul>` : ""}</li>`;
   }).join("");
   const fin = ["aset", "pendapatan", "laba"].map((m) => { const f = e.keuangan.find((x) => x.metrik === m); return `<div class="kq-fin"><dt>${esc(k("kartu.fin." + m))}</dt><dd>${f ? `<b>${esc(k("kartu.fin.nilai", { nilai: angka(f.nilai, { desimal: f.nilai % 1 ? 1 : 0 }), satuan: f.satuan, tahun: f.tahun }))}</b><span class="jm-bantu">${esc(angka(f.idr_t, { desimal: 1 }))} T IDR (EST)</span>` : `<span class="kq-kosong-s">${esc(k("kartu.tanpa"))}</span>`}</dd></div>`; }).join("");
   const sebelum = pohon(e.id, false, new Set()), sesudah = pohon(e.id, true, new Set([e.id]));
@@ -262,7 +262,7 @@ function tabel() {
 /* ---------- metode ---------- */
 function metode() {
   $("kqMetode").innerHTML = `<h2 class="kq-h2">${esc(k("metode.judul"))} <span class="jm-pil jm-pil-warn">${esc(k("hipotesis"))}</span></h2><p>${esc(k("metode.intro", { nmin: D.nmin }))}</p>
-    <h3>${esc(k("metode.rumus"))}</h3><dl class="kq-rumus">${D.ukuran.map((u) => `<div><dt>${esc(k("u." + u.kunci))}</dt><dd>${esc(u.rumus[bahasa()] || u.rumus.id)}</dd></div>`).join("")}</dl>
+    <h3>${esc(k("metode.rumus"))}</h3><dl class="kq-rumus">${D.ukuran.map((u) => `<div><dt>${esc(k("u." + u.kunci))}</dt><dd>${esc(u.rumus[bahasaData()] || u.rumus.id)}</dd></div>`).join("")}</dl>
     <h3>${esc(k("metode.keterbatasan"))}</h3><ul class="kq-bul">${[1, 2, 3, 4, 5].map((i) => `<li>${esc(k("metode.b" + i))}</li>`).join("")}<li>${esc(k("metode.kurs", { kurs: angka(D.kurs.usd_idr), tgl: tgl(D.kurs.tanggal) }))}</li></ul>
     <ul class="kq-sum">${sumberHtml(D.sumber.map((s) => ({ judul: s.judul + (s.lisensi ? " (" + s.lisensi + ")" : ""), url: s.url, tanggal: s.rilis || s.tanggal })))}</ul>`;
 }

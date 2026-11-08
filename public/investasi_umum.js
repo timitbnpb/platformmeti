@@ -40,7 +40,7 @@ export function tautModel(b) {
   if (m.diisi?.includes("capex")) q.set("capex", String(m.capex_usd_kw));
   if (m.diisi?.includes("opex")) q.set("opex", String(m.opex_usd_kw_thn));
   if (m.diisi?.includes("fk")) q.set("fk", String(m.fk));
-  return "/model-keuangan?" + q.toString();
+  return "/investasi?" + q.toString() + "#model";
 }
 
 /** Teks masukan satu komponen (apa yang dihitung dari mana). */

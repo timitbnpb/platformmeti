@@ -1,7 +1,7 @@
 /* /baterai-ev: pembantu bersama semua tab. Memakai ulang rg3_umum.js (logo, bendera, label bukti, kerangka exhibit) dan memuat berkas data
    tambahan saat runtime. Semua berkas tahan kosong: yang tidak ada menjadi null dan tab menampilkan keadaan kosong. */
 import { D, muatSemua, berisi, ex, t, esc, ikon, num, bukti, luar, logoHtml, namaOrg, negaraSel, bendera, chip, lbl, daftarCelah, catatan, sumberBerkas, urlGet, urlSet, kosongTab, amanUrl, namaNegara, warnaIdx } from "/rg3_umum.js";
-import { bahasa } from "/i18n.js";
+import { bahasa, bahasaData } from "/i18n.js";
 
 export { D, berisi, ex, t, esc, ikon, num, bukti, luar, logoHtml, namaOrg, negaraSel, bendera, chip, lbl, daftarCelah, catatan, sumberBerkas, urlGet, urlSet, kosongTab, namaNegara, warnaIdx };
 export const X = {};
@@ -16,7 +16,7 @@ export async function muat() {
   return X;
 }
 /** Teks dwibahasa {id,en}; string biasa dikembalikan apa adanya. */
-export const L = (o) => (o && typeof o === "object" ? o[bahasa()] ?? o.id ?? "" : o ?? "");
+export const L = (o) => (o && typeof o === "object" ? o[bahasaData()] ?? o.id ?? "" : o ?? "");
 export const sumberBe = (id) => X.sumber?.get(id) || null;
 /** Label bukti sebuah baris kurasi: tingkat dari baris, penerbit dan tanggal dari sumbernya. */
 export function buktiBe(r, sumberId = r.sumber_id) {

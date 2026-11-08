@@ -1,6 +1,6 @@
 /* /topik: pembantu bersama cetakan topik mendalam (teks dua bahasa dari data/topik/ui.json, token angka, tabel urut + paginasi, grafik garis bertooltip, eksibit bab).
    Teks antarmuka halaman ini hidup di ui.json (id+en), bukan di kamus global; fungsi u() membacanya. */
-import { bahasa, angka, tanggal } from "/i18n.js";
+import { bahasa, angka, tanggal, bahasaData } from "/i18n.js";
 import { esc, nanti, ikon } from "/inti/umum.js";
 import { exHtml } from "/inti/komponen.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
@@ -12,7 +12,7 @@ export const S = { ui: null, N: {}, sumber: {}, dipakai: new Set(), tabel: new M
 export const muat = (jalur) => fetch(jalur, { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
 
 /** teks dua bahasa: {id,en} atau string */
-export const L = (o) => (o == null ? "" : typeof o === "string" ? o : (o[bahasa()] ?? o.id ?? ""));
+export const L = (o) => (o == null ? "" : typeof o === "string" ? o : (o[bahasaData()] ?? o.id ?? ""));
 export const u = (kunci, p) => {
   const e = S.ui?.s?.[kunci];
   let s = e ? L(e) : kunci;

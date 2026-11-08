@@ -108,7 +108,7 @@ async function isiKegiatan(b) {
 
 function proyekHtml(b) {
   return seksi({ id: "proyek", ikon: "proyek", topik: t("mw.ey.proyek"), judulHtml: esc(t("mw.proyek", { prov: b.nama })),
-    aksiHtml: `${tombol("/wilayah?prov=" + b.kode, "wilayah", "mw.ke_wilayah")}${tombol("/peluang", "analisis", "mw.ke_peluang")}${tombol("/proyek", "proyek", "mw.ke_proyek")}`, isiHtml: `<div id="py-isi">${hantuHtml(1)}</div>` });
+    aksiHtml: `${tombol("/wilayah?prov=" + b.kode, "wilayah", "mw.ke_wilayah")}${tombol("/investasi#peluang", "analisis", "mw.ke_peluang")}${tombol("/proyek", "proyek", "mw.ke_proyek")}`, isiHtml: `<div id="py-isi">${hantuHtml(1)}</div>` });
 }
 async function isiProyek(b) {
   try {

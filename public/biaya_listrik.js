@@ -1,5 +1,4 @@
 /* /biaya-listrik: LCOE dunia dan negara (IRENA), harga modul surya, BPP per sistem (Kepmen ESDM). Informasi saja, tanpa kalkulator. Data statis /data/biaya_listrik.json. */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml, debounce, ikon } from "/inti/umum.js";
 import { uangHtml } from "/inti/uang.js";
 import { t } from "/i18n.js";
@@ -26,8 +25,8 @@ const persen = (a, b) => ((b - a) / a) * 100;
 
 function ubin() {
   const s = dunia("surya"), bp = d.bpp_nasional.at(-1);
-  $("jawab").textContent = t("bl.lead");
-  $("ubin").innerHTML = ubinHtml([
+  $("blJawab").textContent = t("bl.lead");
+  $("blUbin").innerHTML = ubinHtml([
     { ikon: "tek-surya", nilai: n1(akhir(s).sen_usd_kwh, 2), satuan: t("bl.sat"), label: t("bl.u1", { tahun: akhir(s).tahun }), href: "#lcoe" },
     { ikon: "grafik", nilai: num(persen(awal(s).sen_usd_kwh, akhir(s).sen_usd_kwh), 0), satuan: "%", label: t("bl.u2", { a: awal(s).tahun, b: akhir(s).tahun }), href: "#lcoe" },
     { ikon: "tabel", nilai: n1(bp.sen_usd_kwh, 2), satuan: t("bl.sat"), label: t("bl.u3", { tahun: bp.tahun }), href: "#bpp" },
@@ -42,7 +41,7 @@ function rangka() {
   const tabTh = `<div class="jm-tab" role="tablist" aria-label="${esc(t("bl.pilih_th"))}">${bp.map((r) => `<button type="button" role="tab" data-bth="${r.tahun}" aria-selected="${r.tahun === thIni()}">${r.tahun}</button>`).join("")}</div>`;
   const ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: !!o.csv }), tingkat: "h2" });
   const tabBanding = `<div class="jm-tab" role="tablist" aria-label="${esc(t("bl.pilih_tek"))}">${["surya", "bayu-darat"].map((k) => `<button type="button" role="tab" data-tek="${k}" aria-selected="${k === banding}">${esc(nm(k))}</button>`).join("")}</div>`;
-  $("isi").innerHTML = [
+  $("blIsi").innerHTML = [
     ex({ id: "lcoe", ikon: "tek-surya", topik: t("bl.ey.lcoe"), judulHtml: hlHtml("bl.t.lcoe", `${num(Math.abs(persen(awal(s).sen_usd_kwh, akhir(s).sen_usd_kwh)), 0)}%`, { a: awal(s).tahun, b: akhir(s).tahun }) + est, subHtml: esc(t("bl.s.lcoe")), csv: true,
       isiHtml: `${legendaHtml(TEK.map((k) => ({ id: k, kelas: KLS[k], label: nm(k) })))}<div id="g-lcoe" class="ih-bagan"></div><div id="tb-lcoe" class="ih-tabel"></div><p class="jm-bantu ih-catatan">${esc(t("bl.n.lcoe"))}</p>${src("s-irena-lcoe")}` }),
     ex({ id: "banding", ikon: "wilayah", topik: t("bl.ey.banding"), judulHtml: hlHtml("bl.t.banding", `${n1(i1.sen_usd_kwh, 2)}`, { tahun: i1.tahun, x: n1(i1.sen_usd_kwh / w1.sen_usd_kwh, 1), w: n1(w1.sen_usd_kwh, 2) }) + est, subHtml: esc(t("bl.s.banding")), csv: true,
@@ -146,14 +145,13 @@ function gBanding() {
 }
 
 async function mulai() {
-  await mulaiHalaman();
-  $("isi").innerHTML = hantuHtml(3);
-  try { d = await muatData("biaya_listrik.json"); } catch (e) { tampilGalat($("isi"), mulai); return; }
+  $("blIsi").innerHTML = hantuHtml(3);
+  try { d = await muatData("biaya_listrik.json"); } catch (e) { tampilGalat($("blIsi"), mulai); return; }
   const gambar = () => { ubin(); rangka(); bagan(); };
   gambar();
   saatBahasa(gambar);
   pasangPasar();
-  $("isi").addEventListener("click", (e) => {
+  $("blIsi").addEventListener("click", (e) => {
     const b = e.target.closest("button[data-tek],button[data-skala],button[data-bth]"); if (!b || b.getAttribute("aria-selected") === "true") return;
     for (const x of b.parentElement.children) x.setAttribute("aria-selected", String(x === b));
     if (b.dataset.tek) { banding = b.dataset.tek; nanti(() => { gBanding(); tbBanding(); }); }
@@ -163,4 +161,4 @@ async function mulai() {
   let w = innerWidth;
   addEventListener("resize", debounce(() => { if (Math.abs(innerWidth - w) > 20) { w = innerWidth; bagan(); } }, 200));
 }
-mulai();
+await mulai();

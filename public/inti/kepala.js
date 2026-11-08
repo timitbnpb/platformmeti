@@ -32,16 +32,15 @@ const TAB = [
   { kunci: "n7.bidang", ikon: "direktori", hak: null, grup: [
     { href: "/bidang/organisasi", kunci: "bid.n.organisasi", ikon: "gedung" }, { href: "/bidang/advokasi", kunci: "bid.n.advokasi", ikon: "parlemen" }, { href: "/bidang/sdm", kunci: "bid.n.sdm", ikon: "akademi" }, { href: "/bidang/pendanaan", kunci: "bid.n.pendanaan", ikon: "kartu" }, { href: "/bidang/umkm", kunci: "bid.n.umkm", ikon: "tag" }, { href: "/bidang/esg", kunci: "bid.n.esg", ikon: "karbon" }, { href: "/bidang/komunikasi", kunci: "bid.n.komunikasi", ikon: "presentasi" }, { href: "/bidang/internasional", kunci: "bid.n.internasional", ikon: "asean" }, { href: "/bidang/data", kunci: "bid.n.data", ikon: "tabel" }] },
   { kunci: "n7.wilayah", ikon: "wilayah", hak: null, grup: [
-    { href: "/peta", kunci: "nav.peta_nasional", ikon: "globe" }, { href: "/wilayah", kunci: "nav.wilayah_peta", ikon: "peta" }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" }, { href: "/kawasan", kunci: "kw2.nav", ikon: "kawasan" }, { href: "/cek-lokasi", kunci: "cl.nav", ikon: "sasaran" }] },
+    { href: "/peta", kunci: "nav.peta", ikon: "globe", juga: ["/wilayah", "/cek-lokasi"] }, { href: "/proyek", kunci: "nav.proyek", ikon: "proyek" }, { href: "/kawasan", kunci: "kw2.nav", ikon: "kawasan" }] },
   { kunci: "nav.pustaka", ikon: "buku", hak: null, grup: [
     { href: "/pustaka", kunci: "nav.dokumen", ikon: "pdf" }, { href: "/direktori?tampil=riset", kunci: "nav.d_riset", ikon: "wisuda" }, { href: "/direktori?tampil=inovasi", kunci: "nav.d_inovasi", ikon: "tek-surya" }, { href: "/topik", kunci: "nav.topik", ikon: "topik" }, { href: "/regulasi", kunci: "nav.regulasi", ikon: "regulasi" }, { href: "/sejarah", kunci: "sjr.nav", ikon: "linimasa" }, { href: "/panduan", kunci: "pdu.nav", ikon: "daftar2" }] },
   // Media = kabar EBT umum (/berita); siaran pers dan liputan METI ada di Tentang METI (pemilik 8 Nov 2026)
   { href: "/berita", kunci: "nav.media", ikon: "kamera", hak: null },
 ];
 
-const BENDERA = {
-  id: '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><clipPath id="bid"><circle cx="12" cy="12" r="11"/></clipPath><g clip-path="url(#bid)"><rect width="24" height="12" fill="#E70011"/><rect y="12" width="24" height="12" fill="#fff"/></g><circle cx="12" cy="12" r="10.75" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width=".5"/></svg>',
-  en: '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><clipPath id="ben"><circle cx="12" cy="12" r="11"/></clipPath><g clip-path="url(#ben)"><rect width="24" height="24" fill="#012169"/><path d="M0 0l24 24M24 0L0 24" stroke="#fff" stroke-width="4"/><path d="M0 0l24 24M24 0L0 24" stroke="#C8102E" stroke-width="1.6"/><path d="M12 0v24M0 12h24" stroke="#fff" stroke-width="6"/><path d="M12 0v24M0 12h24" stroke="#C8102E" stroke-width="3.2"/></g><circle cx="12" cy="12" r="10.75" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width=".5"/></svg>' };
+const PILIHAN_BAHASA = [["id", "Bahasa Indonesia"], ["zh", "中文"], ["en", "English"]]; // urutan persis: Indonesia, Mandarin, Inggris
+const benderaImg = (b) => `<img src="/img/bendera/${b === "zh" ? "cn" : b === "en" ? "gb" : "id"}.svg" alt="" width="24" height="24">`;
 
 const boleh = (hak, s) => hak === null || (hak === "masuk" && s.masuk) || (hak === "staf" && s.masuk && STAF.includes(s.peran)) || (hak === "admin" && s.masuk && ["admin", "super"].includes(s.peran));
 
@@ -57,8 +56,8 @@ function gambarKepala(el, saya) {
   const cocok = (h) => (h === "/" ? jalur === "/" || jalur === "/index.html" : jalur === h || jalur.startsWith(h + "/") || (h === "/teknologi" && Object.values(MODUL_TEK).includes(jalur)));
   const tab = TAB.filter((x) => boleh(x.hak, saya)).map((x) => {
     if (x.grup) {
-      const aktif = x.grup.some((g) => cocok(g.href)), id = "grup-" + x.kunci.replace(/\./g, "-");
-      return `<div class="jm-grup"><button type="button" class="jm-grup-tbl" aria-expanded="false" aria-controls="${id}"${aktif ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span><svg class="jm-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="jm-sub" id="${id}" hidden>${x.grup.map((g) => `<a href="${g.href}"${cocok(g.href) ? ' aria-current="page"' : ""}>${ikon(g.ikon, 18)}<span data-i18n="${g.kunci}">${t(g.kunci)}</span></a>`).join("")}</div></div>`;
+      const aktif = x.grup.some((g) => cocok(g.href) || (g.juga || []).some(cocok)), id = "grup-" + x.kunci.replace(/\./g, "-");
+      return `<div class="jm-grup"><button type="button" class="jm-grup-tbl" aria-expanded="false" aria-controls="${id}"${aktif ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span><svg class="jm-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="jm-sub" id="${id}" hidden>${x.grup.map((g) => `<a href="${g.href}"${cocok(g.href) || (g.juga || []).some(cocok) ? ' aria-current="page"' : ""}>${ikon(g.ikon, 18)}<span data-i18n="${g.kunci}">${t(g.kunci)}</span></a>`).join("")}</div></div>`;
     }
     return `<a href="${x.href}" data-kunci="${x.kunci}" title="${t(x.kunci)}"${cocok(x.href) ? ' aria-current="page"' : ""}>${ikon(x.ikon, 18)}<span data-i18n="${x.kunci}">${t(x.kunci)}</span></a>`;
   }).join("");
@@ -72,7 +71,8 @@ function gambarKepala(el, saya) {
     <nav class="tabs" id="menu" data-i18n-attr="aria-label:jm.menu" aria-label="${t("jm.menu")}">${tab}</nav>
     <div class="jm-sisi">
       <button type="button" class="iconbtn jm-bulat jm-cari-kotak" id="cari" aria-haspopup="dialog" data-i18n-attr="aria-label:cari.tombol;title:cari.tombol" aria-label="${t("cari.tombol")}" title="${t("cari.tombol")}">${ikon("cari", 20)}<span class="jm-cari-kotak-t" data-i18n="cari.kotak">${t("cari.kotak")}</span><span class="jm-cari-kotak-k" aria-hidden="true"><kbd>${/mac|iphone|ipad/i.test(navigator.platform || navigator.userAgent || "") ? "⌘" : "Ctrl"}</kbd><kbd>K</kbd></span></button>
-      <button type="button" class="iconbtn jm-bulat jm-bahasa" id="bahasa" data-i18n-attr="aria-label:jm.ganti_bahasa;title:jm.ganti_bahasa" aria-label="${t("jm.ganti_bahasa")}" title="${t("jm.ganti_bahasa")}">${BENDERA[b]}</button>
+      <div class="jm-bhs"><button type="button" class="iconbtn jm-bulat jm-bahasa" id="bahasa" aria-haspopup="true" aria-expanded="false" aria-controls="bahasaMenu" data-i18n-attr="aria-label:jm.ganti_bahasa;title:jm.ganti_bahasa" aria-label="${t("jm.ganti_bahasa")}" title="${t("jm.ganti_bahasa")}">${benderaImg(b)}</button>
+      <div class="jm-bhs-menu" id="bahasaMenu" role="group" hidden>${PILIHAN_BAHASA.map(([k, n]) => `<button type="button" data-b="${k}" aria-pressed="${b === k}">${benderaImg(k)}<span>${n}</span></button>`).join("")}</div></div>
       <button type="button" class="iconbtn jm-bulat" id="tema" data-i18n-attr="aria-label:jm.tema;title:jm.tema" aria-label="${t("jm.tema")}" title="${t("jm.tema")}">${ikon("tema", 20)}</button>
       ${akun}
     </div>`;
@@ -81,7 +81,9 @@ function gambarKepala(el, saya) {
 function pasangPenangan(el, saya) {
   const tutupGrup = () => el.querySelectorAll(".jm-grup-tbl[aria-expanded=true]").forEach((b) => { b.setAttribute("aria-expanded", "false"); document.getElementById(b.getAttribute("aria-controls")).hidden = true; });
   document.addEventListener("click", (e) => { if (!e.target.closest(".jm-grup")) tutupGrup(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") tutupGrup(); });
+  const tutupBhs = () => { const m = el.querySelector("#bahasaMenu"); if (m && !m.hidden) { m.hidden = true; el.querySelector("#bahasa").setAttribute("aria-expanded", "false"); } };
+  document.addEventListener("click", (e) => { if (!e.target.closest(".jm-bhs")) tutupBhs(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { tutupGrup(); tutupBhs(); } });
   el.addEventListener("click", (e) => {
     const tbl = e.target.closest("button");
     if (!tbl) return;
@@ -91,9 +93,14 @@ function pasangPenangan(el, saya) {
       tbl.setAttribute("aria-expanded", String(buka));
       el.querySelector("#menu").classList.toggle("buka", buka);
     } else if (tbl.id === "bahasa") {
+      const m = el.querySelector("#bahasaMenu"), buka = m.hidden;
+      m.hidden = !buka; tbl.setAttribute("aria-expanded", String(buka));
+    } else if (tbl.dataset.b) {
       // chrome urgent: bendera berganti seketika; kamus dan render menyusul sesudah satu bingkai tercat
-      const baru = bahasa() === "id" ? "en" : "id";
-      tbl.innerHTML = BENDERA[baru];
+      const baru = tbl.dataset.b;
+      el.querySelector("#bahasa").innerHTML = benderaImg(baru);
+      for (const x of el.querySelectorAll("#bahasaMenu button")) x.setAttribute("aria-pressed", String(x === tbl));
+      el.querySelector("#bahasaMenu").hidden = true; el.querySelector("#bahasa").setAttribute("aria-expanded", "false");
       nanti(() => gantiBahasa(baru, { masuk: saya.masuk }));
     } else if (tbl.id === "tema") {
       const baru = temaEfektif() === "dark" ? "light" : "dark";

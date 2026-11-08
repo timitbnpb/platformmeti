@@ -50,7 +50,7 @@ export function bangun() {
     },
     sumber: [
       { id: 'stat', judul: 'Statistik Ketenagalistrikan 2024, Ditjen Ketenagalistrikan ESDM (kapasitas dan produksi PLTD per provinsi)', url: ST.url, tanggal: ST.tanggal_ambil },
-      { id: 'bpp', judul: 'Kepmen ESDM 169.K/HK.02/MEM.M/2021 (BPP 2020 per sistem dan sub sistem terisolasi), lewat peluang.json', url: '/peluang', tanggal: '2026-11-07' },
+      { id: 'bpp', judul: 'Kepmen ESDM 169.K/HK.02/MEM.M/2021 (BPP 2020 per sistem dan sub sistem terisolasi), lewat peluang.json', url: '/investasi#peluang', tanggal: '2026-11-07' },
       { id: 'ruptl', judul: 'RUPTL PLN 2025-2034: proyek bernama Dedieselisasi atau Isolated', url: 'https://gatrik.esdm.go.id/', tanggal: '2026-11-07' },
       { id: 'solar', judul: 'Harga Dexlite dan Biosolar (laman Pertamina lewat tarif_harga.json)', url: dex.sumber_url, tanggal: dex.tanggal },
       { id: 'atlas', judul: 'Global Solar Atlas 2.0 (PVOUT), satu titik per provinsi', url: 'https://globalsolaratlas.info/', tanggal: '2026-11-08' },

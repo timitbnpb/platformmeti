@@ -2,7 +2,7 @@
    benchmark_harga, kebijakan_dagang, rantai_plts, plts_atap, potensi_atlas, plts_terapung, daur_ulang, biaya_bangun, program_analisis, proyek, korporat, radar_kabupaten),
    tidak disalin. Tiap berkas dimuat malas oleh tab yang memerlukannya; yang tidak ada menjadi null dan tab menampilkan keadaan kosong. */
 import { D as R, ex, bukti, luar, bendera, namaNegara, chip, chipSeg, warnaIdx, kosongTab, catatan, daftarCelah, urlGet, urlSet, num, esc, ikon, t, logoHtml, namaOrg, negaraSel, lbl, sumberBerkas } from "/rg3_umum.js";
-import { bahasa, tanggal } from "/i18n.js";
+import { bahasa, tanggal, bahasaData } from "/i18n.js";
 import { tipHtml, tabel, batangSvg, kolomSvg, garisSvg, legendaHtml } from "/info_hijau.js";
 
 export { R, ex, bukti, luar, bendera, namaNegara, chip, chipSeg, warnaIdx, kosongTab, catatan, daftarCelah, urlGet, urlSet, num, esc, ikon, t, logoHtml, namaOrg, negaraSel, lbl, sumberBerkas, tipHtml, tabel, batangSvg, kolomSvg, garisSvg, legendaHtml };
@@ -19,9 +19,9 @@ const janji = {};
 export function muat(kunci) {
   return Promise.all(kunci.map((k) => (janji[k] ||= fetch("/data/" + BERKAS[k], { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null).then((v) => { X[k] = v; if (k === "org") R.orgAda = new Set((v?.baris || []).map((b) => b.id)); return v; }))));
 }
-export const bahasaAktif = () => (document.documentElement.lang === "en" ? "en" : "id");
+export const bahasaAktif = () => (document.documentElement.lang !== "id" ? "en" : "id");
 /** Teks dwibahasa {id,en}; string biasa dikembalikan apa adanya. */
-export const L = (o) => (o && typeof o === "object" ? o[bahasa()] ?? o.id ?? "" : o ?? "");
+export const L = (o) => (o && typeof o === "object" ? o[bahasaData()] ?? o.id ?? "" : o ?? "");
 export const sumberSy = (id) => (X.sy?.sumber || []).find((s) => s.id === id) || null;
 /** Lencana bukti baris kurasi: tingkat dari baris, penerbit dan tanggal dari sumbernya. */
 export function buktiSy(r, sumberId = r?.sumber_id) {

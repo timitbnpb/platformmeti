@@ -1,6 +1,5 @@
 /* /harga-komponen: pelacak harga komponen EBT (modul surya, baterai Li-ion, turbin angin, inverter) dan ekspor-impor komponen Indonesia (UN Comtrade, HS 6 digit).
    Data statis /data/harga_komponen.json dan /data/dagang_komponen.json. Informasi saja; dampak ke LCOE berlabel EST. */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { nanti, esc, hantuHtml, debounce, ikon } from "/inti/umum.js";
 import { t } from "/i18n.js";
 import { exHtml } from "/inti/komponen.js";
@@ -45,8 +44,8 @@ const tabK = (attr, aktif, label) => `<div class="jm-tab hk2-tab" role="tablist"
 function ubin() {
   const m = urut(seriH("modul")), m10 = m.find((p) => p.x === 2010), ma = m.at(-1), pk = urut(seriH("pack")).at(-1), th = thAkhir();
   const imp = KOMP.reduce((a, k) => a + (baris(k, th).i?.usd || 0), 0);
-  $("jawab").textContent = t("hk2.lead");
-  $("ubin").innerHTML = ubinHtml([
+  $("hkJawab").textContent = t("hk2.lead");
+  $("hkUbin").innerHTML = ubinHtml([
     { ikon: "tek-surya", nilai: num(Math.abs(persen(m10.y, ma.y)), 0), satuan: "%", label: t("hk2.u1", { a: m10.x, b: ma.x }), href: "#harga" },
     { ikon: "petir", nilai: nilai(pk.y), satuan: "USD/kWh", label: t("hk2.u2", { tahun: pk.x }), href: "#harga" },
     { ikon: "tabel", nilai: juta(imp), satuan: t("hk2.juta"), label: t("hk2.u3", { tahun: th }), href: "#neraca" },
@@ -166,7 +165,7 @@ function tbNeraca() {
 function rangka() {
   const th = thAkhir(), imp = KOMP.reduce((a, k) => a + (baris(k, th).i?.usd || 0), 0), eks = KOMP.reduce((a, k) => a + (baris(k, th).e?.usd || 0), 0);
   const m = urut(seriH("modul")), m10 = m.find((p) => p.x === 2010), ma = m.at(-1);
-  $("isi").innerHTML = [
+  $("hkIsi").innerHTML = [
     ex({ id: "harga", ikon: "tag", topik: t("hk2.ey.harga"), judulHtml: hlHtml("hk2.t.harga", `${num(Math.abs(persen(m10.y, ma.y)), 0)}%`, { a: m10.x, b: ma.x }), subHtml: esc(t("hk2.s.harga")), csv: true,
       isiHtml: `${tabK("hk", kh, "hk2.pilih")}<div id="hk-isi"></div><p class="jm-bantu ih-catatan">${esc(t("hk2.n.harga"))}</p>${srcDari(H, H.sumber.map((s) => s.id))}` }),
     dampak(),
@@ -183,15 +182,14 @@ function rangka() {
 }
 
 async function mulai() {
-  await mulaiHalaman();
-  $("isi").innerHTML = hantuHtml(3);
-  try { [H, D] = await Promise.all([muatData("harga_komponen.json"), muatData("dagang_komponen.json")]); } catch { tampilGalat($("isi"), mulai); return; }
+  $("hkIsi").innerHTML = hantuHtml(3);
+  try { [H, D] = await Promise.all([muatData("harga_komponen.json"), muatData("dagang_komponen.json")]); } catch { tampilGalat($("hkIsi"), mulai); return; }
   const gambar = () => { ubin(); rangka(); };
   gambar();
   saatBahasa(gambar);
-  $("isi").addEventListener("click", (e) => {
+  $("hkIsi").addEventListener("click", (e) => {
     const b = e.target.closest("button[data-hk],button[data-dk],button[data-skala],button[data-alir],button[data-nth]"); if (!b || b.getAttribute("aria-selected") === "true") return;
-    if (b.dataset.dk) for (const x of $("isi").querySelectorAll("button[data-dk]")) x.setAttribute("aria-selected", String(x.dataset.dk === b.dataset.dk));
+    if (b.dataset.dk) for (const x of $("hkIsi").querySelectorAll("button[data-dk]")) x.setAttribute("aria-selected", String(x.dataset.dk === b.dataset.dk));
     else for (const x of b.parentElement.children) x.setAttribute("aria-selected", String(x === b));
     if (b.dataset.hk) { kh = b.dataset.hk; nanti(bodiHarga); }
     else if (b.dataset.skala) { logSkala = b.dataset.skala === "log"; nanti(() => gambarGaris(SERI_TAB[kh].filter((x) => seriH(x).titik.length >= 2))); }
@@ -202,4 +200,4 @@ async function mulai() {
   let w = innerWidth;
   addEventListener("resize", debounce(() => { if (Math.abs(innerWidth - w) > 20) { w = innerWidth; gambarGaris(SERI_TAB[kh].filter((x) => seriH(x).titik.length >= 2)); gDampak(); bodiTren(); bodiNegara(); } }, 200));
 }
-mulai();
+await mulai();

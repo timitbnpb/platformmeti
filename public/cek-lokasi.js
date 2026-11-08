@@ -2,7 +2,6 @@
    (geo/provinsi, geo/gardu, geo/transmisi, data/geo/*.geojson, img/risiko/bahaya_multi.png, potensi_atlas, lokasi_hijau, radar_kabupaten, proyek).
    Geometri: inti/geo_titik.js; skor: cek_lokasi_hitung.js (Hipotesis, rumus di /metode#cek-lokasi).
    INP: peta, kolom, dan penanda berubah seketika; hitung berat (titik-dalam-poligon, jarak ke 2.700 saluran) menyusul lewat nanti(). */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
 import { khUbin } from "/inti/kh.js";
@@ -17,7 +16,6 @@ import { batang } from "/grafik.js";
 import { jarakKm, jarakGarisKm, fiturMemuat, dalamGeometri, terdekat, terdekatN, dalamKotak, titikSah } from "/inti/geo_titik.js";
 import { BOBOT, LAHAN, skorLokasi, indeksBahaya, kelasBahaya, kelasSkor } from "/cek_lokasi_hitung.js";
 
-await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
 const ambil = (u) => fetch(u, { credentials: "same-origin" }).then((r) => { if (!r.ok) throw new Error(u); return r.json(); });
@@ -171,7 +169,7 @@ function kartuWilayah(kode) {
   return kartu("wilayah", "wilayah", t("cl.kom.wilayah"),
     `<div class="cl-wil">${lambang(kode, 40)}<div><strong>${esc(NAMA_PROV.get(kode))}</strong><small>${esc(t("cl.kode_bps", { kode }))}</small></div></div>
      <div class="cl-kab"><p class="cl-fl">${esc(t("cl.kab.pilih"))}</p>${sel}<div id="clKabHasil" class="cl-kab-hasil"></div></div>`,
-    tautan("/wilayah/" + kode, "wilayah", "cl.taut.wilayah") + tautan("/peluang?prov=" + kode, "kompas", "cl.taut.peluang"));
+    tautan("/wilayah/" + kode, "wilayah", "cl.taut.wilayah") + tautan("/investasi?prov=" + kode + "#peluang", "kompas", "cl.taut.peluang"));
 }
 function kartuSumber(kode) {
   const a = ATLAS_PROV.get(kode);
@@ -180,7 +178,7 @@ function kartuSumber(kode) {
     `<p class="cl-angka"><b>${N(a.pvout_kwh_per_kwp_tahun)}</b><span>${esc(t("cl.sat.pvout"))}</span></p>
      <dl class="cl-d">${baris(t("cl.f.ghi"), N(a.ghi_kwh_per_m2_tahun) + " kWh/m2")}${baris(t("cl.f.sudut"), N(a.sudut_optimal_derajat) + " derajat")}${baris(t("cl.f.angin"), esc(t("cl.f.angin.tanpa")))}</dl>
      <p class="cl-bantu">${ikon("info", 14)}<span>${esc(t("cl.catatan.atlas"))}</span></p>`,
-    tautan("/surya?tab=dasar", "topik", "cl.taut.surya") + tautan("/biaya-listrik", "kalkulator", "cl.taut.biaya"), buktiHtml("kajian"));
+    tautan("/surya?tab=dasar", "topik", "cl.taut.surya") + tautan("/investasi#biaya", "kalkulator", "cl.taut.biaya"), buktiHtml("kajian"));
 }
 function kartuJaringan(j) {
   if (j.galat) return kartu("jaringan", "petir", t("cl.kom.jaringan"), galatKartu());
@@ -197,7 +195,7 @@ function kartuLahan(l) {
   const pil = l.kelas.map((k) => `<li><span class="cl-lahan cl-lahan-${LAHAN[k] >= 100 ? "tutup" : "pengurang"}">${ikon(LAHAN[k] >= 100 ? "blokir" : "peringatan", 14)}<span>${esc(t("cl.lahan." + k))}</span><b>-${N(LAHAN[k])}</b></span></li>`).join("");
   return kartu("lahan", "peta", t("cl.kom.lahan"),
     l.kelas.length ? `<ul class="cl-pil">${pil}</ul>${l.konsesi.length ? `<p class="cl-bantu">${esc(t("cl.lahan.konsesi", { nama: l.konsesi.slice(0, 2).map((k) => k.nama).join(", ") }))}</p>` : ""}` : `<p class="cl-bersih">${ikon("centang", 16)}<span>${esc(t("cl.lahan.bersih"))}</span></p>`,
-    `${tautan("/risiko", "peringatan", "cl.taut.risiko")}${tautan("/lokasi-hijau", "denah", "cl.taut.hijau")}`, hip());
+    `${tautan("/risiko", "peringatan", "cl.taut.risiko")}${tautan("/cek-lokasi#kawasan-hijau", "denah", "cl.taut.hijau")}`, hip());
 }
 function kartuBahaya(b) {
   if (b.galat) return kartu("bahaya", "peringatan", t("cl.kom.bahaya"), galatKartu());
@@ -208,12 +206,12 @@ function kartuBahaya(b) {
 }
 function kartuBpp(kode) {
   const p = LH_PROV.get(kode), r = RADAR.provinsi?.[kode]?.mentah;
-  if (!p?.bpp) return kartu("bpp", "tag", t("cl.kom.bpp"), kosongKartu("cl.tanpa_data"), tautan("/biaya-listrik", "kalkulator", "cl.taut.biaya"));
+  if (!p?.bpp) return kartu("bpp", "tag", t("cl.kom.bpp"), kosongKartu("cl.tanpa_data"), tautan("/investasi#biaya", "kalkulator", "cl.taut.biaya"));
   return kartu("bpp", "tag", t("cl.kom.bpp"),
     `<p class="cl-angka"><b>${N(p.bpp.rp_kwh)}</b><span>Rp/kWh</span></p>
      <dl class="cl-d">${baris(t("cl.f.sistem"), esc((p.bpp.sistem || []).join(", ") || "-"))}${baris(t("cl.f.tahun"), N(p.bpp.tahun))}${r?.harga != null ? baris(t("cl.f.faktor"), N(r.harga, 1)) : ""}</dl>
      <p class="cl-bantu">${ikon("info", 14)}<span>${esc(t("cl.catatan.bpp"))}</span></p>`,
-    tautan("/biaya-listrik", "kalkulator", "cl.taut.biaya") + tautan("/panduan#istilah-bpp", "kamus", "cl.taut.istilah_bpp") + tautan("/perizinan", "lencana", "cl.taut.izin"), buktiHtml("resmi"));
+    tautan("/investasi#biaya", "kalkulator", "cl.taut.biaya") + tautan("/panduan#istilah-bpp", "kamus", "cl.taut.istilah_bpp") + tautan("/perizinan", "lencana", "cl.taut.izin"), buktiHtml("resmi"));
 }
 function kartuProyek(p) {
   if (p.galat) return kartu("proyek", "proyek", t("cl.kom.proyek"), galatKartu());
@@ -235,7 +233,7 @@ function kartuSkor(r, kode) {
   return ex({ id: "clSkor", ikon: "kalkulator", topik: t("cl.ey.skor"), judulHtml: hlHtml("cl.t.skor", N(r.skor), { kelas: t("cl.skor." + kelas) }) + " " + hip(), subHtml: esc(t("cl.s.skor", { p: N(r.dasar) })),
     isiHtml: `<div class="cl-skor"><span class="jm-pil cl-skor-p ${KELAS_PIL[kelas]}"><b>${N(r.skor)}</b><span>${esc(t("cl.skor." + kelas))}</span></span><div class="cl-grafik">${gf}</div></div>
       <p class="cl-bantu">${ikon("info", 14)}<span>${esc(t("cl.skor.peringatan"))}</span></p>
-      <div class="cl-aksi">${tautan("/lokasi-hijau", "denah", "cl.taut.hijau")}${tautan("/radar", "berlian", "cl.taut.radar")}${tautan("/peluang?prov=" + kode, "kompas", "cl.taut.peluang")}${tautan("/metode#cek-lokasi", "metode", "cl.cara.tautan")}</div>` });
+      <div class="cl-aksi">${tautan("/cek-lokasi#kawasan-hijau", "denah", "cl.taut.hijau")}${tautan("/radar", "berlian", "cl.taut.radar")}${tautan("/investasi?prov=" + kode + "#peluang", "kompas", "cl.taut.peluang")}${tautan("/metode#cek-lokasi", "metode", "cl.cara.tautan")}</div>` });
 }
 
 async function hitung(jalan) {

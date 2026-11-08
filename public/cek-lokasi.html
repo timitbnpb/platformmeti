@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title data-i18n="cl.title">Cek lokasi | Direktori METI</title>
-<meta name="description" content="Klik peta atau isi koordinat: wilayah, potensi surya, jarak ke gardu dan transmisi, status lahan, bahaya bencana, BPP, proyek terdekat, dan skor kelayakan ringkas berlabel Hipotesis." data-i18n-attr="content:cl.deskripsi">
+<meta name="description" content="Klik peta atau isi koordinat: wilayah, potensi surya, jarak ke gardu dan transmisi, status lahan, bahaya bencana, BPP, proyek terdekat, dan skor kelayakan ringkas berlabel Hipotesis. Ada pula pencocok kawasan industri hijau." data-i18n-attr="content:clh.deskripsi">
 <meta name="theme-color" content="#122B4A">
 <link rel="icon" href="/img/logo-meti-tanda.png" type="image/png">
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -14,23 +14,47 @@
 <link rel="stylesheet" href="/inti/jm.css">
 <link rel="stylesheet" href="/inti/kh.css">
 <link rel="stylesheet" href="/grafik.css">
+<link rel="stylesheet" href="/analisis.css">
 <link rel="stylesheet" href="/cek-lokasi.css">
+<link rel="stylesheet" href="/lokasi-hijau.css">
 <script src="/tema.js"></script>
 </head>
 <body data-halaman="cek-lokasi">
 <header class="top" id="kepala"></header>
 <main class="jm-halaman jm-wadah cl-halaman" id="isi">
-<section class="jm-kh" aria-labelledby="judul">
+<section class="jm-kh jm-kh-satu" aria-labelledby="judul">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-sasaran"/></svg><span data-i18n="clh.eyebrow">Cek lokasi</span></p>
+    <h1 id="judul" data-i18n="clh.judul">Cek titik dan kawasan industri hijau</h1>
+    <p class="jm-kh-lead" data-i18n="clh.lead">Periksa kelayakan satu titik untuk proyek EBT, atau bandingkan kawasan industri dan KEK untuk perusahaan bertarget RE100 dan net zero. Skor berlabel Hipotesis, bukan studi kelayakan.</p>
+  </div>
+</section>
+<div id="tabHal"></div>
+<div id="pnTitik" class="cl-panel">
+<section class="jm-kh" aria-labelledby="clKhJ">
   <div class="jm-kh-teks">
     <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-sasaran"/></svg><span data-i18n="cl.eyebrow">Cek lokasi</span></p>
-    <h1 id="judul" data-i18n="cl.judul">Seberapa layak satu titik untuk proyek EBT?</h1>
+    <h2 id="clKhJ" data-i18n="cl.judul">Seberapa layak satu titik untuk proyek EBT?</h2>
     <p class="jm-kh-lead" data-i18n="cl.lead">Klik peta atau isi koordinat. Semua dihitung di peramban Anda dari berkas statis: wilayah, potensi surya, jarak ke jaringan, status lahan, bahaya bencana, BPP, dan proyek terdekat. Skor berlabel Hipotesis, bukan studi kelayakan.</p>
   </div>
   <div class="jm-kh-ubin" id="clUbin" aria-live="polite"></div>
 </section>
 <div id="clIsi" class="cl-isi"></div>
+</div>
+<div id="pnKawasan" class="cl-panel" hidden>
+<section class="jm-kh" aria-labelledby="lhKhJ">
+  <div class="jm-kh-teks">
+    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-denah"/></svg><span data-i18n="lh2.eyebrow">Lokasi industri hijau</span></p>
+    <h2 id="lhKhJ" data-i18n="lh2.judul">Di kawasan mana target RE100 dan net zero paling mudah dipenuhi?</h2>
+    <p class="jm-kh-lead" data-i18n="lh2.lead">Isi kebutuhan perusahaan, lalu bandingkan kawasan industri dan KEK menurut potensi EBT, jarak ke jaringan, biaya sistem, perizinan, dan proyek di sekitarnya. Alat hitung berlabel Hipotesis, bukan studi kelayakan.</p>
+  </div>
+  <div class="jm-kh-ubin" id="lhUbin" aria-live="polite"></div>
+</section>
+<div id="lhIsi" class="lh-isi"></div>
+</div>
 </main>
+<dialog class="jm-dlg lh-dlg" id="lhDlg" aria-labelledby="lhDlgJ"></dialog>
 <footer class="jm-kaki" id="kaki"></footer>
-<script type="module" src="/cek-lokasi.js"></script>
+<script type="module" src="/cek_lokasi_halaman.js"></script>
 </body>
 </html>

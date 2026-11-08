@@ -42,7 +42,7 @@ export function mulai(el) {
     B.pasar ? ex({ id: "tpl-t-hbaex", ikon: "tag", topik: t("tpl.tb.ey.hba"), judulHtml: esc(t("tpl.tb.j.hba")), subHtml: esc(t("tpl.tb.s.hba", { n: dmo.harga_usd_ton, th: dmo.tidak_berubah_sejak })),
       isiHtml: `<div id="tpl-t-hba" class="ih-bagan"></div><div id="tpl-t-tab"></div>${catatan("tpl.tb.n.hba")}`, kakiHtml: kakiSumber(["hessi-2024"]) + `<span class="tpl-sumber"><a class="rg3-tautan" href="/sistem">${esc(t("tpl.tb.lihat_sistem"))}</a></span>` }) : "",
     B.pasar ? ex({ id: "tpl-t-pasex", ikon: "industri", topik: t("tpl.tb.ey.pas"), judulHtml: esc(t("tpl.tb.j.pas")), subHtml: esc(t("tpl.tb.s.pas")), isiHtml: `<div id="tpl-t-pas-l"></div><div id="tpl-t-pas" class="ih-bagan"></div>${catatan("tpl.tb.n.pas")}` }) : "",
-    daftarCelah((B.tp.meta.celah_en && document.documentElement.lang === "en" ? B.tp.meta.celah_en : B.tp.meta.celah).filter((c, i) => i === 0 || i === 2)),
+    daftarCelah((B.tp.meta.celah_en && document.documentElement.lang !== "id" ? B.tp.meta.celah_en : B.tp.meta.celah).filter((c, i) => i === 0 || i === 2)),
   ].join("");
   produksi(); hba(); selisih(); pasokan();
 }

@@ -38,7 +38,7 @@ export function mulai(el) {
   if (!B.hd || !B.rup) { el.innerHTML = kosongTab("hdr.kosong"); return; }
   const R = baris(), mw = R.reduce((s, r) => s + (r.kapasitas_mw || 0), 0);
   el.innerHTML = [
-    ex({ id: "hdr-r-ruptl", ikon: "petir", topik: t("hdr.r.ey.ruptl"), judulHtml: esc(t("hdr.r.j.ruptl", { n: R.length, mw: num(mw, 0) })), subHtml: esc(t("hdr.r.s.ruptl")), isiHtml: `<div id="hdr-r-graf" class="hdr-grafik"></div><div id="hdr-r-tab"></div><p class="jm-bantu ih-catatan">${esc(B.hd.ruptl.catatan[document.documentElement.lang === "en" ? "en" : "id"])}</p>`, kakiHtml: kakiSumber(["ruptl"]) }),
+    ex({ id: "hdr-r-ruptl", ikon: "petir", topik: t("hdr.r.ey.ruptl"), judulHtml: esc(t("hdr.r.j.ruptl", { n: R.length, mw: num(mw, 0) })), subHtml: esc(t("hdr.r.s.ruptl")), isiHtml: `<div id="hdr-r-graf" class="hdr-grafik"></div><div id="hdr-r-tab"></div><p class="jm-bantu ih-catatan">${esc(B.hd.ruptl.catatan[document.documentElement.lang !== "id" ? "en" : "id"])}</p>`, kakiHtml: kakiSumber(["ruptl"]) }),
     ex({ id: "hdr-r-regb", ikon: "palu", topik: t("hdr.r.ey.reg"), judulHtml: esc(t("hdr.r.j.reg")), subHtml: esc(t("hdr.r.s.reg")), isiHtml: `<div id="hdr-r-reg"></div>${catatan("hdr.r.n.reg")}<p class="jm-bantu"><a href="/regulasi">${esc(t("hdr.k.semua"))}</a></p>`, kakiHtml: kakiSumber(["perpres112"]) }),
   ].join("");
   grafik(); tabRuptl(); tabReg();

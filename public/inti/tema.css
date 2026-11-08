@@ -23,8 +23,8 @@
   --batik-pola:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cg fill='none' stroke='black' stroke-width='1.6'%3E%3Cellipse cx='20' cy='10' rx='6' ry='10'/%3E%3Cellipse cx='20' cy='30' rx='6' ry='10'/%3E%3Cellipse cx='10' cy='20' rx='10' ry='6'/%3E%3Cellipse cx='30' cy='20' rx='10' ry='6'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='2' fill='black'/%3E%3C/svg%3E"); --batik-pudar:linear-gradient(180deg,rgb(0 0 0) 0%,rgb(0 0 0 / .85) 35%,rgb(0 0 0 / 0) 78%); --batik:currentColor; --batik-op:.1;
   --r:14px; --r-sm:10px; --r-lg:16px; --r-pil:999px;
   --tepi:max(12px,calc((100vw - var(--maks)) / 2 + var(--gut))); --top:60px; --maks:1600px; --gut:16px; --gap:12px; --target:44px;
-  --display:"Inter",Arial,system-ui,sans-serif;
-  --font:"Inter",Arial,system-ui,sans-serif;
+  --display:"Inter",Arial,system-ui,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --font:"Inter",Arial,system-ui,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; /* cadangan CJK untuk zh, tanpa unduhan fon */
   /* Skala tipografi tunggal (gerbang-tipografi): CSS lain WAJIB memakai token ini, bukan px literal.
      peran: h1/h2 Inter 700, h3 Inter 600, angka Inter 700, eyebrow Inter 700 label kapital .08em, isi Inter 400 body, bantu Inter 400 kecil, tombol/pil Inter 600 tombol. */
   --t-display:30px; --t-h1:24px; --t-h2:18px; --t-h3:17px; --t-angka:28px; --t-body:15px; --t-tombol:13px; --t-kecil:12.5px; --t-label:11px; --t-th:14px; --t-masukan:16px; --t-presentasi:clamp(30px,4.4vw,64px); --ic:var(--ink2);

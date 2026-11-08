@@ -205,7 +205,7 @@ const KORO = {
       }
       return koro(peta, "hijau", 0, "MW");
     },
-    popup: popupKoro("pn2.l.celah", (x) => baris("pn2.celah_tek", `<ul class="pn-kv">${x.per.filter((p) => p[1] != null).sort((a, b) => b[1] - a[1]).map((p) => `<li><span>${esc(labTek(p[0].replace("_", "-")))}</span><b>${esc(N(p[1]))} MW</b></li>`).join("")}</ul>`) + baris("pn2.tanpa_pengembang", x.tanpaPengembang != null && `${esc(N(x.tanpaPengembang))} MW`), () => taut("/peluang", "pn2.t.peluang", "kompas")),
+    popup: popupKoro("pn2.l.celah", (x) => baris("pn2.celah_tek", `<ul class="pn-kv">${x.per.filter((p) => p[1] != null).sort((a, b) => b[1] - a[1]).map((p) => `<li><span>${esc(labTek(p[0].replace("_", "-")))}</span><b>${esc(N(p[1]))} MW</b></li>`).join("")}</ul>`) + baris("pn2.tanpa_pengembang", x.tanpaPengembang != null && `${esc(N(x.tanpaPengembang))} MW`), () => taut("/investasi#peluang", "pn2.t.peluang", "kompas")),
   },
   desa_idm: {
     baca: (d) => koro(new Map(d.baris.map((b) => [b.kode, { v: b.persen_maju_mandiri_2024, b }])), "biru", 1, "%"),
@@ -250,4 +250,4 @@ export const kosongKoro = (k) => !k.peta.size;
 export const ADAPTER = { titik: TITIK, garis: GARIS, poligon: POLIGON, koroplet: KORO };
 export const adapterDari = (L) => ADAPTER[L.jenis] && ADAPTER[L.jenis][L.adapter];
 export const teksNilai = fmtV;
-export const popupProvinsiTanpaNilai = (kode) => kartu({ logo: lambang(kode), judul: esc(namaProv(kode) || kode), sub: esc(t("pn2.provinsi")), links: linkProv(kode) + taut("/peluang?prov=" + kode, "pn2.t.peluang", "kompas") + taut("/proyek?prov=" + kode + "#terpadu", "pn2.t.pelacak", "petir") });
+export const popupProvinsiTanpaNilai = (kode) => kartu({ logo: lambang(kode), judul: esc(namaProv(kode) || kode), sub: esc(t("pn2.provinsi")), links: linkProv(kode) + taut("/investasi?prov=" + kode + "#peluang", "pn2.t.peluang", "kompas") + taut("/proyek?prov=" + kode + "#terpadu", "pn2.t.pelacak", "petir") });

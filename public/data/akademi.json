@@ -64,7 +64,7 @@
     },
     {
      "jenis": "halaman",
-     "ref": "/biaya-listrik",
+     "ref": "/investasi#biaya",
      "judul": {
       "id": "Biaya listrik per teknologi",
       "en": "Cost of electricity by technology"
@@ -246,7 +246,7 @@
     },
     {
      "jenis": "halaman",
-     "ref": "/peluang",
+     "ref": "/investasi#peluang",
      "judul": {
       "id": "Hitung PLTS atap",
       "en": "Rooftop solar calculator"
@@ -610,7 +610,7 @@
     },
     {
      "jenis": "halaman",
-     "ref": "/keuangan-hijau",
+     "ref": "/investasi#pembiayaan",
      "judul": {
       "id": "Keuangan hijau",
       "en": "Green finance data"
@@ -618,7 +618,7 @@
     },
     {
      "jenis": "halaman",
-     "ref": "/model-keuangan",
+     "ref": "/investasi#model",
      "judul": {
       "id": "Model keuangan proyek",
       "en": "Project finance model"

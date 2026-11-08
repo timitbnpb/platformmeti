@@ -18,10 +18,10 @@ const tanggalPendek = (t) => String(t || "").slice(0, 10);
 // halaman situs: judul dari kamus (kunci disimpan, klien memakai t(k) agar mengikuti bahasa)
 const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai-global?tab=tkdn", "nav.rantai"], ["/rantai-global", "rg3.nav"], ["/lelang", "lel.nav"], ["/baterai-ev", "bev.nav"], ["/jaringan", "jr.nav"], ["/bioenergi", "bn.nav"], ["/surya", "sur.nav"], ["/hidrogen", "h2.nav"], ["/transisi-pltu", "tpl.nav"], ["/panas-bumi", "pbm.nav"], ["/gas", "gsj.nav"], ["/nuklir", "nkl.nav"], ["/sampah-energi", "swe.nav"], ["/angin", "ang.nav"], ["/hidro", "hdr.nav"], ["/asean", "nav.asean"], ["/jejaring", "nav.jejaring"], ["/metode", "nav.sub.metode"],
   ["/proyek", "nav.proyek"], ["/wilayah", "nav.wilayah"], ["/regulasi", "nav.regulasi"], ["/berita", "nav.berita"], ["/kalender", "nav.kalender"], ["/tentang", "nav.tentang"],
-  ["/pustaka", "nav.pustaka"], ["/program", "nav.program"], ["/topik", "nav.topik"], ["/peluang", "nav.peluang"], ["/indeks", "nav.indeks"], ["/target#strategi", "nav.strategi"],
+  ["/pustaka", "nav.pustaka"], ["/program", "nav.program"], ["/topik", "nav.topik"], ["/investasi#peluang", "nav.peluang", "peluang"], ["/investasi#model", "nav.model_keuangan", "model keuangan"], ["/investasi#harga-komponen", "hk2.nav", "harga komponen"], ["/cek-lokasi#kawasan-hijau", "lh2.nav", "lokasi hijau"], ["/indeks", "nav.indeks"], ["/target#strategi", "nav.strategi"],
   ["/direktori", "nav.direktori"], ["/target#transisi", "nav.transisi"], ["/pelacak", "nav.pelacak"], ["/kuadran", "nav.kuadran"], ["/target#rapor", "nav.rapor"], ["/kerja", "nav.kerja"],
-  ["/radar", "nav.radar"], ["/investasi", "iv.nav"], ["/biaya-listrik", "nav.biaya_listrik"], ["/keuangan-hijau", "nav.keuangan_hijau"], ["/pasar-listrik-hijau", "nav.pasar_hijau"], ["/dokumen-data", "nav.dokumen_data"],
-  ["/kelayakan", "nav.kelayakan"], ["/cari", "cari.judul"]];
+  ["/radar", "nav.radar"], ["/investasi", "iv.nav"], ["/investasi#biaya", "nav.biaya_listrik", "biaya listrik"], ["/investasi#pembiayaan", "nav.keuangan_hijau", "keuangan hijau"], ["/pasar-listrik-hijau", "nav.pasar_hijau"], ["/dokumen-data", "nav.dokumen_data"],
+  ["/investasi#hitung", "nav.kelayakan", "kelayakan"], ["/cari", "cari.judul"]];
 
 // halaman yang bukan tujuan pencarian: akun, detail berparameter, kerangka
 const TANPA_CARI = /^(index|404|masuk|aktivasi|ganti-sandi|daftar|admin|langganan|kta|kta_v|portal|profil-saya|diikuti|event_detail|video_detail|siaran-pers-rinci|o|p|cari)$/;
@@ -96,7 +96,7 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
   pasok(data("global/pemasok_lain"), "lain", (r) => ({ sub: (r.segmen || []).join("/"), tab: (r.segmen || [])[0] || "lain", x: r.produk }));
   pasok(data("global/pemasok_wte"), "wte", (r) => ({ sub: (r.teknologi || []).join("/"), tab: "wte", x: r.komponen }));
 
-  for (const [href, k] of HALAMAN) tambah("halaman", b(id[k] || href, "", href, href.slice(1), { k }));
+  for (const [href, k, kata] of HALAMAN) tambah("halaman", b(id[k] || href, "", href, kata ?? href.slice(1), { k }));
   // halaman/modul baru: pindai public/*.html, judul dari <title> (tanpa akhiran situs); yang sudah ada di daftar atas dilewati
   const ada = new Set(HALAMAN.map(([h]) => h));
   for (const f of readdirSync(PUB).filter((n) => n.endsWith(".html") && !n.startsWith("_"))) {

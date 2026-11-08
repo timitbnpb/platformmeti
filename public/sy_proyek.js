@@ -42,7 +42,7 @@ function bagianAtap() {
       ${legendaHtml([{ id: "kuota", kelas: "sur-s-kuota", label: t("sur.p.s.kuota") }, { id: "real", kelas: "sur-s-realisasi", label: t("sur.p.s.real") }])}<div id="sur-p-ag" class="ih-bagan"></div><div id="sur-p-ak"></div>${catatan("sur.p.n.kuota")}<p class="jm-bantu ih-catatan">${esc(L(a.catatan))}</p>
       <h3 class="rg3-sub">${esc(t("sur.p.h.real"))}</h3><div id="sur-p-ar"></div><p class="rg3-info rg3-info-bad">${ikon("tanya", 18)}<span>${esc(L(a.klaim_belum_rekonsiliasi[0].ket))} ${buktiSy(a.klaim_belum_rekonsiliasi[0])}</span></p><p class="jm-bantu ih-catatan">${esc(L(a.catatan_industri))}</p>
       <h3 class="rg3-sub">${esc(t("sur.p.h.ruptl"))}</h3><div id="sur-p-ru" class="ih-bagan"></div>${catatan("sur.p.n.ruptl")}
-      ${aturan ? `<h3 class="rg3-sub">${esc(t("sur.p.h.aturan"))}</h3><ul class="sur-daftar">${aturan.butir.map((b) => `<li>${ikon("regulasi", 18)}<p>${esc(b)}</p></li>`).join("")}</ul><p class="jm-bantu"><a class="rg3-tautan" href="/regulasi?id=${esc(aturan.regulasi_id)}">${esc(t("sur.p.ke_aturan"))}</a> <a class="rg3-tautan" href="/peluang#plts-atap">${esc(t("sur.p.ke_kalk"))}</a></p>` : ""}
+      ${aturan ? `<h3 class="rg3-sub">${esc(t("sur.p.h.aturan"))}</h3><ul class="sur-daftar">${aturan.butir.map((b) => `<li>${ikon("regulasi", 18)}<p>${esc(b)}</p></li>`).join("")}</ul><p class="jm-bantu"><a class="rg3-tautan" href="/regulasi?id=${esc(aturan.regulasi_id)}">${esc(t("sur.p.ke_aturan"))}</a> <a class="rg3-tautan" href="/investasi#plts-atap">${esc(t("sur.p.ke_kalk"))}</a></p>` : ""}
       ${daftarCelah(a.celah.map(L))}`, kakiHtml: kakiSy([a.sumber_id, ...a.realisasi.map((r) => r.sumber_id), j.sumber_id, a.target_2028_wilayah_mw.sumber_id]) });
 }
 /* ---------- C&I dan captive ---------- */

@@ -24,9 +24,9 @@ export async function muat() {
 export const baris = () => D.lel?.putaran || [];
 export const cariSumber = (id) => (D.lel?.sumber || []).find((s) => s.id === id) || null;
 
-export const num = (n, d = 0) => (n == null ? "-" : new Intl.NumberFormat(document.documentElement.lang === "en" ? "en-US" : "id-ID", { maximumFractionDigits: d, minimumFractionDigits: 0 }).format(n));
+export const num = (n, d = 0) => (n == null ? "-" : new Intl.NumberFormat(document.documentElement.lang !== "id" ? "en-US" : "id-ID", { maximumFractionDigits: d, minimumFractionDigits: 0 }).format(n));
 export const kosong = '<span class="ih-kosong" title="-">-</span>';
-export const bahasa = () => (document.documentElement.lang === "en" ? "en" : "id");
+export const bahasa = () => (document.documentElement.lang !== "id" ? "en" : "id");
 export const tglTeks = (tgl, presisi) => {
   if (!tgl) return "-";
   const [y, m, h] = String(tgl).split("-").map(Number), p = presisi || (h ? "hari" : m ? "bulan" : "tahun");

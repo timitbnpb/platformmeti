@@ -96,7 +96,7 @@ export function bangun() {
     metode: { rumus: 'Skor 0-100 = jumlah (bobot x norma 0-1) komponen yang ADA; komponen tanpa data dikeluarkan dan bobot dihitung ulang; minimal 5 komponen (semua teknologi) atau 4 (satu teknologi). Norma = min-maks antar 38 provinsi (celah, pasar, AMDAL, Perda memakai log(1+x)).', bobot_semua: BOBOT_SEMUA, bobot_tek: BOBOT_TEK, min_komponen: { semua: 5, tek: 4 } },
     sumber: [
       { id: 'daftar', judul: 'Daftar kabupaten/kota Kemendagri (Wilayah-Administratif-Indonesia, regencies.csv), 514 baris; provinsi Papua dipetakan ke 6 provinsi berlaku dari nama', url: SUMBER_DAFTAR, lisensi: 'MIT', tanggal: TGL },
-      { id: 'peluang', judul: 'peluang.json: potensi RUEN 2015, terpasang HEESI 2025, BPP Kepmen ESDM 2020, faktor lokasi Perpres 112/2022', url: '/peluang', tanggal: '2026-11-07' },
+      { id: 'peluang', judul: 'peluang.json: potensi RUEN 2015, terpasang HEESI 2025, BPP Kepmen ESDM 2020, faktor lokasi Perpres 112/2022', url: '/investasi#peluang', tanggal: '2026-11-07' },
       { id: 'atlas', judul: 'Global Solar Atlas 2.0 (PVOUT), satu titik per provinsi', url: 'https://globalsolaratlas.info/', tanggal: '2026-11-08' },
       { id: 'akses', judul: 'Statistik Ketenagalistrikan 2024 (desa non-PLN dan belum berlistrik) dan IDM Kemendes', url: '/data/desa_akses.json', tanggal: '2026-11-08' },
       { id: 'paket', judul: 'paket_pemda.json: MW proyek, dokumen AMDAL, dan Perda yang menyebut kabupaten/kota (hasil pembacaan teks, dicocokkan lewat nama)', url: '/data/paket_pemda.json', tanggal: '2026-11-07' },

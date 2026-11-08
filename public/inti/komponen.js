@@ -46,20 +46,25 @@ export const BAGIAN_INSIGHT = [
   { href: "/asean", ikon: "asean", kunci: "nav.asean" },
   { href: "/metode", ikon: "metode", kunci: "nav.sub.metode" },
 ];
+/** Subnav bagian Peta: tiga halaman peta tetap terpisah, satu entri "Peta" di menu. */
+export const BAGIAN_PETA = [
+  { href: "/peta", ikon: "globe", kunci: "nav.sub.peta" },
+  { href: "/wilayah", ikon: "peta", kunci: "nav.sub.provinsi" },
+  { href: "/cek-lokasi", ikon: "sasaran", kunci: "nav.sub.cek_titik" },
+];
+const SUBNAV = [{ aria: "nav.insight", daftar: BAGIAN_INSIGHT }, { aria: "nav.peta_sub", daftar: BAGIAN_PETA }];
+const cocokJalur = (x, jalur) => { const p = x.href.split("#")[0].split("?")[0]; return jalur === p || jalur.startsWith(p + "/"); };
+const bagianDari = (jalur) => SUBNAV.find((b) => b.daftar.some((x) => !x.href.includes("#") && cocokJalur(x, jalur)));
 export function subnavHtml(jalur, hash = "") {
+  const bg = bagianDari(jalur);
   const aktif = (x) => {
     const [dasar, h] = x.href.split("#"), p = dasar.split("?")[0];
     if (p === "/insight") return jalur === "/insight" && (h ? hash === "#" + h : hash !== "#tren" && hash !== "#ringkasan");
-    return jalur === p || jalur.startsWith(p + "/");
+    return cocokJalur(x, jalur);
   };
-  return `<nav class="jm-subnav" id="subnav" aria-label="${esc(t("nav.insight"))}">${tabTautan(BAGIAN_INSIGHT.map((x) => ({ href: x.href, ikon: x.ikon, label: t(x.kunci), aktif: aktif(x) })))}</nav>`;
+  return `<nav class="jm-subnav" id="subnav" aria-label="${esc(t(bg.aria))}">${tabTautan(bg.daftar.map((x) => ({ href: x.href, ikon: x.ikon, label: t(x.kunci), aktif: aktif(x) })))}</nav>`;
 }
-export const diBagianInsight = (jalur) =>
-  BAGIAN_INSIGHT.some(
-    (x) =>
-      !x.href.includes("#") &&
-      (jalur === x.href.split("?")[0] || jalur.startsWith(x.href.split("?")[0] + "/")),
-  );
+export const diBagianInsight = (jalur) => !!bagianDari(jalur);
 
 /* Sumber: ikon "!" dalam lingkaran, klik membuka catatan sumber (permintaan pemilik 7 Nov 2026).
    isiHtml sudah di-escape oleh pemanggil. Pakai: sumberHtml(`${esc(teks)} <a href="...">...</a>`). */

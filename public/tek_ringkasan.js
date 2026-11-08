@@ -233,7 +233,7 @@ const RANTAI_TAB = { surya: "surya", bayu: "bayu", hidro: "hidro", "panas-bumi":
 function sTelusur() {
   const tautan = [
     RANTAI_TAB[KODE] && ["globe", `/rantai-global?tab=${RANTAI_TAB[KODE]}`, "tk.tl.rantai"],
-    KODE !== "nuklir" && ["kalkulator", `/model-keuangan?tek=${encodeURIComponent(KODE)}`, "tk.tl.model"],
+    KODE !== "nuklir" && ["kalkulator", `/investasi?tek=${encodeURIComponent(KODE)}#model`, "tk.tl.model"],
     ["buku", "/panduan", "tk.tl.panduan"],
     ["energi-baru", "/transisi-pltu?tab=enb", "tk.tl.baru"],
     ["linimasa", "/sejarah", "tk.tl.sejarah"],
