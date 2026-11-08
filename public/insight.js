@@ -420,9 +420,20 @@ function sorotHash() {
   setTimeout(() => a.classList.remove("jm-ins-sorot"), 3000);
 }
 
+/* Tab Ringkasan (Temuan) dan Tren (#tren) adalah dua tampilan terpisah, bukan satu halaman bergulir. */
+function bagian() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  const kartu = h.startsWith("ins-") ? document.getElementById(h) : null;
+  const tren = h === "tren" || !!(kartu && $("tren-isi").contains(kartu));
+  $("temuan").closest("section").hidden = tren;
+  $("tren").hidden = !tren;
+  if (h === "tren") scrollTo({ top: 0 });
+}
+
 function gambar() {
   const a = gambarTemuan(), b = gambarTren();
   $("jawab").textContent = t("ins.jawab", { n: a + b, tanggal: tanggal(D.proyek?.dibangun_pada ?? D.regulasi?.dibangun_pada) });
+  bagian();
   sorotHash();
 }
 
@@ -433,7 +444,7 @@ async function mulai() {
   isiFilter();
   pasangBagi();
   gambar();
-  addEventListener("hashchange", sorotHash);
+  addEventListener("hashchange", () => { bagian(); sorotHash(); });
   saatBahasa(() => { isiFilter(); gambar(); });
 }
 mulai();

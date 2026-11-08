@@ -28,7 +28,7 @@ const CFG = {
   bioenergi: { foto: ["bioenergi-sawit", "Ojiribeka Chidera", "CC BY-SA 4.0"], pel: "bioenergi", harga: ["bioenergi"], reg: ["bioenergi"], kep: "bioenergi" },
   "biomassa-sampah": { foto: ["biomassa-bantargebang", "Kuncoro Widyo Rumpoko", "CC BY-SA 4.0"], reg: ["bioenergi"], kep: "biomassa-sampah" },
   penyimpanan: { foto: ["penyimpanan-baterai", "Kecko", "CC BY 2.0"], reg: ["penyimpanan"], kep: "penyimpanan", tkdn: ["baterai"] },
-  hidrogen: { reg: ["hidrogen"], kep: "hidrogen" },
+  hidrogen: { foto: ["hidrogen-spbu", "Ogidya", "CC BY-SA 4.0"], reg: ["hidrogen"], kep: "hidrogen" },
   nuklir: { foto: ["nuklir-siwabessy", "Bkusmono", "pd"], reg: ["nuklir"], kep: "nuklir" },
 };
 const segmen = decodeURIComponent(location.pathname.split("/").filter(Boolean)[1] || "");
