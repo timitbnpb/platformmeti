@@ -330,12 +330,17 @@
    "peran_rantai": [
     "manufaktur"
    ],
-   "situs": null,
+   "situs": "https://tbpnickel.com/",
    "sumber": [
     {
      "url": "https://tbpnickel.com/media/news/operational/harita-nickels-high-pressure-acid-leach-hpal-smelter-to-be-operational-by-mid-2024",
      "tingkat_bukti": "kajian",
      "keterangan": "siaran perusahaan tentang smelter HPAL dan RKEF di Pulau Obi"
+    },
+    {
+     "url": "https://tbpnickel.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
     }
    ]
   },
@@ -353,12 +358,17 @@
    "peran_rantai": [
     "manufaktur"
    ],
-   "situs": null,
+   "situs": "https://nickelindustries.com/",
    "sumber": [
     {
      "url": "https://announcements.asx.com.au/asxpdf/20231009/pdf/05vtqtfg19hgfc.pdf",
      "tingkat_bukti": "kajian",
      "keterangan": "pengumuman ASX 9 Oktober 2023 tentang PLTS 200 MWp di IMIP"
+    },
+    {
+     "url": "https://nickelindustries.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
     }
    ]
   },
@@ -399,12 +409,17 @@
    "peran_rantai": [
     "manufaktur"
    ],
-   "situs": null,
+   "situs": "https://iwip.co.id/",
    "sumber": [
     {
      "url": "https://www.gem.wiki/Weda_Bay_power_station",
      "tingkat_bukti": "kajian",
      "keterangan": "pembangkit captive kawasan IWIP menurut Global Energy Monitor"
+    },
+    {
+     "url": "https://iwip.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
     }
    ]
   },
@@ -468,12 +483,17 @@
    "peran_rantai": [
     "manufaktur"
    ],
-   "situs": null,
+   "situs": "https://www.lygend.com/",
    "sumber": [
     {
      "url": "https://news.metal.com/newscontent/102070296-lygends-phase-two-hpal-cobalt-nickel-project-commissioned-as-scheduled",
      "tingkat_bukti": "kajian",
      "keterangan": "pengoperasian HPAL fase dua di Pulau Obi"
+    },
+    {
+     "url": "https://www.lygend.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
     }
    ]
   },
@@ -5942,406 +5962,6 @@
    ]
   },
   {
-   "_asal": "kawasan",
-   "nama": "PT Cikarang Listrindo Tbk",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "listrik"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.listrindo.com/en/service/",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "penyedia listrik kawasan industri Cikarang"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Jababeka Tbk",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengembang kawasan industri"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Bekasi Fajar Industrial Estate Tbk",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengembang MM2100"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Suryacipta Swadaya",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengembang Suryacipta dan Subang Smartpolitan"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Modern Industrial Estate",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengembang Modern Cikande"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Lippo Cikarang Tbk",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.listrindo.com/en/service/",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengembang Lippo Cikarang"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Puradelta Lestari",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengembang Greenland International Industrial Center"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Maligi Permata Industrial Estate",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengembang KIIC Karawang"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Jakarta Industrial Estate Pulogadung",
-   "nama_lain": [],
-   "kategori": "bumn",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola kawasan industri Pulogadung"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Bumi Citra Permai",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengembang Millennium Industrial Estate"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Berkah Kawasan Manyar Sejahtera",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri",
-    "listrik"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://jiipe.com/en/home/blogDetail/id/438",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Gresik dan JIIPE; pembangkit BKMS"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Kawasan Industri Kendal",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Kendal"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Patriot Nusantara Aceh",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Arun Lhokseumawe"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Bangun Palu Sulawesi Tengah",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://katadata.co.id/berita/industri/6a0a964400d46/proyek-bess-dan-lng-hub-masuk-kek-palu-nilai-investasi-capai-rp30-triliun",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Palu"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Malamoi Olom Wobok",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Sorong"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Maloy Batuta Trans Kalimantan",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Maloy Batuta Trans Kalimantan"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Intelegensia Grahatama",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Singhasari"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Membangun Sulut Hebat",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Bitung"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Banten West Java Tourism Development",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Tanjung Lesung"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Minahasa Permai Resort Development",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Likupang"
-    }
-   ]
-  },
-  {
-   "_asal": "kawasan",
-   "nama": "PT Jababeka Morotai",
-   "nama_lain": [],
-   "kategori": "swasta",
-   "kepakaran": [
-    "kawasan-industri"
-   ],
-   "peran_rantai": [
-    "pengelola-kawasan"
-   ],
-   "sumber": [
-    {
-     "url": "https://www.industry.co.id/read/101457/bentuk-konsorsium-jababeka-siap-penuhi-kebutuhan-listrik-di-kek-morotai",
-     "tingkat_bukti": "via-pihak-ketiga",
-     "keterangan": "pengelola KEK Morotai (anak usaha Jababeka)"
-    }
-   ]
-  },
-  {
    "_asal": "global_surya",
    "nama": "Adani Solar",
    "nama_lain": [
@@ -9294,6 +8914,608 @@
      "url": "https://www.znshinesolar.com/",
      "tingkat_bukti": "situs-sendiri",
      "keterangan": "beranda situs resmi (nama, segmen)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "PT Indah Kiat Pulp & Paper Tbk",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://indahkiat.co.id/",
+   "sumber": [
+    {
+     "url": "https://indahkiat.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "PT Asahimas Chemical",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.asc.co.id/",
+   "sumber": [
+    {
+     "url": "https://www.asc.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "PT Freeport Indonesia",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://ptfi.co.id/",
+   "sumber": [
+    {
+     "url": "https://ptfi.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "PT Amman Mineral Nusa Tenggara",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.amman.co.id/",
+   "sumber": [
+    {
+     "url": "https://www.amman.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "PT Fajar Surya Wisesa Tbk",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.fajarpaper.com/",
+   "sumber": [
+    {
+     "url": "https://www.fajarpaper.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "PT Toba Pulp Lestari Tbk",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.tobapulp.com/",
+   "sumber": [
+    {
+     "url": "https://www.tobapulp.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "PT Panasia Indo Resources Tbk",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://panasiagroup.co.id/",
+   "sumber": [
+    {
+     "url": "https://panasiagroup.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "PT Cemindo Gemilang Tbk",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.cemindo.com/",
+   "sumber": [
+    {
+     "url": "https://www.cemindo.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "PT Bukit Asam Tbk",
+   "nama_lain": [
+    "PT Tambang Batubara Bukit Asam"
+   ],
+   "kategori": "bumn",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.ptba.co.id/",
+   "sumber": [
+    {
+     "url": "https://www.ptba.co.id/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "Hongshi Holding Group Co Ltd",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.hongshigroup.com/",
+   "sumber": [
+    {
+     "url": "https://www.hongshigroup.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "logo_kawasan",
+   "nama": "Krakatau Posco Energy PT",
+   "nama_lain": [
+    "PT Krakatau Posco Energy"
+   ],
+   "kategori": "swasta",
+   "kepakaran": [
+    "industri"
+   ],
+   "peran_rantai": [],
+   "situs": "https://www.krakatauposcoenergy.com/",
+   "sumber": [
+    {
+     "url": "https://www.krakatauposcoenergy.com/",
+     "tingkat_bukti": "situs-sendiri",
+     "keterangan": "beranda situs resmi (logo)"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Cikarang Listrindo Tbk",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "listrik"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.listrindo.com/en/service/",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "penyedia listrik kawasan industri Cikarang"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Jababeka Tbk",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang kawasan industri"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Bekasi Fajar Industrial Estate Tbk",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang MM2100"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Suryacipta Swadaya",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang Suryacipta dan Subang Smartpolitan"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Modern Industrial Estate",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang Modern Cikande"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Lippo Cikarang Tbk",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.listrindo.com/en/service/",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang Lippo Cikarang"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Puradelta Lestari",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang Greenland International Industrial Center"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Maligi Permata Industrial Estate",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang KIIC Karawang"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Jakarta Industrial Estate Pulogadung",
+   "nama_lain": [],
+   "kategori": "bumn",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola kawasan industri Pulogadung"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Bumi Citra Permai",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengembang Millennium Industrial Estate"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Berkah Kawasan Manyar Sejahtera",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri",
+    "listrik"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://jiipe.com/en/home/blogDetail/id/438",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Gresik dan JIIPE; pembangkit BKMS"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Kawasan Industri Kendal",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.jetro.go.jp/world/asia/idn/sez.html",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Kendal"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Patriot Nusantara Aceh",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Arun Lhokseumawe"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Bangun Palu Sulawesi Tengah",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://katadata.co.id/berita/industri/6a0a964400d46/proyek-bess-dan-lng-hub-masuk-kek-palu-nilai-investasi-capai-rp30-triliun",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Palu"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Malamoi Olom Wobok",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Sorong"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Maloy Batuta Trans Kalimantan",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Maloy Batuta Trans Kalimantan"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Intelegensia Grahatama",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Singhasari"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Membangun Sulut Hebat",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Bitung"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Banten West Java Tourism Development",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Tanjung Lesung"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Minahasa Permai Resort Development",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/568bd-share-2020.02.05-kebutuhan-listrik-kek.pdf",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Likupang"
+    }
+   ]
+  },
+  {
+   "_asal": "kawasan",
+   "nama": "PT Jababeka Morotai",
+   "nama_lain": [],
+   "kategori": "swasta",
+   "kepakaran": [
+    "kawasan-industri"
+   ],
+   "peran_rantai": [
+    "pengelola-kawasan"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.industry.co.id/read/101457/bentuk-konsorsium-jababeka-siap-penuhi-kebutuhan-listrik-di-kek-morotai",
+     "tingkat_bukti": "via-pihak-ketiga",
+     "keterangan": "pengelola KEK Morotai (anak usaha Jababeka)"
     }
    ]
   }

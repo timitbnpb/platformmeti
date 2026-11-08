@@ -190,3 +190,17 @@ Logo hanya untuk mengenali perusahaan; merek dagang milik pemiliknya. Diambil da
 - en_8dc29e8ca8.png: Daqo New Energy, ikon situs resmi https://www.dqsolar.com/images/Daqo_New_Energy_Corp_Logo_50.png; merek dagang milik pemiliknya, dipakai sebagai identifikasi (diambil 2026-11-08)
 - en_89d09b1c44.png: FIMER, ikon situs resmi https://www.fimer.com/themes/custom/fimer_corporate/logo.svg; merek dagang milik pemiliknya, dipakai sebagai identifikasi (diambil 2026-11-08)
 - en_d6dc34ecc6.png: Antai Solar, ikon situs resmi https://www.antaisolar.com/upfiles/setting/202503/GC8C6SHBVPQW.svg; merek dagang milik pemiliknya, dipakai sebagai identifikasi (diambil 2026-11-08)
+| en_aac574f476.png | PT Indonesia Weda Bay Industrial Park | ikon resmi situs: https://iwip.co.id/ | 2026-11-08 |
+| en_f99309c07b.png | PT Harita Nickel Tbk | logo kepala situs resmi: https://tbpnickel.com/ | 2026-11-08 |
+| en_7f029af89a.png | Nickel Industries Limited | ikon resmi situs: https://nickelindustries.com/ | 2026-11-08 |
+| in_abdca05a83.png | Tsingshan Holding Group | logo kepala situs resmi: https://www.tssgroup.com.cn/ | 2026-11-08 |
+| en_0430061f85.png | PT Cikarang Listrindo Tbk | logo kepala situs resmi: https://listrindo.com/ | 2026-11-08 |
+| en_e24cba2d21.png | PT Indah Kiat Pulp & Paper Tbk | logo kepala situs resmi: https://indahkiat.co.id/ | 2026-11-08 |
+| en_ef8aa692a9.png | PT Asahimas Chemical | logo kepala situs resmi (lambang saja): https://www.asc.co.id/new-companyprofile/ | 2026-11-08 |
+| en_5523a34681.png | PT Amman Mineral Nusa Tenggara | ikon resmi situs (situs induk Amman Mineral Internasional): https://www.amman.co.id/ | 2026-11-08 |
+| en_4a4ef5d63f.png | PT Fajar Surya Wisesa Tbk | logo kepala situs resmi: https://www.fajarpaper.com/ | 2026-11-08 |
+| en_835bbfc83d.png | PT Toba Pulp Lestari Tbk | ikon resmi situs: https://www.tobapulp.com/ | 2026-11-08 |
+| en_1410e8ef6b.png | PT Panasia Indo Resources Tbk | favicon situs resmi: https://panasiagroup.co.id/ | 2026-11-08 |
+| en_c675f10bf2.png | PT Cemindo Gemilang Tbk | ikon resmi situs: https://www.cemindo.com/ | 2026-11-08 |
+| en_e375586366.png | PT Bukit Asam Tbk | favicon situs resmi: https://www.ptba.co.id/ | 2026-11-08 |
+| in_6a4065f8d3.png | Xinyi Glass Holdings | Wikidata Q3674725 P154 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Xinyi_Glass_logo.png | 2026-11-08 |

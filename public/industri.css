@@ -79,7 +79,7 @@
 .in3-chip{display:flex;flex-wrap:wrap;gap:8px}
 .in3-org,.in3-chipb{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:3px 10px 3px 4px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);text-decoration:none}
 .in3-chipb{padding-left:10px}
-.in3-org img{border-radius:50%;object-fit:contain;background:var(--paper);flex:none}
+.in3-lg{display:inline-grid;flex:none}.in3-lg>*{grid-area:1/1}.in3-lg img{z-index:1}.in3-org img{border-radius:50%;object-fit:contain;background:var(--paper);flex:none}
 a.in3-org:hover,button.in3-chipb:hover{border-color:var(--accent)}
 .in3-ini{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--soft-hijau);color:var(--brand);font:700 var(--t-label)/1 var(--font);flex:none}
 .in3-chipb small{color:var(--ink2);font:600 var(--t-label)/1 var(--font)}

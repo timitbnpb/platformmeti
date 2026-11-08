@@ -10,6 +10,7 @@ import { khUbin } from "/inti/kh.js";
 import { muatMapLibre } from "/inti/maplibre.js";
 import { rapikanPeta, pasangBatas } from "/inti/peta_indonesia.js";
 import { pilTek } from "/inti/ikon_tek.js";
+import { logoOrgSatu } from "/inti/logo_org.js";
 import { exHtml, sumberHtml, pilihHtml, cariHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
@@ -48,7 +49,9 @@ const un = (k) => `${N(k.nilai, k.nilai < 100 ? 1 : 0)} ${satuan(k.satuan)}`;
 const kapasitas = (b) => { const k = b.kapasitas; if (!k) return ""; if (k.alternatif) return k.alternatif.map(un).join(` ${t("in3.atau")} `); if (k.rentang) return `${t("pel.rentang", { a: N(k.rentang[0], 1), b: N(k.rentang[1], 1) })} ${satuan(k.satuan)}`; return k.nilai == null ? "" : un(k); };
 const ketKap = (b) => (b.kapasitas?.ket ? `<p class="in3-cat">${esc(b.kapasitas.ket)}${(b.kapasitas.alternatif || []).filter((a) => urlAman(a.url)).map((a) => ` <a href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">${esc(a.ket)}</a>`).join("")}</p>` : "");
 const orgChip = (o) => {
-  const mk = o.logo ? `<img src="${esc(o.logo)}" width="20" height="20" alt="" loading="lazy" decoding="async" data-galat="hapus">` : `<span class="in3-ini" aria-hidden="true">${esc(String(o.nama).replace(/^(PT|CV)\s+/i, "").charAt(0).toUpperCase())}</span>`;
+  const ini = `<span class="in3-ini" aria-hidden="true">${esc(String(o.nama).replace(/^(PT|CV)\s+/i, "").charAt(0).toUpperCase())}</span>`, u = logoOrgSatu(o.org_id, o.nama, o.logo);
+  /* logo menutupi inisial; gambar gagal dimuat dicopot (data-galat) dan inisial tetap terlihat */
+  const mk = u ? `<span class="in3-lg">${ini}<img src="${esc(u)}" width="20" height="20" alt="" loading="lazy" decoding="async" data-galat="hapus"></span>` : ini;
   const isi = `${mk}<span>${esc(o.nama)}</span>${bdr(o.negara, 16)}`;
   return o.org_id ? `<a class="in3-org" href="/o/${esc(o.org_id)}">${isi}</a>` : `<span class="in3-org">${isi}</span>`;
 };
