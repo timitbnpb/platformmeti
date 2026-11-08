@@ -619,3 +619,4 @@ span.tn-kp-b{cursor:default}
 /* SDU: Chief + tiga Vice Chief sejajar empat kolom (pemilik 8 Nov 2026); kotaknya selebar dua kolom kisi */
 .tn-bagan-bg .tn-rg[data-n="4"]>.tn-lr>.tn-kp{flex-basis:min(168px,calc((100% - 24px) / 4))}
 @media (min-width:760px){.tn-kisi>.tn-rg[data-n="4"]{grid-column:span 2}}
+.tn-bagan-bg .tn-rg>.tn-av-kisi{grid-template-columns:repeat(auto-fit,56px)!important;justify-content:center}

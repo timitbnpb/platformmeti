@@ -52,8 +52,11 @@ const kelompok = (judul, a, { ik = "orang", besar = "", ekstra = "" } = {}) => `
 /* kelompok ringkas: kartu pimpinan + deret avatar + tombol "Lihat semua" yang membuka popup berisi seluruh anggota */
 const GR = new Map();
 const KW = /^(Ketua|Wakil Ketua)\b/;
+/* bidang kerja dan unit khusus: hanya kartu ketua; anggota lain di deret avatar + "Lihat semua" (pemilik 8 Nov 2026) */
+const KETUA = /^(Ketua|Chief|Koordinator)\b/;
+const SATU = { pimpinan: KETUA, hanyaPim: true, maksPim: 1, semua: true };
 const PIM = /^(Ketua|Wakil Ketua|Sekretaris|Chief|Vice Chief|Koordinator)\b/;
-function ringkas(judul, a, { ik = "orang", pimpinan = PIM, maksPim = 3, hanyaPim = false } = {}) {
+function ringkas(judul, a, { ik = "orang", pimpinan = PIM, maksPim = 3, hanyaPim = false, semua = false } = {}) {
   /* tiga kartu foto seragam: pimpinan dulu, dilengkapi anggota berfoto bila pimpinan kurang dari tiga */
   /* hanyaPim: kartu besar hanya Ketua dan Wakil Ketua (termasuk kursi lowong), tanpa diisi anggota berfoto (pemilik 8 Nov 2026) */
   const nyata = a.filter(ada), pim = (hanyaPim ? a : nyata).filter((o) => pimpinan.test(o.jabatan || "")).slice(0, maksPim);
@@ -65,7 +68,7 @@ function ringkas(judul, a, { ik = "orang", pimpinan = PIM, maksPim = 3, hanyaPim
   const n = Math.min(maksPim, Math.max(hanyaPim ? 1 : 2, pim.length)), maks = { 1: 10, 2: 10, 3: 16, 4: 22 }[n];
   const tampil = avat.length > maks ? avat.slice(0, maks - 1) : avat, lebih = avat.length - tampil.length;
   const bawah = avat.length ? `<ul class="tn-av-kisi">${tampil.map((o) => { const k = o.orang_id || slug(o.nama); PERS.set(k, o); return `<li><button type="button" class="tn-av-b" data-p="${esc(k)}" title="${esc(o.nama)}, ${esc(o.jabatan)}" aria-label="${esc(t("tn.p.buka", { nama: o.nama }))}">${avatar(o)}</button></li>`; }).join("")}${lebih ? `<li><button type="button" class="tn-av-b tn-plus" data-grup="${id}" title="${esc(TX("tn.anggota_plus", "+{n} anggota", { n: lebih }))}">+${angka(lebih)}</button></li>` : ""}</ul>
-    ${lebih ? `<button type="button" class="tn-semua" data-grup="${id}">${ikon("orang", 16)}<span>${esc(TX("tn.lihat_semua", "Lihat semua {n} anggota", { n: nyata.length }))}</span></button>` : ""}` : "";
+    ${lebih || semua ? `<button type="button" class="tn-semua" data-grup="${id}">${ikon("orang", 16)}<span>${esc(TX("tn.lihat_semua", "Lihat semua {n} anggota", { n: nyata.length }))}</span></button>` : ""}` : "";
   return `<section class="tn-grp tn-rg" data-n="${n}">${kepalaGrup(ik, judul, a)}${lr}${bawah}</section>`;
 }
 
@@ -127,9 +130,9 @@ function struktur(p) {
   const U = p.unit, d = U.dewan || [], iPakar = d.findIndex((o) => /Ketua Dewan Pakar/.test(o.jabatan));
   const pengawas = iPakar < 0 ? d : d.slice(0, iPakar), pakar = iPakar < 0 ? [] : d.slice(iPakar);
   const bidang = p.bidang.filter((b) => b.nama);
-  const kb = (b, i) => `<section class="tn-grp" data-k="${nOrang(b.anggota) === 3 ? 3 : 2}">${kepalaGrup("daftar", t("tn.u.bk", { n: i + 1 }) + ": " + b.nama, b.anggota)}${ul(b.anggota)}</section>`;
+  const kb = (b, i) => ringkas(t("tn.u.bk", { n: i + 1 }) + ": " + b.nama, b.anggota, { ik: "daftar", ...SATU });
   const ket = (U.ketum || [])[0];
-  const unit = [[t("tn.u.institute"), U.institute], [t("tn.u.wilayah"), U.wilayah, { ik: "wilayah" }], [t("tn.u.muda"), U.muda], [t("tn.u.komite"), U.komite], [t("tn.u.staf"), U.staf], [t("tn.u.sdu"), U.sdu && U.sdu.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", pimpinan: /^(Chief|Vice Chief)\b/, maksPim: 4 }]].filter(([, a]) => a);
+  const unit = [[t("tn.u.institute"), U.institute, SATU], [t("tn.u.wilayah"), U.wilayah, { ik: "wilayah", ...SATU }], [t("tn.u.muda"), U.muda, SATU], [t("tn.u.komite"), U.komite, SATU], [t("tn.u.staf"), U.staf, SATU], [t("tn.u.sdu"), U.sdu && U.sdu.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", ...SATU }]].filter(([, a]) => a);
   const baris2 = [["waketum", "tn.u.waketum", true], ["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"], ["eksekutif", "tn.u.eksekutif", true]].filter(([k]) => U[k]).map(([k, j, s]) => kelompok(t(j), U[k])).join("");
   return `<section class="tn-seksi tn-bagan-bg" id="tim" aria-labelledby="tn-struktur">${kepala("tn-struktur", "orang", t("tn.ey.struktur"), t("tn.struktur.h2"), t("tn.struktur.pengantar", { periode: p.periode }))}
   <div class="tn-pohon"><div class="tn-r tn-r0">${ringkas(t("tn.u.penasihat"), U.penasihat || [], { ik: "kompas", pimpinan: KW, hanyaPim: true })}${ringkas(t("tn.u.pengawas"), pengawas, { ik: "perisai", pimpinan: KW, hanyaPim: true })}${ringkas(t("tn.u.pakar"), pakar, { ik: "wisuda", pimpinan: KW, hanyaPim: true })}</div>
