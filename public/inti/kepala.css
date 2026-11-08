@@ -210,3 +210,5 @@ body header.top{gap:12px;padding-inline:var(--tepi)}
 .jm-cari-pintas a{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;min-height:84px;padding:12px;border-radius:var(--r-sm);background:var(--card)}
 .jm-cari-pintas .jm-ik{box-sizing:content-box;width:18px;height:18px;padding:7px;border-radius:50%;background:var(--soft-hijau)}
 @media (min-width:601px){.jm-cari-pintas{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* ikon bar atas tetap tampil: rapatkan bar sampai 1599 agar kepala tidak meluap (pemilik 9 Nov 2026) */
+@media (min-width:1200px) and (max-width:1599px){nav.tabs{gap:2px}nav.tabs>a,nav.tabs .jm-grup-tbl{padding:0 8px!important;gap:6px}}
