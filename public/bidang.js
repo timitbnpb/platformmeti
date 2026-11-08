@@ -16,14 +16,14 @@ const BIDANG = {
   pendanaan: { ikon: "kartu", alat: [A("/direktori?tampil=pendanaan", "nav.d_pendanaan", "kartu"), A("/radar", "nav.radar", "berlian"), A("/peluang", "nav.peluang", "kompas"), A("/transaksi", "tr3.nav", "transaksi"), A("/keuangan-hijau", "nav.keuangan_hijau", "tek-bio"), A("/pasar-listrik-hijau", "nav.pasar_hijau", "tek-listrik"), A("/risiko", "rs3.nav", "peringatan"), A("/indeks-keyakinan", "ky.nav", "survei"), A("/model-keuangan", "nav.model_keuangan", "piala"), A("/biaya-listrik", "nav.biaya_listrik", "kalkulator"), A("/banding", "bd2.nav", "banding")] },
   umkm: { ikon: "tag", alat: [A("/desa-energi", "de2.nav", "desa"), A("/akses-energi", "akn.nav", "ponsel"), A("/rantai", "nav.rantai", "rantai", EBT)] },
   esg: { ikon: "karbon", alat: [A("/karbon", "kb2.nav", "karbon"), A("/air-energi", "ae2.nav", "air-energi"), A("/lokasi-hijau", "lh2.nav", "denah"), A("/industri", "in3.nav", "industri", EBT)] },
-  komunikasi: { ikon: "presentasi", alat: [A("/insight", "n7.gambaran", "kajian", EBT), A("/rapor", "nav.rapor", "presentasi"), A("/ringkasan", "re2.nav", "ringkasan"), A("/galeri", "nav.foto", "gambar", TNT), A("/berita?q=METI", "n7.meti_berita", "mikrofon", TNT)] },
+  komunikasi: { ikon: "presentasi", alat: [A("/insight", "n7.gambaran", "kajian", EBT), A("/rapor", "nav.rapor", "presentasi"), A("/ringkasan", "re2.nav", "ringkasan"), A("/galeri", "nav.foto", "gambar", TNT), A("/siaran-pers", "n7.meti_berita", "mikrofon", TNT)] },
   internasional: { ikon: "asean", alat: [A("/rantai-global", "rg3.nav", "kapal"), A("/asean", "nav.asean", "asean"), A("/direktori?tampil=pendanaan", "nav.d_pendanaan", "kartu", PEN)] },
   data: { ikon: "tabel", alat: [A("/data", "kdt.nav", "unduh"), A("/dokumen-data", "nav.dokumen_data", "tabel"), A("/direktori?tampil=sistem_data", "nav.d_sistem", "csv"), A("/indeks", "nav.indeks", "grafik"), A("/metode", "nav.sub.metode", "metode")] },
 };
 const SLUG = Object.keys(BIDANG);
 
 /* id alat untuk kunci bid.a.<id> */
-const SPESIAL = { "/direktori?tampil=pakar": "orang", "/direktori?tampil=lembaga": "institusi", "/direktori?tampil=pendanaan": "pendanaan", "/direktori?tampil=sistem_data": "sistem-data", "/berita?q=METI": "meti-berita" };
+const SPESIAL = { "/direktori?tampil=pakar": "orang", "/direktori?tampil=lembaga": "institusi", "/direktori?tampil=pendanaan": "pendanaan", "/direktori?tampil=sistem_data": "sistem-data", "/siaran-pers": "meti-berita" };
 const idAlat = (h) => SPESIAL[h] || h.replace(/^\//, "");
 /* satu-satunya foto (pemilik 8 Nov 2026): Pelaku orang */
 const KEG = "/img/kegiatan/audiensi-mpr-2026-10-05.webp", BR = (f) => `/img/beranda/${f}.webp`;
