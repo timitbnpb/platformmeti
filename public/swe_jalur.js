@@ -15,7 +15,7 @@ function tabFasilitas() {
   ], baris: B.sw.jalur.fasilitas });
 }
 function tabProdusen() {
-  const el = document.getElementById("swe-j-hulu"); if (!el) return;
+  const el = document.getElementById("swe-j-hulutab"); if (!el) return;
   const baris = (B.wte?.hulu || []);
   tabel(el, { satuan: "swe.u.segmen", per: 6, urutAwal: 0, menurun: false, kolom: [
     { label: t("swe.c.segmen"), v: (h) => h.segmen, f: (h) => pil("swe.hulu.", h.segmen) },
@@ -31,7 +31,7 @@ export function mulai(el) {
   el.innerHTML = [
     ex({ id: "swe-j-jenis", ikon: "pabrik", topik: t("swe.j.ey.jenis"), judulHtml: esc(t("swe.j.j.jenis")), subHtml: esc(t("swe.j.s.jenis")), isiHtml: `<div class="rg3-kisi">${J.jenis.map(kartu).join("")}</div>${catatan("swe.j.n.jenis")}`, kakiHtml: kakiSumber(["sgnea", "mongabay-rdf-cilacap", "esdm-lfg", "p70-2016", "p26-2020", "iea_wte"]) }),
     ex({ id: "swe-j-fas", ikon: "tabel", topik: t("swe.j.ey.fas"), judulHtml: esc(t("swe.j.j.fas", { n: J.fasilitas.length })), subHtml: esc(t("swe.j.s.fas")), isiHtml: `<div id="swe-j-tab"></div>${catatan("swe.j.n.fas")}`, kakiHtml: kakiSumber(J.fasilitas.flatMap((f) => f.sumber_ids)) }),
-    ex({ id: "swe-j-hulu", ikon: "koper", topik: t("swe.j.ey.hulu"), judulHtml: esc(t("swe.j.j.hulu")), subHtml: esc(t("swe.j.s.hulu")), isiHtml: `<div id="swe-j-hulu"></div>${daftarCelah([B.sw.celah[3]])}` }),
+    ex({ id: "swe-j-hulu", ikon: "koper", topik: t("swe.j.ey.hulu"), judulHtml: esc(t("swe.j.j.hulu")), subHtml: esc(t("swe.j.s.hulu")), isiHtml: `<div id="swe-j-hulutab"></div>${daftarCelah([B.sw.celah[7], B.sw.celah[8]])}` }),
   ].join("");
   tabFasilitas(); tabProdusen();
 }

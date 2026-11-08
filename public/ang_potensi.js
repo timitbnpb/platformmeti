@@ -3,7 +3,6 @@
 import { B, muat, t, ex, num, esc, ikon, tx, buktiS, kakiSumber, tabel, batangSvg, tipHtml, kosongTab, daftarCelah, catatan, bukti, proyekBayu, tautProvinsi, siapTautan, naikkan } from "/ang_umum.js";
 import { nanti } from "/inti/umum.js";
 
-const PUSAT = "global-wind-atlas";
 function kartu(ik, judul, nilai, satuan, ket, sid, tb) {
   return `<div class="rg3-kartu"><div class="rg3-k-kep">${ikon(ik, 22)}<b>${esc(judul)}</b></div><p class="ang-angka">${esc(nilai)} <small>${esc(satuan)}</small></p><p class="jm-bantu">${esc(ket)}</p>${buktiS(sid, tb)}</div>`;
 }
