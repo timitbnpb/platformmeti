@@ -44,7 +44,8 @@
 .so-tab{min-width:0}
 .so-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .so-tabel{table-layout:fixed;width:100%}
-.so-c-no{width:48px}.so-c-org{width:38%}.so-c-sek{width:17%}.so-c-kota{width:13%}.so-c-n{width:11%}
+.so-c-no{width:48px}.so-c-org{width:28%}.so-c-jn{width:12%}.so-c-anak{width:14%}.so-c-sek{width:14%}.so-c-kota{width:11%}.so-c-n{width:8%}
+.so-anak{display:grid;gap:4px;justify-items:start}.so-induk{font:400 var(--t-kecil)/1.3 var(--font);color:var(--ink2)}
 .so-tabel td{padding:8px 12px;vertical-align:middle;overflow-wrap:anywhere}
 .so-tabel tbody tr{cursor:pointer}
 .so-tabel tbody tr:nth-child(even){background:var(--surface)}

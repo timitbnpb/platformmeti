@@ -42,18 +42,12 @@ function rantaiDiagram(o, S) {
     <div class="oj-rk-diagram">${sisi("pemasok")}<div class="oj-rk-tengah"><span class="oj-sp oj-sp-ini">${logoOrgHtml(o.id, o.nama, o.logo, "oj-lg oj-lg-b")}<span class="oj-sp-t"><b>${esc(o.nama)}</b></span></span></div>${sisi("pelanggan")}</div></section>`;
 }
 
-/* gauge setengah lingkaran untuk skor 0..1 */
-function gauge(sk, tingkat, tip) {
-  const a = Math.PI * (1 - Math.min(1, Math.max(0, sk))), x = 60 + 46 * Math.cos(a), y = 58 - 46 * Math.sin(a);
-  return `<svg class="jm-gf oj-gauge" viewBox="0 0 120 70" role="img" aria-label="${esc(tip)}" focusable="false"><path class="oj-g-alas" d="M14 58A46 46 0 0 1 106 58"/><path class="oj-g-isi oj-${tingkat}" d="M14 58A46 46 0 0 1 ${x.toFixed(1)} ${y.toFixed(1)}" tabindex="0" data-tip="${esc(tip)}"/><text class="oj-g-angka" x="60" y="56" text-anchor="middle">${esc(angka(sk, { desimal: 2 }))}</text></svg>`;
-}
 
 export function ringkasHtml(o, S, { tombolIkuti, tombolKoreksi }) {
   const r = S.per.get(o.id), N = S.baris.length, tgl = tanggal(o.diperiksa || S.tgl), tglP = tanggal(S.tglProyek);
   const L = o.lokasi || {}, sek = r.sek, url = urlAman(o.situs), bh = badanHukum(o.nama), dSitus = url ? domain(url) : "", dom = domSumber(o);
   const jawab = t("oj.jawab", { nama: o.nama, kat: (o.kategori?.label || "").toLowerCase(), sek: namaSek(sek).toLowerCase(), kota: L.kota ? t("oj.jawab.kota", { kota: L.kota }) : "", proyek: r.nProy ? t(r.mw ? "oj.jawab.proyek" : "oj.jawab.proyek0", { n: angka(r.nProy), mw: angka(Math.round(r.mw)), v: angka(r.nProv) }) : t("oj.jawab.tanpa"), k: angka(r.rank), N: angka(N) });
   const kutip = `${o.nama}. ${t("oj.kutip.dari", { tgl })}. ${location.origin}/o/${o.id}`;
-  const sk = r.yakin.skor, tingkat = sk >= 0.65 ? "ok" : sk >= 0.4 ? "warn" : "bad";
 
   /* ubin angka di kepala: nilai minimum bertanda info (tooltip), bukan lencana */
   const kpi = (ik, label, nilai, ket, min, sat = "") => `<li class="oj-kpi"><span class="oj-ub-ik">${ikon(ik, 20)}</span><b>${esc(nilai)}${sat ? ` <span class="oj-sat">${esc(sat)}</span>` : ""}</b><span class="oj-kpi-l">${esc(label)}${min ? `<span class="oj-i" title="${esc(t("oj2.min"))}" tabindex="0" aria-label="${esc(t("oj2.min"))}">${ikon("info", 14)}</span>` : ""}</span><small>${esc(ket)}</small></li>`;
@@ -81,14 +75,6 @@ export function ringkasHtml(o, S, { tombolIkuti, tombolKoreksi }) {
   const sumber = per.size ? `<div class="oj-sumber"><span class="oj-kl">${ikon("buku", 16)}${esc(t("oj.sumber"))}</span><p class="oj-chips">${[...per].slice(0, 12).map(([d, a]) => `<a class="oj-chip oj-chip-s" href="${esc(urlAman(a.s.url))}" target="_blank" rel="noopener noreferrer" title="${esc(a.s.tanggal ? tanggal(a.s.tanggal) : "")}">${esc(d)}${a.n > 1 ? `<b>${esc(angka(a.n))}</b>` : ""}</a>`).join("")}</p>${per.size > 12 ? `<span class="oj-bantu">${esc(t("oj.lagi", { n: angka(per.size - 12) }))}</span>` : ""}</div>` : "";
   const fakta = fk ? `<section class="oj-kartu" aria-labelledby="ojFakta"><div class="oj-kh"><h2 id="ojFakta">${ikon("tabel", 20)}${esc(t("oj.fakta"))}</h2>${sumberHtml(glosarium, t("oj.arti"))}</div><dl class="oj-fakta">${fk}</dl>${sumber}<p class="oj-bantu">${esc(t("oj2.diperiksa", { tgl }))}</p></section>` : "";
 
-  /* satu kartu kualitas data: gauge + tiga komponen berangka; rumus di popover info */
-  const tg = (v, a, b) => (v >= a ? "ok" : v >= b ? "warn" : "bad");
-  const komp = (ik, label, nilai, tng) => `<li class="oj-komp"><span class="oj-titik oj-${tng}" aria-hidden="true"></span><span>${esc(label)}</span><b>${esc(nilai)}</b></li>`;
-  const rumus = `<p><b>${esc(t("oj.cara"))}</b></p><p>${esc(t("oj.cara.isi", { isi: angka(r.yakin.isi, { desimal: 2 }), dom: angka(r.yakin.domain), bukti: angka(r.yakin.bukti, { desimal: 2 }) }))}</p>`;
-  const tipSkor = t("oj2.kd.tip", { s: angka(sk, { desimal: 2 }), t: t("oj.yakin.t." + tingkat) });
-  const yakin = `<section class="oj-kartu oj-kd" aria-labelledby="ojYakin"><div class="oj-kh"><h2 id="ojYakin">${ikon("perisai", 20)}${esc(t("oj2.kd"))}</h2>${sumberHtml(rumus, t("oj.cara"))}</div>
-    <div class="oj-kd-isi">${gauge(sk, tingkat, tipSkor)}<div><p class="oj-skor"><span class="oj-pil oj-pil-${tingkat}">${esc(t("oj.yakin.t." + tingkat))}</span><span class="oj-pil">${esc(t("oj.hipotesis"))}</span></p>
-    <ul class="oj-komps">${komp("tabel", t("oj2.kd.isi"), angka(r.yakin.isi, { desimal: 2 }), tg(r.yakin.isi, 0.7, 0.4))}${komp("tautan", t("oj2.kd.dom"), t("oj2.kd.dom_n", { n: angka(r.yakin.domain) }), tg(r.yakin.domain, 3, 2))}${komp("lencana", t("oj2.kd.bukti"), angka(r.yakin.bukti, { desimal: 2 }), tg(r.yakin.bukti, 0.7, 0.4))}</ul></div></div></section>`;
 
   const presisi = L.presisi ? t("oj.presisi." + L.presisi) : "";
   const kantor = L.kota || L.alamat || L.provinsi ? `<section class="oj-kartu" aria-labelledby="ojKantor"><div class="oj-kh"><h2 id="ojKantor">${ikon("lokasi", 20)}${esc(t("oj.kantor"))}</h2></div>
@@ -117,7 +103,7 @@ export function ringkasHtml(o, S, { tombolIkuti, tombolKoreksi }) {
       ${aksi}</div>
       <ul class="oj-kpis">${kpis}</ul></div>
   </header>
-  <div class="oj-baris oj-baris-dua">${fakta}${yakin}</div>
+  <div class="oj-baris oj-baris-dua">${fakta}</div>
   ${rantaiDiagram(o, S)}
   ${info.length ? `<div class="oj-baris">${info.join("")}</div>` : ""}
   ${banding}`;

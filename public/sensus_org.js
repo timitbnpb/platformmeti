@@ -77,7 +77,7 @@ export async function bangunSensus(akar) {
     const f0 = S.baris.filter((r) => cocokQ(r) && (!st.sek || r.sek === st.sek) && (!st.jenis || jenisDari(r.o) === st.jenis));
     $("soF").innerHTML = SARING.map((k) => `<button type="button" class="so-sg so-f${SARING.indexOf(k) + 1}" data-f="${k}" aria-pressed="${st.f.has(k)}">${ikon(IKF[k], 16)}<span class="so-sl">${esc(t("so.f." + k))}</span><span class="so-n">${esc(angka(f0.filter(saringFn[k]).length))}</span></button>`).join("");
   }
-  const kunciUrut = { rank: (r) => r.rank, nm: (r) => r.nm, nProy: (r) => -r.nProy, mw: (r) => -r.mw };
+  const kunciUrut = { rank: (r) => r.rank, nm: (r) => r.nm, jn: (r) => t("so.j." + jenisDari(r.o)), anak: (r) => (r.anak ? 0 : 1), nProy: (r) => -r.nProy, mw: (r) => -r.mw };
   function render() {
     hasil = S.baris.filter(cocok);
     const { k, arah } = st.urut, f = kunciUrut[k];
@@ -88,15 +88,18 @@ export async function bangunSensus(akar) {
     $("soUbin").querySelector("small").textContent = t("so.dari", { x: angka(hasil.length), n: angka(N) });
     const info = `<details class="so-i"><summary aria-label="${esc(t("so.info"))}">${ikon("info", 16)}</summary><span class="so-pop">${esc(t("so.tip.kolom", { tgl: tglP }))}</span></details>`;
     const th = (kk, kunci, num, inf) => `<th scope="col" class="${num ? "so-num" : ""}" aria-sort="${st.urut.k === kk ? (st.urut.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut so-th" data-urut="${kk}">${esc(t(kunci))}</button>${inf ? info : ""}</th>`;
-    $("soTab").innerHTML = hasil.length ? `<table class="jm-tabel so-tabel"><caption class="so-sr">${esc(t("so.caption"))}</caption><colgroup><col class="so-c-no"><col class="so-c-org"><col class="so-c-sek"><col class="so-c-kota"><col class="so-c-n"><col class="so-c-n"></colgroup><thead><tr><th scope="col" class="so-no">${esc(t("so.c.no"))}</th>${th("nm", "so.c.org")}<th scope="col">${esc(t("so.c.sektor"))}</th><th scope="col">${esc(t("so.c.kota"))}</th>${th("nProy", "so.c.proyek", 1, 1)}${th("mw", "so.c.mw", 1, 1)}</tr></thead><tbody>${hasil.slice(a, a + PER).map((r, i) => baris(r, a + i + 1)).join("")}</tbody></table>`
+    $("soTab").innerHTML = hasil.length ? `<table class="jm-tabel so-tabel"><caption class="so-sr">${esc(t("so.caption"))}</caption><colgroup><col class="so-c-no"><col class="so-c-org"><col class="so-c-jn"><col class="so-c-anak"><col class="so-c-sek"><col class="so-c-kota"><col class="so-c-n"><col class="so-c-n"></colgroup><thead><tr><th scope="col" class="so-no">${esc(t("so.c.no"))}</th>${th("nm", "so.c.org")}${th("jn", "so.c.jenis")}${th("anak", "so.c.anak")}<th scope="col">${esc(t("so.c.sektor"))}</th><th scope="col">${esc(t("so.c.kota"))}</th>${th("nProy", "so.c.proyek", 1, 1)}${th("mw", "so.c.mw", 1, 1)}</tr></thead><tbody>${hasil.slice(a, a + PER).map((r, i) => baris(r, a + i + 1)).join("")}</tbody></table>`
       : `<div class="jm-kosong">${ikon("cari", 32)}<p>${esc(t("so.kosong"))}</p><button type="button" class="so-tb" id="soReset">${esc(t("so.reset"))}</button></div>`;
     $("soPag").innerHTML = paginasiHtml({ hal, total: hasil.length, per: PER, satuan: "so.satuan" });
   }
-  const lencana = (r) => [`<span class="so-jn so-jn-${jenisDari(r.o)}">${ikon(IKJ[jenisDari(r.o)], 14)}${esc(t("so.j." + jenisDari(r.o)))}</span>`, r.aplsi && `<span class="so-len">${esc(t("so.len.aplsi"))}</span>`, r.o.meti && `<span class="so-len">${esc(t("pf.meti"))}</span>`, r.anak && `<span class="so-len so-len-anak">${esc(t("so.len.anak"))}</span>`].filter(Boolean).join("");
+  const pilJenis = (r) => `<span class="so-jn so-jn-${jenisDari(r.o)}">${ikon(IKJ[jenisDari(r.o)], 14)}${esc(t("so.j." + jenisDari(r.o)))}</span>`;
+  /* pemilik 9 Nov 2026: jenis dan anak usaha jadi kolom sendiri, bukan lencana di bawah nama */
+  const selAnak = (r) => (r.anak ? `<span class="so-len so-len-anak">${esc(t("so.len.anak"))}</span>${r.o.induk ? `<small class="so-induk">${esc(r.o.induk)}</small>` : ""}` : dim("so.tip.bukan_anak"));
+  const lencana = (r) => [r.aplsi && `<span class="so-len">${esc(t("so.len.aplsi"))}</span>`, r.o.meti && `<span class="so-len">${esc(t("pf.meti"))}</span>`].filter(Boolean).join("");
   const angkaSel = (n, tipKosong) => (n ? `<b>${esc(angka(n))}</b>` : dim(tipKosong));
   function baris(r, no) {
     return `<tr data-id="${esc(r.id)}"><td class="so-no" data-label="${esc(t("so.c.no"))}">${angka(no)}</td><td class="so-org" data-label="${esc(t("so.c.org"))}"><button type="button" class="so-nm" data-buka="${esc(r.id)}">${logoHtml(r)}<span class="so-nt"><span class="so-nn">${esc(r.nm)}</span>${lencana(r) ? `<span class="so-lens">${lencana(r)}</span>` : ""}</span></button></td>`
-      + `<td data-label="${esc(t("so.c.sektor"))}">${sekPil(r.sek)}</td><td data-label="${esc(t("so.c.kota"))}">${r.o.lokasi?.kota ? esc(r.o.lokasi.kota) : dim("so.tip.tanpa_kota")}</td>`
+      + `<td data-label="${esc(t("so.c.jenis"))}">${pilJenis(r)}</td><td class="so-anak" data-label="${esc(t("so.c.anak"))}">${selAnak(r)}</td><td data-label="${esc(t("so.c.sektor"))}">${sekPil(r.sek)}</td><td data-label="${esc(t("so.c.kota"))}">${r.o.lokasi?.kota ? esc(r.o.lokasi.kota) : dim("so.tip.tanpa_kota")}</td>`
       + `<td class="so-num" data-label="${esc(t("so.c.proyek"))}">${angkaSel(r.nProy, "so.tip.tanpa_proyek")}</td><td class="so-num" data-label="${esc(t("so.c.mw"))}">${angkaSel(Math.round(r.mw), r.nProy ? "so.tip.mw_tanpa" : "so.tip.tanpa_mw")}</td></tr>`;
   }
   const segar = () => { hitungChip(); nanti(render); };
