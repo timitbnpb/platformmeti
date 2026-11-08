@@ -24,7 +24,7 @@ export const HALAMAN = [
   { g: "peta", id: "risiko-proyek", ik: "peringatan", href: "/risiko", l: ["rs3.lead"] },
   { g: "peta", id: "sistem-pln", ik: "sistem-listrik", href: "/sistem", l: ["sp2.bauran.narasi", "sp2.kapp.narasi", "sp2.celah.4"] },
   { g: "peta", id: "akses-energi", ik: "ponsel", href: "/akses-energi", l: ["akn.l.kap.n", "akn.d.lok.n"] },
-  { g: "peta", id: "psn", ik: "mahkota", href: "/psn", l: ["psn.s.metode"] },
+  { g: "peta", id: "psn", ik: "mahkota", href: "/program#psn", l: ["psn.s.metode"] },
   { g: "indeks", id: "transaksi", ik: "transaksi", href: "/transaksi", l: ["tr3.n.nilai", "tr3.n.tabel"] },
   { g: "indeks", id: "indeks-keyakinan", ik: "survei", href: "/indeks-keyakinan", l: n("ky.m.", 1, 4) },
   { g: "indeks", id: "strategi", ik: "tingkat", href: "/strategi", st: ["kesenjangan", "peta", "radar", "konsentrasi", "uang", "sinyal"] },

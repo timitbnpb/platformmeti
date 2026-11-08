@@ -1,12 +1,11 @@
-/* /psn: Grand planning PSN. Data = /data/psn.json (Permenko 16/2025 + pengayaan bersumber). Semua grafik SVG .jm-gx bertooltip (inti/tip_grafik.js).
+/* Bagian PSN energi di /program#psn (dimuat program.js sesudah kartu program). Data = /data/psn.json (Permenko 16/2025, hanya energi dan EBT, pengayaan bersumber).
+   Wadah #psnIsi dan #psnDlg disediakan program.js. Semua grafik SVG .jm-gx bertooltip (inti/tip_grafik.js).
    INP: kontrol (chip, pilih) berubah seketika; peta, grafik, dan tabel menyusul lewat nanti(). */
-import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import "/inti/tip_grafik.js";
 import "/inti/galat_gambar.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml, debounce } from "/inti/umum.js";
 import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
-import { khUbin } from "/inti/kh.js";
 import { exHtml, pilihHtml, cariHtml, hapusHtml, sumberHtml } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { buktiHtml } from "/inti/bukti.js";
@@ -18,11 +17,10 @@ import { logoOrg } from "/inti/logo_org.js";
 import { PROV } from "/inti/prov_singkat.js";
 import { SEKTOR, IKON_SEKTOR, STATUS, IKON_STATUS, DANA, IKON_DANA, NEGARA, saring, totalInvestasi, hitungPer, barisLinimasa, tahunDari, barisCsv } from "/psn_hitung.js";
 
-await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
 const PER = 15, URL_AMAN = (u) => (/^https?:\/\//i.test(u || "") ? u : "");
-const WARNA_SEKTOR = { energi: "--tp-listrik", kawasan: "--tp-industri", smelter: "--tp-karbon", jalan: "--data1", pelabuhan: "--data2", bandara: "--data3", kereta: "--data4", bendungan: "--tp-hidro", air: "--tp-simpan", tanggul: "--tp-jaringan", teknologi: "--tp-hidrogen", pendidikan: "--tp-adil", pariwisata: "--tp-bio", pertanian: "--tp-efisiensi", perumahan: "--tp-biaya", program: "--tp-kebijakan" };
+const WARNA_SEKTOR = { energi: "--tp-listrik", kawasan: "--tp-industri", teknologi: "--tp-hidrogen", program: "--tp-kebijakan" };
 const bukti = (k) => buktiHtml(k === "resmi" ? "resmi" : k === "media" ? "media" : "est");
 const ikonStatus = (s) => ikon(IKON_STATUS[s] || "tanya", 16);
 const pilStatus = (s) => `<span class="jm-pil psn-st psn-st-${esc(s)}">${ikonStatus(s)}<span>${esc(t("psn.status." + s))}</span></span>`;
@@ -45,29 +43,20 @@ const SEMUA = D.baris, PROYEK = SEMUA.filter((b) => b.tipe === "proyek");
 const S = { q: "", sektor: "", prov: "", status: "", energi: "", dana: "", lengkap: false, hal: 1, uk: "prio", ua: 1, sel: "" };
 let HASIL = SEMUA;
 
-/* ---------- kepala ---------- */
-const inv = totalInvestasi(SEMUA), energiInti = SEMUA.filter((b) => b.energi === "inti");
-khUbin("psnUbin", [
-  { ikon: "bendera", nilai: N(D.meta.jumlah_proyek), label: t("psn.u1", { p: N(D.meta.jumlah_program) }) },
-  { ikon: "petir", nilai: N(energiInti.length), label: t("psn.u2") },
-  { ikon: "pabrik", nilai: N(SEMUA.filter((b) => b.sektor === "smelter").length), label: t("psn.u3") },
-  { ikon: "kartu", nilai: `US$ ${N(inv.usd)} ${t("psn.miliar")}`, label: t("psn.u4", { n: N(inv.n) }) },
-  { ikon: "centang", nilai: N(SEMUA.filter((b) => b.lengkap).length), label: t("psn.u5") },
-]);
+const energiInti = SEMUA.filter((b) => b.energi === "inti");
 
 /* ---------- kerangka ---------- */
 const opsiSektor = [["", t("psn.f.semua"), "daftar2", SEMUA.length], ...SEKTOR.map((s) => [s, t("psn.sektor." + s), IKON_SEKTOR[s], SEMUA.filter((b) => b.sektor === s).length])];
 const provAda = [...new Set(SEMUA.flatMap((b) => b.prov_kode))].sort();
 const opsiProv = [["", t("psn.f.semua"), "wilayah"], ...provAda.map((k) => [k, provNama(k), "prov:" + k, SEMUA.filter((b) => b.prov_kode.includes(k)).length])];
 const opsiStatus = [["", t("psn.f.semua"), "daftar2"], ...STATUS.map((s) => [s, t("psn.status." + s), IKON_STATUS[s], SEMUA.filter((b) => b.status === s).length])];
-const opsiEnergi = [["", t("psn.f.semua"), "daftar2"], ["ada", t("psn.energi.ada"), "tek-listrik", SEMUA.filter((b) => b.energi).length], ["inti", t("psn.energi.inti"), "petir", energiInti.length], ["turunan", t("psn.energi.turunan"), "pabrik", SEMUA.filter((b) => b.energi === "turunan").length]];
 const opsiDana = [["", t("psn.f.semua"), "daftar2"], ...DANA.map((s) => [s, t("psn.dana." + s), IKON_DANA[s], SEMUA.filter((b) => b.dana.includes(s)).length])];
 const ex = (o) => exHtml({ tingkat: "h2", ...o });
 
 function rangka() {
   isi.innerHTML = [
     ex({ id: "psnSaring", ikon: "cari2", topik: t("psn.ey.saring"), judulHtml: hlHtml("psn.t.saring", t("psn.t.saring.hl")), subHtml: esc(t("psn.s.saring")),
-      isiHtml: `<div class="jm-saring psn-saring">${cariHtml({ id: "psnQ", label: t("psn.f.q"), placeholder: t("psn.f.q") })}${pilihHtml({ id: "psnSek", ikon: "daftar2", label: t("psn.f.sektor"), opsi: opsiSektor })}${pilihHtml({ id: "psnProv", ikon: "wilayah", label: t("psn.f.prov"), opsi: opsiProv })}${pilihHtml({ id: "psnSt", ikon: "status", label: t("psn.f.status"), opsi: opsiStatus })}${pilihHtml({ id: "psnEn", ikon: "petir", label: t("psn.f.energi"), opsi: opsiEnergi })}${pilihHtml({ id: "psnDn", ikon: "kartu", label: t("psn.f.dana"), opsi: opsiDana })}
+      isiHtml: `<div class="jm-saring psn-saring">${cariHtml({ id: "psnQ", label: t("psn.f.q"), placeholder: t("psn.f.q") })}${pilihHtml({ id: "psnSek", ikon: "daftar2", label: t("psn.f.sektor"), opsi: opsiSektor })}${pilihHtml({ id: "psnProv", ikon: "wilayah", label: t("psn.f.prov"), opsi: opsiProv })}${pilihHtml({ id: "psnSt", ikon: "status", label: t("psn.f.status"), opsi: opsiStatus })}${pilihHtml({ id: "psnDn", ikon: "kartu", label: t("psn.f.dana"), opsi: opsiDana })}
         <button type="button" class="psn-chip" id="psnLengkap" aria-pressed="false">${ikon("centang", 16)}<span>${esc(t("psn.f.lengkap"))}</span></button>${hapusHtml({ id: "psnHapus", label: t("psn.f.hapus") })}</div><p class="psn-bantu" id="psnHitung" aria-live="polite"></p>` }),
     ex({ id: "psnPeta", ikon: "peta", topik: t("psn.ey.peta"), judulHtml: `<span id="psnJPeta"></span>`, subHtml: esc(t("psn.s.peta")), aksiHtml: aksiHtml({ csv: false, pdf: false, sajian: false }),
       isiHtml: `<div class="psn-peta" id="psnPetaW"><div id="psnKanvas" class="psn-kanvas" role="application" aria-label="${esc(t("psn.peta.label"))}"></div><div id="psnTip" class="psn-tip" role="status" hidden></div>
@@ -81,9 +70,9 @@ function rangka() {
         <div class="psn-celah"><h3>${ikon("peringatan", 18)}<span>${esc(t("psn.celah"))}</span></h3><ul><li>${ikon("info", 14)}<span>${esc(D.meta.catatan)}</span></li><li>${ikon("info", 14)}<span>${esc(D.meta.terbaru_dicek)}</span></li></ul></div>` }),
   ].join("");
   $("psnQ").addEventListener("input", debounce(() => { S.q = $("psnQ").value; terap(); }, 200));
-  for (const [id, k] of [["psnSek", "sektor"], ["psnProv", "prov"], ["psnSt", "status"], ["psnEn", "energi"], ["psnDn", "dana"]]) $(id).addEventListener("change", () => { S[k] = $(id).value; terap(); });
+  for (const [id, k] of [["psnSek", "sektor"], ["psnProv", "prov"], ["psnSt", "status"], ["psnDn", "dana"]]) $(id).addEventListener("change", () => { S[k] = $(id).value; terap(); });
   $("psnLengkap").addEventListener("click", () => { S.lengkap = !S.lengkap; $("psnLengkap").setAttribute("aria-pressed", String(S.lengkap)); terap(); });
-  $("psnHapus").addEventListener("click", () => { Object.assign(S, { q: "", sektor: "", prov: "", status: "", energi: "", dana: "", lengkap: false }); $("psnQ").value = ""; for (const id of ["psnSek", "psnProv", "psnSt", "psnEn", "psnDn"]) { $(id).value = ""; $(id).dispatchEvent(new Event("jm:segar")); } $("psnLengkap").setAttribute("aria-pressed", "false"); terap(); });
+  $("psnHapus").addEventListener("click", () => { Object.assign(S, { q: "", sektor: "", prov: "", status: "", energi: "", dana: "", lengkap: false }); $("psnQ").value = ""; for (const id of ["psnSek", "psnProv", "psnSt", "psnDn"]) { $(id).value = ""; $(id).dispatchEvent(new Event("jm:segar")); } $("psnLengkap").setAttribute("aria-pressed", "false"); terap(); });
   isi.addEventListener("click", (e) => {
     const b = e.target.closest("[data-buka]"); if (b) return bukaRincian(b.dataset.buka);
     const f = e.target.closest("[data-saring]"); if (f) { const [k, v] = f.dataset.saring.split(":"); S[k] = S[k] === v ? "" : v; const id = { sektor: "psnSek", prov: "psnProv", dana: "psnDn" }[k]; $(id).value = S[k]; $(id).dispatchEvent(new Event("change", { bubbles: true })); }
@@ -220,4 +209,7 @@ function terap() {
 }
 terap();
 bukaPeta();
+/* tautan dalam /program#psn-NNN membuka rincian butir itu */
+const idHash = decodeURIComponent(location.hash.slice(1));
+if (SEMUA.some((b) => b.id === idHash)) bukaRincian(idHash);
 document.addEventListener("jm:bahasa", () => location.reload());

@@ -1,15 +1,14 @@
-/* /psn: hanya token tema.css. Kelas .psn-*. Tanpa kapital, tanpa garis bawah diam. */
-.psn-halaman{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);padding-block:20px 64px;align-content:start}
-.psn-halaman>*{min-width:0}
+/* /program#psn: hanya token tema.css. Kelas .psn-*. Tanpa kapital, tanpa garis bawah diam. */
+.psn-bagian{display:grid;gap:24px;align-content:start;scroll-margin-top:80px}
+.psn-judul{display:grid;gap:6px}
+.psn-judul h2{margin:0;display:flex;align-items:center;gap:10px;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.psn-judul p{margin:0;max-width:70ch;font:400 var(--t-body)/var(--lh-isi) var(--font);color:var(--ink2)}
 .psn-isi{display:grid;gap:32px;align-content:start}
 .psn-isi>.jm-ex{margin:0}
 .psn-bantu{margin:0;font:400 var(--t-kecil)/var(--lh-isi) var(--font);color:var(--ink2)}
 
 /* warna per sektor (--sk) dan sumber dana */
-.psn-s-energi{--sk:var(--tp-listrik)}.psn-s-kawasan{--sk:var(--tp-industri)}.psn-s-smelter{--sk:var(--tp-karbon)}.psn-s-jalan{--sk:var(--data1)}.psn-s-pelabuhan{--sk:var(--data2)}
-.psn-s-bandara{--sk:var(--data3)}.psn-s-kereta{--sk:var(--data4)}.psn-s-bendungan{--sk:var(--tp-hidro)}.psn-s-air{--sk:var(--tp-simpan)}.psn-s-tanggul{--sk:var(--tp-jaringan)}
-.psn-s-teknologi{--sk:var(--tp-hidrogen)}.psn-s-pendidikan{--sk:var(--tp-adil)}.psn-s-pariwisata{--sk:var(--tp-bio)}.psn-s-pertanian{--sk:var(--tp-efisiensi)}
-.psn-s-perumahan{--sk:var(--tp-biaya)}.psn-s-program{--sk:var(--tp-kebijakan)}
+.psn-s-energi{--sk:var(--tp-listrik)}.psn-s-kawasan{--sk:var(--tp-industri)}.psn-s-teknologi{--sk:var(--tp-hidrogen)}.psn-s-program{--sk:var(--tp-kebijakan)}
 .psn-d-apbn{--sk:var(--data1)}.psn-d-bumn{--sk:var(--data2)}.psn-d-swasta{--sk:var(--data3)}.psn-d-kpbu{--sk:var(--data4)}
 .psn-sk{display:inline-flex;align-items:center;gap:6px;color:var(--sk);font:600 var(--t-label)/var(--lh-rapat) var(--font)}
 .psn-sk span{color:var(--ink)}

@@ -1,6 +1,6 @@
-/* /psn: fungsi murni (tanpa DOM, diuji di Node). Data = /data/psn.json (scripts/pipa/psn_bangun.mjs). */
-export const SEKTOR = ["energi", "kawasan", "smelter", "jalan", "pelabuhan", "bandara", "kereta", "bendungan", "air", "tanggul", "teknologi", "pendidikan", "pariwisata", "pertanian", "perumahan", "program"];
-export const IKON_SEKTOR = { energi: "petir", kawasan: "denah", smelter: "pabrik", jalan: "peta", pelabuhan: "transaksi", bandara: "globe", kereta: "rantai", bendungan: "air-energi", air: "lencana", tanggul: "perisai", teknologi: "laptop", pendidikan: "wisuda", pariwisata: "kamera", pertanian: "tek-bio", perumahan: "gedung", program: "bintang" };
+/* /program#psn: fungsi murni (tanpa DOM, diuji di Node). Data = /data/psn.json (scripts/pipa/psn_bangun.mjs). */
+export const SEKTOR = ["energi", "kawasan", "teknologi", "program"];
+export const IKON_SEKTOR = { energi: "petir", kawasan: "denah", teknologi: "laptop", program: "bintang" };
 export const STATUS = ["beroperasi", "sebagian", "konstruksi", "pra-konstruksi", "rencana", "tidak-diketahui"];
 export const IKON_STATUS = { beroperasi: "centang", sebagian: "tingkat", konstruksi: "industri", "pra-konstruksi": "jam", rencana: "kalender", "tidak-diketahui": "tanya" };
 export const DANA = ["apbn", "bumn", "swasta", "kpbu"];

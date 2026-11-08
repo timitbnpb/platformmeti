@@ -116,7 +116,7 @@ const TITIK = {
       const st = { beroperasi: "beroperasi", sebagian: "konstruksi", konstruksi: "konstruksi", "pra-konstruksi": "rencana", rencana: "rencana" }[b.status] || "tidak-diketahui";
       return { id: b.id, nama: b.nama, tek: "", st, w: st, mw: null, prov: "", pk: b.prov_kode[0] || "", lat: b.lat, lng: b.lng, pem: "", pemId: null, sek: b.sektor };
     }),
-    popup: (r) => kartu({ logo: ikon("mahkota", 24), judul: esc(r.nama), sub: provSub(r.pk), rows: baris("psn.f.sektor", t("psn.sektor." + r.sek)) + baris("psn.f.status", t("pj.st." + r.st)), links: taut("/psn", "psn.nav", "mahkota") + linkProv(r.pk) }),
+    popup: (r) => kartu({ logo: ikon("mahkota", 24), judul: esc(r.nama), sub: provSub(r.pk), rows: baris("psn.f.sektor", t("psn.sektor." + r.sek)) + baris("psn.f.status", t("pj.st." + r.st)), links: taut("/program#psn", "psn.nav", "mahkota") + linkProv(r.pk) }),
     tip: (r) => `<b>${esc(r.nama)}</b><span>${esc(t("psn.sektor." + r.sek))}, ${esc(t("pj.st." + r.st))}</span>`,
   },
   desa_mandiri: {

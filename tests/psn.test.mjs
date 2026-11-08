@@ -2,7 +2,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { uraiLampiran, kodeLokasi, PROGRAM, SMELTER, SEKTOR, bangun } from "../scripts/pipa/psn_bangun.mjs";
+import { uraiLampiran, kodeLokasi, PROGRAM, SMELTER, SEKTOR, bangun, adalahEnergi } from "../scripts/pipa/psn_bangun.mjs";
 import { saring, hitungPer, barisLinimasa, totalInvestasi, tahunDari, STATUS, SEKTOR as SEK_LAYAR } from "../public/psn_hitung.js";
 import { PROV } from "../public/inti/prov_singkat.js";
 
@@ -39,8 +39,9 @@ test("program dan smelter tertulis ulang: tiap nama muncul di teks lampiran", ()
 test("psn.json: id unik, sumber resmi pada tiap baris, status dan sektor sah", () => {
   const id = D.baris.map((b) => b.id);
   assert.equal(new Set(id).size, id.length);
-  assert.equal(D.meta.jumlah_proyek, 226);
-  assert.equal(D.baris.filter((b) => b.tipe === "proyek").length, 226);
+  assert.equal(D.meta.jumlah_resmi_proyek, 226);
+  assert.equal(D.meta.jumlah_proyek, D.baris.filter((b) => b.tipe === "proyek").length);
+  assert.equal(D.meta.jumlah_program, D.baris.filter((b) => b.tipe === "program").length);
   for (const b of D.baris) {
     assert.ok(b.sumber.some((s) => s.id === "bpk16" && /^https:\/\/peraturan\.bpk\.go\.id\//.test(s.url)), b.id);
     assert.ok(STATUS.includes(b.status), b.id + " status " + b.status);
@@ -79,6 +80,22 @@ test("psn.json: energi inti memuat sektor energi, PIK, PLTA Mentarang, PSEL", ()
   for (const x of ["psn-200", "psn-215", "psn-p01d", "psn-p01c", "psn-p22"]) assert.ok(inti.includes(x), x);
   assert.equal(D.baris.find((b) => b.id === "psn-p22").proyek_meti.length, 11);
   assert.deepEqual(D.baris.find((b) => b.id === "psn-p01d").proyek_gem, ["gem_hydropower_L100000602132"]);
+});
+
+test("saringan energi: hanya butir energi tersisa, sisanya tercatat di meta dengan alasan", () => {
+  assert.ok(D.baris.length > 0 && D.baris.every(adalahEnergi), "ada butir non-energi");
+  const keluar = D.meta.dikeluarkan;
+  assert.ok(keluar.every((x) => x.id && x.nama && x.sektor && x.alasan));
+  assert.equal(keluar.length + D.baris.length, bangun(D.dibangun_pada).baris.length + keluar.length);
+  assert.equal(keluar.reduce((a, x) => a + 1, 0), Object.values(D.meta.dikeluarkan_per_sektor).reduce((a, n) => a + n, 0));
+  assert.ok(!keluar.some((x) => D.baris.some((b) => b.id === x.id)), "butir ganda");
+  for (const s of ["jalan", "pelabuhan", "bandara", "kereta", "bendungan", "air", "tanggul", "pendidikan", "pariwisata", "pertanian", "perumahan", "smelter"]) {
+    assert.ok(!D.baris.some((b) => b.sektor === s), "sektor non-energi masih ada: " + s);
+    assert.ok(D.meta.dikeluarkan_per_sektor[s] > 0, s);
+  }
+  assert.ok(D.baris.filter((b) => b.sektor === "energi").length === 18, "18 butir sektor energi");
+  for (const id of ["psn-094", "psn-p01d", "psn-p22", "psn-221"]) assert.ok(D.baris.some((b) => b.id === id), id);
+  assert.ok(SEK_LAYAR.every((s) => ["energi", "kawasan", "teknologi", "program"].includes(s)));
 });
 
 test("bangun() deterministik terhadap berkas masukan", () => {
