@@ -1,0 +1,56 @@
+/* /sampah-energi: token tema saja (tanpa hex, tanpa px pada font). Kerangka, tab, kartu, chip memakai .rg3-* dari rantai-global.css; di sini hanya komponen kecil khusus sampah jadi energi. */
+.swe-angka{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);color:var(--head)}
+.swe-angka small{font:600 var(--t-kecil)/1 var(--font);color:var(--ink2)}
+.swe-kaki{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:var(--t-kecil);color:var(--ink2)}
+.swe-sumber{display:inline-flex}
+.swe-lokasi{display:flex;align-items:center;gap:6px;margin:0;font-size:var(--t-kecil);color:var(--ink2)}
+
+/* status semantik pada chip */
+.swe-sem-ok{--wc:var(--ok)}.swe-sem-info{--wc:var(--info)}.swe-sem-warn{--wc:var(--warn)}.swe-sem-bad{--wc:var(--bad)}.swe-sem-x{--wc:var(--ink2)}
+
+/* warna seri grafik */
+.swe-s-ton{color:var(--data1)}.swe-s-mwh{color:var(--data2)}.swe-s-pem{color:var(--data5)}.swe-s-inv{color:var(--warn)}
+
+/* pin dan legenda peta menurut status proyek */
+.swe-pin-beroperasi{background:var(--ok)}.swe-pin-konstruksi{background:var(--info)}.swe-pin-izin{background:var(--data5)}.swe-pin-batal{background:var(--bad)}.swe-pin-rencana{background:var(--warn)}.swe-pin-ditunda{background:var(--ink2)}.swe-pin-tidak-diketahui{background:var(--ink2)}
+.swe-keterangan{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-wrap:wrap;gap:8px 16px}
+.swe-leg{display:inline-flex;align-items:center;gap:6px;font-size:var(--t-kecil);background:none!important;color:var(--ink2)}
+.swe-leg .jm-ik{padding:3px;box-sizing:content-box;border-radius:50%;color:var(--on-accent)}
+.swe-leg.swe-pin-beroperasi .jm-ik{background:var(--ok)}.swe-leg.swe-pin-konstruksi .jm-ik{background:var(--info)}.swe-leg.swe-pin-izin .jm-ik{background:var(--data5)}.swe-leg.swe-pin-rencana .jm-ik{background:var(--warn)}.swe-leg.swe-pin-ditunda .jm-ik{background:var(--ink2)}
+.swe-pin{display:grid;place-items:center;color:var(--on-accent)}
+
+/* daftar butir bersumber */
+.swe-daftar{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.swe-daftar li{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.swe-daftar .jm-ik{flex:none;margin-top:2px;color:var(--accent)}
+.swe-daftar p{margin:0 0 6px}
+.swe-mini{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:var(--t-kecil)}
+
+/* pemain */
+.swe-pemain-kisi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.swe-pemain{display:grid;gap:12px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow)}
+.swe-pemain-k{display:flex;align-items:center;gap:12px}
+.swe-pemain-k h3{margin:0 0 4px;font:700 var(--t-h3)/var(--lh-rapat) var(--display)}
+.swe-ang{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0}
+.swe-ang div{padding:8px 12px;border-radius:var(--r-sm);background:var(--soft-hijau)}
+.swe-ang dt{font-size:var(--t-kecil);color:var(--ink2)}
+.swe-ang dd{margin:0;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.swe-proyek{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:var(--t-kecil)}
+.swe-proyek li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}
+.swe-proyek li>span:first-child{min-width:0;overflow-wrap:anywhere}
+.swe-proyek li>span:last-child{display:inline-flex;align-items:center;gap:6px;flex:none}
+
+/* isu */
+.swe-isu-daftar{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.swe-isu{display:grid;gap:8px;padding:12px 16px;border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:var(--r);background:var(--card)}
+.swe-isu p{margin:0}
+.swe-isu-k{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px}
+.swe-isu-k>span{display:inline-flex;flex-wrap:wrap;gap:6px}
+.swe-isu-b{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:var(--t-kecil);color:var(--ink2)}
+.swe-isu-b>span:first-child{display:inline-flex;align-items:center;gap:6px}
+
+@media (max-width:899px){.swe-pemain-kisi{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.swe-ang{grid-template-columns:minmax(0,1fr)}}
+
+/* tab sejajar satu baris (aturan serupa di rantai-global.css kalah urutan) */
+#sweTab .jm-tab[role="tablist"]{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}
