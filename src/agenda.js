@@ -19,14 +19,16 @@ const BATAS_LAJU = 300;
 // Bantu ----------------------------------------------------------------------------------------------------------
 const lajuLewat = async (env, akun) => (await hak.catatLaju(env, "kurasi:" + akun.id)) > BATAS_LAJU;
 
-// Baris arsip kalender.json (sumber.label "arsip-meti"); galat baca = 503.
+// Acara METI di kalender.json: arsip internal (sumber.label "arsip-meti") atau acara ac_* bersumber situs METI. Galat baca = 503.
+const acaraMeti = (b) => b?.sumber?.label === "arsip-meti" || (/^ac_/.test(b.id) && Array.isArray(b.sumber) && b.sumber.some((x) => x?.label === "situs-meti"));
+// Baris arsip kalender.json; galat baca = 503.
 async function barisArsip(env, req) {
   let res;
   try { res = await env.ASSETS.fetch(new Request(new URL("/data/kalender.json", req.url))); } catch { throw new Galat("layanan"); }
   if (!res.ok) throw new Galat("layanan");
   let k;
   try { k = await res.json(); } catch { throw new Galat("layanan"); }
-  return Array.isArray(k?.baris) ? k.baris.filter((b) => b?.sumber?.label === "arsip-meti" && typeof b.id === "string") : [];
+  return Array.isArray(k?.baris) ? k.baris.filter((b) => typeof b?.id === "string" && acaraMeti(b)) : [];
 }
 const butirArsip = (b) => ({ ref: b.id, judul: b.judul ?? null, tanggal: b.tanggal ?? null, tanggal_selesai: b.tanggal_selesai ?? null, jenis: b.jenis ?? null, tempat: null, sumber: "arsip" });
 

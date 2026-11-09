@@ -44,7 +44,7 @@ export function panelAgenda(el, saya) {
         fetch("/data/kalender.json", { signal: S.ctl.signal }).then((r) => { if (!r.ok) throw new GalatApi("layanan", r.status); return r.json(); }),
         api("/api/agenda", { signal: S.ctl.signal }),
       ]);
-      const arsip = (kal.baris || []).filter((b) => b.sumber && b.sumber.label === "arsip-meti").map((b) => ({ ...b, sumber_tipe: "arsip" }));
+      const arsip = (kal.baris || []).filter((b) => b.sumber && (b.sumber.label === "arsip-meti" || (/^ac_/.test(b.id || "") && Array.isArray(b.sumber) && b.sumber.some((x) => x && x.label === "situs-meti")))).map((b) => ({ ...b, sumber_tipe: "arsip" }));
       const ada = new Set(arsip.map((b) => b.id));
       const tambahan = butirAgenda(ag).filter((x) => (x.sumber === "admin" || /^k-/.test(x.ref)) && !ada.has(x.ref))
         .map((x) => ({ id: x.ref, judul: x.judul, tanggal: x.tanggal, tanggal_selesai: x.tanggal_selesai, jenis: x.jenis, tempat: x.tempat, sumber_tipe: "admin" }));
