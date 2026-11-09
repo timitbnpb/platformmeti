@@ -5,7 +5,19 @@
       "GET /api/roadmap/komentar": "tests/roadmap.test.mjs",
       "POST /api/roadmap/suka": "tests/roadmap.test.mjs",
       "POST /api/roadmap/komentar": "tests/roadmap.test.mjs",
-      "DELETE /api/roadmap/komentar/:id": "tests/roadmap.test.mjs"
+      "DELETE /api/roadmap/komentar/:id": "tests/roadmap.test.mjs",
+      "GET /api/naskah": "tests/naskah.test.mjs",
+      "GET /api/naskah/:ref": "tests/naskah.test.mjs",
+      "POST /api/naskah": "tests/naskah.test.mjs",
+      "PATCH /api/naskah/:ref": "tests/naskah.test.mjs",
+      "POST /api/naskah/:ref/ajukan": "tests/naskah.test.mjs",
+      "POST /api/naskah/:ref/setujui": "tests/naskah.test.mjs",
+      "POST /api/naskah/:ref/tolak": "tests/naskah.test.mjs",
+      "POST /api/naskah/:ref/revisi": "tests/naskah.test.mjs",
+      "POST /api/naskah/:ref/catatan": "tests/naskah.test.mjs",
+      "POST /api/naskah/:ref/tarik": "tests/naskah.test.mjs",
+      "PUT /api/naskah/:ref/lampiran": "tests/naskah.test.mjs",
+      "GET /api/naskah/:ref/unduh": "tests/naskah.test.mjs"
     }
   }
 }
