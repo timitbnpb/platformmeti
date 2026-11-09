@@ -7,7 +7,7 @@
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;padding-top:var(--top);min-height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font:400 var(--t-body)/var(--lh-isi) var(--font);font-variant-numeric:tabular-nums;overflow-x:hidden}
+body{margin:0;padding-top:var(--top);min-height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font:400 var(--t-body)/var(--lh-isi) var(--font);font-variant-numeric:tabular-nums;overflow-x:clip}
 h1,h2,h3{margin:0;font-family:var(--display);color:var(--head);line-height:var(--lh-judul)}
 h1{font-size:var(--t-h1);font-weight:700}
 h2{font-size:var(--t-h2);font-weight:700}

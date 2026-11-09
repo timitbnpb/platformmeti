@@ -1,3 +1,4 @@
+import { pasangPita } from "/inti/riwayat.js";
 import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka, tanggal } from "/i18n.js";
 import { esc, nanti, hantuHtml, kosongHtml, ikon, fotoBerita } from "/inti/umum.js";

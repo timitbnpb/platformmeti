@@ -821,3 +821,19 @@ li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border
   body:not([data-halaman=admin],[data-halaman=aktivasi],[data-halaman=ganti-sandi],[data-halaman=kta],[data-halaman=kta-v],[data-halaman=masuk],[data-halaman=meti-wilayah-kelola]) .jm-kh:not(.rm-buka) .jm-kh-teks>:nth-child(n+3){animation-delay:.12s}
 }
 @keyframes gk-naik{from{opacity:0;transform:translateY(12px)}}
+
+/* grafik tumbuh saat terlihat; foto kepala dan bilah baca mengikuti scroll di peramban yang mendukung */
+@media screen and (prefers-reduced-motion:no-preference){
+  .gk-tumbuh rect{transform-box:fill-box;transform-origin:50% 100%;animation:gk-tumbuh-y .7s cubic-bezier(.2,.8,.2,1) both}
+  .gk-tumbuh :is(circle,path,polyline,polygon){animation:gk-pudar .6s ease both}
+  :is(.jm-batang,.jm-an-batang).gk-tumbuh>li [data-w]{transform-origin:0 50%;animation:gk-tumbuh-x .7s cubic-bezier(.2,.8,.2,1) both}
+  @supports (animation-timeline:scroll()){
+    body:not([data-halaman=admin],[data-halaman=aktivasi],[data-halaman=ganti-sandi],[data-halaman=kta],[data-halaman=kta-v],[data-halaman=masuk],[data-halaman=meti-wilayah-kelola])::after{content:"";position:fixed;top:var(--top);left:0;z-index:30;width:100%;height:2px;background:var(--accent);transform-origin:0 50%;pointer-events:none;animation:gk-baca linear both;animation-timeline:scroll(root)}
+    body:not([data-halaman=admin],[data-halaman=aktivasi],[data-halaman=ganti-sandi],[data-halaman=kta],[data-halaman=kta-v],[data-halaman=masuk],[data-halaman=meti-wilayah-kelola]) .jm-kh-foto{animation:gk-foto linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+  }
+}
+@keyframes gk-tumbuh-y{from{transform:scaleY(0)}}
+@keyframes gk-tumbuh-x{from{transform:scaleX(0)}}
+@keyframes gk-pudar{from{opacity:0}}
+@keyframes gk-baca{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes gk-foto{to{transform:translateY(8%) scale(1.08)}}

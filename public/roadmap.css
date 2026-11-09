@@ -438,7 +438,6 @@ dialog.rm-panel a{text-decoration:none}
 .rm-panggung .rm-grup-j{padding:6px 16px 2px}
 .rm-panggung .rm-bar{--isi:calc(clamp(0,(var(--q) - var(--m) + 1) / (var(--s) - var(--m) + 1),1) * 100%);-webkit-mask-image:linear-gradient(90deg,rgb(0 0 0) var(--isi),rgb(0 0 0/.18) var(--isi));mask-image:linear-gradient(90deg,rgb(0 0 0) var(--isi),rgb(0 0 0/.18) var(--isi))}
 .rm-panggung .rm-tg{opacity:clamp(.25,var(--q) - var(--k) + 1,1);transform:rotate(45deg) scale(clamp(.6,var(--q) - var(--k) + 1,1));transition:opacity .25s ease,transform .35s cubic-bezier(.34,1.4,.64,1)}
-body[data-halaman=roadmap]{overflow:visible}
 @media (prefers-reduced-motion:no-preference){dialog.rm-panel[open]{animation:rm-munculkan .32s cubic-bezier(.2,.8,.2,1) both}dialog.rm-panel[open]::backdrop{animation:rm-redup .25s ease both}}
 @keyframes rm-munculkan{from{opacity:0;transform:translateY(12px) scale(.98)}}
 @keyframes rm-redup{from{opacity:0}}
