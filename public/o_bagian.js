@@ -175,7 +175,7 @@ export function bagBerita({ daftar, foto, sumber }) {
 }
 
 /* ---------- pengurus: tab Semua/Direksi/Komisaris, foto bila ada, nama bergelar baku, peran berwarna, paginasi ---------- */
-const fotoAman = (u) => (typeof u === "string" && /^\/img\/(orang|pengurus)\/[\w.-]+\.webp$/.test(u) ? u : "");
+const fotoAman = (u) => (typeof u === "string" && /^(\/img\/(orang|pengurus)\/[\w.-]+\.webp|\/api\/profil\/[\w-]+\/foto\?v=\d+)$/.test(u) ? u : "");
 const KEL = (p) => {
   const j = p.jabatan || "";
   if (/komisaris|commissioner|dewan pengawas|supervisory/i.test(j)) return "komisaris";

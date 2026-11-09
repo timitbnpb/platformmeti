@@ -40,7 +40,7 @@ test("hak: tamu 401, anggota/pengurus/kurator 403 di semua rute baru", async () 
 test("ringkas: hitungan antrean dari tabel nyata, satu panggilan", async () => {
   const nol = await panggil("/api/admin/ringkas", "GET", "admin");
   assert.equal(nol.status, 200);
-  assert.deepEqual(nol.antrean, { pendaftar: 0, bukti: 0, koreksi: 0, portal: 0, portal_rinci: { klaim: 0, ajuan: 0, wilayah: 0 }, pesan: 0, konsultasi: 0, langganan: 0 });
+  assert.deepEqual(nol.antrean, { pendaftar: 0, bukti: 0, koreksi: 0, portal: 0, portal_rinci: { klaim: 0, ajuan: 0, wilayah: 0, orang: 0 }, pesan: 0, konsultasi: 0, langganan: 0 });
   assert.deepEqual(Object.keys(nol.pengunjung24).sort(), ["ai", "orang"]);
 
   const H = "9".repeat(64);

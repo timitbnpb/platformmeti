@@ -6,6 +6,7 @@ import { muatPembaruan } from "/inti/pembaruan.js";
 import { hantuHtml } from "/inti/umum.js";
 import { terkaitHtml } from "/inti/komponen.js";
 import { muatSensus } from "/inti/org_sensus.js";
+import { terapkanRevisi } from "/inti/revisi_orang.js";
 import { ringkasHtml, pasangRingkas } from "/o_ringkas.js";
 import { bagKeberlanjutan } from "/o_keberlanjutan.js";
 import { bagianOrg } from "/tertaut.js";
@@ -44,6 +45,7 @@ async function mulai() {
   try {
     [org, proyek, prog, reg, berT, orang, mitra, foto, kbl] = await Promise.all(["organisasi", "proyek", "program", "regulasi", "berita", "orang", "mitra-meti"].map(muat).concat(muat("berita_foto").catch(() => ({})), muat("keberlanjutan").catch(() => ({}))));
   } catch { akar.innerHTML = galatHtml("pf.galat"); return; }
+  await terapkanRevisi(orang.baris);
   const o = org.baris.find((x) => x.id === id);
   if (!o) { akar.innerHTML = galatHtml("pf.o.tak"); return; }
   document.title = `${o.nama} | ${t("pf.situs")}`;
@@ -59,7 +61,7 @@ async function mulai() {
   const beritas = berT.baris.filter((x) => (x.organisasi_ids || []).includes(id) || (o.berita_ids || []).includes(x.id));
   const p0 = new Map();
   const orangId = new Map(orang.baris.map((p) => [p.id, p]));
-  for (const p of o.pengurus || []) { const q = orangId.get(p.orang_id) || {}; p0.set(p.orang_id || p.nama, { nama: p.nama, gelar: q.gelar, jabatan: p.jabatan, jenis: q.jenis, foto: p.foto || q.foto || (q.id ? `/img/orang/${q.id}.webp` : ""), sumber_url: p.sumber_url }); }
+  for (const p of o.pengurus || []) { const q = orangId.get(p.orang_id) || {}; const rv = !!q._revisi; p0.set(p.orang_id || p.nama, { nama: rv ? q.nama : p.nama, gelar: q.gelar, jabatan: (rv && q.jabatan_terkini) || p.jabatan, jenis: q.jenis, foto: (rv && /^\/api\//.test(q.foto || "") && q.foto) || p.foto || q.foto || (q.id ? `/img/orang/${q.id}.webp` : ""), sumber_url: p.sumber_url }); }
   for (const p of orang.baris) if (p.organisasi_id === id && !p0.has(p.id)) p0.set(p.id, { nama: p.nama, gelar: p.gelar, jabatan: p.jabatan_terkini, jenis: p.jenis, foto: p.foto || `/img/orang/${p.id}.webp`, sumber_url: "" });
   const pengurus = [...p0.values()];
   const rel = relasi(o, org.baris), progT = tabelProgram(prog.baris, rows);

@@ -8,6 +8,7 @@ import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
 import { muatSensus, TEK_PROYEK, NORM, domain } from "/inti/org_sensus.js";
 import { muat } from "/publik.js";
+import { terapkanRevisi } from "/inti/revisi_orang.js";
 
 const PER = 25;
 const SARING = ["proyek", "aplsi", "situs", "anak"];
@@ -109,7 +110,7 @@ export async function bangunSensus(akar) {
   const laci = $("soLaci"); let idx = 0, X = null;
   const mwP = (p) => (p.kapasitas || []).find((c) => /^MWp?$/.test(c.satuan) && Number.isFinite(c.nilai))?.nilai || 0;
   const urlOk = (u) => (/^https?:\/\//i.test(String(u || "")) ? u : "");
-  const muatX = () => (X ||= Promise.all([muat("orang").catch(() => null), muat("berita").catch(() => null), fetch("/data/foto_orang.json").then((r) => (r.ok ? r.json() : {})).catch(() => ({}))]).then(([orang, berita, foto]) => ({ orang, berita, foto })));
+  const muatX = () => (X ||= Promise.all([muat("orang").catch(() => null), muat("berita").catch(() => null), fetch("/data/foto_orang.json").then((r) => (r.ok ? r.json() : {})).catch(() => ({}))]).then(async ([orang, berita, foto]) => { if (orang?.baris) await terapkanRevisi(orang.baris); return { orang, berita, foto }; }));
   const ubL = (ik, n, label, w) => `<li class="so-ub ${w}"><span class="so-ub-ik">${ikon(ik, 20)}</span><div class="so-ub-t"><p class="so-ub-a"><b>${esc(angka(n))}</b><span>${esc(label)}</span></p></div></li>`;
   const bag = (ik, judul, isi) => `<section class="so-lc-bag"><h4>${ikon(ik, 16)}<span>${esc(judul)}</span></h4>${isi}</section>`;
   function isiLaci() {

@@ -52,9 +52,10 @@ function tautanAman(v, { host = null } = {}) {
 }
 
 export function periksaProfil(b) {
-  const BOLEH = ["gelar", "jabatan", "instansi", "organisasi_id", "kota", "kode_prov", "bio", "keahlian", "tautan", "telepon", "privasi", "bahasa", "sampul"];
+  const BOLEH = ["gelar", "jabatan", "instansi", "organisasi_id", "kota", "kode_prov", "bio", "keahlian", "tautan", "telepon", "privasi", "bahasa", "sampul", "nama"];
   if (Object.keys(b).some((k) => !BOLEH.includes(k))) throw SALAH();
   const d = {};
+  if ("nama" in b) { d.nama = wajib(b.nama, 120); if (d.nama.length < 2) throw SALAH(); }
   if ("gelar" in b) d.gelar = teks(b.gelar, 40);
   if ("jabatan" in b) d.jabatan = teks(b.jabatan, 120);
   if ("instansi" in b) d.instansi = teks(b.instansi, 160);
