@@ -160,6 +160,12 @@ function panelMitra(a) {
   }
   return `<div class="ev-mitra-kep"><h3>${esc(nama)}</h3><div class="ev-spons-aksi">${lihat}${prop}</div></div><ul class="ev-harga">${a.paket.map((p, i) => kartuPaket(p, i, a.id)).join("")}</ul>`;
 }
+/** Paket sponsor satu acara untuk /event/<slug> (event_detail.js); kosong bila acara tidak punya baris di event_mitra. */
+export async function sponsorAcara(slug) {
+  MITRA = MITRA || (await muat("event_mitra"));
+  const a = MITRA.acara.find((x) => x.event === slug);
+  return a ? panelMitra(a) : "";
+}
 function pilihMitra(id) {
   const a = MITRA && MITRA.acara.find((x) => x.id === id);
   if (!a) return;

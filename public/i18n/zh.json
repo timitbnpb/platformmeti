@@ -651,8 +651,6 @@
  "beranda.kpi.kapasitas": "规划与已装机",
  "beranda.kpi.regulasi": "已登记 {n} 项法规",
  "beranda.kpi.organisasi": "国企、民企、协会、机构",
- "beranda.eko.k.tokoh": "人物",
- "beranda.eko.tokoh_semua": "查看全部 {n} 位人物",
  "beranda.kpi.konstruksi": "{n} 个在建",
  "beranda.kk.proyek": "项目",
  "beranda.kk.kapasitas": "容量",
@@ -1710,5 +1708,10 @@
  "rm.prog.bers_j": "附条件项目",
  "rm.prog.bers_l": "仅在满足条件后启动。",
  "rm.prog.mulai": "启动条件",
- "rm.um.ajak": "您的一条意见将帮助确定下一步的优先事项。"
+ "rm.um.ajak": "您的一条意见将帮助确定下一步的优先事项。",
+ "beranda.mock": "示意稿",
+ "beranda.mock.ket": "此列表仅为示例版式，非最终数据。",
+ "beranda.sorotan.sponsor": "成为赞助商",
+ "ev.sponsor.ey": "合作",
+ "ev.sponsor.j": "赞助方案"
 }

@@ -1,4 +1,5 @@
 import { mulaiHalaman } from "/inti/kepala.js";
+import { pasangProdukTerkait } from "/inti/produk_meti.js";
 import { tombolKoreksi } from "/inti/koreksi.js";
 import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { khUbin } from "/inti/kh.js";
@@ -335,6 +336,7 @@ function gambarSemua() {
 
 async function main() {
   await mulaiHalaman();
+  pasangProdukTerkait("produkReg", { halaman: "regulasi" });
   /* tiga tab: Daftar (isi halaman ini), Diskusi (konsultasi.js) dan Pustaka hukum (hukum_isi.js), dua terakhir dimuat malas */
   tabHalaman("tabHal", { label: "reg.tab", tab: [
     { k: "daftar", ikon: "daftar2", teks: "reg.tab.daftar", panel: "panelDaftar", muat: async () => {} },

@@ -837,3 +837,48 @@ li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border
 @keyframes gk-pudar{from{opacity:0}}
 @keyframes gk-baca{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes gk-foto{to{transform:translateY(8%) scale(1.08)}}
+
+/* ===== KEPALA HALAMAN TERPADU (pemilik 9 Nov 2026: "Overview agar dibagusin untuk semua") =====
+   Satu sumber untuk .jm-kh + .jm-kh-ubin di semua halaman: kontainer gradasi lembut, jarak 24px, judul + deskripsi rata kanan-kiri,
+   ubin sejajar dan sama tinggi (kolom mengikuti jumlah ubin), ikon konsisten. Selektor diawali "html body" supaya menang atas
+   varian per halaman (analisis.css, program.css, rantai-global.css, dll) berapa pun urutan muatnya. Pengecualian: roadmap, admin, profil. */
+html body .jm-kh{gap:24px;margin-block:24px;padding:32px 40px}
+html body .jm-kh .jm-kh-teks{gap:12px}
+html body .jm-kh .jm-kh-lead{max-width:none;text-align:start!important;text-wrap:pretty;overflow-wrap:break-word}
+@media (min-width:640px){html body .jm-kh .jm-kh-lead{text-align:justify!important;text-justify:inter-word;hyphens:auto!important;-webkit-hyphens:auto!important}}
+@media (min-width:1000px){html body .jm-kh:not(.jm-kh-satu){grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px;min-height:0}}
+html body .jm-kh.jm-kh-satu:not(:has(.jm-kh-ubin,.jm-kh-sisi)) .jm-kh-lead{max-width:min(100%,120ch)}
+@media (max-width:639px){html body .jm-kh{padding:20px 16px;gap:16px;margin-block:16px}}
+
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin){--kh-n:3;display:grid;gap:12px;align-items:stretch;grid-auto-rows:1fr;width:100%;grid-template-columns:repeat(var(--kh-n),minmax(0,1fr))!important}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(>:nth-child(1):last-child){--kh-n:1}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(>:nth-child(2):last-child){--kh-n:2}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(>:nth-child(4):last-child){--kh-n:4}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(>:nth-child(7)){--kh-n:4}
+/* ubin kaya (berpil sumber/status): empat ubin jadi 2x2 agar label tidak sesak */
+html body .jm-kh:not(.jm-kh-satu) .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(.jm-pil):has(>:nth-child(4):last-child){--kh-n:2}
+/* lima ubin: 3 di atas, 2 melebar di bawah (di kepala selebar halaman: lima sejajar) */
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(>:nth-child(5):last-child){--kh-n:6}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(>:nth-child(5):last-child)>*{grid-column:span 2}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(>:nth-child(5):last-child)>:nth-child(n+4){grid-column:span 3}
+html body .jm-kh-satu .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(>:nth-child(5):last-child){--kh-n:5}
+html body .jm-kh-satu .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin):has(>:nth-child(5):last-child)>*{grid-column:auto}
+@media (max-width:639px){
+  html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin){grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px}
+  html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>*{grid-column:auto!important}
+  html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>:last-child:nth-child(odd){grid-column:1/-1!important}
+}
+
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-kh-ub{container-type:inline-size;min-width:0;align-content:start;gap:8px;padding:16px;box-sizing:border-box}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-kh-ub .jm-kpi-ik{width:32px;height:32px;margin:0}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-kh-ub .jm-kh-angka{flex-wrap:wrap;gap:2px 6px}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-kh-ub .jm-kh-angka b{font-size:clamp(var(--t-h2),20cqi,var(--t-angka))}
+@media (max-width:639px){html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-kh-ub{padding:12px}}
+html body .jm-kh .jm-kh-ey{display:flex;align-items:center;gap:8px;margin:0;font:700 var(--t-kecil)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;color:var(--accent)}
+html body .jm-kh .jm-kh-ey svg{flex:none;width:16px;height:16px}
+html body .jm-kh .jm-kh-ey+h1,html body .jm-kh .jm-kh-ey+h2{margin-top:0}
+/* baris tautan terkait di dalam kepala (mis. "Lihat modul ..."): satu gaya, bukan paragraf kecil/besar acak */
+html body .jm-kh .jm-kh-teks>.jm-bantu,html body .jm-kh .jm-kh-teks>.jm-kh-lead:has(>a:only-child){display:flex;flex-wrap:wrap;gap:4px 16px;margin:0;max-width:none;font:600 var(--t-body)/var(--lh-rapat) var(--font);text-align:start!important}
+html body .jm-kh .jm-kh-teks>.jm-bantu a,html body .jm-kh .jm-kh-teks>.jm-kh-lead>a:only-child{color:var(--accent);font-weight:600;text-decoration:none}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-kh-ub .jm-kh-angka{white-space:normal}
+html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-kh-ub .jm-kh-angka b{white-space:normal;overflow-wrap:anywhere;min-width:0}

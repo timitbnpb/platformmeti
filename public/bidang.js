@@ -5,6 +5,7 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { t, angka } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 import { lihatSemuaHtml } from "/inti/komponen.js";
+import { pasangProdukTerkait } from "/inti/produk_meti.js";
 
 const $ = (id) => document.getElementById(id);
 const EBT = "n7.ebt", PUS = "nav.pustaka", TNT = "n7.tentang", PEN = "bid.n.pendanaan";
@@ -70,8 +71,9 @@ function gambar() {
   else if (!slug) { $("judul").textContent = t("bid.judul"); $("jawab").textContent = t("bid.lead"); document.title = t("bid.judul") + " | " + t("jm.merek"); }
   else { $("judul").textContent = t("bid.n." + slug); $("jawab").textContent = t("bid.d." + slug); document.title = t("bid.n." + slug) + " | " + t("jm.merek"); }
   $("isi").innerHTML = B
-    ? `<a class="jm-bd-balik" href="/bidang">${esc(t("bid.semua"))}</a><div class="jm-bd-kisi">${B.alat.map(kartuAlat).join("")}</div>`
+    ? `<a class="jm-bd-balik" href="/bidang">${esc(t("bid.semua"))}</a><div class="jm-bd-kisi">${B.alat.map(kartuAlat).join("")}</div><div id="produkBid" hidden></div>`
     : `<div class="jm-bd-kisi">${SLUG.map(kartuBidang).join("")}</div>`;
+  if (B) pasangProdukTerkait("produkBid", { j: "bidang", k: slug });
   isiLencana(); isiKredit(); isiPengurus(B ? SLUG.indexOf(slug) + 1 : 0);
 }
 

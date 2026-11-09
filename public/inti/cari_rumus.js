@@ -24,7 +24,7 @@ export function jerami(...bagian) {
 }
 
 /* bobot jenis: butir yang lebih "pasti" menang saat skor lexical sama */
-export const BOBOT_JENIS = { org: 1.15, proyek: 1.1, reg: 1.1, hukum: 1.05, topik: 1.05, program: 1.05, wilayah: 1.1, orang: 1, pakar: 0.95, pendanaan: 1, inovasi: 0.95, pustaka: 0.9, berita: 0.85, halaman: 1 };
+export const BOBOT_JENIS = { org: 1.15, proyek: 1.1, reg: 1.1, hukum: 1.05, topik: 1.05, program: 1.05, wilayah: 1.1, orang: 1, pakar: 0.95, pendanaan: 1, inovasi: 0.95, pustaka: 0.9, produk: 0.95, berita: 0.85, halaman: 1 };
 
 /* jarak edit <= 1 (sisip, hapus, ganti, tukar tetangga) untuk toleransi salah ketik; murah, tanpa matriks */
 export function mirip1(a, b) {
