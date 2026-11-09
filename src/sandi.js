@@ -33,7 +33,7 @@ export async function cocokSandi(sandi, hashSimpan, garam, iterasi) {
 
 // Hitung hash sungguhan pada surel tak dikenal supaya waktu respons sama (KPV §4).
 export async function hashPalsu(sandi) {
-  await turunkan(String(sandi), "00".repeat(16), aktif);
+  await hashSandi(String(sandi), "00".repeat(16)); // lewat hashSandi agar ikut turun ke ITERASI_CADANGAN di produksi
 }
 
 // Akun lama dengan iterasi < target di-rehash saat masuk berikutnya.

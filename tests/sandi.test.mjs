@@ -85,3 +85,17 @@ test("S5 di workerd: 210.000 iterasi diterima, hash-verifikasi bulat, bukan-coco
     console.log("# workerd iterasi diterima:", r.iterasi);
   } finally { await w.stop(); rmSync(dir, { recursive: true, force: true }); }
 });
+
+test("S4c hashPalsu tidak melempar saat runtime menolak iterasi di atas 100000 (surel tak dikenal harus 401, bukan 500)", async (t) => {
+  const asli = crypto.subtle.deriveBits.bind(crypto.subtle);
+  const dipakai = [];
+  t.mock.method(crypto.subtle, "deriveBits", async (algo, kunci, panjang) => {
+    dipakai.push(algo.iterations);
+    if (algo.iterations > 100000) throw new DOMException("Pbkdf2 failed", "NotSupportedError");
+    return asli(algo, kunci, panjang);
+  });
+  const segar = await import("../src/sandi.js?batas-produksi");
+  await assert.doesNotReject(segar.hashPalsu("apa-saja-12345"));
+  assert.deepEqual(dipakai, [210000, 100000]);
+  assert.equal(segar.iterasiAktif(), 100000);
+});
