@@ -6,6 +6,7 @@ import { t, angka, mulaiBahasa, gantiBahasa, bahasa } from "/i18n.js";
 import { api, ikon, nanti } from "/inti/umum.js";
 import { subnavHtml, diBagianInsight } from "/inti/komponen.js";
 import { pasangRel } from "/inti/rel.js";
+import { pasangGerak } from "/inti/gerak.js";
 import { pasangPilih } from "/inti/pilih.js";
 import { pasangCari } from "/inti/cari_global.js";
 import { pasangBukti } from "/inti/bukti.js";
@@ -208,6 +209,7 @@ export async function mulaiHalaman() {
   const kaki = document.getElementById("kaki");
   if (kaki) { kaki.innerHTML = kakiHtml(); kakiIsi(kaki, saya); }
   pasangRel();
+  pasangGerak();
   if (saya.masuk) { import("/pesan.js").then((m) => m.pasangPesan()).catch(() => {}); lencanaAdmin(kepala, saya); } // /pesan.js terkunci bagi tamu: impor dinamis hanya sesudah masuk
   pasangPilih();
   catatHalaman();

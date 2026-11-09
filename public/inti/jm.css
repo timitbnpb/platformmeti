@@ -811,3 +811,13 @@ li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border
 .td-kartu{display:grid;gap:12px}
 .td-ikat{margin:0;color:var(--ink2)}
 .td-ikat small{color:var(--ink2)}
+
+/* gerak halaman bersama (inti/gerak.js): halus, sekali jalan, tidak untuk halaman admin dan akun */
+@media screen and (prefers-reduced-motion:no-preference){
+  .gk-tunggu{opacity:0;transform:translateY(14px)}
+  .gk-masuk{transition:opacity .55s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  body:not([data-halaman=admin],[data-halaman=aktivasi],[data-halaman=ganti-sandi],[data-halaman=kta],[data-halaman=kta-v],[data-halaman=masuk],[data-halaman=meti-wilayah-kelola]) .jm-kh:not(.rm-buka) .jm-kh-teks>*{animation:gk-naik .6s cubic-bezier(.2,.8,.2,1) both}
+  body:not([data-halaman=admin],[data-halaman=aktivasi],[data-halaman=ganti-sandi],[data-halaman=kta],[data-halaman=kta-v],[data-halaman=masuk],[data-halaman=meti-wilayah-kelola]) .jm-kh:not(.rm-buka) .jm-kh-teks>:nth-child(2){animation-delay:.06s}
+  body:not([data-halaman=admin],[data-halaman=aktivasi],[data-halaman=ganti-sandi],[data-halaman=kta],[data-halaman=kta-v],[data-halaman=masuk],[data-halaman=meti-wilayah-kelola]) .jm-kh:not(.rm-buka) .jm-kh-teks>:nth-child(n+3){animation-delay:.12s}
+}
+@keyframes gk-naik{from{opacity:0;transform:translateY(12px)}}
