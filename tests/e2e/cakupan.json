@@ -17,7 +17,13 @@
       "POST /api/naskah/:ref/catatan": "tests/naskah.test.mjs",
       "POST /api/naskah/:ref/tarik": "tests/naskah.test.mjs",
       "PUT /api/naskah/:ref/lampiran": "tests/naskah.test.mjs",
-      "GET /api/naskah/:ref/unduh": "tests/naskah.test.mjs"
+      "GET /api/naskah/:ref/unduh": "tests/naskah.test.mjs",
+      "GET /api/otorisasi": "tests/naskah.test.mjs",
+      "GET /api/otorisasi/:sumber/:ref": "tests/naskah.test.mjs",
+      "POST /api/otorisasi/:sumber/:ref/setujui": "tests/naskah.test.mjs",
+      "POST /api/otorisasi/:sumber/:ref/tolak": "tests/naskah.test.mjs",
+      "POST /api/otorisasi/:sumber/:ref/revisi": "tests/naskah.test.mjs",
+      "POST /api/otorisasi/:sumber/:ref/catatan": "tests/naskah.test.mjs"
     }
   }
 }

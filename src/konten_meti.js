@@ -90,6 +90,11 @@ const bacaPustaka = async (env, akun, ref) => {
   const r = (await hak.baca(env, akun, "pustaka_unggah", { where: { ref } }))[0];
   return r && (r.akses === "anggota" || bisaLihatPengurus(akun)) ? r : null;
 };
+// Status otorisasi (0036) per ref untuk admin/super/pengurus; konten tanpa baris dianggap 'disahkan' (tayang sebelum aturan dua kunci).
+const statusOto = async (env, akun, sumber) => {
+  if (!hak.boleh(akun.peran, "baca", "konten_otorisasi", undefined, akun).ok && !adm(akun)) return null;
+  return new Map((await bacaSemua(env, akun, "konten_otorisasi", { where: { sumber } })).map((o) => [o.ref, o.status]));
+};
 const hapusR2 = async (env, kunci) => { if (env.BERKAS && kunci) await env.BERKAS.delete(kunci).catch(() => {}); }; // yatim di R2 lebih ringan daripada baris tanpa berkas
 
 export const rute = {
@@ -111,7 +116,8 @@ export const rute = {
   "GET /api/berita-meti": async (req, env, ctx, p) => {
     const akun = perlu(p, BACA);
     const baris = await bacaSemua(env, akun, "berita_meti", { where: adm(akun) ? {} : { terbit: 1 }, kolom: KOLOM_DAFTAR_BM, urut: "-id" });
-    return json({ baris: baris.sort(urutBerita).map(butirBerita) }, 200, PRIVAT);
+    const st = await statusOto(env, akun, "berita_meti");
+    return json({ baris: baris.sort(urutBerita).map((r) => ({ ...butirBerita(r), ...(st ? { otorisasi: st.get(r.ref) ?? "disahkan" } : {}) })) }, 200, PRIVAT);
   },
 
   "GET /api/berita-meti/:ref": async (req, env, ctx, p) => {
@@ -119,7 +125,8 @@ export const rute = {
     if (!RE_BM.test(p.params.ref)) return gagal("tidak_ditemukan");
     const r = await bacaBerita(env, akun, p.params.ref);
     if (!r) return gagal("tidak_ditemukan");
-    return json({ ...butirBerita(r), isi: r.isi }, 200, PRIVAT);
+    const st = await statusOto(env, akun, "berita_meti");
+    return json({ ...butirBerita(r), isi: r.isi, ...(st ? { otorisasi: st.get(r.ref) ?? "disahkan" } : {}) }, 200, PRIVAT);
   },
 
   "POST /api/berita-meti": async (req, env, ctx, p) => {
@@ -131,7 +138,7 @@ export const rute = {
       const ref = refBaru("bm-");
       try {
         await hak.tulis(env, akun, "berita_meti", "tambah", d, null, { ref });
-        return json({ ref }, 201, PRIVAT);
+        return json({ ref, otorisasi: "menunggu" }, 201, PRIVAT);
       } catch (e) { if (e?.kode !== "konflik" || coba === 3) throw e; }
     }
   },
@@ -147,7 +154,7 @@ export const rute = {
     const d = cekBerita(b, ada);
     if (!d) return gagal("masukan_salah");
     await hak.tulis(env, akun, "berita_meti", "ubah", d, ada.id);
-    return json({ ref }, 200, PRIVAT);
+    return json({ ref, otorisasi: (await statusOto(env, akun, "berita_meti"))?.get(ref) ?? "disahkan" }, 200, PRIVAT);
   },
 
   "DELETE /api/berita-meti/:ref": async (req, env, ctx, p) => {
@@ -203,7 +210,8 @@ export const rute = {
   "GET /api/pustaka-unggah": async (req, env, ctx, p) => {
     const akun = perlu(p, BACA);
     const baris = await bacaSemua(env, akun, "pustaka_unggah", { where: bisaLihatPengurus(akun) ? {} : { akses: "anggota" }, kolom: KOLOM_PU, urut: "-id" });
-    return json({ baris: baris.map(({ id, ...x }) => x) }, 200, PRIVAT);
+    const st = await statusOto(env, akun, "pustaka_unggah");
+    return json({ baris: baris.map(({ id, ...x }) => ({ ...x, ...(st ? { otorisasi: st.get(x.ref) ?? "disahkan" } : {}) })) }, 200, PRIVAT);
   },
 
   // POST /api/pustaka-unggah?judul=&penerbit=&jenis=&akses=&nama=&tanggal_terbit=&bahasa=&ringkasan=  (badan = berkas mentah, maks 50 MB)
@@ -230,7 +238,7 @@ export const rute = {
       const ref = refBaru("pu-");
       try {
         await hak.tulis(env, akun, "pustaka_unggah", "tambah", d, null, { ref, kunci_r2: kunci, tipe, ukuran: badan.length, nama_berkas: nama });
-        return json({ ref }, 201, PRIVAT);
+        return json({ ref, otorisasi: "menunggu" }, 201, PRIVAT);
       } catch (e) {
         if (e?.kode !== "konflik" || coba === 3) { await hapusR2(env, kunci); throw e; }
       }
@@ -247,7 +255,7 @@ export const rute = {
     const ada = (await hak.baca(env, akun, "pustaka_unggah", { where: { ref }, kolom: ["id"] }))[0];
     if (!ada) return gagal("tidak_ditemukan");
     await hak.tulis(env, akun, "pustaka_unggah", "ubah", d, ada.id);
-    return json({ ref }, 200, PRIVAT);
+    return json({ ref, otorisasi: (await statusOto(env, akun, "pustaka_unggah"))?.get(ref) ?? "disahkan" }, 200, PRIVAT);
   },
 
   "DELETE /api/pustaka-unggah/:ref": async (req, env, ctx, p) => {

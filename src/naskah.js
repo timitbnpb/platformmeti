@@ -9,12 +9,15 @@ import { acak, bacaBody, gagal, json, perlu, PRIVAT } from "./util.js";
 const BACA = ["anggota", "pengurus", "kurator", "wilayah", "admin", "super"];
 const MASUK = ["admin", "super"]; // kunci pertama: memasukkan, mengajukan, menarik
 const PUTUS = ["pengurus", "super"]; // kunci kedua: setujui, tolak, revisi, evaluasi
+const LIHAT_ANTREAN = ["pengurus", "admin", "super"];
+const SUMBER_KONTEN = { berita: "berita_meti", pustaka: "pustaka_unggah" };
+const RE_REF_KONTEN = /^(bm|pu)-\d{1,17}$/;
 const RE_NK = /^nk-\d{1,17}$/;
 const JENIS = ["notulensi", "bahan", "kajian", "keputusan", "laporan", "lainnya"];
 const STATUS = ["draf", "menunggu", "revisi", "disahkan", "ditolak", "ditarik"];
 const MAKS_DOK = 50 * 1024 * 1024;
 const BATAS_LAJU = 300;
-const KOLOM_DAFTAR = ["id", "ref", "jenis", "judul", "ringkasan", "tanggal", "tipe", "ukuran", "nama_berkas", "status", "versi", "oleh", "diajukan", "disahkan_pada", "dibuat", "diubah"];
+const KOLOM_DAFTAR = ["id", "ref", "jenis", "judul", "ringkasan", "tanggal", "tipe", "ukuran", "nama_berkas", "status", "versi", "oleh", "penyunting", "diajukan", "disahkan_pada", "dibuat", "diubah"];
 
 const lajuLewat = async (env, akun) => (await hak.catatLaju(env, "kurasi:" + akun.id)) > BATAS_LAJU;
 const refBaru = () => "nk-" + Date.now() + String(Math.floor(Math.random() * 1000)).padStart(3, "0");
@@ -63,10 +66,39 @@ function cekCatatan(b) {
 const butir = (r, akun) => ({
   ref: r.ref, jenis: r.jenis, judul: r.judul, ringkasan: r.ringkasan, tanggal: r.tanggal, status: r.status, versi: r.versi,
   lampiran: r.tipe ? { tipe: r.tipe, ukuran: r.ukuran, nama: r.nama_berkas } : null,
-  diajukan: r.diajukan, disahkan_pada: r.disahkan_pada, dibuat: r.dibuat, diubah: r.diubah, milikku: r.oleh === akun.id,
+  diajukan: r.diajukan, disahkan_pada: r.disahkan_pada, dibuat: r.dibuat, diubah: r.diubah, milikku: r.oleh === akun.id || r.penyunting === akun.id,
 });
+// Nama pembuat dan penyunting hanya untuk pengurus/admin/super (hak.namaAkun); peran lain tak menerima field-nya.
+const beriNama = async (env, akun, daftar, mentah) => {
+  const nm = await hak.namaAkun(env, akun, mentah.flatMap((r) => [r.oleh, r.penyunting]));
+  if (!nm.size) return daftar;
+  return daftar.map((d, i) => ({ ...d, pembuat: nm.get(mentah[i].oleh) ?? null, penyunting: nm.get(mentah[i].penyunting) ?? null }));
+};
 // Naskah yang boleh dilihat peran ini (klausa hak.js); null = tak ada atau tak boleh dilihat -> pemanggil membalas 404.
 const bacaSatu = async (env, akun, ref, kolom) => (await hak.baca(env, akun, "naskah", { where: { ref }, ...(kolom ? { kolom } : {}) }))[0] ?? null;
+
+// Konten yang boleh dinilai peran ini: draf berita (terbit=0) tak terlihat pengurus, sama dengan daftar. Null = 404.
+async function kontenTerlihat(env, akun, o) {
+  const k = (await hak.baca(env, akun, o.sumber, { where: { ref: o.ref } }))[0];
+  return k && !(o.sumber === "berita_meti" && k.terbit === 0 && akun.peran === "pengurus") ? k : null;
+}
+// Badan keputusan konten: { catatan?, versi } (versi = yang dibaca pemutus). Undefined = salah.
+function cekKonten(b) {
+  if (Object.keys(b).some((k) => !["catatan", "versi"].includes(k)) || !Number.isInteger(b.versi) || b.versi < 1 || b.versi > 999) return undefined;
+  const c = cekCatatan({ catatan: b.catatan });
+  return c === undefined ? undefined : { catatan: c, versi: b.versi };
+}
+// Baris otorisasi konten menurut sumber ('berita' | 'pustaka') dan ref; null bila pola salah atau tak ada.
+async function bacaKonten(env, akun, sumber, ref) {
+  const tabel = SUMBER_KONTEN[sumber];
+  if (!tabel || !RE_REF_KONTEN.test(ref)) return null;
+  return (await hak.baca(env, akun, "konten_otorisasi", { where: { sumber: tabel, ref } }))[0] ?? null;
+}
+const butirKonten = (o, k, akun) => ({
+  sumber: o.sumber === "berita_meti" ? "berita" : "pustaka", ref: o.ref, jenis: k.jenis, judul: k.judul, ringkasan: k.ringkasan ?? null,
+  tanggal: k.tanggal ?? k.tanggal_terbit ?? null, status: o.status, versi: o.versi, milikku: o.oleh === akun.id || o.penyunting === akun.id,
+  lampiran: o.sumber === "pustaka_unggah" ? { tipe: k.tipe, ukuran: k.ukuran, nama: k.nama_berkas } : (k.foto_r2 ? { tipe: "foto", ukuran: null, nama: null } : null),
+});
 
 export const rute = {
   "GET /api/naskah": async (req, env, ctx, p) => {
@@ -79,7 +111,7 @@ export const rute = {
     const kueri = { where, kolom: KOLOM_DAFTAR, urut: "-id" };
     if (cari) kueri.cari = { teks: cari, kolom: ["judul", "ringkasan"] };
     const baris = await bacaSemua(env, akun, "naskah", kueri);
-    return json({ baris: baris.map((r) => butir(r, akun)) }, 200, PRIVAT);
+    return json({ baris: await beriNama(env, akun, baris.map((r) => butir(r, akun)), baris) }, 200, PRIVAT);
   },
 
   "GET /api/naskah/:ref": async (req, env, ctx, p) => {
@@ -87,11 +119,12 @@ export const rute = {
     if (!RE_NK.test(p.params.ref)) return gagal("tidak_ditemukan");
     const r = await bacaSatu(env, akun, p.params.ref);
     if (!r) return gagal("tidak_ditemukan");
-    const hasil = { ...butir(r, akun), isi: r.isi };
+    const hasil = { ...(await beriNama(env, akun, [butir(r, akun)], [r]))[0], isi: r.isi };
     // Linimasa catatan hanya untuk pengurus, admin, super (matriks naskah_catatan); anggota, kurator, wilayah tidak melihatnya.
     if (hak.boleh(akun.peran, "baca", "naskah_catatan", undefined, akun).ok) {
       const cat = await bacaSemua(env, akun, "naskah_catatan", { where: { naskah_id: r.id }, urut: "id" });
-      hasil.catatan = cat.map((c) => ({ versi: c.versi, peran: c.peran, jenis: c.jenis, isi: c.isi, kapan: c.kapan, milikku: c.oleh === akun.id }));
+      const nm = await hak.namaAkun(env, akun, cat.map((c) => c.oleh));
+      hasil.catatan = cat.map((c) => ({ versi: c.versi, peran: c.peran, nama: nm.get(c.oleh) ?? null, jenis: c.jenis, isi: c.isi, kapan: c.kapan, milikku: c.oleh === akun.id }));
     }
     return json(hasil, 200, PRIVAT);
   },
@@ -147,9 +180,9 @@ export const rute = {
     if (await lajuLewat(env, akun)) return gagal("laju_terlampaui");
     const catatan = cekCatatan(await bacaBody(req));
     if (catatan === undefined || !catatan || catatan.length < 3) return gagal("masukan_salah");
-    const ada = await bacaSatu(env, akun, ref, ["id", "status", "versi", "oleh"]);
+    const ada = await bacaSatu(env, akun, ref, ["id", "status", "versi", "oleh", "penyunting"]);
     if (!ada) return gagal("tidak_ditemukan");
-    if (ada.oleh === akun.id) return gagal("dilarang");
+    if (ada.oleh === akun.id || ada.penyunting === akun.id) return gagal("dilarang");
     if (ada.status === "draf") return gagal("konflik");
     await hak.tulis(env, akun, "naskah_catatan", "tambah", { jenis: "evaluasi", isi: catatan }, null, { naskah_id: ada.id, versi: ada.versi, peran: akun.peran });
     return json({ ref }, 201, PRIVAT);
@@ -193,4 +226,56 @@ export const rute = {
       headers: { "content-type": CT_DOK[r.tipe] ?? "application/octet-stream", "content-disposition": disposisi(r.nama_berkas), "x-content-type-options": "nosniff", "cache-control": "private, no-store", vary: "Cookie" },
     });
   },
+
+  // ------------------------------- Konten (berita METI, pustaka unggahan) lewat dua kunci yang sama -------------------------------
+  // Baris konten_otorisasi dibuat/direset TRIGGER saat konten ditulis admin (migrasi 0036). Antrean ini untuk pengurus (memutus) dan admin/super (melihat status).
+  "GET /api/otorisasi": async (req, env, ctx, p) => {
+    const akun = perlu(p, LIHAT_ANTREAN);
+    const st = new URL(req.url).searchParams.get("status");
+    if (st && !["menunggu", "revisi", "disahkan", "ditolak"].includes(st)) return gagal("masukan_salah");
+    const oto = await bacaSemua(env, akun, "konten_otorisasi", { where: st ? { status: st } : {}, urut: "-id" });
+    const [bm, pu] = await Promise.all([bacaSemua(env, akun, "berita_meti", { kolom: ["id", "ref", "jenis", "judul", "tanggal", "ringkasan", "foto_r2", "terbit"] }), bacaSemua(env, akun, "pustaka_unggah", { kolom: ["id", "ref", "jenis", "judul", "tanggal_terbit", "ringkasan", "tipe", "ukuran", "nama_berkas", "akses"] })]);
+    const peta = { berita_meti: new Map(bm.map((x) => [x.ref, x])), pustaka_unggah: new Map(pu.map((x) => [x.ref, x])) };
+    const baris = [], mentah = [];
+    for (const o of oto) {
+      const k = peta[o.sumber].get(o.ref);
+      if (!k || (k.terbit === 0 && akun.peran === "pengurus")) continue; // konten sudah dihapus atau masih draf
+      baris.push(butirKonten(o, k, akun)); mentah.push(o);
+    }
+    return json({ baris: await beriNama(env, akun, baris, mentah) }, 200, PRIVAT);
+  },
+
+  "GET /api/otorisasi/:sumber/:ref": async (req, env, ctx, p) => {
+    const akun = perlu(p, LIHAT_ANTREAN);
+    const o = await bacaKonten(env, akun, p.params.sumber, p.params.ref);
+    if (!o) return gagal("tidak_ditemukan");
+    const tabel = SUMBER_KONTEN[p.params.sumber];
+    const k = await kontenTerlihat(env, akun, o);
+    if (!k) return gagal("tidak_ditemukan");
+    const cat = await bacaSemua(env, akun, "naskah_catatan", { where: { otorisasi_id: o.id }, urut: "id" });
+    const nm = await hak.namaAkun(env, akun, [...cat.map((c) => c.oleh)]);
+    return json({ ...(await beriNama(env, akun, [butirKonten(o, k, akun)], [o]))[0], isi: k.isi ?? null,
+      lampiran_url: tabel === "berita_meti" ? (k.foto_r2 ? `/api/berita-meti/foto/${k.ref}` : null) : `/api/pustaka-unggah/${k.ref}/unduh`,
+      catatan: cat.map((c) => ({ versi: c.versi, peran: c.peran, nama: nm.get(c.oleh) ?? null, jenis: c.jenis, isi: c.isi, kapan: c.kapan, milikku: c.oleh === akun.id })) }, 200, PRIVAT);
+  },
+
+  ...Object.fromEntries(["setujui", "tolak", "revisi", "catatan"].map((aksi) => [`POST /api/otorisasi/:sumber/:ref/${aksi}`, async (req, env, ctx, p) => {
+    const akun = perlu(p, PUTUS);
+    if (await lajuLewat(env, akun)) return gagal("laju_terlampaui");
+    const kb = cekKonten(await bacaBody(req));
+    if (kb === undefined) return gagal("masukan_salah");
+    const { catatan, versi } = kb;
+    const o = await bacaKonten(env, akun, p.params.sumber, p.params.ref);
+    if (!o || !(await kontenTerlihat(env, akun, o))) return gagal("tidak_ditemukan");
+    if (aksi === "catatan") {
+      if (versi !== o.versi) return gagal("konflik");
+      if (!catatan || catatan.length < 3) return gagal("masukan_salah");
+      if (o.oleh === akun.id || o.penyunting === akun.id) return gagal("dilarang");
+      await hak.tulis(env, akun, "naskah_catatan", "tambah", { jenis: "evaluasi", isi: catatan }, null, { otorisasi_id: o.id, versi: o.versi, peran: akun.peran });
+      return json({ ref: o.ref }, 201, PRIVAT);
+    }
+    const h = await hak.kontenStatus(env, akun, o.id, aksi, catatan, versi);
+    return json({ ref: o.ref, status: h.status, versi: h.versi }, 200, PRIVAT);
+  }])),
 };
+

@@ -2,7 +2,8 @@
 // Hak, CHECK, TRIGGER, jejak berjalan di D1 nyata. Aturan dua kunci dibuktikan DUA kali: lewat API dan lewat UPDATE SQL langsung.
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
-import { buatEnv } from "./_bantu.mjs";
+import { buatEnv, pecahSql } from "./_bantu.mjs";
+import { readFileSync } from "node:fs";
 import worker from "../src/worker.js";
 import { rute } from "../src/naskah.js";
 import * as hak from "../src/hak.js";
@@ -71,8 +72,8 @@ const SEMUA_RUTE = [
   ["PUT", "/api/naskah/nk-1/lampiran?nama=a.pdf", PDF], ["GET", "/api/naskah/nk-1/unduh"],
 ];
 
-test("modul mengekspor tepat 12 rute naskah", () => {
-  assert.equal(Object.keys(rute).length, 12);
+test("modul mengekspor tepat 18 rute (12 naskah + 6 antrean konten)", () => {
+  assert.equal(Object.keys(rute).length, 18);
 });
 
 test("tamu DITOLAK 401 di semua rute", async () => {
@@ -319,4 +320,199 @@ test("kebocoran: daftar anggota hanya status disahkan; respons tak memuat kunci 
   assert.ok(!/kunci_r2|disahkan_oleh|"oleh"/.test(teks));
   const sql = await satu("SELECT count(*) AS n FROM naskah WHERE status <> 'disahkan'");
   assert.ok(sql.n > 0, "ada naskah non-sah yang memang tidak boleh bocor");
+});
+
+/* ------------------------- Berita METI dan Pustaka unggahan lewat dua kunci yang sama (konten_otorisasi) ------------------------- */
+const JPEG = new Uint8Array([0xff, 0xd8, 0xff, 0xe0, 0, 16, 0x4a, 0x46, 0x49, 0x46, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0xff, 0xd9]);
+const PU = "judul=Kajian%20contoh&penerbit=METI&jenis=kajian&nama=kajian.pdf&akses=anggota";
+const bikinBm = async (peran = "admin") => (await js(await panggil("POST", "/api/berita-meti", { peran, badan: { jenis: "siaran_pers", judul: "Siaran pers uji otorisasi", tanggal: "2026-11-01", isi: "Isi berita." } }))).ref;
+const bikinPu = async (peran = "admin") => (await js(await panggil("POST", `/api/pustaka-unggah?${PU}`, { peran, badan: PDF }))).ref;
+const oto = (ref) => satu("SELECT * FROM konten_otorisasi WHERE ref = ?", ref);
+const putus = async (sumber, ref, aksi, peran = "pengurus", catatan, versi) => panggil("POST", `/api/otorisasi/${sumber}/${ref}/${aksi}`, { peran, badan: { ...(catatan ? { catatan } : {}), versi: versi ?? (await oto(ref)).versi } });
+
+test("berita baru masuk menunggu: anggota/kurator/wilayah 404 (daftar, butir, foto); admin dan pengurus melihat; sah setelah pengurus setuju", async () => {
+  const ref = await bikinBm();
+  assert.equal((await oto(ref)).status, "menunggu");
+  assert.equal((await panggil("PUT", `/api/berita-meti/${ref}/foto`, { peran: "admin", badan: JPEG })).status, 200);
+  for (const peran of TANPA_KUNCI) {
+    assert.equal((await panggil("GET", `/api/berita-meti/${ref}`, { peran })).status, 404, peran);
+    assert.equal((await panggil("GET", `/api/berita-meti/foto/${ref}`, { peran })).status, 404, `${peran} foto`);
+    assert.ok(!(await js(await panggil("GET", "/api/berita-meti", { peran }))).baris.some((b) => b.ref === ref), `${peran} daftar`);
+  }
+  for (const peran of ["admin", "pengurus", "super"]) assert.equal((await panggil("GET", `/api/berita-meti/${ref}`, { peran })).status, 200, peran);
+  assert.equal((await js(await panggil("GET", `/api/berita-meti/${ref}`, { peran: "admin" }))).otorisasi, "menunggu");
+  const antre = (await js(await panggil("GET", "/api/otorisasi?status=menunggu", { peran: "pengurus" }))).baris;
+  assert.ok(antre.some((b) => b.ref === ref && b.sumber === "berita" && b.milikku === false));
+  assert.equal((await putus("berita", ref, "setujui")).status, 200);
+  for (const peran of TANPA_KUNCI) {
+    assert.equal((await panggil("GET", `/api/berita-meti/${ref}`, { peran })).status, 200, `${peran} sah`);
+    assert.equal((await panggil("GET", `/api/berita-meti/foto/${ref}`, { peran })).status, 200, `${peran} foto sah`);
+  }
+  // disunting ulang: kembali menunggu, tersembunyi, versi naik
+  const v0 = (await oto(ref)).versi;
+  assert.equal((await panggil("PATCH", `/api/berita-meti/${ref}`, { peran: "admin", badan: { judul: "Judul berita diubah" } })).status, 200);
+  const o = await oto(ref);
+  assert.equal(o.status, "menunggu"); assert.equal(o.versi, v0 + 1); assert.equal(o.disahkan_oleh, null);
+  for (const peran of TANPA_KUNCI) assert.equal((await panggil("GET", `/api/berita-meti/${ref}`, { peran })).status, 404, `${peran} sesudah sunting`);
+  // perubahan hanya flag terbit tidak mereset
+  assert.equal((await putus("berita", ref, "setujui")).status, 200);
+  assert.equal((await panggil("PATCH", `/api/berita-meti/${ref}`, { peran: "admin", badan: { terbit: 1 } })).status, 200);
+  assert.equal((await oto(ref)).status, "disahkan");
+});
+
+test("pustaka baru: anggota 404 untuk daftar dan unduh sebelum sah; sunting konten sah mengembalikan ke menunggu", async () => {
+  const ref = await bikinPu();
+  assert.equal((await oto(ref)).status, "menunggu");
+  for (const peran of TANPA_KUNCI) {
+    assert.equal((await panggil("GET", `/api/pustaka-unggah/${ref}/unduh`, { peran })).status, 404, peran);
+    assert.ok(!(await js(await panggil("GET", "/api/pustaka-unggah", { peran }))).baris.some((b) => b.ref === ref));
+  }
+  assert.equal((await panggil("GET", `/api/pustaka-unggah/${ref}/unduh`, { peran: "pengurus" })).status, 200);
+  assert.equal((await putus("pustaka", ref, "setujui")).status, 200);
+  for (const peran of TANPA_KUNCI) assert.equal((await panggil("GET", `/api/pustaka-unggah/${ref}/unduh`, { peran })).status, 200, `${peran} sah`);
+  assert.equal((await panggil("PATCH", `/api/pustaka-unggah/${ref}`, { peran: "admin", badan: { judul: "Judul pustaka baru" } })).status, 200);
+  assert.equal((await oto(ref)).status, "menunggu");
+  for (const peran of TANPA_KUNCI) assert.equal((await panggil("GET", `/api/pustaka-unggah/${ref}/unduh`, { peran })).status, 404, `${peran} sesudah sunting`);
+});
+
+test("konten lama tanpa baris otorisasi tetap terlihat (dianggap sah); disunting masuk antrean", async () => {
+  const DEF = pecahSql(readFileSync("migrations/0036_naskah.sql", "utf8")).filter((x) => /berita_meti_otorisasi_baru/.test(x));
+  await q("DROP TRIGGER berita_meti_otorisasi_baru").run();
+  await q("INSERT INTO berita_meti (ref, jenis, judul, tanggal, oleh) VALUES ('bm-777', 'siaran_pers', 'Berita lama sebelum aturan', '2026-01-01', ?)", ID.admin).run();
+  for (const x of DEF) await q(x).run();
+  assert.equal(await oto("bm-777"), null);
+  for (const peran of TANPA_KUNCI) assert.equal((await panggil("GET", "/api/berita-meti/bm-777", { peran })).status, 200, peran);
+  assert.equal((await js(await panggil("GET", "/api/berita-meti/bm-777", { peran: "admin" }))).otorisasi, "disahkan");
+  assert.equal((await panggil("PATCH", "/api/berita-meti/bm-777", { peran: "admin", badan: { judul: "Berita lama disunting" } })).status, 200);
+  assert.equal((await oto("bm-777")).status, "menunggu");
+  assert.equal((await panggil("GET", "/api/berita-meti/bm-777", { peran: "anggota" })).status, 404);
+});
+
+test("maker tidak bisa mengesahkan kontennya sendiri walau super (API 403, SQL trigger); admin biasa tidak bisa memutus", async () => {
+  const ref = await bikinBm("super");
+  for (const a of ["setujui", "tolak", "revisi"]) assert.equal((await putus("berita", ref, a, "super", "diri sendiri")).status, 403, a);
+  assert.equal((await putus("berita", ref, "catatan", "super", "evaluasi diri")).status, 403);
+  assert.equal((await putus("berita", ref, "setujui", "admin")).status, 403);
+  assert.equal((await oto(ref)).status, "menunggu");
+  await harapTolak("super mengesahkan miliknya", "UPDATE konten_otorisasi SET status='disahkan', disahkan_oleh=?, disahkan_pada=unixepoch() WHERE ref=?", ID.super, ref);
+  await harapTolak("admin biasa pengesah", "UPDATE konten_otorisasi SET status='disahkan', disahkan_oleh=?, disahkan_pada=unixepoch() WHERE ref=?", ID.admin, ref);
+  await harapTolak("transisi menunggu -> menunggu->ditolak tanpa catatan", "UPDATE konten_otorisasi SET status='ditolak' WHERE ref=?", ref);
+  // pengurus (bukan maker) boleh
+  assert.equal((await putus("berita", ref, "setujui")).status, 200);
+  assert.equal((await oto(ref)).disahkan_oleh, ID.pengurus);
+  // pembaca tak berhak: 403 pada rute otorisasi
+  for (const peran of ["anggota", "kurator", "wilayah"]) {
+    assert.equal((await panggil("GET", "/api/otorisasi", { peran })).status, 403, peran);
+    assert.equal((await putus("berita", ref, "setujui", peran)).status, 403, peran);
+  }
+  assert.equal((await panggil("GET", "/api/otorisasi")).status, 401);
+});
+
+test("konten: tolak/revisi wajib catatan (API 422, trigger); revisi lalu sunting mengembalikan ke menunggu dan menaikkan versi; transisi ilegal ditolak", async () => {
+  const ref = await bikinPu();
+  for (const a of ["tolak", "revisi"]) assert.equal((await putus("pustaka", ref, a, "pengurus", "  ")).status, 422, a);
+  await harapTolak("revisi tanpa catatan", "UPDATE konten_otorisasi SET status='revisi' WHERE ref=?", ref);
+  assert.equal((await putus("pustaka", ref, "revisi", "pengurus", "Lengkapi penerbit dan tahun.")).status, 200);
+  assert.equal((await oto(ref)).status, "revisi");
+  assert.equal((await putus("pustaka", ref, "setujui")).status, 409, "revisi tak bisa langsung disetujui");
+  await harapTolak("revisi -> disahkan", "UPDATE konten_otorisasi SET status='disahkan', disahkan_oleh=?, disahkan_pada=unixepoch() WHERE ref=?", ID.pengurus, ref);
+  assert.equal((await panggil("PATCH", `/api/pustaka-unggah/${ref}`, { peran: "admin", badan: { penerbit: "METI Pusat" } })).status, 200);
+  const o = await oto(ref);
+  assert.equal(o.status, "menunggu"); assert.equal(o.versi, 2);
+  assert.equal((await putus("pustaka", ref, "tolak", "pengurus", "Tidak sesuai kebijakan pustaka.")).status, 200);
+  await harapTolak("ditolak -> disahkan", "UPDATE konten_otorisasi SET status='disahkan', disahkan_oleh=?, disahkan_pada=unixepoch() WHERE ref=?", ID.pengurus, ref);
+  await harapTolak("hapus baris otorisasi", "DELETE FROM konten_otorisasi WHERE ref=?", ref);
+  const det = await js(await panggil("GET", `/api/otorisasi/pustaka/${ref}`, { peran: "pengurus" }));
+  assert.deepEqual(det.catatan.map((c) => [c.versi, c.jenis]), [[1, "revisi"], [2, "tolak"]]);
+  assert.equal((await panggil("GET", "/api/otorisasi/ngawur/bm-1", { peran: "pengurus" })).status, 404);
+  assert.ok(await cacah("jejak", "WHERE tabel = 'konten_otorisasi'") >= 2);
+});
+
+test("penyunting ikut terkunci: admin B menyunting berita buatan admin A lalu tidak bisa mengesahkan (API dan SQL); pengurus melihat nama pembuat", async () => {
+  const ref = await bikinBm("admin");
+  assert.equal((await putus("berita", ref, "setujui")).status, 200);
+  assert.equal((await panggil("PATCH", `/api/berita-meti/${ref}`, { peran: "admin2", badan: { judul: "Judul disunting admin dua" } })).status, 200);
+  const o = await oto(ref);
+  assert.equal(o.status, "menunggu"); assert.equal(o.oleh, ID.admin); assert.equal(o.penyunting, ID.admin2);
+  await harapTolak("penyunting mengesahkan", "UPDATE konten_otorisasi SET status='disahkan', disahkan_oleh=?, disahkan_pada=unixepoch() WHERE ref=?", ID.admin2, ref);
+  // super yang menyunting juga terkunci (API)
+  assert.equal((await panggil("PATCH", `/api/berita-meti/${ref}`, { peran: "super", badan: { judul: "Judul disunting super" } })).status, 200);
+  assert.equal((await oto(ref)).penyunting, ID.super);
+  assert.equal((await putus("berita", ref, "setujui", "super")).status, 403);
+  assert.equal((await putus("berita", ref, "catatan", "super", "evaluasi diri")).status, 403);
+  await harapTolak("super penyunting mengesahkan", "UPDATE konten_otorisasi SET status='disahkan', disahkan_oleh=?, disahkan_pada=unixepoch() WHERE ref=?", ID.super, ref);
+  const antre = (await js(await panggil("GET", "/api/otorisasi?status=menunggu", { peran: "pengurus" }))).baris.find((b) => b.ref === ref);
+  assert.equal(antre.pembuat, "admin"); assert.equal(antre.penyunting, "super");
+  assert.equal((await putus("berita", ref, "setujui")).status, 200, "pengurus lain boleh");
+  // anggota tak menerima nama
+  assert.equal((await js(await panggil("GET", `/api/berita-meti/${ref}`, { peran: "anggota" }))).pembuat, undefined);
+});
+
+test("naskah: penyunting terakhir tak bisa mengesahkan (API dan SQL); nama pembuat tampil untuk pengurus, tidak untuk anggota", async () => {
+  const ref = await buat("admin", "draf");
+  assert.equal((await panggil("PATCH", `/api/naskah/${ref}`, { peran: "super", badan: { isi: "Disunting super." } })).status, 200);
+  assert.equal((await panggil("POST", `/api/naskah/${ref}/ajukan`, { peran: "admin", badan: {} })).status, 200);
+  assert.equal((await baris(ref)).penyunting, ID.super);
+  assert.equal((await panggil("POST", `/api/naskah/${ref}/setujui`, { peran: "super", badan: {} })).status, 403);
+  await harapTolak("super penyunting naskah", "UPDATE naskah SET status='disahkan', disahkan_oleh=?, disahkan_pada=unixepoch() WHERE ref=?", ID.super, ref);
+  const d = (await js(await panggil("GET", "/api/naskah?status=menunggu", { peran: "pengurus" }))).baris.find((b) => b.ref === ref);
+  assert.equal(d.pembuat, "admin"); assert.equal(d.penyunting, "super");
+  assert.equal((await panggil("POST", `/api/naskah/${ref}/setujui`, { peran: "pengurus", badan: {} })).status, 200);
+  const a = (await js(await panggil("GET", `/api/naskah/${ref}`, { peran: "anggota" })));
+  assert.equal(a.pembuat, undefined); assert.equal(a.penyunting, undefined);
+  assert.ok((await js(await panggil("GET", `/api/naskah/${ref}`, { peran: "admin" }))).catatan.every((c) => c.nama));
+});
+
+test("1. sunting saat menunggu menaikkan versi; keputusan dengan versi usang 409 (isi tak dibaca), versi wajib 422", async () => {
+  const ref = await bikinBm("admin");
+  const v = (await oto(ref)).versi;
+  const dibaca = (await js(await panggil("GET", `/api/otorisasi/berita/${ref}`, { peran: "pengurus" }))).versi;
+  assert.equal(dibaca, v);
+  assert.equal((await panggil("PATCH", `/api/berita-meti/${ref}`, { peran: "admin", badan: { isi: "Isi diganti saat pengurus membaca." } })).status, 200);
+  const o = await oto(ref);
+  assert.equal(o.status, "menunggu"); assert.equal(o.versi, v + 1);
+  const c0 = await cacah("naskah_catatan");
+  for (const a of ["setujui", "tolak", "revisi", "catatan"]) assert.equal((await putus("berita", ref, a, "pengurus", "alasan cukup", v)).status, 409, a);
+  assert.equal((await oto(ref)).status, "menunggu"); assert.equal(await cacah("naskah_catatan"), c0, "tanpa catatan nyasar");
+  for (const badan of [{}, { catatan: "x kata" }, { versi: "2" }, { versi: 0 }]) assert.equal((await panggil("POST", `/api/otorisasi/berita/${ref}/setujui`, { peran: "pengurus", badan })).status, 422, JSON.stringify(badan));
+  assert.equal((await putus("berita", ref, "setujui", "pengurus", undefined, v + 1)).status, 200, "versi terbaru lolos");
+  // pustaka sama
+  const pu = await bikinPu(); const vp = (await oto(pu)).versi;
+  await panggil("PATCH", `/api/pustaka-unggah/${pu}`, { peran: "admin", badan: { penerbit: "METI Baru" } });
+  assert.equal((await putus("pustaka", pu, "setujui", "pengurus", undefined, vp)).status, 409);
+  await harapTolak("versi lompat dua saat menunggu", "UPDATE konten_otorisasi SET versi = versi + 2 WHERE ref=?", pu);
+  // naskah: beku saat menunggu, jadi yang dibaca pengurus pasti yang disahkan
+  const nk = await buat("admin", "menunggu");
+  assert.equal((await panggil("PATCH", `/api/naskah/${nk}`, { peran: "admin", badan: { isi: "diam diam" } })).status, 409);
+  await harapTolak("isi naskah menunggu", "UPDATE naskah SET isi='diam diam' WHERE ref=?", nk);
+});
+
+test("2. draf berita (terbit=0) tak bocor ke pengurus lewat detail dan keputusan otorisasi: 404; admin tetap melihat", async () => {
+  const ref = (await js(await panggil("POST", "/api/berita-meti", { peran: "admin", badan: { jenis: "siaran_pers", judul: "Draf berita rahasia", tanggal: "2026-11-03", isi: "Isi draf rahasia", terbit: 0 } }))).ref;
+  assert.equal((await panggil("GET", `/api/otorisasi/berita/${ref}`, { peran: "pengurus" })).status, 404);
+  assert.ok(!(await js(await panggil("GET", "/api/otorisasi", { peran: "pengurus" }))).baris.some((b) => b.ref === ref), "daftar juga tidak");
+  for (const a of ["setujui", "tolak", "revisi", "catatan"]) assert.equal((await putus("berita", ref, a, "pengurus", "alasan cukup")).status, 404, a);
+  assert.equal((await oto(ref)).status, "menunggu");
+  assert.equal((await panggil("GET", `/api/otorisasi/berita/${ref}`, { peran: "admin" })).status, 200);
+  assert.equal((await panggil("PATCH", `/api/berita-meti/${ref}`, { peran: "admin", badan: { terbit: 1 } })).status, 200);
+  assert.equal((await panggil("GET", `/api/otorisasi/berita/${ref}`, { peran: "pengurus" })).status, 200, "terbit memasukkannya ke antrean");
+});
+
+test("3. konten_otorisasi dijaga: INSERT hanya menunggu, tak bisa disisipi baris sah lebih dulu, identitas beku, pengesahan tetap", async () => {
+  await harapTolak("INSERT langsung disahkan", "INSERT INTO konten_otorisasi (sumber, ref, status, oleh, disahkan_oleh, disahkan_pada) VALUES ('berita_meti','bm-4242','disahkan',?,?,unixepoch())", ID.admin, ID.pengurus);
+  await harapTolak("INSERT versi lain", "INSERT INTO konten_otorisasi (sumber, ref, versi) VALUES ('berita_meti','bm-4243',5)");
+  await harapTolak("INSERT OR IGNORE disahkan", "INSERT OR IGNORE INTO konten_otorisasi (sumber, ref, status, disahkan_oleh, disahkan_pada) VALUES ('berita_meti','bm-4244','disahkan',?,unixepoch())", ID.pengurus);
+  assert.equal(await oto("bm-4242"), null); assert.equal(await oto("bm-4244"), null);
+  const ref = await bikinBm("admin");
+  assert.equal((await putus("berita", ref, "setujui")).status, 200);
+  const o = await oto(ref);
+  await harapTolak("ganti pembuat", "UPDATE konten_otorisasi SET oleh = ? WHERE ref = ?", ID.anggota, ref);
+  await harapTolak("ganti ref", "UPDATE konten_otorisasi SET ref = 'bm-1' WHERE id = ?", o.id);
+  await harapTolak("ganti sumber", "UPDATE konten_otorisasi SET sumber = 'pustaka_unggah' WHERE id = ?", o.id);
+  await harapTolak("ganti pengesah", "UPDATE konten_otorisasi SET disahkan_oleh = ? WHERE ref = ?", ID.super, ref);
+  await harapTolak("ganti waktu sah", "UPDATE konten_otorisasi SET disahkan_pada = 1 WHERE ref = ?", ref);
+  await harapTolak("sah -> ditolak", "UPDATE konten_otorisasi SET status = 'ditolak', disahkan_oleh = NULL, disahkan_pada = NULL WHERE ref = ?", ref);
+  const s = await oto(ref);
+  assert.equal(s.status, "disahkan"); assert.equal(s.disahkan_oleh, ID.pengurus); assert.equal(s.oleh, ID.admin);
+  await harapTolak("ganti pembuat naskah", "UPDATE naskah SET oleh = ? WHERE ref = (SELECT ref FROM naskah LIMIT 1)", ID.anggota);
 });
