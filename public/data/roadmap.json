@@ -1,0 +1,2616 @@
+{
+ "status": "Ajuan",
+ "versi": "2026-11-09",
+ "KUARTAL": [
+  "K4 2026",
+  "K1 2027",
+  "K2 2027",
+  "K3 2027",
+  "K4 2027",
+  "K1 2028",
+  "K2 2028",
+  "K3 2028",
+  "K4 2028"
+ ],
+ "PROGRAM": [
+  {
+   "id": "P1",
+   "kelas": "Pasti",
+   "nama": "Rapor Energi Terbarukan",
+   "status": "Baru",
+   "peran": "Pelaksana",
+   "mulai": 1,
+   "selesai": 8,
+   "ringkas": "Laporan dua tahunan laju energi terbarukan dengan angka yang sudah direkonsiliasi.",
+   "tujuan": "Pemerintah dan pasar memakai satu rujukan angka energi terbarukan yang terbit tepat tanggal.",
+   "kendala": "Kebutuhan RUPTL 4,26 GW per tahun, laju historis 0,59 GW. Bauran, PLTS atap, dan kapasitas pabrik modul punya beberapa angka berbeda.",
+   "kunci": "Datanya sudah ada di platform METI. Jika terbit berkala dengan angka yang direkonsiliasi, METI menjadi rujukan yang dipakai pemerintah dan pasar.",
+   "kerja": [
+    "Terbit dua kali setahun pada tanggal tetap",
+    "Laju aktual melawan kebutuhan, termasuk saat meleset",
+    "Rekonsiliasi angka yang bertentangan"
+   ],
+   "tonggak": [
+    [
+     2,
+     "Edisi 1"
+    ],
+    [
+     4,
+     "Edisi 2"
+    ],
+    [
+     6,
+     "Edisi 3"
+    ],
+    [
+     8,
+     "Edisi 4"
+    ]
+   ],
+   "pemilik": "Bidang 9 RE Digitalization dan AI, METI Institute",
+   "mitra": "ESDM, PLN, IESR, Ember",
+   "anggaran": 150,
+   "dana": "Sponsor edisi",
+   "ukuran": "4 edisi tepat tanggal sampai 2028",
+   "syarat": "Tidak butuh izin pihak lain. Naik menjadi kuartalan bila 4 edisi tepat waktu.",
+   "sumber": [
+    "target.json",
+    "target_realisasi.json"
+   ],
+   "rencana": [
+    {
+     "kuartal": 1,
+     "kegiatan": [
+      "Tetapkan tanggal terbit tetap",
+      "Daftar angka bentrok dan sumber resminya",
+      "Rekonsiliasi angka dan tulis catatan metode"
+     ],
+     "luaran": "Kalender terbit dan naskah Edisi 1"
+    },
+    {
+     "kuartal": 2,
+     "kegiatan": [
+      "Telaah Dewan Pakar",
+      "Terbitkan Edisi 1 pada tanggal tetap",
+      "Kirim ke ESDM, PLN, dan anggota"
+     ],
+     "luaran": "Edisi 1 terbit"
+    },
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Kumpulkan masukan pembaca",
+      "Perbarui data laju aktual melawan kebutuhan RUPTL",
+      "Cari sponsor edisi"
+     ],
+     "luaran": "Naskah Edisi 2 dan satu sponsor tercatat"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Terbitkan Edisi 2 pada tanggal tetap",
+      "Tulis bagian laju yang meleset apa adanya",
+      "Sebar lewat anggota"
+     ],
+     "luaran": "Edisi 2 terbit"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Perbaiki metode dari masukan",
+      "Perbarui data",
+      "Telaah Dewan Pakar"
+     ],
+     "luaran": "Naskah Edisi 3"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Terbitkan Edisi 3 pada tanggal tetap",
+      "Presentasi ringkas ke anggota",
+      "Nilai apakah layak naik menjadi kuartalan"
+     ],
+     "luaran": "Edisi 3 terbit dan catatan penilaian kuartalan"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Perbarui data dan metode",
+      "Siapkan sponsor edisi terakhir",
+      "Telaah Dewan Pakar"
+     ],
+     "luaran": "Naskah Edisi 4"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Terbitkan Edisi 4 pada tanggal tetap",
+      "Tulis catatan pelajaran 4 edisi",
+      "Serahkan arsip data ke penerus"
+     ],
+     "luaran": "Edisi 4 terbit dan arsip serah terima"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Edisi Rapor terbit tepat tanggal",
+     "awal": "0 edisi",
+     "target": "4 edisi sampai 2028",
+     "cara": "Tanggal terbit di platform dibandingkan kalender"
+    },
+    {
+     "indikator": "Angka bentrok yang sudah direkonsiliasi",
+     "awal": "Ditetapkan K1 2027",
+     "target": "Seluruh angka utama punya satu nilai resmi",
+     "cara": "Daftar rekonsiliasi di platform"
+    },
+    {
+     "indikator": "Edisi yang punya sponsor",
+     "awal": "0 edisi",
+     "target": "Minimal 2 dari 4 edisi",
+     "cara": "Perjanjian sponsor tersimpan di Sekretariat"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 9 RE Digitalization dan AI",
+    "pelaksana": [
+     "METI Institute",
+     "Staf program Sekretariat"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "Dewan Pakar",
+     "Bidang 2 Advokasi dan Regulasi",
+     "Anggota produsen listrik"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Pengumpulan dan rekonsiliasi data",
+     "juta": 40
+    },
+    {
+     "pos": "Penyuntingan dan tata letak",
+     "juta": 40
+    },
+    {
+     "pos": "Telaah Dewan Pakar dan diskusi",
+     "juta": 30
+    },
+    {
+     "pos": "Cetak dan penyebaran",
+     "juta": 40
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Sumber resmi terlambat atau berubah angkanya",
+     "tingkat": "Sedang",
+     "langkah": "Tulis tanggal ambil data dan versi sumber di tiap angka"
+    },
+    {
+     "risiko": "Sponsor edisi tidak ada",
+     "tingkat": "Sedang",
+     "langkah": "Edisi tetap terbit digital dengan biaya rutin; cetak ditunda"
+    },
+    {
+     "risiko": "Relawan penyusun berhenti",
+     "tingkat": "Rendah",
+     "langkah": "Metode ditulis agar pengganti bisa melanjutkan"
+    }
+   ],
+   "tergantung": [],
+   "kriteriaSelesai": [
+    "4 edisi terbit pada tanggal yang dijadwalkan",
+    "Setiap angka utama punya sumber dan tanggal ambil",
+    "Arsip data dan metode diserahkan ke pengurus berikutnya"
+   ]
+  },
+  {
+   "id": "P2",
+   "kelas": "Pasti",
+   "nama": "Satu Data Anggota",
+   "status": "Baru",
+   "peran": "Pelaksana",
+   "mulai": 0,
+   "selesai": 4,
+   "ringkas": "Satu daftar resmi anggota METI dengan persetujuan tertulis tiap anggota.",
+   "tujuan": "Semua publikasi memakai satu jumlah anggota yang bisa dibuktikan dan sah menurut hukum.",
+   "kendala": "Jumlah anggota beredar dalam empat versi: 803 individu, lebih dari 1.300, 1.631 baris, dan lebih dari 1.800.",
+   "kunci": "Iuran, direktori, dan jejaring baru bisa dipercaya bila ada satu daftar dengan persetujuan tiap anggota.",
+   "kerja": [
+    "Rekonsiliasi empat sumber",
+    "Persetujuan tertulis sesuai UU 27/2022",
+    "Satu angka resmi untuk semua publikasi"
+   ],
+   "tonggak": [
+    [
+     1,
+     "Satu angka resmi"
+    ],
+    [
+     4,
+     "Daftar dan persetujuan berjalan rutin"
+    ]
+   ],
+   "pemilik": "Bidang 1 Organisasi dan Kerja Sama Antarlembaga, Sekretariat",
+   "mitra": "METI Wilayah",
+   "anggaran": 40,
+   "dana": "Anggaran rutin",
+   "ukuran": "Satu daftar resmi pada K1 2027",
+   "syarat": "Tidak butuh izin pihak lain.",
+   "sumber": [
+    "meti-wilayah.json",
+    "Buku Saku METI 2026"
+   ],
+   "rencana": [
+    {
+     "kuartal": 0,
+     "kegiatan": [
+      "Kumpulkan empat sumber angka anggota",
+      "Tunjuk satu pemegang daftar di Sekretariat",
+      "Susun definisi anggota aktif"
+     ],
+     "luaran": "Definisi anggota dan daftar sumber"
+    },
+    {
+     "kuartal": 1,
+     "kegiatan": [
+      "Cocokkan nama antar sumber",
+      "Tetapkan satu angka resmi",
+      "Umumkan angka ke pengurus"
+     ],
+     "luaran": "Satu angka resmi pada K1 2027"
+    },
+    {
+     "kuartal": 2,
+     "kegiatan": [
+      "Rancang formulir persetujuan sesuai UU 27/2022",
+      "Uji ke satu kelompok kecil",
+      "Perbaiki formulir"
+     ],
+     "luaran": "Formulir persetujuan versi 1"
+    },
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Kirim permintaan persetujuan bertahap",
+      "Catat jawaban",
+      "Hubungkan dengan penagihan iuran"
+     ],
+     "luaran": "Rekap persetujuan per kategori anggota"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Jalankan pembaruan daftar tiap semester",
+      "Catat anggota baru dan keluar",
+      "Serahkan prosedur ke Sekretariat"
+     ],
+     "luaran": "Prosedur rutin tertulis dan daftar terbaru"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Jumlah anggota resmi",
+     "awal": "803 individu tercatat (empat versi beredar)",
+     "target": "Satu angka resmi pada K1 2027",
+     "cara": "Daftar resmi Sekretariat"
+    },
+    {
+     "indikator": "Anggota dengan persetujuan tertulis",
+     "awal": "Ditetapkan K1 2027",
+     "target": "Persetujuan dikumpulkan rutin tiap semester",
+     "cara": "Rekap persetujuan"
+    },
+    {
+     "indikator": "Publikasi yang memakai angka resmi",
+     "awal": "Ditetapkan K1 2027",
+     "target": "Semua publikasi baru",
+     "cara": "Pemeriksaan sampel oleh Sekretariat"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 1 Organisasi dan Kerja Sama Antarlembaga",
+    "pelaksana": [
+     "Sekretariat",
+     "Koordinator METI Wilayah"
+    ],
+    "penyetuju": "Sekretaris Jenderal",
+    "dikonsultasi": [
+     "Bendahara Umum",
+     "Bidang 9 RE Digitalization dan AI",
+     "Strategic Delivery Unit"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Pembersihan dan pencocokan data",
+     "juta": 15
+    },
+    {
+     "pos": "Formulir dan penyimpanan persetujuan",
+     "juta": 10
+    },
+    {
+     "pos": "Komunikasi ke anggota",
+     "juta": 10
+    },
+    {
+     "pos": "Cadangan",
+     "juta": 5
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Banyak anggota tidak menjawab permintaan persetujuan",
+     "tingkat": "Sedang",
+     "langkah": "Ingatkan lewat METI Wilayah dan saat penagihan iuran"
+    },
+    {
+     "risiko": "Angka resmi lebih kecil dari klaim lama",
+     "tingkat": "Sedang",
+     "langkah": "Jelaskan definisi dan tanggalnya; tampilkan keduanya sebagai catatan"
+    },
+    {
+     "risiko": "Data pribadi bocor",
+     "tingkat": "Tinggi",
+     "langkah": "Simpan di balik login, akses terbatas, tanpa data pribadi di repo publik"
+    }
+   ],
+   "tergantung": [],
+   "kriteriaSelesai": [
+    "Satu angka resmi anggota diumumkan",
+    "Formulir persetujuan dipakai untuk semua anggota baru",
+    "Prosedur pembaruan daftar tertulis dan dijalankan satu semester"
+   ]
+  },
+  {
+   "id": "P3",
+   "kelas": "Pasti",
+   "nama": "Ruang Kendali SDU",
+   "status": "Baru",
+   "peran": "Pelaksana",
+   "mulai": 0,
+   "selesai": 8,
+   "ringkas": "Satu pemegang, satu papan, dan rapat bulanan 30 menit untuk menjaga roadmap berjalan.",
+   "tujuan": "Roadmap tetap berjalan, terlihat kemajuannya, dan tidak berhenti saat pengurus berganti.",
+   "kendala": "Anggaran per program belum tersedia dan tiga PMO tercatat belum terisi. Roadmap tanpa pemegang akan berhenti saat pengurus berganti.",
+   "kunci": "Satu pemegang, satu papan, dan rapat bulanan singkat membuat kemajuan terlihat dan masalah cepat diputus.",
+   "kerja": [
+    "Rapat kendali bulanan 30 menit",
+    "Rencana anggaran bersama Bendahara",
+    "Berkas serah terima kepengurusan"
+   ],
+   "tonggak": [
+    [
+     0,
+     "Pemegang dan papan kendali ditetapkan"
+    ],
+    [
+     1,
+     "Anggaran 2027 disahkan"
+    ],
+    [
+     8,
+     "Serah terima siap"
+    ]
+   ],
+   "pemilik": "Strategic Delivery Unit, Bendahara Umum",
+   "mitra": "Dewan Pengawas",
+   "anggaran": 60,
+   "dana": "Anggaran rutin",
+   "ukuran": "Minimal 80% tonggak tepat waktu",
+   "syarat": "Tidak butuh izin pihak lain.",
+   "sumber": [
+    "kebijakan_info.json",
+    "pengurus-meti.json"
+   ],
+   "rencana": [
+    {
+     "kuartal": 0,
+     "kegiatan": [
+      "Tetapkan pemegang roadmap",
+      "Buat papan kendali di platform",
+      "Jadwalkan rapat bulanan 30 menit"
+     ],
+     "luaran": "Pemegang dan papan kendali ditetapkan"
+    },
+    {
+     "kuartal": 1,
+     "kegiatan": [
+      "Susun rencana anggaran 2027 bersama Bendahara",
+      "Sahkan di rapat pengurus",
+      "Pasang daftar tonggak per program"
+     ],
+     "luaran": "Anggaran 2027 disahkan"
+    },
+    {
+     "kuartal": 2,
+     "kegiatan": [
+      "Rapat bulanan berjalan",
+      "Perbarui status tonggak",
+      "Catat hambatan dan keputusan"
+     ],
+     "luaran": "Papan kendali dan catatan rapat K2"
+    },
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Tinjau kuartalan",
+      "Putuskan program bersyarat yang boleh mulai",
+      "Perbarui risiko"
+     ],
+     "luaran": "Laporan kuartal dan keputusan program"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Rapat bulanan berjalan",
+      "Susun usulan anggaran 2028",
+      "Lapor ke Dewan Pengawas"
+     ],
+     "luaran": "Usulan anggaran 2028"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Tinjau semester",
+      "Sahkan anggaran 2028",
+      "Perbarui daftar tonggak"
+     ],
+     "luaran": "Anggaran 2028 disahkan"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Rapat bulanan berjalan",
+      "Tinjau kuartalan",
+      "Cek mulai syarat program bersyarat"
+     ],
+     "luaran": "Laporan kuartal dan status syarat"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Rapat bulanan berjalan",
+      "Mulai susun berkas serah terima",
+      "Evaluasi tonggak tepat waktu"
+     ],
+     "luaran": "Draf berkas serah terima"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Lengkapi berkas serah terima",
+      "Lapor akhir ke Dewan Pengawas",
+      "Serahkan papan dan arsip"
+     ],
+     "luaran": "Serah terima siap"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Tonggak tepat waktu",
+     "awal": "Ditetapkan K1 2027",
+     "target": "Minimal 80%",
+     "cara": "Papan kendali"
+    },
+    {
+     "indikator": "Rapat kendali bulanan terlaksana",
+     "awal": "0 rapat",
+     "target": "Minimal 10 dari 12 rapat tiap tahun",
+     "cara": "Catatan rapat"
+    },
+    {
+     "indikator": "Berkas serah terima lengkap",
+     "awal": "Belum ada",
+     "target": "1 berkas pada K4 2028",
+     "cara": "Pemeriksaan oleh Sekretaris Jenderal"
+    }
+   ],
+   "raci": {
+    "pemilik": "Strategic Delivery Unit",
+    "pelaksana": [
+     "Staf program Sekretariat",
+     "Bendahara Umum"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "Dewan Pengawas",
+     "Sekretaris Jenderal",
+     "Direktur Eksekutif"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Papan kendali dan perangkat kerja",
+     "juta": 15
+    },
+    {
+     "pos": "Rapat dan koordinasi",
+     "juta": 15
+    },
+    {
+     "pos": "Penyusunan anggaran dan laporan",
+     "juta": 15
+    },
+    {
+     "pos": "Berkas serah terima",
+     "juta": 15
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Rapat bulanan lama-lama tidak berjalan",
+     "tingkat": "Sedang",
+     "langkah": "Rapat singkat 30 menit, daring, agenda tetap dari papan"
+    },
+    {
+     "risiko": "Pemegang roadmap berhalangan",
+     "tingkat": "Sedang",
+     "langkah": "Tunjuk pengganti tertulis di Strategic Delivery Unit"
+    },
+    {
+     "risiko": "Tiga PMO belum terisi",
+     "tingkat": "Sedang",
+     "langkah": "Usulkan pengisian ke Ketua Umum; program tetap jalan lewat pemilik bidang"
+    }
+   ],
+   "tergantung": [],
+   "kriteriaSelesai": [
+    "Papan kendali aktif dan diperbarui tiap bulan",
+    "Anggaran 2027 dan 2028 disahkan",
+    "Berkas serah terima kepengurusan diterima pengurus berikutnya"
+   ]
+  },
+  {
+   "id": "P4",
+   "kelas": "Pasti",
+   "nama": "Green Fast Track dan Buku Putih RUU EBET",
+   "status": "Diperkuat",
+   "peran": "Advokat",
+   "mulai": 0,
+   "selesai": 8,
+   "ringkas": "Satukan 24 posisi METI menjadi Buku Putih RUU EBET dan pelacak lelang terbuka.",
+   "tujuan": "Pembuat kebijakan mendapat usulan pasal per pasal dengan data keterlambatan yang bisa dicek.",
+   "kendala": "Pengadaan EBT baru 51,4% dari target RUPTL sampai 2025. Revisi Perpres 112/2022 belum terbit. Pembahasan RUU EBET diperpanjang pada September 2026.",
+   "kunci": "METI sudah punya 24 pernyataan posisi. Jika disatukan pasal per pasal dan disertai data keterlambatan, usulan lebih mudah dipakai pembuat kebijakan.",
+   "kerja": [
+    "Satukan posisi menjadi Buku Putih",
+    "Pelacak lelang ke PJBL dari data publik",
+    "Satu posisi tertulis PLTS atap"
+   ],
+   "tonggak": [
+    [
+     1,
+     "Posisi PLTS atap"
+    ],
+    [
+     2,
+     "Buku Putih diserahkan ke Komisi XII"
+    ],
+    [
+     4,
+     "Pelacak terbit"
+    ]
+   ],
+   "pemilik": "Bidang 2 Advokasi dan Regulasi",
+   "mitra": "AESI, API, APROBI, APAMSI, APPLTA, AESKI",
+   "anggaran": 120,
+   "dana": "Iuran",
+   "ukuran": "Buku Putih dan pelacak terbit. Hasil kebijakan tidak dijanjikan, karena keputusan ada di pemerintah dan DPR",
+   "syarat": "Karya tulis METI tidak butuh izin. Keberhasilan pasal tergantung pembuat kebijakan.",
+   "sumber": [
+    "kebijakan_info.json",
+    "https://www.dpr.go.id/kegiatan-dpr/berita/DPR-Perpanjang-Pembahasan-RUU-EBET-demi-Matangkan-Substansi-69420"
+   ],
+   "rencana": [
+    {
+     "kuartal": 0,
+     "kegiatan": [
+      "Inventarisasi 24 pernyataan posisi",
+      "Kelompokkan per topik RUU EBET",
+      "Tunjuk penulis utama"
+     ],
+     "luaran": "Daftar posisi per topik"
+    },
+    {
+     "kuartal": 1,
+     "kegiatan": [
+      "Tulis satu posisi tertulis PLTS atap",
+      "Konsultasi dengan asosiasi mitra",
+      "Siapkan kerangka Buku Putih"
+     ],
+     "luaran": "Posisi PLTS atap dan kerangka Buku Putih"
+    },
+    {
+     "kuartal": 2,
+     "kegiatan": [
+      "Selesaikan Buku Putih pasal per pasal",
+      "Telaah Dewan Pakar",
+      "Serahkan ke Komisi XII"
+     ],
+     "luaran": "Buku Putih diserahkan ke Komisi XII"
+    },
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Kumpulkan data lelang dan PJBL dari sumber publik",
+      "Rancang tampilan pelacak",
+      "Uji dengan anggota"
+     ],
+     "luaran": "Data awal dan rancangan pelacak"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Terbitkan pelacak lelang ke PJBL",
+      "Umumkan ke anggota dan media",
+      "Tetapkan jadwal pembaruan"
+     ],
+     "luaran": "Pelacak terbit"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Perbarui pelacak tiap kuartal",
+      "Pantau pembahasan RUU EBET",
+      "Perbarui posisi bila perlu"
+     ],
+     "luaran": "Pelacak diperbarui dan catatan perkembangan RUU"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Perbarui pelacak",
+      "Siapkan masukan untuk revisi Perpres 112/2022 bila terbit",
+      "Pertemuan dengan asosiasi mitra"
+     ],
+     "luaran": "Catatan masukan dan notulen pertemuan"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Perbarui pelacak",
+      "Revisi Buku Putih sesuai perkembangan RUU",
+      "Kirim pembaruan ke Komisi XII"
+     ],
+     "luaran": "Buku Putih versi revisi"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Perbarui pelacak terakhir",
+      "Tulis catatan pelajaran advokasi",
+      "Serahkan arsip posisi ke penerus"
+     ],
+     "luaran": "Arsip posisi dan pelacak diserahkan"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Pernyataan posisi yang dipadukan",
+     "awal": "24 pernyataan posisi",
+     "target": "Seluruhnya masuk Buku Putih atau dicatat alasan tidak dimasukkan",
+     "cara": "Daftar posisi"
+    },
+    {
+     "indikator": "Buku Putih diserahkan",
+     "awal": "Belum ada",
+     "target": "1 dokumen pada K2 2027",
+     "cara": "Tanda terima"
+    },
+    {
+     "indikator": "Pembaruan pelacak lelang",
+     "awal": "Belum ada",
+     "target": "Tiap kuartal sejak terbit",
+     "cara": "Tanggal pembaruan di platform"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 2 Advokasi dan Regulasi",
+    "pelaksana": [
+     "METI Institute",
+     "Dewan Pakar"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "AESI, API, APROBI, APAMSI, APPLTA, AESKI",
+     "Bidang 9 RE Digitalization dan AI"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Penulisan dan penyuntingan Buku Putih",
+     "juta": 40
+    },
+    {
+     "pos": "Pelacak lelang dan data",
+     "juta": 30
+    },
+    {
+     "pos": "Pertemuan dengan asosiasi dan DPR",
+     "juta": 30
+    },
+    {
+     "pos": "Cetak dan penyebaran",
+     "juta": 20
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Pembahasan RUU EBET berubah arah atau tertunda",
+     "tingkat": "Tinggi",
+     "langkah": "Buku Putih disusun per topik agar bisa diperbarui; hasil kebijakan tidak dijanjikan"
+    },
+    {
+     "risiko": "Posisi anggota bertentangan",
+     "tingkat": "Sedang",
+     "langkah": "Catat perbedaan di Buku Putih dan putuskan di rapat pengurus"
+    },
+    {
+     "risiko": "Data lelang publik tidak lengkap",
+     "tingkat": "Sedang",
+     "langkah": "Tampilkan hanya data yang punya sumber dan tandai yang kosong"
+    }
+   ],
+   "tergantung": [],
+   "kriteriaSelesai": [
+    "Buku Putih diserahkan dan ada tanda terima",
+    "Pelacak terbit dan diperbarui minimal tiap kuartal",
+    "Setiap angka pelacak punya sumber publik"
+   ]
+  },
+  {
+   "id": "P5",
+   "kelas": "Pasti",
+   "nama": "METI Wilayah Aktif",
+   "status": "Diperkuat",
+   "peran": "Pelaksana",
+   "mulai": 1,
+   "selesai": 8,
+   "ringkas": "Kriteria aktif seragam agar METI Wilayah yang ada bekerja lebih dulu sebelum wilayah baru.",
+   "tujuan": "Delapan METI Wilayah aktif menurut kriteria yang sama dan angkanya tunggal.",
+   "kendala": "METI Wilayah yang berdiri dicatat 4, 6, atau 8 tergantung sumber.",
+   "kunci": "Kriteria aktif yang sama membuat wilayah yang sudah ada bekerja lebih dulu sebelum membuka wilayah baru.",
+   "kerja": [
+    "Kriteria aktif seragam",
+    "Satu kegiatan tiap wilayah per semester",
+    "Ringkasan RUED provinsi dari platform"
+   ],
+   "tonggak": [
+    [
+     2,
+     "Kriteria disahkan, angka tunggal"
+    ],
+    [
+     8,
+     "8 wilayah aktif sesuai kriteria"
+    ]
+   ],
+   "pemilik": "Koordinator METI Wilayah",
+   "mitra": "Pemda, kampus",
+   "anggaran": 100,
+   "dana": "Iuran daerah, sponsor kegiatan",
+   "ukuran": "8 wilayah aktif pada K4 2028",
+   "syarat": "Wilayah baru dibuka hanya bila 8 wilayah sudah aktif.",
+   "sumber": [
+    "meti-wilayah.json"
+   ],
+   "rencana": [
+    {
+     "kuartal": 1,
+     "kegiatan": [
+      "Susun draf kriteria wilayah aktif",
+      "Cocokkan data 4, 6, dan 8 wilayah yang tercatat",
+      "Dengar masukan koordinator"
+     ],
+     "luaran": "Draf kriteria dan daftar wilayah"
+    },
+    {
+     "kuartal": 2,
+     "kegiatan": [
+      "Sahkan kriteria",
+      "Umumkan angka tunggal",
+      "Nilai tiap wilayah terhadap kriteria"
+     ],
+     "luaran": "Kriteria disahkan dan angka tunggal"
+    },
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Tiap wilayah menyusun kegiatan semester",
+      "Dampingi wilayah yang lemah",
+      "Siapkan ringkasan RUED dari platform"
+     ],
+     "luaran": "Rencana kegiatan tiap wilayah"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Satu kegiatan tiap wilayah terlaksana",
+      "Kumpulkan laporan singkat",
+      "Terbitkan ringkasan RUED provinsi"
+     ],
+     "luaran": "Laporan kegiatan semester dan ringkasan RUED"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Nilai ulang wilayah terhadap kriteria",
+      "Bantu wilayah yang belum aktif",
+      "Bagi praktik baik"
+     ],
+     "luaran": "Hasil penilaian ulang"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Satu kegiatan tiap wilayah terlaksana",
+      "Tambah ringkasan RUED provinsi",
+      "Cari iuran daerah dan sponsor"
+     ],
+     "luaran": "Laporan kegiatan dan ringkasan RUED tambahan"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Penilaian menjelang akhir",
+      "Perkuat wilayah yang tertinggal",
+      "Rapat koordinasi wilayah"
+     ],
+     "luaran": "Daftar wilayah yang memenuhi kriteria"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Penilaian akhir",
+      "Umumkan 8 wilayah aktif bila tercapai",
+      "Serahkan kriteria ke penerus"
+     ],
+     "luaran": "Laporan akhir wilayah aktif"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "METI Wilayah aktif sesuai kriteria",
+     "awal": "Dicatat 4, 6, atau 8 tergantung sumber",
+     "target": "8 wilayah pada K4 2028",
+     "cara": "Penilaian kriteria"
+    },
+    {
+     "indikator": "Kegiatan per wilayah per semester",
+     "awal": "Ditetapkan K2 2027",
+     "target": "Minimal 1 kegiatan",
+     "cara": "Laporan wilayah"
+    },
+    {
+     "indikator": "Ringkasan RUED provinsi terbit",
+     "awal": "Ditetapkan K2 2027",
+     "target": "Satu ringkasan untuk tiap wilayah aktif",
+     "cara": "Platform"
+    }
+   ],
+   "raci": {
+    "pemilik": "Koordinator METI Wilayah",
+    "pelaksana": [
+     "Ketua tiap METI Wilayah",
+     "Bidang 1 Organisasi dan Kerja Sama Antarlembaga"
+    ],
+    "penyetuju": "Wakil Ketua Umum",
+    "dikonsultasi": [
+     "Sekretaris Jenderal",
+     "Bidang 9 RE Digitalization dan AI",
+     "Pemda dan kampus"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Pendampingan dan koordinasi wilayah",
+     "juta": 35
+    },
+    {
+     "pos": "Kegiatan wilayah",
+     "juta": 40
+    },
+    {
+     "pos": "Ringkasan RUED provinsi",
+     "juta": 15
+    },
+    {
+     "pos": "Rapat koordinasi tahunan",
+     "juta": 10
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Wilayah kehabisan relawan",
+     "tingkat": "Tinggi",
+     "langkah": "Kegiatan kecil dan terjadwal; pengurus pusat mendampingi"
+    },
+    {
+     "risiko": "Kriteria dianggap terlalu berat",
+     "tingkat": "Sedang",
+     "langkah": "Mulai dari kriteria sederhana, perketat bertahap"
+    },
+    {
+     "risiko": "Dana daerah belum cair",
+     "tingkat": "Sedang",
+     "langkah": "Kegiatan daring dan memakai fasilitas kampus mitra"
+    }
+   ],
+   "tergantung": [
+    "P2"
+   ],
+   "kriteriaSelesai": [
+    "Kriteria wilayah aktif disahkan",
+    "Angka wilayah aktif tunggal diumumkan",
+    "8 wilayah memenuhi kriteria pada K4 2028"
+   ]
+  },
+  {
+   "id": "P6",
+   "kelas": "Pasti",
+   "nama": "Akademi METI dan Energi Muda",
+   "status": "Diperkuat",
+   "peran": "Pelaksana",
+   "mulai": 1,
+   "selesai": 8,
+   "ringkas": "Tambah modul Akademi METI menjadi 12 dan jalankan dua angkatan Energi Muda.",
+   "tujuan": "Lebih banyak anak muda dan pekerja punya bahan belajar energi terbarukan yang terpakai.",
+   "kendala": "Akademi METI baru 6 modul, padahal kebutuhan tenaga proyek RUPTL diperkirakan 21.322 orang pada 2026.",
+   "kunci": "Modul dan platform sudah tersedia, sehingga METI bisa menambah isi dan satu angkatan belajar tanpa membangun sistem baru.",
+   "kerja": [
+    "Tambah modul menjadi 12",
+    "Satu angkatan Energi Muda per tahun",
+    "Dosen dari anggota secara sukarela"
+   ],
+   "tonggak": [
+    [
+     4,
+     "9 modul, angkatan pertama 30 peserta"
+    ],
+    [
+     8,
+     "12 modul, angkatan kedua 30 peserta"
+    ]
+   ],
+   "pemilik": "Bidang 3 Pengembangan SDM dan Sertifikasi, METI Energi Muda",
+   "mitra": "Kampus, anggota perusahaan",
+   "anggaran": 90,
+   "dana": "Sponsor korporat",
+   "ukuran": "12 modul dan 60 peserta sampai 2028",
+   "syarat": "Tidak butuh izin pihak lain.",
+   "sumber": [
+    "akademi.json",
+    "kerja.json"
+   ],
+   "rencana": [
+    {
+     "kuartal": 1,
+     "kegiatan": [
+      "Tinjau enam modul yang ada",
+      "Pilih topik modul baru",
+      "Cari dosen sukarela dari anggota"
+     ],
+     "luaran": "Daftar topik dan dosen"
+    },
+    {
+     "kuartal": 2,
+     "kegiatan": [
+      "Tulis modul 7 sampai 9",
+      "Uji ke kelompok kecil",
+      "Buka pendaftaran angkatan pertama"
+     ],
+     "luaran": "Draf tiga modul dan pendaftaran dibuka"
+    },
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Terbitkan modul 7 sampai 9",
+      "Seleksi 30 peserta",
+      "Mulai angkatan pertama, cari sponsor korporat"
+     ],
+     "luaran": "9 modul tayang dan angkatan pertama berjalan"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Selesaikan angkatan pertama 30 peserta",
+      "Evaluasi hasil belajar",
+      "Kumpulkan umpan balik"
+     ],
+     "luaran": "Laporan angkatan pertama"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Tulis modul 10 sampai 12",
+      "Perbaiki modul lama",
+      "Buka pendaftaran angkatan kedua"
+     ],
+     "luaran": "Draf tiga modul dan pendaftaran angkatan kedua"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Terbitkan modul 10 sampai 12",
+      "Seleksi 30 peserta",
+      "Mulai angkatan kedua"
+     ],
+     "luaran": "12 modul tayang dan angkatan kedua berjalan"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Jalankan angkatan kedua",
+      "Kumpulkan umpan balik",
+      "Perbarui sponsor"
+     ],
+     "luaran": "Catatan pelaksanaan angkatan kedua"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Selesaikan angkatan kedua 30 peserta",
+      "Evaluasi akhir",
+      "Serahkan bahan ke penerus"
+     ],
+     "luaran": "Laporan akhir akademi"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Jumlah modul Akademi",
+     "awal": "6 modul",
+     "target": "12 modul pada K4 2028",
+     "cara": "Platform akademi"
+    },
+    {
+     "indikator": "Peserta Energi Muda",
+     "awal": "0 peserta",
+     "target": "60 peserta sampai 2028",
+     "cara": "Daftar hadir dan sertifikat"
+    },
+    {
+     "indikator": "Peserta yang menyelesaikan angkatan",
+     "awal": "Ditetapkan K2 2027",
+     "target": "Minimal 70% tiap angkatan",
+     "cara": "Laporan angkatan"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 3 Pengembangan SDM dan Sertifikasi",
+    "pelaksana": [
+     "METI Energi Muda",
+     "Dosen sukarela dari anggota"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "Kampus",
+     "Bidang 1 Organisasi dan Kerja Sama Antarlembaga",
+     "Strategic Delivery Unit"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Penyusunan modul",
+     "juta": 30
+    },
+    {
+     "pos": "Penyelenggaraan dua angkatan",
+     "juta": 40
+    },
+    {
+     "pos": "Platform dan sertifikat",
+     "juta": 10
+    },
+    {
+     "pos": "Cadangan",
+     "juta": 10
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Dosen sukarela sulit dijadwalkan",
+     "tingkat": "Sedang",
+     "langkah": "Rekam sesi dan pakai ulang untuk angkatan berikutnya"
+    },
+    {
+     "risiko": "Sponsor korporat tidak ada",
+     "tingkat": "Sedang",
+     "langkah": "Angkatan dikecilkan atau dijalankan daring"
+    },
+    {
+     "risiko": "Peserta berhenti di tengah",
+     "tingkat": "Rendah",
+     "langkah": "Tugas kecil mingguan dan pendamping per kelompok"
+    }
+   ],
+   "tergantung": [],
+   "kriteriaSelesai": [
+    "12 modul tayang di platform",
+    "Dua angkatan, total 60 peserta, selesai",
+    "Laporan evaluasi tiap angkatan tersedia"
+   ]
+  },
+  {
+   "id": "P7",
+   "kelas": "Pasti",
+   "nama": "Forum Transisi dan AFJET di EBTKE ConEx",
+   "status": "Lanjutan",
+   "peran": "Fasilitator",
+   "mulai": 1,
+   "selesai": 7,
+   "ringkas": "Jadikan EBTKE ConEx wadah tetap Forum Transisi dan pertemuan proyek dengan pemodal.",
+   "tujuan": "Forum transisi berkeadilan dan akses pendanaan punya wadah tetap tanpa membuat acara baru.",
+   "kendala": "Forum Transisi Energi Berkeadilan dan Access to Finance ada di buku saku, tetapi belum punya wadah tetap.",
+   "kunci": "EBTKE ConEx sudah menjadi acara rutin METI. Menjadikannya wadah tetap jauh lebih murah daripada membuat acara baru.",
+   "kerja": [
+    "Satu sesi Forum Transisi per tahun",
+    "Satu sesi pertemuan proyek dan pemodal",
+    "Ringkasan keputusan diterbitkan"
+   ],
+   "tonggak": [
+    [
+     3,
+     "Sesi pertama di ConEx 2027"
+    ],
+    [
+     7,
+     "Sesi kedua di ConEx 2028"
+    ]
+   ],
+   "pemilik": "Bidang 4 Pendanaan, Investasi dan Hubungan Internasional, Bidang 6 ESG",
+   "mitra": "Panitia ConEx, bank, pemda, serikat pekerja",
+   "anggaran": 40,
+   "dana": "Anggaran ConEx",
+   "ukuran": "2 forum dan 2 ringkasan sampai 2028",
+   "syarat": "Mengikuti jadwal ConEx.",
+   "sumber": [
+    "Buku Saku METI 2026"
+   ],
+   "rencana": [
+    {
+     "kuartal": 1,
+     "kegiatan": [
+      "Bicarakan format sesi dengan panitia ConEx",
+      "Tetapkan tema Forum Transisi",
+      "Daftar calon pembicara"
+     ],
+     "luaran": "Format sesi dan tema"
+    },
+    {
+     "kuartal": 2,
+     "kegiatan": [
+      "Undang pembicara bank, pemda, dan serikat pekerja",
+      "Susun agenda sesi",
+      "Siapkan sesi proyek dan pemodal"
+     ],
+     "luaran": "Agenda sesi dan daftar pembicara"
+    },
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Jalankan sesi Forum Transisi di ConEx 2027",
+      "Jalankan satu sesi proyek dan pemodal",
+      "Catat keputusan"
+     ],
+     "luaran": "Sesi pertama terlaksana"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Terbitkan ringkasan keputusan",
+      "Tindak lanjuti dengan peserta",
+      "Evaluasi format"
+     ],
+     "luaran": "Ringkasan keputusan 2027"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Tetapkan tema dan format sesi 2028",
+      "Undang pembicara",
+      "Cek anggaran ConEx 2028"
+     ],
+     "luaran": "Agenda sesi 2028"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Susun agenda akhir",
+      "Siapkan bahan sesi",
+      "Konfirmasi pembicara"
+     ],
+     "luaran": "Bahan sesi dan daftar pembicara"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Jalankan sesi di ConEx 2028",
+      "Terbitkan ringkasan keputusan",
+      "Serahkan format ke penerus"
+     ],
+     "luaran": "Sesi kedua terlaksana dan ringkasan 2028"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Sesi Forum Transisi di ConEx",
+     "awal": "0 sesi",
+     "target": "2 sesi (ConEx 2027 dan 2028)",
+     "cara": "Program acara"
+    },
+    {
+     "indikator": "Ringkasan keputusan terbit",
+     "awal": "0",
+     "target": "2 ringkasan",
+     "cara": "Platform"
+    },
+    {
+     "indikator": "Sesi pertemuan proyek dan pemodal",
+     "awal": "0 sesi",
+     "target": "Minimal 1 sesi tiap ConEx",
+     "cara": "Program acara"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 4 Pendanaan, Investasi dan Hubungan Internasional",
+    "pelaksana": [
+     "Bidang 6 ESG",
+     "Panitia ConEx"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "Bank dan pemda",
+     "Serikat pekerja",
+     "Bidang 1 Organisasi dan Kerja Sama Antarlembaga"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Penyelenggaraan sesi",
+     "juta": 20
+    },
+    {
+     "pos": "Pembicara dan bahan",
+     "juta": 10
+    },
+    {
+     "pos": "Ringkasan keputusan",
+     "juta": 10
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Jadwal ConEx bergeser",
+     "tingkat": "Sedang",
+     "langkah": "Sesi ikut jadwal ConEx dan bahan disiapkan lebih awal"
+    },
+    {
+     "risiko": "Pembicara kunci berhalangan",
+     "tingkat": "Rendah",
+     "langkah": "Siapkan pembicara cadangan dari anggota"
+    },
+    {
+     "risiko": "Ringkasan tidak ditindaklanjuti",
+     "tingkat": "Sedang",
+     "langkah": "Tiap keputusan punya penanggung jawab dan tenggat"
+    }
+   ],
+   "tergantung": [],
+   "kriteriaSelesai": [
+    "Dua sesi terlaksana di ConEx",
+    "Dua ringkasan keputusan terbit",
+    "Format sesi tertulis untuk penerus"
+   ]
+  },
+  {
+   "id": "B1",
+   "kelas": "Bersyarat",
+   "nama": "Paket Kontrak Siap Bank",
+   "status": "Baru",
+   "peran": "Fasilitator",
+   "mulai": 2,
+   "selesai": 8,
+   "ringkas": "Templat kontrak PLTS kecil dan O&M yang sudah dikaji bank, dipakai lima transaksi.",
+   "tujuan": "Proyek kecil dan menengah lebih cepat lolos uji tuntas bank karena kontrak berstandar.",
+   "kendala": "DPR mencatat sekitar US$1,2 miliar proyek bersih siap dibiayai tertahan oleh kepastian PJBL.",
+   "kunci": "Templat yang dikaji bank mengurangi kerja uji tuntas proyek kecil dan menengah.",
+   "kerja": [
+    "Templat PJBL PLTS kecil",
+    "Templat O&M",
+    "Daftar periksa risiko bersama bank"
+   ],
+   "tonggak": [
+    [
+     6,
+     "Dua templat versi 1"
+    ],
+    [
+     8,
+     "Dipakai 5 transaksi"
+    ]
+   ],
+   "pemilik": "Bidang 4 Pendanaan, Investasi dan Hubungan Internasional",
+   "mitra": "Firma hukum, PT SMI, bank",
+   "anggaran": 200,
+   "dana": "Mitra, pro bono",
+   "ukuran": "2 templat, 5 transaksi",
+   "syarat": "Mulai bila ada firma hukum pro bono dan satu bank pengkaji.",
+   "sumber": [
+    "dpr_energi.json"
+   ],
+   "rencana": [
+    {
+     "kuartal": 2,
+     "kegiatan": [
+      "Cari firma hukum pro bono dan satu bank pengkaji",
+      "Kumpulkan contoh kontrak yang ada",
+      "Tetapkan ruang lingkup templat"
+     ],
+     "luaran": "Mitra hukum dan bank tercatat"
+    },
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Susun draf templat PJBL PLTS kecil",
+      "Susun draf templat O&M",
+      "Susun daftar periksa risiko"
+     ],
+     "luaran": "Draf dua templat"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Kaji draf bersama bank",
+      "Perbaiki isi",
+      "Telaah Dewan Pakar"
+     ],
+     "luaran": "Draf hasil kajian bank"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Uji pada satu proyek contoh",
+      "Perbaiki isi",
+      "Siapkan penerbitan"
+     ],
+     "luaran": "Catatan uji proyek contoh"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Terbitkan dua templat versi 1 di platform",
+      "Umumkan ke anggota",
+      "Cari proyek pemakai"
+     ],
+     "luaran": "Dua templat versi 1 terbit"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Dampingi negosiasi dan transaksi berjalan",
+      "Catat masukan pemakai",
+      "Perbaiki templat"
+     ],
+     "luaran": "Catatan transaksi dan templat 1.1"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Dampingi transaksi sampai 5",
+      "Tulis catatan pelajaran",
+      "Serahkan templat ke penerus"
+     ],
+     "luaran": "5 transaksi memakai templat"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Templat kontrak terbit",
+     "awal": "0 templat",
+     "target": "2 templat",
+     "cara": "Platform"
+    },
+    {
+     "indikator": "Transaksi memakai templat",
+     "awal": "0 transaksi",
+     "target": "5 transaksi",
+     "cara": "Konfirmasi pemakai"
+    },
+    {
+     "indikator": "Templat dikaji bank",
+     "awal": "0",
+     "target": "Minimal 1 bank",
+     "cara": "Surat kaji bank"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 4 Pendanaan, Investasi dan Hubungan Internasional",
+    "pelaksana": [
+     "Firma hukum pro bono",
+     "Bank pengkaji"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "Bidang 2 Advokasi dan Regulasi",
+     "PT SMI",
+     "Dewan Pakar"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Kajian dan penyuntingan hukum",
+     "juta": 80
+    },
+    {
+     "pos": "Lokakarya dengan bank",
+     "juta": 40
+    },
+    {
+     "pos": "Pendampingan transaksi",
+     "juta": 60
+    },
+    {
+     "pos": "Penerbitan dan sosialisasi",
+     "juta": 20
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Firma hukum atau bank tidak bersedia",
+     "tingkat": "Tinggi",
+     "langkah": "Program tidak dimulai sampai syarat terpenuhi"
+    },
+    {
+     "risiko": "Pemilik proyek tidak memakai templat",
+     "tingkat": "Sedang",
+     "langkah": "Tawarkan pendampingan gratis untuk transaksi awal"
+    },
+    {
+     "risiko": "PJBL oleh PLN tidak mau memakai templat",
+     "tingkat": "Sedang",
+     "langkah": "Fokus pada kontrak antara pengembang dan pembeli swasta"
+    }
+   ],
+   "tergantung": [
+    "P4"
+   ],
+   "kriteriaSelesai": [
+    "Dua templat versi 1 terbit dan dikaji bank",
+    "Lima transaksi memakai templat",
+    "Catatan pelajaran tersedia"
+   ]
+  },
+  {
+   "id": "B2",
+   "kelas": "Bersyarat",
+   "nama": "Daftar Kesiapan Proyek",
+   "status": "Diperkuat",
+   "peran": "Fasilitator",
+   "mulai": 3,
+   "selesai": 8,
+   "ringkas": "Daftar proyek dengan kesiapan terverifikasi panel independen, target 500 MW.",
+   "tujuan": "Pemodal menemukan proyek yang benar-benar dekat konstruksi.",
+   "kendala": "JETP baru tersalur sekitar 15% dari komitmen. Skor 146 proyek di platform masih hipotesis.",
+   "kunci": "Kesiapan yang diverifikasi membantu pemodal menemukan proyek yang benar-benar dekat konstruksi.",
+   "kerja": [
+    "Panel independen",
+    "Uji metode pada 20 proyek",
+    "Daftar untuk sesi AFJET"
+   ],
+   "tonggak": [
+    [
+     5,
+     "Metode teruji pada 20 proyek"
+    ],
+    [
+     8,
+     "Daftar 500 MW terverifikasi"
+    ]
+   ],
+   "pemilik": "Bidang 4 bersama Bidang 9",
+   "mitra": "ADB, PT SMI, Danantara",
+   "anggaran": 300,
+   "dana": "Mitra pembiayaan",
+   "ukuran": "500 MW terverifikasi pada 2028",
+   "syarat": "Mulai bila ada panel independen dan satu mitra pembiayaan.",
+   "sumber": [
+    "investasi.json",
+    "target_realisasi.json"
+   ],
+   "rencana": [
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Cari panel independen dan mitra pembiayaan",
+      "Tetapkan kriteria kesiapan",
+      "Rancang formulir bukti dan pilih 20 proyek uji"
+     ],
+     "luaran": "Panel, mitra, dan daftar 20 proyek"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Latih panel",
+      "Uji metode pada separuh proyek",
+      "Catat selisih skor dan penilaian panel"
+     ],
+     "luaran": "Hasil uji separuh proyek"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Selesaikan uji 20 proyek",
+      "Tulis laporan metode",
+      "Telaah Dewan Pakar"
+     ],
+     "luaran": "Metode teruji pada 20 proyek"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Verifikasi proyek tambahan",
+      "Beri umpan balik ke pemilik proyek",
+      "Siapkan format daftar"
+     ],
+     "luaran": "Daftar sementara proyek terverifikasi"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Lanjutkan verifikasi",
+      "Siapkan daftar untuk sesi AFJET",
+      "Perbarui metode"
+     ],
+     "luaran": "Daftar menjelang AFJET"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Verifikasi sampai 500 MW",
+      "Sajikan di AFJET ConEx 2028",
+      "Serahkan metode ke penerus"
+     ],
+     "luaran": "Daftar 500 MW terverifikasi"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Proyek diuji metodenya",
+     "awal": "146 proyek berskor hipotesis",
+     "target": "20 proyek teruji",
+     "cara": "Laporan uji"
+    },
+    {
+     "indikator": "Kapasitas terverifikasi",
+     "awal": "0 MW",
+     "target": "500 MW pada 2028",
+     "cara": "Daftar panel"
+    },
+    {
+     "indikator": "Panel independen aktif",
+     "awal": "0",
+     "target": "Minimal 3 anggota panel",
+     "cara": "Surat penunjukan"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 4 Pendanaan, Investasi dan Hubungan Internasional",
+    "pelaksana": [
+     "Bidang 9 RE Digitalization dan AI",
+     "Panel independen"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "ADB",
+     "PT SMI",
+     "Danantara",
+     "Dewan Pakar"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Honor panel independen",
+     "juta": 120
+    },
+    {
+     "pos": "Uji metode 20 proyek",
+     "juta": 80
+    },
+    {
+     "pos": "Verifikasi lapangan sampai 500 MW",
+     "juta": 70
+    },
+    {
+     "pos": "Penerbitan daftar",
+     "juta": 30
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Pemilik proyek enggan membuka data",
+     "tingkat": "Sedang",
+     "langkah": "Perjanjian kerahasiaan dan tampilkan hanya ringkasan"
+    },
+    {
+     "risiko": "Mitra pembiayaan tidak ada",
+     "tingkat": "Tinggi",
+     "langkah": "Program tidak dimulai sampai satu mitra bersedia"
+    },
+    {
+     "risiko": "Skor dinilai tidak adil",
+     "tingkat": "Sedang",
+     "langkah": "Metode terbuka dan ada jalur keberatan"
+    }
+   ],
+   "tergantung": [
+    "P1"
+   ],
+   "kriteriaSelesai": [
+    "Metode teruji pada 20 proyek dan dilaporkan",
+    "Daftar 500 MW terverifikasi terbit",
+    "Panel independen menandatangani hasil"
+   ]
+  },
+  {
+   "id": "B3",
+   "kelas": "Bersyarat",
+   "nama": "Panduan Koperasi Operator",
+   "status": "Baru",
+   "peran": "Fasilitator",
+   "mulai": 2,
+   "selesai": 8,
+   "ringkas": "Model anggaran dasar, kontrak, dan SOP operator, diuji pada lima koperasi.",
+   "tujuan": "Koperasi desa punya panduan sederhana untuk mengoperasikan PLTS agar tidak mangkrak.",
+   "kendala": "Dirjen EBTKE menyoroti siapa yang akan mengoperasikan PLTS di daerah terpencil. Aset hibah pemda hanya bertahan sekitar 5 dari 15 sampai 20 tahun.",
+   "kunci": "Panduan operator yang sederhana bisa langsung dipakai bila program PLTS desa berjalan.",
+   "kerja": [
+    "Model anggaran dasar dan kontrak",
+    "SOP operator",
+    "Uji pada 5 koperasi"
+   ],
+   "tonggak": [
+    [
+     4,
+     "Panduan versi 1"
+    ],
+    [
+     8,
+     "5 koperasi percontohan"
+    ]
+   ],
+   "pemilik": "Bidang 5 Pengembangan UMKM dan Koperasi",
+   "mitra": "Kemenkop, Satgas Transisi Energi",
+   "anggaran": 300,
+   "dana": "Kontrak program, hibah",
+   "ukuran": "1 panduan, 5 koperasi",
+   "syarat": "Mulai bila ada mandat atau pendanaan dari pelaksana PLTS 100 GW.",
+   "sumber": [
+    "kebijakan_info.json",
+    "https://lestari.kompas.com/read/2025/09/03/081400186/proyek-plts-untuk-koperasi-merah-putih-iesr-ingatkan-risiko-mangkrak"
+   ],
+   "rencana": [
+    {
+     "kuartal": 2,
+     "kegiatan": [
+      "Cari mandat atau pendanaan dari pelaksana PLTS 100 GW",
+      "Kumpulkan contoh koperasi yang ada",
+      "Tetapkan ruang lingkup"
+     ],
+     "luaran": "Mandat atau pendanaan tercatat"
+    },
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Susun model anggaran dasar dan kontrak",
+      "Susun draf SOP operator",
+      "Konsultasi dengan Kemenkop"
+     ],
+     "luaran": "Draf model anggaran dasar dan SOP"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Uji draf di dua koperasi",
+      "Perbaiki",
+      "Terbitkan panduan versi 1 di platform"
+     ],
+     "luaran": "Panduan versi 1"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Pilih lima koperasi percontohan",
+      "Latih pengurus koperasi",
+      "Mulai pendampingan"
+     ],
+     "luaran": "Lima koperasi terpilih dan pelatihan"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Dampingi operasi lima koperasi",
+      "Pantau keuangan dan perawatan",
+      "Perbaiki panduan"
+     ],
+     "luaran": "Laporan pendampingan pertama"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Lanjutkan pendampingan",
+      "Pantau keuangan dan perawatan",
+      "Telaah Dewan Pakar"
+     ],
+     "luaran": "Laporan pendampingan kedua"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Selesaikan pendampingan",
+      "Tulis catatan pelajaran",
+      "Serahkan panduan ke penerus"
+     ],
+     "luaran": "5 koperasi percontohan dan panduan versi akhir"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Panduan operator terbit",
+     "awal": "0",
+     "target": "1 panduan",
+     "cara": "Platform"
+    },
+    {
+     "indikator": "Koperasi percontohan",
+     "awal": "0",
+     "target": "5 koperasi",
+     "cara": "Perjanjian pendampingan"
+    },
+    {
+     "indikator": "Koperasi yang masih beroperasi pada akhir pendampingan",
+     "awal": "Ditetapkan K3 2027",
+     "target": "Minimal 4 dari 5",
+     "cara": "Laporan pendampingan"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 5 Pengembangan UMKM dan Koperasi",
+    "pelaksana": [
+     "Koordinator METI Wilayah",
+     "Konsultan koperasi"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "Kemenkop",
+     "Satgas Transisi Energi",
+     "Bidang 2 Advokasi dan Regulasi"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Penyusunan panduan",
+     "juta": 60
+    },
+    {
+     "pos": "Pelatihan koperasi",
+     "juta": 80
+    },
+    {
+     "pos": "Pendampingan lima koperasi",
+     "juta": 130
+    },
+    {
+     "pos": "Penerbitan",
+     "juta": 30
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Tidak ada mandat atau pendanaan",
+     "tingkat": "Tinggi",
+     "langkah": "Program tidak dimulai sampai syarat terpenuhi"
+    },
+    {
+     "risiko": "Koperasi kekurangan tenaga teknis",
+     "tingkat": "Sedang",
+     "langkah": "Latih operator dan hubungkan dengan politeknik"
+    },
+    {
+     "risiko": "Aset PLTS rusak sebelum waktunya",
+     "tingkat": "Sedang",
+     "langkah": "Dana perawatan masuk dalam model kontrak"
+    }
+   ],
+   "tergantung": [],
+   "kriteriaSelesai": [
+    "Panduan versi 1 terbit",
+    "Lima koperasi percontohan didampingi",
+    "Laporan pendampingan diterbitkan"
+   ]
+  },
+  {
+   "id": "B4",
+   "kelas": "Bersyarat",
+   "nama": "Sertifikasi lewat LSP Mitra",
+   "status": "Baru",
+   "peran": "Fasilitator",
+   "mulai": 3,
+   "selesai": 8,
+   "ringkas": "Skema sertifikasi bersama LSP yang sudah ada, target 300 tenaga bersertifikat.",
+   "tujuan": "Lebih banyak teknisi dan pemasang punya sertifikat tanpa METI mendirikan lembaga baru.",
+   "kendala": "Jumlah teknisi PLTS bersertifikat nasional tidak ditemukan, padahal sudah ada 34 LSP terkait EBT.",
+   "kunci": "Bekerja sama dengan LSP yang ada lebih cepat dan murah daripada METI mendirikan lembaga baru.",
+   "kerja": [
+    "MoU dengan LSP",
+    "Daftar publik pemasang",
+    "Pelatihan bersama politeknik"
+   ],
+   "tonggak": [
+    [
+     5,
+     "Skema bersama LSP"
+    ],
+    [
+     8,
+     "300 tenaga bersertifikat"
+    ]
+   ],
+   "pemilik": "Bidang 3 Pengembangan SDM dan Sertifikasi",
+   "mitra": "BNSP, LSP, politeknik",
+   "anggaran": 250,
+   "dana": "Biaya uji peserta",
+   "ukuran": "300 orang pada 2028",
+   "syarat": "Mulai bila ada MoU dengan minimal satu LSP.",
+   "sumber": [
+    "prodi_pelatihan.json"
+   ],
+   "rencana": [
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Cari LSP yang mau bekerja sama",
+      "Tanda tangani MoU",
+      "Tetapkan skema yang dipakai"
+     ],
+     "luaran": "MoU dengan minimal satu LSP"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Susun skema pelatihan dan uji bersama LSP",
+      "Hubungi politeknik",
+      "Tetapkan biaya uji"
+     ],
+     "luaran": "Draf skema bersama"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Sahkan skema bersama LSP",
+      "Siapkan daftar publik pemasang",
+      "Jadwalkan pelatihan pertama"
+     ],
+     "luaran": "Skema bersama LSP"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Jalankan pelatihan dan uji gelombang pertama",
+      "Catat jumlah peserta",
+      "Perbaiki skema"
+     ],
+     "luaran": "Laporan gelombang pertama"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Jalankan gelombang kedua dan ketiga",
+      "Perbarui daftar publik pemasang",
+      "Cari peserta dari anggota"
+     ],
+     "luaran": "Laporan gelombang lanjutan dan daftar pemasang"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Capai 300 tenaga bersertifikat",
+      "Evaluasi",
+      "Serahkan skema ke penerus"
+     ],
+     "luaran": "300 tenaga bersertifikat"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "MoU dengan LSP",
+     "awal": "34 LSP terkait EBT ada, belum bermitra",
+     "target": "Minimal 1 MoU",
+     "cara": "Dokumen MoU"
+    },
+    {
+     "indikator": "Tenaga bersertifikat lewat skema",
+     "awal": "0",
+     "target": "300 orang pada 2028",
+     "cara": "Daftar LSP"
+    },
+    {
+     "indikator": "Pemasang dalam daftar publik",
+     "awal": "0",
+     "target": "Ditetapkan K4 2027",
+     "cara": "Platform"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 3 Pengembangan SDM dan Sertifikasi",
+    "pelaksana": [
+     "LSP mitra",
+     "Politeknik"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "BNSP",
+     "METI Energi Muda",
+     "Bidang 5 Pengembangan UMKM dan Koperasi"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Penyusunan skema dan MoU",
+     "juta": 40
+    },
+    {
+     "pos": "Pelatihan bersama politeknik",
+     "juta": 120
+    },
+    {
+     "pos": "Daftar publik pemasang",
+     "juta": 40
+    },
+    {
+     "pos": "Koordinasi dan penjaminan mutu",
+     "juta": 50
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "LSP tidak mau bermitra",
+     "tingkat": "Tinggi",
+     "langkah": "Program tidak dimulai sampai ada MoU"
+    },
+    {
+     "risiko": "Peserta tidak mampu membayar biaya uji",
+     "tingkat": "Sedang",
+     "langkah": "Cari sponsor dan subsidi dari anggota perusahaan"
+    },
+    {
+     "risiko": "Mutu pelatihan tidak seragam",
+     "tingkat": "Sedang",
+     "langkah": "Standar pelatih dan pemeriksaan sampel oleh LSP"
+    }
+   ],
+   "tergantung": [
+    "P6"
+   ],
+   "kriteriaSelesai": [
+    "Skema bersama LSP disahkan",
+    "300 tenaga bersertifikat tercatat",
+    "Daftar publik pemasang tayang"
+   ]
+  },
+  {
+   "id": "B5",
+   "kelas": "Bersyarat",
+   "nama": "Desa Mandiri Energi Percontohan",
+   "status": "Lanjutan",
+   "peran": "Fasilitator",
+   "mulai": 3,
+   "selesai": 8,
+   "ringkas": "Dua desa percontohan dengan operator yang ditetapkan sebelum pembangunan.",
+   "tujuan": "Ada bukti dua desa yang listriknya menyala dan terawat sebelum menambah ke sepuluh desa.",
+   "kendala": "10.068 lokasi belum berlistrik pada Juli 2026. Target 10 desa pada 2028 di buku saku belum punya dana dan operator.",
+   "kunci": "Dua desa yang berfungsi baik lebih berharga daripada sepuluh desa yang mangkrak, dan menjadi bukti untuk mencari dana lebih besar.",
+   "kerja": [
+    "Pilih 2 desa bersama METI Wilayah",
+    "Tetapkan operator sebelum dibangun",
+    "Ukur ketersediaan listrik bulanan"
+   ],
+   "tonggak": [
+    [
+     6,
+     "2 desa beroperasi"
+    ],
+    [
+     8,
+     "Laporan kinerja, keputusan menambah menuju 10 desa"
+    ]
+   ],
+   "pemilik": "Bidang 5 Pengembangan UMKM dan Koperasi, METI Wilayah",
+   "mitra": "Kemendes, BPDLH, CSR",
+   "anggaran": 1500,
+   "dana": "Hibah, CSR",
+   "ukuran": "2 desa dengan ketersediaan minimal 95%",
+   "syarat": "Mulai bila hibah penuh tersedia dan operator desa sudah ditunjuk.",
+   "sumber": [
+    "akses_energi.json",
+    "Buku Saku METI 2026"
+   ],
+   "rencana": [
+    {
+     "kuartal": 3,
+     "kegiatan": [
+      "Cari hibah penuh dan calon operator desa",
+      "Pilih 2 desa bersama METI Wilayah",
+      "Tetapkan operator tiap desa"
+     ],
+     "luaran": "Hibah, dua desa, dan operator ditetapkan"
+    },
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Mulai pembangunan dua desa",
+      "Latih operator",
+      "Pasang alat ukur ketersediaan"
+     ],
+     "luaran": "Pembangunan berjalan"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Selesaikan pembangunan",
+      "Uji coba sistem",
+      "Dampingi operator"
+     ],
+     "luaran": "Uji coba selesai"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Nyalakan kedua desa",
+      "Ukur ketersediaan bulanan",
+      "Catat gangguan"
+     ],
+     "luaran": "2 desa beroperasi"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Ukur ketersediaan bulanan",
+      "Dampingi operator",
+      "Kumpulkan data biaya perawatan"
+     ],
+     "luaran": "Data ketersediaan dan biaya"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Tulis laporan kinerja",
+      "Putuskan menambah menuju 10 desa",
+      "Serahkan ke penerus"
+     ],
+     "luaran": "Laporan kinerja dan keputusan penambahan"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Desa percontohan beroperasi",
+     "awal": "0 desa",
+     "target": "2 desa",
+     "cara": "Berita acara operasi"
+    },
+    {
+     "indikator": "Ketersediaan listrik bulanan",
+     "awal": "Ditetapkan saat desa beroperasi",
+     "target": "Minimal 95%",
+     "cara": "Alat ukur dan laporan operator"
+    },
+    {
+     "indikator": "Operator desa ditunjuk sebelum pembangunan",
+     "awal": "0",
+     "target": "2 operator",
+     "cara": "Surat penunjukan"
+    }
+   ],
+   "raci": {
+    "pemilik": "Bidang 5 Pengembangan UMKM dan Koperasi",
+    "pelaksana": [
+     "Koordinator METI Wilayah",
+     "Operator desa"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "Kemendes",
+     "BPDLH",
+     "Mitra CSR",
+     "Bidang 6 ESG"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Pembangunan dua sistem desa",
+     "juta": 1100
+    },
+    {
+     "pos": "Pelatihan dan penempatan operator",
+     "juta": 150
+    },
+    {
+     "pos": "Pengukuran dan pendampingan",
+     "juta": 150
+    },
+    {
+     "pos": "Laporan kinerja",
+     "juta": 100
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Hibah penuh tidak tersedia",
+     "tingkat": "Tinggi",
+     "langkah": "Program tidak dimulai sampai syarat terpenuhi"
+    },
+    {
+     "risiko": "Operator desa berhenti",
+     "tingkat": "Tinggi",
+     "langkah": "Dua orang operator per desa dan dana perawatan dari awal"
+    },
+    {
+     "risiko": "Pembangunan terlambat karena cuaca atau logistik",
+     "tingkat": "Sedang",
+     "langkah": "Jadwal memberi ruang satu kuartal cadangan"
+    }
+   ],
+   "tergantung": [
+    "P5",
+    "B3"
+   ],
+   "kriteriaSelesai": [
+    "2 desa beroperasi dengan ketersediaan minimal 95%",
+    "Laporan kinerja terbit",
+    "Keputusan menambah desa tercatat di rapat pengurus"
+   ]
+  },
+  {
+   "id": "B6",
+   "kelas": "Bersyarat",
+   "nama": "Panduan Nasional Start-up ET",
+   "status": "Lanjutan",
+   "peran": "Fasilitator",
+   "mulai": 4,
+   "selesai": 8,
+   "ringkas": "Panduan nasional start-up transisi energi dan daftar 10 lokasi uji dari anggota.",
+   "tujuan": "Start-up transisi energi punya panduan dan tempat uji nyata milik anggota.",
+   "kendala": "Buku saku menargetkan panduan pada 2028. Start-up kesulitan mendapat lokasi uji.",
+   "kunci": "Panduan dan daftar lokasi uji dari anggota murah dibuat dan bisa dijalankan bersama akselerator yang ada.",
+   "kerja": [
+    "Susun panduan",
+    "Daftar 10 lokasi uji anggota"
+   ],
+   "tonggak": [
+    [
+     8,
+     "Panduan terbit, 10 lokasi uji"
+    ]
+   ],
+   "pemilik": "METI Energi Muda, Bidang 9",
+   "mitra": "New Energy Nexus, kampus",
+   "anggaran": 80,
+   "dana": "Sponsor",
+   "ukuran": "1 panduan, 10 lokasi uji",
+   "syarat": "Mulai bila ada satu mitra akselerator.",
+   "sumber": [
+    "https://newenergynexus.com/indonesia"
+   ],
+   "rencana": [
+    {
+     "kuartal": 4,
+     "kegiatan": [
+      "Cari satu mitra akselerator",
+      "Tetapkan isi panduan",
+      "Kumpulkan masukan start-up"
+     ],
+     "luaran": "Mitra dan kerangka panduan"
+    },
+    {
+     "kuartal": 5,
+     "kegiatan": [
+      "Tulis draf panduan",
+      "Hubungi anggota yang punya lokasi uji",
+      "Telaah METI Energi Muda"
+     ],
+     "luaran": "Draf panduan dan daftar calon lokasi"
+    },
+    {
+     "kuartal": 6,
+     "kegiatan": [
+      "Daftarkan 10 lokasi uji dengan syarat jelas",
+      "Uji panduan pada beberapa start-up",
+      "Perbaiki panduan"
+     ],
+     "luaran": "Daftar 10 lokasi uji dan panduan hasil uji"
+    },
+    {
+     "kuartal": 7,
+     "kegiatan": [
+      "Selesaikan panduan",
+      "Telaah Dewan Pakar",
+      "Siapkan peluncuran"
+     ],
+     "luaran": "Panduan final"
+    },
+    {
+     "kuartal": 8,
+     "kegiatan": [
+      "Terbitkan panduan dan daftar lokasi uji",
+      "Umumkan bersama mitra akselerator",
+      "Serahkan ke penerus"
+     ],
+     "luaran": "Panduan terbit dan 10 lokasi uji"
+    }
+   ],
+   "kpi": [
+    {
+     "indikator": "Panduan terbit",
+     "awal": "0",
+     "target": "1 panduan pada K4 2028",
+     "cara": "Platform"
+    },
+    {
+     "indikator": "Lokasi uji terdaftar",
+     "awal": "0",
+     "target": "10 lokasi",
+     "cara": "Daftar lokasi"
+    },
+    {
+     "indikator": "Start-up memakai panduan",
+     "awal": "Ditetapkan K2 2028",
+     "target": "Minimal 5 start-up",
+     "cara": "Konfirmasi start-up"
+    }
+   ],
+   "raci": {
+    "pemilik": "METI Energi Muda",
+    "pelaksana": [
+     "Bidang 9 RE Digitalization dan AI",
+     "Mitra akselerator"
+    ],
+    "penyetuju": "Ketua Umum",
+    "dikonsultasi": [
+     "New Energy Nexus",
+     "Kampus",
+     "Dewan Pakar"
+    ]
+   },
+   "anggaranRinci": [
+    {
+     "pos": "Penyusunan panduan",
+     "juta": 30
+    },
+    {
+     "pos": "Pendaftaran lokasi uji",
+     "juta": 20
+    },
+    {
+     "pos": "Penerbitan dan peluncuran",
+     "juta": 30
+    }
+   ],
+   "risiko": [
+    {
+     "risiko": "Anggota enggan membuka lokasi uji",
+     "tingkat": "Sedang",
+     "langkah": "Syarat dan batas risiko dituliskan; mulai dari anggota yang bersedia"
+    },
+    {
+     "risiko": "Mitra akselerator tidak ada",
+     "tingkat": "Tinggi",
+     "langkah": "Program tidak dimulai sampai satu mitra bersedia"
+    },
+    {
+     "risiko": "Panduan cepat usang",
+     "tingkat": "Rendah",
+     "langkah": "Cantumkan tanggal dan jadwal tinjau tahunan"
+    }
+   ],
+   "tergantung": [
+    "P6"
+   ],
+   "kriteriaSelesai": [
+    "Panduan terbit",
+    "10 lokasi uji terdaftar",
+    "Satu mitra akselerator tercatat"
+   ]
+  }
+ ],
+ "ARAH": [
+  {
+   "id": "A1",
+   "bidang": "Nasional",
+   "nama": "100 GW energi terbarukan pada 2036",
+   "syarat": "Ambisi buku saku yang dipantau lewat Rapor. Bukan janji hasil METI semata."
+  },
+  {
+   "id": "A2",
+   "bidang": "Nasional",
+   "nama": "Bauran EBT 19-23% pada 2030 dan 36-40% pada 2040",
+   "syarat": "Selaras PP 40/2025, menggantikan target 100% pada 2035."
+  },
+  {
+   "id": "A3",
+   "bidang": "Nasional",
+   "nama": "Net zero sebelum 2050",
+   "syarat": "Visi Presiden di KTT G20, 19 November 2024. PP 40/2025 masih mencantumkan 2060."
+  },
+  {
+   "id": "A4",
+   "bidang": "Desa",
+   "nama": "1.000 Desa Mandiri Energi",
+   "syarat": "Dibuka bila percontohan B5 berhasil."
+  },
+  {
+   "id": "A5",
+   "bidang": "Desa",
+   "nama": "Pulau Bebas Diesel",
+   "syarat": "Dibuka bila ada kemitraan PLN."
+  },
+  {
+   "id": "A6",
+   "bidang": "Desa",
+   "nama": "Mikrogrid Tangguh Bencana",
+   "syarat": "Dibuka bila ada mitra kebencanaan."
+  },
+  {
+   "id": "A7",
+   "bidang": "Industri",
+   "nama": "100 Start-up ET",
+   "syarat": "Dibuka sesudah panduan B6 terbit."
+  },
+  {
+   "id": "A8",
+   "bidang": "Industri",
+   "nama": "Solar Nusantara Mandiri",
+   "syarat": "Dibuka bila angka kapasitas pabrik sudah tunggal."
+  },
+  {
+   "id": "A9",
+   "bidang": "Industri",
+   "nama": "Alih Pasar Surya dan Daftar Komponen Merah",
+   "syarat": "Mulai dari data di Rapor P1."
+  },
+  {
+   "id": "A10",
+   "bidang": "Pasar",
+   "nama": "Klub Pembeli Hijau dan Captive Hijau",
+   "syarat": "Dibuka bila ada minimal 10 pembeli."
+  },
+  {
+   "id": "A11",
+   "bidang": "Pasar",
+   "nama": "Kalender Lelang dan Skema Jaringan",
+   "syarat": "Tergantung terbitnya UU EBET."
+  },
+  {
+   "id": "A12",
+   "bidang": "Pasar",
+   "nama": "Bank Hijau dan Dana Persiapan Proyek",
+   "syarat": "Dibuka sesudah B2 terbukti."
+  },
+  {
+   "id": "A13",
+   "bidang": "Organisasi",
+   "nama": "METI Wilayah 38 Provinsi",
+   "syarat": "Dibuka bertahap sesudah 8 wilayah aktif."
+  },
+  {
+   "id": "A14",
+   "bidang": "Organisasi",
+   "nama": "Piagam Proyek Baik dan Jejaring ASEAN",
+   "syarat": "Kepengurusan berikutnya."
+  }
+ ],
+ "NASIONAL": {
+  "kap2026": 16.63,
+  "tahun": [
+   2026,
+   2028,
+   2030,
+   2032,
+   2034,
+   2036
+  ],
+  "historis": [
+   16.6,
+   17.8,
+   19,
+   20.2,
+   21.4,
+   22.6
+  ],
+  "ruptl": [
+   16.6,
+   25.1,
+   33.7,
+   42.2,
+   50.7,
+   59.2
+  ],
+  "ambisi": [
+   16.6,
+   19.6,
+   28.1,
+   44.1,
+   68.1,
+   100.1
+  ]
+ },
+ "MACET": [
+  [
+   "0,59",
+   "GW per tahun",
+   "Laju historis, RUPTL butuh 4,26 GW"
+  ],
+  [
+   "15,75%",
+   "bauran 2025",
+   "Target RUEN 23% meleset"
+  ],
+  [
+   "26%",
+   "RUPTL bernama",
+   "Dari 42.569 MW EBT"
+  ],
+  [
+   "37%",
+   "target transmisi 2025",
+   "Realisasi tambahan jaringan"
+  ],
+  [
+   "19,6 GW",
+   "PLTU captive",
+   "Captive EBT baru 305 MW"
+  ],
+  [
+   "15%",
+   "dana JETP tersalur",
+   "Pensiun dini 0 dari 28 kandidat"
+  ]
+ ],
+ "KUTIPAN": {
+  "teks": "mengambil langkah-langkah besar guna mengurangi suhu permukaan bumi",
+  "oleh": "Presiden Prabowo Subianto",
+  "konteks": "KTT G20 Brasil, 19 November 2024, dikutip dari Buku Saku METI 2026. Visi yang disampaikan: net zero sebelum 2050."
+ },
+ "anggaran": {
+  "pasti": 600,
+  "bersyarat": 2630,
+  "iuranMaks": 281
+ },
+ "tataKelola": [
+  {
+   "ritme": "Bulanan",
+   "kegiatan": "Rapat kendali 30 menit: status tonggak, hambatan, keputusan yang perlu diambil",
+   "siapa": "Strategic Delivery Unit, pemilik program, Sekretariat",
+   "keluaran": "Catatan rapat dan papan kendali yang diperbarui"
+  },
+  {
+   "ritme": "Kuartalan",
+   "kegiatan": "Tinjau kuartal: tonggak, anggaran terpakai, risiko, dan cek syarat mulai program bersyarat",
+   "siapa": "Ketua Umum, Sekretaris Jenderal, Bendahara Umum, Strategic Delivery Unit",
+   "keluaran": "Laporan kuartal dan keputusan mulai atau tunda program bersyarat"
+  },
+  {
+   "ritme": "Semester",
+   "kegiatan": "Laporan ke Dewan Pengawas, penilaian ulang angka kondisi, dan penyesuaian rencana",
+   "siapa": "Ketua Umum, Dewan Pengawas, Strategic Delivery Unit",
+   "keluaran": "Laporan semester dan revisi roadmap bila perlu"
+  },
+  {
+   "ritme": "Tahunan di ConEx",
+   "kegiatan": "Paparkan kemajuan roadmap kepada anggota di EBTKE ConEx, termasuk sesi Forum Transisi dan AFJET",
+   "siapa": "Ketua Umum, Direktur Eksekutif, Bidang 4 Pendanaan, Investasi dan Hubungan Internasional",
+   "keluaran": "Paparan tahunan dan ringkasan keputusan"
+  },
+  {
+   "ritme": "Serah terima",
+   "kegiatan": "Susun berkas serah terima: status program, arsip data, perjanjian mitra, dan pelajaran",
+   "siapa": "Strategic Delivery Unit, Sekretaris Jenderal",
+   "keluaran": "Berkas serah terima kepengurusan yang diterima pengurus berikutnya pada K4 2028"
+  }
+ ],
+ "seratusHari": [
+  {
+   "rentang": "Hari 1 sampai 25",
+   "fokus": "Menetapkan pemegang dan papan",
+   "langkah": [
+    "Tunjuk pemegang roadmap di Strategic Delivery Unit",
+    "Pasang papan kendali di platform",
+    "Jadwalkan rapat bulanan pertama",
+    "Minta pemilik program memastikan tonggak K4 2026"
+   ],
+   "pemilik": "Strategic Delivery Unit"
+  },
+  {
+   "rentang": "Hari 26 sampai 50",
+   "fokus": "Menyatukan angka dan data anggota",
+   "langkah": [
+    "Kumpulkan empat sumber angka anggota (P2)",
+    "Daftar angka energi yang bentrok (P1)",
+    "Inventarisasi 24 pernyataan posisi (P4)",
+    "Susun draf kriteria wilayah aktif (P5)"
+   ],
+   "pemilik": "Bidang 1 Organisasi dan Kerja Sama Antarlembaga dan Bidang 9 RE Digitalization dan AI"
+  },
+  {
+   "rentang": "Hari 51 sampai 75",
+   "fokus": "Menyiapkan anggaran dan mitra",
+   "langkah": [
+    "Susun rencana anggaran 2027 bersama Bendahara",
+    "Buka pembicaraan dengan panitia ConEx (P7)",
+    "Tinjau modul Akademi yang ada (P6)",
+    "Cari mitra untuk program bersyarat, tanpa memulai programnya"
+   ],
+   "pemilik": "Bendahara Umum"
+  },
+  {
+   "rentang": "Hari 76 sampai 100",
+   "fokus": "Mengesahkan rencana dan melapor",
+   "langkah": [
+    "Sahkan anggaran 2027 di rapat pengurus",
+    "Tetapkan tanggal terbit Rapor (P1)",
+    "Laporkan kemajuan 100 hari kepada Dewan Pengawas",
+    "Umumkan roadmap berstatus Ajuan untuk suka dan komentar"
+   ],
+   "pemilik": "Ketua Umum"
+  }
+ ],
+ "risikoUmum": [
+  {
+   "risiko": "Relawan pengurus kewalahan karena banyak program",
+   "tingkat": "Tinggi",
+   "langkah": "Hanya tujuh program pasti yang berjalan; program bersyarat tidak dimulai sebelum syaratnya terpenuhi"
+  },
+  {
+   "risiko": "Dana bersyarat tidak datang",
+   "tingkat": "Tinggi",
+   "langkah": "Program bersyarat ditunda tanpa mengganggu program pasti"
+  },
+  {
+   "risiko": "Angka resmi pemerintah berubah atau terlambat terbit",
+   "tingkat": "Sedang",
+   "langkah": "Tampilkan tanggal ambil data dan versi sumber di tiap angka"
+  },
+  {
+   "risiko": "Pengurus berganti dan program berhenti",
+   "tingkat": "Sedang",
+   "langkah": "Berkas serah terima dan papan kendali di platform"
+  },
+  {
+   "risiko": "Kebijakan nasional berubah, misalnya RUU EBET atau Perpres 112/2022",
+   "tingkat": "Sedang",
+   "langkah": "Hasil kebijakan tidak dijanjikan; Buku Putih dan pelacak mudah diperbarui"
+  },
+  {
+   "risiko": "Data pribadi anggota bocor",
+   "tingkat": "Tinggi",
+   "langkah": "Persetujuan tertulis sesuai UU 27/2022, data di balik login, tanpa data pribadi di repo publik"
+  },
+  {
+   "risiko": "Jumlah dan definisi angka berbeda antar publikasi",
+   "tingkat": "Sedang",
+   "langkah": "Satu angka resmi dari P2 dan P1, dipakai semua publikasi"
+  }
+ ],
+ "keputusan": [
+  "Kepengurusan memakai SK 2026-2028 dengan Ketua Umum Norman Ginting.",
+  "Target 100 GW pada 2036 dipertahankan sebagai ambisi nasional yang dipantau lewat Rapor, bukan janji hasil METI semata.",
+  "Target 100% pada 2035 diganti agar sesuai PP 40/2025: bauran 19-23% pada 2030 dan 36-40% pada 2040.",
+  "Visi Presiden net zero sebelum 2050 dipakai; PP 40/2025 masih mencantumkan 2060 dan perbedaan ini dicatat.",
+  "Anggaran disertakan di roadmap, dipisah antara program pasti dan bersyarat.",
+  "Roadmap tampil berstatus Ajuan dan terbuka untuk suka serta komentar."
+ ]
+}

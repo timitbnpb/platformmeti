@@ -2786,3 +2786,71 @@ export async function keyakinanAgregat(env, akun) {
     return indeksKeyakinan(rs.map((r) => ({ periode: r.periode, n: r.n, rata: Object.fromEntries(BUTIR_KEYAKINAN.map((k) => [k, r["k_" + k]])) })));
   });
 }
+
+/* ========================= Roadmap: suka + komentar per program (migrasi 0035) ========================= */
+// Sel matriks yang ada: tulis = `konsultasi`, moderasi = `konsultasi_putus`. Hasil null = migrasi belum diterapkan.
+const sahProgram = (v) => { const s = String(v ?? ""); if (!/^(UMUM|[PBA]\d{1,2})$/.test(s)) throw salah("program tidak sah"); return s; };
+
+export async function roadmapRingkas(env, akun) {
+  gKons(akun);
+  return tanpaTabel(async () => {
+    const [s, k, m] = await env.DB.batch([
+      env.DB.prepare("SELECT program, count(*) AS n FROM roadmap_suka GROUP BY program"),
+      env.DB.prepare("SELECT program, count(*) AS n FROM roadmap_komentar WHERE status = 'tayang' GROUP BY program"),
+      env.DB.prepare("SELECT program FROM roadmap_suka WHERE akun_id = ?").bind(akun.id),
+    ]);
+    const peta = (r) => Object.fromEntries(r.results.map((x) => [x.program, x.n]));
+    return { suka: peta(s), komentar: peta(k), saya: m.results.map((x) => x.program) };
+  });
+}
+
+export async function roadmapKomentarDaftar(env, akun, program) {
+  gKons(akun);
+  const p = sahProgram(program), staf = kBoleh(akun, "ubah", "konsultasi_putus");
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT c.id, c.akun_id, a.nama, c.isi, c.dibuat_pada FROM roadmap_komentar c LEFT JOIN akun a ON a.id = c.akun_id WHERE c.program = ? AND c.status = 'tayang' ORDER BY c.id DESC LIMIT 200").bind(p).all();
+    return { staf, baris: r.results.map((x) => ({ id: x.id, nama: x.nama || "Anggota", isi: x.isi, dibuat_pada: x.dibuat_pada, milik: x.akun_id === akun.id })) };
+  });
+}
+
+export async function roadmapSuka(env, akun, program) {
+  gKons(akun);
+  const p = sahProgram(program);
+  return tanpaTabel(async () => {
+    await lajuKons(env, akun, BATAS_DUKUNG_JAM);
+    const ada = await env.DB.prepare("SELECT 1 AS x FROM roadmap_suka WHERE program = ? AND akun_id = ?").bind(p, akun.id).first();
+    await env.DB.batch([
+      ada ? env.DB.prepare("DELETE FROM roadmap_suka WHERE program = ? AND akun_id = ?").bind(p, akun.id)
+          : env.DB.prepare("INSERT INTO roadmap_suka (program, akun_id) VALUES (?, ?) ON CONFLICT DO NOTHING").bind(p, akun.id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, ?, 'roadmap_suka', ?, ?)").bind(akun.id, akun.peran, ada ? "hapus" : "tambah", p, JSON.stringify({ ringkas: ada ? "cabut suka" : "suka" })),
+    ]);
+    const n = (await env.DB.prepare("SELECT count(*) AS n FROM roadmap_suka WHERE program = ?").bind(p).first()).n;
+    return { suka: !ada, jumlah: n };
+  });
+}
+
+export async function roadmapKomentarBaru(env, akun, program, isi) {
+  gKons(akun);
+  const p = sahProgram(program), t = ts(isi, 1000);
+  return tanpaTabel(async () => {
+    await lajuKons(env, akun);
+    const [r] = await env.DB.batch([
+      env.DB.prepare("INSERT INTO roadmap_komentar (program, akun_id, isi, status) VALUES (?, ?, ?, 'tayang')").bind(p, akun.id, t),
+      jejKons(env, akun, "tambah", "roadmap_komentar", null, "komentar roadmap " + p),
+    ]);
+    return { id: r.meta.last_row_id };
+  });
+}
+
+// Pemilik atau staf; hapus lunak (status -> disembunyikan).
+export async function roadmapKomentarSembunyi(env, akun, id) {
+  gKons(akun);
+  const n = sahId(id), staf = kBoleh(akun, "ubah", "konsultasi_putus");
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare("UPDATE roadmap_komentar SET status = 'disembunyikan' WHERE id = ? AND status = 'tayang' AND (akun_id = ? OR ? = 1)").bind(n, akun.id, staf ? 1 : 0),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', 'roadmap_komentar', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(n), JSON.stringify({ ringkas: "sembunyikan komentar roadmap" })),
+    ]);
+    return { ubah: r.meta.changes > 0 };
+  });
+}

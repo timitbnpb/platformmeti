@@ -26,7 +26,7 @@ const TAB = [
   /* Navigasi 7 menu (pemilik 8 Nov 2026, desain disetujui): Beranda, Tentang METI, EBT Indonesia, Bidang, Kewilayahan, Pustaka, Media. Ikon unik di seluruh nav (gerbang-ikon-nav). */
   { href: "/", kunci: "nav.beranda", ikon: "beranda", hak: null },
   { kunci: "n7.tentang", ikon: "perisai", hak: null, grup: [
-    { href: "/tentang", kunci: "n7.profil", ikon: "info" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "lokasi" }, { href: "/kalender", kunci: "n7.agenda", ikon: "kalender" }, { href: "/galeri", kunci: "nav.foto", ikon: "gambar" }, { href: "/siaran-pers", kunci: "n7.meti_berita", ikon: "mikrofon" }] },
+    { href: "/tentang", kunci: "n7.profil", ikon: "info" }, { href: "/roadmap", kunci: "n7.roadmap", ikon: "kompas" }, { href: "/meti-wilayah", kunci: "nav.meti_wilayah", ikon: "lokasi" }, { href: "/kalender", kunci: "n7.agenda", ikon: "kalender" }, { href: "/galeri", kunci: "nav.foto", ikon: "gambar" }, { href: "/siaran-pers", kunci: "n7.meti_berita", ikon: "mikrofon" }] },
   { kunci: "n7.ebt", ikon: "insight", hak: null, grup: [
     { href: "/insight", kunci: "n7.gambaran", ikon: "kajian" }, { href: "/teknologi", kunci: "n7.teknologi", ikon: "tek-bio" }, { href: "/sistem", kunci: "sp2.nav", ikon: "sistem-listrik" }, { href: "/jaringan", kunci: "jr.nav", ikon: "menara" }, { href: "/target", kunci: "n7.target", ikon: "bendera" }, { href: "/program", kunci: "n7.program_psn", ikon: "bintang" }, { href: "/industri", kunci: "in3.nav", ikon: "industri" }, { href: "/lelang", kunci: "lel.nav", ikon: "lelang" }, { href: "/investasi", kunci: "iv.nav", ikon: "medali" }] },
   { kunci: "n7.bidang", ikon: "direktori", hak: null, grup: [

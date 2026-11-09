@@ -1,0 +1,11 @@
+{
+  "rute": {
+    "diuji": {
+      "GET /api/roadmap/ringkas": "tests/roadmap.test.mjs",
+      "GET /api/roadmap/komentar": "tests/roadmap.test.mjs",
+      "POST /api/roadmap/suka": "tests/roadmap.test.mjs",
+      "POST /api/roadmap/komentar": "tests/roadmap.test.mjs",
+      "DELETE /api/roadmap/komentar/:id": "tests/roadmap.test.mjs"
+    }
+  }
+}
