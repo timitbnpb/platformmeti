@@ -219,3 +219,7 @@
 .rg3-idk b{font-weight:600;color:var(--ink);overflow-wrap:anywhere}
 .rg3-idk small{color:var(--ink2);font-size:var(--t-kecil);white-space:normal;overflow-wrap:anywhere}
 .rg3-tg{white-space:nowrap;font-variant-numeric:tabular-nums}
+/* label tab panjang membungkus di dalam tombolnya, tidak menabrak ikon tab sebelah (pemilik 9 Nov 2026) */
+@media (min-width:900px){.rg3-tab .jm-tab>button{min-height:48px;height:auto;gap:6px}.rg3-tab .jm-tab>button .jm-ik{flex:none}.rg3-tab .jm-tab>button span{min-width:0;white-space:normal;overflow-wrap:normal;text-align:left;line-height:1.15}}
+/* tab lebih dari 8: dua baris dengan lebar cukup, bukan satu baris sempit */
+@media (min-width:900px){.rg3-tab .jm-tab:has(>button:nth-child(9)){grid-auto-flow:row!important;grid-template-columns:repeat(auto-fit,minmax(168px,1fr))!important;border-radius:var(--r-lg)}.rg3-tab .jm-tab:has(>button:nth-child(9))>button{height:44px;min-height:44px}.rg3-tab .jm-tab:has(>button:nth-child(9))>button span{white-space:nowrap}}
