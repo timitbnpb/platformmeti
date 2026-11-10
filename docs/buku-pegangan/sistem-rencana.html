@@ -117,12 +117,12 @@ td.id{font-weight:600;white-space:nowrap;font-family:ui-monospace,Menlo,monospac
 <header class="hero"><div class="hero-in">
   <small>Buku pegangan</small>
   <h1>Sistem Rencana METI</h1>
-  <p>Cara Direktori METI direncanakan, dikerjakan, diperiksa, dan dirilis: visi, fase, tiket, keputusan pemilik, armada agent, dan gerbang mutu. Dibaca dari paket perencanaan di repo per 7 November 2026.</p>
+  <p>Cara Direktori METI direncanakan, dikerjakan, diperiksa, dan dirilis: visi, fase, tiket, keputusan pemilik, armada agent, dan gerbang mutu. Dibaca dari paket perencanaan dan dicocokkan dengan kode di repo per 11 November 2026.</p>
   <div class="stats">
     <div class="stat"><b>4</b><span>fase, F0 sampai F3</span></div>
-    <div class="stat"><b id="st-tiket">84</b><span>tiket JM</span></div>
+    <div class="stat"><b id="st-tiket">85</b><span>tiket JM</span></div>
     <div class="stat"><b>18</b><span>agent berjenis model</span></div>
-    <div class="stat"><b>~236</b><span>uji node:test</span></div>
+    <div class="stat"><b>1.847</b><span>uji node:test, 217 berkas</span></div>
   </div>
 </div></header>
 
@@ -143,6 +143,7 @@ td.id{font-weight:600;white-space:nowrap;font-family:ui-monospace,Menlo,monospac
 
 <section id="arah">
 <h2><span>1</span>Arah</h2>
+<div class="note"><b>Catatan perubahan, 11 Nov 2026.</b> Terakhir diperbarui 7 Nov 2026. Sejak itu: hitungan tiket dibetulkan dan JM-F11 ditambahkan (85 tiket, sama dengan papan <code>TIKET.md</code>); keputusan K20, D19, dan D20 masuk ke tabel keputusan; status sebagian tiket disahkan dari berkas di kode dan diberi catatan "disahkan dari kode 11 Nov"; modul yang dibangun tanpa tiket didaftar terpisah di bagian 4; bagian 7 memakai angka uji dan gerbang yang dihitung ulang; bagian 9 menambah butir yang menunggu pemilik. Tidak ada keputusan baru yang dibuat di halaman ini. Halaman ini mengikuti K1 sampai K20 dan D1 sampai D20; tambahan K21 sampai K26, D21, D22, dan C-21 sampai C-25 yang sedang ditulis pihak lain di <code>KEPUTUSAN-METI.md</code> (belum dikomit saat ini ditulis) belum dimasukkan ke tabel keputusan.</div>
 <p class="lead">Satu tempat gratis tempat siapa pun bisa menjawab dalam satu menit, dengan sumber bertanggal: siapa pemain energi terbarukan di Indonesia, siapa memasok dan mendanai siapa, proyek apa yang sudah jalan, dan siapa pakarnya.</p>
 <h3>Masalah yang dijawab</h3>
 <ul class="p">
@@ -173,7 +174,7 @@ td.id{font-weight:600;white-space:nowrap;font-family:ui-monospace,Menlo,monospac
 <h3>Empat belas fitur tambahan (K18)</h3>
 <p>Dipilih pemilik pada 7 November 2026 sebagai tiket JM-Q01 sampai Q14. Isu sosial dan lingkungan wajib bersumber dan memberi ruang hak jawab.</p>
 <div class="tw"><table><thead><tr><th>Tiket</th><th>Fitur</th></tr></thead><tbody id="k18"></tbody></table></div>
-<p>Tidak dipilih, jadi tidak dibuat sampai pemilik meminta: peringatan dini proyek macet, pelacak janji pejabat, graf jaringan interaktif, direktori SDM dan pendidikan, tanya data AI, API dan widget sematan.</p>
+<p>Tidak dipilih, jadi tidak dibuat sampai pemilik meminta: peringatan dini proyek macet, pelacak janji pejabat, graf jaringan interaktif, direktori SDM dan pendidikan, tanya data AI, API dan widget sematan. Keadaan kode per 11 Nov 2026: <code>src/tanya.js</code> (Tanya data) dan <code>src/sematan.js</code> (sematan kartu ringkas) ada di kode. Tidak ada keputusan tertulis yang mengubah daftar ini; butirnya dicatat di bagian 9 dan di Buku Pegangan Utama bab 12.</p>
 </section>
 
 <section id="otoritas">
@@ -200,16 +201,16 @@ td.id{font-weight:600;white-space:nowrap;font-family:ui-monospace,Menlo,monospac
 <p class="lead">Nilai terlihat paling cepat: kode direktori yang sudah ada jalan lebih dulu (F0), lalu sensus (F1), rantai dan cerita (F2), lalu pintu terbuka (F3).</p>
 <div class="tl">
   <div class="ph selesai"><h4>F0 Porting <span class="chip selesai">selesai</span></h4>
-    <p>Repo, Worker, D1, R2, login, admin akun, RLS, direktori lama berjalan di METI, i18n kerangka. Migrasi 0001 sampai 0008 sudah diterapkan di produksi dan situs tayang di <code>direktori.metiires.or.id</code>.</p>
+    <p>Repo, Worker, D1, R2, login, admin akun, RLS, direktori lama berjalan di METI, i18n kerangka. Migrasi 0001 sampai 0008 diterapkan di produksi per 7 Nov dan situs tayang di <code>direktori.metiires.or.id</code>. Repo kini memuat migrasi 0001 sampai 0037; status penerapan 0009 ke atas di produksi tidak bisa dipastikan dari repo.</p>
     <p class="lulus"><b>Lulus bila:</b> uji RLS hijau, <code>/direktori</code> tampil di 1280 dan 390 px. Tombol dummy dibatalkan (K15).</p></div>
   <div class="ph berjalan"><h4>F1 Sensus <span class="chip berjalan">berjalan</span></h4>
     <p>Panen gelombang 1, kurasi, sensus perusahaan, profil bersumber, peta, metode. Prioritas K17: pelacak proyek, rantai PLTS, profil proyek dan perusahaan, pengurus METI, profil sendiri dan kelompok orang (K19).</p>
     <p class="lulus"><b>Lulus bila:</b> 300+ entitas bersumber, 0 baris tanpa sumber, skor keyakinan tiap profil.</p></div>
   <div class="ph berjalan"><h4>F2 Rantai dan cerita <span class="chip berjalan">berjalan</span></h4>
-    <p>Rantai pasok, pembiaya, BUMN, data center, desa, wilayah, kebijakan, cerita data. Beberapa halaman sudah tayang: rantai PLTS, wilayah, regulasi, kalender, ASEAN, berita.</p>
+    <p>Rantai pasok, pembiaya, BUMN, data center, desa, wilayah, kebijakan, cerita data. Halaman yang ada di kode: rantai (kini <code>/rantai-global</code>), wilayah, regulasi, kalender, ASEAN, berita, indeks, lelang, kerja, dan puluhan halaman tematik (95 berkas HTML di <code>public/</code>). Seluruh situs di balik login (D19).</p>
     <p class="lulus"><b>Lulus bila:</b> tiap halaman punya Jawaban singkat, Cara menghitung, dan tanggal beku.</p></div>
   <div class="ph ditunda"><h4>F3 Terbuka <span class="chip ditunda">ditunda</span></h4>
-    <p>Klaim profil, daftar mandiri, API terbuka, pencocokan kebutuhan. Pendaftaran mandiri (JM-R02) ditunda pemilik pada 7 November 2026: selama masa uji, akun dibuat manual oleh admin.</p>
+    <p>Klaim profil, daftar mandiri, API terbuka, pencocokan kebutuhan. Pendaftaran mandiri (JM-R02) ditunda pemilik pada 7 November 2026; pada 8 November D20 membuka pendaftaran mandiri dengan persetujuan admin (<code>/daftar</code>, iuran), tanpa tiket baru. Kode klaim profil (organisasi dan entri orang) juga sudah ada.</p>
     <p class="lulus"><b>Lulus bila:</b> disetujui Pengurus Harian (C-01).</p></div>
 </div>
 <h3>Ukuran keberhasilan F1</h3>
@@ -226,7 +227,7 @@ td.id{font-weight:600;white-space:nowrap;font-family:ui-monospace,Menlo,monospac
 <section id="tiket">
 <h2><span>4</span>Tiket</h2>
 <p class="lead">Satu sesi, satu tiket. Selesai berarti perintah bukti keluar 0 dan pemeriksa tanpa temuan tinggi.</p>
-<div class="note warn">Papan di <code>TIKET.md</code> masih mencatat hampir semua tiket sebagai belum. Kolom status di sini dibaca dari isi repo (berkas, migrasi, uji, riwayat commit) per 7 November 2026 dan perlu disahkan sesi induk. Seri JM-I (infrastruktur) ada di <code>INFRASTRUKTUR.md</code> dan tidak dimuat di tabel ini.</div>
+<div class="note warn">Papan di <code>TIKET.md</code> (85 tiket) masih mencatat 82 belum, 1 berjalan (JM-F11), 1 panen awal selesai (JM-D08), dan 1 tunda (JM-R02), tanpa satu pun selesai. Kolom status di sini dibaca dari isi repo (berkas, migrasi, uji, riwayat commit) dan perlu disahkan sesi induk. Status yang diubah pada 11 November 2026 hanya bila ada berkas di kode, dan diberi catatan "disahkan dari kode 11 Nov"; bila ragu statusnya dibiarkan. Seri JM-I (infrastruktur) ada di <code>INFRASTRUKTUR.md</code> dan tidak dimuat di tabel ini.</div>
 <div class="filters" role="search">
   <label>Seri
     <select id="f-seri"><option value="">Semua seri</option><option value="PQR">P, Q, R (arah pemilik)</option><option value="P">P Proyek</option><option value="Q">Q Fitur tambahan</option><option value="R">R Akun dan profil</option><option value="A">A Fondasi</option><option value="B">B Login dan RLS</option><option value="C">C Porting</option><option value="D">D Data dan pipeline</option><option value="E">E Layar sensus</option><option value="F">F Rantai dan cerita</option><option value="G">G Terbuka</option><option value="H">H Uji dan rilis</option></select></label>
@@ -237,11 +238,38 @@ td.id{font-weight:600;white-space:nowrap;font-family:ui-monospace,Menlo,monospac
 </div>
 <p class="count" id="f-hitung" aria-live="polite"></p>
 <div class="tw"><table id="t-tiket"><thead><tr><th>ID</th><th>Judul</th><th>Status</th><th>Catatan</th></tr></thead><tbody></tbody></table></div>
+
+<h3>Dibangun tanpa tiket</h3>
+<p>Modul berikut ada di kode per 11 November 2026 tetapi tidak punya id tiket di <code>TIKET.md</code>, jadi tidak diberi id di sini. Kolom kanan hanya mencatat keputusan yang menyinggungnya; ada atau tidaknya keputusan pemilik tidak dinilai di halaman ini.</p>
+<div class="tw"><table><thead><tr><th>Modul</th><th>Bukti di kode</th><th>Keputusan atau tiket terkait</th></tr></thead><tbody>
+<tr><td>Gerbang masuk seluruh situs</td><td>src/worker.js, tests/sesi.test.mjs</td><td>D19 (tanpa tiket)</td></tr>
+<tr><td>Pendaftaran mandiri, iuran, bukti transfer</td><td>src/daftar.js, public/daftar.html, migrasi 0021 dan 0023</td><td>D20 (tanpa tiket); R02 dan G02 belum mencatatnya</td></tr>
+<tr><td>Kartu Tanda Anggota virtual dan verifikasi publik</td><td>src/kta.js, public/kta.html, public/kta_v.html, migrasi 0017</td><td>tidak ada</td></tr>
+<tr><td>Pesan akun ke admin</td><td>src/pesan.js, migrasi 0016</td><td>tidak ada</td></tr>
+<tr><td>Portal pembaruan data lembaga dan portal pengurus wilayah</td><td>src/portal.js, src/wilayah_kelola.js, public/portal.html, migrasi 0019</td><td>G01 hanya menyebut klaim profil</td></tr>
+<tr><td>Portal otorisasi naskah, dua kunci</td><td>src/naskah.js, public/otorisasi.html, migrasi 0036</td><td>tidak ada</td></tr>
+<tr><td>Forum Konsultasi atas naskah RUU/RPP</td><td>src/konsultasi.js, migrasi 0024</td><td>tidak ada</td></tr>
+<tr><td>Roadmap METI dengan suka dan komentar</td><td>src/roadmap.js, public/roadmap.html, migrasi 0035</td><td>tidak ada</td></tr>
+<tr><td>Lowongan dari lembaga anggota (Green jobs)</td><td>src/kerja.js, public/kerja.html, migrasi 0028</td><td>Q10 hanya menyebut kerja hijau dari data proyek</td></tr>
+<tr><td>Newsletter</td><td>src/langganan.js, public/langganan.html, migrasi 0014</td><td>Q08 menyebut ringkasan surel, bukan newsletter; belum mengirim surel</td></tr>
+<tr><td>Permintaan alamat surel organisasi (manual)</td><td>src/surel.js, migrasi 0030</td><td>C-08 bawaan salin tautan manual</td></tr>
+<tr><td>Feed media sosial METI</td><td>src/sosmed.js, migrasi 0022</td><td>tidak ada; lihat bagian 9</td></tr>
+<tr><td>Masuk dengan Google</td><td>src/google.js, migrasi 0026</td><td>tidak ada; lihat bagian 9</td></tr>
+<tr><td>Tanya data</td><td>src/tanya.js, public/tanya.html</td><td>K18 tidak memilihnya; lihat bagian 9</td></tr>
+<tr><td>Klaim entri orang oleh akun</td><td>migrasi 0037, jenis di src/hak.js</td><td>G01 hanya menyebut klaim profil oleh entitas</td></tr>
+<tr><td>Pustaka hukum dengan pencarian per pasal</td><td>src/hukum.js, migrasi 0029</td><td>tidak ada</td></tr>
+<tr><td>Berita METI dan pustaka unggahan, unduhan tercatat</td><td>src/konten_meti.js, src/pustaka.js, migrasi 0012 dan 0033</td><td>tidak ada</td></tr>
+<tr><td>RSVP acara</td><td>src/event.js, public/event_detail.html, migrasi 0013</td><td>tidak ada</td></tr>
+<tr><td>Survei indeks keyakinan bisnis EBT</td><td>src/keyakinan.js, public/indeks-keyakinan.html, migrasi 0031</td><td>tidak ada</td></tr>
+<tr><td>Lalu lintas orang vs AI</td><td>src/lalin.js, migrasi 0020</td><td>tidak ada</td></tr>
+<tr><td>Kartu bagikan dan sematan</td><td>src/og.js, src/sematan.js</td><td>K18 tidak memilih "API dan widget sematan"</td></tr>
+<tr><td>Kotak tugas admin</td><td>migrasi 0034 (tabel kotak_tugas), tab Kotak di /admin</td><td>tidak ada</td></tr>
+</tbody></table></div>
 </section>
 
 <section id="keputusan">
 <h2><span>5</span>Keputusan</h2>
-<p class="lead">Keputusan pemilik (K) menang atas keputusan perancang (D). Semua bertanggal 7 November 2026 kecuali dinyatakan lain; keputusan D boleh dibatalkan pemilik.</p>
+<p class="lead">Keputusan pemilik (K) menang atas keputusan perancang (D). Semua bertanggal 7 November 2026 kecuali kolom tanggal menyatakan lain; keputusan D boleh dibatalkan pemilik. K1 sampai K20 dan D1 sampai D20 ada di <code>KEPUTUSAN-METI.md</code>; tabel ini memuat yang paling sering dirujuk.</p>
 <div class="tw"><table><thead><tr><th>No</th><th>Tanggal</th><th>Keputusan</th><th>Dampak</th></tr></thead><tbody id="t-kep"></tbody></table></div>
 <p>Pertanyaan terbuka C-01 sampai C-20 (kepemilikan, domain, peran, penyedia surel, cakupan sektor, izin panen) tetap berjalan dengan nilai bawaan yang tercatat di <code>KEPUTUSAN-METI.md</code> bagian C.</p>
 </section>
@@ -290,15 +318,18 @@ td.id{font-weight:600;white-space:nowrap;font-family:ui-monospace,Menlo,monospac
 <h2><span>7</span>Gerbang mutu</h2>
 <p class="lead">Aturan tanpa gerbang mekanis dianggap belum jadi. Gerbang mekanis jalan lebih dulu dari review manusia.</p>
 <div class="cards">
-  <div class="card"><span class="k">Suite</span><h4><code>npm run uji</code></h4><p>Menjalankan <code>node --test</code>: sekitar 236 uji <code>node:test</code> di folder <code>tests/</code>, tanpa framework tambahan. CI memakai alur yang sama di <code>.github/workflows/uji.yml</code>.</p></div>
-  <div class="card"><span class="k">Prinsip</span><h4>Yang salah DITOLAK</h4><p>Tiap aturan hak, CHECK, dan trigger punya uji bahwa peran atau data yang salah ditolak. Tiap fungsi, rute, dan skrip baru terdaftar di <code>tests/cakupan.json</code>.</p></div>
+  <div class="card"><span class="k">Suite</span><h4><code>npm run uji</code></h4><p>Menjalankan <code>node --test</code>: 1.847 uji <code>node:test</code> pada 217 berkas di folder <code>tests/</code> (hasil 11 Nov 2026: 1.839 lulus, 8 dilewati, 0 gagal), tanpa framework tambahan. CI memakai alur yang sama, satu-satunya alur di <code>.github/workflows/uji.yml</code>.</p></div>
+  <div class="card"><span class="k">Prinsip</span><h4>Yang salah DITOLAK</h4><p>Tiap aturan hak, CHECK, dan trigger punya uji bahwa peran atau data yang salah ditolak. Tiap fungsi, rute, dan skrip baru terdaftar di registri cakupan, yang di kode berada di <code>tests/e2e/cakupan.json</code> (TIKET.md masih menulis <code>tests/cakupan.json</code>).</p></div>
 </div>
 <h3>Uji gerbang, per nama berkas</h3>
 <div class="tw"><table><thead><tr><th>Berkas</th><th>Menjaga</th></tr></thead><tbody>
 <tr><td class="id">gerbang-d1.test.mjs</td><td>Akses D1 hanya lewat jalur yang diizinkan.</td></tr>
 <tr><td class="id">gerbang-headers.test.mjs</td><td>Header keamanan dan CSP di <code>public/_headers</code>.</td></tr>
 <tr><td class="id">gerbang-i18n.test.mjs</td><td>Kunci <code>id.json</code> dan <code>en.json</code> setara; tidak ada teks tertanam di JS.</td></tr>
-<tr><td class="id">gerbang-layar-statis.test.mjs</td><td>Pemeriksaan statis layar HTML, JS, dan CSS.</td></tr>
+<tr><td class="id">gerbang-layar-statis.test.mjs</td><td>Pemeriksaan statis layar HTML, JS, dan CSS: tanpa skrip dan gaya inline, halaman terkunci noindex, tanpa hex di CSS selain <code>tema.css</code>, tiap variabel CSS terdefinisi.</td></tr>
+<tr><td class="id">gerbang-tanpa-kapital, -tanpa-garis-bawah, -tanpa-panah, -tanpa-progress, -tanpa-onerror .test.mjs</td><td>Larangan gaya: tanpa <code>uppercase</code> di CSS dan nama kapital penuh di data, tautan tabel tanpa garis bawah, tanpa panah teks, tanpa lintasan progress, tanpa penangan inline.</td></tr>
+<tr><td class="id">gerbang-ujung, -tipografi, -pilih, -paginasi, -panel-geser, -ikon-nav .test.mjs</td><td>Kontrol: tab ujung ke ujung, skala tipografi token, pemilih berikon, paginasi bersama, panel geser peta, ikon menu unik.</td></tr>
+<tr><td class="id">gerbang-kepala-halaman, -kepala-kartu, -grafik-tooltip, -bertaut, -konsistensi-data .test.mjs</td><td>Kepala halaman dan kartu exhibit, tooltip grafik, semua halaman bertaut, tautan id data tidak mati.</td></tr>
 <tr><td class="id">gerbang-model-agent.test.mjs</td><td>Tiap agent punya <code>model:</code>.</td></tr>
 <tr><td class="id">gerbang-ilmu-agent.test.mjs</td><td>Roster, katalog, dan ilmu per agent sinkron.</td></tr>
 <tr><td class="id">hak.test.mjs</td><td>Matriks RLS tiruan di <code>hak.js</code>, tiap sel punya uji.</td></tr>
@@ -336,20 +367,25 @@ td.id{font-weight:600;white-space:nowrap;font-family:ui-monospace,Menlo,monospac
 
 <section id="terbuka">
 <h2><span>9</span>Yang masih terbuka</h2>
-<p class="lead">Butir yang menunggu pemilik atau kurator. Tidak ada yang memuat data pribadi.</p>
+<p class="lead">Butir yang menunggu pemilik atau kurator. Tidak ada yang memuat data pribadi. Butir 1 sampai 8 adalah keadaan 7 Nov yang belum diperiksa ulang pada 11 Nov (ditandai "belum dipastikan"); butir 9 dan seterusnya baru. Daftar lengkap yang menunggu keputusan pemilik ada di Buku Pegangan Utama bab 12.</p>
 <div class="tw"><table><thead><tr><th>Butir</th><th>Keadaan</th><th>Dampak</th></tr></thead><tbody>
-<tr><td><b>Nomor telepon resmi METI</b></td><td>Belum diberikan.</td><td>Halaman tentang dan kontak korporat memakai tempat kosong sampai ada.</td></tr>
-<tr><td><b>Foto pengurus</b></td><td>Belum tersedia dari METI.</td><td>Bagian Pengurus (JM-P08) tampil tanpa foto resmi.</td></tr>
-<tr><td><b>Unduh data GEM</b></td><td>Perlu diunduh manual.</td><td>Panen pembangkit (JM-D09) belum lengkap.</td></tr>
-<tr><td><b>Izin menampilkan 1001startup</b></td><td>Izin tertulis pengelola belum ada (C-13).</td><td>Panen awal sudah ada, tetapi rilis publik menunggu izin.</td></tr>
+<tr><td><b>Nomor telepon resmi METI</b></td><td>Belum dipastikan.</td><td>Halaman tentang dan kontak korporat memakai tempat kosong sampai ada.</td></tr>
+<tr><td><b>Foto pengurus</b></td><td>Berkas ada di <code>public/img/pengurus/</code> (116 berkas), tetapi apakah foto resmi dari METI dan berizin belum dipastikan.</td><td>Bagian Pengurus (JM-P08); lihat juga foto tokoh tanpa lisensi di bab 12 Buku Pegangan Utama.</td></tr>
+<tr><td><b>Unduh data GEM</b></td><td>Belum dipastikan; berkas GEM sudah ada di repo dan status lisensinya menunggu pemilik.</td><td>Panen pembangkit (JM-D09) belum lengkap.</td></tr>
+<tr><td><b>Izin menampilkan 1001startup</b></td><td>Izin tertulis pengelola belum ada (C-13); LISENSI-DATA.md menyarankan izin tertulis untuk panen massal.</td><td>Panen awal sudah ada, tetapi rilis publik menunggu izin.</td></tr>
 <tr><td><b>Review kurator atas 33 nama proyek</b></td><td>Menunggu kurator.</td><td>Nama proyek belum bisa dinyatakan baku.</td></tr>
 <tr><td><b>Review kurator atas 2.000 pakar OpenAlex</b></td><td>Menunggu kurator.</td><td>Pakar hasil panen belum boleh tampil sebagai terverifikasi.</td></tr>
 <tr><td><b>Data PLTS 100 GWp</b></td><td>15 proyek tahap pertama belum ada di snapshot.</td><td>Pelacak proyek dan rantai PLTS belum mewakili program penuh.</td></tr>
 <tr><td><b>Data asosiasi tipis</b></td><td>Isi baru sedikit.</td><td>Sensus kategori Asosiasi belum layak dibaca sebagai peta lengkap.</td></tr>
+<tr><td><b>Tanya data AI</b></td><td>K18 tidak memilihnya, tetapi <code>src/tanya.js</code> dan <code>public/tanya.html</code> ada di kode.</td><td>Menunggu keputusan pemilik; tidak diputuskan di buku ini.</td></tr>
+<tr><td><b>Panen terjadwal</b></td><td>Tidak ada; hanya <code>uji.yml</code> di CI dan satu cron harian untuk rentang IP dan feed sosmed. Pemilik sedang meminta bot harian, mingguan, dan bulanan; rencananya sedang disusun.</td><td>RENCANA-AKHIR menulisnya di luar cakupan; wadah dan jadwal belum diputus.</td></tr>
+<tr><td><b>Google OAuth, Midtrans, Meta Graph, surel</b></td><td>Kode ada (<code>google.js</code>, <code>daftar.js</code>, <code>sosmed.js</code>), pengirim surel tidak ada.</td><td>RENCANA-AKHIR menulisnya di luar cakupan; D20 menyebut Midtrans opsional.</td></tr>
+<tr><td><b>Laporan warga</b></td><td>Tidak ada kode; hanya di RENCANA-AKHIR.</td><td>Tidak ada di K17 atau K18; perlu keputusan bila dibangun.</td></tr>
+<tr><td><b>Akses pengurus ke /admin</b></td><td>Halaman hanya Admin dan Super; D20 menyebut tab persetujuan untuk pengurus.</td><td>Belum jelas mana yang dimaksud pemilik.</td></tr>
 </tbody></table></div>
 </section>
 
-<p class="foot">Sumber: <code>docs/perencanaan/</code> (KEPUTUSAN-METI, GRAND-DESIGN, TIKET, PRD), <code>AGENTS.md</code>, <code>.claude/agents/</code>, <code>tests/</code>, <code>package.json</code>, riwayat git. Keadaan per 7 November 2026.</p>
+<p class="foot">Sumber: <code>docs/perencanaan/</code> (KEPUTUSAN-METI, GRAND-DESIGN, TIKET, PRD), <code>AGENTS.md</code>, <code>.claude/agents/</code>, <code>tests/</code>, <code>package.json</code>, riwayat git. Keadaan per 11 November 2026.</p>
 </main>
 </div>
 
@@ -383,10 +419,10 @@ var T=[
 ["D01","Skema kurasi entitas, fakta, ikatan, sumber","selesai","Migrasi 0003"],
 ["D02","jaga_unggah: tolak baris tanpa sumber","belum","Belum ada berkasnya; U2 bergantung padanya"],
 ["D03","Panen OpenAlex pakar EBT","berjalan","Hasil panen menunggu review kurator (2.000 pakar)"],
-["D04","Panen OSM pembangkit per provinsi","belum",""],
+["D04","Panen OSM pembangkit per provinsi","berjalan","disahkan dari kode 11 Nov: scripts/pipa/pembangkit_osm.mjs dan public/data/pembangkit_osm.json ada"],
 ["D05","Panen Ember, OWID, IRENASTAT, World Bank","berjalan","Dipakai halaman ASEAN"],
 ["D06","Panen regulasi BPK dan JDIH ESDM","berjalan","panen_regulasi; halaman regulasi tayang"],
-["D07","Seed METI: anggota, mitra, pengurus, METI Wilayah","belum","Butuh kurator dan persetujuan (C-10, C-11)"],
+["D07","Seed METI: anggota, mitra, pengurus, METI Wilayah","berjalan","disahkan dari kode 11 Nov: mitra-meti.json, pengurus-meti.json, meti-wilayah.json di public/data; butuh kurator dan persetujuan (C-10, C-11)"],
 ["D08","Panen 1001startup.id energi","berjalan","Panen awal selesai; izin rilis menunggu C-13"],
 ["D09","Panen AESI, GEM manual, WRI GPPD","berjalan","Unduhan GEM masih manual dan belum dilakukan"],
 ["D10","hubung.mjs: graf, dedup, strategis()","belum",""],
@@ -395,50 +431,51 @@ var T=[
 ["D13","Skor keyakinan 0 sampai 1 per profil","belum",""],
 ["E01","Beranda sensus /","selesai","Beranda baru tayang"],
 ["E02","Sensus /perusahaan","belum",""],
-["E03","Profil /p/slug gaya 1001","belum","Digantikan P03 dan P04 untuk proyek dan perusahaan"],
-["E04","Peta /peta","belum","Peta ada di tab direktori; halaman terpisah belum"],
-["E05","/metode: cara hitung, tingkat bukti, skor","belum",""],
-["E06","Hak koreksi dan antrean kurator","belum","Skema koreksi ada (migrasi 0004); layar belum"],
+["E03","Profil /p/slug gaya 1001","berjalan","disahkan dari kode 11 Nov: public/p.html, public/o.html, src/profil.js, tests/profil.test.mjs; P03 dan P04 melanjutkan"],
+["E04","Peta /peta","berjalan","disahkan dari kode 11 Nov: public/peta.html dan tests/peta.test.mjs ada; kelengkapan lapisan belum diperiksa"],
+["E05","/metode: cara hitung, tingkat bukti, skor","berjalan","disahkan dari kode 11 Nov: public/metode.html ada; isi belum dicocokkan per butir tiket"],
+["E06","Hak koreksi dan antrean kurator","berjalan","disahkan dari kode 11 Nov: POST /api/koreksi di src/admin.js, tab Koreksi di /admin, migrasi 0004 dan 0011; layar usulan lengkap belum diperiksa"],
 ["E07","Layar kurasi di /admin","belum",""],
-["F01","Rantai pasok /rantai","selesai","Halaman rantai PLTS tayang"],
+["F01","Rantai pasok /rantai","selesai","Halaman rantai PLTS tayang ; Kini /rantai dialihkan 301 ke /rantai-global?tab=tkdn"],
 ["F02","Pembiaya /pembiaya","belum",""],
 ["F03","Kuadran BUMN energi /bumn","belum",""],
 ["F04","Listrik data center /data-center","belum",""],
-["F05","Energi desa /desa","belum",""],
+["F05","Energi desa /desa","berjalan","disahkan dari kode 11 Nov: public/desa-energi.html dan tests/desa-energi-mandiri.test.mjs ada"],
 ["F06","Rapor provinsi /wilayah","berjalan","Halaman wilayah tayang; rapor belum penuh"],
 ["F07","Kebijakan /kebijakan dan jejak isu","berjalan","Halaman regulasi tayang"],
 ["F08","Cerita data /cerita","belum",""],
-["F09","Riwayat dengan METI dan agenda wilayah","belum","Skema riwayat ada (migrasi 0005)"],
+["F09","Riwayat dengan METI dan agenda wilayah","berjalan","disahkan dari kode 11 Nov: public/meti-wilayah.html, src/meti_wilayah.js, migrasi 0005 dan 0015, tests/meti-wilayah.test.mjs; riwayat dengan METI belum diperiksa"],
 ["F10","Sinkron berita dan acara dari metiires.or.id","berjalan","Panen berita dan video tayang"],
+["F11","Bukti agenda METI (K20): notulensi dan foto per agenda, tab Agenda di /admin, dialog di /kalender","berjalan","Sesuai papan TIKET.md. Bukti di kode: migrasi 0010 dan 0032, src/agenda.js, tests/agenda.test.mjs, jenis agenda di MATRIKS; tulis hanya admin dan super"],
 ["P01","Data proyek ke entitas, fakta, ikatan (K17)","berjalan","panen_proyek; 15 proyek PLTS 100 GWp tahap awal belum ada"],
 ["P02","Pelacak proyek /proyek","berjalan","Halaman proyek tayang"],
-["P03","Profil proyek dengan garis waktu PPA-COD, dwibahasa","belum","Termasuk ikon peta per proyek"],
-["P04","Profil perusahaan dan profil orang","belum","Direksi, proyek, rantai, riwayat jabatan"],
+["P03","Profil proyek dengan garis waktu PPA-COD, dwibahasa","berjalan","disahkan dari kode 11 Nov: public/p.html ada; garis waktu PPA-COD dan ikon peta belum diperiksa"],
+["P04","Profil perusahaan dan profil orang","berjalan","disahkan dari kode 11 Nov: public/o.html, public/anggota.html, tests/profil-org.test.mjs ada; direksi dan riwayat jabatan belum diperiksa"],
 ["P05","Rantai pasok PLTS 100 GW: kebutuhan vs pasokan lokal","berjalan","Bagian dari halaman rantai"],
 ["P06","Regulasi terhubung ke proyek","belum",""],
-["P07","Rapor Transisi Energi kuartalan","belum",""],
+["P07","Rapor Transisi Energi kuartalan","berjalan","disahkan dari kode 11 Nov: public/target.html (bagian rapor) dan scripts/pipa/rapor_bulanan.mjs ada; beku kuartalan dan PDF belum diperiksa"],
 ["P08","Bagian Pengurus METI dengan foto resmi","berjalan","Halaman tentang tayang; foto pengurus belum ada"],
 ["R01","Migrasi 0007: kategori K19, program, kelompok, telepon akun","selesai","0007 dan 0008 diterapkan di produksi"],
-["R02","/daftar dan verifikasi surel","ditunda","Ditunda pemilik 7 Nov 2026: masa uji, akun dibuat admin lewat /admin"],
-["R03","/profil-saya: sunting profil, foto, privasi kontak","belum",""],
+["R02","/daftar dan verifikasi surel","ditunda","Ditunda pemilik 7 Nov 2026: masa uji, akun dibuat admin lewat /admin ; D20 (8 Nov) membuka /daftar dengan persetujuan admin: public/daftar.html, src/daftar.js, migrasi 0021 dan 0023; verifikasi surel tidak ada, status dibiarkan"],
+["R03","/profil-saya: sunting profil, foto, privasi kontak","berjalan","disahkan dari kode 11 Nov: public/profil-saya.html, src/profil_akun.js, migrasi 0018 dan 0037, tests/profil-saya.test.mjs ada"],
 ["R04","Tab kelompok orang dan saringan kategori organisasi","belum","Skema siap dari migrasi 0007"],
 ["R05","Panen aktivis, tokoh daerah, organisasi mahasiswa","belum",""],
-["Q01","Potensi vs realisasi per provinsi","belum",""],
-["Q02","Indeks kesiapan investasi provinsi","belum","F3"],
-["Q03","Pelacak tarif dan harga","belum",""],
-["Q04","Pemantau pengadaan","belum","F3"],
-["Q05","Linimasa regulasi","belum",""],
+["Q01","Potensi vs realisasi per provinsi","berjalan","disahkan dari kode 11 Nov: public/wilayah.html (potensi, realisasi, proyek per provinsi) ada"],
+["Q02","Indeks kesiapan investasi provinsi","berjalan","disahkan dari kode 11 Nov: public/indeks.html (kesiapan provinsi dan kesehatan proyek) ada; tiket menandai F3"],
+["Q03","Pelacak tarif dan harga","berjalan","disahkan dari kode 11 Nov: scripts/panen/benchmark_harga.mjs, tests/benchmark_harga.test.mjs, tab harga di /investasi ada"],
+["Q04","Pemantau pengadaan","berjalan","disahkan dari kode 11 Nov: public/lelang.html dan tests/lelang.test.mjs ada; tiket menandai F3"],
+["Q05","Linimasa regulasi","berjalan","disahkan dari kode 11 Nov: public/regulasi.html memuat linimasa; dampak ke proyek terhubung belum diperiksa"],
 ["Q06","Pencari narasumber per kepakaran K16","belum",""],
 ["Q07","Pelacak rotasi jabatan","belum","F3"],
-["Q08","Ikuti dan ringkasan mingguan surel","belum","F3; bergantung penyedia surel (C-08)"],
+["Q08","Ikuti dan ringkasan mingguan surel","berjalan","disahkan dari kode 11 Nov: src/ikuti.js, public/diikuti.html, tests/ikuti.test.mjs ada; belum ada pengirim surel, ringkasan hanya di layar"],
 ["Q09","Kalender ekosistem","berjalan","Halaman kalender tayang"],
-["Q10","Lapangan kerja hijau per provinsi","belum",""],
+["Q10","Lapangan kerja hijau per provinsi","berjalan","disahkan dari kode 11 Nov: public/kerja.html, src/kerja.js, migrasi 0028, tests/kerja.test.mjs ada"],
 ["Q11","Kalkulator manfaat per proyek","belum",""],
-["Q12","Pelacak dana iklim","belum","F3"],
-["Q13","Isu sosial dan lingkungan per proyek","belum","F3; wajib bersumber dan ada hak jawab"],
+["Q12","Pelacak dana iklim","berjalan","disahkan dari kode 11 Nov: scripts/pipa/jetp_cipp.mjs, public/data/jetp_cipp.json, keuangan_hijau.json ada; tiket menandai F3"],
+["Q13","Isu sosial dan lingkungan per proyek","berjalan","disahkan dari kode 11 Nov: public/risiko.html dan tests/risiko.test.mjs ada; hak jawab belum diperiksa"],
 ["Q14","Perbandingan ASEAN","berjalan","Halaman ASEAN tayang"],
-["G01","Klaim profil oleh entitas","belum","F3"],
-["G02","Daftar mandiri dan verifikasi Sekretariat","belum","F3, terkait R02 yang ditunda"],
+["G01","Klaim profil oleh entitas","berjalan","disahkan dari kode 11 Nov: klaim organisasi di src/portal.js (migrasi 0019) dan klaim entri orang (migrasi 0037) ada; tiket menandai F3"],
+["G02","Daftar mandiri dan verifikasi Sekretariat","belum","F3, terkait R02 yang ditunda ; D20 sebagian mencakup alur ini (persetujuan pengurus, admin, super); status dibiarkan"],
 ["G03","API terbuka baca potret publik","belum","F3; backlog lama"],
 ["G04","Pencocokan kebutuhan proyek ke pakar","belum","F3"],
 ["H01","Uji ujung ke ujung login sampai kurasi","belum",""],
@@ -492,7 +529,8 @@ var K=[
 ["K16",D,"Taksonomi kepakaran dua sumbu: bidang (maks 3 per orang, wajib bersumber) dan jalur karier; penanda pernah-birokrasi.","Skema kepakaran di migrasi 0007; tiket R dan Q06."],
 ["K17",D,"Arah strategis: pelacak proyek per daerah, data terhubung, rantai PLTS 100 GW, regulasi ke proyek, profil proyek dwibahasa.","Prioritas F1 dan F2 di atas tiket lain; tiket seri P."],
 ["K18",D,"Empat belas fitur tambahan dipilih, enam lainnya sengaja tidak dibuat.","Tiket JM-Q01 sampai Q14."],
-["K19",D,"Pendaftaran mandiri, profil sendiri, kelompok orang, kategori organisasi baru. Bagian pendaftaran mandiri ditunda pada hari yang sama.","Migrasi 0007 selesai; R02 ditunda, R03 sampai R05 tetap F1."],
+["K19",D,"Pendaftaran mandiri, profil sendiri, kelompok orang, kategori organisasi baru. Bagian pendaftaran mandiri ditunda pada hari yang sama.","Migrasi 0007 selesai; R02 ditunda, R03 sampai R05 tetap F1. Alur pendaftaran dibuka lewat D20."],
+["K20",D,"Bukti agenda METI di Kalender: notulensi (maks 30.000 karakter) dan foto dokumentasi (maks 40 per agenda) per agenda. Dilihat semua peran yang login, diisi lewat tab Agenda di /admin. Foto privat di R2.","Mengalahkan aturan foto orang tidak disimpan khusus dokumentasi agenda. Migrasi 0010, jenis agenda di MATRIKS, tiket JM-F11."],
 ["D1",D,"Nama kerja Jaringan METI; rute / untuk sensus publik, /direktori untuk anggota; kode tiket JM.","Perancang."],
 ["D2",D,"Satu Worker dengan static assets, D1 untuk data tulis, R2 untuk berkas besar dan potret.","Kuota baca D1 Free 5 juta per hari; layar membaca JSON potret."],
 ["D4",D,"Tanpa build step dan tanpa framework: HTML, vanilla JS, CSS.","Pustaka luar hanya lewat CDN ber-SRI di CSP."],
@@ -506,7 +544,9 @@ var K=[
 ["D15",D,"Panen 1001startup.id terbatas dijalankan, setelah semula tidak.","Izin tertulis pengelola tetap diminta sebelum rilis publik (C-13)."],
 ["D16",D,"Fase F0 sampai F3.","Lihat bagian Fase."],
 ["D17",D,"Angka tampil lewat satu formatter, format Indonesia di mode ID.","Tanpa titik tengah sebagai pemisah teks."],
-["D18",D,"Tombol dummy dua ikon di tiap halaman.","DIBATALKAN oleh K15."]
+["D18",D,"Tombol dummy dua ikon di tiap halaman.","DIBATALKAN oleh K15."],
+["D19",D,"Seluruh situs wajib login. Tamu hanya boleh membuka alur masuk dan aset pendukungnya; halaman lain dialihkan 302 ke /masuk, API lain membalas 401. robots.txt berisi Disallow: /.","Pengecualian nyata di kode: /daftar, lacak, langganan, verifikasi KTA, kartu bagikan, sematan, kalender.ics bertoken. Daftar lengkap ada di Buku Pegangan Utama bab 2."],
+["D20","8 Nov 2026","Pendaftaran anggota mandiri dengan persetujuan admin dibuka: /daftar publik, tautan lacak bertoken, iuran dengan unggah bukti transfer, tab persetujuan untuk pengurus, admin, dan super.","Menggantikan penundaan K19 bagian (a) untuk alur ini. Skema: migrasi 0021 dan 0023. Midtrans opsional di belakang rahasia server."]
 ];
 $("#t-kep").innerHTML=K.map(function(k){return '<tr><td class="id">'+k[0]+'</td><td class="c">'+k[1]+'</td><td>'+esc(k[2])+'</td><td>'+esc(k[3])+'</td></tr>'}).join("");
 

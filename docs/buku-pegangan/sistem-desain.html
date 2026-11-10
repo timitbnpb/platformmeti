@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* Token METI (hijau, biru langit, lime dari logo) (DS §2). Satu-satunya berkas CSS yang boleh berisi hex (gerbang-token-meti).
    Dua blok gelap (@media dan [data-theme="dark"]) WAJIB identik (gerbang-tema-kembar). */
@@ -24,14 +24,17 @@
   --fokus:#1E7FA8;
   --shadow:0 2px 14px rgb(10 60 45/.08); --shadow-lg:0 8px 28px rgb(10 60 45/.16);
   --pendar:0 0 0 1px rgb(74 169 224/.35),0 8px 28px rgb(74 169 224/.18);
+  --lg-diamond:#BFE6F7; --lg-platinum:#CBD5E1; --lg-ruby:#F4B6C0; --lg-gold:#F3D27A; --lg-silver:#DDE3E8; --lg-bronze:#E3B48C; --lg-ink:#1B2623; --tp-surya:#D99A06; --tp-bayu:#2B8FC7; --tp-hidro:#1F5FA8; --tp-panas:#C2410C; --tp-bio:#4D8B1F; --tp-sampah:#7A5A2E; --tp-simpan:#6D4BB5; --tp-nuklir:#B3261E; --tp-hidrogen:#0E8C8C; --tp-jaringan:#475569; --tp-kebijakan:#0A5C47; --tp-industri:#8A3FA0; --tp-biaya:#B8860B; --tp-adil:#C2185B; --tp-karbon:#3F4F45; --tp-listrik:#0277BD; --tp-efisiensi:#2E7D32;
   --r:14px; --r-sm:10px; --r-lg:16px; --r-pil:999px;
-  --top:60px; --maks:1240px; --gut:16px; --gap:12px; --target:44px;
-  --display:"Poppins",system-ui,sans-serif;
+  --top:60px; --maks:1600px; --gut:16px; --gap:12px; --target:44px;
+  --display:"Inter",Arial,system-ui,sans-serif;
   --font:"Inter",Arial,system-ui,sans-serif;
-  --t-display:30px; --t-h1:24px; --t-h2:18px; --t-angka:28px; --t-body:15px; --t-kecil:12.5px; --t-label:11px;
+  --t-display:30px; --t-h1:24px; --t-h2:18px; --t-h3:17px; --t-angka:28px; --t-body:15px; --t-tombol:13px; --t-kecil:12.5px; --t-label:11px; --t-th:14px; --t-masukan:16px;
+  --lh-judul:1.2; --lh-rapat:1.35; --lh-isi:1.5; --ls-label:.08em;
   color-scheme:light;
 }
-@media (min-width:600px){:root{--gut:20px}}
+@media (min-width:600px){:root{--gut:24px}}
+@media (min-width:1000px){:root{--gut:32px}}
 @media (min-width:768px){:root{--t-display:44px; --t-h1:32px; --t-h2:22px; --t-angka:40px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0E1A17; --surface:#14241F; --card:#14241F;
@@ -45,6 +48,7 @@
   --ok-bg:#123A2F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#153A4A;
   --fokus:#5BB8EC; --kaki-bg:#041912;
   --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
+  --tp-surya:#F2B632; --tp-bayu:#5BB8EC; --tp-hidro:#6E9FE0; --tp-panas:#F2955A; --tp-bio:#8BC34A; --tp-sampah:#C9A06A; --tp-simpan:#A98BEB; --tp-nuklir:#FF8A80; --tp-hidrogen:#4FD3D3; --tp-jaringan:#94A3B8; --tp-kebijakan:#4FD3AD; --tp-industri:#CE93D8; --tp-biaya:#E6C04A; --tp-adil:#F48FB1; --tp-karbon:#A7BDB4; --tp-listrik:#4FC3F7; --tp-efisiensi:#81C784; --lg-diamond:#1F5F80; --lg-platinum:#44566B; --lg-ruby:#7A2C3C; --lg-gold:#7A5C12; --lg-silver:#4D5A62; --lg-bronze:#7A4A24; --lg-ink:#FFFFFF;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -59,6 +63,7 @@
   --ok-bg:#123A2F; --warn-bg:#3A2616; --bad-bg:#3A1B19; --info-bg:#153A4A;
   --fokus:#5BB8EC; --kaki-bg:#041912;
   --shadow:0 2px 14px rgb(0 0 0/.35); --shadow-lg:0 8px 28px rgb(0 0 0/.5);
+  --tp-surya:#F2B632; --tp-bayu:#5BB8EC; --tp-hidro:#6E9FE0; --tp-panas:#F2955A; --tp-bio:#8BC34A; --tp-sampah:#C9A06A; --tp-simpan:#A98BEB; --tp-nuklir:#FF8A80; --tp-hidrogen:#4FD3D3; --tp-jaringan:#94A3B8; --tp-kebijakan:#4FD3AD; --tp-industri:#CE93D8; --tp-biaya:#E6C04A; --tp-adil:#F48FB1; --tp-karbon:#A7BDB4; --tp-listrik:#4FC3F7; --tp-efisiensi:#81C784; --lg-diamond:#1F5F80; --lg-platinum:#44566B; --lg-ruby:#7A2C3C; --lg-gold:#7A5C12; --lg-silver:#4D5A62; --lg-bronze:#7A4A24; --lg-ink:#FFFFFF;
   color-scheme:dark;
 }
 
@@ -153,7 +158,7 @@ section.bagian>h2 .no{display:grid;place-items:center;width:36px;height:36px;bor
 .jarak-baris i{display:block;height:16px;background:var(--accent-isi);border-radius:4px}
 
 /* ===== KOMPONEN ASLI (salinan dari public/inti/*.css, publik.css, analisis.css, grafik.css) ===== */
-.jm-wadah{width:100%;max-width:var(--maks);margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+.jm-wadah{width:100%;max-width:var(--maks);margin-inline:auto;padding-inline:var(--gut)}
 /* Komponen .jm-* bersama (maks 400 baris, DS §1). Hanya token. */
 .jm-jawab{display:grid;gap:10px}
 .jm-jawab h1 em.hl{color:var(--accent)}
@@ -221,7 +226,7 @@ dialog.jm-dlg::backdrop{background:rgb(11 23 38/.55)}
 .jm-gulir{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line-cell);border-radius:var(--r)}
 .jm-tabel{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;font-variant-numeric:tabular-nums}
 .jm-tabel thead{background:linear-gradient(90deg,var(--brand),var(--brand2))}
-.jm-tabel th{padding:12px 14px;background:transparent;color:var(--on-brand);font:600 11.5px/1.3 var(--font);letter-spacing:.09em;text-transform:uppercase;text-align:center;white-space:nowrap;border-bottom:2px solid var(--meti-lime)}
+.jm-tabel th{padding:12px 14px;background:transparent;color:var(--on-brand);font:600 var(--t-th)/var(--lh-rapat) var(--font);letter-spacing:normal;text-transform:none;text-align:center;white-space:nowrap;border-bottom:2px solid var(--meti-lime)}
 .jm-tabel thead th:first-child{border-top-left-radius:calc(var(--r) - 1px)}.jm-tabel thead th:last-child{border-top-right-radius:calc(var(--r) - 1px)}
 .jm-tabel td{padding:12px 16px;border-bottom:1px solid var(--line-cell);vertical-align:middle;text-align:left;line-height:1.4}
 /* tautan di sel: tanpa garis bawah, tebal, hover hijau; kolom angka selebar judulnya agar angka berada di bawah judul */
@@ -316,7 +321,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 .jm-kpi.jm-w2 .jm-kpi-ik{background:color-mix(in srgb,var(--data2) 18%,var(--card))}.jm-kpi.jm-w3 .jm-kpi-ik{background:color-mix(in srgb,var(--data3) 22%,var(--card))}
 .jm-kpi.jm-w4 .jm-kpi-ik{background:color-mix(in srgb,var(--data4) 28%,var(--card))}.jm-kpi.jm-w5 .jm-kpi-ik{background:color-mix(in srgb,var(--data5) 20%,var(--card))}
 .jm-kpi-kepala{display:flex;align-items:center;gap:10px;min-width:0}
-.jm-kpi-kepala h3{flex:1;min-width:0;margin:0;font:700 11.5px/1.2 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.jm-kpi-kepala h3{flex:1;min-width:0;margin:0;font:700 var(--t-label)/var(--lh-judul) var(--font);letter-spacing:normal;text-transform:none;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .jm-kpi-kepala .jm-pil{flex:none}
 .jm-an-angka{display:flex;align-items:baseline;gap:8px;margin:2px 0 0;white-space:nowrap}
 .jm-an-angka b{font:900 var(--t-angka)/1.05 var(--display);color:var(--head);font-variant-numeric:tabular-nums}
@@ -357,7 +362,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 .jm-kaki-sos{display:flex;gap:10px;margin-top:18px}
 .jm-kaki-sos a{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;color:var(--on-brand);border:1px solid color-mix(in srgb,var(--on-brand) 22%,transparent);transition:background .15s,color .15s}
 .jm-kaki-sos a:hover{background:var(--meti-lime);color:var(--kaki-bg);border-color:var(--meti-lime)}
-.jm-kaki-kol h2{margin:0 0 14px;font:700 12px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--meti-lime) 80%,var(--kaki-bg));white-space:nowrap}
+.jm-kaki-kol h2{margin:0 0 14px;font:700 var(--t-kecil)/1 var(--font);letter-spacing:normal;text-transform:none;color:color-mix(in srgb,var(--meti-lime) 80%,var(--kaki-bg));white-space:nowrap}
 .jm-kaki-kol ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .jm-kaki-kol>ul>li>a:not(.jm-kaki-ln){display:inline-flex;align-items:center;gap:8px;color:color-mix(in srgb,var(--on-brand) 75%,transparent);text-decoration:none;min-height:24px}
 .jm-kaki-kol>ul>li>a:not(.jm-kaki-ln):hover{color:var(--on-brand);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
@@ -398,7 +403,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 .pv-kepala nav.tabs{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;flex:1;gap:4px;margin-left:12px}
 .pv-kepala nav.tabs a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);width:100%;padding:0 6px;color:var(--ink);text-decoration:none;font:500 14px/1 var(--font);border-radius:var(--r-pil);background:transparent;white-space:nowrap}
 .pv-kepala nav.tabs a:not([aria-current="page"]):hover{background:var(--surface)}
-.pv-kepala nav.tabs a[aria-current="page"]{background:var(--soft-hijau);color:var(--accent);font-weight:600}
+.pv-kepala nav.tabs a[aria-current="page"]{background:var(--brand);color:var(--on-brand);font-weight:600}
 .pv-kepala nav.tabs a .jm-ik{width:18px;height:18px;flex:none;color:currentColor}
 .pv-kepala .jm-merek{display:flex;align-items:center;gap:10px;min-height:var(--target);color:var(--head);font:600 16px/1 var(--display);white-space:nowrap}
 .pv-logo{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--brand);color:var(--on-brand);font:700 13px/1 var(--display)}
@@ -488,14 +493,15 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
     <li><a href="#ikon"><small>7</small>Ikon</a></li>
     <li><a href="#gelap-terang"><small>8</small>Gelap dan terang</a></li>
     <li><a href="#checklist"><small>9</small>Checklist push</a></li>
+    <li><a href="#belum"><small>10</small>Belum diputus</a></li>
   </ol>
 </aside>
 
 <main class="isi">
 <div class="hero">
-  <span class="label">Buku pegangan</span>
+  <span class="label">Buku pegangan, 11 Nov 2026</span>
   <h1>Sistem Desain METI</h1>
-  <p>Acuan visual Direktori METI untuk orang dan agent yang membangun layarnya. Semua contoh di halaman ini dirender dengan CSS asli platform, dalam terang dan gelap. Warna hanya berasal dari <code>public/inti/tema.css</code>.</p>
+  <p>Acuan visual Direktori METI untuk orang dan agent yang membangun layarnya. Semua contoh di halaman ini dirender dengan CSS asli platform, dalam terang dan gelap. Warna hanya berasal dari <code>public/inti/tema.css</code>. Nilai di halaman ini dicocokkan dengan <code>public/inti/*</code> per 11 Nov 2026 (terakhir diperbarui 7 Nov 2026: huruf Poppins diganti Inter, huruf kapital pada header tabel dan label dibuang, menu aktif, gutter, dan lebar maksimum disesuaikan, grup warna topik dan tingkat ditambah). Hal yang sumber aturannya masih bertentangan ada di bagian 10.</p>
   <div><button type="button" class="jm-tbl tema" id="tombol-tema" aria-label="Ganti tema terang atau gelap"><svg class="jm-ik" aria-hidden="true"><use href="#i-tema"/></svg><span>Ganti tema</span></button></div>
 </div>
 
@@ -504,16 +510,16 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
   <p class="pengantar">Aturan pemilik. Layar yang melanggar salah satunya dikembalikan ke pengerja.</p>
   <div class="larangan">
     <article class="kartu"><h3>1. Tidak ada yang dempet</h3><p>Jarak minimal 24px dari hero ke baris kartu, tanpa overlap negatif. Label KPI satu baris, tinggi kartu sama, semua angka sejajar di satu garis dasar. Gap antar kartu 16 sampai 24px.</p></article>
-    <article class="kartu"><h3>2. Header tabel rata tengah</h3><p>Th putih, huruf kapital, rata tengah, di atas gradien hijau dengan garis lime 2px. Sel angka rata kanan dan tabular. Bukan header terang, bukan rata kiri.</p></article>
+    <article class="kartu"><h3>2. Header tabel rata tengah</h3><p>Th putih, huruf biasa (bukan kapital penuh), rata tengah, di atas gradien hijau <b>--brand</b> ke <b>--brand2</b> dengan garis lime 2px. Sel angka rata kanan dan tabular. Bukan header terang, bukan rata kiri.</p></article>
     <article class="kartu"><h3>3. Data berupa grafik sungguhan</h3><p>Batang, kolom, dumbbell atau garis dengan ambang dan nilai. Tidak ada baris teks "label ... N" berjarak lebar. Hero tidak boleh setengah kosong: isi sisi kanan dengan angka besar dan bar.</p></article>
     <article class="kartu"><h3>4. Semua bisa diklik</h3><p>Kartu KPI, baris peringkat, batang grafik, dan sel nama membuka halaman atau laci yang relevan. Elemen yang terlihat seperti data tetapi mati dianggap cacat.</p></article>
-    <article class="kartu"><h3>5. Tanpa kotak galat</h3><p>Bagian yang gagal dimuat disembunyikan, bukan diganti kotak merah atau catatan "tidak tersedia". Fitur yang tidak jalan di platform ini tidak ditampilkan.</p></article>
+    <article class="kartu"><h3>5. Tanpa kotak galat</h3><p>Bagian yang gagal dimuat disembunyikan, bukan diganti kotak merah atau catatan "tidak tersedia". Fitur yang tidak jalan di platform ini tidak ditampilkan. Catatan: kode masih memiliki kelas <code>.jm-galat</code> untuk keadaan galat, dan DESIGN-SYSTEM.md meminta <code>role="alert"</code> dengan tombol "Coba lagi"; sumber aturannya belum disatukan (Buku Pegangan Utama, bab 12).</p></article>
     <article class="kartu"><h3>6. Tautan di tabel tanpa garis bawah</h3><p>Tautan dan tombol di sel: tebal, warna teks, hover hijau. Garis bawah hanya untuk tautan di paragraf dan tombol teks "hapus filter".</p></article>
-    <article class="kartu"><h3>7. Wadah per bagian</h3><p>Tiap bagian halaman berada dalam satu wadah (<code>.jm-wadah</code>) dan satu kartu dengan judul kecil di dalamnya. Tidak ada bagian yang menempel ke tepi layar.</p></article>
+    <article class="kartu"><h3>7. Wadah per bagian</h3><p>Tiap bagian halaman berada dalam satu wadah (<code>.jm-wadah</code>) dan satu kartu dengan judul kecil di dalamnya. Tidak ada bagian yang menempel ke tepi layar. Jarak antar bagian di <code>main</code> minimal 24px.</p></article>
     <article class="kartu"><h3>8. Item nav selebar sama</h3><p>Di desktop semua item menu kepala memakai kolom sama lebar, isi di tengah, ikon dan teks sejajar. Lebar tidak mengikuti panjang label.</p></article>
-    <article class="kartu"><h3>9. Tanpa bahasa AI</h3><p>Tanpa em dash, tanpa emoji, tanpa kata hype. Pemisah teks memakai koma, kalimat, atau baris baru. Kalimat singkat, langsung, bersumber.</p></article>
-    <article class="kartu"><h3>10. Ikon di nav dan tab</h3><p>Setiap item menu kepala, tab, dan subnav membawa ikon 18px dari sprite <code>ikon.svg</code>. Deretan pilihan membentang ujung ke ujung. Tombol ikon polos, tanpa kotak.</p></article>
-    <article class="kartu"><h3>11. Tidak ada hex di luar tema.css</h3><p>Semua warna lewat <code>var(--token)</code>. Gerbang <code>gerbang-token-meti</code> menolak hex di CSS lain. Berlaku juga untuk warna di SVG dan JS.</p></article>
+    <article class="kartu"><h3>9. Tanpa bahasa AI</h3><p>Tanpa em dash, tanpa emoji, tanpa kata hype, tanpa huruf kapital penuh pada tampilan (CSS tanpa <code>uppercase</code>). Pemisah teks memakai koma, kalimat, atau baris baru. Kalimat singkat, langsung, bersumber.</p></article>
+    <article class="kartu"><h3>10. Ikon di nav dan tab</h3><p>Setiap item menu kepala, tab, dan subnav membawa ikon (18px di tab, 20px bawaan <code>.jm-ik</code>) dari sprite <code>ikon.svg</code>; ikon menu kepala wajib berbeda (uji <code>gerbang-ikon-nav</code>). Deretan pilihan membentang ujung ke ujung. Tombol ikon polos, tanpa kotak.</p></article>
+    <article class="kartu"><h3>11. Tidak ada hex di luar tema.css</h3><p>Semua warna lewat <code>var(--token)</code>. Uji <code>gerbang-layar-statis.test.mjs</code> menolak hex di CSS lain (berkas <code>direktori*</code> hasil port dikecualikan). Berlaku juga untuk warna di SVG dan JS.</p></article>
   </div>
 </section>
 
@@ -537,16 +543,17 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 
 <section class="bagian" id="tipografi">
   <h2><span class="no">3</span>Tipografi</h2>
-  <p class="pengantar">Poppins untuk judul, angka, label, dan header tabel. Inter untuk isi, cadangan Arial. Angka selalu <code>font-variant-numeric:tabular-nums</code>. Ukuran di bawah mengikuti lebar layar (nilai kecil di HP, besar mulai 768px).</p>
+  <p class="pengantar">Satu keluarga huruf: Inter (400, 500, 600, 700), dihosting di <code>/fonts/*.woff2</code> dengan <code>font-display:swap</code>, cadangan Arial dan huruf CJK sistem untuk bahasa Mandarin. Tidak ada berkas Poppins. Angka selalu <code>font-variant-numeric:tabular-nums</code>. Ukuran di bawah mengikuti lebar layar (nilai kecil di HP, besar mulai 768px); CSS lain wajib memakai token ini (uji <code>gerbang-tipografi</code>).</p>
   <div class="kartu">
-    <div class="contoh-t"><div class="meta"><b>--t-display</b>30 / 44px, Poppins 700</div><div style="font:700 var(--t-display)/1.1 var(--display);color:var(--head)">Jawaban di judul</div></div>
-    <div class="contoh-t"><div class="meta"><b>--t-h1</b>24 / 32px, Poppins 700</div><div style="font:700 var(--t-h1)/1.2 var(--display);color:var(--head)">Kapasitas EBT naik 12 persen</div></div>
-    <div class="contoh-t"><div class="meta"><b>--t-h2</b>18 / 22px, Poppins 600</div><div style="font:600 var(--t-h2)/1.3 var(--display);color:var(--head)">Judul kartu atau bagian</div></div>
-    <div class="contoh-t"><div class="meta"><b>--t-angka</b>28 / 40px, Poppins 900 di KPI</div><div style="font:900 var(--t-angka)/1.05 var(--display);color:var(--head);font-variant-numeric:tabular-nums">1.284,6 <span style="font:500 14px/1 var(--font);color:var(--ink2)">MW</span></div></div>
-    <div class="contoh-t"><div class="meta"><b>--t-body</b>15px, Inter 400, baris 1,55</div><div style="font:400 var(--t-body)/1.55 var(--font)">Teks isi dipakai untuk paragraf dan sel tabel. Paragraf panjang dibatasi sekitar 60 karakter per baris.</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-display</b>30 / 44px, Inter 700</div><div style="font:700 var(--t-display)/1.1 var(--display);color:var(--head)">Jawaban di judul</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-h1</b>24 / 32px, Inter 700</div><div style="font:700 var(--t-h1)/1.2 var(--display);color:var(--head)">Kapasitas EBT naik 12 persen</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-h2</b>18 / 22px, Inter 700</div><div style="font:600 var(--t-h2)/1.3 var(--display);color:var(--head)">Judul kartu atau bagian</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-angka</b>28 / 40px, Inter 700</div><div style="font:700 var(--t-angka)/1.05 var(--display);color:var(--head);font-variant-numeric:tabular-nums">1.284,6 <span style="font:500 14px/1 var(--font);color:var(--ink2)">MW</span></div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-body</b>15px, Inter 400, baris 1,5</div><div style="font:400 var(--t-body)/var(--lh-isi) var(--font)">Teks isi dipakai untuk paragraf dan sel tabel. Paragraf panjang dibatasi sekitar 60 karakter per baris.</div></div>
     <div class="contoh-t"><div class="meta"><b>--t-kecil</b>12,5px, Inter 400</div><div style="font:400 var(--t-kecil)/1.4 var(--font);color:var(--ink2)">Sumber: ESDM, Desember 2025. Dipakai untuk sumber dan keterangan.</div></div>
-    <div class="contoh-t"><div class="meta"><b>--t-label</b>11px, kapital, spasi .08em</div><div style="font:600 var(--t-label)/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)">Label kecil dan pil kategori</div></div>
-    <div class="contoh-t"><div class="meta"><b>--display / --font</b>keluarga huruf</div><div><span style="font-family:var(--display);font-weight:600">Poppins: judul dan angka</span><br><span style="font-family:var(--font)">Inter: isi dan keterangan</span></div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-label</b>11px, Inter 600, huruf biasa</div><div style="font:600 var(--t-label)/var(--lh-judul) var(--font);color:var(--ink2)">Label kecil dan pil kategori</div></div>
+    <div class="contoh-t"><div class="meta"><b>--t-h3, --t-tombol, --t-th, --t-masukan</b>17px Inter 600, 13px, 14px, 16px</div><div style="font:600 var(--t-h3)/var(--lh-judul) var(--font);color:var(--head)">Judul anak bagian</div></div>
+    <div class="contoh-t"><div class="meta"><b>--display / --font</b>keluarga huruf</div><div><span style="font-family:var(--display);font-weight:700">Inter: judul dan angka</span><br><span style="font-family:var(--font)">Inter: isi dan keterangan</span></div></div>
   </div>
   <p class="pakai">Judul halaman berupa kalimat temuan, kata kunci diberi <code>&lt;em class="hl"&gt;</code>. Satuan di samping angka besar kecil dan abu. Sel tabel dan judul rata kiri atau tengah, bukan rata kiri-kanan.</p>
 </section>
@@ -561,7 +568,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
       <div class="jarak-baris"><b>--target</b><i style="width:var(--target)"></i></div>
       <div class="jarak-baris"><b>24px</b><i style="width:24px"></i></div>
     </div>
-    <p class="pakai"><b>--gut</b> 16px di HP, 20px mulai 600px (tepi halaman). <b>--gap</b> 12px (antar kontrol). <b>--target</b> 44px (tinggi minimum yang bisa disentuh). <b>--maks</b> 1240px (lebar isi, dipakai <code>.jm-wadah</code>). Hero ke baris kartu minimal <b>24px</b>; antar kartu 16 sampai 24px.</p>
+    <p class="pakai"><b>--gut</b> 16px di HP, 24px mulai 600px, 32px mulai 1000px (tepi halaman). <b>--gap</b> 12px (antar kontrol). <b>--target</b> 44px (tinggi minimum yang bisa disentuh). <b>--maks</b> 1600px (lebar isi, dipakai <code>.jm-wadah</code>). Hero ke baris kartu minimal <b>24px</b>; antar bagian di <code>main</code> minimal 24px; antar kartu 16 sampai 24px (aturan pemilik), sementara <b>--gap</b> 12px dipakai antar kontrol.</p>
   </div>
   <div class="kartu">
     <h3>Radius</h3>
@@ -589,7 +596,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
   <article class="kartu" id="k-wadah">
     <h3>.jm-wadah</h3>
     <div class="kelas"><button type="button" class="salin" data-salin="jm-wadah"><svg class="jm-ik" aria-hidden="true"><use href="#i-salin"/></svg>jm-wadah</button></div>
-    <div class="pv"><span class="pv-label">Pratinjau</span><div class="jm-wadah" style="outline:1px dashed var(--line-ctl);padding-block:16px"><div class="jm-kartu">Isi halaman. Lebar maksimum <b>--maks</b> 1240px, jarak tepi <code>clamp(16px,4vw,32px)</code>.</div></div></div>
+    <div class="pv"><span class="pv-label">Pratinjau</span><div class="jm-wadah" style="outline:1px dashed var(--line-ctl);padding-block:16px"><div class="jm-kartu">Isi halaman. Lebar maksimum <b>--maks</b> 1600px, jarak tepi <b>--gut</b> (16, 24, 32px).</div></div></div>
     <p class="pakai"><b>Kapan dipakai:</b> pembungkus tiap bagian halaman (hero, KPI, tabel, grafik) supaya lebar isi dan jarak tepi sama di semua halaman. Berkas: <code>inti/gaya.css</code>.</p>
   </article>
 
@@ -620,7 +627,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
         </tbody>
       </table></div>
     </div>
-    <p class="pakai"><b>Struktur:</b> <code>&lt;div class="jm-gulir"&gt;&lt;table class="jm-tabel"&gt;</code>. Thead satu gradien <b>--brand</b> ke <b>--brand2</b>, th putih kapital rata tengah, garis lime 2px, zebra halus, hover <b>--soft-hijau</b>. Identitas dua baris: <code>&lt;span class="jm-id"&gt;&lt;b&gt;Nama&lt;/b&gt;&lt;small&gt;meta&lt;/small&gt;&lt;/span&gt;</code>. Angka: <code>td.jm-num</code>. Pil atau kolom sempit: <code>td.jm-tengah</code>. Urut: <code>th[aria-sort]</code> berisi <code>button.jm-urut</code>. Kartu di HP: beri tiap td <code>data-label="Kolom"</code>.</p>
+    <p class="pakai"><b>Struktur:</b> <code>&lt;div class="jm-gulir"&gt;&lt;table class="jm-tabel"&gt;</code>. Thead satu gradien <b>--brand</b> ke <b>--brand2</b>, th putih huruf biasa rata tengah (<b>--t-th</b> 14px, Inter 600), garis lime 2px, zebra halus, hover <b>--soft-hijau</b>. Identitas dua baris: <code>&lt;span class="jm-id"&gt;&lt;b&gt;Nama&lt;/b&gt;&lt;small&gt;meta&lt;/small&gt;&lt;/span&gt;</code>. Angka: <code>td.jm-num</code>. Pil atau kolom sempit: <code>td.jm-tengah</code>. Urut: <code>th[aria-sort]</code> berisi <code>button.jm-urut</code>. Kartu di HP: beri tiap td <code>data-label="Kolom"</code>.</p>
     <p class="pakai"><b>Kapan dipakai:</b> semua tabel data, tanpa pengecualian. Header tidak pernah terang atau rata kiri. Tautan di sel tanpa garis bawah.</p>
   </article>
 
@@ -656,7 +663,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
         <button type="button" role="tab" aria-selected="false"><svg class="jm-ik" aria-hidden="true"><use href="#i-linimasa"/></svg>Linimasa</button>
       </div>
     </div>
-    <p class="pakai"><b>Kapan dipakai:</b> berpindah tampilan dalam satu halaman (<code>button[role=tab][aria-selected]</code>) atau antarhalaman (<code>a[aria-current=page]</code>, helper <code>tabTautan</code>). Selalu ikon plus label. Aktif ditandai garis hijau 3px.</p>
+    <p class="pakai"><b>Kapan dipakai:</b> berpindah tampilan dalam satu halaman (<code>button[role=tab][aria-selected]</code>) atau antarhalaman (<code>a[aria-current=page]</code>, helper <code>tabTautan</code>). Selalu ikon plus label. Aktif ditandai garis bawah 3px berwarna <b>--accent</b>.</p>
   </article>
 
   <article class="kartu" id="k-subnav">
@@ -707,7 +714,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
         </a>
       </div>
     </div>
-    <p class="pakai"><b>Aturan:</b> lingkaran ikon 32px bertint dari <b>--data1..5</b> (kelas <code>jm-w2..w5</code>); label kapital satu baris dan dipotong elipsis, konteks pindah ke subjudul atau tooltip; angka Poppins 900 dengan satuan kecil sebaris (<code>align-items:baseline</code>); pil <b>EST</b> untuk angka turunan; sumber satu baris dengan <code>title</code> berisi sumber penuh. Subjudul <code>min-height:3em</code> agar angka tidak bergeser. Seluruh kartu adalah tautan.</p>
+    <p class="pakai"><b>Aturan:</b> lingkaran ikon 32px bertint dari <b>--data1..5</b> (kelas <code>jm-w2..w5</code>); label huruf biasa 11px satu baris dan dipotong elipsis, konteks pindah ke subjudul atau tooltip; angka Inter 700 (<b>--t-angka</b>; kelas <code>.jm-an-angka</code> masih menulis 900, yang tampil 700 karena Inter hanya dihosting sampai 700) dengan satuan kecil sebaris (<code>align-items:baseline</code>); pil <b>EST</b> untuk angka turunan; sumber satu baris dengan <code>title</code> berisi sumber penuh. Subjudul <code>min-height:3em</code> agar angka tidak bergeser. Seluruh kartu adalah tautan.</p>
     <p class="pakai"><b>Kapan dipakai:</b> angka kunci di bawah hero, jarak hero ke kartu minimal 24px. Berkas: <code>publik.css</code> (<code>.jm-kpi</code>) dan <code>analisis.css</code> (<code>.jm-kpi-kepala</code>, <code>.jm-an-angka</code>).</p>
   </article>
 
@@ -753,7 +760,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
         </div>
       </div>
     </div>
-    <p class="pakai"><b>Aturan:</b> <code>grid-auto-flow:column; grid-auto-columns:1fr</code> membuat semua item selebar sama, isi di tengah, padding dan tinggi sama (44px), ikon 18px sejajar teks. Aktif = pil <b>--soft-hijau</b> dengan teks <b>--accent</b>. Tombol ikon polos dengan <code>aria-label</code> dan <code>title</code>. Di bawah 1200px menu jadi hamburger. Berkas: <code>inti/kepala.css</code>.</p>
+    <p class="pakai"><b>Aturan:</b> <code>grid-auto-flow:column; grid-auto-columns:1fr</code> membuat semua item selebar sama, isi di tengah, padding dan tinggi sama (44px), ikon 18px sejajar teks. Aktif = pil <b>--brand</b> dengan teks <b>--on-brand</b>; di menu hamburger aktif memakai <b>--soft-hijau</b> dengan teks <b>--accent</b>. Tombol ikon polos dengan <code>aria-label</code> dan <code>title</code>. Di bawah 1200px menu jadi hamburger. Berkas: <code>inti/kepala.css</code>.</p>
   </article>
 
   <article class="kartu pv-kaki" id="k-kaki">
@@ -776,7 +783,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
       </div>
       <div class="jm-kaki-bawah"><p>Contoh footer. Data bersumber, bertanggal, dan dapat ditelusuri.</p></div>
     </footer></div>
-    <p class="pakai"><b>Kapan dipakai:</b> satu footer bersama di semua halaman. Latar <b>--kaki-bg</b>, garis gradien hijau ke lime di atas, judul kolom lime kapital, angka statistik lime. Tautan footer boleh bergaris bawah saat hover. Berkas: <code>inti/gaya.css</code>.</p>
+    <p class="pakai"><b>Kapan dipakai:</b> satu footer bersama di semua halaman. Latar <b>--kaki-bg</b>, garis gradien hijau ke lime di atas, judul kolom lime huruf biasa, angka statistik lime. Tautan footer boleh bergaris bawah saat hover. Berkas: <code>inti/gaya.css</code>.</p>
   </article>
 
   <article class="kartu" id="k-pil">
@@ -811,7 +818,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
         <button type="button" class="jm-tbl" disabled style="opacity:.5;cursor:not-allowed">Nonaktif</button>
       </div>
     </div>
-    <p class="pakai"><b>Kapan dipakai:</b> <code>jm-tbl-utama</code> untuk satu aksi utama per area, <code>jm-tbl</code> (garis) untuk aksi biasa, <code>jm-tbl-bahaya</code> untuk aksi merusak. Tinggi minimum 44px. Tombol ikon saja polos: tanpa border, kotak, atau latar; hover cukup ganti warna.</p>
+    <p class="pakai"><b>Kapan dipakai:</b> <code>jm-tbl-utama</code> untuk satu aksi utama per area, <code>jm-tbl</code> (garis) untuk aksi biasa, <code>jm-tbl-bahaya</code> untuk aksi merusak. Tidak ada tombol isi data dummy (K15). Tinggi minimum 44px. Tombol ikon saja polos: tanpa border, kotak, atau latar; hover cukup ganti warna.</p>
   </article>
 </section>
 
@@ -888,7 +895,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 
 <section class="bagian" id="gelap-terang">
   <h2><span class="no">8</span>Gelap dan terang</h2>
-  <p class="pengantar">Mode gelap ditulis dua kali di <code>tema.css</code>: di dalam <code>@media (prefers-color-scheme:dark)</code> untuk <code>:root:not([data-theme="light"])</code>, dan di <code>:root[data-theme="dark"]</code> untuk pilihan manual. Dua blok itu <b>wajib identik</b> (gerbang <code>gerbang-tema-kembar</code>).</p>
+  <p class="pengantar">Mode gelap ditulis dua kali di <code>tema.css</code>: di dalam <code>@media (prefers-color-scheme:dark)</code> untuk <code>:root:not([data-theme="light"])</code>, dan di <code>:root[data-theme="dark"]</code> untuk pilihan manual. Dua blok itu <b>wajib identik</b>. Per 11 Nov 2026 keduanya identik (60 token tiap blok); belum ada uji otomatis khusus untuk ini, jadi dijaga lewat peninjauan.</p>
   <div class="kartu">
     <h3>Aturan</h3>
     <ul class="pakai" style="margin:0;padding-left:20px">
@@ -929,12 +936,29 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
   </ul>
   <div class="hasil-cek"><span class="jm-pil" id="hasil-cek">0 dari 18 ya</span><button type="button" class="jm-tbl" id="reset-cek"><svg class="jm-ik" aria-hidden="true"><use href="#i-silang"/></svg>Kosongkan</button></div>
 </section>
+
+<section class="bagian" id="belum">
+  <h2><span class="no">10</span>Belum diputus pemilik</h2>
+  <p class="pengantar">Di bagian ini tertulis nilai yang dipakai kode dan sumber aturan yang saling bertentangan. Halaman ini tidak memilih salah satunya. Daftar lengkap seluruh sistem ada di Buku Pegangan Utama, bab 12. Saat ini ditulis, <code>KEPUTUSAN-METI.md</code> di working tree memuat D21 (belum dikomit) yang memutus konflik gaya mengikuti ATURAN-PEMILIK bagian X dan kode berjalan; begitu dikomit, tabel ini dapat dipindah menjadi keputusan.</p>
+  <div class="jm-gulir"><table class="jm-tabel"><thead><tr><th>Hal</th><th>Yang dipakai kode</th><th>Sumber yang bertentangan</th></tr></thead><tbody>
+    <tr><td>Huruf header tabel dan label</td><td>Huruf biasa (<code>text-transform:none</code>); uji <code>gerbang-tanpa-kapital</code> melarang <code>uppercase</code> di CSS.</td><td>Sistem Desain 7 Nov menulis huruf kapital; ATURAN X3 menulis capitalize; komentar di <code>jm.css</code> masih menyebut kapital.</td></tr>
+    <tr><td>Perataan angka tabel</td><td><code>td.jm-num</code> rata kanan, tabular.</td><td>ATURAN B7 menulis angka di tengah; X2 memutus rata kanan.</td></tr>
+    <tr><td>Warna header tabel</td><td>Gradien <b>--brand</b> ke <b>--brand2</b>, garis lime 2px.</td><td>DESIGN-SYSTEM §6.6 menulis header petrol tanpa gradien.</td></tr>
+    <tr><td>Gutter dan jarak</td><td><b>--gut</b> 16, 24, 32px; <b>--gap</b> 12px; antar bagian minimal 24px.</td><td>DESIGN-SYSTEM <b>--gut</b> 20px dan <b>--maks</b> 1240px; ATURAN T2 (16 sampai 24px) lawan T8 (12px).</td></tr>
+    <tr><td>Menu aktif dan hamburger</td><td>Pil <b>--brand</b> teks putih; hamburger di bawah 1200px.</td><td>Sistem Desain 7 Nov menulis soft-hijau; DESIGN-SYSTEM menulis hamburger di bawah 1100px.</td></tr>
+    <tr><td>Tebal angka KPI dan huruf</td><td>Inter 700; satu kelas menulis 900 yang tampil 700. Tidak ada berkas Poppins.</td><td>Sistem Desain 7 Nov menulis Poppins 900; DESIGN-SYSTEM menulis Poppins 700.</td></tr>
+    <tr><td>Keadaan galat</td><td>Ada kelas <code>.jm-galat</code> (kotak galat berikon).</td><td>DESIGN-SYSTEM §6.0 menulis <code>role="alert"</code> dan tombol "Coba lagi"; prinsip 5 dan ATURAN menulis bagian yang gagal disembunyikan.</td></tr>
+    <tr><td>Kelas ikon dan tab</td><td><code>.jm-ik</code> dan <code>.jm-tab</code>, <code>.jm-subnav</code> di inti; sisa port <code>.ak-ikon</code>, <code>.ak-seg</code> di direktori.</td><td>DESIGN-SYSTEM menulis <code>.ak-ikon</code> dan <code>.ak-seg</code> sebagai kelas utama.</td></tr>
+    <tr><td>Warna per sektor</td><td>Palet topik <b>--tp-*</b> (komentar di <code>tema.css</code>: pemilik 8 Nov 2026).</td><td>DESIGN-SYSTEM menulis tidak ada warna per sektor, hanya <b>--data1..5</b>.</td></tr>
+    <tr><td>Sapaan teks</td><td>Sapaan "kamu" muncul di 19 baris <code>id.json</code> (alur masuk, langganan, KTA, profil); teks lain polos.</td><td>DESIGN-SYSTEM §7 menulis "kamu"; ATURAN X10 menulis birokratis-polos.</td></tr>
+  </tbody></table></div>
+</section>
 </main>
 </div>
 
 <script>
 (function(){
-  var WARNA=[{"judul": "Merek (tetap di kedua mode)", "isi": [["meti-navy", "#0A5C47", null], ["meti-petrol", "#1E7FA8", null], ["meti-teal", "#12896B", null], ["meti-cyan", "#4AA9E0", null], ["meti-lime", "#9DC94F", null], ["meti-cloud", "#F2F8F5", null], ["meti-oranye", "#C55A11", null]]}, {"judul": "Permukaan dan garis", "isi": [["paper", "#FFFFFF", "#0E1A17"], ["surface", "#F2F8F5", "#14241F"], ["card", "#FFFFFF", "#14241F"], ["soft-biru", "#E3F3FA", "#153A4A"], ["soft-hijau", "#E2F3EC", "#123A2F"], ["akun-isi", "#E4F3EE", "#153A4A"], ["akun-krem", "#FBF1DC", "#3A2E1C"], ["akun-biru", "#BFE3F4", "#1E5E78"], ["line", "#D3E3DC", "#25403A"], ["line-cell", "#DCE9E3", "#25403A"], ["line-ctl", "#667C73", "#7E9A8F"]]}, {"judul": "Teks", "isi": [["ink", "#0E1B17", "#E8F2EE"], ["ink2", "#46594F", "#A7BDB4"], ["head", "#0B3D31", "#FFFFFF"], ["on-brand", "#FFFFFF", null], ["on-accent", "#FFFFFF", "#08201A"]]}, {"judul": "Merek dan aksen", "isi": [["brand", "#0A5C47", "#0B3D31"], ["brand2", "#12896B", null], ["accent", "#00705A", "#4FD3AD"], ["accent-isi", "#12896B", null], ["sorot", "#9DC94F", null], ["kaki-bg", "#06261D", "#041912"], ["fokus", "#1E7FA8", "#5BB8EC"]]}, {"judul": "Semantik (ok, warn, bad, info)", "isi": [["ok", "#066B52", "#4FD3AD"], ["warn", "#A8480A", "#F2955A"], ["bad", "#B3261E", "#FF8A80"], ["info", "#1E7FA8", "#5BB8EC"], ["ok-bg", "#E2F3EC", "#123A2F"], ["warn-bg", "#FBEBDD", "#3A2616"], ["bad-bg", "#FBE7E5", "#3A1B19"], ["info-bg", "#E3F3FA", "#153A4A"]]}, {"judul": "Palet data 1 sampai 5 (grafik)", "isi": [["data1", "#0A5C47", "#5BB8EC"], ["data2", "#12896B", "#4FD3AD"], ["data3", "#4AA9E0", "#B3DB6E"], ["data4", "#9DC94F", "#9FB8AE"], ["data5", "#1E7FA8", "#3E9BCB"]]}];
+  var WARNA=[{"judul": "Merek (tetap di kedua mode)", "isi": [["meti-navy", "#0A5C47", null], ["meti-petrol", "#1E7FA8", null], ["meti-teal", "#12896B", null], ["meti-cyan", "#4AA9E0", null], ["meti-lime", "#9DC94F", null], ["meti-cloud", "#F2F8F5", null], ["meti-oranye", "#C55A11", null]]}, {"judul": "Permukaan dan garis", "isi": [["paper", "#FFFFFF", "#0E1A17"], ["surface", "#F2F8F5", "#14241F"], ["card", "#FFFFFF", "#14241F"], ["soft-biru", "#E3F3FA", "#153A4A"], ["soft-hijau", "#E2F3EC", "#123A2F"], ["akun-isi", "#E4F3EE", "#153A4A"], ["akun-krem", "#FBF1DC", "#3A2E1C"], ["akun-biru", "#BFE3F4", "#1E5E78"], ["line", "#D3E3DC", "#25403A"], ["line-cell", "#DCE9E3", "#25403A"], ["line-ctl", "#667C73", "#7E9A8F"]]}, {"judul": "Teks", "isi": [["ink", "#0E1B17", "#E8F2EE"], ["ink2", "#46594F", "#A7BDB4"], ["head", "#0B3D31", "#FFFFFF"], ["on-brand", "#FFFFFF", null], ["on-accent", "#FFFFFF", "#08201A"]]}, {"judul": "Merek dan aksen", "isi": [["brand", "#0A5C47", "#0B3D31"], ["brand2", "#12896B", null], ["accent", "#00705A", "#4FD3AD"], ["accent-isi", "#12896B", null], ["sorot", "#9DC94F", null], ["kaki-bg", "#06261D", "#041912"], ["fokus", "#1E7FA8", "#5BB8EC"]]}, {"judul": "Semantik (ok, warn, bad, info)", "isi": [["ok", "#066B52", "#4FD3AD"], ["warn", "#A8480A", "#F2955A"], ["bad", "#B3261E", "#FF8A80"], ["info", "#1E7FA8", "#5BB8EC"], ["ok-bg", "#E2F3EC", "#123A2F"], ["warn-bg", "#FBEBDD", "#3A2616"], ["bad-bg", "#FBE7E5", "#3A1B19"], ["info-bg", "#E3F3FA", "#153A4A"]]}, {"judul": "Palet data 1 sampai 5 (grafik)", "isi": [["data1", "#0A5C47", "#5BB8EC"], ["data2", "#12896B", "#4FD3AD"], ["data3", "#4AA9E0", "#B3DB6E"], ["data4", "#9DC94F", "#9FB8AE"], ["data5", "#1E7FA8", "#3E9BCB"]]}, {"judul": "Palet topik dan teknologi (--tp-*)", "isi": [["tp-surya", "#D99A06", "#F2B632"], ["tp-bayu", "#2B8FC7", "#5BB8EC"], ["tp-hidro", "#1F5FA8", "#6E9FE0"], ["tp-panas", "#C2410C", "#F2955A"], ["tp-bio", "#4D8B1F", "#8BC34A"], ["tp-sampah", "#7A5A2E", "#C9A06A"], ["tp-simpan", "#6D4BB5", "#A98BEB"], ["tp-nuklir", "#B3261E", "#FF8A80"], ["tp-hidrogen", "#0E8C8C", "#4FD3D3"], ["tp-jaringan", "#475569", "#94A3B8"], ["tp-kebijakan", "#0A5C47", "#4FD3AD"], ["tp-industri", "#8A3FA0", "#CE93D8"], ["tp-biaya", "#B8860B", "#E6C04A"], ["tp-adil", "#C2185B", "#F48FB1"], ["tp-karbon", "#3F4F45", "#A7BDB4"], ["tp-listrik", "#0277BD", "#4FC3F7"], ["tp-efisiensi", "#2E7D32", "#81C784"]]}, {"judul": "Tingkat paket acara (--lg-*)", "isi": [["lg-diamond", "#BFE6F7", "#1F5F80"], ["lg-platinum", "#CBD5E1", "#44566B"], ["lg-ruby", "#F4B6C0", "#7A2C3C"], ["lg-gold", "#F3D27A", "#7A5C12"], ["lg-silver", "#DDE3E8", "#4D5A62"], ["lg-bronze", "#E3B48C", "#7A4A24"], ["lg-ink", "#1B2623", "#FFFFFF"]]}];
   var root=document.documentElement;
 
   /* peta warna */

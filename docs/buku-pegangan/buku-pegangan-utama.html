@@ -104,6 +104,7 @@ footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
   <div class="toc-box"><details id="tocd" open>
     <summary>Daftar isi</summary>
     <ol id="tocl">
+      <li><a href="#perubahan">Catatan perubahan</a></li>
       <li><a href="#apa-ini">1. Apa ini dan untuk siapa</a></li>
       <li><a href="#peta-halaman">2. Peta halaman</a></li>
       <li><a href="#peran">3. Peran dan lapis data</a></li>
@@ -114,6 +115,8 @@ footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
       <li><a href="#glosarium">8. Glosarium singkat</a></li>
       <li><a href="#infrastruktur">9. Infrastruktur</a></li>
       <li><a href="#kontak">10. Kontak dan eskalasi</a></li>
+      <li><a href="#modul">11. Modul layanan di Worker</a></li>
+      <li><a href="#belum-diputus">12. Belum diputus pemilik</a></li>
     </ol>
   </details></div>
 </nav>
@@ -121,9 +124,21 @@ footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
 <main>
 <div class="intro">
   <h1>Buku Pegangan Utama Direktori METI</h1>
-  <p>Rujukan satu halaman untuk siapa pun yang memakai, merawat, atau mengisi Direktori METI di direktori.metiires.or.id. Isinya diringkas dari paket perencanaan di <code>docs/perencanaan/</code>. Bila ada beda, <code>KEPUTUSAN-METI.md</code> yang berlaku.</p>
-  <div class="meta"><span class="pil">Versi 7 Nov 2026</span><span class="pil">Repo publik: tanpa rahasia dan data pribadi</span><span class="pil">Bahasa: Indonesia</span></div>
+  <p>Rujukan satu halaman untuk siapa pun yang memakai, merawat, atau mengisi Direktori METI di direktori.metiires.or.id. Isinya diringkas dari paket perencanaan di <code>docs/perencanaan/</code> dan dicocokkan dengan kode. Bila ada beda, <code>KEPUTUSAN-METI.md</code> yang berlaku. Hal yang kodenya sudah melangkahi keputusan, atau keputusannya belum ada, tidak diputuskan di buku ini: semuanya didaftar di bab 12.</p>
+  <div class="meta"><span class="pil">Versi 11 Nov 2026</span><span class="pil">Dibaca dari kode dan data di repo per 11 Nov 2026</span><span class="pil">Repo publik: tanpa rahasia dan data pribadi</span><span class="pil">Bahasa: Indonesia</span></div>
 </div>
+
+<section class="bab" id="perubahan">
+  <h2>Catatan perubahan, 11 Nov 2026</h2>
+  <p class="lead">Buku ini terakhir diperbarui 7 Nov 2026. Sejak itu keadaan sistem berubah seperti berikut.</p>
+  <ul>
+    <li>Seluruh situs wajib login (D19). Klaim "Publik tanpa login" dihapus; yang tersisa hanya daftar rute pengecualian di bab 2.</li>
+    <li>Pendaftaran anggota mandiri dengan persetujuan admin dan iuran dibuka (D20). Bukti agenda METI berupa notulensi dan foto ada (K20). Tombol isi data dummy tidak ada (K15).</li>
+    <li>Ukuran sistem: 37 berkas migrasi (sebelumnya 8), 95 halaman HTML, 230 rute API, 45 berkas di <code>src/</code>, 1.847 uji pada 217 berkas (sebelumnya sekitar 236).</li>
+    <li>Pemicu terjadwal harian tidak lagi kosong, tetapi panen data terjadwal tetap tidak ada (bab 4).</li>
+    <li>Bab baru: 11 (modul layanan di Worker) dan 12 (belum diputus pemilik).</li>
+  </ul>
+</section>
 
 <section class="bab" id="apa-ini">
   <h2>1. Apa ini dan untuk siapa</h2>
@@ -144,8 +159,8 @@ footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
   </ul>
   <h3>Untuk siapa</h3>
   <div class="grid">
-    <div class="kartu"><h4>Pengunjung publik</h4><p>Membaca insight, proyek, regulasi, berita, kalender, wilayah, dan rantai pasok PLTS tanpa login.</p></div>
-    <div class="kartu"><h4>Anggota METI</h4><p>Membuka direktori orang dan lembaga, menyusun daftar pendek, dan mengekspor.</p></div>
+    <div class="kartu"><h4>Tamu tanpa login</h4><p>Hanya bisa membuka halaman masuk, aktivasi, pendaftaran anggota, langganan newsletter, verifikasi KTA, dan kartu bagikan. Selebihnya dialihkan ke halaman masuk (bab 2).</p></div>
+    <div class="kartu"><h4>Anggota METI</h4><p>Setelah masuk membaca insight, proyek, regulasi, berita, dan kalender; membuka direktori orang dan lembaga, menyusun daftar pendek, dan mengekspor; memakai KTA, forum Konsultasi, dan profil sendiri.</p></div>
     <div class="kartu"><h4>Pengurus dan Sekretariat</h4><p>Melihat lapis pengurus, termasuk kontak korporat dan riwayat dengan METI.</p></div>
     <div class="kartu"><h4>Kurator, Admin, Super Admin</h4><p>Merawat data, membuat akun, dan menjaga mutu serta keamanan.</p></div>
   </div>
@@ -155,53 +170,74 @@ footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
     <li>Angka turunan hitungan platform berlabel <code>EST</code>, rumusnya ditulis di bawah angka.</li>
     <li>Tiap halaman publik memuat jawaban singkat bertanggal, cara menghitung, dan cara mengutip.</li>
     <li>Fitur, layar, atau tabel yang tidak tertulis di paket perencanaan tidak dibuat. Bila dokumen bertentangan, pengerja berhenti dan bertanya ke pemilik.</li>
+    <li>Seluruh situs di balik login (D19). Tidak ada tombol isi data dummy (K15).</li>
   </ul>
 </section>
 
 <section class="bab" id="peta-halaman">
   <h2>2. Peta halaman</h2>
-  <p class="lead">Halaman yang ada di <code>public/</code> saat ini. Isi tampilan dibaca dari potret JSON, bukan dari database, supaya cepat dan hemat kuota.</p>
+  <p class="lead">Ada 95 berkas HTML di <code>public/</code>. Worker (<code>src/worker.js</code>) memeriksa sesi lebih dulu (<code>run_worker_first</code>): tamu tanpa sesi yang meminta halaman mana pun di luar daftar pengecualian dialihkan dengan 302 ke <code>/masuk?ke=</code> alamat asal, dan API selain pengecualian membalas 401. Isi tampilan dibaca dari potret JSON, bukan dari database, supaya cepat dan hemat kuota.</p>
+  <h3>Menu utama (7 menu, 37 tautan)</h3>
   <div class="tw"><table>
-    <thead><tr><th>Halaman</th><th>Alamat</th><th>Yang ditampilkan</th><th>Akses</th></tr></thead>
+    <thead><tr><th>Menu</th><th>Halaman</th><th>Yang ditampilkan</th><th>Akses</th></tr></thead>
     <tbody>
-      <tr><td>Beranda</td><td class="nw"><code>/</code></td><td>Peta ekosistem EBET: kartu angka kunci yang dihitung dari data bersumber, jumlah proyek per teknologi, organisasi per jenis, program terbesar, dan penghasil emisi terbesar.</td><td>Publik</td></tr>
-      <tr><td>Insight: Ringkasan</td><td class="nw"><code>/insight</code></td><td>Temuan inti yang dihitung langsung dari proyek, regulasi, berita, dan wilayah, tiap temuan dengan cara menghitung dan cara membagikan.</td><td>Publik</td></tr>
-      <tr><td>Insight: Tren</td><td class="nw"><code>/insight</code></td><td>Perubahan dari waktu ke waktu: kapasitas, status proyek, regulasi baru, dan arus berita.</td><td>Publik</td></tr>
-      <tr><td>Insight: Wilayah</td><td class="nw"><code>/wilayah</code></td><td>Peta 38 provinsi: kapasitas EBT terpasang, rasio elektrifikasi, potensi panas bumi, proyek terlacak, peraturan daerah, organisasi, dan pakar per provinsi. Pertanyaan utamanya: seberapa jauh realisasi dari potensi.</td><td>Publik</td></tr>
-      <tr><td>Insight: Rantai PLTS</td><td class="nw"><code>/rantai</code></td><td>Cukupkah pasokan modul surya lokal untuk program PLTS 100 GWp: kapasitas pabrikan, ekspor, TKDN, lokasi pabrik, dan anggota APAMSI.</td><td>Publik</td></tr>
-      <tr><td>Insight: ASEAN</td><td class="nw"><code>/asean</code></td><td>Perbandingan 10 negara ASEAN: pangsa listrik terbarukan, kapasitas terbarukan, dan akses listrik, dengan tren 10 tahun.</td><td>Publik</td></tr>
-      <tr><td>Proyek</td><td class="nw"><code>/proyek</code></td><td>Pelacak proyek energi terbarukan: peta proyek, corong status, daftar yang terlambat dari target COD, daftar proyek, dan program nasional (PLTS 100 GW, WtE, B50/E20, RUPTL, PSN/JETP).</td><td>Publik</td></tr>
-      <tr><td>Regulasi</td><td class="nw"><code>/regulasi</code></td><td>Daftar dan linimasa regulasi EBET dengan status, rantai perubahan, dan tautan ke naskah. Memuat bagian khusus RUU Energi Baru dan Energi Terbarukan.</td><td>Publik</td></tr>
-      <tr><td>Berita</td><td class="nw"><code>/berita</code></td><td>Judul dan tautan berita dan video EBET dari media dan kanal resmi, dikelompokkan menurut teknologi dan pelaku yang disebut. Isi artikel tidak disimpan.</td><td>Publik</td></tr>
-      <tr><td>Kalender</td><td class="nw"><code>/kalender</code></td><td>Agenda METI dan acara ekosistem: seminar, konferensi, audiensi, dan terbitnya regulasi.</td><td>Publik</td></tr>
-      <tr><td>Direktori</td><td class="nw"><code>/direktori</code></td><td>Direktori pakar, lembaga, dan wilayah: pencarian, profil berkartu, bagian Terhubung, daftar pendek dengan ekspor, peta, dan riwayat dengan METI. Pengunjung tanpa login melihat ajakan masuk.</td><td>Login</td></tr>
-      <tr><td>Tentang</td><td class="nw"><code>/tentang</code></td><td>Tentang METI, susunan pengurus, mitra, cara direktori dibangun, dan jalur menghubungi pengelola.</td><td>Publik</td></tr>
-      <tr><td>Admin</td><td class="nw"><code>/admin</code></td><td>Tab Akun (membuat akun, tautan aktivasi, peran, nonaktifkan) dan tab Jejak (siapa mengubah apa dan kapan).</td><td>Admin, Super</td></tr>
-      <tr><td>Masuk</td><td class="nw"><code>/masuk</code></td><td>Masuk dengan akun yang dibuat Admin, plus lupa sandi. Halaman pendukung: <code>/aktivasi</code> (menyetel sandi lewat tautan sekali pakai) dan <code>/ganti-sandi</code>.</td><td>Publik</td></tr>
+      <tr><td>Beranda</td><td class="nw"><code>/</code></td><td>Peta ekosistem EBT dan kartu angka kunci yang dihitung dari data bersumber.</td><td>Login</td></tr>
+      <tr><td>Tentang METI</td><td><code>/tentang</code>, <code>/roadmap</code>, <code>/produk-meti</code>, <code>/meti-wilayah</code>, <code>/kalender</code>, <code>/galeri</code>, <code>/siaran-pers</code></td><td>Profil METI dan susunan pengurus; Roadmap METI 2026-2028 dengan suka dan komentar; produk METI; halaman tiap METI Wilayah (<code>/meti-wilayah/&lt;kode BPS&gt;</code>, kelola di <code>/kelola</code>); acara dan bukti agenda; foto, video, dan feed media sosial; siaran pers (<code>/siaran-pers/&lt;id&gt;</code>).</td><td>Login</td></tr>
+      <tr><td>EBT Indonesia</td><td><code>/insight</code>, <code>/teknologi</code>, <code>/sistem</code>, <code>/jaringan</code>, <code>/target</code>, <code>/program</code>, <code>/industri</code>, <code>/lelang</code>, <code>/investasi</code></td><td>Insight ringkasan; satu rumah per teknologi (<code>/teknologi/&lt;kode&gt;</code>: surya, bayu, hidro, panas-bumi, bioenergi, sampah, penyimpanan, hidrogen, nuklir); sistem kelistrikan PLN; jaringan dan interkoneksi; target, transisi, strategi, dan rapor; program nasional dan PSN (<code>/program/&lt;kode&gt;</code>); industri; pelacak lelang; investasi dengan tab peluang, model keuangan, pembiayaan, dan biaya.</td><td>Login</td></tr>
+      <tr><td>Bidang</td><td class="nw"><code>/bidang/&lt;slug&gt;</code></td><td>Sembilan ruang bidang: organisasi, advokasi, sdm, pendanaan, umkm, esg, komunikasi, internasional, data.</td><td>Login</td></tr>
+      <tr><td>Kewilayahan</td><td><code>/peta</code>, <code>/proyek</code>, <code>/kawasan</code></td><td>Peta nasional terpadu (juga <code>/wilayah</code> dan <code>/cek-lokasi</code>); pelacak proyek energi terbarukan; kawasan industri dan KEK (<code>/kawasan/&lt;id&gt;</code>).</td><td>Login</td></tr>
+      <tr><td>Pustaka</td><td><code>/pustaka</code>, <code>/direktori?tampil=riset</code>, <code>/direktori?tampil=inovasi</code>, <code>/topik</code>, <code>/regulasi</code>, <code>/sejarah</code>, <code>/panduan</code></td><td>Dokumen dan unduhan tercatat; riset dan inovasi di direktori; topik mendalam; regulasi dengan linimasa dan pustaka hukum; sejarah; panduan, akademi, dan istilah.</td><td>Login</td></tr>
+      <tr><td>Media</td><td class="nw"><code>/berita</code></td><td>Judul dan tautan berita dan video EBET dari media dan kanal resmi. Isi artikel tidak disimpan.</td><td>Login</td></tr>
     </tbody>
   </table></div>
-  <div class="note"><b>Catatan Insight.</b> Insight adalah halaman ringkasan; Wilayah, Rantai PLTS, dan ASEAN juga punya halaman sendiri (<code>/wilayah</code>, <code>/rantai</code>, <code>/asean</code>) untuk pembacaan penuh.</div>
+  <h3>Halaman di luar menu utama</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Kelompok</th><th>Halaman</th><th>Yang ditampilkan</th><th>Akses</th></tr></thead>
+    <tbody>
+      <tr><td>Direktori dan profil</td><td><code>/direktori</code>, <code>/o/&lt;id&gt;</code>, <code>/p/&lt;id&gt;</code>, <code>/anggota/&lt;id&gt;</code>, <code>/cari</code>, <code>/sektor</code></td><td>Direktori pakar, lembaga, dan wilayah dengan pencarian, daftar pendek, ekspor, dan peta; profil organisasi dan proyek; profil anggota menurut privasinya; pencarian global.</td><td>Login</td></tr>
+      <tr><td>Halaman akun</td><td><code>/saya</code>, <code>/diikuti</code>, <code>/profil-saya</code>, <code>/kta</code>, <code>/portal</code>, <code>/otorisasi</code></td><td>Ringkasan untuk saya; yang diikuti; sunting profil; Kartu Tanda Anggota; portal pembaruan data lembaga; portal otorisasi naskah dua kunci.</td><td>Login</td></tr>
+      <tr><td>Kerja sama dan survei</td><td><code>/kerja</code>, <code>/tanya</code>, <code>/indeks-keyakinan</code>, <code>/indeks</code>, <code>/metode</code>, <code>/data</code>, <code>/dokumen-data</code>, <code>/kredit-foto</code></td><td>Lowongan dan kebutuhan tenaga kerja; Tanya data (bab 12); survei keyakinan bisnis triwulanan; indeks terbuka; metode dan sumber; portal data; kredit foto.</td><td>Login</td></tr>
+      <tr><td>Analisis tematik</td><td><code>/akses-energi</code>, <code>/asean</code>, <code>/banding</code>, <code>/desa-energi</code>, <code>/dpr-energi</code>, <code>/isu</code>, <code>/izin-kontrak</code>, <code>/jejaring</code>, <code>/karbon</code>, <code>/keandalan</code>, <code>/kebijakan</code>, <code>/kinerja</code>, <code>/korporat</code>, <code>/kuadran</code>, <code>/pasar-listrik-hijau</code>, <code>/pelacak</code>, <code>/pemda</code>, <code>/perizinan</code>, <code>/radar</code>, <code>/rantai-global</code>, <code>/risiko</code>, <code>/transaksi</code>, <code>/transisi-pltu</code></td><td>Halaman analisis yang dibaca dari potret masing-masing; sebagian dijangkau lewat tab halaman menu atau pengalihan 301 (misalnya <code>/rantai</code> ke <code>/rantai-global</code>, <code>/event</code> ke <code>/kalender</code>).</td><td>Login</td></tr>
+      <tr><td>Admin</td><td class="nw"><code>/admin</code></td><td>25 tab dalam 6 menu (Hari ini, Anggota, Konten, Data, Komunikasi, Analitik): antara lain akun, persetujuan pendaftaran, KTA, METI Wilayah, portal, agenda, konsultasi, jejak, keamanan, pesan, langganan, statistik.</td><td>Admin, Super</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Rute tanpa login (pengecualian D19)</h3>
+  <p>Daftar ini dibaca dari <code>src/worker.js</code> (ekspresi <code>PUBLIK</code>, himpunan <code>API_PUBLIK</code>, dan rute yang dilayani sebelum gerbang masuk). Selain ini, tamu tidak mendapat apa pun.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Kelompok</th><th>Rute</th><th>Catatan</th></tr></thead>
+    <tbody>
+      <tr><td>Alur masuk</td><td><code>/masuk</code>, <code>/aktivasi</code>, <code>/ganti-sandi</code>, <code>/404</code>; API <code>/api/masuk</code>, <code>/api/masuk/google</code>, <code>/api/masuk/google/kembali</code>, <code>/api/keluar</code>, <code>/api/status</code>, <code>/api/aktivasi</code>, <code>/api/saya</code></td><td>Masuk dengan Google hanya untuk akun yang sudah ada.</td></tr>
+      <tr><td>Pendaftaran anggota (D20)</td><td><code>/daftar</code>, <code>/daftar/lacak</code>; API <code>/api/daftar</code>, <code>/foto</code>, <code>/lacak</code>, <code>/bukti</code>, <code>/bayar-online</code>, <code>/midtrans/notifikasi</code></td><td>Token lacak ada di fragmen alamat (<code>#</code>), jadi tidak dikirim ke server. Pembayaran daring hanya aktif bila rahasianya dipasang.</td></tr>
+      <tr><td>Newsletter</td><td><code>/langganan</code>, <code>/berhenti</code>; API <code>/api/langganan</code>, <code>/api/langganan/berhenti</code></td><td>Belum ada layanan pengirim surel, jadi tidak ada surel yang dikirim.</td></tr>
+      <tr><td>Verifikasi KTA</td><td><code>/kta/v/&lt;nomor&gt;.&lt;tanda&gt;</code>; API <code>/api/kta/verifikasi/&lt;token&gt;</code></td><td>Hanya nama, jenis, status, dan masa berlaku. Token salah dibalas 404 seragam.</td></tr>
+      <tr><td>Kartu bagikan dan sematan</td><td><code>/og/&lt;jenis&gt;/&lt;id&gt;.svg</code>, <code>/sematan/&lt;jenis&gt;/&lt;id&gt;</code></td><td>Hanya angka ringkas publik. Sematan satu-satunya rute yang boleh dibingkai pihak luar.</td></tr>
+      <tr><td>Kalender langganan</td><td><code>/kalender.ics?t=&lt;akun&gt;.&lt;tanda&gt;</code></td><td>Tautan per akun yang mati bila akun dinonaktifkan.</td></tr>
+      <tr><td>Data dan aset</td><td><code>/data/keanggotaan.json</code>, <code>/inti/*.css|js</code>, <code>/i18n/*</code>, <code>/fonts/*</code>, logo dan ikon tertentu di <code>/img/</code>, <code>favicon</code>, <code>robots.txt</code></td><td><code>robots.txt</code> berisi <code>Disallow: /</code>.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>Catatan.</b> Halaman <code>/admin</code> hanya dibuka untuk Admin dan Super; peran lain mendapat 403. Pengalihan gabungan (misalnya <code>/kelayakan</code> ke <code>/investasi#hitung</code>) memakai 301 dan mempertahankan query.</div>
 </section>
 
 <section class="bab" id="peran">
   <h2>3. Peran dan lapis data</h2>
-  <p class="lead">Ada tiga lapis data (publik, anggota, pengurus) dan tujuh peran. Lapis dipisah saat potret dibuat, bukan disaring di peramban, jadi berkas lapis tinggi tidak pernah dirujuk dari halaman lapis rendah.</p>
+  <p class="lead">Ada tiga lapis data (publik, anggota, pengurus) dan tujuh peran. Lapis dipisah saat potret dibuat, bukan disaring di peramban, jadi berkas lapis tinggi tidak pernah dirujuk dari halaman lapis rendah. Sejak D19, hampir semua halaman hanya terbuka bagi akun yang sudah masuk.</p>
   <h3>Peran</h3>
   <div class="tw"><table>
     <thead><tr><th>Peran</th><th>Siapa</th><th>Akses utama</th></tr></thead>
     <tbody>
-      <tr><td>Publik</td><td>Siapa saja, tanpa login</td><td>Baca entitas publik, fakta bersumber, nama, jabatan publik, dan afiliasi orang; potret lapis publik.</td></tr>
-      <tr><td>Anggota</td><td>Akun yang dibuat Admin</td><td>Seperti publik, ditambah potret lapis anggota (rincian kontrak dan pendana) dan direktori. Boleh mengirim usulan koreksi.</td></tr>
-      <tr><td>Pengurus</td><td>Pengurus dan Sekretariat</td><td>Seperti anggota, ditambah lapis pengurus, kontak korporat dan kontak kantor orang, serta riwayat dengan METI.</td></tr>
-      <tr><td>Kurator</td><td>Bidang yang merawat data</td><td>Menulis entitas, fakta, dan ikatan; memutus antrean koreksi.</td></tr>
+      <tr><td>Publik</td><td>Tamu tanpa sesi</td><td>Hanya rute pengecualian di bab 2. Peran tak dikenal, akun nonaktif, dan sesi kedaluwarsa diperlakukan sama.</td></tr>
+      <tr><td>Anggota</td><td>Akun yang dibuat Admin atau disetujui dari pendaftaran mandiri</td><td>Seluruh situs dan potret lapis publik dan anggota (rincian kontrak dan pendana), direktori, usulan koreksi, KTA, Konsultasi, dan profil sendiri.</td></tr>
+      <tr><td>Pengurus</td><td>Pengurus dan Sekretariat</td><td>Seperti anggota, ditambah lapis pengurus, kontak korporat dan kontak kantor orang, riwayat dengan METI, memutus pendaftaran mandiri, dan memutus naskah di portal otorisasi.</td></tr>
+      <tr><td>Kurator</td><td>Bidang yang merawat data</td><td>Menulis entitas, fakta, dan ikatan; memutus antrean koreksi dan moderasi Konsultasi.</td></tr>
       <tr><td>Wilayah</td><td>Ketua METI Wilayah</td><td>Baca seperti anggota; kontak orang hanya untuk provinsinya (<code>cakupan_prov</code>).</td></tr>
-      <tr><td>Admin</td><td>Pengelola akun</td><td>Membuat dan menonaktifkan akun, mengubah peran selain Super, membaca jejak. Tidak bisa menjadikan siapa pun Super, termasuk dirinya.</td></tr>
+      <tr><td>Admin</td><td>Pengelola akun</td><td>Membuat dan menonaktifkan akun, mengubah peran selain Super, membaca jejak, mengelola konten, agenda, dan antrean. Tidak bisa menjadikan siapa pun Super, termasuk dirinya.</td></tr>
       <tr><td>Super</td><td>Pemegang akun tertinggi</td><td>Semua yang dimiliki Admin, ditambah mengelola akun Super dan membaca daftar tolak. Harus selalu tersisa satu.</td></tr>
     </tbody>
   </table></div>
   <h3>Siapa melihat apa</h3>
+  <p>Tabel ini memakai nama lapis data. Karena situs terkunci, kolom Publik berarti lapis publik yang terbaca semua akun yang sudah masuk, ditambah rute pengecualian bab 2; bukan "boleh dibaca tanpa login".</p>
   <div class="tw"><table>
-    <thead><tr><th>Jenis data</th><th>Publik</th><th>Anggota</th><th>Pengurus</th></tr></thead>
+    <thead><tr><th>Jenis data</th><th>Lapis publik</th><th>Anggota</th><th>Pengurus</th></tr></thead>
     <tbody>
       <tr><td>Identitas, lokasi, teknis, status, sumber</td><td>Ya</td><td>Ya</td><td>Ya</td></tr>
       <tr><td>Uang: angka ringkas</td><td>Ya</td><td>Ya</td><td>Ya</td></tr>
@@ -215,11 +251,46 @@ footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
     </tbody>
   </table></div>
   <div class="note">Peran tidak dikenal, akun nonaktif, atau sesi kedaluwarsa diperlakukan sebagai Publik. Semua baca dan tulis ke D1 lewat satu modul penjaga, <code>src/hak.js</code>, karena D1 tidak punya RLS bawaan. Tiap sel matriks hak punya uji bahwa peran yang salah ditolak.</div>
+  <h3>Matriks hak per jenis data</h3>
+  <p>Matriks di <code>src/hak.js</code> kini memuat 28 jenis data (sebelumnya sebagian kecil). Kode sel: <code>B</code> baca, <code>T</code> baca dan tulis, <code>-</code> tidak ada akses; sufiks membatasi sel (<code>diri</code> atau <code>daftar</code> milik sendiri, <code>prov</code> hanya provinsinya, <code>sah</code> dan <code>konten</code> hanya yang sudah disahkan atau terbit, <code>kirim</code> hanya mengirim, <code>cabut</code>, <code>tinjau</code>, <code>putus</code>, <code>catat</code> aksi khusus). Jenis <code>terlarang</code> tidak punya akses untuk peran mana pun.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Jenis</th><th>Publik</th><th>Anggota</th><th>Pengurus</th><th>Kurator</th><th>Wilayah</th><th>Admin</th><th>Super</th></tr></thead>
+    <tbody>
+      <tr><td><code>entitas</code></td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">T</td><td class="nw">B</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>fakta</code></td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">T</td><td class="nw">B</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>ikatan</code></td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">T</td><td class="nw">B</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>orang</code></td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">T</td><td class="nw">B</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>kontak</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">T</td><td class="nw">B</td><td class="nw">B prov</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>terlarang</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td></tr>
+      <tr><td><code>potret_publik</code></td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td></tr>
+      <tr><td><code>potret_anggota</code></td><td class="nw">-</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td></tr>
+      <tr><td><code>potret_pengurus</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">B</td><td class="nw">B</td><td class="nw">-</td><td class="nw">B</td><td class="nw">B</td></tr>
+      <tr><td><code>akun</code></td><td class="nw">-</td><td class="nw">T diri</td><td class="nw">T diri</td><td class="nw">T diri</td><td class="nw">T diri</td><td class="nw">T bukan-super</td><td class="nw">T</td></tr>
+      <tr><td><code>sesi</code></td><td class="nw">-</td><td class="nw">T diri</td><td class="nw">T diri</td><td class="nw">T diri</td><td class="nw">T diri</td><td class="nw">T cabut</td><td class="nw">T</td></tr>
+      <tr><td><code>koreksi</code></td><td class="nw">-</td><td class="nw">T kirim</td><td class="nw">T kirim</td><td class="nw">T</td><td class="nw">T kirim prov</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>riwayat</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">T</td><td class="nw">-</td><td class="nw">-</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>agenda</code></td><td class="nw">-</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>konten_meti</code></td><td class="nw">-</td><td class="nw">B konten</td><td class="nw">B konten</td><td class="nw">B konten</td><td class="nw">B konten</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>konten_otorisasi</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">T tinjau</td><td class="nw">-</td><td class="nw">-</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>naskah</code></td><td class="nw">-</td><td class="nw">B sah</td><td class="nw">T putus</td><td class="nw">B sah</td><td class="nw">B sah</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>naskah_catatan</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">T catat</td><td class="nw">-</td><td class="nw">-</td><td class="nw">T catat</td><td class="nw">T catat</td></tr>
+      <tr><td><code>event_atur</code></td><td class="nw">-</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">B</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>event_daftar</code></td><td class="nw">-</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>jejak</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">B</td><td class="nw">B</td></tr>
+      <tr><td><code>daftar_tolak</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">B</td></tr>
+      <tr><td><code>pendaftaran</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">T</td><td class="nw">-</td><td class="nw">-</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>konsultasi</code></td><td class="nw">-</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>sesi_admin</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">-</td><td class="nw">T cabut</td><td class="nw">T cabut</td></tr>
+      <tr><td><code>surel_minta</code></td><td class="nw">-</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>konsultasi_putus</code></td><td class="nw">-</td><td class="nw">-</td><td class="nw">T</td><td class="nw">T</td><td class="nw">-</td><td class="nw">T</td><td class="nw">T</td></tr>
+      <tr><td><code>keyakinan</code></td><td class="nw">-</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T daftar</td><td class="nw">T</td><td class="nw">T</td></tr>
+    </tbody>
+  </table></div>
 </section>
 
 <section class="bab" id="pipa">
   <h2>4. Sumber data dan pipa</h2>
-  <p class="lead">Data masuk lewat panen otomatis dari sumber publik, kurasi manusia, dan unggahan. Layar membaca potret JSON hasil pipa, bukan database.</p>
+  <p class="lead">Data masuk lewat panen dari sumber publik, kurasi manusia, dan unggahan. Layar membaca potret JSON hasil pipa, bukan database.</p>
   <h3>Alur dari sumber sampai layar</h3>
   <ol class="langkah">
     <li><b>Panen.</b> Skrip <code>scripts/panen/*.mjs</code> mengambil dari sumber publik (OpenAlex, OpenStreetMap, Wikidata, Ember, BPK dan JDIH ESDM untuk regulasi, GDELT dan RSS media untuk berita, dan lainnya). Hasil mentah masuk <code>data-panen/</code> yang tidak ikut repo.</li>
@@ -231,35 +302,35 @@ footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
     <li><b>Layar.</b> Worker melayani potret sesuai peran. Cache tepi dipakai agar kuota baca D1 tidak habis per kunjungan.</li>
   </ol>
   <h3>Potret yang terbit</h3>
-  <p>Per 7 Nov 2026 snapshot publik di <code>public/data/</code> berjumlah baris berikut.</p>
+  <p>Di <code>public/data/</code> ada 178 berkas JSON; 114 di antaranya mencatat <code>dibangun_pada</code> (34 bertanggal 7 Nov, 79 bertanggal 8 Nov, 1 bertanggal 9 Nov 2026), 64 tidak mencatatnya. Jumlah baris dataset utama dihitung dari berkasnya pada 11 Nov 2026.</p>
   <div class="tw"><table>
-    <thead><tr><th>Berkas</th><th>Isi</th><th>Baris</th></tr></thead>
+    <thead><tr><th>Berkas</th><th>Isi</th><th>Baris</th><th>Dibangun</th></tr></thead>
     <tbody>
-      <tr><td><code>proyek.json</code></td><td>Pelacak proyek</td><td>397</td></tr>
-      <tr><td><code>organisasi.json</code></td><td>Perusahaan, lembaga, asosiasi</td><td>355</td></tr>
-      <tr><td><code>orang.json</code></td><td>Pakar dan tokoh (nama, jabatan publik, afiliasi)</td><td>409</td></tr>
-      <tr><td><code>regulasi.json</code></td><td>Regulasi</td><td>430</td></tr>
-      <tr><td><code>berita.json</code></td><td>Judul dan tautan berita</td><td>519</td></tr>
-      <tr><td><code>video.json</code></td><td>Video</td><td>95</td></tr>
-      <tr><td><code>pustaka.json</code></td><td>Publikasi dan kajian</td><td>457</td></tr>
-      <tr><td><code>kalender.json</code></td><td>Acara</td><td>37</td></tr>
-      <tr><td><code>wilayah.json</code></td><td>Provinsi</td><td>38</td></tr>
-      <tr><td><code>karbon.json</code></td><td>Penghasil emisi</td><td>195</td></tr>
-      <tr><td><code>keuangan.json</code></td><td>Pembiaya dan keuangan</td><td>145</td></tr>
-      <tr><td><code>asean.json</code></td><td>Negara ASEAN</td><td>10</td></tr>
-      <tr><td><code>program.json</code></td><td>Program nasional</td><td>7</td></tr>
-      <tr><td><code>angka.json</code></td><td>Kartu angka beranda</td><td>6</td></tr>
-      <tr><td>Lainnya</td><td><code>ringkas.json</code>, <code>rantai_plts.json</code>, <code>mitra-meti.json</code>, <code>pengurus-meti.json</code>, <code>tentang-kredit.json</code></td><td>berkas ringkasan</td></tr>
+      <tr><td><code>proyek.json</code></td><td>Pelacak proyek</td><td>548</td><td>8 Nov 2026</td></tr>
+      <tr><td><code>organisasi.json</code></td><td>Perusahaan, lembaga, asosiasi</td><td>902</td><td>8 Nov 2026</td></tr>
+      <tr><td><code>orang.json</code></td><td>Pakar dan tokoh (nama, jabatan publik, afiliasi)</td><td>550</td><td>8 Nov 2026</td></tr>
+      <tr><td><code>regulasi.json</code></td><td>Regulasi</td><td>499</td><td>8 Nov 2026</td></tr>
+      <tr><td><code>berita.json</code></td><td>Judul dan tautan berita</td><td>866</td><td>8 Nov 2026</td></tr>
+      <tr><td><code>video.json</code></td><td>Video</td><td>97</td><td>8 Nov 2026</td></tr>
+      <tr><td><code>pustaka.json</code></td><td>Publikasi dan kajian</td><td>457</td><td>7 Nov 2026</td></tr>
+      <tr><td><code>kalender.json</code></td><td>Acara</td><td>41</td><td>7 Nov 2026</td></tr>
+      <tr><td><code>wilayah.json</code></td><td>Provinsi</td><td>38</td><td>7 Nov 2026</td></tr>
+      <tr><td><code>karbon.json</code></td><td>Penghasil emisi</td><td>206</td><td>7 Nov 2026</td></tr>
+      <tr><td><code>keuangan.json</code></td><td>Pembiaya dan keuangan</td><td>180</td><td>7 Nov 2026</td></tr>
+      <tr><td><code>asean.json</code></td><td>Negara ASEAN</td><td>10</td><td>7 Nov 2026</td></tr>
+      <tr><td><code>program.json</code></td><td>Program nasional</td><td>7</td><td>8 Nov 2026</td></tr>
+      <tr><td><code>angka.json</code></td><td>Kartu angka beranda</td><td>6</td><td>8 Nov 2026</td></tr>
+      <tr><td>Lainnya</td><td><code>ringkas.json</code> (8 Nov), <code>rantai_plts.json</code> (7 Nov), <code>mitra-meti.json</code>, <code>pengurus-meti.json</code>, <code>tentang-kredit.json</code> (tanpa tanggal bangun), dan berkas tematik lain (total 178 berkas)</td><td>berkas ringkasan</td><td>bervariasi</td></tr>
     </tbody>
   </table></div>
   <h3>Jadwal pembaruan</h3>
   <ul>
-    <li>Tiap potret mencatat <code>dibangun_pada</code>; semua berkas di atas bertanggal 7 Nov 2026.</li>
-    <li>Worker punya pemicu terjadwal harian pukul 18.00 UTC (<code>0 18 * * *</code> di <code>wrangler.jsonc</code>). Fungsinya saat ini masih kosong.</li>
-    <li>Panen dan unggah potret dijalankan koordinator dari mesin kerja, bukan dari server. Di <code>.github/workflows/</code> baru ada alur uji (<code>uji.yml</code>), belum ada alur panen terjadwal.</li>
-    <li>Rencana awal: panen per sumber di GitHub Actions menurut jadwal, maksimal 5 pemicu terjadwal, hasil ke R2.</li>
+    <li>Tiap potret berbentuk baku mencatat <code>dibangun_pada</code>; berkas utama di atas dibangun pada 7 atau 8 Nov 2026, belum ada pembangunan ulang sesudahnya.</li>
+    <li>Worker punya satu pemicu terjadwal harian pukul 18.00 UTC (<code>0 18 * * *</code> di <code>wrangler.jsonc</code>). Fungsi <code>scheduled()</code> menjalankan dua tugas: memperbarui daftar rentang IP operator (untuk lencana lalu lintas terverifikasi) dan menarik feed terbaru akun media sosial resmi METI. Tidak ada panen data di dalamnya.</li>
+    <li>Panen dan unggah potret dijalankan koordinator dari mesin kerja, bukan dari server. Di <code>.github/workflows/</code> hanya ada satu alur, <code>uji.yml</code> (jalankan <code>npm run uji</code> tiap push dan pull request). Tidak ada alur panen terjadwal.</li>
+    <li>Pemilik sedang meminta bot panen harian, mingguan, dan bulanan; rencananya sedang disusun dan belum ada di <code>KEPUTUSAN-METI.md</code>. Bandingkan dengan <code>RENCANA-AKHIR.md</code> yang menulis panen terjadwal lewat CI di luar cakupan (bab 12).</li>
   </ul>
-  <div class="note warn"><b>Panen dari 1001startup.id.</b> Hanya fakta dan tautan sumber primer, dengan atribusi dan tanggal ambil. Teks, estimasi, skor, dan logo mereka tidak disimpan. Situs yang melarang robot (misalnya ESDM One Map dan SINTA) tidak dipanen; yang ada hanya tautan.</div>
+  <div class="note warn"><b>Panen dari 1001startup.id.</b> Hanya fakta dan tautan sumber primer, dengan atribusi dan tanggal ambil. Teks, estimasi, skor, dan logo mereka tidak disimpan. Situs yang melarang robot (misalnya ESDM One Map dan SINTA) tidak dipanen; yang ada hanya tautan. Status izin dan lisensi sumber data ada di bab 12.</div>
 </section>
 
 <section class="bab" id="harian">
@@ -269,16 +340,20 @@ footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
   <div class="tw"><table>
     <thead><tr><th>Perintah</th><th>Fungsi</th></tr></thead>
     <tbody>
-      <tr><td><code>npm run uji</code></td><td>Menjalankan seluruh uji (<code>node --test</code>): hak, sesi, sandi, migrasi, potret, header, i18n, layar statis, dan gerbang agent. Wajib hijau sebelum push; CI menjalankan perintah yang sama.</td></tr>
+      <tr><td><code>npm run uji</code></td><td>Menjalankan seluruh uji (<code>node --test</code>): 1.847 uji pada 217 berkas, termasuk hak, sesi, sandi, migrasi, potret, header, i18n, layar statis, dan 22 berkas gerbang. Hasil terakhir 11 Nov 2026: 1.839 lulus, 8 dilewati, 0 gagal. Wajib hijau sebelum push; CI menjalankan perintah yang sama.</td></tr>
       <tr><td><code>npm run dev</code></td><td>Menjalankan Worker lokal dengan <code>wrangler dev</code>.</td></tr>
       <tr><td><code>npm run agents:build</code></td><td>Membangun ulang katalog dan ilmu agent dari <code>scripts/agents/roster.json</code>.</td></tr>
       <tr><td><code>npm run agents:check</code></td><td>Memeriksa katalog agent masih sinkron dengan roster.</td></tr>
       <tr><td><code>npm run token:ukur</code></td><td>Mengukur pemakaian token konteks agent.</td></tr>
+      <tr><td><code>npm run uji:live</code></td><td>Uji asap GET terhadap situs yang tayang (<code>scripts/mesin/uji_asap_live.mjs</code>): gerbang masuk, pengalihan, dan aset; bila <code>SESI_UJI</code> dipasang, tiap halaman juga dibuka di peramban pada 1440 dan 390 px.</td></tr>
+      <tr><td><code>npm run cari:bangun</code></td><td>Membangun indeks pencarian global (<code>scripts/pipa/indeks_cari.mjs</code>).</td></tr>
     </tbody>
   </table></div>
 
+  <h3>Pendaftaran mandiri dan persetujuan (D20)</h3>
+  <p>Sejak 8 Nov 2026 calon anggota bisa mendaftar sendiri di <code>/daftar</code> tanpa login: jenis (individu, organisasi atau perusahaan, mahasiswa), data diri, kepakaran, persetujuan UU PDP, dan foto atau logo opsional. Tanpa NIK dan data keuangan. Pendaftar mendapat tautan lacak bertoken untuk melihat status, besaran iuran dan rekening tujuan, serta mengunggah bukti transfer. Besaran iuran dan rekening adalah pengaturan admin di D1. Tab Persetujuan anggota di <code>/admin</code> dipakai untuk menyetujui (membuat akun <code>anggota</code> berstatus <code>menunggu</code> dengan tautan aktivasi) atau menolak dengan alasan; semuanya tercatat di jejak.</p>
   <h3>Menambah akun secara manual</h3>
-  <p>Selama masa uji tidak ada pendaftaran mandiri. Akun dibuat Admin.</p>
+  <p>Jalur lain tetap ada: Admin membuat akun langsung.</p>
   <ol class="langkah">
     <li>Admin membuka <code>/admin</code>, tab Akun, lalu menekan Buat akun.</li>
     <li>Isi nama, surel, dan peran (<code>anggota</code>, <code>pengurus</code>, <code>kurator</code>, <code>wilayah</code>, atau <code>admin</code>). Peran <code>wilayah</code> wajib diberi cakupan provinsi. Peran <code>super</code> hanya bisa dibuat Super.</li>
@@ -289,6 +364,7 @@ footer{color:var(--ink2);font-size:14px;padding-top:8px;max-width:72ch}
   </ol>
   <p>Akun Super pertama dibuat dari terminal. Sandi tidak lewat skrip; tautan aktivasi dicetak sekali ke terminal.</p>
   <div class="cmd">node scripts/mesin/buat_super.mjs --surel=ALAMAT-SUREL --nama="Nama" [--db=jaringan-meti] [--asal=URL-WORKER] [--lokal]</div>
+  <p>Skrip bantu lain ada di <code>scripts/mesin/</code>: <code>seed_lokal.mjs</code>, <code>uji_asap_live.mjs</code>, dan <code>cek_mobile.mjs</code>.</p>
 
   <h3>Menerbitkan data</h3>
   <div class="cmd">node scripts/panen/berita.mjs --uji          # uji parser tanpa jaringan
@@ -318,7 +394,7 @@ node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</
   <div class="grid">
     <div class="kartu"><h4>Sandi dan sesi</h4><p>PBKDF2-SHA256 210.000 iterasi dengan garam acak per akun. Sandi minimal 12 karakter. Sesi memakai cookie <code>HttpOnly; Secure; SameSite=Lax</code>, berlaku 14 hari; yang disimpan hanya hash token.</p></div>
     <div class="kartu"><h4>Batas percobaan</h4><p>10 percobaan gagal per 15 menit per IP dan per surel. IP disimpan sebagai hash bergaram harian. Pesan gagal masuk sama untuk surel tak dikenal dan sandi salah.</p></div>
-    <div class="kartu"><h4>CSRF dan masukan</h4><p>Pemeriksaan <code>Origin</code> pada tiap tulis, hanya JSON, badan maksimal 64 KB, kolom tak dikenal ditolak. Semua teks dari data melewati <code>esc()</code> sebelum masuk HTML.</p></div>
+    <div class="kartu"><h4>CSRF dan masukan</h4><p>Tiap tulis wajib membawa header <code>x-pb: 1</code> dan asal yang sama (<code>Sec-Fetch-Site</code> dan <code>Origin</code>), hanya JSON, badan maksimal 64 KB, kolom tak dikenal ditolak. Semua teks dari data melewati <code>esc()</code> sebelum masuk HTML.</p></div>
     <div class="kartu"><h4>Header dan CSP</h4><p>Tanpa skrip dan gaya inline di halaman produksi. Pustaka luar hanya yang terdaftar di CSP. Tanpa analitik pihak ketiga atau piksel iklan.</p></div>
   </div>
   <h3>Aturan yang tidak boleh dilanggar</h3>
@@ -326,7 +402,7 @@ node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</
     <li>Tidak ada surel, telepon, alamat rumah, NIK, atau data anggota di repo, <code>public/</code>, potret publik, log, atau pesan galat. Data contoh memakai <code>example.org</code> dan akhiran "(contoh)".</li>
     <li>Tidak ada <code>account_id</code>, token, kunci API, atau sandi di repo. Rahasia hidup di secret Cloudflare. Kunci OpenAlex disimpan sebagai secret, bukan di berkas.</li>
     <li>Tidak ada scraping profil pribadi (LinkedIn, media sosial, PDDikti, situs ber-CAPTCHA). Data orang hanya dari sumber resmi, publikasi terbuka, atau diberikan sendiri.</li>
-    <li>Foto orang tidak disimpan. Logo hanya dari situs resmi entitasnya, disimpan di R2, dan dihapus atas permintaan.</li>
+    <li>Aturan awal: foto orang tidak disimpan; logo hanya dari situs resmi entitasnya, disimpan di R2, dan dihapus atas permintaan. Keadaan kode sekarang lebih luas dan tidak sepenuhnya diputus pemilik: foto dokumentasi agenda (K20) dan foto profil akun disimpan privat di R2, sedangkan foto tokoh dan pengurus ada sebagai berkas di repo (<code>public/img/orang/</code>, <code>public/img/pengurus/</code>). Lihat bab 12.</li>
     <li>Daftar tolak (<code>daftar-tolak.json</code>, privat di R2) memuat orang dan lembaga yang tidak boleh tampil: terkait kasus hukum korupsi, sudah meninggal, atau meminta keluar. Id di dalamnya tidak boleh muncul di potret mana pun, dan ada uji untuk itu.</li>
     <li>Ringkasan mesin (Workers AI) hanya menerima teks abstrak publik, berlabel Ringkasan mesin, tanpa data pribadi.</li>
     <li>Kegagalan pelindungan data diberitahukan ke subjek dan lembaga paling lambat 3 x 24 jam.</li>
@@ -337,7 +413,7 @@ node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</
 
 <section class="bab" id="keputusan">
   <h2>7. Keputusan pemilik</h2>
-  <p class="lead">Ringkasan keputusan bernomor K di <code>KEPUTUSAN-METI.md</code>. Dokumen itu menang atas semua dokumen lain. K15 membatalkan keputusan perancang D18 (tombol dummy).</p>
+  <p class="lead">Ringkasan keputusan bernomor K (K1 sampai K20) dan keputusan perancang D yang paling sering dirujuk di <code>KEPUTUSAN-METI.md</code>. Dokumen itu menang atas semua dokumen lain. K15 membatalkan keputusan perancang D18 (tombol dummy).</p>
   <div class="tw"><table>
     <thead><tr><th>No</th><th>Keputusan</th></tr></thead>
     <tbody>
@@ -359,7 +435,8 @@ node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</
       <tr><td>K16</td><td>Taksonomi kepakaran direktori profesional dengan dua sumbu. Bidang kepakaran: kode stabil, maksimal 3 per orang dengan satu utama, tiap tag wajib bersumber dan tidak boleh ditebak dari nama lembaga.</td></tr>
       <tr><td>K17</td><td>Arah strategis prioritas F1 dan F2: pelacak proyek per daerah sebagai unggulan, Rapor Transisi Energi tiap kuartal, semua data saling terhubung, peta rantai pasok PLTS 100 GW, dan regulasi terhubung ke proyek.</td></tr>
       <tr><td>K18</td><td>Fitur strategis tambahan (tiket JM-Q01 sampai Q14): potensi vs realisasi provinsi, kesiapan investasi, pelacak tarif, pemantau pengadaan, linimasa regulasi, pencari narasumber, rotasi jabatan, ikuti dan ringkasan surel, kalender, kerja hijau, kalkulator manfaat, dana iklim, isu sosial dan lingkungan, perbandingan ASEAN. Yang tidak dipilih tidak dibuat sampai diminta.</td></tr>
-      <tr><td>K19</td><td>Pendaftaran mandiri, profil sendiri, dan kelompok. Bagian pendaftaran mandiri ditunda pemilik: selama masa uji akun dibuat Admin lewat tautan aktivasi. Bagian profil sendiri dan kelompok tetap F1.</td></tr>
+      <tr><td>K19</td><td>Pendaftaran mandiri, profil sendiri, dan kelompok. Bagian pendaftaran mandiri ditunda pemilik: selama masa uji akun dibuat Admin lewat tautan aktivasi. Bagian profil sendiri dan kelompok tetap F1. Untuk alur pendaftaran, penundaan itu digantikan D20.</td></tr>
+      <tr><td>K20</td><td>Bukti agenda METI di Kalender: tiap agenda bisa diberi notulensi (teks rapi, maksimal 30.000 karakter) dan foto dokumentasi (maksimal 40 per agenda, diperkecil dan dibersihkan metadatanya di peramban). Dilihat semua peran yang login, diisi lewat tab Agenda di <code>/admin</code>. Foto disimpan privat di R2, tidak pernah di repo atau potret. Mengalahkan aturan "foto orang tidak disimpan" khusus untuk dokumentasi agenda.</td></tr>
     </tbody>
   </table></div>
   <h3>Keputusan perancang yang paling sering dirujuk</h3>
@@ -373,6 +450,10 @@ node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</
       <tr><td>D13</td><td>"Kita = METI": METI Pusat, Wilayah, Institute, dan Energi Muda tidak diberi bintang mitra strategis.</td></tr>
       <tr><td>D14</td><td>Satu daftar tolak terpusat, privat di R2.</td></tr>
       <tr><td>D16</td><td>Fase: F0 porting kerangka dan login, F1 sensus dan direktori, F2 rantai pasok dan cerita data, F3 klaim profil dan API terbuka.</td></tr>
+      <tr><td>D17</td><td>Angka tampil dengan format Indonesia di mode ID dan format Inggris di mode EN, lewat satu formatter. Tanpa titik tengah sebagai pemisah teks.</td></tr>
+      <tr><td>D18</td><td>Tombol dummy dua ikon di tiap halaman. Dibatalkan pemilik lewat K15.</td></tr>
+      <tr><td>D19</td><td>Seluruh situs wajib login (7 Nov 2026, pemilik). Tamu hanya boleh membuka alur masuk dan aset pendukungnya; halaman lain dialihkan 302 ke <code>/masuk</code>, API lain membalas 401. <code>robots.txt</code> berisi <code>Disallow: /</code>. Daftar rute pengecualian yang nyata ada di bab 2.</td></tr>
+      <tr><td>D20</td><td>Pendaftaran anggota mandiri dengan persetujuan admin dibuka (8 Nov 2026, pemilik): <code>/daftar</code> publik, tautan lacak bertoken, iuran dengan unggah bukti transfer, tab persetujuan untuk pengurus, admin, dan super. Pembayaran daring Midtrans opsional di belakang rahasia server. Menggantikan penundaan K19 bagian (a) untuk alur ini.</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -391,7 +472,10 @@ node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</
       <tr><td>Skor keyakinan</td><td>Angka 0 sampai 1 per profil dengan label Tinggi, Sedang, atau Rendah dan alasan.</td></tr>
       <tr><td>EST</td><td>Label angka turunan: hitungan platform, bukan angka yang diumumkan pihak lain.</td></tr>
       <tr><td>Potret</td><td>Berkas JSON hasil pipa yang dibaca layar, dibuat terpisah per lapis akses.</td></tr>
-      <tr><td>Lapis</td><td>Tingkat akses data: Publik, Anggota, Pengurus.</td></tr>
+      <tr><td>Lapis</td><td>Tingkat akses data: Publik, Anggota, Pengurus. Sejak D19, lapis Publik hanya terbaca akun yang sudah masuk dan rute pengecualian.</td></tr>
+      <tr><td>Tamu</td><td>Pengunjung tanpa sesi. Hanya mencapai rute pengecualian D19.</td></tr>
+      <tr><td>KTA</td><td>Kartu Tanda Anggota virtual METI; verifikasinya terbuka tanpa login dan hanya menampilkan nama, jenis, status, dan masa berlaku.</td></tr>
+      <tr><td>Dua kunci</td><td>Aturan portal otorisasi: Admin atau Super memasukkan naskah, Pengurus atau Super (bukan pembuatnya) mengotorisasi.</td></tr>
       <tr><td>RLS</td><td>Pembatasan baris. Di sini ditegakkan <code>src/hak.js</code> di Worker.</td></tr>
       <tr><td>Jejak</td><td>Catatan tiap tulis ke D1: siapa, kapan, aksi, dari, dan ke. Tidak bisa diubah dari aplikasi.</td></tr>
       <tr><td>Daftar tolak</td><td>Berkas privat nama yang tidak boleh tampil di mana pun.</td></tr>
@@ -412,14 +496,59 @@ node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</
   <div class="tw"><table>
     <thead><tr><th>Komponen</th><th>Peran</th></tr></thead>
     <tbody>
-      <tr><td>Worker</td><td>Titik masuk <code>src/worker.js</code>: rute <code>/api/*</code>, penjaga halaman terkunci (<code>/direktori</code>, <code>/admin</code>), sesi, sandi, <code>hak.js</code>, dan pemicu terjadwal harian.</td></tr>
-      <tr><td>Static assets</td><td>Folder <code>public/</code> disajikan sebagai aset statik. Hanya rute yang butuh logika yang dilayani Worker lebih dulu; halaman publik langsung dari aset dan cache tepi.</td></tr>
-      <tr><td>D1</td><td>Database SQLite untuk data tulis: akun, sesi, kurasi, koreksi, riwayat, jejak, program. Migrasi bernomor di <code>migrations/</code> (0001 sampai 0008). Kuota baca gratis 5 juta per hari, sebab itu layar tidak membaca D1 per kunjungan.</td></tr>
-      <tr><td>R2</td><td>Bucket untuk potret per lapis dan berkas besar.</td></tr>
-      <tr><td>Workers AI</td><td>Ringkasan abstrak riset, ekstraktif, berlabel Ringkasan mesin.</td></tr>
+      <tr><td>Worker</td><td>Titik masuk <code>src/worker.js</code>: gerbang masuk D19, rute <code>/api/*</code> (230 rute dari 31 berkas), penjaga halaman terkunci (<code>/direktori</code>, <code>/admin</code>), sesi, sandi, <code>hak.js</code>, penyuntik judul dan kartu bagikan, dan pemicu terjadwal harian.</td></tr>
+      <tr><td>Static assets</td><td>Folder <code>public/</code> disajikan sebagai aset statik dengan <code>run_worker_first: true</code>: semua permintaan lewat Worker lebih dulu agar gerbang masuk berlaku juga untuk aset dan data.</td></tr>
+      <tr><td>D1</td><td>Database SQLite untuk data tulis. 37 berkas migrasi di <code>migrations/</code> (0001 sampai 0037), membuat 77 nama tabel berbeda (termasuk tabel virtual FTS5, tidak termasuk tabel sementara pembangunan ulang). Status penerapan tiap migrasi di produksi tidak bisa dipastikan dari repo. Kuota baca gratis 5 juta per hari, sebab itu layar tidak membaca D1 per kunjungan.</td></tr>
+      <tr><td>R2</td><td>Bucket untuk potret per lapis, berkas besar, dan unggahan privat (foto agenda, lampiran pesan, dokumen konsultasi dan pustaka, foto KTA dan profil).</td></tr>
+      <tr><td>Workers AI dan Vectorize</td><td>Ringkasan abstrak riset (ekstraktif, berlabel Ringkasan mesin) dan fitur Tanya data. Binding Vectorize <code>meti-tanya</code> wajib dibuat sebelum deploy (bab 12).</td></tr>
+      <tr><td>Pemicu terjadwal</td><td>Satu jadwal harian (<code>0 18 * * *</code>); batas akun Free 5 jadwal. Isi: rentang IP operator dan feed media sosial.</td></tr>
       <tr><td>Domain</td><td>Produksi di <code>direktori.metiires.or.id</code> (domain khusus Worker, zona metiires.or.id di Cloudflare). Alamat <code>workers.dev</code> tetap hidup sebagai cadangan.</td></tr>
       <tr><td>Lingkungan</td><td>Produksi dan pratinjau (<code>--env pratinjau</code>) dengan D1 dan R2 terpisah. Seed contoh menolak target produksi. Uji lokal tidak menyentuh produksi.</td></tr>
-      <tr><td>CI</td><td>GitHub Actions menjalankan <code>npm ci</code> dan <code>npm run uji</code> pada tiap push dan pull request.</td></tr>
+      <tr><td>CI</td><td>Satu alur GitHub Actions, <code>uji.yml</code>: <code>npm ci</code> lalu <code>npm run uji</code> pada tiap push dan pull request. Tidak ada alur panen atau unggah.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Tabel D1 per migrasi</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Migrasi</th><th>Untuk</th><th>Tabel yang dibuat</th></tr></thead>
+    <tbody>
+      <tr><td class="nw"><code>.git</code></td><td>eep</td><td>tanpa tabel baru</td></tr>
+      <tr><td class="nw"><code>0001</code></td><td>Akun, peran, sesi</td><td><code>akun</code>, <code>sesi</code></td></tr>
+      <tr><td class="nw"><code>0002</code></td><td>Jejak: catatan tiap tulis</td><td><code>jejak</code></td></tr>
+      <tr><td class="nw"><code>0003</code></td><td>Inti data: entitas, fakta, ikatan, sumber, pencarian FTS5</td><td><code>sumber</code>, <code>entitas</code>, <code>label</code>, <code>alias</code>, <code>fakta</code>, <code>pasangan_ikatan</code>, <code>ikatan</code>, <code>entitas_cari</code></td></tr>
+      <tr><td class="nw"><code>0004</code></td><td>Antrean koreksi</td><td><code>koreksi</code></td></tr>
+      <tr><td class="nw"><code>0005</code></td><td>Riwayat dengan METI</td><td><code>riwayat</code></td></tr>
+      <tr><td class="nw"><code>0006</code></td><td>Penghitung batas laju</td><td><code>laju</code></td></tr>
+      <tr><td class="nw"><code>0007</code></td><td>Program nasional, kategori organisasi, kelompok orang; membangun ulang tabel lewat tabel sementara _cad_</td><td><code>akun</code>, <code>sesi</code>, <code>entitas</code>, <code>label</code>, <code>alias</code>, <code>fakta</code>, <code>ikatan</code>, <code>riwayat</code>, <code>koreksi</code></td></tr>
+      <tr><td class="nw"><code>0008</code></td><td>Ikatan program (tanpa tabel baru)</td><td>tanpa tabel baru</td></tr>
+      <tr><td class="nw"><code>0009</code></td><td>Perubahan anggota</td><td><code>anggota_ubah</code></td></tr>
+      <tr><td class="nw"><code>0010</code></td><td>Bukti agenda: notulensi dan foto (K20)</td><td><code>agenda_bukti</code>, <code>agenda_foto</code></td></tr>
+      <tr><td class="nw"><code>0011</code></td><td>Usulan koreksi, statistik harian, konten beranda</td><td><code>koreksi_usul</code>, <code>statistik_harian</code>, <code>konten_beranda</code></td></tr>
+      <tr><td class="nw"><code>0012</code></td><td>Profil akun dasar dan catatan unduh pustaka</td><td><code>akun_profil</code>, <code>dokumen_unduh</code></td></tr>
+      <tr><td class="nw"><code>0013</code></td><td>Pendaftaran acara (RSVP) dan pengaturannya</td><td><code>event_atur</code>, <code>event_daftar</code></td></tr>
+      <tr><td class="nw"><code>0014</code></td><td>Newsletter</td><td><code>langganan</code></td></tr>
+      <tr><td class="nw"><code>0015</code></td><td>METI Wilayah dan pengajuannya</td><td><code>meti_wilayah</code>, <code>meti_wilayah_ajuan</code></td></tr>
+      <tr><td class="nw"><code>0016</code></td><td>Pesan akun ke admin</td><td><code>pesan_utas</code>, <code>pesan</code></td></tr>
+      <tr><td class="nw"><code>0017</code></td><td>Kartu Tanda Anggota (KTA)</td><td><code>kta</code></td></tr>
+      <tr><td class="nw"><code>0018</code></td><td>Profil saya dan riwayatnya</td><td><code>profil</code>, <code>profil_riwayat</code></td></tr>
+      <tr><td class="nw"><code>0019</code></td><td>Ikuti, klaim dan pembaruan data lembaga, portal wilayah</td><td><code>ikuti</code>, <code>ikuti_lihat</code>, <code>org_klaim</code>, <code>org_ajuan</code>, <code>sesi_info</code>, <code>wilayah_akun</code>, <code>wilayah_ajuan</code>, <code>profil_tambah</code></td></tr>
+      <tr><td class="nw"><code>0020</code></td><td>Lalu lintas orang dan AI</td><td><code>lalin</code>, <code>lalin_tamu</code>, <code>lalin_garam</code>, <code>lalin_ip</code>, <code>lalin_kini</code></td></tr>
+      <tr><td class="nw"><code>0021</code></td><td>Pendaftaran anggota mandiri, bukti iuran, pembayaran daring (D20)</td><td><code>pendaftaran</code>, <code>pendaftaran_bukti</code>, <code>pengaturan_daftar</code>, <code>pembayaran_online</code></td></tr>
+      <tr><td class="nw"><code>0022</code></td><td>Feed media sosial METI</td><td><code>sosmed_feed</code></td></tr>
+      <tr><td class="nw"><code>0023</code></td><td>Kategori pada pendaftaran</td><td><code>pendaftaran</code>, <code>pendaftaran_bukti</code>, <code>pembayaran_online</code>, <code>pengaturan_daftar</code></td></tr>
+      <tr><td class="nw"><code>0024</code></td><td>Forum Konsultasi naskah</td><td><code>kons_dokumen</code>, <code>kons_bagian</code>, <code>kons_utas</code>, <code>kons_balasan</code>, <code>kons_dukung</code>, <code>kons_sebut</code></td></tr>
+      <tr><td class="nw"><code>0025</code></td><td>Sesi aktif untuk tab Keamanan</td><td><code>sesi_aktif</code></td></tr>
+      <tr><td class="nw"><code>0026</code></td><td>Masuk dengan Google</td><td><code>akun_google</code></td></tr>
+      <tr><td class="nw"><code>0027</code></td><td>Ikuti per topik</td><td><code>ikuti_baru</code></td></tr>
+      <tr><td class="nw"><code>0028</code></td><td>Lowongan (Green jobs)</td><td><code>lowongan</code></td></tr>
+      <tr><td class="nw"><code>0029</code></td><td>Pustaka hukum dengan pencarian per pasal</td><td><code>hukum_dok</code>, <code>hukum_segmen</code>, <code>hukum_fts</code>, <code>hukum_relasi</code></td></tr>
+      <tr><td class="nw"><code>0030</code></td><td>Permintaan alamat surel organisasi</td><td><code>surel_minta</code></td></tr>
+      <tr><td class="nw"><code>0031</code></td><td>Survei indeks keyakinan bisnis</td><td><code>keyakinan_jawab</code></td></tr>
+      <tr><td class="nw"><code>0032</code></td><td>Kegiatan dan dokumen agenda</td><td><code>agenda_kegiatan</code>, <code>agenda_dokumen</code></td></tr>
+      <tr><td class="nw"><code>0033</code></td><td>Berita METI dan pustaka unggahan</td><td><code>berita_meti</code>, <code>pustaka_unggah</code></td></tr>
+      <tr><td class="nw"><code>0034</code></td><td>Kotak tugas admin</td><td><code>kotak_tugas</code></td></tr>
+      <tr><td class="nw"><code>0035</code></td><td>Suka dan komentar Roadmap</td><td><code>roadmap_suka</code>, <code>roadmap_komentar</code></td></tr>
+      <tr><td class="nw"><code>0036</code></td><td>Portal otorisasi: naskah dua kunci</td><td><code>naskah</code>, <code>konten_otorisasi</code>, <code>naskah_catatan</code></td></tr>
+      <tr><td class="nw"><code>0037</code></td><td>Klaim entri orang oleh akun</td><td><code>orang_klaim</code></td></tr>
     </tbody>
   </table></div>
   <div class="note warn"><b>Deploy.</b> Push ke cabang <code>main</code> membuat perubahan tayang ke publik. Perubahan <code>wrangler.jsonc</code> ditahan sampai pemilik menyetujui. Jalan balik tersedia lewat versi Worker sebelumnya.</div>
@@ -435,7 +564,7 @@ node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</
       <tr><td>Sponsor</td><td>Ketua Umum. Mandat publik dan surat rilis.</td></tr>
       <tr><td>Kurator</td><td>Bidang informasi dan multimedia. Menambah dan memeriksa data, menerima koreksi.</td></tr>
       <tr><td>Peninjau angka</td><td>METI Institute. Memeriksa angka turunan, skor, dan rapor.</td></tr>
-      <tr><td>Admin akun</td><td>Sekretariat. Membuat dan menonaktifkan akun, tautan aktivasi, reset sandi.</td></tr>
+      <tr><td>Admin akun</td><td>Sekretariat. Membuat dan menonaktifkan akun, tautan aktivasi, reset sandi, dan (bersama pengurus) memutus pendaftaran mandiri.</td></tr>
       <tr><td>Penanganan privasi</td><td>Sekretariat dan kurator. Antrean hak subjek data dan permintaan hapus.</td></tr>
       <tr><td>Pengembang</td><td>Tim pengembang. Perawatan, galat, pipa panen, migrasi, deploy.</td></tr>
       <tr><td>Koordinator METI Wilayah</td><td>Menjaga data dan agenda wilayahnya lewat peran Wilayah.</td></tr>
@@ -454,7 +583,59 @@ node scripts/pipa/unggah_potret.mjs          # unggah ke R2 (koordinator saja)</
   </ol>
 </section>
 
-<footer>Sumber: paket perencanaan <code>docs/perencanaan/</code>, <code>AGENTS.md</code>, <code>package.json</code>, dan isi <code>public/</code>, per 7 Nov 2026. Perbarui buku ini bila keputusan pemilik atau halaman berubah.</footer>
+<section class="bab" id="modul">
+  <h2>11. Modul layanan di Worker</h2>
+  <p class="lead">Berkas di <code>src/</code> yang melayani modul di luar inti 7 Nov. Jumlah rute dihitung dari tabel rute tiap berkas (230 rute di 31 berkas). Sebagian besar modul ini dibangun tanpa tiket di <code>TIKET.md</code>; daftarnya ada di Sistem Rencana.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Berkas</th><th>Fungsi</th><th>Migrasi</th><th>Rute API</th></tr></thead>
+    <tbody>
+      <tr><td><code>sesi.js, sandi.js, akun.js, jejak.js, admin.js</code></td><td>Masuk, keluar, aktivasi, sandi, akun, jejak, dan rute admin (statistik, koreksi, antrean).</td><td>0001, 0002, 0011, 0025</td><td>27 (sesi 5, akun 5, jejak 1, admin 16)</td></tr>
+      <tr><td><code>hak.js</code></td><td>Satu-satunya pintu D1: matriks 28 jenis, klausa, jejak satu batch.</td><td>semua</td><td>tanpa rute</td></tr>
+      <tr><td><code>direktori.js, profil.js, siaran.js, og.js, sematan.js</code></td><td>Rute direktori, profil <code>/o</code> dan <code>/p</code>, siaran pers, kartu bagikan, sematan.</td><td>0003 sampai 0007</td><td>18</td></tr>
+      <tr><td><code>daftar.js</code></td><td>Pendaftaran mandiri, persetujuan, iuran, Midtrans opsional (D20).</td><td>0021, 0023</td><td>15</td></tr>
+      <tr><td><code>agenda.js, event.js</code></td><td>Bukti agenda (K20), kegiatan, dokumen; RSVP acara.</td><td>0010, 0013, 0032</td><td>15 + 6</td></tr>
+      <tr><td><code>kta.js</code></td><td>Kartu Tanda Anggota virtual dan verifikasi publik.</td><td>0017</td><td>12</td></tr>
+      <tr><td><code>portal.js, wilayah_kelola.js, meti_wilayah.js</code></td><td>Klaim dan pembaruan data lembaga, portal pengurus wilayah, halaman METI Wilayah.</td><td>0015, 0019</td><td>9 + 7 + 10</td></tr>
+      <tr><td><code>naskah.js</code></td><td>Portal otorisasi naskah dua kunci.</td><td>0036</td><td>9</td></tr>
+      <tr><td><code>konsultasi.js</code></td><td>Forum diskusi atas naskah RUU/RPP dan Masukan METI.</td><td>0024</td><td>22</td></tr>
+      <tr><td><code>pesan.js</code></td><td>Chat akun ke admin dengan lampiran.</td><td>0016</td><td>10</td></tr>
+      <tr><td><code>profil_akun.js</code></td><td>Profil saya, riwayat, foto, privasi, klaim entri orang.</td><td>0018, 0037</td><td>12</td></tr>
+      <tr><td><code>ikuti.js, langganan.js</code></td><td>Ikuti proyek, organisasi, provinsi; newsletter (belum mengirim surel).</td><td>0014, 0019, 0027</td><td>5 + 4</td></tr>
+      <tr><td><code>kerja.js</code></td><td>Lowongan Green jobs dari lembaga anggota, lewat antrean admin.</td><td>0028</td><td>5</td></tr>
+      <tr><td><code>konten_meti.js, pustaka.js, foto_berita.js</code></td><td>Berita METI dan pustaka unggahan, unduhan tercatat, thumbnail berita.</td><td>0012, 0033</td><td>13 + 4 + 1</td></tr>
+      <tr><td><code>hukum.js</code></td><td>Pustaka hukum dengan pencarian per pasal dan tanya berkutipan.</td><td>0029</td><td>4</td></tr>
+      <tr><td><code>roadmap.js, keyakinan.js</code></td><td>Suka dan komentar Roadmap; survei keyakinan bisnis triwulanan.</td><td>0031, 0035</td><td>5 + 2</td></tr>
+      <tr><td><code>surel.js, google.js, sosmed.js</code></td><td>Permintaan alamat surel organisasi (manual); Masuk dengan Google; feed media sosial.</td><td>0022, 0026, 0030</td><td>5 + 2 + 4</td></tr>
+      <tr><td><code>tanya.js</code></td><td>Tanya data: jawaban bersitasi dari potongan sumber.</td><td>tanpa tabel D1</td><td>1</td></tr>
+      <tr><td><code>lalin.js, kelayakan.js, docx.js, alih_tek.js, util.js, ua.js</code></td><td>Lalu lintas orang vs AI, proksi iklim NASA POWER, DOCX minimal, pengalihan teknologi, utilitas.</td><td>0020</td><td>1 (kelayakan) + 2 (worker.js)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note">Semua modul menulis D1 hanya lewat <code>src/hak.js</code>. Rute API selain pengecualian bab 2 menagih sesi, dan tiap tulis menagih header <code>x-pb</code> serta asal yang sama.</div>
+</section>
+
+<section class="bab" id="belum-diputus">
+  <h2>12. Belum diputus pemilik</h2>
+  <p class="lead">Butir berikut kodenya sudah melangkahi keputusan tertulis, atau sumber aturannya saling bertentangan, atau keputusannya belum ada. Buku ini hanya mencatat keadaan kode dan sumber yang bertentangan; tidak ada butir yang diputuskan di sini.</p>
+  <div class="note warn"><b>Catatan sinkron, 11 Nov 2026.</b> Buku ini mengikuti K1 sampai K20 dan D1 sampai D20 yang sudah dikomit. Saat buku ini ditulis, berkas <code>KEPUTUSAN-METI.md</code> di working tree sedang diubah pihak lain (belum dikomit) dengan tambahan K21 sampai K26, D21, D22, dan C-21 sampai C-25. Dari tambahan itu, butir 3 menyinggung K21 (bot panen terjadwal), butir 1 menyinggung C-22 (Tanya AI, masih pertanyaan terbuka dengan bawaan dipertahankan), butir 4 dan 5 menyinggung C-24 (foto dan lisensi), dan butir 10 menyinggung D21 (penyatuan konflik gaya). Setelah tambahan itu dikomit dan dibaca ulang, butir yang terjawab dipindah ke bab 7.</div>
+  <div class="tw"><table>
+    <thead><tr><th>No</th><th>Hal</th><th>Keadaan di kode, 11 Nov 2026</th><th>Aturan atau keputusan yang bertentangan atau kosong</th></tr></thead>
+    <tbody>
+      <tr><td class="nw">1</td><td>Tanya data AI</td><td>Ada <code>src/tanya.js</code> dan <code>public/tanya.html</code> (Vectorize bge-m3 dan model bahasa; jawaban hanya dari potongan bersitasi, lalu diperiksa mesin; tanpa potongan sumber jawabannya "tidak ditemukan"). Binding Vectorize dan AI ada di <code>wrangler.jsonc</code>.</td><td>K18 menaruh "tanya data AI" di daftar tidak dipilih. C-18 hanya mengizinkan ringkasan abstrak riset berlabel Ringkasan mesin. Belum ada keputusan tertulis yang mengubahnya.</td></tr>
+      <tr><td class="nw">2</td><td>Google OAuth, surel, Midtrans, Meta Graph</td><td><code>google.js</code> (hanya untuk akun yang sudah ada, butuh rahasia), <code>sosmed.js</code> (YouTube RSS; Instagram dan Facebook lewat Meta Graph bila rahasia dipasang), <code>daftar.js</code> (Midtrans Snap opsional). Tidak ada pengirim surel: newsletter menyimpan alamat tanpa mengirim, <code>surel.js</code> hanya antrean manual.</td><td><code>RENCANA-AKHIR.md</code> (8 Nov) menulis Midtrans otomatis, Google OAuth, Meta Graph, dan surel transaksional di luar cakupan. D20 menyebut Midtrans opsional. C-08 bawaannya salin tautan manual.</td></tr>
+      <tr><td class="nw">3</td><td>Panen terjadwal (bot harian, mingguan, bulanan)</td><td>Tidak ada. Hanya <code>uji.yml</code> di <code>.github/workflows/</code>; <code>scheduled()</code> hanya rentang IP dan feed sosmed. <code>INFRASTRUKTUR.md</code> merujuk <code>potret.yml</code> yang tidak ada. Pemilik sedang meminta bot harian, mingguan, dan bulanan; rencananya sedang disusun.</td><td><code>RENCANA-AKHIR.md</code> menyebut panen terjadwal lewat CI di luar cakupan; TIKET membatasi cron maksimal 5 dan kuota baca D1 5 juta per hari. Belum ada K atau D yang memilih wadahnya (Actions atau cron Worker).</td></tr>
+      <tr><td class="nw">4</td><td>Foto tokoh dan pengurus</td><td><code>public/img/orang/</code> berisi 128 berkas dan <code>public/img/pengurus/</code> 116 berkas di repo publik. Kredit di <code>data/foto_orang_kredit.json</code>: 188 baris, 169 bertulis "milik ... tampil dengan atribusi" (bukan lisensi). Foto agenda (K20) dan foto profil akun disimpan privat di R2.</td><td>Buku awal dan KEAMANAN-PRIVASI menulis foto orang tidak disimpan; K20 hanya mengecualikan dokumentasi agenda; JM-P04 dan JM-P08 meminta foto beratribusi. <code>LISENSI-DATA.md</code> (8 Nov) menyebut sekitar 129 foto tanpa lisensi dan <code>RENCANA-AKHIR.md</code> memuat foto wajah di repo publik sebagai keputusan pemilik yang menahan.</td></tr>
+      <tr><td class="nw">5</td><td>Lisensi data: GEM, IRENA, 1001startup.id, UN Comtrade</td><td>Data dari sumber-sumber itu masih dipakai di berkas potret dan skrip panen.</td><td><code>LISENSI-DATA.md</code>: GEM bertentangan antara CC BY 4.0 dan rekaman nonkomersial, IRENA nonkomersial, 1001startup.id tidak untuk unduhan massal, Comtrade butuh langganan untuk sebar ulang; 49 dari 81 baris katalog sumber tanpa lisensi. C-13 (izin tertulis) belum dijawab.</td></tr>
+      <tr><td class="nw">6</td><td>Laporan warga</td><td>Tidak ada kode, rute, atau tabel untuk laporan warga.</td><td>Hanya tertulis di <code>RENCANA-AKHIR.md</code> (Gelombang 4 dan 5). Tidak ada di K17 maupun K18; perlu keputusan baru bila dibangun.</td></tr>
+      <tr><td class="nw">7</td><td>Lapis Publik setelah D19, SEO dan kartu bagikan</td><td>Potret lapis publik tetap dibangun dan <code>public/data/</code> hanya terbaca akun login; <code>robots.txt</code> berisi <code>Disallow: /</code>, sementara <code>public/sitemap.xml</code> dan kartu bagikan <code>/og/</code> masih ada.</td><td>D19 mengubah asumsi halaman publik di PRD, ALUR, U4 "Jawaban singkat di semua halaman publik", dan butir SEO WEBSITE.md. Belum diputus apakah lapis Publik dipertahankan dan apa arti U4 sekarang.</td></tr>
+      <tr><td class="nw">8</td><td>Akses halaman /admin untuk Pengurus</td><td>Halaman <code>/admin</code> hanya Admin dan Super (403 untuk Pengurus), padahal menu akun menampilkan tautan Admin untuk Pengurus dan matriks mengizinkan Pengurus pada jenis <code>pendaftaran</code> dan <code>konten_otorisasi</code> lewat API.</td><td>D20 menulis tab persetujuan untuk pengurus, admin, super; keputusan 7 Nov membatasi <code>/admin</code> ke admin dan super. Belum jelas mana yang dimaksud pemilik.</td></tr>
+      <tr><td class="nw">9</td><td>Pengisi bukti agenda</td><td>Matriks <code>agenda</code>: tulis hanya Admin dan Super; Kurator hanya baca (komentar kode 8 Nov).</td><td>K20 menyebut pengisi kurator, admin, super.</td></tr>
+      <tr><td class="nw">10</td><td>Konflik gaya antar sumber desain</td><td>Kode memakai: header tabel gradien <code>--brand</code> ke <code>--brand2</code>, teks putih huruf biasa (<code>text-transform:none</code>) rata tengah, garis lime 2px, angka <code>td.jm-num</code> rata kanan; menu aktif pil <code>--brand</code> teks putih; hamburger di bawah 1200px; <code>--gut</code> 16, 24, 32px; angka KPI Inter 700; hanya satu keluarga huruf (Inter); kelas ikon <code>.jm-ik</code> dan sisa port <code>.ak-ikon</code>; ada kotak galat <code>.jm-galat</code>.</td><td>Buku lama, ATURAN X3, dan DESIGN-SYSTEM saling beda: huruf kapital vs capitalize (dan gerbang yang melarang <code>uppercase</code>), rata kanan vs tengah (B7 vs X2), petrol vs gradien, aktif soft-hijau vs --brand, 1100 vs 1200px, gutter 20px, KPI Poppins 900 vs 700, kotak galat <code>role=alert</code> vs disembunyikan, sapaan "kamu" vs birokratis-polos, warna per sektor (DS: tidak ada) vs palet <code>--tp-*</code> (komentar tema.css: pemilik 8 Nov). Rinci di Sistem Desain.</td></tr>
+      <tr><td class="nw">11</td><td>Sisa tombol dummy</td><td><code>public/direktori.js</code> hanya menyisakan komentar; <code>public/direktori.css</code> masih memuat kelas <code>.ak-dummy</code> yang tidak dipakai.</td><td>K15 menang. <code>DESIGN-SYSTEM.md</code> §5, §6.1, §7 dan D9 masih menyebut tombol dummy dan kunci <code>jm.dummy.*</code>.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>Sumber: paket perencanaan <code>docs/perencanaan/</code>, <code>AGENTS.md</code>, <code>package.json</code>, <code>wrangler.jsonc</code>, <code>src/</code>, <code>migrations/</code>, <code>tests/</code>, dan isi <code>public/</code>, per 11 Nov 2026. Perbarui buku ini bila keputusan pemilik atau halaman berubah.</footer>
 </main>
 </div>
 
