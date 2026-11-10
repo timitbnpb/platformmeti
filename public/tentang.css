@@ -646,23 +646,49 @@ span.tn-kp-b{cursor:default}
 .tn-hero-isi .tn-angka dd{color:var(--meti-lime);line-height:1}
 .tn-hero-isi .tn-angka dt{color:color-mix(in srgb,var(--on-brand) 78%,transparent);opacity:1}
 @media (max-width:760px){.tn-hero-isi .tn-angka{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:14px;width:100%}.tn-hero-isi .tn-angka>div:nth-child(3){border-left:0;padding-left:0}}
-/* kartu foto: nama di bawah foto, tidak menutupi wajah; avatar anggota lebih kecil (pemilik 9 Nov 2026) */
-.tn-bagan-bg .tn-fk,.tn-bagan-bg .tn-fk.besar,.tn-bagan-bg .tn-fk.kecil{display:grid;aspect-ratio:auto;height:100%}
-.tn-bagan-bg .tn-fk-b{position:relative;inset:auto;display:grid;grid-template-rows:auto 1fr;width:100%;height:100%}
-.tn-bagan-bg .tn-fk-bg{position:relative;inset:auto;aspect-ratio:1/1;overflow:hidden}
-.tn-bagan-bg .tn-fk-ini{padding-bottom:0}
-.tn-bagan-bg .tn-fk::after{display:none}
-.tn-bagan-bg .tn-fk-t,.tn-bagan-bg .tn-fk.besar .tn-fk-t{position:static;align-content:start;padding:10px 12px 12px;background:var(--brand);text-align:center}
-.tn-bagan-bg .tn-fk-t b{overflow-wrap:break-word}
-.tn-bagan-bg .tn-fk-kosong .tn-fk-t{background:none}
+/* avatar anggota 40px (pemilik 9 Nov 2026) */
 .tn-av-kisi{grid-template-columns:repeat(auto-fill,40px)!important}
 .tn-av-kisi li,.tn-av-kisi .tn-av,.tn-av-kisi .tn-plus{width:40px;height:40px}
 .tn-av-kisi .tn-ini,.tn-av-kisi .tn-plus{font-size:var(--t-label)}
-/* kartu orang: nama di bawah foto, wajah tidak tertutup (pemilik 9 Nov 2026) */
-.tn-kp{aspect-ratio:auto;background:var(--brand)}
-.tn-kp-b,.tn-lr .tn-kp-b{position:relative;inset:auto;display:grid;grid-template-rows:auto 1fr}
-.tn-kp-f{position:relative;inset:auto;aspect-ratio:1/1}
-.tn-kp-f::after{display:none}
-.tn-kp-n,.tn-lr .tn-kp-n{position:static;inset:auto;align-content:start;min-height:64px;padding:8px 10px 10px;background:var(--brand);text-align:center}
-.tn-kp-n b,.tn-lr .tn-kp-n b{color:var(--on-brand);-webkit-line-clamp:unset;line-clamp:unset;display:block}
-.tn-kp-n small,.tn-lr .tn-kp-n small{color:color-mix(in srgb,var(--on-brand) 85%,transparent);-webkit-line-clamp:unset;line-clamp:unset;display:block}
+
+/* kartu orang: foto penuh 3:4, nama dan jabatan di dalam kartu bagian bawah; sorotan latar tipis setinggi area teks, wajah tidak tertutup (pemilik 9 Nov 2026) */
+.tn-kp-f img{object-position:50% 0}
+.tn-kp-n,.tn-lr .tn-kp-n{padding:22px 10px 10px;background:linear-gradient(0deg,color-mix(in srgb,var(--brand) 58%,transparent) 0%,color-mix(in srgb,var(--brand) 28%,transparent) 55%,transparent 100%);text-shadow:0 1px 3px color-mix(in srgb,black 55%,transparent)}
+.tn-fk:is(.tn-fk-pt,.tn-fk-ft,.besar)::after{top:auto;height:34%;background:linear-gradient(0deg,color-mix(in srgb,var(--brand) 58%,transparent) 0%,color-mix(in srgb,var(--brand) 26%,transparent) 55%,transparent 100%)}
+.tn-fk.besar .tn-fk-t{text-shadow:0 1px 3px color-mix(in srgb,black 55%,transparent)}
+.tn-fk-ft .tn-fk-bg img,.tn-fk.besar .tn-fk-bg img{object-position:50% 0}
+
+/* visi dan misi */
+.tn-vm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:20px;align-items:start}
+.tn-vm .tn-kartu{padding:clamp(18px,2.6vw,28px);display:grid;gap:14px;align-content:start}
+.tn-vm h3{display:flex;align-items:center;gap:10px;margin:0;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head)}
+.tn-vm h3 .jm-ik{flex:none;color:var(--accent)}
+.tn-vm-visi{border-top:4px solid var(--brand2)}
+.tn-vm-visi .tn-isi{margin:0;font-size:var(--t-h3);text-align:justify}
+.tn-vm-l{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.tn-vm-l li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start;padding:10px 12px;border-radius:var(--r);background:var(--surface);color:var(--ink);line-height:var(--lh-isi);text-align:justify}
+.tn-vm-no{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand2));color:var(--on-brand);font:700 var(--t-kecil)/1 var(--display)}
+.tn-vm-sumber{display:flex;align-items:flex-start;gap:8px;margin:16px 0 0;color:var(--ink2);font-size:var(--t-kecil);line-height:var(--lh-isi);text-align:justify}
+.tn-vm-sumber .jm-ik{flex:none;margin-top:2px;color:var(--accent)}
+@media (max-width:900px){.tn-vm{grid-template-columns:minmax(0,1fr)}}
+
+/* roadmap ringkas, wajib berlabel draf */
+.tn-rm{display:grid;gap:16px;padding:clamp(18px,2.6vw,28px);border-top:4px solid var(--brand2)}
+.tn-rm-draf{display:flex;align-items:center;gap:8px;justify-self:start;max-width:100%;margin:0;padding:8px 14px;border-radius:var(--r-pil);background:var(--akun-krem);color:var(--ink);font:700 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.tn-rm-draf .jm-ik{flex:none;color:var(--accent)}
+.tn-rm .tn-rm-st{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tn-rm-prog{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tn-rm-prog li{padding:6px 12px;border-radius:var(--r-pil);background:var(--soft-hijau);color:var(--ink);font-size:var(--t-kecil);line-height:var(--lh-rapat)}
+.tn-rm .tn-isi{margin:0;text-align:justify}
+.tn-rm .tn-tbl-hijau{justify-self:start;margin-top:0}
+@media (max-width:640px){.tn-rm .tn-rm-st{grid-template-columns:minmax(0,1fr)}.tn-rm .tn-tbl-hijau{justify-self:stretch}}
+
+/* staf operasional: sendiri di paling bawah struktur, satu baris penuh */
+.tn-staf-baris{margin-top:20px}
+.tn-bagan-bg .tn-staf-baris>.tn-rg{width:100%!important;max-width:none}
+
+/* kepala wadah bidang kerja dan unit khusus: gradien brand seperti kepala kelompok */
+.tn-wd>.jm-ex-hd{background:linear-gradient(135deg,var(--brand),var(--brand2));border-color:transparent}
+.tn-wd .jm-ex-j{color:var(--on-brand)}
+.tn-wd .jm-ex-j .jm-hl{color:var(--meti-lime);background:none}
+.tn-wd .jm-ex-ey{background:color-mix(in srgb,var(--on-brand) 18%,transparent);color:var(--on-brand);border-color:transparent}

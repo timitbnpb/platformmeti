@@ -388,7 +388,8 @@ function pasang(el, daftar) {
 /* tiga angka utama di hero, tiap ubin menaut ke kartunya */
 function ubin() {
   const nilai = TEMUAN.map((f) => f()).filter(Boolean), U = ["terlambat", "pipeline", "plts"].map((id) => nilai.find((c) => c.id === id)).filter(Boolean);
-  $("ubin").innerHTML = U.map((c) => `<a class="jm-ins-ub" href="#ins-${esc(c.id)}"><b>${esc(c.nilai)}<small>${esc(c.satuan)}</small></b><span>${esc(t("ins.hero." + c.id))}</span></a>`).join("");
+  const IK = { terlambat: "peringatan", pipeline: "grafik", plts: "panel-surya" };
+  $("ubin").innerHTML = U.map((c) => `<a class="jm-kh-ub" href="#ins-${esc(c.id)}"><span class="jm-kpi-ik">${ikon(IK[c.id] || "grafik", 18)}</span><p class="jm-kh-angka"><b>${esc(c.nilai)}</b>${c.satuan ? `<span>${esc(c.satuan)}</span>` : ""}</p><p class="jm-kh-lbl">${esc(t("ins.hero." + c.id))}</p></a>`).join("");
 }
 
 function gambarTemuan() {

@@ -7,10 +7,12 @@ import { t } from "/i18n.js";
 const PILIH = "main section[id], main article.jm-ex[id], main section.jm-ex[id], main .jm-ex[id]";
 const judulPenuh = (el) => (el.dataset.relLabel || el.querySelector(".jm-ex-ey, .jm-kh-ey")?.textContent || el.querySelector("h2, .jm-ex-j, h3")?.textContent || "").trim().replace(/\s+/g, " ");
 /* label butir rel: maksimal 3 kata bermakna (data-rel-label menang, apa adanya) */
-const KATA_LEWAT = /^(di|ke|dari|yang|dan|untuk|pada|dengan|apa|mengapa|bagaimana|siapa|kapan|ini|itu|atau|serta|saja|ada|dalamnya)$/i;
+const KATA_LEWAT = /^(di|ke|dari|yang|dan|untuk|pada|dengan|apa|mengapa|bagaimana|siapa|kapan|ini|itu|atau|serta|saja|ada|dalamnya|for|of|the|in|to|and|with|at|on)$/i;
 const judul = (el) => {
   if (el.dataset.relLabel) return judulPenuh(el);
-  const k = judulPenuh(el).replace(/[?!.:;,]+$/g, "").split(" ");
+  const penuh = judulPenuh(el).replace(/[?!.:;,]+$/g, "");
+  if (/[㐀-鿿]/.test(penuh)) return penuh.split(/[，。：；]/)[0].slice(0, 10); // Mandarin tanpa spasi antarkata
+  const k = penuh.split(" ");
   const inti = k.filter((w) => !KATA_LEWAT.test(w));
   const h = (inti.length ? inti : k).slice(0, 3).join(" ");
   return h.charAt(0).toUpperCase() + h.slice(1);
@@ -87,6 +89,7 @@ let tunda;
 export function pasangRel() {
   const jalan = () => { clearTimeout(tunda); tunda = setTimeout(bangun, 300); };
   jalan();
+  document.addEventListener("jm:bahasa", jalan); // label diambil dari judul seksi, jadi ikut berganti saat bahasa diganti
   // halaman merender seksi secara malas; bangun ulang saat jumlah seksi berubah
   let n = 0;
   new MutationObserver(() => { const m = kumpul().length; if (m !== n) { n = m; jalan(); } }).observe(document.querySelector("main") || document.body, { childList: true, subtree: true });

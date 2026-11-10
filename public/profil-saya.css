@@ -195,3 +195,10 @@ dialog.ps-dlg{width:min(760px,calc(100vw - 24px));max-height:calc(100dvh - 24px)
 /* kepala kartu bagian: judul kiri, ikon sunting/tambah sejajar kanan (audit UI 2) */
 #pfPanel .jm-ex>.jm-ex-hd{align-items:center}
 #pfPanel .jm-ex>.jm-ex-hd>.jm-ex-aksi{grid-row:1;align-self:center}
+
+/* kartu "Profil di direktori": teks deskripsi rata kanan-kiri, blok diberi jarak */
+.prk-isi{display:grid;gap:12px}
+.prk-teks{margin:0;text-align:justify;hyphens:auto}
+.prk-st{margin:0}
+.prk-taut{justify-self:start}
+.prk-dari{display:block;margin-top:8px}

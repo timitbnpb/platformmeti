@@ -265,3 +265,8 @@
 .jm-sorotan-kt:not(:has(.jm-sorotan-gb)) h2{font-size:var(--t-h2)}
 .jm-sorotan-kt:not(:has(.jm-sorotan-gb)) .jm-sorotan-fakta{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (max-width:767px){.jm-sorotan{grid-template-columns:minmax(0,1fr)}}
+/* tombol Jadi sponsor di kartu agenda yang membuka sponsor */
+.jm-sorotan-sponsor{border-color:var(--accent);background:var(--soft-hijau);transition:background .15s,transform .15s}
+.jm-sorotan-sponsor:hover{background:var(--card);text-decoration:none;transform:translateY(-1px)}
+.jm-sorotan-sponsor:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.jm-sorotan-sponsor{transition:none}.jm-sorotan-sponsor:hover{transform:none}}

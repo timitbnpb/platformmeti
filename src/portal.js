@@ -119,6 +119,29 @@ export const rute = {
     return r ? json({ id: r.id }, 201, PRIVAT) : NONAKTIF();
   },
 
+  "GET /api/portal/orang-saya": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    const r = await hak.orangSaya(env, akun);
+    return r ? json(r, 200, PRIVAT) : NONAKTIF();
+  },
+
+  "POST /api/portal/orang-klaim": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    const b = await bacaBody(req, 2048);
+    const orangId = typeof b.orang_id === "string" && RE_REF.test(b.orang_id) ? b.orang_id : null;
+    if (!orangId) return gagal("masukan_salah", 422);
+    const bkt = bukti(b.bukti_url, false);
+    if ((await hak.catatLaju(env, "koreksi:ko" + akun.id, 86400)) > 5) return gagal("laju_terlampaui");
+    const r = await hak.orangKlaimBaru(env, akun, { orangId, bukti: bkt }); // sudah punya klaim aktif = 409 dari indeks unik
+    return r ? json({ id: r.id }, 201, PRIVAT) : NONAKTIF();
+  },
+
+  "GET /api/orang/revisi": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    const r = await hak.orangRevisi(env, akun);
+    return r ? json(r, 200, PRIVAT) : NONAKTIF();
+  },
+
   "POST /api/portal/ajuan": async (req, env, ctx, p) => {
     const akun = perlu(p);
     const a = periksaAjuan(await bacaBody(req, 8192));
@@ -140,17 +163,22 @@ export const rute = {
   "GET /api/admin/portal": async (req, env, ctx, p) => {
     const akun = perlu(p, ADM);
     const q = new URL(req.url).searchParams, tipe = q.get("tipe") || "ajuan", status = q.get("status") || "baru";
-    if (!["klaim", "ajuan", "wilayah"].includes(tipe) || !["baru", "setuju", "tolak"].includes(status)) return gagal("masukan_salah", 422);
+    if (!["klaim", "ajuan", "wilayah", "orang"].includes(tipe) || !["baru", "setuju", "tolak"].includes(status)) return gagal("masukan_salah", 422);
     const r = await hak.orgAntrean(env, akun, tipe, status, q.get("hal") ?? 1);
     return r ? json(r, 200, PRIVAT) : NONAKTIF();
   },
 
   "POST /api/admin/portal/:tipe/:id": async (req, env, ctx, p) => {
     const akun = perlu(p, ADM);
-    if (!["klaim", "ajuan", "wilayah"].includes(p.params.tipe) || !RE_ID.test(p.params.id)) return gagal("tidak_ditemukan");
+    if (!["klaim", "ajuan", "wilayah", "orang"].includes(p.params.tipe) || !RE_ID.test(p.params.id)) return gagal("tidak_ditemukan");
     const b = await bacaBody(req, 2048);
     const catatan = teks(b.catatan, 500);
-    if (!["setuju", "tolak"].includes(b.aksi) || (b.aksi === "tolak" && !catatan)) return gagal("masukan_salah", 422);
+    const cabut = b.aksi === "cabut" && p.params.tipe === "orang";
+    if (!(cabut || ["setuju", "tolak"].includes(b.aksi)) || ((b.aksi === "tolak" || cabut) && !catatan)) return gagal("masukan_salah", 422);
+    if (cabut) {
+      const c = await hak.orangCabut(env, akun, p.params.id, catatan);
+      return !c ? NONAKTIF() : c.ubah ? json({ ok: true }, 200, PRIVAT) : gagal("konflik");
+    }
     const r = await hak.orgPutus(env, akun, p.params.tipe, p.params.id, b.aksi, catatan);
     if (!r) return NONAKTIF();
     return r.ubah ? json({ ok: true }, 200, PRIVAT) : gagal("konflik");

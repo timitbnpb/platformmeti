@@ -50,7 +50,6 @@
 @media (max-width:640px){.gsj-ang{grid-template-columns:minmax(0,1fr)}}
 
 /* tab sejajar satu baris (aturan serupa di rantai-global.css kalah urutan) */
-#gsjTab .jm-tab[role="tablist"]{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}
 
 /* grafik batang: warna seri dari token */
 .gsj-s-a{color:var(--data1)}.gsj-s-b{color:var(--data5)}.gsj-s-c{color:var(--warn)}.gsj-s-d{color:var(--bad)}.gsj-s-e{color:var(--info)}.gsj-s-gas{color:var(--tp-hidrogen)}

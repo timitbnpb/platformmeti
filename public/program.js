@@ -2,6 +2,7 @@
    (scripts/pipa/program_analisis.mjs); /program#psn memuat bagian PSN energi dari psn.js. Teks data dwibahasa {id, en}; teks layar dari kamus. Bagian tanpa isi tidak dirender.
    INP: chrome filter (cari, tahap) berubah seketika, kartu menyusul lewat nanti(); peta dan tabel panjang dibuat sesudah bingkai tercat. */
 import { mulaiHalaman } from "/inti/kepala.js";
+import { pasangProdukTerkait } from "/inti/produk_meti.js";
 import { t, ada, angka, tanggal, bahasa, bahasaData } from "/i18n.js";
 import { navLokal, pasangLokal } from "/inti/paginasi.js";
 import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
@@ -351,6 +352,7 @@ if (!D) { isi.innerHTML = ""; tampilGalat(isi, () => location.reload()); } else 
   } else {
     const gambar = () => (g ? gambarDetail(g) : gambarIndeks());
     gambar();
+    pasangProdukTerkait("pgProduk", g ? { j: "program", k: g.kode } : { halaman: "program" });
     saatBahasa(gambar);
     isi.addEventListener("error", (e) => {
       const im = e.target;

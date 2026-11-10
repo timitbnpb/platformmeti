@@ -114,3 +114,4 @@ Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
 - 2026-11-08 · Nav 7 menu (8 Nov 2026): gerbang-ikon-nav menuntut ikon unik di seluruh TAB; item baru perlu ikon bebas. /bidang/<slug> dilayani satu bidang.html; slug dibaca dari pathname.
 - 2026-11-08 · Select baru wajib data-ikon (gerbang-pilih); GET /api/agenda dibaca longgar (array atau {daftar|bukti}) lewat butirAgenda/petaBukti
 - 2026-11-08 · Rute /siaran-pers/<id> (src/siaran.js) hanya mengenal JSON statis; butir D1 dibuka lewat dialog ?buka=ref di halaman daftar. Unggah dengan progres pakai XMLHttpRequest (fetch tanpa progres).
+- 2026-11-09 · Gerbang ikon-nav menuntut ikon unik: 'linimasa' sudah dipakai /sejarah, jadi menu Roadmap memakai 'kompas'.

@@ -27,5 +27,4 @@
 .h2-fase{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
 
 /* tab ujung ke ujung dalam satu baris: aturan umum jm.css menang atas .rg3-tab, jadi dikunci per id (pola jaringan.css) */
-#h2Tab .jm-tab[role="tablist"]{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}
 @media (max-width:899px){#h2Tab .jm-tab>button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}

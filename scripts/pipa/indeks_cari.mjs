@@ -17,7 +17,7 @@ const tanggalPendek = (t) => String(t || "").slice(0, 10);
 
 // halaman situs: judul dari kamus (kunci disimpan, klien memakai t(k) agar mengikuti bahasa)
 const HALAMAN = [["/", "nav.beranda"], ["/insight", "nav.insight_ringkasan"], ["/rantai-global?tab=tkdn", "nav.rantai"], ["/rantai-global", "rg3.nav"], ["/lelang", "lel.nav"], ["/baterai-ev", "bev.nav"], ["/jaringan", "jr.nav"], ["/bioenergi", "bn.nav"], ["/surya", "sur.nav"], ["/hidrogen", "h2.nav"], ["/transisi-pltu", "tpl.nav"], ["/panas-bumi", "pbm.nav"], ["/gas", "gsj.nav"], ["/nuklir", "nkl.nav"], ["/sampah-energi", "swe.nav"], ["/angin", "ang.nav"], ["/hidro", "hdr.nav"], ["/asean", "nav.asean"], ["/jejaring", "nav.jejaring"], ["/metode", "nav.sub.metode"],
-  ["/proyek", "nav.proyek"], ["/wilayah", "nav.wilayah"], ["/regulasi", "nav.regulasi"], ["/berita", "nav.berita"], ["/kalender", "nav.kalender"], ["/tentang", "nav.tentang"],
+  ["/proyek", "nav.proyek"], ["/produk-meti", "n7.produk", "produk METI masukan roadmap siaran sikap profil"], ["/wilayah", "nav.wilayah"], ["/regulasi", "nav.regulasi"], ["/berita", "nav.berita"], ["/kalender", "nav.kalender"], ["/tentang", "nav.tentang"],
   ["/pustaka", "nav.pustaka"], ["/program", "nav.program"], ["/topik", "nav.topik"], ["/investasi#peluang", "nav.peluang", "peluang"], ["/investasi#model", "nav.model_keuangan", "model keuangan"], ["/investasi#harga-komponen", "hk2.nav", "harga komponen"], ["/cek-lokasi#kawasan-hijau", "lh2.nav", "lokasi hijau"], ["/indeks", "nav.indeks"], ["/target#strategi", "nav.strategi"],
   ["/direktori", "nav.direktori"], ["/target#transisi", "nav.transisi"], ["/pelacak", "nav.pelacak"], ["/kuadran", "nav.kuadran"], ["/target#rapor", "nav.rapor"], ["/kerja", "nav.kerja"],
   ["/radar", "nav.radar"], ["/investasi", "iv.nav"], ["/investasi#biaya", "nav.biaya_listrik", "biaya listrik"], ["/investasi#pembiayaan", "nav.keuangan_hijau", "keuangan hijau"], ["/pasar-listrik-hijau", "nav.pasar_hijau"], ["/dokumen-data", "nav.dokumen_data"],
@@ -79,6 +79,9 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
   for (const d of data("pendanaan")?.pendanaan || []) tambah("pendanaan", b(d.nama, [d.pemberi, d.jenis].filter(Boolean).join(", "), "/direktori?tampil=pendanaan", [d.pemberi, ...(d.sektor || []), ...(d.sasaran || [])], { b: d.tingkat_bukti }));
 
   for (const g of baris(data("program_analisis"))) tambah("program", b(g.nama?.id, g.tahap_ket?.id ? String(g.tahap_ket.id).slice(0, 90) : "", "/program/" + encodeURIComponent(g.kode), ["program nasional", g.nama?.en]));
+
+  // Produk METI (dokumen dan keluaran kerja METI yang sudah publik): tiap butir menunjuk bagian jenisnya di /produk-meti
+  for (const r of baris(data("produk_meti"))) tambah("produk", b(r.judul.id, [r.jenis, r.tanggal].filter(Boolean).join(", "), "/produk-meti#pm-" + r.jenis, [r.judul.en, r.ringkas.id, ...r.terkait.map((x) => x.id)], { b: "resmi" }));
 
   for (const k of baris(data("pustaka"))) tambah("pustaka", b(k.judul, [k.penerbit, k.tanggal].filter(Boolean).join(", "), "/pustaka?id=" + encodeURIComponent(k.id), [k.jenis, ...(k.kepakaran || [])]));
 

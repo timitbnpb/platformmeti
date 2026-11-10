@@ -70,5 +70,4 @@
 @media (max-width:640px){.jr-petawrap{height:auto}}
 
 /* ---- tab ujung ke ujung: aturan umum jm.css (grid auto-fit) lebih spesifik daripada .rg3-tab, jadi dikunci per id ---- */
-#jrTab .jm-tab[role="tablist"]{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}
 @media (max-width:899px){#jrTab .jm-tab>button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}

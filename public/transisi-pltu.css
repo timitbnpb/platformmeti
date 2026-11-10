@@ -29,8 +29,6 @@
 .tpl-u-a{--wc:var(--ok)}.tpl-u-b{--wc:var(--info)}.tpl-u-c{--wc:var(--warn)}.tpl-u-d{--wc:var(--bad)}
 
 /* tab ujung ke ujung dalam satu baris: penegak global di jm.css (grid-auto-flow:row!important) menang atas .rg3-tab, jadi dikalahkan dengan id */
-#tplTab .jm-tab.jm-tab-rata{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}
-#tplTab .jm-tab.jm-tab-rata>button{white-space:nowrap;width:auto}
 
 /* kartu mengisi lebar penuh (tanpa ruang kosong di kanan) */
 .tpl-kisi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;align-items:stretch}

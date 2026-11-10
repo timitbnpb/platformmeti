@@ -45,9 +45,11 @@ async function panggil(metode, jalur, { peran = null, badan, header = {} } = {})
   return worker.fetch(new Request("https://uji.test" + jalur, { method: metode, headers: h, body }), E, { waitUntil() {} });
 }
 const BM = { jenis: "siaran_pers", judul: "Siaran pers contoh", tanggal: "2026-11-01" };
-const bikinBm = async (extra = {}) => (await (await panggil("POST", "/api/berita-meti", { peran: "admin", badan: { ...BM, ...extra } })).json()).ref;
+// Aturan dua kunci (0036): konten baru berstatus menunggu dan tak tampil ke anggota; uji lain mengandaikan sudah sah, maka disahkan pengurus lebih dulu (sah() lewat UPDATE SQL, sama seperti pengesahan nyata).
+const sah = async (sumber, ref) => { const p = await q("SELECT id FROM akun WHERE peran = 'pengurus'").first(); await q("UPDATE konten_otorisasi SET status = 'disahkan', disahkan_oleh = ?, disahkan_pada = unixepoch() WHERE sumber = ? AND ref = ?", p.id, sumber, ref).run(); return ref; };
+const bikinBm = async (extra = {}) => sah("berita_meti", (await (await panggil("POST", "/api/berita-meti", { peran: "admin", badan: { ...BM, ...extra } })).json()).ref);
 const PU = "judul=Kajian%20contoh&penerbit=METI&jenis=kajian&nama=kajian.pdf";
-const bikinPu = async (akses) => (await (await panggil("POST", `/api/pustaka-unggah?${PU}&akses=${akses}`, { peran: "admin", badan: PDF })).json()).ref;
+const bikinPu = async (akses) => sah("pustaka_unggah", (await (await panggil("POST", `/api/pustaka-unggah?${PU}&akses=${akses}`, { peran: "admin", badan: PDF })).json()).ref);
 
 test("publik 401; kurator/anggota/pengurus/wilayah 403 untuk semua rute tulis, tanpa efek", async () => {
   const tulis = [["POST", "/api/berita-meti", BM], ["PATCH", "/api/berita-meti/bm-1", {}], ["DELETE", "/api/berita-meti/bm-1"], ["PUT", "/api/berita-meti/bm-1/foto", JPEG],
@@ -110,6 +112,8 @@ test("foto berita: magic bytes, EXIF ditolak, > 5 MB 413, ganti/lepas, hapus ber
   assert.equal(BERKAS.size, 0);
   assert.equal((await panggil("PUT", f, { peran: "admin", badan: JPEG })).status, 200);
   assert.equal(BERKAS.size, 1);
+  assert.equal((await panggil("GET", `/api/berita-meti/${ref}`, { peran: "anggota" })).status, 404, "ganti foto = kembali menunggu, tersembunyi dari anggota");
+  await sah("berita_meti", ref);
   const butir = await (await panggil("GET", `/api/berita-meti/${ref}`, { peran: "anggota" })).json();
   assert.equal(butir.foto, `/api/berita-meti/foto/${ref}`);
   const g = await panggil("GET", butir.foto, { peran: "anggota" });

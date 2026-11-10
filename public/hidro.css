@@ -50,7 +50,6 @@
 @media (max-width:640px){.hdr-ang{grid-template-columns:minmax(0,1fr)}}
 
 /* tab sejajar satu baris (aturan serupa di rantai-global.css kalah urutan) */
-#hdrTab .jm-tab[role="tablist"]{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}
 
 /* seri grafik */
 .hdr-s-mw{color:var(--tp-hidro)}.hdr-s-lcoe{color:var(--data1)}.hdr-s-sipil{color:var(--tp-hidro)}.hdr-s-mekanis{color:var(--data5)}.hdr-s-listrik{color:var(--warn)}

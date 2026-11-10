@@ -29,8 +29,8 @@ const BIDANG = {
 
 const $ = (id) => document.getElementById(id);
 const panel = $("pfPanel"), samping = $("pfSamping"), dlg = $("psDlg");
-const S = { p: null, prov: [], crop: null, orgs: null, proyek: null, kenal: null };
-const Z = { org: "", ahli: [], rw: null }; // keadaan dialog yang sedang terbuka
+const S = { p: null, prov: [], crop: null, orgs: null, proyek: null, kenal: null, klaim: undefined, orang: null, baris: null, dir: null, dari: new Set() };
+const Z = { org: "", ahli: [], rw: null, klaim: { id: "", nama: "", bukti: "" }, ulang: false }; // keadaan dialog yang sedang terbuka
 
 const tx = (k) => `data-i18n="${k}"`;
 const pesan = (jenis, teks) => { const el = $("pfPesan"); if (el) el.innerHTML = teks ? pesanHtml(jenis, teks) : ""; };
@@ -41,7 +41,69 @@ const medan = (id, kunci, ik, isi, bantu = "") => `<div class="jm-medan ps-f"><l
 const teks = (id, nilai, maks, { tipe = "text", ac = "off", mode = "", ro = false } = {}) => `<input class="jm-isian" id="${id}" name="${id}" type="${tipe}" maxlength="${maks}" autocomplete="${ac}"${mode ? ` inputmode="${mode}"` : ""} value="${esc(nilai ?? "")}"${ro ? " readonly" : ""}>`;
 
 /* ---------- muat ---------- */
-async function muat() { S.p = await api("/api/profil/saya"); }
+async function muat() { S.p = await api("/api/profil/saya"); gabungDir(); }
+
+/* ---------- profil di direktori: klaim entri orang.json (dimuat malas, hanya saat kartu perlu) ---------- */
+const orangData = () => (S.orang ||= fetch("/data/orang.json").then((r) => r.json()).then((j) => (S.baris = j.baris)).catch((e) => { S.orang = null; throw e; }));
+const URL_OK = (u) => (/^https?:\/\//i.test(u || "") ? u : "");
+/* Isi awal: bidang profil yang masih kosong terisi dari entri direktori (belum disimpan); S.dari mencatat kelompoknya untuk keterangan kecil. */
+function gabungDir() {
+  S.dari = new Set();
+  const d = S.dir, p = S.p;
+  if (!d) return;
+  const set = (g, k, v) => { if (v && (Array.isArray(p[k]) ? !p[k].length : !p[k])) { p[k] = v; S.dari.add(g); } };
+  set("org", "jabatan", d.jabatan_terkini); set("org", "instansi", d.organisasi_terkini); set("org", "gelar", d.gelar);
+  if (S.dari.has("org") && d.organisasi_id && !p.organisasi_id) p.organisasi_id = d.organisasi_id;
+  set("bio", "bio", String(d.ringkasan || "").slice(0, MAKS_BIO));
+  set("ahli", "keahlian", (d.kepakaran || []).map((x) => x.kode).filter(Boolean).slice(0, MAKS_KEAHLIAN));
+  if (!Object.keys(p.tautan || {}).length) {
+    const tt = {};
+    for (const x of d.tautan || []) { const k = x.jenis === "linkedin" ? "linkedin" : x.jenis === "profil-resmi" || x.jenis === "web" ? "situs" : ""; if (k && !tt[k] && URL_OK(x.url)) tt[k] = x.url; }
+    if (Object.keys(tt).length) { p.tautan = tt; S.dari.add("tautan"); }
+  }
+}
+async function muatKlaim() {
+  try { S.klaim = (await api("/api/portal/orang-saya")).klaim; } catch { S.klaim = undefined; }
+  S.dir = null;
+  if (S.klaim?.status === "setuju") S.dir = (await orangData().catch(() => []))?.find((o) => o.id === S.klaim.orang_id) || null;
+  if (S.p) gabungDir();
+}
+const dariDir = (g) => (S.dari.has(g) ? `<small class="pf-bantu prk-dari">${esc(t("prk.dari_dir"))}</small>` : "");
+const pilKlaim = { baru: "jm-pil-warn", setuju: "jm-pil-ok", tolak: "jm-pil-bad" };
+function kartuKlaim() {
+  const k = S.klaim;
+  if (k === undefined) return "";
+  const nama = (S.baris || []).find((o) => o.id === k?.orang_id)?.nama || k?.orang_id || "";
+  const lembaga = `<a class="pf-taut prk-taut" href="/portal">${ikon("gedung", 16)}<span>${esc(t("prk.lembaga"))}</span></a>`;
+  const status = k ? `<p class="prk-st"><span class="jm-pil ${pilKlaim[k.status] || ""}">${esc(t(k.status === "baru" ? "prk.s.baru" : "kor.s." + k.status))}</span></p>` : "";
+  let isi;
+  if (k && !Z.ulang) {
+    const ket = k.status === "baru" ? t("prk.baru", { nama }) : k.status === "setuju" ? t("prk.setuju", { nama }) : t("prk.tolak", { nama });
+    const aksi = k.status === "setuju" ? `<a class="jm-tbl" href="/direktori">${ikon("direktori", 18)}<span>${esc(t("prk.lihat"))}</span></a>` : k.status === "tolak" ? `<button type="button" class="jm-tbl" data-aksi="ajukan-ulang">${ikon("tambah", 18)}<span>${esc(t("prk.ulang"))}</span></button>` : "";
+    isi = `${status}<p class="prk-teks">${esc(ket)}</p>${k.status === "tolak" && k.catatan_admin ? `<p class="prk-teks"><b>${esc(t("prk.catatan"))}</b> ${esc(k.catatan_admin)}</p>` : ""}${aksi ? `<div class="jm-aksi">${aksi}</div>` : ""}`;
+  } else {
+    isi = `<p class="prk-teks">${esc(t("prk.lead"))}</p>
+      <div class="jm-medan ps-f pf-combo-w"><label for="kNama">${esc(t("prk.cari"))}</label><div class="ps-in pf-combo">${ikon("cari", 18)}<input class="jm-isian" id="kNama" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="lstKlaim" autocomplete="off" maxlength="120" value="${esc(Z.klaim.nama)}"><ul class="pf-lst" id="lstKlaim" role="listbox" hidden></ul></div><small class="pf-bantu ps-bantu" id="kRef">${esc(Z.klaim.id ? t("prk.dipilih", { nama: Z.klaim.nama }) : t("prk.cari_bantu"))}</small></div>
+      ${medan("kBukti", "prk.bukti", "tautan", teks("kBukti", Z.klaim.bukti, 300, { tipe: "url", mode: "url" }), esc(t("prk.bukti_bantu")))}
+      <div class="jm-aksi"><button type="button" class="jm-tbl jm-tbl-utama" data-aksi="kirim-klaim">${ikon("centang", 18)}<span>${esc(t("prk.kirim"))}</span></button></div>`;
+  }
+  return kartu("direktori", "prk.judul", `<div class="prk-isi">${isi}${lembaga}</div>`);
+}
+function pasangKlaim() {
+  const input = $("kNama");
+  if (!input) return;
+  pasangCombo(input, $("lstKlaim"), () => orangData(), (x) => { Z.klaim.id = x.id; Z.klaim.nama = x.nama; input.value = x.nama; $("kRef").textContent = t("prk.dipilih", { nama: x.nama }); });
+}
+async function kirimKlaim(b) {
+  if (!Z.klaim.id) return pesan("galat", t("prk.pilih_dulu"));
+  b.disabled = true;
+  const bukti = Z.klaim.bukti.trim();
+  try {
+    await api("/api/portal/orang-klaim", { metode: "POST", badan: { orang_id: Z.klaim.id, ...(bukti && { bukti_url: bukti }) } });
+    Z.ulang = false; Z.klaim = { id: "", nama: "", bukti: "" };
+    await muatKlaim(); segar(); pesan("ok", t("prk.terkirim"));
+  } catch (e) { b.disabled = false; pesan("galat", e.status === 409 ? t("prk.sudah") : galatTeks(e.kode)); }
+}
 const namaProv = () => (S.prov.find(([k]) => k === S.p.kode_prov) || [])[1] || "";
 const daftarRw = (j) => S.p.riwayat?.[j] || [];
 
@@ -59,6 +121,7 @@ function gambarKepala() {
   $("pfMeta").innerHTML = [lok ? `<span>${ikon("lokasi", 16)}<span>${esc(lok)}</span></span>` : "", org].filter(Boolean).join("");
   $("pfLencana").innerHTML = p.kta ? `<span class="pf-lencana-meti" title="${esc(t("pf.lencana.ket"))}">${ikon("qr", 16)}<span>${esc(t("pf.lencana"))}${p.kta.tahun_masuk ? ` ${esc(t("pf.sejak", { th: p.kta.tahun_masuk }))}` : ""}</span></span>` : "";
   $("pfAksi").innerHTML = `<button type="button" class="jm-tbl jm-tbl-utama" data-aksi="buka" data-bag="diri">${ikon("ubah", 18)}<span>${esc(t("pf.sunting"))}</span></button>
+    <button type="button" class="jm-tbl" data-aksi="buka" data-bag="nama">${ikon("teks", 18)}<span>${esc(t("prk.nama_judul"))}</span></button>
     <a class="jm-tbl" href="/anggota/${encodeURIComponent(p.id)}">${ikon("orang", 18)}<span>${esc(t("pf.lihat_publik"))}</span></a>
     <button type="button" class="jm-tbl" data-aksi="bagikan">${ikon("bagikan", 18)}<span>${esc(t("pf.bagikan"))}</span></button>`;
 }
@@ -88,17 +151,17 @@ const kartuRw = (j) => kartu(IK_JENIS[j], "pf.jenis." + j, timeline(j), aksiRw(j
 
 function gambarPanel() {
   const p = S.p, ubah = (bag) => tombolIk("buka", "ubah", t("pf.ubah"), `data-bag="${bag}"`);
-  const tentang = kartu("info", "pf.bag.bio", p.bio ? `<p class="pf-bio">${esc(p.bio)}</p>` : kosong("info", "pf.kosong.bio", "buka", 'data-bag="bio"'), ubah("bio"));
-  const ahli = kartu("topik", "pf.bag.keahlian", p.keahlian?.length ? `<div class="pf-pils">${p.keahlian.map((k) => `<span class="pf-pil">${IKON_TEK[k] || ikon("topik", 14)}<span>${esc(labelKeahlian(k))}</span></span>`).join("")}</div>` : kosong("topik", "pf.kosong.keahlian", "buka", 'data-bag="ahli"'), ubah("ahli"));
+  const tentang = kartu("info", "pf.bag.bio", p.bio ? `<p class="pf-bio">${esc(p.bio)}</p>${dariDir("bio")}` : kosong("info", "pf.kosong.bio", "buka", 'data-bag="bio"'), ubah("bio"));
+  const ahli = kartu("topik", "pf.bag.keahlian", p.keahlian?.length ? `<div class="pf-pils">${p.keahlian.map((k) => `<span class="pf-pil">${IKON_TEK[k] || ikon("topik", 14)}<span>${esc(labelKeahlian(k))}</span></span>`).join("")}</div>${dariDir("ahli")}` : kosong("topik", "pf.kosong.keahlian", "buka", 'data-bag="ahli"'), ubah("ahli"));
   const bhs = kartu("bahasa", "pf.bag.bahasa", p.bahasa?.length ? `<ul class="ps-kons">${p.bahasa.map((b) => `<li><span class="ps-logo">${ikon("bahasa", 20)}</span><span class="ps-kon"><b>${esc(b.nama)}</b><small>${esc(t("pf.bhs." + b.tingkat))}</small></span></li>`).join("")}</ul>` : kosong("bahasa", "pf.kosong.bahasa", "buka", 'data-bag="bahasa"'), ubah("bahasa"));
   const meti = p.kta ? `<li class="ps-tl-i"><span class="ps-logo">${ikon("qr", 22)}</span><div class="ps-tl-isi"><b>${esc(t("pf.lencana"))}</b>${p.kta.tahun_masuk ? `<span>${esc(t("pf.sejak", { th: p.kta.tahun_masuk }))}</span>` : ""}</div></li>` : "";
   const inst = p.instansi ? `<li class="ps-tl-i"><span class="ps-logo">${ikon("gedung", 22)}</span><div class="ps-tl-isi"><b>${esc(p.instansi)}</b>${p.jabatan ? `<span>${esc(p.jabatan)}</span>` : ""}${p.organisasi_id ? `<a class="pf-taut pf-taut-kecil" href="/o/${encodeURIComponent(p.organisasi_id)}">${ikon("tautan", 14)}<span>${esc(t("pf.f.org_tertaut"))}</span></a>` : ""}</div></li>` : "";
-  const org = kartu("gedung", "pf.bag.org", inst || meti ? `<ul class="ps-tl">${inst}${meti}</ul>` : kosong("gedung", "pf.kosong.org", "buka", 'data-bag="diri"'), ubah("diri"));
+  const org = kartu("gedung", "pf.bag.org", inst || meti ? `<ul class="ps-tl">${inst}${meti}</ul>${dariDir("org")}` : kosong("gedung", "pf.kosong.org", "buka", 'data-bag="diri"'), ubah("diri"));
   const li = p.tautan?.linkedin, si = p.tautan?.situs, tel = p.kontak?.telepon, sur = p.kontak?.surel;
   const aman = (u) => (/^https?:[/][/]/i.test(u || "") ? u : "");
   const baris = (ik, label, v, href) => `<li><span class="ps-logo">${ikon(ik, 20)}</span><span class="ps-kon"><small>${esc(label)}</small>${href ? `<a class="pf-taut" href="${esc(href)}" target="_blank" rel="noopener noreferrer nofollow"><span>${esc(v)}</span></a>` : `<b>${esc(v)}</b>`}</span></li>`;
   const kon = [li ? baris("linkedin", t("pf.f.linkedin"), li, aman(li)) : "", si ? baris("tautan", t("pf.f.situs"), si, aman(si)) : "", ...["orcid", "scholar", "researchgate"].map((k) => (p.tautan?.[k] ? baris("tautan", t("pf.f." + k), p.tautan[k], aman(p.tautan[k])) : "")), tel ? baris("whatsapp", t("pf.f.telepon"), tel) : "", sur ? baris("surel", t("pf.f.surel"), sur) : ""].filter(Boolean).join("");
-  const tautan = kartu("tautan", "pf.bag.kontak_tautan", kon ? `<ul class="ps-kons">${kon}</ul>` : kosong("tautan", "pf.kosong.tautan", "buka", 'data-bag="tautan"'), ubah("tautan"));
+  const tautan = kartu("tautan", "pf.bag.kontak_tautan", kon ? `<ul class="ps-kons">${kon}</ul>${dariDir("tautan")}` : kosong("tautan", "pf.kosong.tautan", "buka", 'data-bag="tautan"'), ubah("tautan"));
   panel.innerHTML = tentang + kartuRw("pengalaman") + kartuRw("pendidikan") + ahli + bhs + kartuRw("sertifikasi") + kartuRw("publikasi") + org + tautan;
 }
 
@@ -120,13 +183,14 @@ function gambarSamping() {
   const baris = (aksi, ik, kunci, data = "") => `<li><button type="button" class="ps-set" data-aksi="${aksi}" ${data}>${ikon(ik, 18)}<span>${esc(t(kunci))}</span></button></li>`;
   const set = kartu("kunci", "pf.set.judul", `<ul class="ps-sets">${baris("buka", "kunci", "pf.tab.privasi", 'data-bag="privasi"')}${baris("buka", "perisai", "pf.tab.keamanan", 'data-bag="keamanan"')}${p.foto ? baris("hapus-foto", "silang", "pf.foto.hapus") : ""}</ul>`);
   const kenal = S.kenal?.length ? kartu("orang", "pf.kenal.judul", `<ul class="ps-kenal">${S.kenal.map((o) => `<li><span class="ps-logo">${ikon("orang", 20)}</span><span><b>${esc(o.nama)}</b>${o.jabatan_terkini ? `<small>${esc(o.jabatan_terkini)}</small>` : ""}</span></li>`).join("")}</ul>`) : "";
-  samping.innerHTML = lk + kta + set + kenal;
+  samping.innerHTML = lk + kta + kartuKlaim() + set + kenal;
+  pasangKlaim();
 }
 function muatKenal() {
   const org = S.p.organisasi_id;
   if (!org) return;
-  fetch("/data/orang.json").then((r) => r.json()).then((j) => {
-    S.kenal = j.baris.filter((o) => o.organisasi_id === org && o.nama !== S.p.nama).slice(0, 4);
+  orangData().then((baris) => {
+    S.kenal = baris.filter((o) => o.organisasi_id === org && o.nama !== S.p.nama).slice(0, 4);
     if (S.kenal.length) gambarSamping();
   }).catch(() => {});
 }
@@ -148,7 +212,7 @@ async function kirim(fn) {
   const btn = dlg.querySelector("[type=submit]");
   if (btn) { btn.disabled = true; btn.setAttribute("aria-busy", "true"); }
   try { await fn(); dlg.close(); await muat(); segar(); pesan("ok", t("pf.tersimpan")); }
-  catch (e) { galatDlg(e.status === 409 ? t("pf.riwayat.penuh") : e.pesanSendiri || galatTeks(e.kode)); if (btn) { btn.disabled = false; btn.removeAttribute("aria-busy"); } }
+  catch (e) { galatDlg(e.status === 409 ? t("pf.riwayat.penuh") : e.status === 422 && dlg.querySelector("[data-form=nama]") ? t("prk.nama_422") : e.pesanSendiri || galatTeks(e.kode)); if (btn) { btn.disabled = false; btn.removeAttribute("aria-busy"); } }
 }
 const simpanProfil = (badan) => api("/api/profil/saya", { metode: "PUT", badan });
 const nilai = (id) => $(id)?.value.trim() ?? "";
@@ -174,6 +238,12 @@ function segarOrg() {
   r.innerHTML = Z.org ? `<a class="pf-taut pf-taut-kecil" href="/o/${encodeURIComponent(Z.org)}" target="_blank" rel="noopener">${ikon("tautan", 14)}<span>${esc(t("pf.f.org_tertaut"))}</span></a> <button type="button" class="pf-lepas" data-aksi="lepas-org">${esc(t("pf.f.org_lepas"))}</button>` : esc(t("pf.f.instansi_bantu"));
 }
 const kirimDiri = () => simpanProfil({ gelar: nilai("fGelar"), jabatan: nilai("fJabatan"), instansi: nilai("fInstansi"), organisasi_id: Z.org, kota: nilai("fKota"), kode_prov: $("fProv").value });
+
+/* --- Nama (server: wajib berbagi satu kata dengan nama lama) --- */
+function bukaNama() {
+  buka({ judul: t("prk.nama_judul"), ik: "teks", form: "nama", isi: medan("fNamaBaru", "pf.f.nama", "orang", teks("fNamaBaru", S.p.nama, 120, { ac: "name" }), esc(t("prk.nama_bantu"))) });
+}
+const kirimNama = () => simpanProfil({ nama: nilai("fNamaBaru") });
 
 /* --- Tentang --- */
 function bukaBio() {
@@ -394,8 +464,8 @@ function pasangCombo(input, daftarEl, sumber, pilih) {
 }
 
 /* ---------- peristiwa ---------- */
-const BUKA = { diri: bukaDiri, bio: bukaBio, ahli: bukaAhli, bahasa: bukaBahasa, tautan: bukaTautan, privasi: bukaPrivasi, keamanan: bukaKeamanan };
-const KIRIM = { diri: kirimDiri, bio: kirimBio, ahli: kirimAhli, bahasa: kirimBahasa, tautan: kirimTautan, riwayat: kirimRw, sandi: kirimSandi, foto: kirimFoto };
+const BUKA = { nama: bukaNama, diri: bukaDiri, bio: bukaBio, ahli: bukaAhli, bahasa: bukaBahasa, tautan: bukaTautan, privasi: bukaPrivasi, keamanan: bukaKeamanan };
+const KIRIM = { nama: kirimNama, diri: kirimDiri, bio: kirimBio, ahli: kirimAhli, bahasa: kirimBahasa, tautan: kirimTautan, riwayat: kirimRw, sandi: kirimSandi, foto: kirimFoto };
 
 async function gantiSampul() {
   const i = (sampulIndeks() + 1) % SAMPUL.length;
@@ -428,6 +498,8 @@ document.addEventListener("click", (e) => {
   }
   else if (a === "tambah-ahli") tambahAhli($("fAhliBaru").value);
   else if (a === "hapus-foto") hapusFoto();
+  else if (a === "kirim-klaim") kirimKlaim(b);
+  else if (a === "ajukan-ulang") { Z.ulang = true; Z.klaim = { id: "", nama: "", bukti: "" }; gambarSamping(); }
   else if (a === "keluar-satu") {
     if (!confirm(t("pf.sesi.konfirmasi"))) return;
     b.disabled = true;
@@ -450,15 +522,23 @@ dlg.addEventListener("input", (e) => {
 });
 dlg.addEventListener("change", (e) => { if (e.target.dataset?.bagian) simpanPrivasi(e.target.dataset.bagian, e.target.value); });
 dlg.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.id === "fAhliBaru") { e.preventDefault(); tambahAhli(e.target.value); } });
+samping.addEventListener("input", (e) => {
+  if (e.target.id === "kBukti") Z.klaim.bukti = e.target.value;
+  else if (e.target.id === "kNama") { Z.klaim.nama = e.target.value; if (Z.klaim.id) { Z.klaim.id = ""; $("kRef").textContent = t("prk.cari_bantu"); } }
+});
 dlg.addEventListener("close", () => { S.crop = null; });
 document.addEventListener("jm:bahasa", () => { if (S.p) segar(); });
 
 try {
   [S.prov] = await Promise.all([namaProvinsi(), muat()]);
+  await muatKlaim();
   gambarSampul(); segar();
   const h = location.hash.slice(1);
   if (BUKA[h]) BUKA[h]();
   nanti(muatKenal);
+  const kid = new URLSearchParams(location.search).get("klaim");
+  if (kid && S.klaim === null) orangData().then((b) => { const o = b.find((x) => x.id === kid); if (o) { Z.klaim = { id: o.id, nama: o.nama, bukti: "" }; gambarSamping(); $("kNama")?.scrollIntoView({ block: "center" }); } }).catch(() => {});
+  else if (S.klaim) orangData().then(gambarSamping).catch(() => {});
 } catch (e) {
   panel.innerHTML = `<div class="jm-galat" role="alert">${ikon("peringatan", 32)}<p>${esc(e.status === 503 ? t("pf.belum_aktif") : galatTeks(e.kode))}</p></div>`;
 }

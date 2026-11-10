@@ -6,7 +6,8 @@ import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { kepalaTab, ubinKepala, keadaan, aman } from "/admin_umum.js";
 import { namaProvinsi } from "/profil_tampil.js";
 
-const TIPE = ["ajuan", "klaim", "wilayah"], STATUS = ["baru", "setuju", "tolak"];
+const TIPE = ["ajuan", "klaim", "wilayah", "orang"], STATUS = ["baru", "setuju", "tolak"];
+const KUNCI_AKSI = { setuju: "kor.setujui", tolak: "kor.tolak", cabut: "ap.cabut" };
 const pil = (s) => `<span class="jm-pil ${s === "setuju" ? "jm-pil-ok" : s === "tolak" ? "jm-pil-bad" : "jm-pil-warn"}">${esc(t("kor.s." + s))}</span>`;
 const tgl = (u) => (u ? `<span data-urut="${u}">${esc(tanggal(tanggalDariUnix(u)))}</span>` : "-");
 
@@ -17,7 +18,7 @@ function isiTeks(tipe, r) {
 }
 
 export function panelPortal(panel) {
-  const S = { tipe: "ajuan", status: "baru", hal: 1, baris: [], total: 0, galat: null, ctl: null, prov: [], wil: [], pilih: null };
+  const S = { nama: new Map(), tipe: "ajuan", status: "baru", hal: 1, baris: [], total: 0, galat: null, ctl: null, prov: [], wil: [], pilih: null };
   const opsi = (arr, aktif, kunci) => arr.map((x) => `<option value="${x}"${x === aktif ? " selected" : ""}>${esc(t(kunci + x))}</option>`).join("");
   panel.innerHTML = `${kepalaTab("centang", "ap.ey", "ap.j", "ap.d")}
     <div class="jm-bar jm-adm-bar1"><select data-ikon="jenis" class="jm-pilih" id="pTipe" aria-label="${esc(t("ap.f.tipe"))}">${opsi(TIPE, S.tipe, "ap.tipe.")}</select>
@@ -33,7 +34,7 @@ export function panelPortal(panel) {
     const b = e.target.closest("button"); if (!b) return;
     const a = b.dataset.aksi;
     if (b?.dataset.hal) { S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); muat(); } else if (a === "ulang") muat();
-    else if (a === "setuju" || a === "tolak") tinjau(a, b.dataset.id);
+    else if (a === "setuju" || a === "tolak" || a === "cabut") tinjau(a, b.dataset.id);
     else if (a === "batal") dlg.close();
     else if (a === "lepas") { try { await api(`/api/admin/wilayah-akun/${encodeURIComponent(b.dataset.id)}`, { metode: "DELETE" }); muatWil(); } catch (er) { $("pWilPesan").innerHTML = pesanHtml("galat", galatTeks(er.kode || "umum")); } }
   });
@@ -47,10 +48,10 @@ export function panelPortal(panel) {
   dlg.addEventListener("submit", async (e) => {
     e.preventDefault();
     const tbl = e.target.querySelector("button[type=submit]"), catatan = dlg.querySelector("#pCatatan").value.trim();
-    if (S.pilih.aksi === "tolak" && !catatan) { dlg.querySelector("#pPesan").innerHTML = pesanHtml("galat", t("ap.catatan_wajib")); return; }
+    if (S.pilih.aksi !== "setuju" && !catatan) { dlg.querySelector("#pPesan").innerHTML = pesanHtml("galat", t("ap.catatan_wajib")); return; }
     tbl.disabled = true;
     try { await api(`/api/admin/portal/${S.tipe}/${encodeURIComponent(S.pilih.id)}`, { metode: "POST", badan: { aksi: S.pilih.aksi, catatan } }); dlg.close(); muat(); muatRingkas(); }
-    catch (er) { tbl.disabled = false; dlg.querySelector("#pPesan").innerHTML = pesanHtml("galat", er.status === 409 ? t("kor.sudah_diputus") : galatTeks(er.kode || "umum")); }
+    catch (er) { tbl.disabled = false; dlg.querySelector("#pPesan").innerHTML = pesanHtml("galat", er.status === 409 ? t("kor.sudah_diputus") : er.status === 403 ? t("ap.diri_sendiri") : galatTeks(er.kode || "umum")); }
   });
   muat(); muatWil(); muatRingkas();
   /* ubin kepala: jumlah per status untuk jenis yang sedang dibuka */
@@ -61,16 +62,18 @@ export function panelPortal(panel) {
 
   function tinjau(aksi, id) {
     S.pilih = { aksi, id };
-    dlg.innerHTML = `<form class="jm-form"><h2 id="pTinjauJ">${esc(t(aksi === "setuju" ? "kor.setujui" : "kor.tolak"))}</h2><p class="jm-bantu">${esc(t("kor.konfirm"))}</p>
+    dlg.innerHTML = `<form class="jm-form"><h2 id="pTinjauJ">${esc(t(KUNCI_AKSI[aksi]))}</h2><p class="jm-bantu">${esc(t("kor.konfirm"))}</p>
       <div class="jm-medan"><label for="pCatatan">${esc(t("kor.catatan"))}</label><textarea class="jm-isian" id="pCatatan" rows="3" maxlength="500"></textarea></div><div id="pPesan"></div>
-      <div class="jm-aksi"><button type="submit" class="jm-tbl ${aksi === "setuju" ? "jm-tbl-utama" : "jm-tbl-bahaya"}">${esc(t(aksi === "setuju" ? "kor.setujui" : "kor.tolak"))}</button><button type="button" class="jm-tbl" data-aksi="batal">${esc(t("jm.batal"))}</button></div></form>`;
+      <div class="jm-aksi"><button type="submit" class="jm-tbl ${aksi === "setuju" ? "jm-tbl-utama" : "jm-tbl-bahaya"}">${esc(t(KUNCI_AKSI[aksi]))}</button><button type="button" class="jm-tbl" data-aksi="batal">${esc(t("jm.batal"))}</button></div></form>`;
     dlg.showModal();
   }
   async function muat() {
     if (S.ctl) S.ctl.abort();
     S.ctl = new AbortController();
     $("pDaftar").innerHTML = hantuHtml(5);
-    try { const d = await api(`/api/admin/portal?tipe=${S.tipe}&status=${S.status}&hal=${S.hal}`, { signal: S.ctl.signal }); S.baris = d.baris || []; S.total = d.total ?? S.baris.length; S.galat = null; }
+    try {
+      if (S.tipe === "orang" && !S.nama.size) await fetch("/data/orang.json").then((r) => r.json()).then((j) => j.baris.forEach((o) => S.nama.set(o.id, o.nama))).catch(() => {});
+      const d = await api(`/api/admin/portal?tipe=${S.tipe}&status=${S.status}&hal=${S.hal}`, { signal: S.ctl.signal }); S.baris = d.baris || []; S.total = d.total ?? S.baris.length; S.galat = null; }
     catch (e) { if (e.name === "AbortError") return; S.galat = e.kode || "umum"; S.baris = []; }
     nanti(gambar);
   }
@@ -80,14 +83,14 @@ export function panelPortal(panel) {
     else if (!S.baris.length) el.innerHTML = kosongHtml("kor.kosong_antrean");
     else {
       const baris = S.baris.map((r) => {
-        const u = aman(r.bukti_url), aksi = r.status !== "baru" ? pil(r.status) : `<div class="jm-sel-aksi"><button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-utama" data-aksi="setuju" data-id="${esc(r.id)}">${ikon("centang", 16)}${esc(t("kor.setujui"))}</button><button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-bahaya" data-aksi="tolak" data-id="${esc(r.id)}">${ikon("silang", 16)}${esc(t("kor.tolak"))}</button></div>`;
+        const u = aman(r.bukti_url), cabut = S.tipe === "orang" && r.status === "setuju" ? `<button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-bahaya" data-aksi="cabut" data-id="${esc(r.id)}">${ikon("silang", 16)}${esc(t("ap.cabut"))}</button>` : "", aksi = r.status !== "baru" ? pil(r.status) + cabut : `<div class="jm-sel-aksi"><button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-utama" data-aksi="setuju" data-id="${esc(r.id)}">${ikon("centang", 16)}${esc(t("kor.setujui"))}</button><button type="button" class="jm-tbl jm-tbl-kecil jm-tbl-bahaya" data-aksi="tolak" data-id="${esc(r.id)}">${ikon("silang", 16)}${esc(t("kor.tolak"))}</button></div>`;
         const lampir = r.berkas ? `<a href="/api/wilayah/berkas/${encodeURIComponent(r.id)}" target="_blank" rel="noopener noreferrer">${esc(r.berkas.nama)}</a>${r.persetujuan_foto ? ` <span class="jm-pil jm-pil-ok">${esc(t("ap.setuju_foto"))}</span>` : ""}` : "";
-        return `<tr><td data-l="${esc(t("pt.c.org"))}">${esc(r.organisasi_id)}<small>${esc(r.pengaju || "")}</small></td><td data-l="${esc(t("pt.c.jenis"))}">${esc(r.jenis ? (S.tipe === "wilayah" ? t("pb.w." + r.jenis) : t("pt.j." + r.jenis)) : t("ap.tipe.klaim"))}</td>
+        return `<tr><td data-l="${esc(t(S.tipe === "orang" ? "ap.c.entri" : "pt.c.org"))}">${esc(S.tipe === "orang" ? S.nama.get(r.orang_id) || r.orang_id : r.organisasi_id)}<small>${esc(r.pengaju || "")}${r.pengaju_surel ? ` (${esc(r.pengaju_surel)})` : ""}</small></td><td data-l="${esc(t("pt.c.jenis"))}">${esc(r.jenis ? (S.tipe === "wilayah" ? t("pb.w." + r.jenis) : t("pt.j." + r.jenis)) : t(S.tipe === "orang" ? "ap.tipe.orang" : "ap.tipe.klaim"))}</td>
           <td data-l="${esc(t("pt.c.isi"))}"><span class="jm-ringkas-sel">${esc(isiTeks(S.tipe, r))}</span></td>
           <td data-l="${esc(t("kor.c.sumber"))}">${u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(u.replace(/^https?:\/\/(www\.)?/, "").slice(0, 40))}</a>` : "-"}${lampir ? `<small>${lampir}</small>` : ""}</td>
           <td class="jm-nowrap" data-l="${esc(t("pt.c.tanggal"))}">${tgl(r.dibuat)}</td><td data-l="${esc(t("admin.k.aksi"))}">${aksi}${r.catatan_admin ? `<small>${esc(r.catatan_admin)}</small>` : ""}</td></tr>`;
       }).join("");
-      el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["pt.c.org", "pt.c.jenis", "pt.c.isi", "kor.c.sumber", "pt.c.tanggal"].map((k) => `<th scope="col">${esc(t(k))}</th>`).join("")}<th scope="col" data-urut="tidak">${esc(t("admin.k.aksi"))}</th></tr></thead><tbody>${baris}</tbody></table></div>`;
+      el.innerHTML = `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${[S.tipe === "orang" ? "ap.c.entri" : "pt.c.org", "pt.c.jenis", "pt.c.isi", "kor.c.sumber", "pt.c.tanggal"].map((k) => `<th scope="col">${esc(t(k))}</th>`).join("")}<th scope="col" data-urut="tidak">${esc(t("admin.k.aksi"))}</th></tr></thead><tbody>${baris}</tbody></table></div>`;
     }
     $("pHal").innerHTML = paginasiHtml({ hal: S.hal, total: S.total, per: 50, satuan: "jm.pag.u.permohonan" });
   }

@@ -6,6 +6,7 @@ import { cariHtml, pilihHtml, hitungHtml } from "/inti/komponen.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
 import { konfirmasiHapus, kirimBerkas, galatBerkas } from "/admin_konten.js";
 
+const pilOtor = (o) => (o ? ` <span class="jm-pil ${o === "disahkan" ? "jm-pil-ok" : o === "ditolak" ? "jm-pil-bad" : "jm-pil-warn"}">${esc(t("adm.otor." + o))}</span>` : "");
 const EKS = ["pdf", "pptx", "docx", "xlsx"];
 const MAKS = 50 * 1048576;
 const MIME = { pdf: "application/pdf", pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation", docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" };
@@ -71,7 +72,7 @@ export function panelDokPustaka(el) {
         <td data-l="${esc(t("adm.dp.k.penerbit"))}">${esc(b.penerbit || "-")}</td>
         <td data-l="${esc(t("adm.dp.k.jenis"))}"><span class="jm-pil">${esc(labelJenis(b.jenis))}</span></td>
         <td class="jm-nowrap" data-l="${esc(t("adm.dp.k.terbit"))}">${b.tanggal_terbit ? esc(tanggal(b.tanggal_terbit)) : "-"}</td>
-        <td data-l="${esc(t("adm.dp.k.akses"))}"><span class="jm-pil ${b.akses === "pengurus" ? "jm-pil-warn" : "jm-pil-ok"}">${esc(t("adm.dp.akses." + (b.akses === "pengurus" ? "pengurus" : "anggota")))}</span></td>
+        <td data-l="${esc(t("adm.dp.k.akses"))}"><span class="jm-pil ${b.akses === "pengurus" ? "jm-pil-warn" : "jm-pil-ok"}">${esc(t("adm.dp.akses." + (b.akses === "pengurus" ? "pengurus" : "anggota")))}</span>${pilOtor(b.otorisasi)}</td>
         <td class="jm-nowrap" data-l="${esc(t("adm.dp.k.ukuran"))}">${esc(ukuranTeks(b.ukuran))}</td></tr>`).join("")}</tbody></table></div>`;
   }
 
@@ -153,7 +154,7 @@ export function panelDokPustaka(el) {
     if (S.ref) { // ubah metadata
       try {
         await api("/api/pustaka-unggah/" + encodeURIComponent(S.ref), { metode: "PATCH", badan: { ...m, tanggal_terbit: m.tanggal_terbit || null, ringkasan: m.ringkasan || null } });
-        await muatUlang(t("adm.dp.tersimpan"));
+        await muatUlang(t("adm.dp.tersimpan") + " " + t("adm.otor.pesan"));
       } catch (e) { tbl.disabled = false; kabar("galat", e.status === 422 ? t("adm.dp.g422") : galatTeks(e.kode || "umum")); }
       return;
     }
@@ -173,7 +174,7 @@ export function panelDokPustaka(el) {
   }
   async function selesaiAntre() {
     const n = S.jumlah;
-    await muatUlang(n ? t("adm.dp.selesai", { n: angka(n) }) : "");
+    await muatUlang(n ? t("adm.dp.selesai", { n: angka(n) }) + " " + t("adm.otor.pesan") : "");
   }
   async function muatUlang(pesan) {
     try { const d = await api("/api/pustaka-unggah"); S.baris = urut(Array.isArray(d) ? d : (d && d.baris) || []); } catch (e) { /* daftar lama tetap */ }

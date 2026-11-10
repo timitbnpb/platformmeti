@@ -144,6 +144,10 @@ async function isiUtama() {
   const luar = (B.berita || []).filter((n) => urlAman(n.url));
   if (terkait.length || luar.length) bagian.push(exHtml({ id: "ev-berita", ikon: "berita", topik: t("ev.berita.ey"), judulHtml: esc(t("ev.berita.j")),
     isiHtml: `<ul class="ev-berita">${[...luar.map((n) => `<li><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(t("ev.berita.liputan", { media: n.label }))}</span>${ikon("tautan", 14)}</a></li>`), ...terkait.map((n) => `<li><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(n.judul)}</span><small>${esc(n.media)} - ${esc(tanggal(n.terbit.slice(0, 10)))}</small></a></li>`)].join("")}</ul>` }));
+  if (B.sponsor) {
+    const sp = await import("/event.js").then((m) => m.sponsorAcara(slug)).catch(() => "");
+    if (sp) bagian.splice(1, 0, exHtml({ id: "sponsor", ikon: "bintang", topik: t("ev.sponsor.ey"), judulHtml: esc(t("ev.sponsor.j")), isiHtml: sp }));
+  }
   return bagian.join("");
 }
 

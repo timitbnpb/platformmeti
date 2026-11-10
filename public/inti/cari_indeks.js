@@ -8,7 +8,7 @@ export const JENIS = [
   ["proyek", "cari.g.proyek", "proyek"], ["org", "cari.g.org", "direktori"], ["orang", "cari.g.orang", "orang"], ["reg", "cari.g.reg", "regulasi"],
   ["hukum", "cari.g.hukum", "palu"], ["topik", "cari.g.topik", "topik"], ["pakar", "cari.g.pakar", "wisuda"], ["inovasi", "cari.g.inovasi", "petir"],
   ["pendanaan", "cari.g.pendanaan", "kartu"], ["istilah", "cari.g.istilah", "buku"], ["program", "cari.g.program", "kompas"], ["pustaka", "cari.g.pustaka", "buku"], ["berita", "cari.g.berita", "berita"],
-  ["isu", "cari.g.isu", "peringatan"], ["psn", "cari.g.psn", "mahkota"], ["pltu", "cari.g.pltu", "industri"], ["sistem", "cari.g.sistem", "sistem-listrik"], ["kawasan", "cari.g.kawasan", "kawasan"], ["pemasok", "cari.g.pemasok", "pabrik"],
+  ["produk", "cari.g.produk", "lencana"], ["isu", "cari.g.isu", "peringatan"], ["psn", "cari.g.psn", "mahkota"], ["pltu", "cari.g.pltu", "industri"], ["sistem", "cari.g.sistem", "sistem-listrik"], ["kawasan", "cari.g.kawasan", "kawasan"], ["pemasok", "cari.g.pemasok", "pabrik"],
   ["wilayah", "cari.g.wilayah", "wilayah"], ["halaman", "cari.g.halaman", "tautan"],
 ];
 const sedia = new Map();   // jenis -> Promise<butir[]>

@@ -51,6 +51,7 @@ export const HALAMAN = [
   { g: "direktori", id: "sensus-organisasi", ik: "gedung", href: "/direktori?tampil=lembaga", l: ["oj.cara.isi"] },
   { g: "direktori", id: "pakar-riset", ik: "orang", href: "/direktori?tampil=pakar", l: ["tn.metode.isi"] },
   { g: "direktori", id: "beranda", ik: "beranda", href: "/", l: ["beranda.cara_isi"] },
+  { g: "direktori", id: "produk-meti", ik: "lencana", href: "/produk-meti", l: ["prm.m.l1", "prm.m.l2", "prm.m.l3", "prm.m.l4"], s: ["prm.m.s1"], b: ["prm.m.b1", "prm.m.b2"] },
   { g: "proyek", id: "proyek", ik: "proyek", href: "/proyek", l: ["pj.corong.cara"], k: [["kp.j.ey", "kp.j.metode"], ["kp.n.ey", "kp.n.metode"]] },
   { g: "proyek", id: "program", ik: "daftar", href: "/program", l: n("pg.cara.", 1, 4) },
 ];

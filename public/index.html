@@ -32,11 +32,15 @@
           <button type="button" class="jm-cari2-tbl" id="cariTbl" data-i18n="beranda.cari_tbl">Cari</button></div>
       </div>
     </div>
-    <div class="jm-hero2-kanan"><div class="jm-logo-grid" id="ekoLogo"></div><div class="jm-eko-aksi"><a class="jm-lihat" id="ekoSemua" href="/direktori?tampil=lembaga"></a><a class="jm-lihat" id="ekoTokoh" href="/direktori?tampil=pakar"></a></div></div>
+    <div class="jm-hero2-kanan"><p class="jm-mock"><span class="jm-pil jm-pil-mock"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-info"/></svg><span data-i18n="beranda.mock">Mock-up</span></span><span data-i18n="beranda.mock.ket">Daftar ini contoh tampilan, bukan data final.</span></p><div class="jm-logo-grid" id="ekoLogo"></div><div class="jm-eko-aksi"><a class="jm-lihat" id="ekoSemua" href="/direktori?tampil=lembaga"></a></div></div>
   </section>
   <section class="jm-sorotan" id="sorotan" aria-label="Sorotan agenda METI" data-i18n-attr="aria-label:beranda.sorotan" hidden></section>
 </div>
-<nav class="jm-isi" aria-label="Di halaman ini" data-i18n-attr="aria-label:beranda.isi"><a href="#s01"><b>01</b><span class="jm-isi-l" data-i18n="beranda.s01.l">Kondisi sekarang</span></a><a href="#s02"><b>02</b><span class="jm-isi-l" data-i18n="beranda.s02.l">Ekosistem</span></a><a href="#s03"><b>03</b><span class="jm-isi-l" data-i18n="beranda.s03.l">Dataset</span></a><a href="#s04"><b>04</b><span class="jm-isi-l" data-i18n="beranda.s04.l">Proyek dan emisi</span></a><a href="#s05"><b>05</b><span class="jm-isi-l" data-i18n="beranda.s05.l">Teknologi</span></a><a href="#s06"><b>06</b><span class="jm-isi-l" data-i18n="beranda.s06.l">Halaman lain</span></a><a href="#s08"><b>08</b><span class="jm-isi-l" data-i18n="beranda.s08.l">Akses data</span></a></nav>
+<section class="jm-bagian jm-pita" id="s06" aria-labelledby="s06-h"><div class="jm-wadah">
+    <header class="jm-sh">      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-beranda"/></svg><span data-i18n="beranda.s06.ey">Jelajah</span></p><h2 id="s06-h" data-i18n="beranda.s06.h">Halaman dari data yang sama</h2><p class="jm-sh-lead" data-i18n="beranda.s06.p">Halaman lain yang memakai data ini.</p></header>
+    <div class="jm-bento-kisi" id="bento"></div>
+  </div></section>
+<nav class="jm-isi" aria-label="Di halaman ini" data-i18n-attr="aria-label:beranda.isi"><a href="#s06"><b>06</b><span class="jm-isi-l" data-i18n="beranda.s06.l">Halaman lain</span></a><a href="#s01"><b>01</b><span class="jm-isi-l" data-i18n="beranda.s01.l">Kondisi sekarang</span></a><a href="#s02"><b>02</b><span class="jm-isi-l" data-i18n="beranda.s02.l">Ekosistem</span></a><a href="#s03"><b>03</b><span class="jm-isi-l" data-i18n="beranda.s03.l">Dataset</span></a><a href="#s04"><b>04</b><span class="jm-isi-l" data-i18n="beranda.s04.l">Proyek dan emisi</span></a><a href="#s05"><b>05</b><span class="jm-isi-l" data-i18n="beranda.s05.l">Teknologi</span></a><a href="#s08"><b>08</b><span class="jm-isi-l" data-i18n="beranda.s08.l">Akses data</span></a></nav>
 <section class="jm-bagian" id="s01" aria-label="Kondisi terkini" data-i18n-attr="aria-label:beranda.s01.ey"><div class="jm-wadah">
     <div class="jm-kisi" id="kartu"></div>
     <div class="jm-dua jm-terbaru">
@@ -44,6 +48,7 @@
       <section class="jm-ex"><header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-proyek"/></svg><span data-i18n="beranda.proyek.ey">Katalog</span></span><h3 class="jm-ex-j" data-i18n="beranda.proyek">Proyek terbaru di katalog</h3><p class="jm-ex-sub" data-i18n="beranda.proyek.sub">Enam proyek yang baru masuk atau diperbarui.</p></div><div class="jm-ex-aksi"><span id="srcProyek"></span></div></header><div class="jm-ex-bd"><div id="proyek"></div></div></section>
     </div>
     <section class="jm-ex" id="agendaKartu" hidden><header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey"><svg class="jm-ik" width="14" height="14" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-kalender"/></svg><span data-i18n="beranda.agenda.ey">Kalender</span></span><h3 class="jm-ex-j" data-i18n="beranda.agenda">Agenda pilihan</h3><p class="jm-ex-sub" data-i18n="beranda.agenda.sub">Acara yang dipilih pengurus.</p></div></header><div class="jm-ex-bd"><div id="agenda"></div></div></section>
+    <div id="produkBeranda" hidden></div>
   </div></section>
 <section class="jm-bagian jm-pita" id="s02"><div class="jm-wadah">
     <div id="ekoHitung"></div>
@@ -68,10 +73,6 @@
     <div class="jm-tile-kisi" id="sensus"></div>
     <p class="jm-sumber" id="sensusSumber"></p>
     <p class="jm-sumber" id="fotoKredit"></p>
-  </div></section>
-<section class="jm-bagian jm-pita" id="s06" aria-labelledby="s06-h"><div class="jm-wadah">
-    <header class="jm-sh">      <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-beranda"/></svg><span data-i18n="beranda.s06.ey">Jelajah</span></p><h2 id="s06-h" data-i18n="beranda.s06.h">Halaman dari data yang sama</h2><p class="jm-sh-lead" data-i18n="beranda.s06.p">Halaman lain yang memakai data ini.</p></header>
-    <div class="jm-bento-kisi" id="bento"></div>
   </div></section>
 <section class="jm-bagian jm-pita" id="s08" aria-labelledby="ak-h"><div class="jm-wadah">
   <div class="jm-akses jm-batik"><span class="jm-sh-src" id="srcAkses"></span>

@@ -4,6 +4,7 @@ import { rute as ruteGoogle, googleAktif } from "./google.js";
 import { rute as ruteAkun } from "./akun.js";
 import { rute as ruteAgenda } from "./agenda.js";
 import { rute as ruteKontenMeti } from "./konten_meti.js";
+import { rute as ruteNaskah } from "./naskah.js";
 import { rute as ruteSosmed, perbaruiSosmed } from "./sosmed.js";
 import { rute as ruteEvent } from "./event.js";
 import { rute as ruteDirektori } from "./direktori.js";
@@ -21,6 +22,7 @@ import { rute as rutePortal } from "./portal.js";
 import { rute as ruteWilayahKelola } from "./wilayah_kelola.js";
 import { rute as ruteDaftar } from "./daftar.js";
 import { rute as ruteKonsultasi } from "./konsultasi.js";
+import { rute as ruteRoadmap } from "./roadmap.js";
 import { rute as ruteKerja } from "./kerja.js";
 import { rute as ruteSurel } from "./surel.js";
 import { rute as ruteHukum } from "./hukum.js";
@@ -51,7 +53,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteKontenMeti, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteKerja, ...ruteSurel, ...ruteHukum, ...ruteTanya, ...ruteKeyakinan, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteKontenMeti, ...ruteNaskah, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteRoadmap, ...ruteKerja, ...ruteSurel, ...ruteHukum, ...ruteTanya, ...ruteKeyakinan, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });

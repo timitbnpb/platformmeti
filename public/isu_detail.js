@@ -8,6 +8,7 @@ import { petaKoroplet, pasangPeta } from "/peta_koroplet.js";
 import { pasangTabel } from "/proyek_besar_umum.js";
 import { N, tgl, pilTema, pilStatus, pilBukti, kartuIsu, TEMA } from "/isu_umum.js";
 import { tanggal } from "/i18n.js";
+import { pasangProdukTerkait } from "/inti/produk_meti.js";
 
 const sumberLink = (i, n) => { const s = i.sumber[n]; return s ? `<a class="isu-sl" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" title="${esc(s.judul)}">${ikon("tautan", 14)}<span>${esc(s.penerbit)}</span></a>` : ""; };
 const grup = (judulKunci, ik, isi, sub = "") => exHtml({ ikon: ik, topik: t(judulKunci), judulHtml: esc(t(judulKunci)), subHtml: sub, isiHtml: isi, tingkat: "h3" });
@@ -50,7 +51,9 @@ export async function tampilDetail(el, D, id) {
   blok.push(grup("isu.d.sumber", "buku", `<ol class="isu-sumber">${i.sumber.map((s, n) => `<li id="s${n}"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer"><b>${esc(s.judul)}</b></a><small>${esc([s.penerbit, s.tanggal ? tgl(s.tanggal) : ""].filter(Boolean).join(", "))}</small></li>`).join("")}</ol>`));
   const terkait = (i.terkait || []).map((x) => D.baris.find((b) => b.id === x)).filter(Boolean);
   if (terkait.length) blok.push(grup("isu.d.terkait", "tautan", `<ul class="isu-kartu-daftar">${terkait.map(kartuIsu).join("")}</ul>`));
+  blok.push(`<div id="isuProduk" hidden></div>`);
   el.innerHTML = blok.join("");
+  pasangProdukTerkait("isuProduk", { j: "isu", k: id }, { tingkat: "h3" });
   // pihak: tabel (tautan organisasi bila ada id)
   const kolom = [
     [null, "isu.c.pihak", (p) => `<span class="isu-pihak">${p.org_id ? tautOrg(p.org_id, p.nama) : esc(p.nama)}</span>`, "pb-c-n"],

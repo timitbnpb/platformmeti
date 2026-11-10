@@ -14,6 +14,7 @@ import { namaMedia, logoLokal } from "/inti/nama_media.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { muat, namaRegulasi, kelasStatus } from "/publik.js";
+import { pasangProdukTerkait } from "/inti/produk_meti.js";
 
 /* pel = kunci peluang.json; harga = kunci harga_patokan; reg = topik regulasi; kep = kepakaran berita/organisasi; tkdn = kategori TKDN */
 const CFG = {
@@ -258,6 +259,8 @@ export async function mulai(el) {
   const D = olah();
   el.innerHTML = [sPotensi(D), sRuptl(D), sProyek(D), C.rantai || C.tkdn ? sRantai() : "", C.wkp ? sWkp() : "", C.atap ? sAtap() : "", sHarga(), sReg(D), sPemain(D), sBerita(D), sTelusur(), sCara(D)].join("");
   pasangBar(el);
+  const wProduk = el.appendChild(document.createElement("div")); wProduk.hidden = true;
+  pasangProdukTerkait(wProduk, { j: "tek", k: KODE });
   terkaitHtml("teknologi", KODE).then((h) => { if (h && el.isConnected) el.insertAdjacentHTML("beforeend", h); });
   /* logo yang gagal dimuat dicabut (cadangan monogram) (tanpa atribut on*) */
   el.addEventListener("error", (e) => {

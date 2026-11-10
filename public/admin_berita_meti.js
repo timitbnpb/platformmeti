@@ -10,6 +10,7 @@ const IKON_JENIS = { siaran_pers: "siaran", liputan_media: "berita", liputan_keg
 const TIPE_FOTO = ["image/jpeg", "image/png", "image/webp"];
 const MAKS_FOTO = 5 * 1048576;
 const urlHttps = (u) => /^https:\/\/[^\s/]+\S*$/i.test(u);
+const pilOtor = (o) => (o ? ` <span class="jm-pil ${o === "disahkan" ? "jm-pil-ok" : o === "ditolak" ? "jm-pil-bad" : "jm-pil-warn"}">${esc(t("adm.otor." + o))}</span>` : "");
 const isiNol = (v) => (v == null ? "" : String(v));
 
 export function panelBeritaMeti(el) {
@@ -67,7 +68,7 @@ export function panelBeritaMeti(el) {
         <td data-l="${esc(t("adm.bm.k.jenis"))}"><span class="jm-pil">${esc(t("sp.jenis." + b.jenis))}</span></td>
         <td data-l="${esc(t("adm.bm.k.judul"))}"><button type="button" class="jm-adm-nm" data-m="buka" data-ref="${esc(b.ref)}"><strong>${esc(b.judul)}</strong></button></td>
         <td data-l="${esc(t("adm.bm.k.media"))}">${esc(b.media || "-")}</td>
-        <td data-l="${esc(t("adm.bm.k.status"))}"><span class="jm-pil ${Number(b.terbit) ? "jm-pil-ok" : "jm-pil-mati"}">${esc(t(Number(b.terbit) ? "adm.bm.terbit" : "adm.bm.draf"))}</span></td></tr>`).join("")}</tbody></table></div>`;
+        <td data-l="${esc(t("adm.bm.k.status"))}"><span class="jm-pil ${Number(b.terbit) ? "jm-pil-ok" : "jm-pil-mati"}">${esc(t(Number(b.terbit) ? "adm.bm.terbit" : "adm.bm.draf"))}</span>${pilOtor(b.otorisasi)}</td></tr>`).join("")}</tbody></table></div>`;
   }
 
   /* ---------- formulir ---------- */
@@ -151,7 +152,7 @@ export function panelBeritaMeti(el) {
         return;
       }
     }
-    await muatUlang(t(S.ref ? "adm.bm.tersimpan" : "adm.bm.dibuat"));
+    await muatUlang(t(S.ref ? "adm.bm.tersimpan" : "adm.bm.dibuat") + " " + t("adm.otor.pesan"));
   }
 
   async function muatUlang(pesan) {

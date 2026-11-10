@@ -9,7 +9,7 @@ const kotak = () => tip || (tip = Object.assign(document.createElement("div"), {
 
 /* ukuran relatif elemen: lebar/tinggi rect SVG, atau data-w batang HTML */
 const ukur = (e) => e.matches("li") ? [...e.querySelectorAll("[data-w]")].reduce((s, i) => s + +i.dataset.w, 0) : Math.max(+e.getAttribute("width") || 0, +e.getAttribute("height") || 0);
-const kelompok = (e) => e.matches("li") ? e.parentElement : e.closest("svg");
+const kelompok = (e) => e.matches("li") ? e.parentElement : (e.closest("svg") || e.closest(".jm-gx"));
 const saudara = (e) => [...kelompok(e).querySelectorAll(SEL)];
 
 /* siapkan: pindahkan <title>/title jadi data-tip (cegah tooltip bawaan ganda), jadikan bisa difokus */

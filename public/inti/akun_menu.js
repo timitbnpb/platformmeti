@@ -22,6 +22,7 @@ export function akunMenuHtml(saya) {
       ${taut("/kta", ikon("kartu", 20), "am.kta")}
       <a role="menuitem" href="/diikuti" id="am-diikuti">${ikon("lonceng", 20)}<span data-i18n="am.diikuti">${esc(t("am.diikuti"))}</span></a>
       ${taut("/portal", ikon("direktori", 20), "am.portal")}
+      ${taut("/otorisasi", ikon("lencana", 20), "am.otorisasi")}
       ${butir("pesan", IK_PESAN, "am.pesan", '<span class="jm-am-lencana" id="amBelum" hidden></span>')}
       ${taut("/langganan", ikon("surel", 20), "am.langganan")}
       ${butir("surel", ikon("lencana", 20), "am.surel")}

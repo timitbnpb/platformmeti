@@ -50,4 +50,3 @@
 @media (max-width:640px){.pbm-ang{grid-template-columns:minmax(0,1fr)}}
 
 /* tab sejajar satu baris (aturan serupa di rantai-global.css kalah urutan) */
-#pbmTab .jm-tab[role="tablist"]{grid-auto-flow:column!important;grid-template-columns:none!important;grid-auto-columns:minmax(0,1fr)}

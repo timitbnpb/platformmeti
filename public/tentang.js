@@ -1,9 +1,8 @@
-/* Halaman /tentang (publik): hero berfoto warna asli, tentang METI dan Direktori, teknologi (panel bergambar), struktur organisasi (kartu foto penuh wajah), mitra, FAQ, kontak.
-   Teks dari kamus (tn.*); data statis /data/pengurus-meti.json, mitra-meti.json, tentang-kredit.json, ringkas.json. */
-import { rumahTek } from "/inti/rumah_tek.js";
+/* Halaman /tentang (publik): hero berfoto warna asli, tentang METI dan Direktori, visi dan misi, roadmap (draf), struktur organisasi (kartu foto penuh wajah), FAQ, kontak.
+   Teks dari kamus (tn.*); data statis /data/pengurus-meti.json, mitra-meti.json, tentang-kredit.json, ringkas.json, roadmap.json. */
 import "/inti/tautan_org.js";
 import { mulaiHalaman } from "/inti/kepala.js";
-import { t, tanggal, angka } from "/i18n.js";
+import { t, angka } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 import { sumberHtml } from "/inti/komponen.js";
 import { ikonTek } from "/inti/ikon_tek.js";
@@ -13,12 +12,6 @@ const muat = (n) => fetch(`/data/${n}.json`).then((r) => { if (!r.ok) throw new 
 const MI = "https://metiires.or.id";
 const SURELP = "meti.ires@gmail.com";
 const KONTAK = [["jm.kaki.surel", SURELP, "berita"], ["jm.kaki.situs", "www.meti.or.id", "tautan"], ["jm.kaki.kantor", "Taman Sari Parama Lt. 10, Jl. K.H. Wahid Hasyim No. 84-86, Kebon Sirih, Menteng, Jakarta Pusat 10340", "wilayah"]];
-/* kode teknologi sama dengan rumahTek (modul ujung ke ujung); topik regulasi sama dengan CFG.reg di teknologi.js; foto dari /img/beranda */
-const TEK = [["surya", ["surya"], "surya-cirata"], ["bayu", ["angin"], "bayu-sidrap"], ["hidro", ["hidro"], "hidro-saguling"], ["panas-bumi", ["panas_bumi"], "panas-bumi-sibayak"], ["bioenergi", ["bioenergi"], "bioenergi-sawit"], ["biomassa-sampah", ["bioenergi"], "biomassa-bantargebang"], ["penyimpanan", ["penyimpanan"], "penyimpanan-baterai"], ["hidrogen", ["hidrogen"], "hidrogen-spbu"], ["nuklir", ["nuklir"], "nuklir-menara"]];
-/* ponytail: logo lebar (wordmark) diganti lambang kecil + label; ganti lewat data bila daftar bertambah */
-const LAMBANG = { "Ditjen EBTKE ESDM": ["/img/logo/ebtke.png", "Ditjen EBTKE"], "Kementerian ESDM": ["/img/logo/esdm.png", "Kementerian ESDM"] };
-const LOGO_ASOS = { AESI: "/img/logo/aesi.png", APROBI: "/img/logo/aprobi.png", API: "/img/logo/api-inaga.png", APAMSI: "/img/logo/apamsi.png" };
-
 const inisial = (n) => String(n).replace(/[^\p{L} ]/gu, "").split(/\s+/).filter((w) => w.length > 1).slice(0, 2).map((w) => w[0]).join("").toUpperCase() || "?";
 const avatar = (o, besar) => o.foto ? `<img class="tn-av${besar ? " besar" : ""}" src="${esc(o.foto)}" alt="" width="${besar ? 96 : 48}" height="${besar ? 96 : 48}" loading="lazy">` : `<span class="tn-av tn-ini tn-w${(inisial(o.nama).charCodeAt(0) || 0) % 5}${besar ? " besar" : ""}" aria-hidden="true">${esc(inisial(o.nama))}</span>`;
 const PERS = new Map();
@@ -73,23 +66,6 @@ function ringkas(judul, a, { ik = "orang", pimpinan = PIM, maksPim = 3, hanyaPim
   return `<section class="tn-grp tn-rg" data-n="${n}">${kepalaGrup(ik, judul, a)}${lr}${bawah}</section>`;
 }
 
-/* hanya logo yang bergerak: tanpa kartu atau bingkai; nama di title dan aria-label */
-const kartuLogo = (href, nama, g, extra = "") => `<li><a class="tn-logo" ${extra} href="${esc(href)}" title="${esc(nama)}" aria-label="${esc(nama)}">${g}</a></li>`;
-const mono = (n) => `<b class="tn-nama">${esc(n)}</b>`;
-const tbl = (x) => {
-  const l = LAMBANG[x.nama], src = l ? l[0] : x.logo;
-  return kartuLogo("/direktori?cari=" + encodeURIComponent(x.nama), l ? l[1] : x.nama, src ? `<img src="${esc(src)}" alt="" loading="lazy">` : mono(x.nama), `data-org-nama="${esc(x.nama)}"`);
-};
-const tblAsos = (a, sudah) => kartuLogo("/direktori?cari=" + encodeURIComponent(a), a, LOGO_ASOS[a] && !sudah.has(LOGO_ASOS[a]) ? (sudah.add(LOGO_ASOS[a]), `<img src="${LOGO_ASOS[a]}" alt="" loading="lazy">`) : mono(a));
-/* pita bergeser (marquee CSS murni): kartu logo seragam, duplikat nama dibuang; daftar diulang sampai cukup lebar lalu digandakan untuk putaran mulus */
-const jalur = (a, fn, balik) => {
-  const lihat = new Set(), sudah = new Set();
-  const kartu = a.filter((x) => { const k = typeof x === "string" ? x : x.nama; return lihat.has(k) ? false : lihat.add(k); }).map((x) => fn(x, sudah));
-  const r = Math.max(1, Math.ceil(12 / kartu.length)), basis = Array.from({ length: r }, () => kartu).flat();
-  const dup = basis.map((h) => h.replace("<li>", '<li aria-hidden="true">').replace("<a ", '<a tabindex="-1" '));
-  return `<div class="tn-pita"><ul class="tn-trek${balik ? " balik" : ""}">${basis.join("")}${dup.join("")}</ul></div>`;
-};
-
 /* ---------- bagian ---------- */
 const KOLFOTO = [["surya", "surya-cirata"], ["bayu", "bayu-sidrap"], ["hidro", "hidro-saguling"], ["panas-bumi", "panas-bumi-sibayak"], ["bioenergi", "bioenergi-sawit"]];
 function hero(f) {
@@ -110,18 +86,27 @@ function tentang(f) {
     <dl class="tn-mini">${st.map(([ik, n, l]) => `<div><span class="tn-cek-ik">${ikon(ik, 20)}</span><dd>${esc(n)}</dd><dt>${esc(l)}</dt></div>`).join("")}</dl></div></article></section>`;
 }
 
-function teknologi(D) {
-  const kartu = TEK.map(([k, reg, foto]) => {
-    const pj = D.proyek.filter((p) => p.teknologi === k), mw = pj.reduce((a, p) => a + (Number(p.kapasitas?.[0]?.nilai) || 0), 0);
-    const n = [["proyek", angka(pj.length)], ["mw", mw ? angka(Math.round(mw)) : "-"], ["reg", angka(D.reg.filter((r) => reg.some((x) => r.topik.includes(x))).length)], ["op", angka(pj.filter((p) => p.status?.[0]?.nilai === "beroperasi").length)]];
-    const nama = t("tn.tek." + k);
-    return `<li><a class="tn-tp" href="${esc(rumahTek(k))}" aria-label="${esc(t("tn.foto.buka", { nama }))}"><span class="tn-tp-f"><img src="/img/beranda/${foto}.webp" alt="" width="800" height="600" loading="lazy"><span class="tn-tp-t"><i class="tn-tp-ik">${ikonTek(k)}</i><b>${esc(nama)}</b></span></span><span class="tn-tp-n">${n.map(([c, v], i) => `<span><i>${ikon(["proyek", "analisis", "regulasi", "centang"][i], 16)}</i><b>${esc(v)}</b><small>${esc(t("tn.tek.n." + c))}</small></span>`).join("")}</span></a></li>`;
-  }).join("");
-  const j = esc(t("tn.tek.h2", { n: TEK.length })).replace(String(TEK.length), `<span class="jm-hl">${TEK.length}</span>`);
-  return `<section class="tn-seksi tn-pita-bg" id="teknologi" aria-labelledby="tn-tek"><div class="jm-ex"><header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey">${ikon("proyek", 14)}${esc(t("tn.ey.teknologi"))}</span><h2 class="jm-ex-j" id="tn-tek">${j}</h2><p class="jm-ex-sub">${esc(t("tn.tek.lead"))}</p></div></header>
-  <div class="jm-ex-bd"><ul class="tn-tek">${kartu}</ul></div></div></section>`;
+/* visi dan misi dari data/meti_profil.json (kamus tn.vm.*; uji tests/tentang-visimisi.test.mjs menjaga kesamaan teksnya) */
+function visiMisi() {
+  const misi = [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `<li><span class="tn-vm-no">${n}</span><span>${esc(t("tn.vm.m" + n))}</span></li>`).join("");
+  return `<section class="tn-seksi" id="visi-misi" aria-labelledby="tn-vm">${kepala("tn-vm", "kompas", t("tn.ey.visimisi"), t("tn.vm.h2"))}
+  <div class="tn-vm"><article class="tn-kartu tn-vm-visi"><h3>${ikon("kompas", 20)}<span>${esc(t("tn.vm.visi_j"))}</span></h3><p class="tn-isi">${esc(t("tn.vm.visi"))}</p></article>
+  <article class="tn-kartu tn-vm-misi"><h3>${ikon("daftar", 20)}<span>${esc(t("tn.vm.misi_j"))}</span></h3><ol class="tn-vm-l">${misi}</ol></article></div>
+  <p class="tn-vm-sumber">${ikon("info", 16)}<span>${esc(t("tn.vm.sumber"))}</span></p></section>`;
 }
 
+/* ringkasan roadmap dari /data/roadmap.json; wajib berlabel draf (buku saku 2025-2028 dan SK platform 2026-2028 belum selaras) */
+function roadmap(R) {
+  const P = R.PROGRAM || [], K = R.KUARTAL || [], n = (c) => P.filter((x) => x.kelas === c).length;
+  const st = [["centang", String(n("Pasti")), t("rm.ub.pasti")], ["kunci", String(n("Bersyarat")), t("rm.ub.bersyarat")], ["kalender", `${K[0]} - ${K[K.length - 1]}`, t("tn.rm.periode")]];
+  const nama = P.filter((x) => x.kelas === "Pasti").map((x) => `<li>${esc(x.nama)}</li>`).join("");
+  return `<section class="tn-seksi" id="roadmap" aria-labelledby="tn-rm">${kepala("tn-rm", "kompas", t("tn.ey.roadmap"), t("tn.rm.h2"), t("tn.rm.lead"))}
+  <article class="tn-kartu tn-rm"><p class="tn-rm-draf" role="note">${ikon("info", 18)}<span>${esc(t("tn.rm.draf"))}</span></p>
+  <dl class="tn-mini tn-rm-st">${st.map(([ik, v, l]) => `<div><span class="tn-cek-ik">${ikon(ik, 20)}</span><dd>${esc(v)}</dd><dt>${esc(l)}</dt></div>`).join("")}</dl>
+  <ul class="tn-rm-prog" aria-label="${esc(t("rm.ub.pasti"))}">${nama}</ul>
+  <p class="tn-isi">${esc(t("tn.rm.catatan"))}</p>
+  <a class="tn-tbl-hijau" href="/roadmap">${ikon("kompas", 18)}<span>${esc(t("tn.rm.link"))}</span></a></article></section>`;
+}
 
 /* wadah exhibit standar: eyebrow, judul berangka "n kelompok, m orang", isi kisi kompartemen */
 const wadah = (ik, ey, kunci, n, o, isi, kls) => `<div class="jm-ex tn-wd"><header class="jm-ex-hd"><div class="jm-ex-teks"><span class="jm-ex-ey">${ikon(ik, 14)}${esc(ey)}</span><h3 class="jm-ex-j">${esc(TX(kunci, "{n}, {o}", { n, o })).replace(String(n), `<span class="jm-hl">${n}</span>`)}</h3></div></header><div class="jm-ex-bd"><div class="tn-kisi ${kls}">${isi}</div></div></div>`;
@@ -133,7 +118,7 @@ function struktur(p) {
   const bidang = p.bidang.filter((b) => b.nama);
   const kb = (b, i) => ringkas(t("tn.u.bk", { n: i + 1 }) + ": " + b.nama, b.anggota, { ik: "daftar", ...SATU });
   const ket = (U.ketum || [])[0];
-  const unit = [[t("tn.u.institute"), U.institute, SATU], [t("tn.u.wilayah"), U.wilayah, { ik: "wilayah", ...SATU }], [t("tn.u.muda"), U.muda, SATU], [t("tn.u.komite"), U.komite, SATU], [t("tn.u.staf"), U.staf, SATU], [t("tn.u.sdu"), U.sdu && U.sdu.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", ...SATU }]].filter(([, a]) => a);
+  const unit = [[t("tn.u.institute"), U.institute, SATU], [t("tn.u.wilayah"), U.wilayah, { ik: "wilayah", ...SATU }], [t("tn.u.muda"), U.muda, SATU], [t("tn.u.komite"), U.komite, SATU], [t("tn.u.sdu"), U.sdu && U.sdu.map((o) => (o.pmo ? { ...o, jabatan: o.jabatan.replace(/^PMO\s+/, "") } : o)), { ik: "direktori", ...SATU }]].filter(([, a]) => a);
   /* susunan di bawah Ketua Umum (pemilik 8 Nov 2026): Waketum sejajar Direktur Eksekutif, lalu Sekretaris Jenderal dan Bendahara sejajar satu baris, kartu dikecilkan (pemilik 9 Nov 2026) */
   const baris = (daftar) => daftar.filter(([k]) => U[k]).map(([k, j, s]) => kelompok(t(j), U[k], { ekstra: k === "sekjen" || k === "bendahara" ? "tn-baris5" : "" })).join("");
   const rows = [[["waketum", "tn.u.waketum", true], ["eksekutif", "tn.u.eksekutif", true]], [["sekjen", "tn.u.sekjen"], ["bendahara", "tn.u.bendahara"]]].map(baris).filter(Boolean);
@@ -143,13 +128,8 @@ function struktur(p) {
     ${ket ? `<div class="tn-r tn-r1"><section class="tn-grp tn-ketum">${kepalaGrup("orang", t("tn.u.ketum"))}${ul([ket], "besar")}</section></div><div class="tn-konek" aria-hidden="true"></div>` : ""}
     ${rows.map((r) => `<div class="tn-r tn-r2">${r}</div>`).join(`<div class="tn-konek" aria-hidden="true"></div>`)}</div>
     ${wadah("daftar", t("tn.u.bidang_ey"), "tn.u.bidang_h", bidang.length, bidang.reduce((u, b) => u + nOrang(b.anggota), 0), bidang.map(kb).join(""), "tn-kisi-b")}
-    ${wadah("wilayah", t("tn.u.unit"), "tn.u.unit_h", unit.length, unit.reduce((u, [, a]) => u + nOrang(a), 0), unit.map(([j, a, o]) => ringkas(j, a, o)).join(""), "tn-kisi-u")}</section>`;
-}
-
-function mitra(m) {
-  const grup = (kunci, a, fn, ik, balik) => `<h3 class="tn-sub tn-tengah">${ikon(ik, 18)}<span>${esc(t(kunci))}</span><span class="tn-jml">${angka(new Set(a.map((x) => (typeof x === "string" ? x : x.nama))).size)}</span></h3>${jalur(a, fn, balik)}`;
-  return `<section class="tn-seksi tn-pita-bg" id="mitra" aria-labelledby="tn-mitra">${kepala("tn-mitra", "tautan", t("tn.ey.mitra"), t("tn.mitra.h2"), t("tn.mitra.pengantar", { tanggal: tanggal(m.diambil) }))}
-  ${grup("tn.mitra.kerja", m.mitra, tbl, "tautan")}${grup("tn.mitra.anggota", m.anggota, tbl, "gedung", true)}${grup("tn.mitra.asosiasi", m.asosiasi, tblAsos, "direktori")}</section>`;
+    ${wadah("wilayah", t("tn.u.unit"), "tn.u.unit_h", unit.length, unit.reduce((u, [, a]) => u + nOrang(a), 0), unit.map(([j, a, o]) => ringkas(j, a, o)).join(""), "tn-kisi-u")}
+    ${U.staf ? `<div class="tn-staf-baris">${ringkas(t("tn.u.staf"), U.staf, SATU)}</div>` : ""}</section>`;
 }
 
 function faq(k) {
@@ -172,12 +152,13 @@ function kotakKontak() {
 await mulaiHalaman();
 const isi = document.getElementById("isi");
 try {
-  const [p, m, k, r, pry, rg, br, mw] = await Promise.all([muat("pengurus-meti"), muat("mitra-meti"), muat("tentang-kredit"), muat("ringkas"), muat("proyek"), muat("regulasi"), muat("berita"), muat("meti-wilayah").catch(() => ({ provinsi: [], versi_angka: [] }))]);
+  const [p, m, k, r, rm, mw] = await Promise.all([muat("pengurus-meti"), muat("mitra-meti"), muat("tentang-kredit"), muat("ringkas"), muat("roadmap").catch(() => null), muat("meti-wilayah").catch(() => ({ provinsi: [], versi_angka: [] }))]);
   /* angka anggota dan wilayah dari meti-wilayah.json (sama dengan kaki situs) */
   const prov = mw.provinsi || [], terbaru = [...(mw.versi_angka || [])].sort((x, y) => (y.tanggal || "").localeCompare(x.tanggal || ""))[0];
   const nama = new Set([...Object.values(p.unit).flat(), ...p.bidang.flatMap((b) => b.anggota)].filter((o) => o.nama).map((o) => o.nama));
-  isi.innerHTML = hero({ pengurus: nama.size, mitra: m.asosiasi.length, proyek: r.hitung.proyek }) + `<div class="tn-wrap">` + tentang({ pengurus: nama.size, individu: prov.reduce((u, x) => u + (x.individu || 0), 0), organisasi: prov.reduce((u, x) => u + (x.organisasi || 0), 0), wilayah: terbaru?.berdiri || 0, asosiasi: m.asosiasi.length }) + teknologi({ proyek: pry.baris, reg: rg.baris, ber: br.baris }) + struktur(p) + mitra(m) + faq(k) + `</div>`;
+  isi.innerHTML = hero({ pengurus: nama.size, mitra: m.asosiasi.length, proyek: r.hitung.proyek }) + `<div class="tn-wrap">` + tentang({ pengurus: nama.size, individu: prov.reduce((u, x) => u + (x.individu || 0), 0), organisasi: prov.reduce((u, x) => u + (x.organisasi || 0), 0), wilayah: terbaru?.berdiri || 0, asosiasi: m.asosiasi.length }) + visiMisi() + (rm ? roadmap(rm) : "") + struktur(p) + faq(k) + `</div>`;
 } catch (e) {
+  console.error("tentang", e);
   isi.innerHTML = `<p class="tn-wrap tn-galat jm-galat" role="alert">${esc(t("tn.galat"))}</p>`;
 }
 isi.addEventListener("click", (e) => {

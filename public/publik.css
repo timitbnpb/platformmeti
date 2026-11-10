@@ -680,24 +680,11 @@ a.jm-foto:focus-visible{outline:3px solid var(--fokus)}
 /* kisi institusi dan tombol lihat semua */
 .jm-hero2 .jm-logo-grid{border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow)}
 .jm-logo-kol h3 .jm-ik{flex:none;color:var(--accent)}
-.jm-eko-aksi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
-@media (max-width:480px){.jm-eko-aksi{grid-template-columns:minmax(0,1fr)}}
+.jm-eko-aksi{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:12px}
 .jm-eko-aksi .jm-lihat{display:flex;justify-content:center;gap:10px;min-height:48px;margin:0;border-radius:var(--r-pil);background:var(--brand);color:var(--on-brand);font:600 var(--t-body)/1 var(--font)}
-.jm-eko-aksi #ekoTokoh{border:1px solid var(--accent);background:var(--card);color:var(--accent)}
 .jm-eko-aksi a.jm-lihat:hover{background:var(--brand);filter:brightness(1.12)}
-.jm-eko-aksi a#ekoTokoh:hover{background:var(--soft-hijau);filter:none}
 .jm-eko-aksi .jm-ik{transition:transform .18s ease-out}.jm-eko-aksi a:hover .jm-ik{transform:translateX(3px)}
-.jm-logo-tokoh{grid-column:1/-1;border-top:1px solid var(--line)}
-.jm-logo-tokoh h3{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;font:700 var(--t-kecil)/1 var(--display);color:var(--ink2);border-bottom:1px solid var(--line)}
-.jm-logo-tokoh h3 .jm-ik{flex:none;color:var(--accent)}
-.jm-logo-tokoh>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-@media (min-width:1000px){.jm-logo-tokoh>div{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.jm-logo-orang{border-right:1px solid var(--line);margin:0 -1px -1px 0}
-.jm-logo-orang img{border-radius:50%;object-fit:cover;object-position:top}
-.jm-hero2 .jm-logo-orang>span{display:grid;gap:2px;min-width:0;white-space:normal}
-.jm-logo-orang b{font-weight:400;line-height:1.25}
-.jm-hero2 .jm-logo-orang small{display:block;font-size:var(--t-kecil);color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.jm-sorotan-kt h2 a{color:inherit;text-decoration:none}.jm-sorotan-kt h2 a:hover{color:var(--accent)}
+.jm-hero2 .jm-hero2 .jm-sorotan-kt h2 a{color:inherit;text-decoration:none}.jm-sorotan-kt h2 a:hover{color:var(--accent)}
 a.jm-sorotan-gb{cursor:pointer}
 /* kartu angka beranda: ikon, label, angka selalu sejajar antar kartu (pemilik 9 Nov 2026) */
 #kartu .jm-kpi{align-content:start;grid-template-rows:44px auto auto;row-gap:14px;padding:20px}
@@ -710,3 +697,7 @@ a.jm-sorotan-gb{cursor:pointer}
 /* kartu angka: garis konteks sejajar di dasar semua kartu */
 #kartu .jm-kpi{grid-template-rows:44px auto minmax(0,1fr)}
 #kartu .jm-kpi-ctx,#kartu .jm-kpi-ctx:empty{display:flex;flex-wrap:wrap;align-items:center;gap:6px;align-self:end;min-height:calc(2 * 1.45em + 10px);padding-top:10px;border-top:1px solid var(--line)}
+/* label Mock-up pada kisi institusi beranda: daftarnya contoh tampilan (pemilik 9 Nov 2026) */
+.jm-mock{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0;font-size:var(--t-kecil);line-height:var(--lh-rapat);color:var(--ink2)}
+.jm-pil-mock{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:var(--r-pil);border:1px dashed var(--accent);background:var(--card);color:var(--ink);font:700 var(--t-label)/1 var(--font)}
+.jm-pil-mock .jm-ik{flex:none;color:var(--accent)}

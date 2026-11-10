@@ -7,7 +7,7 @@
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;padding-top:var(--top);min-height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font:400 var(--t-body)/var(--lh-isi) var(--font);font-variant-numeric:tabular-nums;overflow-x:hidden}
+body{margin:0;padding-top:var(--top);min-height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font:400 var(--t-body)/var(--lh-isi) var(--font);font-variant-numeric:tabular-nums;overflow-x:clip}
 h1,h2,h3{margin:0;font-family:var(--display);color:var(--head);line-height:var(--lh-judul)}
 h1{font-size:var(--t-h1);font-weight:700}
 h2{font-size:var(--t-h2);font-weight:700}
@@ -185,3 +185,35 @@ h1,h2,h3,.jm-kh h1{letter-spacing:-.015em}
 .jm-kaki .jm-kaki-hub .jm-kaki-sos{display:flex;gap:10px;margin:0;flex:none;flex-wrap:wrap;max-width:100%}
 .jm-kaki .jm-kaki-hub .jm-kaki-sos a{display:grid!important;place-items:center;width:40px;height:40px;min-height:0;padding:0!important;gap:0;border-radius:50%;line-height:0}
 .jm-kaki .jm-kaki-hub .jm-kaki-sos a svg{display:block;width:18px;height:18px;margin:0}
+
+/* ===== kaki METI maksimal (pemilik 9 Nov 2026): gradasi hijau tua > hijau > biru teal, garis aksen atas, batik halus, hover hidup ===== */
+.jm-kaki{overflow:hidden;background:linear-gradient(135deg,var(--kaki-bg) 0%,var(--brand) 46%,color-mix(in srgb,var(--meti-petrol) 45%,var(--kaki-bg)) 100%)}
+.jm-kaki::before{height:4px;z-index:2;background:linear-gradient(90deg,var(--meti-lime),var(--brand2) 45%,var(--meti-cyan))}
+.jm-kaki::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--on-brand);opacity:.06;-webkit-mask-image:var(--batik-pola),linear-gradient(to bottom,transparent 0%,rgb(0 0 0) 100%);mask-image:var(--batik-pola),linear-gradient(to bottom,transparent 0%,rgb(0 0 0) 100%);-webkit-mask-size:40px 40px,100% 100%;mask-size:40px 40px,100% 100%;-webkit-mask-composite:source-in;mask-composite:intersect}
+.jm-kaki>*{position:relative;z-index:1}
+.jm-kaki-merek strong{font-size:var(--t-h1);letter-spacing:.01em}
+.jm-kaki-merek span:not(.jm-kaki-logo){color:color-mix(in srgb,var(--on-brand) 85%,transparent)}
+.jm-kaki-logo{box-shadow:0 4px 14px color-mix(in srgb,var(--kaki-bg) 55%,transparent);transition:transform .2s ease-out}
+.jm-kaki-merek:hover .jm-kaki-logo{transform:rotate(-4deg) scale(1.05)}
+.jm-kaki-kol h2{display:flex;flex-direction:column;gap:8px;align-items:flex-start;color:var(--meti-lime);font-size:var(--t-body);letter-spacing:.01em}
+.jm-kaki-kol h2::after{content:"";width:28px;height:2px;border-radius:2px;background:var(--meti-lime);opacity:.7}
+.jm-kaki-kontak h2{display:block}
+.jm-kaki-kontak h2::after{content:none}
+.jm-kaki-kol>ul>li>a:not(.jm-kaki-ln){color:color-mix(in srgb,var(--on-brand) 88%,transparent);transition:color .15s,transform .15s}
+.jm-kaki-kol>ul>li>a:not(.jm-kaki-ln):hover{color:var(--on-brand);transform:translateX(3px)}
+.jm-kaki-kol a svg{transition:transform .15s,opacity .15s}
+.jm-kaki-kol a:hover svg{opacity:1;transform:scale(1.15)}
+.jm-kaki-hub small{color:color-mix(in srgb,var(--on-brand) 78%,transparent)}
+.jm-kaki-hub a{color:color-mix(in srgb,var(--on-brand) 92%,transparent)}
+.jm-kaki-stat span{color:color-mix(in srgb,var(--on-brand) 82%,transparent)}
+.jm-kaki-sos a{background:color-mix(in srgb,var(--on-brand) 8%,transparent);border-color:color-mix(in srgb,var(--on-brand) 30%,transparent);transition:background .15s,color .15s,transform .15s,box-shadow .15s}
+.jm-kaki-sos a:hover{transform:translateY(-3px);box-shadow:0 6px 14px color-mix(in srgb,var(--kaki-bg) 60%,transparent)}
+.jm-kaki .jm-kaki-hub li.jm-kaki-lgli a.jm-kaki-lg{transition:background .15s,color .15s,transform .15s,box-shadow .15s}
+.jm-kaki .jm-kaki-hub li.jm-kaki-lgli a.jm-kaki-lg:hover{transform:translateY(-2px);box-shadow:0 6px 16px color-mix(in srgb,var(--kaki-bg) 55%,transparent)}
+.jm-kaki-kontak{border-top-color:color-mix(in srgb,var(--on-brand) 18%,transparent);background:color-mix(in srgb,var(--kaki-bg) 28%,transparent)}
+.jm-kaki-bawah{color:color-mix(in srgb,var(--on-brand) 82%,transparent);border-top-color:color-mix(in srgb,var(--on-brand) 18%,transparent)}
+.jm-kaki-bawah a{color:color-mix(in srgb,var(--on-brand) 82%,transparent)}
+.jm-kaki-atas{transition:background .15s,color .15s,transform .15s}
+.jm-kaki-atas:hover{transform:translateY(-3px)}
+@media (max-width:600px){.jm-kaki-merek strong{font-size:var(--t-h2)}.jm-kaki-kol>ul>li>a:not(.jm-kaki-ln){white-space:normal}.jm-kaki-bawah{gap:10px 16px}}
+@media (prefers-reduced-motion:reduce){.jm-kaki *{transition:none!important}.jm-kaki-sos a:hover,.jm-kaki-atas:hover,.jm-kaki-lg:hover,.jm-kaki-merek:hover .jm-kaki-logo,.jm-kaki-kol>ul>li>a:hover{transform:none!important}}
