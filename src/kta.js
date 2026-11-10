@@ -2,7 +2,7 @@
 // Verifikasi publik (/api/kta/verifikasi/:token) terbuka tanpa sesi dan hanya mengembalikan nama, jenis, status, dan masa berlaku.
 import * as hak from "./hak.js";
 import { gabungAnggota } from "./direktori.js";
-import { acak, bacaBody, Galat, gagal, ipHash, json, perlu, PRIVAT, samaTetap } from "./util.js";
+import { acak, bacaBiner, bacaBody, Galat, gagal, ipHash, json, perlu, PRIVAT, samaTetap } from "./util.js";
 
 const ADM = ["admin", "super"];
 const RE_ID = /^\d{1,9}$/;
@@ -41,26 +41,6 @@ function tipe(b) {
   if (b.length >= 5 && b[0] === 0x25 && b[1] === 0x50 && b[2] === 0x44 && b[3] === 0x46 && b[4] === 0x2d) return ["application/pdf", "pdf"];
   return null;
 }
-async function bacaBiner(req, maks) {
-  if (Number(req.headers.get("content-length")) > maks) throw new Galat("terlalu_besar");
-  const bagian = [];
-  let n = 0;
-  if (req.body) {
-    const rd = req.body.getReader();
-    for (;;) {
-      const { value, done } = await rd.read();
-      if (done) break;
-      n += value.length;
-      if (n > maks) { rd.cancel().catch(() => {}); throw new Galat("terlalu_besar"); }
-      bagian.push(value);
-    }
-  }
-  const b = new Uint8Array(n);
-  let p = 0;
-  for (const x of bagian) { b.set(x, p); p += x.length; }
-  return b;
-}
-
 // Bentuk yang boleh dilihat pemilik KTA (tanpa nonce dan kunci R2).
 const bentukSaya = async (env, req, r) => {
   const publik = r.status !== "tertunda";

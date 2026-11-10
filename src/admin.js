@@ -1,6 +1,6 @@
 // admin.js: koreksi publik + putusan, statistik agregat, konten beranda, jejak admin (migrasi 0010). Semua D1 lewat hak.js.
 import * as hak from "./hak.js";
-import { bacaBody, cacheTepi, gagal, ipHash, json, perlu, PRIVAT, sha } from "./util.js";
+import { bacaBiner, bacaBody, cacheTepi, gagal, ipHash, json, perlu, PRIVAT, sha } from "./util.js";
 
 const ADM = ["admin", "super"];
 const NONAKTIF = () => json({ galat: "Fitur belum aktif.", kode: "fitur_belum_aktif" }, 503, PRIVAT);
@@ -73,8 +73,7 @@ export const rute = {
   // sendBeacon: tidak bisa memasang x-pb, jadi router memeriksa asal sendiri untuk jalur ini.
   // 204 untuk kunci yang tak lolos normalisasi; 422 badan/jenis salah; 429 bila melewati batas laju.
   "POST /api/statistik": async (req, env) => {
-    const teks = await req.text();
-    if (teks.length > 512) return gagal("terlalu_besar");
+    const teks = new TextDecoder().decode(await bacaBiner(req, 512));   // bertahap: chunked pun dihentikan di 512 byte
     let b; try { b = JSON.parse(teks); } catch { return gagal("masukan_salah", 422); }
     if (!b || !["halaman", "cari"].includes(b.jenis)) return gagal("masukan_salah", 422);
     const kunci = b.jenis === "cari" ? normalisasiCari(b.kunci) : normalisasiHalaman(b.kunci);

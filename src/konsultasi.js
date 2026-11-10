@@ -3,7 +3,7 @@
 import * as hak from "./hak.js";
 import { buatDocx } from "./docx.js";
 import { susunRekap } from "../public/inti/naskah.js";
-import { acak, bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
+import { acak, bacaBody, formTerbatas, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
 
 const NONAKTIF = () => json({ galat: "Fitur belum aktif.", kode: "fitur_belum_aktif" }, 503, PRIVAT);
 const RE_DOK = /^[a-z0-9-]{2,60}$/;
@@ -142,9 +142,9 @@ export const rute = {
     const akun = perlu(p, ["pengurus", "kurator", "admin", "super"]);
     const id = dok(p);
     if (!env.BERKAS) return gagal("layanan");
-    if (Number(req.headers.get("content-length")) > MAKS_BERKAS + 65536) return gagal("terlalu_besar");
+    if (Number(req.headers.get("content-length")) > MAKS_BERKAS + 65536) return gagal("terlalu_besar");   // ukuran dulu, baru laju (sebelum badan dibaca)
     if ((await hak.catatLaju(env, "impor:ks" + akun.id, 3600)) > 30) return gagal("laju_terlampaui");
-    let fd; try { fd = await req.formData(); } catch { return gagal("masukan_salah", 422); }
+    const fd = await formTerbatas(req, MAKS_BERKAS + 65536);
     const f = fd.get("berkas");
     if (!f || typeof f === "string" || f.size === 0) return gagal("masukan_salah", 422);
     if (f.size > MAKS_BERKAS) return gagal("terlalu_besar");

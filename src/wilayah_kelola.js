@@ -5,7 +5,7 @@ import * as hak from "./hak.js";
 import { NAMA_PROV } from "./meti_wilayah.js";
 import { denganLampiran, sniff, namaAman } from "./pesan.js";
 import { bersih, bukti, hanyaKunci, pilih, TEKNOLOGI, teks, tahun } from "./portal.js";
-import { acak, bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
+import { acak, bacaBody, formTerbatas, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
 
 const ADM = ["admin", "super"];
 const NONAKTIF = () => json({ galat: "Fitur belum aktif.", kode: "fitur_belum_aktif" }, 503, PRIVAT);
@@ -72,9 +72,7 @@ export function periksaWilayah(jenis, x) {
 // multipart: data (JSON teks: { jenis, isi, bukti_url? }), setuju_foto ("1"), berkas (opsional). Jenis berkas dari byte awal.
 async function bacaForm(req) {
   if (!/^multipart\/form-data/i.test(req.headers.get("content-type") || "")) throw new Galat("masukan_salah", 415);
-  if (Number(req.headers.get("content-length")) > MAKS.sk + 65536) throw new Galat("terlalu_besar");
-  let fd;
-  try { fd = await req.formData(); } catch { throw new Galat("masukan_salah"); }
+  const fd = await formTerbatas(req, MAKS.sk + 65536);
   const mentah = fd.get("data");
   let b;
   try { if (typeof mentah !== "string" || mentah.length > 8192) throw 0; b = JSON.parse(mentah); } catch { throw SALAH(); }

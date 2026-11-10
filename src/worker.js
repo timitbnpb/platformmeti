@@ -338,6 +338,7 @@ export default {
     return res;
   },
   async scheduled(ev, env, ctx) {
+    ctx?.waitUntil?.(hak.sistem.sapu(env).catch((e) => console.error("sapu", e?.message)));
     ctx?.waitUntil?.(perbaruiRentang(env).catch((e) => console.error("rentang-ip", e?.message)));
     ctx?.waitUntil?.(perbaruiSosmed(env).then((h) => console.log("sosmed", JSON.stringify(h))).catch((e) => console.error("sosmed", e?.message)));
   },

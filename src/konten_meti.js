@@ -2,8 +2,8 @@
 // D1 hanya lewat hak.baca/hak.tulis; foto di R2 (berita-meti/<32 hex>.<ext>), dokumen di R2 (pustaka-u/<32 hex>.<tipe>), tidak pernah di repo atau public/.
 // Tulis hanya admin dan super. Draf (terbit=0) hanya admin/super; dokumen akses 'pengurus' hanya pengurus, kurator, wilayah, admin, super.
 import * as hak from "./hak.js";
-import { adaMetadata, bacaBiner, CT_DOK, disposisi, teksBersih, tglSah, tipeDokumen, tipeGambar } from "./agenda.js";
-import { acak, bacaBody, gagal, json, perlu, PRIVAT } from "./util.js";
+import { adaMetadata, CT_DOK, disposisi, teksBersih, tglSah, tipeDokumen, tipeGambar } from "./agenda.js";
+import { acak, bacaBiner, bacaBody, gagal, json, perlu, PRIVAT } from "./util.js";
 
 const BACA = ["anggota", "pengurus", "kurator", "wilayah", "admin", "super"];
 const TULIS = ["admin", "super"];

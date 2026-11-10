@@ -57,10 +57,22 @@ export const PRIVAT = { "cache-control": "private, no-store", vary: "Cookie" };
 
 const dekode = new TextDecoder();
 
-// Baca JSON objek, maks `maks` BYTE, dibaca bertahap (juga untuk chunked tanpa Content-Length).
-export async function bacaBody(req, maks = 65536) {
-  if (!/^application\/json(\s*;|$)/i.test(req.headers.get("content-type") || "")) throw new Galat("masukan_salah", 415);
-  if (Number(req.headers.get("content-length")) > maks) throw new Galat("terlalu_besar");
+// Baca badan mentah maks `maks` BYTE, bertahap (juga chunked tanpa Content-Length): berhenti dan batalkan begitu lewat batas.
+export async function bacaBiner(req, maks) {
+  const cl = Number(req.headers.get("content-length"));
+  if (cl > maks) throw new Galat("terlalu_besar");
+  // Content-Length sah: isi satu buffer langsung (memori puncak ~1x ukuran, bukan 2x; tinjauan keamanan 8 Nov 2026)
+  if (Number.isInteger(cl) && cl > 0 && req.body) {
+    const b = new Uint8Array(cl), rd = req.body.getReader();
+    let p = 0;
+    for (;;) {
+      const { value, done } = await rd.read();
+      if (done) break;
+      if (p + value.length > cl) { rd.cancel().catch(() => {}); throw new Galat("terlalu_besar"); }
+      b.set(value, p); p += value.length;
+    }
+    return p === cl ? b : b.slice(0, p);
+  }
   const bagian = [];
   let n = 0;
   if (req.body) {
@@ -79,6 +91,19 @@ export async function bacaBody(req, maks = 65536) {
   const b = new Uint8Array(n);
   let p = 0;
   for (const x of bagian) { b.set(x, p); p += x.length; }
+  return b;
+}
+
+// FormData dari badan multipart yang dibatasi `maks` BYTE sebelum diurai.
+export async function formTerbatas(req, maks) {
+  const b = await bacaBiner(req, maks);
+  try { return await new Response(b, { headers: { "content-type": req.headers.get("content-type") || "" } }).formData(); } catch { throw new Galat("masukan_salah"); }
+}
+
+// Baca JSON objek, maks `maks` BYTE, dibaca bertahap (juga untuk chunked tanpa Content-Length).
+export async function bacaBody(req, maks = 65536) {
+  if (!/^application\/json(\s*;|$)/i.test(req.headers.get("content-type") || "")) throw new Galat("masukan_salah", 415);
+  const b = await bacaBiner(req, maks);
   let o;
   try { o = JSON.parse(dekode.decode(b) || "{}"); } catch { throw new Galat("masukan_salah"); }
   if (!o || typeof o !== "object" || Array.isArray(o)) throw new Galat("masukan_salah");

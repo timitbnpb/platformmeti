@@ -791,7 +791,7 @@ const MATRIKS = {
   potret_anggota:       ["-",    "B",      "B",      "B",      "B",         "B",            "B"],
   potret_pengurus:      ["-",    "-",      "B",      "B",      "-",         "B",            "B"],
   akun:                 ["-",    "T diri", "T diri", "T diri", "T diri",    "T bukan-super", "T"],
-  sesi:                 ["-",    "T diri", "T diri", "T diri", "T diri",    "T cabut",      "T"],
+  sesi:                 ["-",    "T diri", "T diri", "T diri", "T diri",    "T cabut bukan-super", "T"],
   koreksi:              ["-",    "T kirim","T kirim","T",      "T kirim prov","T",          "T"],
   riwayat:              ["-",    "-",      "T",      "-",      "-",         "T",            "T"],
   jejak:                ["-",    "-",      "-",      "-",      "-",         "B",            "B"],
@@ -811,6 +811,7 @@ const MATRIKS = {
 | `T diri` | `baca`, `ubah` pada baris milik sendiri; kolom `ubah` hanya `nama`, `bahasa`, `sandi` (akun); sesi sendiri dapat `cabut` | `sendiri` |
 | `T bukan-super` | seperti `T` pada `akun`, kecuali baris `peran='super'`, menetapkan `super`, dan mengubah peran sendiri | `bukan-super` |
 | `T cabut` | `baca`, `cabut` semua sesi | |
+| `T cabut bukan-super` | `T cabut` kecuali sesi akun `peran='super'` (AD pada `sesi`, `sesi_admin`) | `bukan-super` |
 | `T kirim` | `kirim` dan `baca` koreksi milik sendiri | `sendiri` |
 | `T kirim prov` | seperti `T kirim`, hanya untuk entitas dengan `prov = akun.cakupan_prov` | `sendiri`, `prov` |
 

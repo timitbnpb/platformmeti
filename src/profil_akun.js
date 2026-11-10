@@ -1,7 +1,7 @@
 // profil_akun.js: Profil saya (migrasi 0018). Akun menyunting profil, riwayat, foto, dan privasinya sendiri; anggota lain membaca sesuai privasi; admin membaca semua.
 // Foto: R2 BERKAS profil/<akun_id>.webp, jenis dari magic byte (bukan dari klien), maks 2 MB. D1 hanya lewat hak.js. Nilai di-escape di klien.
 import * as hak from "./hak.js";
-import { bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
+import { bacaBiner, bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
 
 const NONAKTIF = () => json({ galat: "Fitur belum aktif.", kode: "fitur_belum_aktif" }, 503, PRIVAT);
 const MAKS_FOTO = 2 * 1024 * 1024;
@@ -140,9 +140,9 @@ export const rute = {
   "POST /api/profil/saya/foto": async (req, env, ctx, p) => {
     const akun = perlu(p);
     if (!env.BERKAS) throw new Galat("layanan");
-    if (Number(req.headers.get("content-length")) > MAKS_FOTO) throw new Galat("terlalu_besar");
+    if (Number(req.headers.get("content-length")) > MAKS_FOTO) throw new Galat("terlalu_besar");   // ukuran dulu, baru laju
     if ((await hak.catatLaju(env, "koreksi:pf" + akun.id, 3600)) > 20) return gagal("laju_terlampaui");
-    const data = new Uint8Array(await req.arrayBuffer());
+    const data = new Uint8Array(await bacaBiner(req, MAKS_FOTO));
     if (data.length === 0) throw SALAH();
     if (data.length > MAKS_FOTO) throw new Galat("terlalu_besar");
     const tipe = sniff(data);

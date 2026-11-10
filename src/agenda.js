@@ -2,7 +2,7 @@
 // D1 hanya lewat hak.baca/hak.tulis; foto di R2 (agenda/<32 hex>.<ext>), dokumen di R2 (agenda-dok/<32 hex>.<tipe>), tidak pernah di repo atau public/.
 // 8 Nov 2026: semua TULIS hanya admin dan super; kurator baca saja.
 import * as hak from "./hak.js";
-import { acak, bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
+import { acak, bacaBiner, bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
 
 const BACA = ["anggota", "pengurus", "kurator", "wilayah", "admin", "super"];
 const TULIS = ["admin", "super"];
@@ -119,39 +119,6 @@ function adaMetadata(b, ext) {
   return false;
 }
 
-// Baca badan biner bertahap, maks 5 MB.
-async function bacaBiner(req, MAKS = MAKS_FOTO) {
-  const cl = Number(req.headers.get("content-length"));
-  if (cl > MAKS) throw new Galat("terlalu_besar");
-  // Content-Length sah: isi satu buffer langsung (memori puncak ~1x ukuran, bukan 2x; tinjauan keamanan 8 Nov 2026)
-  if (Number.isInteger(cl) && cl > 0 && req.body) {
-    const b = new Uint8Array(cl), rd = req.body.getReader();
-    let p = 0;
-    for (;;) {
-      const { value, done } = await rd.read();
-      if (done) break;
-      if (p + value.length > cl) { rd.cancel().catch(() => {}); throw new Galat("terlalu_besar"); }
-      b.set(value, p); p += value.length;
-    }
-    return p === cl ? b : b.slice(0, p);
-  }
-  const bagian = [];
-  let n = 0;
-  if (req.body) {
-    const rd = req.body.getReader();
-    for (;;) {
-      const { value, done } = await rd.read();
-      if (done) break;
-      n += value.length;
-      if (n > MAKS) { rd.cancel().catch(() => {}); throw new Galat("terlalu_besar"); }
-      bagian.push(value);
-    }
-  }
-  const b = new Uint8Array(n);
-  let p = 0;
-  for (const x of bagian) { b.set(x, p); p += x.length; }
-  return b;
-}
 
 // Tipe dokumen dari magic bytes + ekstensi nama. Mengembalikan "pdf"|"pptx"|"docx"|"xlsx"|null.
 const MARKA_OOXML = { pptx: "ppt/", docx: "word/", xlsx: "xl/" };
@@ -513,7 +480,7 @@ export const rute = {
     const ket = new URL(req.url).searchParams.get("keterangan");
     if (ket !== null && (ket.length > 300 || !teksBersih(ket))) return gagal("masukan_salah");
     if (!(await refSah(env, req, akun, ref))) return gagal("tidak_ditemukan");
-    const badan = await bacaBiner(req);
+    const badan = await bacaBiner(req, MAKS_FOTO);
     const t = tipeGambar(badan);
     if (!badan.length || !t) return gagal("masukan_salah");
     const [tipe, ext] = t;
@@ -545,4 +512,4 @@ export const rute = {
 };
 
 // Fungsi bantu dipakai ulang oleh konten_meti.js (perilaku tidak berubah).
-export { adaMetadata, bacaBiner, CT_DOK, disposisi, teksBersih, tglSah, tipeDokumen, tipeGambar };
+export { adaMetadata, CT_DOK, disposisi, teksBersih, tglSah, tipeDokumen, tipeGambar };

@@ -20,7 +20,7 @@ Baca `B`, tulis `T` (termasuk baca), tidak ada akses `-`. Peran (kolom), sesuai 
 | KR | Kurator | Bidang Informasi dan Multimedia (KP C-20) |
 | WL | Wilayah | Ketua METI Wilayah, dibatasi `cakupan_prov` (KP C-07) |
 | AD | Admin | akun, kurasi, jejak; tidak bisa menjadi Super |
-| SA | Super Admin | akun super, tombol dummy |
+| SA | Super Admin | akun super |
 
 Sel berkualifikasi: `B prov` atau `T prov` = hanya baris yang `cakupan_prov` akunnya cocok; `T diri` = hanya akun sendiri, terbatas pada kolom nama, bahasa, dan sandi; `T kirim` = boleh mengirim usulan, tidak mengubah data tujuan.
 
@@ -36,13 +36,12 @@ Sel berkualifikasi: `B prov` atau `T prov` = hanya baris yang `cakupan_prov` aku
 | Potret R2 lapis anggota (`potret/anggota/*`) | - | B | B | B | B | B | B |
 | Potret R2 lapis pengurus (`potret/pengurus/*`) | - | - | B | B | - | B | B |
 | Akun (peran, status, cakupan, surel akun) | - | T diri | T diri | T diri | T diri | T (bukan super) | T |
-| Sesi (cookie, daftar sesi aktif) | - | T diri | T diri | T diri | T diri | T (cabut) | T |
+| Sesi (cookie, daftar sesi aktif) | - | T diri | T diri | T diri | T diri | T (cabut, bukan-super) | T |
 | Koreksi (usulan perbaikan data) | - | T kirim | T kirim | T | T kirim prov | T | T |
 | Riwayat dengan METI (narasumber, audiensi, MoU, sponsor; KP C-17) | - | - | T | - | - | T | T |
 | Bukti agenda METI: notulensi dan foto (KP K20; foto privat di R2) | - | B | B | T | B | T | T |
 | Jejak admin (siapa, kapan, aksi, dari, ke) | - | - | - | - | - | B | B |
 | Daftar tolak (`daftar-tolak.json`, privat di R2; KP D14) | - | - | - | - | - | - | B |
-| Baris dummy (`dummy=1`) dan tombol dummy (KP D18) | - | - | - | - | - | - | T |
 
 Penjelasan dan aturan sel:
 
@@ -50,12 +49,12 @@ Penjelasan dan aturan sel:
 2. **Orang dan kontak.** Lapis Publik menampilkan nama, jabatan publik, dan afiliasi saja (bawaan KP C-04, C-11). Kontak hanya di lapis pengurus; WL melihat kontak orang di provinsinya lewat rute berpenjaga yang menyaring `cakupan_prov` (potret statis tidak bisa disaring per provinsi, jadi WL tidak membaca potret pengurus). Orang tampil di lapis Publik hanya bila kolom `tampil` bernilai benar, yang diisi saat dasar pemrosesan tercatat (§3.2); nama kolom final ditetapkan di DT.
 3. **Data terlarang** tidak punya kolom, tidak diterima rute mana pun, dan ditolak validasi skema untuk semua peran. Tabel baris ini ada agar uji menegaskannya.
 4. **Potret R2** dibuat per lapis oleh pipeline (JM-D12), bukan disaring di klien. Berkas lapis lebih tinggi tidak pernah dirujuk dari halaman lapis lebih rendah. Tidak ada peran manusia yang menulis potret; hanya pipeline dengan token layanan.
-5. **Akun.** Admin tidak bisa mengubah akun SA, tidak bisa menaikkan siapa pun (termasuk dirinya) menjadi `super`, dan tidak bisa mengubah perannya sendiri. SA terakhir tidak bisa dinonaktifkan atau diturunkan. Kolom `sandi`, `garam`, `aktivasi_hash` tidak pernah keluar dari Worker ke peran mana pun.
+5. **Akun.** Admin tidak bisa mengubah akun SA, tidak bisa menaikkan siapa pun (termasuk dirinya) menjadi `super`, dan tidak bisa mengubah perannya sendiri. SA terakhir tidak bisa dinonaktifkan atau diturunkan. Admin tidak bisa mencabut sesi akun SA (sel `T cabut bukan-super`, dinilai dari peran akun sasaran). Kolom `sandi`, `garam`, `aktivasi_hash` tidak pernah keluar dari Worker ke peran mana pun.
 6. **Koreksi.** Antrean diproses KR, AD, SA. Permintaan hak akses, koreksi, dan hapus dari orang tanpa akun masuk lewat surel privasi di halaman Privasi dan dimasukkan ke antrean oleh KR atau AD (§3.3); formulir publik menunggu JM-G01 (F3).
 7. **Riwayat dengan METI** sebelum F2 belum ada; baris matriks tetap berlaku sejak tabel dibuat. WL tidak melihat riwayat (bawaan KP C-17).
 8. **Jejak.** Tidak ada peran yang menulis jejak lewat rute; hanya `hak.js` yang menulisnya otomatis pada tiap tulis D1 (JM-B07). Jejak tidak bisa diubah atau dihapus oleh siapa pun dari aplikasi.
 9. **Daftar tolak** memuat nama sensitif (§3.5), jadi hanya SA yang bisa membaca; perubahan lewat unggah R2 oleh pemilik dan diuji pipeline.
-10. **Dummy.** `hak.js` menambah `dummy=0` pada setiap baca kecuali peran SA. Baris dummy tidak pernah masuk potret dan tidak pernah tampil pada layar peran lain. Tombol dummy hanya mengisi klien dan tidak menulis ke server (pola asal).
+10. **Putusan klaim/ajuan lembaga (`org_klaim`, `org_ajuan`, `wilayah_ajuan`, `orang_klaim`).** Pemutus tidak boleh pemilik (`akun_id`) baris itu untuk aksi `setuju`, termasuk SA; `tolak` oleh pemilik tetap boleh. Dua kunci: pengaju dan penyetuju selalu dua akun berbeda.
 11. **Peran tanpa akun terdaftar** (peran tak dikenal, akun nonaktif, sesi kedaluwarsa) diperlakukan sebagai PB.
 
 **Tiap baris = satu uji "peran salah DITOLAK" di RU.** Uji dibangkitkan dari satu objek `MATRIKS` di `src/hak.js` yang sama dengan tabel ini: untuk tiap (jenis data, peran, aksi) yang bernilai `-` atau di luar kualifikasi, uji membuktikan ditolak (HTTP 401 untuk PB di rute terkunci, 403 untuk peran lain); untuk yang bernilai B atau T, uji membuktikan diizinkan dan, untuk WL, bahwa baris provinsi lain ditolak. Perubahan `MATRIKS` tanpa perubahan tabel ini membuat `tests/hak.test.mjs` merah (gerbang `gerbang-matriks-sinkron` membandingkan keduanya).
@@ -65,7 +64,7 @@ Penjelasan dan aturan sel:
 D1 (SQLite) tidak punya RLS bawaan, jadi hak ditegakkan di Worker lewat satu pintu (KP D7).
 
 1. **Satu pintu.** Seluruh `env.DB.prepare(...)` hanya ada di `src/hak.js`. Modul lain (`sesi.js`, `sandi.js`, `direktori.js`, `admin.js`) memanggil fungsi `hak.js`; saat login (peran belum ada) mereka memakai pintu khusus `hak.sistem.*` berisi pernyataan tetap, bukan kueri rakitan.
-2. **Antarmuka (JM-B04):** `boleh(peran, aksi, tabel, baris, akun)` mengembalikan benar atau salah dari `MATRIKS`; `baca(env, akun, tabel, kueri)` menambah klausa cakupan secara paksa (`dummy=0` kecuali SA; `cakupan_prov = akun.cakupan_prov` untuk WL; `pemilik = akun.id` untuk sel `T diri`); `tulis(env, akun, tabel, data)` menolak kolom di luar daftar putih per (tabel, peran) dan menulis jejak pada transaksi yang sama.
+2. **Antarmuka (JM-B04):** `boleh(peran, aksi, tabel, baris, akun)` mengembalikan benar atau salah dari `MATRIKS`; `baca(env, akun, tabel, kueri)` menambah klausa cakupan secara paksa (`cakupan_prov = akun.cakupan_prov` untuk WL; `pemilik = akun.id` untuk sel `T diri`); `tulis(env, akun, tabel, data)` menolak kolom di luar daftar putih per (tabel, peran) dan menulis jejak pada transaksi yang sama.
 3. **Daftar putih, bukan daftar hitam.** Nama tabel dan kolom berasal dari objek tetap di `hak.js`, tidak pernah dari input klien. Nilai selalu lewat `.bind()`; tidak ada penyambungan string ke SQL (`security-reviewer` memeriksa).
 4. **Gerbang.** `tests/gerbang-d1.test.mjs` memindai `src/**` dan menjadi merah bila `env.DB` atau `.prepare(` muncul di luar `hak.js`. `tests/hak.test.mjs` menjalankan tiap sel matriks terhadap D1 lokal (Miniflare atau `wrangler`, bukan mock; TEST.md).
 5. **Rute.** Tiap rute `/api/*` menyatakan peran minimal di tabel rute (satu objek `"METODE /path/:id"`); rute tanpa pernyataan peran ditolak router saat start. Autentikasi diperiksa di SETIAP rute di server, bukan hanya disembunyikan di UI. `guard-api` memeriksa metode, peran, validasi input, dan batas laju per rute.

@@ -2,7 +2,7 @@
 // Publik: POST /api/daftar, /foto, /lacak, /bukti, /bayar-online, /midtrans/notifikasi. Admin/pengurus: /api/admin/pendaftaran*.
 // Token lacak: dikirim di BADAN permintaan (bukan URL API), hanya SHA-256-nya disimpan. Semua D1 lewat hak.js.
 import * as hak from "./hak.js";
-import { acak, bacaBody, gagal, ipHash, json, perlu, PRIVAT, RE_EMAIL, sha } from "./util.js";
+import { acak, bacaBody, formTerbatas, gagal, ipHash, json, perlu, PRIVAT, RE_EMAIL, sha } from "./util.js";
 
 const STAF = ["pengurus", "admin", "super"];
 const ADM = ["admin", "super"];
@@ -71,9 +71,7 @@ export function periksaForm(b) {
 async function bacaUnggah(req, maks) {
   const cl = req.headers.get("content-length");
   if (!/^\d{1,10}$/.test(cl ?? "")) throw new hak.Galat("masukan_salah", 411);   // tanpa Content-Length (chunked) ditolak sebelum diurai
-  if (Number(cl) > maks + 4096) throw new hak.Galat("terlalu_besar");
-  let f;
-  try { f = await req.formData(); } catch { throw new hak.Galat("masukan_salah"); }
+  const f = await formTerbatas(req, maks + 4096);
   const token = f.get("token"), berkas = f.get("berkas");
   if (typeof token !== "string" || !RE_TOKEN.test(token) || !berkas || typeof berkas === "string" || berkas.size < 1 || berkas.size > maks) throw new hak.Galat("masukan_salah");
   return { token, badan: new Uint8Array(await berkas.arrayBuffer()) };

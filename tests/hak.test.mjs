@@ -12,26 +12,26 @@ const { PERAN, MATRIKS, AKSI } = hak;
 const KPV = {
   entitas: "B B B T B T T", fakta: "B B B T B T T", ikatan: "B B B T B T T", orang: "B B B T B T T",
   kontak: "- - T B B(prov) T T", terlarang: "- - - - - - -", potret_publik: "B B B B B B B", potret_anggota: "- B B B B B B",
-  potret_pengurus: "- - B B - B B", akun: "- diri diri diri diri bukan-super T", sesi: "- diri diri diri diri cabut T",
+  potret_pengurus: "- - B B - B B", akun: "- diri diri diri diri bukan-super T", sesi: "- diri diri diri diri cabut-bukan-super T",
   koreksi: "- kirim kirim T kirim(prov) T T", riwayat: "- - T - - T T", jejak: "- - - - - B B", daftar_tolak: "- - - - - - B",
   agenda: "- B B B B T T", konten_meti: "- konten konten konten konten T T", konten_otorisasi: "- - tinjau - - T T",
   naskah: "- sah putus sah sah T T", naskah_catatan: "- - catat - - catat catat",
   event_atur: "- B B B B T T", event_daftar: "- daftar daftar daftar daftar T T",
   pendaftaran: "- - T - - T T",
-  sesi_admin: "- - - - - cabut cabut",
+  sesi_admin: "- - - - - cabut-bukan-super cabut",
   konsultasi: "- daftar daftar daftar daftar T T", konsultasi_putus: "- - T T - T T",
   surel_minta: "- daftar daftar daftar daftar T T",
   keyakinan: "- daftar daftar daftar daftar T T",
 };
 const KODE_KPV = (s) => s.split(" ").map((x) => ({ "-": "-", B: "B", T: "T", "B(prov)": "B prov", diri: "T diri", "bukan-super": "T bukan-super",
-  cabut: "T cabut", kirim: "T kirim", "kirim(prov)": "T kirim prov", daftar: "T daftar", sah: "B sah", putus: "T putus", catat: "T catat", konten: "B konten", tinjau: "T tinjau" })[x]);
+  cabut: "T cabut", "cabut-bukan-super": "T cabut bukan-super", kirim: "T kirim", "kirim(prov)": "T kirim prov", daftar: "T daftar", sah: "B sah", putus: "T putus", catat: "T catat", konten: "B konten", tinjau: "T tinjau" })[x]);
 
 // Aksi yang diizinkan per kode sel (ditulis ulang di sini dari DT 5.2, tidak diimpor).
 const HARAP = (kode, jenis) => ({
   "-": [], B: ["baca"], "B prov": ["baca"],
   T: ["baca", "tambah", "ubah", ...({ koreksi: ["tinjau", "kirim"], entitas: ["hapus_keras"], orang: ["hapus_keras"], riwayat: ["hapus"], agenda: ["hapus"], konten_meti: ["hapus"], naskah: ["tinjau"], konten_otorisasi: ["tinjau"], sesi: ["cabut"] }[jenis] ?? [])],
   "T diri": jenis === "sesi" ? ["baca", "cabut"] : ["baca", "ubah"],
-  "T daftar": ["baca", "tambah", "ubah"], "T bukan-super": ["baca", "tambah", "ubah"], "T cabut": ["baca", "cabut"], "T kirim": ["kirim", "baca"], "T kirim prov": ["kirim", "baca"],
+  "T daftar": ["baca", "tambah", "ubah"], "T bukan-super": ["baca", "tambah", "ubah"], "T cabut": ["baca", "cabut"], "T cabut bukan-super": ["baca", "cabut"], "T kirim": ["kirim", "baca"], "T kirim prov": ["kirim", "baca"],
   "B sah": ["baca"], "B konten": ["baca"], "T tinjau": ["baca", "tinjau"], "T putus": ["baca", "tinjau"], "T catat": ["baca", "tambah"],
 }[kode]);
 
@@ -187,7 +187,7 @@ for (const { jenis, peran, kode } of SEL) {
       // sesi: cabut. T diri hanya miliknya; T cabut / T: semua.
       const target = akunDb.anggota2;
       const sebelum = await cacah("sesi");
-      const bisaSemua = harap.includes("cabut") && (kode === "T" || kode === "T cabut");
+      const bisaSemua = harap.includes("cabut") && (kode === "T" || kode === "T cabut" || kode === "T cabut bukan-super");
       if (bisaSemua) {
         await hak.tulis(E, a, "sesi", "cabut", {}, target.id);
         assert.equal(await satu("SELECT count(*) AS n FROM sesi WHERE akun_id = ?", target.id).then((r) => r.n), 0);

@@ -68,7 +68,7 @@ test("Admin tidak naik ke super, tidak ubah super, tidak ubah peran sendiri; SA 
   assert.equal((await panggil("PATCH /api/admin/akun/:id", A.admin, { id: A.super.id, badan: { nama: "x" } })).kode, "dilarang");
   assert.equal((await panggil("PATCH /api/admin/akun/:id", A.admin, { id: A.super.id, badan: { status: "nonaktif" } })).kode, "dilarang");
   assert.equal((await panggil("POST /api/admin/akun/:id/aktivasi", A.admin, { id: A.super.id })).kode, "dilarang");
-  assert.equal((await panggil("DELETE /api/admin/akun/:id/sesi", A.admin, { id: A.super.id })).status, 200); // sel AD sesi = T cabut (tanpa bukan-super)
+  assert.equal((await panggil("DELETE /api/admin/akun/:id/sesi", A.admin, { id: A.super.id })).status, 403); // Admin tidak mencabut sesi akun super (sama dengan sesiAdminCabut)
   assert.equal((await satu("SELECT peran FROM akun WHERE id = ?", A.super.id)).peran, "super");
   assert.equal((await satu("SELECT peran FROM akun WHERE id = ?", A.anggota.id)).peran, "anggota");
   assert.equal((await panggil("PATCH /api/admin/akun/:id", A.admin, { id: A.anggota.id, badan: { peran: "pengurus" } })).status, 200);

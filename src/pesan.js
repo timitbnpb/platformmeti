@@ -1,7 +1,7 @@
 // pesan.js: chat akun ke admin (migrasi 0016). Akun hanya melihat utasnya sendiri; admin dan super melihat semua. D1 hanya lewat hak.js.
 // Lampiran (gambar/PDF, maks 5 MB, jenis dari magic byte, bukan dari klien) disimpan di R2 BERKAS kunci pesan/<utas>/<pesan> dan hanya keluar lewat rute berautentikasi.
 import * as hak from "./hak.js";
-import { acak, bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
+import { acak, bacaBody, formTerbatas, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
 
 const ADM = ["admin", "super"];
 const NONAKTIF = () => json({ galat: "Fitur belum aktif.", kode: "fitur_belum_aktif" }, 503, PRIVAT);
@@ -28,9 +28,7 @@ async function bacaMasukan(req) {
   const ct = req.headers.get("content-type") || "";
   if (/^application\/json/i.test(ct)) return { f: await bacaBody(req, 8192), berkas: null };
   if (!/^multipart\/form-data/i.test(ct)) throw new Galat("masukan_salah", 415);
-  if (Number(req.headers.get("content-length")) > MAKS_LAMPIRAN + 65536) throw new Galat("terlalu_besar");
-  let fd;
-  try { fd = await req.formData(); } catch { throw new Galat("masukan_salah"); }
+  const fd = await formTerbatas(req, MAKS_LAMPIRAN + 65536);
   const f = { isi: fd.get("isi"), topik: fd.get("topik"), utas: fd.get("utas") };
   const b = fd.get("berkas");
   if (typeof b === "string") throw new Galat("masukan_salah", 415);

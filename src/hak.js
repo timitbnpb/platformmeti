@@ -51,7 +51,7 @@ export const MATRIKS = {
   potret_anggota:  ["-", "B", "B", "B", "B", "B", "B"],
   potret_pengurus: ["-", "-", "B", "B", "-", "B", "B"],
   akun:            ["-", "T diri", "T diri", "T diri", "T diri", "T bukan-super", "T"],
-  sesi:            ["-", "T diri", "T diri", "T diri", "T diri", "T cabut", "T"],
+  sesi:            ["-", "T diri", "T diri", "T diri", "T diri", "T cabut bukan-super", "T"],
   koreksi:         ["-", "T kirim", "T kirim", "T", "T kirim prov", "T", "T"],
   riwayat:         ["-", "-", "T", "-", "-", "T", "T"],
   agenda:          ["-", "B", "B", "B", "B", "T", "T"], // K20: bukti agenda + kegiatan + dokumen; baca semua yang login, tulis hanya admin dan super (8 Nov 2026: kurator turun jadi baca)
@@ -65,7 +65,7 @@ export const MATRIKS = {
   daftar_tolak:    ["-", "-", "-", "-", "-", "-", "B"],
   pendaftaran:     ["-", "-", "T", "-", "-", "T", "T"], // 8 Nov 2026: persetujuan anggota mandiri (setujui/tolak, bukti iuran) oleh pengurus, admin, super
   konsultasi:      ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // forum Konsultasi: anggota aktif berkomentar/usul/dukung; menyunting hanya miliknya (15 menit, dijaga fungsi); tamu tidak
-  sesi_admin:      ["-", "-", "-", "-", "-", "T cabut", "T cabut"], // 8 Nov 2026: daftar semua sesi aktif + cabut per sesi + riwayat gagal masuk + matriks hak (tab Keamanan); admin tak mencabut sesi super (dijaga fungsi)
+  sesi_admin:      ["-", "-", "-", "-", "-", "T cabut bukan-super", "T cabut"], // 8 Nov 2026: daftar semua sesi aktif + cabut per sesi + riwayat gagal masuk + matriks hak (tab Keamanan); admin tak mencabut sesi super (klausa bukan-super, baris = akun sasaran)
   surel_minta:     ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 8 Nov 2026: permintaan alamat @metiires.or.id; ajukan/lihat miliknya = akun masuk; antrean + putusan hanya admin, super (dijaga gerbangAdm)
   konsultasi_putus: ["-", "-", "T", "T", "-", "T", "T"], // moderasi + keputusan + kelola naskah: pengurus, kurator, admin, super
   keyakinan:       ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 8 Nov 2026: survei triwulanan keyakinan bisnis EBT; akun masuk menjawab/membaca agregat (n >= 5); jawaban satu per akun per periode
@@ -84,6 +84,7 @@ const KODE = {
   "T daftar":     () => ({ aksi: ["baca", "tambah", "ubah"], klausa: ["sendiri"] }),
   "T bukan-super": (j) => ({ aksi: ["baca", "tambah", "ubah", ...(TAMBAHAN_T[j] ?? [])], klausa: ["bukan-super"] }),
   "T cabut":      () => ({ aksi: ["baca", "cabut"], klausa: [] }),
+  "T cabut bukan-super": () => ({ aksi: ["baca", "cabut"], klausa: ["bukan-super"] }),
   "T kirim":      () => ({ aksi: ["kirim", "baca"], klausa: ["sendiri"] }),
   "T kirim prov": () => ({ aksi: ["kirim", "baca"], klausa: ["sendiri", "prov"] }),
   "B sah":        () => ({ aksi: ["baca"], klausa: ["naskah"] }),
@@ -132,7 +133,8 @@ export const KLAUSA = {
     baris: (akun, r, jenis) => akun?.id != null && !!PEMILIK[jenis] && r[PEMILIK[jenis]] === akun.id,
   },
   "bukan-super": {
-    sql: () => ({ s: "peran <> 'super'", b: [] }),
+    // Hanya tabel akun punya kolom peran; pada sesi klausa dinilai lewat baris (peran akun sasaran), bacaan daftar tak difilter.
+    sql: (akun, tabel) => (tabel === "akun" ? { s: "peran <> 'super'", b: [] } : null),
     baris: (akun, r) => r.peran !== "super",
   },
   // Berita/pustaka: pengesahan lewat konten_otorisasi; konten tanpa baris di sana (lama) dianggap sah. Admin, super, pengurus melihat semuanya (pengurus untuk menilai antrean).
@@ -284,6 +286,8 @@ const PAKAI_SUMBER = ["entitas", "fakta", "ikatan"];
 const PROV_INDUK = ", (SELECT prov FROM entitas WHERE id = entitas_id) AS prov";
 const BARIS_SQL = Object.fromEntries(["entitas", "fakta", "ikatan", "akun", "koreksi", "riwayat", "agenda_bukti", "agenda_foto", "agenda_kegiatan", "agenda_dokumen", "berita_meti", "pustaka_unggah", "naskah", "naskah_catatan", "konten_otorisasi", "event_atur", "event_daftar"].map((t) =>
   [t, `SELECT ${KOLOM_BACA[t].join(", ")}${t === "fakta" || t === "koreksi" ? PROV_INDUK : ""} FROM ${t} WHERE id = ?`]));
+// Sesi dicabut per akun sasaran: baris hak = { akun_id, peran } (peran akun sasaran menimbang klausa bukan-super).
+BARIS_SQL.sesi = "SELECT id AS akun_id, peran FROM akun WHERE id = ?";
 const AKSI_JEJAK = { tambah: "tambah", ubah: "ubah", hapus: "hapus", hapus_keras: "hapus-permanen", kirim: "kirim", tinjau: "tinjau", cabut: "cabut" };
 const RE_ID = /^\d{1,12}$/;
 const kini = () => Math.floor(Date.now() / 1000);
@@ -361,7 +365,7 @@ export async function tulis(env, akun, tabel, aksi, data = {}, id = null, server
 
   // 1. baris yang dibaca dulu (ubah/hapus/tinjau/cabut) + jenis data
   let lama = null;
-  if (khusus) lama = { akun_id: Number(id) };
+  if (khusus) lama = (await env.DB.prepare(BARIS_SQL.sesi).bind(Number(id)).first()) ?? { akun_id: Number(id) };
   else if (id != null) {
     lama = await env.DB.prepare(BARIS_SQL[tabel]).bind(Number(id)).first();
     if (!lama) throw mk("tidak_ditemukan", 404, "baris tidak ada");
@@ -1389,7 +1393,8 @@ export async function sapu(env, sekarang = kini()) {
   const [a, b, c] = await BATCH(env, [
     env.DB.prepare("DELETE FROM sesi WHERE sampai < ?").bind(sekarang),
     // jendela berskala per aksi; CASE dibangun dari konstanta LEBAR (bukan masukan). Hapus yang berakhir > 1 hari lalu.
-    env.DB.prepare(`DELETE FROM laju WHERE (jendela + 1) * CASE aksi ${Object.entries(LEBAR).map(([a, w]) => `WHEN '${a}' THEN ${w}`).join(" ")} ELSE 3600 END < ?`).bind(sekarang - 86400),
+    // jendela < 1e5 = indeks jendela HARIAN (catatLaju(.., 86400)); LEBAR[aksi] tak berlaku bagi baris itu.
+    env.DB.prepare(`DELETE FROM laju WHERE (jendela + 1) * CASE WHEN jendela < 100000 THEN 86400 ELSE CASE aksi ${Object.entries(LEBAR).map(([a, w]) => `WHEN '${a}' THEN ${w}`).join(" ")} ELSE 3600 END END < ?`).bind(sekarang - 86400),
     env.DB.prepare("UPDATE akun SET aktivasi_hash = NULL, aktivasi_sampai = NULL WHERE aktivasi_sampai < ?").bind(sekarang),
   ]);
   // penanda "terakhir aktif" yatim (sesinya sudah hilang); tabel 0025 belum ada = lewati
@@ -1704,7 +1709,8 @@ export async function sesiAdminCabut(env, akun, idHashIni, sid) {
   const t = await env.DB.prepare("SELECT s.id_hash, s.akun_id, a.peran FROM sesi s JOIN akun a ON a.id = s.akun_id WHERE substr(s.id_hash, 1, 16) = ?").bind(sid).first();
   if (!t) return { dicabut: 0 };
   if (t.id_hash === idHashIni) throw salah("sesi ini dicabut lewat keluar");
-  if (t.peran === "super" && akun.peran !== "super") throw tolak("Admin tidak boleh mencabut sesi akun super");
+  const izin = boleh(akun.peran, "cabut", "sesi_admin", { peran: t.peran }, akun);
+  if (!izin.ok) throw tolak(izin.alasan);
   const [r] = await env.DB.batch([
     env.DB.prepare("DELETE FROM sesi WHERE id_hash = ?").bind(t.id_hash),
     env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'cabut', 'sesi', ?, ? WHERE changes() > 0")
@@ -1875,10 +1881,10 @@ export async function orgPutus(env, akun, tipe, id, aksi, catatan) {
   const tabel = TABEL_ORG[tipe];
   if (!tabel || !["setuju", "tolak"].includes(aksi) || !RE_ID.test(String(id))) throw salah("putusan tidak sah");
   return tanpaTabel(async () => {
-    // Klaim orang: penyetuju tidak boleh pemilik klaim itu sendiri (termasuk super). Baris tak ada = lanjut, UPDATE tak mengubah apa pun.
-    if (tipe === "orang" && aksi === "setuju") {
-      const k = await env.DB.prepare("SELECT akun_id FROM orang_klaim WHERE id = ?").bind(Number(id)).first();
-      if (k && k.akun_id === akun.id) throw tolak("orang: tidak boleh menyetujui klaim sendiri");
+    // Semua tipe (termasuk super): penyetuju tidak boleh pemilik baris itu (KPV 1 butir 10). Baris tak ada = lanjut, UPDATE tak mengubah apa pun. Tolak oleh pemilik tetap boleh.
+    if (aksi === "setuju") {
+      const k = await env.DB.prepare(`SELECT akun_id FROM ${tabel} WHERE id = ?`).bind(Number(id)).first();
+      if (k && k.akun_id === akun.id) throw tolak(`${tipe}: tidak boleh menyetujui milik sendiri`);
     }
     try {
       const [u] = await env.DB.batch([

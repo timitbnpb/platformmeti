@@ -126,5 +126,5 @@ test("matriks: dibaca dari MATRIKS, tiap sel selaras dengan boleh(); sesi_admin 
     assert.equal(sel[i].kode, hak.MATRIKS[jenis][i]);
     assert.deepEqual(sel[i].aksi, hak.AKSI.filter((a) => hak.boleh(p, a, jenis).ok));
   });
-  assert.deepEqual(hak.MATRIKS.sesi_admin, ["-", "-", "-", "-", "-", "T cabut", "T cabut"]);
+  assert.deepEqual(hak.MATRIKS.sesi_admin, ["-", "-", "-", "-", "-", "T cabut bukan-super", "T cabut"]);
 });

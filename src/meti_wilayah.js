@@ -2,7 +2,7 @@
 // pengajuan oleh akun masuk; sunting dan persetujuan tahap hanya admin. D1 hanya lewat hak.js; berkas di R2 BERKAS meti-wilayah/<id>/...
 import katalog from "../public/data/meti-wilayah.json" with { type: "json" };
 import * as hak from "./hak.js";
-import { acak, bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
+import { acak, bacaBiner, bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
 
 const ADM = ["admin", "super"];
 export const NAMA_PROV = new Map(katalog.provinsi.map((p) => [p.kode, p.nama]));
@@ -35,23 +35,6 @@ function tipeBerkas(b) {
   if (b.length >= 4 && b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) return "png";
   return null;
 }
-async function bacaBiner(req) {
-  if (Number(req.headers.get("content-length")) > MAKS_BERKAS) throw new Galat("terlalu_besar");
-  const rd = req.body?.getReader(), bagian = [];
-  let n = 0;
-  while (rd) {
-    const { value, done } = await rd.read();
-    if (done) break;
-    n += value.length;
-    if (n > MAKS_BERKAS) { rd.cancel().catch(() => {}); throw new Galat("terlalu_besar"); }
-    bagian.push(value);
-  }
-  const b = new Uint8Array(n);
-  let p = 0;
-  for (const x of bagian) { b.set(x, p); p += x.length; }
-  return b;
-}
-
 // Isi ajuan: nama calon pengurus dan sekretariat (publik setelah disetujui), kontak pengaju (hanya pemilik dan admin).
 function isiAjuan(b) {
   const ketua = opsi(b.ketua, 120), sekretaris = opsi(b.sekretaris, 120), bendahara = opsi(b.bendahara, 120), sekretariat = opsi(b.sekretariat, 300), kontak = opsi(b.kontak, 120);
@@ -109,7 +92,7 @@ export const rute = {
     const ada = await hak.metiWilayahAjuanBaca(env, akun, id);
     if (ada === null) return NONAKTIF();
     if (!ada || ada.akun_id !== akun.id || !["diajukan", "ditinjau"].includes(ada.status)) return gagal("tidak_ditemukan");
-    const badan = await bacaBiner(req), ext = tipeBerkas(badan);
+    const badan = await bacaBiner(req, MAKS_BERKAS), ext = tipeBerkas(badan);
     if (!badan.length || !ext) return gagal("masukan_salah", 422);
     const label = (new URL(req.url).searchParams.get("nama") || "").replace(/[^\w .()-]/g, "_").slice(0, 80) || "berkas";
     const kunci = `meti-wilayah/${id}/${acak(16)}.${ext}`;

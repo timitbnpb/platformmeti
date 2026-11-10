@@ -3,8 +3,8 @@
 // D1 hanya lewat hak.baca/hak.tulis/hak.naskahStatus (klausa 'naskah' menyaring baris: naskah yang tak boleh dilihat = 404, bukan 403).
 // Lampiran di R2 (naskah/<32 hex>.<tipe>), tidak pernah di repo atau public/.
 import * as hak from "./hak.js";
-import { bacaBiner, CT_DOK, disposisi, teksBersih, tglSah, tipeDokumen } from "./agenda.js";
-import { acak, bacaBody, gagal, json, perlu, PRIVAT } from "./util.js";
+import { CT_DOK, disposisi, teksBersih, tglSah, tipeDokumen } from "./agenda.js";
+import { acak, bacaBiner, bacaBody, gagal, json, perlu, PRIVAT } from "./util.js";
 
 const BACA = ["anggota", "pengurus", "kurator", "wilayah", "admin", "super"];
 const MASUK = ["admin", "super"]; // kunci pertama: memasukkan, mengajukan, menarik
