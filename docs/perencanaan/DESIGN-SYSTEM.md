@@ -210,7 +210,6 @@ body                              padding-top:var(--top)
     a.jm-merek                    logo putih 40px + "Jaringan METI"
     nav.tabs#menu                 tab utama, digambar JS dari satu tabel halaman
     div.jm-bahasa                 tombol ID | EN (aria-pressed), simpan localStorage + ?lang=
-    div.ak-dummy#dummy            dua ikon, HANYA Super Admin (D18)
     button#tema.iconbtn           ikon polos, simpan localStorage
   div.jm-pita                     pita "Draf kerja" (C-01), satu konstanta untuk mati
   div.jm-halaman                  maks 1240px, padding 0 var(--gut) 64px, grid gap var(--gap)
@@ -228,7 +227,6 @@ Kepala:
 - Logo: `logo_meti_white.png` 130 x 185 px, tinggi tampil 40px; minta SVG atau PNG 4x ke pemilik (R5 §8 butir 1). Di layar sempit tanpa ruang, logo berwarna dalam kartu putih bersudut bulat.
 - Tab utama (publik): Beranda, Perusahaan, Peta, Rantai, Pembiaya, Wilayah, Kebijakan, Cerita, Metode; Direktori dan Admin hanya muncul bagi yang berhak. Di bawah 1100px tab turun menjadi panel burger; tab aktif `scrollIntoView`.
 - Tombol ID | EN adalah dua tombol kompak di kepala (bukan deretan pilihan isi, jadi tidak diwajibkan ujung ke ujung); aktif berisi `--on-accent` di atas `--accent`.
-- Tombol dummy dua ikon (tabung uji "isi", sapu "hapus"), hanya jika `GET /api/saya` mengembalikan peran `super`; isi ditentukan halaman yang dibuka (`dataContoh()` per halaman); hanya mengisi klien dan tidak menulis ke server.
 
 Pita draf: `--info-bg`, teks `--ink`, ikon info. Isi `jm.pita.draf`. Tidak bisa ditutup. Dihapus lewat satu konstanta `PITA_DRAF=false` bila C-01 dijawab "resmi".
 
@@ -272,7 +270,6 @@ Dipakai apa adanya; hanya token yang berubah. Nama kelas dipertahankan (KP D3).
 | Peta dan panel samping | `.ak-side`, `.ak-pta`, `.ak-lbpeta` | `/peta` | lihat §6.14 |
 | Daftar pendek | `.ak-dpbar` | `/direktori` | ekspor Excel, Word, PDF; tanpa kolom kontak kecuali PG, AD, SA |
 | Paginasi | `PER_HAL`, `navHal` | tabel | `aria-live="polite"` |
-| Tombol dummy | `.ak-dummy` | kepala | §5 |
 | Toast | `.toast` | semua | bawah-kanan, `role="status"` |
 
 ### 6.2 Kartu angka kunci `.jm-angka`
@@ -640,8 +637,6 @@ Sapaan "kamu". Label tetap berikut dipakai di semua halaman lewat `t(kunci)`; `{
 | `jm.keluar` | Keluar | Sign out |
 | `jm.bahasa` | Bahasa | Language |
 | `jm.tema` | Ganti tema | Switch theme |
-| `jm.dummy.isi` | Isi data contoh | Fill sample data |
-| `jm.dummy.hapus` | Hapus data contoh | Clear sample data |
 | `jm.memuat` | Memuat | Loading |
 | `jm.kosong.cocok` | Tidak ada yang cocok. | No match. |
 | `jm.kosong.reset` | Hapus filter | Clear filters |
@@ -668,7 +663,6 @@ Kata kerja tombol: Simpan, Batal, Setujui, Tolak, Salin tautan aktivasi, Nonakti
 | Sektor | semua, surya, angin, air, panas bumi, bioenergi, hidrogen, penyimpanan, jaringan listrik, efisiensi, kendaraan listrik, sampah jadi energi, terkait |
 | Jenis sumber | dokumen, laporan keuangan, situs, data terbuka, berita, hitungan |
 | Aksi dan kontrol | cari, tema, bahasa (globe), burger, tutup, salin, tautan luar, filter, unduh, daftar pendek (bintang), info, peringatan, centang, panah |
-| Dummy | tabung uji (isi), sapu (hapus) |
 | Peta | peta, lapisan, terbang, pin |
 
 Logo METI: `logo_meti_white.png` di kepala, `logo_meti.png` di kartu putih; 130 x 185 px terlalu kecil untuk layar 2x, jadi tinggi tampil maks 40 sampai 48px sampai pemilik memberi SVG.
@@ -690,7 +684,6 @@ Logo METI: `logo_meti_white.png` di kepala, `logo_meti.png` di kartu putih; 130 
 | Skor dan kuadran yang belum lolos uji berpil `Hipotesis` | Mengklaim "terbukti" atau "terverifikasi" tanpa uji | `selera-angka` |
 | Token dari `tema.css`, kontras AA, `:focus-visible` | Hex di CSS lain, `:focus`, teal asli sebagai teks | `gerbang-token-meti`, `gerbang-kontras` |
 | Kepala navy bersama di semua halaman | Palet atau kepala lokal | `direktori-layar` |
-| Tombol dummy dua ikon hanya Super Admin, isi per halaman | Tombol dummy untuk peran lain, dummy tanpa dihitung | `gerbang-dummy` |
 | Teks tampil lewat `t(kunci)`, ID dan EN bersamaan | Teks Indonesia tertanam di JS, kunci hanya di satu bahasa | `gerbang-i18n` |
 | Data pribadi hanya di lapis yang berhak, tidak pernah di potret publik | Menyembunyikan kontak lewat CSS atau JS | `tests/hak.test.mjs` |
 | Skrip dan gaya eksternal, SRI untuk CDN | `style=`, `onclick=`, skrip inline | `gerbang-headers` |
@@ -709,7 +702,7 @@ Tandai sebelum bilang selesai; satu butir gagal berarti kembali ke pengerja.
 - [ ] Pasangan warna baru terdaftar di `tests/kontras.json` dan lulus AA.
 - [ ] Teks teal memakai `--accent`; cyan dan lime tidak jadi teks di latar terang.
 - [ ] Poppins untuk judul dan angka, Inter untuk isi, angka `tabular-nums`; huruf dihosting sendiri.
-- [ ] Kepala navy bersama, garis lime, tombol ID | EN, tombol tema; dummy hanya Super Admin.
+- [ ] Kepala navy bersama, garis lime, tombol ID | EN, tombol tema.
 - [ ] Setiap halaman publik punya Jawaban singkat, angka kunci, komponen utama, Cara menghitung, Cara mengutip dengan tanggal beku.
 - [ ] Tiap angka bersumber dan bertanggal; turunan `EST`; ada penyebut "n dari N".
 - [ ] Skor keyakinan 0 sampai 1 dengan label dan alasan; skor belum diuji berpil `Hipotesis`.
@@ -726,3 +719,8 @@ Tandai sebelum bilang selesai; satu butir gagal berarti kembali ke pengerja.
 - [ ] Layar diperiksa di 1440 dan 390 px, terang dan gelap, ID dan EN; tanpa gulir horizontal halaman; target sentuh minimal 44px.
 - [ ] Halaman 404 dan 500 dirancang; tiap layar punya satu aksi pada keadaan kosong.
 - [ ] Tidak ada teks "netral", "terbukti", "Pantau Bencana", BNPB, atau karhutla di UI.
+
+
+## Nilai gaya D21 (11 Nov 2026)
+
+Konflik gaya diputus mengikuti ATURAN-PEMILIK bagian X dan kode berjalan (KEPUTUSAN-METI D21): header tabel tengah bergradien, tanpa kapital penuh; kolom label rata kiri; angka rata kanan dengan `tabular-nums`; tebal angka KPI, nav aktif, breakpoint hamburger, dan gutter mengikuti `public/inti/jm.css` dan `tema.css`. Bagian opsional yang gagal dimuat disembunyikan; kartu utama yang gagal menampilkan galat `role="alert"` dengan tombol Coba lagi. Tombol isi data dummy dibatalkan (K15): tidak ada `.ak-dummy` dan tidak ada kunci `jm.dummy.*`.

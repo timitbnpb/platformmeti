@@ -45,7 +45,7 @@
       "kelas": "pengerja",
       "model": "sonnet",
       "ringkas": "Pengerja pipeline data: panen per sumber, sambung, hubung, skor, potret per lapis, gerbang unggah, workflow panen.",
-      "kapan": "scripts/panen/**, scripts/pipa/**, scripts/direktori/**, scripts/mesin/**, data/**, atau workflow panen/potret dibuat atau diubah",
+      "kapan": "scripts/panen/**, scripts/pipa/**, scripts/direktori/**, scripts/mesin/**, scripts/hukum/**, hukum/**, data/**, atau workflow panen/potret dibuat atau diubah",
       "fokus": [
         "Pipeline membaca D1 (SELECT tetap, token CI baca saja) dan menulis R2; TIDAK PERNAH menulis ke D1 (ADR-08)",
         "Pipeline menolak baris tanpa sumber_url, tanggal_periksa, tingkat_bukti (KEPUTUSAN D5); baris panen tidak lebih tinggi dari keyakinan Sedang bila via-pihak-ketiga",
@@ -61,6 +61,7 @@
         "scripts/panen/**",
         "scripts/pipa/**",
         "scripts/hukum/**",
+        "hukum/**",
         "scripts/direktori/**",
         "scripts/mesin/**",
         "data/**",

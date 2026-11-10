@@ -1,6 +1,6 @@
 # TIKET penyempurnaan November 2026
 
-Otoritas: `KEPUTUSAN-METI` K21 sampai K26, D21, D22, C-21 sampai C-25. Dokumen isi ada di folder ini. Tiket hanya mengatur siapa dan kapan; aturan umum sama dengan `docs/perencanaan/TIKET.md` §0 dan §1, kecuali tiket berjalan di `main` tanpa worktree (ATURAN X4).
+Otoritas: `KEPUTUSAN-METI` K21 sampai K26, D19, D21 sampai D23, C-21 sampai C-28. Dokumen isi ada di folder ini. Tiket hanya mengatur siapa dan kapan; aturan umum sama dengan `docs/perencanaan/TIKET.md` §0 dan §1, kecuali tiket berjalan di `main` tanpa worktree (ATURAN X4).
 
 **Untuk pekerja agen.** Satu sesi satu tiket. Baca tiket dan Rujukan. Sentuh hanya Berkas. Yang tidak tertulis: berhenti dan tanya. Subagent tidak commit, push, atau deploy. Migrasi D1 produksi dan unggah R2 produksi dijalankan pemilik.
 
@@ -19,6 +19,9 @@ Singkatan: PRD, ALUR, ALG, DS, DT, KPV, RU = dokumen bernama sama di folder ini.
 | JM-S07 | Rute riwayat dengan METI | worker+layar | 1 | S | belum |
 | JM-S08 | Uji integrasi semua rute API | gerbang | 1 | L | belum |
 | JM-S09 | Selaraskan DESIGN-SYSTEM dengan K15 dan D21 | induk | 1 | S | belum |
+| JM-S10 | Pengerasan masukan Tanya sesuai KPV | worker | 1 | S | belum |
+| JM-S11 | 12 jenis MATRIKS tanpa baris KPV §1 dan gerbang sinkronnya | worker+gerbang | 1 | S | belum |
+| JM-S12 | Rute yang lebih sempit dari MATRIKS (koreksi untuk kurator, kontak untuk wilayah per provinsi, catatan naskah untuk admin) | worker | 1 | S | belum |
 | JM-T01 | Registri sumber dan pustaka panen | pipa | 2 | M | belum |
 | JM-T02 | Workflow harian | mekanik+pipa | 2 | M | belum |
 | JM-T03 | Workflow mingguan | mekanik+pipa | 2 | M | belum |
@@ -145,7 +148,7 @@ Singkatan: PRD, ALUR, ALG, DS, DT, KPV, RU = dokumen bernama sama di folder ini.
 ### Seri W, METI Wilayah
 
 #### JM-W01 Skema kegiatan Wilayah
-**Tujuan** kegiatan, berita, agenda, dokumen, pengurus per provinsi; semua lewat `hak.js` dengan `cakupan_prov`. **Bukti** uji D1: wilayah lain DITOLAK. **Pemeriksa** migrasi-idempoten, hak-auditor.
+**Tujuan** memperluas `src/meti_wilayah.js` dan `src/wilayah_kelola.js` yang sudah ada, bukan membuat jalur baru: kegiatan, berita, agenda, dokumen, pengurus per provinsi; semua lewat `hak.js` dengan `cakupan_prov`. **Bukti** uji D1: wilayah lain DITOLAK. **Pemeriksa** migrasi-idempoten, hak-auditor.
 
 #### JM-W02 Admin Wilayah
 **Rute** `/wilayah-admin`. **Tujuan** Ketua Wilayah mengelola kegiatan, agenda, notulen, foto, berita, dan anggota provinsinya, setara admin Pusat tetapi terbatas provinsi; Pusat melihat semua. **Pemeriksa** security-reviewer, guard-api, inp-reviewer.
@@ -203,4 +206,5 @@ Jalur kerja agar tidak ada dua penulis di satu berkas: W `src/**` dan `migration
 | C-23 | isi kunci N02 (ada bawaan) |
 | C-24 | produk data dari GEM, IRENA, 1001startup, Comtrade |
 | C-25 | sumber BPS, EIA, Ember, Comtrade penuh di T04 |
-| Pemilik | migrasi D1 produksi, unggah R2 produksi, push ke `main` (tayang) |
+| C-27 | verifikasi QR tanpa login di M03 dan M06 (ada bawaan) |
+| Pemilik | migrasi D1 produksi, unggah R2 produksi, push ke `main` (tayang), branch protection `main` dan GitHub Secrets sebelum T02 aktif |

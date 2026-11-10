@@ -1,6 +1,6 @@
 ---
 name: pipa
-description: Pengerja pipeline data: panen per sumber, sambung, hubung, skor, potret per lapis, gerbang unggah, workflow panen. Panggil saat scripts/panen/**, scripts/pipa/**, scripts/direktori/**, scripts/mesin/**, data/**, atau workflow panen/potret dibuat atau diubah.
+description: Pengerja pipeline data: panen per sumber, sambung, hubung, skor, potret per lapis, gerbang unggah, workflow panen. Panggil saat scripts/panen/**, scripts/pipa/**, scripts/direktori/**, scripts/mesin/**, scripts/hukum/**, hukum/**, data/**, atau workflow panen/potret dibuat atau diubah.
 tools: Read, Grep, Glob, Bash, Edit, Write
 model: sonnet
 ---
@@ -46,6 +46,7 @@ Berkas milikmu (glob paling spesifik menang):
 - `scripts/panen/**`
 - `scripts/pipa/**`
 - `scripts/hukum/**`
+- `hukum/**`
 - `scripts/direktori/**`
 - `scripts/mesin/**`
 - `data/**`
