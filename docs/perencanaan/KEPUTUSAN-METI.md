@@ -102,6 +102,7 @@ Dua puluh pertanyaan untuk pemilik sebelum mulai membangun. Kolom "Bawaan" dipak
 | C-25 | Kunci API BPS, EIA, Ember, Comtrade penuh didaftarkan siapa? | Pemilik mendaftar sendiri lalu mengisi GitHub Secrets; sumbernya berstatus `perlu_kunci` dan dilewati sampai ada. | Cakupan bot bulanan. |
 | C-26 | Berapa lama jejak, log, dan aduan konsumen disimpan? | Jejak 12 bulan, log 12 bulan, aduan 24 bulan. | `KEAMANAN-PRIVASI` dan pembersih cron. |
 | C-27 | Verifikasi lencana QR (pemasang, sertifikat) boleh dibuka tanpa login, seperti verifikasi KTA? | Tidak dibuka tanpa login sampai dijawab. | Tambah rute pengecualian D19. |
+| C-29 | Admin boleh menulis catatan pada naskah di Portal otorisasi? MATRIKS memberi admin "T catat", tetapi trigger migrasi 0036 hanya membolehkan pengurus dan super mencatat evaluasi. | Tidak menulis, tetap membaca. Sel admin `naskah_catatan` menjadi `B` (baca saja) sesuai kode yang berjalan; dua kunci tetap: admin memasukkan dan membaca evaluasi untuk merevisi, pengurus menilai. | Migrasi trigger baru dan rute dibuka untuk admin. |
 
 ## D. Perubahan sesudah rilis awal
 

@@ -3,6 +3,7 @@ import * as hak from "./hak.js";
 import { bacaBiner, bacaBody, cacheTepi, gagal, ipHash, json, perlu, PRIVAT, sha } from "./util.js";
 
 const ADM = ["admin", "super"];
+const KURASI = ["kurator", "admin", "super"]; // koreksi: sel MATRIKS T
 const NONAKTIF = () => json({ galat: "Fitur belum aktif.", kode: "fitur_belum_aktif" }, 503, PRIVAT);
 const str = (v, min, max) => typeof v === "string" && v.trim().length >= min && v.trim().length <= max;
 const ENTITAS = ["organisasi", "proyek", "regulasi", "orang"];
@@ -38,7 +39,7 @@ export const rute = {
   },
 
   "GET /api/admin/koreksi": async (req, env, ctx, p) => {
-    const akun = perlu(p, ADM);
+    const akun = perlu(p, KURASI);
     const q = new URL(req.url).searchParams, status = q.get("status") || "baru";
     if (!["baru", "setuju", "tolak"].includes(status)) return gagal("masukan_salah", 422);
     const r = await hak.koreksiDaftar(env, akun, status, q.get("hal") ?? 1);
@@ -46,7 +47,7 @@ export const rute = {
   },
 
   "POST /api/admin/koreksi/:id": async (req, env, ctx, p) => {
-    const akun = perlu(p, ADM);
+    const akun = perlu(p, KURASI);
     const b = await bacaBody(req, 2048);
     if (!["setuju", "tolak"].includes(b.aksi) || (b.catatan != null && !str(String(b.catatan), 0, 500))) return gagal("masukan_salah", 422);
     if (!/^\d{1,12}$/.test(p.params.id)) return gagal("tidak_ditemukan");

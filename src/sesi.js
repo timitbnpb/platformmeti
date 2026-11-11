@@ -66,12 +66,12 @@ async function aktivasi(req, env) {
   if (!teks(b.token, 64, 64) || !RE_TOKEN.test(b.token) || !teks(b.sandi, 12, 128)) throw new Galat("masukan_salah");
   const ip = await ipHash(env, req);
   if ((await laju(env, "aktivasi", ip, JAM)) > AKTIVASI_BATAS) return gagal("laju_terlampaui", 429, { "retry-after": String(JAM) });
-  // Atomik: hanya satu pemanggil yang menghabiskan tautan; kedaluwarsa/terpakai/tak dikenal -> null.
-  const akun = await hak.pakaiTautanAktivasi(env, await sha(b.token));
-  if (!akun) throw new Galat("masukan_salah");
-  if (!sandiSah(b.sandi, akun.surel)) throw new Galat("masukan_salah");   // tautan sudah terpakai: Admin menerbitkan ulang
+  // Periksa tanpa menghanguskan, validasi sandi, lalu pakai atomik (hangus + sandi + jejak satu batch): sandi ditolak tidak membakar tautan.
+  const th = await sha(b.token);
+  const cek = await hak.periksaTautanAktivasi(env, th);
+  if (!cek || !sandiSah(b.sandi, cek.surel)) throw new Galat("masukan_salah");
   const h = await hashSandi(b.sandi);
-  await hak.ubahSandi(env, akun.id, h.hash, h.garam, h.iterasi);
+  if (!(await hak.pakaiTautanAktivasi(env, th, h.hash, h.garam, h.iterasi))) throw new Galat("masukan_salah");
   return json({ ok: true });
 }
 

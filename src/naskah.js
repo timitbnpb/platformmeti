@@ -120,7 +120,7 @@ export const rute = {
     const r = await bacaSatu(env, akun, p.params.ref);
     if (!r) return gagal("tidak_ditemukan");
     const hasil = { ...(await beriNama(env, akun, [butir(r, akun)], [r]))[0], isi: r.isi };
-    // Linimasa catatan hanya untuk pengurus, admin, super (matriks naskah_catatan); anggota, kurator, wilayah tidak melihatnya.
+    // Linimasa catatan hanya untuk pengurus, admin (baca saja, C-29), super (matriks naskah_catatan); anggota, kurator, wilayah tidak melihatnya.
     if (hak.boleh(akun.peran, "baca", "naskah_catatan", undefined, akun).ok) {
       const cat = await bacaSemua(env, akun, "naskah_catatan", { where: { naskah_id: r.id }, urut: "id" });
       const nm = await hak.namaAkun(env, akun, cat.map((c) => c.oleh));

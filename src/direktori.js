@@ -51,7 +51,13 @@ const adaData = async (env, nama, lapis) => { const p = await potret(env, nama, 
 const induk = async (req, env, ctx, p) => { perlu(p, ANGGOTA); return kirim(await adaData(env, "induk")); };
 const kampus = async (req, env, ctx, p) => { perlu(p, ANGGOTA); return kirim(await adaData(env, "kampus")); };
 // Kontak orang: hanya pengurus ke atas (anggota 403; layar menyembunyikan kontak).
-const kontak = async (req, env, ctx, p) => { perlu(p, PENGURUS); return kirim(await adaData(env, "kontak", "pengurus")); };
+const kontak = async (req, env, ctx, p) => {
+  const akun = perlu(p, [...PENGURUS, "wilayah"]), d = await adaData(env, "kontak", "pengurus");
+  if (akun.peran !== "wilayah") return kirim(d);
+  // Sel "B prov": WL hanya entri yang membawa prov == cakupan_prov. Tanpa cakupan atau tanpa prov pada entri = tidak lolos (fail-closed).
+  const sah = Object.entries(d.data ?? {}).filter(([, v]) => akun.cakupan_prov && v?.prov === akun.cakupan_prov);
+  return kirim({ ...d, data: Object.fromEntries(sah) });
+};
 const dataBaca = async (req, env, ctx, p) => {
   perlu(p, ANGGOTA);
   const nama = p.params.nama;

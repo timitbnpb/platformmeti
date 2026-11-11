@@ -13,9 +13,9 @@ const KPV = {
   entitas: "B B B T B T T", fakta: "B B B T B T T", ikatan: "B B B T B T T", orang: "B B B T B T T",
   kontak: "- - T B B(prov) T T", terlarang: "- - - - - - -", potret_publik: "B B B B B B B", potret_anggota: "- B B B B B B",
   potret_pengurus: "- - B B - B B", akun: "- diri diri diri diri bukan-super T", sesi: "- diri diri diri diri cabut-bukan-super T",
-  koreksi: "- kirim kirim T kirim(prov) T T", riwayat: "- - T - - T T", jejak: "- - - - - B B", daftar_tolak: "- - - - - - B",
+  koreksi: "- kirim kirim T kirim(prov) T T", riwayat: "- - milik - - T T", jejak: "- - - - - B B", daftar_tolak: "- - - - - - B",
   agenda: "- B B B B T T", konten_meti: "- konten konten konten konten T T", konten_otorisasi: "- - tinjau - - T T",
-  naskah: "- sah putus sah sah T T", naskah_catatan: "- - catat - - catat catat",
+  naskah: "- sah putus sah sah T T", naskah_catatan: "- - catat - - sah catat",
   event_atur: "- B B B B T T", event_daftar: "- daftar daftar daftar daftar T T",
   pendaftaran: "- - T - - T T",
   sesi_admin: "- - - - - cabut-bukan-super cabut",
@@ -24,14 +24,14 @@ const KPV = {
   keyakinan: "- daftar daftar daftar daftar T T",
 };
 const KODE_KPV = (s) => s.split(" ").map((x) => ({ "-": "-", B: "B", T: "T", "B(prov)": "B prov", diri: "T diri", "bukan-super": "T bukan-super",
-  cabut: "T cabut", "cabut-bukan-super": "T cabut bukan-super", kirim: "T kirim", "kirim(prov)": "T kirim prov", daftar: "T daftar", sah: "B sah", putus: "T putus", catat: "T catat", konten: "B konten", tinjau: "T tinjau" })[x]);
+  cabut: "T cabut", "cabut-bukan-super": "T cabut bukan-super", kirim: "T kirim", "kirim(prov)": "T kirim prov", daftar: "T daftar", sah: "B sah", putus: "T putus", catat: "T catat", konten: "B konten", tinjau: "T tinjau", milik: "T milik" })[x]);
 
 // Aksi yang diizinkan per kode sel (ditulis ulang di sini dari DT 5.2, tidak diimpor).
 const HARAP = (kode, jenis) => ({
   "-": [], B: ["baca"], "B prov": ["baca"],
   T: ["baca", "tambah", "ubah", ...({ koreksi: ["tinjau", "kirim"], entitas: ["hapus_keras"], orang: ["hapus_keras"], riwayat: ["hapus"], agenda: ["hapus"], konten_meti: ["hapus"], naskah: ["tinjau"], konten_otorisasi: ["tinjau"], sesi: ["cabut"] }[jenis] ?? [])],
   "T diri": jenis === "sesi" ? ["baca", "cabut"] : ["baca", "ubah"],
-  "T daftar": ["baca", "tambah", "ubah"], "T bukan-super": ["baca", "tambah", "ubah"], "T cabut": ["baca", "cabut"], "T cabut bukan-super": ["baca", "cabut"], "T kirim": ["kirim", "baca"], "T kirim prov": ["kirim", "baca"],
+  "T daftar": ["baca", "tambah", "ubah"], "T milik": ["baca", "tambah", "ubah", ...({ riwayat: ["hapus"] }[jenis] ?? [])], "T bukan-super": ["baca", "tambah", "ubah"], "T cabut": ["baca", "cabut"], "T cabut bukan-super": ["baca", "cabut"], "T kirim": ["kirim", "baca"], "T kirim prov": ["kirim", "baca"],
   "B sah": ["baca"], "B konten": ["baca"], "T tinjau": ["baca", "tinjau"], "T putus": ["baca", "tinjau"], "T catat": ["baca", "tambah"],
 }[kode]);
 
@@ -42,7 +42,7 @@ const satu = async (s, ...b) => q(s, ...b).first();
 const cacah = async (t) => (await satu(`SELECT count(*) AS n FROM ${t}`)).n;
 const HEX = (n, c = "a") => c.repeat(n);
 const akunDb = {}; // kunci "peran" atau "wilayah32" -> objek akun (seperti keluaran bacaSesi)
-let E1, E2, E3, O1, SUMBER;
+let E1, E2, E3, O1, SUMBER, NK2;
 
 async function buatAkun(kunci, peran, cakupan = null) {
   const r = await q("INSERT INTO akun (surel, nama, peran, cakupan_prov, status, garam, sandi, iterasi) VALUES (?,?,?,?, 'aktif', ?, ?, 100000)",
@@ -73,6 +73,18 @@ before(async () => {
   const kr = (e, a, kunci) => q("INSERT INTO koreksi (entitas_id, jenis, kunci, usulan, sumber_url, pengaju_akun, pengaju_kontak) VALUES (?, 'ubah', ?, 'u', 'https://x.example/k', ?, 'rahasia@kontak.id')", e, kunci, akunDb[a].id).run();
   await kr(E1, "anggota", "k1"); await kr(E2, "anggota2", "k2"); await kr(E1, "wilayah", "k3"); await kr(E2, "wilayah32", "k4");
   await q("INSERT INTO riwayat (target_id, jenis, tanggal, judul, oleh) VALUES (?, 'audiensi', '2026-02-01', 'r', ?)", E1, akunDb.admin.id).run();
+  // JM-S12/uji sel: baris untuk 7 tabel hak baru (agenda, konten, naskah, event) supaya baca per sel punya data berbeda.
+  const adm = akunDb.admin.id;
+  await q("INSERT INTO agenda_kegiatan (ref, judul, tanggal, jenis, oleh) VALUES ('k-1', 'Rapat uji', '2026-03-01', 'rapat', ?)", adm).run();
+  for (const n of [1, 2]) await q("INSERT INTO berita_meti (ref, jenis, judul, tanggal, oleh) VALUES (?, 'siaran_pers', ?, '2026-03-01', ?)", `bm-${n}`, `Berita uji ${n}`, adm).run();
+  await q("UPDATE konten_otorisasi SET status = 'disahkan', disahkan_oleh = ?, disahkan_pada = unixepoch() WHERE ref = 'bm-2'", akunDb.pengurus.id).run();
+  for (const n of [1, 2]) await q("INSERT INTO naskah (ref, jenis, judul, tanggal, oleh) VALUES (?, 'bahan', ?, '2026-03-01', ?)", `nk-${n}`, `Naskah uji ${n}`, adm).run();
+  await q("UPDATE naskah SET status = 'menunggu' WHERE ref = 'nk-2'").run();
+  NK2 = (await satu("SELECT id FROM naskah WHERE ref = 'nk-2'")).id;
+  for (const nid of [NK2, (await satu("SELECT id FROM naskah WHERE ref = 'nk-1'")).id]) await q("INSERT INTO naskah_catatan (naskah_id, versi, oleh, peran, jenis) VALUES (?, 1, ?, 'admin', 'ajukan')", nid, adm).run();
+  await q("INSERT INTO naskah_catatan (otorisasi_id, versi, oleh, peran, jenis) SELECT id, 1, ?, 'admin', 'ajukan' FROM konten_otorisasi WHERE ref = 'bm-1'", adm).run();
+  for (const ev of ["ev-uji", "ev-lain"]) await q("INSERT INTO event_atur (event_id, terbuka, oleh) VALUES (?, 1, ?)", ev, adm).run();
+  for (const a of ["anggota", "admin"]) await q("INSERT INTO event_daftar (event_id, akun_id) VALUES ('ev-lain', ?)", akunDb[a].id).run();
   const se = (a, i) => q("INSERT INTO sesi (id_hash, akun_id, sampai) VALUES (?,?, unixepoch()+3600)", HEX(64, i), akunDb[a].id).run();
   await se("anggota", "1"); await se("anggota2", "2"); await se("admin", "3"); await se("super", "4"); await se("wilayah", "5");
 });
@@ -91,7 +103,10 @@ test("MATRIKS identik dengan salinan tangan KPV 1 dan semua baris punya 7 sel", 
 });
 
 /* ---------- ekspektasi baca, ditulis independen dari hak.js ---------- */
-const TABEL_JENIS = { entitas: "entitas", orang: "entitas", fakta: "fakta", kontak: "kontak", ikatan: "ikatan", akun: "akun", sesi: "sesi", koreksi: "koreksi", riwayat: "riwayat", jejak: "jejak" };
+const TABEL_JENIS = { entitas: "entitas", orang: "entitas", fakta: "fakta", kontak: "kontak", ikatan: "ikatan", akun: "akun", sesi: "sesi", koreksi: "koreksi", riwayat: "riwayat", jejak: "jejak",
+  agenda_kegiatan: "agenda_kegiatan", berita_meti: "berita_meti", naskah: "naskah", naskah_catatan: "naskah_catatan", konten_otorisasi: "konten_otorisasi", event_atur: "event_atur", event_daftar: "event_daftar" };
+// jenis MATRIKS -> tabel fisik yang diuji di D1 nyata (jenis lain di MATRIKS dipegang fungsi khusus dan diuji di berkas modulnya; aksi per sel tetap diuji di sini)
+const TABEL_UJI = { agenda: "agenda_kegiatan", konten_meti: "berita_meti", naskah: "naskah", naskah_catatan: "naskah_catatan", konten_otorisasi: "konten_otorisasi", event_atur: "event_atur", event_daftar: "event_daftar" };
 const DASAR = {
   entitas: "SELECT id, lapis, prov, NULL AS pemilik, NULL AS sup FROM entitas",
   fakta: "SELECT id, lapis, (SELECT prov FROM entitas WHERE id = entitas_id) AS prov, NULL AS pemilik, NULL AS sup FROM fakta",
@@ -102,6 +117,14 @@ const DASAR = {
   koreksi: "SELECT id, 'publik' AS lapis, (SELECT prov FROM entitas WHERE id = entitas_id) AS prov, pengaju_akun AS pemilik, NULL AS sup FROM koreksi",
   riwayat: "SELECT id, 'publik' AS lapis, NULL AS prov, NULL AS pemilik, NULL AS sup FROM riwayat",
   jejak: "SELECT id, 'publik' AS lapis, NULL AS prov, NULL AS pemilik, NULL AS sup FROM jejak",
+  agenda_kegiatan: "SELECT id, 'publik' AS lapis, NULL AS prov, oleh AS pemilik, NULL AS sup FROM agenda_kegiatan",
+  // st = status otorisasi (NULL bila belum ada baris = sah)
+  berita_meti: "SELECT id, 'publik' AS lapis, NULL AS prov, oleh AS pemilik, NULL AS sup, (SELECT status FROM konten_otorisasi k WHERE k.sumber = 'berita_meti' AND k.ref = berita_meti.ref) AS st FROM berita_meti",
+  naskah: "SELECT id, 'publik' AS lapis, NULL AS prov, oleh AS pemilik, NULL AS sup, status AS st FROM naskah",
+  naskah_catatan: "SELECT id, 'publik' AS lapis, NULL AS prov, oleh AS pemilik, NULL AS sup, CASE WHEN naskah_id IS NULL THEN '*' ELSE (SELECT status FROM naskah n WHERE n.id = naskah_id) END AS st FROM naskah_catatan",
+  konten_otorisasi: "SELECT id, 'publik' AS lapis, NULL AS prov, oleh AS pemilik, NULL AS sup FROM konten_otorisasi",
+  event_atur: "SELECT id, 'publik' AS lapis, NULL AS prov, oleh AS pemilik, NULL AS sup FROM event_atur",
+  event_daftar: "SELECT id, 'publik' AS lapis, NULL AS prov, akun_id AS pemilik, NULL AS sup FROM event_daftar",
 };
 const LAPIS_TBL = ["entitas", "fakta", "ikatan"];
 async function diharapkan(tabel, peran, kode, a) {
@@ -110,7 +133,9 @@ async function diharapkan(tabel, peran, kode, a) {
   return baris.filter((r) => {
     if (kode === "B") return !LAPIS_TBL.includes(tabel) || lapisOk.includes(r.lapis);
     if (kode === "B prov") return !!a.cakupan_prov && r.prov === a.cakupan_prov;
-    if (kode === "T diri" || kode === "T kirim") return r.pemilik === a.id;
+    if (kode === "T diri" || kode === "T kirim" || kode === "T daftar") return r.pemilik === a.id;
+    if (kode === "B konten") return ["pengurus", "admin", "super"].includes(peran) || r.st == null || r.st === "disahkan";
+    if (["B sah", "T putus", "T catat"].includes(kode)) return ["admin", "super"].includes(peran) || r.st === "*" || (peran === "pengurus" ? r.st !== "draf" : r.st === "disahkan");
     if (kode === "T kirim prov") return r.pemilik === a.id && !!a.cakupan_prov && r.prov === a.cakupan_prov;
     if (kode === "T bukan-super") return !r.sup;
     return true; // T, T cabut
@@ -121,7 +146,7 @@ const idDari = (tabel, r) => (tabel === "sesi" ? r.akun_id : r.id);
 /* ---------- payload tambah sah per jenis ---------- */
 let seq = 0;
 const SMB = () => ({ url: "https://sumber.example/a", jenis: "dokumen-resmi" });
-function tambahSah(jenis) {
+function tambahSah(jenis, peran) {
   const n = ++seq;
   switch (jenis) {
     case "entitas": return ["entitas", "tambah", { jenis: "lembaga", nama: `Baru ${n}`, sumber: SMB() }, { kunci: `lembaga:baru-${n}`, slug: `baru-${n}` }, "entitas"];
@@ -132,11 +157,19 @@ function tambahSah(jenis) {
     case "akun": return ["akun", "tambah", { surel: `baru${n}@uji.test`, nama: "B", peran: "anggota" }, { aktivasi_hash: HEX(64, "b"), aktivasi_sampai: Math.floor(Date.now() / 1000) + 3600 }, "akun"];
     case "koreksi": return ["koreksi", "kirim", { entitas_id: E1, jenis: "ubah", kunci: `kk${n}`, usulan: "u", sumber_url: "https://x.example/z" }, {}, "koreksi"];
     case "riwayat": return ["riwayat", "tambah", { target_id: E1, jenis: "audiensi", tanggal: "2026-05-01", judul: `j${n}` }, {}, "riwayat"];
+    case "agenda": return ["agenda_kegiatan", "tambah", { judul: `Kegiatan ${n}`, tanggal: "2026-06-01", jenis: "rapat" }, { ref: `k-${100 + n}` }, "agenda_kegiatan"];
+    case "konten_meti": return ["berita_meti", "tambah", { jenis: "siaran_pers", judul: `Berita baru ${n}`, tanggal: "2026-06-01" }, { ref: `bm-${100 + n}` }, "berita_meti"];
+    case "naskah": return ["naskah", "tambah", { jenis: "bahan", judul: `Naskah baru ${n}`, tanggal: "2026-06-01" }, { ref: `nk-${100 + n}` }, "naskah"];
+    // admin/super mencatat 'ajukan' (trigger: evaluasi hanya pengurus/super bukan pembuat); pengurus mencatat 'evaluasi' pada naskah buatan admin
+    case "naskah_catatan": return ["naskah_catatan", "tambah", peran === "pengurus" ? { jenis: "evaluasi", isi: "catatan evaluasi uji" } : { jenis: "ajukan" }, { naskah_id: NK2, versi: 1, peran }, "naskah_catatan"];
+    case "event_atur": return ["event_atur", "tambah", { event_id: `ev-baru-${n}` }, {}, "event_atur"];
+    case "event_daftar": return ["event_daftar", "tambah", { event_id: "ev-uji", jumlah: 1 }, {}, "event_daftar"];
     default: return null;
   }
 }
 const SEL_TULIS_YANG_DIHARAP = { // jenis -> aksi yang dicoba untuk "tulis"
   entitas: "tambah", orang: "tambah", fakta: "tambah", kontak: "tambah", ikatan: "tambah", akun: "tambah", koreksi: "kirim", riwayat: "tambah",
+  agenda: "tambah", konten_meti: "tambah", naskah: "tambah", naskah_catatan: "tambah", event_atur: "tambah", event_daftar: "tambah",
 };
 // WL hanya boleh kirim koreksi untuk entitas provinsinya sendiri (E1 prov 31 untuk wilayah; wilayah32 harus ditolak pada E1).
 const tolakKode = (e) => e?.kode === "dilarang";
@@ -154,7 +187,7 @@ for (const { jenis, peran, kode } of SEL) {
       if (!r.ok) assert.match(r.alasan, new RegExp(`${peran}.*${aksi}.*${jenis}`), "pesan penolakan menyebut peran, aksi, jenis");
     }
     // (b) baca nyata di D1
-    const tabel = Object.keys(TABEL_JENIS).find((t) => TABEL_JENIS[t] === (jenis === "orang" ? "entitas" : jenis) && (t === jenis || (jenis === "orang" && t === "entitas")));
+    const tabel = TABEL_UJI[jenis] ?? Object.keys(TABEL_JENIS).find((t) => TABEL_JENIS[t] === (jenis === "orang" ? "entitas" : jenis) && (t === jenis || (jenis === "orang" && t === "entitas")));
     if (tabel && TABEL_JENIS[tabel]) {
       const nama = jenis === "orang" ? "entitas" : tabel;
       if (harap.includes("baca")) {
@@ -168,7 +201,7 @@ for (const { jenis, peran, kode } of SEL) {
       // (c) tulis nyata di D1
       const aksiT = SEL_TULIS_YANG_DIHARAP[jenis];
       if (aksiT) {
-        const [t, ak, data, srv, tbl] = tambahSah(jenis);
+        const [t, ak, data, srv, tbl] = tambahSah(jenis, peran);
         const baris0 = await cacah(tbl), jejak0 = await cacah("jejak");
         if (harap.includes(aksiT)) {
           const { id } = await hak.tulis(E, a, t, ak, data, null, srv);
@@ -433,4 +466,32 @@ test("0019: gerbang hak per peran untuk ikuti, portal, wilayah", async () => {
   assert.ok(await ditolak((x) => hak.wilayahAjuanBaru(E, x, { kode: "31", jenis: "bidang", isi: { bidang: ["a"] }, bukti: "https://a.test/x" }), akunDb.anggota), "provinsi lain ditolak");
   // PERAN/MATRIKS tidak berubah: tautan wilayah bukan peran baru
   assert.equal(PERAN.length, 7);
+});
+
+/* ---------- riwayat: ubah/hapus per peran di D1 nyata (klausa milik, keputusan induk 11 Nov) ---------- */
+test("riwayat: PG hanya ubah/hapus barisnya sendiri; AD/SA semua; peran lain ditolak tanpa efek", async () => {
+  const baru = async (a) => (await hak.tulis(E, a, "riwayat", "tambah", { target_id: E1, jenis: "mou", tanggal: "2026-06-01", judul: "x" })).id;
+  const milikPg = await baru(akunDb.pengurus), milikAd = await baru(akunDb.admin);
+  const judul = async (id) => (await satu("SELECT judul FROM riwayat WHERE id = ?", id)).judul;
+  // PG: miliknya boleh, milik admin ditolak (baris dan jejak tak berubah)
+  await hak.tulis(E, akunDb.pengurus, "riwayat", "ubah", { judul: "ubah-pg" }, milikPg);
+  assert.equal(await judul(milikPg), "ubah-pg");
+  const n0 = await cacah("jejak");
+  await assert.rejects(hak.tulis(E, akunDb.pengurus, "riwayat", "ubah", { judul: "bajak" }, milikAd), tolakKode);
+  await assert.rejects(hak.tulis(E, akunDb.pengurus, "riwayat", "hapus", {}, milikAd), tolakKode);
+  assert.equal(await judul(milikAd), "x"); assert.equal(await cacah("jejak"), n0);
+  // peran tanpa sel T: ubah dan hapus ditolak walau barisnya ada
+  for (const p of ["anggota", "kurator", "wilayah", "publik"]) for (const [ak, d] of [["ubah", { judul: "bajak" }], ["hapus", {}]]) {
+    await assert.rejects(hak.tulis(E, pelaku(p), "riwayat", ak, d, milikPg), tolakKode, `${p} ${ak}`);
+  }
+  assert.equal(await judul(milikPg), "ubah-pg"); assert.equal(await cacah("jejak"), n0);
+  // AD/SA: baris siapa pun
+  await hak.tulis(E, akunDb.admin, "riwayat", "ubah", { judul: "ubah-ad" }, milikPg);
+  assert.equal(await judul(milikPg), "ubah-ad");
+  await hak.tulis(E, akunDb.super, "riwayat", "hapus", {}, milikAd);
+  assert.equal(await satu("SELECT 1 AS x FROM riwayat WHERE id = ?", milikAd), null);
+  // PG menghapus miliknya; PG membaca semua baris (klausa milik tidak menyaring bacaan)
+  await hak.tulis(E, akunDb.pengurus, "riwayat", "hapus", {}, milikPg);
+  assert.equal(await satu("SELECT 1 AS x FROM riwayat WHERE id = ?", milikPg), null);
+  assert.equal((await hak.baca(E, akunDb.pengurus, "riwayat", {})).length, await cacah("riwayat"));
 });

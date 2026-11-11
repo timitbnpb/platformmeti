@@ -34,7 +34,8 @@ export function susunJejak({ tabel, jenisEntitas, dari, ke }) {
 //   bacaSesi(env, idHash)                               -> akun aktif + sampai, atau null (kedaluwarsa/nonaktif)
 //   hapusSesi(env, idHash)                              -> jejak 'keluar' + hapus (satu batch)
 //   catatLaju(env, kunci, jendela?, kini?)              -> jumlah hit dalam jendela (UPSERT satu tulis)
-//   pakaiTautanAktivasi(env, tokenHash)                 -> klaim atomik sekali pakai; akun atau null
+//   periksaTautanAktivasi(env, tokenHash)               -> akun atau null, TANPA menghanguskan (rute memvalidasi sandi dulu)
+//   pakaiTautanAktivasi(env, tokenHash, hash, garam, iterasi) -> hangus + sandi + aktif + cabut sesi + jejak, atomik; akun atau null
 //   ubahSandi(env, akunId, hash, garam, iterasi, kecualiIdHash?) -> set sandi, aktifkan, cabut sesi lain, jejak
 
 /* ============================================= MATRIKS ============================================ */
@@ -53,12 +54,12 @@ export const MATRIKS = {
   akun:            ["-", "T diri", "T diri", "T diri", "T diri", "T bukan-super", "T"],
   sesi:            ["-", "T diri", "T diri", "T diri", "T diri", "T cabut bukan-super", "T"],
   koreksi:         ["-", "T kirim", "T kirim", "T", "T kirim prov", "T", "T"],
-  riwayat:         ["-", "-", "T", "-", "-", "T", "T"],
+  riwayat:         ["-", "-", "T milik", "-", "-", "T", "T"], // PG membaca semua riwayat target, tetapi ubah/hapus hanya baris yang ia tulis (klausa milik)
   agenda:          ["-", "B", "B", "B", "B", "T", "T"], // K20: bukti agenda + kegiatan + dokumen; baca semua yang login, tulis hanya admin dan super (8 Nov 2026: kurator turun jadi baca)
   konten_meti:     ["-", "B konten", "B konten", "B konten", "B konten", "T", "T"], // 8 Nov 2026: berita METI + pustaka unggahan; tulis hanya admin dan super; 9 Nov: non-admin/pengurus hanya melihat yang sah (klausa konten, lewat konten_otorisasi); draf/akses pengurus disaring rute
   konten_otorisasi: ["-", "-", "T tinjau", "-", "-", "T", "T"], // antrean otorisasi berita/pustaka (0036): pengurus/super memutus (dijaga kontenStatus + trigger); admin membaca status
   naskah:          ["-", "B sah", "T putus", "B sah", "B sah", "T", "T"], // Portal otorisasi (0036), dua kunci: admin/super memasukkan, pengurus/super (bukan pembuat) mengotorisasi; anggota/kurator/wilayah hanya status disahkan; pengurus tak melihat draf (klausa naskah)
-  naskah_catatan:  ["-", "-", "T catat", "-", "-", "T catat", "T catat"], // linimasa catatan naskah: tambah saja (append-only dijaga trigger); pengurus hanya untuk naskah bukan draf
+  naskah_catatan:  ["-", "-", "T catat", "-", "-", "B sah", "T catat"], // linimasa catatan naskah (C-29: admin membaca, tidak mencatat); tambah saja (append-only dijaga trigger); pengurus hanya untuk naskah bukan draf
   event_atur:      ["-", "B", "B", "B", "B", "T", "T"], // pengaturan pendaftaran acara; ubah hanya admin
   event_daftar:    ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // RSVP: tiap akun hanya miliknya; admin semua
   jejak:           ["-", "-", "-", "-", "-", "B", "B"],
@@ -81,6 +82,7 @@ const KODE = {
   "B prov":       () => ({ aksi: ["baca"], klausa: ["prov", "lapis"] }),
   "T":            (j) => ({ aksi: ["baca", "tambah", "ubah", ...(TAMBAHAN_T[j] ?? [])], klausa: [] }),
   "T diri":       (j) => ({ aksi: j === "sesi" ? ["baca", "cabut"] : ["baca", "ubah"], klausa: ["sendiri"] }),
+  "T milik":      (j) => ({ aksi: ["baca", "tambah", "ubah", ...(TAMBAHAN_T[j] ?? [])], klausa: ["milik"] }),
   "T daftar":     () => ({ aksi: ["baca", "tambah", "ubah"], klausa: ["sendiri"] }),
   "T bukan-super": (j) => ({ aksi: ["baca", "tambah", "ubah", ...(TAMBAHAN_T[j] ?? [])], klausa: ["bukan-super"] }),
   "T cabut":      () => ({ aksi: ["baca", "cabut"], klausa: [] }),
@@ -101,7 +103,7 @@ export const selMatriks = (peran, jenis) => MATRIKS[jenis]?.[PERAN.indexOf(peran
 /* ============================================== KLAUSA ============================================ */
 const LAPIS_JENIS = ["entitas", "orang", "fakta", "ikatan", "kontak"];
 const LAPIS_SQL_TABEL = ["entitas", "fakta", "ikatan"];
-const PEMILIK = { akun: "id", sesi: "akun_id", koreksi: "pengaju_akun", event_daftar: "akun_id" };
+const PEMILIK = { akun: "id", sesi: "akun_id", koreksi: "pengaju_akun", event_daftar: "akun_id", riwayat: "oleh" };
 const PROV_SQL = {
   entitas: "prov = ?",
   fakta: "entitas_id IN (SELECT id FROM entitas WHERE prov = ?)",
@@ -131,6 +133,11 @@ export const KLAUSA = {
   sendiri: {
     sql: (akun, tabel) => (!PEMILIK[tabel] || akun?.id == null ? { s: "0 = 1", b: [] } : { s: `${PEMILIK[tabel]} = ?`, b: [akun.id] }),
     baris: (akun, r, jenis) => akun?.id != null && !!PEMILIK[jenis] && r[PEMILIK[jenis]] === akun.id,
+  },
+  // Bacaan tak difilter; ubah/hapus menuntut baris milik sendiri. Baris tanpa kolom pemilik (tambah baru) lolos: pemilik diisi server dari sesi.
+  milik: {
+    sql: () => null,
+    baris: (akun, r, jenis) => akun?.id != null && !!PEMILIK[jenis] && (r[PEMILIK[jenis]] === undefined || r[PEMILIK[jenis]] === akun.id),
   },
   "bukan-super": {
     // Hanya tabel akun punya kolom peran; pada sesi klausa dinilai lewat baris (peran akun sasaran), bacaan daftar tak difilter.
@@ -585,7 +592,8 @@ export async function anggotaCatat(env, akun, { anggotaId, aksi, data = null, ca
 /* ========================= Admin 0010: koreksi_usul, statistik_harian, konten_beranda, daftar jejak ========================= */
 // Hasil null = tabel belum ada (migrasi 0010 belum diterapkan); pemanggil membalas 503.
 const ADM_HAK = ["admin", "super"];
-const gerbangAdm = (akun) => { if (!akun || !ADM_HAK.includes(akun.peran)) throw tolak("admin: peran tidak berhak"); };
+const KURASI_HAK = ["kurator", "admin", "super"]; // koreksi: MATRIKS sel T untuk KR, AD, SA
+const gerbangAdm = (akun, himpunan = ADM_HAK) => { if (!akun || !himpunan.includes(akun.peran)) throw tolak("admin: peran tidak berhak"); };
 const tanpaTabel = async (fn) => {
   try { return await fn(); }
   catch (e) { if (/no such table/i.test(String(e?.message) + String(e?.cause?.message))) return null; throw e; }
@@ -606,7 +614,7 @@ export async function koreksiBaru(env, d) {
   });
 }
 export async function koreksiDaftar(env, akun, status, hal = 1) {
-  gerbangAdm(akun);
+  gerbangAdm(akun, KURASI_HAK);
   const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
   return tanpaTabel(async () => {
     const [b, t] = await env.DB.batch([
@@ -619,7 +627,7 @@ export async function koreksiDaftar(env, akun, status, hal = 1) {
 }
 // Putus sekali: UPDATE hanya bila masih 'baru'; jejak hanya bila UPDATE mengubah baris (changes()), satu batch.
 export async function koreksiPutus(env, akun, id, aksi, catatan) {
-  gerbangAdm(akun);
+  gerbangAdm(akun, KURASI_HAK);
   if (!["setuju", "tolak"].includes(aksi)) throw salah("aksi tidak dikenal");
   if (!/^\d{1,12}$/.test(String(id))) throw salah("id tidak sah");
   return tanpaTabel(async () => {

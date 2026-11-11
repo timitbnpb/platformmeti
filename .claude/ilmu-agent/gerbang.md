@@ -62,3 +62,4 @@ Kamu penulisnya; penghakimmu: `penulis-gerbang` (cakupan dan celah gerbang), `pe
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
 - 2026-11-07 · Uji rute lewat worker.fetch dengan sesi dimasukkan via hak.catatSesi (token hex 64, cookie sesi=); terapkanMigrasi dua kali ke DB berisi gagal karena migrasi lain tak idempoten terhadap data, uji idempoten per-berkas saja.
 - 2026-11-08 · gerbang-konsistensi-data: ringkas.json basi vs berkas (regulasi 430/496, berita 519/866, keuangan 145/180, karbon 195/206) dan 36 id mati (lokal-430, p_* organisasi) membuat 2 uji data-nyata merah sengaja; jalankan node scripts/pipa/konsistensi.mjs untuk memuat ulang konsistensi.json
+- 2026-11-11 · S08: cakupan rute dihasilkan dari impor tabel rute src/*.js (bukan regex: regex kehilangan kunci multi-baris). tests/e2e/rute-daftarkan.mjs mendaftarkan rute baru + menyelidiki peran; peran hasil selidik WAJIB ditinjau. Iterator rute.keys() habis setelah satu spread: kirim array.

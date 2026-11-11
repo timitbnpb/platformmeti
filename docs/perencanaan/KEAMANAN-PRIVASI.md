@@ -22,7 +22,7 @@ Baca `B`, tulis `T` (termasuk baca), tidak ada akses `-`. Peran (kolom), sesuai 
 | AD | Admin | akun, kurasi, jejak; tidak bisa menjadi Super |
 | SA | Super Admin | akun super |
 
-Sel berkualifikasi: `B prov` atau `T prov` = hanya baris yang `cakupan_prov` akunnya cocok; `T diri` = hanya akun sendiri, terbatas pada kolom nama, bahasa, dan sandi; `T kirim` = boleh mengirim usulan, tidak mengubah data tujuan.
+Sel berkualifikasi: `B prov` atau `T prov` = hanya baris yang `cakupan_prov` akunnya cocok; `T diri` = hanya akun sendiri, terbatas pada kolom nama, bahasa, dan sandi; `T kirim` = boleh mengirim usulan, tidak mengubah data tujuan; `T daftar` = menulis hanya baris miliknya (akun_id dari sesi); `T milik` = membaca semua, mengubah dan menghapus hanya baris yang ia tulis (kolom `oleh`); `B konten`, `B sah` = baca hanya baris yang terbit atau disahkan; `T tinjau`, `T putus`, `T catat` = memutus atau mencatat status, tidak menyunting isi. Baris bertanda `{kunci}` dicocokkan ke `MATRIKS` oleh `tests/s-worker-matriks.test.mjs`.
 
 | Jenis data | PB | AN | PG | KR | WL | AD | SA |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -38,10 +38,22 @@ Sel berkualifikasi: `B prov` atau `T prov` = hanya baris yang `cakupan_prov` aku
 | Akun (peran, status, cakupan, surel akun) | - | T diri | T diri | T diri | T diri | T (bukan super) | T |
 | Sesi (cookie, daftar sesi aktif) | - | T diri | T diri | T diri | T diri | T (cabut, bukan-super) | T |
 | Koreksi (usulan perbaikan data) | - | T kirim | T kirim | T | T kirim prov | T | T |
-| Riwayat dengan METI (narasumber, audiensi, MoU, sponsor; KP C-17) | - | - | T | - | - | T | T |
-| Bukti agenda METI: notulensi dan foto (KP K20; foto privat di R2) | - | B | B | T | B | T | T |
+| Riwayat dengan METI (narasumber, audiensi, MoU, sponsor; KP C-17); PG membaca semua, mengubah dan menghapus hanya barisnya sendiri | - | - | T milik | - | - | T | T |
+| Bukti agenda METI: notulensi, foto, dokumen (KP K20; foto privat di R2); tulis hanya admin dan super | - | B | B | B | B | T | T |
 | Jejak admin (siapa, kapan, aksi, dari, ke) | - | - | - | - | - | B | B |
 | Daftar tolak (`daftar-tolak.json`, privat di R2; KP D14) | - | - | - | - | - | - | B |
+| Berita METI dan pustaka unggahan admin; non-admin hanya yang sah dan terbit {konten_meti} | - | B konten | B konten | B konten | B konten | T | T |
+| Antrean otorisasi berita dan pustaka; pengurus memutus, admin membaca status {konten_otorisasi} | - | - | T tinjau | - | - | T | T |
+| Naskah Portal otorisasi, dua kunci: admin memasukkan, pengurus (bukan pembuat) mengesahkan; lainnya hanya yang disahkan {naskah} | - | B sah | T putus | B sah | B sah | T | T |
+| Catatan linimasa naskah, hanya tambah (append-only oleh trigger); admin membaca tetapi tidak mencatat (C-29) {naskah_catatan} | - | - | T catat | - | - | B sah | T catat |
+| Pengaturan pendaftaran acara; ubah hanya admin {event_atur} | - | B | B | B | B | T | T |
+| Pendaftaran (RSVP) acara; akun hanya miliknya {event_daftar} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Persetujuan anggota mandiri: setujui, tolak, bukti iuran {pendaftaran} | - | - | T | - | - | T | T |
+| Forum Konsultasi: komentar, usul, dukung; sunting hanya milik sendiri (15 menit) {konsultasi} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Moderasi dan keputusan Konsultasi, kelola naskah {konsultasi_putus} | - | - | T | T | - | T | T |
+| Daftar sesi aktif semua akun dan pencabutan per sesi; admin tak mencabut sesi super {sesi_admin} | - | - | - | - | - | T cabut bukan-super | T cabut |
+| Permintaan alamat surel @metiires.or.id; antrean dan putusan hanya admin dan super {surel_minta} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Survei keyakinan bisnis EBT triwulanan; jawaban satu per akun per periode, agregat hanya bila n >= 5 {keyakinan} | - | T daftar | T daftar | T daftar | T daftar | T | T |
 
 Penjelasan dan aturan sel:
 

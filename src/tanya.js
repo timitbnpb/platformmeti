@@ -7,7 +7,7 @@ import { kataKunci, verifikasiJawaban } from "./tanya_spek.js";
 import { norm, jerami, skor } from "../public/inti/cari_rumus.js";
 
 export const MODEL_TANYA = "@cf/meta/llama-3.3-70b-instruct-fp8-fast", MODEL_EMBED = "@cf/baai/bge-m3";
-const MAKS_VEKTOR = 8, MAKS_KATA = 3, MAKS_TOTAL = 10, MIN_SKOR = 0.35, BATAS_JAM = 40;
+const MAKS_VEKTOR = 8, MAKS_KATA = 3, MAKS_TOTAL = 10, MIN_SKOR = 0.35, BATAS_JAM = 40, MAKS_KLAIM = 12, MAKS_PERNYATAAN = 500;
 // Jenis indeks cari yang dipakai cadangan. Tanpa orang/pakar (lapis orang), tanpa istilah (beling besar).
 const JENIS_CARI = ["proyek", "org", "reg", "topik", "inovasi", "pendanaan", "program", "pustaka", "berita", "isu", "psn", "pltu", "sistem", "kawasan", "pemasok", "wilayah", "halaman"];
 
@@ -79,9 +79,12 @@ export async function tanya(env, akun, pertanyaan) {
   let out;
   try {
     out = uraiJson(await env.AI.run(MODEL_TANYA, { max_tokens: 900, temperature: 0.1, response_format: { type: "json_schema", json_schema: SKEMA },
-      messages: [{ role: "system", content: SISTEM }, { role: "user", content: `PERTANYAAN: ${q}\n\n` + semua.map((x) => `[POTONGAN ${x.n}] ${x.jenis}: ${x.judul}\n${x.teks}`).join("\n\n") }] }));
+      messages: [{ role: "system", content: SISTEM }, { role: "user", content: `PERTANYAAN: ${netral(q)}\n\n` + semua.map((x) => `[POTONGAN ${x.n}] ${x.jenis}: ${x.judul}\n${x.teks}`).join("\n\n") }] }));
   } catch (e) { console.error("tanya AI", e?.message); return dasar; }
-  if (!Array.isArray(out?.klaim)) return dasar;   // keluaran model tak berbentuk: potongan saja, bukan "tidak ditemukan"
+  if (!Array.isArray(out?.klaim)) return dasar;
+  // Keluaran model tak dipercaya: bentuk dipaksa, jumlah dan panjang dibatasi sebelum pemeriksa mesin.
+  out.klaim = out.klaim.slice(0, MAKS_KLAIM).filter((k) => typeof k?.pernyataan === "string" && k.pernyataan.length <= MAKS_PERNYATAAN
+    && Number.isInteger(k.kutipan?.segmen) && typeof k.kutipan.teks === "string" && k.kutipan.teks.length <= 700);   // keluaran model tak berbentuk: potongan saja, bukan "tidak ditemukan"
   const { sah, dibuang } = verifikasiJawaban(out.klaim, new Map(semua.map((x) => [x.n, x.teks])));
   if (!sah.length) return dibuang ? { ...dasar, dibuang, model: MODEL_TANYA } : { ...dasar, status: "kosong", potongan: [], model: MODEL_TANYA };   // klaim kosong dari model = tidak ditemukan
   return { ...dasar, status: "jawab", jawaban: sah.map((k) => k.pernyataan).join(" "), klaim: sah, dibuang, model: MODEL_TANYA };

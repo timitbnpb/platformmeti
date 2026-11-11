@@ -30,7 +30,7 @@ after(async () => { await tutup?.(); });
 test("hak: rute admin tamu 401, non-admin 403", async () => {
   for (const [m, j, b] of [["GET", "/api/admin/koreksi"], ["POST", "/api/admin/koreksi/1", { aksi: "tolak" }], ["GET", "/api/admin/jejak"], ["GET", "/api/admin/statistik"], ["PUT", "/api/admin/konten-beranda", { kunci: "agenda", isi: [] }]]) {
     assert.equal((await panggil(j, m, null, b)).status, 401, "tamu " + m + j);
-    for (const p of ["anggota", "pengurus", "kurator"]) assert.equal((await panggil(j, m, p, b)).status, 403, p + " " + m + j);
+    for (const p of j.startsWith("/api/admin/koreksi") ? ["anggota", "pengurus"] : ["anggota", "pengurus", "kurator"]) assert.equal((await panggil(j, m, p, b)).status, 403, p + " " + m + j); // koreksi: kurator berhak (sel MATRIKS T, JM-S12)
   }
 });
 

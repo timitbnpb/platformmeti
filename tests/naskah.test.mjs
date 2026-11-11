@@ -146,6 +146,7 @@ test("alur dua kunci penuh: admin masukkan, ajukan; pengurus setujui; anggota ba
   }
   const jj = await satu("SELECT aksi, tabel, peran FROM jejak WHERE tabel = 'naskah' ORDER BY id DESC LIMIT 1");
   assert.deepEqual([jj.aksi, jj.tabel, jj.peran], ["tinjau", "naskah", "pengurus"]);
+  assert.equal((await panggil("POST", `/api/naskah/${ref}/catatan`, { peran: "admin", badan: { catatan: "admin menulis" } })).status, 403, "C-29: admin tidak menulis catatan");
   const lin = (await js(await panggil("GET", `/api/naskah/${ref}`, { peran: "admin" }))).catatan.map((c) => c.jenis);
   assert.deepEqual(lin, ["ajukan", "evaluasi", "setujui"]);
 });
