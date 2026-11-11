@@ -1,0 +1,262 @@
+{
+ "dibuat": "2026-11-11",
+ "perlu_ocr": [
+  {
+   "id": "keppres-46-1980-461980",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "keppres-75-1984",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "lain-bptn-1-2022",
+   "halaman_butuh_ocr": 13
+  },
+  {
+   "id": "lain-bptn-3-2021",
+   "halaman_butuh_ocr": 957
+  },
+  {
+   "id": "perda-kabu-banjarnegara-13-2011",
+   "halaman_butuh_ocr": 2
+  },
+  {
+   "id": "perda-kabu-labuhanbatu-utara-1-2014",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "perda-kabu-polewali-mandar-5-2014",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "perda-prov-jawa-tengah-12-2018",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "perda-prov-lampung-9-2019",
+   "halaman_butuh_ocr": 2
+  },
+  {
+   "id": "perda-prov-nusa-tenggara-barat-3-2019",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "perda-prov-riau-2-2022",
+   "halaman_butuh_ocr": 2
+  },
+  {
+   "id": "pergub--bengkulu-36-2025",
+   "halaman_butuh_ocr": 2
+  },
+  {
+   "id": "pergub--kalimantan-utara-43-2018",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "pergub--sulawesi-tengah-25-2019",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "pergub-prov-jakarta-49-2010",
+   "halaman_butuh_ocr": 2
+  },
+  {
+   "id": "permen-esdm-10-2005",
+   "halaman_butuh_ocr": 2
+  },
+  {
+   "id": "permen-esdm-10-2019-102019",
+   "halaman_butuh_ocr": 69
+  },
+  {
+   "id": "permen-esdm-10-2022",
+   "halaman_butuh_ocr": 7
+  },
+  {
+   "id": "permen-esdm-12-2019-122019",
+   "halaman_butuh_ocr": 3
+  },
+  {
+   "id": "permen-esdm-12-2025",
+   "halaman_butuh_ocr": 17
+  },
+  {
+   "id": "permen-esdm-13-2021",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "permen-esdm-13-2021-132021",
+   "halaman_butuh_ocr": 2
+  },
+  {
+   "id": "permen-esdm-13-2025",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "permen-esdm-13-2025-132025",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "permen-esdm-17-2015",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "permen-esdm-18-2015",
+   "halaman_butuh_ocr": 8
+  },
+  {
+   "id": "permen-esdm-2-2019-22019",
+   "halaman_butuh_ocr": 13
+  },
+  {
+   "id": "permen-esdm-20-2014",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "permen-esdm-20-2020",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "permen-esdm-21-2016",
+   "halaman_butuh_ocr": 8
+  },
+  {
+   "id": "permen-esdm-21-2017",
+   "halaman_butuh_ocr": 15
+  },
+  {
+   "id": "permen-esdm-23-2017",
+   "halaman_butuh_ocr": 8
+  },
+  {
+   "id": "permen-esdm-28-2015",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "permen-esdm-29-2014",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "permen-esdm-30-2014",
+   "halaman_butuh_ocr": 3
+  },
+  {
+   "id": "permen-esdm-33-2014",
+   "halaman_butuh_ocr": 2
+  },
+  {
+   "id": "permen-esdm-6-2021",
+   "halaman_butuh_ocr": 2
+  },
+  {
+   "id": "permen-esdm-9-2020",
+   "halaman_butuh_ocr": 3
+  },
+  {
+   "id": "permen-hub-44-2020",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "permen-hub-65-2020",
+   "halaman_butuh_ocr": 20
+  },
+  {
+   "id": "permen-hub-87-2020",
+   "halaman_butuh_ocr": 40
+  },
+  {
+   "id": "pp-10-1989",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "pp-134-2000",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "pp-150-2000",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "pp-16-2001",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "pp-28-1948",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "pp-5-2021-52021",
+   "halaman_butuh_ocr": 390
+  },
+  {
+   "id": "pp-59-2007-592007",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "pp-64-2000",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "pp-67-2002",
+   "halaman_butuh_ocr": 1
+  },
+  {
+   "id": "uu-16-2016",
+   "halaman_butuh_ocr": 2
+  }
+ ],
+ "gagal": [],
+ "antrean_kurator": [
+  {
+   "id": "keppres-76-2003",
+   "jenis": "status_vs_relasi",
+   "status": "berlaku",
+   "dicabut_oleh": [
+    "keppres-104-2003"
+   ]
+  },
+  {
+   "id": "keppres-83-2001",
+   "jenis": "status_vs_relasi",
+   "status": "berlaku",
+   "dicabut_oleh": [
+    "keppres-133-2001"
+   ]
+  },
+  {
+   "id": "perda-kabu-banyumas-11-2011",
+   "jenis": "status_vs_relasi",
+   "status": "berlaku",
+   "dicabut_oleh": [
+    "perda-kabu-banyumas-1-2017"
+   ]
+  },
+  {
+   "id": "perda-kabu-magelang-22-2001",
+   "jenis": "status_vs_relasi",
+   "status": "berlaku",
+   "dicabut_oleh": [
+    "perda-kabu-magelang-8-2009"
+   ]
+  },
+  {
+   "id": "perda-prov-kalimantan-utara-3-2019",
+   "jenis": "status_vs_relasi",
+   "status": "berlaku",
+   "dicabut_oleh": [
+    "perda-prov-kalimantan-utara-8-2025"
+   ]
+  },
+  {
+   "id": "pp-29-2008",
+   "jenis": "status_vs_relasi",
+   "status": "berlaku",
+   "dicabut_oleh": [
+    "pp-2-2014"
+   ]
+  }
+ ],
+ "jumlah_berkas": 571,
+ "bytes": 22554261
+}

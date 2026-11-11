@@ -1,0 +1,2198 @@
+---
+id: "permen-esdm-11-2021"
+id_lama: null
+regulasi_id: "permen-esdm-11-2021"
+jenis: "Peraturan Menteri"
+nomor: "11"
+tahun: 2021
+judul: "Pelaksanaan Usaha Ketenagalistrikan"
+tgl_tetap: null
+tgl_undang: null
+status: "dicabut"
+status_per: 2026-11-11
+mulai: null
+mulai_perkiraan: false
+selesai: 2024-01-29
+mencabut: ["permen-esdm-12-2019"]
+mengubah: []
+mengganti: []
+mengingat: ["permen-esdm-13-2016","perpres-105-2016","perpres-68-2015","pp-14-2012","pp-23-2014","pp-25-2021","pp-42-2012","pp-5-2021","pp-62-2012","uu-11-2020","uu-30-2009","uu-39-2008"]
+merujuk: ["permen-esdm-1-2015","permen-esdm-1-2017","permen-esdm-10-2019","permen-esdm-12-2016","permen-esdm-26-2012","permen-esdm-28-2012","permen-esdm-35-2013","permen-esdm-36-2013","permen-esdm-7-2016"]
+dicabut_oleh: ["permen-esd-2-2024","permen-esdm-2-2024"]
+diubah_oleh: []
+topik: ["jaringan"]
+sumber: {"situs":"jdih.esdm.go.id","url":"https://jdih.esdm.go.id/dokumen/view?id=2175","pdf_sha256":"ee5fe38b1fbec548d8571bef72d0365b1e8742d92e967b623ba81465cbf9a552","diambil":"2026-11-11"}
+ekstraksi: {"metode":"pdftotext","halaman":163,"halaman_ocr":0,"mutu":0.999,"perlu_tinjau":false}
+resmi: false
+lisensi: {"dasar":"UU 28/2014 Pasal 42","diperiksa_naskah":true}
+md_sha256: "cfd4b249463f153d53769dae8cecc3ab2ce01e7334c36c6afbe12bd682ee9c47"
+---
+# Pelaksanaan Usaha Ketenagalistrikan
+
+## Menimbang
+
+bahwa untuk melaksanakan ketentuan Pasal 25 ayat (6), Pasal 26 ayat (9), Pasal 27 ayat (9), Pasal 28 ayat (5), Pasal 31 ayat (3), Pasal 52 ayat (5), dan Pasal 53 ayat (4) Peraturan Pemerintah Nomor 25 Tahun 2021 tentang Penyelenggaraan Bidang Energi dan Sumber Daya Mineral, perlu menetapkan Peraturan Menteri Energi dan Sumber Daya Mineral tentang Pelaksanaan Usaha Ketenagalistrikan;
+
+## Mengingat
+
+1. Pasal 17 ayat (3) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945;
+2. Undang-Undang Nomor 39 Tahun 2008 tentang Kementerian Negara (Lembaran Negara Republik Indonesia Tahun 2008 Nomor 166, Tambahan Lembaran Negara Republik Indonesia Nomor 4916);
+3. Undang-Undang Nomor 30 Tahun 2009 tentang Ketenagalistrikan (Lembaran Negara Republik Indonesia Tahun 2009 Nomor 133, Tambahan Lembaran Negara Republik Indonesia Nomor 5052);
+4. Undang-Undang Nomor 11 Tahun 2020 tentang Cipta Kerja (Lembaran Negara Republik Indonesia Tahun 2020 Nomor 245, Tambahan Lembaran Negara Republik Indonesia Nomor 6573);
+5. Peraturan Pemerintah Nomor 14 Tahun 2012 tentang Kegiatan Usaha Penyediaan Tenaga Listrik (Lembaran Negara Republik Indonesia Tahun 2012 Nomor 28, Tambahan Lembaran Negara Republik Indonesia Nomor 5281) sebagaimana telah diubah dengan Peraturan Pemerintah Nomor 23 Tahun 2014 tentang Perubahan atas Peraturan Pemerintah Nomor 14 Tahun 2012 tentang Kegiatan Usaha Penyediaan Tenaga Listrik (Lembaran Negara Republik Indonesia Tahun 2014 Nomor 75, Tambahan Lembaran Negara Republik Indonesia Nomor 5530);
+6. Peraturan Pemerintah Nomor 42 Tahun 2012 tentang Jual Beli Tenaga Listrik Lintas Negara (Lembaran Negara Republik Indonesia Tahun 2012 Nomor 73, Tambahan Lembaran Negara Republik Indonesia Nomor 5297);
+7. Peraturan Pemerintah Nomor 62 Tahun 2012 tentang Usaha Jasa Penunjang Tenaga Listrik (Lembaran Negara Republik Indonesia Tahun 2012 Nomor 141, Tambahan Lembaran Negara Republik Indonesia Nomor 5326);
+8. Peraturan Pemerintah Nomor 5 Tahun 2021 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko (Lembaran Negara Republik Indonesia Tahun 2021 Nomor 15, Tambahan Lembaran Negara Republik Indonesia Nomor 6617);
+9. Peraturan Pemerintah Nomor 25 Tahun 2021 tentang Penyelenggaraan Bidang Energi dan Sumber Daya Mineral (Lembaran Negara Republik Indonesia Tahun 2021 Nomor 35, Tambahan Lembaran Negara Republik Indonesia Nomor 6637);
+10. Peraturan Presiden Nomor 68 Tahun 2015 tentang Kementerian Energi dan Sumber Daya Mineral (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 132) sebagaimana telah diubah dengan Peraturan Presiden Nomor 105 Tahun 2016 tentang Perubahan atas Peraturan Presiden Nomor 68 Tahun 2015 tentang Kementerian Energi dan Sumber Daya Mineral (Lembaran Negara Republik Indonesia Tahun 2016 Nomor 289);
+11. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 13 Tahun 2016 tentang Organisasi dan Tata Kerja Kementerian Energi dan Sumber Daya Mineral (Berita Negara Republik Indonesia Tahun 2016 Nomor 782);
+
+## Memutuskan
+
+Menetapkan : PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN.
+
+## BAB II USAHA KETENAGALISTRIKAN
+
+### Pasal 1
+
+Dalam Peraturan Menteri ini yang dimaksud dengan:
+1. Usaha Ketenagalistrikan adalah usaha di bidang ketenagalistrikan yang meliputi kegiatan pengadaan tenaga listrik dan layanan jasa dan/atau pekerjaan ketenagalistrikan.
+2. Usaha Penyediaan Tenaga Listrik adalah pengadaan tenaga listrik meliputi pembangkitan, transmisi, distribusi, dan penjualan tenaga listrik kepada konsumen.
+3. Perizinan Berusaha adalah legalitas yang diberikan kepada pelaku usaha untuk memulai dan menjalankan usaha dan/atau kegiatannya.
+4. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum yang selanjutnya disebut IUPTLU adalah izin untuk melakukan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum.
+5. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Sendiri yang selanjutnya disebut IUPTLS adalah izin untuk melakukan Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri.
+6. Izin Usaha Jasa Penunjang Tenaga Listrik yang selanjutnya disingkat IUJPTL adalah izin untuk melakukan usaha jasa penunjang tenaga listrik.
+7. Wilayah Usaha adalah wilayah yang ditetapkan menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral sebagai tempat badan usaha melakukan usaha distribusi dan/atau penjualan tenaga listrik.
+8. Rencana Umum Ketenagalistrikan Nasional yang selanjutnya disingkat RUKN adalah rencana pengembangan sistem penyediaan tenaga listrik yang meliputi bidang pembangkitan, transmisi, dan distribusi tenaga listrik yang diperlukan untuk memenuhi kebutuhan listrik nasional.
+9. Rencana Usaha Penyediaan Tenaga Listrik yang selanjutnya disingkat RUPTL adalah rencana pengadaan tenaga listrik meliputi bidang pembangkitan, transmisi, distribusi, dan/atau penjualan tenaga listrik kepada konsumen dalam suatu Wilayah Usaha.
+10. Sistem Tenaga Listrik adalah sistem penyediaan tenaga listrik yang terdiri atas sekumpulan pembangkit dan gardu induk yang terhubung satu dengan lainnya oleh jaringan transmisi dengan pusat beban atau jaringan distribusi.
+11. Keselamatan Ketenagalistrikan adalah segala upaya atau langkah pemenuhan standardisasi peralatan dan pemanfaat tenaga listrik, pengamanan instalasi tenaga listrik, dan pengamanan pemanfaat tenaga listrik untuk mewujudkan kondisi andal dan aman bagi instalasi, aman dari bahaya bagi manusia dan makhluk hidup lainnya, serta ramah lingkungan.
+12. Standar Nasional Indonesia yang selanjutnya disingkat SNI adalah standar yang ditetapkan oleh Badan Standardisasi Nasional dan berlaku di wilayah Negara Kesatuan Republik Indonesia.
+13. Tingkat Komponen Dalam Negeri yang selanjutnya disingkat TKDN adalah besaran komponen dalam negeri yang merupakan gabungan barang dan/atau jasa pada suatu rangkaian barang dan jasa pada setiap pembangunan infrastruktur ketenagalistrikan.
+14. Perusahaan Engineering Procurement Construction yang yang selanjutnya disebut Perusahaan EPC adalah badan usaha pemegang IUJPTL yang melaksanakan proses tahapan desain atau perancangan sistem yang akan dibangun dan pengadaan atau pembelian barang yang dilanjutkan dengan membangun konstruksi perancangan tersebut di bidang ketenagalistrikan.
+15. Penilaian Kesesuaian adalah kegiatan untuk menilai bahwa barang, jasa, sistem, proses, atau personal telah memenuhi persyaratan acuan.
+16. Aparatur Pengawas Internal Pemerintah adalah instansi pemerintah yang mempunyai tugas dan fungsi melakukan pengawasan, proses audit, reviu, evaluasi, pemantauan, dan kegiatan pengawasan lain terhadap pemenuhan kewajiban penggunaan produk dalam negeri dilaksanakan berdasarkan hasil pemeriksaan akhir terhadap proses pelaksanaan pengadaan barang dan/atau jasa dalam rangka memberikan keyakinan yang memadai bahwa kegiatan telah dilaksanakan sesuai dengan indikator yang telah ditetapkan.
+17. Pelaku Usaha adalah orang perseorangan atau badan usaha yang melakukan usaha dan/atau kegiatan pada bidang tertentu.
+18. Badan Usaha adalah badan usaha berbentuk badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+19. Pemilik Jaringan adalah Badan Usaha pemegang Perizinan Berusaha penyediaan tenaga listrik untuk kepentingan umum dan/atau penyediaan tenaga listrik untuk kepentingan sendiri yang memiliki fasilitas penyaluran tenaga listrik yang meliputi saluran transmisi dan/atau saluran distribusi berikut sarana penunjangnya.
+20. Pemanfaat Jaringan adalah pihak yang memanfaatkan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika.
+21. Pemerintah Daerah adalah kepala daerah sebagai unsur penyelenggara pemerintahan daerah yang memimpin pelaksanaan urusan pemerintahan yang menjadi kewenangan daerah otonom.
+22. Dinas Teknis adalah dinas pada Pemerintah Daerah provinsi yang membidangi energi dan sumber daya mineral.
+23. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+24. Direktur Jenderal adalah direktur jenderal yang mempunyai tugas menyelenggarakan perumusan dan pelaksanaan kebijakan di bidang pembinaan, pengusahaan, keteknikan, keselamatan kerja, dan lingkungan di bidang ketenagalistrikan.
+25. Konsumen adalah setiap orang atau badan yang membeli tenaga listrik dari pemegang Perizinan Berusaha untuk kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum.
+
+### Pasal 2
+
+Usaha Ketenagalistrikan terdiri atas:
+a. Usaha Penyediaan Tenaga Listrik; dan
+b. usaha penunjang tenaga listrik.
+
+### Pasal 3
+
+Usaha Penyediaan Tenaga Listrik sebagaimana dimaksud dalam Pasal 2 huruf a terdiri atas:
+a. Usaha Penyediaan Tenaga Listrik untuk kepentingan umum; dan
+b. Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri.
+
+### Pasal 4
+
+(1) Usaha Penyediaan Tenaga Listrik untuk kepentingan umum sebagaimana dimaksud dalam Pasal 3 huruf a meliputi jenis usaha:
+a. pembangkitan tenaga listrik;
+b. transmisi tenaga listrik;
+c. distribusi tenaga listrik; dan/atau
+d. penjualan tenaga listrik.
+(2) Usaha pembangkitan tenaga listrik sebagaimana dimaksud pada ayat (1) huruf a dilaksanakan dalam rangka memproduksi tenaga listrik.
+(3) Usaha transmisi tenaga listrik sebagaimana dimaksud pada ayat (1) huruf b dilaksanakan dalam rangka penyaluran tenaga listrik dari pembangkitan ke sistem distribusi atau ke Konsumen atau penyaluran tenaga listrik antarsistem.
+(4) Usaha distribusi tenaga listrik sebagaimana dimaksud pada ayat (1) huruf c dilaksanakan dalam rangka penyaluran tenaga listrik dari sistem transmisi atau dari pembangkitan ke Konsumen.
+(5) Usaha penjualan tenaga listrik sebagaimana dimaksud pada ayat (1) huruf d dilaksanakan dalam rangka kegiatan usaha penjualan tenaga listrik kepada Konsumen.
+
+### Pasal 5
+
+(1) Usaha Penyediaan Tenaga Listrik untuk kepentingan umum sebagaimana dimaksud dalam Pasal 4 ayat (1) dapat dilakukan secara terintegrasi.
+(2) Usaha Penyediaan Tenaga Listrik terintegrasi sebagaimana dimaksud pada ayat (1) meliputi jenis usaha:
+a. pembangkitan tenaga listrik, transmisi tenaga listrik, distribusi tenaga listrik, dan penjualan tenaga listrik yang dilakukan dalam satu kesatuan usaha;
+b. pembangkitan tenaga listrik, transmisi tenaga listrik, dan penjualan tenaga listrik yang dilakukan dalam satu kesatuan usaha; atau
+c. pembangkitan tenaga listrik, distribusi tenaga listrik, dan penjualan tenaga listrik yang dilakukan dalam satu kesatuan usaha.
+
+### Pasal 6
+
+(1) Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri sebagaimana dimaksud dalam Pasal 3 huruf b meliputi kegiatan:
+a. pembangkitan tenaga listrik;
+b. pembangkitan tenaga listrik dan distribusi tenaga listrik; atau
+c. pembangkitan tenaga listrik, transmisi tenaga listrik, dan distribusi tenaga listrik.
+(2) Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri sebagaimana dimaksud pada ayat (1) dilaksanakan menurut sifat penggunaannya meliputi:
+a. penggunaan utama untuk pembangkit tenaga listrik dioperasikan secara terus-menerus dalam memenuhi sebagian atau seluruh kebutuhan tenaga listrik untuk kepentingan sendiri;
+b. penggunaan cadangan untuk pembangkit tenaga listrik dioperasikan hanya sewaktu-waktu dalam menjamin kontinuitas dan keandalan penyediaan tenaga listrik untuk kepentingan sendiri;
+c. penggunaan darurat untuk pembangkit tenaga listrik dioperasikan hanya pada saat terjadi gangguan pasokan tenaga listrik dari pemegang IUPTLU setempat; dan
+d. penggunaan sementara untuk pembangkit tenaga listrik dioperasikan hanya untuk kegiatan yang bersifat sementara termasuk pembangkit yang dapat dipindahkan (mobil dan portabel).
+
+## BAB III PERIZINAN BERUSAHA KETENAGALISTRIKAN; Bagian Kesatu Umum
+
+### Pasal 7
+
+(1) Usaha penunjang tenaga listrik sebagaimana dimaksud dalam Pasal 2 huruf b terdiri atas:
+a. usaha jasa penunjang tenaga listrik; dan
+b. usaha industri penunjang tenaga listrik.
+(2) Usaha jasa penunjang tenaga listrik sebagaimana dimaksud pada ayat (1) huruf a meliputi jenis usaha:
+a. konsultansi dalam bidang instalasi tenaga listrik;
+b. pembangunan dan pemasangan instalasi tenaga listrik;
+c. pemeriksaan dan pengujian instalasi tenaga listrik;
+d. pengoperasian instalasi tenaga listrik;
+e. pemeliharaan instalasi tenaga listrik;
+f. penelitian dan pengembangan;
+g. pendidikan dan pelatihan;
+h. laboratorium pengujian peralatan dan pemanfaat tenaga listrik;
+i. sertifikasi peralatan dan pemanfaat tenaga listrik;
+j. sertifikasi kompetensi tenaga teknik ketenagalistrikan;
+k. sertifikasi Badan Usaha jasa penunjang tenaga listrik; dan
+l. usaha jasa lain yang secara langsung berkaitan dengan penyediaan tenaga listrik.
+(3) Usaha jasa lain yang secara langsung berkaitan dengan penyediaan tenaga listrik sebagaimana dimaksud pada ayat (2) huruf l paling sedikit berupa:
+a. pemeriksaan dan penilaian TKDN di bidang ketenagalistrikan;
+b. pemeriksaan dan penilaian penerapan sistem manajemen Keselamatan Ketenagalistrikan;
+c. pengelolaan lingkungan ketenagalistrikan;
+d. pengendalian emisi gas rumah kaca ketenagalistrikan; dan
+e. pemeriksaan dan penilaian kompensasi tanah, bangunan, dan/atau tanaman yang berada di bawah ruang bebas jaringan transmisi tenaga listrik.
+(4) Usaha industri penunjang tenaga listrik sebagaimana dimaksud pada ayat (1) huruf b dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan di bidang perindustrian.
+
+### Pasal 8
+
+Usaha Ketenagalistrikan sebagaimana dimaksud dalam Pasal 2 dilaksanakan setelah mendapatkan Perizinan Berusaha bidang ketenagalistrikan.
+
+## BAB III PERIZINAN BERUSAHA KETENAGALISTRIKAN; Bagian Kedua Perizinan Berusaha untuk Kegiatan Usaha Penyediaan Tenaga
+
+### Pasal 9
+
+Perizinan Berusaha bidang ketenagalistrikan sebagaimana dimaksud dalam Pasal 8 diberikan kepada Badan Usaha untuk kegiatan:
+a. Usaha Penyediaan Tenaga Listrik untuk kepentingan umum;
+b. Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri; dan
+c. usaha jasa penunjang tenaga listrik.
+Listrik untuk Kepentingan Umum
+
+### Pasal 10
+
+(1) Usaha Penyediaan Tenaga Listrik untuk kepentingan umum sebagaimana dimaksud dalam Pasal 9 huruf a wajib mendapatkan Perizinan Berusaha sesuai dengan kegiatan usahanya.
+(2) Perizinan Berusaha sesuai dengan kegiatan usahanya sebagaimana dimaksud pada ayat (1) meliputi:
+a. IUPTLU;
+b. penetapan Wilayah Usaha;
+c. pengesahan RUPTL; dan
+d. izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara. untuk Kepentingan Umum
+
+### Pasal 11
+
+(1) IUPTLU sebagaimana dimaksud dalam Pasal 10 ayat (2) huruf a wajib dimiliki oleh Badan Usaha yang menjalankan setiap Usaha Penyediaan Tenaga Listrik untuk kepentingan umum sebagaimana dimaksud dalam Pasal 4 dan Pasal 5.
+(2) Sebelum mendapatkan IUPTLU, Badan Usaha yang menjalankan usaha:
+a. distribusi tenaga listrik dan/atau penjualan tenaga listrik; atau
+b. penyediaan tenaga listrik secara terintegrasi, wajib mendapatkan penetapan Wilayah Usaha dan pengesahan RUPTL.
+(3) Untuk mendapatkan IUPTLU sebagaimana dimaksud pada ayat (1), Badan Usaha mengajukan permohonan dilengkapi persyaratan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Perizinan Berusaha sektor energi dan sumber daya mineral.
+
+### Pasal 12
+
+(1) IUPTLU sebagaimana dimaksud dalam Pasal 11 ayat (1) berlaku untuk jangka waktu paling lama 30 (tiga puluh) tahun dan dapat diperpanjang.
+(2) Jangka waktu sebagaimana dimaksud pada ayat (1) diberikan dengan mempertimbangkan:
+a. jangka waktu perjanjian jual beli tenaga listrik;
+b. perjanjian sewa jaringan tenaga listrik; atau
+c. RUPTL.
+(3) Permohonan perpanjangan IUPTLU sebagaimana dimaksud pada ayat (1) disampaikan oleh pemegang IUPTLU paling lambat 60 (enam puluh) hari kerja sebelum IUPTLU berakhir.
+(4) Evaluasi permohonan perpanjangan sebagaimana dimaksud pada ayat (3) dilakukan dengan mempertimbangkan ketaatan pemegang IUPTLU dalam penyampaian laporan pelaksanaan IUPTLU.
+
+### Pasal 13
+
+(1) IUPTLU wajib diubah dalam hal terdapat perubahan:
+a. kapasitas instalasi tenaga listrik;
+b. jenis usaha;
+c. nama Badan Usaha; dan/atau
+d. Wilayah Usaha.
+(2) IUPTLU berakhir karena:
+a. habis masa berlakunya dan tidak diajukan perpanjangan;
+b. dikembalikan oleh pemegang IUPTLU; atau
+c. dicabut oleh Menteri atau gubernur sesuai dengan kewenangannya.
+
+### Pasal 14
+
+Penetapan Wilayah Usaha sebagaimana dimaksud dalam Pasal 10 ayat (2) huruf b dilaksanakan dengan mempertimbangkan kriteria:
+a. pemegang Wilayah Usaha yang sudah ada tidak mampu menyediakan tenaga listrik;
+b. pemegang Wilayah Usaha yang sudah ada tidak mampu memenuhi tingkat mutu dan keandalan;
+c. pemegang Wilayah Usaha yang sudah ada mengembalikan sebagian atau seluruh wilayah usahanya kepada Menteri;
+d. Wilayah Usaha yang diusulkan oleh Pelaku Usaha belum terjangkau oleh pemegang Wilayah Usaha yang sudah ada; dan/atau
+e. Wilayah Usaha yang diusulkan oleh Pelaku Usaha merupakan kawasan terpadu yang mengelola sumber daya energi secara terintegrasi sesuai pola kebutuhan listrik usahanya.
+
+### Pasal 15
+
+(1) Untuk mendapatkan penetapan Wilayah Usaha sebagaimana dimaksud dalam Pasal 14, Pelaku Usaha mengajukan permohonan kepada Menteri melalui Direktur Jenderal.
+(2) Permohonan penetapan Wilayah Usaha sebagaimana dimaksud pada ayat (1) dilengkapi persyaratan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Perizinan Berusaha sektor energi dan sumber daya mineral.
+
+### Pasal 16
+
+(1) Berdasarkan permohonan penetapan Wilayah Usaha sebagaimana dimaksud dalam Pasal 15 ayat (1), Menteri melalui Direktur Jenderal melakukan Penilaian Kesesuaian kriteria penetapan Wilayah Usaha dengan dokumen persyaratan permohonan.
+(2) Untuk memastikan pemenuhan kriteria Penilaian Kesesuaian sebagaimana dimaksud pada ayat (1), Menteri melalui Direktur Jenderal dapat melakukan verifikasi lapangan.
+(3) Dalam melakukan verifikasi lapangan sebagaimana dimaksud pada ayat (2), Menteri melalui Direktur Jenderal dapat menugaskan tim teknis.
+(4) Berdasarkan hasil Penilaian Kesesuaian penetapan Wilayah Usaha sebagaimana dimaksud pada ayat (1), Menteri melalui Direktur Jenderal dapat menyetujui atau menolak permohonan penetapan Wilayah Usaha.
+(5) Dalam hal permohonan disetujui, Menteri melalui Direktur Jenderal menetapkan Wilayah Usaha.
+
+### Pasal 17
+
+Penetapan Wilayah Usaha sebagaimana dimaksud dalam Pasal 16 ayat (5) hanya diberikan kepada 1 (satu) Badan Usaha dalam 1 (satu) Wilayah Usaha.
+
+### Pasal 18
+
+(1) Perubahan cakupan Wilayah Usaha dapat dilakukan dalam hal:
+a. perluasan cakupan Wilayah Usaha karena terdapat pemegang Wilayah Usaha lain yang tidak mampu menyediakan tenaga listrik di wilayah usahanya; atau
+b. pengurangan cakupan Wilayah Usaha karena pemegang Wilayah Usaha tidak mampu menyediakan tenaga listrik pada sebagian wilayah usahanya.
+(2) Dalam hal dilakukan perluasan cakupan Wilayah Usaha sebagaimana dimaksud pada ayat (1) huruf a, Pelaku Usaha wajib mengajukan permohonan perubahan Wilayah Usaha kepada Menteri melalui Direktur Jenderal.
+(3) Permohonan perluasan Wilayah Usaha sebagaimana dimaksud pada ayat (2) dilakukan dengan melengkapi dokumen persyaratan berupa:
+a. kemampuan pendanaan;
+b. perubahan batasan Wilayah Usaha dan peta lokasi yang dilengkapi dengan titik koordinat; dan
+c. analisis kebutuhan penyediaan tenaga listrik dalam bahasa Indonesia di Wilayah Usaha yang diusulkan perubahannya.
+(4) Dalam hal dilakukan pengurangan cakupan Wilayah Usaha sebagaimana dimaksud pada ayat (1) huruf b, Menteri melalui Direktur Jenderal melakukan pengurangan cakupan Wilayah Usaha.
+(5) Menteri melalui Direktur Jenderal dapat menugaskan tim teknis untuk melakukan evaluasi perubahan cakupan Wilayah Usaha sebagaimana dimaksud pada ayat (1).
+(6) Menteri melalui Direktur Jenderal mempertimbangkan hasil evaluasi tim teknis dalam menyetujui atau menolak perubahan cakupan Wilayah Usaha.
+(7) Dalam hal perubahan cakupan Wilayah Usaha disetujui, Menteri melalui Direktur Jenderal menetapkan kembali Wilayah Usaha.
+
+### Pasal 19
+
+(1) Menteri melalui Direktur Jenderal mencabut penetapan Wilayah Usaha, dalam hal:
+a. Badan Usaha tidak memperoleh penetapan IUPTLU dalam jangka waktu 3 (tiga) tahun setelah mendapatkan penetapan Wilayah Usaha;
+b. IUPTLU berakhir dan tidak diperpanjang;
+c. IUPTLU dicabut; atau
+d. Badan Usaha tidak dapat memenuhi kewajiban di wilayah usahanya.
+(2) Berdasarkan pencabutan Wilayah Usaha sebagaimana dimaksud pada ayat (1), Menteri melalui Direktur Jenderal mengalihkan Wilayah Usaha kepada:
+a. Badan Usaha milik negara sebagai pemegang IUPTLU yang memiliki Wilayah Usaha; atau
+b. Badan Usaha pemegang IUPTLU lain yang memiliki Wilayah Usaha terdekat.
+
+### Pasal 20
+
+RUPTL sebagaimana dimaksud dalam Pasal 10 ayat (2) huruf c digunakan oleh pemegang Wilayah Usaha sebagai dasar:
+a. pelaksanaan kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum; dan
+b. pembelian tenaga listrik dan/atau sewa jaringan tenaga listrik dengan pemegang IUPTLU lainnya.
+
+### Pasal 21
+
+RUPTL sebagaimana dimaksud dalam Pasal 20 wajib dimiliki oleh pemegang Wilayah Usaha.
+
+### Pasal 22
+
+(1) RUPTL sebagaimana dimaksud dalam Pasal 21 disusun berdasarkan RUKN.
+(2) RUPTL sebagaimana dimaksud pada ayat (1) harus mengakomodasi rencana pengembangan sistem penyediaan tenaga listrik yang terdapat dalam RUKN.
+(3) Target bauran energi dalam RUPTL harus sesuai dengan target bauran energi nasional dalam RUKN.
+(4) Pencapaian target bauran energi sebagaimana dimaksud pada ayat (3) dapat dilakukan dengan:
+a. memaksimalkan potensi energi baru dan terbarukan di wilayah usahanya;
+b. kerja sama antarpemegang Wilayah Usaha; atau
+c. pembelian sertifikat energi baru dan terbarukan.
+(5) Porsi energi baru dan terbarukan dalam target bauran energi RUKN sebagaimana dimaksud pada ayat (3) dan ayat (4) merupakan target minimal dan porsi batubara dan bahan bakar minyak merupakan target maksimal.
+
+### Pasal 23
+
+RUPTL disusun berdasarkan analisis kebutuhan tenaga listrik dengan menggunakan asumsi dan/atau target:
+a. jumlah pelanggan; dan
+b. jenis pelanggan.
+
+### Pasal 24
+
+(1) RUPTL untuk usaha distribusi tenaga listrik dan/atau usaha penjualan tenaga listrik disusun untuk jangka waktu 5 (lima) tahun.
+(2) RUPTL untuk Usaha Penyediaan Tenaga Listrik terintegrasi disusun untuk jangka waktu 10 (sepuluh) tahun.
+
+### Pasal 25
+
+Pemegang Wilayah Usaha mengajukan permohonan pengesahan RUPTL yang dilengkapi persyaratan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Perizinan Berusaha sektor energi dan sumber daya mineral.
+
+### Pasal 26
+
+Ketentuan mengenai sistematika dan format penyusunan RUPTL sebagaimana dimaksud dalam Pasal 20 tercantum dalam Lampiran I yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 27
+
+(1) Pemegang Wilayah Usaha sebagaimana dimaksud dalam Pasal 25 menyampaikan permohonan usulan RUPTL secara tertulis kepada Menteri melalui Direktur Jenderal atau gubernur sesuai dengan kewenangannya.
+(2) Usulan RUPTL sebagaimana dimaksud pada ayat (1) disahkan oleh Menteri atau gubernur sesuai dengan kewenangannya.
+(3) Ketentuan mengenai format surat permohonan pengesahan usulan RUPTL sebagaimana dimaksud pada ayat (1) dan ayat (2) tercantum dalam Lampiran II yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 28
+
+(1) Pemegang Wilayah Usaha melakukan evaluasi RUPTL secara berkala setiap 1 (satu) tahun.
+(2) Evaluasi RUPTL sebagaimana dimaksud pada ayat (1) mencakup evaluasi proyeksi kebutuhan tenaga listrik.
+(3) Hasil evaluasi proyeksi kebutuhan tenaga listrik sebagaimana dimaksud pada ayat (2) disampaikan kepada Menteri melalui Direktur Jenderal atau gubernur sesuai dengan kewenangannya setiap bulan September.
+
+### Pasal 29
+
+(1) Setiap perubahan RUPTL harus mendapatkan pengesahan dari Menteri atau gubernur sesuai dengan kewenangannya.
+(2) Perubahan RUPTL sebagaimana dimaksud pada ayat (1) dapat dilakukan berdasarkan:
+a. hasil evaluasi RUPTL secara berkala oleh pemegang Wilayah Usaha sebagaimana dimaksud dalam Pasal 28 ayat (1); atau
+b. perintah Menteri atau gubernur sesuai dengan kewenangannya.
+(3) Permohonan pengesahan usulan perubahan RUPTL berdasarkan hasil evaluasi RUPTL secara berkala sebagaimana dimaksud pada ayat (2) huruf a disampaikan:
+a. setelah proyeksi kebutuhan tenaga listrik sebagaimana dimaksud dalam Pasal 28 ayat (3) diterima secara lengkap dan benar; dan
+b. paling lambat bulan Oktober sebelum tahun perencanaan.
+(4) Dalam hal terdapat perintah Menteri atau gubernur sesuai dengan kewenangannya sebagaimana dimaksud pada ayat (2) huruf b, pemegang Wilayah Usaha wajib mengubah RUPTL.
+
+### Pasal 30
+
+(1) Dalam hal dilakukan perubahan RUPTL, hasil dan alasan perubahan dicantumkan dalam dokumen usulan perubahan RUPTL.
+(2) Perubahan RUPTL sebagaimana dimaksud pada ayat (1) disusun berdasarkan analisis kebutuhan tenaga listrik dengan menggunakan asumsi dan/atau target:
+a. pertumbuhan penduduk;
+b. pertumbuhan ekonomi;
+c. inflasi;
+d. jumlah pelanggan dan jenis pelanggan; dan
+e. asumsi dan/atau target lainnya sesuai dengan kebutuhan.
+(3) Hasil analisis kebutuhan tenaga listrik sebagaimana dimaksud pada ayat (2) menjadi dasar perencanaan pasokan tenaga listrik.
+(4) Perencanaan pasokan tenaga listrik sebagaimana dimaksud pada ayat (3) dilakukan:
+a. berdasarkan optimasi Sistem Tenaga Listrik dengan menggunakan perangkat lunak yang khusus digunakan dalam perencanaan Sistem Tenaga Listrik; dan
+b. sejalan dengan kebijakan Pemerintah.
+(5) Selain menggunakan asumsi dan/atau target sebagaimana dimaksud pada ayat (2), perubahan RUPTL didasarkan pada data historis.
+(6) Data historis sebagaimana dimaksud pada ayat (5) menggunakan:
+a. data dalam 5 (lima) tahun terakhir untuk RUPTL usaha distribusi tenaga listrik dan/atau usaha penjualan tenaga listrik; atau
+b. data dalam 10 (sepuluh) tahun terakhir untuk RUPTL Usaha Penyediaan Tenaga Listrik terintegrasi.
+(7) Dalam hal pemegang Wilayah Usaha belum memiliki data historis sebagaimana dimaksud pada ayat (6), perubahan RUPTL dapat disusun berdasarkan:
+a. data historis yang dimiliki sejak pemegang Wilayah Usaha melakukan kegiatan Usaha Penyediaan Tenaga Listrik; atau
+b. analisis kebutuhan tenaga listrik sesuai dengan asumsi dan/atau target jumlah pelanggan dan jenis pelanggan.
+
+### Pasal 31
+
+(1) Pemegang Wilayah Usaha menyampaikan permohonan pengesahan usulan perubahan RUPTL secara tertulis kepada Menteri melalui Direktur Jenderal atau gubernur sesuai dengan kewenangannya.
+(2) Usulan perubahan RUPTL sebagaimana dimaksud pada ayat (1) disahkan oleh Menteri atau gubernur sesuai dengan kewenangannya.
+(3) Ketentuan mengenai format surat permohonan pengesahan usulan perubahan RUPTL sebagaimana dimaksud pada ayat (1) tercantum dalam Lampiran III yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 32
+
+(1) Dalam hal usulan RUPTL sebagaimana dimaksud dalam Pasal 27 ayat (1) disampaikan oleh Badan Usaha stasiun pengisian kendaraan listrik umum, pengesahan RUPTL dilakukan oleh Direktur Jenderal atas nama Menteri.
+(2) Dalam hal usulan perubahan RUPTL sebagaimana dimaksud dalam Pasal 31 ayat (1) disampaikan oleh Badan Usaha stasiun pengisian kendaraan listrik umum, pengesahan RUPTL dilakukan oleh Direktur Jenderal atas nama Menteri.
+
+### Pasal 33
+
+Tata cara pengesahan untuk pertama kali sebagaimana dimaksud dalam Pasal 27 ayat (2) dan perubahan RUPTL sebagaimana dimaksud dalam Pasal 31 ayat (2) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Perizinan Berusaha sektor energi dan sumber daya mineral.
+
+### Pasal 34
+
+Pemegang Wilayah Usaha harus melaksanakan RUPTL yang telah disahkan sebagaimana dimaksud dalam Pasal 27 ayat
+(2) dan Pasal 31 ayat (2) untuk memenuhi kebutuhan tenaga listrik di dalam wilayah usahanya.
+
+### Pasal 35
+
+(1) Pemegang IUPTLU yang memiliki Wilayah Usaha wajib menyampaikan laporan realisasi RUPTL.
+(2) Laporan realisasi RUPTL sebagaimana dimaksud pada ayat (1) merupakan laporan kegiatan usaha:
+a. pemegang Wilayah Usaha; dan
+b. pemegang IUPTLU yang memiliki Wilayah Usaha.
+(3) Laporan realisasi RUPTL sebagaimana dimaksud pada ayat (1) disampaikan kepada:
+a. Menteri melalui Direktur Jenderal, bagi Badan Usaha yang IUPTLU-nya diterbitkan oleh Menteri; atau
+b. gubernur, bagi Badan Usaha yang IUPTLU-nya diterbitkan oleh gubernur.
+(4) Selain laporan realisasi RUPTL disampaikan kepada gubernur sebagaimana dimaksud pada ayat (3) huruf b, Badan Usaha yang IUPTLU-nya diterbitkan oleh gubernur wajib menyampaikan tembusan laporan realisasi RUPTL kepada Menteri melalui Direktur Jenderal.
+(5) Laporan realisasi RUPTL sebagaimana dimaksud pada ayat (1) disusun:
+a. secara berkala setiap 3 (tiga) bulan yang disampaikan pada bulan Januari, bulan April, bulan Juli, bulan Oktober, dan sewaktu-waktu apabila diperlukan oleh Badan Usaha milik negara; atau
+b. secara berkala setiap tahun yang disampaikan pada bulan Januari dan sewaktu-waktu apabila diperlukan oleh selain Badan Usaha milik negara.
+(6) Ketentuan mengenai sistematika dan format laporan realisasi RUPTL tercantum dalam Lampiran IV yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+Jaringan Tenaga Listrik Lintas Negara
+
+### Pasal 36
+
+(1) Izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara sebagaimana dimaksud dalam Pasal 10 ayat (2) huruf d hanya dapat dilakukan oleh pemegang IUPTLU terintegrasi sebagaimana dimaksud dalam Pasal 5.
+(2) Izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara sebagaimana dimaksud pada ayat (1) untuk melaksanakan usaha:
+a. penjualan tenaga listrik lintas negara;
+b. pembelian tenaga listrik lintas negara; dan/atau
+c. interkoneksi jaringan tenaga listrik lintas negara.
+(3) Penjualan tenaga listrik lintas negara sebagaimana dimaksud pada ayat (2) huruf a dapat dilakukan dengan syarat:
+a. kebutuhan tenaga listrik setempat dan wilayah sekitarnya telah terpenuhi;
+b. harga jual tenaga listrik tidak mengandung subsidi; dan
+c. tidak mengganggu mutu dan keandalan penyediaan tenaga listrik di wilayah usahanya.
+(4) Pembelian tenaga listrik lintas negara sebagaimana dimaksud pada ayat (2) huruf b dapat dilakukan dengan syarat:
+a. belum terpenuhinya kebutuhan tenaga listrik setempat;
+b. hanya sebagai penunjang pemenuhan kebutuhan tenaga listrik setempat;
+c. tidak merugikan kepentingan negara dan bangsa yang terkait dengan kedaulatan, keamanan, dan pembangunan ekonomi;
+d. untuk meningkatkan mutu dan keandalan penyediaan tenaga listrik setempat;
+e. tidak mengabaikan pengembangan kemampuan penyediaan tenaga listrik dalam negeri; dan
+f. tidak menimbulkan ketergantungan pengadaan tenaga listrik dari luar negeri.
+
+### Pasal 37
+
+(1) Untuk mendapatkan izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara sesuai jenis usaha sebagaimana dimaksud dalam Pasal 36 ayat (2), Badan Usaha mengajukan permohonan dengan melengkapi persyaratan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Perizinan Berusaha sektor energi dan sumber daya mineral.
+(2) Izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara sebagaimana dimaksud pada ayat (1) diberikan untuk jangka waktu paling lama 5 (lima) tahun dan dapat diperpanjang.
+(3) Permohonan perpanjangan sebagaimana dimaksud pada ayat (2) dilakukan oleh pemegang izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara paling lambat 60 (enam puluh) hari kerja sebelum izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara berakhir.
+(4) Evaluasi permohonan perpanjangan sebagaimana dimaksud pada ayat (3) dilakukan dengan mempertimbangkan ketaatan pemegang izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara dalam menyampaikan laporan pelaksanaan izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara.
+
+## BAB III PERIZINAN BERUSAHA KETENAGALISTRIKAN; Bagian Ketiga Perizinan Berusaha untuk Kegiatan Usaha Penyediaan Tenaga
+
+### Pasal 38
+
+(1) Izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara harus diubah dalam hal terdapat perubahan kapasitas pembelian atau penjualan tenaga listrik lintas negara.
+(2) Izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara berakhir karena:
+a. habis masa berlakunya dan tidak diajukan perpanjangan; atau
+b. dicabut oleh Menteri.
+Listrik untuk Kepentingan Sendiri
+
+### Pasal 39
+
+(1) Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri sebagaimana dimaksud dalam Pasal 9 huruf b wajib mendapatkan IUPTLS.
+(2) IUPTLS sebagaimana dimaksud pada ayat (1) wajib dimiliki oleh Pelaku Usaha yang menjalankan kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri dengan total kapasitas pembangkit tenaga listrik lebih dari 500 (lima ratus) kilowatt dalam 1 (satu) sistem instalasi tenaga listrik.
+(3) Pelaku Usaha yang menjalankan kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri dengan total kapasitas pembangkit tenaga listrik sampai dengan 500 (lima ratus) kilowatt dalam 1 (satu) sistem instalasi tenaga listrik wajib menyampaikan laporan Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri dengan total kapasitas pembangkit tenaga listrik sampai dengan 500 (lima ratus) kilowatt.
+(4) Laporan sebagaimana dimaksud pada ayat (3) disampaikan 1 (satu) kali selama menjalankan Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri kepada Menteri melalui Direktur Jenderal atau gubernur sesuai dengan kewenangannya.
+(5) Ketentuan mengenai format laporan Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri dengan total kapasitas pembangkit tenaga listrik sampai dengan 500 (lima ratus) kilowatt sebagaimana dimaksud pada ayat (3) tercantum dalam Lampiran V yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 40
+
+(1) Untuk mendapatkan IUPTLS sebagaimana dimaksud dalam Pasal 39 ayat (1), Pelaku Usaha mengajukan permohonan dengan melengkapi persyaratan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Perizinan Berusaha sektor energi dan sumber daya mineral.
+(2) IUPTLS berlaku untuk jangka waktu paling lama 10 (sepuluh) tahun dan dapat diperpanjang.
+(3) Permohonan perpanjangan IUPTLS sebagaimana dimaksud pada ayat (2) disampaikan oleh pemegang IUPTLS paling lambat 60 (enam puluh) hari kerja sebelum IUPTLS berakhir.
+(4) Evaluasi permohonan perpanjangan IUPTLS sebagaimana dimaksud pada ayat (3) dilakukan dengan mempertimbangkan ketaatan pemegang IUPTLS dalam penyampaian laporan pelaksanaan IUPTLS.
+
+## BAB III PERIZINAN BERUSAHA KETENAGALISTRIKAN; Bagian Keempat Perizinan Usaha untuk Kegiatan Usaha Jasa Penunjang
+
+### Pasal 41
+
+(1) IUPTLS wajib diubah dalam hal terdapat perubahan:
+a. penggunaan sebagaimana dimaksud dalam Pasal 6 ayat (2); atau
+b. kapasitas instalasi tenaga listrik.
+(2) IUPTLS berakhir karena:
+a. habis masa berlakunya dan tidak diajukan perpanjangan; atau
+b. dicabut oleh Menteri atau gubernur sesuai dengan kewenangannya.
+Tenaga Listrik
+
+## BAB IV KEGIATAN USAHA PENYEDIAAN TENAGA LISTRIK; Bagian Kesatu Umum
+
+### Pasal 42
+
+Perizinan Berusaha untuk usaha jasa penunjang tenaga listrik sebagaimana dimaksud dalam Pasal 9 huruf c dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Perizinan Berusaha sektor energi dan sumber daya mineral.
+
+## BAB IV KEGIATAN USAHA PENYEDIAAN TENAGA LISTRIK; Bagian Kedua Standar Mutu dan Keandalan Sistem Tenaga Listrik
+
+### Pasal 43
+
+Dalam melakukan kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum, pemegang IUPTLU wajib:
+a. menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+b. memberikan pelayanan yang sebaik-baiknya kepada Konsumen dan masyarakat;
+c. memenuhi ketentuan Keselamatan Ketenagalistrikan; dan
+d. mengutamakan produk dan potensi dalam negeri.
+
+### Pasal 44
+
+(1) Standar mutu dan keandalan Sistem Tenaga Listrik harus diberlakukan sesuai dengan aturan jaringan pada sistem setempat yang meliputi:
+a. aturan jaringan Sistem Tenaga Listrik (grid code); dan/atau
+b. aturan distribusi tenaga listrik.
+(2) Aturan jaringan sebagaimana dimaksud pada ayat (1) ditetapkan oleh:
+a. Menteri, untuk Wilayah Usaha yang IUPTLU-nya diterbitkan oleh Menteri; atau
+b. gubernur sesuai dengan kewenangannya, untuk Wilayah Usaha yang IUPTLU-nya diterbitkan oleh gubernur.
+(3) Dalam hal belum terdapat aturan jaringan pada suatu Wilayah Usaha sebagaimana dimaksud pada ayat (2), pengelolaan Sistem Tenaga Listrik dapat mengikuti aturan jaringan lain yang sejenis yang telah ada sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai aturan jaringan Sistem Tenaga Listrik.
+
+### Pasal 45
+
+(1) Dalam memenuhi standar mutu dan keandalan Sistem Tenaga Listrik sebagaimana dimaksud dalam Pasal 44, pemegang:
+a. IUPTLU terintegrasi;
+b. IUPTLU transmisi tenaga listrik;
+c. IUPTLU distribusi tenaga listrik; dan/atau
+d. IUPTLS, dapat melakukan kerja sama antarpemegang izin usaha.
+(2) Kerja sama sebagaimana dimaksud pada ayat (1) berupa:
+a. pemanfaatan bersama jaringan tenaga listrik; dan/atau
+b. operasi paralel.
+(3) Selain untuk memenuhi standar mutu dan keandalan Sistem Tenaga Listrik sebagaimana dimaksud pada ayat (1), pemanfaatan bersama jaringan tenaga listrik dapat dilakukan untuk menyalurkan tenaga listrik dari pembangkitan sampai dengan titik beban.
+
+### Pasal 46
+
+(1) Pemanfaatan bersama jaringan tenaga listrik sebagaimana dimaksud dalam Pasal 45 ayat (2) huruf a meliputi pemanfaatan bersama jaringan:
+a. transmisi tenaga listrik; dan/atau
+b. distribusi tenaga listrik.
+(2) Pemanfaatan bersama jaringan transmisi tenaga listrik dan/atau distribusi tenaga listrik sebagaimana dimaksud pada ayat (1) harus sesuai dengan:
+a. kemampuan kapasitas jaringan transmisi tenaga listrik dan/atau distribusi tenaga listrik; dan
+b. aturan jaringan Sistem Tenaga Listrik (grid code) atau aturan jaringan distribusi tenaga listrik sebagaimana dimaksud dalam Pasal 44.
+(3) Kemampuan kapasitas jaringan transmisi tenaga listrik dan/atau distribusi tenaga listrik sebagaimana dimaksud pada ayat (2) huruf a merupakan kemampuan untuk menyalurkan tenaga listrik sesuai dengan kapasitas jaringan yang dipersyaratkan.
+
+### Pasal 47
+
+(1) Jaringan transmisi dan/atau distribusi tenaga listrik yang dimanfaatkan bersama sebagaimana dimaksud dalam Pasal 46 ayat (1) dapat dimiliki oleh pemegang:
+a. IUPTLU terintegrasi;
+b. IUPTLU transmisi tenaga listrik;
+c. IUPTLU distribusi tenaga listrik; atau
+d. IUPTLS yang memiliki transmisi dan/atau distribusi tenaga listrik.
+(2) Pemilik Jaringan transmisi dan/atau distribusi tenaga listrik sebagaimana dimaksud pada ayat (1) dalam menjalankan:
+a. jenis usaha transmisi tenaga listrik:
+1. tidak dibatasi oleh Wilayah Usaha; dan
+2. wajib membuka kesempatan pemanfaatan bersama jaringan transmisi tenaga listrik; dan
+b. jenis usaha distribusi tenaga listrik:
+1. dilaksanakan dalam 1 (satu) Wilayah Usaha; dan
+2. wajib membuka kesempatan pemanfaatan bersama jaringan distribusi tenaga listrik.
+(3) Pemilik Jaringan transmisi dan/atau distribusi tenaga listrik sebagaimana dimaksud pada ayat (1) dapat melakukan interkoneksi Sistem Tenaga Listrik dengan memanfaatkan jaringan transmisi dan/atau distribusi tenaga listrik untuk disewakan kepada pemegang:
+a. IUPTLU terintegrasi yang memiliki Wilayah Usaha;
+b. IUPTLU pembangkit tenaga listrik; atau
+c. IUPTLS.
+(4) Dalam hal dilakukan interkoneksi Sistem Tenaga Listrik sebagaimana dimaksud pada ayat (3), pengaturan operasi sistem pemanfaatan jaringan:
+a. transmisi tenaga listrik dilakukan oleh operator sistem yang mengoperasikan sistem paling besar pada sistem setempat; atau
+b. distribusi tenaga listrik dilakukan oleh pemegang Wilayah Usaha.
+
+### Pasal 48
+
+(1) Untuk dapat melakukan kerja sama pemanfaatan jaringan transmisi dan/atau distribusi tenaga listrik, pemegang izin yang akan menyewa mengajukan usulan kepada pemegang izin yang memiliki jaringan transmisi dan/atau distribusi tenaga listrik.
+(2) Usulan sebagaimana dimaksud pada ayat (1) ditembuskan kepada Menteri atau gubernur sesuai dengan kewenangannya.
+(3) Usulan sebagaimana dimaksud pada ayat (2) dilengkapi dengan dokumen:
+a. IUPTLU atau IUPTLS; dan
+b. rencana pemanfaatan jaringan transmisi dan/atau distribusi tenaga listrik yang meliputi:
+1. lokasi dan panjang jaringan;
+2. jenis dan kapasitas pembangkit tenaga listrik;
+3. jangka waktu pemanfaatan jaringan;
+4. karakteristik Konsumen; dan
+5. mutu tenaga listrik.
+
+### Pasal 49
+
+(1) Berdasarkan usulan sebagaimana dimaksud dalam Pasal 48, pemegang izin usaha yang memiliki jaringan transmisi dan/atau distribusi tenaga listrik melakukan evaluasi terhadap usulan pemegang izin yang akan menyewa jaringan transmisi dan/atau distribusi tenaga listrik.
+(2) Evaluasi sebagaimana dimaksud pada ayat (1) dilakukan untuk menilai kecukupan dan kesesuaian persyaratan dokumen.
+(3) Pelaksanaan evaluasi sebagaimana dimaksud pada ayat
+(2) harus diselesaikan dalam jangka waktu paling lama 5 (lima) hari kerja terhitung sejak surat usulan diterima.
+(4) Hasil evaluasi sebagaimana dimaksud pada ayat (2) dapat berupa:
+a. menerima usulan pemegang izin yang akan menyewa dan dilanjutkan dengan negosiasi;
+b. mengembalikan usulan pemegang izin yang akan menyewa untuk dilengkapi dan/atau diperbaiki; atau
+c. menolak usulan pemegang izin yang akan menyewa disertai dengan alasan penolakan.
+(5) Hasil evaluasi sebagaimana dimaksud pada ayat (4) huruf a dan huruf c ditembuskan kepada Menteri atau gubernur sesuai dengan kewenangannya.
+
+### Pasal 50
+
+(1) Negosiasi sebagaimana dimaksud dalam Pasal 49 ayat (4) huruf a dilakukan dalam rangka menyepakati harga sewa jaringan transmisi dan/atau distribusi tenaga listrik untuk:
+a. memenuhi mutu dan keandalan Sistem Tenaga Listrik bagi pemegang izin yang menyewa; atau
+b. menyalurkan tenaga listrik dari pembangkitan sampai dengan titik beban sesuai dengan kebutuhan pemegang izin yang menyewa.
+(2) Negosiasi harga sewa jaringan transmisi dan/atau distribusi tenaga listrik wajib mempertimbangkan ketentuan aturan jaringan sebagaimana dimaksud dalam Pasal 46.
+(3) Negosiasi sebagaimana dimaksud pada ayat (1) dilakukan dalam jangka waktu paling lama 20 (dua puluh) hari kerja terhitung sejak surat yang menyatakan bahwa usulan diterima.
+(4) Hasil negosiasi pemanfaatan bersama jaringan transmisi dan/atau distribusi tenaga listrik dapat berupa:
+a. kesepakatan harga sewa jaringan transmisi dan/atau distribusi tenaga listrik; atau
+b. ketidaksepakatan harga sewa jaringan transmisi dan/atau distribusi tenaga listrik.
+
+### Pasal 51
+
+(1) Kesepakatan harga sewa jaringan transmisi dan/atau distribusi tenaga listrik dari hasil negosiasi sebagaimana dimaksud dalam Pasal 50 ayat (4) huruf a diajukan pemegang izin yang memiliki jaringan transmisi dan/atau distribusi tenaga listrik kepada Menteri atau gubernur sesuai dengan kewenangannya untuk mendapatkan persetujuan.
+(2) Menteri atau gubernur sesuai dengan kewenangannya menyetujui atau menolak usulan harga sewa jaringan transmisi dan/atau distribusi tenaga listrik paling lambat 30 (tiga puluh) hari kerja terhitung sejak surat pengajuan.
+(3) Dalam hal Menteri atau gubernur sesuai dengan kewenangannya menolak harga sewa jaringan transmisi dan/atau distribusi tenaga listrik sebagaimana dimaksud pada ayat (2), pemegang izin yang memiliki jaringan dan pemegang izin yang akan menyewa jaringan melakukan negosiasi ulang.
+
+### Pasal 52
+
+(1) Pemegang izin melakukan perjanjian kerja sama pemanfaatan jaringan transmisi dan/atau distribusi tenaga listrik setelah mendapatkan persetujuan dari Menteri atau gubernur sesuai dengan kewenangannya sebagaimana dimaksud dalam Pasal 51 ayat (2).
+(2) Perjanjian kerja sama sebagaimana dimaksud pada ayat
+(1) dilengkapi dengan dokumen:
+a. aturan jaringan yang disepakati, dalam hal suatu Wilayah Usaha belum mempunyai aturan jaringan; dan/atau
+b. ketentuan teknis yang disepakati, dalam hal ketentuan teknis belum tercantum pada aturan jaringan.
+
+### Pasal 53
+
+(1) Operasi paralel sebagaimana dimaksud dalam Pasal 45 ayat (2) huruf b dilaksanakan melalui interkoneksi pembangkit tenaga listrik atau sistem penyediaan tenaga listrik dengan sistem penyediaan tenaga listrik lainnya.
+(2) Badan Usaha yang memiliki pembangkit dapat melakukan operasi paralel dengan sistem penyediaan tenaga listrik pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha.
+(3) Operasi paralel sebagaimana dimaksud pada ayat (1) dilakukan untuk:
+a. cadangan kapasitas tenaga listrik melalui pembelian tenaga listrik dari pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha; dan/atau
+b. tambahan kapasitas tenaga listrik melalui pembelian tenaga listrik dari pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha.
+(4) Penyambungan tenaga listrik pada operasi paralel dapat dilakukan pada jaringan:
+a. tegangan tinggi;
+b. tegangan menengah; dan/atau
+c. tegangan rendah.
+
+## BAB IV KEGIATAN USAHA PENYEDIAAN TENAGA LISTRIK; Bagian Ketiga Layanan Penyediaan Tenaga Listrik
+
+### Pasal 54
+
+(1) Operasi paralel sebagaimana dimaksud dalam Pasal 53 dilaksanakan dengan mempertimbangkan kemampuan kapasitas sistem penyediaan tenaga listrik pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha dan sesuai dengan aturan jaringan Sistem Tenaga Listrik (grid code) sebagaimana dimaksud dalam Pasal 44.
+(2) Untuk melakukan operasi paralel sebagaimana dimaksud pada ayat (1), Pelaku Usaha yang memiliki pembangkit mengajukan permohonan operasi paralel kepada pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha.
+
+### Pasal 55
+
+Layanan penyediaan tenaga listrik meliputi pemenuhan:
+a. kecukupan pasokan tenaga listrik;
+b. tingkat mutu pelayanan tenaga listrik; dan
+c. kewajaran tarif tenaga listrik.
+
+### Pasal 56
+
+(1) Pemenuhan kecukupan pasokan tenaga listrik sebagaimana dimaksud dalam Pasal 55 huruf a dengan menyediakan pasokan tenaga listrik selama 24 (dua puluh empat) jam sehari pada suatu Wilayah Usaha.
+(2) Pemenuhan kecukupan pasokan tenaga listrik sebagaimana dimaksud pada ayat (1) wajib dilakukan oleh pemegang IUPTLU yang memiliki Wilayah Usaha.
+(3) Dalam pemenuhan kecukupan pasokan tenaga listrik sebagaimana dimaksud pada ayat (1), pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha dapat melakukan kerja sama penyediaan tenaga listrik dengan:
+a. pemegang IUPTLU pembangkit tenaga listrik;
+b. pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha lainnya;
+c. pemegang IUPTLS;
+d. pemegang IUJPTL; dan/atau
+e. Badan Usaha penyedia tenaga listrik negara lain.
+(4) Dalam pemenuhan kecukupan pasokan tenaga listrik sebagaimana dimaksud pada ayat (1), pemegang IUPTLU distribusi dan/atau penjualan tenaga listrik yang memiliki Wilayah Usaha melakukan perubahan kerja sama untuk penambahan jumlah pasokan tenaga listrik dari pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha.
+
+### Pasal 57
+
+(1) Kerja sama pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha dengan pemegang IUPTLU pembangkit tenaga listrik sebagaimana dimaksud dalam Pasal 56 ayat (3) huruf a dilakukan oleh pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha melalui tahapan pengadaan tenaga listrik.
+(2) Hasil pengadaan tenaga listrik sebagaimana dimaksud pada ayat (1) dituangkan dalam perjanjian jual beli tenaga listrik.
+
+### Pasal 58
+
+(1) Kerja sama antarpemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha sebagaimana dimaksud dalam Pasal 56 ayat (3) huruf b harus memenuhi syarat:
+a. memiliki instalasi tenaga listrik yang telah beroperasi;
+b. memiliki Konsumen; dan
+c. memiliki pembangkit tenaga listrik.
+(2) Kerja sama pemegang IUPTLU distribusi dan/atau penjualan tenaga listrik yang memiliki Wilayah Usaha dengan pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha sebagaimana dimaksud dalam Pasal 56 ayat (4) harus memenuhi syarat:
+a. memiliki instalasi tenaga listrik yang telah beroperasi;
+b. memiliki Konsumen; dan
+c. memiliki kontrak jual beli tenaga listrik secara curah atau layanan khusus.
+(3) Kerja sama sebagaimana dimaksud pada ayat (1) dan ayat (2) tidak memerlukan Perizinan Berusaha yang baru.
+(4) Harga jual beli tenaga listrik dalam kerja sama sebagaimana dimaksud pada ayat (1) dan ayat (2) wajib mendapatkan persetujuan dari Menteri.
+
+### Pasal 59
+
+(1) Kerja sama pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha dengan pemegang IUPTLS sebagaimana dimaksud dalam Pasal 56 ayat (3) huruf c dilakukan untuk pembelian kelebihan tenaga listrik (excess power).
+(2) Kerja sama pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha dengan pemegang IUPTLS sebagaimana dimaksud pada ayat (1) dilakukan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai pembelian kelebihan tenaga listrik (excess power).
+
+### Pasal 60
+
+(1) Kerja sama pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha dengan pemegang IUJPTL sebagaimana dimaksud dalam Pasal 56 ayat (3) huruf d dilakukan melalui mekanisme penyewaan instalasi pembangkit, transmisi, dan/atau distribusi tenaga listrik.
+(2) Pemegang IUJPTL yang bekerja sama dengan pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha tidak memerlukan Perizinan Berusaha ketenagalistrikan baru.
+(3) Harga sewa dalam kerja sama sebagaimana dimaksud pada ayat (1) harus mendapatkan persetujuan dari Menteri.
+
+### Pasal 61
+
+(1) Kerja sama pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha dengan Badan Usaha Penyediaan Tenaga Listrik negara lain sebagaimana dimaksud dalam Pasal 56 ayat (3) huruf e dilakukan melalui mekanisme penjualan atau pembelian tenaga listrik lintas negara.
+(2) Harga jual beli tenaga listrik lintas negara sebagaimana dimaksud pada ayat (1) harus mendapatkan persetujuan dari Menteri.
+
+### Pasal 62
+
+(1) Pemenuhan tingkat mutu pelayanan tenaga listrik sebagaimana dimaksud dalam Pasal 55 huruf b dengan memenuhi indikator mutu layanan tenaga listrik pada suatu Wilayah Usaha.
+(2) Pemenuhan indikator mutu layanan sebagaimana dimaksud pada (1) wajib dilakukan oleh pemegang IUPTLU yang memiliki Wilayah Usaha.
+(3) Dalam pemenuhan indikator mutu layanan, pemegang IUPTLU distribusi dan/atau penjualan tenaga listrik yang memiliki Wilayah Usaha dapat melakukan pengadaan pembangkit tenaga listrik sebagai cadangan yang dioperasikan hanya sewaktu-waktu.
+(4) Dalam hal tidak dapat memenuhi indikator mutu layanan sebagaimana dimaksud pada ayat (3), pemegang IUPTLU yang memiliki Wilayah Usaha wajib memberikan pengurangan tagihan listrik untuk pascabayar atau penambahan kilowatt-hour (kWh) untuk prabayar kepada Konsumen pada bulan berikutnya.
+
+### Pasal 63
+
+(1) Indikator mutu layanan pada suatu Wilayah Usaha sebagaimana dimaksud dalam Pasal 62 ditetapkan oleh Menteri atau gubernur sesuai dengan kewenangannya.
+(2) Dalam hal Konsumen pada golongan tarif tertentu menginginkan mutu pelayanan yang lebih baik, indikator mutu layanan dituangkan dalam perjanjian jual beli tenaga listrik.
+
+## BAB IV KEGIATAN USAHA PENYEDIAAN TENAGA LISTRIK; Bagian Keempat Pemenuhan Ketentuan Keselamatan Ketenagalistrikan
+
+### Pasal 64
+
+(1) Pemenuhan kewajaran tarif tenaga listrik sebagaimana dimaksud dalam Pasal 55 huruf c dilakukan dengan memperhatikan keseimbangan kepentingan nasional, daerah, Konsumen, dan Pelaku Usaha Penyediaan Tenaga Listrik pada suatu Wilayah Usaha.
+(2) Pemenuhan kewajaran tarif tenaga listrik sebagaimana dimaksud pada ayat (1) wajib dilakukan oleh pemegang IUPTLU yang memiliki Wilayah Usaha.
+(3) Kewajaran sebagaimana dimaksud pada ayat (1) berdasarkan struktur dan golongan tarif tenaga listrik yang disesuaikan dengan kebutuhan Konsumen.
+(4) Dalam hal pemegang IUPTLU yang memiliki Wilayah Usaha menerapkan tarif tenaga listrik tertinggi (ceiling base tariff), besaran keuntungan usaha harus didapatkan secara wajar.
+(5) Tata cara penetapan tarif tenaga listrik dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+
+## BAB IV KEGIATAN USAHA PENYEDIAAN TENAGA LISTRIK; Bagian Kelima Mengutamakan Produk dan Potensi Dalam Negeri
+
+### Pasal 65
+
+(1) Dalam memenuhi ketentuan Keselamatan Ketenagalistrikan sebagaimana dimaksud dalam Pasal 43 huruf c, setiap kegiatan Usaha Ketenagalistrikan wajib memenuhi Keselamatan Ketenagalistrikan.
+(2) Keselamatan Ketenagalistrikan sebagaimana dimaksud pada ayat (1) meliputi:
+a. pemenuhan standardisasi peralatan dan pemanfaat tenaga listrik;
+b. pengamanan instalasi tenaga listrik; dan
+c. pengamanan pemanfaat tenaga listrik.
+(3) Pemenuhan Keselamatan Ketenagalistrikan dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+
+## BAB V KEGIATAN USAHA JASA PENUNJANG TENAGA LISTRIK; Bagian Kesatu Pelaksanaan Usaha Jasa Penunjang Tenaga Listrik
+
+### Pasal 66
+
+(1) Instansi Pemerintah Pusat, instansi Pemerintah Daerah, Badan Usaha milik negara, Badan Usaha milik daerah, Badan Usaha swasta, badan layanan umum, koperasi, perseorangan, swadaya masyarakat, dan lembaga/Badan Usaha lainnya dalam melakukan Usaha Ketenagalistrikan wajib mengutamakan produk dan potensi dalam negeri.
+(2) Pengutamaan produk dan potensi dalam negeri sebagaimana dimaksud pada ayat (1) meliputi:
+a. kewajiban penggunaan produk dalam negeri;
+b. pemenuhan TKDN; dan
+c. pengadaan produk dalam negeri.
+(3) Kewajiban penggunaan produk dalam negeri sebagaimana dimaksud pada ayat (2) huruf a wajib dipenuhi oleh pejabat pengadaan barang dan/atau jasa yang bertanggung jawab dalam menetapkan spesifikasi pengadaan barang dan/atau jasa pada instansi Pemerintah Pusat, instansi Pemerintah Daerah, Badan Usaha milik negara, Badan Usaha milik daerah, Badan Usaha swasta, badan layanan umum, koperasi, perseorangan, swadaya masyarakat, dan lembaga/Badan Usaha lainnya dalam kegiatan pembangunan infrastruktur ketenagalistrikan.
+(4) Pemenuhan TKDN sebagaimana dimaksud pada ayat (2) huruf b wajib dipenuhi oleh:
+a. pemegang IUPTLU yang menjual tenaga listrik kepada pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha; dan
+b. Perusahaan EPC atau Badan Usaha penunjang tenaga listrik pemegang IUJPTL yang menyediakan barang dan/atau jasa kepada pemegang IUPTLU.
+(5) Pengadaan produk dalam negeri sebagaimana dimaksud pada ayat (2) huruf c wajib dipenuhi oleh:
+a. pemegang IUPTLU yang menjual tenaga listrik kepada pemegang IUPTLU terintegrasi yang memiliki Wilayah Usaha; dan
+b. Perusahaan EPC atau Badan Usaha penunjang tenaga listrik pemegang IUJPTL yang menyediakan barang dan/atau jasa kepada pemegang IUPTLU.
+(6) Pemenuhan kewajiban penggunaan produk dalam negeri sebagaimana dimaksud pada ayat (3) dilaksanakan berdasarkan hasil pemeriksaan akhir terhadap proses pelaksanaan pengadaan barang dan/atau jasa.
+(7) Pemeriksaan sebagaimana dimaksud pada ayat (6) dilakukan oleh Aparatur Pengawas Internal Pemerintah serta pejabat pengawas internal dan tim peningkatan penggunaan produksi dalam negeri bidang ketenagalistrikan untuk pengadaan barang dan/atau jasa kementerian/lembaga setelah serah terima pekerjaan.
+(8) Pemeriksaan sebagaimana dimaksud pada ayat (7) dilakukan oleh pengawas internal pada pengguna produk dalam negeri untuk pengadaan barang dan/atau jasa oleh Badan Usaha milik negara, badan hukum lainnya yang dimiliki negara, Badan Usaha milik daerah, dan Badan Usaha swasta setelah serah terima pekerjaan.
+(9) Penilaian pemenuhan besaran nilai TKDN sebagaimana dimaksud pada ayat (4) dilakukan melalui kegiatan verifikasi TKDN.
+(10) Verifikasi TKDN sebagaimana dimaksud pada ayat (9) dapat dilakukan oleh lembaga verifikasi independen.
+(11) Pemenuhan pengutamaan produk dan potensi dalam negeri dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan di bidang pemberdayaan industri.
+
+### Pasal 67
+
+(1) Usaha jasa penunjang tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (2) dan ayat (3) dilaksanakan oleh pemegang IUJPTL sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Perizinan Berusaha sektor energi dan sumber daya mineral.
+(2) Kegiatan usaha jasa penunjang tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (2) huruf (a), huruf (b), huruf (d), huruf (e), huruf (f), huruf (g), dan huruf (h) dapat dilaksanakan oleh pemegang IUPTLU atau pemegang IUPTLS. dalam Bidang Instalasi Tenaga Listrik
+
+### Pasal 68
+
+Pelaksanaan usaha konsultansi dalam bidang instalasi tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (2) huruf a meliputi kegiatan:
+a. perencanaan; dan/atau
+b. pengawasan.
+
+### Pasal 69
+
+(1) Kegiatan perencanaan sebagaimana dimaksud dalam Pasal 68 huruf a dilakukan untuk menghasilkan dokumen yang berisi paling sedikit:
+a. studi kelayakan instalasi tenaga listrik;
+b. desain/gambar instalasi/diagram satu garis;
+c. lokasi dan tata letak instalasi;
+d. spesifikasi teknis;
+e. daftar kuantitas atau daftar keluaran;
+f. perkiraan biaya;
+g. metode pengoperasian dan pemeliharaan instalasi; dan/atau
+h. rencana pemenuhan Keselamatan Ketenagalistrikan.
+(2) Hasil kegiatan perencanaan sebagaimana dimaksud pada ayat (1) dilaporkan kepada Direktur Jenderal secara online melalui sistem informasi Direktorat Jenderal yang memuat paling sedikit:
+a. informasi dasar instalasi berupa:
+1. nama instalasi;
+2. nama pemilik atau pemohon instalasi;
+3. alamat lokasi instalasi;
+4. daya instalasi; dan
+5. nama tenaga teknik dan penanggung jawab teknik yang merancang;
+b. detail engineering design; dan
+c. standar instalasi yang digunakan.
+(3) Direktorat Jenderal memberikan nomor detail engineering design instalasi sebagai dokumentasi mampu telusur terhadap pelaporan kegiatan perencanaan yang disampaikan.
+(4) Kegiatan perencanaan sebagaimana dimaksud pada ayat
+(1) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Keselamatan Ketenagalistrikan.
+
+### Pasal 70
+
+(1) Kegiatan pengawasan sebagaimana dimaksud dalam Pasal 68 huruf b dilakukan untuk memastikan:
+a. terpenuhinya persyaratan keteknikan; dan
+b. terpenuhinya persyaratan administrasi kontrak.
+(2) Pengawasan sebagaimana dimaksud pada ayat (1) dilakukan oleh pemilik instalasi.
+(3) Dalam melaksanakan kegiatan pengawasan sebagaimana dimaksud pada ayat (2), pemilik instalasi dapat menggunakan pemegang Perizinan Berusaha jasa konsultansi pengawasan dalam bidang instalasi tenaga listrik yang memiliki kompetensi dan memenuhi persyaratan sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+(4) Dalam hal pemilik instalasi menggunakan pemegang Perizinan Berusaha jasa konsultansi pengawasan sebagaimana dimaksud pada ayat (3), penyedia jasa konsultansi pengawasan bertindak untuk dan atas nama pemilik instalasi sesuai dengan ketentuan dalam kontrak kerja.
+
+### Pasal 71
+
+(1) Pemegang Perizinan Berusaha jasa konsultansi pengawasan sebagaimana dimaksud dalam Pasal 70 ayat
+(3) melakukan pengawasan dalam kegiatan pekerjaan pembangunan dan pemasangan instalasi tenaga listrik, dengan tugas paling sedikit:
+a. mengevaluasi dan menyetujui rencana mutu dan rencana Keselamatan Ketenagalistrikan setiap kegiatan dalam pelaksanaan;
+b. melakukan pengawasan mutu proses dan mutu hasil pekerjaan; dan
+c. melakukan pengawasan penerapan Keselamatan Ketenagalistrikan.
+(2) Pemegang Perizinan Berusaha jasa konsultansi pengawasan sebagaimana dimaksud pada ayat (1) mempunyai kewenangan memberikan izin pelaksanaan pekerjaan yang memenuhi persyaratan dan/atau menghentikan setiap pekerjaan yang tidak memenuhi persyaratan keamanan, keselamatan, kesehatan, dan keberlanjutan pekerjaan pembangunan dan pemasangan instalasi tenaga listrik.
+(3) Pemegang Perizinan Berusaha jasa konsultansi pengawasan sebagaimana dimaksud pada ayat (1) harus:
+a. bertanggung jawab terhadap hasil pelaksanaan pembangunan dan pemasangan instalasi tenaga listrik sesuai dengan tugas dan tanggung jawabnya;
+b. menyampaikan laporan secara berkala kepada pengguna jasa sesuai dengan ketentuan dalam kontrak kerja pembangunan dan pemasangan instalasi tenaga listrik; dan
+c. menyampaikan laporan hasil pelaksanaan pekerjaan konsultansi pengawasan kepada Direktur Jenderal secara daring melalui sistem informasi Direktorat Jenderal.
+Instalasi Tenaga Listrik
+
+### Pasal 72
+
+(1) Pelaksanaan usaha pembangunan dan pemasangan instalasi tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (2) huruf b merupakan kegiatan pelaksanaan fisik yang terencana dan dilakukan dengan kesesuaian waktu, mutu, dan biaya untuk mewujudkan instalasi tenaga listrik.
+(2) Kegiatan pembangunan dan pemasangan instalasi tenaga listrik sebagaimana dimaksud pada ayat (1) dilaksanakan berdasarkan hasil perencanaan sebagaimana dimaksud dalam Pasal 69 ayat (1).
+(3) Kegiatan pelaksanaan fisik sebagaimana dimaksud pada ayat (1) harus memenuhi paling sedikit ketentuan Keselamatan Ketenagalistrikan dan perizinan sesuai dengan ketentuan peraturan perundang-undangan.
+(4) Hasil kegiatan pembangunan dan pemasangan sebagaimana dimaksud pada ayat (1) dilaporkan kepada Direktur Jenderal secara daring melalui sistem informasi Direktorat Jenderal yang memuat paling sedikit:
+a. informasi dasar instalasi berupa:
+1. nama instalasi;
+2. nama pemilik atau pemohon instalasi;
+3. alamat lokasi instalasi;
+4. daya instalasi; dan
+5. nama tenaga teknik dan penanggung jawab teknik yang ditugaskan;
+b. hasil pelaksanaan pekerjaan;
+c. dokumentasi pelaksanaan pekerjaan;
+d. standar yang digunakan; dan
+e. buku manual yang digunakan jika ada.
+(5) Direktorat Jenderal memberikan nomor identitas instalasi sebagai dokumentasi mampu telusur terhadap pelaporan hasil pekerjaan pembangunan dan pemasangan instalasi tenaga listrik yang disampaikan.
+Tenaga Listrik
+
+### Pasal 73
+
+(1) Pelaksanaan usaha jasa pemeriksaan dan pengujian instalasi tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (2) huruf c dilakukan untuk memastikan terpenuhinya ketentuan Keselamatan Ketenagalistrikan pada instalasi tenaga listrik.
+(2) Pemenuhan ketentuan Keselamatan Ketenagalistrikan sebagaimana dimaksud pada ayat (1) dibuktikan dengan sertifikat laik operasi.
+(3) Kegiatan pemeriksaan dan pengujian instalasi tenaga listrik sebagaimana dimaksud pada ayat (1) dilakukan terhadap:
+a. instalasi tenaga listrik yang baru selesai dibangun atau dipasang;
+b. instalasi tenaga listrik lama yang belum pernah dilakukan sertifikasi laik operasi; atau
+c. instalasi tenaga listrik lama yang telah habis masa berlaku sertifikat laik operasinya.
+(4) Kegiatan pemeriksaan dan pengujian instalasi tenaga listrik sebagaimana dimaksud pada ayat (1) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+
+### Pasal 74
+
+(1) Pemilik instalasi tenaga listrik dapat menunjuk pemegang Perizinan Berusaha jasa pengoperasian instalasi tenaga listrik sesuai ruang lingkupnya untuk melaksanakan kegiatan pengoperasian instalasi tenaga listrik.
+(2) Pengoperasian instalasi tenaga listrik sebagaimana dimaksud pada ayat (1) dilakukan setelah instalasi tenaga listrik memiliki sertifikat laik operasi.
+(3) Kegiatan pengoperasian instalasi tenaga listrik sebagaimana dimaksud pada ayat (2) dilaksanakan sesuai ketentuan peraturan perundang-undangan yang mengatur mengenai Keselamatan Ketenagalistrikan dan standar operasional prosedur pengoperasian instalasi tenaga listrik.
+
+### Pasal 75
+
+(1) Pelaksanaan usaha pemeliharaan instalasi tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (2) huruf e dilakukan untuk seluruh atau sebagian instalasi tenaga listrik untuk mempertahankan kondisi operasi secara optimum dan menjaga Keselamatan Ketenagalistrikan beserta sarana dan prasarananya agar selalu laik operasi.
+(2) Pemilik instalasi tenaga listrik dapat menunjuk pemegang Perizinan Berusaha jasa pemeliharaan instalasi tenaga listrik sesuai ruang lingkupnya untuk melaksanakan kegiatan pemeliharaan instalasi tenaga listrik.
+(3) Kegiatan pemeliharaan instalasi tenaga listrik sebagaimana dimaksud pada ayat (2) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Keselamatan Ketenagalistrikan dan standar operasional prosedur pengoperasian instalasi tenaga listrik.
+Usaha Pendidikan dan Pelatihan
+
+### Pasal 76
+
+Pelaksanaan usaha penelitian dan pengembangan sebagaimana dimaksud dalam Pasal 7 ayat (2) huruf f serta usaha pendidikan dan pelatihan sebagaimana dimaksud dalam Pasal 7 ayat (2) huruf g dilakukan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai penelitian dan pengembangan serta pendidikan dan pelatihan.
+Pemanfaat Tenaga Listrik
+
+### Pasal 77
+
+(1) Pelaksanaan usaha laboratorium pengujian peralatan dan pemanfaat tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (2) huruf h dilakukan untuk menilai pelaksanaan pengujian sesuai dengan SNI yang diberlakukan wajib di bidang ketenagalistrikan.
+(2) Pelaksanaan usaha laboratorium pengujian peralatan dan pemanfaat tenaga listrik sebagaimana dimaksud pada ayat (1) dilakukan oleh laboratorium pengujian yang telah memiliki Perizinan Berusaha jasa penunjang tenaga listrik.
+(3) Pengujian sebagaimana dimaksud pada ayat (1) wajib dilakukan oleh laboratorium pengujian dalam negeri.
+(4) Dalam hal sebagian atau seluruh pengujian tidak dapat dilakukan oleh laboratorium pengujian dalam negeri sebagaimana dimaksud pada ayat (3), pengujian dapat dilakukan oleh laboratorium luar negeri dengan ketentuan:
+a. memenuhi persyaratan yang ditetapkan oleh organisasi kerja sama akreditasi internasional dan/atau regional yang relevan dengan akreditasi laboratorium pengujian;
+b. memiliki perjanjian kerja sama dengan lembaga sertifikasi produk atau laboratorium pengujian dalam negeri; dan
+c. dicantumkan dalam skema Penilaian Kesesuaian lembaga sertifikasi produk atau laboratorium pengujian dalam negeri.
+(5) Laboratorium pengujian wajib menyediakan sistem informasi yang dapat diakses oleh publik untuk penelusuran hasil pengujian.
+(6) Laboratorium pengujian wajib mencantumkan laporan atau sertifikat hasil pengujian pada laman Badan Usaha.
+(7) Laboratorium pengujian wajib melaporkan hasil pengujian kepada Direktur Jenderal paling lambat 7 (tujuh) hari kerja terhitung sejak penetapan laporan hasil uji.
+Tenaga Listrik
+
+### Pasal 78
+
+(1) Pelaksanaan usaha sertifikasi peralatan dan pemanfaat tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat
+(2) huruf i dilakukan untuk menilai pemenuhan kesesuaian produk terhadap SNI yang diberlakukan wajib di bidang ketenagalistrikan.
+(2) Pemenuhan kesesuaian produk sebagaimana dimaksud pada ayat (1) dilakukan melalui kegiatan usaha sertifikasi peralatan dan pemanfaat tenaga listrik.
+(3) Pelaksanaan usaha sertifikasi peralatan dan pemanfaat tenaga listrik sebagaimana dimaksud pada ayat (2) dilakukan oleh pemegang Perizinan Berusaha jasa sertifikasi peralatan dan pemanfaat tenaga listrik.
+(4) Kegiatan sertifikasi peralatan dan pemanfaat tenaga listrik sebagaimana pada ayat (2) dilakukan oleh lembaga sertifikasi produk dengan mengacu skema Penilaian Kesesuaian sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai pemberlakuan SNI wajib di bidang ketenagalistrikan.
+(5) Tata cara sertifikasi peralatan dan pemanfaat tenaga listrik dilakukan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai akreditasi dan sertifikasi ketenagalistrikan.
+(6) Pemegang Perizinan Berusaha jasa sertifikasi peralatan dan pemanfaat tenaga listrik wajib menyediakan sistem informasi yang dapat diakses oleh publik untuk penelusuran sertifikat produk.
+(7) Pemegang Perizinan Berusaha jasa sertifikasi peralatan dan pemanfaat tenaga listrik wajib mencantumkan sertifikat produk pada laman Badan Usaha.
+(8) Pemegang Perizinan Berusaha jasa sertifikasi peralatan dan pemanfaat tenaga listrik wajib melaporkan sertifikasi produk kepada Direktur Jenderal paling lambat 7 (tujuh) hari kerja terhitung sejak penetapan sertifikat produk.
+
+### Pasal 79
+
+(1) Pelaksanaan usaha sertifikasi Badan Usaha jasa penunjang tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (2) huruf k dilakukan untuk menilai kesesuaian klasifikasi dan kualifikasi Badan Usaha jasa penunjang tenaga listrik.
+(2) Pelaksanaan Penilaian Kesesuaian klasifikasi dan kualifikasi Badan Usaha sebagaimana dimaksud pada ayat (1) mengacu pada peraturan perundang-undangan di bidang ketenagalistrikan.
+(3) Hasil Penilaian Kesesuaian sebagaimana dimaksud pada ayat (2) dibuktikan dengan sertifikat Badan Usaha. di Bidang Ketenagalistrikan
+
+### Pasal 80
+
+(1) Pemeriksaan dan penilaian TKDN di bidang ketenagalistrikan sebagaimana dimaksud dalam Pasal 7 ayat (3) huruf a dilakukan untuk menilai pemenuhan besaran TKDN di bidang ketenagalistrikan.
+(2) Besaran TKDN di bidang ketenagalistrikan sebagaimana dimaksud pada ayat (1) sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai pemberdayaan industri.
+(3) Pemeriksaan dan penilaian sebagaimana dimaksud pada ayat (1) dilakukan oleh pemegang Perizinan Berusaha jasa pemeriksaan dan penilaian TKDN di bidang ketenagalistrikan.
+(4) Pemeriksaan dan penilaian sebagaimana dimaksud pada ayat (1) dilakukan melalui kegiatan verifikasi TKDN dalam jangka waktu paling lama 4 (empat) bulan sebelum tanggal serah terima pekerjaan pertama.
+(5) Penyedia barang dan/atau jasa harus memastikan tidak menggunakan lembaga yang sama pada proyek yang sama untuk kegiatan verifikasi TKDN dan verifikasi dalam rangka pemberian fasilitas pembebasan bea masuk.
+(6) Penyedia barang dan/atau jasa wajib menyediakan dokumen kontrak/subkontrak beserta amandemennya dalam verifikasi TKDN instalasi ketenagalistrikan, termasuk dokumen pengadaan lahan, biaya perizinan, gedung perkantoran, fasilitas perkantoran, jalan, irigasi, dan fasilitas sosial di luar instalasi ketenagalistrikan.
+(7) Pemegang Perizinan Berusaha jasa pemeriksaan dan penilaian TKDN di bidang ketenagalistrikan wajib melaporkan hasil verifikasi TKDN kepada Direktur Jenderal paling lambat 7 (tujuh) hari kerja terhitung sejak laporan verifikasi diterbitkan.
+(8) Kegiatan pemeriksaan dan penilaian sebagaimana dimaksud pada ayat (7) dilaporkan secara berkala setiap triwulan kepada Direktur Jenderal.
+Keselamatan Ketenagalistrikan
+
+### Pasal 81
+
+(1) Pelaksanaan usaha pemeriksaan dan penilaian penerapan sistem manajemen Keselamatan Ketenagalistrikan sebagaimana dimaksud dalam Pasal 7 ayat (3) huruf b dilakukan untuk melaksanakan audit penerapan sistem manajemen Keselamatan Ketenagalistrikan.
+(2) Pelaksanaan audit penerapan sistem manajemen Keselamatan Ketenagalistrikan sebagaimana dimaksud pada ayat (1) sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai Keselamatan Ketenagalistrikan.
+(3) Hasil audit sebagaimana dimaksud pada ayat (2) dibuktikan dengan laporan pelaksanaan audit penerapan sistem manajemen Keselamatan Ketenagalistrikan.
+
+### Pasal 82
+
+(1) Pengelolaan lingkungan ketenagalistrikan sebagaimana dimaksud dalam Pasal 7 ayat (3) huruf c dilakukan untuk memastikan terpenuhinya aspek ramah lingkungan dan Keselamatan Ketenagalistrikan pada instalasi tenaga listrik.
+(2) Aspek ramah lingkungan sebagaimana dimaksud pada ayat (1) sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai lingkungan.
+(3) Hasil kegiatan pengelolaan lingkungan ketenagalistrikan sebagaimana dimaksud pada ayat (1) disampaikan oleh pemegang Perizinan Berusaha jasa pengelolaan lingkungan ketenagalistrikan kepada Menteri melalui Direktur Jenderal secara daring melalui sistem informasi Direktorat Jenderal untuk mendapatkan persetujuan.
+(4) Persetujuan sebagaimana dimaksud pada ayat (3) berupa nomor register pengelolaan lingkungan ketenagalistrikan.
+
+### Pasal 83
+
+(1) Pengendalian emisi gas rumah kaca ketenagalistrikan sebagaimana dimaksud dalam Pasal 7 ayat (3) huruf d dilakukan untuk melakukan verifikasi dan validasi pelaksanaan inventarisasi dan mitigasi gas rumah kaca.
+(2) Kegiatan inventarisasi sebagaimana dimaksud pada ayat
+(1) merupakan kegiatan verifikasi dan validasi tingkat emisi gas rumah kaca yang dihasilkan oleh pembangkit listrik.
+(3) Kegiatan mitigasi sebagaimana dimaksud pada ayat (1) merupakan kegiatan verifikasi dan validasi capaian penurunan emisi gas rumah kaca pada pembangkit listrik.
+(4) Hasil kegiatan pengendalian emisi gas rumah kaca ketenagalistrikan sebagaimana dimaksud pada ayat (1) disampaikan oleh pemegang Perizinan Berusaha jasa pengendalian emisi gas rumah kaca ketenagalistrikan kepada Menteri melalui Direktur Jenderal secara daring melalui sistem informasi Direktorat Jenderal untuk mendapatkan pesetujuan.
+(5) Persetujuan sebagaimana dimaksud pada ayat (4) berupa nomor register pengendalian emisi gas rumah kaca ketenagalistrikan. dan/atau Tanaman yang Berada di Bawah Ruang Bebas Jaringan Transmisi Tenaga Listrik
+
+### Pasal 84
+
+(1) Pemeriksaan dan penilaian kompensasi tanah, bangunan, dan/atau tanaman yang berada di bawah ruang bebas jaringan transmisi tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (3) huruf e dilakukan untuk melakukan pembayaran kompensasi kepada pemegang hak atas tanah, bangunan, dan/atau tanaman yang berada di bawah ruang bebas jaringan transmisi tenaga listrik.
+(2) Pemeriksaan dan penilaian kompensasi tanah, bangunan, dan/atau tanaman sebagaimana dimaksud pada ayat (1) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai ruang bebas dan kompensasi atas tanah, bangunan, dan/atau tanaman yang berada di bawah ruang bebas.
+Jasa Penunjang Tenaga Listrik
+
+### Pasal 85
+
+(1) Badan Usaha jasa penunjang sebagaimana dimaksud dalam Pasal 7 ayat (2) dan ayat (3) harus memiliki struktur organisasi yang memuat paling sedikit unsur:
+a. manajerial; dan
+b. pelaksana.
+(2) Unsur manajerial sebagaimana dimaksud pada ayat (1) huruf a memiliki peran paling sedikit sebagai:
+a. pengawas manajerial; dan
+b. penanggung jawab Badan Usaha.
+(3) Pengawas manajerial sebagaimana dimaksud pada ayat
+(2) huruf a memiliki fungsi paling sedikit:
+a. melakukan pengawasan dengan itikad baik dan kehati-hatian untuk kepentingan Badan Usaha sesuai dengan maksud dan tujuan pendirian Badan Usaha; dan
+b. menghilangkan timbulnya konflik kepentingan saat pelaksanaan tugas pengawasan.
+(4) Penanggung jawab Badan Usaha sebagaimana dimaksud pada ayat (2) huruf b memiliki fungsi paling sedikit:
+a. menjalankan tugas pengelolaan Badan Usaha dengan tetap memperhatikan keseimbangan antara kepentingan seluruh pihak yang terkait dan aktivitas Badan Usaha;
+b. mewakili Badan Usaha dan memastikan tidak ada pihak lain yang dapat bertindak atas nama Badan Usaha kecuali diberikan kuasa oleh penanggung jawab Badan Usaha yang berwenang;
+c. memastikan seluruh aktivitas Badan Usaha sesuai dengan ketentuan peraturan perundang-undangan;
+d. memimpin dan mengurus Badan Usaha untuk kepentingan, tujuan, efisiensi, dan efektivitas Badan Usaha;
+e. memelihara dan mengurus kekayaan Badan Usaha secara amanah dan transparan, serta mengembangkan sistem pengendalian internal dan sistem manajemen risiko secara terstruktur dan komprehensif; dan
+f. menghindari kondisi terjadi konflik kepentingan saat pelaksanaan pekerjaan Badan Usaha.
+(5) Unsur pelaksana sebagaimana dimaksud pada ayat (1) huruf b terdiri atas:
+a. penanggung jawab teknik; dan
+b. tenaga teknik.
+(6) Penanggung jawab teknik sebagaimana dimaksud pada ayat (5) huruf a merupakan perseorangan yang telah memiliki sertifikat kompetensi sesuai dengan bidangnya yang ditunjuk untuk melaksanakan tugas paling sedikit:
+a. mengawasi pelaksanaan pekerjaan teknik sesuai dengan prosedur operasional standar dan/atau instruksi kerja yang berlaku;
+b. mereviu hasil pelaksanaan pekerjaan teknik sesuai bidangnya;
+c. mengusulkan penetapan hasil pekerjaan kepada penanggung jawab Badan Usaha; dan
+d. bertanggung jawab atas usulan hasil pekerjaan teknik sesuai bidangnya.
+(7) Tenaga teknik sebagaimana dimaksud pada ayat (5) huruf b merupakan perseorangan yang telah memiliki sertifikat kompetensi sesuai dengan bidangnya yang ditunjuk untuk melaksanakan tugas paling sedikit:
+a. melaksanakan pekerjaan teknik sesuai dengan prosedur operasional standar dan/atau instruksi kerja yang berlaku; dan
+b. melaporkan hasil pekerjaan teknik sesuai bidang penugasan.
+
+## BAB V KEGIATAN USAHA JASA PENUNJANG TENAGA LISTRIK; Bagian Kedua Pemilihan Penyedia Jasa Penunjang Tenaga Listrik
+
+### Pasal 86
+
+Dalam hal Badan Usaha Jasa Penunjang Tenaga Listrik merupakan Badan Usaha tidak berbadan hukum, unsur manajerial sebagaimana dimaksud dalam Pasal 85 ayat (1) huruf a dapat dilaksanakan oleh pemilik Badan Usaha.
+
+### Pasal 87
+
+(1) Pemilihan penyedia jasa penunjang tenaga listrik yang menggunakan sumber pembiayaan dari keuangan negara dilaksanakan dengan prinsip:
+a. pemenuhan asas nyata;
+b. menciptakan nilai tambah dari kualitas, waktu, biaya, layanan, keamanan, keselamatan, kesehatan, dan keberlanjutan;
+c. persaingan usaha yang sehat;
+d. keberpihakan terhadap usaha kecil;
+e. penggunaan produk dalam negeri; dan
+f. penilaian berbasis kinerja penyedia jasa dan kemampuan usaha.
+(2) Pemilihan penyedia jasa sebagaimana dimaksud pada ayat (1) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan di bidang pengadaan barang/jasa pemerintah.
+
+### Pasal 88
+
+(1) Pengguna jasa dalam menyusun dokumen pemilihan penyedia jasa sebagaimana dimaksud dalam Pasal 87 ayat (1) harus menguraikan daftar pekerjaan yang memuat klasifikasi dan kualifikasi Badan Usaha jasa penunjang tenaga listrik yang akan dipilih.
+(2) Klasifikasi dan kualifikasi Badan Usaha jasa penunjang tenaga listrik sebagaimana dimaksud pada ayat (1) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai klasifikasi dan kualifikasi usaha jasa penunjang tenaga listrik.
+
+## BAB VI PEMANFAATAN JARINGAN TENAGA LISTRIK UNTUK KEPENTINGAN TELEKOMUNIKASI, MULTIMEDIA, DAN/ATAU INFORMATIKA
+
+### Pasal 89
+
+(1) Kinerja penyedia jasa sebagaimana dimaksud dalam Pasal 87 ayat (1) huruf f didasarkan pada laporan kinerja yang terdapat pada sistem informasi Direktorat Jenderal.
+(2) Kinerja penyedia jasa sebagaimana dimaksud pada ayat
+(1) meliputi kinerja tahunan dan kinerja sesaat.
+(3) Kinerja tahunan sebagaimana dimaksud pada ayat (2) merupakan kinerja penyelesaian proyek yang ditangani Badan Usaha yang sudah melalui proses serah terima pekerjaan.
+(4) Kinerja sesaat sebagaimana dimaksud pada ayat (2) merupakan kinerja berdasarkan rencana dan realisasi hasil pekerjaan pada saat pekerjaan berlangsung.
+(5) Direktur Jenderal dapat mengumumkan pemeringkatan penyedia jasa berdasarkan hasil kinerja penyedia jasa sebagaimana dimaksud pada ayat (1).
+
+### Pasal 90
+
+(1) Jaringan tenaga listrik dapat dimanfaatkan untuk kepentingan telekomunikasi, multimedia, dan/atau informatika.
+(2) Pemanfaatan jaringan tenaga listrik sebagaimana dimaksud pada ayat (1) dilakukan:
+a. apabila tidak mengganggu kelangsungan penyediaan tenaga listrik; dan
+b. setelah memperoleh persetujuan Pemilik Jaringan.
+
+### Pasal 91
+
+(1) Pemanfaatan jaringan tenaga listrik sebagaimana dimaksud dalam Pasal 90 ayat (1) meliputi:
+a. penyangga dan/atau jalur sepanjang jaringan;
+b. serat optik pada jaringan;
+c. konduktor pada jaringan; dan/atau
+d. kabel pilot pada jaringan.
+(2) Pemanfaatan penyangga dan/atau jalur sepanjang jaringan sebagaimana dimaksud pada ayat (1) huruf a dilakukan dengan memperhatikan:
+a. ketersediaan kapasitas jaringan yang masih dapat dimanfaatkan; dan
+b. kekuatan konstruksi penyangga.
+(3) Pemanfaatan serat optik pada jaringan sebagaimana dimaksud pada ayat (1) huruf b dilakukan dengan memperhatikan:
+a. ketersediaan kanal dan/atau serat optik yang masih dapat dimanfaatkan; dan
+b. kapasitas serat optik dalam mendukung sistem operasi penyaluran tenaga listrik.
+(4) Pemanfaatan konduktor pada jaringan sebagaimana dimaksud pada ayat (1) huruf c dilakukan dengan memperhatikan:
+a. fungsi utama konduktor untuk menyalurkan tenaga listrik;
+b. perbedaan frekuensi dan spesifikasi konduktor; dan
+c. pemenuhan standar dan prosedur baku di bidang ketenagalistrikan.
+(5) Pemanfaatan kabel pilot pada jaringan sebagaimana dimaksud pada ayat (1) huruf d dilakukan dengan memperhatikan:
+a. fungsi utama kabel pilot sebagai supervisory control and data acquisition (SCADA); dan
+b. spesifikasi kabel pilot.
+
+## BAB VII HAK DAN KEWAJIBAN
+
+### Pasal 92
+
+(1) Pemilik Jaringan menyampaikan laporan pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika untuk setiap Pemanfaat Jaringan kepada Menteri melalui Direktur Jenderal.
+(2) Laporan sebagaimana dimaksud pada ayat (1) merupakan laporan awal setelah Pemilik Jaringan memberikan persetujuan pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika untuk setiap Pemanfaat Jaringan.
+(3) Laporan sebagaimana dimaksud pada ayat (1) disampaikan paling lambat 30 (tiga puluh) hari kerja terhitung sejak Pemilik Jaringan memberikan persetujuan pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika.
+(4) Menteri melalui Direktur Jenderal melakukan evaluasi atas laporan sebagaimana dimaksud pada ayat (1) paling lama 30 (tiga puluh) hari kerja terhitung sejak laporan diterima secara lengkap dan benar.
+(5) Berdasarkan hasil evaluasi sebagaimana dimaksud pada ayat (4), Menteri melalui Direktur Jenderal memberikan nomor register laporan.
+(6) Penyampaian laporan sebagaimana dimaksud pada ayat
+(1) dilakukan menggunakan sistem informasi Direktorat Jenderal.
+(7) Dalam hal sistem informasi Direktorat Jenderal sebagaimana dimaksud pada ayat (6) belum tersedia, laporan disampaikan secara tertulis.
+(8) Ketentuan mengenai format laporan pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika sebagaimana dimaksud pada ayat (1) tercantum dalam Lampiran VI yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 93
+
+Badan Usaha Ketenagalistrikan berhak melakukan kegiatan usahanya sesuai dengan lingkup Perizinan Berusaha yang diberikan.
+
+### Pasal 94
+
+(1) Pemegang IUPTLU wajib:
+a. melaksanakan kewajiban sebagaimana dimaksud dalam Pasal 43;
+b. memenuhi komitmen prasarana dasar sesuai dengan kebutuhan usaha paling sedikit berupa:
+1. analisis dampak lingkungan;
+2. kesesuaian kegiatan pemanfaatan ruang;
+3. persetujuan bangunan gedung; dan
+4. sertifikat laik fungsi;
+c. memiliki sertifikat laik operasi untuk instalasi yang akan dioperasikan;
+d. memiliki sertifikat kompetensi untuk pengoperasian yang dilakukan oleh tenaga teknik;
+e. menggunakan peralatan yang memenuhi SNI yang diberlakukan wajib; dan
+f. menyampaikan laporan pelaksanaan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum secara berkala setiap bulan Januari kepada Menteri melalui Direktur Jenderal atau gubernur sesuai dengan kewenangannya.
+(2) Dalam menyampaikan laporan sebagaimana dimaksud pada ayat (1) huruf f, pemegang IUPTLU harus menyediakan sistem informasi yang terintegrasi dengan sistem informasi Direktorat Jenderal.
+(3) Ketentuan mengenai format laporan pelaksanaan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum sebagaimana dimaksud pada ayat (1) huruf f tercantum dalam Lampiran VII yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 95
+
+(1) Pemegang IUPTLS wajib:
+a. memenuhi komitmen prasarana dasar sesuai dengan kebutuhan usaha paling sedikit berupa:
+1. analisis dampak lingkungan;
+2. kesesuaian kegiatan pemanfaatan ruang;
+3. persetujuan bangunan gedung; dan
+4. sertifikat laik fungsi;
+b. instalasi yang akan dioperasikan wajib memiliki sertifikat laik operasi untuk instalasi yang akan dioperasikan;
+c. pengoperasian dilakukan oleh tenaga teknik yang memiliki sertifikat kompetensi untuk pengoperasian yang dilakukan oleh tenaga teknik;
+d. menggunakan peralatan yang digunakan memenuhi SNI yang diberlakukan wajib; dan
+e. menyampaikan laporan pelaksanaan Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri secara berkala setiap bulan Januari kepada Menteri melalui Direktur Jenderal atau gubernur sesuai dengan kewenangannya.
+(2) Ketentuan mengenai format laporan pelaksanaan Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri sebagaimana dimaksud pada ayat (1) huruf e tercantum dalam Lampiran VIII yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 96
+
+(1) Pemegang izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara wajib:
+a. memenuhi kewajiban sebagai pemegang IUPTLU sebagaimana dimaksud dalam Pasal 94 ayat (1); dan
+b. menyampaikan laporan pelaksanaan izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara secara berkala setiap bulan Januari kepada Menteri melalui Direktur Jenderal.
+(2) Ketentuan mengenai format laporan pelaksanaan izin penjualan, izin pembelian, dan/atau izin interkoneksi jaringan tenaga listrik lintas negara sebagaimana dimaksud pada ayat (1) huruf b tercantum dalam Lampiran IX yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 97
+
+(1) Pemegang Perizinan Berusaha jasa penunjang tenaga listrik sebagaimana dimaksud dalam Pasal 7 ayat (2) dan ayat (3) wajib:
+a. memenuhi ketentuan persyaratan dan standar Perizinan Berusaha;
+b. memenuhi tingkat mutu dan pelayanan yang baik sesuai dengan sistem manajemen mutu meliputi:
+1. menetapkan pedoman standar pelayanan;
+2. menetapkan maklumat pelayanan; dan
+3. menetapkan pedoman sistem dokumentasi yang mampu telusur;
+c. memenuhi standar teknis dan ketentuan Keselamatan Ketenagalistrikan;
+d. mengutamakan produk dan potensi dalam negeri;
+e. menggunakan tenaga teknik yang memiliki sertifikat kompetensi tenaga teknik ketenagalistrikan yang masih berlaku dan terpelihara sesuai dengan ruang lingkup Perizinan Berusaha;
+f. menerapkan sistem manajemen mutu yang telah ditetapkan; dan
+g. menyampaikan laporan kegiatan usaha jasa penunjang tenaga listrik secara berkala setiap bulan Januari kepada Menteri melalui Direktur Jenderal atau gubernur sesuai dengan kewenangannya.
+(2) Laporan kegiatan usaha jasa penunjang tenaga listrik sebagaimana dimaksud pada ayat (1) huruf g memuat paling sedikit:
+a. data kegiatan pekerjaan usaha jasa penunjang tenaga listrik;
+b. data realisasi TKDN; dan
+c. data kompetensi penanggung jawab teknik dan tenaga teknik.
+
+### Pasal 98
+
+(1) Pemilik Jaringan wajib:
+a. menjaga fungsi utama jaringan tenaga listrik untuk penyaluran tenaga listrik;
+b. melakukan pencegahan yang diperlukan jika ditemukan potensi terganggunya penyaluran tenaga listrik;
+c. menghentikan sementara pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika jika ditemukan kondisi terganggunya penyaluran tenaga listrik;
+d. menetapkan prosedur pemasangan, pengoperasian, pengamanan, pemeliharaan, pembongkaran, dan penertiban jaringan telekomunikasi, multimedia, dan/atau informatika yang terpasang pada jaringan tenaga listrik;
+e. melakukan uji petik secara berkala pemanfaatan jaringan tenaga listrik miliknya untuk kepentingan telekomunikasi, multimedia, dan/atau informatika; dan
+f. menyampaikan laporan pelaksanaan pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika untuk setiap Pemanfaat Jaringan setiap bulan Januari kepada Menteri melalui Direktur Jenderal sesuai dengan format sebagaimana dimaksud dalam Pasal 92 ayat (8).
+(2) Pemanfaat Jaringan wajib:
+a. menjaga fungsi utama jaringan tenaga listrik untuk penyaluran tenaga listrik;
+b. melaporkan kepada Pemilik Jaringan dan melakukan pencegahan yang diperlukan jika ditemukan potensi terganggunya penyaluran tenaga listrik;
+c. melakukan tindakan perbaikan jika pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika menyebabkan terganggunya penyaluran tenaga listrik;
+d. memberikan ganti rugi jika pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika menyebabkan terganggunya penyaluran tenaga listrik dan terganggunya kepentingan umum; dan
+e. melaksanakan prosedur pemasangan, pengoperasian, pengamanan, pemeliharaan, pembongkaran, dan penertiban jaringan telekomunikasi, multimedia, dan/atau informatika yang terpasang pada jaringan tenaga listrik.
+
+### Pasal 99
+
+(1) Menteri melalui Direktur Jenderal melakukan evaluasi atas laporan berkala pemanfaatan jaringan tenaga listrik sebagaimana dimaksud dalam Pasal 98 ayat (1) huruf f paling lama 30 (tiga puluh) hari kerja terhitung sejak laporan diterima secara lengkap dan benar.
+(2) Berdasarkan evaluasi sebagaimana dimaksud pada ayat (1), Menteri melalui Direktur Jenderal memberikan nomor register laporan.
+(3) Penyampaian laporan berkala sebagaimana dimaksud pada ayat (1) dilakukan menggunakan sistem informasi Direktorat Jenderal.
+(4) Dalam hal sistem informasi Direktorat Jenderal sebagaimana dimaksud pada ayat (3) belum tersedia, laporan disampaikan secara tertulis.
+
+### Pasal 100
+
+(1) Konsumen wajib:
+a. melaksanakan pengamanan terhadap bahaya yang mungkin timbul akibat pemanfaatan tenaga listrik;
+b. menjaga keamanan instalasi tenaga listrik milik Konsumen;
+c. memanfaatkan tenaga listrik sesuai dengan peruntukannya;
+d. membayar tagihan pemakaian tenaga listrik; dan
+e. menaati persyaratan teknis di bidang ketenagalistrikan.
+(2) Konsumen bertanggung jawab terhadap kerugian pemegang Perizinan Berusaha untuk kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum jika tidak melaksanakan kewajiban sebagaimana dimaksud pada ayat (1).
+(3) Tanggung jawab Konsumen sebagaimana dimaksud pada ayat (2) berupa:
+a. membayar denda atas keterlambatan pembayaran pemakaian tenaga listrik;
+b. membayar tagihan susulan pemakaian tenaga listrik;
+c. membayar ganti kerugian atas kerusakan/kehilangan instalasi tenaga listrik yang dimiliki oleh pemegang Perizinan Berusaha untuk kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum; dan/atau
+d. tanggung jawab lain sesuai dengan ketentuan peraturan perundang-undangan.
+(4) Dalam hal Konsumen berkeberatan dalam melaksanakan tanggung jawabnya sebagaimana dimaksud pada ayat (3), dilakukan investigasi ketenagalistrikan.
+
+## BAB VIII PEMBINAAN DAN PENGAWASAN USAHA KETENAGALISTRIKAN
+
+### Pasal 101
+
+(1) Investigasi ketenagalistrikan sebagaimana dimaksud dalam Pasal 100 ayat (4) dilakukan setelah Konsumen mengajukan surat permohonan keberatan kepada pemegang Perizinan Berusaha untuk kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum paling lambat 14 (empat belas) hari kerja terhitung sejak surat permohonan diterima.
+(2) Keberatan yang diajukan oleh Konsumen sebagaimana dimaksud pada ayat (1) dilakukan analisis dan evaluasi oleh tim yang dibentuk oleh pemegang Perizinan Berusaha untuk kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum.
+(3) Keanggotaan tim sebagaimana dimaksud pada ayat (2) terdiri atas unsur Direktorat Jenderal dan pemegang Perizinan Berusaha untuk kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum.
+(4) Dalam hal keberatan yang diajukan oleh Konsumen sebagaimana dimaksud pada ayat (1) diterima, pemegang Perizinan Berusaha untuk kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum wajib menindaklanjuti keberatan yang diterima paling lambat 30 (tiga puluh) hari kerja terhitung sejak keberatan diterima.
+
+## BAB IX SANKSI ADMINISTRATIF
+
+### Pasal 102
+
+(1) Pembinaan Usaha Ketenagalistrikan terhadap penyelenggaraan pelaksanaan Usaha Ketenagalistrikan dilakukan oleh Menteri melalui Direktur Jenderal.
+(2) Pembinaan sebagaimana dimaksud pada ayat (1) meliputi kegiatan:
+a. sosialisasi, dialog, dan/atau focus group discussion;
+b. pendidikan dan pelatihan teknis;
+c. pembantuan dalam penyelesaian hambatan atas pelaksanaan Usaha Ketenagalistrikan; dan
+d. pemantauan dan evaluasi atas penyelenggaraan pelaksanaan Usaha Ketenagalistrikan.
+(3) Pembinaan sebagaimana dimaksud pada ayat (1) dilakukan kepada Pelaku Usaha dan Dinas Teknis di Pemerintah Daerah provinsi.
+(4) Menteri melalui Direktur Jenderal atau gubernur sesuai dengan kewenangannya melakukan pengawasan Usaha Ketenagalistrikan terhadap pemenuhan kewajiban pemegang Perizinan Berusaha bidang ketenagalistrikan.
+(5) Dalam hal hasil pengawasan sebagaimana dimaksud pada ayat (1) terdapat ketidaksesuaian atau penyimpangan, Menteri melalui Direktur Jenderal atau gubernur sesuai dengan kewenangannya memberikan sanksi.
+
+## BAB X KETENTUAN PERALIHAN
+
+### Pasal 103
+
+(1) Pemegang Perizinan Berusaha bidang ketenagalistrikan yang melanggar ketentuan sebagaimana dimaksud dalam Pasal 11 ayat (1), Pasal 18 ayat (2), Pasal 21, Pasal 29 ayat (4), Pasal 35 ayat (1) dan ayat (4), Pasal 39 ayat (2) dan ayat (3), Pasal 43, Pasal 47 ayat (2), Pasal 50 ayat (2), Pasal 56 ayat (2), Pasal 58 ayat (4), Pasal 62 ayat (2) dan ayat (4), Pasal 64 ayat (2), Pasal 65 ayat (1), Pasal 66 ayat (1), ayat (3), ayat (4), dan ayat (5), Pasal 77 ayat (3), ayat (5), ayat (6), dan ayat (7), Pasal 78 ayat (6) sampai dengan ayat (8), Pasal 80 ayat (7), Pasal 94 ayat (1), Pasal 95 ayat (1), Pasal 96 ayat (1), Pasal 97 ayat (1), Pasal 98 ayat (1), dan Pasal 100 ayat (1) dikenai sanksi administratif berupa:
+a. teguran tertulis;
+b. pembekuan kegiatan sementara; dan/atau
+c. pencabutan Perizinan Berusaha.
+(2) Teguran tertulis sebagaimana dimaksud pada ayat (1) huruf a diberikan paling banyak 3 (tiga) kali dalam jangka waktu:
+a. teguran kesatu, paling lama 2 (dua) bulan;
+b. teguran kedua, paling lama 1 (satu) bulan; dan
+c. teguran ketiga, paling lama 2 (dua) minggu.
+(3) Dalam hal pelanggar ketentuan sebagaimana dimaksud pada ayat (1) mendapat sanksi teguran tertulis dan setelah berakhirnya jangka waktu teguran tertulis ketiga sebagaimana dimaksud pada ayat (2) tidak melaksanakan kewajibannya, Menteri atau gubernur sesuai dengan kewenangannya mengenakan sanksi administratif berupa pembekuan kegiatan sementara.
+(4) Sanksi administratif sebagaimana dimaksud pada ayat
+(1) sewaktu-waktu dapat dicabut apabila pelanggar ketentuan dalam masa pengenaan sanksi memenuhi kewajibannya.
+(5) Dalam hal pemegang Perizinan Berusaha dikenai sanksi pembekuan kegiatan sementara sebagaimana dimaksud pada ayat (3) dan dalam jangka waktu paling lama 3 (tiga) bulan tidak melaksanakan kewajibannya, pelanggar dikenakan sanksi administratif berupa pencabutan Perizinan Berusaha.
+
+## BAB XI KETENTUAN PENUTUP
+
+### Pasal 104
+
+(1) Pada saat Peraturan Menteri mulai berlaku, IUPTLU, IUPTLS, penetapan Wilayah Usaha, pengesahan RUPTL, dan IUJPTL yang telah diterbitkan sebelum Peraturan Menteri ini diundangkan, dinyatakan masih tetap berlaku sampai dengan masa berlakunya berakhir.
+(2) Pada saat Peraturan Menteri mulai berlaku, IUPTLU, IUPTLS, penetapan Wilayah Usaha, pengesahan RUPTL, dan IUJPTL yang masih dalam proses wajib menyesuaikan dengan ketentuan Peraturan Menteri ini.
+(3) Pada saat Peraturan Menteri mulai berlaku, pelaksanaan pelaporan hasil pekerjaan kegiatan usaha jasa penunjang tenaga listrik sebagaimana dimaksud dalam Pasal 69 ayat (2), Pasal 71 ayat (3) huruf c, dan Pasal 72 ayat (4) dilaksanakan paling lambat 1 Juni 2022.
+
+### Pasal 105
+
+Pada saat Peraturan Menteri ini mulai berlaku:
+a. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 26 Tahun 2012 tentang Tata Cara Permohonan Izin Penjualan, Izin Pembelian, dan Izin Interkoneksi Jaringan Tenaga Listrik Lintas Negara (Berita Negara Republik Indonesia Tahun 2012 Nomor 1064);
+b. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 28 Tahun 2012 tentang Tata Cara Permohonan Wilayah Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum (Berita Negara Republik Indonesia Tahun 2012 Nomor 1186) sebagaimana telah diubah dengan Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 07 Tahun 2016 tentang Perubahan atas Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 28 Tahun 2012 tentang Tata Cara Permohonan Wilayah Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum (Berita Negara Republik Indonesia Tahun 2016 Nomor 385);
+c. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 35 Tahun 2013 tentang Tata Cara Perizinan Usaha Ketenagalistrikan (Berita Negara Republik Indonesia Tahun 2013 Nomor 1524) sebagaimana telah diubah dengan Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 12 Tahun 2016 tentang Perubahan atas Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 35 Tahun 2013 tentang Tata Cara Perizinan Usaha Ketenagalistrikan (Berita Negara Republik Indonesia Tahun 2016 Nomor 706);
+d. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 36 Tahun 2013 tentang Tata Cara Permohonan Izin Pemanfaatan Jaringan Tenaga Listrik untuk Kepentingan Telekomunikasi, Multimedia, dan Informatika (Berita Negara Republik Indonesia Tahun 2013 Nomor 1539);
+e. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 01 Tahun 2015 tentang Kerja Sama Penyediaan Tenaga Listrik dan Pemanfaatan Bersama Jaringan Tenaga Listrik (Berita Negara Republik Indonesia Tahun 2015 Nomor 3);
+f. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 01 Tahun 2017 tentang Operasi Paralel Pembangkit Tenaga Listrik dengan Jaringan Tenaga Listrik PT Perusahaan Listrik Negara (Persero) (Berita Negara Republik Indonesia Tahun 2017 Nomor 40);
+g. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 10 Tahun 2019 tentang Tata Cara Penyusunan Rencana Usaha Penyediaan Tenaga Listrik (Berita Negara Republik Indonesia Tahun 2019 Nomor 983); dan
+h. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 12 Tahun 2019 tentang Kapasitas Pembangkit Tenaga Listrik untuk Kepentingan Sendiri yang Dilaksanakan Berdasarkan Izin Operasi (Berita Negara Republik Indonesia Tahun 2019 Nomor 1019), dicabut dan dinyatakan tidak berlaku.
+
+### Pasal 106
+
+Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.
+Agar setiap orang mengetahuinya, memerintahkan pengundangan Peraturan Menteri ini dengan penempatannya dalam Berita Negara Republik Indonesia.
+
+## Penutup
+
+Ditetapkan di Jakarta pada tanggal 2 Juni 2021 MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd ARIFIN TASRIF Diundangkan di Jakarta pada tanggal 11 Juni 2021 DIREKTUR JENDERAL PERATURAN PERUNDANG-UNDANGAN KEMENTERIAN HUKUM DAN HAK ASASI MANUSIA REPUBLIK INDONESIA, ttd.
+WIDODO EKATJAHJANA BERITA NEGARA REPUBLIK INDONESIA TAHUN 2021 NOMOR 671
+
+## Lampiran hal. 70
+
+Salinan sesuai dengan aslinya KEMENTERIAN ENERGI DAN SUMBER DAYA MINERAL : KERALA BIRO HUKUM. \
+
+## Lampiran hal. 71
+
+LAMPIRAN I PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 11 TAHUN 2021 TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN SISTEMATIKA DAN FORMAT PENYUSUNAN RENCANA USAHA PENYEDIAAN TENAGA LISTRIK A. SISTEMATIKA DAN FORMAT PENYUSUNAN RENCANA USAHA PENYEDIAAN TENAGA LISTRIK UNTUK USAHA DISTRIBUSI TENAGA LISTRIK (sampul depan) (logo Badan Usaha) RENCANA USAHA PENYEDIAAN TENAGA LISTRIK PT ...................................................
+TAHUN ..... SAMPAI DENGAN TAHUN .....
+I. Pendahuluan Pendahuluan memuat paling sedikit:
+1. Latar Belakang Berisi uraian perlunya disusun RUPTL oleh Badan Usaha sebagai dasar pelaksanaan kegiatan Usaha Penyediaan Tenaga Listrik dalam satu Wilayah Usaha.
+2. Landasan Hukum Berisi uraian landasan hukum yang menjadi dasar dalam penyusunan RUPTL.
+3. Visi dan Misi Badan Usaha Berisi visi dan misi Badan Usaha yang melaksanakan penyusunan RUPTL.
+4. Tujuan dan Sasaran Penyusunan RUPTL Berisi uraian tujuan dan sasaran penyusunan RUPTL.
+5. Proses Penyusunan RUPTL dan Penanggung Jawab Berisi uraian urutan proses penyusunan RUPTL mulai dari acuan yang digunakan yaitu RUKN, kemudian proses proyeksi kebutuhan tenaga listrik mulai dari sumber data, variabel yang digunakan, penentuan asumsi dan/atau target, metode dan tools yang digunakan dalam pemodelan, dan pada akhirnya penentuan rencana pembangunan sistem distribusi tenaga listrik.
+
+## Lampiran hal. 72
+
+Penanggung jawab berisi unit dalam Badan Usaha yang bertanggung jawab dan terlibat dalam proses penyusunan RUPTL.
+6. Ruang Lingkup dan Wilayah Usaha Berisi uraian ruang lingkup perencanaan dalam RUPTL dan peta rencana Wilayah Usaha yang sedang diajukan berikut penjelasannya, atau peta Wilayah Usaha berikut penjelasannya dalam hal RUPTL diajukan dalam rangka perubahan RUPTL.
+7. Sistematika Dokumen RUPTL Berisi uraian singkat sistematika penulisan dokumen RUPTL.
+II. Strategi Pengembangan Sistem Distribusi Tenaga Listrik Menguraikan strategi pengembangan sistem distribusi tenaga listrik jangka pendek dan jangka menengah yang memuat paling sedikit:
+1. strategi untuk melayani pertumbuhan kebutuhan tenaga listrik; dan
+2. strategi pengembangan sistem distribusi.
+Dalam hal RUPTL diajukan dalam rangka perubahan RUPTL, RUPTL ditambahkan strategi percepatan elektrifikasi daerah yang belum berlistrik.
+III. Kondisi Usaha Distribusi Tenaga Listrik Bab ini ditujukan khusus dalam rangka penyusunan perubahan RUPTL. Untuk RUPTL yang disusun oleh Badan Usaha yang baru akan berusaha di bidang distribusi tenaga listrik, ketentuan dalam Bab ini dapat diabaikan.
+Bab ini menguraikan data perkembangan tahunan kondisi usaha distribusi tenaga listrik 5 (lima) tahun terakhir.
+
+## Lampiran hal. 72
+
+Data kondisi usaha distribusi tenaga listrik memuat paling sedikit uraian data realisasi fisik, operasi dan keandalan sistem distribusi yang terdiri atas data realisasi panjang jaringan tegangan menengah, jaringan tegangan rendah, kapasitas dan jumlah trafo gardu distribusi, susut/losses distribusi, pemakaian sendiri gardu distribusi, system average interruption duration index (SAIDI), dan system average interruption frequency index (SAIFI).
+Data realisasi fisik sistem distribusi sesuai dengan format pada Tabel 1.
+Tabel 1 Realisasi Fisik Sistem Distribusi Tahun Tahun Tahun Uraian Satuan *)P-5 dst.
+P-4 P-1 Panjang Jaringan Tegangan kms Menengah Panjang Jaringan Tegangan kms Rendah Kapasitas Trafo Gardu Distribusi MVA Jumlah Trafo Gardu Distribusi unit Keterangan: *) P adalah tahun awal perencanaan Selain dalam bentuk tabel, data realisasi fisik sistem distribusi digambarkan dalam bentuk diagram satu garis (single line diagram) dan dalam suatu peta.
+Data realisasi operasi sistem distribusi sesuai dengan format pada Tabel 2.
+Tabel 2 Realisasi Operasi Sistem Distribusi Tahun Tahun Tahun P-Uraian Satuan *)P-5 dst.
+P-4 1 GWh Susut Jaringan Distribusi % Pemakaian Sendiri Gardu GWh Distribusi % Keterangan: *) P adalah tahun awal perencanaan Data realisasi keandalan sistem distribusi sesuai dengan format pada Tabel 3.
+Tabel 3 Realisasi Keandalan Sistem Distribusi Tahun Tahun Tahun Uraian Satuan *)P-5 dst.
+
+## Lampiran hal. 74
+
+P-4 P-1 System Average jam/ Interruption Duration pelanggan Index (SAIDI) System Average kali/ Interruption Frequency pelanggan Index (SAIFI) Keterangan: *) P adalah tahun awal perencanaan
+IV. Rencana Usaha Distribusi Tenaga Listrik Menguraikan rencana pengadaan penyaluran tenaga listrik dari sistem transmisi atau dari pembangkitan ke Konsumen per tahun selama jangka waktu 5 (lima) tahun ke depan per Sistem Tenaga Listrik.
+Bab ini memuat paling sedikit kebutuhan infrastruktur sistem distribusi yang terdiri atas jaringan tegangan menengah, jaringan tegangan rendah, dan gardu distribusi. Perhitungan kebutuhan infrastruktur sistem distribusi tidak terlepas dari rencana usaha penjualan tenaga listrik yang tercantum dalam RUPTL yang disusun oleh Badan Usaha penjualan tenaga listrik yang bekerja sama dengan Badan Usaha distribusi tenaga listrik.
+Kebutuhan infrastruktur sistem distribusi dapat dihitung berdasarkan pada proyeksi penjualan tenaga listrik oleh Badan Usaha penjualan tenaga listrik, jumlah pelanggan dan jenis pelanggan, serta jarak dari gardu induk atau pembangkit tenaga listrik ke pelanggan.
+Rencana pembangunan sistem distribusi sesuai dengan format pada Tabel 4.
+Tabel 4 Rekapitulasi Rencana Pembangunan Sistem Distribusi Tahun Tahun Tahun Uraian Satuan *)P dst.
+P+1 P+4 Panjang Jaringan Tegangan Menengah kms Panjang Jaringan Tegangan Rendah kms Kapasitas Trafo Gardu Distribusi MVA Tahun Tahun Tahun Uraian Satuan *)P dst.
+
+## Lampiran hal. 75
+
+P+1 P+4 Jumlah Trafo Gardu Distribusi unit Keterangan: *) P adalah tahun awal perencanaan Rincian rencana pembangunan jaringan tegangan menengah sesuai dengan format pada Tabel 5.
+Tabel 5 Rincian Rencana Pembangunan Jaringan Tegangan Menengah Tegangan Panjang Target No. Dari Ke Konduktor Status*) (kV) (kms) COD
+1. 2. dst.
+Total Keterangan: *) rencana/pengadaan/kontrak belum konstruksi/konstruksi Rincian rencana pembangunan jaringan tegangan rendah sesuai dengan format pada Tabel 6.
+Tabel 6 Rincian Rencana Pembangunan Jaringan Tegangan Rendah Tegangan Panjang Target No. Dari Ke Konduktor Status*) (V) (kms) COD
+1. 2. dst.
+Total Keterangan: *) rencana/pengadaan/kontrak belum konstruksi/konstruksi Rincian rencana pembangunan gardu distribusi sesuai dengan format pada Tabel 7.
+Tabel 7 Rincian Rencana Pembangunan Gardu Distribusi Nama Tegangan Kapasitas Target No. New/Extension Status*) Gardu (kV/V) (kVA) COD
+1. 2. dst.
+Total Keterangan: *) rencana/pengadaan/kontrak belum konstruksi/konstruksi Rincian rencana operasi sistem distribusi sesuai dengan format pada Tabel 8.
+Tabel 8 Rincian Rencana Operasi Sistem Distribusi Tahun Tahun Tahun Uraian Satuan *)P dst.
+P+1 **)n GWh Susut Jaringan Distribusi % Pemakaian Sendiri Gardu GWh Distribusi % Keterangan: *) P adalah tahun awal perencanaan *) n adalah tahun akhir perencanaan
+
+## Lampiran hal. 76
+
+V. Kebutuhan Investasi dan Indikasi Pendanaan Menguraikan proyeksi investasi yang diperlukan oleh Badan Usaha dalam melaksanakan rencana usaha distribusi tenaga listrik selama 5 (lima) tahun ke depan, antara lain kebutuhan investasi untuk pembangunan:
+1. jaringan tegangan menengah;
+2. jaringan tegangan rendah; dan
+3. gardu distribusi.
+Rekapitulasi kebutuhan investasi pembangunan sistem distribusi sesuai dengan format pada Tabel 9.
+Tabel 9 Rekapitulasi Kebutuhan Investasi (Disbursement) Pembangunan Sistem Distribusi (dalam Rp/USD) Tahun Tahun Tahun Uraian *)P dst.
+P+1 P+4 Jaringan Tegangan Menengah Jaringan Tegangan Rendah Gardu Distribusi Total Keterangan: *) P adalah tahun awal perencanaan Selain kebutuhan investasi, perlu diuraikan indikasi sumber pendanaan untuk memenuhi kebutuhan investasi tersebut, misalnya anggaran pendapatan dan belanja negara, anggaran pendapatan dan belanja daerah, anggaran internal Badan Usaha, loan, hibah, dan lain-lain.
+VI. Analisis Risiko Menguraikan secara garis besar mengenai analisis risiko yang mungkin dihadapi oleh Badan Usaha dalam kegiatan usaha distribusi tenaga listrik selama 5 (lima) tahun ke depan, antara lain berupa profil risiko, pemetaan profil risiko, dan mitigasi risiko.
+B. SISTEMATIKA DAN FORMAT PENYUSUNAN RENCANA USAHA PENYEDIAAN TENAGA LISTRIK UNTUK USAHA PENJUALAN TENAGA LISTRIK (sampul depan) (logo Badan Usaha) RENCANA USAHA PENYEDIAAN TENAGA LISTRIK PT ...................................................
+
+## Lampiran hal. 77
+
+TAHUN ..... SAMPAI DENGAN TAHUN .....
+I. Pendahuluan Pendahuluan memuat paling sedikit:
+1. Latar Belakang Berisi uraian perlunya disusun RUPTL oleh Badan Usaha sebagai dasar pelaksanaan kegiatan Usaha Penyediaan Tenaga Listrik dalam satu Wilayah Usaha.
+2. Landasan Hukum Berisi uraian landasan hukum yang menjadi dasar dalam penyusunan RUPTL.
+3. Visi dan Misi Badan Usaha Berisi visi dan misi Badan Usaha yang melaksanakan penyusunan RUPTL.
+4. Tujuan dan Sasaran Penyusunan RUPTL Berisi uraian tujuan dan sasaran penyusunan RUPTL.
+5. Proses Penyusunan RUPTL dan Penanggung Jawab Berisi uraian urutan proses penyusunan RUPTL mulai dari acuan yang digunakan yaitu RUKN, kemudian proses proyeksi kebutuhan tenaga listrik mulai dari sumber data, variabel yang digunakan, penentuan asumsi dan/atau target, metode dan tools yang digunakan dalam pemodelan, dan pada akhirnya penentuan rencana usaha penjualan tenaga listrik.
+Penanggung jawab berisi unit dalam Badan Usaha yang bertanggung jawab dan terlibat dalam proses penyusunan RUPTL.
+6. Ruang Lingkup dan Wilayah Usaha Berisi uraian ruang lingkup perencanaan dalam RUPTL dan peta rencana Wilayah Usaha yang sedang diajukan berikut penjelasannya, atau peta Wilayah Usaha berikut penjelasannya dalam hal RUPTL diajukan dalam rangka perubahan RUPTL.
+7. Sistematika Dokumen RUPTL Berisi uraian singkat sistematika penulisan dokumen RUPTL.
+
+## Lampiran hal. 78
+
+II. Strategi Penjualan Tenaga Listrik Menguraikan strategi penjualan tenaga listrik untuk melayani pertumbuhan kebutuhan tenaga listrik.
+III. Kondisi Usaha Penjualan Tenaga Listrik Bab ini ditujukan khusus dalam rangka penyusunan perubahan RUPTL. Untuk RUPTL yang disusun oleh Badan Usaha baru yang akan berusaha di bidang penjualan tenaga listrik, ketentuan dalam Bab ini dapat diabaikan.
+Bab ini menguraikan data perkembangan tahunan kondisi usaha penjualan tenaga listrik 5 (lima) tahun terakhir.
+Data kondisi usaha penjualan tenaga listrik memuat paling sedikit data realisasi penjualan tenaga listrik, jumlah pelanggan, dan pendapatan penjualan tenaga listrik per kelompok pelanggan.
+Kelompok pelanggan dapat disesuaikan berdasarkan kelompok tarif tenaga listrik yang diterapkan oleh Badan Usaha terhadap pelanggannya.
+Data realisasi penjualan tenaga listrik sesuai dengan format pada Tabel 10.
+Tabel 10 Realisasi Penjualan Tenaga Listrik (dalam TWh/GWh/MWh) Tahun Kelompok Pelanggan*) **)P-5 Tahun P-4 dst. Tahun P-1 Rumah Tangga Industri Bisnis dst.
+Total Pertumbuhan (%) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan Data realisasi jumlah pelanggan sesuai dengan format pada Tabel 11.
+Tabel 11 Realisasi Jumlah Pelanggan Tahun **)P-Kelompok Pelanggan*) Tahun P-4 dst. Tahun P-1 5 Rumah Tangga Industri Bisnis dst.
+
+## Lampiran hal. 79
+
+Total Pertumbuhan (%) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan Data realisasi pendapatan penjualan tenaga listrik sesuai dengan format pada Tabel 12.
+Tabel 12 Realisasi Pendapatan Penjualan Tenaga Listrik (dalam Rp) Tahun **)P-Kelompok Pelanggan*) Tahun P-4 dst. Tahun P-1 5 Rumah Tangga Industri Bisnis dst.
+Total Pertumbuhan (%) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan
+IV. Rencana Usaha Penjualan Tenaga Listrik Menguraikan rencana penjualan tenaga listrik kepada Konsumen per tahun selama kurun waktu 5 (lima) tahun ke depan per Sistem Tenaga Listrik.
+Bab rencana usaha penjualan tenaga listrik memuat paling sedikit:
+1. Proyeksi Penjualan Tenaga Listrik Menguraikan proyeksi penjualan tenaga listrik. Untuk penyederhanaan proyeksi, penjualan tenaga listrik dapat dikelompokkan dalam 4 (empat) kelompok pelanggan yaitu rumah tangga, industri, bisnis, dan publik (gabungan antara penerangan jalan umum, sosial, dan gedung pemerintah).
+Bagi Badan Usaha yang baru akan berusaha di bidang penjualan tenaga listrik atau telah beroperasi namun kurang dari 5 (lima) tahun, proyeksi penjualan tenaga listrik dapat dilakukan berdasarkan analisis kebutuhan tenaga listrik dengan menggunakan asumsi dan/atau target jumlah pelanggan dan jenis pelanggan.
+
+## Lampiran hal. 81
+
+Kebutuhan tenaga listrik dapat dihitung dengan berbagai metode sesuai dengan ketersediaan data dan asumsi. Bagi Badan Usaha yang telah beroperasi selama 5 (lima) tahun atau lebih dapat menggunakan metode econometric regression analysis mengingat ketersediaan data yang cukup memadai.
+Dalam pemodelan dengan metode ekonometri dibutuhkan beberapa data historis tahunan paling singkat data 5 (lima) tahun terakhir, antara lain:
+a. jumlah penduduk;
+b. jumlah rumah tangga;
+c. indeks harga Konsumen;
+d. inflasi;
+e. produk domestik regional bruto (PDRB) real per sektor Data PDRB bersumber dari Badan Pusat Statistik (BPS) yang terdiri atas beberapa lapangan usaha yang bersifat dinamis, sehingga dalam periode beberapa tahun jumlah lapangan usaha dapat berubah. Namun demikian, tidak seluruh lapangan usaha atau sublapangan usaha dimasukkan ke dalam perhitungan pemodelan melainkan hanya jenis lapangan usaha atau sublapangan usaha yang mengkonsumsi tenaga listrik saja. Lapangan usaha tersebut kemudian diklasifikasikan ke dalam kelompok Konsumen tenaga listrik dapat terlihat pada Tabel 13.
+f. penjualan tenaga listrik per kelompok pelanggan;
+g. pelanggan per kelompok pelanggan;
+h. pendapatan penjualan tenaga listrik per kelompok pelanggan;
+i. tarif tenaga listrik rata-rata per kelompok pelanggan; atau
+j. rasio pelanggan rumah tangga Rasio pelanggan rumah tangga adalah perbandingan jumlah pelanggan rumah tangga dengan jumlah rumah tangga pada suatu daerah.
+
+## Lampiran hal. 81
+
+Data untuk pemodelan proyeksi penjualan tenaga listrik sesuai dengan format pada Tabel 13.
+Tabel 13 Data untuk Pemodelan Proyeksi Penjualan Tenaga Listrik Tahun Tahun Tahun Uraian Satuan *)P-5 dst.
+P-4 P-1 Jumlah Penduduk jiwa Pertumbuhan % Penduduk Jumlah Rumah Tangga KK Indeks Harga Konsumen Inflasi % PDRB Real per Kapita Rp Juta Pertumbuhan PDRB % Real PDRB Real:
+Total Rp Miliar Bisnis Rp Miliar Publik Rp Miliar Industri Rp Miliar dst. **) Rp Miliar Penjualan Tenaga Listrik***)
+a. Rumah Tangga GWh
+b. Industri GWh
+c. Bisnis GWh
+d. Publik GWh Pelanggan***)
+a. Rumah Tangga Pelanggan
+b. Industri Pelanggan
+c. Bisnis Pelanggan
+d. Publik Pelanggan Tarif Tenaga Listrik Rata-Rata***)
+a. Rumah Tangga Rp/kWh
+b. Industri Rp/kWh
+c. Bisnis Rp/kWh Tahun Tahun Tahun Uraian Satuan *)P-5 dst.
+P-4 P-1
+d. Publik Rp/kWh Rasio Pelanggan Rumah % Tangga Keterangan: *) P adalah tahun awal perencanaan **) disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki ***) disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki Asumsi dan/atau target yang digunakan dalam proyeksi, antara lain pertumbuhan PDRB real per lapangan usaha, inflasi, pertumbuhan penduduk, rasio elektrifikasi, tarif tenaga listrik dan lain-lain. Asumsi dan/atau target harus mengacu pada asumsi dan/atau target yang dikeluarkan oleh instansi atau lembaga yang berkompeten (sesuai tugas dan fungsinya).
+Asumsi dan/atau target sesuai dengan format pada Tabel 14.
+
+## Lampiran hal. 83
+
+Tabel 14 Asumsi dan/atau Target Tahun Tahun Tahun Uraian Satuan *)P dst.
+P+1 **)n Jumlah Penduduk jiwa Pertumbuhan % Penduduk Jumlah Rumah Tangga KK Indeks Harga Konsumen Inflasi % PDRB Real per Kapita Rp Juta Pertumbuhan PDRB Real:
+Total % Bisnis % Publik % Industri % Tahun Tahun Tahun Uraian Satuan *)P dst.
+P+1 **)n dst. ***) % Penjualan Tenaga Listrik****)
+a. Rumah Tangga GWh
+b. Industri GWh
+c. Bisnis GWh
+d. Publik GWh Pelanggan****)
+a. Rumah Tangga Pelanggan
+b. Industri Pelanggan
+c. Bisnis Pelanggan
+d. Publik Pelanggan Tarif Tenaga Listrik Rata-Rata****)
+a. Rumah Tangga Rp/kWh
+b. Industri Rp/kWh
+c. Bisnis Rp/kWh
+d. Publik Rp/kWh Rasio Pelanggan Rumah % Tangga Keterangan: *) P adalah tahun awal perencanaan **) n adalah tahun akhir perencanaan ***) disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki ****) disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki Hasil proyeksi penjualan tenaga listrik sesuai dengan format pada Tabel 15.
+Tabel 15 Proyeksi Penjualan Tenaga Listrik (dalam TWh/GWh/MWh) Tahun Kelompok Pelanggan*) Tahun **)P Tahun P+1 dst.
+P+4 Rumah Tangga Industri Bisnis dst.
+Total Pertumbuhan (%) Konsumsi Tenaga Listrik per Kapita (kWh) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan
+
+## Lampiran hal. 85
+
+2. Rencana Pembelian Tenaga Listrik Berdasarkan proyeksi penjualan tenaga listrik dapat dihitung besaran tenaga listrik yang akan dibeli dari Badan Usaha pembangkitan tenaga listrik dan/atau dari Badan Usaha Penyediaan Tenaga Listrik terintegrasi.
+Rencana pembelian tenaga listrik sesuai dengan format pada Tabel 16.
+Tabel 16 Rencana Pembelian Tenaga Listrik (dalam MW dan TWh/GWh/MWh) Tahun Sumber Tenaga Listrik Tahun *)P Tahun P+1 dst.
+P+4 PT … (nama Badan Usaha) PT … (nama Badan Usaha) dst.
+Total Keterangan: *) P adalah tahun awal perencanaan
+3. Proyeksi Jumlah Pelanggan Menguraikan proyeksi jumlah pelanggan yang dapat dikelompokkan dalam 4 (empat) kelompok pelanggan, yaitu kelompok pelanggan rumah tangga, industri, bisnis, dan publik (penerangan jalan umum, sosial, dan gedung pemerintah).
+Kelompok pelanggan dapat disesuaikan berdasarkan kelompok tarif tenaga listrik yang diterapkan oleh Badan Usaha terhadap pelanggannya.
+Proyeksi jumlah pelanggan diperlukan untuk perencanaan kebutuhan material penyambungan dari jaringan distribusi ke pelanggan, antara lain kabel sambungan dan alat pengukur dan pembatas (APP). Selain itu, proyeksi jumlah pelanggan diperlukan untuk perencanaan sistem distribusi yang terdiri atas panjang jaringan tegangan menengah dan jaringan tegangan rendah, serta kapasitas dan jumlah trafo distribusi bagi Badan Usaha distribusi tenaga listrik.
+
+## Lampiran hal. 86
+
+Proyeksi jumlah pelanggan dapat dilakukan menggunakan metode ekonometri sebagaimana proyeksi penjualan tenaga listrik di atas. Khusus untuk proyeksi pelanggan rumah tangga dihitung melalui perkalian antara target rasio pelanggan rumah tangga dan jumlah rumah tangga.
+Hasil proyeksi jumlah pelanggan sesuai dengan format pada Tabel 17.
+Tabel 17 Proyeksi Jumlah Pelanggan Tahun Kelompok Pelanggan*) Tahun **)P Tahun P+1 dst.
+P+4 Rumah Tangga Industri Bisnis dst.
+Total Pertumbuhan (%) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan
+V. Kebutuhan Investasi dan Indikasi Pendanaan Menguraikan proyeksi investasi yang diperlukan oleh Badan Usaha dalam melaksanakan rencana usaha penjualan tenaga listrik selama 5 (lima) tahun ke depan, antara lain kebutuhan investasi untuk pengadaan:
+1. kabel sambungan pelanggan; atau
+2. alat pengukur dan pembatas (APP).
+Rekapitulasi kebutuhan investasi pengadaan perlengkapan usaha penjualan sesuai dengan format pada Tabel 18.
+Tabel 18 Rekapitulasi Kebutuhan Investasi (Disbursement) Pengadaan Perlengkapan Usaha Penjualan (dalam Rp/USD) Tahun Tahun Uraian *)P dst. Tahun P+4 P+1 Kabel Sambungan Pelanggan APP dst.
+
+## Lampiran hal. 87
+
+Total Keterangan: *) P adalah tahun awal perencanaan Selain kebutuhan investasi, perlu diuraikan indikasi sumber pendanaan untuk memenuhi kebutuhan investasi tersebut, misalnya anggaran pendapatan dan belanja negara, anggaran pendapatan dan belanja daerah, anggaran internal Badan Usaha, loan, hibah, dan lain-lain.
+VI. Analisis Risiko Menguraikan secara garis besar mengenai analisis risiko yang mungkin dihadapi oleh Badan Usaha dalam kegiatan usaha penjualan tenaga listrik selama 5 (lima) tahun ke depan, antara lain berupa profil risiko, pemetaan profil risiko, dan mitigasi risiko.
+C. SISTEMATIKA DAN FORMAT PENYUSUNAN RENCANA USAHA PENYEDIAAN TENAGA LISTRIK UNTUK USAHA DISTRIBUSI DAN PENJUALAN TENAGA LISTRIK Sistematika dan format RUPTL untuk usaha distribusi tenaga listrik dan usaha penjualan tenaga listrik mengacu pada sistematika dan format sebagaimana dimaksud pada huruf A dan huruf B.
+D. SISTEMATIKA DAN FORMAT PENYUSUNAN RENCANA USAHA PENYEDIAAN TENAGA LISTRIK UNTUK USAHA PENYEDIAAN TENAGA LISTRIK TERINTEGRASI (sampul depan) (logo Badan Usaha) RENCANA USAHA PENYEDIAAN TENAGA LISTRIK PT ...................................................
+TAHUN ..... SAMPAI DENGAN TAHUN .....
+I. Pendahuluan Pendahuluan memuat paling sedikit:
+1. Latar Belakang Berisi uraian perlunya disusun RUPTL oleh Badan Usaha sebagai dasar pelaksanaan kegiatan Usaha Penyediaan Tenaga Listrik dalam satu Wilayah Usaha.
+
+## Lampiran hal. 88
+
+2. Landasan Hukum Berisi uraian landasan hukum yang menjadi dasar dalam penyusunan RUPTL.
+3. Visi dan Misi Badan Usaha Berisi visi dan misi Badan Usaha yang melaksanakan penyusunan RUPTL.
+4. Tujuan dan Sasaran Penyusunan RUPTL Berisi uraian tujuan dan sasaran penyusunan RUPTL.
+5. Proses Penyusunan RUPTL dan Penanggung Jawab Berisi uraian urutan proses penyusunan RUPTL mulai dari acuan yang digunakan yaitu RUKN, kemudian proses proyeksi kebutuhan tenaga listrik mulai dari sumber data, variabel yang digunakan, penentuan asumsi dan/atau target, metode dan tools yang digunakan dalam pemodelan, dan pada akhirnya penentuan rencana penyediaan tenaga listrik.
+Penanggung jawab berisi unit-unit dalam Badan Usaha yang bertanggung jawab dan terlibat dalam proses penyusunan RUPTL.
+6. Ruang Lingkup dan Wilayah Usaha Berisi uraian ruang lingkup perencanaan dalam RUPTL dan peta rencana Wilayah Usaha yang sedang diajukan berikut penjelasannya, atau peta Wilayah Usaha berikut penjelasannya dalam hal RUPTL diajukan dalam rangka perubahan RUPTL.
+7. Sistematika Dokumen RUPTL Berisi uraian singkat sistematika penulisan dokumen RUPTL.
+Sistematika penulisan disesuaikan dengan jenis Usaha Penyediaan Tenaga Listrik terintegrasi.
+II. Strategi Pengembangan Infrastruktur Penyediaan Tenaga Listrik dan Penjualan Tenaga Listrik Menguraikan strategi pengembangan infrastruktur penyediaan tenaga listrik dan penjualan tenaga listrik jangka pendek, jangka menengah, dan jangka panjang yang memuat paling sedikit:
+
+## Lampiran hal. 89
+
+1. strategi untuk melayani pertumbuhan kebutuhan tenaga listrik;
+2. strategi pengembangan kapasitas pembangkit;
+3. strategi pengembangan transmisi dan gardu induk;
+4. strategi pengembangan sistem distribusi;
+5. strategi elektrifikasi daerah yang belum berlistrik; dan
+6. strategi penurunan emisi gas rumah kaca.
+III. Ketersediaan Sumber Energi dan Strategi Pemanfaatan Menguraikan data potensi sumber energi dan strategi pemanfaatan termasuk logistik/transportasi untuk pembangkitan tenaga listrik berdasarkan jenis sumber energi yang akan dimanfaatkan dengan mengikuti kebijakan Pemerintah di bidang energi dan ketenagalistrikan, yaitu:
+1. sumber energi baru;
+2. sumber energi terbarukan; dan
+3. sumber energi tak terbarukan.
+IV. Kondisi Usaha Penyediaan Tenaga Listrik Bab ini ditujukan khusus dalam rangka penyusunan perubahan RUPTL. Untuk RUPTL yang disusun oleh Badan Usaha yang baru akan berusaha di bidang penyediaan tenaga listrik, ketentuan dalam Bab ini dapat diabaikan.
+Bab ini menguraikan data perkembangan tahunan kondisi Usaha Penyediaan Tenaga Listrik 10 (sepuluh) tahun terakhir.
+Dalam hal Wilayah Usaha mencakup lebih dari 1 (satu) pulau besar, data kondisi Usaha Penyediaan Tenaga Listrik dikelompokkan berdasarkan data rekapitulasi keseluruhan, per pulau besar/regional, dan per provinsi. Data per provinsi tersebut dapat dimuat dalam suatu lampiran per provinsi yang tidak terpisahkan dari dokumen RUPTL.
+Data kondisi Usaha Penyediaan Tenaga Listrik memuat paling sedikit:
+
+## Lampiran hal. 90
+
+1. Gambaran Umum Kondisi Pasokan Tenaga Listrik Menguraikan kondisi umum pasokan tenaga listrik 1 (satu) tahun terakhir, dilengkapi dengan peta Sistem Tenaga Listrik, baik interkoneksi maupun isolated yang memuat paling sedikit pembangkit, transmisi, dan gardu induk.
+2. Kondisi Penjualan Tenaga Listrik Menguraikan data realisasi penjualan tenaga listrik, jumlah pelanggan, dan pendapatan penjualan tenaga listrik untuk melihat tarif rata-rata per kelompok pelanggan.
+Data realisasi penjualan tenaga listrik sesuai dengan format pada Tabel 19.
+Tabel 19 Realisasi Penjualan Tenaga Listrik (dalam TWh/GWh/MWh) Tahun **)P- Tahun P-Kelompok Pelanggan*) Tahun P-9 dst.
+10 1 Rumah Tangga Industri Bisnis dst.
+Total Pertumbuhan (%) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan Data realisasi jumlah pelanggan sesuai dengan format pada Tabel 20.
+Tabel 20 Realisasi Jumlah Pelanggan Tahun Tahun Kelompok Pelanggan*) **)P-10 Tahun P-9 dst.
+P-1 Rumah Tangga Industri Bisnis dst.
+Total Pertumbuhan (%) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan Data realisasi pendapatan penjualan tenaga listrik sesuai dengan format pada Tabel 21.
+Tabel 21 Realisasi Pendapatan Penjualan Tenaga Listrik (dalam Rp) Tahun Kelompok Pelanggan*) **)P-10 Tahun P-9 dst. Tahun P-1 Rumah Tangga Industri Bisnis dst.
+
+## Lampiran hal. 91
+
+Total Pertumbuhan (%) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan
+3. Kondisi Pembangkitan Menguraikan data detail pembangkitan tenaga listrik existing: kapasitas terpasang, daya mampu neto (DMN), daya mampu pasok (DMP) tertinggi, jumlah unit pembangkit, produksi dan/atau pembelian tenaga listrik, bauran energi, dan konsumsi sumber energi primer.
+Komposisi kepemilikan pembangkit dapat terdiri atas pembangkit milik pemegang IUPTLU sendiri, kerja sama antarpemegang IUPTLU (IPP), kerja sama antarbadan usaha pemegang Wilayah Usaha, excess power, dan ekspor atau impor tenaga listrik dari negara lain.
+Rekapitulasi realisasi kapasitas terpasang pembangkit sesuai dengan format pada Tabel 22.
+Tabel 22 Rekapitulasi Realisasi Kapasitas Terpasang Pembangkit (dalam MW) Tahun Tahun **)P-10 dst.
+P-1 Uraian*) Kerja Kerja Kerja Kerja Sama Sama Milik Sama Excess Milik Sama Excess Antar Antar Sendiri dengan Power Sendiri dengan Power wilayah wilayah IPP IPP Usaha Usaha PLT...
+PLT... dst.
+Subtotal Impor Total Keterangan: *) jenis dan kepemilikan pembangkit dapat disesuaikan **) P adalah tahun awal perencanaan Rekapitulasi realisasi DMN pembangkit sesuai dengan format pada Tabel 23.
+Tabel 23 Rekapitulasi Realisasi DMN Pembangkit (dalam MW) Tahun Tahun **)P-10 dst.
+
+## Lampiran hal. 93
+
+P-1 Uraian*) Kerja Kerja Kerja Kerja Sama Sama Milik Sama Excess Milik Sama Excess Antar Antar Sendiri dengan Power Sendiri dengan Power wilayah wilayah IPP IPP Usaha Usaha PLT...
+PLT... dst.
+Subtotal Impor Total Keterangan: *) jenis dan kepemilikan pembangkit dapat disesuaikan **) P adalah tahun awal perencanaan Rekapitulasi realisasi DMP tertinggi pembangkit sesuai dengan format pada Tabel 24.
+Tabel 24 Rekapitulasi Realisasi DMP Tertinggi Pembangkit (dalam MW) Tahun Tahun **)P-10 dst.
+P-1 Uraian*) Kerja Kerja Kerja Kerja Sama Sama Milik Sama Excess Milik Sama Excess Antar Antar Sendiri dengan Power Sendiri dengan Power wilayah wilayah IPP IPP Usaha Usaha PLT ...
+PLT ... dst.
+Subtotal Impor Total Keterangan: *) jenis dan kepemilikan pembangkit dapat disesuaikan **) P adalah tahun awal perencanaan Rekapitulasi realisasi jumlah unit pembangkit sesuai dengan format pada Tabel 25.
+Tabel 25 Rekapitulasi Realisasi Jumlah Unit Pembangkit (dalam Unit) Tahun Tahun **)P-10 dst.
+P-1 Uraian*) Kerja Kerja Kerja Kerja Sama Sama Milik Sama Excess Milik Sama Excess Antar Antar Sendiri dengan Power Sendiri dengan Power wilayah wilayah IPP IPP Usaha Usaha PLT...
+PLT... dst.
+Impor Subtotal Total Keterangan: *) jenis dan kepemilikan pembangkit dapat disesuaikan **) P adalah tahun awal perencanaan Data detail pembangkit tenaga listrik existing sesuai dengan format pada Tabel 26.
+
+## Lampiran hal. 94
+
+Tabel 26 Pembangkit Tenaga Listrik Existing Kapa- DMP Nama Beban Jenis Lokasi/ Kabu- Jum- sitas Tertinggi Sta- Titik Titik Sistem Pro- Puncak Pem- Nama Bahan DMN No. paten/ lah Terpa 1 Tahun COD tus Pemilik Koor- Ko-Tenaga vinsi Sistem bang- Pem- Bakar (MW) Kota Unit sang Terakhir **) dinat neksi Listrik *) kit bangkit (MW) (MW)
+1. Milik Sendiri/ IPP/ Wilayah Usaha /Excess Power ***)
+2. Milik Sendiri/ IPP/ Wilayah Usaha/ Excess Power ***) dst.
+Impor Keterangan: *) beban puncak tertinggi yang pernah tercapai **) operasi/rusak permanen/dll sesuai kondisi aktual ***) hapus yang tidak sesuai Rekapitulasi realisasi produksi dan/atau pembelian tenaga listrik berdasarkan sumber energi primer sesuai dengan format pada Tabel
+27. Tabel 27 Rekapitulasi Realisasi Produksi dan/atau Pembelian Tenaga Listrik (dalam TWh/GWh/MWh) Tahun Tahun **)P-10 dst.
+P-1 Uraian*) Kerja Kerja Kerja Kerja Sama Sama Milik Sama Excess Sub- Milik Sama Excess Sub-Antar Antar Sendiri dengan Power total Sendiri dengan Power total wilayah wilayah IPP IPP Usaha Usaha EBT Air Panas Bumi BBN Biomassa Surya Bayu dst.
+Gas BBM:
+HSD MFO IDO HFO Batubara Subtotal Impor Total Keterangan: *) jenis dan kepemilikan pembangkit dapat disesuaikan **) P adalah tahun awal perencanaan Rekapitulasi realisasi bauran energi pembangkitan tenaga listrik berdasarkan sumber energi primer sesuai dengan format pada Tabel
+
+## Lampiran hal. 95
+
+28. Tabel 28 Realisasi Bauran Energi Pembangkitan Tenaga Listrik (dalam %) Tahun Tahun P-No. Sumber Energi Primer *) **)P-10 dst.
+1
+1. EBT Air Panas Bumi BBN Biomassa Surya Bayu dst.
+2. Gas
+3. BBM:
+HSD MFO IDO HFO
+4. Batubara Impor Total Keterangan: *) jenis dapat disesuaikan **) P adalah tahun awal perencanaan Rekapitulasi realisasi konsumsi sumber energi primer sesuai dengan format pada Tabel 29.
+Tabel 29 Rekapitulasi Realisasi Konsumsi Sumber Energi Primer Tahun Tahun *)P-10 dst.
+P-1 Sumber Kerja Kerja Satuan Kerja Kerja Energi Milik Sama Milik Sama Excess Sama Excess Sama Sendiri Antar Sendiri Antarw Power dengan Power**) dengan **) wilayah **) ilayah **) IPP**) IPP**) Usaha **) Usaha **) juta Batubara ton Gas MMBTU Tahun Tahun *)P-10 dst.
+P-1 Sumber Kerja Kerja Satuan Kerja Kerja Energi Milik Sama Milik Sama Excess Sama Excess Sama Sendiri Antar Sendiri Antarw Power dengan Power**) dengan **) wilayah **) ilayah **) IPP**) IPP**) Usaha **) Usaha **) BBM: kl HSD kl MFO kl IDO kl HFO kl Biomassa ton Uap Panas ton Bumi dst.
+Keterangan: *) P adalah tahun awal perencanaan **) jenis dan kepemilikan pembangkit dapat disesuaikan
+4. Kondisi Sistem Transmisi Memuat paling sedikit data realisasi fisik dan operasi sistem transmisi yang terdiri atas panjang jaringan transmisi, susut transmisi, kapasitas trafo gardu induk, jumlah trafo gardu induk, pemakaian sendiri gardu induk, dan beban puncak Sistem Tenaga Listrik noncoincident.
+
+## Lampiran hal. 97
+
+Data realisasi panjang jaringan transmisi sesuai dengan format pada Tabel 30.
+Tabel 30 Realisasi Panjang Jaringan Transmisi (dalam kms) Tahun **)P- Tahun P-Tegangan (kV)*) Tahun P-9 dst.
+10 1 500 275 150 70 Total Keterangan: *) jenis tegangan dapat disesuaikan **) P adalah tahun awal perencanaan Data realisasi susut transmisi sesuai dengan format pada Tabel 31.
+Tabel 31 Realisasi Susut Transmisi Tahun Tahun Tahun Uraian *)P-10 dst.
+P-9 P-1 Susut Transmisi (GWh) Susut Transmisi (%) Keterangan: *) P adalah tahun awal perencanaan Data realisasi kapasitas trafo gardu induk sesuai dengan format pada Tabel 32.
+Tabel 32 Realisasi Kapasitas Trafo Gardu Induk (dalam MVA) Tahun Tahun Tahun Tegangan (kV)*) **)P-10 dst.
+P-9 P-1 Total Keterangan: *) jenis tegangan dapat disesuaikan **) P adalah tahun awal perencanaan Data realisasi jumlah trafo gardu induk sesuai dengan format pada Tabel 33.
+Tabel 33 Realisasi Jumlah Trafo Gardu Induk (dalam unit) Tahun **)P- Tahun Tahun P-Tegangan (kV)*) dst.
+10 P-9 1 Tahun **)P- Tahun Tahun P-Tegangan (kV)*) dst.
+10 P-9 1 Total Keterangan: *) jenis tegangan dapat disesuaikan **) P adalah tahun awal perencanaan Data realisasi pemakaian sendiri gardu induk sesuai dengan format pada Tabel 34.
+Tabel 34 Realisasi Pemakaian Sendiri Gardu Induk Satuan Tahun *)P- Tahun P- Tahun Uraian dst.
+
+## Lampiran hal. 99
+
+10 9 P-1 GWh Pemakaian Sendiri Gardu Induk % Keterangan: *) P adalah tahun awal perencanaan Data realisasi beban puncak Sistem Tenaga Listrik noncoincident sesuai dengan format pada Tabel 35.
+Tabel 35 Realisasi Beban Puncak Sistem Tenaga Listrik (dalam MW) Tahun *)P- Tahun P-Uraian Tahun P-9 dst.
+10 1 Beban Puncak Keterangan: *) P adalah tahun awal perencanaan
+5. Kondisi Sistem Distribusi Memuat paling sedikit data realisasi fisik, operasi, dan keandalan sistem distribusi yang terdiri atas data realisasi panjang jaringan tegangan menengah, jaringan tegangan rendah, kapasitas dan jumlah trafo gardu distribusi, susut/losses distribusi, pemakaian sendiri gardu distribusi, system average interruption duration index (SAIDI), dan system average interruption frequency index (SAIFI).
+Data realisasi fisik sistem distribusi sesuai dengan format pada Tabel
+36. Tabel 36 Realisasi Fisik Sistem Distribusi Tahun Tahun P- Tahun Uraian Satuan *)P-10 dst.
+9 P-1 Panjang Jaringan Tegangan kms Menengah Panjang Jaringan Tegangan kms Rendah Kapasitas Trafo Gardu MVA Distribusi Jumlah Trafo Gardu unit Distribusi Keterangan: *) P adalah tahun awal perencanaan Data realisasi operasi sistem distribusi sesuai dengan format pada Tabel 37.
+Tabel 37 Realisasi Operasi Sistem Distribusi Tahun *)P- Tahun Tahun Uraian Satuan dst.
+
+## Lampiran hal. 100
+
+10 P-9 P-1 Susut Jaringan Distribusi GWh % GWh Pemakaian Sendiri Gardu Distribusi % Keterangan: *) P adalah tahun awal perencanaan Data realisasi keandalan sistem distribusi sesuai dengan format pada Tabel 38.
+Tabel 38 Realisasi Keandalan Sistem Distribusi Tahun Tahun Tahun Uraian Satuan *)P-10 dst.
+P-9 P-1 System Average jam/ Interruption Duration pelanggan Index (SAIDI) System Average kali/ Interruption Frequency pelanggan Index (SAIFI) Keterangan: *) P adalah tahun awal perencanaan
+V. Rencana Penyediaan Tenaga Listrik Menguraikan rencana pengadaan tenaga listrik meliputi pembangkitan, transmisi, distribusi, dan penjualan tenaga listrik kepada Konsumen per tahun selama kurun waktu 10 (sepuluh) tahun ke depan per Sistem Tenaga Listrik.
+Perencanaan penyediaan tenaga listrik diawali dari prakiraan di sisi permintaan (demand side) kemudian dilanjutkan dengan prakiraan di sisi penyediaan (supply side).
+Dalam hal Wilayah Usaha mencakup lebih dari 1 (satu) pulau besar, rencana penyediaan tenaga listrik dikelompokkan berdasarkan rekapitulasi keseluruhan, per pulau besar/regional, dan per provinsi.
+Rencana per provinsi tersebut dapat dimuat dalam suatu lampiran per provinsi yang tidak terpisahkan dari dokumen RUPTL yang tergabung dengan data kondisi Usaha Penyediaan Tenaga Listrik.
+
+## Lampiran hal. 101
+
+Rencana pembangunan infrastruktur penyediaan tenaga listrik (pembangkit, jaringan transmisi, dan gardu induk) harus ditampilkan dalam suatu peta yang digabung dengan peta kondisi Usaha Penyediaan Tenaga Listrik.
+Bab rencana penyediaan tenaga listrik memuat paling sedikit:
+1. Perubahan RUPTL, Hasil, dan Alasan Perubahan Subbab ini ditujukan khusus dalam rangka penyusunan perubahan RUPTL, untuk RUPTL yang disusun pertama kali, ketentuan dalam Subbab ini dapat diabaikan.
+Tabel 39 Rekapitulasi Perubahan RUPTL RUPTL Usulan No Uraian Satuan Sebelumnya Perubahan
+1. Asumsi Pertumbuhan Ekonomi % (Rata-Rata 10 Tahun)
+2. Proyeksi Pertumbuhan Penjualan % (Rata-Rata 10 Tahun)
+3. Tambahan Pembangkit MW (Total 10 Tahun)
+4. Tambahan Transmisi kms (Total 10 Tahun)
+5. Tambahan Gardu Induk MVA (Total 10 Tahun)
+6. Tambahan Jaringan Distribusi kms (Total 10 Tahun)
+7. Tambahan Gardu Distribusi MVA (Total 10 Tahun)
+8. Tambahan Pelanggan Sambungan Tabel 40 Rekapitulasi Perubahan Tambahan Infrasturktur Tenaga Listrik (dalam MW/kms/MVA) Infrastruktur Total (Pembangkit/ Keluar RUPTL Usulan Berubah Proyek Telah No. Transmisi/ Selisih dari Baru Sebelumnya Perubahan Kapasitas yang COD Gardu Induk, RUPTL Berubah Distribusi)*)
+1. 2.
+3. dst.
+Total Keterangan: *) dikelompokkan berdasarkan jenis pembangkit, untuk sistem penyaluran berdasarkan jenis tegangan Rincian perubahan infrastruktur tenaga listrik dikelompokkan berdasarkan kategori perubahan dalam tabel masing-masing sesuai dengan format pada Tabel 41.
+
+## Lampiran hal. 103
+
+Tabel 41 Rincian Perubahan Tambahan Infrastruktur Tenaga Listrik (dalam MW/kms/MVA) Alasan RUPTL Sebelumnya Usulan Perubahan Perubahan No. Nama Rencana Nama Rencana Kapasitas Kapasitas Proyek*) COD Proyek COD
+1. 2.
+3. dst.
+Total Keterangan: *) dikelompokkan berdasarkan jenis pembangkit, untuk sistem penyaluran berdasarkan jenis tegangan
+2. Proyeksi Penjualan Tenaga Listrik Menguraikan proyeksi penjualan tenaga listrik yang dapat dikelompokkan dalam 4 (empat) sektor pemakai yaitu sektor rumah tangga, industri, bisnis, dan publik (penerangan jalan umum, sosial, dan gedung pemerintah).
+Bagi Badan Usaha yang baru akan berusaha atau telah beroperasi namun kurang dari 10 (sepuluh) tahun, proyeksi penjualan tenaga listrik dapat menggunakan analisis kebutuhan tenaga listrik berdasarkan asumsi dan/atau target jumlah pelanggan dan jenis pelanggan.
+Kebutuhan tenaga listrik dapat dihitung dengan berbagai metode sesuai dengan ketersediaan data dan asumsi. Bagi Badan Usaha yang telah beroperasi selama 10 (sepuluh) tahun atau lebih dapat menggunakan metode econometric regression analysis mengingat ketersediaan data yang cukup memadai.
+Dalam pemodelan dengan metode ekonometri dibutuhkan beberapa data historis tahunan paling singkat data 10 (sepuluh) tahun terakhir, antara lain:
+a. jumlah penduduk;
+b. jumlah rumah tangga;
+c. indeks harga Konsumen;
+d. inflasi;
+
+## Lampiran hal. 103
+
+e. produk domestik regional bruto (PDRB) real per sektor Data PDRB bersumber dari Badan Pusat Statistik (BPS), data tersebut terdiri atas beberapa lapangan usaha yang bersifat dinamis, sehingga dalam periode beberapa tahun jumlah lapangan usaha dapat berubah. Namun demikian tidak seluruh lapangan usaha atau sublapangan usaha dimasukkan ke dalam perhitungan pemodelan melainkan hanya jenis lapangan usaha atau sublapangan usaha yang mengkonsumsi tenaga listrik saja. Lapangan usaha tersebut kemudian diklasifikasikan ke dalam kelompok Konsumen tenaga listrik dapat terlihat pada Tabel 42;
+f. penjualan tenaga listrik per kelompok pelanggan;
+g. pelanggan per kelompok pelanggan;
+h. pendapatan penjualan tenaga listrik per kelompok pelanggan;
+i. tarif tenaga listrik rata-rata per kelompok pelanggan; atau
+j. rasio pelanggan rumah tangga Rasio pelanggan rumah tangga merupakan perbandingan jumlah pelanggan rumah tangga dengan jumlah rumah tangga pada suatu daerah.
+Data untuk pemodelan proyeksi penjualan tenaga listrik sesuai dengan format pada Tabel 42.
+Tabel 42 Data untuk Pemodelan Proyeksi Penjualan Tenaga Listrik Tahun Tahun Tahun Uraian Satuan *)P-10 dst.
+P-9 P-1 Jumlah Penduduk jiwa Pertumbuhan Penduduk % Jumlah Rumah Tangga KK Indeks Harga Konsumen Inflasi % PDRB Real per Kapita Rp Juta Pertumbuhan PDRB Real % PDRB Real:
+Total Rp Miliar Bisnis Rp Miliar Publik Rp Miliar Tahun Tahun Tahun Uraian Satuan *)P-10 dst.
+
+## Lampiran hal. 105
+
+P-9 P-1 Industri Rp Miliar dst. **) Rp Miliar Penjualan Tenaga Listrik***)
+a. Rumah Tangga GWh
+b. Industri GWh
+c. Bisnis GWh
+d. Publik GWh Pelanggan***)
+a. Rumah Tangga Pelanggan
+b. Industri Pelanggan
+c. Bisnis Pelanggan
+d. Publik Pelanggan Tarif Tenaga Listrik Rata-Rata***)
+a. Rumah Tangga Rp/kWh
+b. Industri Rp/kWh
+c. Bisnis Rp/kWh
+d. Publik Rp/kWh Rasio Pelanggan Rumah % Tangga Keterangan: *) P adalah tahun awal perencanaan **) disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki ***) disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki Asumsi dan/atau target yang digunakan dalam proyeksi, antara lain pertumbuhan PDRB real per lapangan usaha, inflasi, pertumbuhan penduduk, rasio elektrifikasi, tarif tenaga listrik dan lain-lain. Asumsi dan/atau target harus mengacu pada asumsi dan/atau target yang dikeluarkan oleh instansi atau lembaga yang berkompeten (sesuai tugas dan fungsinya).
+Asumsi dan/atau target sesuai dengan format pada Tabel 43.
+Tabel 43 Asumsi dan/atau Target Tahun Tahun Tahun Uraian Satuan *)P dst.
+P+1 **)n Jumlah Penduduk jiwa Pertumbuhan % Penduduk Jumlah Rumah Tangga KK Indeks Harga Konsumen Inflasi % PDRB Real per Kapita Rp Juta Pertumbuhan PDRB Real:
+Total % Bisnis % Publik % Industri % dst. ***) % Penjualan Tenaga Listrik****)
+a. Rumah Tangga GWh
+b. Industri GWh
+c. Bisnis GWh
+d. Publik GWh Pelanggan****)
+a. Rumah Tangga Pelanggan
+b. Industri Pelanggan
+c. Bisnis Pelanggan
+d. Publik Pelanggan Tarif Tenaga Listrik Rata-Rata****)
+
+## Lampiran hal. 106
+
+e. Rumah Tangga Rp/kWh
+f. Industri Rp/kWh
+g. Bisnis Rp/kWh
+h. Publik Rp/kWh Tahun Tahun Tahun Uraian Satuan *)P dst.
+P+1 **)n Rasio Pelanggan Rumah % Tangga Keterangan: *) P adalah tahun awal perencanaan **) n adalah tahun akhir perencanaan ***) disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki ****) disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki Rekapitulasi hasil pemodelan kemudian ditampilkan dalam RUTPL.
+Hasil proyeksi penjualan tenaga listrik sesuai dengan format pada Tabel 44.
+Tabel 44 Proyeksi Penjualan Tenaga Listrik (dalam TWh/GWh/MWh) Tahun Kelompok Pelanggan*) Tahun **)P Tahun P+1 dst.
+P+9 Rumah Tangga Industri Bisnis dst.
+Total Pertumbuhan (%) Konsumsi Tenaga Listrik per Kapita (kWh) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan Selain dalam bentuk tabel, hasil proyeksi penjualan juga ditampilkan dalam bentuk grafik dan dibandingkan dengan proyeksi dalam RUKN. Dalam hal RUPTL disusun dalam rangka perubahan, di dalam grafik tersebut ditambahkan perbandingan terhadap proyeksi RUPTL sebelumnya.
+3. Proyeksi Jumlah Pelanggan Menguraikan proyeksi jumlah pelanggan yang dapat dikelompokkan dalam 4 (empat) kelompok pelanggan, yaitu kelompok pelanggan rumah tangga, industri, bisnis, dan publik (penerangan jalan umum, sosial, dan gedung pemerintah).
+
+## Lampiran hal. 108
+
+Kelompok pelanggan dapat disesuaikan berdasarkan kelompok tarif tenaga listrik yang diterapkan oleh Badan Usaha terhadap pelanggannya.
+Proyeksi jumlah pelanggan diperlukan untuk perencanaan sistem distribusi yang terdiri atas panjang jaringan tegangan menengah dan jaringan tegangan rendah, serta kapasitas dan jumlah trafo distribusi.
+Proyeksi jumlah pelanggan dapat dilakukan menggunakan metode ekonometri sebagaimana proyeksi penjualan tenaga listrik di atas. Khusus untuk proyeksi pelanggan rumah tangga dihitung melalui perkalian antara target rasio pelanggan rumah tangga dan jumlah rumah tangga.
+Hasil proyeksi jumlah pelanggan sesuai dengan format pada Tabel 45.
+Tabel 45 Proyeksi Jumlah Pelanggan Tahun Tahun Kelompok Pelanggan*) Tahun **)P dst.
+P+1 P+9 Rumah Tangga Industri Bisnis dst.
+Total Pertumbuhan (%) Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang dimiliki **) P adalah tahun awal perencanaan
+4. Perencanaan Pembangkitan Tenaga Listrik Menguraikan proyeksi kebutuhan tambahan daya/pembangkit, berdasarkan jenis, neraca daya, proyeksi bauran energi pembangkitan, kebutuhan bahan bakar, dan proyeksi emisi gas rumah kaca (GRK).
+
+## Lampiran hal. 109
+
+a. Proyeksi Kebutuhan Daya/Pembangkit Berdasarkan Jenis Setelah memperoleh proyeksi penjualan tenaga listrik yang merupakan prakiraan demand side, langkah selanjutnya adalah melakukan proyeksi kebutuhan daya/pembangkit pada suatu Sistem Tenaga Listrik dengan memperhitungkan transmisi antarregion yang merupakan prakiraan supply side.
+Proyeksi kebutuhan daya atau pembangkit dilakukan melalui optimasi supply. Optimasi tersebut harus menggunakan perangkat lunak yang khusus digunakan dalam perencanaan Sistem Tenaga Listrik. Sebelum dilakukan optimasi supply, hasil proyeksi penjualan tenaga listrik final ditambahkan dengan target losses per region.
+Data-data yang dibutuhkan untuk optimasi supply antara lain kebijakan implementasi teknologi pembangkit, data dan asumsi tekno-ekonomi per jenis pembangkit (efisiensi, capex, opex, faktor emisi, life time, unit size, ramping rate, technical minimum loading, dan lain lain), target bauran energi pembangkitan (nasional), data potensi sumber energi primer, asumsi harga energi primer, data kapasitas pembangkit existing dan retirement (per jenis), asumsi load profile (per jam dalam setahun), data profile output PLTA reservoir (per minggu dalam setahun), data profile output VRE (PLTA RoR, PLTB & PLTS) (per jam dalam setahun), asumsi biaya transmisi antarregion, kapasitas hantar transmisi existing antarregion, planned outage (PO) pembangkit dan transmisi, EFOR, dan lain-lain.
+
+## Lampiran hal. 109
+
+Data tersebut kemudian diolah menggunakan perangkat lunak optimasi sehingga menghasilkan output antara lain kebutuhan tambahan pembangkit per jenis per region, proyeksi emisi, investasi, biaya pokok penyediaan (BPP), interkoneksi antarregion, dan lain-lain.
+Hasil proyeksi dan optimasi supply-demand tenaga listrik dirangkum dalam suatu tabel neraca daya sehingga terlihat keseimbangan kebutuhan (demand) dan pasokan (supply) serta kecukupan reserve margin untuk menjaga keandalan pasokan tenaga listrik. Reserve margin perencanaan ditentukan berdasarkan loss of load probability (LOLP) paling besar 0,274% (nol koma dua tujuh empat persen), artinya probabilitas beban puncak lebih besar dari kapasitas pembangkitan paling lama 1 (satu) hari dalam setahun, kecuali untuk sistem kecil dapat menggunakan metode deterministik.
+b. Neraca Daya Menguraikan supply-demand tenaga listrik dalam suatu tabel sehingga terlihat kecukupan rencana pasokan dalam rangka memenuhi kebutuhan tenaga listrik. Neraca daya terdiri atas 6 (enam) bagian utama yaitu kebutuhan, pasokan existing, rencana tambahan pasokan, bauran energi, emisi gas rumah kaca (GRK), dan estimasi biaya pokok penyediaan (BPP) pembangkitan rata-rata.
+Neraca daya sesuai dengan format pada Tabel 46.
+Tabel 46 Neraca Daya Satuan/ Tahun Tahun Tahun Uraian dst.
+Jenis *)P P+1 P+9
+1. KEBUTUHAN
+a. Penjualan GWh
+b. Pertumbuhan Penjualan %
+c. Produksi GWh
+d. Faktor Beban %
+e. Beban Puncak Neto MW
+f. Pertumbuhan Beban % Puncak Neto
+
+## Lampiran hal. 110
+
+2. PASOKAN EXISTING Satuan/ Tahun Tahun Tahun Uraian dst.
+Jenis *)P P+1 P+9
+a. Total Kapasitas Terpasang MW
+b. Total Daya Mampu Pasok MW (DMP) Tertinggi:
+1. Milik Sendiri: MW PLT... MW PLT... MW dst. MW
+2. Kerja Sama dengan IPP: MW PLT... MW PLT... MW dst. MW
+3. Kerja Sama MW Antarwilayah Usaha:
+PLT... MW PLT... MW dst. MW
+4. Pembelian Excess MW Power:
+PLT... MW PLT... MW dst. MW
+5. Impor MW
+6. Retired MW PLT... MW PLT... MW dst. MW
+7. Mothballed PLT ... MW PLT ... MW dst. MW
+3. TAMBAHAN PASOKAN (DMN)
+a. On Going dan Committed: MW Satuan/ Tahun Tahun Tahun Uraian dst.
+Jenis *)P P+1 P+9 1) Dikembangkan Sendiri: MW (Nama Proyek) PLT...
+(Nama Proyek) PLT... dst. dst.
+2) Kerja Sama dengan IPP: MW (Nama Proyek) PLT...
+(Nama Proyek) PLT... dst. dst.
+3) Kerja Sama MW Antarwilayah Usaha:
+(Nama Proyek) PLT...
+(Nama Proyek) PLT... dst. dst.
+4) Impor MW
+b. Rencana Tambahan: MW 1) Dikembangkan Sendiri: MW (Nama Proyek) PLT...
+(Nama Proyek) PLT... dst. dst 2) Kerja Sama dengan IPP: MW (Nama Proyek) PLT...
+(Nama Proyek) PLT... dst. dst.
+3) Kerja Sama MW Antarwilayah Usaha:
+(Nama Proyek) PLT...
+(Nama Proyek) PLT... dst. dst.
+4) Ekspor/Impor MW
+4. REKAPITULASI
+a. Total Pasokan Existing MW (DMP Tertinggi) Satuan/ Tahun Tahun Tahun Uraian dst.
+Jenis *)P P+1 P+9
+b. Total Tambahan Pasokan MW (DMN)
+c. Total Daya Mampu MW Sistem**) − Pembangkit Fosil MW − Pembangkit EBT MW
+d. LOLP %
+e. Reserve Margin MW
+f. Reserve Margin %
+5. BAURAN ENERGI
+a. EBT %
+b. Gas %
+c. BBM %
+d. Batubara %
+
+## Lampiran hal. 113
+
+6. EMISI GRK Juta ton
+a. EBT Juta ton
+b. Gas Juta ton
+c. Batubara Juta ton
+d. BBM Juta ton
+7. ESTIMASI BPP Rp/kWh PEMBANGKITAN RATA-RATA Keterangan: *) P adalah tahun awal perencanaan **) c = a + b, asumsi untuk tambahan pasokan: DMP tertinggi = DMN Neraca daya dibuat untuk setiap Sistem Tenaga Listrik, baik interkoneksi maupun isolated. Untuk sistem isolated, rekapitulasi dalam tabel neraca daya dapat ditambahkan dengan nilai N-1 dan N-2. Setiap neraca daya dilengkapi dengan grafiknya.
+Berdasarkan neraca daya, kemudian dibuat rekapitulasi rencana penambahan pembangkit sesuai dengan format pada Tabel 47.
+Tabel 47 Rekapitulasi Rencana Penambahan Pembangkit Tahun* TahunP Tahun Tahun )P dst. Total +1 P+9
+1. Dikembangkan Sendiri:
+PLT...
+PLT... dst.
+2. Kerja Sama dengan IPP:
+PLT...
+PLT... dst.
+3. Kerja Sama Antarwilayah Usaha:
+PLT...
+PLT... dst.
+4. Ekspor/Impor
+5. Total PLT...
+PLT... dst.
+Ekspor/Impor Keterangan: *) P adalah tahun awal perencanaan Adapun untuk rincian rencana pembangunan pembangkit sesuai dengan format pada Tabel 48.
+Tabel 48 Rincian Rencana Pembangunan Pembangkit Nama Jenis Lokasi/ Sistem Kabupaten/ Pem- Nama Kapasitas Target Titik Titik No. Provinsi Status*) Pengembang **) Tenaga Kota bang- Pem- (MW) COD Koordinat Koneksi Listrik kit bangkit
+
+## Lampiran hal. 114
+
+1. sendiri/kerja sama dengan IPP/kerja sama antarwilayah usaha/unalloc Nama Jenis Lokasi/ Sistem Kabupaten/ Pem- Nama Kapasitas Target Titik Titik No. Provinsi Status*) Pengembang **) Tenaga Kota bang- Pem- (MW) COD Koordinat Koneksi Listrik kit bangkit ated/impor
+2. sendiri/kerja sama dengan IPP/kerja sama antarwilayah usaha/unalloc ated/impor dst.
+Total Keterangan: *) rencana/pengadaan/kontrak belum konstruksi/ konstruksi **) hapus yang tidak sesuai
+c. Proyeksi Bauran Energi Pembangkitan Menguraikan proyeksi bauran energi pembangkitan tenaga listrik berdasarkan rencana operasi pembangkit existing dan rencana sebagaimana tercantum dalam neraca daya.
+Bauran energi dihitung berdasarkan prakiraan komposisi produksi tenaga listrik per jenis sumber energi primer.
+Prakiraan bauran energi harus sejalan dengan kebijakan Pemerintah di bidang energi dan ketenagalistrikan.
+Komposisi produksi tenaga listrik per jenis sumber energi primer sesuai dengan format pada Tabel 49.
+Tabel 49 Komposisi Produksi Tenaga Listrik (dalam GWh) Sumber Energi Tahun Tahun No. Tahun P+1 dst. Total Primer *) **)P P+9
+1. EBT Air Panas Bumi BBN Biomassa Surya Bayu dst.
+Sumber Energi Tahun Tahun No. Tahun P+1 dst. Total Primer *) **)P P+9
+2. Gas
+3. BBM:
+HSD MFO IDO HFO
+4. Batubara Impor Total Keterangan: *) jenis dapat disesuaikan **) P adalah tahun awal perencanaan Adapun rencana bauran energi pembangkitan tenaga listrik sesuai dengan format pada Tabel 50.
+
+## Lampiran hal. 116
+
+Tabel 50 Rencana Bauran Energi Pembangkitan Tenaga Listrik (dalam %) Sumber Tahun Tahun No. Tahun P+1 dst.
+Energi Primer *) **)P P+9
+1. EBT Air Panas Bumi BBN Biomassa Surya Bayu dst.
+2. Gas
+3. BBM:
+HSD MFO IDO HFO
+4. Batubara Sumber Tahun Tahun No. Tahun P+1 dst.
+Energi Primer *) **)P P+9 Impor Total Keterangan: *) jenis dapat disesuaikan **) P adalah tahun awal perencanaan Selain dalam bentuk tabel, proyeksi bauran energi pembangkitan tenaga listrik ditampilkan dalam bentuk grafik.
+d. Proyeksi Kebutuhan Bahan Bakar Pembangkit Menguraikan proyeksi kebutuhan bahan bakar dalam operasional pembangkit. Proyeksi kebutuhan bahan bakar pembangkit dihitung berdasarkan prakiraan komposisi produksi tenaga listrik per jenis sumber energi primer dan efisiensi pembangkit.
+Proyeksi kebutuhan bahan bakar pembangkit sesuai dengan format pada Tabel 51.
+Tabel 51 Proyeksi Kebutuhan Bahan Bakar Pembangkit Sumber Energi Tahun TahunP Tahun No. Satuan dst. Total Primer *) **)P +1 P+9
+1. Uap Panas Bumi juta ton
+2. BBN kl
+3. Biomassa ribu ton
+4. Gas BBTU
+5. BBM:
+HSD MFO kl IDO HFO
+6. Batubara juta ton dst.
+Keterangan: *) jenis dapat disesuaikan **)P adalah tahun awal perencanaan Sebagai upaya pemenuhan kebutuhan bahan bakar pembangkit berbahan bakar gas, perlu dibuat rincian prakiraan kebutuhan gas per pembangkit dengan sesuai dengan format pada Tabel 52.
+Tabel 52 Prakiraan Kebutuhan Gas (dalam BBTUD) Tahun** TahunP TahunP No. Pembangkit*) Pemasok )P dst. +1 +9
+1. PLTG/GU/MG/MGU …
+
+## Lampiran hal. 118
+
+2. PLTG/GU/MG/MGU …
+3. PLTG/GU/MG/MGU … dst.
+Total Keterangan: *) hapus yang tidak sesuai **) P adalah tahun awal perencanaan
+e. Proyeksi Emisi Gas Rumah Kaca Menguraikan proyeksi emisi CO2 yang merupakan dampak dari operasional pembangkit. Proyeksi emisi CO2 diperoleh berdasarkan produksi tenaga listrik terutama dari berbagai pembangkit berbahan bakar fosil. Proyeksi emisi CO2 sesuai dengan format pada Tabel 53.
+Tabel 53 Proyeksi Emisi Gas Rumah Kaca (dalam juta tCO2) Sumber Tahun No. Tahun *)P dst. Tahun P+9 Energi Primer P+1
+1. BBN
+2. Biomassa
+3. Gas
+4. BBM:
+HSD MFO Sumber Tahun No. Tahun *)P dst. Tahun P+9 Energi Primer P+1 IDO HFO
+5. Batubara dst. dst.
+Total Keterangan: *) P adalah tahun awal perencanaan Selain dalam bentuk tabel, proyeksi emisi gas rumah kaca perlu ditampilkan dalam bentuk grafik.
+5. Perencanaan Jaringan Transmisi Menguraikan rencana pembangunan jaringan transmisi per jenis tegangan. Kebutuhan panjang jaringan transmisi dan jenis tegangan yang digunakan dihitung dan ditentukan berdasarkan prakiraan jarak antara pusat pembangkit dan pusat beban di mana akan dibangun gardu induk dengan mempertimbangkan susut (losses).
+Rekapitulasi rencana pembangunan jaringan transmisi sesuai dengan format pada Tabel 54.
+Tabel 54 Rekapitulasi Rencana Pembangunan Jaringan Transmisi (dalam kms) Tahun Tahun Tahun No. Tegangan (kV) *) **)P dst. Total P+1 P+9
+1. 500 DC
+2. 500
+3. 275
+4. 150
+5. 70 dst. dst.
+
+## Lampiran hal. 119
+
+Total Keterangan: *) jenis tegangan dapat disesuaikan dapat disesuaikan dengan instalasi yang dimiliki Badan Usaha pemegang Wilayah Usaha **) P adalah tahun awal perencanaan Adapun detail rencana pembangunan jaringan transmisi sesuai dengan format pada Tabel 55.
+Tabel 55 Rencana Pembangunan Jaringan Transmisi Kabu-Tegangan Konduk- Panjang Target Sumber Status Kete-No. Provinsi paten/ Dari Ke (kV)*) tor (kms) COD Pendanaan **) rangan Kota
+1. 500 DC/500/ /70
+2. 500 DC/500/ /70 dst.
+Total Keterangan: *) hapus yang tidak sesuai **) rencana/pengadaan/kontrak belum konstruksi/konstruksi Perencanaan transmisi dilengkapi dengan prakiraan aliran daya per Sistem Tenaga Listrik per tahun.
+Tabel 56 Rencana Susut Transmisi Tahun Tahun Tahun Uraian dst. *)P P-9 **)n Susut Transmisi (GWh) Susut Transmisi (%) Keterangan: *) P adalah tahun awal perencanaan **) n adalah tahun akhir perencanaan
+6. Perencanaan Gardu Induk Menguraikan rencana pembangunan gardu induk, baik penambahan trafo per jenis tegangan maupun penambahan line bay. Kebutuhan gardu induk dan jenis tegangan yang digunakan dihitung dan ditentukan berdasarkan prakiraan kebutuhan beban pada suatu daerah.
+Rekapitulasi rencana pembangunan gardu induk sesuai dengan format pada Tabel 57.
+Tabel 57 Rekapitulasi Rencana Pembangunan Gardu Induk (dalam MVA) Tahun Tahun Tahun No. Tegangan (kV) *) **)P dst. Total P+1 P+9
+1. 500 DC (Converter)
+2. 500/150
+3. 275/150
+4. 150/70
+5. 150/20
+6. 70/20 dst. dst.
+
+## Lampiran hal. 121
+
+Total Keterangan: *) jenis tegangan dapat disesuaikan dengan instalasi yang dimiliki Badan Usaha pemegang Wilayah Usaha **) P adalah tahun awal perencanaan Adapun detail rencana pembangunan gardu induk sesuai dengan format pada Tabel 58.
+Tabel 58 Rencana Pembangunan Gardu Induk Kapa-Kabu- Tar-Gardu Tegangan Baru/Ext/ sitas Sumber Status Titik No. Provinsi paten/ get Induk (kV)*) Uprate (MVA/ Pendanaan **) Koordinat Kota COD LB)
+1. 500 DC (Converter/ 500/150/ 275/150/ 150/70/ 150/20/
+2. 500 DC (Converter/ 500/150/ 275/150/ 150/70/ 150/20/ dst. dst.
+Total Keterangan: *) hapus yang tidak sesuai **) rencana/pengadaan/kontrak belum konstruksi/konstruksi Perencanaan gardu induk dilengkapi dengan capacity balance gardu induk exsisting dan rencana.
+7. Perencanaan Sistem Distribusi Menguraikan rencana pengadaan penyaluran tenaga listrik dari sistem transmisi atau dari pembangkitan ke Konsumen.
+Kebutuhan infrastruktur sistem distribusi dihitung berdasarkan pada proyeksi penjualan tenaga listrik, jumlah pelanggan dan jenis pelanggan, serta jarak dari sistem transmisi atau pembangkitan ke Konsumen.
+Rencana pembangunan sistem distribusi sesuai dengan format pada Tabel 59.
+Tabel 59 Rencana Pembangunan Sistem Distribusi No. Uraian Tahun Tahun dst. Tahun *)P P+1 P+9
+1. Panjang Jaringan Tegangan Menengah (kms)
+2. Panjang Jaringan Tegangan Rendah (kms)
+3. Kapasitas Trafo Gardu Distribusi (MVA)
+
+## Lampiran hal. 122
+
+4. Jumlah Trafo Gardu Distribusi (Unit) Keterangan: *) P adalah tahun awal perencanaan Untuk jenis Usaha Penyediaan Tenaga Listrik terintegrasi yang tidak melakukan kegiatan usaha transmisi tenaga listrik, Badan Usaha harus mencantumkan rincian rencana pembangunan sistem distribusi, yang terdiri atas rincian rencana pembangunan jaringan tegangan menengah, rincian rencana pembangunan jaringan tegangan rendah, dan rincian rencana pembangunan gardu distribusi.
+Rencana pembangunan jaringan tegangan menengah sesuai dengan format pada Tabel 60.
+Tabel 60 Rincian Rencana Pembangunan Jaringan Tegangan Menengah Tegangan Panjang Target No. Dari Ke Konduktor Status*) (kV) (kms) COD
+1. 2. dst.
+Total Keterangan: *) rencana/pengadaan/kontrak belum konstruksi/konstruksi Rencana pembangunan jaringan tegangan rendah sesuai dengan format pada Tabel 61.
+Tabel 61 Rincian Rencana Pembangunan Jaringan Tegangan Rendah Tegangan Panjang Target No. Dari Ke Konduktor Status*) (V) (kms) COD
+1. 2. dst.
+Total Keterangan: *) rencana/pengadaan/kontrak belum konstruksi/konstruksi Rencana pembangunan gardu distribusi sesuai dengan format pada Tabel 62.
+Tabel 62 Rincian Rencana Pembangunan Gardu Distribusi Nama Tegangan Kapasitas New/ Target No. Status*) Gardu (kV/V) (kVA) Extension COD
+1. 2. dst.
+Total Keterangan: *) rencana/pengadaan/kontrak belum konstruksi/konstruksi Tabel 63 Rincian Rencana Operasi Sistem Distribusi Tahun Tahun Tahun Uraian Satuan *)P dst.
+
+## Lampiran hal. 124
+
+P+1 **)n GWh Susut Jaringan Distribusi % Pemakaian Sendiri Gardu GWh Distribusi % Keterangan: *) P adalah tahun awal perencanaan *) n adalah tahun akhir perencanaan
+VI. Kebutuhan Investasi dan Indikasi Pendanaan Menguraikan proyeksi kebutuhan investasi yang diperlukan oleh Badan Usaha dalam melaksanakan RUPTL selama 10 (sepuluh) tahun ke depan, antara lain kebutuhan investasi untuk:
+1. pembangunan pembangkit;
+2. pembangunan jaringan transmisi;
+3. pembangunan gardu induk;
+4. pembangunan sistem distribusi;
+5. penambahan pelanggan; dan
+6. pengembangan listrik perdesaan.
+Tabel 64 Rekapitulasi Kebutuhan Investasi (Disbursement) Pembangunan Infrastruktur Penyediaan Tenaga Listrik (dalam Rp/USD) Tahun Tahun … Tahun Uraian*) **)P P+1 dst. P+9 Pembangkit Transmisi Gardu Induk Distribusi Listrik Perdesaan TOTAL *) untuk setiap infrastruktur tenaga listrik diuraikan per pengembang **) P adalah tahun awal perencanaan Selain kebutuhan investasi, perlu diuraikan indikasi sumber pendanaan untuk memenuhi kebutuhan investasi tersebut antara lain anggaran pendapatan dan belanja negara, anggaran pendapatan dan belanja daerah, anggaran internal Badan Usaha, loan, dan hibah.
+VII. ANALISIS RISIKO Menguraikan secara garis besar mengenai analisis risiko yang mungkin dihadapi oleh Badan Usaha dalam kegiatan Usaha Penyediaan Tenaga Listrik selama 10 (sepuluh) tahun ke depan antara lain profil risiko, pemetaan profil risiko, dan mitigasi risiko.
+
+## Lampiran hal. 125
+
+MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+ARIFIN TASRIF Salinan sesuai dengan aslin^ KEMENT^RIAN ENERGI DAN SUMBER D)^YA MINERAL ---KEPALA BIRO HUKUM. //vA LAMPIRAN II PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 11 TAHUN 2021 TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN FORMAT SURAT PERMOHONAN PENGESAHAN USULAN RENCANA USAHA PENYEDIAAN TENAGA LISTRIK KOP SURAT BADAN USAHA Nomor : (kota),(tanggal)(bulan)(tahun) Lampiran :
+Hal : Permohonan Pengesahan RUPTL PT … Tahun ... s.d. Tahun ...
+Yang terhormat, Menteri Energi dan Sumber Daya Mineral u.p. Direktur Jenderal Ketenagalistrikan /Gubernur … *) di Tempat Dalam rangka pelaksanaan kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum dan sesuai dengan Peraturan Pemerintah Nomor 5 Tahun 2021 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko dan Peraturan Pemerintah Nomor 25 Tahun 2021 tentang Penyelenggaraan Bidang Energi dan Sumber Daya Mineral, bersama ini kami mengajukan permohonan pengesahan RUPTL PT ... Tahun ... s.d. Tahun ... (dokumen RUPTL terlampir) untuk usaha distribusi tenaga listrik/usaha penjualan tenaga listrik/Usaha Penyediaan Tenaga Listrik terintegrasi*) dengan penetapan Wilayah Usaha Nomor ... tanggal ..., dengan pokok-pokok: **)
+1. Proyeksi Rata-Rata Pertumbuhan Kebutuhan : …%
+2. Total Rencana Pembangunan Pembangkit : … MW
+3. Target Bauran Energi Pembangkitan Akhir : Batubara… %, EBT…%, Tahun Periode RUPTL Gas
+
+## Lampiran hal. 127
+
+4. Total Rencana Pembangunan Jaringan Transmisi:... kms
+5. Total Rencana Pembangunan Gardu Induk ... MVA
+6. Total Rencana Pembangunan Jaringan Distribusi ... kms
+7. Total Rencana Pembangunan Gardu Distribusi ... MVA
+8. Total Kebutuhan Investasi ... juta USD Demikian permohonan kami, atas perhatian Bapak/Ibu*) Menteri/Gubernur*), kami sampaikan terima kasih.
+Hormat kami, (Direktur Utama) tanda tangan dan stempel (Nama Lengkap) Tembusan:
+- Menteri Energi dan Sumber Daya Mineral ***)
+- Direktur Jenderal Ketenagalistrikan ****) *) hapus yang tidak sesuai **) disesuaikan dengan jenis usaha ***) untuk permohonan kepada Menteri Energi dan Sumber Daya Mineral u.p.
+Direktur Jenderal Ketenagalistrikan ****) untuk permohonan kepada gubernur MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+ARIFIN TASRIF -Salinan sesuai dengan aslinya KEMENTERIAN ENERGI DAN SUMBER DAYA MINERAL 'Vrv KEPALA BIRO HUKUM, . ■ '• * LAMPIRAN III PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 11 TAHUN 2021 TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN FORMAT SURAT PERMOHONAN PENGESAHAN USULAN PERUBAHAN RENCANA USAHA PENYEDIAAN TENAGA LISTRIK KOP SURAT BADAN USAHA Nomor : (kota),(tanggal)(bulan)(tahun) Lampiran :
+Hal : Permohonan Pengesahan RUPTL PT … Tahun ... s.d. Tahun ...
+
+## Lampiran hal. 128
+
+Yang terhormat, Menteri Energi dan Sumber Daya Mineral u.p. Direktur Jenderal Ketenagalistrikan /Gubernur … *) di Tempat Dalam rangka pelaksanaan kegiatan Usaha Penyediaan Tenaga Listrik untuk kepentingan umum dan sesuai dengan Peraturan Pemerintah Nomor 5 Tahun 2021 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko dan Peraturan Pemerintah Nomor 25 tahun 2021 tentang Penyelenggaraan Bidang Energi dan Sumber Daya Mineral, bersama ini kami mengajukan permohonan pengesahan RUPTL PT ... Tahun ... s.d. Tahun ... (dokumen RUPTL terlampir) untuk Usaha Distribusi Tenaga Listrik/Usaha Penjualan Tenaga Listrik/Usaha Penyediaan Tenaga Listrik terintegrasi*) dengan IUPTLU Nomor: … tanggal... dan penetapan Wilayah Usaha Nomor ... tanggal ..., dengan pokok-pokok: **)
+1. Proyeksi Rata-Rata Pertumbuhan Kebutuhan : …%
+2. Total Rencana Pembangunan Pembangkit : … MW
+3. Target Bauran Energi Pembangkitan Akhir :Batubara... %, EBT...%, Tahun Periode RUPTL Gas Bumi...%, BBM.,,%
+4. Total Rencana Pembangunan Jaringan Transmisi ... kms
+5. Total Rencana Pembangunan Gardu Induk .. MVA
+6. Total Rencana Pembangunan Jaringan Distribusi .. kms
+7. Total Rencana Pembangunan Gardu Distribusi .. MVA
+8. Total Kebutuhan Investasi .. juta USD Demikian permohonan kami, atas perhatian Bapak/Ibu*) Menteri/ Gubernur*), kami sampaikan terima kasih.
+Hormat kami, (Direktur Utama) tanda tangan dan stempel (Nama Lengkap) Tembusan:
+- Menteri Energi dan Sumber Daya Mineral
+
+## Lampiran hal. 129
+
+- Direktur Jenderal Ketenagalistrikan ****1 *) hapus yang tidak sesuai **) disesuaikan dengan jenis usaha ***) untuk permohonan kepada Menteri Energi dan Sumber Daya Mineral u.p.
+Direktur Jenderal Ketenagalistrikan ****) untuk permohonan kepada gubernur MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+ARIFIN TASRIF -;>Salinan sesuai dengan aslinya KEMENTE^IAN ENERGI DAN SUMBER DAY>. MINERAL KEPALArBIROHUKUM, LAMPIRAN IV PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 11 TAHUN 2021 TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN SISTEMATIKA DAN FORMAT LAPORAN REALISASI RENCANA USAHA PENYEDIAAN TENAGA LISTRIK (KOP SURAT BADAN USAHA) Nomor : (kota),(tanggal)(bulan)(tahun) Lampiran :
+Hal : Laporan Realisasi RUPTL PT … Tahun … s.d. Tahun … Periode … Yang terhormat, Menteri Energi dan Sumber Daya Mineral u.p. Direktur Jenderal Ketenagalistrikan /Gubernur … *) di Tempat Bersama ini kami sampaikan laporan realisasi RUPTL PT … Tahun … s.d.
+Tahun … yang telah disahkan melalui Keputusan Menteri Energi dan Sumber Daya Mineral/Gubernur Nomor… Tanggal… untuk periode … dengan ringkasan:
+Rencana Realisasi Capaian No. Uraian **) Satuan Tahun Berjalan s.d. ... **) (%) **) TWh/ 1 Penjualan Tenaga Listrik GWh/ MWh Pertumbuhan Penjualan 2 % Tenaga Listrik (YoY) 3 Jumlah Pelanggan Pelanggan 4 Penambahan Pembangkit MW Rencana Realisasi Capaian No. Uraian **) Satuan Tahun Berjalan s.d. ... **) (%) **) TWh/ 5 Produksi Tenaga Listrik GWh/ MWh 6 Bauran Energi:
+
+## Lampiran hal. 131
+
+Batubara Gas % EBT BBM Penambahan Jaringan 7 kms Transmisi 8 Penambahan Gardu Induk MVA Penambahan Jaringan 9 Distribusi:
+Jaringan Tegangan kms Menengah Jaringan Tegangan Rendah Penambahan Gardu 10 MVA Distribusi 11 Investasi:
+Pembangkitan Transmisi USD Gardu Induk Distribusi Listrik Perdesaan Adapun laporan lebih rinci sebagaimana terlampir.
+Demikian laporan kami, atas perhatian Bapak/Ibu*) Menteri/Gubernur*), kami sampaikan terima kasih.
+Hormat kami, (Direktur Utama) tanda tangan dan stempel (Nama Lengkap) Tembusan:
+- Menteri Energi dan Sumber Daya Mineral ***)
+- Direktur Jenderal Ketenagalistrikan ****) *) hapus yang tidak sesuai **) disesuaikan dengan jenis usaha ***) untuk permohonan kepada Menteri Energi dan Sumber Daya Mineral u.p.
+Direktur Jenderal Ketenagalistrikan ****) untuk permohonan kepada gubernur LAMPIRAN SURAT LAPORAN REALISASI RUPTL Dalam hal Wilayah Usaha mencakup lebih dari 1 (satu) pulau besar, tabel dalam lampiran laporan realisasi RUPTL dikelompokkan berdasarkan rekapitulasi keseluruhan dan per pulau besar/regional.
+1. Realisasi Penjualan Tenaga Listrik (untuk Usaha Distribusi Tenaga Listrik, Usaha Penjualan Tenaga Listrik, dan Usaha Penyediaan Tenaga Listrik Terintegrasi) Tabel 1 Rencana dan Realisasi Penjualan Tenaga Listrik Rencana Kelompok Realisasi Capaian No. Satuan Tahun Keterangan Pelanggan*) s.d. ... **) (%) ***) Berjalan 1 Rumah Tangga 2 Industri TWh/ GWh/ 3 Bisnis MWh 4 dst.
+
+## Lampiran hal. 132
+
+Total 5 Pertumbuhan YoY % Konsumsi Tenaga 6 kWh Listrik per Kapita Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang berlaku pada masing-masing Wilayah Usaha **) sesuai periode laporan ***) terhadap rencana tahun berjalan Tabel 2 Realisasi Harga Jual Listrik Rata-Rata Kelompok Realisasi s.d.
+No. Satuan Keterangan Pelanggan*) ... **) 1 Rumah Tangga 2 Industri Rp/kWh 3 Bisnis 4 dst.
+Total Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang berlaku pada masing-masing Wilayah Usaha **) sesuai periode laporan Tabel 3 Rencana dan Realisasi Jumlah Pelanggan Rencana Kelompok Realisasi Capaian No.
+Pelanggan*) Satuan Tahun s.d. ... **) (%) ***) Keterangan Berjalan 1 Rumah Tangga 2 Industri Pelanggan 3 Bisnis 4 dst.
+Total 5 Pertumbuhan YoY % Keterangan: *) kelompok pelanggan disesuaikan dengan kelompok tarif tenaga listrik yang berlaku pada masing-masing Wilayah Usaha **) sesuai periode laporan ***) terhadap rencana tahun berjalan
+2. Realisasi Pembangkitan (untuk Usaha Penyediaan Tenaga Listrik Terintegrasi) Tabel 4 Rekapitulasi Realisasi Kemajuan Pembangunan Pembangkit *) Tahapan Pembangunan (MW) Total No. Regional Kontrak/PPA Keterangan (MW) Perencanaan Pengadaan Konstruksi COD Belum Konstruksi 1 A 2 B 3 C dst.
+
+## Lampiran hal. 133
+
+Total Keterangan: *) hanya untuk Wilayah Usaha yang memiliki regional Tabel 5 Rekapitulasi Realisasi Kemajuan Pembangunan Pembangkit per Jenis Pembangkit Tahapan Pembangunan (MW) Total Kontrak/PPA Keterangan No. Uraian COD (MW) Perencanaan Pengadaan Belum Konstruksi Konstruksi Rencana Realisasi Dikembangkan Sendiri:
+1. PLT… PLT… Tahapan Pembangunan (MW) Total Kontrak/PPA Keterangan No. Uraian COD (MW) Perencanaan Pengadaan Belum Konstruksi Konstruksi Rencana Realisasi dst.
+Kerja Sama dengan IPP:
+2. PLT… PLT… dst.
+Kerja Sama Antarwilayah Usaha:
+3. PLT… PLT… dst.
+Unallocated PLT…
+4. PLT… dst.
+5. Impor Total PLT…
+6. PLT… dst.
+Impor Tabel 6 Rincian Kemajuan Pembangunan Pembangkit per Tahapan Pembangunan *) Nama Lokasi/ Sistem Kabupaten/ Jenis Kapasitas (MW) Rencana COD Pengembang Titik Titik Keterangan No. Provinsi Nama Tenaga Kota Pembangkit **) Koordinat Koneksi ***) Pembangkit RUPTL Realisasi RUPTL Estimasi Listrik sendiri/kerja sama dengan IPP/kerja sama
+1. antarwilayah usaha / unallocated /impor sendiri/kerja sama dengan IPP/kerja sama
+2. antarwilayah usaha/ unallocated /impor dst .
+
+## Lampiran hal. 134
+
+Total Keterangan: *) tabel dibuat terpisah untuk masing-masing tahapan pembangunan **) hapus yang tidak sesuai ***) khusus proyek dalam tahap konstruksi dilengkapi dengan tanggal mulai konstruksi dan persentase kemajuan engineering procurement construction (EPC) dan overall Tabel 7 Rencana dan Realisasi Produksi Tenaga Listrik (dalam GWh) Sumber Energi Rencana Realisasi No. Capaian (%) ***) Keterangan Primer *) Tahun Berjalan s.d. ... **)
+1. EBT Air Panas Bumi BBN Biomassa Surya Bayu dst.
+2. Gas
+3. BBM:
+HSD MFO IDO HFO
+4. Batubara Impor Total Keterangan: *) jenis dapat disesuaikan **) sesuai periode laporan ***) terhadap rencana tahun berjalan Tabel 8 Rencana dan Realisasi LOLP (dalam %) Rencana Realisasi No. Sistem Keterangan Tahun Berjalan s.d. ... **)
+1. 2.
+3. 4.
+5. dst.
+Tabel 9 Rencana dan Realisasi Bauran Energi Pembangkitan Tenaga Listrik (dalam %) Sumber Energi Rencana Realisasi No. Capaian (%) ***) Keterangan Primer *) Tahun Berjalan s.d. ... **)
+1. EBT Air Sumber Energi Rencana Realisasi No. Capaian (%) ***) Keterangan Primer *) Tahun Berjalan s.d. ... **) Panas Bumi BBN Biomassa Surya Bayu dst.
+2. Gas
+3. BBM:
+HSD MFO IDO HFO
+4. Batubara Impor Total Keterangan: *) jenis dapat disesuaikan **) sesuai periode laporan ***) terhadap rencana tahun berjalan Tabel 10 Rencana dan Realisasi Konsumsi Sumber Energi Primer Sumber Rencana Realisasi Capaian (%) No. Energi Primer Satuan Keterangan *) Tahun Berjalan s.d. ... **) ***)
+1. Panas Bumi juta ton
+2. BBN kl
+
+## Lampiran hal. 136
+
+3. Biomassa ribu ton
+4. Gas BBTU BBM:
+HSD
+5. MFO kl IDO HFO
+6. Batubara juta ton dst. dst.
+Keterangan: *) jenis dapat disesuaikan **) sesuai periode laporan ***) terhadap rencana tahun berjalan Tabel 11 Rencana dan Realisasi Emisi Gas Rumah Kaca (dalam juta tCO2) Sumber Energi Rencana Realisasi No. Capaian (%) ***) Keterangan Primer *) Tahun Berjalan s.d. ... **)
+1. BBN
+2. Biomassa
+3. Gas BBM:
+HSD
+4. MFO IDO HFO
+5. Batubara dst. dst Total Keterangan: *) jenis dapat disesuaikan **) sesuai periode laporan ***) terhadap proyeksi tahun berjalan
+3. Jaringan Transmisi (untuk Usaha Penyediaan Tenaga Listrik Terintegrasi) Tabel 12 Rekapitulasi Realisasi Kemajuan Pembangunan Jaringan Transmisi *) Tahapan Pembangunan (kms) Total No. Regional Keterangan (kms) Pengadaan Pengadaan Perencanaan Konstruksi Energize Lahan Konstruksi 1 A 2 B 3 C dst.
+Total Keterangan: *) hanya untuk Wilayah Usaha yang memiliki regional Tabel 13 Rekapitulasi Realisasi Kemajuan Pembangunan Jaringan Transmisi per Jenis Tegangan Tahapan Pembangunan (kms) Tegangan Total Ketera-No. Energize (kV) *) (kms) Pengadaan Pengadaan ngan Perencanaan Konstruksi Lahan Konstruksi Ren- Reali-cana sasi
+1. 500 DC
+2. 500
+3. 275
+4. 150
+5. 70 dst.
+
+## Lampiran hal. 138
+
+Total Keterangan: *) jenis tegangan dapat disesuaikan dengan instalasi yang dimiliki Badan Usaha pemegang Wilayah Usaha Tabel 14 Rincian Kemajuan Pembangunan Jaringan Transmisi per Tahapan Pembangunan *) Panjang (kms) Rencana COD Kabupaten/ Sumber Keterangan No. Provinsi Dari Ke Tegangan (kV)**) Konduktor Kota Pendanaan ***) RUPTL Realisasi RUPTL Estimasi 500
+1. DC/500/275/150/70 500
+2. DC/500/275/150/70 dst.
+Total Keterangan: *) tabel dibuat terpisah untuk masing-masing tahapan pembangunan **) hapus yang tidak sesuai ***) khusus proyek dalam tahap konstruksi dilengkapi dengan tanggal mulai konstruksi dan persentase kemajuan engineering procurement construction (EPC) dan overall
+4. Gardu Induk (untuk Usaha Penyediaan Tenaga Listrik Terintegrasi) Tabel 15 Rekapitulasi Realisasi Kemajuan Pembangunan Gardu Induk*) Tahapan Pembangunan (kms) Total No. Regional Keterangan (MVA) Pengadaan Perencanaan Konstruksi Energize Konstruksi 1 A 2 B 3 C 4 dst.
+Total Keterangan: *) hanya untuk Wilayah Usaha yang memiliki regional Tabel 16 Rekapitulasi Realisasi Kemajuan Pembangunan Gardu Induk per Jenis Tegangan Tahapan Pembangunan (MVA) Total No. Tegangan (kV) *) Keterangan (MVA) Pengadaan Energize Perencanaan Konstruksi Konstruksi Rencana Realisasi
+1. 500 DC (Converter)
+2. 500/150
+3. 275/150
+4. 150/70
+5. 150/20
+6. 70/20 dst.
+
+## Lampiran hal. 139
+
+Total Keterangan: *) jenis tegangan dapat disesuaikan dengan instalasi yang dimiliki Badan Usaha pemegang Wilayah Usaha Tabel 17 Rincian Kemajuan Pembangunan Gardu Induk per Tahapan *) Baru/ Kapasitas Kabupaten/ Gardu Tegangan Sumber Titik Keterangan No. Provinsi Ext/ (MVA/LB) Rencana COD Kota Induk (kV) **) Pendanaan Koordinat ***) Uprate RUPTL Realisasi RUPTL Estimasi 500 DC (Converter/ 500/150/
+1. 275/150/ 150/70/ 150/ 20/ 500 DC (Converter/
+2. 500/150/ 275/ 150/ Baru/ Kapasitas Kabupaten/ Gardu Tegangan Sumber Titik Keterangan No. Provinsi Ext/ (MVA/LB) Rencana COD Kota Induk (kV) **) Pendanaan Koordinat ***) Uprate RUPTL Realisasi RUPTL Estimasi 150/70/ 150/20/ dst.
+Total Keterangan: *) tabel dibuat terpisah untuk masing-masing tahapan pembangunan **) hapus yang tidak sesuai ***) khusus proyek dalam tahap konstruksi dilengkapi dengan tanggal mulai konstruksi dan persentase kemajuan engineering procurement construction (EPC) dan overall
+
+## Lampiran hal. 140
+
+5. Sistem Distribusi (untuk Usaha Distribusi Tenaga Listrik dan Usaha Penyediaan Tenaga Listrik Terintegrasi) Tabel 18 Rekapitulasi Realisasi Fisik Sistem Distribusi Rencana Realisasi Capaian No. Uraian Satuan Tahun Keterangan s.d. ... *) (%) **) Berjalan Panjang Jaringan 1 kms Tegangan Menengah Panjang Jaringan 2 kms Tegangan Rendah Kapasitas Trafo Gardu 3 MVA Distribusi Jumlah Trafo Gardu 4 unit Distribusi Keterangan: *) sesuai periode laporan **) terhadap rencana tahun berjalan Tabel 19 Rekapitulasi Realisasi Keandalan Sistem Distribusi Rencana Realisasi Capaian No Uraian Satuan Tahun Keterangan s.d. ... *) (%) **) Berjalan System Average Interruption jam/ 1 Duration Index (SAIDI) pelanggan System Average Interruption kali/ 2 Frequency Index (SAIFI) pelanggan Keterangan: *) sesuai periode laporan **) terhadap rencana tahun berjalan
+5. Pemakaian Sendiri dan Susut (untuk Usaha Distribusi Tenaga Listrik dan Useiha Penyediaan Tenaga Listrik Terintegrasi) Tabel 20 Rekapitulasi Realisasi Keandalan Sistem Distribusi Rencana Realisasi Capaian No Uraian Satuan Tahun Keterangan s.d. (%)") Beijalan Pemakaian Sendiri GWh I Pembangkit % Pemakaian Sendiri Gardu GWh 2 Induk % Pemakaian Sendiri Gardu GWh 3 Distribusi % GWh 4 Susut Jaringan Transmisi % GWh 5 Susut Jaringan Distribusi % Keterangan: *) sesuai periode laporan **) terhadap rencana tahun berjalan MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+
+## Lampiran hal. 141
+
+ARIFIN TASRIF Saiinan sesuai dengan aslinya KEMENTERIAN ENERGI DAN SUMBER DAYA MINERAL ' KEPALy^IRO HUKUM, M. Idris F. Sihite LAMPIRAN V PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 11 TAHUN 2021 TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN FORMAT LAPORAN USAHA PENYEDIAAN TENAGA LISTRIK UNTUK KEPENTINGAN SENDIRI DENGAN TOTAL KAPASITAS PEMBANGKIT TENAGA LISTRIK SAMPAI DENGAN 500 (LIMA RATUS) KILOWATT Nomor :
+Lampiran :
+Hal : Laporan Usaha Penyediaan Tenaga Listrik untuk Kepentingan Sendiri dengan Total Kapasitas Pembangkit Tenaga Listrik sampai dengan 500 kW Yang terhormat, Menteri Energi dan Sumber Daya Mineral u.p. Direktur Jenderal Ketenagalistrikan /Gubernur…. (provinsi) u.p Kepala Dinas ….. (yang membidangi urusan ketenagalistrikan) Dalam rangka Usaha Penyediaan Tenaga Listrik untuk kepentingan sendiri dengan total kapasitas pembangkit tenaga listrik sampai dengan 500 (lima ratus) kilowatt, dengan ini kami sampaikan laporan sebagai berikut:
+A. Data Administrasi
+1. Nama (Badan Usaha/Non-Badan :………………………………… Usaha/Perseorangan)
+2. Alamat :…………………………………
+3. Nomor Telepon/Faksimile/Handphone :…………………………………
+4. Nomor Induk Berusaha :………………………………… untuk Badan Usaha/Nomor Induk Kependudukan untuk Perseorangan
+5. Nomor Pokok Wajib Pajak :………………………………… B. Data Teknis
+1. Data Pembangkit Tenaga Listrik
+
+## Lampiran hal. 143
+
+a. Pembangkit Selain Pembangkit Listrik Tenaga Surya Unit Spesifikasi 1 2 3 dst Jenis (air, diesel, gas, dsb.) Merek Tipe Negara Pembuat Tahun Pembuatan Kapasitas (kW) Energi Primer
+b. Pembangkit Listrik Tenaga Surya Spesifikasi Unit 1 2 3 dst Merek Tipe Negara Pembuat Tahun Pembuatan Kapasitas Satuan (watt-peak) Jumlah Unit
+2. Jaringan Distribusi
+a. Panjang saluran :…………. Kms
+b. Tegangan :…………. volt
+3. Sambungan Listrik dari Pihak Lain (ada/tidak ada)
+a. Dari pihak lain :……………
+b. Daya tersambung :……….. kVA C. Lokasi Instalasi Penyediaan Tenaga Listrik
+1. Jalan :……………………………………………………
+2. Desa/Kelurahan :……………………………………………………
+3. Kecamatan :……………………………………………………
+4. Kabupaten/Kota :……………………………………………………
+5. Provinsi :…………………………………………………… Demikian laporan ini disampaikan dan saya bertanggung jawab atas kebenaran data tersebut. Apabila di kemudian hari diketahui bahwa terdapat data tidak benar yang berdampak pada pengenaan sanksi, saya atau Badan Usaha/non-Badan Usaha yang saya wakili bersedia dikenai sanksi sesuai dengan ketentuan peraturan perundang-undangan.
+(tempat), (tgl) (bulan)(tahun) meterai, tanda tangan, dan stempel (Nama) (Jabatan,jika Badan Usaha) Tembusan:
+Menteri Energi dan Sumber Daya Mineral MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+
+## Lampiran hal. 144
+
+ARIFIN TASRIF Salinan sesuai dengan aslinya KEMENXPBIi?iN ENERGI DAN SUMBER DAYA Ml 4ERAL KERALA BIRO HUKUM, LAMPIRAN VI PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 11 TAHUN 2021 TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN FORMAT LAPORAN PEMANFAATAN JARINGAN TENAGA LISTRIK UNTUK KEPENTINGAN TELEKOMUNIKASI, MULTIMEDIA, DAN/ATAU INFORMATIKA A. LAPORAN AWAL Laporan ini disampaikan Pemilik Jaringan setiap persetujuan pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika pada setiap Pemanfaat Jaringan.
+Laporan paling sedikit memuat:
+1. Latar belakang pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika.
+2. Profil Pemanfaat Jaringan yang berisi identitas, alamat, Perizinan Berusaha bidang telekomunikasi, multimedia, dan/atau informatika yang dimiliki.
+3. Pemanfaatan jaringan oleh Pemanfaat Jaringan yang berisi daerah cakupan kerja, kapasitas jaringan, desain, serta spesifikasi alat dan perangkat telekomunikasi, multimedia, dan/atau informatika yang akan digunakan termasuk proyeksi rencana pemanfaatan jaringan sampai dengan 5 (lima) tahun ke depan.
+4. Dokumen hasil analisis kelaikan pemanfaatan jaringan yang selalu dimutakhirkan oleh Pemilik Jaringan yang menyatakan bahwa pemanfaatan jaringan telah memenuhi ketentuan ruang bebas dan Keselamatan Ketenagalistrikan, dengan tambahan rincian berdasarkan ruang lingkup:
+
+## Lampiran hal. 145
+
+a. pemanfaatan penyangga dan/atau jalur sepanjang jaringan:
+1) jenis penyangga;
+2) lokasi dan titik koordinat penyangga berdasarkan global positioning systems (GPS);
+3) jaringan listrik dan peralatan listrik yang terpasang;
+4) jaringan telekomunikasi, multimedia, dan/atau informatika dan peralatan telekomunikasi, multimedia, dan/atau informatika yang terpasang;
+5) analisis kekuatan kontruksi setiap penyangga yang dimanfaatkan; dan 6) proyeksi pertumbuhan pemanfaatan penyangga dan/atau jalur sepanjang jaringan sampai dengan 5 (lima) tahun ke depan;
+b. pemanfaatan serat optik pada jaringan, merupakan serat optik yang dimiliki oleh Pemilik Jaringan:
+1) jenis dan kapasitas serat optik yang terpasang;
+2) fungsi serat optik yang terpasang;
+3) analisis kapasitas serat optik yang dimanfaatkan dari point to point; dan 4) proyeksi pertumbuhan pemanfaatan serat optik sampai dengan 5 (lima) tahun ke depan;
+c. pemanfaatan konduktor pada jaringan, merupakan konduktor yang digunakan untuk penyaluran tenaga listrik:
+1) jenis konduktor yang dimanfaatkan;
+2) frekuensi yang digunakan untuk kepentingan telekomunikasi, multimedia, dan/atau informatika;
+3) teknologi yang digunakan termasuk standar dan prosedur yang digunakan;
+4) analisis interferensi pada perangkat yang terhubung dengan konduktor; dan 5) proyeksi pertumbuhan pemanfaatan konduktor sampai dengan 5 (lima) tahun ke depan;
+d. pemanfaatan kabel pilot pada jaringan:
+1) jenis dan kapasitas kabel pilot yang terpasang;
+
+## Lampiran hal. 146
+
+2) fungsi kabel pilot yang terpasang;
+3) analisis interferensi kabel pilot yang dimanfaatkan dari point to point; dan 4) proyeksi pertumbuhan pemanfaatan kabel pilot sampai dengan 5 (lima) tahun ke depan.
+5. Perjanjian pemanfaatan jaringan antara Pemilik Jaringan dan Pemanfaat Jaringan termasuk rekapitulasi perjanjian antara Pemanfaat Jaringan dan pihak lain yang menggunakan jaringan melalui Pemanfaat Jaringan.
+6. Prosedur pemasangan, pengoperasian, pengamanan, pemeliharaan, pembongkaran, dan penertiban jaringan telekomunikasi, multimedia, dan/atau informatika. Dalam prosedur tersebut harus mengikuti ketentuan:
+a. prosedur pemasangan alat dan perangkat telekomunikasi, multimedia, dan/atau informatika pada jaringan harus memperhatikan rancangan pemanfaatan jaringan, ketentuan ruang bebas, ketentuan Keselamatan Ketenagalistrikan, dan estetika;
+b. prosedur pengoperasian alat dan perangkat telekomunikasi, multimedia, dan/atau informatika harus memastikan tidak boleh terganggunya penyediaan tenaga listrik;
+c. prosedur pengamanan harus memastikan pemberian tanda yang jelas pada jaringan yang dimanfaatkan yang mencakup identitas Pemanfaat Jaringan dan jenis perangkat telekomunikasi, multimedia, dan/atau informatika yang terpasang;
+d. prosedur pemeliharaan harus dapat memastikan alat dan perangkat telekomunikasi, multimedia, dan/atau informatika selalu diperlihara terhadap:
+1) bagian yang mudah dan tidak mudah dilihat;
+2) bagian yang mudah dan tidak mudah terkena gangguan;
+
+## Lampiran hal. 147
+
+3) tanda dan alat pengaman; dan 4) alat pelindung beserta alat pelengkap lainnya.
+Pelaksanaan pemeliharaan wajib memperhatikan fungsi jaringan dalam penyaluran tenaga listrik dan ketentuan Keselamatan Ketenagalistrikan;
+e. prosedur pembongkaran harus dapat memastikan tidak terganggunya penyediaan tenaga listrik, ketentuan Keselamatan Ketenagalistrikan, dan aspek estetika setelah pembongkaran;
+f. prosedur penertiban merupakan prosedur untuk memastikan bahwa:
+1) pihak yang memanfaatkan jaringan adalah pihak yang memiliki perjanjian pemanfaatan jaringan; dan 2) perapihan jaringan telekomunikasi, multimedia, dan/atau informatika memenuhi aspek estetika.
+7. Jenis, spesiflkasi, dan/atau kapasitas peralatan telekomunikasi, multimedia, dan/atau informatika yang dipasang di jaringan.
+B. LAPORAN BERKALA Laporan ini disampaikan Pemilik Jaringan setiap bulan Januari untuk setiap Pemanfaat Jaringan. Laporan sedikitnya memuat:
+1. Latar belakang pengembangan pemanfaatan jaringan tenaga listrik untuk kepentingan telekomunikasi, multimedia, dan/atau informatika (jika ada).
+2. Perubahan profil Pemanfaat Jaringan yang berisi identitas, alamat, Perizinan Berusaha bidang telekomunikasi, multimedia, dan/atau informatika (jika ada).
+
+## Lampiran hal. 148
+
+3. Perubahan pemanfaatan jaringan oleh Pemanfaat Jaringan yang berisi daerah cakupan kerja, kapasitas jaringan, desain, serta spesifikasi alat dan perangkat telekomunikasi, multimedia, dan/atau informatika yang digunakan termasuk proyeksi rencana hingga 5 (lima) tahun ke depan.
+4. Dokumen hasil analisis kelaikan pemanfaatan jaringan yang selalu dimutakhirkan oleh Pemilik Jaringan yang menyatakan bahwa pemanfaatan jaringan telah memenuhi ketentuan ruang bebas dan Keselamatan Ketenagalistrikan, dengan tambahan rincian berdasarkan ruang lingkup pemanfaatan sebagai berikut:
+a. pemanfaatan penyangga dan/atau jalur sepanjang jaringan:
+1) jenis penyangga;
+2) lokasi dan titik koordinat penyangga berdasarkan global positioning systems (GPS);
+3) jaringan listrik dan peralatan listrik yang terpasang;
+4) jaringan telekomunikasi, multimedia, dan/atau informatika dan peralatan telekomunikasi, multimedia, dan/atau informatika yang terpasang;
+5) analisis kekuatan kontruksi setiap penyangga yang dimanfaatkan; dan 6) proyeksi pertumbuhan pemanfaatan penyangga dan/atau jalur sepanjang jaringan sampai dengan 5 (lima) tahun ke depan;
+b. pemanfaatan serat optik pada jaringan, merupakan serat optik yang dimiliki oleh Pemilik Jaringan:
+1) jenis dan kapasitas serat optik yang terpasang;
+2) fungsi serat optik yang terpasang;
+3) analisis kapasitas serat optik yang dimanfaatkan dari point to point; dan 4) proyeksi pertumbuhan pemanfaatan serat optik sampai dengan 5 (lima) tahun ke depan;
+
+## Lampiran hal. 149
+
+c. pemanfaatan konduktor pada jaringan, merupakan konduktor yang digunakan untuk penyaluran tenaga listrik:
+1) jenis konduktor yang dimanfaatkan;
+2) frekuensi yang digunakan untuk kepentingan telekomunikasi, multimedia, dan/atau informatika;
+3) teknologi yang digunakan termasuk standar dan prosedur yang digunakan;
+4) analisis interferensi pada perangkat yang terhubung dengan konduktor; dan 5) proyeksi pertumbuhan pemanfaatan konduktor sampai dengan 5 (lima) tahun ke depan
+d. pemanfaatan kabel pilot pada jaringan 1) jenis dan kapasitas kabel pilot yang terpasang;
+2) fungsi kabel pilot yang terpasang;
+3) analisis interferensi kabel pilot yang dimanfaatkan dari point to point; dan 4) proyeksi pertumbuhan pemanfaatan kabel pilot hingga 5 (lima) tahun ke depan.
+5. Perubahan perjanjian pemanfaatan jaringan antara Pemilik Jaringan dan Pemanfaat Jaringan termasuk rekapitulasi perjanjian antara Pemanfaat Jaringan dan pihak lain yang menggunakan jaringan melalui Pemanfaat Jaringan (jika ada).
+6. Perubahan prosedur pemasangan, pengoperasian, pengamanan, pemeliharaan, pembongkaran, dan penertiban jaringan telekomunikasi, multimedia, dan/atau informatika (jika ada).
+7. Perubahan jenis, spesifikasi, dan/atau kapasitas peralatan telekomunikasi, multimedia, dan/atau informatika yang dipasang di jaringan (jika ada).
+8. Dokumen uji sampling peninjauan lapangan pemanfaatan jaringan.
+
+## Lampiran hal. 149
+
+9. Gangguan penyaluran tenaga listrik akibat pemanfaatan jaringan untuk kepentingan telekomunikasi, multimedia, dan/atau informatika (jika ada) yang berisi jenis gangguan, waktu gangguan, penyebab gangguan, dampak dari gangguan, waktu penyelesaian gangguan, dan mitigasi gangguan.
+10. Rekapitulasi kecelakaan dalam pemasangan, pengoperasian, pemeliharaan, pembongkaran, dan penertiban pemanfaatan jaringan (jika ada).
+11. Rekapitulasi penertiban pemanfaatan jaringan (jika ada).
+MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+ARIFIN TASRIF Salinan sesuai dengan aslinya KEMENTEf?tAN ENERGI DAN SUMBER DAYA MINERAL KERALA BIRO HUKUM.
+LAMPIRAN VII PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 11 TAHUN 2021 TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN FORMAT LAPORAN PELAKSANAAN USAHA PENYEDIAAN TENAGA LISTRIK UNTUK KEPENTINGAN UMUM KOP SURAT BADAN USAHA PT ……………………………………………..
+TAHUN ……….
+1. DATA UMUM Data Pengembang Nama Badan Usaha Alamat Kantor Alamat Kantor Pusat No. Telp. Cabang No. Telp.
+(jika ada) No. Fax No. Fax E-mail Nama Jabatan Contact Person E-mail No. Telp/HP Data Izin Usaha Penyediaan Tenaga Listrik Nomor Tanggal Jangka Waktu (Tahun) Tenaga Listrik Dijual kepada Data Perjanjian Jual Beli Tenaga Listrik dengan PT PLN Nomor Tanggal Jangka Waktu (Tahun) Data Perjanjian Jual Beli Tenaga Listrik dengan PT PLN Terbaru (jika ada amandemen PJBL) Nomor Tanggal Sertifikat Laik Operasi Nomor Tanggal
+
+## Lampiran hal. 152
+
+a. Perubahan Pemegang Saham Semula Menjadi Menjadi
+1. 1. 1.
+2. 2. 2.
+3. 3. 3. …dst …dst …dst Berdasarkan:
+1. Akta hasil RUPS (Nomor dan Tanggal);
+2. Anggaran dasar (Nomor dan Tanggal);
+3. Pengesahan Menteri (Nomor dan Tanggal);
+4. Persetujuan PT PLN (Persero) (Nomor dan Tanggal).
+b. Perubahan Komisaris Semula Menjadi Menjadi
+1. 1. 1.
+2. 2. 2.
+3. 3. 3. …dst …dst …dst Berdasarkan:
+1. Akta hasil RUPS (Nomor dan Tanggal);
+2. Anggaran dasar (Nomor dan Tanggal);
+3. Pengesahan Menteri (Nomor dan Tanggal);
+4. Persetujuan PT PLN (Persero) (Nomor dan Tanggal).
+c. Perubahan Direksi Semula Menjadi Menjadi
+1. 1. 1.
+2. 2. 2.
+3. 3. 3. …dst …dst …dst Berdasarkan:
+1. Akta hasil RUPS (Nomor dan Tanggal);
+2. Anggaran dasar (Nomor dan Tanggal);
+3. Pengesahan Menteri (Nomor dan Tanggal);
+4. Persetujuan PT PLN (Persero) (Nomor dan Tanggal).
+2. DATA INSTALASI PENYEDIAAN TENAGA LISTRIK
+a. Data Instalasi Pembangkitan Tenaga Listrik Lokasi Proyek Pembangkit Kapasitas COD / Jenis Energi Kabupaten/ Provinsi Koordinat2) Nama Unit Penggerak Pembangkit Primer Terpasang Kota (..º..’..” BT) Rencana Mula1) Utama COD (MW) (..º..’..” LU/LS) 1) isian: turbin air, turbin uap, turbin gas, combine cycle, mesin diesel, mesin gas, turbin angin, atau fotovoltaik 2) untuk PLTA/PLTM/PLTMH diisi koordinat intake dan rumah pembangkit (power house)
+b. Data Peralatan Utama Instalasi Pembangkitan Tenaga Listrik Penggerak Mula Generator Nama Tipe Pabrikan Tahun Tipe Pabrikan Tahun Unit Pembangkit Produksi Produksi
+
+## Lampiran hal. 153
+
+c. Data Instalasi Transmisi dan/atau Distribusi Tenaga Listrik Kapasitas Lokasi Proyek Unit Kabupaten/ Provinsi Koordinat Terpasang COD / Jenis Nama Tegangan Kota (..º..’..” BT) (MVA) atau Rencana Instalasi Instalasi (kV) (..º..’..” Panjang COD LU/LS) Saluran (kms) Gardu Induk Jaringan/ Saluran Transmisi Gardu Distribusi Jaringan/ Saluran Distribusi
+d. Data Peralatan Utama Instalasi Transmisi dan/atau Distribusi Tenaga Listrik Transformator Nama Instalasi Unit Tipe Pabrikan Tahun Produksi
+e. Titik Interkoneksi Pemilik/Pengelola Sistem Tenaga Subsistem Tenaga Nama Instalasi Instalasi Listrik Listrik
+3. REALISASI INVESTASI DAN PENYERAPAN TENAGA KERJA (KHUSUS TAHAP KONSTRUKSI)
+a. Realisasi Investasi Rupiah Dollar AS Mata Uang Lain Rencana Investasi Total Realisasi Investasi Pembelian Komponen Dalam Negeri
+b. Realisasi Penyerapan Tenaga Kerja Jumlah Tenaga Kerja Status Warga Negara Warga Negara Total Indonesia (orang) Asing (orang) In-house Pegawai Tetap Pegawai Kontrak Pegawai Sumber Luar (Outsourcing) Konsultan Perencana Proyek Konsultan Pengawas Proyek Kontraktor Pelaksana Proyek
+4. PROGRES PERIZINAN DAN NONPERIZINAN (KHUSUS TAHAP KONSTRUKSI) Dalam Tidak No. Jenis Sudah Dimiliki Proses Diperlukan Nomor Tanggal
+1. Pemenuhan Komitmen Prasarana Dasar Sesuai Kebutuhan Usaha (Kesesuaian Kegiatan Pemanfaatan Ruang, AMDAL, Persetujuan Bangunan Gedung, SLF, dsb.)
+2. Sertifikat Laik Operasi
+3. Sertifikat Kompetensi Tenaga Teknik Ketenagalistrikan
+
+## Lampiran hal. 155
+
+5. PROGRES PROYEK (KHUSUS TAHAP KONSTRUKSI) No. Kegiatan Selesai Dalam Proses Keterangan
+1. Kegiatan Desain Engineering …..%
+a. Sipil …..% Pelaksana:.................
+b. Mekanikal …..% Pelaksana:.................
+c. Elektrikal …..% Pelaksana:.................
+2. Kegiatan Pengadaan Peralatan …..% (Procurement)
+a. Sipil …..% Pelaksana:.................
+b. Mekanikal …..% Pelaksana:.................
+c. Elektrikal …..% Pelaksana:.................
+3. Kegiatan Konstruksi …..% (Construction)
+a. Sipil …..% Pelaksana:.................
+b. Mekanikal …..% Pelaksana:.................
+c. Elektrikal …..% Pelaksana:.................
+4. Kemajuan Proyek Total …..%
+5. Kegiatan Pengawasan Pelaksana:................
+Konstruksi
+6. Pembebasan Lahan Kebutuhan lahan: ………. Ha Lahan sudah dikuasai: ………. Ha (……….%)
+6. KAPASITAS DAN PRODUKSI TENAGA LISTRIK (KHUSUS TAHAP OPERASI) Bulan (Nama Pembangkit) DMN/ Beban Capacity Availability Neraca Energi NDC1) Tertinggi Factor Factor (MW) (MW) (CF) (AF)2) AFpm AFa Pembelian Produksi Pemakaian Produksi (%) (%) (kWh) Bruto Sendiri Netto Ea (kWh) (kWh) (kWh) Jan / Juli Feb / Agt Mar /Sep Apr / Okt Mei / Nov Juni / Des 1) DMN/NDC: Daya Mampu Netto/Net Dependable Capacity 2) hanya diisi untuk PLTU, PLTG, PLTGU, dan PLTD
+
+## Lampiran hal. 156
+
+7. KONSUMSI BAHAN BAKAR (HANYA DIISI UNTUK PLTU, PLTG, PLTGU, DAN PLTD) (KHUSUS TAHAP OPERASI) Bulan (Nama Pembangkit) Bahan Bakar Utama Bahan Bakar Lainnya Volume1) SHRw2) Harga3) Volume1) SHRw2) Harga3) (satuan) (satuan) (satuan) (satuan) (satuan) (satuan) Jan / Juli Feb / Agt Mar /Sep Apr / Okt Mei / Nov Juni / Des 1) satuan: ton atau Btu atau SCF atau liter 2) satuan: kcal/kWh atau Btu/kWh 3) satuan: Rp/kg atau USD/kg atau USD/MMBtu atau USD/MMSCF atau Rp/liter
+8. PEMELIHARAAN TERJADWAL (PLANNED OUTAGE) (KHUSUS TAHAP OPERASI) Nama Pembangkit Unit Kegiatan Tanggal Durasi (jam)
+9. PEMELIHARAAN TIDAK TERJADWAL (MAINTENANCE OUTAGE) (KHUSUS TAHAP OPERASI) Nama Pembangkit Unit Kegiatan Tanggal Durasi (jam)
+10. GANGGUAN OPERASI (FORCED OUTAGE) (KHUSUS TAHAP OPERASI) Gangguan Internal Gangguan Eksternal Nama Unit Jenis Tanggal Durasi Jenis Tanggal Durasi Pembangkit (jam) (jam)
+11. PERMASALAHAN YANG DIHADAPI ................................................................................................................... ................................................................................................................... ............................
+12. LAMPIRAN
+a. Dokumen Pendukung; dan
+b. Foto.
+20. Penanggung Jawab, Tanda tangan dan Stempel Nama :
+Jabatan:
+Tembusan:
+Menteri Energi dan Sumber Daya Mineral MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+
+## Lampiran hal. 157
+
+ARIFIN TASRIF Salinan sesuai dengan aslinya KEMENTER'iAN energi dan sumber DAYAlMINERAL KERALA BIRO HUKUM, M. Idris F. Sihite LAMPIRAN VIII PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 11 TAHUN 2021 TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN FORMAT LAPORAN PELAKSANAAN USAHA PENYEDIAAN TENAGA LISTRIK UNTUK KEPENTINGAN SENDIRI KOP SURAT BADAN USAHA (ISIKAN NAMA PERUSAHAAN) TAHUN ……….
+1. DATA UMUM Data Pengembang Nama Badan Usaha Alamat Kantor Alamat Kantor Pusat No. Telp. Cabang (jika ada) No. Telp.
+No. Fax No. Fax E-mail Nama Jabatan Contact Person E-mail No. Telp/HP Data Izin Usaha Penyediaan Tenaga Listrik Nomor Tanggal Jangka Waktu (Tahun) Kelebihan Tenaga Listrik Dijual kepada Sertifikat Laik Operasi Nomor Tanggal
+2. DATA INSTALASI PENYEDIAAN TENAGA LISTRIK
+a. Data Instalasi Pembangkitan Tenaga Listrik Lokasi Proyek Pembangkit Kapasitas Jenis Energi COD / Nama Unit Kabupaten Provinsi Koordinat2) Penggerak Primer Rencana Pembangkit Terpasang / Kota Mula1) Utama (..º..’..” BT) COD (MW) (..º..’..” LU/LS) 1) isian: turbin air, turbin uap, turbin gas, combine cycle, mesin diesel, mesin gas, turbin angin, atau fotovoltaik 2) untuk PLTA/PLTM/PLTMH diisi koordinat intake dan rumah pembangkit (power house)
+b. Data Peralatan Utama Instalasi Pembangkitan Tenaga Listrik Penggerak Mula Generator Nama Tipe Pabrikan Tahun Tipe Pabrikan Tahun Unit Pembangkit Produksi Produksi
+
+## Lampiran hal. 159
+
+c. Data Instalasi Transmisi dan/atau Distribusi Tenaga Listrik Kapasitas Unit Lokasi Proyek Terpasang Kabupaten Provinsi Koordinat COD / Jenis Nama Tegangan (MVA) atau Rencana Instalasi Instalasi (kV) / Kota (..º..’..” BT) Panjang COD Saluran (kms) (..º..’..” LU/LS) Gardu Induk Jaringan/ Saluran Transmisi Gardu Distribusi Jaringan/ Saluran Distribusi
+d. Data Peralatan Utama Instalasi Transmisi dan/atau Distribusi Tenaga Listrik Transformator Nama Instalasi Unit Tipe Pabrikan Tahun Produksi
+e. Titik Interkoneksi Pemilik/Pengelola Sistem Tenaga Subsistem Tenaga Nama Instalasi Instalasi Listrik Listrik
+3. KAPASITAS DAN PRODUKSI TENAGA LISTRIK (KHUSUS PENJUALAN KELEBIHAN TENAGA LISTRIK/EXCESS POWER) Bulan {Nama Pembangkit) DMN/ Beban Capacity Availability Neraca Energi NDO) Tertinggi Factor Factor (MW) (MW) (CF) (AFP AFpm AFa Pembelian Produksi Pemakaian Produksi (%) (%) (kWh) Bruto Sendiri Netto Ea (kWh) (kWh) (kWh) Jan / Juli Feb / Agt Mar /Sep Apr / Okt Mei / Nov Juni / Des DMN/NDC: daya mampu netto/net dependable capacity 2) hanya Hanya diisi diisi untuk untuk PLTU, PLTU,PLTG, PLTG,PLTGU, PLTGU,dan dan PLTD PLTD
+4. LAMPIRAN
+a. Dokumen Pendukung; dan
+b. Foto.
+20. Penanggung Jawab, Tanda tangan dan Stempel Nama :
+Jabatan:
+Tembusan:
+Menteri Energi dan Sumber Daya Mineral MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+
+## Lampiran hal. 160
+
+ARIFIN TASRIF -.^S^attTTafYsesuai dengan aslinya KEMENTgSlAN ENERGI DAN SUMBER DAYA MINERAL KEPAUABIROHUKUM. lirirPrOilw LAMPIRAN IX PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 11 TAHUN 2021 TENTANG PELAKSANAAN USAHA KETENAGALISTRIKAN FORMAT LAPORAN PELAKSANAAN IZIN PENJUALAN, IZIN PEMBELIAN, DAN/ATAU IZIN INTERKONEKSI JARINGAN TENAGA LISTRIK LINTAS NEGARA KOP SURAT BADAN USAHA PT ……………………………………………..
+TAHUN ……….
+1. DATA UMUM Data Pengembang Nama Badan Usaha Alamat Kantor Alamat Kantor Pusat No. Telp. No. Telp.
+Cabang (jika ada) No. Fax No. Fax E-mail Nama Jabatan Contact Person E-mail No.
+Telp/HP Data Izin Usaha Penjualan/Pembelian/Interkoneksi Jaringan Tenaga Listrik Lintas Negara Nomor Tanggal Jangka Waktu (Tahun) Penjualan/Pembelian/ Interkoneksi Jaringan Tenaga listrik kepada Data Perjanjian Penjualan/Pembelian Tenaga Listrik Nomor Tanggal Jangka Waktu (Tahun) Data Perjanjian Penjualan/Pembelian Tenaga Listrik (jika ada amandemen) Nomor Tanggal Sertifikat Laik Operasi Nomor Tanggal
+2. DATA INSTALASI PENYEDIAAN TENAGA LISTRIK
+
+## Lampiran hal. 162
+
+a. Data Instalasi Pembangkitan Tenaga Listrik Kapasitas Lokasi Proyek Pembangkit Jenis Energi COD / Nama Unit Kabupaten/ Provinsi Koordinat2) Penggerak Primer Rencana Pembangkit Terpasang Kota Mula1) Utama (..º..’..” BT) COD (MW) (..º..’..” LU/LS) 1) isian: turbin air, turbin uap, turbin gas, combine cycle, mesin diesel, mesin gas, turbin angin, atau fotovoltaik 2) untuk PLTA/PLTM/PLTMH diisi koordinat intake dan rumah pembangkit (power house)
+b. Data Peralatan Utama Instalasi Pembangkitan Tenaga Listrik Penggerak Mula Generator Nama Unit Tipe Pabrikan Tahun Tipe Pabrikan Tahun Pembangkit Produksi Produksi
+c. Data Instalasi Transmisi dan/atau Distribusi Tenaga Listrik Kapasitas Lokasi Proyek Unit Terpasang Kabupaten Provinsi Koordinat COD / Jenis Nama Tegangan / Kota (MVA) atau (..º..’..” BT) Rencana Instalasi Instalasi (kV) Panjang (..º..’..” LU/LS) COD Saluran (kms) Gardu Induk Jaringan/ Saluran Transmisi Gardu Distribusi Jaringan/ Saluran Distribusi
+d. Data Peralatan Utama Instalasi Transmisi dan/atau Distribusi Tenaga Listrik Transformator Nama Instalasi Unit Tipe Pabrikan Tahun Produksi
+e. Titik Interkoneksi Pemilik/Pengelola Sistem Tenaga Subsistem Tenaga Nama Instalasi Instalasi Listrik Listrik
+
+## Lampiran hal. 163
+
+3. DATA PENJUALAN / PEMBELIAN TENAGA LISTRIK Bulan (Nama Pembangkit) DMN/ Beban Capacity Availability Neraca Energi NDO) Tertinggi Factor(CP) Factor (AFp^ (MW) (MW) AFptn AFa Pembelian Penjualan Produksi (%) (%) (kWh) (kWh) Bruto (kWh) Jan / Juli Feb / Agt Mar /Sep Apr / Okt Mei / Nov Juni / Des DMN/iVDC; daya mampu netto/nef dependable capacity hanya diisi 2) Hanya diisi untuk untuk PLTU, PLTU,PLTG, PLTG,PLTGU, PLTGU,dan dan PLTD PLTD LAMPIRAN
+a. Dokumen Pendukung; dan
+b. Foto.
+20. Penanggung Jawab, Tanda tangan dan Stempel Nama :
+Jabatan:
+Tembusan:
+Menteri Energi dan Sumber Daya Mineral MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+ARIFIN TASRIF sesuai dengan aslinya kem0#Erian energi dan sumber daya mineral •7 - KEPAL^BIRO HUKUM,

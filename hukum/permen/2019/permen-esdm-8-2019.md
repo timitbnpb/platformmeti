@@ -1,0 +1,89 @@
+---
+id: "permen-esdm-8-2019"
+id_lama: null
+regulasi_id: null
+jenis: "Peraturan Menteri"
+nomor: "8"
+tahun: 2019
+judul: "Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 8 Tahun 2019 tentang Perubahan Atas Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 16 Tahun 2017 tentang Pedoman Umum Pelaksanaan Pemberian Bantuan Pemerintah Di Lingkungan Direktorat Jenderal Minyak dan Gas Bumi"
+tgl_tetap: null
+tgl_undang: null
+status: "tidak_diketahui"
+status_per: 2026-11-11
+mulai: null
+mulai_perkiraan: false
+selesai: null
+mencabut: []
+mengubah: ["permen-esdm-16-2017"]
+mengganti: []
+mengingat: ["permen-esdm-13-2016","permen-esdm-16-2017","permen-esdm-21-2007","permen-esdm-26-2009","perpres-104-2007","perpres-105-2016","perpres-125-2015","perpres-38-2019","perpres-64-2012","perpres-68-2015","uu-22-2001","uu-30-2007"]
+merujuk: []
+dicabut_oleh: null
+diubah_oleh: []
+topik: []
+sumber: {"situs":"jdih.esdm.go.id","url":"https://jdih.esdm.go.id/dokumen/view?id=1943","pdf_sha256":"f37f890d8a99162d71947ed7b4a34c6349f3cb302c7a0ae639fbdb11fd98d31d","diambil":"2026-11-11"}
+ekstraksi: {"metode":"pdftotext","halaman":6,"halaman_ocr":0,"mutu":0.998,"perlu_tinjau":false}
+resmi: false
+lisensi: {"dasar":"UU 28/2014 Pasal 42","diperiksa_naskah":true}
+md_sha256: "b4061132dc72245879d4378d61cd9db582dfbedeb3c49b57305acd47557358ee"
+---
+# Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 8 Tahun 2019 tentang Perubahan Atas Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 16 Tahun 2017 tentang Pedoman Umum Pelaksanaan Pemberian Bantuan Pemerintah Di Lingkungan Direktorat Jenderal Minyak dan Gas Bumi
+
+## Menimbang
+
+a. bahwa untuk memperlancar pelaksanaan diversifikasi energi bahan bakar minyak ke bahan bakar gas dan konversi minyak tanah ke Liquefied Petroleum Gas dan menyesuaikan sasaran program konversi minyak tanah ke Liquefied Petroleum Gas, perlu mengubah beberapa ketentuan dalam Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 16 Tahun 2017 tentang Pedoman Umum Pelaksanaan Pemberian Bantuan Pemerintah di Lingkungan Direktorat Jenderal Minyak dan Gas Bumi;
+b. bahwa berdasarkan pertimbangan sebagaimana dimaksud dalam huruf a, perlu menetapkan Peraturan Menteri Energi dan Sumber Daya Mineral tentang Perubahan atas Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 16 Tahun 2017 tentang Pedoman Umum Pelaksanaan Pemberian Bantuan Pemerintah di Lingkungan Direktorat Jenderal Minyak dan Gas Bumi;
+
+## Mengingat
+
+1. Undang-Undang Nomor 22 Tahun 2001 tentang Minyak dan Gas Bumi (Lembaran Negara Republik Indonesia Tahun 2001 Nomor 136, Tambahan Lembaran Negara Republik Indonesia Nomor 4152);
+2. Undang-Undang Nomor 30 Tahun 2007 tentang Energi (Lembaran Negara Republik Indonesia Tahun 2007 Nomor 96, Tambahan Lembaran Negara Republik Indonesia Nomor 4746);
+3. Peraturan Presiden Nomor 104 Tahun 2007 tentang Penyediaan, Pendistribusian, dan Penetapan Harga Liquefied Petroleum Gas Tabung 3 Kilogram;
+4. Peraturan Presiden Nomor 64 Tahun 2012 tentang Penyediaan, Pendistribusian, dan Penetapan Harga Bahan Bakar Gas untuk Transportasi Jalan (Lembaran Negara Republik Indonesia Tahun 2012 Nomor 137) sebagaimana telah diubah dengan Peraturan Presiden Nomor 125 Tahun 2015 tentang Perubahan atas Peraturan Presiden Nomor 64 Tahun 2012 tentang Penyediaan, Pendistribusian, dan Penetapan Harga Bahan Bakar Gas untuk Transportasi Jalan (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 253);
+5. Peraturan Presiden Nomor 38 Tahun 2019 tentang Penyediaan, Pendistribusian, dan Penetapan Harga Liquefied Petroleum Gas untuk Kapal Penangkap Ikan bagi Nelayan Sasaran dan Mesin Pompa Air bagi Petani Sasaran (Lembaran Negara Republik Indonesia Tahun 2019 Nomor 111);
+6. Peraturan Presiden Nomor 68 Tahun 2015 tentang Kementerian Energi dan Sumber Daya Mineral (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 132) sebagaimana telah diubah dengan Peraturan Presiden Nomor 105 Tahun 2016 tentang Perubahan atas Peraturan Presiden Nomor 68 Tahun 2015 tentang Kementerian Energi dan Sumber Daya Mineral (Lembaran Negara Republik Indonesia Tahun 2016 Nomor 289);
+7. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 021 Tahun 2007 tentang Penyelenggaraan dan Pendistribusian Liquefied Petroleum Gas Tabung 3 Kilogram;
+8. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 26 Tahun 2009 tentang Penyediaan dan Pendistribusian Liquefied Petroleum Gas (Berita Negara Republik Indonesia Tahun 2009 Nomor 333);
+9. Peraturan Menteri Keuangan Nomor 168/PMK.05/2015 tentang Mekanisme Pelaksanaan Anggaran Bantuan Pemerintah pada Kementerian Negara/Lembaga (Berita Negara Republik Indonesia Tahun 2015 Nomor 1340) sebagaimana telah diubah dengan Peraturan Menteri Keuangan Nomor 173/PMK.05/2016 tentang Perubahan atas Peraturan Menteri Keuangan Nomor 168/PMK.05/2015 tentang Mekanisme Pelaksanaan Anggaran Bantuan Pemerintah pada Kementerian Negara/Lembaga (Berita Negara Republik Indonesia Tahun 2016 Nomor 1745);
+10. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 13 Tahun 2016 tentang Organisasi dan Tata Kerja Kementerian Energi dan Sumber Daya Mineral (Berita Negara Republik Indonesia Tahun 2016 Nomor 782);
+11. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 16 Tahun 2017 tentang Pedoman Umum Pelaksanaan Pemberian Bantuan Pemerintah di Lingkungan Direktorat Jenderal Minyak dan Gas Bumi (Berita Negara Republik Indonesia Tahun 2017 Nomor 301);
+
+## Memutuskan
+
+Menetapkan ; PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL TENTANG PERUBAHAN ATAS PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL NOMOR 16 TAHUN 2017 TENTANG PEDOMAN UMUM PELAKSANAAN PEMBERIAN BANTUAN PEMERINTAH DI LINGKUNGAN DIREKTORAT JENDERAL MINYAK DAN GAS BUMI.
+
+### Pasal I
+
+Beberapa ketentuan dalam Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 16 Tahun 2017 tentang Pedoman Umum Pelaksanaan Pemberian Bantuan Pemerintah di Lingkungan Direktorat Jenderal Minyak dan Gas Bumi (Berita Negara Republik Indonesia Tahun 2017 Nomor 301), diubah sebagai berikut:
+1. Ketentuan Pasal 4 diubah sehingga berbunyi sebagai berikut:
+
+### Pasal 4
+
+Kegiatan pemberian Bantuan Pemerintah di lingkungan Direktorat Jenderal meliputi:
+a. penyediaan dan pendistribusian, termasuk pemasangan paket perdana Liquefied Petroleum Gas untuk kapal penangkap ikan bagi Nelayan Sasaran yang meliputi mesin kapal, Konverter Kit Kapal Penangkap Ikan dan pemasangannya yang terdiri atas pipa penyaluran, regulator, pencampur [mixer], serta peralatan lainnya, tabung Liquefied Petroleum Gas 3 Kilogram beserta isinya, dan peralatan pendukungnya;
+b. penyediaan dan pendistribusian, termasuk pemasangan paket perdana Liquefied Petroleum Gas untuk mesin pompa air bagi Petani Sasaran yang meliputi mesin pompa air, Konverter Kit Mesin Pompa Air dan pemasangannya yang terdiri atas regulator, pencampur [mixer), serta peralatan lainnya, tabung Liquefied Petroleum Gas 3 Kilogram beserta isinya, dan peralatan pendukungnya;
+c. penyediaan dan pendistribusian paket perdana konversi minyak tanah ke tabung Liquefied Petroleum Gas 3 Kilogram yang meliputi tabung Liquefied Petroleum Gas 3 Kilogram beserta isinya dan kompor gas beserta peralatan lainnya; dan
+d. penyediaan, pendistxibusian, dan pemasangan paket konversi bahan bakar minyak ke bahan bakar gas untuk transportasi yang meliputi Konverter Kit kendaraan bermotor beserta aksesoris pendukung dan tabung Compressed Natural Gas beserta isinya.
+2. Ketentuan Pasal 5 diubah sehingga berbunyi sebagai berikut:
+
+### Pasal 5
+
+(1) Bantuan Pemerintah di lingkungan Direktorat Jenderal sebagaimana dimaksud dalam Pasal 4 huruf a diberikan untuk kapal penangkap ikan bagi Nelayan Sasaran.
+(2) Bantuan Pemerintah di lingkungan Direktorat Jenderal sebagaimana dimaksud dalam Pasal 4 huruf b diberikan untuk mesin pompa air bagi Petani Sasaran.
+(3) Bantuan Pemerintah di lingkungan Direktorat Jenderal sebagaimana dimaksud dalam Pasal 4 huruf c diberikan untuk rumah tangga dan usaha mikro yang menggunakan minyak tanah untuk memasak dan tidak mempunyai kompor gas.
+(4) Bantuan Pemerintah di lingkungan Direktorat Jenderal sebagaimana dimaksud dalam Pasal 4 huruf d diberikan untuk kendaraan dinas dan kendaraan bermotor angkutan penumpang umum.
+
+### Pasal II
+
+Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.
+Agar setiap orang mengetahuinya, memerintahkan pengundangan Peraturan Menteri ini dengan penempatannya dalam Berita Negara Republik Indonesia.
+
+## Penutup
+
+Ditetapkan di Jakarta pada tanggal 15 Agustus 2019 MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+IGNASIUS JONAN Diundangkan di Jakarta pada tanggal 19 Agustus 2019 DIREKTUR JENDERAL PERATURAN PERUNDANG-UNDANGAN KEMENTERIAN HUKUM DAN HAK ASASI MANUSIA REPUBLIK INDONESIA, ttd.
+WIDODO EKATJAHJANA BERITA NEGARA REPUBLIK INDONESIA TAHUN 2019 NOMOR 927
+
+## Lampiran hal. 6
+
+Salinan sesuai dengan aslinya KEMENTERIAlstENERGI DAN SUMBER DAYA MINERAL 3 Hukum, <</ Mi A rofi NIR-19 19 110 3 1002

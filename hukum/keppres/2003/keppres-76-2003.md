@@ -1,0 +1,160 @@
+---
+id: "keppres-76-2003"
+id_lama: null
+regulasi_id: "keppres-76-2003"
+jenis: "Keputusan Presiden"
+nomor: "76"
+tahun: 2003
+judul: "Perubahan Atas Keputusan Presiden Nomor 89 Tahun 2002 Tentang Harga Jual Tenaga Listrik Tahun 2003 Yang Disediakan Oleh Perusahaan Perseroan (Persero) PT Perusahaan Listrik Negara"
+tgl_tetap: 2003-09-30
+tgl_undang: null
+status: "berlaku"
+status_per: 2026-11-11
+mulai: 2003-09-30
+mulai_perkiraan: true
+selesai: 2003-12-31
+mencabut: []
+mengubah: ["keppres-89-2002"]
+mengganti: []
+mengingat: ["keppres-89-2002","pp-10-1989","pp-23-1994","uu-20-2002","uu-29-2002","uu-8-1999"]
+merujuk: []
+dicabut_oleh: ["keppres-104-2003"]
+diubah_oleh: []
+topik: ["jaringan","harga"]
+sumber: {"situs":"peraturan.bpk.go.id","url":"https://peraturan.bpk.go.id/Details/56322","pdf_sha256":"74ea21cfbc47a8a838e7952e3bb68406601ad44a51209bda1c119b38da0b9553","diambil":"2026-11-11"}
+ekstraksi: {"metode":"pdftotext","halaman":9,"halaman_ocr":0,"mutu":1,"perlu_tinjau":false}
+resmi: false
+lisensi: {"dasar":"UU 28/2014 Pasal 42","diperiksa_naskah":true}
+md_sha256: "b5e5272a84295f4dc220daef93250a4b4869b0ca5aa6a01b3d290df397a5010b"
+---
+# Perubahan Atas Keputusan Presiden Nomor 89 Tahun 2002 Tentang Harga Jual Tenaga Listrik Tahun 2003 Yang Disediakan Oleh Perusahaan Perseroan (Persero) PT Perusahaan Listrik Negara
+
+## Menimbang
+
+a. bahwa dengan semakin membaiknya kondisi perekonomian nasional dan untuk meringankan beban kehidupan rakyat Indonesia, serta dengan tetap memperhatikan kelangsungan pengusahaan penyediaan tenaga listrik dan peningkatan mutu pelayanan oleh Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara, dipandang tidak perlu melakukan kenaikan tarif dasar listrik untuk periode 1 Oktober 2003 sampai dengan 31 Desember 2003 dari tarif dasar listrik yang berlaku pada periode 1 Juli 2003 sampai dengan 30 September 2003;
+b. bahwa berdasarkan pertimbangan tersebut dalam huruf a dan berhubung dalam Keputusan Presiden Nomor 89 Tahun 2002 tentang Harga Jual Tenaga Listrik Tahun 2003 yang Disediakan oleh Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara telah ditetapkan kenaikan tarif dasar listrik untuk periode 1 Oktober 2003 sampai dengan 31 Desember 2003, dipandang perlu mengubah Keputusan Presiden Nomor 89 Tahun 2002 tersebut;
+
+## Mengingat
+
+1. Pasal 4 ayat (1) Undang-Undang Dasar 1945 sebagaimana telah diubah dengan Perubahan Keempat Undang-Undang Dasar 1945;
+2. Undang-undang Nomor 8 Tahun 1999 tentang Perlindungan Konsumen (Lembaran Negara Republik Indonesia Tahun 1999 Nomor 42, Tambahan Lembaran Negara Nomor 3821);
+3. Undang-undang Nomor 20 Tahun 2002 tentang Ketenagalistrikan (Lembaran Negara Republik Indonesia Tahun 2002 Nomor 94, Tambahan Lembaran Negara Nomor 4226);
+4. Undang-undang Nomor 29 Tahun 2002 tentang Anggaran Pendapatan dan Belanja Negara Tahun Anggaran 2003 (Lembaran Negara Republik Indonesia Tahun 2002 Nomor 136, Tambahan Lembaran Negara Nomor 4249);
+5. Peraturan Pemerintah Nomor 10 Tahun 1989 tentang Penyediaan dan Pemanfaatan Tenaga Listrik (Lembaran Negara Republik Indonesia Tahun 1989 Nomor 24, Tambahan Lembaran Negara Nomor 3394);
+6. Peraturan Pemerintah Nomor 23 Tahun 1994 tentang Pengalihan Bentuk Perusahaan Umum (PERUM) Listrik Negara Menjadi Perusahaan Perseroan (PERSERO) (Lembaran Negara Republik Indonesia Tahun 1994 Nomor 34);
+7. Keputusan Presiden Nomor 89 Tahun 2002 tentang Harga Jual Tenaga Listrik Tahun 2003 yang Disediakan oleh Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara (Lembaran Negara Republik Indonesia Tahun 2002 Nomor 143);
+
+## Memutuskan
+
+Menetapkan : KEPUTUSAN PRESIDEN TENTANG PERUBAHAN ATAS KEPUTUSAN PRESIDEN NOMOR 89 TAHUN 2002 TENTANG HARGA JUAL TENAGA LISTRIK TAHUN 2003 YANG DISEDIAKAN OLEH PERUSAHAAN PERSEROAN (PERSERO) PT PERUSAHAAN LISTRIK NEGARA.
+
+### Pasal I
+
+Beberapa ketentuan dalam Lampiran Keputusan Presiden Nomor 89 Tahun 2002 tentang Harga Jual Tenaga Listrik Tahun 2003 yang Disediakan oleh Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara, diubah sebagai berikut :
+1. Lampiran II B diubah, sehingga keseluruhan Lampiran II B berbunyi sebagai berikut :
+TARIF DASAR LISTRIK UNTUK KEPERLUAN PELAYANAN SOSIAL BIAYA BEBAN BIAYA PEMAKAIAN (Rp./kVA/bulan) (Rp./kWh) GOL.
+NO. BATAS DAYA 1 Juli 1 Oktober 1 Juli 1 Oktober TARIF s.d. s.d. s.d. s.d.
+30 Sep. 31 Des. 2003 30 Sep. 2003 31 Des. 2003 2003
+1. S-1/TR 220 VA - - Abonemen Abonemen per bulan (Rp.) : 14.800 per bulan (Rp.) : 14.800
+2. S-2/TR 450 VA 10.000 10.000 Blok I : 0 s.d. 30 kWh : 123 Blok I : 0 s.d. 30 kWh : 123 Blok II : di atas 30 kWh Blok II : di atas 30 kWh s.d. 60 kWh : 265 s.d. 60 kWh : 265 Blok III : di atas 60 kWh : 360 Blok III : di atas 60 kWh : 360
+3. S-2/TR 900 VA 15.000 15.000 Blok I : 0 s.d. 20 kWh : 200 Blok I : 0 s.d. 20 kWh : 200 Blok II : di atas 20 kWh Blok II : di atas 20 kWh s.d. 60 kWh : 295 s.d. 60 kWh : 295 Blok III : di atas 60 kWh : Blok III : di atas 60 kWh : 360 360
+4. S-2/TR 1.300 VA 25.000 25.000 Blok I : 0 s.d. 20 kWh : 250 Blok I : 0 s.d. 20 kWh : 250 Blok II : di atas 20 kWh Blok II : di atas 20 kWh s.d. s.d. 60 kWh : 335 60 kWh : 335 Blok III : di atas 60 kWh : Blok III : di atas 60 kWh : 405 405
+5. S-2/TR 2.200 VA 27.000 27.000 Blok I : 0 s.d. 20 kWh : 250 Blok I : 0 s.d. 20 kWh : 250 Blok II : di atas 20 kWh Blok II : di atas 20 kWh s.d. 60 kWh : 370 s.d. 60 kWh : 370 Blok III : di atas 60 kWh : 420 Blok III : di atas 60 kWh : 420
+6. S-2/TR di atas 2.200 30.500 30.500 Blok I : 0 s.d.
+VA s.d. 200 Blok I : 0 s.d. 60 jam nyala : 380 kVA 60 jam nyala : 380 Blok II : di atas 60 jam nyala Blok II : di atas 60 jam nyala berikutnya : 430 berikutnya : 430
+7. S-3/TM di atas 200 29.500 29.500 Blok WBP = K x P x 325 Blok WBP = K x P x 325 kVA Blok LWBP = P x 325 Blok LWBP = P x 325 Catatan :
+P : Faktor pengali untuk pembeda antara S-3 bersifat sosial murni dengan S-3 bersifat komersial Untuk pelanggan S-3 yang bersifat sosial murni P = 1 Untuk pelanggan S-3 yang bersifat komersial P = 1,17 Kategori S-3 bersifat komersial dan S-3 bersifat sosial murni ditetapkan oleh Direksi Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara dengan mempertimbangkan kemampuan bayar dan sifat usahanya.
+K : Faktor perbandingan antara harga WBP dan LWBP sesuai dengan karakteristik beban sistem kelistrikan setempat (1,4 ? K ? 2 ), yang ditetapkan oleh Direksi Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara.
+WBP : Waktu Beban Puncak.
+LWBP : Luar Waktu Beban Puncak.
+Jam nyala : adalah kWh per bulan dibagi dengan kVA tersambung.
+2. Lampiran III B diubah, sehingga keseluruhan Lampiran III B berbunyi sebagai berikut :
+TARIF DASAR LISTRIK UNTUK KEPERLUAN RUMAH TANGGA BIAYA BEBAN BIAYA PEMAKAIAN NO. GOL. BATAS DAYA (Rp./kVA/bulan) (Rp./kWh) TARIF 1 Juli 1 Oktober 1 Juli 1 Oktober s.d. s.d. s.d. s.d.
+30 Sep. 2003 31 Des. 2003 30 Sep. 2003 31 Des. 2003
+1. R-1/TR s.d. 450 VA 11.000 11.000 Blok I : 0 s.d. 30 kWh : 169 Blok I : 0 s.d. 30 kWh : 169 Blok II : di atas 30 kWh Blok II : di atas 30 kWh s.d. 60 kWh : 360 s.d. 60 kWh : 360 Blok III : di atas 60 kWh : 495 Blok III : di atas 60 kWh : 495
+2. R-1/TR 900 VA 20.000 20.000 Blok I : 0 s.d. 20 kWh : 275 Blok I : 0 s.d. 20 kWh : 275 Blok II : di atas 20 kWh Blok II : di atas 20 kWh s.d. 60 kWh : 445 s.d. 60 kWh : 445 Blok III : di atas 60 kWh : 495 Blok III : di atas 60 kWh : 495
+3. R-1/TR 1.300 VA 30.100 30.100 Blok I : 0 s.d. 20 kWh : 385 Blok I : 0 s.d. 20 kWh : 385 Blok II : di atas 20 kWh Blok II : di atas 20 kWh s.d. 60 kWh : 445 s.d. 60 kWh : 445 Blok III : di atas 60 kWh : 495 Blok III : di atas 60 kWh : 495
+4. R-1/TR 2.200 VA 30.200 30.200 Blok I : 0 s.d. 20 kWh : 390 Blok I : 0 s.d. 20 kWh : 390 Blok II : di atas 20 kWh Blok II : di atas 20 kWh s.d. 60 kWh : 445 s.d. 60 kWh : 445 Blok III : di atas 60 kWh : 495 Blok III : di atas 60 kWh : 495 di atas
+5. R-2/TR 2.200 VA s.d. 30.400 30.400 560 560 6.600 VA
+6. R-3/TR di atas 6.600 VA 34.260 34.260 621 621
+3. Lampiran IV B diubah, sehingga keseluruhan Lampiran IV B berbunyi sebagai berikut :
+TARIF DASAR LISTRIK UNTUK KEPERLUAN BISNIS BIAYA BEBAN BIAYA PEMAKAIAN (Rp./kVA/bulan) (Rp./kWh) GOL. BATAS 1 Juli 1 Oktober 1 Juli 1 Oktober NO.
+TARIF DAYA s.d. s.d. s.d. s.d.
+30 Sept. 31 Des. 2003 30 Sept. 2003 31 Des. 2003 2003 Blok I : 0 s.d. 30 kWh : 254 Blok I : 0 s.d. 30 kWh : 254
+1. B-1/TR s.d. 450 VA 23.500 23.500 Blok II : di atas 30 kWh : 420 Blok II : di atas 30 kWh : 420 Blok I : 0 s.d. 108 kWh : 420 Blok I : 0 s.d. 108 kWh : 420
+2. B-1/TR 900 VA 26.500 26.500 Blok II : di atas 108 kWh : 465 Blok II : di atas 108 kWh : 465 Blok I : 0 s.d. 146 kWh : 470 Blok I : 0 s.d. 146 kWh : 470
+3. B-1/TR 1.300 VA 28.200 28.200 Blok II : di atas 146 kWh : 473 Blok II : di atas 146 kWh : 473 Blok I : 0 s.d. 264 kWh : 480 Blok I : 0 s.d. 264 kWh : 480
+4. B-1/TR 2.200 VA 29.200 29.200 Blok II : di atas 264 kWh : 518 Blok II : di atas 264 kWh : 518 Blok I : 0 s.d. 100 jam nyala : Blok I : 0 s.d. 100 jam nyala : 520 520
+5. B-2/TR di atas 30.000 30.000 Blok II : di atas 100 jam nyala 2.200 VA Blok II : di atas 100 jam nyala berikutnya : 545 s.d. 200 kVA berikutnya : 545 di atas Blok WBP = K x 452 Blok WBP = K x 452
+6. B-3/TM 200 kVA 28.400 28.400 Blok LWBP = 452 Blok LWBP = 452 Catatan :
+K : Faktor perbandingan antara harga WBP dan LWBP sesuai dengan karakteristik beban sistem kelistrikan setempat (1,4 ? K ? 2 ), yang ditetapkan oleh Direksi Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara.
+WBP : Waktu Beban Puncak LWBP : Luar Waktu Beban Puncak Jam nyala : adalah kWh per bulan dibagi dengan kVA tersambung
+4. Lampiran V B diubah, sehingga keseluruhan Lampiran V B berbunyi sebagai berikut :
+TARIF DASAR LISTRIK UNTUK KEPERLUAN INDUSTRI BIAYA BEBAN BIAYA PEMAKAIAN (Rp./kVA/bulan) (Rp./kWh) GOL. BATAS 1 Juli 1 Oktober 1 Juli 1 Oktober NO.
+TARIF DAYA s.d. s.d. s.d. s.d.
+
+<!-- bagian 2 -->
+30 Sept. 31 Des. 2003 30 Sept. 2003 31 Des. 2003 2003 Blok I : 0 s.d. 30 kWh : 160 Blok I : 0 s.d. 30 kWh : 160
+1. I-1/TR s.d. 450 VA 26.000 26.000 Blok II : di atas 30 kWh : 395 Blok II : di atas 30 kWh : 395 Blok I : 0 s.d. 72 kWh : 315 Blok I : 0 s.d. 72 kWh : 315
+2. I-1/TR 900 VA 31.500 31.500 Blok II : di atas 72 kWh : 405 Blok II : di atas 72 kWh : 405 Blok I : 0 s.d. 104 kWh : 450 Blok I : 0 s.d. 104 kWh : 450
+3. I-1/TR 1.300 VA 31.800 31.800 Blok II : di atas 104 kWh : 460 Blok II : di atas 104 kWh : 460 Blok I : 0 s.d. 196 kWh : 455 Blok I : 0 s.d. 196 kWh : 455
+4. I-1/TR 2.200 VA 32.000 32.000 Blok II : di atas 196 kWh : 460 Blok II : di atas 196 kWh : 460
+5. I-1/TR di atas 2.200 32.200 32.200 Blok I : 0 s.d. 80 jam nyala : Blok I : 0 s.d. 80 jam nyala : 455 VA s.d. 14 455 Blok II : di atas 80 jam nyala kVA Blok II : di atas 80 jam nyala berikutnya : 460 berikutnya : 460
+6. I-2/TR di atas 14 32.500 32.500 Blok WBP = K x 440 Blok WBP = K x 440 kVA s.d. 200 Blok LWBP = 440 Blok LWBP = 440 kVA
+7. I-3/TM di atas 200 29.500 29.500 0 s.d. 350 jam nyala, 0 s.d. 350 jam nyala, kVA Blok WBP = K x 439 Blok WBP = K x 439 di atas 350 jam nyala, di atas 350 jam nyala, Blok WBP = 439 Blok WBP = 439 Blok LWBP = 439 Blok LWBP = 439
+8. I-4/TT 30.000 kVA 27.000 27.000 434 434 ke atas Catatan :
+K : Faktor perbandingan antara harga WBP dan LWBP sesuai dengan karakteristik beban sistem kelistrikan setempat (1,4 ? K ? 2 ), yang ditetapkan oleh Direksi Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara.
+WBP : Waktu Beban Puncak LWBP : Luar Waktu Beban Puncak Jam nyala : adalah kWh per bulan dibagi dengan kVA tersambung
+5. Lampiran VI B diubah, sehingga keseluruhan Lampiran VI B berbunyi sebagai berikut :
+TARIF DASAR LISTRIK UNTUK KEPERLUAN KANTOR PEMERINTAH DAN PENERANGAN JALAN UMUM BIAYA BEBAN BIAYA PEMAKAIAN (Rp./kVA/bulan) (Rp./kWh) GOL.
+NO. BATAS DAYA 1 Juli 1 Oktober 1 Juli 1 Oktober TARIF s.d. s.d. s.d. s.d.
+30 Sept. 2003 31 Des. 2003 30 Sept. 2003 31 Des. 2003
+1. P-1/TR s.d. 450 VA 20.000 20.000 575 575
+2. P-1/TR 900 VA 24.600 24.600 600 600
+3. P-1/TR 1.300 VA 24.600 24.600 600 600
+4. P-1/TR 2.200 VA 24.600 24.600 600 600
+5. P-1/TR di atas 2.200 24.600 24.600 600 600 VA s.d. 200 kVA
+6. P-2/TM di atas 23.800 23.800 Blok WBP =Kx Blok WBP = K x 379 200 kVA 379 Blok LWBP = 379 Blok LWBP = 379
+7. P-3/TR - - - 635 635 Catatan :
+K : Faktor perbandingan antara harga WBP dan LWBP sesuai dengan karakteristik beban sistem kelistrikan setempat (1,4 ? K ? 2 ), yang ditetapkan oleh Direksi Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara.
+WBP : Waktu Beban Puncak LWBP : Luar Waktu Beban Puncak Jam nyala : adalah kWh per bulan dibagi dengan kVA tersambung
+6. Lampiran VII B diubah, sehingga keseluruhan Lampiran VII B berbunyi sebagai berikut :
+TARIF DASAR LISTRIK UNTUK TRAKSI BIAYA BEBAN BIAYA PEMAKAIAN GOL. (Rp./kVA/bulan) (Rp./kWh) NO. BATAS DAYA TARIF 1 Juli s.d. 1 Oktober s.d. 1 Juli s.d. 1 Oktober s.d.
+30 Sept. 2003 31 Des. 2003 30 Sept. 2003 31 Des. 2003 Blok WBP = K x 360 Blok WBP = K x 360
+1. T/TM di atas 200 kVA 23.000 *) 23.000 *) Blok LWBP = 360 Blok LWBP = 360 Catatan : *) : Perhitungan biaya beban didasarkan pada hasil pengukuran daya maksimum bulanan untuk :
+a. daya maksimum bulanan > 0,5 dari daya tersambung, biaya beban dikenakan sebesar daya maksimum terukur;
+b. daya maksimum bulanan ? 0,5 dari daya tersambung, biaya beban dikenakan 50% daya tersambung terukur.
+WBP : Waktu Beban Puncak LWBP : Luar Waktu Beban Puncak K : Faktor perbandingan antara harga WBP dan LWBP sesuai dengan karakteristik beban sistem kelistrikan setempat (1,4 ? K ? 2 ), yang ditetapkan oleh Direksi Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara.
+7. Lampiran VIII B diubah, sehingga keseluruhan Lampiran VIII B berbunyi sebagai berikut :
+TARIF DASAR LISTRIK UNTUK CURAH (BULK) BIAYA BEBAN BIAYA PEMAKAIAN GOL. (Rp./kVA/bulan) (Rp./kWh) NO. BATAS DAYA TARIF 1 Juli s.d. 1 Oktober s.d. 1 Juli s.d. 1 Oktober s.d.
+30 Sept. 2003 31 Des. 2003 30 Sept. 2003 31 Des. 2003
+1. C/TM di atas 200 kVA 26.500 26.500 Blok WBP = K x 390 Blok WBP = K x 390 Blok LWBP = 390 Blok LWBP = 390 Catatan :
+Tarif ini untuk keperluan penjualan secara curah kepada Pemegang Izin Usaha Ketenagalistrikan Untuk Kepentingan Umum (PIUKU).
+K :
+Faktor perbandingan antara harga WBP dan LWBP sesuai dengan karakteristik beban sistem kelistrikan setempat (1,4 ? K ? 2 ), yang ditetapkan oleh Direksi Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara.
+WBP : Waktu Beban Puncak LWBP : Luar Waktu Beban Puncak Jam nyala : adalah kWh per bulan dibagi dengan kVA tersambung
+8. Lampiran IX B diubah, sehingga keseluruhan Lampiran IX B berbunyi sebagai berikut :
+TARIF DASAR LISTRIK UNTUK MULTIGUNA BIAYA BEBAN BIAYA PEMAKAIAN (Rp./kVA/bulan) (Rp./kWh) GOL. BATAS 1 Oktober NO. 1 Juli s.d.
+TARIF DAYA s.d. 1 Juli s.d. 1 Oktober s.d.
+30 Sept.
+31 Des. 30 Sept. 2003 31 Des. 2003 2003 2003 M/TR/
+1. TM/TT - - - 1.380 *) 1.380 *) 1) Tarif ini diperuntukkan hanya bagi penggunaan tenaga listrik yang karena berbagai hal tidak dapat dicakup oleh ketentuan tarif baku sebagaimana tercantum dalam Lampiran II A dan II B, Lampiran III A dan III B, Lampiran IV A dan IV B, Lampiran V A dan V B, Lampiran VI A dan VI B, Lampiran VII A dan VII B, serta Lampiran VIII A dan VIII B Keputusan Presiden ini atau atas kesepakatan para pihak.
+2) Tarif ini dapat diberlakukan untuk berbagai kegunaan diantaranya :
+a. Tarif untuk dasar perhitungan harga ekspor-impor energi listrik antara Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara dengan pihak lain demi terciptanya hubungan timbal balik yang saling menguntungkan;
+b. Tarif untuk dasar perhitungan harga atas energi listrik yang oleh pelanggan dikehendaki mempunyai sifat lebih dari yang baku atau yang telah disanggupi oleh Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara sebagai sifat baku baik dalam hal mutu, keandalan maupun pelayanan;
+
+<!-- bagian 3 -->
+c. Tarif untuk dasar perhitungan harga atas energi listrik bagi pelanggan listrik Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara yang bebannya dapat dan boleh diatur, dipotong, atau dikeluarkan dari sistem oleh Perusahaan Perseroaan (PERSERO) PT Perusahaan Listrik Negara sesuai kesepakatan bersama;
+d. Tarif untuk dasar perhitungan harga bagi pihak yang ingin menginterkoneksikan sistem kelistrikan dengan sistem kelistrikan Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara, baik dengan aliran daya antar sistem maupun tanpa adanya aliran daya antar sistem;
+e. Tarif untuk dasar perhitungan harga bagi pihak yang memerlukan energi listrik dari Perusahaan Perseroaan (PERSERO) PT Perusahaan Listrik Negara secara musiman atau dengan pola beban tertentu yang disepakati bersama;
+f. Tarif untuk dasar perhitungan harga atas energi listrik yang oleh karena sesuatu hal tidak dapat dikenakan menurut tarif baku sebagaimana tercantum dalam Lampiran II A dan II B, Lampiran III A dan III B, Lampiran IV A dan IV B, Lampiran V A dan V B, Lampiran VI A dan VI B, Lampiran VII A dan VII B, serta Lampiran VIII A dan VIII B Keputusan Presiden ini yang diantaranya adalah karena : o bersifat sementara (jangka waktu pendek); o tergantung kondisi sistem kelistrikan Perusahaan Perseroan (PERSERO) PT Perusahaan Listrik Negara (kemampuan); o adanya peluang bisnis para pihak yang saling menguntungkan.
+Keterangan : *) Sebagai tarif maksimum Di dalam mengimplementasikan, angka tarif ini dikalikan terhadap faktor pengali ?N? dengan nilai ?N? tidak lebih dari 1 (satu).
+
+### Pasal II
+
+Keputusan Presiden ini mulai berlaku pada tanggal diundangkan.
+Agar setiap orang mengetahuinya, memerintahkan pengundangan Keputusan Presiden ini dengan penempatannya dalam Lembaran Negara Republik Indonesia.
+
+## Penutup
+
+Ditetapkan di Jakarta pada tanggal 30 September 2003 PRESIDEN REPUBLIK INDONESIA, ttd MEGAWATI SOEKARNOPUTRI Diundangkan di Jakarta pada tanggal 30 September 2003 SEKRETARIS NEGARA REPUBLIK INDONESIA, ttd BAMBANG KESOWO LEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2003 NOMOR 107 Salinan sesuai dengan aslinya Deputi Sekretaris Kabinet Bidang Hukum dan Perundang-undangan, Lambock V. Nahattands

@@ -1,0 +1,99 @@
+---
+id: "permen-esdm-45-2018"
+id_lama: null
+regulasi_id: "permen-esdm-45-2018"
+jenis: "Peraturan Menteri"
+nomor: "45"
+tahun: 2018
+judul: "Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 45 Tahun 2018 Tentang Perubahan Atas Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 41 Tahun 2018 tentang Penyediaan dan Pemanfaatan Bahan Bakar Nabati Jenis Biodiesel Dalam Kerangka Pembiayaan Oleh Badan Pengelola Dana Perkebunan Kelapa Sawit"
+tgl_tetap: null
+tgl_undang: null
+status: "tidak_diketahui"
+status_per: 2026-11-11
+mulai: null
+mulai_perkiraan: false
+selesai: null
+mencabut: []
+mengubah: ["permen-esdm-41-2018"]
+mengganti: []
+mengingat: ["permen-esdm-12-2015","permen-esdm-13-2016","permen-esdm-32-2008","permen-esdm-41-2018","perpres-105-2016","perpres-191-2014","perpres-43-2018","perpres-61-2015","perpres-66-2018","perpres-68-2015","pp-24-2015","pp-79-2014","uu-30-2007","uu-39-2014"]
+merujuk: []
+dicabut_oleh: null
+diubah_oleh: []
+topik: ["bioenergi"]
+sumber: {"situs":"jdih.esdm.go.id","url":"https://jdih.esdm.go.id/dokumen/view?id=1858","pdf_sha256":"d7c3a37f2688322521cc25d5a58b1c46c0e9fc8ae156f8e3a3059a3614f960f1","diambil":"2026-11-11"}
+ekstraksi: {"metode":"pdftotext","halaman":7,"halaman_ocr":0,"mutu":0.999,"perlu_tinjau":false}
+resmi: false
+lisensi: {"dasar":"UU 28/2014 Pasal 42","diperiksa_naskah":true}
+md_sha256: "325c0f6f1fdc1247c035d4067a803c3e8fed9eac218f2987fb077a2f7fd94c05"
+---
+# Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 45 Tahun 2018 Tentang Perubahan Atas Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 41 Tahun 2018 tentang Penyediaan dan Pemanfaatan Bahan Bakar Nabati Jenis Biodiesel Dalam Kerangka Pembiayaan Oleh Badan Pengelola Dana Perkebunan Kelapa Sawit
+
+## Menimbang
+
+a. bahwa untuk mempermudah implementasi pembayaran selisih kurang antara harga indeks pasar Bahan Bakar Minyak Jenis Minyak Solar dengan harga indeks pasar Bahan Bakar Nabati Jenis Biodiesel, perlu mengubah pengaturan terkait periode penetapan harga indeks pasar Jenis Bahan Bakar Minyak Tertentu;
+b. bahwa berdasarkan pertimbangan sebagaimana dimaksud dalam huruf a, perlu menetapkan Peraturan Menteri Energi dan Sumber Daya Mineral tentang Perubahan atas Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 41 Tahun 2018 tentang Penyediaan dan Pemanfaatan Bahan Bakar Nabati Jenis Biodiesel dalam Kerangka Pembiayaan oleh Badan Pengelola Dana Perkebunan Kelapa Sawit;
+
+## Mengingat
+
+2-
+1. Undang-Undang Nomor 30 Tahun 2007 tentang Energi (Lembaran Negara Republik Indonesia Tahun 2007 Nomor 96, Tambahan Lembaran Negara Republik Indonesia Nomor 4746);
+2. Undang-Undang Nomor 39 Tahun 2014 tentang Perkebunan (Lembaran Negara Republik Indonesia Tahun 2014 Nomor 308, Tambahan Lembaran Negara Republik Indonesia Nomor 5613);
+3. Peraturan Pemerintah Nomor 79 Tahun 2014 tentang Kebijakan Energi Nasional (Lembaran Negara Republik Indonesia Tahun 2014 Nomor 300, Tambahan Lembaran Negara Republik Indonesia Nomor 5609);
+4. Peraturan Pemerintah Nomor 24 Tahun 2015 tentang Penghimpunan Dana Perkebunan (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 104, Tambahan Lembaran Negara Republik Indonesia Nomor 5697);
+5. Peraturan Presiden Nomor 191 Tahun 2014 tentang Penyediaan, Pendistribusian, dan Harga dual Eceran Bahan Bakar Minyak (Lembaran Negara Republik Indonesia Tahun 2014 Nomor 399) sebagaimana telah diubah dengan Peraturan Presiden Nomor 43 Tahun 2018 tentang Perubahan atas Peraturan Presiden Nomor 191 Tahun 2014 tentang Penyediaan, Pendistribusian, dan Harga Jual Eceran Bahan Bakar Minyak (Lembaran Negara Republik Indonesia Tahun 2018 Nomor 83);
+6. Peraturan Presiden Nomor 61 Tahun 2015 tentang Penghimpunan dan Penggunaan Dana Perkebunan Kelapa Sawit (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 105) sebagaimana telah beberapa kali diubah, terakhir dengan Peraturan Presiden Nomor 66 Tahun 2018 tentang Perubahan Kedua atas Peraturan Presiden Nomor 61 Tahun 2015 tentang Penghimpunan dan Penggunaan Dana Perkebunan Kelapa Sawit (Lembaran Negara Republik Indonesia Tahun 2018 Nomor 134);
+3-
+7. Peraturan Presiden Nomor 68 Tahun 2015 tentang Kementerian Energi dan Sumber Daya Mineral (Lembaran Negara Republik Indonesia Tahun 2015 Nomor 132) sebagaimana telah diubah dengan Peraturan Presiden Nomor 105 Tahun 2016 tentang Perubahan atas Peraturan Presiden Nomor 68 Tahun 2015 tentang Kementerian Energi dan Sumber Daya Mineral (Lembaran Negara Republik Indonesia Tahun 2016 Nomor 289);
+8. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 32 Tahun 2008 tentang Penyediaan, Pemanfaatan, dan Tata Niaga Bahan Bakar Nabati (Biofuel) sebagai Bahan Bakar Lain sebagaimana telah beberapa kali diubah, terakhir dengan Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 12 Tahun 2015 tentang Perubahan Ketiga atas Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 32 Tahun 2008 tentang Penyediaan, Pemanfaatan, dan Tata Niaga Bahan Bakar Nabati (Biofuel) sebagai Bahan Bakar Lain (Berita Negara Republik Indonesia Tahun 2015 Nomor 406);
+9. Peraturan Menteri Keuangan Nomor 113/PMK.01/2015 tentang Organisasi dan Tata Kerja Badan Pengelola Dana Perkebunan Kepala Sawit (Berita Negara Republik Indonesia Tahun 2015 Nomor 886);
+10. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 13 Tahun 2016 tentang Organisasi dan Tata Kerja Kementerian Energi dan Sumber Daya Mineral (Berita Negara Republik Indonesia Tahun 2016 Nomor 782);
+11. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 41 Tahun 2018 tentang Penyediaan dan Pemanfaatan Bahan Bakar Nabati Jenis Biodiesel dalam Kerangka Pembiayaan oleh Badan Pengelola Dana Perkebunan Kelapa Sawit (Berita Negara Republik Indonesia Tahun 2018 Nomor 1137);
+
+## Memutuskan
+
+Menetapkan : PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL TENTANG PERUBAHAN ATAS PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL NOMOR 41 TAHUN 2018 TENTANG PENYEDIAAN DAN PEMANFAATAN BAHAN BAKAR NABATI JENIS BIODIESEL DALAM KERANGKA PEMBIAYAAN OLEH BADAN PENGELOLA DANA PERKEBUNAN KELAPA SAWIT.
+
+### Pasal I
+
+Beberapa ketentuan dalam Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 41 Tahun 2018 tentang Penyediaan dan Pemanfaatan Bahan Bakar Nabati Jenis Biodiesel dalam Kerangka Pembiayaan oleh Badan Pengelola Dana Perkebunan Kelapa Sawit (Berita Negara Republik Indonesia Tahun 2018 Nomor 1137) diubah sebagai berikut:
+1. Ketentuan ayat (5) Pasal 14 diubah sehingga Pasal 14 berbunyi sebagai berikut:
+
+### Pasal 14
+
+(1) Hasil verillkasi sebagaimana dimaksud dalam Pasal 13 ayat (7) digunakan sebagai dasar penentuan besaran Dana Pembiayaan Biodiesel untuk menutup selisih kurang antara harga indeks pasar BBM Jenis Minyak Solar dengan harga indeks pasar BBN Jenis Biodiesel.
+(2) Harga indeks pasar:
+a. BBM Jenis Minyak Solar sebagaimana dimaksud pada ayat (1) ditetapkan oleh Menteri melalui Dirjen Migas; dan
+b. BBN Jenis Biodiesel sebagaimana dimaksud pada ayat (1) ditetapkan oleh Menteri melalui Dirjen EBTKE.
+(3) Selisih kurang sebagaimana dimaksud pada ayat (1) berlaku untuk semua jenis BBM Jenis Minyak Solar.
+(4) Selisih kurang sebagaimana dimaksud pada ayat (1) untuk pencampuran pada Jenis Bahan Bakar Minyak Tertentu merupakan batas atas pembayaran Dana Pembiayaan Biodiesel.
+(5) Penetapan harga indeks pasar BBM Jenis Minyak Solar oleh Menteri melalui Dirjen Migas sebagaimana dimaksud pada ayat (2) huruf a dalam rangka perhitungan selisih kurang antara harga indeks pasar Jenis Bahan Bakar Minyak Tertentu dan Jenis Bahan Bakar Minyak Umum dengan harga indeks pasar BBN Jenis Biodiesel dilakukan setiap bulan.
+(6) Penetapan harga indeks pasar BBN Jenis Biodiesel oleh Menteri melalui Dirjen EBTKE sebagaimana dimaksud pada ayat (2) huruf b ditetapkan setiap bulan dan berlaku untuk pengadaan BBN Jenis Biodiesel untuk pencampuran dengan Jenis Bahan Bakar Minyak Umum dan pencampuran Jenis Bahan Bakar Minyak Tertentu.
+(7) Harga penyaluran BBN Jenis Biodiesel menggunakan harga indeks pasar BBM Jenis Minyak Solar sebagaimana dimaksud pada ayat (5).
+(8) Dalam hal harga indeks pasar BBM Jenis Minyak Solar sebagaimana dimaksud pada ayat (5) lebih besar dari harga indeks pasar BBN Jenis Biodiesel sebagaimana dimaksud pada ayat (6), harga penyaluran BBN Jenis Biodiesel menggunakan harga indeks pasar BBN Jenis Biodiesel.
+6-
+2. Ketentuan Pasal 25 ditambahkan 2 huruf bam yaitu dengan humf c dan humf d sehingga Pasal 26 berbunyi sebagai berikut:
+
+### Pasal 26
+
+Pada saat Peraturan Menteri ini mulai berlaku:
+a. periode pelaksanaan pengadaan BBN Jenis Biodiesel oleh PT Pertamina (Persero) dan PT AKR Corporindo Tbk dalam kerangka dana pembiayaan biodiesel untuk periode bulan Mei 2018 sampai dengan bulan Oktober 2018 disesuaikan menjadi periode bulan Mei 2018 sampai dengan bulan Desember 2018;
+b. kontrak Badan Usaha BBM dengan Badan Usaha BBN Jenis Biodiesel dalam rangka pengadaan BBN Jenis Biodiesel untuk pencampuran Jenis Bahan Bakar Umum tetap berlaku dan ketentuan terkait harga pembelian BBN Jenis Biodiesel disesuaikan dengan Peraturan Menteri ini;
+c. verifikasi dalam rangka memperoleh Dana Pembiayaan Biodiesel untuk penyaluran BBN Jenis Biodiesel sampai dengan bulan Agustus 2018 dilakukan oleh Menteri melalui Dirjen EBTKE; dan
+d. harga indeks pasar BBM Jenis Minyak Solar dalam rangka perhitungan selisih kurang antara harga indeks pasar BBM Jenis Minyak Solar dengan harga indeks pasar BBN Jenis Biodiesel yang ditetapkan sebelum Peraturan Menteri ini tetap berlaku sampai dengan masa berlakunya habis.
+7-
+
+### Pasal II
+
+Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.
+Agar setiap orang mengetahuinya, memerintahkan pengundangan Peraturan Menteri ini dengan penempatannya dalam Berita Negara Republik Indonesia.
+
+## Penutup
+
+Ditetapkan di Jakarta pada tanggal 15 Oktober 2018 MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+IGNASIUS JONAN Diundangkan di Jakarta padatanggal 17 Oktober 2018 DIREKTUR JENDERAL PERATURAN PERUNDANG-UNDANGAN KEMENTERIAN HUKUM DAN HAK ASASI MANUSIA REPUBLIK INDONESIA, ttd.
+WIDODO EKATJAHJANA BERITA NEGARA REPUBLIK INDONESIA TAHUN 2018 NOMOR 14 39
+
+## Lampiran hal. 7
+
+Salinan sesuai dengan aslinya KEMENTERIAN^ENERGI DAN SUMBER DAYA MINERAL OAN epala Biro Hukum, 56-, o ■< -< > uJ ofi 601 151S90031001

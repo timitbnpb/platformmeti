@@ -1,0 +1,394 @@
+---
+id: "permen-esdm-3-2025"
+id_lama: null
+regulasi_id: "permen-esdm-3-2025"
+jenis: "Peraturan Menteri"
+nomor: "3"
+tahun: 2025
+judul: "Konservasi Energi Oleh Pemerintah dan Pemerintah Daerah"
+tgl_tetap: null
+tgl_undang: null
+status: "tidak_diketahui"
+status_per: 2026-11-11
+mulai: null
+mulai_perkiraan: false
+selesai: null
+mencabut: []
+mengubah: []
+mengganti: []
+mengingat: ["permen-esdm-9-2024","perpres-11-2023","perpres-169-2024","pp-33-2023","uu-30-2007","uu-39-2008","uu-61-2024"]
+merujuk: []
+dicabut_oleh: null
+diubah_oleh: []
+topik: ["efisiensi"]
+sumber: {"situs":"jdih.esdm.go.id","url":"https://jdih.esdm.go.id/dokumen/view?id=2526","pdf_sha256":"6e83633cd396aa61e37ebc3b3eca3f380c53cefc48d0f6b297743ac55f85b1b7","diambil":"2026-11-11"}
+ekstraksi: {"metode":"pdftotext","halaman":18,"halaman_ocr":0,"mutu":1,"perlu_tinjau":false}
+resmi: false
+lisensi: {"dasar":"UU 28/2014 Pasal 42","diperiksa_naskah":true}
+md_sha256: "6564884a862505b8087b0453ffa323349b32386b700b7eec88abaeffd4445411"
+---
+# Konservasi Energi Oleh Pemerintah dan Pemerintah Daerah
+
+## Menimbang
+
+bahwa untuk melaksanakan ketentuan Pasal 44 Peraturan Pemerintah Nomor 33 Tahun 2023 tentang Konservasi Energi, perlu menetapkan Peraturan Menteri Energi dan Sumber Daya Mineral tentang Konservasi Energi oleh Pemerintah dan Pemerintah Daerah;
+
+## Mengingat
+
+1. Pasal 17 ayat (3) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945;
+2. Undang-Undang Nomor 30 Tahun 2007 tentang Energi (Lembaran Negara Republik Indonesia Tahun 2007 Nomor 96, Tambahan Lembaran Negara Republik Indonesia Nomor 4746);
+3. Undang-Undang Nomor 39 Tahun 2008 tentang Kementerian Negara (Lembaran Negara Republik Indonesia Tahun 2008 Nomor 166, Tambahan Lembaran Negara Republik Indonesia Nomor 4916) sebagaimana telah diubah dengan Undang-Undang Nomor 61 Tahun 2024 tentang Perubahan atas Undang-Undang Nomor 39 Tahun 2008 tentang Kementerian Negara (Lembaran Negara Republik Indonesia Tahun 2024 Nomor 225, Tambahan Lembaran Negara Republik Indonesia Nomor 6994);
+4. Peraturan Pemerintah Nomor 33 Tahun 2023 tentang Konservasi Energi (Lembaran Negara Republik Indonesia Tahun 2023 Nomor 83, Tambahan Lembaran Negara Republik Indonesia Nomor 6879);
+5. Peraturan Presiden Nomor 11 Tahun 2023 tentang Urusan Pemerintahan Konkuren Tambahan di Bidang Energi dan Sumber Daya Mineral pada Subbidang Energi Baru Terbarukan (Lembaran Negara Republik Indonesia Tahun 2023 Nomor 20);
+6. Peraturan Presiden Nomor 169 Tahun 2024 tentang Kementerian Energi dan Sumber Daya Mineral (Lembaran Negara Republik Indonesia Tahun 2024 Nomor 365);
+7. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 9 Tahun 2024 tentang Organisasi dan Tata Kerja Kementerian Energi dan Sumber Daya Mineral (Berita Negara Republik Indonesia Tahun 2024 Nomor 414);
+
+## Memutuskan
+
+Menetapkan : PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL TENTANG KONSERVASI ENERGI OLEH PEMERINTAH DAN PEMERINTAH DAERAH.
+
+## BAB II PELAKSANAAN KONSERVASI ENERGI; Bagian Kesatu Umum
+
+### Pasal 1
+
+Dalam Peraturan Menteri ini yang dimaksud dengan:
+1. Energi adalah kemampuan untuk melakukan kerja yang dapat berupa panas, cahaya, mekanika, kimia, dan elektromagnetika.
+2. Konservasi Energi adalah upaya sistematis, terencana, dan terpadu guna melestarikan sumber daya Energi dalam negeri serta meningkatkan efisiensi pemanfaatannya.
+3. Efisiensi Energi adalah upaya menggunakan Energi secara efisien dan tepat guna dengan tetap mengutamakan keselamatan, keamanan, kenyamanan, dan produktivitas.
+4. Penghematan Energi adalah pengurangan konsumsi Energi untuk menghasilkan output yang sama dan/atau peningkatan produktivitas dengan konsumsi Energi yang sama.
+5. Pemanfaatan Energi adalah kegiatan menggunakan Energi, baik langsung maupun tidak langsung, dari sumber Energi.
+6. Manajemen Energi adalah kegiatan terpadu untuk mengendalikan konsumsi Energi agar tercapai Pemanfaatan Energi yang efektif dan efisien untuk menghasilkan keluaran yang maksimal melalui tindakan teknis secara terstruktur dan ekonomis untuk meminimalisasi Pemanfaatan Energi termasuk Energi untuk proses produksi, bahan baku, dan bahan pendukung.
+7. Peralatan Pemanfaat Energi adalah peranti atau perangkat atau fasilitas yang dalam pengoperasiannya memanfaatkan sumber Energi atau Energi.
+8. Kinerja Energi adalah hasil terukur terkait dengan Efisiensi Energi, Pemanfaatan Energi, dan konsumsi Energi.
+9. Audit Energi adalah proses evaluasi Pemanfaatan Energi dan identifikasi peluang Penghematan Energi serta rekomendasi peningkatan efisiensi pada pengguna sumber Energi dan pengguna Energi dalam rangka Konservasi Energi.
+10. Sertifikat Kompetensi Kerja yang selanjutnya disebut Sertifikat Kompetensi adalah bukti tertulis yang diterbitkan oleh lembaga sertifikasi profesi terakreditasi yang menerangkan bahwa seseorang telah menguasai kompetensi kerja tertentu sesuai dengan Standar Kompetensi Kerja Nasional Indonesia.
+11. Kompetensi Kerja yang selanjutnya disebut Kompetensi adalah kemampuan kerja setiap individu yang mencakup aspek pengetahuan, keterampilan, dan sikap kerja yang sesuai dengan standar yang ditetapkan.
+12. Manajer Energi adalah orang yang ditunjuk untuk memimpin tim Manajemen Energi.
+13. Auditor Energi adalah orang yang melakukan Audit Energi.
+14. Pemerintah Pusat yang selanjutnya disebut Pemerintah adalah Presiden Republik Indonesia yang memegang kekuasaan pemerintahan negara Republik Indonesia yang dibantu oleh Wakil Presiden dan menteri sebagaimana dimaksud dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945.
+15. Pemerintah Daerah adalah kepala daerah sebagai unsur penyelenggara pemerintahan daerah yang memimpin pelaksanaan urusan pemerintahan yang menjadi kewenangan daerah otonom.
+16. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang Energi.
+17. Kementerian Negara/Lembaga adalah kementerian negara, lembaga Pemerintah nonkementerian negara, dan lembaga negara.
+18. Perangkat Daerah adalah unsur pembantu kepala daerah dan Dewan Perwakilan Rakyat Daerah dalam penyelenggaraan urusan pemerintahan yang menjadi kewenangan daerah.
+
+## BAB II PELAKSANAAN KONSERVASI ENERGI; Bagian Kedua Kegiatan Manajemen Energi
+
+### Pasal 2
+
+(1) Pemerintah dan Pemerintah Daerah wajib melaksanakan Konservasi Energi melalui Manajemen Energi pada kegiatan Pemanfaatan Energi.
+(2) Selain melalui Manajemen Energi sebagaimana dimaksud pada ayat (1), Pemerintah dan Pemerintah Daerah melaksanakan program Konservasi Energi paling sedikit melalui:
+a. penerapan standar Kinerja Energi dan label tanda hemat Energi;
+b. peningkatan kesadaran Konservasi Energi;
+c. peningkatan kapasitas sumber daya manusia; dan/atau
+d. kerja sama bidang Konservasi Energi.
+(3) Pemerintah Daerah sebagaimana dimaksud pada ayat (1) dan ayat (2) meliputi Pemerintah Daerah provinsi dan Pemerintah Daerah kabupaten/kota.
+(4) Pelaksanaan Konservasi Energi oleh Pemerintah sebagaimana dimaksud pada ayat (1) dan ayat (2) dilakukan oleh Kementerian Negara/Lembaga dan dikoordinasikan oleh Menteri.
+(5) Pelaksanaan Konservasi Energi oleh Pemerintah Daerah provinsi sebagaimana dimaksud pada ayat (3) dilakukan oleh Perangkat Daerah provinsi dan dikoordinasikan oleh gubernur.
+(6) Pelaksanaan Konservasi Energi oleh Pemerintah Daerah kabupaten/kota sebagaimana dimaksud pada ayat (3) dilakukan oleh Perangkat Daerah kabupaten/kota dan dikoordinasikan oleh bupati/wali kota.
+
+### Pasal 3
+
+(1) Pelaksanaan Konservasi Energi melalui Manajemen Energi oleh Pemerintah diterapkan pada sarana dan prasarana yang dikelola oleh Kementerian Negara/Lembaga.
+(2) Sarana dan prasarana sebagaimana dimaksud pada ayat (1) merupakan:
+a. fasilitas yang dikuasai dan/atau dimiliki oleh negara/Pemerintah;
+b. fasilitas yang dibiayai oleh anggaran pendapatan dan belanja negara; dan
+c. fasilitas di bawah pengurusan lembaga negara dalam arti yang luas yang pemanfaatannya ditujukan secara khusus untuk kegiatan yang berhubungan dengan penyelenggaraan negara dan pemerintahan.
+
+### Pasal 4
+
+(1) Pelaksanaan Konservasi Energi melalui Manajemen Energi oleh Pemerintah Daerah diterapkan pada sarana dan prasarana yang dikelola oleh Pemerintah Daerah.
+(2) Sarana dan prasarana sebagaimana dimaksud pada ayat (1) merupakan:
+a. fasilitas yang dikuasai dan/atau dimiliki oleh Pemerintah Daerah;
+b. fasilitas yang dibiayai oleh anggaran pendapatan dan belanja daerah; dan
+c. fasilitas di bawah pengurusan Pemerintah Daerah yang pemanfaatannya ditujukan secara khusus untuk kegiatan yang berhubungan dengan penyelenggaraan pemerintahan daerah.
+
+### Pasal 5
+
+(1) Pemerintah atau Pemerintah Daerah melakukan identifikasi terhadap sarana dan prasarana sebagaimana dimaksud dalam Pasal 3 atau Pasal 4.
+(2) Berdasarkan hasil identifikasi sebagaimana dimaksud pada ayat (1), Pemerintah atau Pemerintah Daerah menentukan sarana dan prasarana yang menjadi lingkup Manajemen Energi sesuai dengan ketentuan peraturan perundang-undangan.
+(3) Menteri, menteri/pimpinan lembaga, gubernur, atau bupati/wali kota dapat mendelegasikan pelaksanaan identifikasi sebagaimana dimaksud pada ayat (1) dan penentuan sarana dan prasarana sebagaimana dimaksud pada ayat (2) kepada pejabat pimpinan tinggi madya, sekretaris daerah provinsi, atau sekretaris daerah kabupaten/kota.
+
+### Pasal 6
+
+Manajemen Energi dilaksanakan melalui:
+a. penunjukan Manajer Energi;
+b. penyusunan program Efisiensi Energi;
+c. pelaksanaan Audit Energi secara berkala; dan
+d. pelaksanaan rekomendasi hasil Audit Energi.
+
+### Pasal 7
+
+(1) Penunjukan Manajer Energi sebagaimana dimaksud dalam Pasal 6 huruf a dan pembentukan tim Manajemen Energi dilakukan oleh:
+a. Menteri/menteri/pimpinan lembaga melalui pejabat pimpinan tinggi madya;
+b. gubernur melalui sekretaris daerah provinsi; dan
+c. bupati/wali kota melalui sekretaris daerah kabupaten/kota, sesuai dengan kewenangannya.
+(2) Tim Manajemen Energi sebagaimana dimaksud pada ayat (1) terdiri atas:
+a. ketua, yang dijabat oleh 1 (satu) orang Manajer Energi yang memiliki Sertifikat Kompetensi Manajemen Energi;
+b. wakil ketua, yang dijabat oleh 1 (satu) orang yang memiliki Sertifikat Kompetensi Manajemen Energi; dan
+c. anggota, yang jumlahnya disesuaikan dengan kebutuhan.
+(3) Sertifikat Kompetensi sebagaimana dimaksud pada ayat (2) huruf a dan huruf b diperoleh melalui uji Kompetensi sesuai dengan ketentuan peraturan perundang-undangan.
+
+### Pasal 8
+
+Tim Manajemen Energi sebagaimana dimaksud dalam Pasal 7 ayat (1) mempunyai tugas:
+a. menyiapkan kebijakan Energi;
+b. menyusun rencana Manajemen Energi;
+c. melaksanakan rencana Manajemen Energi;
+d. melakukan pemantauan dan evaluasi pelaksanaan Manajemen Energi; dan
+e. meningkatkan Kinerja Energi secara berkelanjutan.
+
+### Pasal 9
+
+(1) Kebijakan Energi sebagaimana dimaksud dalam Pasal 8 huruf a merupakan komitmen secara keseluruhan untuk mencapai Kinerja Energi.
+(2) Komitmen sebagaimana dimaksud pada ayat (1) paling sedikit berupa komitmen untuk:
+a. memastikan ketersediaan informasi dan sumber daya yang dibutuhkan dalam mencapai tujuan dan target Energi;
+b. memenuhi persyaratan legal yang berlaku dan persyaratan lain yang terkait dengan Efisiensi Energi, Pemanfaatan Energi, dan konsumsi Energi;
+c. melakukan peningkatan berkelanjutan Kinerja Energi dan Manajemen Energi melalui kegiatan berulang;
+d. mendukung pengadaan produk hemat Energi dan jasa yang memengaruhi Kinerja Energi; dan
+e. mendukung aktivitas desain yang mempertimbangkan peningkatan Kinerja Energi.
+(3) Kebijakan Energi sebagaimana dimaksud pada ayat (1) ditetapkan oleh Menteri, menteri/pimpinan lembaga, gubernur, atau bupati/wali kota sesuai dengan kewenangannya.
+
+### Pasal 10
+
+(1) Penyusunan rencana Manajemen Energi sebagaimana dimaksud dalam Pasal 8 huruf b dilaksanakan melalui kegiatan:
+a. penyusunan manajemen risiko dan peluang;
+b. pelaksanaan tinjauan Energi;
+c. penetapan indikator Kinerja Energi;
+d. penetapan nilai awal (baseline) Energi;
+e. penyusunan dan penetapan tujuan, target, program Efisiensi Energi; dan
+f. perencanaan pengumpulan data Energi.
+(2) Penyusunan rencana Manajemen Energi sebagaimana dimaksud pada ayat (1) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan mengenai Manajemen Energi.
+
+### Pasal 11
+
+Pelaksanaan rencana Manajemen Energi sebagaimana dimaksud dalam Pasal 8 huruf c meliputi:
+a. pelaksanaan program Efisiensi Energi dan pengendalian operasi;
+b. pertimbangan peluang peningkatan Kinerja Energi dan pengendalian operasi dalam rancangan baru atau modifikasi terhadap peralatan, sistem, dan proses; dan
+c. pertimbangan Kinerja Energi dalam proses pengadaan.
+
+### Pasal 12
+
+(1) Pemantauan dan evaluasi pelaksanaan Manajemen Energi sebagaimana dimaksud dalam Pasal 8 huruf d meliputi pengukuran, pencatatan, pembandingan, analisis, dan pembuatan laporan.
+(2) Laporan pemantauan dan evaluasi pelaksanaan Manajemen Energi sebagaimana dimaksud pada ayat (1) berupa usulan tindakan perbaikan dan/atau peningkatan pelaksanaan program Efisiensi Energi.
+(3) Laporan pemantauan dan evaluasi pelaksanaan Manajemen Energi sebagaimana dimaksud pada ayat (1) disusun paling sedikit 1 (satu) kali dalam 1 (satu) tahun.
+(4) Laporan pemantauan dan evaluasi pelaksanaan Manajemen Energi sebagaimana dimaksud pada ayat (3) disampaikan oleh Manajer Energi kepada Menteri, menteri/pimpinan lembaga, gubernur, atau bupati/wali kota sesuai dengan kewenangannya.
+
+### Pasal 13
+
+Peningkatan Kinerja Energi secara berkelanjutan sebagaimana dimaksud dalam Pasal 8 huruf e meliputi peningkatan kesesuaian, kecukupan, dan efektivitas Manajemen Energi.
+
+### Pasal 14
+
+(1) Penyusunan program Efisiensi Energi sebagaimana dimaksud dalam Pasal 6 huruf b dilakukan oleh tim Manajemen Energi.
+(2) Penyusunan program Efisiensi Energi sebagaimana dimaksud pada ayat (1) paling sedikit memuat informasi mengenai:
+a. rencana yang akan dilakukan;
+b. jenis dan konsumsi Energi;
+c. penggunaan peralatan hemat Energi;
+d. langkah Efisiensi Energi;
+e. jumlah produk yang dihasilkan atau jasa yang diberikan; dan
+f. Kinerja Energi.
+
+### Pasal 15
+
+(1) Pelaksanaan Audit Energi secara berkala sebagaimana dimaksud dalam Pasal 6 huruf c dilakukan oleh Auditor Energi internal dan/atau Auditor Energi eksternal yang telah memiliki Sertifikat Kompetensi.
+(2) Dalam melaksanakan Audit Energi secara berkala sebagaimana dimaksud pada ayat (1), Pemerintah atau Pemerintah Daerah mengutamakan penugasan kepada Auditor Energi internal.
+(3) Sertifikat Kompetensi sebagaimana dimaksud pada ayat (1) diperoleh melalui uji Kompetensi sesuai dengan ketentuan peraturan perundang-undangan.
+(4) Audit Energi secara berkala sebagaimana dimaksud pada ayat (1) dilaksanakan paling sedikit 1 (satu) kali dalam 3 (tiga) tahun.
+(5) Audit Energi secara berkala sebagaimana dimaksud pada ayat (1) dilaksanakan paling sedikit terhadap 1 (satu) peralatan Pemanfaatan Energi signifikan.
+(6) Pemanfaatan Energi signifikan sebagaimana dimaksud pada ayat (5) merupakan Pemanfaatan Energi yang memiliki konsumsi Energi yang besar dan/atau menawarkan potensi besar untuk peningkatan Kinerja Energi.
+
+### Pasal 16
+
+Audit Energi sebagaimana dimaksud dalam Pasal 15 menghasilkan rekomendasi hasil Audit Energi.
+
+### Pasal 17
+
+(1) Rekomendasi hasil Audit Energi sebagaimana dimaksud dalam Pasal 16 berupa rekomendasi:
+a. Penghematan Energi yang layak secara teknis; dan
+b. Penghematan Energi yang layak secara biaya.
+(2) Rekomendasi Penghematan Energi yang layak secara teknis sebagaimana dimaksud pada ayat (1) huruf a merupakan rekomendasi yang memiliki risiko rendah pada saat diterapkan.
+(3) Rekomendasi Penghematan Energi yang layak secara biaya sebagaimana dimaksud pada ayat (1) huruf b terdiri atas:
+a. rekomendasi Penghematan Energi tanpa biaya, merupakan rekomendasi kegiatan yang menghasilkan Penghematan Energi yang tidak membutuhkan biaya dalam mengimplementasikannya;
+b. rekomendasi Penghematan Energi berbiaya rendah, merupakan rekomendasi kegiatan yang menghasilkan Penghematan Energi yang membutuhkan waktu pengembalian biaya kurang dari 2 (dua) tahun;
+c. rekomendasi Penghematan Energi berbiaya menengah, merupakan rekomendasi kegiatan yang menghasilkan Penghematan Energi yang membutuhkan waktu pengembalian biaya 2 (dua) tahun sampai dengan 4 (empat) tahun; dan/atau
+d. rekomendasi Penghematan Energi berbiaya tinggi, merupakan rekomendasi kegiatan yang menghasilkan Penghematan Energi yang membutuhkan waktu pengembalian biaya lebih dari 4 (empat) tahun.
+(4) Waktu pengembalian biaya sebagaimana dimaksud pada ayat (3) merupakan waktu yang diperlukan untuk mengembalikan sejumlah biaya yang telah dikeluarkan atas pelaksanaan rekomendasi hasil Audit Energi dibandingkan dengan nilai penghematan atas pengeluaran biaya operasional Pemanfaatan Energi.
+
+## BAB II PELAKSANAAN KONSERVASI ENERGI; Bagian Ketiga Penerapan Standar Kinerja Energi
+
+### Pasal 18
+
+Pemerintah dan Pemerintah Daerah melaksanakan rekomendasi hasil Audit Energi sebagaimana dimaksud dalam Pasal 16 paling lambat 3 (tiga) tahun terhitung sejak Audit Energi selesai dilaksanakan. dan Label Tanda Hemat Energi
+
+### Pasal 19
+
+(1) Konservasi Energi oleh Pemerintah dan Pemerintah Daerah dilaksanakan melalui penggunaan Peralatan Pemanfaat Energi yang memiliki standar Kinerja Energi dan/atau label tanda hemat Energi.
+(2) Peralatan Pemanfaat Energi sebagaimana dimaksud pada ayat (1) diutamakan yang memiliki tingkat hemat Energi tertinggi.
+(3) Tingkat hemat Energi tertinggi sebagaimana dimaksud pada ayat (2) dilaksanakan sesuai dengan ketentuan peraturan perundangan-undangan mengenai standar Kinerja Energi minimum untuk Peralatan Pemanfaat Energi.
+
+### Pasal 20
+
+Dalam hal standar Kinerja Energi dan/atau label tanda hemat Energi sebagaimana dimaksud dalam Pasal 19 ayat (1) belum tersedia, Pemerintah dan Pemerintah Daerah dapat menggunakan Peralatan Pemanfaat Energi yang efisien sesuai dengan standar nasional Indonesia atau standar internasional.
+
+## BAB II PELAKSANAAN KONSERVASI ENERGI; Bagian Keempat Peningkatan Kesadaran Konservasi Energi
+
+### Pasal 21
+
+Peralatan Pemanfaat Energi yang memiliki standar Kinerja Energi dan/atau label tanda hemat Energi sebagaimana dimaksud dalam Pasal 19 diperoleh melalui pengadaan barang/jasa pemerintah dengan metode:
+a. katalog sektoral hemat Energi yang dapat diakses pada layanan yang disediakan oleh lembaga yang melaksanakan pengembangan dan perumusan kebijakan pengadaan barang/jasa pemerintah;
+b. pengadaan langsung; atau
+c. pelelangan, sesuai dengan ketentuan peraturan perundang-undangan.
+
+## BAB II PELAKSANAAN KONSERVASI ENERGI; Bagian Kelima Peningkatan Kapasitas Sumber Daya Manusia
+
+### Pasal 22
+
+(1) Pemerintah dan Pemerintah Daerah melaksanakan peningkatan kesadaran Konservasi Energi melalui kegiatan:
+a. bimbingan teknis;
+b. penyebarluasan informasi; dan/atau
+c. pemberian penghargaan.
+(2) Kegiatan bimbingan teknis sebagaimana dimaksud pada ayat (1) huruf a dapat dilaksanakan melalui seminar, sosialisasi, atau lokakarya di bidang Konservasi Energi.
+(3) Kegiatan penyebarluasan informasi sebagaimana dimaksud pada ayat (1) huruf b dapat dilaksanakan melalui:
+a. media cetak;
+b. media sosial; dan/atau
+c. iklan layanan masyarakat.
+(4) Pemberian penghargaan sebagaimana dimaksud pada ayat (1) huruf c dapat diberikan oleh Menteri, menteri/pimpinan lembaga, gubernur, atau bupati/wali kota sesuai dengan kewenangannya.
+(5) Pemberian penghargaan sebagaimana dimaksud pada ayat (4) dilaksanakan sebagai apresiasi atas upaya terbaik di bidang Konservasi Energi.
+
+## BAB II PELAKSANAAN KONSERVASI ENERGI; Bagian Keenam Kerja Sama Bidang Konservasi Energi
+
+### Pasal 23
+
+(1) Peningkatan kapasitas sumber daya manusia dilaksanakan melalui kegiatan pelatihan dan/atau fasilitasi sertifikasi Kompetensi di bidang Konservasi Energi.
+(2) Kegiatan pelatihan sebagaimana dimaksud pada ayat (1) meliputi:
+a. pelatihan Manajer Energi;
+b. pelatihan Auditor Energi;
+c. pelatihan pengukuran dan verifikasi (measurement and verification) Kinerja Energi;
+d. pelatihan optimasi sistem dan penguasaan teknologi; dan/atau
+e. pelatihan lain di bidang Konservasi Energi.
+(3) Kegiatan fasilitasi sertifikasi Kompetensi sebagaimana dimaksud pada ayat (1) meliputi:
+a. sertifikasi Manajemen Energi;
+b. sertifikasi Audit Energi;
+c. sertifikasi pengukuran dan verifikasi (measurement dan verification) Kinerja Energi; dan/atau
+d. sertifikasi lain di bidang Konservasi Energi.
+
+## BAB III PENGANGGARAN
+
+### Pasal 24
+
+(1) Konservasi Energi oleh Pemerintah atau Pemerintah Daerah dapat dilaksanakan melalui kerja sama dengan pihak lain secara efektif dan efisien.
+(2) Kerja sama dengan pihak lain sebagaimana dimaksud pada ayat (1) dilakukan melalui kerja sama nasional dan internasional.
+(3) Kerja sama nasional sebagaimana dimaksud pada ayat (2) dilakukan melalui:
+a. kerja sama antar-Kementerian Negara/Lembaga, antar-Pemerintah Daerah, dan/atau Pemerintah dengan Pemerintah Daerah; dan/atau
+b. kerja sama dengan pihak terkait lainnya, sesuai dengan ketentuan peraturan perundang-undangan.
+(4) Kerja sama internasional sebagaimana dimaksud pada ayat (2) dilakukan oleh Pemerintah dan/atau Pemerintah Daerah sesuai dengan ketentuan peraturan perundang-undangan mengenai kerja sama internasional.
+(5) Dalam hal kerja sama dilakukan untuk infrastruktur Konservasi Energi, Pemerintah atau Pemerintah Daerah dapat menggunakan skema kerja sama dengan badan usaha sesuai dengan ketentuan peraturan perundang-undangan.
+
+### Pasal 25
+
+(1) Pemerintah dan Pemerintah Daerah mengalokasikan anggaran untuk melaksanakan Konservasi Energi.
+(2) Alokasi anggaran sebagaimana dimaksud pada ayat (1) bersumber dari:
+a. anggaran pendapatan dan belanja negara dan/atau anggaran pendapatan dan belanja daerah; atau
+b. sumber pendanaan lain yang sah sesuai dengan ketentuan peraturan perundang-undangan.
+(3) Sumber pendanaan lain sebagaimana dimaksud pada ayat (2) huruf b dapat berupa pendanaan yang bersumber dari:
+a. pelaku usaha jasa Konservasi Energi; atau
+b. pinjaman daerah, sesuai dengan ketentuan peraturan perundang-undangan.
+
+## BAB IV PELAPORAN
+
+### Pasal 26
+
+(1) Mekanisme penganggaran pelaksanaan Konservasi Energi oleh Pemerintah dan Pemerintah Daerah provinsi dialokasikan melalui:
+a. kegiatan Konservasi Energi; dan/atau
+b. kegiatan terkait pengelolaan bangunan gedung, kendaraan dinas, penerangan jalan, lampu taman, papan iklan, dan/atau sarana dan prasarana lain sesuai dengan ketentuan peraturan perundang-undangan.
+(2) Mekanisme penganggaran pelaksanaan Konservasi Energi oleh Pemerintah Daerah kabupaten/kota dialokasikan melalui kegiatan terkait pengelolaan bangunan gedung, kendaraan dinas, penerangan jalan, lampu taman, papan iklan, dan/atau sarana dan prasarana lain sesuai dengan ketentuan peraturan perundang-undangan.
+
+## BAB V MONITORING DAN EVALUASI
+
+### Pasal 27
+
+(1) Pelaporan hasil pelaksanaan Konservasi Energi dilaksanakan 1 (satu) kali dalam 1 (satu) tahun.
+(2) Bupati/wali kota menyampaikan laporan pelaksanaan Konservasi Energi yang dilakukan oleh Pemerintah Daerah kabupaten/kota kepada gubernur.
+(3) Gubernur menyampaikan laporan pelaksanaan Konservasi Energi yang dilakukan oleh Pemerintah Daerah provinsi dan Pemerintah Daerah kabupaten/kota kepada Menteri.
+(4) Pimpinan Kementerian Negara/Lembaga menyampaikan laporan pelaksanaan Konservasi Energi kepada Menteri.
+(5) Laporan pelaksanaan Konservasi Energi sebagaimana dimaksud pada ayat (3) dan ayat (4) disampaikan secara elektronik melalui sistem pelaporan yang disediakan oleh Kementerian paling lambat tanggal 30 Juni tahun berikutnya.
+(6) Dalam hal sistem pelaporan secara elektronik sebagaimana dimaksud pada ayat (5) mengalami kendala, pelaporan pelaksanaan Konservasi Energi dilakukan secara manual.
+(7) Pemerintah dan Pemerintah Daerah yang telah menyampaikan laporan pelaksanaan Konservasi Energi sebagaimana dimaksud pada ayat (1) memperoleh bukti pelaporan pelaksanaan Konservasi Energi.
+(8) Laporan pelaksanaan Konservasi Energi sebagaimana dimaksud pada ayat (5) dan ayat (6) disusun dengan format sebagaimana tercantum dalam Lampiran I yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 28
+
+(1) Monitoring dan evaluasi dilaksanakan terhadap laporan pelaksanaan Konservasi Energi sebagaimana dimaksud dalam Pasal 27.
+(2) Monitoring dan evaluasi sebagaimana dimaksud pada ayat (1) dilaksanakan oleh Menteri.
+(3) Hasil monitoring dan evaluasi sebagaimana dimaksud pada ayat (2) berupa hasil pelaksanaan Konservasi Energi.
+
+### Pasal 29
+
+(1) Dalam melaksanakan monitoring dan evaluasi sebagaimana dimaksud dalam Pasal 28, Menteri melakukan penilaian pelaksanaan Konservasi Energi.
+(2) Penilaian pelaksanaan Konservasi Energi sebagaimana dimaksud pada ayat (1) dilakukan berdasarkan intensitas konsumsi Energi sebagaimana tercantum dalam Lampiran II yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+### Pasal 30
+
+(1) Menteri menyampaikan hasil pelaksanaan Konservasi Energi sebagaimana dimaksud dalam Pasal 28 ayat (3) kepada menteri yang menyelenggarakan urusan pemerintahan di bidang aparatur negara dan reformasi birokrasi dan menteri yang menyelenggarakan urusan pemerintahan di bidang pemerintahan dalam negeri.
+(2) Hasil pelaksanan Konservasi Energi sebagaimana dimaksud pada ayat (1) ditembuskan kepada gubernur.
+
+## BAB VI APRESIASI
+
+### Pasal 31
+
+Menteri melaksanakan pembinaan teknis pelaksanaan Konservasi Energi kepada Kementerian Negara/Lembaga dan Pemerintah Daerah.
+
+## BAB VII PENERAPAN NILAI EKONOMI KARBON
+
+### Pasal 32
+
+(1) Berdasarkan hasil monitoring dan evaluasi sebagaimana dimaksud dalam Pasal 28, Menteri dapat memberikan apresiasi kepada Pemerintah dan Pemerintah Daerah.
+(2) Apresiasi sebagaimana dimaksud pada ayat (1) berupa:
+a. pemberian pelatihan dan fasilitasi sertifikasi Kompetensi di bidang Konservasi Energi;
+b. fasilitasi pelaksanaan Audit Energi;
+c. pendampingan pengembangan sistem Manajemen Energi; dan/atau
+d. pemberian apresiasi lain sesuai dengan ketentuan peraturan perundang-undangan.
+
+## BAB VIII KETENTUAN PENUTUP
+
+### Pasal 33
+
+(1) Pemerintah dan Pemerintah Daerah yang melaksanakan Konservasi Energi sebagai pelaksanaan aksi mitigasi perubahan iklim dapat menerima manfaat melalui mekanisme nilai ekonomi karbon sektor Energi.
+(2) Nilai ekonomi karbon sebagaimana dimaksud pada ayat (1) dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan mengenai nilai ekonomi karbon.
+
+### Pasal 34
+
+Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.
+Agar setiap orang mengetahuinya, memerintahkan pengundangan Peraturan Menteri ini dengan penempatannya dalam Berita Negara Republik Indonesia.
+
+## Penutup
+
+Ditetapkan di Jakarta pada tanggal 23 Januari 2025 MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, Œ BAHLIL LAHADALIA Diundangkan di Jakarta pada tanggal Д DIREKTUR JENDERAL PERATURAN PERUNDANG-UNDANGAN KEMENTERIAN HUKUM REPUBLIK INDONESIA, Ѽ DHAHANA PUTRA BERITA NEGARA REPUBLIK INDONESIA TAHUN 2025 NOMOR Ж
+
+## Lampiran hal. 15
+
+LAMPIRAN I PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 3 TAHUN 2025 TENTANG KONSERVASI ENERGI OLEH PEMERINTAH DAN PEMERINTAH DAERAH FORMAT LAPORAN PELAKSANAAN KONSERVASI ENERGI OLEH PEMERINTAH DAN PEMERINTAH DAERAH KOP INSTITUSI LAPORAN PELAKSANAAN KONSERVASI ENERGI KEMENTERIAN NEGARA/LEMBAGA... / PEMERINTAH DAERAH PROVINSI... / PEMERINTAH DAERAH KABUPATEN/KOTA ...*) TAHUN ...
+Informasi Umum Nama Institusi :
+Alamat :
+Nomor Persetujuan Bangunan Gedung :
+Nomor Sertifikat Laik Fungsi :
+Fungsi Bangunan : (perkantoran/universitas/rumah sakit/hotel/mal/lainnya) Nama Penanggung Jawab :
+Jabatan :
+Email :
+
+## Lampiran hal. 15
+
+Nomor Kontak (HP) : *) diisi sesuai dengan nomenklatur institusi A. Manajemen Energi Keterangan Manajemen Energi (Ya/Tidak)*) Apakah terdapat kebijakan Efisiensi Energi institusi Apakah terdapat struktur organisasi Manajemen Energi Apakah memiliki sertifikat ISO 50001 Apakah memiliki Manajer Energi bersertifikat Apakah memiliki building automation system Apakah mempunyai sistem monitoring Energi Apakah memiliki sertifikat bangunan gedung hijau *)dipilih salah satu, jika “ya” mohon dilampirkan B. Detail Bangunan Luas Bangunan … m2 Luas Bangunan Menggunakan AC … m2 Jumlah Lantai … lantai Jam Operasional Gedung dalam 1 Tahun … jam C. Baseline Total Konsumsi*) Tahun Listrik Listrik PLTS Atap LPG CNG Gas Alam Solar (kWh) (kWh) (kg) (kg) (m3) (liter) *)total konsumsi Energi dalam 1 (satu) tahun D. Pemakaian Energi Menggunakan Jaringan Gas Kota (Ya/Tidak)* Memiliki PLTS Atap (Ya/Tidak)* Memiliki Genset (Ya/Tidak)* Kontrak Daya Listrik ...kVa Golongan Tarif Jaringan Listrik *dipilih salah satu Listrik Listrik PLTS LPG CNG Gas Alam Solar Bulan Okupansi* (kWh) Atap (kWh) (kg) (kg) (m3) (liter) Januari Februari Maret April Mei Juni Juli Agustus September Oktober November Desember *okupansi : tingkat pemanfaatan suatu bangunan, diisi dengan jumlah orang per bulan atau jumlah kamar per bulan E.
+
+## Lampiran hal. 15
+
+Peralatan Sistem Pendinginan Peralatan Daya Jumlah Unit Estimasi Jam Operasi Sistem Tata Cahaya Peralatan Daya Jumlah Unit Estimasi Jam Operasi Sistem Transportasi Vertikal Peralatan Daya Jumlah Unit Estimasi Jam Operasi Peralatan Kantor Peralatan Daya Jumlah Unit Estimasi Jam Operasi Peralatan Lainnya* Peralatan Daya Jumlah Unit Estimasi Jam Operasi *Contoh: PJU, lampu taman, atau papan iklan Kendaraan Dinas Jenis Konsumsi Energi Jumlah Jarak Tempuh Kendaraan per Kilometer Unit F. Kegiatan Efisiensi Energi Jenis Sumber Realisasi Nama Penghematan Energi Peralatan Energi yang Anggaran Kegiatan (Satuan Energi) Dihemat (Rp) Diisi terkait kegiatan Efisiensi Energi yang dilaksanakan termasuk pelaksanaan rekomendasi hasil Audit Energi G. Rencana Kegiatan Efisiensi Energi Alokasi Estimasi Nama Rencana Implementasi Peralatan Anggaran Penghematan Energi Kegiatan (Tahun) (Rp) (Satuan Energi) Diisi rencana kegiatan Efisiensi Energi yang akan dilaksanakan H. Audit Energi Nama Auditor Energi :
+Jenis Auditor Energi : (internal/eksternal) Nomor Sertifikat Auditor Energi :
+Periode Pelaksanaan Audit :
+Ringkasan Eksekutif : (dokumen dilampirkan) Detail Rekomendasi Audit Energi Kebutuhan Estimasi Penghematan Rencana Rekomendasi Peralatan Anggaran Energi Implementasi (Rp) (Satuan Energi) (Tahun) MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+
+## Lampiran hal. 17
+
+BAHLIL LAHADALIA LAMPIRAN II PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 3 TAHUN 2025 TENTANG KONSERVASI ENERGI OLEH PEMERINTAH DAN PEMERINTAH DAERAH INTENSITAS KONSUMSI ENERGI UNTUK PENILAIAN PELAKSANAAN KONSERVASI ENERGI Intensitas Konsumsi Energi (kWh/m2/tahun) Klasifikasi Luas Bangunan ≤ 5000 m2 Luas Bangunan > 5000 m2 Sangat Efisien IKE < 70 IKE < 99 Efisien 70 ≤ IKE < 99 99 ≤ IKE < 135 Cukup Efisien 99 ≤ IKE ≤ 135 135 ≤ IKE ≤ 173 Boros IKE > 135 IKE > 173 Intensitas Konsumsi Energi (IKE) merupakan indikator Kinerja Energi yang menunjukkan besarnya penggunaan Energi per luas area bangunan dalam 1 (satu) tahun.
+MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+BAHLIL LAHADALIA

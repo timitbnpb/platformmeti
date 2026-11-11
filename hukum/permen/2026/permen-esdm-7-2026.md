@@ -1,0 +1,5003 @@
+---
+id: "permen-esdm-7-2026"
+id_lama: null
+regulasi_id: "permen-esdm-7-2026"
+jenis: "Peraturan Menteri"
+nomor: "7"
+tahun: 2026
+judul: "Standar Kegiatan Usaha Pada Penyelenggaraan Perizinan Berusaha Berbasis Resiko Sektor Energi dan Sumber Daya Mineral"
+tgl_tetap: null
+tgl_undang: null
+status: "tidak_diketahui"
+status_per: 2026-11-11
+mulai: null
+mulai_perkiraan: false
+selesai: null
+mencabut: ["permen-esdm-5-2021"]
+mengubah: []
+mengganti: []
+mengingat: ["permen-esdm-12-2025","perpres-169-2024","pp-28-2025","uu-39-2008","uu-61-2024"]
+merujuk: ["keppres-21-1981","keppres-45-1991","permen-esdm-14-2024","pp-5-2021","uu-27-2003"]
+dicabut_oleh: null
+diubah_oleh: []
+topik: []
+sumber: {"situs":"jdih.esdm.go.id","url":"https://jdih.esdm.go.id/dokumen/view?id=2780","pdf_sha256":"1c09e555b76b783215d1cf21ed2b440ebb34fc81140a1adabd68401f90531e4c","diambil":"2026-11-11"}
+ekstraksi: {"metode":"pdftotext","halaman":324,"halaman_ocr":0,"mutu":0.999,"perlu_tinjau":false}
+resmi: false
+lisensi: {"dasar":"UU 28/2014 Pasal 42","diperiksa_naskah":true}
+md_sha256: "8347eadf074026555d71be45d41107dc6451a365b6feab27f3426f5eebc56912"
+---
+# Standar Kegiatan Usaha Pada Penyelenggaraan Perizinan Berusaha Berbasis Resiko Sektor Energi dan Sumber Daya Mineral
+
+## Menimbang
+
+bahwa untuk melaksanakan ketentuan Pasal 5 ayat (7) Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, perlu menetapkan Peraturan Menteri Energi dan Sumber Daya Mineral tentang Standar Kegiatan Usaha pada Penyelenggaraan Perizinan Berusaha Berbasis Risiko Sektor Energi dan Sumber Daya Mineral;
+
+## Mengingat
+
+1. Pasal 17 ayat (3) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945;
+2. Undang-Undang Nomor 39 Tahun 2008 tentang Kementerian Negara (Lembaran Negara Republik Indonesia Tahun 2008 Nomor 166, Tambahan Lembaran Negara Republik Indonesia Nomor 4916) sebagaimana telah diubah dengan Undang-Undang Nomor 61 Tahun 2024 tentang Perubahan atas Undang-Undang Nomor 39 Tahun 2008 tentang Kementerian Negara (Lembaran Negara Republik Indonesia Tahun 2024 Nomor 225, Tambahan Lembaran Negara Republik Indonesia Nomor 6694);
+3. Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko (Lembaran Negara Republik Indonesia Tahun 2025 Nomor 98, Tambahan Lembaran Negara Republik Indonesia Nomor 7115);
+4. Peraturan Presiden Nomor 169 Tahun 2024 tentang Kementerian Energi dan Sumber Daya Mineral (Lembaran Negara Republik Indonesia Tahun 2024 Nomor 365);
+5. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 12 Tahun 2025 tentang Organisasi dan Tata Kerja Kementerian Energi dan Sumber Daya Mineral (Berita Negara Republik Indonesia Tahun 2025 Nomor 290);
+
+## Memutuskan
+
+Menetapkan : PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL TENTANG STANDAR KEGIATAN USAHA PADA PENYELENGGARAAN PERIZINAN BERUSAHA BERBASIS RISIKO SEKTOR ENERGI DAN SUMBER DAYA MINERAL.
+
+## BAB II PERIZINAN BERUSAHA BERBASIS RISIKO; Bagian Kesatu Umum
+
+### Pasal 1
+
+Dalam Peraturan Menteri ini yang dimaksud dengan:
+1. Perizinan Berusaha Berbasis Risiko yang selanjutnya disingkat PBBR adalah perizinan berusaha yang menggunakan pendekatan berbasis risiko yang diperoleh dari hasil analisis risiko setiap kegiatan usaha.
+2. Perizinan Berusaha yang selanjutnya disingkat PB adalah legalitas yang diberikan kepada Pelaku Usaha untuk memulai dan menjalankan usaha dan/atau kegiatannya.
+3. Perizinan Berusaha Untuk Menunjang Kegiatan Usaha yang selanjutnya disingkat PB UMKU adalah legalitas yang diberikan kepada Pelaku Usaha untuk menunjang kegiatan usaha.
+4. Sistem Perizinan Berusaha Terintegrasi Secara Elektronik (Online Single Submission) yang selanjutnya disebut Sistem OSS adalah sistem elektronik terintegrasi yang dikelola dan diselenggarakan oleh lembaga OSS untuk penyelenggaraan PBBR.
+5. Pelaku Usaha adalah orang perseorangan atau badan usaha yang melakukan usaha dan/atau kegiatan pada bidang tertentu.
+6. Kawasan Ekonomi Khusus yang selanjutnya disingkat KEK adalah Kawasan Ekonomi Khusus sebagaimana diatur dalam peraturan perundang-undangan di bidang kawasan ekonomi khusus.
+7. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+
+## BAB II PERIZINAN BERUSAHA BERBASIS RISIKO; Bagian Kedua Persyaratan Dasar
+
+### Pasal 2
+
+(1) Untuk melakukan kegiatan usaha sektor energi dan sumber daya mineral, Pelaku Usaha wajib memiliki PB sektor energi dan sumber daya mineral.
+(2) Apabila PB sebagaimana dimaksud pada ayat (1), termasuk PB diluar sektor energi dan sumber daya mineral perlu dilengkapi dengan perizinan berusaha untuk menunjang kegiatan usaha, Pelaku Usaha wajib memiliki PB UMKU.
+(3) PB sebagaimana dimaksud pada ayat (1) dan PB UMKU sebagaimana dimaksud pada ayat (2) diproses secara elektronik melalui Sistem OSS.
+(4) Sistem OSS sebagaimana dimaksud pada ayat (3) terintegrasi secara elektronik dengan sistem di kementerian/lembaga.
+
+## BAB II PERIZINAN BERUSAHA BERBASIS RISIKO; Bagian Ketiga PB dan PB UMKU Sektor Energi dan Sumber Daya Mineral
+
+### Pasal 3
+
+(1) PB sebagaimana dimaksud dalam Pasal 2 ayat (1) diperoleh setelah Pelaku Usaha melakukan pemenuhan persyaratan dasar terlebih dahulu, kecuali diatur lain sesuai dengan ketentuan peraturan perundang-undangan.
+(2) Terhadap kegiatan survei umum serta wilayah kerja untuk kegiatan usaha hulu minyak dan gas bumi yang sudah ditetapkan oleh Pemerintah, persetujuan Kegiatan Kesesuaian Pemanfaatan Ruang diberikan tanpa dilakukan penilaian dokumen usulan kegiatan pemanfaatan ruang sesuai dengan ketentuan peraturan perundang-undangan.
+(3) Pemenuhan persyaratan dasar untuk kegiatan pencampuran hasil produk kilang minyak dan gas bumi dengan biofuel berupa persetujuan Kegiatan Kesesuaian Pemanfaatan Ruang dan Pernyataan Kesanggupan Pengelolaan Lingkungan Hidup telah tercakup dalam pemenuhan persyaratan dasar pemberian Izin Pengolahan Minyak dan Gas Bumi, Izin Penyimpanan Minyak dan Gas Bumi, dan/atau Izin Niaga Minyak dan Gas Bumi.
+(4) Terhadap infrastruktur ketenagalistrikan yang dibangun dalam wilayah usaha ketenagalistrikan yang ditetapkan oleh Pemerintah, persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang diberikan tanpa dilakukan penilaian dokumen usulan kegiatan pemanfaatan ruang, dengan ketentuan:
+a. lokasi usaha dan/atau kegiatan terletak di lokasi KEK atau kawasan industri yang poligon koordinat lokasinya telah terdaftar dalam Sistem OSS dan terdapat bukti bahwa Pelaku Usaha dapat melakukan kegiatan usaha di KEK atau kawasan industri;
+b. lokasi usaha dan/atau kegiatan terletak di kawasan yang dikelola oleh otorita atau badan penyelenggara pengembangan suatu kawasan yang poligon koordinat lokasinya telah terdaftar dalam Sistem OSS dan terdapat bukti bahwa Pelaku Usaha dapat melakukan kegiatan usaha di kawasan tersebut; atau
+c. lokasi usaha dan/atau kegiatan terletak di luar lokasi sebagaimana dimaksud pada huruf a dan huruf b, untuk infrastruktur ketenagalistrikan berupa jaringan distribusi tenaga listrik, gardu distribusi, dan/atau penjualan tenaga listrik.
+(5) Terhadap infrastruktur ketenagalistrikan berupa pembangkit, jaringan transmisi, dan/atau gardu induk di wilayah usaha PT Perusahaan Listrik Negara (Persero), baik yang berasal dari pembiayaan anggaran pendapatan dan belanja negara maupun pembiayaan PT Perusahaan Listrik Negara (Persero), permohonan penerbitan Kesesuaian Kegiatan Pemanfaatan Ruang diajukan oleh Menteri kepada menteri yang menyelenggarakan urusan pemerintahan di bidang pertanahan dan tata ruang.
+(6) Kewajiban pemenuhan persyaratan dasar untuk PB berupa Kegiatan Kesesuaian Pemanfaatan Ruang dikecualikan dalam tahap:
+a. survei dan eksplorasi pada subsektor energi baru, terbarukan, dan konservasi energi; dan
+b. kegiatan eksplorasi pada subsektor mineral dan batubara.
+(7) Pemenuhan persyaratan dasar untuk kegiatan usaha di sektor energi dan sumber daya mineral yang berada pada kawasan hutan atau wilayah perairan laut, sesuai dengan ketentuan peraturan perundang-undangan.
+
+### Pasal 4
+
+(1) PB sektor energi dan sumber daya mineral meliputi subsektor:
+a. minyak dan gas bumi;
+b. ketenagalistrikan;
+c. mineral dan batubara; dan
+d. energi baru, terbarukan, dan konservasi energi.
+(2) PB UMKU sektor energi dan sumber daya mineral meliputi penunjang operasional dan/atau komersial kegiatan usaha yang terdiri atas subsektor:
+a. minyak dan gas bumi;
+b. ketenagalistrikan;
+c. mineral dan batubara;
+d. energi baru, terbarukan, dan konservasi energi; dan
+e. geologi.
+
+## BAB III PENGAWASAN
+
+### Pasal 5
+
+Menteri menetapkan standar kegiatan usaha pada penyelenggaraan PBBR berupa:
+a. PB sektor energi dan sumber daya mineral sebagaimana tercantum dalam Lampiran I; dan
+b. PB UMKU sektor energi dan sumber daya mineral sebagaimana tercantum dalam Lampiran II, yang merupakan bagian tidak terpisahkan dari Peraturan Menteri ini.
+
+## BAB IV SANKSI ADMINISTRATIF
+
+### Pasal 6
+
+Pengawasan terhadap PB dan/atau PB UMKU sektor energi dan sumber daya mineral dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.
+
+### Pasal 7
+
+Pelaku Usaha yang melanggar ketentuan PB dan/atau PB UMKU subsektor minyak dan gas bumi dikenai sanksi administratif berupa:
+a. teguran tertulis;
+b. penghentian sementara kegiatan usaha;
+c. penghentian usaha atau kegiatan;
+d. pengenaan denda administratif; dan/atau
+e. pencabutan PB dan/atau PB UMKU.
+
+### Pasal 8
+
+(1) Pelaku Usaha yang melanggar ketentuan PB dan/atau PB UMKU subsektor ketenagalistrikan dikenai sanksi administratif berupa:
+a. teguran tertulis;
+b. pembekuan kegiatan sementara;
+c. denda administratif; dan/atau
+d. pencabutan PB dan/atau PB UMKU.
+(2) Dalam hal pelanggaran sebagaimana dimaksud pada ayat
+(1) mengakibatkan timbulnya korban dan/atau kerusakan terhadap:
+a. keselamatan;
+b. kesehatan;
+c. lingkungan;
+d. pemanfaatan sumber daya; dan/atau
+e. aspek lainnya, dikenai sanksi administratif berupa pembekuan kegiatan sementara atau pencabutan PB dan/atau PB UMKU.
+
+### Pasal 9
+
+(1) Pelaku Usaha yang melanggar ketentuan PB dan/atau PB UMKU subsektor mineral dan batubara dikenai sanksi administratif berupa:
+a. peringatan tertulis;
+b. penghentian sementara sebagian atau seluruh kegiatan PB dan/atau PB UMKU; dan/atau
+c. pencabutan PB dan/atau PB UMKU.
+(2) Selain sanksi administratif sebagaimana dimaksud pada ayat (1), pemegang PB atau PB UMKU yang melanggar kewajiban pembayaran pendapatan negara dan/atau pendapatan daerah dikenai denda administratif sesuai dengan ketentuan peraturan perundang-undangan.
+
+### Pasal 10
+
+(1) Pelaku Usaha yang melanggar ketentuan PB dan/atau PB UMKU subsektor energi baru, terbarukan, dan konservasi energi:
+a. untuk kegiatan usaha panas bumi untuk pemanfaatan tidak langsung dikenai sanksi administratif sesuai dengan ketentuan peraturan perundang-undangan dibidang panas bumi;
+b. untuk kegiatan usaha panas bumi untuk pemanfaatan langsung dikenai sanksi administratif berupa:
+1. peringatan tertulis;
+2. penghentian sementara seluruh kegiatan usaha pengusahaan panas bumi untuk pemanfaatan langsung; dan/atau
+3. pencabutan PB UMKU.
+(2) Pelaku Usaha yang melanggar ketentuan PB dan/atau PB UMKU subsektor energi baru, terbarukan, dan konservasi energi untuk kegiatan usaha bahan bakar nabati dan kegiatan usaha bahan bakar biogas dikenai sanksi administratif berupa:
+a. peringatan tertulis;
+b. penghentian sementara kegiatan usaha bahan bakar nabati dan/atau kegiatan usaha bahan bakar biogas;
+c. denda administratif; dan/atau
+d. pencabutan PB.
+(3) Pelaku Usaha yang melanggar ketentuan PB dan/atau PB UMKU subsektor energi baru, terbarukan, dan konservasi energi untuk kegiatan usaha konservasi energi dikenai sanksi administratif berupa:
+a. peringatan tertulis;
+b. penghentian sementara seluruh kegiatan usaha; dan/atau
+c. pencabutan PB.
+
+### Pasal 11
+
+Pelaku Usaha yang melanggar ketentuan PB UMKU subsektor geologi dikenai sanksi administratif berupa:
+a. peringatan tertulis;
+b. penghentian sementara seluruh kegiatan pengusahaan air tanah; dan/atau
+c. pencabutan PB UMKU.
+
+## BAB V KETENTUAN LAIN-LAIN
+
+### Pasal 12
+
+Pengenaan sanksi administratif sebagaimana dimaksud dalam Pasal 7 sampai dengan Pasal 11 dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.
+
+### Pasal 13
+
+PB UMKU untuk kegiatan usaha pengangkutan yang meliputi kegiatan pemindahan minyak bumi, gas bumi, bahan bakar minyak, bahan bakar gas, dan/atau hasil olahan yang menggunakan alat transportasi selain moda pipa dari suatu tempat ke tempat lain untuk tujuan komersial dilaksanakan sesuai dengan norma, standar, prosedur, dan kriteria pada sektor transportasi berdasarkan Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko.
+
+## BAB VI KETENTUAN PERALIHAN
+
+### Pasal 14
+
+Dalam hal terdapat perubahan Klasifikasi Baku Lapangan Usaha Indonesia sesuai dengan ketentuan peraturan perundang-undangan, Klasifikasi Baku Lapangan Usaha Indonesia dalam Peraturan Menteri ini dibaca dan dimaknai sesuai dengan perubahan Klasifikasi Baku Lapangan Usaha Indonesia.
+
+### Pasal 15
+
+Pada saat Peraturan Menteri ini mulai berlaku, permohonan PB dan/atau PB UMKU yang masih dalam proses penerbitan sampai dengan Sistem OSS yang telah disesuaikan dengan Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko beroperasi, tetap diproses berdasarkan:
+1. Peraturan Pemerintah Nomor 5 Tahun 2021 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko dan Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 5 Tahun 2021 tentang Standar Kegiatan Usaha dan Produk pada Penyelenggaraan Perizinan Berusaha Berbasis Risiko Sektor Energi dan Sumber Daya Mineral; atau
+2. Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 14 Tahun 2024 tentang Penyelenggaraan Izin Pengusahaan Air Tanah dan Persetujuan Penggunaan Air Tanah.
+
+### Pasal 16
+
+Pada saat Peraturan Menteri ini mulai berlaku, PB dan/atau PB UMKU yang telah diterbitkan dan masih berlaku sebelum berlakunya Peraturan Menteri ini, dinyatakan tetap berlaku sampai dengan jangka waktu berakhirnya PB dan/atau PB UMKU.
+
+## BAB VI KETENTUAN PENUTUP
+
+### Pasal 17
+
+Pada saat Peraturan Menteri ini mulai berlaku, terhadap kegiatan pencampuran produk hasil pengolahan minyak dan gas bumi dengan biofuel, Badan Usaha yang telah memiliki Izin Pengolahan Minyak dan Gas Bumi, Izin Penyimpanan Minyak dan Gas Bumi, dan/atau Izin Niaga Minyak dan Gas Bumi tetap dapat melakukan kegiatan pencampuran (blending) dan harus menyesuaikan dengan Peraturan Menteri ini paling lambat 12 (dua belas) bulan terhitung sejak Peraturan Menteri ini diundangkan.
+
+### Pasal 18
+
+Pada saat Peraturan Menteri ini mulai berlaku:
+a. ketentuan pelaksanaan PB atau PB UMKU yang diatur dalam Peraturan Menteri ini dikecualikan bagi Pelaku Usaha yang PB atau PB UMKUnya telah diterbitkan dan masih berlaku sebelum berlakunya Peraturan Menteri ini, kecuali ketentuan dalam Peraturan Menteri ini lebih menguntungkan bagi Pelaku Usaha; dan
+b. ketentuan PB atau PB UMKU yang memiliki nomenklatur berbeda sebelum berlakunya Peraturan Menteri ini, harus dibaca dan dimaknai sesuai dengan nomenklatur yang diatur dalam Peraturan Menteri ini.
+
+### Pasal 19
+
+Pada saat Peraturan Menteri ini mulai berlaku, semua Peraturan Menteri yang mengatur mengenai ketentuan standar kegiatan usaha dalam penyelenggaraan perizinan berusaha berbasis risiko sektor energi dan sumber daya mineral, dinyatakan masih tetap berlaku sepanjang tidak bertentangan dengan ketentuan dalam Peraturan Menteri ini.
+
+### Pasal 20
+
+Pada saat Peraturan Menteri ini mulai berlaku, Peraturan Menteri Energi dan Sumber Daya Mineral Nomor 5 Tahun 2021 tentang Standar Kegiatan Usaha dan Produk pada Penyelenggaraan Perizinan Berusaha Berbasis Risiko Sektor Energi dan Sumber Daya Mineral (Berita Negara Republik Indonesia Tahun 2021 Nomor 318), dicabut dan dinyatakan tidak berlaku.
+
+### Pasal 21
+
+Peraturan Menteri ini mulai berlaku pada tanggal diundangkan.
+Agar setiap orang mengetahuinya, memerintahkan pengundangan Peraturan Menteri ini dengan penempatannya dalam Berita Negara Republik Indonesia.
+
+## Penutup
+
+Ditetapkan di Jakarta pada tanggal 8 Juni 2026 MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, Œ BAHLIL LAHADALIA Diundangkan di Jakarta pada tanggal Д DIREKTUR JENDERAL PERATURAN PERUNDANG-UNDANGAN KEMENTERIAN HUKUM REPUBLIK INDONESIA, Ѽ DHAHANA PUTRA BERITA NEGARA REPUBLIK INDONESIA TAHUN 2026 NOMOR Ж
+
+## Lampiran hal. 10
+
+LAMPIRAN I PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 7 TAHUN 2026 TENTANG STANDAR KEGIATAN USAHA PADA PENYELENGGARAAN PERIZINAN BERUSAHA BERBASIS RISIKO SEKTOR ENERGI DAN SUMBER DAYA MINERAL STANDAR KEGIATAN USAHA PERIZINAN BERUSAHA SEKTOR ENERGI DAN SUMBER DAYA MINERAL A. Subsektor Minyak dan Gas Bumi
+1. Standar Kegiatan Usaha Berupa Kontrak Kerja Sama No. Kontrak Kerja Sama KBLI:
+(06100) Pertambangan Minyak Bumi
+(06201) Pertambangan Gas Alam
+1. Ruang a. Semua kegiatan eksplorasi, pengembangan, Lingkup ekstraksi, produksi, pengangkutan, pemasaran, Kegiatan Pasca Operasi termasuk diantaranya kegiatan survei seismik 2D/3D/lainnya Minyak dan Gas Bumi yang dilakukan secara tidak menetap kurang dari 30 hari; dan
+b. Kegiatan:
+1) Penangkapan, Penyimpanan, dan Pemanfaatan Karbon; dan 2) Penangkapan dan Penyimpanan Karbon, pada Wilayah Kerja Minyak dan Gas Bumi berdasarkan Kontrak Kerja Sama.
+2. Istilah dan a. Wilayah Kerja yang selanjutnya disingkat WK Definisi adalah daerah tertentu di dalam Wilayah Hukum Pertambangan Indonesia untuk pelaksanaan Eksplorasi dan Eksploitasi.
+b. Kontrak Kerja Sama adalah Kontrak Bagi Hasil atau bentuk kontrak kerjasama lain dalam kegiatan Eksplorasi dan Eksploitasi yang lebih menguntungkan Negara dan hasilnya dipergunakan untuk sebesar-besar kemakmuran rakyat.
+
+## Lampiran hal. 10
+
+c. Kontraktor adalah Badan Usaha atau Bentuk Usaha Tetap yang yang ditetapkan untuk melaksanakan Eksplorasi dan Eksploitasi pada suatu Wilayah Kerja berdasarkan Kontrak Kerja Sama dengan Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi No. Kontrak Kerja Sama atau Badan Pengelola Minyak dan Gas Bumi Aceh.
+d. Badan Usaha yang selanjutnya disingkat BU adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha bersifat tetap, terus-menerus dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+e. Bentuk Usaha Tetap yang selanjutnya disingkat BUT adalah badan usaha yang didirikan dan berbadan hukum di luar wilayah Negara Kesatuan Republik Indonesia yang melakukan kegiatan di wilayah Negara Kesatuan Republik Indonesia dan wajib mematuhi peraturan perundang-undangan yang berlaku di Republik Indonesia.
+f. Pemilik Manfaat (Beneficial Ownership) yang selanjutnya disebut Pemilik Manfaat adalah orang perseorangan yang dapat menunjuk atau memberhentikan direksi, dewan komisaris, pengurus, pembina, atau pengawas pada korporasi, memiliki kemampuan untuk mengendalikan korporasi, berhak atas dan/atau menerima manfaat dari korporasi baik langsung maupun tidak langsung, merupakan pemilik sebenarnya dari dana atau saham korporasi.
+
+## Lampiran hal. 11
+
+g. Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi yang selanjutnya disingkat SKK Migas adalah pelaksana penyelenggaraan pengelolaan Kegiatan Usaha Hulu di bidang Minyak dan Gas Bumi berdasarkan Kontrak Kerja Sama di bawah pembinaan, koordinasi, dan pengawasan Menteri Energi dan Sumber Daya Mineral.
+h. Badan Pengelola Migas Aceh yang selanjutnya disingkat BPMA adalah suatu badan Pemerintah yang dibentuk untuk melakukan pengelolaan dan pengendalian bersama kegiatan usaha hulu di bidang Minyak dan Gas Bumi yang berada di darat dan laut di wilayah kewenangan Aceh (0 s.d. 12 mil laut).
+i. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan Memenuhi persyaratan sebagaimana tercantum Persyaratan dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+No. Kontrak Kerja Sama
+a. terkait dengan Keputusan Menteri mengenai Penetapan Kontraktor Kontrak Kerja Sama atau Keputusan Menteri mengenai Persetujuan Perpanjangan/Ahli Kelola/Pengelolaan Bersama dimaknai termasuk Keputusan/Persetujuan Menteri mengenai:
+1) Penetapan Kontraktor;
+2) Penetapan hasil lelang WK Minyak dan Gas Bumi;
+3) Persetujuan Pengalihan Partisipasi Interes atau Persetujuan Pengalihan Partisipasi Interes 10%; atau 4) Perpanjangan/Alih Kelola/Pengelolaan Bersama dan Penetapan Bentuk dan Ketentuan-Ketentuan Pokok Kontrak Kerja Sama.
+
+## Lampiran hal. 12
+
+b. terkait dengan Salinan Kontrak Kerja Sama dimaknai sebagai Salinan Kontrak Kerja Sama yang memuat informasi mengenai nama Perusahaan dan nama penandatangan Kontrak Kerja Sama serta jabatannya;
+c. terkait dengan Salinan Jaminan Pelaksanaan dimaknai termasuk Salinan Jaminan Pelaksanaan atau surat keterangan selesainya Komitmen Pasti atau Komitmen Kerja Pasti dari SKK Migas/BPMA.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi dilakukan terhadap kesesuaian Verifikasi dokumen persyaratan.
+b. Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 30 (tiga puluh) hari kerja sejak permohonan diterima dan lengkap.
+c. Apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan.
+d. Pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada huruf c.
+e. Permohonan dinyatakan batal apabila Pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada huruf d.
+No. Kontrak Kerja Sama
+f. Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan NIB disetujui.
+
+## Lampiran hal. 13
+
+g. Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+6. Ketentuan BU/BUT wajib mematuhi ketentuan peraturan Kewajiban perundang-undangan dan melaksanakan ketentuan yang terdapat pada Kontrak Kerja Sama.
+2. Standar Kegiatan Usaha Berupa Izin Eksplorasi Zona Target Injeksi Karbon No. Izin Eksplorasi Zona Target Injeksi Karbon KBLI:
+(39000) Aktivitas Remediasi dan Pengelolaan Limbah dan Sampah Lainnya
+1. Ruang Standar ini melingkupi kegiatan usaha eksplorasi Lingkup zona target injeksi karbon di formasi geologi (Wilayah Izin Penyimpanan Karbon) mencakup kegiatan geofisika, geologi, reservoir, engineering, akuisisi data seismik dan/atau reprocessing data seismik termasuk kegiatan survei seismik 2D/3D/lainnya yang dilakukan secara tidak menetap kurang dari 30 hari, dan pengeboran sumur eksplorasi atau sumur appraisal.
+2. Istilah dan a. Penangkapan dan Penyimpanan Karbon atau Definisi Carbon Capture and Storage yang selanjutnya disingkat CCS adalah kegiatan usaha yang mencakup penangkapan karbon dan/atau pengangkutan karbon tertangkap, penginjeksian dan penyimpanan karbon ke zona target injeksi dengan aman dan permanen sesuai dengan kaidah keteknikan yang baik.
+b. Wilayah Izin Penyimpanan Karbon adalah wilayah tertentu di wilayah Indonesia untuk penyelenggaraan CCS.
+
+## Lampiran hal. 13
+
+c. Karbon adalah karbon dioksida (CAS 124-38-9) dengan spesifikasi konsentrasi tertentu yang berasal dari emisi yang ditangkap dan diproses dengan berbagai teknologi dengan memperhatikan standar dan kaidah keteknikan yang baik, yang berasal dari kegiatan usaha hulu minyak dan gas bumi, pembangkit listrik, industri, dan kegiatan penghasil emisi lainnya dari domestik atau luar negeri dengan tujuan untuk diinjeksikan ke zona target injeksi.
+No. Izin Eksplorasi Zona Target Injeksi Karbon
+d. Zona Target Injeksi yang selanjutnya disingkat ZTI adalah sistem batuan dalam formasi geologi mencakup lapisan zona penyimpanan, lapisan zona penyangga, lapisan zona kedap dan perangkap geologi yang mampu menampung Karbon yang diinjeksikan, secara aman dan permanen serta memenuhi standar keamanan lingkungan.
+e. Eksplorasi ZTI adalah kegiatan yang bertujuan memperoleh informasi mengenai potensi ZTI Karbon di wilayah yang ditentukan.
+f. Izin Eksplorasi ZTI Karbon adalah izin yang diberikan oleh pemerintah untuk melakukan Eksplorasi ZTI di Wilayah Izin Penyimpanan Karbon melalui kegiatan akuisisi data, pengeboran, studi bawah permukaan, dan mitigasi risiko kebocoran ZTI.
+g. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha bersifat tetap, terus-menerus dan didirikan sesuai dengan peraturan perundang-undangan yang berlaku serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+
+## Lampiran hal. 14
+
+h. Bentuk Usaha Tetap adalah Badan Usaha yang didirikan dan berbadan hukum di luar wilayah Negara Kesatuan Republik Indonesia yang melakukan kegiatan di wilayah Negara Kesatuan Republik Indonesia dan wajib mematuhi peraturan perundang-undangan yang berlaku di Republik Indonesia.
+i. Lelang Wilayah Izin Penyimpanan Karbon yang selanjutnya disebut Lelang adalah mekanisme Penawaran Wilayah Izin Penyimpanan Karbon yang wilayahnya disiapkan oleh Pemerintah.
+j. Seleksi Terbatas Wilayah Izin Penyimpanan Karbon yang selanjutnya disebut Seleksi Terbatas adalah mekanisme Penawaran Wilayah Izin Penyimpanan Karbon yang wilayahnya diusulkan oleh badan usaha dan/atau bentuk usaha tetap.
+k. Pemilik Manfaat (Beneficial Ownership) yang selanjutnya disebut Pemilik Manfaat adalah orang perseorangan yang dapat menunjuk atau memberhentikan direksi, dewan komisaris, pengurus, pembina, atau pengawas pada Korporasi, memiliki kemampuan untuk mengendalikan Korporasi, berhak atas dan/atau menerima manfaat dari Korporasi baik langsung maupun tidak langsung, merupakan pemilik sebenarnya dari dana atau saham Korporasi.
+No. Izin Eksplorasi Zona Target Injeksi Karbon
+l. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+
+## Lampiran hal. 15
+
+4. Ketentuan a. Permohonan Baru Persyaratan Persyaratan permohonan baru sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan Salinan jaminan pelaksanaan komitmen pasti Eksplorasi Zona Target Injeksi dimaknai termasuk juga bukti penyerahannya.
+b. Perpanjangan 1) laporan kinerja Izin Ekplorasi ZTI; dan 2) dokumen penjelasan urgensi dan latar belakang perpanjangan serta rencana kerja pada masa perpanjangan.
+c. Penyesuaian Penyesuaian dapat dilakukan untuk perubahan luasan, peta, dan/atau koordinat Wilayah Izin Penyimpanan Karbon dengan memenuhi persyaratan berupa dokumen kelayakan teknis.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 20 (dua puluh) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan.
+
+## Lampiran hal. 15
+
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3).
+No. Izin Eksplorasi Zona Target Injeksi Karbon 5) permohonan dinyatakan batal apabila Pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4).
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Izin Eksplorasi ZTI Karbon disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Eksplorasi ZTI Karbon berlaku selama 6 (enam) tahun dan dapat diperpanjang 1 (satu) kali paling lama 4 (empat) tahun.
+c. Berakhirnya Izin Eksplorasi ZTI Karbon:
+1) Izin Eksplorasi ZTI Karbon berakhir karena: a) habis masa berlakunya; atau b) dicabut.
+2) pencabutan Izin Eksplorasi ZTI Karbon sebagaimana dimaksud pada angka 1) huruf b dapat didasarkan pada: a) pengenaan sanksi administratif; b) permohonan pencabutan dari pemohon; dan/atau c) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban pemegang Izin Eksplorasi ZTI Karbon:
+Kewajiban a. menyampaikan rencana kerja dan anggaran pelaksanaan komitmen pasti Eksplorasi ZTI serta menyusun analisis manajemen risikonya;
+b. membuat perjanjian dengan Kontraktor yang memuat prinsip-prinsip kesepakatan (mutually agreed principles), dalam hal Wilayah Izin Penyimpanan Karbon bertampalan (overlay) dengan Wilayah Kerja;
+
+## Lampiran hal. 16
+
+c. melaksanakan komitmen pasti Eksplorasi ZTI;
+d. melaksanakan kegiatan Eksplorasi ZTI sesuai rencana kerja yang telah disetujui;
+e. menyampaikan laporan tertulis atas pelaksanaan kegiatan Eksplorasi ZTI sesuai dengan ketentuan peraturan perundang-undangan;
+f. menyediakan jaminan pelaksanaan komitmen pasti Eksplorasi ZTI;
+g. melaksanakan kewajiban penyerahan data Eksplorasi ZTI yang diperoleh sesuai dengan ketentuan dengan peraturan perundang-undangan;
+h. menjamin mutu data yang dihasilkan dari Kegiatan Eksplorasi ZTI;
+No. Izin Eksplorasi Zona Target Injeksi Karbon
+i. melaksanakan kewajiban pembayaran penerimaan negara bukan pajak kepada Pemerintah dan kewajiban perpajakan sesuai dengan ketentuan peraturan perundang-undangan;
+j. menyampaikan permohonan persetujuan Rencana Pengembangan dan Operasi ZTI dalam hal akan melanjutkan ke tahap kegiatan operasi penyimpanan Karbon;
+k. menyertakan sertifikasi kapasitas penyimpanan Karbon dalam permohonan persetujuan Rencana Pengembangan dan Operasi ZTI;
+l. menjamin dan bertanggung jawab atas penggunaan instalasi dan peralatan serta keakuratan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+m. mengutamakan pemanfaatan barang dan jasa yang diproduksi di Indonesia;
+n. menjamin keselamatan dan kesehatan kerja, serta pengelolaan lingkungan hidup;
+
+## Lampiran hal. 17
+
+o. menyediakan sistem tanggap darurat untuk menghadapi kondisi berbahaya yang berpotensi mengancam keselamatan pekerja, keselamatan instalasi dan peralatan, keselamatan lingkungan dan/atau keselamatan umum sesuai dengan ketentuan perundang-undangan;
+p. menyediakan asuransi yang minimal meliputi perlindungan atas kerusakan fasilitas pekerja, kerusakan lingkungan pembongkaran akibat kecelakaan dengan coverage yang wajar berdasarkan paparan risiko dan biaya;
+q. memastikan bahwa subkontraktor yang terlibat dalam aktivitas juga menyediakan asuransi untuk pekerjanya;
+r. melaksanakan kewajiban pasca operasi kegiatan Eksplorasi ZTI;
+s. melakukan penyesuaian izin apabila terdapat perubahan luasan, peta, dan/atau koordinat Wilayah Izin Penyimpanan Karbon;
+t. melaporkan dan melakukan pemutakhiran atas perubahan data administrasi dan/atau teknis selain data sebagaimana dimaksud dalam huruf s; dan
+u. mematuhi ketentuan peraturan perundang-undangan.
+3. Standar Kegiatan Usaha Berupa Izin Operasi Penyimpanan Karbon No. Izin Operasi Penyimpanan Karbon KBLI:
+(39000) Aktivitas Remediasi dan Pengelolaan Limbah dan Sampah Lainnya
+
+## Lampiran hal. 18
+
+1. Ruang Standar ini melingkupi kegiatan usaha operasi Lingkup penyimpanan karbon di formasi geologi (Wilayah Izin Penyimpanan Karbon) mencakup konstruksi fasilitas injeksi dan pendukung, pengeboran sumur injeksi Karbon dan Monitoring, commissioning, injeksi, pemeliharaan dan kegiatan lain yang terkait Operasi Penyimpanan, Pengukuran, Pelaporan dan Verifikasi (Measurement, Reporting and Verification atau MRV) dan penutupan Penyimpanan Karbon.
+2. Istilah dan a. Penangkapan dan Penyimpanan Karbon atau Definisi Carbon Capture and Storage yang selanjutnya disingkat CCS adalah kegiatan usaha yang mencakup penangkapan karbon dan/atau pengangkutan karbon tertangkap, penginjeksian dan penyimpanan karbon ke zona target injeksi dengan aman dan permanen sesuai dengan kaidah keteknikan yang baik.
+b. Wilayah Izin Penyimpanan Karbon adalah wilayah tertentu di wilayah Indonesia untuk penyelenggaraan CCS.
+c. Karbon adalah karbon dioksida (CAS 124-38-9) dengan spesifikasi konsentrasi tertentu yang berasal dari emisi yang ditangkap dan diproses dengan berbagai teknologi dengan memperhatikan standar dan kaidah keteknikan yang baik, yang berasal dari kegiatan usaha hulu minyak dan gas bumi, pembangkit listrik, industri, dan kegiatan penghasil emisi lainnya dari domestik atau luar negeri dengan tujuan untuk diinjeksikan ke zona target injeksi;
+
+## Lampiran hal. 18
+
+d. Zona Target Injeksi yang selanjutnya disingkat ZTI adalah sistem batuan dalam formasi geologi mencakup lapisan zona penyimpanan, lapisan zona penyangga, lapisan zona kedap dan perangkap geologi yang mampu menampung Karbon yang diinjeksikan, secara aman dan permanen serta memenuhi standar keamanan lingkungan;
+e. Izin Eksplorasi ZTI Karbon adalah izin yang diberikan oleh pemerintah untuk melakukan eksplorasi ZTI di Wilayah Izin Penyimpanan Karbon melalui kegiatan akuisisi data, pengeboran, studi bawah permukaan, dan mitigasi risiko kebocoran ZTI;
+f. Izin Operasi Penyimpanan Karbon adalah izin yang diberikan oleh pemerintah untuk No. Izin Operasi Penyimpanan Karbon melakukan kegiatan injeksi dan Penyimpanan Karbon di Wilayah Izin Penyimpanan Karbon;
+g. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha bersifat tetap, terus-menerus dan didirikan sesuai dengan peraturan perundang-undangan yang berlaku serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+h. Pemilik Manfaat (Beneficial Ownership) yang selanjutnya disebut Pemilik Manfaat adalah orang perseorangan yang dapat menunjuk atau memberhentikan direksi, dewan komisaris, pengurus, pembina, atau pengawas pada Korporasi, memiliki kemampuan untuk mengendalikan Korporasi, berhak atas dan/atau menerima manfaat dari Korporasi baik langsung maupun tidak langsung, merupakan pemilik sebenarnya dari dana atau saham Korporasi.
+
+## Lampiran hal. 19
+
+i. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan a. Permohonan Baru Persyaratan Persyaratan permohonan baru sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan salinan jaminan pelaksanaan operasi penyimpanan Karbon dimaknai termasuk juga bukti penyerahannya;
+2) memenuhi persyaratan tambahan berupa: a) laporan lengkap tahap kegiatan Eksplorasi ZTI; b) laporan keuangan, dengan ketentuan:
+(1) bagi Badan Usaha yang berdiri lebih dari 3 tahun berupa laporan keuangan 3 tahun terakhir yang telah diaudit oleh Akuntan Publik; atau
+(2) bagi Badan Usaha yang berdiri kurang dari 3 tahun berupa laporan keuangan tahunan yang ada dan laporan keuangan induk perusahaan yang telah diaudit oleh akuntan publik.
+b. Perpanjangan 1) laporan kinerja Izin Operasi Penyimpanan Karbon; dan No. Izin Operasi Penyimpanan Karbon 2) dokumen yang memuat penjelasan, urgensi, dan latar belakang perpanjangan serta rencana kerja pada masa perpanjangan.
+c. Penyesuaian Penyesuaian dapat dilakukan untuk perubahan luasan, peta, dan/atau koordinat Wilayah Izin Penyimpanan Karbon dengan memenuhi persyaratan berupa dokumen kelayakan teknis.
+
+## Lampiran hal. 20
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 20 (dua puluh) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Izin Operasi Penyimpanan Karbon disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 20
+
+b. Masa Berlaku Izin Operasi Penyimpanan Karbon diberikan untuk jangka waktu paling lama 30 (tiga puluh) tahun dan dapat diberikan perpanjangan untuk jangka waktu paling lama 20 (dua puluh) tahun untuk setiap kali perpanjangan dengan mempertimbangkan kapasitas penyimpanan.
+No. Izin Operasi Penyimpanan Karbon
+c. Berakhirnya Izin Operasi Penyimpanan Karbon:
+1) Izin Operasi Penyimpanan Karbon berakhir karena: a) habis masa berlakunya; atau b) dicabut.
+2) pencabutan Izin Operasi Penyimpanan Karbon sebagaimana dimaksud pada angka 1) huruf b dapat didasarkan pada: a) pengenaan sanksi administratif; b) permohonan pencabutan dari pemohon; dan/atau c) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban pemegang Izin Operasi Penyimpanan Kewajiban Karbon:
+a. menyampaikan rencana kerja dan anggaran pelaksanaan operasi Penyimpanan Karbon yang paling sedikit meliputi kegiatan pengadaan, konstruksi, commissioning, injeksi, pemeliharaan, monitoring, MRV dan penutupan serta menyusun analisis manajemen risikonya;
+b. melaksanakan kegiatan Operasi Penyimpanan Karbon sesuai Rencana Pengembangan dan Operasi ZTI dan rencana kerja yang telah disetujui;
+c. melaksanakan kegiatan pengadaan, konstruksi, commissioning, injeksi, pemeliharaan, Monitoring, MRV dan penutupan sesuai standar kaidah keteknikan yang baik;
+d. menyampaikan laporan tertulis atas pelaksanaan Rencana Kerja Izin Operasi sesuai dengan ketentuan peraturan perundang-undangan;
+
+## Lampiran hal. 21
+
+e. melaksanakan kewajiban pembayaran penerimaan negara bukan pajak (royalti) dan penerimaan negara bukan pajak lainnya kepada Pemerintah dan kewajiban perpajakan sesuai dengan ketentuan peraturan perundang-undangan;
+f. menyediakan jaminan pelaksanaan operasi penyimpan karbon;
+g. menyerahkan data hasil kegiatan Izin Operasi Penyimpanan Karbon yang diperoleh sesuai dengan ketentuan peraturan perundang-undangan;
+h. menjamin dan bertanggung jawab atas penggunaan instalasi dan peralatan serta keakuratan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+No. Izin Operasi Penyimpanan Karbon
+i. menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Pemerintah;
+j. mengutamakan pemanfaatan barang dan jasa yang diproduksi di Indonesia;
+k. menjamin keselamatan dan kesehatan kerja, serta pengelolaan lingkungan hidup;
+l. menangani kebocoran pada saat operasi penyimpanan sesuai dengan ketentuan peraturan perundang-undangan;
+m. menyediakan sistem tanggap darurat untuk menghadapi kondisi berbahaya yang berpotensi mengancam keselamatan pekerja, keselamatan instalasi dan peralatan, keselamatan lingkungan, dan/atau keselamatan umum sesuai dengan ketentuan peraturan perundang-undangan;
+n. menyediakan asuransi yang minimal meliputi perlindungan atas kerusakan fasilitas, pekerja, kerusakan lingkungan, pembongkaran akibat kecelakaan dengan coverage yang wajar berdasarkan paparan risiko dan biaya;
+
+## Lampiran hal. 22
+
+o. memastikan bahwa subkontraktor yang terlibat dalam aktivitas juga menyediakan asuransi untuk pekerjanya;
+p. menyediakan jaminan pasca operasi;
+q. melaksanakan pengembalian Wilayah Izin Penyimpanan Karbon dan kegiatan pasca operasi;
+r. melakukan penyesuaian izin apabila terdapat perubahan luasan, peta dan/atau koordinat Wilayah Izin Penyimpanan Karbon;
+s. melaporkan dan melakukan pemutakhiran atas perubahan data administrasi dan/atau teknis selain data sebagaimana dimaksud dalam huruf r; dan
+t. mematuhi ketentuan peraturan perundang-undangan.
+4. Standar Kegiatan Usaha Berupa Izin Survei Umum No. Izin Survei Umum KBLI:
+(71102) Aktivitas Keinsinyuran Dan Konsultasi Teknis YBDI
+1. Ruang Standar ini mencakup jasa konsultasi kegiatan Lingkup survei geofisika, survei geologi, survei seismik, dan survei geokimia.
+No. Izin Survei Umum
+2. Istilah dan a. Wilayah Kerja adalah daerah tertentu di dalam Definisi Wilayah Hukum Pertambangan Indonesia untuk pelaksanaan Eksplorasi dan Eksploitasi.
+b. Wilayah Terbuka adalah bagian dari Wilayah Hukum Pertambangan Indonesia yang belum ditetapkan sebagai Wilayah Kerja.
+c. Survei Umum adalah kegiatan lapangan yang meliputi pengumpulan, analisis dan penyajian data yang berhubungan dengan informasi kondisi geologi untuk memperkirakan letak dan potensi sumber daya Minyak dan Gas Bumi di luar Wilayah Kerja.
+d. Izin Survei Umum adalah izin yang diberikan oleh Menteri kepada Badan Usaha untuk melaksanakan kegiatan survei Umum dalam Wilayah Terbuka.
+
+## Lampiran hal. 23
+
+e. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha bersifat tetap, terus menerus dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam Wilayah Negara Kesatuan Republik Indonesia.
+f. Kontraktor adalah Badan Usaha atau Bentuk Usaha Tetap yang ditetapkan untuk melaksanakan Eksplorasi dan Eksploitasi pada suatu Wilayah Kerja berdasarkan Kontrak Kerja Sama dengan Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi atau Badan Pengelola Minyak dan Gas Bumi Aceh.
+g. Pemilik Manfaat (Beneficial Ownership) yang selanjutnya disebut Pemilik Manfaat adalah orang perseorangan yang dapat menunjuk atau memberhentikan direksi, dewan komisaris, pengurus, pembina, atau pengawas pada korporasi, memiliki kemampuan untuk mengendalikan korporasi, berhak atas dan/atau menerima manfaat dari korporasi baik langsung maupun tidak langsung, merupakan pemilik sebenarnya dari dana atau saham korporasi.
+h. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+i. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+j. Direktorat Jenderal adalah Direktorat Jenderal yang bidang tugas dan kewenangannya meliputi di bidang Minyak dan Gas Bumi.
+
+## Lampiran hal. 23
+
+k. Pusat Data dan Teknologi Informasi Energi dan Sumber Daya Mineral yang selanjutnya disebut Pusdatin ESDM adalah unit kerja yang No. Izin Survei Umum mempunyai tugas melaksanakan pengelolaan dan pengintegrasian data, informasi, dan teknologi informasi energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan a. Permohonan Baru Persyaratan Persyaratan permohonan baru sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan jaminan kecukupan pendanaan yang dibuktikan dengan surat keterangan dari bank utama (prime bank) yang berkedudukan di Indonesia yang menerangkan bahwa badan usaha memiliki kemampuan pendanaan untuk melakukan kegiatan usahanya, berlaku bagi Badan Usaha yang berdiri kurang dari 3 (tiga) tahun serta tidak memiliki perusahaan induk.
+b. Perpanjangan:
+Perpanjangan dapat diberikan sepanjang realisasi luasan area/panjang lintasan/jumlah titik Survei Umum telah mencapai 51% (lima puluh satu persen) di Wilayah Terbuka dengan memenuhi dokumen persyaratan berupa Berita Acara Laporan Kemajuan Kegiatan Survei Umum dan Usulan Perpanjangan;
+c. Penyesuaian Dalam hal terdapat perubahan luasan area/panjang lintasan/jumlah titik Survei Umum yang melebihi 20% (dua puluh persen) dari total luasan yang tertuang dalam Izin Survei Umum, wajib dilakukan penyesuaian dengan persyaratan:
+
+## Lampiran hal. 24
+
+1) dalam hal Survei Umum dilaksanakan di Wilayah Terbuka seluruhnya: a) Berita Acara laporan kemajuan kegiatan Survei Umum dan perubahan lintasan; dan b) perubahan batas wilayah dan peta yang menggambarkan luasan area, panjang lintasan, atau jumlah titik Survei Umum yang dilengkapi dengan koordinat geografis dalam proyeksi Longitude dan Latitude.
+2) dalam hal Survei Umum melintasi Wilayah Kerja aktif: a) Berita Acara laporan kemajuan kegiatan Survei Umum dan perubahan lintasan;
+No. Izin Survei Umum b) perubahan batas wilayah dan peta yang menggambarkan luasan area, panjang lintasan, atau jumlah titik Survei Umum yang dilengkapi dengan koordinat geografis dalam proyeksi Longitude dan Latitude; dan c) surat keterangan tidak keberatan dari Kontraktor lainnya dalam hal perubahan lintasan Survei Umum akan melintasi Wilayah Kerja lainnya di luar Wilayah Kerja yang sudah disampaikan dalam dokumen awal.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+
+## Lampiran hal. 25
+
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 10 (sepuluh) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Izin Survei Umum disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Survei Umum berlaku untuk jangka waktu selama 12 (dua belas) bulan terhitung sejak diterbitkan dan dapat diperpanjang 1 (satu) kali untuk paling lama 6 (enam) bulan.
+No. Izin Survei Umum
+c. Berakhirnya Izin Survei Umum:
+1) Izin Survei Umum berakhir karena: a) habis masa berlakunya; atau b) dicabut.
+2) pencabutan Izin Survei Umum sebagaimana dimaksud pada angka 1) huruf b dapat didasarkan pada: a) pengenaan sanksi administratif; b) permohonan pencabutan dari pemohon; dan/atau c) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan a. Dalam hal Survei Umum dilaksanakan di Kewajiban Wilayah Terbuka seluruhnya, setelah Izin Survei Umum diterbitkan, pelaku usaha wajib:
+
+## Lampiran hal. 26
+
+1) melakukan kegiatan Survei Umum dan Izin Survei Umum tidak dapat dialihkan kepada pihak lain;
+2) selama pelaksanaan Survei Umum, pelaku usaha wajib melaporkan perkembangan pelaksanaan Survei Umum kepada Direktorat Jenderal Minyak dan Gas Bumi secara berkala minimal 3 (tiga) bulan sekali atau setiap saat apabila diperlukan;
+3) dalam hal terjadi perubahan, baik luasan area/panjang lintasan/jumlah titik dan/atau lokasi survei di luar wilayah yang tercakup dalam Izin Survei Umum, pelaku usaha wajib melaporkan kepada Direktur Jenderal Minyak dan Gas Bumi c.q Direktur Pembinaan Usaha Hulu Minyak dan Gas Bumi;
+4) dalam hal terdapat perubahan luasan area/panjang lintasan/jumlah titik Survei Umum yang melebihi 20% (dua puluh persen) dari total luasan area/panjang lintasan/jumlah titik Survei Umum yang tertuang dalam Izin Survei Umum, pelaku usaha wajib terlebih dahulu menyampaikan permohonan penyesuaian izin kepada Kepala BKPM setelah melakukan presentasi ke Direktorat Jenderal Minyak dan Gas Bumi;
+5) apabila kontrak kerja sama penyimpanan, pemeliharaan, dan pemasyarakatan data dengan Pusdatin ESDM telah dilakukan sebelum adanya perubahan izin, terhadap kontrak kerja sama penyimpanan, pemeliharaan, dan pemasyarakatan data tersebut wajib dilakukan amandemen setelah terbitnya perubahan izin sebagaimana dimaksud pada angka 4);
+
+## Lampiran hal. 27
+
+No. Izin Survei Umum 6) apabila ketentuan angka 3), angka 4), dan angka 5) tidak dipenuhi, data tambahan yang dihasilkan dari perubahan luasan area/panjang lintasan/jumlah titik dan/atau lokasi survei tersebut wajib diserahkan kepada Pusdatin ESDM setelah dievaluasi oleh Direktorat Jenderal Minyak dan Gas Bumi dan data tersebut menjadi milik negara serta pelaku usaha tidak memiliki hak pemasyarakatan atas data tambahan tersebut;
+
+## Lampiran hal. 27
+
+7) mengadakan Kontrak Kerja Sama dengan Pusdatin ESDM mengenai penyimpanan, pemeliharaan, dan pemasyarakatan data, dengan ketentuan dan mekanisme sebagai berikut: a) Badan Usaha wajib menindaklanjuti Izin Survei Umum tersebut dengan kontrak kerja sama penyimpanan, pemeliharaan dan pemasyarakatan data antara Badan Usaha dengan Pusdatin ESDM dan apabila sampai pada akhir masa berlaku Izin Survei Umum, Badan Usaha tidak memiliki kontrak kerja sama penyimpanan, pemeliharaan, dan pemasyarakatan data tersebut, Izin Survei Umum dinyatakan tidak berlaku dan seluruh data hasil kegiatan Survei Umum wajib diserahkan kepada Pemerintah cq. Pusdatin ESDM; b) kontrak kerja sama dengan Pusdatin ESDM dapat dilakukan setelah Izin Survei Umum diterbitkan, dengan tanggal efektif kontrak yaitu sejak memenuhi realisasi luasan area/panjang lintasan/jumlah titik Survei Umum minimal 51% (lima puluh satu persen) berdasarkan hasil pemantauan pelaksanaan Survei Umum oleh Direktorat Jenderal Minyak dan Gas Bumi; c) apabila realisasi luasan area/panjang lintasan/jumlah titik Survei Umum lebih kecil dari yang tertuang dalam Izin Survei Umum (termasuk perubahan izinnya jika ada), akan mengurangi secara proporsional jangka waktu kontrak kerja sama terkait penyimpanan, pemeliharaan, dan pemasyarakatan data, 8) Pelaku Usaha wajib menyampaikan dokumen perjanjian dengan pihak ketiga kepada Pusdatin ESDM terkait dengan No.
+
+## Lampiran hal. 27
+
+Izin Survei Umum antara lain pelaksanaan Survei Umum dan penyimpanan, pemeliharaan, dan pemasyarakatan data hasil kegiatan Survei Umum;
+9) Pelaku Usaha wajib bertanggung jawab sepenuhnya terhadap penguasaan di dalam kegiatan penyimpanan, pengelolaan dan kegiatan pemasyarakatan data hasil kegiatan survei umum;
+10) Pelaku usaha wajib menyerahkan snapshot dan salinan atas data Survei Umum yang diperoleh termasuk daftar seluruh datanya kepada Pusdatin ESDM melalui Direktorat Jenderal Minyak dan Gas Bumi dan mempresentasikan hasil Survei Umum kepada Direktorat Jenderal Minyak dan Gas Bumi sesuai dengan ketentuan peraturan perundang-undangan.
+b. Dalam hal Survei Umum melintasi Wilayah Kerja aktif, setelah Izin Survei Umum diterbitkan, pelaku usaha wajib:
+1) melakukan kegiatan Survei Umum dan Izin Survei Umum tidak dapat dialihkan kepada pihak lain;
+2) selama pelaksanaan Survei Umum, pelaku usaha wajib melaporkan perkembangan pelaksanaan Survei Umum kepada Direktorat Jenderal Minyak dan Gas Bumi secara berkala minimal 3 (tiga) bulan sekali atau setiap saat apabila diperlukan.
+3) dalam hal terjadi perubahan, baik luasan area/panjang lintasan/jumlah titik dan/atau lokasi survei di luar wilayah yang tercakup dalam Izin Survei Umum, pelaku usaha wajib: a) mempertahankan pelaksanaan realisasi minimal 70% (tujuh puluh persen) di Wilayah Terbuka; b) melaporkan kepada Direktur Jenderal Minyak dan Gas Bumi c.q Direktur Pembinaan Usaha Hulu Minyak dan Gas Bumi;
+
+## Lampiran hal. 28
+
+4) dalam hal terdapat perubahan luasan area/panjang lintasan/jumlah titik Survei Umum yang melebihi 20% (dua puluh persen) dari total luasan area/panjang lintasan/jumlah titik Survei Umum yang tertuang dalam Izin Survei Umum, pelaku usaha wajib terlebih dahulu menyampaikan permohonan penyesuaian izin kepada Kepala BKPM setelah melakukan presentasi ke Direktorat Jenderal Minyak dan Gas Bumi;
+No. Izin Survei Umum 5) apabila kontrak kerja sama penyimpanan, pemeliharaan, dan pemasyarakatan data dengan Pusdatin ESDM telah dilakukan sebelum adanya perubahan izin, terhadap kontrak kerja sama penyimpanan, pemeliharaan, dan pemasyarakatan data tersebut wajib dilakukan amandemen setelah terbitnya perubahan izin sebagaimana dimaksud pada angka 4);
+6) apabila ketentuan angka dan 3), angka 4), dan angka 5) tidak dipenuhi, data tambahan yang dihasilkan dari perubahan luasan area/panjang lintasan/jumlah titik dan/atau lokasi survei tersebut wajib diserahkan kepada Pusdatin ESDM setelah dievaluasi oleh Direktorat Jenderal Minyak dan Gas Bumi dan Data tersebut menjadi milik negara serta pelaku usaha tidak memiliki hak pemasyarakatan atas Data tambahan tersebut;
+
+## Lampiran hal. 29
+
+7) luasan area/panjang lintasan/jumlah titik hasil survei umum yang dapat dimasukkan dalam Kontrak Kerja Sama penyimpanan, pemeliharaan, dan pemasyarakatan data dengan Pusdatin ESDM tetap wajib memenuhi minimal 70% (tujuh puluh persen) dari realisasi pelaksanaan Survei Umum di Wilayah Terbuka serta data hasil Survei Umum yang tidak masuk dalam lingkup kontrak kerja sama penyimpanan, pemeliharaan, dan pemasyarakatan data tersebut wajib diserahkan kepada Pusdatin ESDM setelah dievaluasi oleh Direktorat Jenderal Minyak dan Gas Bumi dan Data tersebut menjadi milik negara serta pelaku usaha tidak memiliki hak pemasyarakatan atas Data tersebut;
+
+## Lampiran hal. 29
+
+8) mengadakan Kontrak Kerja Sama dengan Pusdatin ESDM mengenai penyimpanan, pemeliharaan dan pemasyarakatan data, dengan ketentuan dan mekanisme sebagai berikut: a) Badan Usaha wajib menindaklanjuti Izin Survei Umum tersebut dengan kontrak kerja sama penyimpanan, pemeliharaan, dan pemasyarakatan data antara Badan Usaha dengan Pusdatin ESDM dan apabila sampai pada akhir masa berlakunya Izin Survei Umum, Badan Usaha tidak memiliki kontrak kerja sama penyimpanan, pemeliharaan, dan pemasyarakatan data tersebut, Izin Survei Umum dinyatakan tidak berlaku No. Izin Survei Umum dan seluruh data hasil kegiatan Survei Umum wajib diserahkan kepada Pemerintah cq. Pusdatin ESDM; b) Izin Survei Umum yang terdiri dari area di Wilayah Terbuka dan area di Wilayah Kerja aktif yang dilintasi akan dituangkan pada 1 (satu) Kontrak Kerja Sama penyimpanan, pemeliharaan, dan pemasyarakatan data antara pelaku usaha dan Pusdatin ESDM; c) Kontrak kerja sama dengan Pusdatin ESDM dapat dilakukan setelah Izin Survei Umum diterbitkan, dengan tanggal efektif kontrak yaitu sejak memenuhi realisasi luasan area/panjang lintasan/jumlah titik Survei Umum minimal 51% (lima puluh satu persen) di Wilayah Terbuka berdasarkan hasil pemantauan pelaksanaan Survei Umum oleh Direktorat Jenderal Minyak dan Gas Bumi; d) apabila realisasi luasan area/panjang lintasan/jumlah titik Survei Umum lebih kecil dari yang tertuang dalam izin Survei Umum (termasuk perubahan izinnya jika ada), akan mengurangi secara proporsional
+
+## Lampiran hal. 29
+
+jangka waktu Kontrak Kerja penyimpanan, sama pemeliharaan, dan pemasyarakatan data, 9) Pelaku usaha wajib menyampaikan dokumen perjanjian dengan pihak ketiga kepada Pusdatin ESDM terkait dengan antara lain pelaksanaan Survei Umum dan penyimpanan, pemeliharaan, dan pemasyarakatan data hasil kegiatan Survei Umum;
+10) Pelaku usaha wajib bertanggung jawab sepenuhnya terhadap penguasaan di dalam kegiatan penyimpanan, pengelolaan dan kegiatan pemasyarakatan data hasil kegiatan survei umum;
+11) Pelaku usaha wajib menyerahkan snapshot dan salinan atas data Survei Umum yang diperoleh termasuk daftar seluruh datanya kepada Pusdatin ESDM melalui Direktorat Jenderal Minyak dan Gas Bumi dan mempresentasikan hasil Survei Umum kepada Direktorat Jenderal Minyak dan Gas Bumi sesuai dengan ketentuan peraturan perundang-undangan.
+5. Standar Kegiatan Usaha Berupa Pengangkutan Minyak dan Gas Bumi No. Izin Pengangkutan Minyak dan Gas Bumi KBLI:
+(49300) Angkutan Melalui Saluran Pipa
+1. Ruang a. Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan pelayanan Izin Usaha Pengangkutan Minyak dan Gas Bumi melalui pipa untuk Badan Usaha yang melakukan kegiatan pemindahan minyak bumi, gas bumi, bahan bakar minyak, bahan bakar gas, dan/atau hasil olahan (kecuali pelumas, petrokimia dan aspal) melalui moda pipa dari suatu tempat ke tempat lain untuk tujuan komersial;
+
+## Lampiran hal. 31
+
+b. Standar ini disusun sebagai panduan bagi Badan Usaha untuk mendapatkan Izin Usaha Pengangkutan Minyak dan Gas Bumi melalui pipa dari Menteri Energi dan Sumber Daya Mineral, dalam rangka menjamin pelaksanaan dan pengendalian usaha pengangkutan minyak dan gas bumi secara transparan, menjamin ketersediaan dan kelancaran pendistribusian minyak dan gas bumi secara efisien dan efektif, menjamin keselamatan dan kesehatan kerja, pengelolaan lingkungan hidup dan untuk memitigasi risiko serta dampak yang mungkin terjadi.
+2. Istilah dan a. Minyak Bumi adalah hasil proses alami berupa Definisi hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa cair atau padat, termasuk aspal, lilin mineral atau ozokerit dan bitumen yang diperoleh dari proses penambangan, tetapi tidak termasuk batubara atau endapan hidrokarbon lain yang berbentuk padat yang diperoleh dari kegiatan yang tidak berkaitan dengan kegiatan usaha Minyak dan Gas Bumi.
+b. Gas Bumi adalah hasil proses alami berupa hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa gas yang diperoleh dari proses penambangan Minyak dan Gas Bumi.
+c. Bahan Bakar Minyak yang selanjutnya disingkat BBM adalah bahan bakar yang berasal dan/atau diolah dari Minyak Bumi.
+d. Hasil Olahan adalah hasil dan/atau produk selain bahan bakar minyak dan/atau bahan bakar gas yang diperoleh dari kegiatan hasil pengolahan minyak dan gas bumi baik berupa produk akhir atau produk antara kecuali pelumas dan petrokimia.
+
+## Lampiran hal. 32
+
+No. Izin Pengangkutan Minyak dan Gas Bumi
+e. Kegiatan Usaha Pengangkutan Melalui Pipa adalah kegiatan pemindahan Minyak Bumi, Gas Bumi, Bahan Bakar Minyak, Bahan Bakar Gas, dan/atau Hasil Olahan melalui pipa dari suatu tempat ke tempat lain untuk tujuan komersial.
+f. Izin Usaha Sementara Pengangkutan Minyak dan Gas Bumi Melalui Pipa adalah izin yang diterbitkan oleh Menteri Energi dan Sumber Daya Mineral yang bersifat sementara dalam rangka persetujuan atas pembangunan pipa dan penyiapan sarana dan fasilitas pendukung serta pengurusan dokumen persyaratan perizinan-perizinan dari instansi lain yang diberikan kepada Badan Usaha sebelum diberikan Izin Usaha Pengangkutan Minyak dan Gas Bumi.
+g. Izin Usaha Pengangkutan Minyak dan Gas Bumi Melalui Pipa adalah izin yang diterbitkan oleh Menteri Energi dan Sumber Daya Mineral dan diberikan kepada Badan Usaha untuk melaksanakan kegiatan usaha Pengangkutan dengan tujuan memperoleh keuntungan dan/atau laba.
+h. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha yang bersifat tetap, terus menerus, dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+
+## Lampiran hal. 32
+
+i. Wilayah Jaringan Distribusi selanjutnya disebut WJD adalah wilayah tertentu dari jaringan distribusi Gas Bumi yang merupakan bagian dari Rencana Induk Jaringan Transmisi dan Distribusi Gas Bumi Nasional untuk melaksanakan kegiatan usaha Pengangkutan Gas Bumi melalui Pipa di wilayah distribusi.
+j. Keselamatan Minyak dan Gas Bumi adalah keselamatan yang meliputi keselamatan pekerja, keselamatan instalasi dan peralatan, keselamatan lingkungan dan keselamatan umum.
+k. Instalasi Minyak dan Gas Bumi adalah rangkaian peralatan yang terintegrasi dalam suatu sistem untuk melaksanakan fungsi operasi pada Kegiatan Usaha Minyak dan Gas Bumi.
+l. Inspeksi Teknis adalah suatu kegiatan yang dilakukan secara langsung meliputi pemeriksaan dokumen, pemeriksaan fisik, dan pengujian peralatan dan/atau Instalasi mengacu pada ketentuan peraturan perundang-undangan, standar, dan kaidah keteknikan yang baik. Persetujuan Layak Operasi yang selanjutnya disingkat PLO adalah pengakuan No. Izin Pengangkutan Minyak dan Gas Bumi formal bahwa Kontraktor atau Pemegang Izin Usaha telah melaksanakan Inspeksi Teknis yang mengacu pada ketentuan peraturan perundangan-undangan, Standar, dan kaidah keteknikan yang baik.
+m. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+n. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+
+## Lampiran hal. 33
+
+o. Direktorat Jenderal adalah Direktorat Jenderal yang bidang tugas dan kewenangannya meliputi di bidang Minyak dan Gas Bumi.
+3. Penggolongan a. Izin Usaha Sementara Pengangkutan Minyak Usaha dan Gas Bumi Melalui Pipa, dengan jenis kegiatan:
+1) Pengangkutan Minyak Bumi/BBM/Hasil Olahan;
+2) Pengangkutan Gas Bumi/Hasil Olahan.
+b. Izin Usaha Pengangkutan Minyak dan Gas Bumi Melalui Pipa, dengan jenis kegiatan:
+1) Pengangkutan Minyak Bumi/BBM/Hasil Olahan;
+2) Pengangkutan Gas Bumi/Hasil Olahan.
+c. Skala Usaha: Kecil, Menengah, Besar.
+d. Tingkat Risiko: Tinggi.
+4. Ketentuan a. Izin Usaha Pengangkutan Minyak dan Gas Bumi Persyaratan untuk Kegiatan Usaha Pengangkutan Melalui Pipa untuk komoditas Minyak Bumi/BBM/Hasil Olahan:
+1) Persyaratan administratif Izin Usaha Sementara/Izin Usaha/Perpanjangan Izin Usaha/Penyesuaian Izin Usaha sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan surat pernyataan tertulis di atas meterai mengenai:
+(1) kesanggupan Badan Usaha memenuhi aspek keselamatan, kesehatan kerja dan pengelolaan lingkungan hidup dimaknai sebagai kesanggupan Badan Usaha memenuhi seluruh aspek Keselamatan Minyak dan Gas Bumi;
+
+## Lampiran hal. 33
+
+(2) kesediaan dilakukan audit kepatuhan terhadap ketentuan No. Izin Pengangkutan Minyak dan Gas Bumi peraturan perundang-undangan dimaknai sebagai kesanggupan Badan Usaha untuk dilakukan audit kepatuhan melalui pemeriksaan rutin dan insidental terhadap pemenuhan persyaratan dan pelaksanaan kewajiban dalam perizinan berusaha;
+(3) kesanggupan Badan Usaha menjamin dan bertanggung jawab bahwa sarana dan fasilitas yang di miliki/ dikuasai layak beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik selama masa operasi, dimaknai dengan menghapus frasa “selama masa operasi”; b) selain memenuhi persyaratan administratif berupa surat pernyataan tertulis di atas meterai sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi pernyataan tertulis tambahan berupa:
+(1) kesanggupan Badan Usaha untuk menyampaikan laporan kegiatan usaha pengangkutan antara lain badan usaha pengguna, volume supply, volume output, dan jenis komoditas yang diangkut; dan
+(2) kesanggupan menjalankan penugasan dari Pemerintah dalam rangka pemenuhan BBM Nasional.
+
+## Lampiran hal. 34
+
+2) persyaratan teknis Izin Usaha Sementara/perpanjangan Izin Usaha Sementara sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai antara lain memuat latar belakang, rencana jenis, jumlah dan kapasitas sarana pengangkutan, rencana lokasi, jenis komoditas, standar dan mutu produk yang diangkut, skema pengangkutan, calon pengguna fasilitas pengangkutan melalui pipa, penggunaan tenaga kerja asing dan tenaga kerja lokal, Analisis Keekonomian (rencana investasi, tarif, indikator kelayakan usaha dan periode pengembalian modal), rencana pelaksanaan pembangunan sarana dan No. Izin Pengangkutan Minyak dan Gas Bumi fasilitas, Komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa; b) terkait dengan Kesepakatan awal (MoU atau HoA) atas pengangkutan Minyak Bumi/BBM/Hasil Olahan dimaknai sebagai dokumen yang menjelaskan kesepakatan rencana pengangkutan (MoU) melalui pipa minyak bumi/bahan bakar minyak/hasil olahan dengan calon pengguna fasilitas pengangkutan melalui pipa; c) terkait dengan Jaminan kecukupan pendanaan yang dibuktikan dengan dokumen kesepakatan dengan pihak lain untuk pendanaan (mencantumkan nominal tertentu) dimaknai sebagai dokumen kesepakatan dengan pihak lain untuk pendanaan dengan nominal tertentu dan memperoleh dukungan keuangan dari pihak lain tersebut; dan d) selain memenuhi persyaratan teknis
+
+## Lampiran hal. 34
+
+sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang atau persetujuan Pemerintah/instansi yang berwenang sesuai dengan ketentuan yang berlaku atau pengelola kawasan yang berwenang mengenal lokasi untuk pembangunan fasilitas dan sarana.
+
+## Lampiran hal. 35
+
+3) persyaratan teknis Izin Usaha/ Perpanjangan Izin Usaha/Penyesuaian Izin Usaha sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai antara lain memuat latar belakang, jenis, jumlah dan kapasitas sarana pengangkutan, lokasi, jenis komoditas, standar dan mutu produk yang diangkut, skema pengangkutan, pengguna fasilitas pengangkutan melalui pipa, penggunaan tenaga kerja asing dan tenaga kerja lokal, Analisis Keekonomian (investasi, tarif, indikator kelayakan usaha dan periode pengembalian modal), pelaksanaan pembangunan sarana dan fasilitas, No. Izin Pengangkutan Minyak dan Gas Bumi Komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa; b) terkait Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik Lingkungan Migas/PLO yang masih berlaku/sesuai ketentuan peraturan perundang-undangan dimaknai sebagai PLO yang masih berlaku, Certificate of Inspection (COI) yang masih berlaku atau Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas; dan c) terkait dengan dokumen perjanjian antara transporter dengan shipper dimaknai sebagai dokumen perjanjian pengangkutan Minyak Bumi/BBM/Hasil Olahan melalui pipa yang
+
+## Lampiran hal. 35
+
+paling sedikit memuat volume dan spesifikasi komoditas serta tarif transportasi.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+b. Izin Usaha Pengangkutan Minyak dan Gas Bumi untuk Kegiatan Usaha Pengangkutan Melalui Pipa untuk komoditas Gas Bumi/Hasil Olahan:
+1) persyaratan administratif Izin Usaha Sementara/Izin Usaha/Perpanjangan Izin Usaha/Penyesuaian Izin Usaha sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan surat pernyataan tertulis di atas meterai mengenai kesanggupan Badan Usaha menjamin dan bertanggung jawab bahwa sarana dan fasilitas yang di miliki/ dikuasai layak beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik selama masa No. Izin Pengangkutan Minyak dan Gas Bumi operasi dimaknai dengan menghapus frasa “selama masa operasi”; b) selain memenuhi persyaratan administratif berupa surat pernyataan tertulis di atas meterai sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi pernyataan tertulis tambahan berupa:
+
+## Lampiran hal. 37
+
+(1) kesanggupan menjalankan penugasan dari Pemerintah dalam rangka pemenuhan BBG Nasional; dan
+(2) kesanggupan Badan Usaha menerima penugasan dari Pemerintah untuk pemanfaatan bersama dengan pihak lain atas fasilitas yang dimiliki.
+2) persyaratan teknis Izin Usaha Sementara/Perpanjangan Izin Usaha Sementara sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai paling sedikit memuat latar belakang, calon shipper, skema usaha, rencana jenis, jumlah dan kapasitas sarana pengangkutan, rencana produk, standar, dan mutu produk yang diangkut, rencana lokasi kegiatan usaha (provinsi dan/atau Kabupaten, rencana penggunaan tenaga kerja asing dan tenaga kerja lokal, analisa keekonomian (minimal biaya investasi, biaya operasional, pendapatan angkutan), rencana pemanfaatan atau pembangunan sarana dan fasilitas pengangkutan gas bumi melalui pipa yang meliputi teknologi yang digunakan, jalur dimensi, kapasitas, right of way pipa serta sarana dan fasilitas selain pipa dan data titik koordinat berupa Data Geo-reference Standard Datum WGS84, Komitmen Tingkat Komponen Dalam Negeri Barang dan Jasa:; b) terkait dengan rencana pemanfaatan atau pembangunan sarana dan fasilitas pengangkutan gas bumi melalui pipa yang meliputi teknologi yang digunakan, jalur dimensi, kapasitas, right of way No.
+
+## Lampiran hal. 37
+
+Izin Pengangkutan Minyak dan Gas Bumi pipa serta sarana dan fasilitas selain pipa dan data titik koordinat berupa Data Geo-reference Standard Datum WGS84 dimaknai menjadi bagian dari Studi Kelayakan; dan c) terkait dengan jaminan kecukupan pendanaan, yang dibuktikan dengan laporan keuangan 3 (tiga) tahun terakhir dimaknai sebagai laporan keuangan 3 (tiga) tahun terakhir yang sudah diaudit; dan d) selain memenuhi persyaratan teknis sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang atau persetujuan Pemerintah/instansi yang berwenang sesuai dengan ketentuan yang berlaku atau pengelola kawasan yang berwenang mengenal lokasi untuk pembangunan fasilitas dan sarana.
+
+## Lampiran hal. 38
+
+3) persyaratan teknis Izin Usaha/ Perpanjangan Izin Usaha/Penyesuaian Izin Usaha sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai paling sedikit memuat latar belakang, konsumen, skema usaha, jenis, jumlah dan kapasitas sarana pengangkutan, produk, standar, dan mutu produk yang diangkut, lokasi kegiatan usaha (provinsi dan/atau kabupaten), penggunaan tenaga kerja asing dan tenaga kerja lokal, analisa keekonomian (minimal biaya investasi, biaya operasional, pendapatan angkutan, periode pengembalian modal), capaian tingkat komponen dalam negeri barang dan jasa; b) terkait dengan Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik Lingkungan Migas/PLO yang masih berlaku/sesuai ketentuan peraturan perundang-undangan dimaknai sebagai PLO yang masih berlaku, Certificate of Inspection (COI) No. Izin Pengangkutan Minyak dan Gas Bumi yang masih berlaku atau Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas; c) selain memenuhi persyaratan teknis sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa:
+
+## Lampiran hal. 39
+
+(1) persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang untuk kegiatan berusaha atau sesuai ketentuan peraturan perundang-undangan untuk setiap lokasi sarana dan fasilitas usaha; dan
+(2) dokumen Persetujuan Lingkungan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan:
+Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 15 (lima belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Izin Pengangkutan Minyak dan Gas Bumi Melalui Pipa disetujui;
+4) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku 1) masa berlaku Izin Usaha Sementara paling lama 3 (tiga) tahun dan dapat diperpanjang 1 (satu) kali paling lama 2 (dua) tahun.
+2) Izin Usaha Pengangkutan Minyak dan Gas Bumi untuk Kegiatan Usaha Pengangkutan melalui pipa untuk komoditas Minyak Bumi/BBM/Hasil Olahan:
+
+## Lampiran hal. 40
+
+No. Izin Pengangkutan Minyak dan Gas Bumi a) 10 (sepuluh) tahun untuk pipa dengan kapasitas lebih dari 500.000 (lima ratus ribu) barel per hari dan/atau panjang lebih dari 300 km (tiga ratus kilo meter) dan dapat diperpanjang; b) 5 (lima) tahun untuk pipa dengan kapasitas sampai dengan 500.000 (lima ratus ribu) barel per hari dan/atau Panjang sampai dengan 300 km (tiga ratus kilo meter) dan dapat diperpanjang.
+3) Izin Usaha Pengangkutan Minyak dan Gas Bumi untuk Kegiatan Usaha Pengangkutan melalui pipa untuk komoditas Gas Bumi/Hasil Olahan dapat diberikan masa berlaku paling lama 20 (dua puluh) tahun dan/atau sepanjang Hak Khusus dan dapat diperpanjang.
+c. Berakhirnya Izin Pengangkutan Minyak dan Gas Bumi Melalui Pipa 1) Izin Pengangkutan Minyak dan Gas Bumi Melalui Pipa berakhir karena: a) habis masa berlakunya; atau b) dicabut.
+2) Pencabutan Izin Pengangkutan Minyak dan Gas Bumi sebagaimana dimaksud pada angka 1) huruf b dapat didasarkan pada: a) pengenaan sanksi administratif; b) permohonan pencabutan dari Badan Usaha; dan/atau c) Putusan pengadilan yang telah memiliki kekuatan hukum tetap berupa pencabutan izin atau pailit.
+6. Ketentuan Kewajiban KBLI 49300 - Minyak Bumi Kewajiban Pemegang Izin Usaha wajib:
+a. menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Direktur Jenderal;
+
+## Lampiran hal. 40
+
+b. menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, kehandalan, kalibrasi, dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+c. menjamin Keselamatan Minyak Dan Gas Bumi serta pengembangan masyarakat setempat sesuai dengan ketentuan peraturan perundang-undangan;
+d. menjamin pelaksanaan pemeriksaan rutin dan insidental oleh Direktorat Jenderal sesuai dengan ketentuan peraturan perundang-undangandengan mempertimbangkan No. Izin Pengangkutan Minyak dan Gas Bumi ketersediaan SDM dan anggaran, yang dilaksanakan:
+1) secara periodik setiap 3 (tiga) sampai 5 (lima) tahun sekali selama masa izin usaha berlaku;
+2) paling lambat 6 (enam) bulan sebelum masa izin usaha berakhir; dan 3) Badan Usaha dapat diberikan sanksi administratif apabila berdasarkan hasil evaluasi pemeriksaan rutin dan insidental terhadap pemenuhan persyaratan dan pelaksanaan kewajiban yang tercantum dalam perizinan berusaha dan/atau ketentuan peraturan perundang undangan.
+e. melaporkan kepada Menteri melalui Direktur Jenderal mengenai pelaksanaan kegiatan Izin Usaha Pengangkutan Minyak dan Gas Bumi secara berkala setiap 1 (satu) bulan sekali atau sewaktu-waktu apabila diperlukan;
+f. menyampaikan permohonan perpanjangan Izin Usaha paling lambat 3 (tiga) bulan sebelum masa berlaku Izin Usaha berakhir atau penyesuaian Izin Usaha apabila terdapat perubahan data administratif dan/atau teknis perizinan berusaha;
+
+## Lampiran hal. 41
+
+g. melaksanakan penunjukan Pemerintah dalam rangka penyediaan cadangan BBM Nasional; dan
+h. mematuhi dan memenuhi semua kewajiban yang tercantum dalam Izin Usaha, perizinan, dan ketentuan dalam peraturan perundang-undangan.
+Pemegang Izin Usaha Sementara wajib:
+a. melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan sarana dan fasilitas;
+b. menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+c. menggunakan kaidah keteknikan yang baik;
+d. mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+e. menjamin Keselamatan dan Kesehatan Kerja dan pengelolaan Iingkungan hidup;
+f. Instalasi peralatan dan sistem alat ukur wajib disampaikan dalam kesepakatan pengangkutan Minyak Bumi/BBM/Hasil Olahan;
+g. melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila No. Izin Pengangkutan Minyak dan Gas Bumi terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+h. melaporkan kepada Menteri melalui Direktur Jenderal mengenai pelaksanaan kegiatan setiap 3 (tiga) bulan sekali atau sewaktu-waktu apabila diperlukan;
+i. pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara;
+
+## Lampiran hal. 42
+
+j. pada saat melakukan uji coba operasi sebagaimana dimaksud pada butir i, Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha; dan
+k. dalam hal pada saat melakukan uji coba operasi sebagaimana dimaksud terdapat produk yang secara teknis harus disalurkan kepada pihak lain, Pemegang Izin Usaha Sementara wajib meminta persetujuan kepada Direktur Jenderal.
+Kewajiban KBLI 49300 - Gas Bumi Pemegang Izin Usaha Sementara wajib:
+a. melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan sarana dan fasilitas;
+b. menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+c. menggunakan kaidah keteknikan yang baik;
+d. mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+e. menjamin Keselamatan dan Kesehatan Kerja dan pengelolaan Iingkungan hidup;
+f. instalasi peralatan dan sistem alat ukur wajib disampaikan dalam GTA;
+g. melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+h. melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 3 (tiga) bulan sekali atau sewaktu- waktu apabila diperlukan;
+
+## Lampiran hal. 42
+
+i. pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara;
+No. Izin Pengangkutan Minyak dan Gas Bumi
+j. pada saat melakukan uji coba operasi sebagaimana dimaksud pada butir i, Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha; dan
+k. dalam hal pada saat melakukan uji coba operasi sebagaimana dimaksud terdapat produk yang secara teknis harus disalurkan kepada pihak lain, Pemegang Izin Usaha Sementara wajib meminta persetujuan kepada Direktur Jenderal.
+Pemegang Izin Usaha:
+a. menjamin dan bertanggung jawab atas penggunaan instalasi peralatan dan keakuratan sistem alat ukur yang digunakan sudah memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+b. instalasi peralatan dan sistem alat ukur wajib disampaikan dalam GTA;
+c. menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Direktur Jenderal;
+d. menjamin keselamatan dan kesehatan kerja, pengelolaan lingkungan hidup serta pengembangan masyarakat setempat;
+e. melaksanakan penugasan Pemerintah dalam rangka penyediaan cadangan BBG Nasional;
+f. mengajukan penyesuaian izin apabila terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+
+## Lampiran hal. 43
+
+g. melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 1 (satu) bulan sekali atau sewaktu-waktu apabila diperlukan; dan
+h. memenuhi perizinan yang ditetapkan oleh Instansi terkait sesuai dengan ketentuan peraturan perundang-undangan.
+6. Standar Kegiatan Usaha Berupa Izin Transportasi Karbon Melalui Pipa No. Izin Transportasi Karbon Melalui Pipa KBLI:
+(49300) Angkutan Melalui Saluran Pipa
+1. Ruang Standar ini mencakup pembangunan dan sarana Lingkup fasilitas pengangkutan, uji coba operasi, dan pemindahan karbon melalui moda pipa dari suatu tempat ke tempat lain.
+Dalam pelaksanaan kegiatan usaha transportasi karbon melalui pipa, sebelum memperoleh Izin Transportasi Karbon Melalui Pipa, diperlukan Izin Sementara sebagai dasar pelaksanaan konstruksi No. Izin Transportasi Karbon Melalui Pipa dan tahap uji coba untuk memastikan kelayakan teknis dan keselamatan.
+2. Istilah dan a. Penangkapan dan Penyimpanan Karbon atau Definisi Carbon Capture and Storage yang selanjutnya disingkat CCS adalah kegiatan usaha yang mencakup penangkapan karbon dan/atau pengangkutan karbon tertangkap, penginjeksian dan penyimpanan karbon ke zona target injeksi dengan aman dan permanen sesuai dengan kaidah keteknikan yang baik.
+b. Wilayah Izin Penyimpanan Karbon adalah wilayah tertentu di wilayah Indonesia untuk penyelenggaraan CCS.
+
+## Lampiran hal. 44
+
+c. Karbon adalah karbon dioksida (CAS 124-38-9) dengan spesifikasi konsentrasi tertentu yang berasal dari emisi yang ditangkap dan diproses dengan berbagai teknologi dengan memperhatikan standar dan kaidah keteknikan yang baik, yang berasal dari kegiatan usaha hulu minyak dan gas bumi, pembangkit listrik, industri, dan kegiatan penghasil emisi lainnya dari domestik atau luar negeri dengan tujuan untuk diinjeksikan ke zona target injeksi.
+d. Zona Target Injeksi yang selanjutnya disingkat ZTI adalah sistem batuan dalam formasi geologi mencakup lapisan zona penyimpanan, lapisan zona penyangga, lapisan zona kedap dan perangkap geologi yang mampu menampung Karbon yang diinjeksikan, secara aman dan permanen serta memenuhi standar keamanan lingkungan.
+e. Izin Operasi Penyimpanan Karbon adalah izin yang diberikan oleh pemerintah untuk melakukan kegiatan injeksi dan Penyimpanan Karbon di Wilayah Izin Penyimpanan Karbon.
+f. Izin Sementara Transportasi Karbon Melalui Pipa adalah izin yang diterbitkan oleh pemerintah yang bersifat sementara dalam rangka persetujuan atas pembangunan pipa dan penyiapan sarana dan fasilitas pendukung serta pengurusan dokumen persyaratan perizinan-perizinan dari instansi lain yang diberikan kepada Badan Usaha sebelum diberikan Izin Transportasi Karbon Melalui Pipa.
+
+## Lampiran hal. 44
+
+g. Izin Transportasi Karbon Melalui Pipa yang selanjutnya disebut Izin Transportasi adalah izin yang diberikan pemerintah untuk Pengangkutan Karbon ke titik serah lokasi injeksi dengan moda pengangkutan pipa.
+h. Pemilik Manfaat (Beneficial Ownership) yang selanjutnya disebut Pemilik Manfaat adalah orang perseorangan yang dapat menunjuk atau No. Izin Transportasi Karbon Melalui Pipa memberhentikan direksi, dewan komisaris, pengurus, pembina, atau pengawas pada Korporasi, memiliki kemampuan untuk mengendalikan Korporasi, berhak atas dan/atau menerima manfaat dari Korporasi baik langsung maupun tidak langsung, merupakan pemilik sebenarnya dari dana atau saham Korporasi.
+i. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha bersifat tetap, terus-menerus dan didirikan sesuai dengan peraturan perundang-undangan yang berlaku serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+j. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+k. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+l. Direktorat Jenderal adalah Direktorat Jenderal yang bidang tugas dan kewenangannya meliputi di bidang Minyak dan Gas Bumi.
+3. Penggolongan a. Izin Sementara Transportasi Karbon Melalui Usaha Pipa
+b. Izin Transportasi Karbon Melalui Pipa
+c. Skala Usaha: Besar
+d. Tingkat Risiko: Tinggi
+
+## Lampiran hal. 45
+
+4. Ketentuan a. Permohonan Izin Sementara Transportasi Persyaratan Karbon Melalui Pipa:
+1) Persyaratan Administratif: a) dokumen Pemilik Manfaat; b) profil Badan Usaha; c) surat pernyataan tertulis di atas meterai mengenai:
+(1) kesanggupan memenuhi aspek keselamatan, kesehatan, dan pengelolaan lingkungan serta pengembangan masyarakat;
+(2) kesanggupan memenuhi peraturan perundang-undangan; dan
+(3) kesediaan dilakukan inspeksi lapangan. d) salinan Izin Operasi Penyimpanan Karbon, dalam hal Badan Usaha pemohon merupakan pemegang Izin Operasi Penyimpanan Karbon.
+2) Persyaratan Teknis: a) Studi Kelayakan yang memuat:
+No. Izin Transportasi Karbon Melalui Pipa
+(1) rencana jenis, jumlah, dan kapasitas sarana pengangkutan termasuk teknologi yang digunakan;
+(2) rencana pengembangan pembangunan dan/atau pemanfaatan fasilitas dan sarana pengangkutan; dan
+(3) analisis keekonomian (rencana biaya investasi, tarif, indikator kelayakan usaha, periode pengembalian modal). b) kesepakatan pengangkutan Karbon, untuk pengangkutan Karbon selain Karbon milik sendiri berupa HoA/MoU/Transport Agreement untuk permohonan Izin Sementara Transportasi Karbon Melalui Pipa.
+3) persyaratan finansial berupa jaminan kecukupan pendanaan yang nilainya sesuai dengan rencana kerja/usaha.
+b. Perpanjangan Izin Sementara Transportasi Karbon Melalui Pipa:
+1) laporan kinerja Izin Sementara yang meliputi pelaksanaan kewajiban oleh pemegang izin;
+2) dokumen yang memuat penjelasan, urgensi dan latar belakang perpanjangan;
+
+## Lampiran hal. 46
+
+3) rencana kerja; dan 4) jaminan kecukupan pendanaan yang nilainya sesuai dengan rencana kerja.
+c. Permohonan Izin Transportasi Karbon Melalui Pipa:
+1) Persyaratan Administratif: a) persyaratan administratif sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko; b) selain memenuhi persyaratan administratif sebagaimana dimaksud pada huruf a), memenuhi persyaratan administratif tambahan berupa:
+(1) profil Badan Usaha;
+(2) surat pernyataan mengenai:
+(a) kesanggupan memenuhi aspek keselamatan, kesehatan, dan pengelolaan lingkungan serta pengembangan masyarakat;
+(b) kesanggupan memenuhi peraturan perundang-undangan; dan
+(c) kesediaan dilakukan inspeksi lapangan.
+No. Izin Transportasi Karbon Melalui Pipa 2) Persyaratan Teknis:
+Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan studi kelayakan dimaknai sebagai Studi kelayakan yang memuat:
+(1) data ketersediaan jenis, jumlah, dan kapasitas sarana pengangkutan termasuk teknologi yang digunakan;
+(2) rencana pengembangan pembangunan dan/atau pemanfaatan fasilitas dan sarana pengangkutan;
+(3) analisis keekonomian (rencana biaya investasi, tarif, indikator kelayakan usaha, periode pengembalian modal; dan
+
+## Lampiran hal. 47
+
+(4) data realisasi pembangunan fasilitas sesuai Izin Sementara. b) selain memenuhi persyaratan teknis sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa laporan uji coba untuk kelayakan operasi.
+3) Selain memenuhi persyaratan administratif dan teknis sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan tambahan sebagai persyaratan finansial berupa jaminan kecukupan pendanaan yang nilainya sesuai dengan rencana kerja/usaha.
+d. Perpanjangan Izin Transportasi Karbon Melalui Pipa:
+1) laporan kinerja Izin sebelumnya yang meliputi pelaksanaan kewajiban;
+2) kesepakatan pengangkutan Karbon, untuk pengangkutan Karbon selain Karbon milik sendiri;
+3) dokumen yang memuat penjelasan, urgensi dan latar belakang perpanjangan;
+4) dokumen analisis keekonomian (rencana biaya investasi, tarif, indikator kelayakan usaha, periode pengembalian modal);
+5) rencana usaha;
+No. Izin Transportasi Karbon Melalui Pipa 6) jaminan kecukupan pendanaan yang nilainya sesuai dengan rencana usaha.
+e. Penyesuaian Izin Transportasi Karbon Melalui Pipa:
+Penyesuaian Izin Transportasi Karbon Melalui Pipa dapat dilakukan untuk perubahan dan/atau penambahan sarana dan fasilitas transportasi Karbon melalui pipa, dengan memenuhi persyaratan berupa dokumen kelayakan teknis dan keekonomian.
+
+## Lampiran hal. 48
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan:
+Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 15 (lima belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4).
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Izin Sementara Transportasi Karbon Melalui Pipa atau Izin Transportasi Karbon Melalui Pipa disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 48
+
+b. Masa Berlaku 1) Izin Sementara Transportasi Karbon Melalui Pipa berlaku untuk jangka waktu paling lama 3 (tiga) tahun dan dapat diperpanjang No. Izin Transportasi Karbon Melalui Pipa paling lama 2 (dua) tahun untuk setiap kali perpanjangan;
+2) Izin Transportasi Karbon Melalui Pipa berlaku untuk jangka waktu paling lama 20 (dua puluh) tahun yang telah meliputi masa berlaku Izin Sementara Transportasi Karbon Melalui Pipa dan perpanjangannya apabila ada serta dapat diperpanjang paling lama 10 (sepuluh) tahun untuk setiap kali perpanjangan.
+c. Berakhirnya Izin Transportasi Karbon Melalui Pipa:
+1) Izin Transportasi Karbon Melalui Pipa berakhir karena: a) habis masa berlakunya; atau b) dicabut.
+2) Pencabutan Izin Transportasi Karbon Melalui Pipa sebagaimana dimaksud pada angka 1) huruf b dapat didasarkan pada: a) pengenaan sanksi administratif; b) permohonan pencabutan dari pemohon; dan/atau c) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan a. Menjamin dan bertanggung jawab atas Kewajiban penggunaan instalasi dan peralatan serta keakuratan sistem alat ukur yang digunakan memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+b. Menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Menteri;
+c. Menjamin keselamatan dan kesehatan kerja, serta pengelolaan lingkungan hidup;
+d. Melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 1 (satu) bulan sekali atau sewaktu-waktu apabila diperlukan;
+
+## Lampiran hal. 49
+
+e. Menyediakan asuransi yang minimal meliputi perlindungan atas kerusakan fasilitas, pekerja, kerusakan lingkungan, pembongkaran akibat kecelakaan dengan coverage yang wajar berdasarkan paparan risiko dan biaya;
+f. Mengutamakan pemanfaatan barang dan jasa yang diproduksi di Indonesia;
+g. Melaksanakan kewajiban penanganan kebocoran dalam transportasi Karbon sesuai dengan ketentuan peraturan perundang-undangan;
+h. Melakukan penyesuaian izin apabila terdapat perubahan dan/atau penambahan sarana dan fasilitas transportasi Karbon melalui pipa;
+No. Izin Transportasi Karbon Melalui Pipa
+i. Melaporkan dan melakukan pemutakhiran izin atas perubahan data administrasi dan/atau teknis selain data teknis sebagaimana dimaksud dalam huruf h;
+j. Mematuhi ketentuan peraturan perundang-undangan.
+7. Standar Kegiatan Usaha Berupa Pengolahan Minyak dan Gas Bumi No. Izin Pengolahan Minyak dan Gas Bumi KBLI:
+(19211) Industri Bahan Bakar dari Pemurnian dan Pengilangan Minyak Bumi
+(35201) Pengadaan Gas Alam dan Buatan
+(19214) Industri Pengolahan Minyak Pelumas Bekas Menjadi Bahan Bakar
+1. Ruang Standar ini memuat pengaturan yang terkait Lingkup dengan:
+
+## Lampiran hal. 50
+
+a. Kelompok usaha pada Klasifikasi Baku Lapangan Usaha Indonesia 19211 (Industri Bahan Bakar dari Pemurnian dan Pengilangan Minyak Bumi) yang mencakup usaha pemurnian dan pengilangan minyak bumi yang menghasilkan bahan bakar seperti avigas, avtur, gasoline, minyak tanah atau kerosin, minyak solar, minyak diesel, minyak bakar atau bensin, termasuk Liquefied Petroleum Gas (LPG) dari hasil pengilangan minyak bumi;
+b. Kelompok usaha pada Klasifikasi Baku Lapangan Usaha Indonesia 35201 (Pengadaan Gas Alam dan Buatan) yang mencakup usaha pengolahan bahan bakar gas yang dapat dimanfaatkan secara langsung dimana pembuatannya disertai usaha peningkatan mutu gas namun tidak terbatas pada pemurnian, pencampuran, dan proses lainnya yang dihasilkan dari gas alam;
+c. Kelompok usaha pada Klasifikasi Baku Lapangan Usaha Indonesia 19214 (Industri Pengolahan Minyak Pelumas Bekas menjadi Bahan Bakar) yang mencakup usaha pengolahan kembali minyak pelumas bekas untuk dapat digunakan sebagai bahan bakar minyak.
+2. Istilah dan a. Minyak Bumi adalah hasil proses alami berupa Definisi hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa cair atau padat, termasuk aspal, lilin mineral atau ozokerit dan bitumen yang diperoleh dari proses No. Izin Pengolahan Minyak dan Gas Bumi penambangan, tetapi tidak termasuk batubara atau endapan hidrokarbon lain yang berbentuk padat yang diperoleh dari kegiatan yang tidak berkaitan dengan kegiatan usaha Minyak dan Gas Bumi.
+
+## Lampiran hal. 51
+
+b. Gas Bumi adalah hasil proses alami berupa hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa gas yang diperoleh dari proses penambangan Minyak dan Gas Bumi.
+c. Bahan Bakar Minyak yang selanjutnya disingkat BBM adalah bahan bakar yang berasal dan/atau diolah dari Minyak Bumi.
+d. Bahan Bakar Gas yang selanjutnya disingkat BBG adalah bahan bakar yang berasal dari Gas Bumi dan/atau hasil olahan dari Minyak dan Gas Bumi.
+e. Hasil Olahan adalah hasil dan/atau produk selain BBM dan/atau BBG yang diperoleh dari kegiatan hasil pengolahan minyak dan gas bumi baik berupa produk akhir atau produk antara kecuali pelumas dan petrokimia.
+f. Kondensat adalah fraksi hidrokarbon cair yang dihasilkan dari gas bumi atau campuran gas dan cairan hidrokarbon, yang mengembun pada kondisi tekanan dan temperatur permukaan setelah dipisahkan dari gas bumi.
+g. Liquefied Petroleum Gas yang selanjutnya disingkat LPG adalah gas hidrokarbon yang dicairkan dengan tekanan untuk memudahkan penyimpanan, pengangkutan, penanganan dan kegiatan komersial yang pada dasarnya terdiri atas propana, Butana, atau campuran keduanya.
+h. Liquefied Natural Gas yang selanjutnya disingkat LNG adalah gas bumi yang terutama terdiri dari metana yang dibekukan pada suhu sangat rendah (sekitar minus 1600 C (seratus enam puluh derajat celcius)) dan dipertahankan dalam keadaan cair untuk mempermudah transportasi, dan penyimpanan.
+
+## Lampiran hal. 51
+
+i. Bahan Bakar dengan Spesifikasi Tertentu adalah bahan bakar yang diperoleh dari hasil kegiatan pengolahan hasil olahan dengan spesifikasi yang berbeda dengan spesifikasi standar dan mutu yang ditetapkan oleh Menteri untuk dijual kepada Konsumen Tertentu serta tidak digunakan sebagai bahan bakar penggerak sarana transportasi.
+j. Kegiatan Pencampuran adalah kegiatan teknis dan operasional berupa proses menggabungkan dua atau lebih produk energi baik antar hasil produk kilang minyak bumi maupun antara No. Izin Pengolahan Minyak dan Gas Bumi hasil produk kilang minyak bumi dengan biofuel untuk menghasilkan produk akhir dengan spesifikasi mutu tertentu sesuai standar keselamatan, kualitas, dan ketentuan peraturan perundang-undangan.
+k. Konsumen Tertentu adalah konsumen akhir yang menggunakan bahan bakar sebagai sumber energi untuk proses produksi pemanasan, pembakaran,atau pengoperasian peralatan industri yang terpasang secara tetap pada suatu lokasi usaha yang tidak termasuk dalam kategori BBM dengan standar dan mutu (spesifikasi) yang ditetapkan oleh Pemerintah dan tidak untuk tujuan niaga atau diperjual belikan kembali pada Badan Usaha Niaga Minyak dan Gas Bumi atau pihak lainnya. serta tidak digunakan sebagai bahan bakar penggerak sarana transportasi.
+l. Pengolahan adalah kegiatan memurnikan, memperoleh bagian-bagian, mempertinggi mutu dan meningkatkan nilai tambah Minyak Bumi dan/atau Gas Bumi tetapi tidak termasuk pengolahan lapangan.
+
+## Lampiran hal. 52
+
+m. Izin Usaha adalah izin yang diterbitkan oleh Menteri dan diberikan kepada Badan Usaha untuk melaksanakan kegiatan usaha Pengolahan, Pengangkutan, Penyimpanan dan/atau Niaga dengan tujuan memperoleh keuntungan dan/atau laba.
+n. Izin Usaha Sementara Pengolahan Minyak dan Gas Bumi adalah izin yang diterbitkan oleh Menteri yang bersifat sementara dalam rangka pembangunan atau penyiapan sarana dan fasilitas Pengolahan Minyak dan Gas Bumi serta pengurusan perizinan-perizinan dari instansi lain yang diberikan kepada badan usaha sebelum diberikan Izin Usaha.
+o. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha yang bersifat tetap, terus menerus, dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+p. Keselamatan Minyak dan Gas Bumi adalah keselamatan yang meliputi keselamatan pekerja, keselamatan instalasi dan peralatan, keselamatan lingkungan dan keselamatan umum.
+q. Instalasi Minyak dan Gas Bumi adalah rangkaian peralatan yang terintegrasi dalam suatu sistem untuk melaksanakan fungsi No. Izin Pengolahan Minyak dan Gas Bumi operasi pada Kegiatan Usaha Minyak dan Gas Bumi.
+r. Inspeksi Teknis adalah suatu kegiatan yang dilakukan secara langsung meliputi pemeriksaan dokumen, pemeriksaan fisik, dan pengujian peralatan dan/atau Instalasi mengacu pada ketentuan peraturan perundang-undangan, standar, dan kaidah keteknikan yang baik.
+
+## Lampiran hal. 53
+
+s. Persetujuan Layak Operasi yang selanjutnya disingkat PLO adalah pengakuan formal bahwa Kontraktor atau Pemegang Izin Usaha telah melaksanakan Inspeksi Teknis yang mengacu pada ketentuan peraturan perundangan-undangan, Standar, dan kaidah keteknikan yang baik.
+t. Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi yang selanjutnya disingkat SKK Migas adalah pelaksana penyelenggaraan pengelolaan Kegiatan Usaha Hulu di bidang Minyak dan Gas Bumi berdasarkan Kontrak Kerja Sama di bawah pembinaan, koordinasi, dan pengawasan Menteri Energi dan Sumber Daya Mineral.
+u. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+v. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+3. Penggolongan Jenis Izin Usaha Pengolahan Minyak dan Gas Bumi:
+Usaha a. Izin Usaha Sementara Pengolahan Minyak dan Gas Bumi, dengan jenis kegiatan:
+1) Pengolahan Minyak Bumi;
+2) Pengolahan Gas Bumi;
+3) Pengolahan Hasil Olahan.
+b. Izin Usaha Pengolahan Minyak dan Gas Bumi, dengan jenis kegiatan:
+1) Pengolahan Minyak Bumi;
+2) Pengolahan Gas Bumi;
+3) Pengolahan Hasil Olahan.
+c. Pelaku Usaha (Pemegang Izin Usaha Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Minyak bumi) melakukan pencampuran dari Hasil Produk
+d. Skala Usaha: Besar
+e. Tingkat Risiko: Tinggi
+
+## Lampiran hal. 53
+
+4. Ketentuan a. Izin Usaha Pengolahan Minyak dan Gas Bumi Persyaratan untuk kegiatan Pengolahan Minyak Bumi:
+No. Izin Pengolahan Minyak dan Gas Bumi 1) persyaratan administratif Izin Usaha Sementara/Izin Usaha/Perpanjangan Izin Usaha/Penyesuaian Izin Usaha Pengolahan Minyak dan Gas Bumi untuk kegiatan Pengolahan Minyak Bumi Persyaratan administratif sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan surat pernyataan tertulis di atas meterai mengenai:
+(1) kesanggupan Badan Usaha memenuhi aspek keselamatan, kesehatan kerja, dan pengelolaan lingkungan hidup dimaknai sebagai kesanggupan kesanggupan Badan Usaha memenuhi seluruh aspek Keselamatan Minyak dan Gas Bumi;
+(2) kesediaan dilakukan audit kepatuhan terhadap ketentuan peraturan perundang-undangan dimaknai sebagai kesanggupan Badan Usaha untuk dilakukan audit kepatuhan melalui pemeriksaan rutin dan insidental terhadap pemenuhan persyaratan dan pelaksanaan kewajiban dalam perizinan berusaha;
+
+## Lampiran hal. 54
+
+(3) kesanggupan Badan Usaha menjamin dan bertanggung jawab bahwa sarana dan fasilitas yang di miliki/ dikuasai layak beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik selama masa operasi, dimaknai dengan menghapus frasa “selama masa operasi”; dan b) selain memenuhi persyaratan administratif berupa surat pernyataan tertulis di atas meterai sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi pernyataan tertulis tambahan berupa:
+(1) esanggupan Badan Usaha untuk menyampaikan laporan jadwal rencana tahunan, realisasi pelaksanaan bulanan, dan penghentian operasi guna perawatan fasilitas dan sarana Pengolahan No. Izin Pengolahan Minyak dan Gas Bumi dalam rangka menjaga ketersediaan BBM secara berkala; dan
+(2) kesanggupan dan komitmen Badan Usaha untuk melakukan kegiatan usaha pengolahan minyak bumi dengan sumber pasokan bahan baku yang sah sesuai peraturan perundang-undangan.
+(3) kesanggupan Badan Usaha untuk menyampaikan laporan kegiatan usaha pencampuran hasil kilang minyak dan gas bumi dengan Bahan Bakar Nabati meliputi laporan jadwal rencana tahunan, realisasi pelaksanaan bulanan, dan penghentian operasi guna perawatan fasilitas dan sarana pencampuran hasil kilang minyak dan gas bumi dengan Bahan Bakar Nabati dalam rangka menjaga ketersediaan BBM secara berkala (apabila melakukan kegiatan pencampuran (blending);
+
+## Lampiran hal. 55
+
+(4) kesanggupan Badan Usaha Pencampuran Hasil Kilang Minyak dan Gas Bumi dengan Bahan Bakar Nabati untuk menyediakan fasilitas pengujian terhadap mutu hasil pencampuran (blending) terkait dengan kegiatan pencampuran atau bekerjasama dengan laboratorium independen yang telah terakreditasi.
+
+## Lampiran hal. 55
+
+2) persyaratan teknis untuk Izin Usaha Sementara Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Minyak Bumi Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait Studi Kelayakan dimaknai antara lain memuat latar belakang, profil perusahaan, sumber pasokan bahan baku, rencana jenis dan spesifikasi produk yang dihasilkan, rencana produksi dan pemasarannya, calon konsumen, lokasi, sarana dan fasilitas teknologi proses, SOP kegiatan usaha pengolahan minyak bumi, termasuk SOP kegiatan usaha pencampuran dengan komoditas dan lokasinya (bagi Badan Usaha yang melakukan kegiatan No. Izin Pengolahan Minyak dan Gas Bumi pencampuran), skema usaha, analisa keekonomian (rencana investasi, harga jual, indikator kelayakan usaha, dan periode pengembalian modal), rencana pelaksanaan pembangunan sarana dan fasilitas, serta komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa; b) terkait kesepakatan awal (MoU/HoA/Perjanjian Jual Beli) dengan calon pemasok bahan baku Minyak Bumi dan/atau dokumen lain yang mengindikasikan tersedianya pasokan dengan calon pemasok yang difasilitasi oleh SKK Migas dimaknai sebagai dokumen yang menjelaskan:
+(1) kesepakatan awal jual beli dengan pemasok; dan/atau
+
+## Lampiran hal. 56
+
+(2) dokumen Persetujuan SKK Migas kepada pemasok yang menerangkan ketersediaan pasokan minyak bumi atau kondensat untuk kegiatan pengolahan minyak bumi. c) terkait dengan jaminan kecukupan pendanaan yang dibuktikan dengan dokumen kesepakatan dengan pihak lain untuk pendanaan (mencantumkan nominal tertentu) dimaknai sebagai dokumen kesepakatan dengan pihak lain untuk pendanaan dengan nominal tertentu dan memperoleh dukungan keuangan dari pihak lain tersebut.
+
+## Lampiran hal. 56
+
+3) persyaratan teknis untuk Izin Usaha/Perpanjangan/Penyesuaian Izin Usaha Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Minyak Bumi Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai antara lain memuat latar belakang, profil perusahaan, sumber pasokan bahan baku, jenis dan spesifikasi produk yang dihasilkan, produksi dan pemasarannya, daftar konsumen, lokasi, sarana dan fasilitas teknologi proses, SOP kegiatan usaha pengolahan minyak bumi, termasuk SOP kegiatan usaha pencampuran dengan komoditas dan lokasinya (bagi Badan Usaha yang No. Izin Pengolahan Minyak dan Gas Bumi melakukan kegiatan pencampuran), skema usaha, analisa keekonomian (investasi, harga jual, indikator kelayakan usaha, dan periode pengembalian modal), rencana pelaksanaan pembangunan sarana dan fasilitas, serta komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa; b) terkait dengan Berita Acara Pemeriksaan keselamatan instalasi dan peralatan terkait fasilitas dan/atau sarana yang ditandatangani oleh petugas Direktorat Teknik dan Lingkungan Migas/PLO yang masih berlaku/sesuai ketentuan peraturan perundang-undangan dimaknai sebagai PLO yang masih berlaku, Certificate of Inspection (COI) yang masih berlaku atau Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang
+
+## Lampiran hal. 56
+
+ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas; c) terkait dengan memiliki laboratorium uji terakreditasi untuk melakukan pengujian terhadap mutu produk yang dihasilkan sesuai dengan standar dan mutu yang ditetapkan Menteri dimaknai dengan ketentuan:
+(1) untuk kilang dengan kapasitas lebih dari 100.000 (seratus ribu) barel per hari memiliki laboratorium uji produk yang telah terakreditasi;
+(2) untuk kilang dengan kapasitas sampai dengan 100.000 (seratus ribu) barel per hari bekerja sama dengan laboratorium independen yang telah terakreditasi; dan
+(3) untuk Badan Usaha yang memiliki kilang dengan kapasitas lebih dari 100.000 (seratus ribu) barel per hari, namun belum dapat memenuhi persyaratan kepemilikan laboratorium uji terakreditasi, Badan Usaha menyampaikan kesanggupan untuk memiliki laboratorium uji mutu produk yang terakreditasi dalam waktu 3 (tiga) tahun sejak Izin Usaha diterbitkan dan selama masa waktu 3 (tiga) tahun tersebut bekerja sama dengan laboratorium independen yang telah terakreditasi.
+No. Izin Pengolahan Minyak dan Gas Bumi Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+
+## Lampiran hal. 58
+
+b. Izin Usaha Pengolahan Minyak dan Gas Bumi untuk kegiatan Pengolahan Gas Bumi 1) persyaratan administratif Izin Usaha Sementara/Izin Usaha/Perpanjangan Izin Usaha/Penyesuaian Izin Usaha Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Gas Bumi Persyaratan administratif sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan surat pernyataan tertulis di atas meterai mengenai kesanggupan Badan Usaha dimaknai sebagai surat pernyataan tertulis di atas meterai mengenai:
+(1) kesanggupan Badan Usaha memenuhi aspek keselamatan, kesehatan kerja dan pengelolaan lingkungan hidup;
+(2) kesanggupan memenuhi kewajiban Badan Usaha;
+(3) kesanggupan Badan Usaha memenuhi ketentuan peraturan perundang-undangan;
+(4) kesediaan dilakukan audit kepatuhan terhadap ketentuan peraturan perundang-undangan;
+(5) kesanggupan Badan Usaha menjamin dan bertanggung jawab bahwa sarana dan fasilitas yang dimiliki/dikuasai layak beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik;
+(6) Badan Usaha bebas dari konflik atau permasalahan hukum lainnya dengan pihak lain;
+(7) dokumen persyaratan dan keterangan/pernyataan yang diberikan adalah benar adanya dan apabila dikemudian hari terbukti No. Izin Pengolahan Minyak dan Gas Bumi tidak benar akan dicabut lzin Usahanya sesuai dengan ketentuan peraturan perundang undangan;
+
+## Lampiran hal. 59
+
+(8) kesanggupan Badan Usaha menerima penugasan dari Pemerintah untuk menghasilkan dan/atau mengusahakan jenis BBG untuk pemenuhan cadangan BBG Nasional. b) selain memenuhi persyaratan administratif sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan administratif tambahan berupa identitas/surat kuasa narahubung.
+
+## Lampiran hal. 59
+
+2) Persyaratan teknis Izin Usaha Sementara Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Gas Bumi Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai paling sedikit memuat latar belakang, profil perusahaan, sumber pasokan bahan baku, rencana jenis dan spesifikasi produk yang dihasilkan, rencana produksi dan pemasarannya, calon konsumen, lokasi, sarana dan fasilitas, teknologi proses, skema usaha, analisa keekonomian (biaya investasi, perhitungan kelayakan usaha), rencana pemanfaatan atau pembangunan sarana dan fasilitas pengolahan Gas Bumi yang meliputi antara lain teknologi yang digunakan, dimensi, kapasitas, serta sarana dan fasilitas dan data titik koordinat berupa Data Geo-reference Standard Datum WGS84, dan Komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa; b) terkait dengan kesepakatan Jual Beli Gas Bumi atau Kesepakatan Kerja Sama Pengolahan Gas Bumi dengan KKKS atau Badan Usaha Minyak dan Gas Bumi yang memiliki Izin Usaha sesuai dengan ketentuan peraturan perundang-undangan yang berlaku dimaknai dengan ketentuan:
+No. Izin Pengolahan Minyak dan Gas Bumi
+(1) terkait dengan bentuk kesepakatan jual beli atau kesepakatan kerja sama dimaknai sebagai MoU; dan
+
+## Lampiran hal. 60
+
+(2) terkait dengan Badan Usaha dimaknai sebagai Badan Usaha Pemegang Izin Usaha Niaga Minyak dan Gas Bumi. c) terkait dengan kesepakatan awal dengan pengguna akhir atau Badan Usaha yang memiliki Izin Usaha sesuai dengan ketentuan peraturan perundang-undangan yang berlaku dimaknai dengan ketentuan:
+(1) terkait dengan bentuk kesepakatan awal dimaknai sebagai MoU/Letter of Intent (LoI); dan
+(2) terkait dengan Badan Usaha dimaknai sebagai Badan Usaha Pemegang Izin Usaha Niaga Minyak dan Gas Bumi. d) terkait dengan jaminan kecukupan pendanaan yang dibuktikan dengan laporan keuangan 3 (tiga) tahun terakhir dimaknai sebagai laporan keuangan yang sudah diaudit; dan e) terkait dengan rencana pemanfaatan atau pembangunan sarana dan fasilitas pengolahan Gas Bumi yang meliputi antara lain teknologi yang digunakan, dimensi, kapasitas, serta sarana dan fasilitas dan data titik koordinat berupa Data Geo-reference Standard Datum WGS84 dimaknai menjadi bagian dari Studi Kelayakan; dan f) selain memenuhi persyaratan teknis sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang untuk kegiatan berusaha atau sesuai peraturan perundang-undangan untuk setiap lokasi sarana dan fasilitas usaha.
+
+## Lampiran hal. 60
+
+2) Persyaratan teknis Izin Usaha/Perpanjangan Izin Usaha/Penyesuaian Izin Usaha Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Gas Bumi Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan No. Izin Pengolahan Minyak dan Gas Bumi Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai paling sedikit memuat latar belakang, profil perusahaan, sumber pasokan bahan baku, jenis dan spesifikasi produk yang dihasilkan, rencana produksi dan pemasarannya, konsumen, lokasi, sarana dan fasilitas, konfigurasi dan teknologi proses, skema usaha, analisa keekonomian (biaya investasi, perhitungan kelayakan usaha), laporan pelaksanaan pembangunan sarana dan fasilitas, dan Capaian Tingkat Komponen Dalam Negeri Barang dan Jasa; b) terkait dengan dokumen kontrak jual beli dengan pengguna akhir atau Badan Usaha Niaga Gas Bumi /LNG/LPG dimaknai termasuk dokumen kontrak jual beli dengan pengguna akhir atau Badan Usaha Pemegang Izin Usaha Niaga Gas Bumi /LNG/LPG/Hasil Olahan; c) terkait dengan BA commisioning atau BA Hasil Pemeriksaan Keselamatan Instalasi dan Peralatan yang ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas atau Persetujuan Layak Operasi (PLO) dimaknai sebagai PLO yang masih berlaku, Certificate of Inspection (COI) yang masih berlaku atau Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana
+
+## Lampiran hal. 60
+
+yang ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas; d) selain memenuhi persyaratan teknis sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa:
+(1) persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang untuk kegiatan berusaha atau sesuai peraturan perundang-undangan untuk setiap lokasi sarana dan fasilitas usaha; dan
+(2) dokumen Persetujuan Lingkungan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+No. Izin Pengolahan Minyak dan Gas Bumi Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+c. Izin Usaha Pengolahan Minyak dan Gas Bumi untuk kegiatan Pengolahan Hasil Olahan:
+1) persyaratan administratif Izin Usaha Sementara/Izin Usaha/ Perpanjangan Izin Usaha/ Penyesuaian Izin Usaha Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Hasil Olahan Persyaratan administratif sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan surat pernyataan tertulis di atas meterai mengenai:
+
+## Lampiran hal. 62
+
+(1) kesanggupan Badan Usaha memenuhi aspek keselamatan, kesehatan kerja, dan pengelolaan lingkungan hidup dimaknai sebagai kesanggupan Badan Usaha memenuhi seluruh aspek Keselamatan Minyak dan Gas Bumi;
+(2) kesediaan dilakukan audit kepatuhan terhadap ketentuan peraturan perundang-undangan dimaknai sebagai kesanggupan Badan Usaha untuk dilakukan audit kepatuhan melalui pemeriksaan rutin dan insidental terhadap pemenuhan persyaratan dan pelaksanaan kewajiban dalam perizinan berusaha;
+(3) kesanggupan Badan Usaha menjamin dan bertanggungjawab bahwa sarana dan fasilitas yang di miliki/dikuasai layak beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik selama masa operasi dimaknai dengan menghapus frasa “selama masa operasi”; b) selain memenuhi persyaratan administratif berupa surat pernyataan tertulis di atas meterai sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha No. Izin Pengolahan Minyak dan Gas Bumi Berbasis Risiko, memenuhi pernyataan tertulis tambahan berupa:
+(1) kesanggupan Badan Usaha untuk menyampaikan laporan jadwal rencana tahunan, realisasi pelaksanaan bulanan, dan penghentian operasi guna perawatan fasilitas dan sarana Pengolahan dalam rangka menjaga ketersediaan BBM secara berkala;
+(2) komitmen Badan Usaha untuk melakukan kegiatan usaha pengolahan hasil olahan dengan sumber pasokan bahan baku yang sah sesuai peraturan perundang-undangan;
+
+## Lampiran hal. 63
+
+(3) komitmen Badan Usaha untuk tidak menjual produk bahan bakar dengan spesifikasi tertentu kepada Badan Usaha Niaga Umum BBM; dan
+(4) komitmen Badan Usaha untuk menjual produk bahan bakar dengan spesifikasi tertentu hanya kepada konsumen tertentu.
+2) Persyaratan Teknis Izin Usaha Sementara Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Hasil Olahan Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai antara lain memuat latar belakang, profil perusahaan, sumber pasokan bahan baku, rencana jenis dan spesifikasi produk yang dihasilkan, rencana produksi dan pemasarannya, calon konsumen, lokasi, sarana dan fasilitas teknologi proses, skema usaha, analisa keekonomian (rencana investasi, harga jual, indikator kelayakan usaha, dan periode pengembalian modal), rencana pelaksanaan pembangunan sarana dan fasilitas, komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa, rencana merek dagang, dan dokumen Kontrak Perjanjian Jual Beli dengan Konsumen Akhir paling sedikit memuat volume, jangka waktu, dan wilayah;
+
+## Lampiran hal. 64
+
+No. Izin Pengolahan Minyak dan Gas Bumi b) terkait dengan Kesepakatan awal (MoU/HoA/Perjanjian Jual Beli) dengan pemasok bahan baku Minyak Bumi dan/atau dokumen lain yang mengindikasikan tersedianya pasokan dengan calon pemasok yang difasilitasi oleh SKK Migas dimaknai sebagai dokumen yang menjelaskan kesepakatan awal atau kontrak jual beli dengan pemasok; c) terkait dengan jaminan kecukupan pendanaan yang dibuktikan dengan dokumen kesepakatan dengan pihak lain untuk pendanaan (mencantumkan nominal tertentu) dimaknai sebagai dokumen kesepakatan dengan pihak lain untuk pendanaan dengan nominal tertentu dan memperoleh dukungan keuangan dari pihak lain tersebut.
+
+## Lampiran hal. 64
+
+3) Persyaratan Teknis Izin Usaha/Perpanjangan Izin Usaha/Penyesuaian Izin Usaha Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Hasil Olahan Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai antara lain memuat latar belakang, profil perusahaan, sumber pasokan bahan baku, jenis dan spesifikasi produk yang dihasilkan, produksi dan pemasarannya, daftar konsumen, lokasi, sarana dan fasilitas teknologi proses, skema usaha, analisa keekonomian (Investasi, Harga Jual, Indikator Kelayakan Usaha, dan Periode Pengembalian Modal), rencana pelaksanaan pembangunan sarana dan fasilitas, serta komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa; b) erkait Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik Lingkungan Migas/PLO yang masih berlaku/sesuai ketentuan peraturan perundang-undangan dimaknai sebagai PLO yang masih berlaku, Certificate of Inspection (COI) No.
+
+## Lampiran hal. 64
+
+Izin Pengolahan Minyak dan Gas Bumi yang masih berlaku atau Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas; c) terkait dengan memiliki laboratorium uji terakreditasi untuk melakukan pengujian terhadap mutu produk yang dihasilkan sesuai dengan standar dan mutu yang ditetapkan Menteri dimaknai dengan ketentuan:
+(1) untuk kilang dengan kapasitas lebih dari 100.000 (seratus ribu) barel per hari memiliki laboratorium uji produk yang telah terakreditasi;
+(2) untuk kilang dengan kapasitas sampai dengan 100.000 (seratus ribu) barel per hari bekerja sama dengan laboratorium independen yang telah terakreditasi; dan
+(3) untuk Badan Usaha yang memiliki kilang dengan kapasitas lebih dari 100.000 (seratus ribu) barel per hari, namun belum dapat memenuhi persyaratan kepemilikan laboratorium uji terakreditasi, Badan Usaha menyampaikan kesanggupan untuk memiliki laboratorium uji mutu produk yang terakreditasi dalam waktu 3 (tiga) tahun sejak Izin Usaha diterbitkan dan selama masa waktu 3 (tiga) tahun tersebut bekerja sama dengan laboratorium independen yang telah terakreditasi. d) terkait dengan Spesifikasi dan hasil uji laboratorium produk yang dihasilkan (untuk produk bahan bakar dengan spesifikasi tertentu yang berbeda dengan standar dan mutu yang ditetapkan oleh Pemerintah) dimaknai dengan ketentuan:
+
+## Lampiran hal. 65
+
+(1) menyampaikan dokumen hasil uji laboratorium atas seluruh parameter mutu produk yang dihasilkan;
+(2) menyampaikan dokumen nama komoditas dan /atau bukti pendaftaran merek dagang; dan
+(3) menyampaikan dokumen kontrak perjanjian dimaknai sebagai kontrak perjanjian jual beli dengan konsumen tertentu paling sedikit memuat No. Izin Pengolahan Minyak dan Gas Bumi volume, jangka waktu, dan wilayah pasokan. e) selain memenuhi persyaratan teknis sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa:
+(1) dokumen persetujuan lingkungan;
+(2) persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang atau Persetujuan Pemerintah/ instansi yang berwenang sesuai dengan ketentuan yang berlaku atau Pengelola kawasan yang berwenang mengenai lokasi untuk pembangunan fasilitas dan sarana; dan
+(3) dokumen yang menyatakan bahwa pemasok memiliki izin pengumpul limbah B3 (Bahan Berbahaya dan Beracun).
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan:
+Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+
+## Lampiran hal. 66
+
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 15 (lima belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Izin Pengolahan Minyak dan Gas Bumi disetujui;
+4) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku 1) Izin Pengolahan Minyak dan Gas Bumi untuk kegiatan pengolahan minyak bumi: a) 20 (dua puluh) tahun untuk kilang dengan kapasitas desain lebih dari 5.000 No. Izin Pengolahan Minyak dan Gas Bumi (lima ribu) KL per hari dan dapat diperpanjang; b) 15 (lima belas) tahun untuk kilang dengan kapasitas desain lebih dari 1.000 (seribu) sampai dengan 5.000 (lima ribu) KL per hari dan dapat diperpanjang; c) 10 (sepuluh) tahun untuk kilang dengan kapasitas desain lebih dari 500 (lima ratus) sampai dengan 1.000 (seribu) KL per hari dan dapat diperpanjang; dan d) 5 (lima) tahun untuk kilang dengan kapasitas desain sampai dengan 500 (lima ratus) KL per hari dan dapat diperpanjang.
+2) Izin Pengolahan Minyak dan Gas Bumi untuk Kegiatan Pengolahan Gas Bumi diberikan sepanjang periode alokasi gas bumi atau periode PJBG dengan Badan Usaha Pemegang Izin Usaha Niaga Minyak dan Gas Bumi atau paling lama 10 (sepuluh) tahun dan dapat diperpanjang.
+3) Izin Pengolahan Minyak dan Gas Bumi untuk kegiatan pengolahan Hasil Olahan diberikan paling lama 5 (lima) tahun dan dapat diperpanjang.
+
+## Lampiran hal. 67
+
+4) Izin Usaha Sementara Pengolahan Minyak dan Gas Bumi diberikan untuk jangka waktu paling lama 3 (tiga) tahun dan dapat diperpanjang satu kali untuk jangka waktu paling lama 2 (dua) tahun.
+c. Berakhirnya Izin Pengolahan Minyak dan Gas Bumi 1) Izin Pengolahan Minyak dan Gas Bumi berakhir karena: a) habis masa berlakunya; atau b) dicabut.
+2) Pencabutan Izin Pengolahan Minyak dan Gas Bumi sebagaimana dimaksud pada angka 1) huruf b dapat didasarkan pada: a) pengenaan sanksi administratif; b) permohonan pencabutan dari Badan Usaha; dan/atau c) putusan pengadilan yang telah memiliki kekuatan hukum tetap berupa pencabutan izin atau pailit.
+6. Ketentuan Kewajiban KBLI 19211 Kewajiban Pemegang Izin Usaha:
+a. menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Direktur Jenderal;
+No. Izin Pengolahan Minyak dan Gas Bumi
+b. menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, kehandalan, kalibrasi, dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+c. menjamin keselamatan minyak dan gas bumi serta pengembangan masyarakat setempat sesuai dengan ketentuan peraturan perundang-undangan;
+d. menjamin pelaksanaan pemeriksaan rutin dan insidental oleh Direktorat Jenderal sesuai dengan ketentuan peraturan perundang-undangan dengan mempertimbangkan ketersediaan SDM dan anggaran, yang dilaksanakan:
+
+## Lampiran hal. 68
+
+1) secara periodik setiap 3 (tiga) sampai 5 (lima) tahun sekali selama masa izin usaha berlaku; dan 2) paling lambat 6 (enam) bulan sebelum masa izin usaha berakhir, Badan Usaha dapat diberikan sanksi administratif apabila berdasarkan hasil evaluasi pemeriksaan rutin dan insidental terhadap pemenuhan persyaratan dan pelaksanaan kewajiban yang tercantum dalam perizinan berusaha dan/atau ketentuan peraturan perundang undangan.
+e. melaporkan kepada Menteri melalui Direktur Jenderal mengenai pelaksanaan kegiatan Izin Usaha Pengolahan Minyak dan Gas bumi secara berkala setiap 1 (satu) bulan sekali atau sewaktu-waktu apabila diperlukan;
+f. menyampaikan permohonan perpanjangan Izin Usaha paling lambat 3 (tiga) bulan sebelum masa berlaku izin usaha berakhir atau penyesuaian Izin Usaha apabila terdapat perubahan data administratif dan/atau teknis perizinan berusaha;
+g. mematuhi dan memenuhi semua kewajiban yang tercantum dalam Izin Usaha, perizinan, dan ketentuan dalam peraturan perundang-undangan;
+h. melaksanakan penugasan Pemerintah dalam rangka penyediaan cadangan BBM Nasional.
+Pemegang Izin Usaha Sementara:
+a. melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan sarana dan fasilitas yang disetujui;
+b. menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+No. Izin Pengolahan Minyak dan Gas Bumi
+c. menggunakan kaidah keteknikan yang baik;
+
+## Lampiran hal. 69
+
+d. mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+e. menjamin Keselamatan dan Kesehatan Kerja dan pengelolaan Iingkungan hidup;
+f. melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+g. melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 3 (tiga) bulan sekali atau sewaktu-waktu apabila diperlukan;
+h. pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara;
+i. pada saat melakukan uji coba operasi sebagaimana dimaksud pada butir h, Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha; dan
+j. dalam hal pada saat melakukan uji coba operasi sebagaimana dimaksud terdapat produk yang secara teknis harus disalurkan kepada pihak lain, Pemegang Izin Usaha Sementara wajib meminta persetujuan kepada Direktur Jenderal.
+Kewajiban KBLI 35201 Pemegang Izin Usaha Sementara wajib:
+a. melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan sarana dan fasilitas;
+b. menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+c. menggunakan kaidah keteknikan yang baik;
+
+## Lampiran hal. 69
+
+d. mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+e. menjamin keselamatan dan kesehatan kerja dan pengelolaan Iingkungan hidup;
+f. instalasi peralatan dan sistem alat ukur wajib disampaikan dalam perjanjian;
+g. melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila No. Izin Pengolahan Minyak dan Gas Bumi terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+h. melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 3 (tiga) bulan sekali atau sewaktu- waktu apabila diperlukan;
+i. pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara;
+j. pada saat melakukan uji coba operasi sebagaimana dimaksud pada butir i, Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha;
+k. dalam hal pada saat melakukan uji coba operasi sebagaimana dimaksud terdapat produk yang secara teknis harus disalurkan kepada pihak lain, Pemegang Izin Usaha Sementara wajib meminta persetujuan kepada Direktur Jenderal.
+Pemegang Izin Usaha wajib:
+
+## Lampiran hal. 70
+
+a. menjamin dan bertanggung jawab atas penggunaan instalasi peralatan dan keakuratan sistem alat ukur yang digunakan sudah memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+b. menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Direktur Jenderal;
+c. instalasi peralatan dan sistem alat ukur wajib disampaikan dalam perjanjian;
+d. menjamin keselamatan dan kesehatan kerja, pengelolaan lingkungan hidup serta pengembangan masyarakat setempat;
+e. melaksanakan penugasan Pemerintah dalam rangka penyediaan cadangan BBG Nasional;
+f. melaporkan dan/atau menyampaikan permohonan penyesuaian Izin apabila terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+g. melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 1 (satu) bulan sekali atau sewaktu-waktu apabila diperlukan;
+h. memenuhi perizinan yang ditetapkan oleh Instansi terkait sesuai dengan ketentuan peraturan perundang-undangan;
+i. memiliki laboratorium terakreditasi dalam jangka waktu 3 (tiga) tahun setelah Izin Usaha diterbitkan.
+No. Izin Pengolahan Minyak dan Gas Bumi Kewajiban KBLI 19214 Pemegang Izin Usaha:
+a. menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Direktur Jenderal;
+b. menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, kehandalan, kalibrasi, dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+
+## Lampiran hal. 71
+
+c. menjamin keselamatan minyak dan gas bumi serta pengembangan masyarakat setempat sesuai dengan ketentuan peraturan perundangan-undangan;
+d. menjamin pelaksanaan pemeriksaan rutin dan insidental oleh Direktorat Jenderal sesuai dengan ketentuan peraturan perundang-undangandengan mempertimbangkan ketersediaan SDM dan anggaran, yang dilaksanakan:
+1) secara periodik setiap 3 (tiga) sampai 5 (lima) tahun sekali selama masa izin usaha berlaku;
+2) paling lambat 6 (enam) bulan sebelum masa izin usaha berakhir; dan 3) Badan Usaha dapat diberikan sanksi administratif apabila berdasarkan hasil evaluasi pemeriksaan rutin dan insidental terhadap pemenuhan persyaratan dan pelaksanaan kewajiban yang tercantum dalam perizinan berusaha dan/atau ketentuan peraturan perundang undangan.
+e. memenuhi ketentuan pelaksanaan kepemilikan laboratorium uji yang terakreditasi untuk melakukan pengujian terhadap mutu produk yang dihasilkan;
+f. melaporkan kepada Menteri melalui Direktur Jenderal mengenai pelaksanaan kegiatan Izin Usaha Pengolahan Minyak dan Gas bumi secara berkala setiap 3 (tiga) bulan sekali atau sewaktu-waktu apabila diperlukan;
+g. menyampaikan permohonan perpanjangan Izin Usaha paling lambat 3 (tiga) bulan sebelum masa berlaku izin usaha berakhir atau penyesuaian Izin Usaha apabila terdapat perubahan data administratif dan/atau teknis perizinan berusaha;
+h. mematuhi dan memenuhi semua kewajiban yang tercantum dalam Izin Usaha, perizinan, dan ketentuan dalam peraturan perundang-undangan;
+
+## Lampiran hal. 72
+
+No. Izin Pengolahan Minyak dan Gas Bumi
+i. melaksanakan penugasan Pemerintah dalam rangka penyediaan cadangan BBM Nasional.
+Pemegang Izin Usaha Sementara:
+a. melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan sarana dan fasilitas yang disetujui;
+b. menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+c. menggunakan kaidah keteknikan yang baik;
+d. mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+e. menjamin Keselamatan dan Kesehatan Kerja dan pengelolaan lingkungan hidup;
+f. melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+g. melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 3 (tiga) bulan sekali atau sewaktu-waktu apabila diperlukan;
+h. pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara;
+i. pada saat melakukan uji coba operasi sebagaimana dimaksud pada butir h, Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha; dan
+
+## Lampiran hal. 72
+
+j. dalam hal pada saat melakukan uji coba operasi sebagaimana dimaksud terdapat produk yang secara teknis harus disalurkan kepada pihak lain, Pemegang Izin Usaha Sementara wajib meminta persetujuan kepada Direktur Jenderal.
+8. Standar Kegiatan Usaha Berupa Niaga Minyak dan Gas Bumi No. Izin Niaga Minyak dan Gas Bumi KBLI:
+(46610) Perdagangan Besar Bahan Bakar Padat, Cair dan Gas dan Produk YBDI
+(35202) Distribusi Gas Alam dan Buatan No. Izin Niaga Minyak dan Gas Bumi
+1. Ruang Standar ini memuat pengaturan yang terkait Lingkup dengan:
+a. Kelompok usaha pada KBLI 46610 (Perdagangan Besar Bahan Bakar Padat, Cair, Gas dan Produk YBDI) yang mencakup usaha perdagangan besar bahan bakar gas, cair, dan padat serta produk sejenisnya, seperti minyak bumi mentah, minyak mentah, bahan bakar diesel, gasoline, bahan bakar oli, kerosin, premium, solar, minyak tanah, Bahan Bakar Campuran, bahan bakar gas (LPG, gas butana dan propana, LNG, CNG, dan lain-lain), dan kondensat dari kegiatan eksploitasi minyak dan gas bumi yang diberlakukan sebagai minyak bumi;
+b. Kelompok usaha pada KBLI 35202 (Distribusi Gas Alam dan Buatan) yang mencakup usaha penyaluran gas melalui jaringan yang bertekanan ekstra tinggi (lebih dari 10 bar), yang bertekanan tinggi (antara 4 bar s.d. 10 bar), dan yang bertekanan menengah ke bawah (di bawah 4 bar), baik berasal dari produksi pihak lain sampai ke konsumen atau pelanggan.
+
+## Lampiran hal. 73
+
+2. Istilah dan a. Minyak Bumi adalah hasil proses alami berupa Definisi hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa cair atau padat, termasuk aspal, lilin mineral atau ozokerit dan bitumen yang diperoleh dari proses penambangan, tetapi tidak termasuk batubara atau endapan hidrokarbon lain yang berbentuk padat yang diperoleh dari kegiatan yang tidak berkaitan dengan kegiatan usaha Minyak dan Gas Bumi.
+b. Gas Bumi adalah hasil proses alami berupa hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa gas yang diperoleh dari proses penambangan Minyak dan Gas Bumi.
+c. Bahan Bakar Minyak yang selanjutnya disingkat BBM adalah bahan bakar yang berasal dan/atau diolah dari Minyak Bumi.
+d. Bahan Bakar Gas untuk Tranportasi yang selanjutnya disingkat BBG untuk Transportasi adalah bahan bakar untuk digunakan dalam kegiatan transportasi yang berasal dari Gas Bumi dan/atau hasil olahan dari Minyak dan Gas Bumi.
+e. Hasil Olahan adalah hasil dan/atau produk selain bahan bakar minyak dan/atau bahan bakar gas yang diperoleh dari kegiatan hasil pengolahan minyak dan gas bumi baik berupa produk akhir atau produk antara kecuali pelumas dan petrokimia.
+No. Izin Niaga Minyak dan Gas Bumi
+f. Kondensat adalah fraksi hidrokarbon cair yang dihasilkan dari gas bumi atau campuran gas dan cairan hidrokarbon, yang mengembun pada kondisi tekanan dan temperatur permukaan setelah dipisahkan dari gas bumi.
+
+## Lampiran hal. 74
+
+g. Liquefied Petroleum Gas yang selanjutnya disingkat LPG adalah gas hidrokarbon yang dicairkan dengan tekanan untuk memudahkan penyimpanan, pengangkutan, dan penanganannya yang pada dasarnya terdiri atas propana, butana, atau campuran keduanya.
+h. Liquefied Natural Gas yang selanjutnya disingkat LNG adalah Gas Bumi yang terutama terdiri dari metana yang dicairkan pada suhu sangat rendah (sekitar minus 160°C) dan dipertahankan dalam keadaan cair untuk mempermudah transportasi dan penimbunan.
+i. Compressed Natural Gas yang selanjutnya disingkat CNG adalah BBG yang berasal dari Gas Bumi dengan unsur utama berupa metana (C1) yang telah dimampatkan dan dipertahankan serta disimpan pada bejana bertekanan khusus untuk mempermudah transportasi dan penimbunan.
+j. Bahan Bakar Campuran adalah BBM dan/atau gas yang dicampur dengan bahan bakar nabati dan/atau bahan bakar lain, seperti campuran Minyak Solar dan FAME, campuran bensin dan ethanol/methanol, campuran LPG dan Dimethyl Ether.
+k. Kegiatan Pencampuran adalah kegiatan teknis dan operasional berupa proses menggabungkan dua atau lebih produk energi baik antar hasil produk kilang minyak bumi maupun antara hasil produk kilang minyak bumi dengan biofuel untuk menghasilkan produk akhir dengan spesifikasi mutu tertentu sesuai standar keselamatan, kualitas, dan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 74
+
+l. Niaga adalah kegiatan pembelian, penjualan, ekspor, impor untuk komoditas Minyak Bumi, BBM, BBG dan/atau Hasil Olahan, termasuk Gas Bumi melalui pipa.
+m. Izin Usaha adalah izin yang diberikan kepada Badan Usaha untuk melaksanakan Pengolahan, Pengangkutan, Penyimpanan dan/atau Niaga dengan tujuan memperoleh keuntungan dan/atau laba.
+n. Izin Usaha Sementara Niaga Minyak dan Gas Bumi adalah izin yang bersifat sementara dalam rangka pembangunan atau penyiapan sarana dan fasilitas untuk melakukan kegiatan usaha dan pengurusan perizinan dari instansi lain No. Izin Niaga Minyak dan Gas Bumi yang diberikan kepada Badan Usaha sebelum diberikan Izin Usaha Niaga Minyak dan Gas Bumi.
+o. Pemegang Izin Usaha adalah Badan Usaha yang diberikan Izin Usaha.
+p. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha yang bersifat tetap, terus-menerus, dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+q. Keselamatan Minyak dan Gas Bumi adalah keselamatan yang meliputi keselamatan pekerja, keselamatan instalasi dan peralatan, keselamatan lingkungan dan keselamatan umum.
+r. Instalasi Minyak dan Gas Bumi adalah rangkaian peralatan yang terintegrasi dalam suatu sistem untuk melaksanakan fungsi operasi pada Kegiatan Usaha Minyak dan Gas Bumi.
+
+## Lampiran hal. 75
+
+s. Inspeksi Teknis adalah suatu kegiatan yang dilakukan secara langsung meliputi pemeriksaan dokumen, pemeriksaan fisik, dan pengujian peralatan dan/atau Instalasi mengacu pada ketentuan peraturan perundang-undangan, standar, dan kaidah keteknikan yang baik.
+t. Persetujuan Layak Operasi yang selanjutnya disingkat PLO adalah adalah pengakuan formal bahwa Kontraktor atau Pemegang Izin Usaha telah melaksanakan Inspeksi Teknis yang mengacu pada ketentuan peraturan perundangan-undangan, Standar, dan kaidah keteknikan yang baik.
+u. Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi yang selanjuitnya disingkat SKK Migas adalah pelaksana penyelenggaraan pengelolaan Kegiatan Usaha Hulu di bidang Minyak dan Gas Bumi berdasarkan Kontrak Kerja Sama di bawah pembinaan, koordinasi, dan pengawasan Menteri Energi dan Sumber Daya Mineral.
+v. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+w. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+No. Izin Niaga Minyak dan Gas Bumi
+3. Penggolongan a. Izin Usaha Sementara Niaga Minyak dan Gas Usaha Bumi, dengan jenis kegiatan:
+1) Niaga Minyak Bumi;
+2) Niaga Umum BBM;
+3) Niaga Umum Hasil Olahan (kecuali pelumas, petrokimia, dan aspal);
+4) Niaga LPG, LNG, CNG, atau BBG untuk Transportasi;
+5) Niaga Gas Bumi yang memiliki Fasilitas Jaringan Distribusi.
+
+## Lampiran hal. 76
+
+b. Izin Usaha Niaga Minyak dan Gas Bumi, dengan jenis kegiatan:
+1) Niaga Minyak Bumi;
+2) Niaga Umum BBM;
+3) Niaga Terbatas BBM;
+4) Niaga Umum Hasil Olahan (kecuali pelumas, petrokimia, dan aspal);
+5) Niaga Terbatas Hasil Olahan (kecuali pelumas, petrokimia, dan aspal);
+6) Niaga LPG, LNG, CNG, atau BBG untuk Transportasi;
+7) Niaga Gas Bumi Pipa;
+8) Niaga Gas Bumi yang memiliki Fasilitas Jaringan Distribusi.
+c. Skala usaha: Mikro, Kecil, Menengah, Besar
+d. Tingkat risiko: Tinggi
+4. Ketentuan a. Izin Usaha Niaga Minyak dan Gas Bumi untuk Persyaratan Kegiatan Niaga Minyak Bumi, Niaga Umum BBM dan/atau Niaga Umum Hasil Olahan:
+1) persyaratan administratif Izin Usaha Sementara/Izin Usaha/perpanjangan/Izin Usaha Niaga Minyak dan Gas Bumi untuk Kegiatan Niaga Minyak Bumi, Niaga Umum BBM, dan/atau Niaga Umum Hasil Olahan Persyaratan administratif sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan surat pernyataan tertulis di atas meterai mengenai:
+(1) kesanggupan Badan Usaha memenuhi aspek keselamatan, kesehatan kerja, dan pengelolaan lingkungan hidup dimaknai sebagai kesanggupan Badan Usaha memenuhi seluruh aspek Keselamatan Minyak dan Gas Bumi;
+
+## Lampiran hal. 76
+
+(2) kesediaan dilakukan audit kepatuhan terhadap ketentuan peraturan perundang-undangan No. Izin Niaga Minyak dan Gas Bumi dimaknai sebagai kesanggupan Badan Usaha untuk dilakukan audit kepatuhan melalui pemeriksaan rutin dan insidental terhadap pemenuhan persyaratan dan pelaksanaan kewajiban dalam perizinan berusaha;
+(3) kesanggupan Badan Usaha menjamin dan bertanggung jawab bahwa sarana dan fasilitas yang di miliki/ dikuasai layak beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik selama masa operasi, dimaknai dengan menghapus frasa “selama masa operasi”; dan
+(4) kesanggupan Badan Usaha menerima penugasan dari Menteri untuk melaksanakan penyimpanan dalam rangka penyediaan cadangan penyangga energi atau cadangan operasi dan pemenuhan kebutuhan minyak bumi di dalam negeri pada fasilitas dan sarana penyimpanan miliknya (untuk kegiatan usaha niaga minyak bumi) dimaknai termasuk juga melaksanakan penyimpanan dalam rangka penyediaan cadangan penyangga energi atau cadangan operasi dan pemenuhan kebutuhan BBM di dalam negeri pada fasilitas dan sarana penyimpanan miliknya (untuk kegiatan usaha niaga BBM). b) selain memenuhi persyaratan administratif berupa surat pernyataan tertulis di atas meterai sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi pernyataan tertulis tambahan berupa;
+
+## Lampiran hal. 77
+
+(1) kesanggupan Badan Usaha untuk menyampaikan laporan pasokan, penjualan dan/atau pendistribusian, stok, harga, impor dan ekspor dan penunjukan penyalur;
+(2) komitmen Badan Usaha untuk menyimpan, mencampur, atau memperdagangkan minyak mentah, hasil olahan, atau BBM yang berasal dari sumber pasokan yang sah sesuai peraturan perundang-undangan;
+No. Izin Niaga Minyak dan Gas Bumi
+(3) komitmen Badan Usaha untuk tidak memperjualbelikan produk bahan bakar dengan spesifikasi tertentu yang diperoleh dari Badan Usaha Pengolahan Hasil Olahan;
+(4) komitmen Badan Usaha untuk memastikan bahwa seluruh sarana dan fasilitas angkutan darat, laut, dan/atau udara yang dimiliki/dikuasai untuk kegiatan usaha niaga minyak dan gas bumi telah memiliki legalitas sesuai dengan ketentuan peraturan perundang-undangan;
+(5) kesanggupan Badan Usaha untuk menyampaikan laporan kegiatan usaha pencampuran hasul kilang minuak dan gas bumi dengan BBN meliputi laporan jadwal rencana tahunan, realisasi pelaksanaan bulanan, dan penghentian operasi guna perawatan fasilitas dan sarana pencampuran hasil kilang minyak dan gas bumi dengan BBN dalam rangka menjaga ketersediaan BBM secara berkala (apabila melakukan kegiatan pencampuran (blending)); dan
+(6) kesanggupan Badan Usaha Pencampuran Hasil Minyak Bumi dengan BBN untuk menyediakan fasilitas pengujian terhadap mutu hasil pencampuran (blending) terkait dengan kegiatan pencampuran atau bekerjasama dengan laboratorium independen yang telah terakreditasi.
+
+## Lampiran hal. 78
+
+2) persyaratan teknis Izin Usaha Sementara Niaga Minyak dan Gas Bumi untuk Kegiatan Niaga Minyak Bumi, Niaga Umum Bahan Bakar Minyak dan/atau Niaga Umum Hasil Olahan Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai antara lain memuat lokasi, sarana dan fasilitas, komoditas (untuk 1 komoditas wajib memiliki/ menguasai 1 fasilitas penyimpanan), skema usaha, rencana pasokan (sumber pasokan, volume, jenis No. Izin Niaga Minyak dan Gas Bumi kontrak, dan strategi keberlanjutan pasokan), SOP kegiatan usaha niaga Minyak Bumi, Niaga Umum BBM dan/atau Niaga Umum Hasil Olahan, termasuk SOP kegiatan usaha pencampuran dengan komoditas dan rencana lokasinya (bagi Badan Usaha yang melakukan kegiatan pencampuran, penggunaan Tenaga Kerja Asing dan Tenaga Kerja Lokal, komitmen Tingkat Komponen Dalam Negeri (TKDN) barang dan jasa, realisasi (bila ada) dan rencana kegiatan Usaha Niaga Migas, analisis keekonomian (rencana investasi, harga jual, indikator kelayakan usaha, dan periode pengembalian modal) serta rencana merek dagang dan rencana spesifikasi produk yang akan diniagakan untuk kegiatan niaga umum BBM dan/atau Hasil Olahan; b) terkait dengan kesepakatan awal (MoU atau HoA) jual beli dengan pemasok dan/atau dokumen yang mengindikasikan tersedianya pasokan dengan calon pemasok Minyak Bumi yang difasilitasi
+
+## Lampiran hal. 78
+
+oleh SKK Migas untuk kegiatan Niaga Minyak Bumi dan/atau Niaga Umum Hasil Olahan dimaknai sebagai dokumen yang menjelaskan:
+(1) kesepakatan awal jual beli dengan pemasok; dan/atau
+(2) dokumen dari SKK Migas kepada pemasok yang menerangkan ketersediaan pasokan Minyak Bumi dan/atau Hasil Olahan, untuk kegiatan Niaga Minyak Bumi dan/atau Niaga umum Hasil Olahan; c) terkait dengan Rencana penggunaan sarana dan fasilitas Niaga Umum BBM berupa kepemilikan sarana dan fasilitas penyimpanan dengan jumlah keseluruhan paling sedikit 1500 KL (seribu lima ratus kilo liter) dan kebutuhan fasilitas penyimpanan selanjutnya dapat menguasai/sewa.
+Sarana Fasilitas penyimpanan BBM dimaksud dapat berupa tangki darat, floating storage, tangki penyimpanan BBM di Fasilitas Sarana Pengisian Bahan Bakar untuk Transportasi Darat, Laut, dan Udara dan fasilitas penyimpanan sesuai dengan ketentuan peraturan lainnya Berserta data titik koordinat No. Izin Niaga Minyak dan Gas Bumi berupa Data Georeference Standard Datum WGS84 baik yang:
+(1) dimiliki dengan jangka waktu pembangunan sarana dan fasilitas penyimpanan; dan/atau
+(2) dikuasai dengan sewa eksklusif kepada pihak lain, dimaknai dengan:
+(1) rencana penggunaan sarana dan fasilitas Niaga Umum BBM berupa kepemilikan sarana dan fasilitas penyimpanan dengan jumlah keseluruhan paling sedikit 1500 KL (seribu lima ratus kilo liter) dan kebutuhan fasilitas penyimpanan selanjutnya dapat menguasai/sewa; dan
+
+## Lampiran hal. 80
+
+(2) sarana fasilitas penyimpanan BBM yang dimaksud dapat berupa penyimpanan darat, penyimpanan perairan (floating storage), penyimpanan di fasilitas Sarana Pengisian Bahan Bakar untuk Transportasi Darat, Laut, dan Udara dan fasilitas penyimpanan lain sesuai ketentuan peraturan lainnya.
+Fasilitas-fasilitas tersebut dilengkapi dengan data titik koordinat berupa Data Georeference Standard Datum WGS84. Sarana Fasilitas Penyimpanan BBM yang dimaksud tidak berpindah-pindah tempat, baik yang
+(a) dimiliki dengan jangka waktu pembangunan sarana dan fasilitas penyimpanan; dan/atau
+(b) dikuasai dengan sewa eksklusif kepada pihak lain. d) terkait dengan Jaminan kecukupan pendanaan, yang dibuktikan dengan Dokumen kesepakatan dengan pihak lain untuk pendanaan (mencantumkan nominal tertentu) dimaknai sebagai dokumen kesepakatan dengan pihak lain untuk pendanaan dengan nominal tertentu dan memperoleh dukungan keuangan dari pihak lain tersebut; dan e) terkait dengan Badan Usaha Niaga yang melakukan kegiatan pencampuran (blending) untuk menghasilkan BBM dan/atau Hasil Olahan wajib memiliki/menguasai fasilitas pencampuran (blending). Badan Usaha No. Izin Niaga Minyak dan Gas Bumi Niaga hanya dapat melakukan blending dengan komoditas hasil blending yang tercantum dalam Izin Usaha tidak diperlukan serta dimaknai menjadi bagian dari persyaratan teknis Izin Usaha/Perpanjangan Izin Usaha.
+
+## Lampiran hal. 81
+
+3) persyaratan teknis Izin Usaha/ Perpanjangan Izin Usaha Izin Usaha Niaga Minyak dan Gas Bumi untuk Kegiatan Niaga Minyak Bumi, Niaga Umum BBM dan/atau Niaga Umum Hasil Olahan Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai antara lain memuat lokasi, sarana dan fasilitas, komoditas (untuk 1 komoditas wajib memiliki/ menguasai 1 fasilitas penyimpanan), skema usaha, pasokan (sumber pasokan, volume, jenis kontrak, dan strategi keberlanjutan pasokan), SOP kegiatan usaha niaga Minyak Bumi, Niaga Umum BBM dan/atau Niaga Umum Hasil Olahan, termasuk SOP kegiatan usaha pencampuran dengan komoditas dan lokasinya (bagi Badan Usaha yang melakukan kegiatan pencampuran, penggunaan Tenaga Kerja Asing dan Tenaga Kerja Lokal, realisasi kegiatan usaha Niaga Migas yang pernah dijalani sebelumnya (apabila ada), komitmen Tingkat Komponen Dalam Negeri (TKDN) barang dan jasa, dan analisis keekonomian (investasi, harga jual, indikator kelayakan usaha, dan periode pengembalian modal); b) terkait dengan Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik Lingkungan Migas/PLO yang masih berlaku/sesuai ketentuan peraturan perundang-undangan dimaknai sebagai PLO yang masih berlaku, Certificate of Inspection (COI) yang masih
+
+## Lampiran hal. 81
+
+berlaku atau Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas No. Izin Niaga Minyak dan Gas Bumi Direktorat Teknik dan Lingkungan Migas; c) terkait dengan daftar sarana dan fasilitas niaga yang digunakan termasuk kepemilikan sarana dan fasilitas penyimpanan dengan jumlah keseluruhan paling sedikit 1500 KL (seribu lima ratus kilo liter) dan kebutuhan fasilitas penyimpanan selanjutnya dapat menguasai/sewa.
+
+## Lampiran hal. 82
+
+Sarna fasilitas Penyimpanan BBM dimaksud dapat berupa tangki darat, floating storage, tangki penyimpanan BBM di Fasilitas Sarana Pengisian Bahan Bakar untuk Transportasi Darat, Laut, dan Udara dan fasilitas penyimpanan lain sesuai ketentuan peraturan lainnya dimaknai sebagai daftar sarana dan fasilitas niaga yang digunakan sebagai sarana dan fasilitas Penyimpanan BBM dapat berupa penyimpanan darat, penyimpanan perairan (floating storage), penyimpanan di Fasilitas Sarana Pengisian Bahan Bakar untuk Transportasi Darat, Laut, dan Udara dan/atau fasilitas penyimpanan lain sesuai ketentuan peraturan perundangan lainnya. Kepemilikan sarana dan fasilitas penyimpanan dengan jumlah keseluruhan paling sedikit 1500 KL (seribu lima ratus kiloliter) dan kebutuhan fasilitas penyimpanan selanjutnya dapat menguasai/sewa sarana; d) terkait dengan persyaratan teknis huruf d dan huruf f sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko dimaknai sebagai daftar sarana dan fasilitas niaga yang digunakan termasuk fasilitas penyimpanan dan fasilitas pendukung apabila terdapat fasilitas niaga untuk kegiatan niaga minyak bumi, niaga umum BBM, dan/atau niaga umum Hasil Olahan sebagai berikut;
+(1) untuk penyimpanan darat dan fasilitas pendukungnya berupa dokumen kepemilikan, yaitu surat pernyataan kepemilikan dari Direksi beserta dokumen pendukung dan/atau kontrak perjanjian sewa-menyewa apabila sewa;
+
+## Lampiran hal. 83
+
+No. Izin Niaga Minyak dan Gas Bumi
+(2) untuk penyimpanan perairan (floating storage) dan fasilitas pendukungnya berupa Gross Akta Kapal yang diterbitkan oleh Kementerian Perhubungan, Ship particulars, dan/atau kontrak perjanjian sewa-menyewa apabila sewa;
+(3) untuk sarana penyimpanan di Fasilitas Sarana Pengisian Bahan Bakar untuk Transportasi Darat, Laut, Udara dan fasilitas pendukungnya berupa dokumen kepemilikan, yaitu Surat Pernyataan Kepemilikan dari Direksi berserta dokumen pendukung dan/atau kontrak perjanjian sewa-menyewa apabila sewa. e) selain memenuhi persyaratan teknis sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa:
+(1) dokumen persetujuan lingkungan; dan
+(2) Badan Usaha Niaga yang melakukan kegiatan pencampuran (blending) untuk menghasilkan BBM dan/atau Hasil Olahan wajib memiliki/menguasai fasilitas pencampuran (blending). Komoditas hasil akhir dari blending harus sesuai dengan spesifikasi Direktur Jenderal Minyak dan Gas Bumi dan/atau yang tercantum dalam Izin.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+
+## Lampiran hal. 83
+
+b. Izin Usaha Niaga Minyak dan Gas Bumi untuk Kegiatan Niaga Terbatas BBM dan/atau Niaga Terbatas Hasil Olahan:
+1) persyaratan administratif Izin Usaha Sementara/Izin Usaha/perpanjangan Izin Usaha/penyesuaian Izin Usaha Niaga No. Izin Niaga Minyak dan Gas Bumi Minyak dan Gas Bumi untuk Kegiatan Niaga terbatas BBM dan/atau Niaga terbatas Hasil Olahan Persyaratan administratif sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan surat pernyataan tertulis di atas meterai mengenai:
+(1) kesanggupan Badan Usaha memenuhi aspek keselamatan, kesehatan kerja, dan pengelolaan lingkungan hidup dimaknai sebagai kesanggupan Badan Usaha memenuhi seluruh aspek Keselamatan Minyak dan Gas Bumi;
+(2) kesediaan dilakukan audit kepatuhan terhadap ketentuan peraturan perundang-undangan dimaknai sebagai kesanggupan Badan Usaha untuk dilakukan audit kepatuhan melalui pemeriksaan rutin dan insidental terhadap pemenuhan persyaratan dan pelaksanaan kewajiban dalam perizinan berusaha;
+(3) kesanggupan Badan Usaha menjamin dan bertanggung jawab bahwa sarana dan fasilitas yang dimiliki/dikuasai layak beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik selama masa operasi dimaknai dengan menghapus frasa “selama masa operasi”;
+
+## Lampiran hal. 84
+
+(4) selain surat pernyataan tertulis di atas meterai sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, terdapat pernyataan tertulis tambahan, meliputi:
+(a) kesanggupan Badan Usaha untuk menyampaikan laporan pasokan, penjualan dan/atau pendistribusian, harga, impor dan ekspor;
+(b) komitmen Badan Usaha untuk memastikan bahwa seluruh sarana dan fasilitas angkutan darat, laut, dan/atau udara yang No. Izin Niaga Minyak dan Gas Bumi dimiliki/dikuasai untuk kegiatan usaha niaga minyak dan gas bumi telah memiliki legalitas sesuai dengan ketentuan peraturan perundang-undangan; dan
+(c) kesanggupan Badan Usaha untuk mematuhi seluruh ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 85
+
+2) persyaratan teknis Izin Usaha Sementara/Izin Usaha/perpanjangan Izin Usaha/penyesuaian Izin Usaha Niaga Minyak dan Gas Bumi untuk Kegiatan Niaga terbatas BBM, dan/atau Niaga terbatas Hasil Olahan Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai termasuk juga memuat Komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa; b) terkait dengan Jaminan kecukupan pendanaan yang dibuktikan dengan dokumen kesepakatan dengan pihak lain untuk pendanaan (mencantumkan nominal tertentu) dimaknai dengan dokumen kesepakatan dengan pihak lain untuk pendanaan dengan nominal tertentu dan memperoleh dukungan keuangan dari pihak lain tersebut; c) terkait dengan kontrak perjanjian jual beli dengan pemasok dimaknai dimaknai sebagai dokumen yang menjelaskan:
+(1) kesepakatan rencana pasokan dengan satu atau beberapa pemasok untuk kegiatan Niaga Terbatas BBM paling sedikit memuat sumber, volume, dan jangka waktu pasokan; dan/atau
+
+## Lampiran hal. 85
+
+(2) kontrak perjanjian jual beli dengan pemasok untuk kegiatan Niaga Terbatas Hasil Olahan paling sedikit memuat sumber, volume, dan jangka waktu kontrak. d) terkait dengan Kontrak perjanjian dengan konsumen pengguna yang memiliki/menguasai fasilitas penyimpanan yang terintegrasi dengan receiving terminal/dermaga/jetty untuk kegiatan Niaga Terbatas Hasil Olahan No. Izin Niaga Minyak dan Gas Bumi dimaknai termasuk dengan volume penjualan sebesar minimum 5000 KL (lima ribu kilo liter) per bulan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+c. Izin Usaha Niaga Minyak dan Gas Bumi untuk Kegiatan Niaga LPG, Niaga LNG, Niaga CNG, Niaga BBG untuk Transportasi, Niaga Gas Bumi Pipa dan Niaga Gas Bumi Yang Memiliki Fasilitas Jaringan Distribusi:
+
+## Lampiran hal. 86
+
+1) persyaratan administratif Izin Usaha Sementara/Izin Usaha/Perpanjangan Izin Usaha/Penyesuaian Izin Usaha Niaga Minyak dan Gas Bumi untuk Kegiatan Niaga LPG, Niaga LNG, Niaga CNG, Niaga BBG untuk Transportasi, Niaga Gas Bumi Pipa dan Niaga Gas Bumi Yang Memiliki Fasilitas Jaringan Distribusi Persyaratan administratif sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang atau Persetujuan Pemerintah/instansi yang berwenang sesuai ketentuan yang berlaku atau pengelola kawasan yang berwenang mengenai lokasi untuk pembangunan fasilitas dan sarana serta terkait dengan dalam hal fasilitas berupa floating storage diperlukan Surat Persetujuan Penggunaan Permukaan Perairan untuk Lokasi Penyimpanan (penetapan titik koordinat) dari instansi yang berwenang tidak diperlukan dan dimaknai menjadi bagian dari persyaratan teknis; b) terkait dengan surat pernyataan tertulis di atas meterai mengenai terkait dengan kesanggupan Badan Usaha menjamin dan bertanggung jawab bahwa sarana dan fasilitas yang dimiliki/dikuasai layak No.
+
+## Lampiran hal. 86
+
+Izin Niaga Minyak dan Gas Bumi beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik selama masa operasi dimaknai dengan menghapus frasa “selama masa operasi”; c) selain memenuhi persyaratan administratif sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan administratif tambahan berupa:
+(1) Identitas dan Surat Kuasa Narahubung;
+(2) NIB dengan KBLI 35202 untuk Niaga Gas Pipa; dan
+(3) NIB dengan KBLI 46610 untuk Niaga Gas Non Pipa (LNG, LPG, CNG, BBG Untuk Transportasi), Hasil Olahan.
+2) persyaratan teknis Izin Usaha Niaga Minyak dan Gas Bumi untuk setiap kegiatan usaha niaga: a) Izin Usaha Niaga Minyak dan Gas Bumi untuk kegiatan Niaga LPG, Niaga LNG, Niaga CNG dan/atau Niaga BBG untuk Transportasi, sebagai berikut:
+(1) persyaratan teknis untuk Izin Usaha Sementara Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+
+## Lampiran hal. 87
+
+(a) terkait dengan Analisis Kelayakan Usaha dimaknai sebagai Studi Kelayakan Usaha yang paling sedikit memuat rencana Sumber Pasokan, Calon Konsumen, Spesifikasi Komoditas, Lokasi, Sarana dan Fasilitas, Skema Usaha, Rencana Penggunaan Tenaga Kerja Asing dan Tenaga Kerja Lokal, Komitmen TKDN, dan Dokumen Analisis Keuangan meliputi Rencana Biaya Investasi, Komponen pembentuk harga sampai dengan konsumen akhir, serta Perhitungan Keekonomian sebagaimana tercantum dalam studi kelayakan usaha;
+(b) terkait dengan kesepakatan awal jual beli (MoU) Gas Bumi/LNG/CNG/LPG dengan No. Izin Niaga Minyak dan Gas Bumi pemasok yang telah memiliki perizinan sesuai dengan ketentuan peraturan perundang-undangan dimaknai sebagai kesepakatan awal jual beli (MoU) untuk komoditas Gas Bumi, LNG, CNG, LPG, dan/atau BBG untuk Transportasi dengan pemasok yang telah memiliki perizinan sesuai dengan ketentuan peraturan perundang-undangan;
+(c) terkait dengan Kesepakatan jual beli dengan konsumen yang telah memiliki perizinan sesuai dengan ketentuan peraturan perundang-undangan dimaknai sebagai kesepakatan awal jual beli (MoU dan/atau Letter of Intent (LoI)) dengan konsumen sesuai dengan ketentuan peraturan perundang-undangan:
+
+## Lampiran hal. 88
+
+i. untuk kegiatan Niaga LNG, calon konsumen merupakan konsumen sesuai dengan ketentuan peraturan perundang-undangan; ii. untuk kegiatan Niaga BBG untuk Tranportasi, calon konsumen merupakan sektor transportasi; dan iii. untuk kegiatan Niaga LPG dan/atau CNG, calon konsumen merupakan konsumen akhir atau Badan Usaha Niaga yang telah memiliki perizinan sesuai dengan ketentuan peraturan perundang-undangan.
+(d) terkait dengan rencana pemanfaatan atau pembangunan sarana dan fasilitas Niaga LPG, LNG, BBG, dan/atau CNG yang meliputi antara lain teknologi yang digunakan, dimensi, kapasitas, serta sarana dan fasilitas dan data titik koordinat berupa Data Geo-reference Standard Datum WGS84 dimaknai sebagai rencana pemanfaatan atau pembangunan sarana dan fasilitas Niaga LPG, LNG, CNG, dan/atau BBG untuk Transportasi yang meliputi antara lain teknologi yang digunakan, No. Izin Niaga Minyak dan Gas Bumi kapasitas, right of way pipa (jika ada), jalur penyaluran molekul serta sarana dan fasilitas selain pipa dan data titik koordinat berupa Data Geo-reference Standard Datum WGS84;
+(e) terkait dengan Rencana merek dagang dan logo untuk kegiatan niaga LPG, BBG, CNG, dan/atau LNG retail dimaknai sebagai bukti pendaftaran atau sertifikat merek dagang dari instansi yang berwenang; dan
+
+## Lampiran hal. 89
+
+(f) selain memenuhi persyaratan teknis untuk Izin Usaha Sementara sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang atau Persetujuan Pemerintah/instansi yang berwenang sesuai ketentuan yang berlaku atau pengelola kawasan yang berwenang mengenai lokasi untuk pembangunan fasilitas dan sarana. Dalam hal fasilitas berupa Floating Storage diperlukan Surat Persetujuan Penggunaan Permukaan Perairan untuk Lokasi Penyimpanan (penetapan Titik Koordinat) dari instansi yang berwenang.
+(2) persyaratan teknis untuk Izin Usaha/ perpanjangan Izin Usaha/ penyesuaian Izin Usaha Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+(a) terkait dengan Analisis kelayakan usaha dimaknai sebagai studi kelayakan usaha yang paling sedikit memuat:
+i. sumber pasokan dan calon konsumen; ii. Neraca Gas Bumi;
+No. Izin Niaga Minyak dan Gas Bumi iii. spesifikasi komoditas sesuai dengan ketentuan yang berlaku; iv. lokasi kegiatan usaha beserta Data Teknis Sarana dan Fasilitas beserta data Titik Koordinat berupa Data Geo-reference Standard Datum WGS84;
+
+## Lampiran hal. 90
+
+v. skema usaha dan rencana pengembangan Usaha; vi. Penggunaan Tenaga Kerja Asing dan Tenaga Kerja Lokal; vii. capaian Tingkat Komponen Dalam Negeri barang dan/atau jasa TKDN; viii. dokumen analisis keuangan meliputi biaya investasi, komponen pembentuk harga sampai dengan konsumen akhir, serta perhitungan keekonomian.
+(b) terkait dengan dokumen pasokan berupa Penetapan alokasi gas bumi/LNG dari Menteri atau Perjanjian Jual Beli gas bumi/LNG/CNG/LPG dengan pemasok yang bukan kontraktor kontrak kerja sama hulu migas (Badan Usaha) yang telah memiliki perizinan sesuai dengan ketentuan peraturan perundang-undang dimaknai sebagai dokumen pasokan berupa:
+i. untuk komoditas LNG berupa penetapan alokasi Gas Bumi/LNG dari Menteri dan/atau Perjanjian Jual Beli Gas Bumi (PJBG) dengan Badan Usaha yang telah memiliki perizinan sesuai dengan ketentuan peraturan perundang-undangan; dan ii. untuk komoditas LPG/CNG/ BBG untuk Transportasi berupa penetapan alokasi Gas Bumi/LNG dari Menteri dan/atau Perjanjian Jual Beli Gas Bumi (PJBG) atau Perjanjian Jual Beli LPG/CNG/BBG untuk Transportasi dengan Badan No. Izin Niaga Minyak dan Gas Bumi Usaha yang telah memiliki perizinan sesuai dengan ketentuan peraturan perundang-undangan.
+(c) terkait dengan dokumen kontrak jual beli dengan konsumen akhir atau konsumen yang telah memiliki perizinan dimaknai termasuk juga BBG untuk Transportasi;
+
+## Lampiran hal. 91
+
+(d) terkait dengan Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik Lingkungan Migas/PLO yang masih berlaku/sesuai ketentuan peraturan perundang-undangan dimaknai sebagai dimaknai sebagai PLO yang masih berlaku, Certificate of Inspection (COI) yang masih berlaku atau Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas;
+(e) terkait dengan Bukti kepemilikan/penguasaan atau kontrak sewa menyewa sarana dan fasilitas untuk moda angkutan darat berupa stnk/bpkb untuk moda angkutan/penyimpanan laut berupa gross akta kapal untuk fasilitas berupa tangki, pipa dokumen kepemilikan berupa Surat pernyataan dari Direktur yang berwenang dimaknai sebagai bukti kepemilikan/penguasaan atau kontrak sewa-menyewa sarana dan fasilitas:
+i. untuk moda angkutan darat berupa STNK/BPKB; ii. untuk moda angkutan /penyimpanan laut berupa Gross Akta Kapal; iii. untuk fasilitas berupa tangki namun tidak terbatas pada Skid Tank/GTM/Isotank, dokumen kepemilikan No. Izin Niaga Minyak dan Gas Bumi berupa Surat Pernyataan dari Direksi, sedangkan untuk sewa berupa Dokumen sewa-menyewa yang masih berlaku.
+
+## Lampiran hal. 92
+
+(f) selain memenuhi persyaratan teknis untuk Izin Usaha/ perpanjangan Izin Usaha/ penyesuaian Izin Usaha sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa:
+i. persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang atau Persetujuan Pemerintah/instansi yang berwenang sesuai ketentuan yang berlaku atau pengelola kawasan yang berwenang mengenai lokasi untuk pembangunan fasilitas dan sarana. Dalam hal fasilitas berupa Floating Storage diperlukan Surat Persetujuan Penggunaan Permukaan Perairan untuk Lokasi Penyimpanan (penetapan Titik Koordinat) dari instansi yang berwenang; ii. dokumen Persetujuan Lingkungan; iii. jaminan kecukupan pendanaan, yang dibuktikan dengan:
+(i) laporan keuangan 3 (tiga) tahun terakhir;
+(ii) dokumen kesepakatan dengan pihak lain; atau (iii) surat keterangan dari bank umum yang berkedudukan di Indonesia, yang menerangkan bahwa Badan Usaha memiliki kemampuan pendanaan. iv. bukti pelaporan kegiatan usaha Niaga Minyak dan Gas Bumi untuk Kegiatan Niaga LPG, Niaga LNG, Niaga CNG No. Izin Niaga Minyak dan Gas Bumi dan Niaga BBG untuk Transportasi (apabila telah memiliki Izin Usaha Niaga Minyak dan Gas Bumi. b) Izin Usaha Niaga Minyak dan Gas Bumi untuk kegiatan Niaga Gas Bumi Pipa dan Niaga Gas Bumi yang Memiliki Fasilitas Jaringan Distribusi
+
+## Lampiran hal. 93
+
+(1) persyaratan teknis Izin Usaha Sementara untuk kegiatan Niaga Gas Bumi Pipa dan Niaga Gas Bumi yang Memiliki Fasilitas Jaringan Distribusi Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+(a) terkait dengan Analisis kelayakan dimaknai sebagai Studi Kelayakan yang paling sedikit memuat Sumber Pasokan, calon konsumen, spesifikasi komoditas, Lokasi, Sarana dan Fasilitas, skema usaha, rencana Penggunaan Tenaga Kerja Asing dan Tenaga Kerja Lokal, Komitmen TKDN, Dokumen Analisis Keuangan meliputi Rencana Biaya Investasi, Komponen pembentuk harga sampai dengan konsumen akhir, serta Perhitungan Keekonomian:
+(b) terkait dengan kesepakatan jual beli Gas Bumi/LNG/CNG dengan pemasok yang telah memiliki perizinan sesuai ketentuan peraturan perundang-undangan dimaknai sebagai dokumen rencana pasokan:
+i. untuk pasokan gas bumi berupa kesepakatan awal jual beli (MoU) dengan Kontraktor Kontrak Kerja Sama atau dokumen penetapan pemenang lelang dari Kontraktor Kontrak Kerja Sama atas pasokan gas bumi; ii. untuk pasokan LNG berupa kesepakatan awal jual beli LNG dengan Kontraktor Kontrak Kerja Sama atau No. Izin Niaga Minyak dan Gas Bumi Badan Usaha Pengolahan LNG; iii. untuk pasokan CNG berupa kesepakatan awal jual beli CNG dengan Badan Usaha Niaga CNG.
+
+## Lampiran hal. 94
+
+(c) terkait dengan Kesepakatan jual beli Gas Bumi dengan konsumen yang telah memiliki perizinan sesuai ketentuan peraturan perundang-undangan dimaknai sebagai kesepakatan awal jual beli Gas Bumi (MoU/Letter of Intent (LoI)) dengan konsumen akhir atau Badan Usaha Niaga CNG, BBG untuk Transportasi, dan/atau Badan Usaha Pengolahan Minyak dan Gas Bumi;
+(d) terkait dengan terhadap Pemegang Hak Khusus Wilayah Jaringan Distribusi, salinan dokumen penetapan pemenang lelang Hak Khusus Wilayah Jaringan Distribusi dari Badan Pengatur/salinan dokumen penugasan Menteri untuk membangun dan mengoperasikan Wilayah Jaringan Distribusi dan/atau Wilayah Niaga Tertentu dimaknai sebagai terhadap Pemegang Hak Khusus Wilayah Jaringan Distribusi:
+i. salinan dokumen penetapan pemenang Lelang Hak Khusus Wilayah Jaringan Distribusi dari Badan Pengatur; atau ii. dokumen penugasan Pemerintah untuk membangun dan mengoperasikan Wilayah Jaringan Distribusi dan/atau Wilayah Niaga Tertentu.
+(e) terkait dengan jaminan kecukupan pendanaan yang dibuktikan dengan surat keterangan dari bank umum yang berkedudukan di Indonesia yang menerangkan bahwa Badan Usaha memiliki kemampuan pendanaan dengan nominal tertentu (minimal 70% dari total No. Izin Niaga Minyak dan Gas Bumi nilai investasi) dimaknai dengan menghapus frasa “(minimal 70% dari total nilai investasi)”; dan
+
+## Lampiran hal. 95
+
+(f) selain memenuhi persyaratan teknis Izin Usaha Sementara untuk kegiatan Niaga Gas Bumi Pipa dan Niaga Gas Bumi yang Memiliki Fasilitas Jaringan Distribusi sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang atau Persetujuan Pemerintah/instansi yang berwenang sesuai ketentuan yang berlaku atau pengelola kawasan yang berwenang mengenai lokasi untuk pembangunan fasilitas dan sarana.
+Dalam hal fasilitas berupa floating storage diperlukan Surat Persetujuan Penggunaan Permukaan Perairan untuk Lokasi Penyimpanan (penetapan Titik Koordinat) dari instansi yang berwenang.
+(2) persyaratan teknis untuk Izin Usaha/ perpanjangan/penyesuaian Izin Usaha Niaga Gas Bumi Pipa dan Niaga Gas Bumi Yang Memiliki Fasilitas Jaringan Distribusi Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+
+## Lampiran hal. 95
+
+(a) terkait dengan Analisis kelayakan usaha dimaknai sebagai Studi Kelayakan Usaha yang paling sedikit memuat Sumber Pasokan, calon konsumen, spesifikasi komoditas, Lokasi, Sarana dan Fasilitas, skema usaha, rencana Penggunaan Tenaga Kerja Asing dan Tenaga Kerja Lokal, Komitmen TKDN, Dokumen Analisis Keuangan meliputi Rencana Biaya Investasi, No. Izin Niaga Minyak dan Gas Bumi Komponen pembentuk harga sampai dengan konsumen akhir, serta Perhitungan Keekonomian sebagaimana tercantum dalam Studi Kelayakan Usaha:
+(b) terkait dengan dokumen pasokan berupa penetapan alokasi Gas Bumi/LNG dari Menteri atau kontrak Jual Beli LNG/CNG dengan pemasok yang bukan Kontraktor Kontrak Kerja Sama hulu migas atau kontrak Jual Beli dengan BU Niaga Gas Bumi dengan skema interruptible sesuai ketentuan yang berlaku, dimaknai sebagai dokumen pasokan berupa:
+i. untuk pasokan gas bumi berupa alokasi Gas Bumi dari Menteri; ii. untuk pasokan LNG berupa alokasi LNG dari Menteri atau kontrak jual beli LNG dengan Badan Usaha Pengolahan LNG; iii. untuk pasokan CNG berupa kontrak jual beli CNG dengan Badan Usaha Niaga CNG; atau iv. Perjanjian Jual Beli Gas Bumi dengan BU Niaga Gas Bumi dengan skema interruptible.
+
+## Lampiran hal. 96
+
+(c) terkait dengan kontrak jual beli Gas Bumi dengan konsumen akhir atau BU Pengolahan LNG atau BU niaga CNG atau BU niaga BBG atau BU Niaga Gas bumi dengan skema interruptible sesuai dengan ketentuan yang berlaku dimaknai sebagai Perjanjian Jual Beli Gas Bumi (PJBG) dengan konsumen akhir atau Badan Usaha Pengolahan Minyak dan Gas Bumi atau Badan Usaha Niaga CNG atau Badan Usaha Niaga BBG untuk Transportasi atau BU Niaga Gas Bumi dengan skema interruptible sesuai dengan ketentuan peraturan perundang-undangan;
+(d) terkait dengan terhadap Pemegang Hak Khusus Wilayah Jaringan Distribusi, salinan dokumen No. Izin Niaga Minyak dan Gas Bumi penetapan pemenang lelang Hak Khusus Wilayah Jaringan Distribusi dari Badan Pengatur/salinan dokumen penugasan Menteri untuk membangun dan mengoperasikan Wilayah Jaringan Distribusi dan/atau Wilayah Niaga Tertentu dimaknai sebagai terhadap Pemegang Hak Khusus Wilayah Jaringan Distribusi:
+i. salinan dokumen Penetapan Pemenang Lelang Hak Khusus Wilayah Jaringan Distribusi dari Badan Pengatur; atau ii. dokumen penugasan Pemerintah untuk membangun dan mengoperasikan Wilayah Jaringan Distribusi dan/atau Wilayah Niaga Tertentu;
+
+## Lampiran hal. 97
+
+(e) selain memenuhi persyaratan teknis Izin Usaha/ perpanjangan/penyesuaian Izin Usaha Niaga Gas Bumi Pipa dan Niaga Gas Bumi Yang Memiliki Fasilitas Jaringan Distribusi sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa:
+i. persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang atau Persetujuan Pemerintah/instansi yang berwenang sesuai ketentuan yang berlaku atau pengelola kawasan yang berwenang mengenai lokasi untuk pembangunan fasilitas dan sarana. Dalam hal fasilitas berupa Floating Storage diperlukan Surat Persetujuan Penggunaan Permukaan Perairan untuk Lokasi Penyimpanan (penetapan Titik Koordinat) dari instansi yang berwenang;
+No. Izin Niaga Minyak dan Gas Bumi ii. jaminan kecukupan pendanaan, yang dibuktikan dengan:
+(i) laporan keuangan 3 (tiga) tahun terakhir;
+(ii) dokumen kesepakatan dengan pihak lain untuk pendanaan dengan nominal tertentu; atau (iii)surat keterangan dari bank umum yang berkedudukan di Indonesia, yang menerangkan bahwa Badan Usaha memiliki kemampuan pendanaan dengan nominal tertentu. iii. bukti pelaporan kegiatan usaha Niaga Minyak dan Gas Bumi untuk Kegiatan Niaga Gas Bumi Pipa dan Niaga Gas Bumi yang memiliki Fasilitas Jaringan Distribusi (apabila telah memiliki Izin Usaha Niaga Minyak dan Gas Bumi.
+
+## Lampiran hal. 98
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan:
+Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 15 (lima belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Izin Niaga Minyak dan Gas Bumi disetujui;
+4) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku 1) Izin Usaha Sementara diberikan untuk jangka waktu paling lama 3 (tiga) tahun dan No. Izin Niaga Minyak dan Gas Bumi dapat diperpanjang satu kali untuk jangka waktu paling lama 2 (dua) tahun.
+2) Izin Niaga Minyak dan Gas Bumi untuk: a) Kegiatan Niaga Umum Komoditas BBM diberikan dengan ketentuan:
+(1) 20 tahun untuk Badan Usaha dengan kapasitas penyimpanan lebih besar dari 100.000 (seratus ribu) Kilo Liter dan dapat diperpanjang;
+(2) 15 tahun untuk Badan Usaha dengan kapasitas penyimpanan antara 50.000 - 100.000 (lima puluh ribu sampai seratus ribu) Kilo Liter dan dapat diperpanjang;
+
+## Lampiran hal. 99
+
+(3) 10 tahun untuk Badan Usaha dengan kapasitas penyimpanan lebih kecil dari 50.000 (lima puluh ribu) Kilo Liter dan dapat diperpanjang;
+(4) 5 tahun untuk Badan Usaha dengan sarana penyimpanan perairan (floating storage) dan dapat diperpanjang. b) Kegiatan Niaga Umum Minyak Bumi dan/atau Hasil Olahan diberikan dengan ketentuan:
+(1) untuk Badan Usaha yang memiliki fasilitas diberikan izin paling lama 5 (lima) tahun atau mengikuti jangka waktu kontrak pasokan, mana yang lebih cepat berakhir; dan
+
+## Lampiran hal. 99
+
+(2) untuk Badan Usaha yang menguasai fasilitas diberikan izin paling lama 3 (tiga) tahun atau mengikuti jangka waktu kontrak pasokan, mana yang lebih cepat berakhir. c) Kegiatan Niaga Terbatas Minyak Bumi, BBM, dan/atau Hasil Olahan diberikan dengan mempertimbangkan jangka waktu perjanjian kontrak pasokan; d) Komoditas niaga LPG, LNG, CNG, BBG untuk Transportasi dan Hasil Olahan Gas Bumi diberikan paling lama sepanjang periode alokasi Gas Bumi dan/atau Periode PJBG dengan BU Niaga Migas dan/atau Periode PJBG dengan konsumennya dan/atau paling lama 5 (lima) tahun dan dapat diperpanjangan; dan e) Komoditas niaga Gas Bumi Pipa dan Gas Bumi yang memiliki Fasilitas Jaringan Distribusi diberikan paling lama sepanjang periode alokasi Gas Bumi dan/atau Periode PJBG dengan Badan No. Izin Niaga Minyak dan Gas Bumi Usaha Pengolahan Minyak dan Gas Bumi dan/atau Periode PJBG dengan Badan Usaha Niaga LPG, Niaga LNG, Niaga CNG, Niaga BBG untuk Transportasi dan/atau Niaga Hasil Olahan Gas Bumi dan/atau Periode PJBG dengan konsumennya dan/atau paling lama 5 (lima) tahun dan dapat diperpanjang.
+c. Berakhirnya Izin Niaga Minyak dan Gas Bumi 1) Izin Niaga Minyak dan Gas Bumi berakhir karena: a) habis masa berlakunya; atau b) dicabut.
+
+## Lampiran hal. 100
+
+2) Pencabutan Izin Niaga Minyak dan Gas Bumi sebagaimana dimaksud pada angka 1) huruf b dapat didasarkan pada: a) pengenaan sanksi administratif; b) permohonan pencabutan dari Badan Usaha; dan/atau c) putusan pengadilan yang telah memiliki kekuatan hukum tetap berupa pencabutan izin atau pailit.
+6. Ketentuan Kewajiban KBLI 46610 - Niaga Minyak Bumi, Niaga Kewajiban Umum BBM, Niaga Terbatas BBM, Niaga Umum Hasil Olahan, dan Niaga Terbatas Hasil Olahan:
+a. Izin Usaha:
+1) menjamin dan bertanggungjawab atas standar dan mutu (spesifikasi) komoditas yang diniagakan sampai ke konsumen akhir sesuai dengan ketentuan peraturan perundang-undangan;
+2) mempunyai dan menggunakan merek dagang tertentu yang telah mendapat pengesahan dari instansi yang berwenang;
+3) menjamin harga jual komoditas yang diniagakan sesuai yang diatur dan/atau ditetapkan oleh Menteri;
+4) menjamin ketersediaan komoditas yang diniagakan secara berkesinambungan pada jaringan distribusi niaganya;
+5) menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, kehandalan, kalibrasi, dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+6) menjamin keselamatan minyak dan gas bumi serta pengembangan masyarakat setempat sesuai dengan ketentuan peraturan perundangan-undangan;
+
+## Lampiran hal. 101
+
+No. Izin Niaga Minyak dan Gas Bumi 7) menjamin pelaksanaan pemeriksaan rutin dan insidental oleh Direktorat Jenderal sesuai dengan ketentuan peraturan perundang-undangan dengan mempertimbangkan ketersediaan SDM dan anggaran, yang dilaksanakan: a) secara periodik setiap 3 (tiga) sampai 5 (lima) tahun sekali selama masa izin usaha berlaku; dan b) paling lambat 6 (enam) bulan sebelum masa izin usaha berakhir; c) Badan Usaha dapat diberikan sanksi administratif apabila berdasarkan hasil evaluasi pemeriksaan rutin terdapat pelanggaran atas kewajiban yang tercantum dalam perizinan berusaha dan atau ketentuan peraturan perundang-undangan yang berlaku.
+8) melaporkan kepada Menteri melalui Direktur Jenderal mengenai pelaksanaan kegiatan Izin Usaha Niaga secara berkala setiap 1 (satu) bulan sekali atau sewaktu-waktu apabila diperlukan;
+9) menyampaikan permohonan perpanjangan Izin Usaha paling lambat 3 (tiga) bulan sebelum masa berlaku izin usaha berakhir;
+10) melakukan penyesuaian terhadap Izin Usaha apabila terjadi perubahan data administratif dan/atau teknis perizinan berusaha antara lain perubahan sarana dan fasilitas maupun lokasi kegiatan usaha atau jenis komoditas dan/atau merek dagang;
+11) mematuhi dan memenuhi semua kewajiban yang tercantum dalam Izin Usaha, perizinan, dan ketentuan dalam peraturan perundang-undangan;
+12) melaksanakan penugasan Pemerintah dalam rangka penyediaan cadangan Minyak Bumi/BBM Nasional;
+
+## Lampiran hal. 101
+
+13) menjamin pelaksanaan penunjukan penyalur dengan ketentuan sebagai berikut: a) penunjukan Penyalur oleh BU Niaga Migas melalui seleksi; b) Penyalur wajib berbentuk Koperasi, usaha kecil dan/atau Badan Usaha Swasta Nasional berdasarkan kontrak perjanjian kerja sama penunjukan penyalur; c) Penyalur bukan untuk usaha perseorangan, ditujukan untuk badan usaha yang berbadan hukum, dan hanya untuk usaha Penanaman Modal Dalam Negeri;
+No. Izin Niaga Minyak dan Gas Bumi d) Penyalur hanya dapat menerima penunjukan dari 1 (satu) Badan Usaha Niaga Migas untuk komoditas BBM; e) Penyalur wajib menggunakan logo dan merek dagang yang digunakan atau dimiliki oleh BU Niaga Migas; f) Penyalur menyampaikan laporan kegiatan penyalurannya kepada BU Niaga Migas; g) Penyalur wajib memiliki perizinan sesuai perundangan yang berlaku; h) Penyalur memiliki dokumen NIB, Persetujuan lingkungan hidup, persetujuan kegiatan pemanfaatan ruang, dan keselamatan sesuai dengan ketentuan peraturan perundang-undangan; i) Penyalur memiliki/menguasai sarana fasilitas dengan ketentuan sebagai berikut:
+(1) Penyalur BBM yang menyalurkan Bahan Bakar di Stasiun Pengisian Bahan Bakar untuk transportasi Darat, transportasi Laut, dan transportasi udara (SPBU, SPBN, dsb) wajib memiliki Sarana dan Fasilitas pengisian Bahan Bakar;
+
+## Lampiran hal. 102
+
+(2) Penyalur BBM yang menyalurkan selain di Stasiun Pengisian Bahan Bakar untuk transportasi Darat, transportasi Laut, dan transportasi udara (agen BBM) wajib memiliki Sarana dan fasilitas pengangkutan untuk kegiatan penyaluran dengan transportasi darat; dan
+(3) Untuk kegiatan penyaluran dengan transportasi laut/sungai, Penyalur dapat menguasai sarana dan Fasilitas pengangkutan. j) penyalur dilarang menjual/menyalurkan kepada Badan Usaha Niaga Migas; k) Penyalur Minyak Tanah PSO wajib menunjuk Sub Penyalur dalam melaksanakan kegiatan penyaluran; l) Penyalur wajib menjual jenis BBM Umum sesuai dengan harga yang ditentukan oleh Badan Usaha Niaga; dan m) stok (cadangan) bahan bakar yang ada di fasilitas penyalur merupakan milik/dicatat sebagai stok Badan Usaha Niaga.
+No. Izin Niaga Minyak dan Gas Bumi 14) Badan Usaha Niaga wajib melaporkan penunjukan penyalurnya kepada Ditjen Migas.
+b. Izin Usaha Sementara:
+1) melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan sarana dan fasilitas yang disetujui;
+2) menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+3) menggunakan kaidah keteknikan yang baik;
+4) mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+5) menjamin Keselamatan dan Kesehatan Kerja dan pengelolaan Iingkungan hidup;
+
+## Lampiran hal. 103
+
+6) melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+7) melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 3 (tiga) bulan sekali atau sewaktu-waktu apabila diperlukan;
+8) pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara; dan 9) pada saat melakukan uji coba operasi sebagaimana dimaksud pada angka 8), Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha;
+10) dalam hal pada saat melakukan uji coba operasi sebagaimana dimaksud terdapat produk yang secara teknis harus disalurkan kepada pihak lain, Pemegang Izin Usaha Sementara wajib meminta persetujuan kepada Direktur Jenderal.
+Kewajiban KBLI 46610 – Niaga LPG, Niaga LNG, Niaga CNG, Niaga BBG untuk Transportasi, Niaga Hasil Olahan Gas
+a. Pemegang Izin Usaha Sementara:
+1) melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan saran dan fasilitas;
+No. Izin Niaga Minyak dan Gas Bumi 2) menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+3) menggunakan kaidah keteknikan yang baik;
+
+## Lampiran hal. 104
+
+4) mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+5) menjamin Keselamatan dan Kesehatan Kerja serta Pengelolaan Lingkungan Hidup;
+6) dilarang melakukan kegiatan niaga;
+7) melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila terdapat perubahan data administratif dan teknis kepada Menteri;
+8) melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 3 (tiga) bulan sekali atau sewaktu- waktu apabila diperlukan;
+9) pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara;
+10) pada saat melakukan uji coba operasi sebagaimana dimaksud pada angka 9), Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha;
+11) dalam hal pada saat melakukan uji coba operasi sebagaimana dimaksud terdapat produk yang secara teknis harus disalurkan kepada pihak lain, Pemegang Izin Usaha Sementara wajib meminta persetujuan kepada Direktur Jenderal.
+b. Pemegang Izin Usaha:
+1) memenuhi dan mematuhi ketentuan peraturan perundang-undangan;
+2) menjamin ketersediaan komoditas yang diniagakan secara berkesinambungan pada jaringan distribusi niaganya;
+3) menjamin harga jual komoditas yang diniagakan sesuai yang diatur dan/atau ditetapkan oleh Menteri;
+
+## Lampiran hal. 104
+
+4) menjamin dan bertanggungjawab atas standar dan mutu (spesifikasi) komoditas yang diniagakan sampai ke konsumen akhir sesuai dengan ketentuan peraturan perundang-undangan;
+No. Izin Niaga Minyak dan Gas Bumi 5) mempunyai dan menggunakan merek dagang tertentu yang telah mendapat pengesahan dari instansi yang berwenang;
+6) menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+7) menjamin keselamatan dan kesehatan kerja dan pengelolaan lingkungan hidup serta pengembangan masyarakat setempat;
+8) bersedia dilakukan inspeksi oleh petugas Direktorat Jenderal secara periodik atau sewaktu-waktu apabila diperlukan;
+9) memenuhi perizinan yang ditetapkan oleh instansi terkait sesuai dengan ketentuan peraturan perundang-undangan;
+10) melakukan penyesuaian terhadap Izin Usaha Niaga Minyak dan Gas Bumi apabila terjadi perubahan dan/atau penambahan terhadap: a) sarana dan fasilitas maupun lokasi kegiatan usaha; atau b) jenis komoditas.
+11) menyampaikan laporan kepada Menteri melalui Direktur Jenderal setiap 1 (satu) bulan sekali mengenai pelaksanaan kegiatan usaha niaganya dan/atau terdapat perubahan terhadap data administrasi;
+12) menjamin keselamatan instalasi dan peralatan sesuai dengan ketentuan peraturan perundang-undangan;
+
+## Lampiran hal. 105
+
+13) Badan Usaha Niaga dapat melaksanakan penunjukan penyalur dengan ketentuan sebagai berikut: a) Penyalur wajib berbentuk Koperasi, usaha kecil dan/atau Badan Usaha Swasta Nasional; b) Penyalur bukan untuk usaha perseorangan, ditujukan untuk badan usaha yang berbadan hukum, dan hanya untuk usaha Penanaman Modal Dalam Negeri; c) Penyalur hanya dapat menerima penunjukan dari 1 (satu) Badan Usaha Niaga Migas untuk masing-masing jenis komoditas BBM, BBG, LPG, dan/atau LNG; d) Penyalur wajib menggunakan logo dan merek dagang BU Niaga Migas; e) Penyalur menyampaikan laporan kegiatan penyalurannya kepada Badan Usaha Niaga Migas;
+No. Izin Niaga Minyak dan Gas Bumi f) memenuhi kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; g) memiliki kontrak perjanjian kerjasama penunjukan penyalur; h) Penyalur memiliki dokumen NIB, persetujuan lingkungan hidup, persetujuan kegiatan pemanfaatan ruang, dan keselamatan sesuai dengan ketentuan peraturan perundang-undangan; i) Penyalur memiliki/menguasai sarana fasilitas dengan ketentuan sebagai berikut:
+(1) Penyalur LPG, BBG, dan LNG yang menyalurkan Bahan Bakar di Stasiun Pengisian Bahan Bakar untuk transportasi Darat, transportasi Laut, dan transportasi udara (SPBG) wajib memiliki Sarana dan Fasilitas pengisian Bahan Bakar;
+
+## Lampiran hal. 106
+
+(2) Penyalur BBG/LPG/LNG yang menyalurkan selain di Stasiun Pengisian Bahan Bakar untuk transportasi Darat, transportasi Laut, dan transportasi udara (agen LPG, agen LNG dsb) wajib memiliki Sarana dan fasilitas pengangkutan untuk kegiatan penyaluran dengan transportasi darat;
+(3) untuk kegiatan penyaluran dengan transportasi laut/sungai, Penyalur dapat menguasai sarana dan Fasilitas pengangkutan;
+(4) Penyalur selain Penyalur LPG PSO hanya dapat menyalurkan bahan bakar kepada konsumen pengguna langsung untuk kepentingan sendiri dan tidak diperjualbelikan kembali. j) Penyalur dilarang menjual/menyalurkan kepada Badan Usaha Niaga Migas; k) Penyalur LPG Bersubsidi (PSO) wajib menunjuk Sub Penyalur dalam melaksanakan kegiatan penyaluran; l) Penyalur wajib menjual Jenis LPG Umum, dan LNG sesuai dengan harga yang ditentukan oleh Badan Usaha Niaga; m) stok (cadangan) bahan bakar yang ada di fasilitas penyalur merupakan milik/dicatat sebagai stok Badan Usaha Niaga.
+No. Izin Niaga Minyak dan Gas Bumi 14) Badan Usaha Niaga wajib melaporkan penunjukan penyalur kepada Ditjen Migas.
+Kewajiban KBLI 35202 – Niaga Gas Bumi Pipa dan Niaga Gas Bumi yang Memiliki Fasilitas Jaringan Distribusi:
+a. Pemegang Izin Usaha Sementara:
+1) melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan sarana dan fasilitas;
+2) menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+3) menggunakan kaidah keteknikan yang baik;
+
+## Lampiran hal. 107
+
+4) mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+5) menjamin Keselamatan dan Kesehatan Kerja serta Pengelolaan Lingkungan Hidup;
+6) dilarang melakukan kegiatan niaga;
+7) melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila terdapat perubahan data administratif dan teknis kepada Menteri;
+8) melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 3 (tiga) bulan sekali atau sewaktu-waktu apabila diperlukan;
+9) pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara;
+10) pada saat melakukan uji coba operasi sebagaimana dimaksud pada angka 9), Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha;
+11) dalam hal pada saat melakukan uji coba operasi sebagaimana dimaksud terdapat produk yang secara teknis harus disalurkan kepada pihak lain, Pemegang Izin Usaha Sementara wajib meminta persetujuan kepada Direktur Jenderal.
+b. Pemegang Izin Usaha:
+1) menjamin ketersediaan komoditas yang diniagakan secara berkesinambungan pada jaringan distribusi niaga;
+No. Izin Niaga Minyak dan Gas Bumi 2) menjamin harga jual komoditas yang diniagakan sesuai yang diatur dan/atau ditetapkan oleh Menteri;
+
+## Lampiran hal. 108
+
+3) menjamin dan bertanggungjawab atas standar dan mutu (spesifikasi) komoditas yang diniagakan sampai ke konsumen akhir sesuai dengan ketentuan peraturan perundang-undangan;
+4) menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+5) menjamin keselamatan dan kesehatan kerja dan pengelolaan lingkungan hidup serta pengembangan masyarakat setempat;
+6) bersedia dilakukan inspeksi oleh petugas Direktorat Jenderal secara periodik atau sewaktu-waktu apabila diperlukan;
+7) memenuhi perizinan yang ditetapkan oleh instansi terkait sesuai dengan ketentuan peraturan perundang-undangan;
+8) melakukan penyesuaian terhadap Izin Usaha Niaga Minyak dan Gas Bumi apabila terjadi perubahan dan/atau penambahan terhadap: a) sarana dan fasilitas maupun lokasi oleh instansi terkait sesuai dengan ketentuan peraturan perundang-undangan; dan/atau b) jenis komoditas.
+9) menyampaikan laporan kepada Menteri melalui Direktur Jenderal mengenai pelaksanaan kegiatan usaha niaganya setiap 1 (satu) bulan sekali dan/atau terdapat perubahan terhadap data administrasi;
+10) memenuhi dan mematuhi peraturan perundang-undangan.
+9. Standar Kegiatan Usaha Berupa Penyimpanan Minyak dan Gas Bumi No. Izin Penyimpanan Minyak dan Gas Bumi KBLI:
+(52104) Penyimpanan Minyak dan Gas Bumi
+
+## Lampiran hal. 108
+
+1. Ruang Standar ini memuat pengaturan yang terkait dengan Lingkup kelompok usaha pada KBLI 52104 yang mencakup kegiatan usaha penyimpanan minyak dan gas bumi yang meliputi kegiatan penerimaan, pengumpulan, penampungan dan pengeluaran minyak bumi, No. Izin Penyimpanan Minyak dan Gas Bumi bahan bakar minyak, bahan bakar gas, dan/atau hasil olahan pada lokasi di atas dan/atau di bawah permukaan tanah dan/atau permukaan air untuk tujuan komersial termasuk penyimpanan di zona perdagangan bebas.
+2. Istilah dan a. Minyak Bumi adalah hasil proses alami berupa Definisi hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa cair atau padat, termasuk aspal, lilin mineral atau ozokerit dan bitumen yang diperoleh dari proses penambangan, tetapi tidak termasuk batubara atau endapan hidrokarbon lain yang berbentuk padat yang diperoleh dari kegiatan yang tidak berkaitan dengan kegiatan usaha Minyak dan Gas Bumi.
+b. Gas Bumi adalah hasil proses alami berupa hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa gas yang diperoleh dari proses penambangan Minyak dan Gas Bumi.
+c. Bahan Bakar Minyak yang selanjutnya disingkat BBM adalah bahan bakar yang berasal dan/atau diolah dari Minyak Bumi;
+d. Bahan Bakar Gas yang selanjutnya disingkat BBG adalah bahan bakar yang berasal dari Gas Bumi dan/atau hasil olahan dari Minyak dan Gas Bumi.
+
+## Lampiran hal. 109
+
+e. Hasil Olahan adalah hasil dan/atau produk selain BBM dan/atau BBG yang diperoleh dari kegiatan hasil pengolahan minyak dan gas bumi baik berupa produk akhir atau produk antara kecuali penampungan, dan pengeluaran Minyak Bumi dan/atau Gas Bumi, pelumas dan petrokimia.
+f. Liquefied Petroleum Gas yang selanjutnya disingkat LPG adalah gas hidrokarbon yang dicairkan dengan tekanan untuk memudahkan penyimpanan, pengangkutan, dan penanganannya yang pada dasarnya terdiri atas propana, butana, atau campuran keduanya.
+g. Liquefied Natural Gas yang selanjutnya disingkat LNG adalah Gas Bumi yang terutama terdiri dari metana yang dicairkan pada suhu sangat rendah (sekitar minus 160°C (seratus enam puluh derajat celcius)) dan dipertahankan dalam keadaan cair untuk mempermudah transportasi dan penimbunan.
+h. Compressed Natural Gas yang selanjutnya disingkat CNG adalah Bahan Bakar Gas yang berasal dari Gas Bumi dengan unsur utama berupa metana (C1) yang telah dimampatkan dan dipertahankan serta disimpan pada bejana No. Izin Penyimpanan Minyak dan Gas Bumi bertekanan khusus untuk mempermudah transportasi dan penimbunan.
+i. Kegiatan Pencampuran adalah kegiatan teknis dan operasional berupa proses menggabungkan dua atau lebih produk energi baik antar hasil produk kilang minyak bumi maupun antara hasil produk kilang minyak bumi dengan biofuel untuk menghasilkan produk akhir dengan spesifikasi mutu tertentu sesuai standar keselamatan, kualitas, dan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 110
+
+j. Kegiatan Usaha Penyimpanan Minyak dan Gas Bumi adalah kegiatan penerimaan, pengumpulan, penampungan, dan pengeluaran Minyak Bumi, Gas Bumi, dan/atau Hasil Olahan.
+k. Izin Usaha Sementara Penyimpanan Minyak dan Gas Bumi adalah izin yang diterbitkan oleh Menteri yang bersifat sementara dalam rangka pembangunan atau penyiapan sarana dan fasilitas untuk melakukan kegiatan usaha serta pengurusan dokumen persyaratan perizinan dari instansi lain yang diberikan kepada Badan Usaha sebelum diberikan Izin Usaha Penyimpanan Minyak dan Gas Bumi.
+l. Izin Usaha adalah izin yang diterbitkan oleh Menteri dan diberikan kepada Badan Usaha untuk melaksanakan kegiatan usaha Pengolahan, Pengangkutan, Penyimpanan dan/atau Niaga dengan tujuan memperoleh keuntungan dan/atau laba.
+m. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha yang bersifat tetap, terus menerus, dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+n. Keselamatan Minyak dan Gas Bumi adalah keselamatan yang meliputi keselamatan pekerja, keselamatan instalasi dan peralatan, keselamatan lingkungan dan keselamatan umum.
+o. Instalasi Minyak dan Gas Bumi adalah rangkaian peralatan yang terintegrasi dalam suatu sistem untuk melaksanakan fungsi operasi pada Kegiatan Usaha Minyak dan Gas Bumi.
+
+## Lampiran hal. 110
+
+p. Inspeksi Teknis adalah suatu kegiatan yang dilakukan secara langsung meliputi pemeriksaan dokumen, pemeriksaan fisik, dan pengujian peralatan dan/atau Instalasi mengacu pada ketentuan peraturan perundang-No. Izin Penyimpanan Minyak dan Gas Bumi undangan, standar, dan kaidah keteknikan yang baik.
+q. Persetujuan Layak Operasi yang selanjutnya disingkat PLO adalah adalah pengakuan formal bahwa Kontraktor atau Pemegang Izin Usaha telah melaksanakan Inspeksi Teknis yang mengacu pada ketentuan peraturan perundangan-undangan, Standar, dan kaidah keteknikan yang baik.
+r. Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi yang selanjuitnya disingkat SKK Migas adalah pelaksana penyelenggaraan pengelolaan Kegiatan Usaha Hulu di bidang Minyak dan Gas Bumi berdasarkan Kontrak Kerja Sama di bawah pembinaan, koordinasi, dan pengawasan Menteri Energi dan Sumber Daya Mineral.
+s. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+t. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+3. Penggolongan a. Izin Usaha Sementara Penyimpanan Minyak dan Usaha Gas Bumi, dengan jenis kegiatan:
+1) Penyimpanan Minyak Bumi/BBM/Hasil Olahan;
+2) Penyimpanan LPG/LNG/CNG/BBG untuk Transportasi/Hasil Olahan dan/atau Penyimpanan LPG dengan fasilitas bottling plant.
+
+## Lampiran hal. 111
+
+b. Izin Usaha Penyimpanan Minyak dan Gas Bumi, dengan jenis kegiatan:
+1) Penyimpanan Minyak Bumi/BBM/Hasil Olahan;
+2) Penyimpanan LPG/LNG/CNG/BBG untuk Transportasi/Hasil Olahan dan/atau Penyimpanan LPG dengan fasilitas bottling plant.
+c. Pelaku Usaha (Pemegang Izin Usaha Penyimpanan Migas yang disewa oleh Badan Usaha Niaga Migas) untuk melakukan pencampuran dari Hasil Produk.
+d. Skala Usaha: Kecil, Menengah, Besar.
+e. Tingkat Risiko: Tinggi.
+4. Ketentuan a. Izin Usaha Penyimpanan Minyak dan Gas Bumi Persyaratan untuk Kegiatan Usaha Penyimpanan Minyak Bumi/BBM/Hasil Olahan:
+No. Izin Penyimpanan Minyak dan Gas Bumi 1) persyaratan administratif Izin Usaha Sementara/Izin Usaha/Perpanjangan Izin Usaha/Penyesuaian Izin Usaha Persyaratan administratif sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan surat pernyataan tertulis di atas meterai mengenai;
+(1) kesanggupan Badan Usaha memenuhi aspek keselamatan, kesehatan kerja dan pengelolaan lingkungan hidup dimaknai sebagai kesanggupan Badan Usaha memenuhi seluruh aspek Keselamatan Minyak dan Gas Bumi;
+(2) kesediaan dilakukan audit kepatuhan terhadap ketentuan peraturan perundang-undangan dimaknai sebagai kesanggupan Badan Usaha untuk dilakukan audit kepatuhan melalui pemeriksaan rutin dan insidental terhadap pemenuhan persyaratan dan pelaksanaan kewajiban dalam perizinan berusaha;
+
+## Lampiran hal. 112
+
+(3) kesanggupan Badan Usaha menjamin dan bertanggung jawab bahwa sarana dan fasilitas yang di miliki/ dikuasai layak beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik selama masa operasi, dimaknai dengan menghapus frasa “selama masa operasi”. b) selain memenuhi persyaratan administratif berupa surat pernyataan tertulis di atas meterai sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi pernyataan tertulis tambahan berupa:
+(1) kesanggupan Badan Usaha untuk menyampaikan laporan kegiatan usaha penyimpanan antara lain badan usaha pengguna, asal supply, volume supply, volume output, stok awal, stok akhir, skema sewa (dedicated/commingle), jenis komoditas yang disimpan, nomor No. Izin Penyimpanan Minyak dan Gas Bumi tangki penyimpanan (untuk masing-masing tangki penyimpanan yang terdaftar pada izin usaha);
+(2) kesanggupan Badan Usaha untuk melaksanakan penugasan Pemerintah dalam rangka penyediaan cadangan BBM Nasional;
+(3) kesanggupan Badan Usaha Penyimpanan untuk menyediakan fasilitas pengujian terhadap mutu hasil pencampuran (blending) terkait dengan kegiatan pencampuran atau memanfaatkan fasilitas laboratorium uji yang terakreditasi milik pihak lain;
+
+## Lampiran hal. 113
+
+(4) Kesanggupan Badan Usaha untuk menyampaikan laporan kegiatan usaha pencampuran hasil kilang minyak dan gas bumi dengan Bahan Bakar Nabati meliputi laporan jadwal rencana tahunan, realisasi pelaksanaan bulanan, dan penghentian operasi guna perawatan fasilitas dan sarana pencampuran hasil kilang minyak dan gas bumi dengan Bahan Bakar Nabati dalam rangka menjaga ketersediaan BBM secara berkala (apabila melakukan kegiatan pencampuran (blending)); dan
+(5) Kesanggupan Badan Usaha Pencampuran Hasil Kilang Minyak dan Gas Bumi dengan Bahan Bakar Nabati untuk menyediakan fasilitas pengujian terhadap mutu hasil pencampuran (blending) terkait dengan kegiatan pencampuran atau bekerjasama dengan laboratorium independen yang telah terakreditasi.
+
+## Lampiran hal. 113
+
+2) persyaratan teknis Izin Usaha Sementara Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai antara lain memuat latar belakang, struktur organisasi, penggunaan tenaga kerja asing dan tenaga kerja lokal, rencana skema usaha, rencana lokasi, fasilitas penyimpanan (jenis, jumlah, kapasitas, status kepemilikan), tata No. Izin Penyimpanan Minyak dan Gas Bumi waktu pembangunan atau penyiapan sarana dan fasilitas, standar serta mutu komoditas yang akan disimpan, SOP kegiatan usaha penyimpanan Minyak Bumi/BBM/Hasil Olahan termasuk SOP kegiatan usaha pencampuran dengan komoditas dan rencana lokasinya (bagi Badan Usaha yang melakukan kegiatan pencampuran), calon konsumen, jaminan kecukupan pendanaan, Analisis Keekonomian (rencana biaya investasi, tarif, indikator kelayakan usaha, dan periode pengembalian modal), rincian data kapal/ship particulars (untuk fasilitas penyimpanan di perairan), rencana penyediaan fasilitas pengujian mutu terhadap bahan bakar hasil pencampuran (bagi Badan Usaha yang akan melakukan kegiatan pencampuran untuk menghasilkan BBM dan/atau Hasil Olahan), bukti pelaporan kegiatan usaha penyimpanan Migas (apabila telah memiliki Izin Usaha Penyimpanan Migas), serta komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa; dan b) terkait dengan jaminan kecukupan pendanaan yang
+
+## Lampiran hal. 113
+
+dibuktikan dengan dokumen kesepakatan dengan pihak lain untuk pendanaan (mencantumkan nominal tertentu) dimaknai sebagai dokumen kesepakatan dengan pihak lain untuk pendanaan dengan nominal tertentu dan memperoleh dukungan keuangan dari pihak lain tersebut.
+
+## Lampiran hal. 114
+
+3) persyaratan teknis Izin Usaha/ Perpanjangan Izin Usaha/Penyesuaian Izin Usaha Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai antara lain memuat latar belakang, struktur organisasi, penggunaan tenaga kerja asing dan tenaga kerja lokal, skema usaha, lokasi, fasilitas penyimpanan (jenis, jumlah, kapasitas, status kepemilikan), SOP kegiatan usaha penyimpanan Minyak Bumi/BBM/Hasil Olahan, termasuk SOP kegiatan usaha No. Izin Penyimpanan Minyak dan Gas Bumi pencampuran dengan komoditas dan lokasinya (bagi Badan Usaha yang melakukan kegiatan pencampuran), daftar konsumen, tata waktu pembangunan atau penyiapan sarana dan fasilitas, standar serta mutu komoditas yang akan disimpan, jaminan kecukupan pendanaan, analisa keekonomian usaha (rencana biaya investasi, tarif, indikator kelayakan usaha, periode pengembalian modal), rincian data kapal/ship particulars (untuk fasilitas penyimpanan di perairan), penyediaan fasilitas pengujian mutu terhadap bahan bakar hasil pencampuran (bagi Badan Usaha yang akan melakukan kegiatan pencampuran untuk menghasilkan Bahan Bakar Minyak dan/atau Hasil Olahan), bukti pelaporan kegiatan usaha penyimpanan Migas (apabila telah memiliki Izin Usaha Penyimpanan Migas), serta komitmen Tingkat Komponen Dalam Negeri (TKDN) Barang dan Jasa; b) terkait dengan Berita Acara
+
+## Lampiran hal. 114
+
+Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik Lingkungan Migas/PLO yang masih berlaku/sesuai ketentuan peraturan perundang-undangan dimaknai sebagai PLO yang masih berlaku, Certificate of Inspection (COI) yang masih berlaku atau Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas; c) selain memenuhi persyaratan teknis Izin Usaha/ Perpanjangan Izin Usaha/Penyesuaian Izin Usaha sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa:
+(1) dokumen kontrak perjanjian penyimpanan dengan pengguna fasilitas penyimpanan Minyak Bumi/BBM/Hasil Olahan (sesuai komoditas yang akan disimpan) No. Izin Penyimpanan Minyak dan Gas Bumi paling sedikit memuat volume, dan jangka waktu kesepakatan;
+(2) dokumen yang menjelaskan bukti kepemilikan fasilitas penyimpanan darat, antara lain akta kepemilikan, akta jual beli, dan/atau persetujuan bangunan gedung dan/atau bukti perjanjian kerja sama dengan pemilik sarana dan fasilitas penyimpanan darat (jika sewa); dan
+
+## Lampiran hal. 116
+
+(3) dokumen yang menjelaskan pemanfaatan fasilitas laboratorium uji yang terakreditasi milik pihak lain apabila Badan Usaha penyimpanan melakukan kegiatan pencampuran (blending), namun tidak memiliki fasilitas pengujian terhadap mutu hasil pencampuran (blending) sesuai standar dan mutu yang ditetapkan Menteri.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+b. Izin Usaha Penyimpanan Minyak dan Gas Bumi untuk Kegiatan Usaha Penyimpanan LPG/LNG/CNG/BBG untuk Transportasi/Hasil Olahan dan/atau Penyimpanan LPG dengan fasilitas bottling plant:
+1) persyaratan administratif Izin Usaha Sementara/Izin Usaha/Perpanjangan Izin Usaha/ Penyesuaian Izin Usaha Persyaratan administratif sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan surat pernyataan tertulis di atas meterai mengenai Kesanggupan Badan Usaha menjamin dan bertanggung jawab bahwa sarana dan fasilitas yang di miliki/ dikuasai layak beroperasi dan mampu dijalankan sesuai dengan kaidah keteknikan yang baik selama masa operasi, dimaknai dengan menghapus frasa “selama masa operasi”;
+
+## Lampiran hal. 117
+
+No. Izin Penyimpanan Minyak dan Gas Bumi b) selain memenuhi persyaratan administratif berupa surat pernyataan tertulis di atas meterai sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi pernyataan tertulis tambahan berupa kesanggupan badan usaha menerima penunjukan dan penugasan dari Pemerintah dalam rangka mendukung penyediaan jenis BBG untuk pemenuhan cadangan BBG Nasional; dan c) selain memenuhi persyaratan administratif Izin Usaha Sementara/Izin Usaha/Perpanjangan Izin Usaha/ Penyesuaian Izin Usaha sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan tambahan berupa Identitas dan Surat Kuasa Narahubung.
+
+## Lampiran hal. 117
+
+2) persyaratan teknis Izin Usaha Sementara/Perpanjangan Izin Usaha Sementara/Penyesuaian Izin Usaha Sementara Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai paling sedikit memuat latar belakang, profil perusahaan, skema usaha, rencana penggunaan tenaga kerja asing dan tenaga kerja lokal, rencana fasilitas penyimpanan (jenis, jumlah, kapasitas, status kepemilikan sarana dan fasilitas), rencana tata waktu pembangunan atau penyiapan sarana dan fasilitas, rencana standar serta mutu komoditas yang akan disimpan, analisa keekonomian usaha (biaya investasi, perkiraan tarif, perhitungan kelayakan usaha, faktor pembentuk harga), dan komitmen Tingkat Komponen Dalam Negeri Barang dan Jasa; b) terkait dengan kesepakatan awal dengan calon pengguna fasilitas penyimpanan dimaknai sebagai kesepakatan awal dengan calon pengguna fasilitas No.
+
+## Lampiran hal. 117
+
+Izin Penyimpanan Minyak dan Gas Bumi penyimpanan paling sedikit memuat volume, jangka waktu kesepakatan dan waktu dimulainya penyimpanan; c) terkait dengan jaminan kecukupan pendanaan yang dibuktikan dengan laporan keuangan 3 (tiga) tahun terakhir dimaknai sebagai laporan keuangan 3 (tiga) tahun terakhir yang telah di audit; d) selain memenuhi persyaratan teknis Izin Usaha Sementara/Perpanjangan Izin Usaha Sementara/Penyesuaian Izin Usaha Sementara sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa:
+(1) persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang untuk kegiatan berusaha atau sesuai dengan ketentuan peraturan perundang-undangan untuk setiap lokasi sarana dan fasilitas usaha; dan
+(2) rencana pemanfaatan atau pembangunan sarana dan fasilitas penyimpanan Gas Bumi yang meliputi antara lain teknologi yang digunakan, dimensi, kapasitas, serta sarana dan fasilitas dan data titik koordinat berupa Data Geo-reference Standard Datum WGS84.
+
+## Lampiran hal. 118
+
+3) persyaratan teknis Izin Usaha/ Perpanjangan Izin Usaha/Penyesuaian Izin Usaha Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan: a) terkait dengan Studi Kelayakan dimaknai paling sedikit memuat latar belakang, profil perusahaan, skema usaha, penggunaan tenaga kerja asing dan tenaga kerja lokal, fasilitas penyimpanan (jenis, jumlah, kapasitas, status kepemilikan sarana dan fasilitas), capaian tata waktu pembangunan atau penyiapan sarana dan fasilitas, standar serta mutu komoditas yang akan disimpan, analisa keekonomian usaha (biaya investasi, perkiraan tarif, perhitungan kelayakan usaha, faktor No. Izin Penyimpanan Minyak dan Gas Bumi pembentuk harga), dan capaian Tingkat Komponen Dalam Negeri barang dan jasa; b) terkait BA Commissioning atau BA Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas/PLO yang masih berlaku sesuai dengan ketentuan peraturan perundang-undangan dimaknai sebagai PLO yang masih berlaku, Certificate of Inspection (COI) yang masih berlaku atau Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait Fasilitas dan/atau Sarana yang ditandatangani oleh Petugas Direktorat Teknik dan Lingkungan Migas; c) terkait dengan dokumen kontrak perjanjian penyimpanan dengan pengguna fasilitas penyimpanan LNG/LPG/
+
+## Lampiran hal. 118
+
+CNG (sesuai komoditas yang akan disimpan dimaknai sebagai dokumen kontrak perjanjian penyimpanan dengan pengguna fasilitas penyimpanan LNG/LPG/CNG/BBG untuk Transportasi/Hasil Olahan dan/atau dan/atau Penyimpanan LPG dengan fasilitas bottling plant (sesuai komoditas yang akan disimpan) paling sedikit memuat volume, jangka waktu kesepakatan dan waktu dimulainya penyimpanan; d) terkait dengan bukti kepemilikan/penguasaan/kontrak sewa menyewa sarana dan fasilitas:
+(1) untuk moda angkutan darat termasuk juga Bukti KIR (Dokumen Uji Kendaraan Bermotor); dan
+(2) untuk fasilitas berupa tangki, pipa dimaknai sebagai untuk fasilitas berupa tangki/Skid Tank/Isotank dan/atau pipa dokumen kepemilikan berupa surat pernyataan dari Direktur. Apabila sewa, disertakan dokumen sewa-menyewa yang masih berlaku. e) selain memenuhi persyaratan teknis Izin Usaha Sementara/Izin Usaha/Perpanjangan Izin Usaha/ Penyesuaian Izin Usaha sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang No. Izin Penyimpanan Minyak dan Gas Bumi Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan teknis tambahan berupa:
+(1) persetujuan Kesesuaian Kegiatan Pemanfaatan Ruang untuk kegiatan berusaha atau sesuai dengan ketentuan peraturan perundang-undangan untuk setiap lokasi sarana dan fasilitas usaha;
+(2) dokumen persetujuan lingkungan.
+
+## Lampiran hal. 120
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan:
+Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 15 (lima belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Izin Penyimpanan Minyak dan Gas Bumi disetujui;
+4) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku 1) Masa berlaku Izin Usaha Sementara paling lama 3 (tiga) tahun dan dapat diperpanjang 1 (satu) kali menjadi 2 (dua) tahun;
+
+## Lampiran hal. 120
+
+2) Izin Usaha Penyimpanan Minyak dan Gas Bumi untuk penyimpanan Minyak Bumi/BBM/Hasil Olahan untuk sarana dan fasilitas penyimpanan di darat diberikan: a) 15 (lima belas) tahun untuk penyimpanan dengan kapasitas lebih dari 100.000 (seratus ribu) Kilo Liter dan dapat diperpanjang; b) 10 (sepuluh) tahun untuk penyimpanan dengan kapasitas lebih dari 50.000 (lima puluh ribu) sampai dengan 100.000 (seratus ribu) Kilo Liter dan dapat diperpanjang; dan No. Izin Penyimpanan Minyak dan Gas Bumi c) 5 (lima) tahun untuk penyimpanan dengan kapasitas sampai dengan 50.000 (lima puluh ribu) Kilo Liter dan dapat diperpanjang.
+3) Izin Usaha Penyimpanan Minyak dan Gas Bumi untuk penyimpanan Minyak Bumi/BBM/Hasil Olahan untuk sarana dan fasilitas penyimpanan di perairan diberikan masa berlaku paling lama 3 (tiga) tahun dan dapat diperpanjang;
+4) Izin Usaha Penyimpanan Minyak dan Gas Bumi untuk penyimpanan LNG/CNG/BBG untuk Transportasi/Hasil Olahan Gas dan/atau Penyimpanan LPG dengan fasilitas bottling plant diberikan paling lama berdasarkan keekonomian proyek dan/atau umur layanan teknis sarana dan fasilitas dan/atau perjanjian dengan pengguna fasilitas dan/atau paling lama 5 (lima) tahun dan dapat diperpanjang.
+c. Berakhirnya Izin Penyimpanan Minyak dan Gas Bumi:
+1) Izin Penyimpanan Minyak dan Gas Bumi berakhir karena: a) habis masa berlakunya; atau b) dicabut.
+
+## Lampiran hal. 121
+
+2) pencabutan Izin Penyimpanan Minyak dan Gas Bumi sebagaimana dimaksud pada angka 1) huruf b dapat didasarkan pada: a) pengenaan sanksi administratif; b) permohonan pencabutan dari Badan Usaha; dan/atau c) Putusan pengadilan yang telah memiliki kekuatan hukum tetap berupa pencabutan izin atau pailit.
+6. Ketentuan Kewajiban KBLI 52104 - Minyak Bumi Kewajiban a. Izin Usaha:
+1) menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Direktur Jenderal;
+2) menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, kehandalan, kalibrasi, dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+3) menjamin Keselamatan Minyak dan Gas Bumi serta pengembangan masyarakat setempat sesuai dengan ketentuan peraturan perundang- undangan;
+No. Izin Penyimpanan Minyak dan Gas Bumi 4) menjamin pelaksanaan pemeriksaan rutin dan insidental oleh Direktorat Jenderal sesuai dengan ketentuan peraturan perundang-undangan dengan mempertimbangkan ketersediaan SDM dan anggaran, yang dilaksanakan: a) secara periodik setiap 3 (tiga) sampai 5 (lima) tahun sekali selama masa izin usaha berlaku; b) paling lambat 6 (enam) bulan sebelum masa izin usaha berakhir; dan c) Badan Usaha dapat diberikan sanksi administratif apabila berdasarkan hasil evaluasi pemeriksaan rutin dan insidental terdapat pelanggaran atas kewajiban yang tercantum dalam perizinan berusaha dan atau ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 122
+
+5) melaporkan kepada Menteri melalui Direktur Jenderal mengenai pelaksanaan kegiatan Izin Usaha Penyimpanan Minyak dan Gas bumi secara berkala setiap 3 (tiga) bulan sekali atau sewaktu-waktu apabila diperlukan;
+6) menyampaikan permohonan perpanjangan Izin Usaha paling lambat 3 (tiga) bulan sebelum masa berlaku izin usaha berakhir atau penyesuaian Izin Usaha apabila terdapat perubahan data administratif dan/atau teknis perizinan berusaha;
+7) melaksanakan penugasan Pemerintah dalam rangka penyediaan cadangan BBM Nasional;
+8) mematuhi dan memenuhi semua kewajiban yang tercantum dalam Izin Usaha, perizinan, dan ketentuan dalam peraturan perundang-undangan.
+b. Izin Usaha Sementara:
+1) melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan sarana dan fasilitas;
+2) menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+3) menggunakan kaidah keteknikan yang baik;
+4) mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+5) menjamin Keselamatan dan Kesehatan Kerja dan pengelolaan Iingkungan hidup;
+No. Izin Penyimpanan Minyak dan Gas Bumi 6) instalasi peralatan dan sistem alat ukur wajib disampaikan dalam kesepakatan penyimpanan Minyak Bumi/BBM/Hasil Olahan;
+
+## Lampiran hal. 123
+
+7) melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+8) melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 3 (tiga) bulan sekali atau sewaktu-waktu apabila diperlukan;
+9) pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara; dan 10) pada saat melakukan uji coba operasi sebagaimana dimaksud pada angka 9), Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha.
+Kewajiban KBLI 52104 – Gas Bumi
+a. Izin Usaha Sementara:
+1) melaksanakan pembangunan sarana dan fasilitas sesuai dengan rencana pembangunan sarana dan fasilitas;
+2) menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+3) mengutamakan penggunaan tenaga kerja Warga Negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratakan;
+4) menjamin keselamatan dan kesehatan kerja dan pengelolaan lingkungan hidup;
+5) melaporkan dan/atau menyampaikan permohonan Izin Usaha Sementara apabila terdapat perubahan data administratif dan teknis kepada Menteri melalui Direktur Jenderal;
+
+## Lampiran hal. 123
+
+6) melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatannya setiap 3 (tiga) bulan sekali atau sewaktu- waktu apabila diperlukan;
+7) pemegang Izin Usaha Sementara yang telah menyelesaikan pembangunan sarana dan fasilitas yang diperlukan, wajib melakukan uji coba operasi terhadap sarana dan No. Izin Penyimpanan Minyak dan Gas Bumi fasilitas yang telah selesai dibangun selama jangka waktu Izin Usaha Sementara; dan 8) pada saat melakukan uji coba operasi sebagaimana dimaksud pada angka 7) , Pemegang Izin Usaha Sementara dilarang melakukan kegiatan usaha.
+b. Izin Usaha 1) menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+2) menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Direktur Jenderal;
+3) menjamin keselamatan dan kesehatan kerja, pengelolaan lingkungan hidup serta pengembangan masyarakat setempat;
+4) melaksanakan penugasan Pemerintah dalam rangka penyediaan cadangan BBG Nasional;
+5) melaporkan dan/atau menyampaikan permohonan penyesuaian Izin Usaha apabila terdapat perubahan data administratif dan teknis;
+6) melaporkan kepada Menteri melalui Direktur Jenderal mengenai kegiatan usahanya setiap 3 (tiga) bulan sekali atau sewaktu-waktu apabila diperlukan;
+7) memenuhi perizinan yang ditetapkan oleh Instansi terkait sesuai dengan ketentuan peraturan perundang-undangan;
+
+## Lampiran hal. 124
+
+8) melaksanakan kewajiban yang tercantum dalam lzin Usaha; dan 9) menjamin keselamatan instalasi dan peralatan sesuai dengan ketentuan peraturan perundang-undangan.
+10. Standar Kegiatan Usaha Berupa Pencampuran dari Hasil Produk Kilang Minyak Bumi dengan Bahan Bakar Nabati No. Persetujuan Pencampuran Hasil Produk Kilang Minyak Bumi dengan Bahan Bakar Nabati KBLI:
+(19206) Industri Produk dari Pencampuran Hasil kilang Minyak Bumi dengan Bahan Bakar Nabati
+1. Ruang Standar ini memuat pengaturan yang terkait dengan Lingkup kelompok usaha pada KBLI 19291 (Manufaktur Produk dari Hasil Kilang Minyak Bumi) - KBLI 19206 (Industri Produk dari Pencampuran Hasil Kilang Minyak Bumi dengan Bahan Bakar Nabati) No. Persetujuan Pencampuran Hasil Produk Kilang Minyak Bumi dengan Bahan Bakar Nabati bagi Badan Usaha Pemegang Izin Usaha Pengolahan, Penyimpanan dan/atau Niaga Minyak dan Gas Bumi yang mencakup kegiatan usaha pencampuran hasil produk kilang Minyak Bumi dengan Bahan Bakar Nabati, antara lain pencampuran bioetanol dengan bensin, pencampuran biodiesel dengan minyak solar, dan pencampuran Bahan Bakar Nabati cair lainnya dengan bahan bakar fosil.
+
+## Lampiran hal. 125
+
+2. Istilah dan a. Minyak Bumi adalah hasil proses alami berupa Definisi hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa cair atau padat, termasuk aspal, lilin mineral atau ozokerit dan bitumen yang diperoleh dari proses penambangan, tetapi tidak termasuk batubara atau endapan hidrokarbon lain yang berbentuk padat yang diperoleh dari kegiatan yang tidak berkaitan dengan kegiatan usaha Minyak dan Gas Bumi.
+b. Gas Bumi adalah hasil proses alami berupa hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa gas yang diperoleh dari proses penambangan Minyak dan Gas Bumi.
+c. Bahan Bakar Minyak yang selanjutnya disingkat BBM adalah bahan bakar yang berasal dan/atau diolah dari Minyak Bumi.
+d. Hasil Olahan adalah hasil dan/atau produk selain BBM dan/atau BBG yang diperoleh dari kegiatan hasil pengolahan minyak dan gas bumi baik berupa produk akhir atau produk antara kecuali pelumas dan petrokimia.
+e. Bahan Bakar Nabati yang selanjutnya disingkat BBN adalah bahan bakar yang berwujud cair yang dihasilkan dari bahan nabati, bahan organik lain, dan/atau limbah organik.
+f. Bioetanol adalah BBN berupa etanol yang diproses secara fermentasi atau proses lainnya untuk bahan bakar motor bensin.
+g. Biodiesel adalah BBN berupa Ester Methyl Asam Lemak yang diproses secara esterifikasi atau proses lainnya untuk bahan bakar motor diesel.
+
+## Lampiran hal. 125
+
+h. Kegiatan Pencampuran adalah kegiatan teknis dan operasional berupa proses menggabungkan dua atau lebih produk energi baik antar hasil produk kilang minyak bumi maupun antara hasil produk kilang minyak bumi dengan BBN untuk menghasilkan produk akhir dengan spesifikasi mutu tertentu sesuai standar keselamatan, kualitas, dan ketentuan peraturan perundang-undangan.
+No. Persetujuan Pencampuran Hasil Produk Kilang Minyak Bumi dengan Bahan Bakar Nabati
+i. Pengolahan adalah kegiatan memurnikan, memperoleh bagian-bagian, mempertinggi mutu dan meningkatkan nilai tambah Minyak Bumi dan/atau Gas Bumi tetapi tidak termasuk pengolahan lapangan.
+j. Izin Usaha adalah izin yang diterbitkan oleh Menteri dan diberikan kepada Badan Usaha untuk melaksanakan kegiatan usaha Pengolahan, Pengangkutan, Penyimpanan dan/atau Niaga dengan tujuan memperoleh keuntungan dan/atau laba.
+k. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha yang bersifat tetap, terus menerus, dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+l. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+m. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+
+## Lampiran hal. 126
+
+3. Penggolongan Jenis Persetujuan Pencampuran Hasil Produk Usaha Kilang Minyak Bumi dengan Bahan Bakar Nabati:
+a. Pelaku Usaha (Pemegang Izin Usaha Pengolahan Minyak dan Gas Bumi untuk jenis Kegiatan Pengolahan Minyak Bumi atau Pemegang Izin Usaha Penyimpanan Minyak dan Gas Bumi untuk jenis Kegiatan Penyimpanan BBM dan/atau Pemegang Izin Usaha Niaga Minyak dan Gas Bumi untuk jenis Kegiatan Niaga BBM) yang melakukan pencampuran dari Hasil Produk Kilang Minyak Bumi dengan Bahan Bakar Nabati.
+b. Skala Usaha: Besar
+c. Tingkat Risiko: Menengah Tinggi
+4. Ketentuan Persyaratan Persyaratan Persetujuan/Penyesuaian/Perpanjangan Pencampuran Hasil Produk Kilang Minyak Bumi dengan Bahan Bakar Nabati :
+a. Izin Usaha Pengolahan, Izin Usaha Penyimpanan dan/atau Izin Usaha Niaga Minyak dan Gas Bumi yang masih berlaku.
+b. SOP kegiatan usaha pencampuran dengan komoditas dan lokasinya.
+No. Persetujuan Pencampuran Hasil Produk Kilang Minyak Bumi dengan Bahan Bakar Nabati Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan:
+Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+
+## Lampiran hal. 127
+
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 10 (sepuluh) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Persetujuan Pencampuran Hasil Produk Kilang Minyak dengan Bahan Bakar Nabati disetujui;
+4) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Persetujuan Pencampuran Hasil Produk Kilang dengan Bahan Bakar Nabati diberikan mengikuti Izin Usaha yang dimiliki.
+c. Berakhirnya Persetujuan Pencampuran Hasil Produk Kilang dengan Bahan Bakar Nabati Persetujuan Pencampuran Hasil Produk Kilang dengan Bahan Bakar Nabati berakhir karena masa berlaku Izin Usaha yang dimiliki sudah berakhir atau dicabut.
+6. Ketentuan Kewajiban KBLI 19206 Kewajiban Izin Usaha:
+1. menjamin mutu produk atau komoditas sesuai dengan standar yang ditetapkan oleh Direktur Jenderal;
+2. menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, kehandalan, kalibrasi, dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+3. menjamin Keselamatan Minyak dan Gas Bumi serta pengembangan masyarakat setempat sesuai dengan ketentuan peraturan perundang-undangan;
+No. Persetujuan Pencampuran Hasil Produk Kilang Minyak Bumi dengan Bahan Bakar Nabati
+
+## Lampiran hal. 128
+
+4. menjamin pelaksanaan pemeriksaan rutin dan insidental oleh Direktorat Jenderal sesuai ketentuan peraturan perundangan dengan mempertimbangkan ketersediaan SDM dan anggaran, yang dilaksanakan:
+a. secara periodik setiap 3 (tiga) sampai 5 (lima) tahun sekali selama masa izin usaha berlaku;
+b. paling lambat 6 (enam) bulan sebelum masa izin usaha berakhir; dan
+c. Badan Usaha dapat diberikan sanksi administratif apabila berdasarkan hasil evaluasi pemeriksaan rutin dan insidental terdapat pelanggaran atas kewajiban yang tercantum dalam perizinan berusaha dan atau ketentuan peraturan perundang undangan yang berlaku.
+5. menyampaikan permohonan perpanjangan Persetujuan paling lambat 3 (tiga) bulan sebelum masa berlaku persetujuan berakhir atau penyesuaian Persetujuan apabila terdapat perubahan data administratif dan/atau teknis Persetujuan;
+6. mematuhi dan memenuhi semua kewajiban yang tercantum dalam Persetujuan, dan ketentuan dalam peraturan perundang-undangan.
+11. Standar Kegiatan Usaha Berupa Persetujuan Penyalur Minyak dan Gas Bumi di Stasiun Pengisian No. Persetujuan Penyalur Minyak dan Gas Bumi di Stasiun Pengisian KBLI:
+(47301) Perdagangan Eceran Bahan Bakar Minyak, Bahan Bakar Gas (BBG), dan Liquefied Petroleum Gas (LPG) di Sarana Pengisian Bahan Bakar Transportasi Darat, Laut, dan Udara
+
+## Lampiran hal. 128
+
+1. Ruang Standar ini memuat pengaturan yang terkait dengan Lingkup kelompok usaha pada Klasifikasi Baku Lapangan Usaha Indonesia 47301 yang mencakup kegiatan perdagangan eceran untuk Bahan Bakar Minyak, Bahan Bakar Gas (BBG), Liquefied Petroleum Gas (LPG), Liquefied Natural Gas (LNG), Compressed Natural Gas (CNG) di sarana pengisian bahan bakar untuk transportasi darat, laut dan udara (seperti SPBU, SPBG dan sebagainya).
+2. Istilah dan a. Kegiatan Penyaluran adalah kegiatan Definisi penyaluran Bahan Bakar Minyak, Bahan Bakar No. Persetujuan Penyalur Minyak dan Gas Bumi di Stasiun Pengisian Gas atau Liquefied Petroleum Gas kepada pengguna akhir pada wilayah penyaluran oleh Penyalur Bahan Bakar Minyak, Bahan Bakar Gas atau Liquefied Petroleum Gas yang terintegrasi berdasarkan perjanjian kerja sama dengan Badan Usaha Pemegang Izin Usaha Niaga Minyak dan Gas Bumi.
+b. Penyalur adalah koperasi, usaha kecil, dan/atau badan usaha swasta nasional yang ditunjuk oleh Badan Usaha Niaga Minyak dan Gas Bumi untuk melakukan Kegiatan Penyaluran.
+c. Badan Usaha Pemegang Izin Usaha Niaga Minyak dan Gas Bumi yang selanjutnya disebut BU Niaga Migas adalah badan usaha yang telah memperoleh izin usaha untuk melakukan Kegiatan Usaha Niaga Umum Bahan Bakar Minyak, Niaga Bahan Bakar Gas, dan/atau Niaga Liquefied Petroleum Gas sesuai dengan ketentuan peraturan perundang-undangan.
+d. Bahan Bakar Minyak yang selanjutnya disingkat BBM adalah bahan bakar yang berasal dan/atau diolah dari Minyak Bumi.
+
+## Lampiran hal. 129
+
+e. Bahan Bakar Gas untuk Transportasi yang selanjutnya disingkat BBG untuk Transportasi adalah bahan bakar untuk digunakan dalam kegiatan transportasi yang berasal dari Gas Bumi dan/atau hasil olahan dari Minyak dan Gas Bumi.
+f. Liquefied Petroleum Gas yang selanjutnya disingkat LPG adalah gas hidrokarbon yang dicairkan dengan tekanan untuk memudahkan penyimpanan, pengangkutan, dan penanganannya yang pada dasarnya terdiri atas propane, butana, atau campuran keduanya.
+g. Liquefied Natural Gas yang selanjutnya disingkat LNG adalah Gas Bumi yang terutama terdiri dari metana yang dicairkan pada suhu sangat rendah (sekitar minus 160°C (seratus enam puluh derajat celcius)) dan dipertahankan dalam keadaan cair untuk mempermudah transportasi dan penimbunan.
+h. Compressed Natural Gas yang selanjutnya disingkat CNG adalah Bahan Bakar Gas yang berasal dari Gas Bumi dengan unsur utama berupa metana (C1) yang telah dimampatkan dan dipertahankan serta disimpan pada bejana bertekanan khusus untuk mempermudah transportasi dan penimbunan yang dapat digunakan sebagai bahan bakar untuk kendaraan.
+i. Keselamatan Minyak dan Gas Bumi adalah keselamatan yang meliputi keselamatan pekerja, keselamatan instalasi dan peralatan, No. Persetujuan Penyalur Minyak dan Gas Bumi di Stasiun Pengisian keselamatan lingkungan dan keselamatan umum.
+
+## Lampiran hal. 130
+
+j. Instalasi Minyak dan Gas Bumi adalah rangkaian peralatan yang terintegrasi dalam suatu sistem untuk melaksanakan fungsi operasi pada Kegiatan Usaha Minyak dan Gas Bumi.
+k. Inspeksi Teknis adalah suatu kegiatan yang dilakukan secara langsung meliputi pemeriksaan dokumen, pemeriksaan fisik, dan pengujian peralatan dan/atau Instalasi mengacu pada ketentuan peraturan perundang-undangan, standar, dan kaidah keteknikan yang baik.
+l. Persetujuan Layak Operasi yang selanjutnya disingkat PLO adalah adalah pengakuan formal bahwa Kontraktor atau Pemegang Izin Usaha telah melaksanakan Inspeksi Teknis yang mengacu pada ketentuan peraturan perundangan-undangan, Standar, dan kaidah keteknikan yang baik.
+m. Penanaman Modal Dalam Negeri yang selanjutnya disingkat PMDN adalah kegiatan menanam modal untuk melakukan usaha di wilayah negara Republik Indonesia yang dilakukan oleh penanam modal dalam negeri dengan menggunakan modal dalam negeri.
+n. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+o. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+p. Direktorat Jenderal adalah Direktorat Jenderal yang bidang tugas dan kewenangannya meliputi di bidang Minyak dan Gas Bumi.
+3. Penggolongan a. Sarana Pengisian BBM untuk Transportasi Usaha Darat, Laut, dan Udara dengan kapasitas penyimpanan <20 (kurang dari dua puluh) Kilo Liter
+
+## Lampiran hal. 130
+
+b. Sarana Pengisian BBM untuk Transportasi Darat, Laut, dan Udara dengan kapasitas penyimpanan ≥20 (lebih dari sama dengan dua puluh) Kilo Liter
+c. Tingkat Risiko: Menengah - Tinggi
+d. Pelaku usaha: PMDN
+e. Skala Usaha: Mikro, Kecil, Menengah, Besar
+f. Sarana Pengisian BBG untuk Transportasi dalam skala usaha Menengah dan Besar.
+No. Persetujuan Penyalur Minyak dan Gas Bumi di Stasiun Pengisian
+4. Ketentuan a. Persyaratan Sarana Pengisian BBM untuk Persyaratan Transportasi Darat, Laut, dan Udara (SPBU dengan skema CODO/DODO, SPBN, SPDN, dll) dengan kapasitas penyimpanan <20 Kilo Liter sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan memiliki kontrak perjanjian kerjasama dengan BU Niaga Migas dimaknai antara lain memuat:
+1) identitas pihak Penyalur dan BU Niaga Migas;
+2) ruang lingkup kerja sama meliputi lingkup kerja sama meliputi jenis komoditas, lokasi dan koordinat sarana pengisian;
+3) ketentuan volume dan wilayah penyaluran;
+4) kepemilikan sarana dan fasilitas penyimpanan pada fasilitas Penyalur;
+5) masa berlaku kontrak;
+6) pemenuhan dokumen lingkungan; dan 7) pemenuhan dokumen keselamatan berupa Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait sarana dan fasilitas atau COI (Certificate of Inspection) yang masih berlaku.
+
+## Lampiran hal. 131
+
+b. Persyaratan Sarana Pengisian BBM untuk Transportasi Darat, Laut, dan Udara (SPBU dengan skema CODO/DODO, SPBN, SPDN, dll) dengan kapasitas penyimpanan ≥20 Kilo Liter sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan memiliki kontrak perjanjian kerjasama dengan BU Niaga Migas dimaknai antara lain memuat:
+1) identitas pihak Penyalur dan BU Niaga Migas;
+2) ruang lingkup kerja sama meliputi lingkup kerja sama meliputi jenis komoditas, lokasi dan koordinat sarana pengisian;
+3) ketentuan volume dan wilayah penyaluran;
+4) kepemilikan sarana dan fasilitas penyimpanan pada fasilitas Penyalur;
+5) masa berlaku kontrak;
+6) pemenuhan dokumen lingkungan; dan 7) pemenuhan dokumen keselamatan berupa Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait sarana dan fasilitas atau COI (Certificate of Inspection) yang masih berlaku.
+No. Persetujuan Penyalur Minyak dan Gas Bumi di Stasiun Pengisian
+c. Persyaratan untuk Sarana Pengisian BBG untuk Transportasi Darat, Laut, dan Udara (SPBG, SPBLGV, dll) sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan memiliki kontrak perjanjian kerja sama dengan Badan Usaha Niaga Migas dimaknai paling sedikit memuat 1) identitas Penyalur;
+2) pemenuhan ketentuan sarana fasilitas;
+
+## Lampiran hal. 132
+
+3) pemenuhan dokumen lingkungan; dan 4) pemenuhan dokumen keselamatan berupa Berita Acara Pemeriksaan Keselamatan Instalasi dan Peralatan terkait sarana dan fasilitas atau COI (Certificate of Inspection) yang masih berlaku.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan:
+Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Persetujuan Penyalur Minyak dan Gas Bumi di Stasiun Pengisian disetujui;
+4) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Persetujuan Penyalur Migas di Stasiun Pengisian berlaku sepanjang kontrak kerja sama dengan BU Niaga Migas masih berlaku dan paling lama sampai berakhirnya Izin Usaha Niaga Migas yang dimiliki oleh BU Niaga Migas.
+c. Berakhirnya Persetujuan Penyalur Migas di Stasiun Pengisian Persetujuan Penyalur Migas di Stasiun Pengisian berakhir karena:
+
+## Lampiran hal. 133
+
+No. Persetujuan Penyalur Minyak dan Gas Bumi di Stasiun Pengisian 1) kontrak kerja sama dengan BU Niaga Migas berakhir atau diakhiri; atau 2) Izin Usaha Niaga Migas BU Niaga Migas berakhir atau dicabut.
+6. Ketentuan a. Kewajiban untuk Sarana Pengisian BBM untuk Kewajiban Transportasi Darat, Laut dan Udara dengan kapasitas penyimpanan <20 (kurang dari dua puluh) Kilo Liter:
+1) memiliki bentuk Koperasi, usaha kecil dan/atau Badan Usaha Swasta Nasional yang berbentuk PMDN ;
+2) hanya dapat menerima penunjukan dari 1 (satu) BU Niaga Migas;
+3) menggunakan logo dan merek dagang BU Niaga Migas;
+4) menjamin harga jual komoditas yang diniagakan sesuai dengan harga yang ditentukan oleh BU Niaga Migas dan/atau ditetapkan oleh Pemerintah;
+5) menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, kehandalan, kalibrasi, dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+6) menjamin Keselamatan Minyak dan Gas Bumi serta pengembangan masyarakat setempat sesuai dengan ketentuan peraturan perundang-undangan yang berlaku;
+7) menyampaikan laporan kegiatan penyaluran kepada BU Niaga Migas untuk selanjutnya disampaikan oleh BU Niaga Migas sebagai bagian dari pelaporan kegiatan usaha niaga minyak dan gas bumi kepada Menteri melalui Direktur Jenderal. Pengawasan terkait Kegiatan Penyaluran oleh Penyalur dilakukan Menteri melalui BU Niaga Migas.
+
+## Lampiran hal. 133
+
+b. Kewajiban untuk Sarana Pengisian BBM untuk Transportasi Darat, Laut dan Udara dengan kapasitas penyimpanan ≥20 (lebih dari sama dengan dua puluh) Kilo Liter:
+1) memiliki bentuk Koperasi, usaha kecil dan/atau Badan Usaha Swasta Nasional yang berbentuk PMDN;
+2) hanya dapat menerima penunjukan dari 1 (satu) BU Niaga Migas;
+3) menjamin harga jual komoditas yang diniagakan sesuai dengan harga yang ditentukan oleh BU Niaga Migas dan/atau ditetapkan oleh Pemerintah;
+No. Persetujuan Penyalur Minyak dan Gas Bumi di Stasiun Pengisian 4) menggunakan logo dan merek dagang BU Niaga Migas;
+5) menyampaikan laporan kegiatan penyaluran kepada BU Niaga Migas untuk selanjutnya disampaikan oleh BU Niaga Migas sebagai bagian dari pelaporan kegiatan usaha niaga minyak dan gas bumi kepada Menteri melalui Direktur Jenderal. Pengawasan terkait Kegiatan Penyaluran oleh Penyalur dilakukan Menteri melalui BU Niaga Migas.
+c. Kewajiban untuk Sarana Pengisian BBG untuk Transportasi:
+1) berbentuk Koperasi, usaha menengah, besar dan/atau Badan Usaha Swasta Nasional;
+2) hanya dapat menerima penunjukan dari 1 (satu) BU Niaga Migas;
+3) menjamin harga jual komoditas yang diniagakan sesuai dengan harga yang ditentukan oleh BU Niaga Migas dan/atau ditetapkan oleh Pemerintah;
+4) menggunakan logo dan merek dagang BU Niaga Migas;
+
+## Lampiran hal. 134
+
+5) menyampaikan laporan kegiatan penyaluran kepada BU Niaga Migas untuk selanjutnya disampaikan oleh BU Niaga Migas sebagai bagian dari pelaporan Kegiatan Usaha Niaga Minyak Dan Gas Bumi kepada Menteri melalui Direktur Jenderal. Pengawasan terkait Kegiatan Penyaluran oleh Penyalur dilakukan Menteri melalui BU Usaha Niaga Migas.
+12. Standar Kegiatan Usaha Berupa Persetujuan Penyalur Minyak dan Gas Bumi di Selain Stasiun Pengisian No. Persetujuan Penyalur Minyak dan Gas Bumi di Selain Stasiun Pengisian KBLI:
+(47302) Perdagangan Eceran Bahan Bakar Minyak, Bahan Bakar Gas (BBG), dan Liquefied Petroleum Gas (LPG) Selain di Sarana Pengisian Bahan Bakar Transportasi Darat, Laut, dan Udara
+1. Ruang Standar ini memuat pengaturan yang terkait dengan Lingkup kelompok usaha pada Klasifikasi Baku Lapangan Usaha Indonesia 47302 yang mencakup kegiatan perdagangan eceran untuk Bahan Bakar Minyak, Bahan Bakar Gas (BBG), Liquefied Petroleum Gas (LPG), Liquefied Natural Gas (LNG), Compressed Natural Gas (CNG) selain di sarana pengisian bahan bakar untuk transportasi darat, laut dan udara No. Persetujuan Penyalur Minyak dan Gas Bumi di Selain Stasiun Pengisian (seperti Agen LPG Umum, Agen LPG Tertentu (3 kg) dan Agen BBM selain Stasiun Pengisian Bahan Bakar Umum dan sebagainya).
+
+## Lampiran hal. 135
+
+2. Istilah dan a. Kegiatan Penyaluran adalah kegiatan penyaluran Definisi Bahan Bakar Minyak, Bahan Bakar Gas atau Liquefied Petroleum Gas kepada pengguna akhir pada wilayah penyaluran oleh Penyalur Bahan Bakar Minyak, Bahan Bakar Gas atau Liquefied Petroleum Gas yang terintegrasi berdasarkan perjanjian kerja sama dengan Badan Usaha Pemegang Izin Usaha Niaga Minyak dan Gas Bumi.
+b. Penyalur/Agen adalah koperasi, usaha kecil, dan/atau badan usaha swasta nasional yang ditunjuk oleh Badan Usaha Niaga Minyak dan Gas Bumi untuk melakukan Kegiatan Penyaluran.
+c. Badan Usaha Pemegang Izin Usaha Niaga Minyak dan Gas Bumi yang selanjutnya disebut BU Niaga Migas adalah badan usaha yang telah memperoleh izin usaha untuk melakukan Kegiatan Usaha Niaga Umum Bahan Bakar Minyak, Niaga Bahan Bakar Gas, dan/atau Niaga Liquefied Petroleum Gas sesuai dengan ketentuan peraturan perundang-undangan.
+d. Bahan Bakar Minyak yang selanjutnya disingkat BBM adalah bahan bakar yang berasal dan/atau diolah dari Minyak Bumi.
+e. Liquefied Petroleum Gas yang selanjutnya disingkat LPG adalah gas hidrokarbon yang dicairkan dengan tekanan untuk memudahkan penyimpanan, pengangkutan, dan penanganannya yang pada dasarnya terdiri atas propane, butana, atau campuran keduanya.
+
+## Lampiran hal. 135
+
+f. Liquefied Natural Gas yang selanjutnya disingkat LNG adalah Gas Bumi yang terutama terdiri dari metana yang dicairkan pada suhu sangat rendah (sekitar minus 160°C (seratus enam puluh derajat celcius)) dan dipertahankan dalam keadaan cair untuk mempermudah transportasi dan penimbunan.
+g. Compressed Natural Gas yang selanjutnya disingkat CNG adalah Bahan Bakar Gas yang berasal dari Gas Bumi dengan unsur utama berupa metana (C1) yang telah dimampatkan dan dipertahankan serta disimpan pada bejana bertekanan khusus untuk mempermudah transportasi dan penimbunan yang dapat digunakan sebagai bahan bakar untuk kendaraan.
+No. Persetujuan Penyalur Minyak dan Gas Bumi di Selain Stasiun Pengisian
+h. Penanaman Modal Dalam Negeri yang selanjutnya disingkat PMDN adalah kegiatan menanam modal untuk melakukan usaha di wilayah negara Republik Indonesia yang dilakukan oleh penanam modal dalam negeri dengan menggunakan modal dalam negeri.
+i. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+j. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+k. Direktorat Jenderal adalah Direktorat Jenderal yang bidang tugas dan kewenangannya meliputi di bidang Minyak dan Gas Bumi.
+3. Penggolongan a. Penyalur/Agen di Selain Stasiun Pengisian Usaha meliputi:
+1) BBM 2) BBG: a) LPG Umum; b) LPG Tertentu c) LNG/CNG.
+
+## Lampiran hal. 136
+
+b. Tingkat Risiko merupakan Menengah – Tinggi;
+c. Pelaku usaha: PMDN;
+d. Skala Usaha: Mikro, Kecil, Menengah, Besar.
+4. Ketentuan a. Persyaratan Penyalur/Agen Bahan Bakar Persyaratan Minyak selain di Stasiun Pengisian sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan memiliki kontrak perjanjian kerja sama dengan Badan Usaha Niaga Migas dimaknai antara lain memuat:
+1) identitas pihak Penyalur/Agen dan BU Niaga Migas;
+2) ruang lingkup kerja sama meliputi jenis komoditas, ketentuan volume dan wilayah penyaluran;
+3) kepemilikan dan/atau penguasaan sarana dan fasilitas pengangkutan;
+4) masa berlaku kontrak; dan 5) pemenuhan dokumen keselamatan terkait sarana dan fasilitas pengangkutan.
+b. Persyaratan Penyalur/Agen LPG Umum sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan No. Persetujuan Penyalur Minyak dan Gas Bumi di Selain Stasiun Pengisian Berusaha Berbasis Risiko, dengan ketentuan memiliki kontrak perjanjian kerja sama dengan Badan Usaha Niaga Migas dimaknai paling sedikit memuat:
+1) identitas Penyalur/Agen;
+2) pemenuhan ketentuan sarana dan fasilitas, serta persyaratan keselamatan;
+3) masa berlaku kontrak perjanjian kerja sama;
+4) pemenuhan dokumen lingkungan;
+5) hak dan kewajiban.
+
+## Lampiran hal. 137
+
+c. Persyaratan Penyalur/Agen LPG Tertentu (3 kg) sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan memiliki kontrak perjanjian kerja sama dengan Badan Usaha Penerima Penugasan dan Pendistribusian LPG Tertentu dimaknai sebagai memiliki kontrak perjanjian kerja sama dengan badan usaha Penerima Penugasan Penyediaan dan Pendistribusian LPG Tertentu yang paling sedikit memuat:
+1) identitas Penyalur/Agen;
+2) ketentuan alokasi, harga, dan tata cara penyerahan;
+3) pemenuhan ketentuan sarana dan fasilitas, serta persyaratan keselamatan;
+4) masa berlaku kontrak perjanjian kerja sama;
+5) pemenuhan dokumen lingkungan; dan 6) hak dan kewajiban.
+d. Persyaratan untuk Penyalur/Agen LNG/CNG:
+Memiliki kontrak perjanjian kerjasama dengan BU Niaga Migas untuk komoditas LNG/CNG yang paling sedikit memuat:
+1) identitas Penyalur;
+2) pemenuhan ketentuan sarana dan fasilitas, serta persyaratan keselamatan;
+3) masa berlaku kontrak perjanjian kerja sama;
+4) pemenuhan dokumen lingkungan; dan 5) hak dan kewajiban.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+
+## Lampiran hal. 138
+
+No. Persetujuan Penyalur Minyak dan Gas Bumi di Selain Stasiun Pengisian
+5. Ketentuan a. Verifikasi Permohonan:
+Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Persetujuan Penyalur Minyak dan Gas Bumi di Selain Stasiun Pengisian disetujui;
+4) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Persetujuan Penyalur Migas selain di Stasiun Pengisian berlaku sepanjang kontrak kerja sama dengan BU Niaga Migas masih berlaku dan paling lama sampai berakhirnya Izin Usaha Niaga Migas yang dimiliki oleh BU Niaga Migas.
+c. Berakhirnya Persetujuan Penyalur Migas Selain di Stasiun Pengisian Persetujuan Penyalur Migas di Stasiun Pengisian berakhir karena:
+1) kontrak kerja sama dengan BU Niaga Migas berakhir atau diakhiri; atau 2) Izin Usaha Niaga Migas BU Niaga Migas berakhir atau dicabut.
+6. Ketentuan a. Kewajiban Penyalur/Agen BBM Selain di Stasiun Kewajiban Pengisian:
+1) berbentuk Koperasi, usaha kecil dan/atau Badan Usaha Swasta Nasional yang berbentuk PMDN;
+2) hanya dapat menerima penunjukan dari 1 (satu) Badan Usaha Niaga Migas;
+
+## Lampiran hal. 138
+
+3) menjamin harga jual komoditas yang diniagakan sesuai dengan harga yang ditentukan oleh BU Niaga Migas dan/atau ditetapkan oleh Pemerintah;
+4) menggunakan logo dan merek dagang BU Niaga Migas;
+5) menyampaikan laporan kegiatan penyaluran kepada BU Niaga Migas untuk selanjutnya disampaikan oleh BU Niaga Migas sebagai bagian dari pelaporan kegiatan usaha niaga minyak dan gas bumi kepada Menteri melalui Direktur Jenderal. Pengawasan No. Persetujuan Penyalur Minyak dan Gas Bumi di Selain Stasiun Pengisian terkait kegiatan penyaluran oleh Penyalur dilakukan Menteri melalui BU Niaga Migas;
+6) memiliki atau menguasai sarana dan fasilitas pengangkutan sesuai dengan ketentuan peraturan perundang-undangan.
+b. Kewajiban Penyalur/Agen LPG Tertentu/ Umum:
+1) berbentuk Koperasi, usaha kecil dan/atau Badan Usaha Swasta Nasional yang berbentuk PMDN;
+2) hanya dapat menerima penunjukan dari 1 (satu) BU Niaga Migas;
+3) menjamin harga jual komoditas yang diniagakan sesuai dengan harga yang ditentukan oleh Badan Usaha Niaga Migas dan/atau ditetapkan oleh Pemerintah;
+4) menggunakan logo dan merek dagang BU Niaga Migas;
+
+## Lampiran hal. 139
+
+5) menyampaikan laporan kegiatan penyaluran kepada BU Niaga Migas untuk selanjutnya disampaikan oleh BU Niaga Migas sebagai bagian dari pelaporan kegiatan usaha niaga minyak dan gas bumi. Pengawasan terkait Kegiatan Penyaluran oleh Penyalur dilakukan Menteri melalui BU Niaga Migas; dan 6) memiliki atau menguasai sarana dan fasilitas pengangkutan dan/atau penyimpanan sesuai dengan ketentuan peraturan perundang-undangan.
+c. Kewajiban Penyalur/Agen LNG/CNG Selain di Stasiun Pengisian:
+1) berbentuk Koperasi, usaha kecil dan/atau Badan Usaha Swasta Nasional;
+2) hanya dapat menerima penunjukan dari 1 (satu) BU Niaga Migas;
+3) menjamin harga jual komoditas yang diniagakan sesuai dengan harga yang ditentukan oleh BU Niaga Migas dan/atau ditetapkan oleh Pemerintah;
+4) menggunakan logo dan merek dagang BU Niaga Migas;
+5) menyampaikan laporan kegiatan penyaluran kepada BU Niaga Migas untuk selanjutnya disampaikan oleh BU Niaga Migas sebagai bagian dari pelaporan kegiatan usaha niaga No. Persetujuan Penyalur Minyak dan Gas Bumi di Selain Stasiun Pengisian minyak dan gas bumi kepada Menteri melalui Direktur Jenderal. Pengawasan terkait kegiatan penyaluran oleh Penyalur dilakukan Menteri melalui BU Niaga Migas;
+6) memiliki atau menguasai sarana dan fasilitas pengangkutan sesuai dengan ketentuan peraturan perundang-undangan;
+
+## Lampiran hal. 140
+
+7) menyalurkan LNG yang dikemas dalam bentuk tabung Vessel Gas Liquid (VGL) atau kemasan tabung silinder vertikal yang dapat menyimpan LNG dalam bentuk cair (cryogenic) dengan kapasitas maksimal sebanyak 300 (tiga ratus) Liter LNG.
+13. Standar Kegiatan Usaha Berupa Persetujuan Pangkalan Liquefied Petroleum Gas Tertentu (3 Kg) No. Persetujuan Pangkalan Liquefied Petroleum Gas Tertentu (3 Kg) KBLI: (47772) Perdagangan Eceran Gas Elpiji
+1. Ruang Standar ini memuat pengaturan yang terkait dengan Lingkup kelompok usaha pada Klasifikasi Baku Lapangan Usaha Indonesia 47772 yang mencakup kegiatan Perdagangan Eceran Gas Elpiji berupa Pangkalan LPG Tertentu (3 Kg).
+2. Istilah dan a. Liquefied Petroleum Gas yang selanjutnya Definisi disingkat LPG adalah gas hidrokarbon yang dicairkan dengan tekanan untuk memudahkan penyimpanan, pengangkutan, dan penanganannya yang pada dasarnya terdiri atas propane, butana, atau campuran keduanya.
+b. LPG Tertentu adalah LPG yang diisikan ke dalam tabung dengan berat isi 3 (tiga) kilogram yang merupakan bahan bakar yang mempunyai kekhususan karena kondisi tertentu seperti pengguna, penggunaan, kemasan, volume, harga, dan diberikan subsidi.
+c. Badan Usaha Penerima Penugasan Penyediaan dan Pendistribusian LPG Tertentu adalah badan usaha pemegang izin usaha niaga minyak dan gas bumi yang mendapat penugasan untuk penyediaan dan pendistribusian LPG Tertentu.
+
+## Lampiran hal. 140
+
+d. Penyalur LPG Tertentu adalah koperasi, usaha kecil, dan/atau badan usaha swasta nasional yang ditunjuk sebagai agen dan memiliki perjanjian kerja sama dengan Badan Usaha Penerima Penugasan Penyediaan dan Pendistribusian LPG Tertentu.
+No. Persetujuan Pangkalan Liquefied Petroleum Gas Tertentu (3 Kg)
+e. Pangkalan LPG Tertentu adalah perorangan, koperasi, usaha kecil, dan/atau badan usaha swasta nasional yang memiliki perjanjian kerja sama dengan Penyalur LPG Tertentu untuk menyalurkan volume Isi Ulang LPG Tertentu ke Sub Pangkalan LPG Tertentu dan/atau pengguna LPG Tertentu.
+f. Sub Pangkalan LPG Tertentu adalah perorangan, koperasi, usaha kecil, dan/atau badan usaha swasta nasional yang ditunjuk oleh Pangkalan untuk menyalurkan volume Isi Ulang LPG Tertentu ke pengguna LPG Tertentu.
+3. Penggolongan a. Skala usaha: Mikro, Kecil, Menengah, Besar;
+Usaha b. Tingkat risiko: Menengah Rendah.
+4. Ketentuan - Persyaratan
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) Pemohon mengajukan permohononan melalui Sistem OSS;
+2) Sistem OSS secara otomatis menerbitkan Persetujuan.
+b. Masa Berlaku Persetujuan Pangkalan LPG Tertentu diberikan sepanjang kontrak kerja sama dengan Penyalur/Agen masih berlaku.
+c. Berakhirnya Persetujuan Pangkalan LPG Tertentu Persetujuan Pangkalan LPG Tertentu berakhir karena kontrak kerja sama dengan Penyalur/Agen berakhir atau diakhiri.
+6. Ketentuan Kewajiban pemegang Persetujuan Pangkalan LPG Kewajiban Tertentu:
+
+## Lampiran hal. 141
+
+a. memiliki perjanjian kerja sama Pangkalan LPG Tertentu dengan Penyalur (Agen) LPG Tertentu yang masih berlaku;
+b. Pangkalan LPG Tertentu melakukan pendistribusian isi ulang LPG Tertentu ke Sub Pangkalan LPG Tertentu dan/atau pengguna LPG Tertentu sesuai dengan ketentuan peraturan perundang-undangan;
+c. Pangkalan LPG Tertentu melakukan pencatatan transaksi dalam mendistribusikan isi ulang LPG Tertentu ke Sub Pangkalan LPG Tertentu dan/atau pengguna LPG Tertentu pada sistem pendistribusian isi ulang LPG Tertentu tepat sasaran berbasis elektronik atau sesuai dengan ketentuan peraturan perundang-undangan;
+No. Persetujuan Pangkalan Liquefied Petroleum Gas Tertentu (3 Kg)
+d. mencantumkan papan informasi di lokasi Pangkalan LPG Tertentu yang memuat paling sedikit nama Pangkalan LPG Tertentu, alamat Pangkalan LPG Tertentu, nama Penyalur LPG Tertentu, call center kementerian yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral, dan call center Badan Usaha Penerima Penugasan Penyediaan dan Pendistribusian LPG Tertentu;
+e. memenuhi ketentuan peraturan perundang-undangan terkait harga LPG Tertentu.
+14. Standar Kegiatan Usaha Berupa Persetujuan Sub Pangkalan Liquefied Petroleum Gas Tertentu (3 KG) No. Persetujuan Sub Pangkalan Liquefied Petroleum Gas Tertentu (3 KG) KBLI: (47772) Perdagangan Eceran Gas Elpiji
+
+## Lampiran hal. 142
+
+1. Ruang Standar ini memuat pengaturan yang terkait dengan Lingkup kelompok usaha pada Klasifikasi Baku Lapangan Usaha Indonesia 47772 yang mencakup kegiatan Perdagangan Eceran Gas Elpiji berupa Sub Pangkalan LPG Tertentu (3 Kg).
+2. Istilah dan a. Liquefied Petroleum Gas yang selanjutnya Definisi disingkat LPG adalah gas hidrokarbon yang dicairkan dengan tekanan untuk memudahkan penyimpanan, pengangkutan, dan penanganannya yang pada dasarnya terdiri atas propane, butana, atau campuran keduanya.
+b. LPG Tertentu adalah LPG yang diisikan ke dalam tabung dengan berat isi 3 (tiga) kilogram yang merupakan bahan bakar yang mempunyai kekhususan karena kondisi tertentu seperti pengguna, penggunaan, kemasan, volume, harga, dan diberikan subsidi.
+c. Badan Usaha Penerima Penugasan Penyediaan dan Pendistribusian LPG Tertentu adalah badan usaha pemegang izin usaha niaga minyak dan gas bumi yang mendapat penugasan untuk penyediaan dan pendistribusian LPG Tertentu.
+d. Penyalur LPG Tertentu adalah koperasi, usaha kecil, dan/atau badan usaha swasta nasional yang ditunjuk sebagai agen dan memiliki perjanjian kerja sama dengan Badan Usaha Penerima Penugasan Penyediaan dan Pendistribusian LPG Tertentu.
+
+## Lampiran hal. 142
+
+e. Pangkalan LPG Tertentu adalah perorangan, koperasi, usaha kecil, dan/atau badan usaha swasta nasional yang memiliki perjanjian kerja sama dengan Penyalur LPG Tertentu untuk No. Persetujuan Sub Pangkalan Liquefied Petroleum Gas Tertentu (3 KG) menyalurkan volume Isi Ulang LPG Tertentu ke Sub Pangkalan LPG Tertentu dan/atau pengguna LPG Tertentu.
+f. Sub Pangkalan LPG Tertentu adalah perorangan, koperasi, usaha kecil, dan/atau badan usaha swasta nasional yang ditunjuk oleh Pangkalan untuk menyalurkan volume Isi Ulang LPG Tertentu ke pengguna LPG Tertentu.
+3. Penggolongan a. Skala usaha: Mikro, Kecil, Menengah, Besar;
+Usaha b. Tingkat risiko: Rendah.
+4. Ketentuan - Persyaratan
+5. Ketentuan a. Verifikasi Pemberian Persetujuan Verifikasi 1) Pemohon mengajukan permohononan melalui Sistem OSS.
+2) Sistem OSS secara otomatis menerbitkan persetujuan.
+b. Masa Berlaku Persetujuan Sub Pangkalan LPG Tertentu diberikan sepanjang penunjukan dengan Pangkalan masih berlaku.
+c. Berakhirnya Persetujuan Sub Pangkalan LPG Tertentu Persetujuan Sub Pangkalan LPG Tertentu berakhir karena penunjukan dengan Pangkalan berakhir atau diakhiri.
+6. Ketentuan Kewajiban pemegang Persetujuan Sub Pangkalan Kewajiban LPG Tertentu
+a. memiliki surat penunjukan Sub Pangkalan LPG Tertentu dari Pangkalan LPG Tertentu yang masih berlaku;
+b. melakukan pendistribusian isi ulang LPG Tertentu ke pengguna LPG Tertentu sesuai dengan ketentuan peraturan perundang-undangan yang berlaku;
+
+## Lampiran hal. 143
+
+c. melakukan pencatatan transaksi dalam mendistribusikan isi ulang LPG Tertentu ke pengguna LPG Tertentu pada sistem pendistribusian isi ulang LPG Tertentu tepat sasaran berbasis elektronik atau sesuai dengan ketentuan peraturan perundang-undangan yang berlaku;
+d. mencantumkan papan informasi di lokasi Sub Pangkalan LPG Tertentu yang memuat paling sedikit nama Sub Pangkalan LPG Tertentu, alamat Sub Pangkalan LPG Tertentu, nama Pangkalan LPG Tertentu, nama Penyalur LPG Tertentu, call center kementerian yang No. Persetujuan Sub Pangkalan Liquefied Petroleum Gas Tertentu (3 KG) menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral, dan call center Badan Usaha Penerima Penugasan Penyediaan dan Pendistribusian LPG Tertentu;
+e. memenuhi ketentuan peraturan perundang-undangan terkait harga LPG Tertentu.
+15. Standar Kegiatan Usaha Berupa Persetujuan Aktivitas Penunjang Pemboran dan Operasi Sumur Pemboran Persetujuan Aktivitas Penunjang Pemboran dan Operasi No.
+Sumur Pemboran KBLI:
+(09100) Aktivitas Penunjang Pertambangan Minyak Bumi dan Gas Alam
+1. Ruang Kegiatan usaha jasa penunjang pertambangan Lingkup minyak dan gas bumi serta kegiatan penyimpanan karbon di wilayah izin penyimpanan karbon yang dilakukan atas dasar balas jasa (fee) atau kontrak.
+
+## Lampiran hal. 144
+
+Kegiatan ini mencakup jasa penunjang yang berkaitan dengan kegiatan pemboran/drilling, pemboran inti/coring, pemboran berarah/directional drilling, pemboran unconventional UBD (Under Balanced Drilling) & MPD (Managed Pressure Drilling), pengambilan minyak bumi dengan cara tradisional, pekerjaan ulang sumur/workover, perawatan sumur/well service, penyemenan sumur/cementing, pelayanan mud logging, rekayasa lumpur pemboran, pelayanan electrical logging dan perforasi sumur, penanganan casing dan tubing, pengujian kandungan lapisan/drill stem testing, pelayanan slickline dan penyelesaian sumur/well completion, stimulasi sumur/well stimulation serta perekahan hidrolik dan coil tubing, fishing, perawatan alat produksi sampai kepala sumur, monitoring sumur minyak dan gas, monitoring sumur injeksi karbon, Monitoring, Measurement, and Verification penyimpanan karbon, pengelolaan brine (air saline aquifer) dan fluida injeksi, pengelolaan limbah di area pemboran, penanganan gas beracun, pelayanan top drive, pelayanan MWD (Measurement While Drilling) dan LWD (Logging While Drilling), penutupan sumur dan pekerjaan pasca operasi pemboran, penanganan semburan liar, penanganan kebocoran karbon, serta data acquisition, processing, interpretation, operation, dan technical analysis.
+Persetujuan Aktivitas Penunjang Pemboran dan Operasi No.
+Sumur Pemboran
+
+## Lampiran hal. 145
+
+2. Istilah dan a. Badan Usaha adalah perusahaan berbentuk Definisi badan hukum yang menjalankan jenis usaha bersifat tetap, terus menerus dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+b. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+c. Sumur Minyak Bumi yang Dikelola oleh Badan Usaha Milik Daerah, Koperasi, Usaha Mikro, Usaha Kecil, atau Usaha Menengah yang selanjutnya disebut Sumur Minyak BUMD/Koperasi/UMKM adalah sumur minyak bumi tertentu yang dapat diproduksikan dan dilakukan perbaikan tata kelola sesuai dengan good engineering practices, keselamatan dan kesehatan kerja, serta pengelolaan lingkungan hidup.
+d. Keselamatan Minyak dan Gas Bumi yang selanjutnya disebut Keselamatan Migas adalah keselamatan yang meliputi keselamatan pekerja, keselamatan instalasi dan peralatan, keselamatan lingkungan, dan keselamatan umum.
+e. Pemboran/Drilling adalah kegiatan membuat lubang sumur hingga mencapai kedalaman sasaran reservoir untuk keperluan eksplorasi dan produksi minyak dan gas bumi serta eksplorasi zona target injeksi dan penyimpanan karbon baik di darat/onshore, rawa/swamp, maupun lepas pantai/offshore.
+f. Pemboran Inti/Coring adalah kegiatan pengambilan inti/core/contoh batuan formasi.
+
+## Lampiran hal. 145
+
+g. Pemboran Berarah/Directional Drilling adalah kegiatan pemboran berarah termasuk horizontal drilling sesuai target reservoir yang telah ditetapkan.
+h. Pemboran Unconventional UBD (Under Balanced Drilling) & MPD (Managed Pressure Drilling) adalah kegiatan rekayasa pemboran dalam kondisi under balanced atau equal pressure antara tekanan hidrostatik lumpur dengan tekanan formasi.
+i. Pekerjaan Ulang Sumur/Workover adalah kegiatan operasi remedial pada sumur minyak bumi dan/atau gas bumi yang bertujuan untuk meningkatkan atau mengaktifkan kembali produksi sumur, atau kegiatan perbaikan skala besar yang dilakukan pada sumur yang tidak dapat dikelompokkan ke dalam pekerjaan perawatan sumur/well service.
+Persetujuan Aktivitas Penunjang Pemboran dan Operasi No.
+Sumur Pemboran
+j. Perawatan Sumur/Well Service adalah pekerjaan perawatan atau reparasi ringan yang dilakukan pada sumur minyak dan gas bumi dengan tujuan memperbaiki atau mempertahankan produksi dari formasi yang telah diproduksikan.
+k. Penyemenan Sumur/Cementing adalah kegiatan untuk melindungi dan melekatkan casing dengan dinding sumur;
+l. Pelayanan Mud Logging adalah kegiatan yang meliputi pengumpulan dan penganalisaan data serta mengkomunikasikan data pemboran sumur.
+m. Rekayasa Lumpur Pemboran adalah kegiatan yang meliputi penyediaan jasa dan alat untuk pembuatan dan perekayasaan lumpur pemboran.
+
+## Lampiran hal. 146
+
+n. Pelayanan Electrical Logging dan Perforasi Sumur adalah kegiatan yang meliputi pengambilan data pada sumur terbuka (open hole) dan sumur terselubung (cased hole) serta kegiatan perforasi untuk keperluan tes produksi sumur atau untuk keperluan pekerjaan Block Squeeze Cementing sebagai bagian dari usaha isolasi antar lapisan formasi.
+o. Penanganan Casing dan Tubing adalah kegiatan yang meliputi penanganan dan pemasangan termasuk penempatan casing dan atau tubing.
+p. Pengujian Kandungan Lapisan/Drill Stem Testing adalah kegiatan yang meliputi pengujian produktivitas formasi selama proses pemboran berlangsung untuk mengetahui karakteristik reservoir seperti permeabilitas, skin factor, laju alir, dan tekanan reservoir.
+q. Pelayanan Slickline dan Penyelesaian Sumur/Well Completion adalah kegiatan yang meliputi penyelesaian tahap akhir (komplesi) sumur pemboran serta jasa pemasangan peralatan komplesi termasuk wellhead dan christmas tree.
+r. Stimulasi Sumur/Well Stimulation serta Perekahan Hidrolik dan Coil Tubing adalah kegiatan yang meliputi perekahan formasi menggunakan tekanan tinggi serta reaksi kimia untuk meningkatkan produksi sumur minyak bumi dan gas alam, terutama sumur-sumur yang memiliki permeabilitas dan atau production index yang rendah.
+s. Fishing adalah kegiatan "memancing" atau mengambil alat/material/sampah yang secara tidak sengaja tertinggal atau terjatuh dalam sumur pemboran.
+Persetujuan Aktivitas Penunjang Pemboran dan Operasi No.
+Sumur Pemboran
+
+## Lampiran hal. 147
+
+t. Perawatan Alat Produksi Sampai Kepala Sumur adalah kegiatan yang meliputi pencabutan, penggantian, dan pemasangan kembali alat produksi yang ada di dalam sumur sampai kepala sumur.
+u. Monitoring Sumur Minyak dan Gas adalah kegiatan untuk memantau dan mencatat data real time serta periodik pada sumur minyak dan gas dalam kegiatan pemboran dan produksi.
+v. Pengelolaan Limbah di Area Pemboran adalah kegiatan yang meliputi pengelolaan limbah lumpur pemboran, serbuk/cutting, tumpahan minyak, dan minyak bekas pada area pemboran.
+w. Penanganan Gas Beracun adalah kegiatan yang meliputi pendeteksian dan penanganan adanya gas beracun di lingkungan sumur pemboran.
+x. Pelayanan Top Drive adalah kegiatan yang meliputi pemasangan dan pengoperasian sistem top drive untuk memutar rangkaian pipa bor serta memberikan tenaga angkat.
+y. Pelayanan MWD (Measurement While Drilling) dan LWD (Logging While Drilling) adalah kegiatan yang meliputi jasa dan pengadaan peralatan logging yang dilakukan pada saat pemboran untuk menampilkan data logging secara real time.
+
+## Lampiran hal. 147
+
+z. Penutupan Sumur dan Pekerjaan Pasca Operasi Pemboran adalah kegiatan yang meliputi penyumbatan/penutupan sumur sementara maupun permanen untuk kemudian ditinggalkan karena tidak diproduksikan atau tidak lagi dilakukan injeksi karbon, pembongkaran peralatan/instalasi/fasilitas, dan pemulihan lokasi pertambangan minyak bumi dan gas alam atau wilayah izin penyimpanan karbon. aa. Penanganan Semburan Liar adalah kegiatan yang meliputi jasa dan alat yang digunakan untuk mencegah semburan liar dan menutup sumur ketika kru pemboran kehilangan kendali atas fluida formasi. bb. Data Acquisition, Processing, Interpretation, Operation, dan Technical Analysis adalah kegiatan rangkaian yang dilakukan pada proses well logging dan core logging yang meliputi akuisisi data, pemrosesan data, interpretasi data, operasi dan analisis teknikal dalam fase eksplorasi yang bertujuan membuat model bawah permukaan berdasarkan data lapangan. cc. Monitoring Sumur Injeksi karbon adalah kegiatan untuk memantau dan mencatat data real time serta periodik pada sumur injeksi.
+Persetujuan Aktivitas Penunjang Pemboran dan Operasi No.
+Sumur Pemboran dd. Monitoring, Measurement, and Verification (MMV) adalah rangkaian kegiatan pemantauan, pengukuran, dan verifikasi terhadap aliran, penyimpanan, dan keamanan karbon dioksida di bawah permukaan untuk memastikan integritas dan permanensi penyimpanan karbon.
+3. Penggolongan a. Persetujuan Aktivitas Penunjang Pemboran dan Usaha Operasi Sumur Pemboran
+
+## Lampiran hal. 148
+
+b. Persetujuan untuk Memproduksi Minyak Bumi pada Sumur Tua
+c. Persetujuan Kerja Sama Produksi Sumur Minyak BUMD/Koperasi/UMKM
+d. Skala Usaha: Kecil, Menengah, Besar
+4. Ketentuan a. Persyaratan Permohonan Baru/Perpanjangan Persyaratan Persetujuan Aktivitas Penunjang Pemboran dan Operasi Sumur Pemboran Persyaratan permohonan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan Analisis manajemen risiko keselamatan Minyak dan Gas Bumi dimaknai mengacu kepada standar internasional atau Standar Nasional Indonesia terkait OHS (Occupational Health and Safety), Management System, dan Risk Management Standard.
+b. Persyaratan Permohonan Baru/Perpanjangan Persetujuan untuk Memproduksi Minyak Bumi pada Sumur Tua dan Persetujuan Kerja Sama Produksi Sumur Minyak BUMD/Koperasi/UMKM 1) Dokumen persetujuan berupa: a) Bagi permohonan persetujuan untuk memproduksi minyak bumi pada sumur tua, berupa Keputusan Menteri mengenai persetujuan pemroduksian minyak bumi pada sumur tua; dan b) Bagi permohonan persetujuan kerja sama produksi Sumur Minyak BUMD/Koperasi/UMKM, berupa Keputusan Menteri mengenai persetujuan kerja sama produksi Sumur Minyak BUMD/Koperasi/UMKM.
+2) Dokumen perjanjian kerja sama berupa: a) Bagi permohonan persetujuan untuk memproduksi minyak bumi pada sumur tua, berupa perjanjian untuk Persetujuan Aktivitas Penunjang Pemboran dan Operasi No.
+
+## Lampiran hal. 149
+
+Sumur Pemboran memproduksi minyak bumi pada sumur tua antara Kontraktor dengan KUD/BUMD; dan b) Bagi permohonan persetujuan kerja sama produksi Sumur Minyak BUMD/Koperasi/UMKM, berupa perjanjian kerja sama produksi Sumur Minyak BUMD/Koperasi/UMKM antara Kontraktor dengan BUMD/Koperasi/UMKM.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 15 (lima belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 149
+
+b. Masa Berlaku:
+1) Persetujuan Aktivitas Penunjang Pemboran dan Operasi Sumur Pemboran berlaku untuk jangka waktu paling lama 5 (lima) tahun dan dapat diperpanjang paling lama 5 (lima) tahun untuk setiap kali perpanjangan;
+Persetujuan Aktivitas Penunjang Pemboran dan Operasi No.
+Sumur Pemboran 2) Persetujuan untuk Memproduksi Minyak Bumi pada Sumur Tua berlaku untuk jangka waktu paling lama 5 (lima) tahun dan dapat diperpanjang paling lama 5 (lima) tahun;
+3) Persetujuan Kerja Sama Produksi Sumur Minyak BUMD/Koperasi/UMKM berlaku untuk jangka waktu selama masa penanganan sementara sesuai dengan ketentuan peraturan perundang-undangan yang mengatur mengenai kerja sama pengelolaan bagian wilayah kerja untuk peningkatan produksi minyak dan gas bumi.
+6. Ketentuan Mengikuti standar internasional, Standar Nasional Kewajiban Indonesia, dan/atau standar lainnya sesuai dengan ketentuan peraturan perundang-undangan.
+16. Standar Kegiatan Usaha Berupa Standar Jasa Inspeksi Periodik Minyak Dan Gas Bumi No. Jasa Inspeksi Periodik KBLI:
+(71203) Jasa Inspeksi Periodik
+
+## Lampiran hal. 150
+
+1. Ruang Kelompok ini mencakup kegiatan jasa inspeksi Lingkup teknis dan pemeriksaan keselamatan peralatan pada kegiatan usaha minyak dan gas bumi serta kegiatan penyimpanan karbon pada Wilayah Izin Penyimpanan Karbon termasuk kegiatan inspeksi dan verifikasi Monitoring, Measurement, and Verification (MMV) dan kegiatan pengujian teknis tak merusak (Non Destructive Testing) Non Radiasi oleh Badan Usaha Inspeksi di bidang Minyak dan Gas Bumi serta penyimpanan karbon pada Wilayah Izin Penyimpanan Karbon.
+2. Istilah dan a. Keselamatan Minyak dan Gas Bumi yang Definisi selanjutnya disebut Keselamatan Migas adalah keselamatan yang meliputi keselamatan pekerja, keselamatan instalasi dan peralatan, keselamatan lingkungan, dan keselamatan umum.
+b. Inspeksi Teknis yang selanjutnya disebut Inspeksi adalah suatu kegiatan yang dilakukan secara langsung meliputi pemeriksaan dokumen, pemeriksaan fisik, dan pengujian peralatan dan/atau Instalasi mengacu pada ketentuan peraturan perundang undangan, standar, dan kaidah keteknikan yang baik.
+No. Jasa Inspeksi Periodik
+c. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha bersifat tetap, terus menerus dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+d. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+
+## Lampiran hal. 151
+
+e. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+f. Monitoring, Measurement, and Verification (MMV) adalah rangkaian kegiatan pemantauan, pengukuran, dan verifikasi terhadap aliran, tekanan, migrasi, serta integritas penyimpanan karbon di bawah permukaan untuk memastikan keamanan dan permanensi penyimpanan karbon dioksida (CO₂).
+3. Penggolongan a. Kecil;
+Usaha b. Menengah;
+c. Besar.
+4. Ketentuan Persyaratan Permohonan Baru/Perpanjangan Persyaratan Persetujuan Jasa Inspeksi Periodik:
+Persyaratan permohonan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan Analisis manajemen risiko keselamatan peralatan Minyak dan Gas Bumi dimaknai mengacu kepada standar internasional atau Standar Nasional Indonesia terkait OHS (Occupational Health and Safety), Management System, dan Risk Management Standard.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+
+## Lampiran hal. 151
+
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) Verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu No. Jasa Inspeksi Periodik paling lama 15 (lima belas) hari kerja sejak permohonan diterima dan lengkap;
+3) Apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Persetujuan Jasa Inspeksi Periodik disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Persetujuan Jasa Inspeksi Periodik berlaku untuk jangka waktu paling lama 5 (lima) tahun dan dapat diperpanjang paling lama 5 (lima) tahun untuk setiap kali perpanjangan.
+6. Ketentuan Mengikuti standar internasional, Standar Nasional Kewajiban Indonesia, dan/atau standar lainnya sesuai dengan ketentuan peraturan perundang-undangan.
+B. Subsektor Ketenagalistrikan
+1. Standar Kegiatan Usaha Berupa Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Pembangkitan Tenaga Listrik Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+
+## Lampiran hal. 152
+
+Pembangkitan Tenaga Listrik KBLI: (35111) Pembangkitan Tenaga Listrik
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Pembangkitan Tenaga Listrik.
+2. Istilah dan a. Pembangkitan Tenaga Listrik adalah kegiatan Definisi memproduksi tenaga listrik.
+b. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum yang selanjutnya disebut IUPTLU adalah izin untuk melakukan usaha penyediaan tenaga listrik untuk kepentingan umum.
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+Pembangkitan Tenaga Listrik
+c. Badan Usaha adalah badan usaha berbentuk badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+d. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan a. Permohonan Baru atau Perubahan IUPTLU Persyaratan Pembangkitan Tenaga Listrik:
+1) kesesuaian proyek infrastruktur tenaga listrik dalam rencana usaha penyediaan tenaga listrik;
+2) kesepakatan jual beli tenaga listrik antara pemohon dengan calon pembeli tenaga listrik (Perjanjian Jual Beli Tenaga Listrik beserta amandemennya) sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan;
+
+## Lampiran hal. 153
+
+3) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan;
+4) dokumen pemenuhan tingkat komponen dalam negeri sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan; dan 5) berita acara penyelesaian proyek infrastruktur tenaga listrik.
+b. Perpanjangan IUPTLU Pembangkitan Tenaga Listrik:
+1) kesepakatan jual beli tenaga listrik antara pemohon dengan calon pembeli tenaga listrik (Perjanjian Jual Beli Tenaga Listrik beserta amandemennya) sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan; dan 2) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+Pembangkitan Tenaga Listrik perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan IUPTLU Pembangkitan Verifikasi Tenaga Listrik:
+1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+
+## Lampiran hal. 154
+
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada huruf c);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada huruf d);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan IUPTLU Pembangkitan disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku IUPTLU Pembangkitan Tenaga Listrik diberikan sesuai masa berlaku perjanjian jual beli tenaga listrik dan dapat diperpanjang.
+c. Berakhirnya IUPTLU Pembangkitan Tenaga Listrik:
+1) IUPTLU Pembangkitan Tenaga Listrik berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang IUPTLU Pembangkitan Tenaga Listrik dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan IUPTLU Pembangkitan Tenaga Listrik, sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+
+## Lampiran hal. 155
+
+Pembangkitan Tenaga Listrik
+6. Ketentuan Kewajiban pemegang IUPTLU Pembangkitan Tenaga Kewajiban Listrik:
+a. instalasi yang akan dioperasikan wajib memiliki Sertifikat Laik Operasi;
+b. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+c. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+d. melaporkan kegiatan usaha secara berkala sesuai dengan ketentuan peraturan perundang-undangan;
+e. menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+f. memenuhi ketentuan keselamatan ketenagalistrikan;
+g. mengutamakan produk dan potensi dalam negeri; dan
+h. rekomendasi persetujuan dan penandasahan Rencana Impor Barang dalam hal melakukan impor barang untuk mendapatkan fasilitas pembebasan bea masuk.
+2. Standar Kegiatan Usaha Berupa Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Transmisi Tenaga Listrik Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+Transmisi Tenaga Listrik KBLI: (35112) Transmisi Tenaga Listrik
+
+## Lampiran hal. 155
+
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Transmisi Tenaga Listrik yang mencakup usaha pengoperasian sistem transmisi atau usaha penyaluran tenaga listrik dari pembangkit ke jaringan distribusi melalui jaringan tenaga listrik yang bertegangan tinggi (antara 35 kilovolt sampai dengan 150 kilovolt), bertegangan ekstratinggi (antara 150 kilovolt sampai dengan 500 kilovolt) dan/atau bertegangan ultratinggi (di atas 500 kilovolt) termasuk gardu induknya, baik berasal dari produksi sendiri maupun dari produksi pihak lain.
+2. Istilah dan a. Transmisi Tenaga Listrik adalah penyaluran Definisi tenaga listrik dari pembangkitan ke sistem distribusi atau ke konsumen, atau penyaluran tenaga listrik antarsistem.
+b. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum yang selanjutnya disebut IUPTLU adalah izin untuk melakukan usaha Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+Transmisi Tenaga Listrik penyediaan tenaga listrik untuk kepentingan umum.
+c. Badan Usaha adalah badan usaha berbentuk badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+d. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+
+## Lampiran hal. 156
+
+4. Ketentuan a. Permohonan Baru atau Perubahan IUPTLU Persyaratan Transmisi Tenaga Listrik:
+1) kesesuaian proyek infrastruktur tenaga listrik dalam rencana usaha penyediaan tenaga listrik;
+2) kesepakatan sewa jaringan tenaga listrik antara pemohon dengan calon penyewa jaringan tenaga listrik dengan harga sewa jaringan tenaga listrik: a) sesuai dengan ketentuan harga sewa jaringan tenaga listrik; atau b) telah mendapatkan persetujuan harga sewa jaringan tenaga listrik dari Menteri.
+3) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan;
+4) dokumen pemenuhan tingkat komponen dalam negeri sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan; dan 5) berita acara penyelesaian proyek infrastruktur tenaga listrik.
+b. Perpanjangan IUPTLU Transmisi Tenaga Listrik:
+1) kesepakatan sewa jaringan tenaga listrik antara pemohon dengan calon penyewa jaringan tenaga listrik dengan harga sewa jaringan tenaga listrik: a) sesuai dengan ketentuan harga sewa jaringan tenaga listrik; atau b) telah mendapatkan persetujuan harga sewa jaringan tenaga listrik dari Menteri.
+2) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+
+## Lampiran hal. 157
+
+Transmisi Tenaga Listrik Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan IUPTLU Transmisi Tenaga Listrik disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku IUPTLU Transmisi Tenaga Listrik diberikan sesuai masa berlaku perjanjian sewa jaringan transmisi tenaga listrik dan dapat diperpanjang.
+
+## Lampiran hal. 157
+
+c. Berakhirnya IUPTLU Transmisi Tenaga Listrik 1) IUPTLU Transmisi berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang IUPTLU Transmisi Tenaga Listrik dapat mengajukan pengembalian IUPTLU Transmisi Tenaga Listrik sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan IUPTLU Transmisi Tenaga Listrik sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada:
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+Transmisi Tenaga Listrik a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban Pemegang IUPTLU Transmisi Tenaga Kewajiban Listrik:
+a. instalasi yang akan dioperasikan wajib memiliki Sertifikat Laik Operasi;
+b. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+c. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+d. melaporkan kegiatan usaha secara berkala sesuai dengan ketentuan peraturan perundang-undangan;
+e. menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+f. memenuhi ketentuan keselamatan ketenagalistrikan; dan
+g. mengutamakan produk dan potensi dalam negeri.
+3. Standar Kegiatan Usaha Berupa Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Distribusi Tenaga Listrik Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+Distribusi Tenaga Listrik KBLI: (35113) Distribusi Tenaga Listrik
+
+## Lampiran hal. 158
+
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Distribusi Tenaga Listrik yang mencakup usaha pengoperasian sistem distribusi atau usaha penyaluran tenaga listrik melalui jaringan tenaga listrik yang bertegangan menengah ke bawah (di bawah 35 KV (tiga puluh lima kilo volt)) sampai ke konsumen atau pelanggan termasuk dengan gardu distribusinya, baik berasal dari produksi sendiri maupun dari produksi pihak lain.
+2. Istilah dan a. Distribusi Tenaga Listrik adalah penyaluran Definisi tenaga listrik dari sistem transmisi atau dari pembangkitan ke konsumen.
+b. Izin Usaha Penyediaan Tenaga Listrik Untuk Kepentingan Umum yang selanjutnya disebut IUPTLU adalah izin untuk melakukan usaha penyediaan tenaga listrik untuk kepentingan umum.
+c. Badan Usaha adalah badan usaha berbentuk badan hukum atau tidak berbentuk badan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+Distribusi Tenaga Listrik hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+d. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan a. Permohonan Baru atau Perubahan IUPTLU Persyaratan Distribusi Tenaga Listrik:
+1) kesesuaian proyek infrastruktur tenaga listrik dalam rencana usaha penyediaan tenaga listrik;
+
+## Lampiran hal. 159
+
+2) kesepakatan sewa jaringan tenaga listrik antara pemohon dengan calon penyewa jaringan tenaga listrik dengan harga sewa jaringan tenaga listrik: a) sesuai dengan ketentuan harga sewa jaringan tenaga listrik; atau b) telah mendapatkan persetujuan harga sewa jaringan tenaga listrik dari Menteri.
+3) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan;
+4) dokumen pemenuhan tingkat komponen dalam negeri sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan; dan 5) berita acara penyelesaian proyek infrastruktur tenaga listrik.
+b. Perpanjangan IUPTLU Distribusi Tenaga Listrik:
+1) kesepakatan sewa jaringan tenaga listrik antara pemohon dengan calon penyewa jaringan tenaga listrik dengan harga sewa jaringan tenaga listrik: a) sesuai dengan ketentuan harga sewa jaringan tenaga listrik; dan b) telah mendapatkan persetujuan harga sewa jaringan tenaga listrik dari Menteri.
+2) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+
+## Lampiran hal. 160
+
+Distribusi Tenaga Listrik Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan IUPTLU Distribusi Tenaga Listrik disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku IUPTLU distribusi Tenaga Listrik diberikan sesuai masa berlaku perjanjian sewa jaringan distribusi tenaga listrik dan dapat diperpanjang.
+c. Berakhirnya IUPTLU Distribusi Tenaga Listrik 1) IUPTLU Distribusi Tenaga Listrik berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+
+## Lampiran hal. 160
+
+2) Pemegang IUPTLU Distribusi Tenaga Listrik dapat mengajukan pengembalian IUPTLU Distribusi Tenaga Listrik sebagaimana dimaksud pada angka 1) huruf b);
+3) Pencabutan IUPTLU Distribusi Tenaga Listrik sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No.
+Distribusi Tenaga Listrik
+6. Ketentuan Kewajiban Pemegang IUPTLU Distribusi Tenaga Kewajiban Listrik:
+a. instalasi yang akan dioperasikan wajib memiliki Sertifikat Laik Operasi;
+b. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+c. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+d. melaporkan kegiatan usaha secara berkala sesuai dengan ketentuan peraturan perundang-undangan;
+e. menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+f. memenuhi ketentuan keselamatan ketenagalistrikan; dan
+g. mengutamakan produk dan potensi dalam negeri.
+4. Standar Kegiatan Usaha Berupa Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Penjualan Tenaga No. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Penjualan Tenaga Listrik KBLI: (35114) Penjualan Tenaga Listrik
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum– Penjualan Tenaga Listrik yang mencakup:
+
+## Lampiran hal. 161
+
+a. Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum Penjualan Tenaga Listrik SPKLU.
+b. Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum Penjualan Tenaga Listrik SPKLU yang terintegrasi dengan pembangkit Tenaga Listrik Energi Baru dan Terbarukan.
+2. Istilah dan a. Penjualan Tenaga Listrik adalah penjualan Definisi tenaga listrik kepada konsumen akhir.
+b. Izin Usaha Penyediaan Tenaga Listrik Untuk Kepentingan Umum yang selanjutnya disebut IUPTLU adalah izin untuk melakukan usaha penyediaan tenaga listrik untuk kepentingan umum.
+c. Badan Usaha adalah badan usaha berbentuk badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+No. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Penjualan Tenaga Listrik
+d. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan - Persyaratan
+5. Ketentuan a. Verifikasi Permohonan Verifikasi IUPTLU Penjualan Tenaga Listrik SPKLU dan IUPTLU penjualan tenaga listrik SPKLU yang terintegrasi dengan pembangkit Tenaga Listrik Energi Baru dan Terbarukan 1) pemohon mengajukan permohonan melalui Sistem OSS; dan 2) Sistem OSS secara otomatis menerbitkan IUPTLU Penjualan Tenaga Listrik SPKLU.
+
+## Lampiran hal. 162
+
+b. Masa Berlaku IUPTLU Penjualan Tenaga Listrik SPKLU dan IUPTLU penjualan tenaga listrik SPKLU yang terintegrasi dengan pembangkit Tenaga Listrik Energi Baru dan Terbarukan diberikan selama badan usaha melakukan kegiatan usahanya.
+c. Berakhirnya IUPTLU Penjualan Tenaga Listrik SPKLU dan IUPTLU penjualan tenaga listrik SPKLU yang terintegrasi dengan pembangkit Tenaga Listrik Energi Baru dan Terbarukan 1) IUPTLU Penjualan Tenaga Listrik SPKLU dan IUPTLU penjualan tenaga listrik SPKLU yang terintegrasi dengan pembangkit Tenaga Listrik Energi Baru dan Terbarukan berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang IUPTLU Penjualan Tenaga Listrik SPKLU dan IUPTLU penjualan tenaga listrik SPKLU yang terintegrasi dengan pembangkit Tenaga Listrik Energi Baru dan Terbarukan dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan IUPTLU Penjualan Tenaga Listrik SPKLU dan IUPTLU penjualan tenaga listrik SPKLU yang terintegrasi dengan pembangkit Tenaga Listrik Energi Baru dan Terbarukan sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan No. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Penjualan Tenaga Listrik b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+
+## Lampiran hal. 163
+
+6. Ketentuan Kewajiban Pemegang IUPTLU Penjualan Tenaga Kewajiban Listrik SPKLU dan IUPTLU penjualan tenaga listrik SPKLU yang terintegrasi dengan pembangkit Tenaga Listrik Energi Baru dan Terbarukan:
+a. instalasi yang akan dioperasikan wajib memiliki Sertifikat Laik Operasi;
+b. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+c. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+d. melaporkan kegiatan usaha secara berkala sesuai dengan ketentuan peraturan perundang-undangan;
+e. menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+f. memberikan pelayanan yang sebaik-baiknya kepada konsumen dan masyarakat;
+g. memenuhi ketentuan keselamatan ketenagalistrikan;
+h. mengutamakan produk dan potensi dalam negeri; dan
+i. berkomitmen melengkapi dokumen studi kelayakan/analisis kelayakan usaha penyediaan tenaga listrik dengan ketentuan dokumen (berbahasa Indonesia) berisi:
+1) kajian kelayakan finansial;
+2) kajian kelayakan operasional;
+3) analisis interkoneksi jaringan;
+4) lokasi instalasi;
+5) diagram satu garis;
+6) jenis dan kapasitas usaha yang akan dilakukan;
+7) jadwal pembangunan; dan 8) jadwal pengoperasian.
+
+## Lampiran hal. 163
+
+5. Standar Kegiatan Usaha Berupa Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik KBLI:
+(35115) Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik yang mencakup usaha Penyediaan Tenaga Listrik Terintegrasi Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik.
+Dalam hal Pelaku Usaha akan melakukan penjualan dan/atau pembelian tenaga listrik lintas negara, dibutuhkan:
+a. persetujuan penjualan tenaga listrik lintas negara;
+b. persetujuan pembelian tenaga listrik lintas negara dan persetujuan harga;
+c. persetujuan penjualan dan pembelian tenaga listrik lintas negara secara dua arah dan persetujuan harga; dan/atau
+d. persetujuan interkoneksi jaringan tenaga listrik lintas negara.
+2. Istilah dan a. Pembangkitan Tenaga Listrik adalah kegiatan Definisi memproduksi tenaga listrik.
+
+## Lampiran hal. 164
+
+b. Transmisi Tenaga Listrik adalah penyaluran tenaga listrik dari pembangkitan ke sistem distribusi atau ke konsumen, atau penyaluran tenaga listrik antarsistem.
+c. Distribusi Tenaga Listrik adalah penyaluran tenaga listrik dari sistem transmisi atau dari pembangkitan ke konsumen.
+d. Usaha Penjualan Tenaga Listrik adalah kegiatan usaha penjualan tenaga listrik kepada konsumen.
+e. Izin Usaha Penyediaan Tenaga Listrik Untuk Kepentingan Umum yang selanjutnya disebut IUPTLU adalah izin untuk melakukan usaha penyediaan tenaga listrik untuk kepentingan umum.
+f. Badan Usaha adalah badan usaha berbentuk badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+g. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan a. Permohonan Baru atau Perubahan IUPTLU Persyaratan Pembangkitan, Transmisi, Distribusi, dan Penjualan Tenaga Listrik 1) penetapan Wilayah Usaha Penyediaan Tenaga Listrik yang berisi dokumen berupa: a) analisis kebutuhan penyediaan tenaga listrik sesuai dengan kegiatan usahanya Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik (distribusi, penjualan, atau terintegrasi) yang disusun berdasarkan rencana umum ketenagalistrikan nasional, dengan memuat:
+(1) pendahuluan;
+
+## Lampiran hal. 165
+
+(2) untuk usaha penyediaan tenaga listrik terintegrasi:
+(a) strategi pengembangan infrastruktur penyediaan tenaga listrik dan penjualan tenaga listrik;
+(b) ketersediaan sumber energi dan strategi pemanfaatannya; dan
+(c) kondisi usaha penyediaan tenaga listrik; dan
+(d) rencana penyediaan tenaga listrik, yang memuat rencana:
+i. proyeksi penjualan; ii. proyeksi pelanggan; iii. pembangkitan (neraca daya, bauran energi, bahan bakar, emisi gas rumah kaca); iv. transmisi;
+v. gardu induk; dan vi. sistem distribusi.
+(3) kebutuhan investasi, indikasi pendanaan, dan rencana tarif tenaga listrik; dan
+(4) analisis risiko. b) rekomendasi Gubernur atau Pejabat yang diberikan kewenangan di Lingkungan Pemerintahan Daerah Provinsi yang memuat pernyataan bahwa wilayah usaha yang direkomendasikan:
+(1) memenuhi kriteria untuk mendapatkan penetapan wilayah usaha penyediaan tenaga listrik; dan
+(2) telah dilakukan evaluasi dan dinyatakan sesuai dengan Rencana Tata Ruang Wilayah (RTRW) dan Rencana Detail Tata Ruang (RDTR).
+Badan Usaha mengajukan permohonan kepada Gubernur atau Pejabat yang diberikan kewenangan di Lingkungan Pemerintahan Daerah Provinsi dengan melengkapi dokumen:
+(1) Nomor Induk Berusaha (NIB);
+(2) KBLI sesuai dengan usaha yang akan dijalankan;
+(3) peta lokasi yang membentuk geometri yang terdiri atas titik koordinat, garis, dan poligon;
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik
+
+## Lampiran hal. 166
+
+(4) peta masterplan lokasi yang akan diajukan Wilayah Usaha;
+(5) persetujuan kesesuaian kegiatan pemanfaatan ruang; dan
+(6) pernyataan komitmen Badan Usaha untuk membangun Wilayah Usaha. c) hasil verifikasi teknis lapangan oleh tim teknis Direktorat Jenderal Ketenagalistrikan.
+2) rencana usaha penyediaan tenaga listrik yang telah disahkan oleh Menteri;
+3) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan;
+4) dokumen pemenuhan tingkat komponen dalam negeri sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan; dan 5) berita acara penyelesaian proyek infrastruktur tenaga listrik.
+b. Perpanjangan IUPTLU Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik:
+1) Wilayah Usaha penyediaan tenaga listrik yang ditetapkan oleh Menteri; dan 2) Rencana Usaha Penyediaan Tenaga Listrik yang telah disahkan oleh Menteri.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan:
+Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+
+## Lampiran hal. 166
+
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku IUPTLU Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik diberikan untuk jangka waktu 30 (tiga puluh) tahun dan dapat diperpanjang.
+c. Berakhirnya IUPTLU Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik 1) IUPTLU Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang IUPTLU Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf b);
+
+## Lampiran hal. 167
+
+3) pencabutan IUPTLU Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban pemegang IUPTLU Pembangkitan, Kewajiban Transmisi, Distribusi dan Penjualan Tenaga Listrik:
+a. instalasi yang akan dioperasikan wajib memiliki Sertifikat Laik Operasi;
+b. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+c. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+d. melaporkan kegiatan usaha secara berkala sesuai dengan ketentuan peraturan perundang-undangan;
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkitan, Transmisi, Distribusi dan Penjualan Tenaga Listrik
+e. menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+f. memberikan pelayanan yang sebaik-baiknya kepada konsumen dan masyarakat; dan
+g. mengutamakan produk dan potensi dalam negeri.
+6. Standar Kegiatan Usaha Berupa Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum - Pembangkit, Transmisi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkit, Transmisi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha KBLI:
+(35116) Pembangkit, Transmisi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha
+
+## Lampiran hal. 168
+
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum yang mencakup IUPTLU – Pembangkit, Transmisi, dan Penjualan Tenaga Listrik dalam Satu Kesatuan Usaha.
+Dalam hal Pelaku Usaha akan melakukan penjualan dan/atau pembelian tenaga listrik lintas negara, dibutuhkan:
+a. persetujuan penjualan tenaga listrik lintas negara;
+b. persetujuan pembelian tenaga listrik lintas negara dan persetujuan harga;
+c. persetujuan penjualan dan pembelian tenaga listrik lintas negara secara dua arah dan persetujuan harga; dan/atau
+d. persetujuan interkoneksi jaringan tenaga listrik lintas negara.
+2. Istilah dan a. Pembangkitan Tenaga Listrik adalah kegiatan Definisi memproduksi tenaga listrik.
+b. Transmisi Tenaga Listrik adalah penyaluran tenaga listrik dari pembangkitan ke sistem distribusi atau ke konsumen, atau penyaluran tenaga listrik antarsistem.
+c. Usaha Penjualan Tenaga Listrik adalah kegiatan usaha penjualan tenaga listrik kepada konsumen.
+d. Izin Usaha Penyediaan Tenaga Listrik Untuk Kepentingan Umum yang selanjutnya disebut IUPTLU adalah izin untuk melakukan usaha penyediaan tenaga listrik untuk kepentingan umum.
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkit, Transmisi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha
+
+## Lampiran hal. 169
+
+e. Wilayah Usaha adalah wilayah yang ditetapkan pemerintah pusat sebagai tempat badan usaha melakukan usaha distribusi dan/atau penjualan tenaga listrik.
+f. Badan Usaha adalah badan usaha berbentuk badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+g. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan a. Permohonan Baru atau Perubahan IUPTLU – Persyaratan Pembangkit, Transmisi, dan Penjualan Tenaga Listrik:
+1) penetapan Wilayah Usaha penyediaan tenaga listrik yang ditetapkan oleh Menteri, dengan mengajukan permohonan kepada Menteri dan melengkapi dokumen persyaratan berupa: a) analisis kebutuhan penyediaan tenaga listrik sesuai dengan kegiatan usahanya (distribusi, penjualan, atau terintegrasi) yang disusun berdasarkan rencana umum ketenagalistrikan nasional, dengan memuat:
+(1) pendahuluan;
+(2) untuk usaha penyediaan tenaga listrik terintegrasi:
+(a) strategi pengembangan infrastruktur penyediaan tenaga listrik dan penjualan tenaga listrik;
+(b) ketersediaan sumber energi dan strategi pemanfaatannya;
+(c) kondisi usaha penyediaan tenaga listrik; dan
+(d) rencana penyediaan tenaga listrik, yang memuat rencana:
+i. proyeksi penjualan; ii. proyeksi pelanggan; iii. pembangkitan (neraca daya, bauran energi, bahan bakar, emisi gas rumah kaca); iv. transmisi;
+
+## Lampiran hal. 169
+
+v. gardu induk; dan vi. sistem distribusi.
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkit, Transmisi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha b) rekomendasi Gubernur atau Pejabat yang diberikan kewenangan di Lingkungan Pemerintahan Daerah Provinsi yang memuat pernyataan bahwa wilayah usaha yang direkomendasikan:
+(1) memenuhi kriteria untuk mendapatkan penetapan wilayah usaha penyediaan tenaga listrik; dan
+(2) Telah dilakukan evaluasi dan dinyatakan sesuai dengan Rencana Tata Ruang Wilayah (RTRW) dan Rencana Detail Tata Ruang (RDTR).
+Badan Usaha mengajukan permohonan kepada Gubernur atau Pejabat yang diberikan kewenangan di Lingkungan Pemerintahan Daerah Provinsi dengan melengkapi dokumen yang memuat:
+(1) Nomor Induk Berusaha (NIB);
+(2) KBLI sesuai dengan usaha yang akan dijalankan;
+(3) peta lokasi yang membentuk geometri yang terdiri atas titik koordinat, garis, dan poligon;
+(4) peta masterplan lokasi yang akan diajukan Wilayah Usaha;
+(5) persetujuan kesesuaian kegiatan pemanfaatan ruang; dan
+(6) pernyataan komitmen Badan Usaha untuk membangun Wilayah Usaha. c) hasil verifikasi teknis lapangan oleh tim teknis Direktorat Jenderal Ketenagalistrikan.
+2) rencana usaha penyediaan tenaga listrik yang telah disahkan oleh Menteri;
+3) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan;
+
+## Lampiran hal. 170
+
+4) dokumen pemenuhan tingkat komponen dalam negeri sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan; dan 5) berita acara penyelesaian proyek infrastruktur tenaga listrik.
+b. Perpanjangan IUPTLU – Pembangkit, Transmisi, dan Penjualan Tenaga Listrik:
+1) Wilayah Usaha Penyediaan Tenaga Listrik yang ditetapkan oleh Menteri; dan 2) rencana usaha penyediaan tenaga listrik yang telah disahkan oleh Menteri;
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkit, Transmisi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha 3) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+
+## Lampiran hal. 171
+
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku IUPTLU Pembangkit, Transmisi, dan Penjualan Tenaga Listrik diberikan untuk jangka waktu 30 (tiga puluh) tahun dan dapat diberikan diperpanjang.
+c. Berakhirnya IUPTLU Pembangkit, Transmisi, dan Penjualan Tenaga Listrik 1) IUPTLU Pembangkit, Transmisi, dan Penjualan Tenaga Listrik berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum – No. Pembangkit, Transmisi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha c) dicabut, 2) pemegang IUPTLU Pembangkit, Transmisi, dan Penjualan Tenaga Listrik dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan IUPTLU Pembangkit, Transmisi, dan Penjualan Tenaga Listrik sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban pemegang IUPTLU Pembangkit, Kewajiban Transmisi, dan Penjualan Tenaga Listrik:
+
+## Lampiran hal. 172
+
+a. instalasi yang akan dioperasikan wajib memiliki Sertifikat Laik Operasi;
+b. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+c. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+d. melaporkan kegiatan usaha secara berkala sesuai dengan ketentuan peraturan perundang-undangan;
+e. menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+f. memberikan pelayanan yang sebaik-baiknya kepada konsumen dan masyarakat; dan
+g. mengutamakan produk dan potensi dalam negeri.
+7. Standar Kegiatan Usaha Berupa Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum - Pembangkit, Distribusi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum - No.
+Pembangkit, Distribusi, dan Penjualan Tenaga Listrik KBLI:
+(35117) Pembangkit, Distribusi dan Penjualan Tenaga Listrik dalam Satu Kesatuan Usaha
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum yang mencakup IUPTLU – Pembangkit, Distribusi, dan Penjualan Tenaga Listrik.
+Dalam hal Pelaku Usaha akan melakukan penjualan dan/atau pembelian tenaga listrik lintas negara, dibutuhkan:
+a. persetujuan penjualan tenaga listrik lintas negara;
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum - No.
+Pembangkit, Distribusi, dan Penjualan Tenaga Listrik
+
+## Lampiran hal. 173
+
+b. persetujuan pembelian tenaga listrik lintas negara dan persetujuan harga
+c. persetujuan penjualan dan pembelian tenaga listrik lintas negara secara dua arah dan persetujuan harga; dan/atau
+d. persetujuan interkoneksi jaringan tenaga listrik lintas negara.
+2. Istilah dan a. Pembangkitan Tenaga Listrik adalah kegiatan Definisi memproduksi tenaga listrik.
+b. Distribusi Tenaga Listrik adalah penyaluran tenaga listrik dari sistem transmisi atau dari pembangkitan ke konsumen.
+c. Usaha Penjualan Tenaga Listrik adalah kegiatan usaha penjualan tenaga listrik kepada konsumen.
+d. Izin Usaha Penyediaan Tenaga Listrik Untuk Kepentingan Umum yang selanjutnya disebut IUPTLU adalah izin untuk melakukan usaha penyediaan tenaga listrik untuk kepentingan umum.
+e. Wilayah Usaha adalah wilayah yang ditetapkan pemerintah pusat sebagai tempat badan usaha melakukan usaha distribusi dan/atau penjualan tenaga listrik.
+f. Badan Usaha adalah badan usaha berbentuk badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+g. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan a. Permohonan Baru atau Perubahan IUPTLU – Persyaratan Pembangkit, Distribusi, dan Penjualan Tenaga Listrik dalam Satu Kesatuan Usaha 1) penetapan Wilayah Usaha Penyediaan Tenaga Listrik yang ditetapkan oleh Menteri.
+
+## Lampiran hal. 173
+
+Badan Usaha mengajukan permohonan kepada Menteri dan melengkapi dokumen persyaratan berupa: a) analisis kebutuhan penyediaan tenaga listrik sesuai dengan kegiatan usahanya (distribusi, penjualan, atau terintegrasi) yang disusun berdasarkan rencana umum ketenagalistrikan nasional, dengan memuat:
+(1) pendahuluan;
+(2) untuk usaha penyediaan tenaga listrik terintegrasi:
+Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum - No.
+Pembangkit, Distribusi, dan Penjualan Tenaga Listrik
+(a) strategi pengembangan infrastruktur penyediaan tenaga listrik dan penjualan tenaga listrik;
+(b) ketersediaan sumber energi dan strategi pemanfaatannya;
+(c) kondisi usaha penyediaan tenaga listrik; dan
+(d) rencana penyediaan tenaga listrik, yang memuat rencana:
+i. proyeksi penjualan; ii. proyeksi pelanggan; iii. pembangkitan (neraca daya, bauran energi, bahan bakar, emisi gas rumah kaca); iv. transmisi;
+v. gardu induk; dan vi. sistem distribusi.
+(3) kebutuhan investasi, indikasi pendanaan, dan rencana tarif tenaga listrik; dan
+(4) analisis risiko. b) Rekomendasi Gubernur atau Pejabat yang diberikan kewenangan di Lingkungan Pemerintahan Daerah Provinsi yang memuat pernyataan bahwa wilayah usaha yang direkomendasikan:
+(1) memenuhi kriteria untuk mendapatkan penetapan wilayah usaha penyediaan tenaga listrik; dan
+(2) Telah dilakukan evaluasi dan dinyatakan sesuai dengan Rencana Tata Ruang Wilayah (RTRW) dan Rencana Detail Tata Ruang (RDTR).
+
+## Lampiran hal. 174
+
+Badan Usaha mengajukan permohonan kepada Gubernur atau Pejabat yang diberikan kewenangan di Lingkungan Pemerintahan Daerah Provinsi dengan melengkapi dokumen:
+(1) Nomor Induk Berusaha (NIB);
+(2) Klasifikasi Baku Lapangan Usaha Indonesia (KBLI) sesuai dengan usaha yang akan dijalankan;
+(3) peta lokasi yang membentuk geometri yang terdiri atas titik koordinat, garis, dan poligon;
+(4) peta masterplan lokasi yang akan diajukan wilayah usaha;
+(5) persetujuan kesesuaian kegiatan pemanfaatan ruang; dan
+(6) pernyataan komitmen badan usaha untuk membangun wilayah usaha, Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum - No.
+Pembangkit, Distribusi, dan Penjualan Tenaga Listrik c) hasil verifikasi teknis lapangan oleh tim teknis Ditjen Ketenagalistrikan.
+2) rencana usaha penyediaan tenaga listrik yang telah disahkan oleh Menteri;
+3) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan;
+4) dokumen pemenuhan tingkat komponen dalam negeri sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan; dan 5) berita acara penyelesaian proyek infrastruktur tenaga listrik.
+b. Perpanjangan IUPTLU – Pembangkit, Distribusi, dan Penjualan Tenaga Listrik 1) Wilayah Usaha Penyediaan Tenaga Listrik yang ditetapkan oleh Menteri; dan 2) rencana usaha penyediaan tenaga listrik yang telah disahkan oleh Menteri;
+
+## Lampiran hal. 175
+
+3) dokumen pemenuhan kelaikan operasi instalasi tenaga listrik sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum - No.
+Pembangkit, Distribusi, dan Penjualan Tenaga Listrik pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 176
+
+b. Masa Berlaku IUPTLU Pembangkit, Distribusi, dan Penjualan Tenaga Listrik diberikan untuk jangka waktu 30 (tiga puluh) tahun dan dapat diperpanjang.
+c. Berakhirnya IUPTLU Pembangkit, Distribusi, dan Penjualan Tenaga Listrik 1) IUPTLU Pembangkit, Distribusi, dan Penjualan Tenaga Listrik berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang IUPTLU Pembangkit, Distribusi, dan Penjualan Tenaga Listrik dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan IUPTLU Pembangkit, Distribusi, dan Penjualan Tenaga Listrik sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban pemegang IUPTLU Pembangkit, Kewajiban Distribusi, dan Penjualan Tenaga Listrik:
+a. instalasi yang akan dioperasikan wajib memiliki Sertifikat Laik Operasi;
+b. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+c. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+d. melaporkan kegiatan usaha secara berkala sesuai dengan ketentuan peraturan perundang-undangan;
+e. menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+f. memberikan pelayanan yang sebaik-baiknya kepada konsumen dan masyarakat; dan
+g. mengutamakan produk dan potensi dalam negeri.
+
+## Lampiran hal. 177
+
+8. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Pengoperasian No.
+Instalasi Penyediaan Tenaga Listrik KBLI: (35121) Pengoperasian Instalasi Penyediaan Tenaga Listrik
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik yang mencakup usaha jasa pengoperasian instalasi penyediaan tenaga listrik yang dilakukan oleh pihak lain dalam bidang:
+a. pembangkitan tenaga listrik;
+b. transmisi tenaga listrik; dan
+c. distribusi tenaga listrik.
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+b. Sertifikat Badan Usaha adalah bukti pengakuan formal terhadap kesesuaian klasifikasi dan kualifikasi atas kemampuan pelaku usaha di bidang usaha jasa penunjang tenaga listrik.
+c. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+
+## Lampiran hal. 177
+
+4. Ketentuan Persyaratan permohonan baru atau perubahan Izin Persyaratan Usaha Jasa Penunjang – Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+a. terkait dengan pemenuhan standar Perizinan Berusaha Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik dimaknai sebagai pemenuhan standar Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik dengan melengkapi persyaratan berupa:
+1) Sertifikat Badan Usaha jasa penunjang tenaga listrik;
+2) dokumen prosedur kerja (standard operating procedure) yang menjamin pemenuhan keselamatan ketenagalistrikan; dan 3) dokumen pemenuhan peralatan kerja yang mendukung pemenuhan keselamatan ketenagalistrikan.
+Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Pengoperasian No.
+Instalasi Penyediaan Tenaga Listrik
+b. terkait dengan dokumen sistem manajemen mutu dimaknai sebagai dokumen sistem manajemen mutu/manual mutu sesuai dengan standar nasional Indonesia ISO 9001 series.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+
+## Lampiran hal. 178
+
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima lengkap dan benar.
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik disetujui.
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+c. Berakhirnya Izin Usaha Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik 1) Izin Usaha Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik berakhir karena: a) dikembalikan; atau b) dicabut.
+Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Pengoperasian No.
+
+## Lampiran hal. 179
+
+Instalasi Penyediaan Tenaga Listrik 2) pemegang Izin Usaha Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik dapat mengajukan pengembalian Izin Usaha sebagaimana dimaksud pada angka 1) huruf a);
+3) pencabutan Izin Usaha Jasa Pengoperasian Instalasi Penyediaan Tenaga Listrik sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Pemegang Izin Usaha Jasa Pengoperasian Instalasi Kewajiban Penyediaan Tenaga Listrik wajib menyampaikan laporan berkala secara daring setiap bulan Januari sesuai dengan ketentuan peraturan perundang-undangan.
+9. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pembangunan No. dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik KBLI: (43211) Instalasi Listrik
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik yang mencakup usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik yang dilakukan oleh pihak lain dalam bidang:
+a. pembangkitan tenaga listrik;
+b. transmisi tenaga listrik;
+
+## Lampiran hal. 179
+
+c. distribusi tenaga listrik;
+d. instalasi pemanfaatan tenaga listrik; dan
+e. lainnya yang secara langsung berkaitan dengan instalasi tenaga listrik.
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+b. Sertifikat Badan Usaha adalah bukti pengakuan formal terhadap kesesuaian klasifikasi dan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pembangunan No. dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik kualifikasi atas kemampuan pelaku usaha di bidang usaha jasa penunjang tenaga listrik.
+c. Kantor Perwakilan Jasa Penunjang Tenaga Listrik Asing yang selanjutnya disebut Kantor Perwakilan Asing adalah kantor yang ditunjuk oleh badan usaha jasa penunjang tenaga listrik asing atau usaha perseorangan jasa penunjang tenaga listrik asing di luar negeri sebagai perwakilannya di Indonesia.
+d. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+
+## Lampiran hal. 180
+
+4. Ketentuan a. Persyaratan permohonan baru atau perubahan Persyaratan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan pemenuhan standar Perizinan Berusaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik dimaknai sebagai pemenuhan Standar Izin Usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik dan melengkapi persyaratan berupa: a) Sertifikat Badan Usaha jasa penunjang tenaga listrik; b) dokumen prosedur kerja (standard operating procedure) yang menjamin pemenuhan keselamatan ketenagalistrikan; dan c) dokumen pemenuhan peralatan kerja yang mendukung pemenuhan keselamatan ketenagalistrikan.
+2) Khusus untuk Kantor Perwakilan Asing juga harus melengkapi persyaratan: a) bukti pembayaran penerimaan negara bukan pajak administrasi Perizinan Berusaha jasa penunjang tenaga listrik Kantor Perwakilan Asing yang dikeluarkan oleh Menteri;
+
+## Lampiran hal. 181
+
+Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pembangunan No. dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik b) bukti pengalaman pekerjaan sesuai dengan ruang lingkup yang dimohonkan; dan c) surat keterangan status wajib pajak dengan status valid.
+3) terkait dengan dokumen sistem manajemen mutu dimaknai sebagai dokumen sistem manajemen mutu/manual mutu sesuai dengan standar nasional Indonesia ISO 9001 series.
+b. Perpanjangan untuk Kantor Perwakilan Asing:
+1) pemenuhan Standar Izin Usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik dengan melengkapi persyaratan berupa: a) Sertifikat Badan Usaha jasa penunjang tenaga listrik; b) prosedur kerja (standard operating procedure) yang menjamin pemenuhan keselamatan ketenagalistrikan; c) peralatan kerja yang mendukung pemenuhan keselamatan ketenagalistrikan; d) bukti pembayaran penerimaan negara bukan pajak administrasi Perizinan Berusaha jasa penunjang tenaga listrik Kantor Perwakilan Asing yang dikeluarkan oleh Menteri; e) bukti pengalaman pekerjaan sesuai dengan ruang lingkup yang dimohonkan; dan f) surat keterangan status wajib pajak dengan status valid.
+2) dokumen sistem manajemen mutu/manual mutu sesuai dengan standar nasional Indonesia ISO 9001 series.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+
+## Lampiran hal. 181
+
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pembangunan No. dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Izin Usaha Jasa Pemeliharaan Instalasi Tenaga Listrik disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 182
+
+b. Masa Berlaku 1) Izin Usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Izin Usaha Jasa Pemeliharaan Instalasi Tenaga Listrik diberikan sepanjang Badan Usaha melakukan kegiatan usaha;
+2) khusus untuk Kantor Perwakilan Asing diberikan untuk jangka waktu paling lama 3 (tiga) tahun dan dapat diberikan perpanjangan untuk jangka waktu paling lama 3 (tiga) tahun untuk setiap kali perpanjangan.
+c. Berakhirnya Izin Usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Izin Usaha Jasa Pemeliharaan Instalasi Tenaga Listrik 1) Izin Usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Izin Usaha Jasa Pemeliharaan Instalasi Tenaga Listrik berakhir karena: a) habis masa berlakunya, khusus untuk Kantor Perwakilan Asing; b) dikembalikan; atau c) dicabut.
+2) pemegang Izin Usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Izin Usaha Jasa Pemeliharaan Instalasi Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pembangunan No. dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik Tenaga Listrik dapat mengajukan pengembalian Izin Usaha sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan Izin Usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Izin Usaha Jasa Pemeliharaan Instalasi Tenaga Listrik sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+
+## Lampiran hal. 183
+
+6. Ketentuan Kewajiban Pemegang Izin Usaha Jasa Pembangunan Kewajiban dan Pemasangan Instalasi Tenaga Listrik, Izin Usaha Jasa Pemeliharaan Instalasi Tenaga Listrik
+a. pemegang Izin Usaha Jasa Pembangunan dan Pemasangan Instalasi Tenaga Listrik, Izin Usaha Jasa Pemeliharaan Instalasi Tenaga Listrik wajib menyampaikan laporan berkala secara daring setiap bulan Januari sesuai dengan ketentuan peraturan perundang-undangan;
+b. khusus Kantor Perwakilan Asing selain kewajiban memenuhi ketentuan sebagaimana dimaksud pada huruf a juga harus memenuhi kewajiban sebagai berikut:
+1) membentuk kerja sama operasi dengan badan usaha jasa penunjang tenaga listrik dalam negeri berkualifikasi besar yang memiliki perizinan berusaha dalam setiap kegiatan usaha jasa penunjang tenaga listrik di Indonesia dengan ketentuan paling rendah 30% (tiga puluh persen) dari nilai biaya pekerjaan dikerjakan dengan badan usaha jasa penunjang tenaga listrik dalam negeri;
+2) mempekerjakan lebih banyak tenaga kerja Indonesia daripada tenaga kerja asing;
+3) menempatkan warga negara Indonesia sebagai penanggung jawab badan usaha Kantor Perwakilan Asing;
+4) mengutamakan penggunaan material dalam negeri;
+5) memiliki teknologi tinggi, mutakhir, efisien, berwawasan lingkungan, serta memperhatikan kearifan lokal;
+6) melaksanakan proses alih teknologi;
+
+## Lampiran hal. 183
+
+7) menyampaikan laporan rencana dan realisasi pekerjaan secara daring melalui sistem informasi usaha jasa penunjang ketenagalistrikan paling sedikit berisi: a) nama dan jenis pekerjaan; b) nilai kontrak pekerjaan;
+Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pembangunan No. dan Pemasangan Instalasi Tenaga Listrik, Jasa Pemeliharaan Instalasi Tenaga Listrik c) badan usaha jasa penunjang tenaga listrik mitra kerja sama operasi; dan d) proporsi pembagian nilai pekerjaan dengan mitra kerja sama operasi.
+8) mempekerjakan tenaga kerja Indonesia sebagai tenaga kerja pendamping pada tingkat manajemen dan teknis paling rendah 1 (satu) tingkat di bawah jabatan tenaga kerja asing berdasarkan klasifikasi keilmuan yang sesuai.
+10. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pemeriksaan dan No.
+Pengujian Instalasi Tenaga Listrik KBLI: (71204) Jasa Inspeksi Teknik Instalasi
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik yang mencakup usaha jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik dalam bidang:
+a. pembangkitan tenaga listrik;
+b. transmisi tenaga listrik;
+c. distribusi tenaga listrik;
+d. instalasi pemanfaatan tenaga listrik; dan
+e. lainnya yang secara langsung berkaitan dengan instalasi tenaga listrik.
+
+## Lampiran hal. 184
+
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+b. Lembaga Inspeksi Teknik Tenaga Listrik yang selanjutnya disebut Lembaga Inspeksi Teknik adalah lembaga yang berusaha pada jenis usaha pemeriksaan dan pengujian instalasi tenaga listrik yang diberi hak untuk melakukan sertifikasi instalasi tenaga listrik selain instalasi pemanfaatan tenaga listrik pemanfaatan tenaga listrik tegangan rendah.
+c. Lembaga Inspeksi Teknik Tegangan Rendah adalah lembaga yang berusaha pada jenis usaha pemeriksaan dan pengujian instalasi pemanfaatan tenaga listrik tegangan rendah yang diberi hak untuk melakukan sertifikasi Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pemeriksaan dan No.
+Pengujian Instalasi Tenaga Listrik instalasi pemanfaatan tenaga listrik tegangan rendah.
+d. Sertifikasi Instalasi Tenaga Listrik adalah serangkaian kegiatan pemeriksaan dan pengujian peralatan listrik dan instalasinya serta verifikasi instalasi tenaga listrik untuk memastikan suatu instalasi tenaga listrik dan peralatan telah berfungsi sebagaimana kesesuaian persyaratan yang ditentukan dan dinyatakan laik dioperasikan.
+e. Sertifikat Badan Usaha adalah bukti pengakuan formal terhadap kesesuaian klasifikasi dan kualifikasi atas kemampuan pelaku usaha di bidang usaha jasa penunjang tenaga listrik.
+
+## Lampiran hal. 185
+
+f. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan Usaha dalam kelompok ini adalah usaha jasa Usaha pemeriksaan dan pengujian instalasi tenaga listrik, yang terdiri atas:
+a. Lembaga Inspeksi Teknik; dan
+b. Lembaga Inspeksi Teknik Tegangan Rendah.
+4. Ketentuan a. Lembaga Inspeksi Teknik Persyaratan Persyaratan permohonan baru atau perubahan Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik sebagai Lembaga Inspeksi Teknik sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan Pemenuhan Standar Perizinan Berusaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik dimaknai sebagai pemenuhan Standar Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik dengan melengkapi persyaratan berupa:
+1) Sertifikat Badan Usaha jasa penunjang tenaga listrik;
+2) surat pernyataan yang menyatakan pemilik, pengurus, atau pelaksana badan usaha tidak memiliki afiliasi dengan usaha jasa pembangunan dan pemasangan instalasi tenaga listrik;
+3) dokumen sistem manajemen mutu/manual mutu sesuai dengan standar nasional Indonesia ISO 9001 series;
+4) pedoman pelaksanaan sertifikasi instalasi tenaga listrik;
+Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pemeriksaan dan No.
+
+## Lampiran hal. 186
+
+Pengujian Instalasi Tenaga Listrik 5) surat pernyataan/komitmen dari manajemen puncak untuk membuat sistem informasi sertifikasi instalasi tenaga listrik yang terintegrasi dengan sistem informasi Direktorat Jenderal Ketenagalistrikan;
+6) peralatan uji yang dimiliki dan/atau perjanjian kerja sama penggunaan peralatan uji; dan 7) daftar penanggung jawab teknik dan tenaga Teknik yang bersertifikat kompetensi tenaga Teknik ketenagalistrikan dengan level kompetensi paling rendah dan jumlah paling rendah sesuai klasifikasi dan kualifikasi usahanya.
+b. Lembaga Inspeksi Teknik Tegangan Rendah Persyaratan permohonan baru atau perubahan Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik sebagai Lembaga Inspeksi Teknik Tegangan Rendah sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan Pemenuhan Standar Perizinan Berusaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik dimaknai sebagai pemenuhan Standar Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik dengan melengkapi persyaratan berupa:
+1) Sertifikat Akreditasi sebagai Lembaga Inspeksi Teknik Tegangan Rendah; dan 2) dokumen sistem manajemen mutu/manual mutu sesuai dengan standar nasional Indonesia ISO 9001 series.
+
+## Lampiran hal. 186
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pemeriksaan dan No.
+Pengujian Instalasi Tenaga Listrik 3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 187
+
+b. Masa Berlaku Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+c. Berakhirnya Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik 1) Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik berakhir karena: a) dikembalikan; atau b) dicabut.
+2) pemegang Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik dapat mengajukan pengembalian Izin Usaha sebagaimana dimaksud pada angka 1) huruf a);
+3) pencabutan Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan a. Kewajiban pemegang Izin Usaha Jasa Kewajiban Pemeriksaan dan Pengujian Instalasi Tenaga Listrik untuk Lembaga Inspeksi Teknik 1) pemegang Izin Usaha wajib menyampaikan laporan berkala secara daring setiap bulan Januari;
+Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pemeriksaan dan No.
+Pengujian Instalasi Tenaga Listrik 2) memiliki sistem informasi sertifikasi yang terintegrasi dengan sistem informasi Direktorat Jenderal Ketenagalistrikan;
+
+## Lampiran hal. 188
+
+3) melakukan registrasi setiap Sertifikat Laik Operasi yang diterbitkan kepada Menteri melalui Direktur Jenderal Ketenagalistrikan; dan 4) memenuhi persyaratan akreditasi sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan dalam waktu paling lama 3 (tiga) tahun terhitung sejak mendapatkan Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik untuk Lembaga Inspeksi Teknik.
+b. Kewajiban pemegang Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik untuk Lembaga Inspeksi Teknik Tegangan Rendah 1) pemegang Izin Usaha Jasa Pemeriksaan dan Pengujian Instalasi Tenaga Listrik untuk Lembaga Inspeksi Teknik Tegangan Rendah wajib menyampaikan laporan berkala secara daring setiap bulan Januari; dan 2) melakukan registrasi setiap Sertifikat Laik Operasi yang diterbitkan oleh Menteri melalui Direktur Jenderal Ketenagalistrikan.
+11. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pengoperasian No.
+Instalasi Pemanfaatan Tenaga Listrik KBLI: (35122) Pengoperasian Instalasi Pemanfaatan Tenaga Listrik
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik yang mencakup usaha jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik yang dilakukan oleh pihak lain dalam bidang:
+
+## Lampiran hal. 188
+
+a. instalasi pemanfaatan tenaga listrik; dan
+b. lainnya yang secara langsung berkaitan dengan instalasi tenaga listrik.
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pengoperasian No.
+Instalasi Pemanfaatan Tenaga Listrik Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+b. Sertifikat Badan Usaha adalah bukti pengakuan formal terhadap kesesuaian klasifikasi dan kualifikasi atas kemampuan pelaku usaha di bidang usaha jasa penunjang tenaga listrik.
+c. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan Persyaratan permohonan baru atau perubahan Izin Persyaratan Usaha Jasa Penunjang Tenaga Listrik - Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan pemenuhan standar Perizinan Berusaha Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik dimaknai sebagai pemenuhan standar Izin Usaha Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik dengan melengkapi persyaratan berupa Sertifikat Badan Usaha jasa penunjang tenaga listrik.
+
+## Lampiran hal. 189
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pengoperasian No.
+Instalasi Pemanfaatan Tenaga Listrik pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 190
+
+b. Masa Berlaku Izin Usaha Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+c. Berakhirnya Izin Usaha Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik 1) Izin Usaha Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik berakhir karena: a) dikembalikan; atau b) dicabut.
+2) pemegang Izin Usaha Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik dapat mengajukan pengembalian Izin Usaha sebagaimana dimaksud pada angka 1) huruf a);
+3) pencabutan Izin Usaha Jasa Pengoperasian Instalasi Pemanfaatan Tenaga Listrik sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Pemegang Izin Usaha Jasa Pengoperasian Instalasi Kewajiban Pemanfaatan Tenaga Listrik wajib menyampaikan laporan berkala secara daring setiap bulan Januari sesuai dengan ketentuan peraturan perundang-undangan.
+12. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Konsultansi Dalam Bidang Instalasi Tenaga Listrik Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Konsultansi No.
+Dalam Bidang Instalasi Tenaga Listrik KBLI: (71102) Aktivitas Keinsinyuran dan Konsultasi Teknis YBDI
+
+## Lampiran hal. 191
+
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik yang mencakup usaha jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik yang dilakukan oleh pihak lain dalam bidang:
+a. pembangkitan tenaga listrik;
+b. transmisi tenaga listrik;
+c. distribusi tenaga listrik;
+d. instalasi pemanfaatan tenaga listrik; dan
+e. lainnya yang secara langsung berkaitan dengan instalasi tenaga listrik.
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+b. Sertifikat Badan Usaha adalah bukti pengakuan formal terhadap kesesuaian klasifikasi dan kualifikasi atas kemampuan pelaku usaha di bidang usaha jasa penunjang tenaga listrik.
+c. Kantor Perwakilan Jasa Penunjang Tenaga Listrik Asing yang selanjutnya disebut Kantor Perwakilan Asing adalah kantor yang ditunjuk oleh badan usaha jasa penunjang tenaga listrik asing atau usaha perseorangan jasa penunjang tenaga listrik asing di luar negeri sebagai perwakilannya di Indonesia.
+d. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+
+## Lampiran hal. 191
+
+4. Ketentuan a. Persyaratan permohonan baru atau perubahan Persyaratan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Konsultansi Dalam Bidang Instalasi Tenaga Listrik sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan pemenuhan standar Perizinan Berusaha Jasa Konsultansi Dalam Bidang Instalasi Tenaga Listrik dimaknai sebagai:
+Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Konsultansi No.
+Dalam Bidang Instalasi Tenaga Listrik 1) pemenuhan standar Izin Usaha Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik dengan melengkapi persyaratan berupa Sertifikat Badan Usaha jasa penunjang tenaga listrik bagi Badan Usaha yang mengajukan permohonan atau perubahan Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik.
+2) Khusus untuk Kantor Perwakilan Asing juga harus melengkapi persyaratan: a) bukti pembayaran penerimaan negara bukan pajak administrasi Perizinan Berusaha jasa penunjang tenaga listrik Kantor Perwakilan Asing yang dikeluarkan oleh Menteri; b) bukti pengalaman pekerjaan sesuai dengan ruang lingkup yang dimohonkan; dan c) surat keterangan status wajib pajak dengan status valid.
+b. Perpanjangan untuk Kantor Perwakilan Asing harus melakukan pemenuhan persyaratan:
+1) Sertifikat Badan Usaha jasa penunjang tenaga listrik;
+
+## Lampiran hal. 192
+
+2) bukti pembayaran penerimaan negara bukan pajak administrasi Perizinan Berusaha jasa penunjang tenaga listrik Kantor Perwakilan Asing yang dikeluarkan oleh Menteri;
+3) bukti pengalaman pekerjaan sesuai dengan ruang lingkup yang dimohonkan; dan 4) surat keterangan status wajib pajak dengan status valid.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Konsultansi No.
+Dalam Bidang Instalasi Tenaga Listrik dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan untuk dapat disampaikan kembali;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+
+## Lampiran hal. 193
+
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik disetujui.
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku 1) Izin Usaha Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+2) Khusus untuk Kantor Perwakilan Asing diberikan untuk jangka waktu paling lama 3 (tiga) tahun dan dapat diberikan perpanjangan untuk jangka waktu paling lama 3 (tiga) tahun untuk setiap kali perpanjangan.
+c. Berakhirnya Izin Usaha Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik 1) Izin Usaha Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik berakhir karena: a) habis masa berlakunya, khusus Kantor Perwakilan Asing; b) dikembalikan; atau c) dicabut.
+2) pemegang Izin Usaha Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan Izin Usaha Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Kewajiban Kewajiban Pemegang Izin Usaha Jasa Konsultansi dalam Bidang Instalasi Tenaga Listrik Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Konsultansi No.
+Dalam Bidang Instalasi Tenaga Listrik
+
+## Lampiran hal. 194
+
+a. Pemegang Izin Usaha Jasa Konsultansi Dalam Bidang Instalasi Tenaga Listrik wajib menyampaikan laporan berkala secara daring setiap bulan Januari sesuai dengan ketentuan peraturan perundang-undangan.
+b. Khusus Kantor Perwakilan Asing selain kewajiban sebagaimana dimaksud pada huruf a juga harus memenuhi kewajiban:
+1) membentuk kerja sama operasi dengan badan usaha jasa penunjang tenaga listrik dalam negeri berkualifikasi besar yang memiliki Perizinan Berusaha dalam setiap kegiatan usaha jasa penunjang tenaga listrik di Indonesia dengan ketentuan paling rendah 50% (lima puluh persen) dari nilai biaya pekerjaan dikerjakan dengan badan usaha jasa penunjang tenaga listrik dalam negeri;
+2) mempekerjakan lebih banyak tenaga kerja Indonesia daripada tenaga kerja asing;
+3) menempatkan warga negara Indonesia sebagai penanggung jawab badan usaha Kantor Perwakilan Asing;
+4) mengutamakan penggunaan material dalam negeri;
+5) memiliki teknologi tinggi, mutakhir, efisien, berwawasan lingkungan, serta memperhatikan kearifan lokal;
+6) melaksanakan proses alih teknologi;
+7) menyampaikan laporan rencana dan realisasi pekerjaan secara daring melalui sistem informasi usaha jasa penunjang ketenagalistrikan, paling sedikit berisi: a) nama dan jenis pekerjaan; b) nilai kontrak pekerjaan; c) badan usaha jasa penunjang tenaga listrik mitra kerja sama operasi; dan d) proporsi pembagian nilai pekerjaan dengan mitra kerja sama operasi.
+
+## Lampiran hal. 194
+
+8) mempekerjakan tenaga kerja Indonesia sebagai tenaga kerja pendamping pada tingkat manajemen dan teknis paling rendah 1 (satu) tingkat di bawah jabatan tenaga kerja asing berdasarkan klasifikasi keilmuan yang sesuai.
+13. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik dan Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik Izin Usaha Jasa Penunjang Tenaga Listrik – No. Jasa Sertifikasi Peralatan Dan Pemanfaat Tenaga Listrik Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik KBLI: (71201) Jasa Sertifikasi
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik atau Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik yang mencakup:
+a. usaha jasa sertifikasi peralatan dan pemanfaat tenaga listrik; dan
+b. usaha jasa sertifikasi badan usaha jasa penunjang tenaga listrik dalam bidang:
+1) konsultansi dalam bidang Instalasi Tenaga Listrik;
+2) pembangunan dan pemasangan Instalasi Tenaga Listrik;
+3) pemeriksaan dan pengujian Instalasi Tenaga Listrik;
+4) pengoperasian Instalasi Tenaga Listrik;
+5) pemeliharaan Instalasi Tenaga Listrik; dan 6) Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan.
+
+## Lampiran hal. 195
+
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+b. Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik adalah kegiatan yang berkaitan dengan pemberian jaminan tertulis suatu produk peralatan atau pemanfaat tenaga listrik telah memenuhi standar dan/atau telah sesuai dengan ketentuan peraturan perundang-undangan.
+c. Sertifikasi Badan Usaha adalah proses penilaian untuk mendapatkan pengakuan formal terhadap klasifikasi dan kualifikasi atas kemampuan pelaku usaha di bidang usaha jasa penunjang tenaga listrik.
+d. Sertifikat Badan Usaha adalah bukti pengakuan formal terhadap kesesuaian klasifikasi dan kualifikasi atas kemampuan pelaku usaha di bidang usaha jasa penunjang tenaga listrik.
+e. Lembaga Sertifikasi Produk adalah lembaga yang berusaha pada jenis usaha sertifikasi peralatan dan pemanfaat tenaga listrik.
+Izin Usaha Jasa Penunjang Tenaga Listrik – No. Jasa Sertifikasi Peralatan Dan Pemanfaat Tenaga Listrik Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik
+f. Lembaga Sertifikasi Badan Usaha adalah lembaga yang berusaha pada jenis usaha sertifikasi badan usaha jasa penunjang tenaga listrik yang diberi hak untuk melakukan sertifikasi badan usaha.
+g. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+
+## Lampiran hal. 196
+
+3. Penggolongan Usaha dalam kelompok ini adalah usaha jasa Usaha sertifikasi yang terdiri atas:
+a. usaha jasa sertifikasi peralatan dan pemanfaat tenaga listrik; dan
+b. usaha jasa sertifikasi badan usaha jasa penunjang tenaga listrik.
+4. Ketentuan a. Lembaga Sertifikasi Produk Persyaratan Persyaratan permohonan baru atau perubahan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan Pemenuhan Standar Perizinan Berusaha Jasa sertifikasi peralatan dan pemanfaatan tenaga listrik dimaknai sebagai pemenuhan Standar Izin Usaha Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik dengan melengkapi persyaratan berupa:
+1) Sertifikat Akreditasi sebagai Lembaga Sertifikasi Produk dari Komite Akreditasi Nasional;
+2) laboratorium uji yang sudah memiliki Izin Usaha Jasa Penunjang Tenaga Listrik atau kontrak alih daya antara badan usaha jasa sertifikasi peralatan dan pemanfaat tenaga listrik dengan laboratorium penguji yang sudah memiliki Izin Usaha Jasa Penunjang Tenaga Listrik atau perjanjian kerja sama dengan laboratorium pengujian luar negeri berstandar internasional dalam hal pengujian tidak dapat dilakukan oleh laboratorium uji yang memiliki Izin Usaha Jasa Penunjang Tenaga Listrik;
+
+## Lampiran hal. 196
+
+3) daftar ketua auditor (lead auditor) dan auditor tetap atau daftar ketua auditor (lead auditor) dan auditor tidak tetap jika ada, dilengkapi dokumen kontrak alih daya badan usaha jasa sertifikasi peralatan dan pemanfaat tenaga listrik dengan auditor; dan Izin Usaha Jasa Penunjang Tenaga Listrik – No. Jasa Sertifikasi Peralatan Dan Pemanfaat Tenaga Listrik Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik 4) struktur organisasi yang terdokumentasi yang menguraikan tugas, fungsi dan pembagian kewenangan.
+b. Lembaga Sertifikasi Badan Usaha Persyaratan permohonan baru atau perubahan Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Sertifikasi Badan Usaha sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan Pemenuhan Standar Perizinan Berusaha Jasa sertifikasi peralatan dan pemanfaatan tenaga listrik dimaknai sebagai pemenuhan Standar Izin Usaha Jasa Sertifikasi Badan Usaha dengan melengkapi persyaratan berupa:
+1) laporan keuangan yang diaudit kantor akuntan publik;
+2) penanggung jawab teknik yang memiliki sertifikat kompetensi asesor badan usaha dengan kualifikasi kompetensi asesor badan usaha paling rendah madya paling sedikit pada setiap kantor wilayah;
+3) tenaga teknik yang memiliki sertifikat kompetensi asesor badan usaha dengan kualifikasi kompetensi asesor badan usaha paling rendah asesor badan usaha muda paling sedikit pada setiap kantor wilayah;
+
+## Lampiran hal. 197
+
+4) dokumen sistem manajemen mutu/manual mutu sesuai dengan Standar Nasional Indonesia ISO 9001 series;
+5) surat pernyataan/komitmen dari manajemen puncak untuk membuat sistem informasi sertifikasi badan usaha yang terintegrasi dengan sistem informasi Direktorat Jenderal Ketenagalistrikan;
+6) pedoman pelaksanaan Sertifikasi Badan Usaha;
+7) dalam hal Badan Usaha melakukan kegiatan untuk: a) lingkup usaha pada jenis usaha konsultansi dalam bidang ketenagalistrikan, pengoperasian instalasi tenaga listrik, atau pemeliharaan instalasi tenaga listrik, memiliki paling sedikit 1 (satu) kantor wilayah yang masing-masing berada di Indonesia bagian barat, tengah, dan timur; dan/atau b) lingkup usaha pada jenis usaha pembangunan dan pemasangan instalasi Izin Usaha Jasa Penunjang Tenaga Listrik – No. Jasa Sertifikasi Peralatan Dan Pemanfaat Tenaga Listrik Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik tenaga listrik, memiliki paling sedikit 2 (dua) kantor wilayah pada provinsi yang berbeda masing-masing berada di Indonesia bagian barat, tengah, dan timur.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+
+## Lampiran hal. 198
+
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik atau Izin Usaha Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik atau Izin Usaha Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+Izin Usaha Jasa Penunjang Tenaga Listrik – No. Jasa Sertifikasi Peralatan Dan Pemanfaat Tenaga Listrik Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik
+
+## Lampiran hal. 199
+
+c. Berakhirnya Izin Usaha Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik atau Izin Usaha Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik 1) Izin Usaha Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik atau Izin Usaha Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik berakhir karena: a) dikembalikan; atau b) dicabut.
+2) pemegang Izin Usaha Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik atau Izin Usaha Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf a);
+3) pencabutan Izin Usaha Jasa Sertifikasi Peralatan dan Pemanfaat Tenaga Listrik atau Izin Usaha Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan a. Kewajiban pemegang Izin Usaha Jasa Sertifikasi Kewajiban Peralatan dan Pemanfaat Tenaga Listrik untuk Lembaga Sertifikasi Produk 1) menyampaikan laporan berkala secara daring setiap bulan Januari;
+2) memiliki sistem informasi sertifikasi yang terintegrasi dengan sistem informasi Direktorat Jenderal Ketenagalistrikan;
+3) memenuhi persyaratan akreditasi sesuai dengan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 199
+
+b. Kewajiban pemegang Izin Usaha Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik untuk Lembaga Sertifikasi Badan Usaha 1) menyampaikan laporan berkala secara daring setiap bulan Januari;
+2) memiliki sistem informasi sertifikasi yang terintegrasi dengan sistem informasi Direktorat Jenderal Ketenagalistrikan;
+3) memenuhi persyaratan akreditasi sesuai dengan ketentuan peraturan perundang-undangan di bidang ketenagalistrikan dalam waktu paling lama 3 (tiga) tahun terhitung sejak mendapatkan Izin Usaha Jasa Sertifikasi Badan Usaha Jasa Penunjang Tenaga Listrik.
+14. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Laboratorium Pengujian Peralatan Dan Pemanfaat Tenaga Listrik Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Laboratorium No.
+Pengujian Peralatan dan Pemanfaat Tenaga Listrik KBLI: (71202) Jasa Pengujian Laboratorium
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik yang mencakup Usaha Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik.
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+b. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+
+## Lampiran hal. 200
+
+3. Penggolongan - Usaha
+4. Ketentuan Persyaratan permohonan baru atau perubahan Izin Persyaratan Usaha Jasa Penunjang Tenaga Listrik – Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan Pemenuhan Standar Perizinan Berusaha Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik dimaknai sebagai pemenuhan Standar Izin Usaha Jasa Laboratorium dan Pengujian Peralatan dan Pemanfaat Tenaga Listrik dengan melengkapi persyaratan berupa:
+a. Sertifikat Akreditasi sebagai Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik dari Komite Akreditasi Nasional;
+b. laboratorium uji; dan
+c. struktur organisasi yang terdokumentasi yang menguraikan tugas, fungsi dan pembagian kewenangan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Laboratorium No.
+Pengujian Peralatan dan Pemanfaat Tenaga Listrik perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+
+## Lampiran hal. 201
+
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+c. Berakhirnya Izin Usaha Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik 1) Izin Usaha Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik berakhir karena: a) dikembalikan; atau b) dicabut.
+2) pemegang Izin Usaha Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Listrik dapat mengajukan pengembalian Izin Usaha sebagaimana dimaksud pada angka 1) huruf a);
+
+## Lampiran hal. 201
+
+3) pencabutan Izin Usaha Jasa Laboratorium Pengujian Peralatan dan Pemanfaat Tenaga Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Laboratorium No.
+Pengujian Peralatan dan Pemanfaat Tenaga Listrik Listrik sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Pemegang Izin Usaha Jasa Laboratorium Pengujian Kewajiban Peralatan dan Pemanfaat Tenaga Listrik wajib menyampaikan laporan berkala secara daring setiap bulan Januari.
+15. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Penelitian Dan Pengembangan Yang Terkait Dengan Instalasi Tenaga Listrik Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Penelitian Dan No.
+Pengembangan Yang Terkait Dengan Instalasi Tenaga Listrik KBLI: (72102) Penelitian Dan Pengembangan Teknologi dan Rekayasa
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Penelitian dan Pengembangan yang terkait Instalasi Tenaga Listrik yang mencakup usaha Jasa Penelitian dan Pengembangan yang terkait Instalasi Tenaga Listrik.
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+
+## Lampiran hal. 202
+
+b. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan Persyaratan permohonan baru atau perubahan Izin Persyaratan Usaha Jasa Penunjang Tenaga Listrik – Jasa Penelitian dan Pengembangan yang terkait Instalasi Tenaga Listrik sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan Pemenuhan Standar Perizinan Berusaha Jasa Penelitian dan Pengembangan yang Terkait dengan Instalasi Tenaga Listrik dimaknai sebagai pemenuhan Standar Izin Usaha Jasa Penelitian dan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Penelitian Dan No.
+Pengembangan Yang Terkait Dengan Instalasi Tenaga Listrik Pengembangan dengan melengkapi persyaratan berupa:
+a. rencana kegiatan penelitian dan pengembangan;
+b. uraian fasilitas laboratorium/instalasi dan peralatan yang digunakan;
+c. uraian perlengkapan keselamatan kerja untuk kegiatan penelitian dan pengembangan; dan
+d. prosedur kerja (standard operating procedure).
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+
+## Lampiran hal. 203
+
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Penelitian dan Pengembangan disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha Jasa Penelitian dan Pengembangan diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Penelitian Dan No.
+Pengembangan Yang Terkait Dengan Instalasi Tenaga Listrik
+c. Berakhirnya Izin Usaha Jasa Penelitian dan Pengembangan 1) Izin Usaha berakhir karena: a) dikembalikan; atau b) dicabut.
+2) pemegang Izin Usaha Jasa Penelitian dan Pengembangan dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf a);
+
+## Lampiran hal. 204
+
+3) pencabutan Izin Usaha Jasa Penelitian dan Pengembangan sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Pemegang Izin Usaha Jasa Penelitian dan Kewajiban Pengembangan wajib menyampaikan laporan berkala secara daring setiap bulan Januari sesuai dengan ketentuan peraturan perundang-undangan.
+16. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi No Kompetensi Tenaga Teknik Ketenagalistrikan KBLI: (74322) Aktivitas Sertifikasi Personel Independen
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan yang mencakup usaha jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan dalam bidang:
+a. pembangkitan tenaga listrik;
+b. transmisi tenaga listrik;
+c. distribusi tenaga listrik;
+d. penjualan tenaga listrik;
+e. instalasi pemanfaatan tenaga listrik; dan
+f. lainnya yang secara langsung berkaitan dengan instalasi tenaga listrik.
+
+## Lampiran hal. 204
+
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi No Kompetensi Tenaga Teknik Ketenagalistrikan
+b. Sertifikat Badan Usaha adalah bukti pengakuan formal terhadap kesesuaian klasifikasi dan kualifikasi atas kemampuan pelaku usaha di bidang usaha jasa penunjang tenaga listrik.
+c. Sertifikat Kompetensi Tenaga Teknik adalah bukti pengakuan formal terhadap klasifikasi kompetensi dan kualifikasi kompetensi tenaga teknik atau asesor di bidang ketenagalistrikan.
+d. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan Persyaratan permohonan baru atau perubahan Izin Persyaratan Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan Pemenuhan Standar Perizinan Berusaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan dimaknai sebagai pemenuhan Standar Izin Usaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan dengan melengkapi persyaratan berupa:
+a. Sertifikat Badan Usaha jasa penunjang tenaga listrik;
+
+## Lampiran hal. 205
+
+b. surat pernyataan/komitmen manajemen puncak untuk menjaga ketidakberpihakan dalam kegiatan sertifikasi;
+c. dokumen sistem manajemen mutu/manual mutu sesuai dengan standar nasional Indonesia ISO 9001 series;
+d. pedoman pelaksanaan sertifikasi kompetensi ketenagalistrikan;
+e. surat pernyataan/komitmen dari manajemen puncak untuk membuat sistem informasi sertifikasi kompetensi ketenagalistrikan yang terintegrasi dengan sistem informasi Direktorat Jenderal Ketenagalistrikan;
+f. tempat uji kompetensi yang dimiliki dan/atau perjanjian kerja sama penggunaan tempat uji kompetensi; dan
+g. daftar penanggung jawab teknik dan tenaga teknik yang bersertifikat kompetensi tenaga teknik ketenagalistrikan dengan level kompetensi paling rendah dan jumlah paling rendah sesuai klasifikasi dan kualifikasi usahanya.
+Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi No Kompetensi Tenaga Teknik Ketenagalistrikan Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+
+## Lampiran hal. 206
+
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+c. Berakhirnya Izin Usaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan 1) Izin Usaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan berakhir karena: a) dikembalikan; atau b) dicabut.
+2) pemegang Izin Usaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Sertifikasi No Kompetensi Tenaga Teknik Ketenagalistrikan dapat mengajukan pengembalian Izin Usaha sebagaimana dimaksud pada angka 1) huruf a);
+
+## Lampiran hal. 207
+
+3) pencabutan Izin Usaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban pemegang Izin Usaha Jasa Sertifikasi Kewajiban Kompetensi Tenaga Teknik Ketenagalistrikan
+a. pemegang Izin Usaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan wajib menyampaikan laporan berkala secara daring setiap bulan Januari;
+b. memiliki sistem informasi sertifikasi yang terintegrasi dengan sistem informasi Direktorat Jenderal Ketenagalistrikan; dan
+c. memenuhi persyaratan akreditasi sesuai dengan ketentuan peraturan perundang-undangan dalam waktu paling lama 3 (tiga) tahun terhitung sejak mendapatkan Izin Usaha Jasa Sertifikasi Kompetensi Tenaga Teknik Ketenagalistrikan.
+17. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Pendidikan dan No.
+Pelatihan di Bidang Ketenagalistrikan KBLI: (85497) Pendidikan Teknik Swasta
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan yang mencakup usaha Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan dalam bidang:
+a. pembangkitan tenaga listrik;
+b. transmisi tenaga listrik;
+
+## Lampiran hal. 207
+
+c. distribusi tenaga listrik;
+d. instalasi pemanfaatan tenaga listrik;
+e. asesor Ketenagalistrikan;
+f. industri penunjang tenaga listrik; dan
+g. lainnya yang secara langsung berkaitan dengan instalasi tenaga listrik.
+Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Pendidikan dan No.
+Pelatihan di Bidang Ketenagalistrikan
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+b. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan - Usaha
+4. Ketentuan Persyaratan permohonan baru atau perubahan Izin Persyaratan Usaha Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan Pemenuhan Standar Perizinan Berusaha Jasa Pendidikan dan Pelatihan di bidang Ketenagalistrikan dimaknai sebagai pemenuhan standar Izin Usaha Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan dengan melengkapi persyaratan berupa:
+a. sertifikat akreditasi yang diterbitkan oleh Menteri;
+b. dokumen kepemilikan kantor;
+c. dokumentasi ruang kelas dan ruang praktik;
+d. dokumentasi sarana dan prasarana pendukung pendidikan dan pelatihan;
+
+## Lampiran hal. 208
+
+e. struktur organisasi yang menguraikan tugas dan fungsi dan pembagian kewenangan yang menjamin ketidakberpihakan; dan
+f. daftar pengawas, pengajar, dan instruktur.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 5 (lima) hari kerja sejak permohonan diterima dan lengkap;
+Izin Usaha Jasa Penunjang Tenaga Listrik - Jasa Pendidikan dan No.
+Pelatihan di Bidang Ketenagalistrikan 3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+
+## Lampiran hal. 209
+
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+c. Berakhirnya Izin Usaha Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan 1) Izin Usaha Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan berakhir karena: a) dikembalikan; atau b) dicabut.
+2) pemegang Izin Usaha Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf a);
+3) pencabutan Izin Usaha Jasa Pendidikan dan Pelatihan di Bidang Ketenagalistrikan sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Pemegang Izin Usaha Jasa Pendidikan dan Kewajiban Pelatihan di Bidang Ketenagalistrikan wajib menyampaikan laporan berkala secara daring setiap bulan Januari sesuai dengan ketentuan peraturan perundang-undangan.
+18. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Penunjang Tenaga Listrik – Aktivitas Penunjang Tenaga Listrik Lainnya Izin Usaha Jasa Penunjang Tenaga Listrik – Aktivitas Penunjang No.
+
+## Lampiran hal. 210
+
+Tenaga Listrik Lainnya KBLI: (35129) Aktivitas Penunjang Tenaga Listrik Lainnya
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup dalam proses permohonan Izin Usaha Jasa Penunjang Tenaga Listrik – Aktivitas Penunjang Tenaga Listrik Lainnya yang mencakup seluruh usaha Aktivitas Penunjang Tenaga Listrik Lainnya, selain usaha jasa konservasi energi.
+2. Istilah dan a. Badan Usaha adalah badan usaha berbentuk Definisi badan hukum atau tidak berbentuk badan hukum yang didirikan di wilayah Negara Kesatuan Republik Indonesia dan melakukan usaha dan/atau kegiatan pada bidang tertentu.
+b. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan Usaha dalam kelompok ini terdiri atas usaha jasa Usaha yang secara langsung berkaitan dengan penyediaan tenaga listrik, paling sedikit berupa:
+a. pemeriksaan dan penilaian Tingkat Komponen Dalam Negeri di bidang ketenagalistrikan;
+b. pemeriksaan dan penilaian penerapan sistem manajemen keselamatan ketenagalistrikan;
+c. pengelolaan lingkungan ketenagalistrikan;
+d. pengendalian emisi gas rumah kaca ketenagalistrikan;
+e. pemeriksaan dan penilaian kompensasi tanah, bangunan, dan/atau tanaman yang berada di bawah ruang bebas jaringan transmisi tenaga listrik;
+f. verifikasi produksi listrik energi terbarukan;
+g. pemeriksaan dan verifikasi rencana impor barang modal ketenagalistrikan; dan
+h. layanan satu pintu usaha jasa penunjang tenaga listrik berbasis elektronik.
+
+## Lampiran hal. 210
+
+4. Ketentuan - Persyaratan
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) pemohon mengajukan permohonan melalui Sistem OSS;
+2) Sistem OSS secara otomatis menerbitkan Izin Usaha Aktivitas Penunjang Tenaga Listrik Lainnya.
+Izin Usaha Jasa Penunjang Tenaga Listrik – Aktivitas Penunjang No.
+Tenaga Listrik Lainnya
+b. Masa Berlaku Izin Usaha Aktivitas Penunjang Tenaga Listrik Lainnya diberikan sepanjang Badan Usaha melakukan kegiatan usaha.
+c. Berakhirnya Izin Usaha Aktivitas Penunjang Tenaga Listrik Lainnya 1) Izin Usaha Aktivitas Penunjang Tenaga Listrik Lainnya berakhir karena: a) dikembalikan; atau b) dicabut.
+2) pemegang Izin Usaha Aktivitas Penunjang Tenaga Listrik Lainnya dapat mengajukan pengembalian Izin Usaha sebagaimana dimaksud pada angka 1) huruf a);
+3) pencabutan Izin Usaha Aktivitas Penunjang Tenaga Listrik Lainnya sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban pemegang Izin Usaha Aktivitas Kewajiban Penunjang Tenaga Listrik Lainnya
+a. pemegang Izin Usaha Aktivitas Penunjang Tenaga Listrik Lainnya wajib menyampaikan laporan berkala secara daring setiap bulan Januari; dan
+b. memenuhi dan mematuhi ketentuan peraturan perundang-undangan di bidang ketenagalistrikan sebelum melakukan pekerjaan.
+C. Subsektor Mineral Dan Batubara
+
+## Lampiran hal. 211
+
+1. Standar Kegiatan Usaha Berupa Izin Usaha Pertambangan (Komoditas Mineral Logam dan Batubara) Izin Usaha Pertambangan No.
+(Komoditas Mineral Logam dan Batubara) KBLI:
+(05100) Pertambangan Batubara
+(07101) Pertambangan Pasir Besi
+(07102) Pertambangan Bijih Besi
+(07291) Pertambangan Bijih Timah
+(07292) Pertambangan Bijih Timah Hitam
+(07293) Pertambangan Bijih Bauksit
+(07294) Pertambangan Bijih Tembaga
+(07295) Pertambangan Bijih Nikel
+(07296) Pertambangan Bijih Mangan Izin Usaha Pertambangan No.
+(Komoditas Mineral Logam dan Batubara)
+(07299) Pertambangan Bahan Galian Lainnya yang Tidak Mengandung Bijih Besi
+(07301) Pertambangan Emas dan Perak
+(07309) Pertambangan Bijih Logam Mulia Lainnya
+(08993) Pertambangan Aspal Alam
+(08999) Pertambangan dan Penggalian Lainnya YTDL (khusus komoditas mineral logam tanah jarang)
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha pertambangan untuk komoditas Mineral logam dan Batubara antara lain Batubara, Pasir Besi, Bijih Besi, Bijih Timah, Bijih Timah Hitam, Bijih Bauksit, Bijih Tembaga, Bijih Nikel, Bijih Mangan, Bahan Galian lainnya yang tidak mengandung Bijih Besi, Emas dan Perak, Mineral Logam Tanah Jarang, Bijih Logam Mulia Lainnya, dan Aspal Alam dalam bentuk Izin Usaha Pertambangan (IUP) yang Wilayah Izin Usaha Pertambangan (WIUP)-nya diberikan melalui mekanisme lelang atau pemberian secara prioritas.
+
+## Lampiran hal. 212
+
+Kegiatan Usaha Pertambangan Mineral logam atau Batubara adalah sebagian atau seluruh tahapan kegiatan dalam rangka pengusahaan Mineral logam atau Batubara yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+Pelaku usaha pertambangan Mineral logam atau Batubara dalam bentuk IUP tidak memiliki IUP lain atau perizinan berusaha lain di bidang pertambangan mineral dan batubara, kecuali BUMN dapat memiliki IUP lain atau perizinan berusaha lain di bidang pertambangan mineral dan batubara sesuai dengan ketentuan peraturan perundang-undangan.
+2. Istilah dan a. Pertambangan adalah sebagian atau seluruh Definisi tahapan kegiatan dalam rangka pengelolaan dan pengusahaan mineral atau batubara yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+b. Mineral adalah senyawa anorganik yang terbentuk di alam, yang memiliki sifat fisik dan kimia tertentu serta susunan kristal teratur atau gabungannya yang membentuk batuan, baik dalam bentuk lepas atau padu.
+Izin Usaha Pertambangan No.
+(Komoditas Mineral Logam dan Batubara)
+c. Pertambangan Mineral adalah Pertambangan kumpulan Mineral yang berupa bijih atau batuan, di luar panas bumi, minyak dan gas bumi, serta air tanah.
+
+## Lampiran hal. 213
+
+d. Batubara adalah endapan senyawa organik karbonan yang terbentuk secara alamiah dari sisa tumbuh-tumbuhan.
+e. Pertambangan Batubara adalah Pertambangan endapan karbon yang terdapat di dalam bumi, termasuk bitumen padat, gambut, dan batuan aspal.
+f. Usaha Pertambangan adalah kegiatan dalam rangka pengusahaan Mineral atau Batubara yang meliputi tahapan kegiatan penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta pascatambang.
+g. Eksplorasi adalah tahapan kegiatan Usaha Pertambangan untuk memperoleh informasi secara terperinci dan teliti tentang lokasi, bentuk, dimensi, sebaran, kualitas dan sumber daya terukur dari bahan galian, serta informasi mengenai lingkungan sosial dan lingkungan hidup.
+h. Wilayah Izin Usaha Pertambangan, yang selanjutnya disebut WIUP, adalah wilayah yang diberikan kepada pemegang IUP dan Surat Izin Penambangan Batuan (SIPB).
+3. Penggolongan a. Penggolongan usaha ini meliputi:
+Usaha 1) Pertambangan Mineral logam atau Batubara; dan 2) berada dalam WIUP Mineral logam atau Batubara.
+b. WIUP Mineral logam atau WIUP Batubara dapat diberikan dengan:
+1) mekanisme lelang; atau 2) mekanisme pemberian secara prioritas.
+c. Pemberian WIUP Mineral logam atau Batubara melalui mekanisme lelang sesuai dengan ketentuan peraturan perundang-undangan;
+d. Mekanisme pemberian secara prioritas WIUP Mineral logam atau Batubara terdiri atas:
+
+## Lampiran hal. 213
+
+1) pemberian secara prioritas kepada Koperasi, Badan Usaha kecil dan menengah, atau Badan Usaha yang dimiliki oleh Organisasi Kemasyarakatan keagamaan;
+2) pemberian secara prioritas kepada BUMN, BUMD, atau Badan Usaha swasta dalam rangka peningkatan akses pendidikan tinggi bagi masyarakat serta meningkatkan Izin Usaha Pertambangan No.
+(Komoditas Mineral Logam dan Batubara) kemandirian dan keunggulan perguruan tinggi; dan 3) pemberian secara prioritas kepada BUMN dan Badan Usaha swasta dalam rangka peningkatan nilai tambah/hilirisasi.
+e. Kriteria dan persyaratan pemohon WIUP Mineral logam atau Batubara dengan mekanisme pemberian secara prioritas sesuai dengan ketentuan peraturan perundang-undangan.
+f. WIUP Mineral logam untuk komoditas logam tanah jarang, selain dapat diberikan melalui mekanisme lelang atau pemberian prioritas, Menteri dapat menetapkan BUMN sebagai pelaksana pengusahaan dan pemanfaatan Mineral logam komoditas logam tanah jarang untuk pengembangan industri prioritas di dalam negeri sesuai dengan ketentuan peraturan perundang-undangan.
+4. Ketentuan a. Persyaratan IUP Tahap Kegiatan Eksplorasi Persyaratan meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+
+## Lampiran hal. 214
+
+1) terkait dengan bukti penempatan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi dimaknai sebagai bukti penempatan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi yang diterbitkan oleh bank pemerintah; dan 2) terkait dengan surat keterangan fiskal dimaknai sebagai surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+b. Persyaratan IUP Tahap Kegiatan Eksplorasi dalam rangka pemberian WIUP secara prioritas untuk Koperasi meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam ketentuan peraturan perundang-undangan di bidang pertambangan mineral dan batubara.
+c. Persyaratan Perpanjangan IUP Tahap Kegiatan Eksplorasi sesuai dengan persyaratan Izin Usaha Pertambangan No.
+(Komoditas Mineral Logam dan Batubara) sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+
+## Lampiran hal. 215
+
+1) terkait dengan kajian kendala berdasarkan kriteria teknis yang ditentukan dimaknai termasuk juga menyampaikan kendala sosial selama pelaksanaan kegiatan Eksplorasi serta menyampaikan: a) target waktu (timeline) penyelesaian perizinan lain yang diperlukan; b) bukti korespondensi penyelesaian permohonan perizinan lain atau perizinan lain yang telah didapatkan; dan c) bukti atau dokumentasi telah mempersiapkan mobilisasi sarana atau prasarana yang diperlukan, yang dituangkan dalam bentuk laporan kegiatan Eksplorasi yang telah dilakukan.
+2) terkait dengan rencana kegiatan dan anggaran biaya Eksplorasi jangka panjang yang dijabarkan dalam tiap semester selama jangka waktu permohonan perpanjangan dimaknai sebagai rencana kegiatan dan anggaran biaya di seluruh WIUP;
+3) terkait dengan menempatkan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi pada bank pemerintah dimaknai sebagai bukti penempatan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi yang diterbitkan oleh bank pemerintah;
+4) memenuhi persyaratan tambahan dan kriteria, yaitu: a) persyaratan tambahan, terdiri atas:
+(1) susunan pengurus, daftar pemegang saham dan/atau penyertaan modal, dan daftar pemilik manfaat sampai dengan penerima manfaat akhir;
+(2) bukti pelunasan iuran tetap tahap kegiatan Eksplorasi tahun terakhir; dan
+(3) bukti penyampaian laporan triwulan terakhir pelaksanaan kegiatan eksplorasi. b) kriteria, terdiri atas:
+
+## Lampiran hal. 215
+
+(1) dilakukan dalam rangka penyelesaian kewajiban penerimaan negara bukan pajak di bidang Mineral atau Batubara;
+(2) telah memiliki peralatan pelaksanaan Eksplorasi di lapangan; dan/atau Izin Usaha Pertambangan No.
+(Komoditas Mineral Logam dan Batubara)
+(3) dilakukan dalam rangka pembangunan sarana dan prasarana penunjang kegiatan Usaha Pertambangan termasuk penyiapan infrastruktur pendukung kegiatan Eksplorasi.
+d. Persyaratan peningkatan tahap kegiatan Eksplorasi menjadi tahap kegiatan Operasi Produksi meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan surat keterangan fiskal dimaknai sebagai surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+e. Persyaratan perpanjangan IUP Tahap Kegiatan Operasi Produksi meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+
+## Lampiran hal. 216
+
+1) terkait dengan surat keterangan fiskal dimaknai sebagai surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+2) terkait dengan laporan pelaksanaan pengelolaan lingkungan dan Reklamasi dimaknai sebagai laporan akhir pelaksanaan pengelolaan lingkungan dan Reklamasi serta menyampaikan: a) salinan bukti penempatan jaminan reklamasi; b) salinan bukti penempatan jaminan pascatambang; dan c) dokumen lingkungan hidup dan persetujuan lingkungan yang diterbitkan oleh instansi yang berwenang sesuai dengan ketentuan peraturan perundang-undangan.
+Izin Usaha Pertambangan No.
+(Komoditas Mineral Logam dan Batubara)
+f. Pelaksanaan penyesuaian dan persetujuan lainnya terkait IUP mengikuti ketentuan peraturan perundang-undangan di bidang pertambangan mineral dan batubara.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi dilakukan terhadap kesesuaian Verifikasi dokumen persyaratan;
+b. Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+
+## Lampiran hal. 217
+
+c. Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+d. Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui; dan
+e. Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+6. Ketentuan Kewajiban Pemegang IUP:
+Kewajiban a. melakukan kegiatan usaha pertambangan pada WIUP sesuai dengan ketentuan perundang-undangan;
+b. melaksanakan kegiatan usaha pertambangan sesuai dengan persetujuan Rencana Kerja dan Anggaran Biaya (RKAB);
+c. melakukan pengelolaan dan pemantauan lingkungan sesuai dengan ketentuan peraturan perundang-undangan;
+d. melaksanakan reklamasi dan/atau pascatambang serta menempatkan jaminan reklamasi dan/atau jaminan pascatambang sesuai dengan ketentuan peraturan perundang-undangan;
+e. melaksanakan program pengembangan dan pemberdayaan masyarakat sesuai dengan ketentuan peraturan perundang-undangan;
+f. mengutamakan pemanfaatan tenaga kerja setempat, barang, dan jasa dalam negeri sesuai dengan ketentuan peraturan perundang-undangan;
+g. melakukan penyelesaian hak atas tanah dengan pemegang hak atas tanah sesuai dengan ketentuan peraturan perundang-undangan;
+Izin Usaha Pertambangan No.
+(Komoditas Mineral Logam dan Batubara)
+h. melaksanakan kaidah pertambangan yang baik (good mining practice) sesuai dengan ketentuan peraturan perundang-undangan;
+
+## Lampiran hal. 218
+
+i. melaksanakan pemberian sebagian keuntungan untuk kepentingan perguruan tinggi sebesar paling sedikit 60% (enam puluh persen) dari keuntungan bersih pemegang IUP yang diberikan dengan mekanisme pemberian secara prioritas sejak berproduksi dan telah diaudit oleh akuntan publik;
+j. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+k. tidak melanggar larangan yang telah diatur berdasarkan ketentuan peraturan perundang-undangan.
+2. Standar Kegiatan Usaha Berupa Izin Usaha Pertambangan (Komoditas Mineral Bukan Logam, Mineral Bukan Logam Jenis Tertentu, dan Batuan) Izin Usaha Pertambangan No. (Komoditas Mineral Bukan Logam, Mineral Bukan Logam Jenis Tertentu, dan Batuan) KBLI:
+(08101) Penggalian Batu Hias dan Batu Bangunan
+(08102) Penggalian Batu Kapur/Gamping
+(08103) Penggalian Kerikil/Sirtu
+(08104) Penggalian Pasir
+(08105) Penggalian Tanah dan Tanah Liat
+(08106) Penggalian Gips
+(08107) Penggalian Tras
+(08108) Penggalian Batu Apung
+(08109) Penggalian Batu, Pasir dan Tanah Liat Lainnya
+(08911) Pertambangan Belerang
+(08912) Pertambangan Fosfat
+(08913) Pertambangan Nitrat
+(08914) Pertambangan Yodium
+(08915) Pertambangan Potash (Kalium Karbonat)
+(08919) Pertambangan Mineral, Bahan Kimia dan Bahan Pupuk Lainnya
+(08991) Pertambangan Batu Mulia
+(08992) Penggalian Feldspar dan Kalsit
+(08994) Penggalian Asbes
+(08995) Penggalian Kuarsa/Pasir Kuarsa
+(08999) Pertambangan dan Penggalian Lainnya YTDL
+
+## Lampiran hal. 218
+
+1. 1Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha pertambangan untuk komoditas Batu Hias dan Batu Izin Usaha Pertambangan No. (Komoditas Mineral Bukan Logam, Mineral Bukan Logam Jenis Tertentu, dan Batuan) Bangunan, Batu Kapur/Gamping, Kerikil/Sirtu, Pasir, Tanah dan Tanah Liat, Gips, Tras, Batu Apung, Batu, Pasir dan tanah liat lainnya, Belerang, Fosfat, Nitrat, Yodium, Potash (Kalium Karbonat), Mineral, Bahan Kimia dan Bahan Pupuk lainnya, Batu Mulia, Feldspar dan Kalsit, Asbes, Kuarsa/Pasir Kuarsa, dan Pertambangan dan Penggalian lainnya dalam bentuk Izin Usaha Pertambangan (IUP) yang Wilayah Izin Usaha Pertambangan (WIUP)-nya diberikan melalui mekanisme permohonan wilayah.
+Kegiatan Usaha Pertambangan Mineral Bukan Logam atau Batuan adalah sebagian atau seluruh tahapan kegiatan dalam rangka pengusahaan mineral bukan logam atau batuan yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+Pelaku usaha pertambangan Mineral bukan logam, Mineral bukan logam jenis tertentu, atau batuan dalam bentuk IUP tidak memiliki IUP Mineral logam atau IUP Batubara atau perizinan berusaha lain di bidang pertambangan mineral dan batubara, kecuali BUMN dapat memiliki IUP lain atau perizinan berusaha lain dibidang pertambangan mineral dan batubara sesuai dengan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 219
+
+2. Istilah dan a. Pertambangan adalah sebagian atau seluruh Definisi tahapan kegiatan dalam rangka pengelolaan dan pengusahaan Mineral atau batubara yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+b. Mineral adalah senyawa anorganik yang terbentuk di alam, yang memiliki sifat fisik dan kimia tertentu serta susunan kristal teratur atau gabungannya yang membentuk batuan, baik dalam bentuk lepas atau padu.
+c. Pertambangan Mineral adalah Pertambangan kumpulan Mineral yang berupa bijih atau batuan, di luar panas bumi, minyak dan gas bumi, serta air tanah.
+d. Usaha Pertambangan adalah kegiatan dalam rangka pengusahaan Mineral atau Batubara yang meliputi tahapan kegiatan penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau Izin Usaha Pertambangan No. (Komoditas Mineral Bukan Logam, Mineral Bukan Logam Jenis Tertentu, dan Batuan) pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta pascatambang.
+e. Eksplorasi adalah tahapan kegiatan Usaha Pertambangan untuk memperoleh informasi secara terperinci dan teliti tentang lokasi, bentuk, dimensi, sebaran, kualitas dan sumber daya terukur dari bahan galian, serta informasi mengenai lingkungan sosial dan lingkungan hidup.
+
+## Lampiran hal. 220
+
+f. Wilayah Izin Usaha Pertambangan, yang selanjutnya disebut WIUP, adalah wilayah yang diberikan kepada pemegang IUP dan SIPB.
+3. Penggolongan a. Penggolongan usaha ini meliputi:
+Usaha 1) pertambangan Mineral bukan logam atau batuan; dan 2) berada dalam WIUP Mineral bukan logam atau batuan.
+b. WIUP mineral bukan logam atau WIUP batuan diberikan berdasarkan permohonan Badan Usaha, Koperasi, atau perusahaan perseorangan sesuai dengan ketentuan peraturan perundang-undangan.
+c. Kewenangan pemberian WIUP mineral bukan logam atau WIUP batuan serta IUP dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.
+4. Ketentuan a. Persyaratan IUP Tahap Kegiatan Eksplorasi Persyaratan meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan bukti penempatan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi dimaknai sebagai bukti penempatan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi yang diterbitkan oleh bank pemerintah; dan 2) terkait dengan surat keterangan fiskal dimaknai sebagai surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 221
+
+Izin Usaha Pertambangan No. (Komoditas Mineral Bukan Logam, Mineral Bukan Logam Jenis Tertentu, dan Batuan)
+b. Persyaratan peningkatan tahap kegiatan Eksplorasi menjadi tahap kegiatan Operasi Produksi meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan surat keterangan fiskal dimaknai sebagai surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+c. Persyaratan perpanjangan IUP Tahap Kegiatan Operasi Produksi meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan surat keterangan fiskal dimaknai sebagai surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 221
+
+2) terkait dengan laporan pelaksanaan pengelolaan lingkungan dan Reklamasi dimaknai sebagai laporan akhir pelaksanaan pengelolaan lingkungan dan Reklamasi serta menyampaikan: a) salinan bukti penempatan jaminan reklamasi; b) salinan bukti penempatan jaminan pascatambang; dan c) dokumen lingkungan hidup dan persetujuan lingkungan yang diterbitkan oleh instansi yang berwenang sesuai dengan ketentuan peraturan perundang-undangan.
+d. Pelaksanaan penyesuaian dan persetujuan lainnya terkait IUP mengikuti ketentuan peraturan perundang-undangan di bidang pertambangan mineral dan batubara.
+Izin Usaha Pertambangan No. (Komoditas Mineral Bukan Logam, Mineral Bukan Logam Jenis Tertentu, dan Batuan) Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi dilakukan terhadap kesesuaian Verifikasi dokumen persyaratan;
+b. Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+c. Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+d. Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui; dan
+
+## Lampiran hal. 222
+
+e. Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+6. Ketentuan Kewajiban Pemegang IUP:
+Kewajiban a. melakukan kegiatan usaha pertambangan pada WIUP sesuai dengan ketentuan perundang-undangan;
+b. melaksanakan kegiatan usaha pertambangan sesuai dengan persetujuan Rencana Kerja dan Anggaran Biaya (RKAB);
+c. melakukan pengelolaan dan pemantauan lingkungan sesuai dengan ketentuan peraturan perundang-undangan;
+d. melaksanakan reklamasi dan/atau pascatambang serta menempatkan jaminan reklamasi dan/atau jaminan pascatambang sesuai dengan ketentuan peraturan perundang-undangan;
+e. melaksanakan program pengembangan dan pemberdayaan masyarakat sesuai dengan ketentuan peraturan perundang-undangan;
+f. mengutamakan pemanfaatan tenaga kerja setempat, barang, dan jasa dalam negeri sesuai dengan ketentuan peraturan perundang-undangan;
+g. melakukan penyelesaian hak atas tanah dengan pemegang hak atas tanah sesuai dengan ketentuan peraturan perundang-undangan;
+h. melaksanakan kaidah pertambangan yang baik (good mining practice) sesuai dengan ketentuan peraturan perundang-undangan;
+Izin Usaha Pertambangan No. (Komoditas Mineral Bukan Logam, Mineral Bukan Logam Jenis Tertentu, dan Batuan)
+i. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+j. tidak melanggar larangan yang telah diatur sesuai dengan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 223
+
+3. Standar Kegiatan Usaha Berupa Izin Usaha Pertambangan Khusus No. Izin Usaha Pertambangan Khusus KBLI:
+(05100) Pertambangan Batubara
+(07101) Pertambangan Pasir Besi
+(07102) Pertambangan Bijih Besi
+(07291) Pertambangan Bijih Timah
+(07292) Pertambangan Bijih Timah Hitam
+(07293) Pertambangan Bijih Bauksi
+(07294) Pertambangan Bijih Tembaga
+(07295) Pertambangan Bijih Nikel
+(07296) Pertambangan Bijih Mangan
+(07299) Pertambangan Bahan Galian Lainnya yang Tidak Mengandung Bijih Besi
+(07301) Pertambangan Emas dan Perak
+(07309) Pertambangan Bijih Logam Mulia Lainnya
+(08993) Pertambangan Aspal Alam
+(08999) Pertambangan dan Penggalian Lainnya YTDL (khusus komoditas mineral logam tanah jarang)
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha pertambangan untuk komoditas Mineral Logam dan Batubara antara lain Batubara, Pasir Besi, Bijih Besi, Bijih Timah, Bijih Timah Hitam, Bijih Bauksit, Bijih Tembaga, Bijih Nikel, Bijih Mangan, Bahan Galian lainnya yang tidak mengandung bijih besi, Emas dan Perak, Mineral logam tanah jarang, Bijih Logam Mulia Lainnya, dan Aspal Alam dalam bentuk Izin Usaha Pertambangan Khusus (IUPK) yang Wilayah Izin Usaha Pertambangan Khusus (WIUPK)- nya diberikan melalui mekanisme pemberian secara prioritas atau lelang.
+
+## Lampiran hal. 223
+
+Kegiatan Usaha Pertambangan Khusus Mineral Logam atau Batubara adalah sebagian atau seluruh tahapan kegiatan dalam rangka pengusahaan mineral logam atau batubara yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau No. Izin Usaha Pertambangan Khusus pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+Pelaku usaha pertambangan Mineral logam atau Batubara dalam bentuk IUPK tidak memiliki IUPK lain atau perizinan berusaha lain di bidang pertambangan mineral dan batubara, kecuali BUMN dapat memiliki IUPK lain atau perizinan berusaha lain dibidang pertambangan mineral dan batubara sesuai dengan ketentuan peraturan perundang-undangan.
+2. Istilah dan a. Pertambangan adalah sebagian atau seluruh Definisi tahapan kegiatan dalam rangka pengelolaan dan pengusahaan mineral atau batubara yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+b. Mineral adalah senyawa anorganik yang terbentuk di alam, yang memiliki sifat fisik dan kimia tertentu serta susunan kristal teratur atau gabungannya yang membentuk batuan, baik dalam bentuk lepas atau padu.
+c. Pertambangan Mineral adalah Pertambangan kumpulan Mineral yang berupa bijih atau batuan, di luar panas bumi, minyak dan gas bumi, serta air tanah.
+
+## Lampiran hal. 224
+
+d. Batubara adalah endapan senyawa organik karbonan yang terbentuk secara alamiah dari sisa tumbuh-tumbuhan.
+e. Pertambangan Batubara adalah Pertambangan endapan karbon yang terdapat di dalam bumi, termasuk bitumen padat, gambut, dan batuan aspal.
+f. Usaha Pertambangan adalah kegiatan dalam rangka pengusahaan Mineral atau Batubara yang meliputi tahapan kegiatan penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta pascatambang.
+g. Eksplorasi adalah tahapan kegiatan Usaha Pertambangan untuk memperoleh informasi secara terperinci dan teliti tentang lokasi, bentuk, dimensi, sebaran, kualitas dan sumber daya terukur dari bahan galian, serta informasi mengenai lingkungan sosial dan lingkungan hidup.
+h. Izin Usaha Pertambangan Khusus, yang selanjutnya disebut dengan IUPK, adalah izin No. Izin Usaha Pertambangan Khusus untuk melaksanakan Usaha Pertambangan di wilayah izin usaha pertambangan khusus.
+i. Wilayah Izin Usaha Pertambangan Khusus dalam Wilayah Usaha Pertambangan Khusus, yang selanjutnya disebut WIUPK, adalah wilayah yang diberikan kepada pemegang IUPK.
+3. Penggolongan a. Penggolongan usaha ini meliputi:
+Usaha 1) Pertambangan Mineral logam atau Batubara; dan 2) berada dalam WIUPK Mineral logam atau Batubara.
+b. WIUPK Mineral logam atau WIUPK Batubara dapat diberikan dengan:
+1) mekanisme pemberian secara prioritas; atau 2) mekanisme lelang.
+
+## Lampiran hal. 225
+
+c. Pemberian WIUPK secara prioritas dilakukan melalui penawaran kepada:
+1) BUMN;
+2) BUMD;
+3) Koperasi;
+4) Badan Usaha kecil dan menengah;
+5) BUMN, BUMD, dan Badan Usaha swasta dalam rangka peningkatan akses Pendidikan tinggi bagi masyarakat serta peningkatan kemandirian dan keunggulan perguruan tinggi; atau 6) Badan Usaha yang dimiliki Organisasi Kemasyarakatan keagamaan.
+d. Kriteria pemohon WIUPK Mineral logam atau WIUPK Batubara melalui mekanisme pemberian secara prioritas sesuai dengan ketentuan peraturan perundang-undangan.
+4. Ketentuan a. Persyaratan IUPK Tahap Kegiatan Eksplorasi Persyaratan meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan bukti penempatan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi dimaknai sebagai bukti penempatan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi yang diterbitkan oleh bank pemerintah; dan 2) terkait dengan surat keterangan fiskal dimaknai sebagai surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+No. Izin Usaha Pertambangan Khusus
+
+## Lampiran hal. 226
+
+b. Persyaratan IUPK Tahap Kegiatan Eksplorasi dalam rangka pemberian WIUP secara prioritas untuk Koperasi meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam ketentuan peraturan perundang-undangan di bidang pertambangan mineral dan batubara.
+c. Persyaratan perpanjangan IUPK Tahap Kegiatan Eksplorasi sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan kajian kendala berdasarkan kriteria teknis yang ditentukan dimaknai termasuk juga menyampaikan kendala sosial selama pelaksanaan kegiatan Eksplorasi serta menyampaikan: a) target waktu (timeline) penyelesaian perizinan lain yang diperlukan; b) bukti korespondensi penyelesaian permohonan perizinan lain atau perizinan lain yang telah didapatkan; dan c) bukti atau dokumentasi telah mempersiapkan mobilisasi sarana atau prasarana yang diperlukan, yang dituangkan dalam bentuk laporan kegiatan Eksplorasi yang telah dilakukan.
+2) terkait dengan rencana kegiatan dan anggaran biaya Eksplorasi jangka panjang yang dijabarkan dalam tiap semester selama jangka waktu permohonan perpanjangan dimaknai sebagai rencana kegiatan dan anggaran biaya di seluruh WIUP;
+
+## Lampiran hal. 226
+
+3) terkait dengan menempatkan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi pada bank pemerintah dimaknai sebagai bukti penempatan jaminan kesungguhan pelaksanaan kegiatan Eksplorasi yang diterbitkan oleh bank pemerintah;
+4) memenuhi persyaratan tambahan dan kriteria, yaitu: a) persyaratan tambahan, terdiri atas:
+(1) susunan pengurus, daftar pemegang saham dan/atau penyertaan modal, dan daftar pemilik manfaat sampai dengan penerima manfaat akhir;
+No. Izin Usaha Pertambangan Khusus
+(2) bukti pelunasan iuran tetap tahap kegiatan Eksplorasi tahun terakhir; dan
+(3) bukti penyampaian laporan triwulan terakhir pelaksanaan kegiatan eksplorasi. b) kriteria, terdiri atas:
+(1) dilakukan dalam rangka penyelesaian kewajiban penerimaan negara bukan pajak di bidang Mineral atau Batubara;
+(2) telah memiliki peralatan pelaksanaan Eksplorasi di lapangan; dan/atau
+(3) dilakukan dalam rangka pembangunan sarana dan prasarana penunjang kegiatan Usaha Pertambangan termasuk penyiapan infrastruktur pendukung kegiatan Eksplorasi.
+
+## Lampiran hal. 227
+
+d. Persyaratan peningkatan tahap kegiatan Eksplorasi menjadi tahap kegiatan Operasi Produksi meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan surat keterangan fiskal dimaknai sebagai surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+e. Persyaratan perpanjangan IUPK Tahap Kegiatan Operasi Produksi meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan surat keterangan fiskal dimaknai sebagai surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 227
+
+2) terkait dengan laporan pelaksanaan pengelolaan lingkungan dan Reklamasi dimaknai sebagai laporan akhir pelaksanaan No. Izin Usaha Pertambangan Khusus pengelolaan lingkungan dan Reklamasi serta menyampaikan: a) salinan bukti penempatan jaminan reklamasi; b) salinan bukti penempatan jaminan pascatambang; dan c) dokumen lingkungan hidup dan persetujuan lingkungan yang diterbitkan oleh instansi yang berwenang sesuai dengan ketentuan peraturan perundang-undangan.
+f. Pelaksanaan penyesuaian dan persetujuan lainnya terkait IUPK mengikuti ketentuan peraturan perundang-undangan di bidang pertambangan mineral dan batubara.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi dilakukan terhadap kesesuaian Verifikasi dokumen persyaratan;
+b. Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+c. Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+d. Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui; dan
+e. Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 228
+
+6. Ketentuan Kewajiban Pemegang IUPK:
+Kewajiban a. melakukan kegiatan usaha pertambangan pada WIUPK sesuai dengan ketentuan perundang-undangan;
+b. melaksanakan kegiatan usaha pertambangan sesuai dengan persetujuan Rencana Kerja dan Anggaran Biaya (RKAB);
+c. melakukan pengelolaan dan pemantauan lingkungan sesuai dengan ketentuan peraturan perundang-undangan;
+d. melaksanakan reklamasi dan/atau pascatambang serta menempatkan jaminan reklamasi dan/atau jaminan pascatambang No. Izin Usaha Pertambangan Khusus sesuai dengan ketentuan peraturan perundang-undangan;
+e. melaksanakan program pengembangan dan pemberdayaan masyarakat sesuai dengan ketentuan peraturan perundang-undangan;
+f. mengutamakan pemanfaatan tenaga kerja setempat, barang, dan jasa dalam negeri sesuai dengan ketentuan peraturan perundang-undangan;
+g. melakukan penyelesaian hak atas tanah dengan pemegang hak atas tanah sesuai dengan ketentuan peraturan perundang-undangan;
+h. melaksanakan kaidah pertambangan yang baik (good mining practice) sesuai dengan ketentuan peraturan perundang-undangan;
+i. melaksanakan pemberian sebagian keuntungan untuk kepentingan perguruan tinggi sebesar paling sedikit sebesar 60% (enam puluh persen) dari keuntungan bersih pemegang IUPK yang diberikan dengan mekanisme pemberian secara prioritas sejak berproduksi dan telah diaudit oleh akuntan publik;
+j. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+
+## Lampiran hal. 229
+
+k. tidak melanggar larangan yang telah diatur berdasarkan ketentuan peraturan perundang-undangan.
+4. Standar Kegiatan Usaha Berupa Surat Izin Penambangan Batuan No. Surat Izin Penambangan Batuan KBLI
+(08102) Penggalian Batu Kapur/Gamping
+(08103) Penggalian Kerikil/Sirtu
+(08104) Penggalian Pasir
+(08105) Penggalian Tanah dan Tanah Liat
+(08109) Penggalian Batu, Pasir dan Tanah Liat Lainnya
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha pertambangan untuk komoditas Batu Kapur/Gamping, Kerikil/Sirtu, Pasir, Tanah dan Tanah Liat, Batu, Pasir dan tanah liat lainnya, Kerikil Galian dari Bukit, Kerikil Sungai, Batu Kali, Kerikil Sungai Ayak Tanpa Pasir, Pasir Urug, Pasir Pasang, Tanah Urug, Pasir Laut, Tanah Merah (Laterit), Tanah Liat dan Pertambangan dan Penggalian lainnya dalam bentuk Surat Izin Penambangan Batuan (SIPB) yang Wilayah Izin No. Surat Izin Penambangan Batuan Usaha Pertambangan (WIUP)-nya diberikan melalui mekanisme permohonan wilayah.
+Kegiatan usaha untuk pemegang SIPB adalah sebagian atau seluruh tahapan kegiatan dalam rangka pengusahaan batuan jenis tertentu dan keperluan tertentu yang meliputi perencanaan, penambangan, pengolahan, serta pengangkutan dan penjualan.
+Pelaku usaha pertambangan batuan dalam bentuk SIPB tidak memiliki SIPB lain atau perizinan berusaha lain di bidang pertambangan mineral dan batubara.
+
+## Lampiran hal. 230
+
+2. Istilah dan a. Pertambangan adalah sebagian atau seluruh Definisi tahapan kegiatan dalam rangka pengelolaan dan pengusahaan mineral atau batubara yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+b. Mineral adalah senyawa anorganik yang terbentuk di alam, yang memiliki sifat fisik dan kimia tertentu serta susunan kristal teratur atau gabungannya yang membentuk batuan, baik dalam bentuk lepas atau padu.
+c. Pertambangan Mineral adalah Pertambangan kumpulan Mineral yang berupa bijih atau batuan, di luar panas bumi, minyak dan gas bumi, serta air tanah.
+d. Usaha Pertambangan adalah kegiatan dalam rangka pengusahaan Mineral atau Batubara yang meliputi tahapan kegiatan penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta pascatambang.
+e. Surat lzin Penambangan Batuan yang selanjutnya disebut SIPB adalah izin yang diberikan untuk melaksanakan kegiatan Usaha Pertambangan batuan jenis tertentu atau untuk keperluan tertentu.
+f. Wilayah Izin Usaha Pertambangan yang selanjutnya disebut WIUP, adalah wilayah yang diberikan kepada pemegang IUP atau pemegang SIPB.
+g. Batuan jenis tertentu adalah batuan yang digunakan untuk kebutuhan konstruksi.
+
+## Lampiran hal. 230
+
+h. Batuan untuk keperluan tertentu adalah batuan untuk keperluan mendukung proyek pembangunan yang dibiayai oleh Pemerintah Pusat dan/atau Pemerintah Daerah.
+No. Surat Izin Penambangan Batuan
+3. Penggolongan a. Penggolongan usaha ini meliputi:
+Usaha 1) pertambangan batuan untuk batuan jenis tertentu atau untuk keperluan tertentu; dan 2) berada dalam WIUP batuan.
+b. SIPB diberikan berdasarkan pengajuan dari BUMD/Badan Usaha milik desa, Badan Usaha swasta dalam rangka penanaman modal dalam negeri, Koperasi, atau Perusahaan perseorangan.
+c. Kewenangan pemberian SIPB dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.
+d. Wilayah yang dimohon tidak berada pada Wilayah yang telah diterbitkan Izin Usaha Pertambangan.
+4. Ketentuan a. Persyaratan SIPB meliputi persyaratan Persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko.
+b. Persyaratan Perpanjangan SIPB:
+1) pengajuan permohonan secara elektronik;
+2) salinan riwayat SIPB;
+3) Nomor Induk Berusaha dengan cakupan kegiatan usaha di bidang Usaha Pertambangan Mineral logam atau Batubara;
+4) susunan pengurus, daftar pemegang saham dan/atau penyertaan modal, dan daftar pemilik manfaat sampai dengan penerima manfaat akhir.
+
+## Lampiran hal. 231
+
+5) salinan kontrak/perjanjian pelaksanaan proyek pembangunan yang dibiayai oleh Pemerintah Pusat atau Pemerintah Daerah bagi permohonan SIPB untuk keperluan tertentu;
+6) laporan pelaksanaan kegiatan SIPB;
+7) koordinat dan luas wilayah yang dimohonkan; dan 8) bukti pelunasan pajak daerah 1 (satu) tahun terakhir.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+No. Surat Izin Penambangan Batuan
+5. Ketentuan a. Ketentuan Verifikasi Verifikasi 1) Verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+3) Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+4) Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui;
+5) Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Ketentuan Pengembalian 1) pengajuan permohonan secara elektronik;
+2) laporan pelaksanaan kegiatan SIPB;
+3) peta wilayah pengembalian beserta koordinatnya;
+
+## Lampiran hal. 232
+
+4) bukti pelunasan pembayaran kewajiban keuangan; dan 5) laporan pengelolaan lingkungan hidup, termasuk reklamasi dan pascatambang.
+6. Ketentuan Kewajiban Pemegang SIPB:
+Kewajiban a. menyusun dan menyampaikan dokumen perencanaan penambangan;
+b. melaksanakan kegiatan usaha penambangan dan produksi sesuai dokumen perencanaan Penambangan yang telah disetujui;
+c. dalam melaksanakan kegiatan Usaha Pertambangan harus sesuai dengan Standar Khusus, Standar Nasional Indonesia, Standar Kompetensi Kerja Nasional yang telah ditetapkan sebagai standar wajib di sektor pertambangan;
+d. tidak melakukan kegiatan penambangan di luar koordinat dan peta SIPB;
+e. melaksanakan pemenuhan kewajiban keuangan dan/atau pajak daerah sesuai dengan ketentuan peraturan perundang-undangan;
+f. menyelesaikan hak atas tanah dengan pemegang hak atas tanah sebelum melaksanakan kegiatan penambangan;
+g. melaksanakan kaidah pertambangan yang baik (good mining practice) sesuai dengan ketentuan peraturan perundang-undangan;
+h. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+i. tidak melanggar larangan yang telah diatur sesuai dengan ketentuan peraturan perundang-undangan.
+5. Standar Kegiatan Usaha Berupa Izin Pertambangan Rakyat No. Izin Pertambangan Rakyat KBLI:
+(07101) Pertambangan Pasir Besi
+(07102) Pertambangan Bijih Besi
+(07291) Pertambangan Bijih Timah
+(07292) Pertambangan Bijih Timah Hitam
+(07293) Pertambangan Bijih Bauksit
+(07294) Pertambangan Bijih Tembaga
+
+## Lampiran hal. 233
+
+(07295) Pertambangan Bijih Nikel
+(07296) Pertambangan Bijih Mangan
+(07299) Pertambangan Bahan Galian Lainnya yang Tidak Mengandung Bijih Besi
+(07301) Pertambangan Emas dan Perak
+(07309) Pertambangan Bijih Logam Mulia Lainnya
+(08101) Penggalian Batu Hias dan Batu Bangunan
+(08102) Penggalian Batu Kapur/Gamping
+(08103) Penggalian Kerikil/Sirtu
+(08104) Penggalian Pasir
+(08105) Penggalian Tanah dan Tanah Liat
+(08106) Penggalian Gips
+(08107) Penggalian Tras
+(08108) Penggalian Batu Apung
+(08109) Penggalian Batu, Pasir dan Tanah Liat Lainnya
+(08911) Pertambangan Belerang
+(08912) Pertambangan Fosfat
+(08913) Pertambangan Nitrat
+(08914) Pertambangan Yodium
+(08915) Pertambangan Potash (Kalium Karbonat)
+(08919) Pertambangan Mineral, Bahan Kimia dan Bahan Pupuk Lainnya
+(08991) Pertambangan Batu Mulia
+(08992) Penggalian Feldspar dan Kalsit
+(08994) Penggalian Asbes
+(08995) Penggalian Kuarsa/Pasir Kuarsa
+(08999) Pertambangan dan Penggalian Lainnya YTDL
+
+## Lampiran hal. 233
+
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha pertambangan mineral logam, mineral bukan logam dan batuan untuk komoditas antara lain Pasir Besi, Bijih Besi, Bijih Timah, Bijih Timah Hitam, Bijih Bauksit, Bijih Tembaga, Bijih Nikel, Bijih Mangan, Bahan Galian lainnya yang tidak mengandung bijih besi, Emas dan Perak, Bijih Logam Mulia Lainnya, Batu Hias dan Batu Bangunan, Batu Kapur/Gamping, Kerikil/Sirtu, Pasir, Tanah dan Tanah Liat, Gips, Tras, Batu Apung, Batu, Pasir dan tanah liat lainya, Belerang, Fosfat, Nitrat, Yodium, Potash (Kalium Karbonat), Mineral, Bahan Kimia dan Bahan Pupuk lainnya, Batu Mulia, Feldspar dan Kalsit, Asbes, Kuarsa/Pasir Kuarsa, dan No. Izin Pertambangan Rakyat Pertambangan dan Penggalian lainnya dalam bentuk Izin Pertambangan Rakyat (IPR).
+Kegiatan Usaha Pertambangan Rakyat adalah sebagian atau seluruh tahapan kegiatan dalam rangka Pengusahaan mineral yang meliputi penyusunan dokumen rencana penambangan, penambangan, pengolahan dan/atau pemurnian, pengangkutan dan penjualan, serta kegiatan pengelolaan lingkungan hidup.
+Pelaku usaha pertambangan Mineral logam, Mineral bukan logam, Mineral bukan logam jenis tertentu, atau batuan dalam bentuk IPR tidak memiliki IPR lain atau perizinan berusaha lain di bidang pertambangan mineral dan batubara.
+
+## Lampiran hal. 234
+
+2. Istilah dan a. Pertambangan adalah adalah sebagian atau Definisi seluruh tahapan kegiatan dalam rangka pengelolaan dan pengusahaan mineral atau batubara yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+b. Mineral adalah senyawa anorganik yang terbentuk di alam, yang memiliki sifat fisik dan kimia tertentu serta susunan kristal teratur atau gabungannya yang membentuk batuan, baik dalam bentuk lepas atau padu.
+c. Pertambangan Mineral adalah Pertambangan kumpulan Mineral yang berupa bijih atau batuan, di luar panas bumi, minyak dan gas bumi, serta air tanah.
+d. Usaha Pertambangan adalah kegiatan dalam rangka pengusahaan Mineral atau Batubara yang meliputi tahapan kegiatan penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta pascatambang.
+e. Izin Pertambangan Rakyat yang selanjutnya disebut IPR, adalah izin untuk melaksanakan Usaha Pertambangan dalam wilayah pertambangan rakyat dengan luas wilayah dan investasi terbatas.
+f. Wilayah Pertambangan Rakyat, yang selanjutnya disebut WPR, adalah bagian dari Wilayah Pertambangan tempat dilakukan kegiatan Usaha Pertambangan rakyat.
+No. Izin Pertambangan Rakyat
+3. Penggolongan a. Penggolongan usaha ini meliputi:
+
+## Lampiran hal. 235
+
+Usaha 1) Pertambangan Mineral logam, Mineral bukan logam, atau batuan;
+2) berada dalam WPR; dan 3) luas IPR untuk orang perseorangan paling luas 5 (lima) hektar dan untuk koperasi paling luas 10 (sepuluh) hektar.
+b. Izin Pertambangan Rakyat dilakukan dengan ketentuan:
+1) dilakukan pada suatu blok WPR yang telah ditetapkan dokumen pengelolaan WPR;
+2) telah disusun rencana reklamasi dan rencana pascatambang.
+c. Kewenangan pemberian IPR dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.
+4. Ketentuan a. Persyaratan IPR sesuai dengan persyaratan Persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terdapat persyaratan tambahan yaitu:
+1) salinan dokumen lingkungan hidup sesuai dengan ketentuan: a) apabila dapat menyelesaikan penyusunan dokumen lingkungan hidup yang diterbitkan oleh Pemerintah Daerah Provinsi secara sendiri; atau b) apabila tidak dapat menyelesaikan penyusunan dokumen lingkungan hidup secara sendiri, dapat memperoleh pendampingan penyusunan yang pendanaannya berasal dari Pemerintah Daerah Provinsi apabila tersedia.
+2) konfirmasi kesesuaian ruang dari instansi pemerintah yang menyelenggarakan urusan pemerintahan di bidang pertanahan dan ruang.
+b. Persyaratan perpanjangan IPR sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+
+## Lampiran hal. 235
+
+1) terkait dengan bukti pelunasan iuran pertambangan rakyat 3 (tiga) tahun terakhir dimaknai juga bukti pelunasan iuran pertambangan rakyat selama jangka waktu IPR apabila jangka waktu IPR kurang dari 3 (tiga) tahun;
+2) terkait dengan laporan kegiatan (kegiatan tambang, pengelolaan lingkungan) dimaknai No. Izin Pertambangan Rakyat sebagai laporan pengelolaan dan pemantauan lingkungan serta laporan pelaksanaan operasi produksi; dan 3) salinan Kartu Tanda Penduduk (KTP).
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Ketentuan Verifikasi Verifikasi 1) Verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+3) Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+4) Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui; dan 5) Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Ketentuan Pengembalian 1) pengajuan permohonan secara elektronik disertai alasan pengembalian izin;
+2) laporan pelaksanaan kegiatan IPR;
+
+## Lampiran hal. 236
+
+3) peta wilayah pengembalian beserta koordinatnya;
+4) bukti pelunasan pembayaran kewajiban keuangan; dan 5) laporan pengelolaan lingkungan hidup, termasuk reklamasi dan pascatambang.
+6. Ketentuan Kewajiban Pemegang IPR:
+Kewajiban a. menyusun rencana penambangan berdasarkan dokumen pengelolaan WPR yang telah ditetapkan;
+b. melakukan kegiatan penambangan setelah menyampaikan dokumen rencana penambangan kepada Pemerintah Daerah Provinsi;
+c. melakukan kegiatan penambangan paling lambat 3 (tiga) bulan setelah IPR diterbitkan;
+d. menyelesaikan hak atas tanah dengan pemegang hak atas tanah sebelum melakukan No. Izin Pertambangan Rakyat kegiatan penambangan sesuai dengan ketentuan peraturan perundang-undangan;
+e. mematuhi peraturan perundang-undangan di bidang keselamatan pertambangan, pengelolaan lingkungan hidup, dan memenuhi standar baku mutu lingkungan;
+f. menyampaikan laporan pelaksanaan kegiatan pertambangan rakyat dengan menerapkan kaidah pertambangan yang baik;
+g. melaksanakan pascatambang sesuai dengan ketentuan peraturan perundang-undangan;
+h. membayar iuran pertambangan rakyat sesuai dengan ketentuan peraturan perundang-undangan;
+i. melakukan pengelolaan dan pemantauan lingkungan sesuai dengan ketentuan peraturan perundang-undangan;
+j. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+k. tidak melanggar larangan yang telah diatur sesuai dengan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 237
+
+6. Standar Kegiatan Usaha Berupa Izin Pengangkutan dan Penjualan No. Izin Pengangkutan dan Penjualan KBLI:
+(46610) Perdagangan Besar Batubara
+(46620) Perdagangan Besar Logam dan Bijih Logam
+(46641) Perdagangan Besar Mineral Bukan Logam
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan kegiatan usaha dalam bentuk Izin Pengangkutan dan Penjualan komoditas tambang Mineral dan Batubara antara lain Perdagangan Besar Batubara, Perdagangan Besar Logam dan Bijih Logam, dan Perdagangan Besar Mineral Bukan Logam.
+Kegiatan Pengangkutan dan Penjualan Mineral dan Batubara meliputi kegiatan membeli, mengangkut, dan menjual komoditas tambang Mineral atau Batubara dan tidak termasuk kegiatan pertambangan dan usaha jasa.
+Pelaku usaha pengangkutan dan penjualan Mineral logam, Mineral bukan logam, Mineral bukan logam jenis tertentu, atau Batubara dalam bentuk Izin Pengangkutan dan Penjualan tidak memiliki Izin Pengangkutan dan Penjualan lain atau perizinan No. Izin Pengangkutan dan Penjualan berusaha lain di bidang pertambangan mineral dan batubara.
+2. Istilah dan a. Mineral adalah senyawa anorganik yang Definisi terbentuk di alam, yang memiliki sifat fisik dan kimia tertentu serta susunan kristal teratur atau gabungannya yang membentuk batuan, baik dalam bentuk lepas atau padu
+b. Batubara adalah endapan senyawa organik karbonan yang terbentuk secara alamiah dari sisa tumbuh-tumbuhan.
+
+## Lampiran hal. 238
+
+c. lzin Pengangkutan dan Penjualan adalah izin usaha yang diberikan kepada perusahaan untuk membeli, mengangkut, dan menjual komoditas tambang Mineral atau Batubara.
+3. Penggolongan a. Penggolongan usaha ini meliputi perdagangan Usaha (membeli, mengangkut, dan menjual) untuk komoditas pertambangan:
+1) Mineral logam;
+2) Mineral bukan logam;
+3) Mineral bukan logam jenis tertentu; dan 4) Batubara.
+b. Kewenangan pemberian Izin Pengangkutan dan Penjualan dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.
+4. Ketentuan a. Persyaratan Izin Pengangkutan dan Penjualan Persyaratan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan salinan nota kesepahaman atau perjanjian kerja sama pengangkutan dan penjualan yang masih berlaku dimaknai juga dengan pemegang Izin Pertambangan Rakyat (IPR) dan/atau Kontrak Karya (KK)/Perjanjian Karya Pengusahaan Pertambangan Batubara (PKP2B).
+b. Persyaratan perpanjangan Izin Pengangkutan dan Penjualan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko dengan mengajukan permohonan secara elektronik, dengan ketentuan:
+1) terkait dengan dokumen yang memuat informasi daftar pemilik manfaat dimaknai sebagai pemilik manfaat sampai dengan penerima manfaat akhir;
+
+## Lampiran hal. 238
+
+2) terkait dengan salinan nota kesepahaman atau perjanjian kerja sama pengangkutan No. Izin Pengangkutan dan Penjualan dan penjualan yang masih berlaku dimaknai juga dengan pemegang Izin Pertambangan Rakyat (IPR) dan/atau Kontrak Karya (KK);
+3) memenuhi persyaratan tambahan berupa surat keterangan fiskal yang meliputi surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Ketentuan Verifikasi Verifikasi 1) Verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+3) Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+4) Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui; dan 5) Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Ketentuan Pengembalian 1) pengajuan permohonan secara elektronik disertai alasan pengembalian izin; dan 2) salinan bukti penyampaian laporan triwulan dan tahunan.
+
+## Lampiran hal. 239
+
+6. Ketentuan Kewajiban Pemegang Izin Pengangkutan dan Kewajiban Penjualan:
+a. melaksanakan kegiatan pengangkutan dan penjualan sesuai dengan ketentuan peraturan perundang-undangan;
+b. menyampaikan laporan kegiatan pengangkutan dan penjualan sesuai dengan ketentuan peraturan perundang-undangan;
+c. mematuhi ketentuan peraturan perundang-undangan di bidang lalu lintas dan angkutan jalan apabila menggunakan fasilitas umum;
+d. melakukan kegiatan pengangkutan dan penjualan komoditas mineral atau Batubara yang berasal dari IUP, IUPK, IUPK sebagai No. Izin Pengangkutan dan Penjualan Kelanjutan Operasi Kontrak/Perjanjian, IPR, KK, PKP2B atau Izin Pengangkutan dan Penjualan lainnya;
+e. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+f. tidak melanggar larangan yang telah diatur sesuai dengan ketentuan peraturan perundang-undangan.
+7. Standar Kegiatan Usaha Berupa Izin Usaha Pertambangan Khusus Sebagai Kelanjutan Operasi Kontrak/Perjanjian Izin Usaha Pertambangan Khusus Sebagai Kelanjutan Operasi No.
+Kontrak/Perjanjian KBLI:
+(05100) Pertambangan Batubara
+(07101) Pertambangan Pasir Besi
+(07102) Pertambangan Bijih Besi
+(07292) Pertambangan Bijih Timah Hitam
+(07294) Pertambangan Bijih Tembaga
+(07295) Pertambangan Bijih Nikel
+(07299) Pertambangan Bahan Galian Lainnya yang Tidak Mengandung Bijih Besi
+(07301) Pertambangan Emas dan Perak
+(07309) Pertambangan Bijih Logam Mulia Lainnya
+(08991) Pertambangan Batu Mulia
+
+## Lampiran hal. 240
+
+(08999) Pertambangan dan Penggalian Lainnya YTDL
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha pertambangan untuk komoditas antara lain Batubara, Pasir Besi, Bijih Besi, Bijih Tembaga, Bijih Nikel, Bahan Galian lainnya yang tidak mengandung bijih besi, Emas dan Perak, Bijih Logam Mulia, dan Aspal Alam dalam bentuk Izin Usaha Pertambangan Khusus (IUPK) sebagai Kelanjutan Operasi Kontrak/Perjanjian dari perpanjangan Perjanjian Karya Pengusahaan Pertambangan Batubara (PKP2B) dan Kontrak Karya (KK).
+Kegiatan Usaha Pertambangan Khusus sebagai Kelanjutan Operasi Kontrak/Perjanjian adalah sebagian atau seluruh tahapan kegiatan dalam rangka pengusahaan mineral logam atau batubara yang meliputi eksplorasi lanjutan, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+Izin Usaha Pertambangan Khusus Sebagai Kelanjutan Operasi No.
+Kontrak/Perjanjian Pelaku usaha pertambangan Mineral logam atau Batubara dalam bentuk Izin Usaha Pertambangan Khusus sebagai Kelanjutan Operasi Kontrak/Perjanjian tidak memiliki Izin Usaha Pertambangan Khusus sebagai Kelanjutan Operasi Kontrak/Perjanjian lain atau perizinan berusaha lain di bidang pertambangan mineral dan batubara.
+
+## Lampiran hal. 241
+
+2. Istilah dan a. Pertambangan adalah adalah sebagian atau Definisi seluruh tahapan kegiatan dalam rangka pengelolaan dan pengusahaan mineral atau batubara yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+b. Mineral adalah senyawa anorganik yang terbentuk di alam, yang memiliki sifat fisik dan kimia tertentu serta susunan kristal teratur atau gabungannya yang membentuk batuan, baik dalam bentuk lepas atau padu.
+c. Pertambangan Mineral adalah Pertambangan kumpulan Mineral yang berupa bijih atau batuan, di luar panas bumi, minyak dan gas bumi, serta air tanah.
+d. Batubara adalah endapan senyawa organik karbonan yang terbentuk secara alamiah dari sisa tumbuh-tumbuhan.
+e. Pertambangan Batubara adalah Pertambangan endapan karbon yang terdapat di dalam bumi, termasuk bitumen padat, gambut, dan batuan aspal.
+f. Usaha Pertambangan adalah kegiatan dalam rangka pengusahaan Mineral atau Batubara yang meliputi tahapan kegiatan penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta pascatambang.
+g. Izin Usaha Pertambangan Khusus, yang selanjutnya disebut dengan IUPK, adalah izin untuk melaksanakan Usaha Pertambangan di wilayah izin usaha pertambangan khusus.
+
+## Lampiran hal. 241
+
+h. Izin Usaha Pertambangan Khusus sebagai Kelanjutan Operasi Kontrak/Perjanjian, yang selanjutnya disebut dengan IUPK sebagai Kelanjutan Operasi Kontrak/Perjanjian, adalah izin usaha yang diberikan sebagai perpanjangan setelah selesainya pelaksanaan Kontrak Karya Izin Usaha Pertambangan Khusus Sebagai Kelanjutan Operasi No.
+Kontrak/Perjanjian atau Perjanjian Karya Pengusahaan Pertambangan Batubara.
+i. Wilayah Izin Usaha Pertambangan Khusus dalam Wilayah Usaha Pertambangan Khusus, yang selanjutnya disebut WIUPK, adalah wilayah yang diberikan kepada pemegang IUPK.
+j. Kontrak Karya yang selanjutnya disebut KK adalah perjanjian antara pemerintah dengan perusahaan berbadan hukum Indonesia untuk melakukan kegiatan Usaha Pertambangan Mineral.
+k. Perjanjian Karya Pengusahaan Pertambangan Batubara yang selanjutnya disebut PKP2B adalah perjanjian antara pemerintah dengan perusahaan berbadan hukum Indonesia untuk melakukan kegiatan Usaha Pertambangan Batubara.
+3. Penggolongan Penggolongan usaha ini meliputi:
+Usaha a. Pertambangan Mineral logam, Mineral bukan logam, atau Batubara; dan
+b. kelanjutan operasi KK atau PKP2B.
+
+## Lampiran hal. 242
+
+4. Ketentuan a. Persyaratan IUPK sebagai Kelanjutan Operasi Persyaratan Kontrak/Perjanjian meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan memenuhi persyaratan tambahan berupa:
+1) rencana pengembangan dan/atau pemanfaatan Batubara yang telah disetujui khusus bagi pemohon pemegang PKP2B; dan 2) hasil audit lingkungan oleh pihak lain yang tersertifikasi sesuai dengan ketentuan peraturan perundang-undangan.
+b. Persyaratan perpanjangan IUPK sebagai Kelanjutan Operasi Kontrak/Perjanjian meliputi persyaratan administratif, persyaratan teknis, persyaratan lingkungan, dan persyaratan finansial sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan laporan pelaksanaan pengelolaan lingkungan dimaknai sebagai laporan akhir pelaksanaan pengelolaan Izin Usaha Pertambangan Khusus Sebagai Kelanjutan Operasi No.
+Kontrak/Perjanjian lingkungan termasuk juga laporan pelaksanaan reklamasi;
+
+## Lampiran hal. 243
+
+2) memenuhi persyaratan tambahan berupa: a) susunan pengurus, daftar pemegang saham, dan daftar pemilik manfaat sampai dengan penerima manfaat akhir; b) rencana kerja selama masa perpanjangan; c) salinan bukti penempatan jaminan reklamasi; d) salinan bukti penempatan jaminan pascatambang; e) dokumen lingkungan hidup dan persetujuan lingkungan yang diterbitkan oleh instansi yang berwenang sesuai dengan ketentuan perundang-undangan; dan f) surat keterangan fiskal badan usaha, pengurus, dan/atau pemegang saham sesuai dengan ketentuan peraturan perundang-undangan.
+c. Pelaksanaan penyesuaian dan persetujuan lainnya terkait IUP mengikuti ketentuan peraturan perundang-undangan di bidang pertambangan mineral dan batubara.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi dilakukan terhadap kesesuaian Verifikasi dokumen persyaratan;
+b. Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+c. Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+d. Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui; dan
+
+## Lampiran hal. 243
+
+e. Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+Izin Usaha Pertambangan Khusus Sebagai Kelanjutan Operasi No.
+Kontrak/Perjanjian
+6. Ketentuan Kewajiban pemegang IUPK sebagai Kelanjutan Kewajiban Operasi Kontrak/Perjanjian:
+a. melakukan kegiatan usaha pertambangan pada WIUPK sesuai dengan ketentuan perundang-undangan;
+b. melaksanakan kegiatan usaha pertambangan sesuai dengan persetujuan Rencana Kerja dan Anggaran Biaya (RKAB);
+c. melakukan pengelolaan dan pemantauan lingkungan sesuai dengan ketentuan peraturan perundang-undangan;
+d. melaksanakan reklamasi dan/atau pasca tambang serta menempatkan jaminan reklamasi dan/atau jaminan pascatambang sesuai dengan ketentuan peraturan perundang-undangan;
+e. melaksanakan program pengembangan dan pemberdayaan masyarakat sesuai dengan ketentuan peraturan perundang-undangan;
+f. mengutamakan pemanfaatan tenaga kerja setempat, barang, dan jasa dalam negeri sesuai dengan ketentuan peraturan perundang-undangan;
+g. melakukan penyelesaian hak atas tanah dengan pemegang hak atas tanah sesuai dengan ketentuan peraturan perundang-undangan;
+h. melaksanakan kaidah pertambangan yang baik (good mining practice) sesuai dengan ketentuan peraturan perundang-undangan;
+i. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+j. tidak melanggar larangan yang telah diatur berdasarkan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 244
+
+8. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Pertambangan No. Izin Usaha Jasa Pertambangan KBLI:
+(09900) Aktivitas Penunjang Pertambangan dan Penggalian Lainnya
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha jasa pertambangan.
+Kelompok kegiatan ini mencakup jasa penunjang atas dasar balas jasa atau kontrak, yang dibutuhkan dalam kegiatan pertambangan golongan pokok KBLI 05, 07, dan 08, seperti jasa eksplorasi No. Izin Usaha Jasa Pertambangan misalnya dengan cara tradisional seperti mengambil contoh bijih dan membuat observasi geologi, jasa pemompaan dan penyaluran hasil tambang dan jasa percobaan penggalian dan pengeboran ladang atau sumur tambang.
+Pelaku usaha yang melakukan kegiatan usaha jasa pertambangan tidak memiliki perizinan berusaha lain dibidang pertambangan Mineral dan Batubara.
+2. Istilah dan a. Usaha Jasa Pertambangan Inti adalah usaha Definisi jasa yang kegiatannya berkaitan dengan tahapan dan/atau bagian kegiatan usaha pertambangan.
+b. lzin Usaha Jasa Pertambangan, yang selanjutnya disebut IUJP, adalah izin yang diberikan untuk melakukan kegiatan Usaha Jasa Pertambangan Inti yang berkaitan dengan tahapan dan/atau bagian kegiatan usaha pertambangan.
+
+## Lampiran hal. 245
+
+c. Penanggung Jawab Operasional yang selanjutnya disebut PJO adalah orang yang menduduki jabatan tertinggi dalam struktur organisasi perusahaan jasa pertambangan di wilayah kegiatan usaha pertambangan, dan bertanggung jawab kepada Kepala Teknik Tambang atas dilaksanakan dan ditaatinya peraturan perundang-undangan mengenai kaidah teknik pertambangan yang baik.
+1)
+3. Penggolongan IUJP untuk jenis kegiatan pelaksanaan yang Usaha meliputi bidang:
+a. penyelidikan umum, meliputi subbidang:
+1) survei tinjau (reconnaissance);
+2) remote sensing; dan 3) prospeksi,
+b. eksplorasi, meliputi subbidang:
+1) penentuan posisi;
+2) pemetaan topografi;
+3) pemetaan geologi;
+4) geokimia;
+5) geofisika;
+6) geoteknik, hidrologi, dan hidrogeologi;
+7) pembukaan lahan;
+8) pengeboran eksplorasi;
+9) percontoan eksplorasi;
+10) estimasi sumber daya; dan 11) estimasi cadangan,
+c. studi kelayakan, meliputi subbidang penyusunan Studi Kelayakan,
+d. konstruksi pertambangan, meliputi subbidang:
+1) penerowongan (tunneling);
+2) penyemenan tambang bawah tanah;
+3) penyanggaan tambang bawah tanah;
+No. Izin Usaha Jasa Pertambangan 4) shaft sinking;
+5) sistem penerangan tambang bawah tanah;
+6) fasilitas instalasi listrik tambang bawah tanah;
+7) alat berat tambang bawah tanah;
+8) pengeboran dalam rangka peledakan;
+9) peledakan;
+10) fasilitas perbengkelan;
+11) komisioning tambang;
+12) ventilasi tambang;
+13) fasilitas pengolahan;
+14) fasilitas pemurnian;
+15) fasilitas stockpile;
+16) fasilitas pembibitan;
+
+## Lampiran hal. 246
+
+17) pekerjaan sipil sesuai peruntukan lahan pascatambang atau program reklamasi bentuk lain;
+18) jalan pertambangan;
+19) jembatan;
+20) pelabuhan;
+21) gudang bahan peledak;
+22) fasilitas penimbunan bahan bakar cair;
+23) sistem penyaliran;
+24) tempat penyimpanan sementara limbah bahan berbahaya dan beracun (B3);
+25) kolam pengendap;
+26) Tailing Storage Facility (TSF);
+27) timbunan tailing untuk material padat; dan 28) geoteknik,
+e. pengangkutan, meliputi subbidang:
+1) menggunakan truk;
+2) menggunakan lori; dan 3) menggunakan ban berjalan (belt conveyor).
+f. lingkungan pertambangan, meliputi subbidang:
+1) pemantauan lingkungan;
+2) survei Rencana Pengelolaan Lingkungan Hidup/Rencana Pemantauan Lingkungan Hidup (RKL/RPL);
+3) pengelolaan air asam tambang;
+4) audit lingkungan pertambangan; dan 5) pengendalian erosi,
+g. reklamasi dan pascatambang, meliputi subbidang:
+1) penyiapan dan penataan lahan;
+2) penebaran tanah pucuk (topsoil);
+3) pembongkaran fasilitas;
+4) pembibitan;
+5) penanaman;
+6) perawatan; dan 7) reklamasi bentuk lain,
+h. keselamatan pertambangan, meliputi subbidang:
+1) pemeriksaan dan pengujian teknik; dan No. Izin Usaha Jasa Pertambangan 2) audit keselamatan dan kesehatan kerja pertambangan,
+i. penambangan, meliputi subbidang:
+1) pembukaan lahan;
+2) pemberaian/pembongkaran tanah/batuan penutup dengan didahului peledakan;
+3) pemberaian/pembongkaran tanah/batuan penutup tanpa didahului peledakan;
+4) pengupasan, pemuatan dan pemindahan tanah/batuan penutup;
+
+## Lampiran hal. 247
+
+5) penggalian mineral (mineral getting);
+6) penggalian batubara (coal getting);
+7) pengeboran dalam rangka peledakan;
+8) peledakan; dan 9) pengelolaan geoteknik.
+j. pengolahan mineral, meliputi subbidang:
+1) kominusi;
+2) separasi;
+3) konsentrasi;
+4) pencucian dengan air (washing); dan 5) pengurangan kadar air (dewatering).
+Kewenangan pemberian IUJP dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.
+4. Ketentuan a. Persyaratan IUJP meliputi persyaratan Persyaratan administratif dan persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko.
+b. Persyaratan perpanjangan IUJP dan/atau perubahan IUJP dalam rangka perubahan bidang dan/atau subbidang sesuai dengan persyaratan permohonan IUJP baru dan terdapat persyaratan tambahan sesuai dengan persyaratan tambahan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan bukti penyampaian bukti laporan kegiatan triwulanan kepada kepala teknik tambang atau instansi pemberi izin dimaknai:
+1) bukti laporan kegiatan triwulanan selama 1 (satu) tahun terakhir; atau 2) dalam hal umur kontrak kerja belum mencapai 1 (satu) tahun maka bukti penyampaian laporan kegiatan sesuai dimulainya periode kontrak kerja.
+
+## Lampiran hal. 247
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), No. Izin Usaha Jasa Pertambangan dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Ketentuan Verifikasi Verifikasi 1) Verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+3) Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+4) Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui; dan 5) Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Ketentuan Pengembalian 1) surat permohonan/pengajuan pengembalian secara elektronik dengan disertai alasan pengembalian IUJP;
+2) salinan dokumen IUJP yang dikembalikan; dan 3) salinan bukti penyampaian laporan triwulan terakhir.
+6. Ketentuan Kewajiban Pemegang IUJP:
+Kewajiban a. mengutamakan produk dalam negeri;
+b. mengutamakan subkontraktor lokal dan tenaga kerja lokal;
+c. melakukan kegiatan usaha sesuai dengan bidang dan subbidangnya;
+d. menyusun dan menyampaikan laporan pelaksanaan IUJP sesuai dengan ketentuan peraturan perundang-undangan;
+
+## Lampiran hal. 248
+
+e. melaksanakan ketentuan keselamatan pertambangan sesuai dengan ketentuan peraturan perundang-undangan;
+f. memiliki tenaga teknis pertambangan yang berkompeten sesuai dengan ketentuan peraturan perundang-undangan;
+g. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+h. tidak melanggar larangan yang telah diatur berdasarkan ketentuan peraturan perundang-undangan.
+9. Standar Kegiatan Usaha Berupa Sertifikat Standar Konsultasi dan/atau Perencanaan Pada Usaha Jasa Pertambangan Sertifikat Standar Konsultasi dan/atau Perencanaan Pada No.
+Usaha Jasa Pertambangan KBLI:
+(71102) Aktivitas Keinsinyuran dan Konsultasi Teknis YBDI
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha jasa.
+
+## Lampiran hal. 249
+
+Kelompok ini mencakup kegiatan perancangan teknik, dan konsultansi, seperti permesinan, pabrik dan proses industri, proyek yang melibatkan teknik sipil, teknik hidrolik, teknik lalu lintas, jasa nasihat dan konsultansi rekayasa teknik, jasa rekayasa konstruksi bangunan gedung hunian dan nonhunian, jasa rekayasa pekerjaan teknik sipil sumber daya air, jasa rekayasa untuk pekerjaan mekanikal dalam bangunan, jasa rekayasa bangunan fasilitas olahraga, jasa konsultansi teknik lingkungan, jasa konsultansi terkait konstruksi pekerjaan sistem kendali lalu lintas, jasa rekayasa konstruksi pembangkit jaringan transmisi, gardu induk, dan distribusi tenaga listrik serta jasa rekayasa untuk proses industrial, produksi dan fasilitas produksi, jasa rekayasa lainnya, perluasan dan realisasi proyek yang berhubungan dengan teknik listrik dan elektro, teknik pertambangan, teknik kimia, mekanik, teknik industri dan teknik sistem dan teknik keamanan, proyek manajemen air; dan kegiatan manajemen proyek dan jasa penyelidikan lapangan yang berkaitan dengan konstruksi, kegiatan perluasan proyek yang menggunakan AC, pendingin, kebersihan dan teknik pengontrolan polusi, teknik akustik dan lain-lain; kegiatan survei geofisika, geologi dan survei seismik atau gempa bumi termasuk jasa pembuatan prospektus dan jasa interpretasi geologi dan geofisika sektor konstruksi; kegiatan survei geodetik meliputi kegiatan survei batas dan tanah, survei hidrologi, survei keadaan di atas dan di bawah permukaan tanah
+
+## Lampiran hal. 249
+
+dan kegiatan informasi spasial dan kartografi termasuk kegiatan pemetaan dan jasa pembuatan peta. Termasuk jasa rekayasa pekerjaan teknik sipil transportasi, jasa fasilitasi teknis prasarana, dan sarana umum sektor konstruksi.
+Pelaku usaha yang melakukan kegiatan usaha jasa pertambangan tidak memiliki Perizinan Berusaha lain dibidang pertambangan Mineral dan Batubara.
+Sertifikat Standar Konsultasi dan/atau Perencanaan Pada No.
+Usaha Jasa Pertambangan
+2. Istilah dan a. Usaha Jasa Pertambangan Inti adalah usaha Definisi jasa yang kegiatannya berkaitan dengan tahapan dan/atau bagian kegiatan usaha pertambangan.
+b. Sertifikat standar di bidang pertambangan mineral dan batubara merupakan pernyataan dan/atau bukti pemenuhan standar pelaksanaan kegiatan usaha untuk kegiatan konsultasi dan/atau perencanaan dengan melakukan observasi/pengamatan lapangan tanpa melakukan pengambilan data primer menggunakan peralatan pada kegiatan Usaha Jasa Pertambangan Inti.
+3. Penggolongan Sertifikat standar untuk jenis kegiatan konsultasi Usaha dan/atau perencanaan yang meliputi bidang:
+a. penyelidikan umum;
+b. eksplorasi;
+c. studi kelayakan;
+d. konstruksi Pertambangan;
+e. pengangkutan;
+f. Iingkungan Pertambangan;
+g. reklamasi dan pascatambang;
+h. keselamatan Pertambangan;
+i. penambangan; dan/atau
+j. pengolahan.
+4. Ketentuan a. Persyaratan Sertifikat Standar meliputi:
+Persyaratan 1) pengajuan permohonan secara elektronik;
+
+## Lampiran hal. 250
+
+2) Nomor Izin Berusaha dengan Klasifikasi Baku Lapangan Usaha Indonesia yang sesuai dengan Sertifikat Standar yang dimohonkan;
+3) susunan pengurus, daftar pemegang saham dan/atau penyertaan modal, dan daftar pemilik manfaat sampai dengan penerima manfaat akhir; dan 4) dokumen yang memuat daftar tenaga ahli yang bekerja secara purnawaktu dalam bentuk tabel yang dilengkapi dengan bukti pendukung pemenuhan tenaga ahli yang harus sesuai dengan bidang sertifikat standar yang diajukan.
+b. Persyaratan Perubahan Sertifikat Standar dalam rangka penambahan bidang meliputi:
+1) persyaratan administratif dan teknis sebagaimana dimaksud pada huruf a angka 1) dan angka 2); dan 2) salinan dokumen Sertifikat Standar sebelumnya.
+Sertifikat Standar Konsultasi dan/atau Perencanaan Pada No.
+Usaha Jasa Pertambangan Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, pelaku usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi dilakukan terhadap kesesuaian Verifikasi dokumen persyaratan;
+b. Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+c. Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+
+## Lampiran hal. 251
+
+d. Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui;
+e. Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+6. Ketentuan Kewajiban Pemegang Sertifikat Standar:
+Kewajiban a. melakukan kegiatan usaha sesuai dengan bidangnya;
+b. memiliki tenaga teknis pertambangan yang berkompeten sesuai dengan ketentuan peraturan perundang-undangan;
+c. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+d. tidak melanggar larangan yang telah diatur berdasarkan ketentuan peraturan perundang-undangan.
+D. Subsektor Energi Baru, Terbarukan, dan Konservasi Energi
+1. Standar Kegiatan Usaha Berupa Izin Pengusahaan Panas Bumi No. Izin Pengusahaan Panas Bumi KBLI:
+(06202) Pengusahaan Tenaga Panas Bumi
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan pengusahaan panas bumi yang mencakup usaha pencarian dan pengeboran tenaga panas bumi, serta lokasi di kawasan hutan. Termasuk kegiatan lain yang berhubungan dengan pengusahaan tenaga No. Izin Pengusahaan Panas Bumi panas bumi sampai ke tempat pemanfaatannya.
+Kegiatan pengubahan tenaga panas bumi menjadi tenaga listrik termasuk golongan pokok 35 (tiga puluh lima).
+
+## Lampiran hal. 252
+
+2. Istilah dan a. Panas Bumi adalah sumber energi panas yang Definisi terkandung di dalam air panas, uap air, serta batuan bersama mineral ikutan dan gas lainnya yang secara genetik tidak dapat dipisahkan dalam suatu sistem Panas Bumi.
+b. Pelaku Usaha adalah orang perseorangan atau badan usaha yang melakukan usaha dan/atau kegiatan pada bidang tertentu.
+c. Wilayah Kerja Panas Bumi yang selanjutnya disebut Wilayah Kerja adalah wilayah dengan batas-batas koordinat tertentu digunakan untuk pengusahaan Panas Bumi untuk Pemanfaatan Tidak Langsung.
+d. Izin Panas Bumi yang selanjutnya disingkat IPB adalah Perizinan Berusaha di bidang Panas Bumi untuk melakukan pengusahaan Panas Bumi untuk Pemanfaatan Tidak Langsung pada Wilayah Kerja tertentu.
+e. Pembangkit Listrik Tenaga Panas Bumi yang selanjutnya disebut PLTP adalah pembangkit listrik yang memanfaatkan energi Panas Bumi yang diekstrak dari fluida dan batuan panas di dalam atau di permukaan bumi.
+f. Badan Usaha Milik Negara yang selanjutnya disingkat BUMN adalah badan usaha yang seluruh atau sebagian besar modalnya dimiliki oleh negara melalui penyertaan secara langsung yang berasal dari kekayaan negara yang dipisahkan.
+g. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan Ruang lingkup kegiatan pengusahaan panas bumi Usaha untuk pengajuan permohonan penerbitan Perizinan Berusaha IPB dapat dimulai dari:
+a. tahap survei;
+b. tahap eksplorasi; dan/atau
+
+## Lampiran hal. 252
+
+c. tahap eksploitasi dan/atau pemanfaatan.
+Pelaku Usaha yang dapat mengajukan permohonan penerbitan IPB terdiri atas:
+a. Pelaku Usaha dari pemenang lelang Wilayah Kerja Panas Bumi;
+b. BUMN yang mendapatkan penugasan pengusahaan panas bumi untuk pemanfaatan tidak langsung; atau No. Izin Pengusahaan Panas Bumi
+c. Pelaku Usaha yang merupakan pemegang kuasa pengusahaan sumber daya Panas Bumi, pemegang kontrak operasi bersama pengusahaan sumber daya Panas Bumi, dan pemegang izin pengusahaan sumber daya Panas Bumi.
+4. Ketentuan Pemenuhan persyaratan untuk penerbitan IPB Persyaratan sebagaimana tercantum dalam ketentuan Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+a. terkait dengan salinan surat penetapan pemenang lelang atau surat penugasan pengusahaan panas bumi untuk pemanfaatan tidak langsung dimaknai sebagai:
+1) untuk Pelaku Usaha dari pemenang lelang Wilayah Kerja berupa salinan surat penetapan pemenang lelang Wilayah Kerja;
+2) untuk BUMN yang mendapatkan penugasan pengusahaan panas bumi untuk pemanfaatan tidak langsung berupa salinan Keputusan Menteri tentang penugasan pengusahaan panas bumi;
+
+## Lampiran hal. 253
+
+3) untuk Pelaku Usaha yang merupakan pemegang kuasa pengusahaan sumber daya Panas Bumi, pemegang kontrak operasi bersama pengusahaan sumber daya Panas Bumi, dan pemegang izin pengusahaan sumber daya Panas Bumi berupa: a) salinan surat kuasa pengusahaan sumber daya Panas Bumi atau izin pengusahaan sumber daya Panas Bumi; dan b) salinan persetujuan perpanjangan dari Menteri.
+b. memenuhi persyaratan tambahan berupa:
+1) daftar penerima manfaat (beneficial ownership); dan 2) salinan akta pendirian perusahaan dan/atau perubahannya.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+No. Izin Pengusahaan Panas Bumi
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+
+## Lampiran hal. 254
+
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan IPB disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku IPB IPB diberikan untuk jangka waktu paling lama 37 (tiga puluh tujuh) tahun dengan ketentuan:
+1) tahap eksplorasi diberikan untuk jangka waktu paling lama 5 (lima) tahun dan dapat diberikan perpanjangan 2 (dua) kali untuk jangka waktu 1 (satu) tahun untuk masing-masing perpanjangan.
+2) tahap eksploitasi dan pemanfaatan diberikan untuk jangka waktu paling lama 30 (tiga puluh) tahun sejak studi kelayakan disetujui oleh Menteri dan dapat diberikan perpanjangan untuk jangka waktu paling lama 20 (dua puluh) tahun untuk setiap kali perpanjangan.
+c. Integrasi Perizinan Berusaha 1) IPB berlaku sebagai izin usaha penyediaan tenaga listrik untuk kepentingan umum yang berlaku efektif setelah perjanjian jual beli tenaga listrik ditandatangani antara Pemegang IPB dengan BUMN di bidang ketenagalistrikan.
+2) Ketentuan integrasi perizinan berusaha sebagaimana dimaksud pada angka 1) berlaku sepanjang pemegang IPB dan pemegang izin usaha penyediaan tenaga No. Izin Pengusahaan Panas Bumi listrik untuk kepentingan umum merupakan 1 (satu) entitas badan usaha yang sama.
+
+## Lampiran hal. 255
+
+d. Berakhirnya IPB 1) IPB berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang IPB dapat mengajukan pengembalian untuk pengakhiran IPB sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan IPB sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan a. Dalam rangka memproduksi uap atau listrik, Kewajiban Pelaku Usaha wajib:
+1) memahami dan menaati ketentuan peraturan perundang-undangan di bidang keselamatan dan kesehatan kerja serta perlindungan dan pengelolaan lingkungan hidup dan memenuhi standar yang berlaku;
+2) melakukan pengendalian pencemaran dan/atau kerusakan lingkungan hidup yang meliputi kegiatan pencegahan, penanggulangan, dan pemulihan fungsi lingkungan hidup;
+3) melaksanakan eksplorasi, eksploitasi, dan pemanfaatan sesuai dengan kaidah teknis yang baik dan benar;
+4) mengutamakan penggunaan produk dalam negeri secara transparan dan bersaing;
+5) memberikan dukungan terhadap kegiatan penelitian dan pengembangan ilmu pengetahuan dan teknologi di bidang Panas Bumi;
+6) memberikan dukungan terhadap kegiatan penciptaan, pengembangan kompetensi, dan pembinaan sumber daya manusia di bidang Panas Bumi;
+7) melaksanakan program pengembangan dan pemberdayaan masyarakat setempat;
+8) menyelenggarakan pembukuan atau pencatatan dengan memperhatikan itikad baik dan mencerminkan keadilan atau kegiatan usaha yang sebenarnya;
+
+## Lampiran hal. 255
+
+9) menyampaikan laporan tertulis pengusahaan Panas Bumi kepada Menteri secara berkala atas: a) rencana kerja dan anggaran belanja; dan No. Izin Pengusahaan Panas Bumi b) realisasi pelaksanaan rencana kerja dan anggaran belanja;
+10) memenuhi kewajiban berupa pendapatan negara dan pendapatan daerah sesuai dengan ketentuan peraturan perundang-undangan;
+11) menyampaikan rencana jangka panjang Eksplorasi, Eksploitasi, dan pemanfaatan kepada Menteri yang mencakup rencana kegiatan dan rencana anggaran serta menyampaikan besarnya cadangan;
+12) mengutamakan penggunaan tenaga kerja Indonesia; dan 13) mendorong pengembangan Pemanfaatan Langsung Panas Bumi pada Wilayah Kerjanya.
+b. Kewajiban pengakhiran IPB:
+1) melunasi dan menyelesaikan seluruh kewajiban finansial sesuai dengan ketentuan peraturan perundang-undangan;
+2) menyerahkan semua data dan informasi Panas Bumi pada Wilayah Kerja, baik dalam bentuk analog maupun digital yang terkait dengan pelaksanaan pengusahaan Panas Bumi kepada Menteri;
+3) melakukan pasca kegiatan panas bumi; dan 4) melakukan seluruh kewajiban setelah IPB berakhir, sesuai dengan ketentuan peraturan perundang-undangan.
+c. Khusus untuk badan usaha yang memproduksi listrik wajib:
+1) instalasi yang akan dioperasikan wajib memiliki Sertifikat Laik Operasi;
+2) pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+3) peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+
+## Lampiran hal. 256
+
+4) melaporkan kegiatan usaha secara berkala sesuai dengan ketentuan peraturan perundang-undangan;
+5) menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+6) memenuhi ketentuan keselamatan ketenagalistrikan;
+7) mengutamakan produk dan potensi dalam negeri.
+2. Standar Kegiatan Usaha Berupa Izin Usaha Bahan Bakar Nabati No. Izin Usaha Bahan Bakar Nabati KBLI:
+(20115) Industri Kimia Dasar Organik yang Bersumber Dari Hasil Pertanian
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha khusus biofuel dari industri kimia organik sesuai KBLI 20115 (KBLI tahun 2020) untuk usaha Bahan Bakar Nabati/biofuel yang meliputi pengolahan, pembelian, penjualan, ekspor dan/atau impor, pengangkutan, penyimpanan, serta pemasaran Bahan Bakar Nabati dengan produk biofuel cair yang dapat berupa biodiesel, bioetanol, diesel biohidrokarbon, bioavtur/jet fuel nabati, minyak diesel nabati, minyak bensin nabati dan bahan nabati lainnya yang diperuntukkan untuk bahan bakar cair (KBLI 20297 Industri Biofuel Cair dalam KBLI tahun 2025).
+2. Istilah dan a. Bahan Bakar Nabati (biofuel) yang selanjutnya Definisi disingkat BBN adalah bahan bakar berwujud cair yang dihasilkan dari bahan nabati, bahan organik lain, dan/atau limbah organik.
+b. Biodiesel adalah BBN berupa ester metil asam lemak yang diproses secara esterifikasi atau proses lainnya untuk bahan bakar motor diesel.
+
+## Lampiran hal. 257
+
+c. Bioetanol adalah BBN berupa etanol yang diproses secara fermentasi atau proses lainnya untuk bahan bakar motor bensin.
+d. Diesel Biohidrokarbon adalah BBN berupa minyak hidrokarbon tanpa kandungan oksigenat yang diproses melalui berbagai teknologi proses tertentu untuk bahan bakar motor diesel.
+e. Bioavtur adalah BBN berupa jetfuel yang diproses melalui berbagai teknologi proses tertentu untuk bahan bakar pesawat terbang mesin turbin atau jet.
+f. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha yang bersifat tetap, terus-menerus, dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+g. Pelaku Usaha adalah orang perseorangan atau badan usaha yang melakukan usaha dan/atau kegiatan pada bidang tertentu.
+No. Izin Usaha Bahan Bakar Nabati
+h. Izin Usaha BBN adalah perizinan berusaha yang wajib dimiliki Pelaku Usaha untuk pengusahaan BBN.
+i. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+j. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang energi baru, terbarukan, dan konservasi energi.
+3. Penggolongan Berdasarkan Jenis BBN yang dihasilkan, Izin Usaha Usaha BBN dikategorikan menjadi:
+a. Usaha BBN Jenis Biodiesel;
+b. Usaha BBN Jenis Bioetanol;
+c. Usaha BBN Jenis Diesel Biohidrokarbon;
+d. Usaha BBN Jenis Bioavtur; dan
+
+## Lampiran hal. 258
+
+e. Usaha BBN Jenis Lainnya.
+4. Ketentuan a. Permohonan baru atau perpanjangan Izin Usaha Persyaratan BBN memenuhi persyaratan sebagaimana tercantum dalam ketentuan Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko.
+b. Permohonan perubahan Izin Usaha BBN memenuhi persyaratan:
+1) data informasi mengenai perubahan teknis yang diajukan;
+2) sumber perolehan bahan baku/BBN yang diusahakan;
+3) data standar dan mutu (spesifikasi) BBN yang akan diusahakan dan diniagakan;
+4) nama dan merek dagang BBN;
+5) informasi Kelayakan Usaha; dan 6) daftar penerima manfaat (beneficial ownership).
+Permohonan pemeriksaan lapangan diajukan oleh Pelaku Usaha kepada Menteri sebelum melakukan permohonan di Sistem OSS.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+No. Izin Usaha Bahan Bakar Nabati
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 10 (sepuluh) hari kerja sejak permohonan diterima dan lengkap;
+
+## Lampiran hal. 259
+
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha BBN disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha BBN Izin Usaha BBN diberikan untuk jangka waktu 20 (dua puluh) tahun dan dapat diberikan perpanjangan untuk jangka waktu paling lama 20 (dua puluh) tahun untuk setiap kali perpanjangan.
+c. Berakhirnya Izin Usaha BBN 1) Izin Usaha BBN berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang Izin Usaha BBN dapat mengajukan pengembalian untuk pengakhiran Izin Usaha BBN sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan Izin Usaha BBN sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan a. Kewajiban pemegang Izin Usaha BBN:
+
+## Lampiran hal. 259
+
+Kewajiban 1) menjamin ketersediaan BBN untuk memenuhi kebutuhan dalam negeri secara berkesinambungan termasuk cadangan BBN No. Izin Usaha Bahan Bakar Nabati untuk keperluan darurat sesuai dengan ketentuan peraturan perundang-undangan;
+2) memiliki perizinan berusaha untuk kegiatan usaha niaga BBN;
+3) menjamin standar dan mutu (spesifikasi) BBN: a) Produk BBN yang diusahakan untuk penggunaan dalam negeri harus memenuhi standar dan mutu (spesifikasi) BBN yang telah ditetapkan oleh Kementerian ESDM, yaitu:
+(1) Spesifikasi biodiesel untuk Izin Usaha BBN Jenis Biodiesel mengacu pada Keputusan Direktur Jenderal Energi Baru, Terbarukan dan Konservasi Energi Nomor 148.K/EK.05/DJE/2024 tentang Standar dan Mutu (Spesifikasi) Bahan Bakar Nabati Jenis Biodiesel sebagai Bahan Bakar Lain yang Dipasarkan dalam Negeri dan perubahannya;
+(2) Spesifikasi bioetanol untuk Izin Usaha BBN Jenis Bioetanol mengacu pada Keputusan Direktur Jenderal Energi Baru, Terbarukan dan Konservasi Energi Nomor 95.K/EK.05/DJE/2023 tentang Standar dan Mutu (Spesifikasi) Bahan Bakar Nabati Jenis Bioetanol sebagai Bahan Bakar Lain yang Dipasarkan dalam Negeri dan perubahannya;
+
+## Lampiran hal. 260
+
+(3) Spesifikasi diesel biohidrokarbon untuk Izin Usaha BBN Jenis diesel biohidrokarbon mengacu pada Keputusan Direktur Jenderal Energi Baru, Terbarukan dan Konservasi Energi Nomor 112.K/EK.05/DJE/2024 tentang Perubahan Atas Keputusan Direktur Jenderal Energi Baru, Terbarukan dan Konservasi Energi Nomor 95.K/EK.05/DJE/2022 tentang Standar dan Mutu (Spesifikasi) Bahan Bakar Nabati Jenis Diesel Nabati (Diesel Biohidrokarbon) sebagai Bahan Bakar Lain yang Dipasarkan dalam Negeri dan perubahannya;
+(4) Spesifikasi bioavtur untuk Izin Usaha BBN Jenis Bioavtur mengacu pada SNI 8674:2018 untuk Standar No. Izin Usaha Bahan Bakar Nabati Bioavtur Murni/Biojet dan perubahannya; atau
+(5) Standar dan Mutu (spesifikasi) BBN lainnya yang ditetapkan. b) Produk BBN yang diusahakan untuk penggunaan ekspor harus memenuhi standar dan mutu (spesifikasi) BBN yang mengacu pada standar dan mutu (spesifikasi) BBN negara tujuan ekspor; c) Produk BBN yang diusahakan untuk penggunaan dalam negeri dan ekspor harus memenuhi standar dan mutu (spesifikasi) BBN yang telah ditetapkan oleh Kementerian ESDM, yaitu:
+(1) Spesifikasi biodiesel untuk Izin Usaha BBN Jenis Biodiesel mengacu pada Keputusan Direktur Jenderal Energi Baru, Terbarukan dan Konservasi Energi Nomor 148.K/EK.05/DJE/2024 tentang Standar dan Mutu (Spesifikasi) Bahan Bakar Nabati Jenis Biodiesel sebagai Bahan Bakar Lain yang Dipasarkan dalam Negeri dan perubahannya;
+
+## Lampiran hal. 261
+
+(2) Spesifikasi bioetanol untuk Izin Usaha BBN Jenis Bioetanol mengacu pada Keputusan Direktur Jenderal Energi Baru, Terbarukan dan Konservasi Energi Nomor 95.K/EK.05/DJE/2023 tentang Standar dan Mutu (Spesifikasi) Bahan Bakar Nabati Jenis Bioetanol sebagai Bahan Bakar Lain yang Dipasarkan dalam Negeri dan perubahannya;
+(3) Spesifikasi diesel biohidrokarbon untuk Izin Usaha BBN Jenis diesel biohidrokarbon mengacu pada Keputusan Direktur Jenderal Energi Baru, Terbarukan dan Konservasi Energi Nomor 112.K/EK.05/DJE/2024 tentang Perubahan Atas Keputusan Direktur Jenderal Energi Baru, Terbarukan dan Konservasi Energi Nomor 95.K/EK.05/DJE/2022 tentang Standar dan Mutu (Spesifikasi) Bahan Bakar Nabati Jenis Diesel Nabati (Diesel Biohidrokarbon) sebagai Bahan Bakar Lain yang Dipasarkan dalam Negeri dan perubahannya; atau No. Izin Usaha Bahan Bakar Nabati
+(4) Spesifikasi bioavtur untuk Izin Usaha BBN Jenis Bioavtur mengacu pada SNI 8674:2018 untuk Standar Bioavtur Murni/Biojet dan perubahannya;
+(5) Standar dan Mutu (spesifikasi) BBN lainnya yang ditetapkan. d) Standar dan Mutu (spesifikasi) BBN yang mengacu pada standar dan mutu (spesifikasi) BBN negara tujuan ekspor, sesuai dengan ketentuan peraturan perundang-undangan;
+4) memanfaatkan dan mengutamakan BBN dari produksi dalam negeri;
+5) menjamin dan bertanggung jawab sampai ke tingkat penyalur/konsumen akhir atas standar dan mutu BBN yang diniagakan sesuai standar dan mutu/spesifikasi yang ditetapkan;
+
+## Lampiran hal. 262
+
+6) memiliki dan/atau menguasai sarana kegiatan usaha BBN, yang meliputi: a) fasilitas pengolahan; b) fasilitas pengangkutan; c) fasilitas penyimpanan; dan/atau d) fasilitas pemasaran.
+7) menjamin penyediaan fasilitas dan sarana kegiatan usaha BBN yang memadai, meliputi fasilitas penyediaan, pendistribusian, dan pemasaran;
+8) menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, dan sistem alat ukur yang digunakan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+9) mempunyai dan menggunakan nama dan merek dagang tertentu BBN;
+10) mengutamakan pemenuhan kebutuhan dalam negeri;
+11) menyampaikan data dan laporan mengenai pelaksanaan kegiatan usaha niaga BBN termasuk harga jual BBN kepada Menteri melalui Direktur Jenderal setiap bulan sekali dan/atau sewaktu-waktu apabila diperlukan;
+12) menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+13) menggunakan kaidah keteknikan yang baik;
+14) mengutamakan pemanfaatan barang, peralatan jasa, teknologi serta kemampuan rekayasa dan rancang bangun dalam negeri;
+15) mengutamakan penggunaan tenaga kerja warga negara Indonesia dengan No. Izin Usaha Bahan Bakar Nabati memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+16) menjamin keselamatan dan kesehatan kerja serta lingkungan hidup;
+
+## Lampiran hal. 263
+
+17) membantu pengembangan masyarakat setempat; dan 18) memenuhi persyaratan keberlanjutan dalam penyediaan dan pemanfaatan BBN sesuai dengan peraturan perundang-undangan.
+b. Kewajiban khusus untuk pemegang Izin Usaha BBN yang melaksanakan pembangunan fasilitas dan sarana:
+1) menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+2) menggunakan kaidah keteknikan yang baik;
+3) mengutamakan pemanfaatan barang, peralatan, jasa, teknologi, serta kemampuan rekayasa dan rancang bangun dalam negeri;
+4) mengutamakan penggunaan tenaga kerja warga negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+5) menjamin keselamatan dan kesehatan kerja serta lingkungan hidup; dan 6) membantu pengembangan masyarakat setempat.
+c. Kewajiban bagi Pelaku Usaha yang melakukan kegiatan usaha ekspor dan/atau impor BBN:
+1) mendapatkan rekomendasi dan/atau evaluasi, sebagai salah satu kelengkapan persyaratan penetapan neraca komoditas oleh Menteri yang menyelenggarakan urusan pemerintahan di bidang perdagangan;
+2) rekomendasi dan/atau evaluasi sebagaimana dimaksud pada angka 1 diberikan: a) dengan memenuhi dokumen persyaratan berupa:
+(1) SK Izin Usaha BBN yang masih berlaku;
+(2) Certificate of Analysis produk yang akan dilakukan ekspor/impor;
+(3) beneficial ownership; dan
+
+## Lampiran hal. 263
+
+(4) Surat Persetujuan Ekspor atau Impor dari Kementerian Perdagangan periode sebelumnya (untuk yang pernah melaksanakan ekspor atau impor) atau surat pernyataan belum No. Izin Usaha Bahan Bakar Nabati pernah melaksanakan ekspor atau impor (untuk yang belum pernah melaksanakan ekspor atau impor). b) dengan memperhatikan kapasitas produksi dan jaminan pemenuhan kebutuhan BBN sebagai bahan bakar lain di dalam negeri; c) 1 (satu) kali untuk 1 (satu) tahun pelaksanaan ekspor dan/atau impor; dan d) paling lama 7 (tujuh) hari sejak diterimanya permohonan rekomendasi dan/atau evaluasi ekspor dan/atau impor dari Pelaku Usaha.
+3) melaporkan kepada Menteri mengenai pelaksanaan ekspor dan/atau impor.
+d. Ketentuan Lain Bagi Pelaku Usaha:
+1) Pelaku Usaha yang melakukan kegiatan usaha BBN dapat meniagakan BBN kepada konsumen akhir; dan 2) Terhadap BBN yang dicampur dengan bahan bakar minyak hanya dapat diniagakan oleh Badan Usaha pemegang Izin Usaha Niaga Bahan Bakar Minyak.
+3. Standar Kegiatan Usaha Berupa Izin Usaha Bahan Bakar Biogas No. Izin Usaha Bahan Bakar Biogas KBLI:
+(35203) Pengadaan Gas Bio
+
+## Lampiran hal. 264
+
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan dalam penyelenggaraan usaha bahan bakar biogas (BBBg) sesuai KBLI 35203 untuk usaha yang mencakup usaha pengolahan, penyimpanan, penjualan, dan penyaluran Bahan Bakar Biogas melalui jaringan pipa dan/atau tabung penyimpanan, yang dapat dimanfaatkan secara langsung sebagai bahan bakar yang dihasilkan dari produk sampingan pertanian, perkebunan, peternakan, atau limbah di mana pembuatannya disertai usaha peningkatan mutu gas, seperti pemurnian, pencampuran dan proses lainnya.
+2. Istilah dan a. Bahan Bakar Biogas yang selanjutnya disingkat Definisi BBBg adalah bahan bakar berwujud gas yang dihasilkan dari produk sampingan pertanian, perkebunan, peternakan, atau sampah/limbah di mana pembuatannya disertai usaha No. Izin Usaha Bahan Bakar Biogas peningkatan mutu gas, seperti pemurnian, pencampuran dan proses lainnya.
+b. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha yang bersifat tetap, terus-menerus, dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+c. Pelaku Usaha adalah orang perseorangan atau badan usaha yang melakukan usaha dan/atau kegiatan pada bidang tertentu.
+d. Izin Usaha BBBg adalah perizinan berusaha yang wajib dimiliki Pelaku Usaha untuk pengusahaan BBBg.
+e. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+
+## Lampiran hal. 265
+
+f. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang energi baru, terbarukan, dan konservasi energi.
+3. Penggolongan - Usaha
+4. Ketentuan Permohonan baru, perubahan teknis izin, dan Persyaratan perpanjangan Izin BBBg memenuhi persyaratan sebagaimana tercantum dalam ketentuan Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan surat pernyataan tertulis di atas meterai terkait dengan kesanggupan badan usaha dilakukan peninjauan lapangan oleh Direktorat Jenderal EBTKE tidak diperlukan serta menjadi permohonan pemeriksaan lapangan yang diajukan oleh Pelaku Usaha kepada Menteri melalui Direktur Jenderal sebelum melakukan permohonan di Sistem OSS;
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+No. Izin Usaha Bahan Bakar Biogas
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 15 (lima belas) hari kerja sejak permohonan diterima dan lengkap;
+
+## Lampiran hal. 266
+
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila Pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha BBBg disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha BBBg Izin Usaha BBBg diberikan untuk jangka waktu paling lama 20 (dua puluh) tahun dan dapat diberikan perpanjangan untuk jangka waktu paling lama 10 (sepuluh) tahun untuk setiap kali perpanjangan.
+c. Berakhirnya Izin Usaha BBBg 1) Izin Usaha BBBg berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang Izin Usaha BBBg dapat mengajukan pengembalian untuk pengakhiran Izin Usaha BBBg sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan Izin Usaha BBBg sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan a. Kewajiban Pemegang Izin Usaha BBBg:
+Kewajiban 1) memenuhi dan mematuhi peraturan perundangan-undangan;
+
+## Lampiran hal. 267
+
+No. Izin Usaha Bahan Bakar Biogas 2) memiliki perizinan berusaha untuk kegiatan usaha BBBg;
+3) menjamin ketersediaan BBBg untuk memenuhi kebutuhan dalam negeri;
+4) menjamin harga jual BBBg yang wajar;
+5) memiliki dan/atau menguasai fasilitas dan sarana kegiatan usaha BBBg yang meliputi fasilitas penyediaan, pendistribusian, dan pemasaran;
+6) menjamin dan bertanggung jawab atas penggunaan peralatan, keakuratan, dan sistem alat ukur yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+7) menjamin standar dan mutu (spesifikasi) BBBg sesuai kontrak jual beli BBBg dan/atau sesuai dengan ketentuan peraturan perundang-undangan;
+8) menjamin keselamatan dan kesehatan kerja, pengelolaan lingkungan hidup serta pengembangan masyarakat setempat;
+9) melaporkan pelaksanaan kegiatan usaha BBBg kepada Menteri melalui Direktur Jenderal setiap 3 (tiga) bulan dan/atau sewaktu-waktu apabila diperlukan;
+10) melaporkan dan/atau menyampaikan permohonan penyesuaian terhadap Izin usaha apabila terdapat perubahan data administratif dan/atau teknis;
+11) bersedia dilakukan inspeksi/peninjauan lapangan oleh petugas Direktorat Jenderal Energi Baru, Terbarukan, dan Konservasi Energi sewaktu-waktu apabila diperlukan; dan 12) memenuhi perizinan yang ditetapkan oleh Instansi terkait sesuai dengan ketentuan perundang-undangan.
+b. Kewajiban khusus pemegang Izin Usaha BBBg yang melaksanakan pembangunan fasilitas dan sarana:
+
+## Lampiran hal. 267
+
+1) menggunakan barang dan peralatan yang memenuhi standar sesuai dengan ketentuan peraturan perundang-undangan;
+2) menggunakan kaidah keteknikan yang baik;
+3) mengutamakan pemanfaatan barang, peralatan, jasa, teknologi, serta kemampuan rekayasa dan rancang bangun dalam negeri;
+4) mengutamakan penggunaan tenaga kerja warga negara Indonesia dengan memperhatikan pemanfaatan tenaga kerja setempat sesuai dengan standar kompetensi yang dipersyaratkan;
+No. Izin Usaha Bahan Bakar Biogas 5) menjamin keselamatan dan kesehatan kerja serta lingkungan hidup; dan 6) membantu pengembangan masyarakat setempat.
+c. Kewajiban pemegang Izin Usaha BBBg yang melakukan kegiatan usaha ekspor dan/atau impor BBBg:
+1) mendapatkan rekomendasi dan/atau evaluasi sebagai salah satu kelengkapan persyaratan penetapan neraca komoditas oleh Menteri yang menyelenggarakan urusan pemerintahan di bidang perdagangan;
+2) rekomendasi dan/atau evaluasi sebagaimana dimaksud pada angka 1 diberikan: a) dengan memperhatikan kapasitas produksi dan jaminan pemenuhan kebutuhan BBBg di dalam negeri; b) 1 (satu) kali untuk 1 (satu) tahun pelaksanaan ekspor dan/atau impor dan; c) paling lama 7 (tujuh) hari sejak diterimanya permohonan rekomendasi dan/atau evaluasi ekspor dan/atau impor dari Pelaku Usaha;
+
+## Lampiran hal. 268
+
+3) dalam hal Neraca Komoditas sebagaimana dimaksud pada angka 1) untuk BBBg belum tersedia, rekomendasi dan/atau evaluasi dikeluarkan oleh Menteri dengan mempertimbangkan kelayakan keekonomian proyek dan pengembalian investasi; dan 4) melaporkan kepada Menteri mengenai pelaksanaan ekspor dan/atau impor.
+d. Ketentuan Lain Bagi Pemegang Izin Usaha BBBg:
+1) Pelaku Usaha yang melakukan kegiatan usaha BBBg dapat meniagakan BBBg kepada konsumen akhir (skala besar) dan/atau distributor; dan 2) terhadap BBBg yang dicampur dengan bahan bakar gas melalui jaringan pipa gas, hanya dapat diniagakan oleh pemegang Izin Usaha Niaga Bahan Bakar Gas dan/atau Izin Usaha Pengangkutan Gas.
+4. Standar Kegiatan Usaha Berupa Izin Usaha Pengelolaan Sampah menjadi Energi Listrik (PSEL) No. Standar Kegiatan Usaha Standar Izin Usaha PSEL KBLI:
+(38211) Pengolahan Sampah Tidak Berbahaya untuk Menghasilkan Energi
+1. Ruang Standar ini mencakup pengolahan limbah dan Lingkup sampah yang tidak berbahaya untuk menghasilkan produk berupa listrik.
+
+## Lampiran hal. 269
+
+2. Istilah dan a. Pengolah Sampah Berbasis Teknologi Ramah Definisi Lingkungan Menjadi Energi Listrik yang selanjutnya disebut PSEL adalah sistem pengolahan sampah berbasis teknologi ramah lingkungan yang memenuhi baku mutu sesuai dengan ketentuan peraturan perundang-undangan berupa pembangkit listrik tenaga sampah (PLTSa) untuk dapat mengolah sampah menjadi energi listrik, dan mengurangi volume sampah dengan waktu pengolahan secara signifikan yang efektif dan efisien serta telah teruji.
+b. Badan Usaha Milik Negara yang selanjut disingkat BUMN adalah badan usaha yang memenuhi minimal salah satu ketentuan berikut:
+1) seluruh atau sebagian besar modalnya dimiliki oleh Negara Republik Indonesia melalui penyertaan langsung; atau 2) terdapat hak istimewa yang dimiliki Negara Republik Indonesia.
+c. Anak Usaha BUMN adalah anak perusahaan BUMN dan turunannya yang didirikan oleh BUMN dalam rangka kepentingan usaha BUMN.
+d. Badan Pengelola Investasi Daya Anagata nusantara yang selanjutnya disebut BPI Danantara adalah badan yang melaksanakan tugas pemerintah di bidang pengelolaan BUMN sebagaimana diatur dalam Undang-Undang tentang BUMN.
+e. Badan Usaha Pengembang dan Pengelola PSEL yang selanjutnya disebut BUPP PSEL adalah badan usaha yang merencanakan, membangun, dan mengoperasikan PSEL.
+
+## Lampiran hal. 269
+
+f. Izin Usaha PSEL adalah perizinan berusaha yang wajib dimiliki BUPP untuk pengusahaan PSEL, yang juga berupa Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum yang selanjutnya disebut IUPTLU.
+No. Standar Kegiatan Usaha Standar Izin Usaha PSEL
+g. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan Skala Usaha:
+Usaha a. Mikro;
+b. Kecil;
+c. Menengah;
+d. Besar
+4. Ketentuan a. Kerja sama dengan BPI Danantara/BUMN/Anak Persyaratan Usaha BUMN 1) Penunjukan BUPP PSEL oleh BPI Danantara; dan 2) Perjanjian kerja sama antara BUPP PSEL dan pemerintah daerah.
+b. Tidak termasuk kerja sama dengan BPI Danantara/BUMN/Anak Usaha BUMN Perjanjian kerja sama antara BUPP PSEL dan pemerintah daerah yang disahkan oleh pejabat notaris;
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 10 (sepuluh) hari kerja sejak permohonan diterima dan lengkap;
+
+## Lampiran hal. 270
+
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 3 (tiga) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin PSEL disetujui;
+No. Standar Kegiatan Usaha Standar Izin Usaha PSEL 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha PSEL Izin Usaha PSEL diberikan dengan jangka waktu paling lama 30 (tiga puluh) tahun dan dapat diberikan perpanjangan paling lama 30 (tiga puluh) tahun untuk setiap kali perpanjangan.
+c. Integrasi Perizinan Berusaha PSEL berlaku sebagai IUPTLU yang berlaku efektif setelah perjanjian jual beli tenaga listrik ditandatangani oleh PT PLN (Persero) dan BUPP PSEL.
+d. Berakhirnya Izin Usaha PSEL 1) Izin Usaha PSEL berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) Pemegang Izin Usaha PSEL dapat mengajukan pengembalian untuk pengakhiran Izin Usaha PSEL sebagaimana dimaksud pada angka 1) huruf b);
+
+## Lampiran hal. 271
+
+3) Pencabutan Izin Usaha PSEL sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban Pemegang Izin Usaha PSEL:
+Kewajiban a. instalasi yang akan dioperasikan wajib memiliki sertifikat laik operasi;
+b. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki sertifikat kompetensi;
+c. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+d. melaporkan kegiatan usaha secara berkala setiap 3 (tiga) bulan dan/atau sewaktu-waktu apabila diperlukan sesuai dengan ketentuan peraturan perundang-undangan;
+e. menyediakan tenaga listrik yang memenuhi standar mutu dan keandalan yang berlaku;
+f. memenuhi ketentuan keselamatan ketenagalistrikan; dan
+g. mengutamakan produk dan potensi dalam negeri.
+5. Standar Kegiatan Usaha Berupa Izin Usaha Pengolahan Sampah menjadi Bioenergi dan/atau Bahan Bakar Minyak Terbarukan Standar Kegiatan Usaha Berupa Izin Usaha Pengolahan Sampah No. menjadi Bioenergi dan/atau Bahan Bakar Minyak Terbarukan KBLI:
+(38211) Pengolahan Sampah Tidak Berbahaya untuk Menghasilkan Energi
+1. Ruang Standar ini mencakup usaha Pengolahan Sampah Lingkup Yang Tidak Berbahaya untuk Menghasilkan Produk Bionergi dan/atau Bahan Bakar Minyak Terbarukan yang disertai penyimpanan, penjualan, dan penyaluran.
+
+## Lampiran hal. 272
+
+2. Istilah dan a. Pengolah Sampah Menjadi Energi Terbarukan Definisi Berbasis Teknologi Ramah Lingkungan Bioenergi yang selanjutnya disebut PSE Bioenergi adalah pengolahan sampah menjadi energi berbentuk biomassa dan biogas.
+b. Pengolah Sampah Menjadi Energi Terbarukan Berbasis Teknologi Ramah Lingkungan Bahan Bakar Minyak Terbarukan yang selanjutnya disebut PSE BBMT adalah pengolah sampah menjadi energi yang berbentuk cair dan memenuhi baku mutu sesuai dengan ketentuan peraturan perundangan-undangan.
+c. Badan Usaha adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha yang bersifat tetap, terus-menerus, dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+d. Pelaku Usaha adalah orang perseorangan atau Badan Usaha yang melakukan usaha dan/atau kegiatan pada bidang tertentu.
+e. Izin Usaha PSE Bioenergi adalah perizinan berusaha yang wajib dimiliki Pelaku Usaha untuk pengusahaan PSE Bioenergi.
+f. Izin Usaha PSE BBMT adalah perizinan berusaha yang wajib dimiliki Pelaku Usaha untuk pengusahaan PSE BBMT.
+g. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+h. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang energi baru, terbarukan, dan konservasi energi.
+
+## Lampiran hal. 273
+
+Standar Kegiatan Usaha Berupa Izin Usaha Pengolahan Sampah No. menjadi Bioenergi dan/atau Bahan Bakar Minyak Terbarukan
+3. Penggolongan Skala Usaha:
+Usaha a. Mikro;
+b. Kecil ;
+c. Menengah;
+d. Besar.
+4. Ketentuan Permohonan Baru, Perubahan Teknis, dan Persyaratan Perpanjangan Izin Usaha PSE Bioenergi dan PSE BBMT:
+a. Perjanjian kerja sama antara Pelaku Usaha dan pemerintah daerah yang disahkan oleh pejabat notaris (apabila sampah disediakan oleh pemerintah daerah);
+b. Berita acara verifikasi sarana produksi;
+Permohonan pemeriksaan lapangan diajukan oleh Pelaku Usaha kepada Menteri sebelum melakukan permohonan di Sistem OSS.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) Verifikasi dilakukan terhadap kesesuaian dokumen persyaratan.
+2) Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 10 (sepuluh) hari kerja sejak permohonan diterima dan lengkap.
+3) Apabila berdasarkan verifikasi permohonan dinyatakan belum lengkap dan sesuai, permohonan dikembalikan disertai alasan pengembalian atau catatan perbaikan untuk dapat disampaikan kembali.
+
+## Lampiran hal. 273
+
+4) Pemohon harus menyampaikan perbaikan paling lambat 3 (tiga) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3).
+5) Permohonan dinyatakan batal apabila Pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4).
+6) Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Usaha PSE Bioenergi dan PSE BBMT disetujui.
+7) Apabila berdasarkan verifikasi permohonan Standar Kegiatan Usaha Berupa Izin Usaha Pengolahan Sampah No. menjadi Bioenergi dan/atau Bahan Bakar Minyak Terbarukan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Izin Usaha PSE Bioenergi dan PSE BBMT Izin Usaha PSE Bioenergi dan PSE BBMT diberikan dengan jangka waktu paling lama 20 (dua puluh) tahun dan dapat diberikan perpanjangan paling lama 10 (sepuluh) tahun untuk setiap kali perpanjangan.
+c. Berakhirnya Izin Usaha PSE Bioenergi dan PSE BBMT 1) Izin Usaha PSE Bioenergi dan PSE BBMT berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) Pemegang Izin Usaha PSE Bioenergi dan PSE BBMT dapat mengajukan pengembalian untuk pengakhiran Izin Usaha PSE Bioenergi dan PSE BBMT sebagaimana dimaksud pada angka 1) huruf b);
+3) Pencabutan Izin Usaha PSE Bioenergi dan PSE BBMT sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+
+## Lampiran hal. 274
+
+6. Ketentuan Kewajiban Pemegang Izin Usaha PSE Bioenergi dan Kewajiban PSE BBMT:
+a. memenuhi standar dan mutu (spesifikasi) produk bioenergi dan Bahan Bakar Minyak Terbarukan yang akan diniagakan.
+b. menjamin keselamatan dan kesehatan kerja, pengelolaan lingkungan hidup serta pengembangan masyarakat setempat;
+c. melaporkan pelaksanaan kegiatan usaha PSE Bioenergi dan PSE BBMT kepada Menteri melalui Direktur Jenderal setiap 3 (tiga) bulan dan/atau sewaktu-waktu apabila diperlukan; dan
+d. melaporkan dan/atau menyampaikan permohonan penyesuaian terhadap Izin Usaha PSE Bioenergi dan PSE BBMT apabila terdapat perubahan data administratif dan/atau teknis.
+6. Standar Kegiatan Usaha Berupa Izin Usaha Jasa Konservasi Energi No. Izin Usaha Jasa Konservasi Energi KBLI:
+(35129) Aktivitas Penunjang Tenaga Listrik Lainnya Usaha Jasa Konservasi Energi
+1. Ruang Standar ini mengatur dan menetapkan batasan Lingkup tentang persyaratan Usaha Jasa Konservasi Energi dengan ruang lingkup Usaha Jasa Konservasi Energi.
+2. Istilah dan a. Konservasi Energi adalah upaya sistematis, Definisi terencana, dan terpadu guna melestarikan sumber daya energi dalam negeri serta meningkatkan efisiensi pemanfaatannya.
+b. Energi adalah kemampuan untuk melakukan kerja yang dapat berupa panas, cahaya, mekanika, kimia, dan elektromagnetika.
+
+## Lampiran hal. 275
+
+c. Usaha Jasa Konservasi Energi dilaksanakan oleh Badan Usaha, Badan Layanan Umum atau Unit Pelaksana Teknis yang melaksanakan usaha atau memberikan layanan usaha jasa Konservasi Energi.
+d. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Penggolongan a. Standar kegiatan ini untuk pelaku usaha yang Usaha memiliki skala usaha:
+1) mikro;
+2) kecil;
+3) menengah;
+4) besar.
+b. Standar kegiatan ini memiliki tingkat risiko menengah rendah.
+4. Ketentuan - Persyaratan
+5. Ketentuan a. Verifikasi Permohonan Verifikasi 1) pemohon mengajukan permohonan melalui Sistem OSS;
+2) Sistem OSS secara otomatis menerbitkan Izin Usaha Jasa Konservasi Energi.
+b. Masa Berlaku Izin Usaha Jasa Konservasi Energi diberikan sepanjang Pelaku Usaha atau pemegang Izin Usaha Jasa Konservasi Energi melakukan kegiatan usaha.
+c. Berakhirnya Izin Usaha Jasa Konservasi Energi 1) Izin Usaha Jasa Konservasi Energi berakhir karena:
+No. Izin Usaha Jasa Konservasi Energi a) dikembalikan; atau b) dicabut 2) pemegang Izin Usaha Jasa Konservasi Energi dapat mengajukan pengembalian untuk pengakhiran Izin Usaha Jasa Konservasi Energi sebagaimana dimaksud pada angka 1) huruf a);
+3) pencabutan Izin Usaha Jasa Konservasi Energi sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+6. Ketentuan Kewajiban pemegang Izin Usaha Jasa Konservasi Kewajiban Energi:
+
+## Lampiran hal. 276
+
+a. memenuhi dan mematuhi ketentuan peraturan perundang-undangan; dan
+b. melaporkan pelaksanaan usaha konservasi energi pada Menteri melalui Direktur Jenderal Energi Baru, Terbarukan, dan Konservasi Energi setiap akhir tahun.
+MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+BAHLIL LAHADALIA LAMPIRAN II PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 7 TAHUN 2026 TENTANG STANDAR KEGIATAN USAHA PADA PENYELENGGARAAN PERIZINAN BERUSAHA BERBASIS RISIKO SEKTOR ENERGI DAN SUMBER DAYA MINERAL STANDAR KEGIATAN USAHA PERIZINAN BERUSAHA UNTUK MENUNJANG KEGIATAN USAHA SEKTOR ENERGI DAN SUMBER DAYA MINERAL A. Subsektor Minyak dan Gas Bumi
+1. Standar Kegiatan Usaha Berupa Persetujuan Layak Operasi Instalasi Minyak dan Gas Bumi No. Persetujuan Layak Operasi Instalasi Minyak dan Gas Bumi KBLI:
+(06100) Pertambangan Minyak Bumi
+(06201) Pertambangan Gas Alam
+(39000) Aktivitas Remediasi dan Pengelolaan Limbah dan Sampah Lainnya
+(09100) Aktivitas Penunjang Pertambangan Minyak Bumi dan Gas Alam
+(19211) Industri Bahan Bakar dari Pemurnian dan Pengilangan Minyak Bumi
+(19214) Industri Pengolahan Minyak Pelumas Bekas Menjadi Bahan Bakar
+(35201) Pengadaan Gas Alam dan Buatan
+(46610) Perdagangan Besar Bahan Bakar Padat, Cair dan Gas Dan Produk YBDI
+(35202) Distribusi Gas Alam dan Buatan
+(49300) Angkutan Melalui Saluran Pipa
+(52104) Penyimpanan Minyak dan Gas Bumi
+
+## Lampiran hal. 277
+
+1. Tujuan Sebagai acuan persyaratan yang harus dipenuhi oleh pelaku usaha untuk mendapatkan Persetujuan Layak Operasi Instalasi pada Kegiatan Usaha Minyak dan Gas Bumi serta Penangkapan dan Penyimpanan Karbon berdasarkan Izin Usaha.
+2. Istilah dan a. Persetujuan Layak Operasi adalah pengakuan Definisi formal bahwa Kontraktor atau Pemegang Izin Usaha telah melaksanakan Inspeksi Teknis yang mengacu pada ketentuan peraturan perundangan-undangan, Standar,dan kaidah keteknikan yang baik.
+b. Kegiatan Usaha Minyak dan Gas Bumi adalah kegiatan yang meliputi kegiatan usaha hulu dan kegiatan usaha hilir.
+c. Penangkapan dan Penyimpanan Karbon (Carbon Capture and Storage) yang selanjutnya disingkat No. Persetujuan Layak Operasi Instalasi Minyak dan Gas Bumi CCS adalah kegiatan usaha yang mencakup penangkapan karbon dan/atau pengangkutan karbon tertangkap, penginjeksian dan penyimpanan karbon ke zona target injeksi dengan aman dan permanen sesuai dengan kaidah keteknikan yang baik.
+d. Kontraktor adalah Badan Usaha atau Bentuk Usaha Tetap yang ditetapkan untuk melaksanakan Eksplorasi dan Eksploitasi pada suatu Wilayah Kerja berdasarkan Kontrak Kerja Sama dengan Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi atau Badan Pengelola Minyak dan Gas Bumi Aceh.
+e. Pemegang Izin Usaha adalah pemegang izin usaha atau izin usaha sementara pada kegiatan usaha hilir dan CCS.
+
+## Lampiran hal. 278
+
+f. Instalasi Minyak dan Gas Bumi, yang selanjutnya disebut Instalasi adalah rangkaian peralatan yang terintegrasi dalam suatu sistem untuk melaksanakan fungsi operasi pada Kegiatan Usaha Minyak dan Gas Bumi serta CCS.
+g. Penelaahan Desain adalah evaluasi secara sistematis dan independen dari suatu rancangan desain Instalasi pada Kegiatan Usaha Minyak dan Gas Bumi serta CCS.
+h. Inspeksi Teknis yang selanjutnya disebut Inspeksi adalah suatu kegiatan yang dilakukan secara langsung meliputi pemeriksaan dokumen, pemeriksaan fisik, dan pengujian peralatan dan/atau Instalasi mengacu pada ketentuan peraturan perundang-undangan, standar, dan kaidah keteknikan yang baik;
+i. Pemeriksaan Keselamatan adalah pemeriksaan teknis untuk pengawasan pelaksanaan Keselamatan Minyak dan Gas Bumi dan keteknikan pada Kegiatan Usaha Minyak dan Gas Bumi serta CCS untuk memastikan dipenuhinya ketentuan peraturan perundang-undangan, standar, dan kaidah keteknikan yang baik;
+j. Analisis Risiko adalah kegiatan untuk mengidentifikasi dan menganalisa potensi sebab dan kemungkinan akibat risiko secara kuantitatif, semi kuantitatif, dan kualitatif.
+k. Lembaga Enjiniring Independen, yang selanjutnya disebut Lembaga Enjiniring adalah perusahaan enjiniring, institusi akademis, atau Badan Layanan Umum yang memiliki kompetensi dan kualifikasi di bidang enjiniring.
+
+## Lampiran hal. 278
+
+l. Perusahaan Usaha Penunjang Minyak dan Gas Bumi yang selanjutnya disebut Perusahaan No. Persetujuan Layak Operasi Instalasi Minyak dan Gas Bumi Usaha Penunjang adalah Badan Usaha Milik Negara, Badan Usaha Milik Daerah, Koperasi atau Badan Usaha Swasta yang berbadan hukum Indonesia yang bergerak dalam bidang usaha untuk menunjang Kegiatan Usaha Minyak dan Gas Bumi serta CCS yang mengoperasikan Instalasi.
+m. Kepala Teknik Minyak dan Gas Bumi, yang selanjutnya disebut Kepala Teknik adalah penanggung jawab Keselamatan Minyak dan Gas Bumi pada Kontraktor atau Pemegang Izin Usaha pada Kegiatan Usaha Minyak dan Gas Bumi serta CCS.
+n. Kepala Inspeksi Minyak dan Gas Bumi yang selanjutnya disebut Kepala Inspeksi adalah pejabat yang secara ex officio menduduki jabatan direktur yang mempunyai tugas melaksanakan perumusan dan pelaksanaan kebijakan, penyusunan norma, Standar, prosedur, serta pemberian bimbingan teknis dan evaluasi di bidang standardisasi, keteknikan, dan keselamatan pada Kegiatan Usaha Minyak dan Gas Bumi serta CCS.
+o. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Ketentuan a. Persyaratan Umum Persyaratan Persyaratan umum sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan terkait dengan Izin Usaha atau Izin Usaha Sementara dimaknai termasuk untuk kegiatan CCS.
+
+## Lampiran hal. 279
+
+b. Persyaratan Khusus Persyaratan khusus sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan termasuk memenuhi persyaratan tambahan berupa dokumen Penetapan Daerah Terbatas dan Daerah Terlarang, khusus untuk Instalasi yang berada di perairan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+No. Persetujuan Layak Operasi Instalasi Minyak dan Gas Bumi Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 10 (sepuluh) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+
+## Lampiran hal. 280
+
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Persetujuan Layak Operasi disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Persetujuan Layak Operasi diberikan dengan jangka waktu paling lama 4 (empat) tahun.
+5. Ketentuan a. Pemegang Izin Usaha, Kontraktor, Badan Usaha Kewajiban Pemegang Izin Pembangunan dan Pengoperasian Pipa Gas Bumi serta Fasilitas dan Sarana Pendukung untuk Kepentingan Sendiri, atau Perusahaan Usaha Penunjang bertanggungjawab sepenuhnya atas keselamatan instalasi;
+b. Setiap perubahan Instalasi wajib dilaporkan kepada Kepala Inspeksi serta dapat dilakukan Pemeriksaan Keselamatan terhadap Instalasi; dan
+c. Inspeksi dan Pemeriksaan Keselamatan dilakukan kembali selambat-lambatnya 3 (tiga) bulan sebelum berakhir masa berlaku Persetujuan.
+2. Standar Kegiatan Usaha Berupa Persetujuan Gudang Bahan Peledak Minyak dan Gas Bumi No. Persetujuan Gudang Bahan Peledak Minyak dan Gas Bumi KBLI:
+(06100) Pertambangan Minyak Bumi
+(06201) Pertambangan Gas Alam
+(39000) Aktivitas Remediasi dan Pengelolaan Limbah dan Sampah Lainnya
+1. Tujuan Sebagai acuan persyaratan yang harus dipenuhi oleh pelaku usaha untuk mendapatkan Persetujuan Gudang Bahan Peledak pada Kegiatan Usaha Minyak Dan Gas Bumi serta Kegiatan Penangkapan dan Penyimpanan Karbon berdasarkan Izin Usaha.
+
+## Lampiran hal. 281
+
+2. Istilah dan a. Kontraktor adalah Badan Usaha atau Bentuk Definisi Usaha Tetap yang ditetapkan untuk melaksanakan Eksplorasi dan Eksploitasi pada suatu Wilayah Kerja berdasarkan Kontrak Kerja Sama dengan Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi atau Badan Pengelola Minyak dan Gas Bumi Aceh.
+b. Penangkapan dan Penyimpanan Karbon (Carbon Capture and Storage) yang selanjutnya disingkat CCS adalah kegiatan usaha yang mencakup penangkapan karbon dan/atau pengangkutan karbon tertangkap, penginjeksian dan penyimpanan karbon ke zona target injeksi dengan aman dan permanen sesuai dengan kaidah keteknikan yang baik.
+c. Pemegang Izin Usaha adalah pemegang izin usaha pada CCS.
+d. Bahan Peledak yang selanjutnya disebut Handak adalah bahan atau zat yang berbentuk padat, cair, gas, atau campurannya yang apabila dikenai atau terkena suatu reaksi berupa panas, benturan atau gesekan akan berubah sebagian atau seluruhnya berbentuk gas dan perubahan berlangsung dalam waktu yang amat singkat disertai dengan efek panas dan tekanan yang sangat tinggi.
+e. Gudang Handak adalah suatu bangunan atau kontainer yang secara teknis mampu menyimpan bahan peledak secara aman.
+f. Kepala Teknik Minyak dan Gas Bumi, yang selanjutnya disebut Kepala Teknik adalah penanggung jawab Keselamatan Minyak dan Gas Bumi pada Kontraktor atau Pemegang Izin Usaha pada kegiatan usaha minyak dan gas bumi serta CCS.
+
+## Lampiran hal. 281
+
+g. Inspektur Minyak dan Gas Bumi yang No. Persetujuan Gudang Bahan Peledak Minyak dan Gas Bumi selanjutnya disebut Inspektur Migas adalah pegawai negeri sipil yang diberi tugas, tanggung jawab, wewenang, dan hak untuk melakukan inspeksi teknis dan/atau pemeriksaan keselamatan, pengawasan penggunaan dan pengembangan potensi dalam negeri, pengawasan pelaksanaan kegiatan operasional, dan penilaian penerapan sistem manajemen keselamatan pada kegiatan usaha minyak dan gas bumi serta CCS.
+h. Kepala Inspeksi Minyak dan Gas Bumi yang selanjutnya disebut Kepala Inspeksi adalah pejabat yang secara ex officio menduduki jabatan direktur yang mempunyai tugas melaksanakan perumusan dan pelaksanaan kebijakan, penyusunan norma, Standar, prosedur, serta pemberian bimbingan teknis dan evaluasi di bidang standardisasi, keteknikan, dan keselamatan pada kegiatan usaha minyak dan gas bumi serta CCS.
+i. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+j. Direktorat Jenderal adalah adalah Direktorat Jenderal yang bidang tugas dan kewenangannya meliputi di bidang Minyak dan Gas Bumi.
+3. Ketentuan a. Persyaratan Umum Persyaratan Persyaratan umum sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan dimaknai berlaku juga untuk Pemegang Izin Usaha.
+
+## Lampiran hal. 282
+
+b. Persyaratan Teknis Persyaratan teknis sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan Persyaratan Gudang Permanen dan Sementara Bahan Peledak Minyak dan Gas Bumi berupa Rekomendasi Kepolisian Daerah (Polda untuk Gudang Permanen dan Gudang Sementara di darat Untuk Kontainer penyimpanan bahan peledak sementara di atas perairan tidak memerlukan rekomendasi Polda) diubah dan dimaknai menjadi rekomendasi Kepolisian Republik Indonesia untuk Gudang Handak No. Persetujuan Gudang Bahan Peledak Minyak dan Gas Bumi permanen dan Gudang Handak sementara di darat sesuai dengan ketentuan peraturan perundang-undangan, kecuali kontainer penyimpanan bahan peledak sementara di atas perairan; dan 2) persyaratan teknis dimaknai berlaku juga untuk Pemegang Izin Usaha.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+
+## Lampiran hal. 283
+
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 12 (dua belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan Persetujuan Gudang Bahan Peledak Minyak dan Gas Bumi; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Persetujuan Gudang Bahan Peledak Minyak dan Gas Bumi:
+1) untuk Gudang Handak permanen diberikan dengan jangka waktu 5 (lima) tahun; atau 2) untuk Gudang Handak sementara diberikan dengan jangka waktu paling lama 1 tahun.
+No. Persetujuan Gudang Bahan Peledak Minyak dan Gas Bumi
+5. Ketentuan Pemegang Persetujuan Gudang Bahan Peledak Kewajiban Minyak dan Gas Bumi wajib:
+a. bertanggung jawab sepenuhnya atas keselamatan dan keamanan gudang bahan peledak dan bahan peledak yang disimpan;
+b. menaati segala peraturan umum penyimpanan, pengeluaran, pengangkutan, dan pemakaian bahan peledak sesuai ketentuan peraturan perundang-undangan dan Standar Nasional Indonesia;
+
+## Lampiran hal. 284
+
+c. menunjuk tim pengelola bahan peledak yang dilengkapi personel yang memiliki sertifikat kualifikasi pengelola bahan peledak dan/atau juru tembak yang memiliki Surat Persetujuan Juru Tembak Bahan Peledak dari Direktorat Jenderal Minyak dan Gas Bumi; dan
+d. menyampaikan pelaporan pengelolaan bahan peledak kepada Direktorat Jenderal Minyak dan Gas Bumi setiap 1 (satu) bulan sekali atau sewaktu-waktu apabila diperlukan.
+3. Standar Kegiatan Usaha Berupa Persetujuan Pengalihan Nilai Sisa Komitmen Pasti ke Wilayah Terbuka Persetujuan Pengalihan Nilai Sisa Komitmen Pasti Ke No.
+Wilayah Terbuka KBLI:
+(06100) Pertambangan Minyak Bumi
+(06201) Pertambangan Gas Alam
+1. Tujuan Sebagai acuan persyaratan yang harus dipenuhi oleh pelaku usaha untuk mendapatkan Persetujuan Pengalihan Nilai Sisa Komitmen Pasti ke Wilayah Terbuka untuk Kontrak Kerja Sama yang telah berakhir dalam bentuk kegiatan Eksplorasi dengan tujuan untuk memperoleh data dan mendukung penyiapan Wilayah Kerja Minyak dan Gas Bumi.
+2. Istilah dan a. Wilayah Kerja adalah daerah tertentu di dalam Definisi Wilayah Hukum Pertambangan Indonesia untuk pelaksanaan Eksplorasi dan Eksploitasi.
+b. Wilayah Terbuka adalah bagian dari Wilayah Hukum Pertambangan Indonesia yang belum ditetapkan sebagai Wilayah Kerja.
+c. Kontrak Kerja Sama adalah Kontrak Bagi Hasil atau bentuk kontrak kerja sama lain dalam kegiatan Eksplorasi dan Eksploitasi yang lebih Persetujuan Pengalihan Nilai Sisa Komitmen Pasti Ke No.
+
+## Lampiran hal. 285
+
+Wilayah Terbuka menguntungkan Negara dan hasilnya dipergunakan untuk sebesar-besar kemakmuran rakyat.
+d. Data adalah semua fakta, petunjuk, indikasi dan informasi baik dalam bentuk tulisan (karakter), angka (digital), gambar (analog), media magnetik, dokumen, percontoh batuan, fluida, dan bentuk lain yang didapat dari hasil Survei Umum, Eksplorasi, dan Eksploitasi Minyak dan Gas Bumi.
+e. Komitmen Pasti adalah Rencana Kerja 3 (tiga) tahun kontrak pertama, di mana Kontraktor berkomitmen dan berkewajiban untuk memenuhinya.
+f. Kontraktor adalah Badan Usaha atau Bentuk Usaha Tetap yang ditetapkan untuk melaksanakan Eksplorasi dan Eksploitasi pada suatu Wilayah Kerja berdasarkan Kontrak Kerja Sama dengan Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi atau Badan Pengelola Minyak dan Gas Bumi Aceh.
+g. Badan Usaha yang selanjutnya disingkat BU adalah perusahaan berbentuk badan hukum yang menjalankan jenis usaha bersifat tetap, terus-menerus dan didirikan sesuai dengan peraturan perundang-undangan serta bekerja dan berkedudukan dalam wilayah Negara Kesatuan Republik Indonesia.
+h. Bentuk Usaha Tetap yang selanjutnya disingkat BUT adalah badan usaha yang didirikan dan berbadan hukum di luar wilayah Negara Kesatuan Republik Indonesia yang melakukan kegiatan di wilayah Negara Kesatuan Republik Indonesia dan wajib mematuhi peraturan perundang-undangan yang berlaku di Republik Indonesia.
+
+## Lampiran hal. 285
+
+i. Satuan Kerja Khusus Pelaksana Kegiatan Usaha Hulu Minyak dan Gas Bumi yang selanjutnya disebut SKK Migas adalah pelaksana penyelenggaraan pengelolaan Kegiatan Usaha Hulu di bidang Minyak dan Gas Bumi berdasarkan Kontrak Kerja Sama di bawah pembinaan, koordinasi, dan pengawasan Menteri Energi dan Sumber Daya Mineral.
+j. Badan Pengelola Minyak dan Gas Bumi Aceh yang selanjutnya disingkat BPMA adalah suatu badan Pemerintah yang dibentuk untuk melakukan pengelolaan dan pengendalian bersama kegiatan usaha hulu di bidang Minyak dan Gas Bumi yang berada di darat dan laut di wilayah kewenangan Aceh (0 s.d. 12 mil laut).
+Persetujuan Pengalihan Nilai Sisa Komitmen Pasti Ke No.
+Wilayah Terbuka
+k. Kantor Pelayanan Kekayaan Negara dan Lelang yang selanjutnya disebut KPKNL adalah instansi vertikal di bawah Direktorat Jenderal Kekayaan Negara yang bertugas melaksanakan pelayanan di bidang kekayaan negara, penilaian, piutang negara dan lelang.
+l. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+m. Direktur Jenderal adalah Direktur Jenderal yang mempunyai tugas merumuskan serta melaksanakan kebijakan dan standarisasi teknis di bidang minyak dan gas bumi.
+3. Ketentuan a. Permohonan Baru Persyaratan Persyaratan permohonan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+
+## Lampiran hal. 286
+
+1) terkait dengan Persyaratan teknis berupa Kontrak Kerja Sama dimaknai sebagai salinan dokumen Kontrak Kerja Sama yang menunjukan informasi mengenai; a) nama perusahaan; dan b) nama penandatangan Kontrak Kerja Sama dan jabatannya.
+2) terkait dengan Persyaratan teknis berupa Surat Rekomendasi: a) surat Rekomendasi dimaknai termasuk dari SKK Migas/BPMA; dan b) surat pernyataan dimaknai termasuk surat pernyataan dari Kontraktor atau afiliasinya.
+3) terkait dengan persyaratan teknis berupa surat penarikan piutang, dimaknai sebagai surat pernyataan piutang negara selesai dari kantor pelayanan kekayaan negara dan lelang yang memuat informasi pembayaran biaya administrasi pengurusan piutang negara.
+4) selain memenuhi persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan tambahan berupa salinan surat Persetujuan Pengalihan Partisipasi Interes atau Persetujuan Pengalihan Partisipasi Interes 10% (sepuluh persen), apabila ada.
+Persetujuan Pengalihan Nilai Sisa Komitmen Pasti Ke No.
+Wilayah Terbuka
+b. Penyesuaian Penyesuaian dapat dilakukan untuk perubahan data teknis terkait:
+
+## Lampiran hal. 287
+
+1) peta, koordinat, luas wilayah yang diusulkan, rencana kerja dan/atau tata waktu pelaksanaan kegiatan; dan/atau 2) perubahan alokasi anggaran untuk setiap jenis kegiatan, sepanjang masih sesuai dengan nilai anggaran dalam Persetujuan Pengalihan Nilai Sisa Komitmen Pasti ke Wilayah Terbuka, dengan persyaratan berupa surat rekomendasi dari SKK Migas/BPMA.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 3 (tiga) bulan sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+
+## Lampiran hal. 287
+
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan persetujuan pengalihan nilai sisa Komitmen Pasti ke Wilayah Terbuka disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+Persetujuan Pengalihan Nilai Sisa Komitmen Pasti Ke No.
+Wilayah Terbuka
+b. Masa Berlaku Persetujuan Pengalihan Nilai Sisa Komitmen Pasti ke Wilayah Terbuka diberikan dengan jangka waktu paling lama 3 (tiga) tahun.
+5. Ketentuan a. Menyerahkan Jaminan Pelaksanaan nilai sisa Kewajiban Komitmen Pasti sesuai dengan peraturan perundang-undangan;
+b. Melaporkan hasil atau kemajuan kegiatan pengalihan nilai sisa Komitmen Pasti ke Wilayah Terbuka termasuk laporan keuangan setiap 6 (enam) bulan sekali atau sewaktu-waktu apabila diperlukan;
+c. Menyerahkan data hasil kegiatan pengalihan nilai sisa Komitmen Pasti ke Wilayah Terbuka kepada Pemerintah; dan
+d. Menjamin standar dan mutu yang berlaku dan menerapkan kaidah keteknikan yang baik.
+B. Subsektor Ketenagalistrikan
+1. Standar Kegiatan Usaha Berupa Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Sendiri No. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Sendiri (berlaku untuk semua KBLI yang melakukan pembangkitan tenaga listrik untuk kepentingan sendiri)
+1. Tujuan Sebagai acuan pelaku usaha dalam proses permohonan Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Sendiri meliputi:
+a. pembangkitan tenaga listrik;
+
+## Lampiran hal. 288
+
+b. pembangkitan tenaga listrik dan distribusi tenaga listrik; atau
+c. pembangkitan tenaga listrik, transmisi tenaga listrik, dan distribusi tenaga listrik.
+2. Istilah dan a. Izin Usaha Penyediaan Tenaga Listrik untuk Definisi Kepentingan Sendiri yang selanjutnya disebut IUPTLS adalah izin untuk melakukan usaha penyediaan tenaga listrik yang dilaksanakan untuk:
+1) kepentingan 1 (satu) entitas; dan/atau 2) pertukaran energi;
+3) afiliasinya untuk menunjang: a) kegiatan usaha dalam bentuk ekosistem terintegrasi; dan/atau b) kawasan khusus hilirisasi.
+No. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Sendiri
+b. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang ketenagalistrikan.
+3. Ketentuan a. Permohonan Baru Persyaratan Persyaratan permohonan IUPTLS berlaku bagi Pelaku usaha yang menggunakan instalasi dengan total kapasitas pembangkit di atas 500 kW (lima ratus kilo watt) dalam 1 (satu) sistem instalasi.
+Persyaratan permohonan baru IUPTLS sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan kajian teknis dengan ketentuan dokumen (berbahasa Indonesia) yang memuat Analisis kebutuhan tenaga Listrik dimaknai sebagai analisis kebutuhan tenaga listrik termasuk komitmen target bauran energi dan pengurangan emisi nasional.
+
+## Lampiran hal. 289
+
+b. Perpanjangan Pemegang IUPTLS wajib menyampaikan permohonan perpanjangan sebelum masa berlaku berakhir dengan menyampaikan permohonan dengan dilengkapi kajian teknis dan memenuhi dokumen persyaratan berikut:
+1) salinan IUPTLS yang masih berlaku;
+2) dokumen kajian teknis dengan ketentuan dokumen berisi: a) analisis kebutuhan tenaga listrik; b) lokasi instalasi termasuk tata letak (gambar situasi); c) diagram satu garis; d) jenis dan kapasitas instalasi penyediaan tenaga listrik e) jadwal pembangunan; dan f) jadwal pengoperasian.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak No. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Sendiri permohonan diterima dan lengkap;
+3) Apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+
+## Lampiran hal. 290
+
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan IUPTLS disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku IUPTLS diberikan untuk jangka waktu sesuai dengan perizinan berusaha kegiatan utamanya.
+c. Berakhirnya IUPTLS 1) IUPTLS berakhir karena: a) dikembalikan; b) habis masa berlakunya; atau c) dicabut.
+2) pemegang IUPTLS dapat mengajukan pengembalian IUPTLS sebagaimana dimaksud pada angka 1) huruf a);
+3) pencabutan IUPTLS sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+5. Ketentuan Kewajiban pemegang IUPTLS:
+Kewajiban a. memenuhi persyaratan dasar sesuai kebutuhan usaha;
+b. instalasi yang akan dioperasikan wajib memiliki Sertifikat Laik Operasi;
+c. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+d. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib; dan
+e. melaporkan kegiatan usaha secara berkala setiap 1 (satu) tahun sekali sesuai dengan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 291
+
+2. Standar Kegiatan Usaha Berupa Registrasi Nomor Identitas Stasiun Pengisian Kendaraan Listrik Umum dan Stasiun Penukaran Baterai Kendaraan Listrik Umum Registrasi Nomor Identitas Stasiun Pengisian Kendaraan Listrik No.
+Umum dan Stasiun Penukaran Baterai Kendaraan Listrik Umum KBLI: (35114) Penjualan Tenaga Listrik
+1. Tujuan Sebagai acuan Pelaku Usaha dalam proses pengaturan terkait registrasi nomor identitas Stasiun Pengisian Kendaraan Listrik Umum (SPKLU) dan Stasiun Penukaran Baterai Kendaraan Listrik Umum (SPBKLU).
+2. Istilah dan a. Kendaraan Bermotor Listrik yang selanjutnya Definisi disebut KBL adalah kendaraan yang digerakkan dengan motor listrik dan mendapatkan pasokan sumber daya tenaga listrik dari baterai dan mesin secara langsung di kendaraan maupun dari luar.
+b. Stasiun Pengisian Kendaraan Listrik Umum yang selanjutnya disebut SPKLU adalah sarana pengisian energi listrik untuk KBL berbasis baterai untuk umum, termasuk yang terintegrasi dengan pembangkit Tenaga Listrik Energi Baru dan Terbarukan.
+c. Stasiun Penukaran Baterai Kendaraan Listrik Umum yang selanjutnya disebut SPBKLU adalah sarana penukaran baterai yang akan diisi ulang dengan baterai yang telah diisi ulang untuk KBL untuk umum.
+d. Pelaku Usaha adalah orang perseorangan atau badan usaha yang melakukan usaha dan/atau kegiatan pada bidang tertentu
+
+## Lampiran hal. 291
+
+e. Sertifikat Laik Operasi yang selanjutnya disebut SLO adalah bukti pengakuan formal suatu instalasi tenaga listrik telah berfungsi sebagaimana kesesuaian persyaratan yang ditentukan dan dinyatakan siap dioperasikan.
+f. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang ketenagalistrikan.
+3. Ketentuan a. Permohonan Baru Persyaratan 1) Registrasi Nomor Identitas SPKLU Persyaratan permohonan Nomor Identitas SPKLU sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko melalui aplikasi SPKLU yang terintegrasi dengan aplikasi sistem perizinan berusaha terintegrasi secara elektronik ESDM dan single gateway Direktorat Registrasi Nomor Identitas Stasiun Pengisian Kendaraan Listrik No.
+Umum dan Stasiun Penukaran Baterai Kendaraan Listrik Umum Jenderal Ketenagalistrikan, dengan ketentuan memenuhi kewajiban komitmen IUPTLU.
+2) Registrasi Nomor Identitas SPBKLU Persyaratan permohonan Nomor Identitas SPBKLU sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko melalui aplikasi SPBKLU yang terintegrasi dengan aplikasi sistem perizinan berusaha terintegrasi secara elektronik ESDM dan single gateway Direktorat Jenderal Ketenagalistrikan.
+b. Perubahan Pemegang Nomor Identitas SPKLU atau SPBKLU melakukan perubahan Nomor Identitas SPKLU atau SPBKLU dalam hal terjadi:
+
+## Lampiran hal. 292
+
+1) perubahan kapasitas atau unit SPKLU atau SPBKLU; dan/atau 2) perubahan alamat atau lokasi SPKLU atau SPBKLU.
+Pemenuhan persyaratan perubahan sebagai berikut:
+1) Registrasi Nomor Identitas SPKLU Pemohon nomor identitas SPKLU wajib memenuhi kewajiban komitmen IUPTLU, kemudian menyampaikan data skema dan lokasi SPKLU secara tertulis kepada Menteri c.q. Direktur Jenderal Ketenagalistrikan dengan dilengkapi data sebagai berikut: a) skema bisnis SPKLU; b) nama Pemohon berikut nomor dan tanggal penerbitan IUPTLU; c) fasilitas penukaran baterai (ada atau tidak ada); dan d) alamat SPKLU:
+(1) jalan;
+(2) provinsi; dan
+(3) kabupaten/kota, Format surat penyampaian data skema dan lokasi SPKLU mengikuti ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+2) Registrasi Nomor Identitas SPBKLU Pemohon perubahan nomor identitas SPBKLU menyampaikan data skema dan lokasi SPBKLU kepada Menteri c.q. Direktur Jenderal Ketenagalistrikan dengan dilengkapi data sebagai berikut: a) skema bisnis SPBKLU;
+Registrasi Nomor Identitas Stasiun Pengisian Kendaraan Listrik No.
+Umum dan Stasiun Penukaran Baterai Kendaraan Listrik Umum b) fasilitas pengecekan ulang baterai (ada atau tidak ada); dan c) alamat SPBKLU:
+(1) jalan;
+(2) provinsi; dan
+(3) kabupaten/kota, Format surat penyampaian data skema dan lokasi SPBKLU mengikuti ketentuan peraturan perundang-undangan di bidang ketenagalistrikan.
+
+## Lampiran hal. 293
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Nomor Identitas SPKLU/SPBKLU disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Nomor Identitas SPKLU/SPBKLU berlaku selama pelaku usaha melakukan kegiatan berusaha, kecuali apabila terdapat perubahan.
+Registrasi Nomor Identitas Stasiun Pengisian Kendaraan Listrik No.
+
+## Lampiran hal. 294
+
+Umum dan Stasiun Penukaran Baterai Kendaraan Listrik Umum
+c. Berakhirnya Masa Berlaku Nomor Identitas SPKLU/SPBKLU 4) Nomor Identitas SPKLU/SPBKLU berakhir karena: d) dikembalikan; atau e) dicabut.
+5) Badan Usaha pemilik nomor identitas SPKLU/SPBKLU dapat mengajukan pengembalian nomor identitas SPKLU/SPBKLU sebagaimana dimaksud pada angka 1) huruf a);
+6) pencabutan Nomor Registrasi SPKLU/SPBKLU sebagaimana dimaksud angka 1) huruf b) dapat didasarkan pada:
+a. pengenaan sanksi administratif; dan
+b. Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+5. Ketentuan Kewajiban pemegang Nomor Identitas Kewajiban SPKLU/SPBKLU:
+a. memenuhi komitmen prasarana dasar sesuai kebutuhan usaha (antara lain Kesesuaian Kegiatan Pemanfaatan Ruang, Izin Lingkungan, Persetujuan Bangunan Gedung, Sertifikat Laik Fungsi, AMDAL, UKL/UPL, dan sebagainya);
+b. Persyaratan dasar perizinan berusaha kegiatan usaha pengisian listrik untuk KBL yang berlokasi pada kegiatan usaha lain menggunakan persyaratan dasar kegiatan usaha lain tersebut;
+c. instalasi yang akan dioperasikan wajib memiliki SLO;
+d. pengoperasian dilakukan oleh Tenaga Teknik yang memiliki Sertifikat Kompetensi;
+e. peralatan yang digunakan memenuhi Standar Nasional Indonesia yang diberlakukan wajib;
+f. Pelaku Usaha pengoperasian SPKLU dan SPBKLU harus memiliki Izin Usaha Jasa Penunjang Tenaga Listrik; dan
+
+## Lampiran hal. 294
+
+g. dalam hal terdapat perubahan data skema dan lokasi SPKLU/SPBKLU, Pelaku Usaha wajib melaporkan perubahan data sesuai dengan ketentuan peraturan perundang-undangan.
+3. Standar Kegiatan Usaha Berupa Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara No. Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara KBLI:
+(35115) Pembangkit, Transmisi, Distribusi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha
+(35116) Pembangkit, Transmisi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha
+(35117) Pembangkit, Distribusi, dan Penjualan Tenaga Listrik Dalam Satu Kesatuan Usaha
+1. Tujuan Sebagai acuan pelaku usaha dalam proses permohonan persetujuan harga pembelian tenaga listrik lintas negara.
+2. Istilah dan a. Pembangkitan Tenaga Listrik adalah kegiatan Definisi memproduksi tenaga listrik.
+b. Transmisi Tenaga Listrik adalah penyaluran tenaga listrik dari pembangkitan ke sistem distribusi atau ke konsumen, atau penyaluran tenaga listrik antarsistem.
+c. Distribusi Tenaga Listrik adalah penyaluran tenaga listrik dari sistem transmisi atau dari pembangkitan ke konsumen.
+d. Izin Usaha Penyediaan Tenaga Listrik untuk Kepentingan Umum yang selanjutnya disebut IUPTLU adalah izin untuk melakukan usaha penyediaan tenaga listrik untuk kepentingan umum.
+e. Berita Acara Harga Perkiraan Sendiri yang selanjutnya disebut Berita Acara HPS adalah rincian harga perkiraan sendiri dari pembeli terhadap komponen harga jual tenaga listrik.
+
+## Lampiran hal. 295
+
+f. Berita Acara Kesepakatan adalah kesepakatan harga jual tenaga listrik antara pembeli dan penjual.
+g. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang ketenagalistrikan.
+3. Ketentuan Pemegang IUPTLU mengajukan surat permohonan Persyaratan persetujuan harga pembelian tenaga listrik lintas negara kepada Menteri dengan persyaratan:
+a. Persyaratan administratif:
+1) IUPTLU;
+2) Izin Pembelian Tenaga Listrik Lintas Negara;
+3) profil badan usaha penjual tenaga listrik;
+4) surat penetapan pengembang atau Letter of Intent (LoI); dan 5) data dan informasi kepemilikan saham dan pengurus perusahaan sampai dengan tingkatan penerima manfaat terakhir badan usaha penjual tenaga listrik.
+No. Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara
+b. Persyaratan teknis:
+1) informasi terkait kelayakan teknis harga pembelian tenaga listrik, antara lain: a) kapasitas kontrak; b) lokasi dan titik interkoneksi; c) faktor ketersediaan (availability factor) dan/atau faktor kapasitas (capacity factor); d) suplai dan karakteristik bahan bakar pembangkit; dan e) rencana commercial operation date.
+2) informasi terkait kelayakan finansial harga pembelian tenaga listrik, antara lain: a) rincian besaran harga pembelian tenaga Listrik yang terdiri atas:
+(1) biaya investasi;
+(2) biaya operasi dan pemeliharaan tetap;
+(3) biaya bahan bakar;
+(4) biaya operasi dan pemeliharaan tidak tetap; dan/atau
+
+## Lampiran hal. 296
+
+(5) biaya jaringan atau fasilitas khusus, b) lama kontrak; c) model harga pembelian tenaga listrik, antara lain harga flat, harga staging, atau harga dasar; d) perhitungan eskalasi harga pembelian tenaga listrik; e) pola dan mekanisme kerja sama; f) mekanisme pembayaran; dan g) model finansial dan parameter finansial harga pembelian tenaga listrik.
+3) Berita Acara HPS; dan 4) Berita Acara kesepakatan/negosiasi.
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud No. Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara disetujui bersamaan dengan terbitnya persetujuan pembelian tenaga listrik lintas negara; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 297
+
+b. Masa Berlaku Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara diberikan paling lama 5 (lima) tahun.
+c. Berakhirnya Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara:
+1) Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf b);
+3) pencabutan Persetujuan Harga Pembelian Tenaga Listrik Lintas Negara sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+5. Ketentuan Kewajiban pemegang Persetujuan Harga Pembelian Kewajiban Tenaga Listrik Lintas Negara:
+a. menindaklanjuti dengan penandatanganan kontrak kerja sama (Power Exchange Agreement); dan
+b. menyampaikan laporan secara berkala setiap tahun atau sewaktu-waktu apabila diperlukan.
+C. Subsektor Mineral dan Batubara Standar Kegiatan Usaha Berupa Izin Usaha Pertambangan Untuk Penjualan No. Izin Usaha Pertambangan Untuk Penjualan (berlaku untuk semua KBLI selain Pertambangan)
+1. Tujuan Standar ini mengatur dan menetapkan batasan tentang persyaratan dalam penyelenggaraan usaha dalam bentuk Izin Usaha Pertambangan untuk Penjualan.
+
+## Lampiran hal. 298
+
+Kegiatan Usaha Pertambangan yang dilakukan oleh badan usaha bukan pertambangan untuk keperluan konstruksi dan sebagainya yang bersifat sementara dan hanya diberikan untuk 1 (satu) kali penjualan.
+Kewenangan pemberian Izin Usaha Pertambangan untuk Penjualan dilaksanakan sesuai dengan ketentuan peraturan perundang-undangan.
+2. Istilah a. Pertambangan adalah adalah sebagian atau dan Definisi seluruh tahapan kegiatan dalam rangka pengelolaan dan pengusahaan mineral atau batubara yang meliputi penyelidikan umum, eksplorasi, studi kelayakan, konstruksi, penambangan, pengolahan dan/atau pemurnian atau pengembangan dan/atau pemanfaatan, pengangkutan dan penjualan, serta kegiatan pascatambang.
+b. Izin Usaha Pertambangan untuk Penjualan yang selanjutnya disebut IUP untuk Penjualan adalah izin untuk melakukan penjualan mineral atau batubara yang tergali dari kegiatan di luar kegiatan Pertambangan meliputi kegiatan konstruksi dan sebagainya yang bersifat sementara dan hanya diberikan untuk 1 (satu) kali penjualan.
+c. Mineral adalah senyawa anorganik yang terbentuk di alam, yang memiliki sifat fisik dan kimia tertentu serta susunan kristal teratur atau gabungannya yang membentuk batuan, baik dalam bentuk lepas atau padu.
+d. Batubara adalah endapan senyawa organik karbonan yang terbentuk secara alamiah dari sisa tumbuh-tumbuhan.
+
+## Lampiran hal. 298
+
+3. Ketentuan Persyaratan Izin Usaha Pertambangan untuk Persyaratan Penjualan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan memenuhi persyaratan tambahan berupa:
+a. salinan Izin Usaha dari instansi tekait sesuai No. Izin Usaha Pertambangan Untuk Penjualan dengan KBLI bidang usaha dan sesuai dengan kegiatan yang menghasilkan Mineral atau Batubara tergali yang dilaksanakan sesuai ketentuan peraturan perundang-undangan;
+b. salinan:
+1) Surat Perintah Kerja dari Pejabat Pembuat Komitmen jika melaksanakan proyek pemerintah pusat/pemerintah daerah;
+2) Surat Perintah Kerja dari Pejabat yang Berwenang jika melaksanakan proyek badan usaha milik negara atau badan usaha milik daerah; atau 3) Izin Lokasi dari instansi yang berwenang sesuai dengan rencana penanaman modal pemohon sesuai ketentuan peraturan perundang-undangan apabila melaksanakan kegiatan proyek pemohon sendiri; dan
+c. surat persetujuan rencana kegiatan dari instansi penerbit izin sesuai bidang usaha terkait KBLI.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+
+## Lampiran hal. 299
+
+4. Ketentuan a. Verifikasi dilakukan terhadap kesesuaian Verifikasi dokumen persyaratan;
+b. Verifikasi permohonan dilakukan melalui tim evaluator perizinan;
+c. Verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak permohonan diterima dan lengkap;
+d. Apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan disetujui;
+e. Apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+5. Ketentuan Kewajiban Pemegang IUP untuk Penjualan:
+Kewajiban a. melaksanakan penjualan atas komoditas tergali sesuai proyek dan persetujuan dalam IUP untuk Penjualan;
+b. memenuhi kewajiban keuangan dan pembayaran pajak daerah atau iuran produksi sesuai dengan ketentuan peraturan perundang-undangan;
+c. menyampaikan laporan hasil kegiatan penjualan sesuai dengan ketentuan peraturan perundang-No. Izin Usaha Pertambangan Untuk Penjualan undangan;
+d. mematuhi segala kewajiban lainnya sesuai dengan ketentuan peraturan perundang-undangan; dan
+e. tidak melanggar larangan yang telah diatur berdasarkan ketentuan peraturan perundang-undangan.
+D. Subsektor Energi Baru, Terbarukan, dan Konservasi Energi
+1. Standar Kegiatan Usaha Berupa Registrasi Usaha Penunjang Panas Bumi No. Registrasi Usaha Penunjang Panas Bumi (berlaku untuk semua KBLI yang terkait dengan kegiatan Panas Bumi)
+
+## Lampiran hal. 300
+
+1. Tujuan Sebagai acuan persyaratan yang harus dipenuhi oleh pelaku usaha untuk mendapatkan Registrasi Usaha Penunjang Panas Bumi dalam kegiatan penunjang pengusahaan panas bumi pemanfaatan tidak langsung.
+2. Istilah dan a. Registrasi Usaha Penunjang Panas Bumi yang Definisi selanjutnya disebut RUP adalah proses pendaftaran perusahaan yang bergerak dalam bidang usaha penunjang panas bumi.
+b. Pemanfaatan Tidak Langsung adalah kegiatan pengusahaan pemanfaatan panas bumi dengan melalui proses pengubahan dari energi panas dan/atau fluida menjadi energi listrik.
+c. Izin Panas Bumi yang selanjutnya disingkat IPB adalah Perizinan Berusaha dibidang panas bumi untuk melakukan pengusahaan panas bumi untuk Pemanfaatan Tidak Langsung pada Wilayah Kerja tertentu.
+d. Kepala Inspektur Panas Bumi yang selanjutnya disebut Kepala Inspektur adalah pejabat yang secara ex officio menduduki jabatan pimpinan tinggi pratama yang menangani bidang pembinaan dan pengawasan penerapan K3 dan keteknikan panas bumi, pengendalian pencemaran dan/atau kerusakan lingkungan, dan penyelenggaraan usaha penunjang panas bumi.
+e. Inspektur Panas Bumi yang selanjutnya disebut Inspektur adalah pegawai negeri sipil yang diberi tugas, kewenangan, dan tanggung jawab untuk melaksanakan pembinaan dan pengawasan penerapan K3 dan keteknikan panas bumi, pengendalian pencemaran dan/atau kerusakan No. Registrasi Usaha Penunjang Panas Bumi lingkungan, dan penyelenggaraan usaha penunjang panas bumi.
+
+## Lampiran hal. 301
+
+f. Kepala Teknik Panas Bumi yang selanjutnya disingkat KTPB adalah pemegang jabatan dan kewenangan tertinggi dalam struktur organisasi lapangan dalam hal penerapan keselamatan dan kesehatan kerja dan keteknikan panas bumi serta pengendalian pencemaran dan/atau kerusakan lingkungan.
+g. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Ketentuan a. Permohonan Baru Persyaratan Persyaratan permohonan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan Surat sewa/kepemilikan peralatan dimaknai sebagai surat pernyataan sewa/kepemilikan peralatan beserta bukti sewa/kepemilikan peralatan;
+2) terkait dengan Surat pernyataan tenaga ahli dimaknai sebagai surat pernyataan tenaga ahli beserta CV, ID (KTP/SIM/IMTA), Ijazah, dan sertifikat keahlian Tenaga Ahli;
+
+## Lampiran hal. 301
+
+3) terkait dengan Laporan keuangan 2 tahun terakhir yang telah diaudit oleh auditor independen dimaknai dengan ketentuan bagi koperasi, badan usaha dengan kualifikasi usaha kecil, atau badan layanan umum tidak diperlukan audit dari auditor independen; dan 4) selain memenuhi persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan tambahan berupa: a) khusus untuk Pelaku Usaha dengan status Penanaman Modal Asing, melampirkan salinan bukti penanaman modal asing; b) khusus untuk perusahaan inspeksi harus melampirkan ISO 17020 dan Berita Acara verifikasi kemampuan usaha; dan c) tanda bukti kesesuaian persyaratan.
+No. Registrasi Usaha Penunjang Panas Bumi
+b. Perpanjangan Persyaratan perpanjangan berupa:
+1) salinan RUP sebelumnya;
+2) laporan keuangan 2 (dua) tahun terakhir yang telah diaudit oleh auditor independen, kecuali untuk koperasi, badan usaha dengan kualifikasi usaha kecil, atau badan layanan umum tidak diperlukan audit dari auditor independen;
+3) surat pernyataan kewajiban perusahaan;
+4) surat pernyataan sewa/kepemilikan peralatan beserta bukti sewa/kepemilikan peralatan;
+5) surat pernyataan tenaga ahli beserta CV, ID (KTP/SIM/IMTA), Ijazah, dan sertifikat keahlian Tenaga Ahli;
+6) Company Profile;
+7) salinan surat izin sesuai dengan subbidang usaha yang diajukan;
+8) bukti penyampaian laporan semester;
+
+## Lampiran hal. 302
+
+9) khusus untuk Pelaku Usaha dengan status Penanaman Modal Asing, melampirkan salinan bukti penanaman modal asing;
+10) khusus untuk perusahaan inspeksi harus melampirkan ISO 17020 dan Berita Acara verifikasi kemampuan usaha; dan 11) tanda bukti kesesuaian persyaratan.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 4 (empat) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila No. Registrasi Usaha Penunjang Panas Bumi pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+
+## Lampiran hal. 303
+
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan RUP disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku RUP RUP diberikan untuk jangka waktu paling lama 3 (tiga) tahun dan dapat diberikan perpanjangan untuk jangka waktu paling lama 3 (tiga) tahun untuk setiap kali perpanjangan.
+c. Berakhirnya RUP 1) RUP berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang RUP dapat mengajukan pengembalian RUP sebagaimana dimaksud pada angka 1) huruf b).
+3) pencabutan RUP sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+5. Ketentuan Kewajiban pemegang RUP:
+Kewajiban a. mengikuti ketentuan peraturan perundang-undangan, memenuhi standar yang berlaku di bidang keselamatan dan kesehatan kerja dan keteknikan panas bumi, dan memenuhi pedoman teknis yang ditetapkan oleh Menteri;
+b. mematuhi ketentuan peraturan perundang-undangan dan memenuhi standar yang berlaku di bidang perlindungan dan pengelolaan lingkungan hidup;
+c. semaksimal mungkin menggunakan barang, jasa, teknologi, serta kemampuan rekayasa dan rancang bangun dalam negeri secara transparan dan bersaing;
+d. mengutamakan penggunaan tenaga kerja Indonesia dan melaksanakan program pengembangan tenaga kerja Indonesia;
+
+## Lampiran hal. 303
+
+e. menyampaikan laporan kegiatan usaha perusahaan secara berkala setiap 6 (enam) bulan kepada Kepala Inspektur Panas Bumi setelah RUP didapatkan; dan
+f. melakukan kegiatan usaha sesuai dengan klasifikasi dan kualifikasi usaha.
+2. Standar Kegiatan Usaha Berupa Persetujuan Gudang Bahan Peledak Panas Bumi No. Persetujuan Gudang Bahan Peledak Panas Bumi KBLI: (06202) Pengusahaan Tenaga Panas Bumi
+1. Tujuan Sebagai acuan persyaratan yang harus dipenuhi oleh pelaku usaha untuk mendapatkan Persetujuan Gudang Bahan Peledak Panas Bumi dalam kegiatan pengusahaan tenaga panas bumi:
+a. ketentuan umum dan keselamatan pembangunan gudang bahan peledak;
+b. pengaturan ruangan dan persyaratan teknis gudang bahan peledak; dan
+c. tahapan pembangunan gudang bahan peledak.
+2. Istilah dan a. Persetujuan Gudang Bahan Peledak adalah Definisi persetujuan untuk membangun gudang penyimpanan bahan peledak yang digunakan untuk operasional kegiatan pengusahaan tenaga panas bumi.
+b. Kepala Inspektur Panas Bumi yang selanjutnya disebut Kepala Inspektur adalah pejabat yang secara ex officio menduduki jabatan pimpinan tinggi pratama yang menangani bidang pembinaan dan pengawasan penerapan K3 dan keteknikan panas bumi, pengendalian pencemaran dan/atau kerusakan lingkungan, dan penyelenggaraan usaha penunjang panas bumi.
+
+## Lampiran hal. 304
+
+c. Inspektur Panas Bumi yang selanjutnya disebut Inspektur adalah pegawai negeri sipil yang diberi tugas, kewenangan, dan tanggung jawab untuk melaksanakan pembinaan dan pengawasan penerapan K3 dan keteknikan panas bumi, pengendalian pencemaran dan/atau kerusakan lingkungan, dan penyelenggaraan usaha penunjang panas bumi.
+d. Kepala Teknik Panas Bumi yang selanjutnya disingkat KTPB adalah pemegang jabatan dan kewenangan tertinggi dalam struktur organisasi lapangan dalam hal penerapan K3 dan keteknikan panas bumi serta pengendalian pencemaran dan/atau kerusakan lingkungan.
+e. Pemanfaatan Tidak Langsung adalah kegiatan pengusahaan pemanfaatan panas bumi dengan melalui proses pengubahan dari energi Panas dan/atau fluida menjadi energi listrik.
+f. Wilayah Kerja Panas Bumi yang selanjutnya disebut Wilayah Kerja adalah wilayah dengan batas-batas koordinat tertentu digunakan untuk pengusahaan Panas Bumi untuk Pemanfaatan Tidak Langsung.
+No. Persetujuan Gudang Bahan Peledak Panas Bumi
+g. Izin Panas Bumi yang selanjutnya disingkat IPB adalah Perizinan Berusaha dibidang Panas Bumi untuk melakukan pengusahaan Panas Bumi untuk Pemanfaatan Tidak Langsung pada Wilayah Kerja tertentu.
+
+## Lampiran hal. 305
+
+h. Kuasa Pengusahaan Sumber Daya Panas Bumi adalah Perizinan untuk melakukan kegiatan pengusahaan Panas Bumi untuk Pemanfaatan Tidak Langsung pada Wilayah Kerja Panas Bumi yang diberikan kepada Badan Usaha sebelum berlakunya Undang-Undang Nomor 27 Tahun 2003 dengan mengacu kepada Keputusan Presiden Nomor 21 Tahun 1981 dan Keputusan Presiden Nomor 45 Tahun 1991.
+i. Kontrak Operasi Bersama Panas Bumi adalah perjanjian yang dilakukan untuk melakukan kegiatan pengusahaan panas bumi antara pihak manajemen operasi dan kontraktor yang ditandatangani sebelum berlakunya Undang-Undang Nomor 27 Tahun 2003 tentang Panas Bumi dengan mengacu kepada Keputusan Presiden Nomor 21 Tahun 1981 dan Keputusan Presiden Nomor 45 Tahun 1991.
+j. Penugasan Survei Pendahuluan dan Eksplorasi yang selanjutnya disingkat PSPE adalah penugasan yang diberikan oleh Menteri untuk melaksanakan kegiatan Survei Pendahuluan dan Eksplorasi.
+k. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Ketentuan a. Permohonan Baru Persyaratan Persyaratan permohonan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+
+## Lampiran hal. 305
+
+1) terkait dengan Gambar konstruksi gudang bahan peledak dengan skala 1:100 dimaknai termasuk berupa pandangan atas dan pandangan samping serta hal-hal lain yang diperlukan sesuai dengan kapasitas maksimum gudang bahan peledak yang dimohonkan;
+2) terkait dengan Gambar situasi gudang bahan peledak dengan skala 1:5000 dimaknai termasuk dengan mencantumkan informasi jarak aman;
+3) selain memenuhi persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha No. Persetujuan Gudang Bahan Peledak Panas Bumi Berbasis Risiko, memenuhi persyaratan tambahan berupa: a) Izin/Kontrak/Penugasan/Persetujuan Penugasan; b) Berita Acara Inspeksi Penetapan Rencana Lokasi Gudang Bahan Peledak; dan c) Berita Acara kesesuaian bangunan gudang bahan peledak dengan ketentuan peraturan perundang-undangan dan Standar Nasional Indonesia atau standar lain yang berlaku.
+b. Perpanjangan Persyaratan perpanjangan berupa:
+1) salinan: a) Izin Panas Bumi; b) Persetujuan Survei Pendahuluan dan Eksplorasi; c) Kuasa Pengusahaan Sumber Daya Panas Bumi; d) Kontrak Operasi Bersama Panas Bumi; e) Izin Pengusahaan Sumber Daya Panas Bumi; atau f) Penugasan pemerintah untuk penambahan data (government drilling).
+2) salinan Persetujuan Gudang Bahan Peledak Panas Bumi sebelumnya;
+3) salinan pengesahan pengangkatan KTPB;
+
+## Lampiran hal. 306
+
+4) gambar konstruksi gudang bahan peledak dengan skala 1 : 100; berupa pandangan atas dan pandangan samping serta hal-hal lain yang diperlukan sesuai dengan kapasitas maksimum gudang bahan peledak yang dimohonkan;
+5) gambar situasi gudang bahan peledak dengan skala 1 : 5000 yang mencantumkan informasi jarak aman;
+6) rekomendasi penggunaan Gudang Bahan Peledak dari Kepolisian; dan 7) Berita Acara kesesuaian bangunan gudang bahan peledak dengan ketentuan peraturan perundang-undangan dan Standar Nasional Indonesia atau standar lain yang berlaku.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+No. Persetujuan Gudang Bahan Peledak Panas Bumi
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 7 (tujuh) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+
+## Lampiran hal. 307
+
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Persetujuan Gudang Bahan Peledak Panas Bumi disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku Persetujuan Gudang Bahan Peledak Panas Bumi 1) untuk Persetujuan Gudang Bahan Peledak Sementara diberikan untuk jangka waktu paling lama 2 (dua) tahun dan dapat diberikan perpanjangan untuk jangka waktu paling lama 2 (dua) tahun untuk setiap kali perpanjangan; atau 2) untuk Persetujuan Gudang Bahan Peledak Tetap diberikan untuk jangka waktu paling lama 5 (lima) tahun dan dapat diberikan perpanjangan untuk jangka waktu paling lama 5 (lima) tahun untuk setiap kali perpanjangan.
+c. Berakhirnya Persetujuan Gudang Bahan Peledak 1) Persetujuan Gudang Bahan Peledak berakhir karena: a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang Persetujuan Gudang Bahan Peledak dapat mengajukan pengembalian sebagaimana dimaksud pada angka 1) huruf b).
+No. Persetujuan Gudang Bahan Peledak Panas Bumi 3) pencabutan Persetujuan Gudang Bahan Peledak sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+
+## Lampiran hal. 308
+
+5. Ketentuan Kewajiban pemegang Persetujuan Gudang Bahan Kewajiban Peledak Panas:
+a. mematuhi ketentuan peraturan perundang-undangan, memenuhi standar yang berlaku terkait pembangunan dan penggunaan gudang bahan peledak, dan memenuhi pedoman teknis yang ditetapkan oleh Menteri; dan
+b. menyampaikan laporan triwulan tentang penggunaan dan persediaan bahan peledak kepada Kepala Inspektur Panas Bumi setelah Persetujuan didapatkan.
+3. Standar Kegiatan Usaha Berupa Sertifikat Laik Operasi Pengusahaan Panas Bumi untuk Pemanfaatan Langsung Sertifikat Laik Operasi Pengusahaan Panas Bumi untuk No.
+Pemanfaatan Langsung KBLI:
+(93221) Pemandian Alam
+(93231) Wisata Agro
+(16102) Industri Pengawetan Kayu
+(15111) Industri Pengawetan Kulit
+(12091) Industri Pengeringan dan Pengolahan Tembakau
+(10733) Industri Manisan Buah-Buahan dan Sayuran Kering
+(10313) Industri Pengeringan Buah-Buahan dan Sayuran
+(10763) Industri Pengolahan Teh
+(01640) Pemilihan Benih Tanaman untuk Pengembangbiakan
+(10722) Industri Gula Merah
+(10761) Industri Pengolahan Kopi
+(10211) Industri Penggaraman atau Pengeringan Ikan
+(10291) Industri Pengeringan Biota Air Lainnya
+(10510) Industri Pengolahan Susu Segar dan Krim
+(20294) Industri Minyak Atsiri
+(17011) Industri Bubur Kertas (Pulp)
+1. Tujuan Sebagai acuan persyaratan yang harus dipenuhi oleh pelaku usaha dalam pengambilan energi panas bumi untuk pemanfaatan langsung berupa Sertifikat Laik Operasi Pemanfaatan Langsung Panas Bumi.
+
+## Lampiran hal. 308
+
+Pelaku usaha harus memiliki Sertifikat Laik Operasi Pemanfaatan Langsung Panas Bumi sebelum fasilitas pemanfaatan langsung beroperasi.
+Sertifikat Laik Operasi Pengusahaan Panas Bumi untuk No.
+Pemanfaatan Langsung
+2. Istilah dan a. Pemanfaatan Langsung adalah kegiatan Definisi pengusahaan pemanfaatan Panas Bumi secara langsung tanpa melakukan proses pengubahan dari Energi Panas dan/atau fluida menjadi jenis energi lain untuk keperluan nonlistrik.
+b. Pemanfaatan Tidak Langsung adalah kegiatan pengusahaan pemanfaatan Panas Bumi dengan melalui proses pengubahan dari Energi Panas dan/atau fluida menjadi energi listrik.
+c. Manifestasi Panas Bumi adalah suatu tanda di permukaan bumi sebagai indikasi adanya potensi Panas Bumi.
+d. Sertifikat Laik Operasi Pemanfaatan Langsung Panas Bumi yang selanjutnya disingkat SLO Pemanfaatan Langsung adalah sertifikat yang diberikan untuk dapat melakukan kegiatan Pemanfaatan Langsung, merupakan bukti tertulis yang dikeluarkan oleh Direktorat Jenderal yang menangani panas bumi atau dinas terkait yang membidangi panas bumi untuk pemanfaatan langsung pada tingkat provinsi atau kabupaten/kota.
+e. Wilayah Operasional Panas Bumi untuk Pemanfaatan Tidak Langsung yang selanjutnya disingkat WOP adalah wilayah yang ditetapkan di dalam Wilayah Kerja Panas Bumi yang digunakan dalam kegiatan operasional Pemanfaatan Tidak Langsung.
+f. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+
+## Lampiran hal. 309
+
+3. Ketentuan a. Permohonan Baru Persyaratan Persyaratan permohon sesuai dengan persyaratan sebagaimana tercantum dalam ketentuan Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, dengan ketentuan:
+1) terkait dengan persyaratan administratif berupa salinan bukti/sertifikat mengikuti pelatihan terkait pemanfaatan langsung panas bumi dari pelaku usaha dimaknai menjadi bagian dari persyaratan teknis;
+2) selain memenuhi persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko, memenuhi persyaratan tambahan sebagai persyaratan teknis berupa:
+Sertifikat Laik Operasi Pengusahaan Panas Bumi untuk No.
+Pemanfaatan Langsung a) daftar penggunaan bahan, peralatan dan/atau instalasi yang memenuhi standar; b) daftar personil dengan kompetensi teknis pengambilan energi Panas Bumi untuk pemanfaatan langsung yang dilengkapi dengan bukti sertifikat pelatihan dengan materi paling sedikit meliputi:
+(1) aspek keselamatan, kesehatan kerja dan lindungan lingkungan; dan
+(2) aspek teknis Pemanfaatan Langsung. c) surat pernyataan sendiri telah memenuhi kelayakan teknis Pemanfaatan Langsung yang dilengkapi dengan:
+(1) desain rancang bangun fasilitas Pemanfaatan Langsung;
+(2) metode pengambilan energi panas bumi untuk pemanfaatan langsung; dan
+(3) rencana penggunaan energi panas bumi untuk pemanfaatan langsung.
+b. Perpanjangan Persyaratan perpanjangan berupa:
+
+## Lampiran hal. 310
+
+1) telah mendapatkan Perizinan Berusaha yang sesuai dengan sektornya;
+2) salinan SLO Pemanfaatan Langsung Panas Bumi sebelumnya;
+3) administratif meliputi: a) Nomor Induk Berusaha/Perizinan Berusaha Sektor; dan b) peta situasi lokasi pengambilan dan pemanfaatan energi panas bumi.
+4) teknis meliputi: a) daftar penggunaan bahan, peralatan dan/atau instalasi yang memenuhi standar; b) daftar personil dengan kompetensi teknis pengambilan energi Panas Bumi untuk pemanfaatan langsung yang dilengkapi dengan bukti sertifikat pelatihan dengan materi paling sedikit meliputi:
+(1) aspek keselamatan, kesehatan kerja dan lindungan lingkungan, dan
+(2) aspek teknis Pemanfaatan Langsung. c) surat pernyataan sendiri telah memenuhi kelayakan teknis Pemanfaatan Langsung yang dilengkapi dengan:
+(1) desain rancang bangun fasilitas Pemanfaatan Langsung;
+Sertifikat Laik Operasi Pengusahaan Panas Bumi untuk No.
+Pemanfaatan Langsung
+(2) metode pengambilan energi panas bumi untuk pemanfaatan langsung; dan
+(3) rencana penggunaan energi panas bumi untuk pemanfaatan langsung.
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+
+## Lampiran hal. 311
+
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 10 (sepuluh) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Persetujuan SLO Pemanfaatan Langsung disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+b. Masa Berlaku SLO SLO diberikan untuk jangka waktu paling lama 5 (lima) tahun dan dapat diberikan perpanjangan untuk jangka waktu paling lama 5 (lima) tahun untuk setiap kali perpanjangan.
+c. Berakhirnya SLO Pemanfaatan Langsung Panas Bumi 1) SLO Pemanfataan Langsung berakhir karena:
+Sertifikat Laik Operasi Pengusahaan Panas Bumi untuk No.
+Pemanfaatan Langsung a) habis masa berlakunya; b) dikembalikan; atau c) dicabut.
+2) pemegang SLO dapat mengajukan pengembalian SLO sebagaimana dimaksud pada angka 1) huruf b).
+
+## Lampiran hal. 312
+
+3) pencabutan SLO sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+5. Ketentuan Kewajiban pemegang SLO Pemanfaatan Langsung:
+Kewajiban a. memahami dan menaati peraturan perundang-undangan di bidang keselamatan dan kesehatan kerja serta perlindungan dan pengelolaan lingkungan hidup dan memenuhi standar yang berlaku;
+b. melakukan pengendalian pencemaran dan/atau kerusakan lingkungan hidup yang meliputi kegiatan pencegahan, penanggulangan, dan pemulihan fungsi lingkungan hidup;
+c. memenuhi standar pengambilan fluida Panas Bumi untuk Pemanfaatan Langsung;
+d. menyampaikan laporan kegiatan Pemanfaatan Langsung Panas Bumi secara berkala setiap tahun; dan
+e. memperhatikan aspek budaya masyarakat setempat.
+4. Standar Kegiatan Usaha Berupa Persetujuan Studi Kelayakan/Feasibility Study Proyek Pembangkit Listrik Tenaga Panas Bumi No. Persetujuan Studi Kelayakan/Feasibility Study Proyek Pembangkit Listrik Tenaga Panas Bumi KBLI:
+(06202) Pengusahaan Tenaga Panas Bumi
+(35111) Pembangkitan Tenaga Listrik
+(42917) Konstruksi Bangunan Sipil Panas Bumi
+1. Tujuan Sebagai acuan persyaratan yang harus dipenuhi oleh pelaku usaha untuk mendapatkan Persetujuan Studi Kelayakan/Feasibility Study (FS) Proyek Pembangkit Listrik Tenaga Panas Bumi dalam kegiatan pengusahaan tenaga panas bumi.
+
+## Lampiran hal. 312
+
+2. Istilah dan a. Studi Kelayakan adalah kajian untuk Definisi memperoleh informasi secara terperinci terhadap seluruh aspek yang berkaitan untuk menentukan kelayakan teknis, ekonomis, dan No. Persetujuan Studi Kelayakan/Feasibility Study Proyek Pembangkit Listrik Tenaga Panas Bumi lingkungan atas suatu rencana usaha dan/atau kegiatan pemanfaatan panas bumi yang diusulkan.
+b. Wilayah Kerja Panas Bumi yang selanjutnya disebut Wilayah Kerja adalah wilayah dengan batas-batas koordinat tertentu digunakan untuk pengusahaan panas bumi untuk pemanfaatan tidak langsung.
+c. Izin Panas Bumi yang selanjutnya disingkat IPB adalah perizinan berusaha dibidang panas bumi untuk melakukan pengusahaan panas bumi untuk pemanfaatan tidak langsung pada Wilayah Kerja tertentu.
+d. Pembangkit Listrik Tenaga Panas Bumi yang selanjutnya disebut PLTP adalah pembangkit listrik yang memanfaatkan energi panas bumi yang diekstrak dari fluida dan batuan panas di dalam atau di permukaan bumi.
+e. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+3. Ketentuan Persyaratan permohonan baru atau perubahan Persyaratan kapasitas dan/atau teknologi pembangkitan tenaga listrik pada jangka waktu eksplorasi sesuai dengan persyaratan sebagaimana tercantum dalam ketentuan Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko.
+
+## Lampiran hal. 313
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi mengalami perubahan, Pelaku Usaha melakukan perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+4. Ketentuan a. Verifikasi Permohonan Verifikasi 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 30 (tiga puluh) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak No. Persetujuan Studi Kelayakan/Feasibility Study Proyek Pembangkit Listrik Tenaga Panas Bumi pengembalian sebagaimana dimaksud pada angka 3);
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Persetujuan Studi Kelayakan/FS Proyek PLTP disetujui; dan 7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+
+## Lampiran hal. 314
+
+b. Masa Berlaku Persetujuan Studi Kelayakan/FS Proyek PLTP Persetujuan Studi Kelayakan/FS Proyek PLTP termasuk perubahannya berlaku sejak tanggal persetujuan diberikan sampai dengan berakhirnya IPB termasuk perpanjangannya (apabila diberikan perpanjangan jangka waktu IPB), kecuali terjadi perubahan kapasitas dan/atau teknologi pembangkitan tenaga listrik pada jangka waktu eksploitasi yang disetujui Menteri.
+5. Ketentuan Kewajiban pemegang Persetujuan Studi Kewajiban Kelayakan/FS PLTP:
+a. melaksanakan program kerja eksploitasi dan produksi/pemanfaatan sesuai dokumen FS;
+b. menyampaikan laporan jangka panjang eksploitasi;
+c. menyampaikan laporan berkala (bulanan, triwulanan, dan tahunan) serta laporan Rencana Kerja dan Anggaran Biaya; dan
+d. memenuhi semua kewajiban lainnya untuk tahap eksploitasi dan pemanfaatan sesuai dengan ketentuan peraturan perundang-undangan di bidang Panas Bumi.
+E. Subsektor Geologi Standar Kegiatan Usaha Penggunaan Air Tanah Berupa Izin Pengusahaan Air Tanah No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah)
+
+## Lampiran hal. 314
+
+1. Tujuan Sebagai acuan bagi pelaku usaha dalam proses permohonan Izin Pengusahaan Air Tanah dengan mengutamakan air permukaan dan diterbitkan berdasarkan pada kondisi air tanah yang tercantum dalam zona konservasi air tanah dan/atau data No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah) hidrogeologi lainnya serta untuk mewujudkan tertib penyelenggaraan Izin Pengusahaan Air Tanah.
+2. Istilah dan a. Air Tanah adalah air yang terdapat dalam Definisi lapisan tanah atau batuan di bawah permukaan tanah.
+b. Zona Konservasi Air Tanah adalah zona atau daerah yang ditentukan berdasarkan kesamaan kondisi daya dukung Air Tanah, kesamaan tingkat kerusakan Air Tanah, dan kesamaan pengelolaannya.
+c. Sungai Bawah Tanah adalah sungai yang mengalir di bawah permukaan tanah.
+d. Izin Pengusahaan Air Tanah adalah legalitas untuk menggunakan Air Tanah yang diberikan kepada pelaku usaha untuk menunjang kegiatan usaha.
+e. Pengeboran/Penggalian Air Tanah adalah kegiatan membuat sumur bor/gali Air Tanah sebagai sarana eksplorasi, penggunaan, pengusahaan, pemantauan, pengimbuhan, dan/atau peresapan Air Tanah.
+f. Menteri adalah menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral.
+g. Kepala Badan adalah kepala badan yang mempunyai tugas menyelenggarakan penyelidikan dan pelayanan di bidang sumber daya geologi, vulkanologi dan mitigasi bencana geologi, Air Tanah, dan geologi lingkungan, serta survei geologi.
+
+## Lampiran hal. 315
+
+3. Ketentuan a. Permohonan Baru Persyaratan 1) Pelaku Usaha mengisi permohonan yang memuat informasi sebagai berikut: a) alamat lokasi sumur bor/gali Air Tanah atau lokasi ruas sungai bawah tanah (Jalan, RT/RW, Desa/Kel., Kec., Kab./Kota, Prov.) dan disertai koordinat rencana titik Pengeboran/Penggalian Air Tanah atau ruas sungai bawah tanah dalam format decimal degree; b) rencana peruntukan penggunaan Air Tanah atau Sungai Bawah Tanah; c) rencana jumlah debit pengambilan Air Tanah dalam m3/hari (meter kubik per hari; d) nomor urut sumur bor/gali Air Tanah; e) pernyataan yang memuat kesanggupan membuat sumur resapan/imbuhan, No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah) dan/atau pantau, melaporkan rencana pelaksanaan konstruksi dan uji pemompaan, dan lokasi tidak dalam proses sengketa; dan f) data teknis konstruksi sumur bor/gali Air Tanah/ Sungai Bawah Tanah disertai gambar rencana konstruksi sumur bor/ gali Air Tanah dan/atau gambar rencana konstruksi sipil yang telah mendapatkan rekomendasi dari instansi berwenang untuk Sungai Bawah Tanah.
+
+## Lampiran hal. 316
+
+2) Dalam hal untuk skala usaha mikro dan kecil dengan debit pengambilan Air Tanah lebih dari 10m3/hari (sepuluh meter kubik per hari), skala usaha menengah, dan skala usaha besar, selain mengisi permohonan sebagaimana dimaksud pada angka 1) dilengkapi dengan laporan Pendahuluan Pengeboran/Penggalian Air Tanah disertai dokumen pendukung atau dokumen teknis rencana penggunaan Air Tanah pada Sungai Bawah Tanah sesuai dengan pedoman teknis.
+b. Perpanjangan Pelaku Usaha mengajukan permohonan perpanjangan sesuai dengan persyaratan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko.
+Dalam hal dokumen atau data dan/atau informasi dalam sistem perizinan online (OSS) mengalami perubahan, Pelaku Usaha mengajukan perubahan data dan/atau informasi terlebih dahulu dalam sistem perizinan online (OSS).
+c. Keterlanjuran Konstruksi berupa Sumur Bor/Gali Air Tanah dan/atau Penggunaan Air Tanah Tanpa Izin Pengusahaan Air Tanah (Penataan) 1) Mengisi permohonan yang memuat informasi sebagai berikut: a) alamat lokasi sumur bor/gali Air Tanah (Jalan, RT/RW, Desa/Kel., Kec., Kab./Kota, Prov.); b) koordinat sumur bor/gali Air Tanah atau ruas Sungai Bawah Tanah dalam format decimal degree; c) peruntukan penggunaan Air Tanah;
+
+## Lampiran hal. 317
+
+No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah) d) rencana jumlah debit pengambilan atau penggunaan Air Tanah dalam m3/hari (meter kubik per hari); e) nomor urut sumur bor/gali Air Tanah; f) kedalaman konstruksi sumur bor/gali Air Tanah; g) diameter konstruksi sumur bor/gali Air Tanah; h) pernyataan sesuai dengan ketentuan sebagaimana tercantum dalam Peraturan Pemerintah Nomor 28 Tahun 2025 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko termasuk pernyataan yang memuat kesanggupan untuk membuat sumur resapan, sumur imbuhan, dan/atau sumur pantau untuk sumur bor/gali Air Tanah; i) data teknis konstruksi sumur bor/ gali Air Tanah/ Sungai Bawah Tanah disertai gambar konstruksi sumur bor/ gali Air Tanah dan/atau gambar konstruksi sipil yang telah mendapatkan rekomendasi dari instansi berwenang untuk Sungai Bawah Tanah.
+2) mengunggah dokumentasi sumur bor/ gali Air Tanah atau lokasi penggunaan Air Tanah pada Sungai Bawah Tanah, serta sarana dan prasarana penggunaan Air Tanah lainnya yang telah terbangun dalam kompilasi foto geotagging.
+3) dalam hal permohonan dengan debit pengambilan Air Tanah lebih dari atau sama dengan 100 meter kubik per hari (100 m3/hari), selain mengisi permohonan sebagaimana dimaksud pada angka 1) dan mengunggah dokumentasi sebagaimana dimaksud pada angka 2), dilengkapi dengan dokumen teknis sesuai dengan pedoman teknis.
+
+## Lampiran hal. 317
+
+4) mengunggah dokumen bukti pengenaan sanksi sesuai dengan ketentuan peraturan perundang-undangan.
+d. Perubahan 1) Mengisi permohonan yang memuat informasi sebagai berikut: a) perubahan debit pengambilan air tanah:
+(1) rencana perubahan debit pengambilan Air Tanah dalam m3/hari (meter kubik per hari); dan/atau No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah)
+(2) dokumen data dan analisis uji pemompaan sesuai pedoman teknis apabila debit pengambilan Air Tanah lebih dari 10 m3/hari (sepuluh meter kubik per hari). b) perubahaan konstruksi sumur bor/ gali Air Tanah:
+(1) rencana perubahan konstruksi sumur bor/gali Air Tanah; atau
+(2) gambar rencana perubahan konstruksi sipil yang telah mendapatkan rekomendasi dari instansi yang berwenang untuk Sungai Bawah Tanah yang membangun konstruksi sipil. c) perubahan pemegang Izin Pengusahaan Air Tanah dengan melampirkan dokumen yang berkaitan dengan perubahan identitas pelaku usaha.
+2) dalam hal perubahan dikarenakan terjadinya bencana alam, selain mengisi permohonan sebagaimana dimaksud pada angka 1) huruf a) dan/atau angka 1) huruf b), dilengkapi persyaratan berupa penetapan keadaan bencana alam dari instansi yang berwenang.
+3) dalam hal terdapat perubahan kebijakan Pemerintah dan/atau kondisi lingkungan Air Tanah, Pemerintah dapat mengubah Izin Pengusahaan Air Tanah.
+
+## Lampiran hal. 318
+
+Dalam hal dokumen atau data dan/atau informasi telah tersedia dalam sistem perizinan online (OSS), dokumen atau data dan/atau informasi tidak perlu disampaikan Pelaku Usaha.
+Dalam hal dokumen atau data dan/atau informasi dalam sistem perizinan online (OSS) mengalami perubahan, Pelaku Usaha mengajukan terlebih dahulu perubahan data dan/atau informasi dalam sistem perizinan online (OSS).
+4. Ketentuan a. Ketentuan verifikasi untuk permohonan Izin Verifikasi Pengusahaan Air Tanah untuk skala usaha mikro dan kecil dengan debit pengambilan Air Tanah kurang dari atau sama dengan 10m3/hari 1) pemohon mengajukan permohonan melalui Sistem OSS;
+2) verifikasi atas permohonan dilakukan secara otomatis melalui Sistem OSS.
+b. Ketentuan verifikasi untuk permohonan Izin Pengusahaan Air Tanah untuk skala usaha mikro dan kecil dengan debit pengambilan Air Tanah lebih dari 10m3/hari, menengah, dan No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah) besar 1) verifikasi dilakukan terhadap kesesuaian dokumen persyaratan;
+2) verifikasi terhadap kesesuaian dokumen persyaratan dilakukan dalam jangka waktu paling lama 30 (tiga puluh) hari kerja sejak permohonan diterima dan lengkap;
+3) apabila berdasarkan verifikasi permohonan dinyatakan memerlukan perbaikan, permohonan dikembalikan disertai catatan perbaikan;
+4) pemohon menyampaikan perbaikan paling lambat 10 (sepuluh) hari kerja sejak pengembalian sebagaimana dimaksud pada angka 3);
+
+## Lampiran hal. 319
+
+5) permohonan dinyatakan batal apabila pemohon tidak menyampaikan perbaikan dalam jangka waktu sebagaimana dimaksud pada angka 4);
+6) apabila berdasarkan verifikasi permohonan dinyatakan sesuai, permohonan penerbitan Izin Pengusahaan Air Tanah disetujui;
+7) apabila berdasarkan verifikasi permohonan dinyatakan tidak sesuai, permohonan ditolak disertai alasan penolakan.
+c. Verifikasi dan evaluasi Izin Pengusahaan Air Tanah dilaksanakan oleh tim teknis.
+d. Ketentuan Pemberian Debit 1) pada zona perlindungan Air Tanah di Daerah Imbuhan Air Tanah, pengambilan Air Tanah dibatasi dengan debit paling banyak 25 m3/hari (dua puluh lima meter kubik per hari) dan menerapkan Zero Delta Q Policy;
+2) pada zona pemanfaatan Air Tanah di zona aman, pembatasan pengambilan Air Tanah dilakukan dengan ketentuan debit yang ditetapkan pada peta Zona Konservasi Air Tanah;
+3) pada zona rawan, pengambilan Air Tanah dibatasi dengan debit yang tidak lebih besar daripada debit maksimal yang ditetapkan pada peta Zona Konservasi Air Tanah;
+4) pada zona kritis, pengambilan Air Tanah dibatasi dengan debit paling banyak 10 m3/hari (sepuluh meter kubik per hari);
+5) pada zona rusak: a) untuk permohonan Izin Pengusahaan Air Tanah baru tidak dapat diberikan izin; dan No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah) b) untuk permohonan perpanjangan Izin Pengusahaan Air Tanah diberikan paling banyak 10 m3/hari (sepuluh meter kubik per hari);
+
+## Lampiran hal. 320
+
+6) untuk pengambilan Air Tanah pada Akuifer Tidak Tertekan, ketentuan penerbitan Izin Pengusahaan Air Tanah sebagai berikut: a) untuk kedalaman kurang dari 40 m (empat puluh meter), debit pengambilan Air Tanah dibatasi paling banyak 10 m3/hari (sepuluh meter kubik per hari); b) pembatasan debit pengambilan Air Tanah sebagaimana dimaksud pada huruf a tidak berlaku untuk kondisi teknis:
+(1) potensi Air Tanah pada kedalaman lebih dari 40 m (empat puluh meter) sangat kecil atau langka;
+(2) kualitas Air Tanah pada kedalaman lebih dari 40 m (empat puluh meter) payau, asin, atau tercemar;
+(3) tidak berpengaruh secara langsung terhadap Air Tanah yang digunakan oleh masyarakat untuk pemenuhan kebutuhan pokok sehari-hari; dan/atau
+(4) Air Tanah untuk pemanfaatan langsung panas bumi;
+7) dalam hal terdapat kondisi teknis sebagaimana dimaksud pada angka 6) huruf b, pembatasan debit pengambilan Air Tanah didasarkan pada hasil evaluasi teknis dengan prinsip tidak mengganggu sumber air masyarakat sekitar dan tidak menimbulkan kerusakan kondisi lingkungan Air Tanah;
+8) dalam hal Zona Konservasi Air Tanah belum ditetapkan, ketentuan pemberian debit pengambilan Air Tanah didasarkan pada data hidrogeologi lainnya.
+
+## Lampiran hal. 320
+
+e. Masa Berlaku Izin Pengusahaan Air Tanah 1) Masa berlaku Izin Pengusahaan Air Tanah diberikan sesuai dengan zona konservasi Air Tanah dengan ketentuan: a) pada zona perlindungan Air Tanah di Daerah Imbuhan Air Tanah diberikan untuk jangka waktu paling lama 3 (tiga) tahun dan perpanjangan untuk jangka waktu paling lama 3 (tiga) tahun tiap kali perpanjangan; b) pada zona pemanfaatan Air Tanah di zona aman diberikan untuk jangka waktu No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah) paling lama 7 (tujuh) tahun dan perpanjangan untuk jangka waktu paling lama 7 (tujuh) tahun tiap kali perpanjangan; c) pada zona pemanfaatan Air Tanah di zona rawan diberikan untuk jangka waktu paling lama 5 (lima) tahun dan perpanjangan untuk jangka waktu paling lama 5 (lima) tahun tiap kali perpanjangan; d) pada zona pemanfaatan Air Tanah di zona kritis diberikan untuk jangka waktu paling lama 4 (empat) tahun untuk dan perpanjangan untuk jangka waktu paling lama 4 (empat) tahun tiap kali perpanjangan; e) pada zona pemanfaatan Air Tanah di zona rusak diberikan perpanjangan untuk jangka waktu paling lama 3 (tiga) tahun untuk tiap kali perpanjangan.
+
+## Lampiran hal. 321
+
+2) Masa berlaku Izin Pengusahaan Air Tanah dalam rangka Keterlanjuran Konstruksi Berupa Sumur Bor/Gali Air Tanah dan/atau Penggunaan Air Tanah Tanpa Izin Pengusahaan Air Tanah (Penataan) diberikan dengan ketentuan: a) diberikan untuk jangka waktu paling lama 2 (dua) tahun dan perpanjangan untuk jangka waktu paling lama 2 (dua) tahun tiap kali perpanjangan; b) Izin Pengusahaan Air Tanah pada zona rusak tidak dapat diberikan perpanjangan.
+3) Permohonan perpanjangan Izin Pengusahaan Air Tanah hanya dapat diajukan setelah Pemegang Izin Pengusahaan Air Tanah memenuhi seluruh kewajiban atas Izin Pengusahaan Air Tanah yang telah dimiliki sebelumnya.
+4) Permohonan perpanjangan Izin Pengusahaan Air Tanah dapat diajukan paling cepat 6 (enam) bulan sebelum jangka waktu Izin Pengusahaan Air Tanah berakhir.
+f. Berakhirnya Izin Pengusahaan Air Tanah 1) Izin Pengusahaan Air Tanah berakhir karena: a) dikembalikan; b) habis masa berlakunya; atau c) dicabut.
+2) pemegang Izin Pengusahaan Air Tanah dapat mengajukan pengembalian Izin Pengusahaan No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah) Air Tanah sebagaimana dimaksud pada angka 1) huruf a);
+3) dalam hal pengembalian Izin Pengusahaan Air Tanah sebagaimana dimaksud pada angka 2), dilakukan pencabutan Izin Pengusahaan Air Tanah;
+
+## Lampiran hal. 322
+
+4) pencabutan Izin Pengusahaan Air Tanah sebagaimana dimaksud angka 1) huruf c) dapat didasarkan pada: a) pengenaan sanksi administratif; dan b) Putusan pengadilan yang telah memiliki kekuatan hukum tetap.
+5) Dalam hal berdasarkan hasil pengawasan ditemukan ketidaksesuian prosedur dalam penerbitan Izin Pengusahaan Air Tanah, maka Menteri, gubernur, bupati/wali kota, kepala Administrator Kawasan Ekonomi Khusus, kepala Badan Pengusahaan Kawasan Perdagangan Bebas dan Pelabuhan Bebas, atau kepala Otorita Ibu Kota Nusantara dapat langsung mengajukan permohonan pencabutan Izin Pengusahaan Air Tanah kepada Menteri Investasi dan Hilirisasi/Kepala Badan Koordinasi Penanaman Modal/Kepala Dinas Penanaman Modal dan Pelayanan Satu Pintu.
+5. Ketentuan a. Kewajiban Pemegang Izin Pengusahaan Air Kewajiban Tanah:
+1) memenuhi ketentuan dalam Izin Pengusahaan Air Tanah dan pedoman teknis yang ditetapkan oleh Menteri;
+2) melaksanakan pengeboran/penggalian Air Tanah paling lambat 1 (satu) tahun sejak diterbitkannya Izin Pengusahaan Air Tanah sesuai dengan tahapan dan persyaratan yang tercantum dalam pedoman teknis yang ditetapkan oleh Menteri;
+3) memasang meter air;
+4) membangun sumur imbuhan atau sumur resapan sesuai dengan pedoman teknis yang ditetapkan oleh Menteri;
+5) membangun sumur pantau untuk kriteria tertentu sesuai dengan pedoman teknis yang ditetapkan oleh Menteri;
+
+## Lampiran hal. 322
+
+6) ketentuan pembangunan sumur pantau sebagaimana dimaksud pada angka 5) mencakup: a) 1 (satu) sumur pantau untuk setiap sumur bor/gali Air Tanah ke-5 (kelima) No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah) dan kelipatannya di 1 (satu) lokasi; atau b) 1 (satu) sumur pantau untuk jumlah pengambilan Air Tanah lebih dari atau sama dengan 5.000 m3/hari (lima ribu meter kubik per hari) dari 1 (satu) atau beberapa sumur bor/gali Air Tanah di 1 (satu) lokasi;
+7) melindungi dan memelihara kelangsungan fungsi Air Tanah;
+8) mencegah kerusakan lingkungan;
+9) tidak mengganggu sumber Air Tanah untuk kebutuhan pokok sehari-hari masyarakat sekitar;
+
+## Lampiran hal. 323
+
+10) menyampaikan laporan teknis secara berkala setiap 6 (enam) bulan sekali untuk debit pengambilan Air Tanah lebih dari 10 m3/hari (sepuluh meter kubik per hari) kepada Kepala Badan, satuan kerja perangkat daerah yang membidangi urusan energi dan sumber daya mineral di provinsi, atau kabupaten/kota, kepala Administrator Kawasan Ekonomi Khusus, kepala Badan Pengusahaan Kawasan Perdagangan Bebas dan Pelabuhan Bebas, atau kepala Otorita Ibu Kota Nusantara, paling sedikit memuat: a) rekapitulasi debit pengambilan Air Tanah bulanan dalam m3/bulan (meter kubik per bulan); b) hasil analisis kualitas Air Tanah setiap 6 (enam) bulan untuk Izin Pengusahaan Air Tanah pada Sumur Bor/Gali Air Tanah, termasuk pada Sungai Bawah Tanah yang Memerlukan Konstruksi Pengeboran/Penggalian Air Tanah; dan/atau c) pengukuran kedalaman muka Air Tanah bulanan untuk Izin Pengusahaan Air Tanah pada Sumur Bor/Gali Air Tanah, termasuk pada Sungai Bawah Tanah yang Memerlukan Konstruksi Pengeboran/Penggalian Air Tanah;
+11) memberikan bantuan pemenuhan kebutuhan air untuk masyarakat sekitar;
+12) melakukan usaha penghematan air dan pengendalian terjadinya pencemaran air tanah;
+13) memberikan akses kepada aparatur sipil negara yang berwenang untuk melakukan pemeriksaan terhadap sumur bor/gali Air Tanah;
+
+## Lampiran hal. 323
+
+14) menyediakan lahan untuk pembangunan No. Standar Kegiatan Usaha Izin Pengusahaan Air Tanah (berlaku untuk semua KBLI yang menggunakan Air Tanah) sumur pantau yang akan dibangun oleh pemerintah dengan ketentuan penyediaan lahan tidak menghilangkan kewajiban membangun sumur pantau bagi pemegang Izin Pengusahaan Air Tanah;
+15) memberikan ganti rugi kepada masyarakat sekitar apabila kegiatan pengusahaan air tanah yang dilakukan menimbulkan kerugian;
+16) melaporkan apabila ditemukan hal yang dapat membahayakan lingkungan; dan 17) membayar pajak air tanah dan kewajiban keuangan lainnya.
+b. Penutupan dan Pengalihan Penggunaan Air Tanah Setelah Berakhirnya Izin Pengusahaan Air Tanah 1) Pelaku Usaha yang Izin Pengusahaan Air Tanah telah berakhir wajib memenuhi seluruh kewajiban, termasuk penutupan sumur bor/gali Air Tanah, dalam jangka waktu paling lambat 30 (tiga puluh) hari kerja setelah berakhirnya Izin Pengusahaan Air Tanah.
+2) Penutupan sumur bor/gali Air Tanah sebagaimana dimaksud angka 1) dilakukan sesuai dengan pedoman teknis yang ditetapkan oleh Menteri.
+3) Dalam hal Pelaku Usaha tidak melakukan penutupan sumur bor/gali Air Tanah sesuai dengan pedoman teknis sebagaimana dimaksud pada angka 2), dikenai sanksi sesuai dengan ketentuan peraturan perundang-undangan.
+
+## Lampiran hal. 324
+
+Izin Pengusahaan Air Tanah yang telah berakhir dapat mengajukan permohonan Persetujuan Penggunaan Air Tanah dalam jangka waktu paling lambat 30 (tiga puluh) hari kerja setelah berakhirnya Izin Pengusahaan Air Tanah sesuai ketentuan peraturan perundang-undangan.
+MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA, ttd.
+BAHLIL LAHADALIA
