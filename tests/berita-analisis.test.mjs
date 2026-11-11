@@ -37,7 +37,7 @@ test("negaraMedia: peta domain, TLD, generik, tak dikenal", () => {
   assert.equal(negaraMedia("kosong"), "");
 });
 test("tierMedia: domain, subdomain daerah, nama, bawaan", () => {
-  assert.equal(tierMedia(r(1, "x", "antaranews.com", "", "id"), tabel), "utama");
+  assert.equal(tierMedia(r(1, "x", "antaranews.com", "", "id"), tabel), "nasional");   // K21: Antara ditolak, tidak ada di tabel tier; jatuh ke bawaan "nasional" (domain .com berbahasa id)
   assert.equal(tierMedia(r(1, "x", "jateng.tribunnews.com", "", "id"), tabel), "daerah");
   assert.equal(tierMedia(r(1, "x", "esdm.go.id", "", "id"), tabel), "rilis");
   assert.equal(tierMedia(r(1, "x", "foo.com", "", "en"), tabel), "internasional");

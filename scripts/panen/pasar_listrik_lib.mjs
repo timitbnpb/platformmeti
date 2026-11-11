@@ -142,9 +142,10 @@ export function bangun() {
   const wilayah = kea.sistem.map((s) => ({ sistem_id: s.id, nama: s.nama, kode_bps: s.prov, saidi_jam: null, saifi_kali: null, alasan: 'Tidak terbit sebagai berkas terbuka per wilayah atau UID PLN: Statistik Ketenagalistrikan 2024 (Tabel 47) dan RUPTL hanya memuat angka nasional; tidak diisi, tidak dikarang.' }));
   const nasional = kea.tren_nasional.map((r) => ({ tahun: r.tahun, saidi_jam: r.saidi_jam, saifi_kali: r.saifi_kali, ikut: 'keandalan.json#tren_nasional', sumber_asal: r.sumber }));
 
-  // tautan dua arah ke tarif_harga.json (Q3 2026)
+  // tautan dua arah ke tarif_harga.json (Q3 2026); baris yang dibuang (K21, tanpa sumber resmi) tidak ditautkan
+  const adaTh = new Set(th.baris.map((b) => b.id));
   const peta = { 'r1m-900': ['tl_2026q3_r_1_tr_900_va_rtm'], 'r1-b2-pju': ['tl_2026q3_r_1_tr_1_300_va', 'tl_2026q3_r_1_tr_2_200_va', 'tl_2026q3_b_2_tr_6_600_va_200_kva'], 'r2-r3-p1-p3': ['tl_2026q3_r_2_tr_3_500_5_500_va', 'tl_2026q3_r_3_tr_6_600_va_ke_atas', 'tl_2026q3_p_1_tr_6_600_va_200_kva', 'tl_2026q3_p_3_tr'], 'b3-i3': ['tl_2026q3_b_3_tm_di_atas_200_kva', 'tl_2026q3_i_3_tm_di_atas_200_kva'], p2: ['tl_2026q3_p_2_tm_di_atas_200_kva'], i4: ['tl_2026q3_i_4_tt_30_000_kva_ke_atas'] };
-  const seri = SERI.map((s) => ({ id: s.id, nama: s.nama, golongan: s.golongan, tarif_harga_id: peta[s.id], peristiwa: s.awal.map(([berlaku, rp_kwh, sumber_id, tingkat_bukti]) => ({ berlaku, rp_kwh, sumber_id, tingkat_bukti, tanggal: TGL })) }));
+  const seri = SERI.map((s) => ({ id: s.id, nama: s.nama, golongan: s.golongan, tarif_harga_id: peta[s.id].filter((i) => adaTh.has(i)), peristiwa: s.awal.map(([berlaku, rp_kwh, sumber_id, tingkat_bukti]) => ({ berlaku, rp_kwh, sumber_id, tingkat_bukti, tanggal: TGL })) }));
 
   return {
     lapis: 'publik', dibangun_pada: TGL, sumber: SUMBER,

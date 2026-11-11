@@ -11,6 +11,11 @@ for (const k of Object.keys(r.hitung)) if (fs.existsSync(`public/data/${k}.json`
 const nilai = { proyek: r.hitung.proyek, organisasi: r.hitung.organisasi, orang: r.hitung.orang, regulasi: berlaku };
 for (const k of r.kartu) {
   if (k.kode in nilai) k.nilai = nilai[k.kode];
+  if (k.kode === "proyek" && fs.existsSync("public/data/proyek_rekon.json")) {   // JM-S05: angka tunggal dari proyek_rekon.json
+    const rk = baca("proyek_rekon");
+    k.nilai = rk.angka_proyek.terlacak; k.tautan = "/proyek#selisih";
+    k.catatan = `dari ${rk.angka_proyek.sumber.replace("public/data/", "")} (${rk.angka_proyek.tanggal}); ${rk.angka_proyek.rincian.ragu_dikecualikan} diragukan tidak dihitung; penjelasan selisih terhadap angka nasional di ${k.tautan}`;
+  }
   if (k.kode === "regulasi") k.catatan = `dari ${reg.length} aturan tercatat`;
 }
 fs.writeFileSync("public/data/ringkas.json", JSON.stringify(r));

@@ -1491,16 +1491,16 @@
      "en": "Example 3 kWp home in West Java (PVOUT 1422): 4266 kWh per year, capacity factor 16.23 percent. EST."
     },
     {
-     "id": "Dengan asumsi Hipotesis kalkulator METI (Rp 15.000.000 per kWp, pakai sendiri 70 persen, O&M 1 persen per tahun) dan tarif R-1/TR 2.200 VA Rp 1444.7: hemat 4.314.163 dikurangi O&M 450.000 = Rp 3.864.163 per tahun; modal Rp 45.000.000 kembali sekitar 11.65 tahun tanpa diskonto dan degradasi. EST.",
-     "en": "With the METI calculator Hypothesis assumptions (IDR 15,000,000 per kWp, 70 percent self-consumption, 1 percent O&M per year) and tariff R-1/TR 2.200 VA IDR 1444.7: saving 4,314,163 minus O&M 450,000 = IDR 3,864,163 per year; capex IDR 45,000,000 repaid in about 11.65 years without discounting or degradation. EST."
+     "id": "Dengan asumsi Hipotesis kalkulator METI (Rp 15.000.000 per kWp, pakai sendiri 70 persen, O&M 1 persen per tahun) dan tarif R-2/TR 3.500-5.500 VA Rp 1699.53: hemat 5.075.136 dikurangi O&M 450.000 = Rp 4.625.136 per tahun; modal Rp 45.000.000 kembali sekitar 9.73 tahun tanpa diskonto dan degradasi. EST.",
+     "en": "With the METI calculator Hypothesis assumptions (IDR 15,000,000 per kWp, 70 percent self-consumption, 1 percent O&M per year) and tariff R-2/TR 3.500-5.500 VA IDR 1699.53: saving 5,075,136 minus O&M 450,000 = IDR 4,625,136 per year; capex IDR 45,000,000 repaid in about 9.73 years without discounting or degradation. EST."
     },
     {
      "id": "Contoh LCOE dunia: IRENA mencatat USD 0,043 per kWh (2024) dan USD 691 per kW biaya terpasang (ringkasan pers; cek PDF IRENA).",
      "en": "World LCOE example: IRENA reports USD 0.043 per kWh (2024) and USD 691 per kW installed cost (press summary; check the IRENA PDF)."
     },
     {
-     "id": "Contoh pinalti (EST): inverter 5 kW x 240 jam x Rp 1.444,7 per kWh (tarif R-1 2.200 VA, bab 11) = Rp 1.733.640.",
-     "en": "Penalty example (EST): 5 kW inverter x 240 hours x Rp 1,444.7 per kWh (R-1 2,200 VA tariff, chapter 11) = Rp 1,733,640."
+     "id": "Contoh pinalti (EST): inverter 5 kW x 240 jam x Rp 1.699,53 per kWh (tarif R-2 3.500-5.500 VA, bab 11; ilustrasi Hipotesis) = Rp 2.039.436.",
+     "en": "Penalty example (EST): 5 kW inverter x 240 hours x Rp 1,699.53 per kWh (R-2 3,500-5,500 VA tariff, chapter 11; Hypothesis illustration) = Rp 2,039,436."
     },
     {
      "id": "Contoh rasio DC/AC: Cirata 192 MWp dengan 145 MWac (FAQ bab 2) = 1,32 (EST).",
@@ -4442,8 +4442,8 @@
      "en": "Export market hit: the US set provisional countervailing duties of 86 to 143 percent on Indonesian solar panels (ANTARA, 26 Feb 2026)."
     },
     {
-     "id": "Tarif PLN nonsubsidi Q3 2026: rumah R-1 2.200 VA Rp 1.444,7 per kWh, industri I-3 Rp 1.114,74, bisnis B-2 Rp 1.444,7; patokan penghematan PLTS atap.",
-     "en": "PLN non-subsidised tariffs Q3 2026: home R-1 2,200 VA IDR 1,444.7 per kWh, industry I-3 IDR 1,114.74, business B-2 IDR 1,444.7; the benchmark for rooftop savings."
+     "id": "Tarif PLN nonsubsidi Q3 2026: rumah R-2 3.500-5.500 VA Rp 1.699,53 per kWh, pemerintah P-2 Rp 1.522,88 (siaran pers ESDM 2022; tarif nonsubsidi tetap sampai Q3 2026); patokan penghematan PLTS atap.",
+     "en": "PLN non-subsidised tariffs Q3 2026: home R-2 3,500-5,500 VA IDR 1,699.53 per kWh, government P-2 IDR 1,522.88 (ESDM press release 2022; non-subsidised tariff unchanged through Q3 2026); the benchmark for rooftop savings."
     },
     {
      "id": "Kebutuhan pasar utilitas menurut RUPTL 2025-2034: 2.573 MW surya dalam 47 proyek, puncak 2033 sebesar 630 MW (basis proyek RUPTL, EST).",
@@ -10169,232 +10169,6 @@
         23310
        ]
       ]
-     },
-     {
-      "nama": {
-       "id": "Captive dan pasokan industri",
-       "en": "Captive and industrial supply"
-      },
-      "sorot": false,
-      "titik": [
-       [
-        "0",
-        -11100
-       ],
-       [
-        "1",
-        -9500
-       ],
-       [
-        "2",
-        -7909
-       ],
-       [
-        "3",
-        -6327
-       ],
-       [
-        "4",
-        -4753
-       ],
-       [
-        "5",
-        -3187
-       ],
-       [
-        "6",
-        -1629
-       ],
-       [
-        "7",
-        -80
-       ],
-       [
-        "8",
-        1461
-       ],
-       [
-        "9",
-        2994
-       ],
-       [
-        "10",
-        4518
-       ],
-       [
-        "11",
-        6035
-       ],
-       [
-        "12",
-        7543
-       ],
-       [
-        "13",
-        9043
-       ],
-       [
-        "14",
-        10536
-       ],
-       [
-        "15",
-        12020
-       ],
-       [
-        "16",
-        13497
-       ],
-       [
-        "17",
-        14965
-       ],
-       [
-        "18",
-        16426
-       ],
-       [
-        "19",
-        17879
-       ],
-       [
-        "20",
-        19324
-       ],
-       [
-        "21",
-        20761
-       ],
-       [
-        "22",
-        22191
-       ],
-       [
-        "23",
-        23613
-       ],
-       [
-        "24",
-        25028
-       ],
-       [
-        "25",
-        26435
-       ]
-      ]
-     },
-     {
-      "nama": {
-       "id": "Power wheeling (pemanfaatan jaringan bersama)",
-       "en": "Power wheeling (shared use of the grid)"
-      },
-      "sorot": false,
-      "titik": [
-       [
-        "0",
-        -11100
-       ],
-       [
-        "1",
-        -9500
-       ],
-       [
-        "2",
-        -7909
-       ],
-       [
-        "3",
-        -6327
-       ],
-       [
-        "4",
-        -4753
-       ],
-       [
-        "5",
-        -3187
-       ],
-       [
-        "6",
-        -1629
-       ],
-       [
-        "7",
-        -80
-       ],
-       [
-        "8",
-        1461
-       ],
-       [
-        "9",
-        2994
-       ],
-       [
-        "10",
-        4518
-       ],
-       [
-        "11",
-        6035
-       ],
-       [
-        "12",
-        7543
-       ],
-       [
-        "13",
-        9043
-       ],
-       [
-        "14",
-        10536
-       ],
-       [
-        "15",
-        12020
-       ],
-       [
-        "16",
-        13497
-       ],
-       [
-        "17",
-        14965
-       ],
-       [
-        "18",
-        16426
-       ],
-       [
-        "19",
-        17879
-       ],
-       [
-        "20",
-        19324
-       ],
-       [
-        "21",
-        20761
-       ],
-       [
-        "22",
-        22191
-       ],
-       [
-        "23",
-        23613
-       ],
-       [
-        "24",
-        25028
-       ],
-       [
-        "25",
-        26435
-       ]
-      ]
      }
     ],
     "ringkas": [
@@ -10402,16 +10176,6 @@
       "id": "ipp",
       "irr": 12,
       "payback": 7.7
-     },
-     {
-      "id": "captive",
-      "irr": 13.3,
-      "payback": 7.1
-     },
-     {
-      "id": "wheeling",
-      "irr": 13.3,
-      "payback": 7.1
      }
     ],
     "label": {
@@ -10419,8 +10183,8 @@
      "en": "Illustrative cumulative cash flow per revenue model (Rp thousand per kW)"
     },
     "asumsi": {
-     "id": "Harga jual per model memakai jangkar tarif repo (BPP nasional 1027.7 Rp per kWh; tarif B-2 1444.7, B-3 1114.74, R-1 1444.7 Rp per kWh, EST), diskon sewa atap 15 persen dan ESCO 10 persen (Hipotesis), degradasi 0,5 persen per tahun, tanpa pajak dan utang (arus kas proyek sebelum pajak). Biaya modal, faktor kapasitas, dan biaya operasi dari biaya_bangun.json (skala utilitas); umur proyek 25 tahun adalah Hipotesis METI karena berkas tidak memuat umur. Harga adalah jangkar acuan, bukan harga PPA proyek.",
-     "en": "Selling price per model uses repository tariff anchors (national BPP 1027.7 Rp per kWh; B-2 tariff 1444.7, B-3 1114.74, R-1 1444.7 Rp per kWh, EST), a 15 percent rooftop-rental and 10 percent ESCO discount (Hypothesis), 0.5 percent per year degradation, and no tax or debt (pre-tax project cash flow). Cost inputs (capex, capacity factor, operating cost) from biaya_bangun.json scale the utilitas scale; project life 25 years is a METI Hypothesis because the file holds no life. Prices are reference anchors, not project PPA prices."
+     "id": "Harga jual per model memakai jangkar tarif repo (BPP nasional 1027.7 Rp per kWh; tarif B-2 -, B-3 -, R-1 - Rp per kWh, EST), diskon sewa atap 15 persen dan ESCO 10 persen (Hipotesis), degradasi 0,5 persen per tahun, tanpa pajak dan utang (arus kas proyek sebelum pajak). Biaya modal, faktor kapasitas, dan biaya operasi dari biaya_bangun.json (skala utilitas); umur proyek 25 tahun adalah Hipotesis METI karena berkas tidak memuat umur. Harga adalah jangkar acuan, bukan harga PPA proyek.",
+     "en": "Selling price per model uses repository tariff anchors (national BPP 1027.7 Rp per kWh; B-2 tariff -, B-3 -, R-1 - Rp per kWh, EST), a 15 percent rooftop-rental and 10 percent ESCO discount (Hypothesis), 0.5 percent per year degradation, and no tax or debt (pre-tax project cash flow). Cost inputs (capex, capacity factor, operating cost) from biaya_bangun.json scale the utilitas scale; project life 25 years is a METI Hypothesis because the file holds no life. Prices are reference anchors, not project PPA prices."
     },
     "menunggu": {
      "id": "Grafik arus kas, IRR, dan payback belum dihitung karena public/data/biaya_bangun.json belum memuat biaya modal, faktor kapasitas, dan biaya operasi bersumber untuk skala utilitas teknologi ini (atau teknologinya tidak punya sumber terbuka yang terbaca). Begitu berkas itu terisi, bangun ulang topik dan angka muncul otomatis; METI tidak memasukkan angka karangan.",

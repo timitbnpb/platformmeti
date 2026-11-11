@@ -1,0 +1,247 @@
+{
+ "catatan": "Rangkaian pipa (JM-T06). langkah.bangun/sambung/potret/periksa/salin dijalankan scripts/pipa/rangkai.mjs sesudah panen (_bot.mjs). Skrip panen yang tercatat di data/sumber_jadwal.json juga terpasang. Setiap skrip di scripts/{panen,pipa,direktori,mesin} yang tidak dirujuk berkas lain WAJIB muncul di sini (langkah) atau di pensiun, dengan alasan; gerbang tests/t-bot-rangkai.test.mjs menagih. Hubung dan skor (sensus, kuadran, keyakinan) ada di dalam potret.mjs; lapis dan jaga unggah di potret.mjs --periksa. Unggah R2 (unggah_potret.mjs) bukan bagian bot.",
+ "langkah": [
+  {
+   "id": "bangun",
+   "syarat": [],
+   "skrip": [
+    {
+     "skrip": "scripts/pipa/berita_turunan.mjs",
+     "jadwal": [
+      "harian"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/indeks_cari.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/data_atlas.mjs",
+     "jadwal": [
+      "bulanan"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/data_kelistrikan.mjs",
+     "jadwal": [
+      "bulanan"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/data_target.mjs",
+     "jadwal": [
+      "bulanan"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/perizinan_indeks.mjs",
+     "jadwal": [
+      "bulanan"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/katalog_sumber.mjs",
+     "jadwal": [
+      "bulanan"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/data_energi.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/data_plts_atap_hitung.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/data_rantai_org.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/kalender_ics.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/kerja_hitung.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/ringkas_hitung.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/proyek_berita.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/proyek_koordinat.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/potret_kalender.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/potret_orang.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/pipa/blok_kosong.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/panen/psn_cek_url.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/panen/produk_global.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/panen/perjanjian_dagang.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/panen/global_surya.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/panen/global_lain_lengkapi.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    },
+    {
+     "skrip": "scripts/panen/esg_rantai_simulasi_tkdn.mjs",
+     "jadwal": [
+      "manual"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sambung",
+   "syarat": [
+    "data-panen/direktori"
+   ],
+   "skrip": [
+    {
+     "skrip": "scripts/pipa/data_direktori.mjs",
+     "jadwal": [
+      "bulanan",
+      "manual"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "potret",
+   "syarat": [
+    "data-panen"
+   ],
+   "skrip": [
+    {
+     "skrip": "scripts/pipa/potret.mjs",
+     "jadwal": [
+      "bulanan",
+      "manual"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "periksa",
+   "syarat": [
+    "data-panen/potret"
+   ],
+   "skrip": [
+    {
+     "skrip": "scripts/pipa/potret.mjs",
+     "args": [
+      "--periksa"
+     ],
+     "jadwal": [
+      "bulanan",
+      "manual"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "salin",
+   "syarat": [
+    "data-panen/potret/publik"
+   ],
+   "skrip": [
+    {
+     "skrip": "scripts/pipa/salin_potret.mjs",
+     "args": [
+      "organisasi",
+      "proyek"
+     ],
+     "jadwal": [
+      "bulanan",
+      "manual"
+     ]
+    }
+   ]
+  }
+ ],
+ "pensiun": {
+  "scripts/mesin/cek_mobile.mjs": "alat pemeriksa tampilan lokal, bukan data",
+  "scripts/mesin/seed_lokal.mjs": "benih D1 lokal untuk pengembangan, bukan data produksi",
+  "scripts/pipa/seed_konsultasi.mjs": "benih konsultasi sekali jalan; kini dikurasi di D1",
+  "scripts/panen/foto_inovasi.mjs": "unduh foto sekali; aset sudah di public/img",
+  "scripts/panen/logo_kampus.mjs": "unduh logo sekali; aset sudah di public/img",
+  "scripts/panen/logo_media.mjs": "unduh logo sekali; aset sudah di public/img",
+  "scripts/pipa/logo_org_situs.mjs": "unduh logo sekali; aset sudah di public/img",
+  "scripts/panen/lahan_ps.mjs": "sumber resmi tidak terjangkau (header skrip, 8 Nov 2026); diaktifkan lagi bila terjangkau",
+  "scripts/pipa/emisi_provinsi.mjs": "sumber tidak terjangkau dan Climate Watch /api/ dilarang robots.txt (header skrip)",
+  "scripts/panen/panen_1001.mjs": "hanya atas perintah pemilik (R13, D15), tidak dijadwalkan",
+  "scripts/panen/panen_akar.mjs": "panen benih sekali atas perintah pemilik; tidak dijadwalkan",
+  "scripts/panen/panen_lembaga.mjs": "panen benih sekali atas perintah pemilik; tidak dijadwalkan",
+  "scripts/panen/panen_provinsi.mjs": "panen benih sekali atas perintah pemilik; tidak dijadwalkan",
+  "scripts/pipa/buang_antara.mjs": "pembersihan sekali sumber Antara (K21); tidak dijalankan ulang",
+  "scripts/pipa/statistik_esdm_2025.mjs": "statistik edisi 2025 sekali; edisi baru lewat resmi_heesi.py (S04)",
+  "scripts/pipa/pakar_openalex.mjs": "digantikan scripts/pipa/pakar.mjs (cakupan penulis EBET persis)",
+  "scripts/pipa/unggah_direktori.mjs": "digantikan unggah_potret.mjs yang dijalankan koordinator",
+  "scripts/pipa/topik_efisiensi.mjs": "naskah topik ditulis tangan; hasil sudah di public/data",
+  "scripts/pipa/topik_energi_laut.mjs": "naskah topik ditulis tangan; hasil sudah di public/data",
+  "scripts/pipa/topik_karbon_dalam.mjs": "naskah topik ditulis tangan (header skrip)",
+  "scripts/pipa/topik_nuklir.mjs": "naskah topik ditulis tangan; hasil sudah di public/data",
+  "scripts/pipa/topik_pembiayaan_hijau.mjs": "naskah topik ditulis tangan; hasil sudah di public/data",
+  "scripts/pipa/topik_transisi_berkeadilan.mjs": "naskah topik ditulis tangan; hasil sudah di public/data"
+ }
+}

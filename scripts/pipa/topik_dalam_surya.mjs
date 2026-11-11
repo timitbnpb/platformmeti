@@ -60,7 +60,7 @@ function isi(d, SUMBER, ambilSumber) {
     ['Pinalti PLTS atap tanpa persetujuan (Permen ESDM 2/2024 Pasal 23) = kapasitas total inverter (kW) x 240 jam x tarif (Rp per kWh).', 'Penalty for rooftop solar without approval (Energy Ministry Reg. 2/2024 Article 23) = total inverter capacity (kW) x 240 hours x tariff (Rp per kWh).'],
   ]), ['permen2', 'hitung']);
   ke(d, '5', 'rumus', 'contoh', P([
-    [`Contoh pinalti (EST): inverter 5 kW x 240 jam x Rp 1.444,7 per kWh (tarif R-1 2.200 VA, bab 11) = Rp ${fmt(5 * 240 * 1444.7)}.`, `Penalty example (EST): 5 kW inverter x 240 hours x Rp 1,444.7 per kWh (R-1 2,200 VA tariff, chapter 11) = Rp ${fmtE(5 * 240 * 1444.7)}.`],
+    [`Contoh pinalti (EST): inverter 5 kW x 240 jam x Rp 1.699,53 per kWh (tarif R-2 3.500-5.500 VA, bab 11; ilustrasi Hipotesis) = Rp ${fmt(5 * 240 * 1699.53)}.`, `Penalty example (EST): 5 kW inverter x 240 hours x Rp 1,699.53 per kWh (R-2 3,500-5,500 VA tariff, chapter 11; Hypothesis illustration) = Rp ${fmtE(5 * 240 * 1699.53)}.`],
     [`Contoh rasio DC/AC: Cirata 192 MWp dengan 145 MWac (FAQ bab 2) = ${(192 / 145).toFixed(2).replace('.', ',')} (EST).`, `DC/AC example: Cirata 192 MWp with 145 MWac (FAQ chapter 2) = ${(192 / 145).toFixed(2)} (EST).`],
     ['Contoh degradasi (asumsi Hipotesis 0,5 persen per tahun): produksi tahun ke-26 sebesar 0,995 pangkat 25 = 88,2 persen dari tahun pertama (EST); laju sebenarnya ada pada lembar data pabrikan.', 'Degradation example (Hypothesis assumption 0.5 percent per year): year-26 output is 0.995 to the power 25 = 88.2 percent of year one (EST); the real rate is on the manufacturer datasheet.'],
   ]));

@@ -45,7 +45,7 @@ export function bangunIndeks({ data = baca, id = JSON.parse(readFileSync(join(PU
 
   // pasal hukum: katalog yang dibangun agent hukum; bentuk dibaca longgar (item punya judul/nomor, opsional pasal[] dengan nomor + isi/judul)
   const hk = data("hukum/katalog");
-  for (const it of baris(hk?.baris ? hk : hk?.regulasi || hk?.katalog || hk)) {
+  for (const it of baris(hk?.baris ? hk : hk?.dok || hk?.regulasi || hk?.katalog || hk)) {
     const nama = it.judul || it.nama, idr = it.id || it.regulasi_id; if (!nama || !idr) continue;
     tambah("hukum", b(nama, [it.nomor && it.tahun ? `${it.nomor}/${it.tahun}` : "", it.jenis].filter(Boolean).join(" "), "/regulasi#hd=" + encodeURIComponent(idr), [it.nomor, it.tahun], { b: "resmi" }));
     for (const ps of it.pasal || []) { const no = ps.nomor ?? ps.no; if (no == null) continue; tambah("hukum", b(`${nama}, Pasal ${no}`, ps.judul || String(ps.isi || "").slice(0, 90), `/regulasi#hd=${encodeURIComponent(idr)}`, [`pasal ${no}`, ps.isi ? String(ps.isi).slice(0, 400) : ""], { b: "resmi" })); }

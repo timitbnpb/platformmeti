@@ -6,6 +6,7 @@ import { kodeProvinsi } from "/inti/tautan.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { sumberHtml, unduhRegHtml, exHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { penerbitHtml } from "/penerbit.js";
+import { jumlahProyek } from "/inti/cakupan.js";
 import { muat, label, namaRegulasi, sembunyi } from "/publik.js";
 
 import { LOGO_ORG, LOGO_NAMA, logoOrg } from "/inti/logo_org.js";
@@ -98,6 +99,7 @@ export async function gambarDataset(R) {
   const el = document.getElementById("dataset");
   try {
     const [pro, org, reg, rantai, wil, pus, orang, ber] = await Promise.all(["proyek", "organisasi", "regulasi", "rantai_plts", "wilayah", "pustaka", "orang", "berita"].map(muat)), foto = await muat("berita_foto").catch(() => ({}));
+    const nPro = (await jumlahProyek()) ?? pro.baris.length;
     const tahun = +String(pro.dibangun_pada).slice(0, 4);
     const kap = R.kartu.find((k) => k.kode === "kapasitas")?.nilai;
     const lewat = pro.baris.filter((p) => st(p) !== "beroperasi" && p.cod_target?.length && Math.min(...p.cod_target.map((c) => c.nilai)) < tahun).length;
@@ -111,7 +113,7 @@ export async function gambarDataset(R) {
     const doc = rangking([...pus.baris].sort((a, b) => String(b.tanggal).localeCompare(String(a.tanggal))).slice(0, 5).map((d) => ({ nama: d.judul, nilai: tanggal(d.tanggal) })));
     const sm = (k, p) => t("beranda.ds." + k + ".s", { tanggal: tanggal(p) });
     el.innerHTML = [
-      kartu("proyek", 1, "/proyek", pro.dibangun_pada, [[angka(pro.baris.length), "beranda.ds.l.proyek", 0, "lokasi", "data2"], [angka(kap), "beranda.ds.l.mw", 1, "petir", "warn", "beranda.ds.tip.mw"], [angka(lewat), "beranda.ds.l.cod", 1, "jam", "bad", "beranda.ds.tip.cod"]], top7, sm("proyek", pro.dibangun_pada)),
+      kartu("proyek", 1, "/proyek", pro.dibangun_pada, [[angka(nPro), "beranda.ds.l.proyek", 0, "lokasi", "data2"], [angka(kap), "beranda.ds.l.mw", 1, "petir", "warn", "beranda.ds.tip.mw"], [angka(lewat), "beranda.ds.l.cod", 1, "jam", "bad", "beranda.ds.tip.cod"]], top7, sm("proyek", pro.dibangun_pada)),
       kartu("pengembang", 2, "/direktori?tampil=lembaga", pro.dibangun_pada, [[angka(pc.n), "beranda.ds.l.pengembang", 0, "gedung", "data5"], [angka(pc.pangsa, { desimal: 1 }) + "%", "beranda.ds.l.bumn", 1, "perisai", "data1", "beranda.ds.tip.bumn"], [angka(pc.pipa), "beranda.ds.l.pipa", 1, "petir", "warn", "beranda.ds.tip.pipa"]], pc.svg, sm("pengembang", pro.dibangun_pada)),
       kartu("regulasi", 3, "/regulasi", reg.dibangun_pada, [[angka(reg.baris.length), "beranda.ds.l.reg", 0, "regulasi", "data1"], [angka(reg.baris.filter((r) => r.status === "berlaku").length), "beranda.ds.l.berlaku", 0, "centang", "ok"], [angka(reg.baris.filter((r) => r.status === "diubah" || r.status === "dicabut").length), "beranda.ds.l.ubahcabut", 0, "ubah", "warn"]], baru, sm("regulasi", reg.dibangun_pada)),
       kartu("rantai", 4, "/rantai-global?tab=tkdn", rantai.dibangun_pada, [[angka(rr.pabrikan), "beranda.ds.l.pabrikan", 0, "pabrik", "data3"], [angka(rr.total_mwp / 1000, { desimal: 1 }), "beranda.ds.l.gwp", 0, "tek-surya", "tp-surya"], [tkdn == null ? "-" : angka(tkdn, { desimal: 1 }) + "%", "beranda.ds.l.tkdn", 1, "lencana", "ok", "beranda.ds.tip.tkdn"]],

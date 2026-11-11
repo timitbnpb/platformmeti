@@ -32,7 +32,7 @@ const gaya = () => (gayaP ??= new Promise((ok) => {
 }));
 
 const pilJenis = (p) => `<span class="jm-pil pm-pil">${ikon(IKON_JENIS[p.jenis], 14)}<span>${esc(t("prm.jenis." + p.jenis))}</span></span>${p.status ? `<span class="jm-pil jm-pil-warn">${esc(t("prm.status." + p.status))}</span>` : ""}`;
-const sumberNama = (p) => (luar(p.sumber.url) ? p.sumber.label : t("prm.di_platform"));
+const sumberNama = (p) => (p.sumber && luar(p.sumber.url) ? p.sumber.label : t("prm.di_platform"));
 
 /* kartu ringkas (satu tautan; komponen terkait) */
 export const kartuRingkas = (p) => {

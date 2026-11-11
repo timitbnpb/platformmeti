@@ -18,10 +18,10 @@ export const SUMBER = [
   { id: 's-bpp', judul: 'Kepmen ESDM Besaran Biaya Pokok Penyediaan Pembangkitan PT PLN (Persero), 2016 sampai 2020 (transkripsi data/peluang/bpp.json)', penerbit: 'Kementerian ESDM', tahun: 2021, url: 'https://jdih.esdm.go.id', lisensi: 'Dokumen peraturan (publik)', tingkat_bukti: 'resmi' },
 ];
 export const CELAH = [
-  'LCOE Indonesia dari IRENA hanya ada untuk bayu darat 2017 sampai 2020; surya, panas bumi, dan air Indonesia tidak ada di rilis yang dibaca. LCOE Indonesia versi IESR dan Agora berupa PDF: butuh unduhan pemilik.',
-  'Harga baterai dan inverter dari waktu ke waktu tidak tersedia terbuka (seri BNEF tidak boleh disebarkan ulang; Our World in Data menolak CSV-nya). Butuh unduhan pemilik: laporan IRENA Electricity Storage Costs atau IEA.',
-  'Harga modul mulai 2010 adalah tolok pasar Eropa (pvXchange), bukan harga impor Indonesia; impor Indonesia (BPS) butuh unduhan pemilik.',
-  'LCOE pembangkit fosil tidak dimuat (rilis IRENA yang dibaca hanya EBT); BPP nasional dipakai sebagai pembanding campuran, bukan LCOE fosil. Subsidi fosil (IESR) butuh unduhan pemilik.',
+  'LCOE Indonesia dari IRENA hanya ada untuk bayu darat 2017 sampai 2020; surya, panas bumi, dan air Indonesia tidak ada di rilis yang dibaca. LCOE Indonesia versi IESR dan Agora berupa PDF: belum tersedia (menunggu dokumen sumber).',
+  'Harga baterai dan inverter dari waktu ke waktu tidak tersedia terbuka (seri BNEF tidak boleh disebarkan ulang; Our World in Data menolak CSV-nya). belum tersedia (menunggu dokumen sumber): laporan IRENA Electricity Storage Costs atau IEA.',
+  'Harga modul mulai 2010 adalah tolok pasar Eropa (pvXchange), bukan harga impor Indonesia; impor Indonesia (BPS) belum tersedia (menunggu dokumen sumber).',
+  'LCOE pembangkit fosil tidak dimuat (rilis IRENA yang dibaca hanya EBT); BPP nasional dipakai sebagai pembanding campuran, bukan LCOE fosil. Subsidi fosil (IESR) belum tersedia (menunggu dokumen sumber).',
   'BPP hanya tersedia untuk tahun 2016, 2017, 2018, dan 2020 (berkas Kepmen yang diterima); tahun 2015, 2019, dan 2021 ke atas belum ada.',
   'Harga indikatif pasar per teknologi (J10) tidak ada sumber publik bertanggal yang dibaca; tarif Perpres 112/2022 sudah ada di data keuangan.',
 ];

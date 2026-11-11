@@ -9,7 +9,7 @@ export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 export const REPO = process.env.META_REPO || ROOT;
 export const TGL = process.env.TANGGAL_AMBIL || '2026-11-07';
 export const UA = 'METI-Network-research/0.1 (+https://platformmeti.timitbnpb.workers.dev)';
-export const TINGKAT = ['resmi', 'media', 'situs-sendiri'];
+export const TINGKAT = ['resmi', 'media', 'situs-sendiri', 'turunan'];   // turunan: nilai dari rilis resmi lama yang dinyatakan tetap oleh rilis berikutnya (inferensi)
 
 export const baca = (p, akar = REPO) => JSON.parse(fs.readFileSync(path.join(akar, p), 'utf8'));
 export const bacaAda = (p, akar = REPO) => (fs.existsSync(path.join(akar, p)) ? baca(p, akar) : null);

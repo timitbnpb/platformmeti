@@ -11,6 +11,7 @@ import { pasangBawah, IKON } from "/beranda_bawah.js";
 import { pasangProdukTerkait } from "/inti/produk_meti.js";
 import { sumberHtml, lihatSemuaHtml } from "/inti/komponen.js";
 import { kontenBeranda, daftarKonten } from "/inti/konten_beranda.js";
+import { jumlahProyek } from "/inti/cakupan.js";
 import { muat, label, urlAman, namaRegulasi, sembunyi } from "/publik.js";
 
 const KARTU = ["kapasitas", "proyek", "regulasi", "organisasi"];
@@ -156,9 +157,9 @@ const hitungPer = (arr, f, urut) => { const m = new Map(); for (const x of arr) 
 async function gambarJalur() {
   const el = document.getElementById("ekoJalur");
   try {
-    const [pr, wl, rt, kl, pk, og, rg] = await Promise.all(["proyek", "wilayah", "rantai_plts", "topik/indeks", "pustaka", "organisasi", "regulasi"].map(muat));
+    const [pr, wl, rt, kl, pk, og, rg] = await Promise.all(["proyek", "wilayah", "rantai_plts", "topik/indeks", "pustaka", "organisasi", "regulasi"].map(muat)), nPro = (await jumlahProyek()) ?? pr.baris.length;
     const J = [
-      ["proyek", "/proyek", "proyek", pr.baris.length, "proyek", spark(hitungPer(pr.baris, (p) => p.teknologi))],
+      ["proyek", "/proyek", "proyek", nPro, "proyek", spark(hitungPer(pr.baris, (p) => p.teknologi))],
       ["wilayah", "/wilayah", "wilayah", wl.baris.length, "provinsi", spark(wl.baris.map((w) => w.terpasang_mw?.nilai).filter((x) => x != null).sort((a, b) => b - a).slice(0, 12))],
       ["rantai", "/rantai-global?tab=tkdn", "rantai", rt.pabrikan.length, "pabrikan", spark([...rt.pabrikan].map((p) => p.mwp).sort((a, b) => b - a).slice(0, 12))],
       ["regulasi", "/regulasi", "regulasi", rg.baris.length, "regulasi", spark(hitungPer(rg.baris, (r) => r.tahun, true))],

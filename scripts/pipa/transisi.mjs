@@ -1,7 +1,7 @@
 // public/data/transisi.json: bahan halaman /transisi (target, kesehatan sistem, karbon) yang BELUM ada di berkas data lain.
 //   node scripts/pipa/transisi.mjs [tanggal]     (tanpa jaringan; membaca teks RUPTL lokal, ieto2025, regulasi)
 // Isi: neraca daya 16 sistem PLN (RUPTL 2025-2034, skenario RE Base, tabel 5.82-5.122), beban puncak nasional 2015-2024 (tabel 4.48),
-// pembanding IESR (IETO 2025), regulasi nilai ekonomi karbon, daftar celah ("butuh unduhan pemilik").
+// pembanding IESR (IETO 2025), regulasi nilai ekonomi karbon, daftar celah ("belum tersedia (menunggu dokumen sumber)").
 // Angka target/karbon/kapasitas yang sudah ada TIDAK disalin: halaman membaca target.json, karbon.json, karbon_proyek.json, ember_bulanan.json.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -165,10 +165,10 @@ function bangun(teks, tgl) {
     pembanding_iesr: ieto,
     regulasi_karbon: reg,
     celah: [
-      'Kurtailmen (energi EBT variabel yang dibuang): tidak ada angka publik per sistem di RUPTL 2025-2034 maupun Statistik Ketenagalistrikan 2024; butuh unduhan pemilik (laporan operasi sistem PLN atau permintaan data ke ESDM).',
+      'Kurtailmen (energi EBT variabel yang dibuang): tidak ada angka publik per sistem di RUPTL 2025-2034 maupun Statistik Ketenagalistrikan 2024; belum tersedia (menunggu dokumen sumber) (laporan operasi sistem PLN atau permintaan data ke ESDM).',
       'Faktor kapasitas per operator panas bumi dan hidro: laporan tahunan operator (PGE, Star Energy, Medco Power, PLN Indonesia Power) tidak dipanen; halaman memakai faktor kapasitas EST per provinsi dari Statistik 2024.',
-      'Faktor emisi grid resmi ESDM per sistem (Kepmen ESDM faktor emisi GRK sistem ketenagalistrikan): dokumen tidak ada di korpus lokal; butuh unduhan pemilik. Halaman memakai intensitas emisi turunan dari tabel RUPTL (emisi GRK dibagi produksi).',
-      'Pajak karbon: tarif Rp30 per kg CO2e (UU 7/2021 Pasal 13) dan penundaan pemberlakuan tidak ada naskahnya di korpus regulasi lokal; hanya Perpres 98/2021 (dicabut) dan Perpres 110/2025 yang tercatat. Butuh unduhan UU HPP dan PMK terkait.',
+      'Faktor emisi grid resmi ESDM per sistem (Kepmen ESDM faktor emisi GRK sistem ketenagalistrikan): dokumen tidak ada di korpus lokal; belum tersedia (menunggu dokumen sumber). Halaman memakai intensitas emisi turunan dari tabel RUPTL (emisi GRK dibagi produksi).',
+      'Pajak karbon: tarif Rp30 per kg CO2e (UU 7/2021 Pasal 13) dan penundaan pemberlakuan tidak ada naskahnya di korpus regulasi lokal; hanya Perpres 98/2021 (dicabut) dan Perpres 110/2025 yang tercatat. UU HPP dan PMK terkait belum ada di korpus.',
       'Status SRN PPI per proyek EBT: portal SRN (srn.menlhk.go.id) tidak dipanen; yang tampil adalah proyek terdaftar di IDXCarbon dan registri Gold Standard/Verra yang sudah ada di karbon.json dan karbon_proyek.json.',
       'Tambahan kapasitas EBT per bulan: siaran pers ESDM/PLN tidak memuat deret bulanan terstruktur; yang tampil deret tahunan Statistik Ketenagalistrikan (rata-rata per bulan = EST).',
       'Kapasitas serap EBT variabel per sistem (batas penetrasi PLN) dan skenario Ember 14 persen 2030 ke 36 persen 2050: tidak ada tabel terbaca di RUPTL; halaman memakai rasio PLTS+PLTB rencana RUPTL terhadap beban puncak neto 2034 (EST).',

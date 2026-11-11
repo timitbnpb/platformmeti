@@ -44,7 +44,7 @@ test('prioritas 0-100, dan tingkat tetap (tinggi/sedang/rendah)', () => {
   assert.equal(tingkatPrioritas(70), 't'); assert.equal(tingkatPrioritas(50), 's'); assert.equal(tingkatPrioritas(10), 'r'); assert.equal(tingkatPrioritas(null), null);
   assert.equal(tingkatSkor(55), 't'); assert.equal(tingkatSkor(35), 's'); assert.equal(tingkatSkor(34.9), 'r');
 });
-test('harga solar dari tarif_harga (Dexlite terbaru) dan celah tercatat', () => {
-  assert.equal(D.harga_solar.rp_per_liter, 23700); assert.match(D.harga_solar.berlaku_sejak, /^\d{4}-\d{2}-\d{2}$/);
+test('harga solar: tanpa sumber resmi terbaca (K21) jadi asumsi berlabel Hipotesis, dan celah tercatat', () => {
+  assert.ok(D.harga_solar.rp_per_liter > 0 && D.harga_solar.alasan); assert.equal(D.harga_solar.label, 'Hipotesis'); assert.equal(D.harga_solar.sumber_url, null);
   assert.ok(D.celah.length >= 4); assert.equal(D.tingkat_bukti, 'hipotesis'); assert.doesNotMatch(JSON.stringify(D), /[—–·]/);
 });

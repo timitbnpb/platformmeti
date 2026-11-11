@@ -580,9 +580,6 @@ a.ak-ptl:hover{background:oklch(100% 0 0 / .24)}
 .ak-lsumber{margin:0;padding-left:18px;display:grid;gap:4px;font-size:var(--t-tombol)}
 .ak-rkbaris{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .ak-rkl{display:grid;gap:10px;margin:0;padding-left:20px}
-.ak-dummy{justify-self:center;display:flex;gap:8px;align-items:center}
-.ak-dummy button{font-size:var(--t-h3);min-width:44px;min-height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer}
-.ak-dummy span{font-size:var(--t-kecil);color:var(--ink2)}
 /* peta berlogo */
 .ak-pta{display:grid;gap:10px}
 .ak-pita{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}

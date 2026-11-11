@@ -14,6 +14,7 @@ import { ikonTek, pilTek, pilStatus, ikonStatus } from "/inti/ikon_tek.js";
 import { PROV } from "/penerbit.js";
 import { geserPanel } from "/inti/panel_geser.js";
 import { aksiHtml } from "/inti/aksi_ex.js";
+import { muatRekon, cakupanHtml } from "/inti/cakupan.js";
 import { pasangKeputusan } from "/proyek_keputusan.js";
 import { pasangTender } from "/proyek_tender.js";
 import { peristiwaPopupHtml } from "/peristiwa_komitmen.js";
@@ -145,10 +146,12 @@ const dokSumber = () => [...new Set(SEMUA.flatMap((r) => (r.p.sumber || []).map(
 
 /* ---------- hero: kartu KPI, batang status, batang program ---------- */
 const progNamaPendek = (id) => (ada("pj.pn." + id) ? t("pj.pn." + id) : progNama(id));
+let REKON = null;
+muatRekon().then((r) => { REKON = r; if (r) { const el = document.getElementById("pjCakupan"); if (el) el.innerHTML = cakupanHtml(r, { id: "selisih" }); gambarHero(); if (location.hash === "#selisih") document.getElementById("selisih")?.scrollIntoView(); } });
 function gambarHero() {
-  const n = SEMUA.length, mw = jumlahMW(SEMUA), st = hitung(SEMUA, (r) => r.st);
+  const n = REKON?.angka_proyek?.terlacak ?? SEMUA.length, mw = jumlahMW(SEMUA), st = hitung(SEMUA, (r) => r.st);
   const [kv, ks] = mw >= 10000 ? [num(mw / 1000, 1), "GW"] : [num(mw, 0), "MW"];
-  khUbin("pjAngka", [{ ikon: "proyek", nilai: num(n), label: t("pj.k.total") }, { ikon: "analisis", nilai: kv, satuan: ks, label: t("pj.k.kap") }, { ikon: "status", nilai: num(st.konstruksi || 0), label: labSt("konstruksi") }, { ikon: "centang", nilai: num(st.beroperasi || 0), label: labSt("beroperasi") }, { ikon: "kalender", nilai: num(SEMUA.filter((r) => r.telat).length), label: t("pj.k.telat") }]);
+  khUbin("pjAngka", [{ ikon: "proyek", nilai: num(n), label: t("pj.k.total") }, { ikon: "analisis", nilai: kv, satuan: ks, label: t("pj.k.kap_daftar", { n: num(SEMUA.length) }) }, { ikon: "status", nilai: num(st.konstruksi || 0), label: labSt("konstruksi") }, { ikon: "centang", nilai: num(st.beroperasi || 0), label: labSt("beroperasi") }, { ikon: "kalender", nilai: num(SEMUA.filter((r) => r.telat).length), label: t("pj.k.telat") }]);
   segarHero(); kepalaSeksi();
 }
 function segarHero() {

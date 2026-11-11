@@ -9603,179 +9603,6 @@
         88048
        ]
       ]
-     },
-     {
-      "nama": {
-       "id": "Captive dan pasokan industri",
-       "en": "Captive and industrial supply"
-      },
-      "sorot": false,
-      "titik": [
-       [
-        "0",
-        -36300
-       ],
-       [
-        "1",
-        -32429
-       ],
-       [
-        "2",
-        -28582
-       ],
-       [
-        "3",
-        -24759
-       ],
-       [
-        "4",
-        -20958
-       ],
-       [
-        "5",
-        -17181
-       ],
-       [
-        "6",
-        -13426
-       ],
-       [
-        "7",
-        -9695
-       ],
-       [
-        "8",
-        -5986
-       ],
-       [
-        "9",
-        -2299
-       ],
-       [
-        "10",
-        1364
-       ],
-       [
-        "11",
-        5006
-       ],
-       [
-        "12",
-        8625
-       ],
-       [
-        "13",
-        12222
-       ],
-       [
-        "14",
-        15796
-       ],
-       [
-        "15",
-        19349
-       ],
-       [
-        "16",
-        22880
-       ],
-       [
-        "17",
-        26390
-       ],
-       [
-        "18",
-        29877
-       ],
-       [
-        "19",
-        33343
-       ],
-       [
-        "20",
-        36788
-       ],
-       [
-        "21",
-        40211
-       ],
-       [
-        "22",
-        43614
-       ],
-       [
-        "23",
-        46995
-       ],
-       [
-        "24",
-        50355
-       ],
-       [
-        "25",
-        53694
-       ],
-       [
-        "26",
-        57013
-       ],
-       [
-        "27",
-        60310
-       ],
-       [
-        "28",
-        63587
-       ],
-       [
-        "29",
-        66844
-       ],
-       [
-        "30",
-        70081
-       ],
-       [
-        "31",
-        73297
-       ],
-       [
-        "32",
-        76493
-       ],
-       [
-        "33",
-        79668
-       ],
-       [
-        "34",
-        82824
-       ],
-       [
-        "35",
-        85960
-       ],
-       [
-        "36",
-        89077
-       ],
-       [
-        "37",
-        92173
-       ],
-       [
-        "38",
-        95250
-       ],
-       [
-        "39",
-        98308
-       ],
-       [
-        "40",
-        101346
-       ]
-      ]
      }
     ],
     "ringkas": [
@@ -9783,11 +9610,6 @@
       "id": "ipp",
       "irr": 8.8,
       "payback": 10.7
-     },
-     {
-      "id": "captive",
-      "irr": 9.9,
-      "payback": 9.6
      }
     ],
     "label": {
@@ -9795,8 +9617,8 @@
      "en": "Illustrative cumulative cash flow per revenue model (Rp thousand per kW)"
     },
     "asumsi": {
-     "id": "Harga jual per model memakai jangkar tarif repo (BPP nasional 1027.7 Rp per kWh; tarif B-2 1444.7, B-3 1114.74, R-1 1444.7 Rp per kWh, EST), diskon sewa atap 15 persen dan ESCO 10 persen (Hipotesis), degradasi 0,5 persen per tahun, tanpa pajak dan utang (arus kas proyek sebelum pajak). Biaya modal, faktor kapasitas, dan biaya operasi dari biaya_bangun.json (skala besar); umur proyek 40 tahun adalah Hipotesis METI karena berkas tidak memuat umur. Harga adalah jangkar acuan, bukan harga PPA proyek.",
-     "en": "Selling price per model uses repository tariff anchors (national BPP 1027.7 Rp per kWh; B-2 tariff 1444.7, B-3 1114.74, R-1 1444.7 Rp per kWh, EST), a 15 percent rooftop-rental and 10 percent ESCO discount (Hypothesis), 0.5 percent per year degradation, and no tax or debt (pre-tax project cash flow). Cost inputs (capex, capacity factor, operating cost) from biaya_bangun.json scale the besar scale; project life 40 years is a METI Hypothesis because the file holds no life. Prices are reference anchors, not project PPA prices."
+     "id": "Harga jual per model memakai jangkar tarif repo (BPP nasional 1027.7 Rp per kWh; tarif B-2 -, B-3 -, R-1 - Rp per kWh, EST), diskon sewa atap 15 persen dan ESCO 10 persen (Hipotesis), degradasi 0,5 persen per tahun, tanpa pajak dan utang (arus kas proyek sebelum pajak). Biaya modal, faktor kapasitas, dan biaya operasi dari biaya_bangun.json (skala besar); umur proyek 40 tahun adalah Hipotesis METI karena berkas tidak memuat umur. Harga adalah jangkar acuan, bukan harga PPA proyek.",
+     "en": "Selling price per model uses repository tariff anchors (national BPP 1027.7 Rp per kWh; B-2 tariff -, B-3 -, R-1 - Rp per kWh, EST), a 15 percent rooftop-rental and 10 percent ESCO discount (Hypothesis), 0.5 percent per year degradation, and no tax or debt (pre-tax project cash flow). Cost inputs (capex, capacity factor, operating cost) from biaya_bangun.json scale the besar scale; project life 40 years is a METI Hypothesis because the file holds no life. Prices are reference anchors, not project PPA prices."
     },
     "menunggu": {
      "id": "Grafik arus kas, IRR, dan payback belum dihitung karena public/data/biaya_bangun.json belum memuat biaya modal, faktor kapasitas, dan biaya operasi bersumber untuk skala utilitas teknologi ini (atau teknologinya tidak punya sumber terbuka yang terbaca). Begitu berkas itu terisi, bangun ulang topik dan angka muncul otomatis; METI tidak memasukkan angka karangan.",

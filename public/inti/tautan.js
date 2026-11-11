@@ -34,7 +34,7 @@ const rekam = {
   isu: (b) => ({ id: b.id, nama: b.judul, lain: [], tgl: b.terbaru }),
 };
 export function siapTautan(...jenis) {
-  return Promise.all(jenis.map((j) => idx[j] ? 0 : muatJson(j).then((d) => {
+  return Promise.all(jenis.filter((j) => SUMBER[j]).map((j) => idx[j] ? 0 : muatJson(j).then((d) => {
     if (idx[j]) return;
     const byId = new Map(), byNama = new Map(), amb = new Set();
     for (const b of d.baris || []) {

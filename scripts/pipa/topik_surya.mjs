@@ -140,7 +140,7 @@ function susunDasar() {
     T(`Menurut IRENA, rata-rata global LCOE surya baru USD 0,043 per kWh pada 2024 (ringkasan pers). Di Indonesia kapasitasnya ${k25.kapasitas_mw} MW pada ${k25.tahun}, masih kecil dibanding potensi.`, `Per IRENA, the global average LCOE of new solar was USD 0.043 per kWh in 2024 (press summary). Indonesia has ${k25.kapasitas_mw} MW in ${k25.tahun}, still small relative to potential.`),
     T('Empat bentuk utama: skala utilitas di tanah, atap (rumah, gedung, industri), terapung di waduk, dan hibrida atau komunal untuk desa tanpa jaringan andal.', 'Four main forms: utility-scale ground-mounted, rooftop (homes, buildings, industry), floating on reservoirs, and hybrid or community systems for villages without reliable grids.'),
   ] };
-  const tarifR = r.hit.tarif.find((t) => t.golongan === 'R-1/TR 2.200 VA');
+  const tarifR = r.hit.tarif.find((t) => t.golongan === 'R-2/TR 3.500-5.500 VA');
   const asum = r.hit.asumsi;
   const pv = r.pot.find((p) => p.provinsi === 'Jawa Barat').pvout_kwh_per_kwp_tahun;
   const kwp = 3, prod = kwp * pv, pakai = asum.rumah.pakai_sendiri_persen.nilai / 100, hemat = prod * pakai * tarifR.tarif_idr_per_kwh, om = kwp * asum.rumah.harga_per_kwp_idr.nilai * asum.rumah.om_persen_per_tahun.nilai / 100, cap = kwp * asum.rumah.harga_per_kwp_idr.nilai;
@@ -202,7 +202,7 @@ function susunDasar() {
   bab['11'] = { tipe: 'teks', sumber: sm('rantai', 'tarifas', 'hitung'), paragraf: [
     T(`Industri modul: ${r.rantai.pabrikan} pabrikan, ${r.rantai.total_mwp} MWp per tahun, ${r.rantai.lokal_mwp} MWp untuk pasar lokal, ${r.rantai.ekspor_mwp} MWp untuk ekspor (${r.rantai.ekspor_hanya_mwp} MWp khusus ekspor).`, `Module industry: ${r.rantai.pabrikan} factories, ${r.rantai.total_mwp} MWp per year, ${r.rantai.lokal_mwp} MWp domestic, ${r.rantai.ekspor_mwp} MWp export (${r.rantai.ekspor_hanya_mwp} MWp export-only).`),
     T('Pasar ekspor terpukul: AS menetapkan bea masuk imbalan sementara 86 sampai 143 persen atas panel surya Indonesia (ANTARA, 26 Feb 2026).', 'Export market hit: the US set provisional countervailing duties of 86 to 143 percent on Indonesian solar panels (ANTARA, 26 Feb 2026).'),
-    T('Tarif PLN nonsubsidi Q3 2026: rumah R-1 2.200 VA Rp 1.444,7 per kWh, industri I-3 Rp 1.114,74, bisnis B-2 Rp 1.444,7; patokan penghematan PLTS atap.', 'PLN non-subsidised tariffs Q3 2026: home R-1 2,200 VA IDR 1,444.7 per kWh, industry I-3 IDR 1,114.74, business B-2 IDR 1,444.7; the benchmark for rooftop savings.'),
+    T('Tarif PLN nonsubsidi Q3 2026: rumah R-2 3.500-5.500 VA Rp 1.699,53 per kWh, pemerintah P-2 Rp 1.522,88 (siaran pers ESDM 2022; tarif nonsubsidi tetap sampai Q3 2026); patokan penghematan PLTS atap.', 'PLN non-subsidised tariffs Q3 2026: home R-2 3,500-5,500 VA IDR 1,699.53 per kWh, government P-2 IDR 1,522.88 (ESDM press release 2022; non-subsidised tariff unchanged through Q3 2026); the benchmark for rooftop savings.'),
   ] };
   // D
   const reg = [

@@ -1,10 +1,12 @@
 // Bangun public/data/panduan.json dari panduan_data.mjs; periksa tautan (regulasi, organisasi, istilah, kunci skala biaya). Tanpa jaringan.
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { namaProyek as _n } from "../../public/inti/nama_proyek.js";
 import { logoOrgSatu } from "../../public/inti/logo_org.js";
 import { labelReg } from "./sejarah_bangun.mjs";
 import { PANDUAN, TEMPLAT, MITOS, PENAFIAN } from "./panduan_data.mjs";
 
+// B-11: rujukan gambar yang berkasnya tidak ada dibuang (layar jatuh ke ikon).
+const logoAda = (u) => (u && existsSync(new URL("../../public" + u, import.meta.url)) ? { logo: u } : {});
 const J = (f) => JSON.parse(readFileSync(new URL("../../public/data/" + f, import.meta.url), "utf8"));
 const OUT = new URL("../../public/data/panduan.json", import.meta.url);
 
@@ -24,7 +26,7 @@ export function bangun(hariIni = new Date().toISOString().slice(0, 10)) {
   }
   for (const m of MITOS) { if (m.reg) cek(m.id, reg, [m.reg], "regulasi"); if (!m.fakta.en) galat.push(m.id + ": en kosong"); }
   if (galat.length) throw new Error("panduan_bangun:\n" + galat.join("\n"));
-  const taut = (p) => ({ regulasi: (p.regulasi ?? []).map((id) => ({ id, nama: labelReg(RG.get(id)), judul: RG.get(id).judul, status: RG.get(id).status })), org: (p.org ?? []).map((id) => ({ id, nama: OG.get(id).nama, logo: logoOrgSatu(id, OG.get(id).nama, OG.get(id).logo) })), istilah: (p.istilah ?? []).map((id) => ({ id, nama: IM.get(id).nama })) });
+  const taut = (p) => ({ regulasi: (p.regulasi ?? []).map((id) => ({ id, nama: labelReg(RG.get(id)), judul: RG.get(id).judul, status: RG.get(id).status })), org: (p.org ?? []).map((id) => ({ id, nama: OG.get(id).nama, ...logoAda(logoOrgSatu(id, OG.get(id).nama, OG.get(id).logo)) })), istilah: (p.istilah ?? []).map((id) => ({ id, nama: IM.get(id).nama })) });
   const panduan = PANDUAN.map(({ regulasi, org, istilah, ...sisa }) => ({ ...sisa, taut: taut({ regulasi, org, istilah }) }));
   const mitos = MITOS.map((m) => ({ ...m, taut_reg: m.reg ? taut({ regulasi: [m.reg] }).regulasi[0] : null }));
   return { lapis: "publik", dibangun_pada: hariIni, penafian: PENAFIAN, jumlah: PANDUAN.length, panduan, templat: TEMPLAT, mitos,

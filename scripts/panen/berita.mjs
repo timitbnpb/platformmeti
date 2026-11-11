@@ -74,10 +74,13 @@ const frasa = (t) => (/\s/.test(t) ? `"${t}"` : t);
 export const kueriGdelt = (terms, ed) => (terms.length > 1 ? `(${terms.map(frasa).join(" OR ")})` : frasa(terms[0])) + (ed === 'en' ? ' Indonesia sourcelang:english' : ' sourcelang:indonesian');
 export const kueriGoogle = (terms) => terms.map(frasa).join(' OR ');
 
+// K21/JM-S04: Antara dilarang dipanen (feed, hasil GDELT/Google, arsip lama). Penyaring dipasang di main() sebelum dedup().
+export const ANTARA = /(^|[./@])antaranews\.com|^antara( news)?$/i;
+export const bukanAntara = (a) => !ANTARA.test(String(a.media || '')) && !ANTARA.test(String(a.url || '').replace(/^https?:\/\//, ''));
+
 // RSS langsung media (bukan feed pencarian: disaring dengan aturan K16). Yang tidak ada di sini gagal diperiksa 7 Nov 2026:
 // Kompas, Kontan, The Jakarta Post, ESDM (tidak ada feed publik, 404 atau HTML); Bisnis (robots melarang /rss/ dan /feed/, 403).
 export const FEEDS = [
-  ['Antara', 'https://www.antaranews.com/rss/ekonomi.xml', 'id'], ['Antara', 'https://www.antaranews.com/rss/ekonomi-bisnis.xml', 'id'],
   ['CNBC Indonesia', 'https://www.cnbcindonesia.com/rss', 'id'], ['Katadata', 'https://katadata.co.id/rss', 'id'],
   ['Mongabay', 'https://www.mongabay.co.id/feed/', 'id'], ['Mongabay', 'https://www.mongabay.co.id/category/energi/feed/', 'id'],
   ['Dunia Energi', 'https://www.dunia-energi.com/feed/', 'id'], ['Ruang Energi', 'https://ruangenergi.com/feed/', 'id'],
@@ -287,7 +290,7 @@ async function main() {
   const jalurArsip = join(AKAR, 'data-panen/berita/berita.jsonl');
   const lama = !uji && existsSync(jalurArsip) ? readFileSync(jalurArsip, 'utf-8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
   const batas = new Date(Date.now() - (mundurHari || 120) * 864e5).toISOString();
-  const hasil = dedup([...baris, ...lama.filter((a) => a.terbit >= batas)]).sort((a, b) => b.terbit.localeCompare(a.terbit));
+  const hasil = dedup([...baris, ...lama.filter((a) => a.terbit >= batas)].filter(bukanAntara)).sort((a, b) => b.terbit.localeCompare(a.terbit));
   const per = {}; for (const a of hasil) for (const k of a.kepakaran) per[k] = (per[k] || 0) + 1;
   const media = {}; for (const a of hasil) media[a.media || '?'] = (media[a.media || '?'] || 0) + 1;
   const sumber = {}; for (const a of hasil) sumber[a.sumber_panen.split(':')[0]] = (sumber[a.sumber_panen.split(':')[0]] || 0) + 1;

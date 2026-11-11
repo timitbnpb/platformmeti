@@ -784,6 +784,7 @@ li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border
 .jm-bukti[data-b=resmi]{background:var(--ok-bg);color:var(--ok)}
 .jm-bukti[data-b=media]{background:var(--warn-bg);color:var(--warn)}
 .jm-bukti[data-b=est]{background:color-mix(in srgb,var(--data2) 18%,var(--card));color:var(--ink)}
+.jm-bukti[data-b=turunan]{background:color-mix(in srgb,var(--data4) 18%,var(--card));color:var(--ink)}
 .jm-bukti[data-b=hip]{background:color-mix(in srgb,var(--data3) 22%,var(--card));color:var(--ink)}
 .jm-bukti[data-b=kata]{background:color-mix(in srgb,var(--data5) 16%,var(--card));color:var(--ink)}
 .jm-bukti[data-b=kajian]{background:var(--info-bg);color:var(--info)}
@@ -882,3 +883,10 @@ html body .jm-kh .jm-kh-teks>.jm-bantu,html body .jm-kh .jm-kh-teks>.jm-kh-lead:
 html body .jm-kh .jm-kh-teks>.jm-bantu a,html body .jm-kh .jm-kh-teks>.jm-kh-lead>a:only-child{color:var(--accent);font-weight:600;text-decoration:none}
 html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-kh-ub .jm-kh-angka{white-space:normal}
 html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-kh-ub .jm-kh-angka b{white-space:normal;overflow-wrap:anywhere;min-width:0}
+.jm-cak-kartu{list-style:none;margin:12px 0;padding:0}
+.jm-cak-kartu li{display:grid;gap:4px;padding:12px 14px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.jm-cak-kartu b{font:700 var(--t-angka)/var(--lh-judul) var(--display);font-variant-numeric:tabular-nums;color:var(--head)}
+.jm-cak-kartu span{font-size:var(--t-kecil);color:var(--ink2);line-height:var(--lh-rapat)}
+.jm-cak-jawab,.jm-cak-ket{margin:0 0 12px}
+.jm-cak-hit>summary{cursor:pointer;font-weight:600;margin-bottom:8px}
+.jm-cak-sum{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:12px 0 0}

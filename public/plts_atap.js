@@ -77,12 +77,13 @@ function kontrolHtml() {
 async function gambar() {
   akar.innerHTML = hantuHtml(4);
   try { D = await muat("plts_atap_hitung"); } catch { akar.innerHTML = galatHtml("layanan"); return; }
-  S.gol ||= (D.tarif.find((g) => g.id.endsWith("r_1_tr_2_200_va")) || D.tarif[0]).id;
+  S.gol ||= (D.tarif.find((g) => g.kelompok === "rumah tangga") || D.tarif[0]).id;
+  const tdk = D.meta?.golongan_tidak_tersedia || ["R-1"], adaR1 = !tdk.length;
   S.prov ||= (D.provinsi.find((p) => p.kode === "32") || D.provinsi[0]).kode;
   const celah = (D.meta?.celah || []).map((c) => `<li>${esc(c)}</li>`).join("");
   const sum = sumberHtml(esc(t("plts.sumber", { tanggal: tanggal(D.meta?.tarif_terbaru || D.dibangun_pada) })));
   const h = hasilHtml();
-  akar.innerHTML = exHtml({ id: "paEx1", ikon: "kalkulator", topik: t("pel.tab.plts"), judulHtml: esc(t("plts.ex.j")), subHtml: `${esc(t("plts.lead"))} ${hip()}`, aksiHtml: sum })
+  akar.innerHTML = exHtml({ id: "paEx1", ikon: "kalkulator", topik: t("pel.tab.plts"), judulHtml: esc(t("plts.ex.j")), subHtml: `${esc(t("plts.lead"))} ${hip()}${adaR1 ? "" : `<p class="jm-bantu" role="note"><span class="jm-pil jm-pil-warn">${esc(t("plts.r1.pil"))}</span> ${esc(t("plts.r1.belum", { gol: tdk.join(", ") }))}</p>`}`, aksiHtml: sum })
     + exHtml({ id: "paEx2", ikon: "grafik", topik: t("plts.ex.hasil"), judulHtml: esc(t("plts.ex.hasil.j")), subHtml: est(), isiHtml: `<div id="paHasil" aria-live="polite">${h.hasil}</div>` })
     + exHtml({ id: "paEx3", ikon: "metode", topik: t("plts.cara"), judulHtml: esc(t("plts.cara")), subHtml: `${est()} ${hip()}`, isiHtml: `<div id="paCara">${h.cara}</div>` })
     + exHtml({ id: "paEx4", ikon: "daftar", topik: t("plts.asumsi"), judulHtml: esc(t("plts.asumsi.j")), subHtml: hip(), isiHtml: asumsiHtml() })

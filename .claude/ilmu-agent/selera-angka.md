@@ -50,3 +50,4 @@ Kolom sumber angka: `fakta.nilai_num` + `satuan` + `per_tanggal` + `sumber_id` (
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-11 · Tangkapan layar cakupan (01:29) stale terhadap proyek_rekon.json (607/186/60): bandingkan angka layar dengan JSON sebelum vonis

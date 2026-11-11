@@ -73,7 +73,7 @@ function alur() {
 }
 
 /* ---------- tingkat bukti ---------- */
-const BUKTI = [["resmi", "jm-pil-ok", "Resmi"], ["kajian", "met-p-kajian", "Kajian"], ["media", "jm-pil-warn", "Media"], ["kata", "met-p-kata", ""], ["est", "met-p-est", "EST"], ["hip", "met-p-hip", "Hipotesis"], ["tinjau", "met-p-tinjau", ""]];
+const BUKTI = [["resmi", "jm-pil-ok", "Resmi"], ["kajian", "met-p-kajian", "Kajian"], ["media", "jm-pil-warn", "Media"], ["kata", "met-p-kata", ""], ["est", "met-p-est", "EST"], ["hip", "met-p-hip", "Hipotesis"], ["turunan", "met-p-est", ""], ["tinjau", "met-p-tinjau", ""]];
 function bukti() {
   return `<ul class="met-bukti">${BUKTI.map(([k, kls, lab]) => `<li class="met-bk"><span class="jm-pil ${kls}">${esc(lab || t("met.tb." + k + ".j"))}</span><h3>${esc(t("met.tb." + k + ".j"))}</h3><p>${esc(t("met.tb." + k))}</p><p class="met-contoh"><b>${esc(t("met.contoh"))}</b> ${esc(t("met.tb." + k + ".contoh"))}</p></li>`).join("")}</ul>`;
 }

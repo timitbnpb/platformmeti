@@ -6,6 +6,9 @@ import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { minmaks, ASUMSI } from '../../public/radar_rumus.js';
 
+// ASUMSI harga solar (Hipotesis): tidak ada sumber resmi terbaca untuk harga BBM (K21: harga media dibuang). Bilangan bulat ilustrasi untuk kalkulator,
+// BUKAN harga Pertamina; pengguna mengubahnya di kalkulator. Ganti dengan baris tarif_harga.json bersumber begitu ada.
+export const ASUMSI_HARGA_SOLAR = { produk: 'Solar (asumsi)', rp_per_liter: 20000, alasan: 'ilustrasi bulat; tanpa sumber resmi terbaca; bukan harga Pertamina' };
 const AKAR = fileURLToPath(new URL('../../', import.meta.url));
 const TGL = '2026-11-08';
 const J = (f) => JSON.parse(fs.readFileSync(AKAR + f, 'utf8'));
@@ -15,8 +18,11 @@ export function bangun() {
   const ST = J('public/data/statistik_pln.json'), PEL = J('public/data/peluang.json'), ATL = J('public/data/potensi_atlas.json'), TAR = J('public/data/tarif_harga.json'), RUP = J('public/data/ruptl.json');
   const atl = new Map(ATL.baris.map((b) => [b.kode, b.pvout_kwh_per_kwp_tahun]));
   const bpp = new Map(PEL.baris.map((b) => [b.kode, b.bpp]));
-  const dex = TAR.baris.filter((r) => r.kelompok === 'harga_bbm' && /^Dexlite/.test(r.produk) && r.berlaku_sejak).sort((a, z) => z.berlaku_sejak.localeCompare(a.berlaku_sejak))[0];
-  const bio = TAR.baris.filter((r) => r.kelompok === 'harga_bbm' && /^Biosolar/.test(r.produk)).sort((a, z) => String(z.berlaku_sejak).localeCompare(String(a.berlaku_sejak)))[0];
+  // K21: harga BBM tak lagi punya sumber resmi terbaca (tarif_harga.json dibersihkan). Pakai baris bersumber bila ada; bila tidak, ASUMSI berlabel Hipotesis, tanpa sumber_url.
+  const dex0 = TAR.baris.filter((r) => r.kelompok === 'harga_bbm' && /^Dexlite/.test(r.produk) && r.berlaku_sejak).sort((a, z) => z.berlaku_sejak.localeCompare(a.berlaku_sejak))[0];
+  const bio0 = TAR.baris.filter((r) => r.kelompok === 'harga_bbm' && /^Biosolar/.test(r.produk)).sort((a, z) => String(z.berlaku_sejak).localeCompare(String(a.berlaku_sejak)))[0];
+  const dex = dex0 ?? { produk: ASUMSI_HARGA_SOLAR.produk, harga_idr_per_liter: ASUMSI_HARGA_SOLAR.rp_per_liter, berlaku_sejak: null, wilayah: 'asumsi', sumber_url: null, tanggal: TGL, label: 'Hipotesis', alasan: ASUMSI_HARGA_SOLAR.alasan };
+  const bio = bio0 ?? null;
   const dedies = new Map();
   for (const r of RUP.baris) if (/dedieselisasi|isolated/i.test(r.nama) && r.provinsi) {
     const kode = PEL.baris.find((b) => b.nama === r.provinsi)?.kode; if (!kode) continue;
@@ -42,7 +48,7 @@ export function bangun() {
   });
   return {
     lapis: 'publik', dibangun_pada: TGL, tahun_data: ST.tahun, tingkat_bukti: 'hipotesis', jumlah: baris.length,
-    harga_solar: { produk: dex.produk, rp_per_liter: dex.harga_idr_per_liter, berlaku_sejak: dex.berlaku_sejak, wilayah: dex.wilayah, sumber_url: dex.sumber_url, pembanding_subsidi: { produk: bio.produk, rp_per_liter: bio.harga_idr_per_liter, berlaku_sejak: bio.berlaku_sejak } },
+    harga_solar: { label: dex.label ?? null, alasan: dex.alasan ?? null, produk: dex.produk, rp_per_liter: dex.harga_idr_per_liter, berlaku_sejak: dex.berlaku_sejak, wilayah: dex.wilayah, sumber_url: dex.sumber_url, pembanding_subsidi: bio ? { produk: bio.produk, rp_per_liter: bio.harga_idr_per_liter, berlaku_sejak: bio.berlaku_sejak } : null },
     asumsi: ASUMSI, bobot_prioritas: BOBOT,
     metode: {
       rumus: ['Energi diganti (kWh) = produksi PLTD tahunan (GWh) x 1 juta x pangsa diganti.', 'Solar hemat (liter) = energi diganti x konsumsi spesifik PLTD (liter per kWh).', 'Hemat BBM (Rp) = solar hemat x harga Dexlite terbaru.', 'Biaya PLTS + baterai (Rp) = energi diganti x biaya (sen USD per kWh) x kurs.', 'Hemat bersih = hemat BBM dikurangi biaya PLTS + baterai.', 'PLTS dibutuhkan (MWp) = energi diganti / (PVOUT provinsi x efisiensi sistem) / 1000.'],
@@ -52,7 +58,7 @@ export function bangun() {
       { id: 'stat', judul: 'Statistik Ketenagalistrikan 2024, Ditjen Ketenagalistrikan ESDM (kapasitas dan produksi PLTD per provinsi)', url: ST.url, tanggal: ST.tanggal_ambil },
       { id: 'bpp', judul: 'Kepmen ESDM 169.K/HK.02/MEM.M/2021 (BPP 2020 per sistem dan sub sistem terisolasi), lewat peluang.json', url: '/investasi#peluang', tanggal: '2026-11-07' },
       { id: 'ruptl', judul: 'RUPTL PLN 2025-2034: proyek bernama Dedieselisasi atau Isolated', url: 'https://gatrik.esdm.go.id/', tanggal: '2026-11-07' },
-      { id: 'solar', judul: 'Harga Dexlite dan Biosolar (laman Pertamina lewat tarif_harga.json)', url: dex.sumber_url, tanggal: dex.tanggal },
+      { id: 'solar', judul: dex0 ? 'Harga Dexlite dan Biosolar (tarif_harga.json)' : 'Harga solar: ASUMSI Hipotesis (tanpa sumber resmi terbaca); ubah di kalkulator', url: dex.sumber_url, tanggal: dex.tanggal },
       { id: 'atlas', judul: 'Global Solar Atlas 2.0 (PVOUT), satu titik per provinsi', url: 'https://globalsolaratlas.info/', tanggal: '2026-11-08' },
     ],
     celah: [

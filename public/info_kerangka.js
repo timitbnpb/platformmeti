@@ -37,11 +37,8 @@ export const narasi = (teks) => `<p class="inf-narasi">${esc(teks)}</p>`;
 /** Sumber bertanggal (dilipat): [{sumber, halaman?, url?, tanggal, tahun?}] */
 export const sumber = (daftar) => sumberLipat(daftar.map((s) => ({ ...s, url: url(s.url) })));
 
-/** Kartu "butuh unduhan pemilik": alasan dari kamus (kunci b.<id>), sumber nama saja. */
-export function butuhHtml(id, b) {
-  return `<article class="inf-butuh"><header>${ikon("unduh", 18)}<h3>${esc(tt("butuh.judul"))}</h3>${labelPil("butuh.pil")}</header><p>${esc(tt("b." + id))}</p><p class="jm-bantu">${esc(tt("butuh.sumber"))}: ${tautan(b.url, b.sumber)}</p></article>`;
-}
-export const butuhDaftar = (peta, kunci) => `<div class="inf-butuh-baris">${kunci.filter((k) => peta[k]).map((k) => butuhHtml(k, peta[k])).join("")}</div>`;
+// Kartu "butuh unduhan pemilik" = label internal: tidak ditampilkan ke publik (JM-S06).
+export const butuhDaftar = () => "";
 
 /* ---------- tabel urut berpaginasi bernomor ----------
    kolom: [{k, label (teks), v(r) nilai urut/tampil mentah, f(r) HTML sel (default esc(v)), num, tengah}]

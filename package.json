@@ -8,7 +8,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "uji": "node --test",
+    "uji": "node --test --test-concurrency=4",
     "uji:live": "node scripts/mesin/uji_asap_live.mjs",
     "dev": "wrangler dev",
     "agents:build": "node scripts/agents/build.mjs",

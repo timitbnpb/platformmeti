@@ -1969,42 +1969,6 @@
    ],
    "baris": [
     {
-     "penerbit": "PT Arkora Hydro Tbk",
-     "instrumen": "Obligasi hijau korporasi 2023",
-     "nilai": "-",
-     "tahun": "2023",
-     "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5581897",
-     "id": "pd_ob_arko_obligasi_hijau_2023"
-    },
-    {
-     "penerbit": "PT Arkora Hydro Tbk",
-     "instrumen": "Sukuk Ijarah Berkelanjutan Berwawasan Lingkungan I Tahun 2026",
-     "nilai": "-",
-     "tahun": "2026",
-     "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5581897",
-     "id": "pd_ob_arko_sukuk_2026"
-    },
-    {
-     "penerbit": "PT Indonesia Infrastructure Finance",
-     "instrumen": "Green Perpetual Notes (tercatat di BEI)",
-     "nilai": "335,19 IDR miliar",
-     "tahun": "2023",
-     "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5253477",
-     "id": "pd_ob_iif_green_perpetual_2023"
-    },
-    {
-     "penerbit": "PT Indonesia Infrastructure Finance",
-     "instrumen": "Obligasi berkelanjutan PUB 2023 (penerbitan Nov 2025)",
-     "nilai": "1.500 IDR miliar",
-     "tahun": "2025",
-     "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5253477",
-     "id": "pd_ob_iif_pub_2023_nov2025"
-    },
-    {
      "penerbit": "PT Pertamina Geothermal Energy Tbk",
      "instrumen": "Green bond global USD 400 juta (jatuh tempo 2028)",
      "nilai": "400 juta USD",
@@ -2096,15 +2060,6 @@
     },
     {
      "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
-     "instrumen": "Green Sukuk wholesale PBSG002 (reopening)",
-     "nilai": "-",
-     "tahun": "2026",
-     "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/5531499",
-     "id": "pd_ob_ri_pbsg002_2026"
-    },
-    {
-     "penerbit": "Pemerintah Indonesia (Kemenkeu/DJPPR)",
      "instrumen": "Green Sukuk Ritel ST006",
      "nilai": "1.460 IDR miliar",
      "tahun": "2019",
@@ -2173,15 +2128,6 @@
      "tahun": "2024",
      "tautan": "Sumber",
      "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8C2C3353-9134-43B3-9307-D465DE7C2CB8",
-     "id": null
-    },
-    {
-     "penerbit": "Pemerintah Indonesia (Kemenkeu)",
-     "instrumen": "Total sukuk hijau negara sampai 2025",
-     "nilai": "185.600 IDR miliar",
-     "tahun": "2025",
-     "tautan": "Sumber",
-     "url": "https://www.antaranews.com/berita/4895069",
      "id": null
     },
     {

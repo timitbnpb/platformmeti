@@ -1,0 +1,119 @@
+# GENERATE dari rancangan JM-T03 (K21, D23). Sumber: JDIH ESDM, BPK, Amdalnet, siaran pers, OpenAlex, Crossref, DOAJ, Wikidata, DPR, HBA.
+# Sakelar: semua job berhenti tanpa galat sampai variabel repo BOT_AKTIF bernilai 'true' (pemilik memasang branch protection dan secrets dulu).
+# Izin: workflow hanya baca; job panen dan uji hanya baca; hanya bot_pr yang menulis, dan hanya ke cabang data-bot, tidak pernah ke main.
+name: panen-mingguan
+on:
+  schedule:
+    - cron: '0 18 * * 1'
+  workflow_dispatch:
+    inputs:
+      sumber:
+        description: 'Kode sumber dipisah koma (kosong = semua yang jatuh tempo)'
+        required: false
+        default: ''
+        type: string
+      paksa:
+        description: 'Abaikan jatuh tempo dan sinyal (robots tetap dihormati)'
+        required: false
+        default: false
+        type: boolean
+permissions:
+  contents: read
+concurrency:
+  group: data-bot
+  cancel-in-progress: false
+jobs:
+  panen:
+    if: ${{ vars.BOT_AKTIF == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Pulihkan status bot dari data-bot bila ada
+        run: |
+          git fetch origin data-bot || true
+          git checkout origin/data-bot -- data/bot/status.json || true
+      - name: Panen dan rangkai
+        env:
+          SUMBER: ${{ inputs.sumber }}
+          PAKSA: ${{ inputs.paksa }}
+          JADWAL: mingguan
+          BPS_KUNCI: ${{ secrets.BPS_KUNCI }}
+          EIA_KUNCI: ${{ secrets.EIA_KUNCI }}
+          EMBER_KUNCI: ${{ secrets.EMBER_KUNCI }}
+          COMTRADE_KUNCI: ${{ secrets.COMTRADE_KUNCI }}
+          OPENALEX_KEY: ${{ secrets.OPENALEX_KEY }}
+        run: |
+          args=(--jadwal "$JADWAL")
+          if [ -n "$SUMBER" ]; then args+=("--sumber=$SUMBER"); fi
+          if [ "$PAKSA" = "true" ]; then args+=(--paksa); fi
+          node scripts/pipa/rangkai.mjs "${args[@]}"
+      - name: Kemas berkas berubah (putih-daftar saja)
+        run: |
+          git ls-files --modified --others --exclude-standard -- public/data data/direktori data/bot hukum > "$RUNNER_TEMP/berubah.txt"
+          if [ -f data/bot/status.json ]; then echo data/bot/status.json >> "$RUNNER_TEMP/berubah.txt"; fi
+          sort -u -o "$RUNNER_TEMP/berubah.txt" "$RUNNER_TEMP/berubah.txt"
+          tar --ignore-failed-read -czf "$RUNNER_TEMP/hasil-panen.tgz" -T "$RUNNER_TEMP/berubah.txt" || true
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: hasil-panen
+          path: ${{ runner.temp }}/hasil-panen.tgz
+          retention-days: 1
+          if-no-files-found: warn
+  uji:
+    needs: panen
+    if: ${{ vars.BOT_AKTIF == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: hasil-panen
+          path: ${{ runner.temp }}/hasil
+      - run: node scripts/pipa/arsip_aman.mjs "$RUNNER_TEMP/hasil/hasil-panen.tgz"
+      - run: npm ci
+      - run: npm run uji
+  bot_pr:
+    needs: uji
+    if: ${{ vars.BOT_AKTIF == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: hasil-panen
+          path: ${{ runner.temp }}/hasil
+      - run: node scripts/pipa/arsip_aman.mjs "$RUNNER_TEMP/hasil/hasil-panen.tgz"
+      - name: Cabang data-bot dan PR (kode dari main, bukan dari artefak)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JADWAL: mingguan
+        run: node scripts/pipa/bot_pr.mjs --jadwal "$JADWAL"

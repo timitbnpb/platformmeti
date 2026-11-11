@@ -28,7 +28,7 @@ const tgl = (s) => { const d = Date.parse(s); return Number.isFinite(d) ? Math.f
 const muatStatis = async () => {
   const ambil = (url) => fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(url)))).catch(() => null);
   const [org, pg, pw, psn, ki, dd, ks] = await Promise.all([data("organisasi").catch(() => null), ambil("/data/global/pelaku_global.json"), ambil("/data/global/pemasok_wte.json"),
-    data("psn").catch(() => null), ambil("/data/kawasan_industri.json"), ambil("/data/direktori/kandidat_gabung.json"), data("konsistensi").catch(() => null)]);
+    data("psn").catch(() => null), ambil("/data/kawasan_industri.json"), Promise.resolve(null), data("konsistensi").catch(() => null)]);
   const o = [];
   for (const b of org?.baris || []) if (!b.logo) o.push({ jenis: "logo", id: "org:" + b.id, judul: b.nama, sub: b.kategori?.label || "", ref: "organisasi:" + b.id, dibuat: tgl(org.dibangun_pada) });
   if (pg) {

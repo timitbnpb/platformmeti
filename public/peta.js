@@ -37,9 +37,7 @@ try {
 }
 for (const def of IDX.lapisan) L.set(def.id, { def, status: def.berkas ? "idle" : "segera" });
 /* berkas yang diharapkan muncul belakangan: bila belum ada, lapisan tampil redup "segera" (tanpa galat) */
-await Promise.all(IDX.lapisan.filter((d) => d.menanti && d.berkas).map((d) => fetch(d.berkas, { method: "HEAD", credentials: "same-origin" })
-  .then((r) => { if (!r.ok || !/json/.test(r.headers.get("content-type") || "")) L.get(d.id).status = "segera"; })
-  .catch(() => { L.get(d.id).status = "segera"; })));
+for (const d of IDX.lapisan) if (d.menanti && d.berkas) L.get(d.id).status = "segera"; // tanpa HEAD: berkas belum ada, hapus `menanti` di peta_lapisan.json bila sudah terbit
 const ADA = () => [...L.values()].filter((l) => l.status !== "segera");
 let view = null;
 {

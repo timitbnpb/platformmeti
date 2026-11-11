@@ -22,6 +22,7 @@ Singkatan: PRD, ALUR, ALG, DS, DT, KPV, RU = dokumen bernama sama di folder ini.
 | JM-S10 | Pengerasan masukan Tanya sesuai KPV | worker | 1 | S | belum |
 | JM-S11 | 12 jenis MATRIKS tanpa baris KPV §1 dan gerbang sinkronnya | worker+gerbang | 1 | S | belum |
 | JM-S12 | Rute yang lebih sempit dari MATRIKS (koreksi untuk kurator, kontak untuk wilayah per provinsi, catatan naskah untuk admin) | worker | 1 | S | belum |
+| JM-S13 | Antara tuntas di 44 berkas sisa lewat generator masing-masing (daftar sisa di gerbang hanya menyusut); kontak per provinsi butuh pembangun data kontak nyata | pipa | 1 | M | belum |
 | JM-T01 | Registri sumber dan pustaka panen | pipa | 2 | M | belum |
 | JM-T02 | Workflow harian | mekanik+pipa | 2 | M | belum |
 | JM-T03 | Workflow mingguan | mekanik+pipa | 2 | M | belum |

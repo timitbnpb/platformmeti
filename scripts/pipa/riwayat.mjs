@@ -245,6 +245,9 @@ export function susunKeluaran(rantaiPerDs, tanggal, hari = 30) {
   return { terbaru: bungkus(pilih), entitas, awal };
 }
 
+// B-11: peristiwa yang merujuk gambar /img/ yang berkasnya tidak ada dibuang dari indeks entitas.
+const gambarAda = (u) => typeof u !== 'string' || !u.startsWith('/img/') || existsSync(join(AKAR, 'public', u));
+const bersihGambar = (e) => Object.fromEntries(Object.entries(e).map(([k, v]) => [k, v.filter((x) => x.every(gambarAda))]).filter(([, v]) => v.length));
 function tulisJson(jalur, obj) { mkdirSync(dirname(jalur), { recursive: true }); writeFileSync(jalur, JSON.stringify(obj) + '\n'); }
 
 export function jalankan({ tanggal, awalGit = false, hari = 30 }) {
@@ -259,7 +262,7 @@ export function jalankan({ tanggal, awalGit = false, hari = 30 }) {
   const rantai = Object.fromEntries(NAMA_DATASET.map((ds) => [ds, muatRantai(ds)]));
   const { terbaru, entitas, awal } = susunKeluaran(rantai, tanggal, hari);
   tulisJson(join(KELUAR, 'perubahan_terbaru.json'), terbaru);
-  for (const [ds, e] of Object.entries(entitas)) tulisJson(join(KELUAR, 'entitas', ds + '.json'), { lapis: 'riwayat_entitas', jenis: ds, dibangun_pada: tanggal, awal: awal[ds] || tanggal, entitas: e });
+  for (const [ds, e] of Object.entries(entitas)) tulisJson(join(KELUAR, 'entitas', ds + '.json'), { lapis: 'riwayat_entitas', jenis: ds, dibangun_pada: tanggal, awal: awal[ds] || tanggal, entitas: bersihGambar(e) });
   const kes = susunKesegaran(tanggal);
   tulisJson(join(DATA, 'kesegaran.json'), kes);
   log.push(`perubahan 30 hari: ${terbaru.jumlah_total} (dimuat ${terbaru.perubahan.length}); kesegaran: ${JSON.stringify(kes.ringkas)}`);

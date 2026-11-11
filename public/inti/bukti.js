@@ -5,8 +5,8 @@
 import { t, tanggal as tgl } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 
-const PETA = { resmi: "resmi", media: "media", est: "est", hipotesis: "hip", hip: "hip", "kata-pihak": "kata", pihak: "kata", kata: "kata", kajian: "kajian", "via-pihak-ketiga": "kajian", tinjau: "tinjau" };
-export const IKON_BUKTI = { resmi: "perisai", media: "berita", est: "kalkulator", hip: "tanya", kata: "orang", kajian: "kajian", tinjau: "peringatan" };
+const PETA = { resmi: "resmi", media: "media", est: "est", hipotesis: "hip", hip: "hip", "kata-pihak": "kata", pihak: "kata", kata: "kata", kajian: "kajian", "via-pihak-ketiga": "kajian", tinjau: "tinjau", turunan: "turunan" };
+export const IKON_BUKTI = { resmi: "perisai", media: "berita", est: "kalkulator", hip: "tanya", kata: "orang", kajian: "kajian", tinjau: "peringatan", turunan: "metode" };
 export const kodeBukti = (k) => PETA[String(k || "").toLowerCase()] || "";
 const URL_METODE = "/metode#tingkat-bukti";
 
