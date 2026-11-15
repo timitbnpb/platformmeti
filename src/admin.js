@@ -101,7 +101,7 @@ export const rute = {
   },
 
   // Beranda admin: semua hitungan antrean dalam satu panggilan (COUNT terindeks).
-  "GET /api/admin/ringkas": async (req, env, ctx, p) => json(await hak.ringkasAdmin(env, perlu(p, ADM)), 200, PRIVAT),
+  "GET /api/admin/ringkas": async (req, env, ctx, p) => { const akun = perlu(p, ADM), u = new URL(req.url).searchParams; return json(await hak.ringkasAdmin(env, akun, Date.now(), { dari: u.get("dari") ?? undefined, sampai: u.get("sampai") ?? undefined }), 200, PRIVAT); },
 
   // Kotak masuk kurasi terpadu (0034): butir D1 yang menunggu + penugasan. Butir statis dibaca klien dari JSON publik.
   "GET /api/admin/kotak": async (req, env, ctx, p) => json(await hak.kotakAdmin(env, perlu(p, ADM)), 200, PRIVAT),

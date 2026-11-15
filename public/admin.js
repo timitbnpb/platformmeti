@@ -85,9 +85,21 @@ function jalan() {
     return isiSub.length < 2 ? "" : isiSub.map(([k, kunci, ik]) => `<button type="button" role="tab" id="tab-${k}" data-tab="${k}" aria-selected="${k === tab}" aria-controls="panel" tabindex="${k === tab ? 0 : -1}">${ikon(ik, 18)}<span>${esc(t(kunci))}</span></button>`).join("");
   };
 
+  /* sidebar kiri (>= 1100px, lewat CSS): kelompok MENU berikon, sub-tab berlencana hitungan, kaki "Pembaruan data" */
+  const sisiHtml = () => MENU.map(([m, kunci, ik]) => `<div class="jm-sisi-grup"><p class="jm-sisi-j">${ikon(ik, 18)}<span>${esc(t(kunci))}</span></p>${TAB.filter((x) => x[3] === m).map(([k, kt, ikt]) => `<button type="button" class="jm-sisi-t" id="sk-${k}" data-sk="${k}"${k === tab ? ' aria-current="page"' : ""}>${ikon(ikt, 18)}<span>${esc(t(kt))}</span></button>`).join("")}</div>`).join("") + '<div class="jm-sisi-kaki" id="sisiKaki"></div>';
+  const kakiSisi = async () => {
+    const kaki = $("sisiKaki");
+    if (!kaki || !adm) return;
+    const d = await fetch("/data/kesegaran.json").then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    const n = d?.ringkas || {};
+    if (!d || !kaki.isConnected) return;
+    kaki.innerHTML = `<p class="jm-sisi-j">${ikon("jam", 18)}<span>${esc(t("adm.rs.segar"))}</span></p>${["segar", "perlu", "basi"].map((s) => `<button type="button" class="jm-sisi-s" data-ke="kesegaran"><span>${esc(t("kes.s." + s))}</span><b class="jm-pil ${s === "segar" ? "jm-pil-ok" : s === "perlu" ? "jm-pil-warn" : "jm-pil-bad"}">${esc(angka(n[s] || 0))}</b></button>`).join("")}`;
+  };
+
   function rangka() {
     terakhir[menuDari(tab)] = tab;
     isi.innerHTML = `
+      <div class="jm-adm-ruang"><aside class="jm-adm-sisi" id="sisi" aria-label="${esc(t("admin.tab.label"))}">${sisiHtml()}</aside><div class="jm-adm-badan">
       <div class="jm-adm-nav">
         <div class="jm-tab jm-adm-menu" role="group" aria-label="${esc(t("admin.tab.label"))}">
           ${MENU.map(([m, kunci, ik]) => `<button type="button" data-menu="${m}" aria-pressed="${m === menuDari(tab)}">${ikon(ik, 20)}<span>${esc(t(kunci))}</span></button>`).join("")}
@@ -95,7 +107,7 @@ function jalan() {
         <div class="jm-tab jm-adm-alt" id="subTab" role="tablist" aria-label="${esc(t("adm.m.sub"))}"${subHtml(menuDari(tab)) ? "" : " hidden"}>${subHtml(menuDari(tab))}</div>
       </div>
       <section class="jm-adm-panel" id="panel" role="tabpanel" aria-labelledby="tab-${tab}"></section>
-      <div class="jm-adm-status" id="status" aria-live="polite"></div>`;
+      <div class="jm-adm-status" id="status" aria-live="polite"></div></div></div>`;
     // kolom Aksi tidak bisa diurutkan: tandai sebelum pengurut global (inti/komponen.js, 60 ms) memasang tombol urut
     const aksiTh = new Set(["admin.k.aksi", "pd.c.aksi", "kf.ad.k.aksi", "adm.event.k.aksi", "adm.kta.k.aksi", "adm.anggota.k.aksi", "adm.mw.c.aksi", "kam.k.aksi"].map((k) => t(k)));
     new MutationObserver(() => { for (const th of $("panel").querySelectorAll("th:not([data-urut])")) if (aksiTh.has(th.textContent.trim())) th.dataset.urut = "tidak"; }).observe($("panel"), { childList: true, subtree: true });
@@ -107,24 +119,28 @@ function jalan() {
     const nav = isi.querySelector(".jm-adm-nav");
     nav.addEventListener("click", klikTab);
     nav.addEventListener("keydown", tombolTab);
+    $("sisi").addEventListener("click", (e) => { const b = e.target.closest("[data-sk],[data-ke]"); if (b && b.getAttribute("aria-current") !== "page") pilihTab(b.dataset.sk || b.dataset.ke); });
+    kakiSisi();
     bukaTab(tab);
     lencanaTab();
   }
 
   // angka di tab Pesan (belum dibalas, dari peristiwa "pesan-belum") dan Langganan (baru 7 hari, dari ringkasan); 0 tampil redup
-  const hitungTab = { pesan: 0, langganan: 0 };
+  const hitungTab = { pesan: 0, langganan: 0, persetujuan: 0, koreksi: 0, portal: 0, konsultasi: 0 };
   function lencanaTab() {
     for (const [k, n] of Object.entries(hitungTab)) {
-      const b = document.getElementById("tab-" + k);
-      if (!b) continue;
-      b.querySelector(".jm-adm-n")?.remove();
-      b.insertAdjacentHTML("beforeend", `<b class="jm-adm-n${n ? "" : " jm-adm-n0"}">${esc(teksLencana(n))}</b>`);
+      for (const id of ["tab-", "sk-"]) {
+        const b = document.getElementById(id + k);
+        if (!b) continue;
+        b.querySelector(".jm-adm-n")?.remove();
+        b.insertAdjacentHTML("beforeend", `<b class="jm-adm-n${n ? "" : " jm-adm-n0"}">${esc(teksLencana(n))}</b>`);
+      }
     }
   }
   if (adm) {
     document.addEventListener("pesan-belum", (e) => { hitungTab.pesan = e.detail; lencanaTab(); });
     api("/api/admin/pesan-belum").then((d) => { hitungTab.pesan = d.belum || 0; lencanaTab(); document.dispatchEvent(new CustomEvent("pesan-belum", { detail: hitungTab.pesan })); }).catch(() => {});
-    api("/api/admin/ringkas").then((d) => { hitungTab.langganan = d.antrean?.langganan || 0; lencanaTab(); }).catch(() => {});
+    api("/api/admin/ringkas").then((d) => { const q = d.antrean || {}; Object.assign(hitungTab, { langganan: q.langganan || 0, persetujuan: (q.pendaftar || 0) + (q.bukti || 0), koreksi: q.koreksi || 0, portal: q.portal || 0, konsultasi: q.konsultasi || 0 }); lencanaTab(); }).catch(() => {});
   }
 
   // Chrome urgent: penanda menu dan sub-tab berubah seketika; isi panel menyusul lewat nanti().
@@ -137,6 +153,7 @@ function jalan() {
     const sub = $("subTab");
     if (lama !== menu) { sub.innerHTML = subHtml(menu); sub.hidden = !sub.innerHTML; lencanaTab(); }
     for (const x of sub.querySelectorAll("[data-tab]")) { const aktif = x.dataset.tab === k; x.setAttribute("aria-selected", String(aktif)); x.tabIndex = aktif ? 0 : -1; }
+    for (const x of isi.querySelectorAll("[data-sk]")) { if (x.dataset.sk === k) x.setAttribute("aria-current", "page"); else x.removeAttribute("aria-current"); }
     if (dorong) history.replaceState(null, "", `${location.pathname}?tab=${k}`);
     nanti(() => bukaTab(k));
   }

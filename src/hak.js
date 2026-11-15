@@ -4,6 +4,7 @@
 
 import { Galat } from "./util.js"; // satu kelas galat dengan router (util.js murni, tanpa D1)
 import { bersihTeks } from "../public/inti/naskah.js"; // murni; forum Konsultasi (0024)
+import { PROV } from "../public/inti/prov_singkat.js"; // murni; nama provinsi untuk papan wilayah
 export { Galat };
 const mk = (kode, status, alasan) => Object.assign(new Galat(kode, status), { alasan }); // alasan = untuk uji/log, bukan klien
 const tolak = (pesan) => mk("dilarang", 403, pesan);
@@ -1606,8 +1607,32 @@ export async function sesiSayaCabutLain(env, akun, idHashIni) {
 const hitungSatu = (env, sql, ...b) => env.DB.prepare(sql).bind(...b).first().then((r) => r?.n ?? 0)
   .catch((e) => { if (/no such table/i.test(String(e?.message) + String(e?.cause?.message))) return 0; throw e; });
 
-export async function ringkasAdmin(env, akun, sekarang = Date.now()) {
+// Periode dasbor (WIB). Salah = 400. Tanpa parameter = hari ini. Banding = jendela sama panjang tepat sebelumnya.
+const RE_TGL = /^\d{4}-\d{2}-\d{2}$/;
+const tglPeriodeSah = (t) => typeof t === "string" && RE_TGL.test(t) && !Number.isNaN(Date.parse(t + "T00:00:00Z")) && new Date(t + "T00:00:00Z").toISOString().slice(0, 10) === t;
+const tglGeser = (t, hari) => new Date(Date.parse(t + "T00:00:00Z") + hari * 86400000).toISOString().slice(0, 10);
+const detikWib = (t) => Date.parse(t + "T00:00:00Z") / 1000 - 7 * 3600; // awal hari WIB dalam epoch detik
+const periodeAdm = (q, sekarang) => {
+  const kini = tglLalin(sekarang);
+  const dari = q?.dari ?? q?.sampai ?? kini, sampai = q?.sampai ?? dari;
+  if (!tglPeriodeSah(dari) || !tglPeriodeSah(sampai) || sampai < dari) throw mk("masukan_salah", 400, "periode tidak sah");
+  const len = (Date.parse(sampai) - Date.parse(dari)) / 86400000 + 1;
+  if (len > 400) throw mk("masukan_salah", 400, "periode > 400 hari");
+  return { dari, sampai, len, banding_dari: tglGeser(dari, -len), banding_sampai: tglGeser(dari, -1) };
+};
+// {n, banding} untuk satu tabel/kolom waktu (detik); satu pindai atas dua jendela. Tabel belum ada = null.
+const hitungDua = (env, tabel, kolom, P) => tanpaTabel(async () => {
+  const s = detikWib(P.dari), e = detikWib(tglGeser(P.sampai, 1)), bs = detikWib(P.banding_dari);
+  const r = await env.DB.prepare(`SELECT COALESCE(SUM(${kolom} >= ?), 0) AS n, COALESCE(SUM(${kolom} < ?), 0) AS b FROM ${tabel} WHERE ${kolom} >= ? AND ${kolom} < ?`).bind(s, s, bs, e).first();
+  return { n: r.n, banding: r.b };
+});
+const jumlahDua = (xs) => xs.every((x) => x == null) ? null : { n: xs.reduce((a, x) => a + (x?.n ?? 0), 0), banding: xs.reduce((a, x) => a + (x?.banding ?? 0), 0) };
+const harianSql = (env, tabel, kolom, P) => tanpaTabel(async () => (await env.DB.prepare(`SELECT date(${kolom} + 25200, 'unixepoch') AS t, COUNT(*) AS n FROM ${tabel} WHERE ${kolom} >= ? AND ${kolom} < ? GROUP BY t`).bind(detikWib(P.dari), detikWib(tglGeser(P.sampai, 1))).all()).results);
+const PULAU = (k) => { const a = +String(k)[0]; return a === 1 || +k === 21 ? "Sumatera" : a === 3 ? "Jawa" : a === 5 ? "Bali-Nusa Tenggara" : a === 6 ? "Kalimantan" : a === 7 ? "Sulawesi" : a === 8 ? "Maluku" : "Papua"; };
+
+export async function ringkasAdmin(env, akun, sekarang = Date.now(), q = {}) {
   gerbangAdm(akun);
+  const P = periodeAdm(q, sekarang);
   const n = Math.floor(sekarang / 1000);
   const usulan = USULAN_UTAS.map(() => "?").join(",");
   const [pendaftar, bukti, koreksi, klaim, ajuan, wilayah, orang, pesan, konsultasi, langganan, jam] = await Promise.all([
@@ -1624,10 +1649,48 @@ export async function ringkasAdmin(env, akun, sekarang = Date.now()) {
     tanpaTabel(async () => (await env.DB.prepare("SELECT tgl, kunci, n FROM lalin WHERE dim = 'jam' AND tgl >= ?").bind(tglLalin(sekarang - HARI_MS)).all()).results),
   ]);
   const { total24 } = lalin24(jam ?? [], sekarang);
+  const s30 = n - 30 * 86400;
+  const [pend, kor, pes, kon, lang, k1, k2, k3, k4, aktif, lalinHari, hPend, hKor, hPes, wPend, wAjuan, wKeg, wAdm] = await Promise.all([
+    hitungDua(env, "pendaftaran", "dibuat", P), hitungDua(env, "koreksi_usul", "dibuat_pada", P), hitungDua(env, "pesan_utas", "dibuat", P),
+    hitungDua(env, "kons_utas", "dibuat", P), hitungDua(env, "langganan", "dibuat", P),
+    hitungDua(env, "org_klaim", "dibuat", P), hitungDua(env, "org_ajuan", "dibuat", P), hitungDua(env, "wilayah_ajuan", "dibuat", P), hitungDua(env, "orang_klaim", "dibuat", P),
+    tanpaTabel(() => env.DB.prepare("SELECT COUNT(*) AS n FROM akun WHERE status = 'aktif'").first().then((r) => r.n)),
+    tanpaTabel(async () => (await env.DB.prepare("SELECT tgl, n FROM lalin WHERE dim = 'jenis' AND kunci = 'orang' AND tgl >= ? AND tgl <= ?").bind(P.banding_dari, P.sampai).all()).results),
+    harianSql(env, "pendaftaran", "dibuat", P), harianSql(env, "koreksi_usul", "dibuat_pada", P), harianSql(env, "pesan_utas", "dibuat", P),
+    tanpaTabel(async () => (await env.DB.prepare("SELECT prov, SUM(status = 'disetujui') AS anggota, SUM(status = 'menunggu') AS menunggu FROM pendaftaran WHERE prov IS NOT NULL GROUP BY prov").all()).results),
+    tanpaTabel(async () => (await env.DB.prepare("SELECT kode_prov AS prov, COUNT(*) AS menunggu FROM wilayah_ajuan WHERE status = 'baru' GROUP BY kode_prov").all()).results),
+    tanpaTabel(async () => (await env.DB.prepare("SELECT kode_prov AS prov, COUNT(*) AS n FROM wilayah_ajuan WHERE jenis = 'kegiatan' AND status = 'setuju' AND dibuat >= ? GROUP BY kode_prov").bind(s30).all()).results),
+    tanpaTabel(async () => (await env.DB.prepare("SELECT kode_prov AS prov FROM wilayah_akun UNION SELECT cakupan_prov FROM akun WHERE peran = 'wilayah' AND status = 'aktif' AND cakupan_prov IS NOT NULL").all()).results),
+  ]);
+  // pengunjung: jumlah 'orang' per hari (dim 'jenis', disimpan permanen) dalam jendela periode dan banding.
+  const jml = (a, b) => (lalinHari ?? []).filter((x) => x.tgl >= a && x.tgl <= b).reduce((t, x) => t + x.n, 0);
+  const pengunjung = lalinHari == null ? null : { n: jml(P.dari, P.sampai), banding: jml(P.banding_dari, P.banding_sampai) };
+  const mp = (xs) => Object.fromEntries((xs ?? []).map((x) => [x.t ?? x.tgl, x.n]));
+  const mPend = mp(hPend), mKor = mp(hKor), mPes = mp(hPes), mLal = mp(lalinHari);
+  const harian = [];
+  for (let tgl = P.dari; tgl <= P.sampai; tgl = tglGeser(tgl, 1)) harian.push({ tgl, pendaftar_baru: hPend == null ? null : mPend[tgl] ?? 0, koreksi_masuk: hKor == null ? null : mKor[tgl] ?? 0, pesan_masuk: hPes == null ? null : mPes[tgl] ?? 0, pengunjung: lalinHari == null ? null : mLal[tgl] ?? 0 });
+  const byProv = (xs) => Object.fromEntries((xs ?? []).map((x) => [x.prov, x]));
+  const dP = byProv(wPend), dA = byProv(wAjuan), dK = byProv(wKeg), adm = new Set((wAdm ?? []).map((x) => x.prov));
+  const papan_wilayah = Object.entries(PROV).map(([kode, [nama]]) => ({
+    kode_prov: kode, nama, pulau: PULAU(kode),
+    anggota: wPend == null ? null : dP[kode]?.anggota ?? 0,
+    menunggu: wPend == null && wAjuan == null ? null : (dP[kode]?.menunggu ?? 0) + (dA[kode]?.menunggu ?? 0),
+    kegiatan_30h: wKeg == null ? null : dK[kode]?.n ?? 0,
+    admin_ada: adm.has(kode),
+  }));
   return {
     antrean: { pendaftar, bukti, koreksi, portal: klaim + ajuan + wilayah + orang, portal_rinci: { klaim, ajuan, wilayah, orang }, pesan, konsultasi, langganan },
     pengunjung24: { orang: total24.orang, ai: total24.ai_jawab + total24.ai_crawl },
     waktu: n,
+    periode: {
+      dari: P.dari, sampai: P.sampai, banding_dari: P.banding_dari, banding_sampai: P.banding_sampai,
+      angka: {
+        pendaftar_baru: pend, anggota_aktif: aktif == null ? null : { n: aktif, banding: null }, koreksi_masuk: kor, pesan_masuk: pes,
+        konsultasi_baru: kon, langganan_baru: lang, pengunjung, portal_masuk: jumlahDua([k1, k2, k3, k4]),
+      },
+    },
+    harian, papan_wilayah,
+    segar: null, // ponytail: kesegaran dataset dihitung layar (admin_kesegaran.js); server belum punya logikanya
   };
 }
 
