@@ -170,3 +170,5 @@ dialog.jm-rt-pop{width:min(960px,calc(100vw - 24px));max-height:calc(100vh - 32p
 @media (max-width:719px){.rt2-ubin{grid-template-columns:1fr}#rt2-tabel .jm-tabel{min-width:0}#rt2-tabel td .jm-an-nama,.rt2-prod{min-width:0}}
 #rt2-tabel td .jm-id b{white-space:normal;overflow:visible;text-overflow:clip}
 @media (max-width:719px){#rt2-tabel td[data-label]{grid-template-columns:110px minmax(0,1fr)!important;align-items:center}#rt2-tabel td::before{white-space:normal;min-width:0}#rt2-tabel td.jm-num{text-align:left}}
+/* katalog TKDN: pilihan tampilan per pabrikan atau per produk (butir 62) */
+.rt2-mode{margin-bottom:12px}

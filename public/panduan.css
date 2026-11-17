@@ -35,7 +35,7 @@
 a.pd-taut:hover{border-color:var(--accent)}
 .pd-logo{object-fit:contain;border-radius:3px}
 .pd-t-regulasi .jm-ik{color:var(--data2)}.pd-t-org .jm-ik{color:var(--data3)}.pd-t-istilah .jm-ik{color:var(--data4)}
-.pd-tombol{display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border-radius:var(--r-pil);background:var(--accent-isi);color:var(--on-accent);font-size:var(--t-kecil);font-weight:600;text-decoration:none}
+.pd-tombol{display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border-radius:var(--r-pil);background:var(--accent);color:var(--on-accent);font-size:var(--t-kecil);font-weight:600;text-decoration:none}
 .pd-tombol:hover{opacity:.9}
 .pd-faq{display:grid;gap:8px}
 .pd-faq details,.pd-templat{border:1px solid var(--line);border-radius:var(--r);background:var(--card)}

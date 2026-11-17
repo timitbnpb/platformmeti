@@ -8,7 +8,7 @@
 .in3-lb{border-radius:50%;object-fit:contain;vertical-align:middle;flex:none;margin-right:8px}
 
 /* pil berwarna per nilai (--k = token warna) */
-.in3-pil{--tk:var(--ink2);display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;background:color-mix(in srgb,var(--tk) 14%,var(--card));color:var(--tk);border:1px solid color-mix(in srgb,var(--tk) 30%,transparent)}
+.in3-pil{--tk:var(--ink2);display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;background:color-mix(in srgb,var(--tk) 14%,var(--card));color:color-mix(in srgb,var(--tk) 45%,var(--ink));border:1px solid color-mix(in srgb,var(--tk) 30%,transparent)}
 .in3-pil .jm-ik{color:var(--tk)}
 .in3-titik{width:8px;height:8px;border-radius:50%;background:var(--tk);flex:none}
 .in3-k-nikel{--tk:var(--tp-hidro)}.in3-k-aluminium{--tk:var(--tp-bayu)}.in3-k-pulp-kertas{--tk:var(--tp-bio)}.in3-k-kawasan-industri{--tk:var(--tp-industri)}.in3-k-kimia{--tk:var(--tp-simpan)}
@@ -81,7 +81,7 @@
 .in3-chipb{padding-left:10px}
 .in3-lg{display:inline-grid;flex:none}.in3-lg>*{grid-area:1/1}.in3-lg img{z-index:1}.in3-org img{border-radius:50%;object-fit:contain;background:var(--paper);flex:none}
 a.in3-org:hover,button.in3-chipb:hover{border-color:var(--accent)}
-.in3-ini{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--soft-hijau);color:var(--brand);font:700 var(--t-label)/1 var(--font);flex:none}
+.in3-ini{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--soft-hijau);color:var(--accent);font:700 var(--t-label)/1 var(--font);flex:none}
 .in3-chipb small{color:var(--ink2);font:600 var(--t-label)/1 var(--font)}
 .in3-chipb-ebt{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 35%,transparent)}
 .in3-chipb-sel{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}

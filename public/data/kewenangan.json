@@ -1,0 +1,215 @@
+{
+ "lapis": "publik",
+ "dibangun_pada": "2026-11-15",
+ "tingkat_bukti": "resmi",
+ "catatan": "Butir disalin dari teks pasal di korpus hukum/ repo ini (hasil baca PDF; salah baca huruf dirapikan, isi tidak diubah). Urusan tanpa teks pasal di korpus ditulis kosong, tidak diisi dari sumber lain. Baris lingkup adalah ringkasan Pasal 5 UU Panas Bumi, bukan salinan kata demi kata.",
+ "sumber": [
+  {
+   "id": "uu-6-2023",
+   "judul": "UU 6/2023 tentang Penetapan Perppu 2/2022 tentang Cipta Kerja menjadi Undang-Undang",
+   "berkas": "hukum/uu/2023/uu-6-2023.md",
+   "url": "https://peraturan.bpk.go.id/Details/246523",
+   "tingkat_bukti": "resmi",
+   "tanggal": "2026-11-11"
+  },
+  {
+   "id": "uu-30-2009",
+   "judul": "UU 30/2009 tentang Ketenagalistrikan",
+   "berkas": "hukum/uu/2009/uu-30-2009.md",
+   "tingkat_bukti": "resmi",
+   "tanggal": "2026-11-11",
+   "url": "https://peraturan.bpk.go.id/Details/38767"
+  },
+  {
+   "id": "uu-21-2014",
+   "judul": "UU 21/2014 tentang Panas Bumi",
+   "berkas": "hukum/uu/2014/uu-21-2014.md",
+   "tingkat_bukti": "resmi",
+   "tanggal": "2026-11-11",
+   "url": "https://jdih.esdm.go.id/dokumen/view?id=48"
+  }
+ ],
+ "urusan": [
+  {
+   "id": "ketenagalistrikan",
+   "nama": "Ketenagalistrikan",
+   "ikon": "petir",
+   "dasar": {
+    "dok": "uu-30-2009",
+    "regulasi_id": "uu-30-2009",
+    "pasal": "Pasal 5",
+    "teks": "UU 30/2009 Pasal 5"
+   },
+   "diubah": {
+    "dok": "uu-6-2023",
+    "regulasi_id": "uu-6-2023",
+    "pasal": "Pasal 42 angka 4",
+    "teks": "sebagaimana diubah UU 6/2023 Pasal 42 angka 4"
+   },
+   "tingkat": {
+    "pusat": {
+     "rujukan": "Pasal 5 ayat (1) huruf a sampai r",
+     "butir": [
+      "penetapan kebijakan Ketenagalistrikan nasional",
+      "penetapan peraturan perundang-undangan di bidang Ketenagalistrikan",
+      "penetapan standar, pedoman, dan kriteria di bidang Ketenagalistrikan",
+      "penetapan pedoman penetapan tarif Tenaga Listrik untuk Konsumen",
+      "penetapan Rencana Umum Ketenagalistrikan nasional",
+      "penetapan Wilayah Usaha",
+      "penetapan Perizinan Berusaha terkait jual beli Tenaga Listrik lintas negara",
+      "penetapan Perizinan Berusaha penyediaan Tenaga Listrik",
+      "penetapan tarif Tenaga Listrik untuk Konsumen dari pemegang Perizinan Berusaha penyediaan Tenaga Listrik untuk kepentingan umum",
+      "penetapan persetujuan harga jual Tenaga Listrik dan sewa jaringan Tenaga Listrik dari pemegang Perizinan Berusaha penyediaan Tenaga Listrik untuk kepentingan umum",
+      "penetapan persetujuan penjualan kelebihan Tenaga Listrik dari pemegang Perizinan Berusaha penyediaan Tenaga Listrik untuk kepentingan sendiri",
+      "penetapan Perizinan Berusaha untuk kegiatan jasa penunjang Tenaga Listrik",
+      "penetapan Perizinan Berusaha terkait usaha jasa penunjang Tenaga Listrik yang dilakukan oleh badan usaha milik negara atau penanam modal asing/mayoritas sahamnya dimiliki oleh penanam modal asing",
+      "penetapan Perizinan Berusaha terkait pemanfaatan jaringan Tenaga Listrik untuk kepentingan telekomunikasi, multimedia, dan informatika pada jaringan milik pemegang Perizinan Berusaha terkait penyediaan Tenaga Listrik atau Perizinan Berusaha terkait operasi yang ditetapkan oleh Pemerintah Pusat",
+      "pembinaan dan pengawasan kepada badan usaha di bidang Ketenagalistrikan",
+      "pengangkatan inspektur Ketenagalistrikan",
+      {
+       "teks": "pembinaan jabatan fungsional inspektur Ketenagalistrikan untuk seluruh tingkat pemerintahan",
+       "korpus": "pembinaan jabatan fungsional inspektur Ketenagalistrikan untuk selurrrh tingkat pemerintahan"
+      },
+      "penetapan sanksi administratif kepada badan usaha yang Perizinan Berusahanya ditetapkan oleh Pemerintah Pusat"
+     ]
+    },
+    "provinsi": {
+     "rujukan": "Pasal 5 ayat (2) huruf a sampai e",
+     "butir": [
+      "penetapan peraturan daerah provinsi di bidang Ketenagalistrikan",
+      "penetapan Rencana Umum Ketenagalistrikan daerah provinsi",
+      {
+       "teks": "pembinaan dan pengawasan kepada badan usaha di bidang Ketenagalistrikan yang Perizinan Berusahanya ditetapkan oleh Pemerintah Daerah provinsi sesuai dengan norma, standar, prosedur, dan kriteria yang ditetapkan oleh Pemerintah Pusat",
+       "korpus": "pembinaan dan pengawasian kepada badan usaha di bidang Ketenagalistrikan yang Perizinan Berusahanya ditetapkan oleh Pemerintah Daerah provinsi sesuai dengan norma, standar, prosedur, dan kriteria yang ditetapkan oleh Pemerintah Pusat"
+      },
+      "pengangkatan inspektur Ketenagalistrikan untuk provinsi",
+      "penetapan sanksi administratif kepada badan usaha yang Perizinan Berusahanya ditetapkan oleh Pemerintah Daerah provinsi sesuai dengan norma, standar, prosedur, dan kriteria yang ditetapkan oleh Pemerintah Pusat"
+     ]
+    },
+    "kabkota": {
+     "rujukan": null,
+     "butir": [],
+     "kosong": "tanpa-ayat"
+    }
+   }
+  },
+  {
+   "id": "panas-bumi",
+   "nama": "Panas bumi",
+   "ikon": "panas-bumi",
+   "dasar": {
+    "dok": "uu-21-2014",
+    "regulasi_id": "uu-21-2014",
+    "pasal": "Pasal 5 sampai 8",
+    "teks": "UU 21/2014 Pasal 5 sampai 8"
+   },
+   "diubah": {
+    "dok": "uu-6-2023",
+    "regulasi_id": "uu-6-2023",
+    "pasal": "Pasal 41 angka 2 sampai 5",
+    "teks": "sebagaimana diubah UU 6/2023 Pasal 41 angka 2 sampai 5"
+   },
+   "tingkat": {
+    "pusat": {
+     "rujukan": "Pasal 5 ayat (1) dan Pasal 6",
+     "lingkup": [
+      "Pemanfaatan Langsung yang berada pada lintas wilayah provinsi termasuk Kawasan Hutan produksi dan Kawasan Hutan lindung, Kawasan Hutan konservasi, kawasan konservasi di perairan, dan wilayah laut lebih dari 12 mil dari garis pantai",
+      "Pemanfaatan Tidak Langsung yang berada di seluruh wilayah Indonesia, termasuk Kawasan Hutan produksi, Kawasan Hutan lindung, Kawasan Hutan konservasi, dan wilayah laut"
+     ],
+     "butir": [
+      "pembuatan kebijakan nasional",
+      "pengaturan di bidang Panas Bumi",
+      "Perizinan Berusaha di bidang Panas Bumi",
+      "pembuatan norma, standar, pedoman, dan kriteria untuk kegiatan pengusahaan Panas Bumi",
+      "pembinaan dan pengawasan",
+      "pengelolaan data dan informasi geologi serta potensi Panas Bumi",
+      "inventarisasi dan penyusunan neraca sumber daya dan cadangan Panas Bumi",
+      "pelaksanaan Eksplorasi, Eksploitasi, dan/atau pemanfaatan Panas Bumi",
+      "pendorongan kegiatan penelitian, pengembangan, dan kemampuan perekayasaan"
+     ]
+    },
+    "provinsi": {
+     "rujukan": "Pasal 5 ayat (2) dan Pasal 7",
+     "lingkup": [
+      "Pemanfaatan Langsung yang berada pada lintas wilayah kabupaten/kota dalam satu provinsi, termasuk Kawasan Hutan produksi dan Kawasan Hutan lindung",
+      "Pemanfaatan Langsung di wilayah laut paling jauh 12 mil dari garis pantai ke arah laut lepas dan/atau ke arah perairan kepulauan"
+     ],
+     "butir": [
+      "pembentukan peraturan perundang-undangan daerah provinsi di bidang Panas Bumi untuk Pemanfaatan Langsung",
+      "Perizinan Berusaha untuk Pemanfaatan Langsung pada wilayah yang menjadi kewenangannya",
+      "pembinaan dan pengawasan",
+      "pengelolaan data dan informasi geologi serta potensi Panas Bumi pada wilayah provinsi",
+      {
+       "teks": "inventarisasi dan penyusunan neraca sumber daya dan cadangan Panas Bumi pada wilayah provinsi",
+       "korpus": "inventarisasi dan pen5rusunan neraca sumber daya dan cadangan Panas Bumi pada wilayah provinsi"
+      }
+     ]
+    },
+    "kabkota": {
+     "rujukan": "Pasal 5 ayat (3) dan Pasal 8",
+     "lingkup": [
+      "Pemanfaatan Langsung yang berada pada wilayah kabupaten/kota, termasuk Kawasan Hutan produksi dan Kawasan Hutan lindung",
+      "Pemanfaatan Langsung di wilayah laut paling jauh 1/3 dari wilayah laut kewenangan provinsi"
+     ],
+     "butir": [
+      "pembentukan peraturan perundang-undangan daerah kabupaten/kota di bidang Panas Bumi untuk Pemanfaatan Langsung",
+      "Perizinan Berusaha untuk Pemanfaatan Langsung pada wilayah yang menjadi kewenangannya",
+      "pembinaan dan pengawasan",
+      "pengelolaan data dan informasi geologi serta potensi Panas Bumi pada wilayah kabupaten/kota",
+      "inventarisasi dan penyusunan neraca sumber daya dan cadangan Panas Bumi pada wilayah kabupaten/kota"
+     ]
+    }
+   }
+  },
+  {
+   "id": "energi-umum",
+   "nama": "Energi secara umum (UU Energi)",
+   "ikon": "topik",
+   "dasar": null,
+   "diubah": null,
+   "belum": "UU 30/2007 tentang Energi tidak ada di korpus hukum/ repo ini.",
+   "tingkat": {
+    "pusat": {
+     "rujukan": null,
+     "butir": [],
+     "kosong": "belum-teks"
+    },
+    "provinsi": {
+     "rujukan": null,
+     "butir": [],
+     "kosong": "belum-teks"
+    },
+    "kabkota": {
+     "rujukan": null,
+     "butir": [],
+     "kosong": "belum-teks"
+    }
+   }
+  },
+  {
+   "id": "urusan-esdm-pemda",
+   "nama": "Pembagian urusan ESDM menurut UU Pemerintahan Daerah",
+   "ikon": "gedung",
+   "dasar": null,
+   "diubah": null,
+   "belum": "UU 23/2014 tentang Pemerintahan Daerah dan lampiran pembagian urusannya tidak ada di korpus hukum/ repo ini.",
+   "tingkat": {
+    "pusat": {
+     "rujukan": null,
+     "butir": [],
+     "kosong": "belum-teks"
+    },
+    "provinsi": {
+     "rujukan": null,
+     "butir": [],
+     "kosong": "belum-teks"
+    },
+    "kabkota": {
+     "rujukan": null,
+     "butir": [],
+     "kosong": "belum-teks"
+    }
+   }
+  }
+ ]
+}

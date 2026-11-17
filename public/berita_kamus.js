@@ -88,3 +88,22 @@ export function negaraMedia(d) {
   return /\.(com|org|net|news|tv|us)$/.test(d) ? "us" : "";
 }
 export const BENDERA_ADA = new Set(["ae", "au", "az", "bd", "bn", "br", "ca", "cn", "de", "eg", "es", "fr", "gb", "gh", "hk", "id", "il", "in", "ir", "it", "jp", "ke", "kh", "kr", "la", "mm", "my", "ng", "nl", "nz", "ph", "pk", "qa", "ru", "sa", "sg", "th", "tl", "tr", "tw", "tz", "us", "vn", "za"]);
+
+/* ---------- Rekap judul harian (F65-305) ----------
+   Deterministik, TANPA AI dan tanpa kalimat buatan: isi berita tidak disimpan (hak cipta), jadi yang bisa dilakukan dengan jujur hanyalah
+   mengelompokkan JUDUL menurut kamus isu di atas. Tidak ada klaim tentang isi berita. Hari = tanggal WIB dari waktu terbit. */
+export const tglWib = (iso) => new Date(Date.parse(iso) + 7 * JAM).toISOString().slice(0, 10);
+/** Hari terbaru di data yang punya minimal `min` judul. -> { tanggal, n, media, kelompok: [{ id, n, judul: [baris], lagi }] } atau null bila tak ada hari yang cukup.
+ *  Satu judul masuk satu kelompok (isu pertama yang cocok, urutan kamus); tanpa isu = "lain", selalu terakhir. */
+export function rekapHarian(rows, { min = 3, maks = 5 } = {}) {
+  const per = new Map();
+  for (const r of rows) { if (!r?.judul || !Number.isFinite(Date.parse(r.terbit))) continue; const g = tglWib(r.terbit); if (!per.has(g)) per.set(g, []); per.get(g).push(r); }
+  const tanggal = [...per.keys()].sort().reverse().find((g) => per.get(g).length >= min);
+  if (!tanggal) return null;
+  const hari = per.get(tanggal).sort((a, b) => b.terbit.localeCompare(a.terbit)), kel = new Map();
+  for (const r of hari) { const id = (ISU.find(([, re]) => re.test(r.judul)) || ["lain"])[0]; if (!kel.has(id)) kel.set(id, []); kel.get(id).push(r); }
+  const kelompok = [...kel.entries()].sort((a, b) => (a[0] === "lain") - (b[0] === "lain") || b[1].length - a[1].length || a[0].localeCompare(b[0]))
+    .map(([id, l]) => ({ id, n: l.length, judul: l.slice(0, maks), lagi: Math.max(0, l.length - maks) }));
+  return { tanggal, n: hari.length, media: new Set(hari.map((r) => r.media)).size, kelompok };
+}
+

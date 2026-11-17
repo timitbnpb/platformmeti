@@ -119,3 +119,24 @@
 .kta-balik[data-sisi="belakang"]::after{display:none}
 @keyframes kta-kilau{0%,45%{background-position:120% 0}100%{background-position:-60% 0}}
 @media (prefers-reduced-motion:reduce){.kta-kilau::after{animation:none;display:none}}
+/* Halaman verifikasi publik (KTA dan sertifikat acara): kartu sudah memuat logo; kepala situs tidak bergaya di sini (kepala.css tidak dimuat), jadi disembunyikan. */
+.jm-hal-kta-v>.top{display:none}
+@media print{.jm-hal-kta-v{background:none;min-height:0}.jm-hal-kta-v #svCetak,.jm-hal-kta-v .psn-fab{display:none}}
+/* perpanjangan iuran dan bukti pembayaran (F65-301) */
+#kta-iuran:not(:empty){margin-top:16px}
+.iu-panel{display:grid;gap:12px}
+.iu-panel h3{margin:8px 0 0;font:600 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--head)}
+.iu-bukti{display:grid;gap:10px;padding:16px;border-radius:var(--r);background:var(--surface)}
+.iu-bukti h3{margin:0}
+.iu-berkas{display:grid;gap:6px;font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.iu-berkas input{min-height:var(--target);font:400 var(--t-body)/var(--lh-isi) var(--font);color:var(--ink)}
+.iu-panel td small{display:block;color:var(--ink2);font-size:var(--t-kecil)}
+.iu-bb{display:grid;gap:12px}
+.iu-bb h2{margin:0;font:700 var(--t-h2)/var(--lh-judul) var(--font);color:var(--head)}
+.iu-bb-org{margin:0;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+@media print{
+  .iu-cetak body>*:not(dialog){display:none!important}
+  .iu-cetak dialog.jm-dlg{position:static;width:auto;max-width:none;border:0;box-shadow:none;padding:0}
+  .iu-cetak .iu-bb-aksi{display:none}
+}
+

@@ -12,7 +12,7 @@
 .pl-lg{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;overflow:hidden;background:var(--card);border:1px solid var(--line)}
 .pl-lg img{width:100%;height:100%;object-fit:contain}
 .pl-mg{border:0;color:var(--on-brand);font:700 var(--t-body)/1 var(--font)}
-.pl-mg-0{background:var(--brand)}.pl-mg-1{background:var(--accent)}.pl-mg-2{background:color-mix(in srgb,var(--brand) 70%,var(--accent))}.pl-mg-3{background:color-mix(in srgb,var(--accent) 70%,var(--ink))}.pl-mg-4{background:color-mix(in srgb,var(--brand) 60%,var(--ink2))}.pl-mg-5{background:color-mix(in srgb,var(--accent) 55%,var(--brand))}
+.pl-mg-0{background:var(--brand)}.pl-mg-1{background:color-mix(in srgb,var(--accent) 50%,var(--kaki-bg))}.pl-mg-2{background:color-mix(in srgb,var(--accent) 35%,var(--kaki-bg))}.pl-mg-3{background:color-mix(in srgb,var(--accent) 20%,var(--kaki-bg))}.pl-mg-4{background:color-mix(in srgb,var(--brand) 60%,var(--kaki-bg))}.pl-mg-5{background:color-mix(in srgb,var(--accent) 55%,var(--kaki-bg))}
 .pl-nm .jm-taut-lb{display:none}
 .jm-tk-lg .pl-lg{width:48px;height:48px}
 .pl-sub{margin:16px 0 8px;font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head)}
@@ -28,7 +28,7 @@
 .pl-lt{display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
 .pl-lt a{text-decoration:none}
 .pl-lt small{font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
-.pl-jn-target{color:var(--brand)}
+.pl-jn-target{color:var(--accent)}
 @media (max-width:760px){.pl-th li{flex-direction:column;gap:4px}}
 @media (max-width:639px){.pl-kh .jm-kh-ubin .jm-kh-ub:last-child:nth-child(odd){grid-column:1/-1}}
 .pl-kol{display:grid;gap:6px}

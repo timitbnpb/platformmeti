@@ -18,6 +18,11 @@ let d = null, dp = null, tek = "surya", fProv = "", fKomp = "", horizon = 10, ur
 let mPasar = "", mApamsi = "", sel = null, urutKota = { k: "mwp", arah: -1 };
 let halK = 1, hal = 1, balaiPer = 10, tkdnDat = null, popIdx = -1, daftarKini = [];
 let tkdn2 = null, fKat = "", cariS = "";
+/* katalog per produk (butir 62): tampilan per pabrikan atau per produk, dan saringan masa berlaku. Kedaluwarsa dihitung dari tanggal hari ini, bukan dari bendera saat data dibangun. */
+let tkMode = "pab", fStatus = "";
+const HARI_INI = new Date().toISOString().slice(0, 10);
+const lewat = (r) => (r.berlaku_sampai ? r.berlaku_sampai < HARI_INI : !r.aktif);
+const saringSert = () => { const q = cariS.trim().toLowerCase(); return tkdn2.baris.filter((r) => (!fKat || r.kategori === fKat) && (!fStatus || (fStatus === "lewat") === lewat(r)) && (!q || `${r.pabrikan} ${r.produk} ${r.merk || ""} ${r.tipe || ""} ${r.provinsi || ""}`.toLowerCase().includes(q))); };
 let peta = null, petaSiap = false, grup = [], markah = [];
 
 const gw = (mwp) => mwp / 1000;
@@ -485,8 +490,15 @@ function pasang() {
     nanti(tabel);
   });
   $("rt2-sisa").addEventListener("input", debounce((e) => { if (e.target.id === "rt2-cari") { cariS = e.target.value; rt2Tabel(); } }));
-  $("rt2-sisa").addEventListener("change", (e) => { if (e.target.id === "rt2-kat") { fKat = e.target.value; nanti(rt2Tabel); } });
-  $("rt2-sisa").addEventListener("click", (e) => { if (!e.target.closest("#rt2-hapus")) return; cariS = ""; fKat = ""; $("rt2-cari").value = ""; $("rt2-kat").value = ""; nanti(rt2Tabel); });
+  $("rt2-sisa").addEventListener("change", (e) => { if (e.target.id === "rt2-kat") fKat = e.target.value; else if (e.target.id === "rt2-status") fStatus = e.target.value; else return; nanti(rt2Tabel); });
+  $("rt2-sisa").addEventListener("click", (e) => {
+    const m = e.target.closest("[data-rt2mode]");
+    if (m) { if (m.dataset.rt2mode === tkMode) return; tkMode = m.dataset.rt2mode; segSync(m.parentElement, m); return void nanti(rt2Tabel); } // chrome langsung, tabel ditunda
+    if (!e.target.closest("#rt2-hapus")) return; cariS = ""; fKat = ""; fStatus = ""; $("rt2-cari").value = ""; $("rt2-kat").value = ""; $("rt2-status").value = ""; nanti(rt2Tabel);
+  });
+  /* CSV memuat semua baris yang lolos saringan (bukan hanya halaman yang tampil), satu baris per sertifikat */
+  $("rt2-sisa").addEventListener("jm:csv", (e) => { if (e.target.id !== "h-sert") return; e.detail.baris = [[t("rt2.c.produk"), t("rt2.c.merk"), t("rt2.c.pabrikan"), t("rt2.c.kat"), "TKDN (%)", t("rt2.c.terbit"), t("rt2.c.sampai"), t("rt2.c.status"), t("rt2.c.sumber")],
+    ...saringSert().map((r) => [r.produk, [r.merk, r.tipe].filter(Boolean).join(" "), r.pabrikan, t("rt2.kat." + r.kategori), r.tkdn_persen ?? "", r.diterbitkan || "", r.berlaku_sampai || "", t(lewat(r) ? "rt2.lewat" : "rt2.aktif"), r.sumber_url || ""])]; });
   // peta dimuat malas saat mendekati layar
   const el = $("peta-pabrik");
   if ("IntersectionObserver" in window) {
@@ -538,12 +550,13 @@ function rt2Sisa() {
   if (!tkdn2.baris.length) { akar.innerHTML = ""; return; }
   const S = statKat(), pab = new Set(tkdn2.baris.map((r) => r.pabrikan_org_id || r.pabrikan)).size, top = S[0];
   const baris = S.map((o) => ({ label: t("rt2.kat." + o.k), ikon: "", bagian: [{ k: o.k, nilai: o.rata }], th: tipHtml(t("rt2.kat." + o.k), [[t("rt2.tip.rata"), n1(o.rata, 1) + "%", "rt2-c-" + o.k], [t("rt2.tip.maks"), n1(o.maks, 1) + "%"], [t("rt2.tip.sert"), num(o.n)], [t("rt2.tip.aktif"), num(o.aktif)], [t("rt2.tip.pab"), num(o.pab.size)], [t("rt2.tip.relevansi"), t(UMUM.has(o.k) ? "rt2.umum" : "rt2.khusus")]]), tip: `${t("rt2.kat." + o.k)}: ${n1(o.rata, 1)}%` }));
-  const filterHtml = `<div class="jm-saring">${cariHtml({ id: "rt2-cari", label: t("rt2.cari") })}${pilihHtml({ id: "rt2-kat", ikon: "jenis", label: t("rt2.f_kat"), nilai: fKat, opsi: [["", t("rt2.f_kat") + ": " + t("rt.semua")], ...S.map((o) => [o.k, t("rt2.kat." + o.k), "tek:" + KAT[o.k], o.n])] })}${hapusHtml({ id: "rt2-hapus", label: t("jm.kosong.reset") })}${hitungHtml({ id: "rt2-hitung", teks: "" })}</div>`;
+  const filterHtml = `<div class="jm-saring">${cariHtml({ id: "rt2-cari", label: t("rt2.cari") })}${pilihHtml({ id: "rt2-kat", ikon: "jenis", label: t("rt2.f_kat"), nilai: fKat, opsi: [["", t("rt2.f_kat") + ": " + t("rt.semua")], ...S.map((o) => [o.k, t("rt2.kat." + o.k), "tek:" + KAT[o.k], o.n])] })}${pilihHtml({ id: "rt2-status", ikon: "status", label: t("rt2.f_status"), nilai: fStatus, opsi: [["", t("rt2.f_status") + ": " + t("rt.semua")], ["aktif", t("rt2.aktif")], ["lewat", t("rt2.lewat")]] })}${hapusHtml({ id: "rt2-hapus", label: t("jm.kosong.reset") })}${hitungHtml({ id: "rt2-hitung", teks: "" })}</div>`;
+  const modeHtml = `<div class="jm-tab jm-tab-rata rt2-mode" role="tablist" aria-label="${esc(t("rt2.mode"))}">${[["pab", "gedung"], ["prod", "tabel"]].map(([m, ik]) => `<button type="button" role="tab" data-rt2mode="${m}" aria-selected="${tkMode === m}">${ikon(ik, 16)}<span>${esc(t("rt2.mode." + m))}</span></button>`).join("")}</div>`;
   akar.innerHTML =
     exHtml({ id: "h-kat", ikon: "tingkat", topik: t("rt2.ey.kat"), judulHtml: hlHtml("rt2.t.kat", t("rt2.kat." + top.k), { v: n1(top.rata, 1) }) + " " + pil("an.est"), subHtml: esc(t("rt2.s.kat")), aksiHtml: aksiHtml({ csv: false }), tingkat: "h2",
       isiHtml: `<div class="ih-bagan" id="rt2-g-kat"></div><p class="jm-bantu">${esc(t("rt2.cat.kat"))}</p>${srcTkdn()}` }) +
-    exHtml({ id: "h-sert", ikon: "tabel", topik: t("rt2.ey.sert"), judulHtml: hlHtml("rt2.t.sert", num(tkdn2.baris.length), { n: num(pab) }), subHtml: esc(t("rt2.s.sert")), aksiHtml: aksiHtml({ csv: false }), tingkat: "h2",
-      isiHtml: `${filterHtml}<div id="rt2-tabel" class="ih-tabel"></div><p class="jm-bantu">${esc(t("rt2.cat.sert"))}</p>${srcTkdn()}` });
+    exHtml({ id: "h-sert", ikon: "tabel", topik: t("rt2.ey.sert"), judulHtml: hlHtml("rt2.t.sert", num(tkdn2.baris.length), { n: num(pab) }), subHtml: esc(t("rt2.s.sert")), aksiHtml: aksiHtml({ csv: true }), tingkat: "h2",
+      isiHtml: `${modeHtml}${filterHtml}<div id="rt2-tabel" class="ih-tabel"></div><p class="jm-bantu">${esc(t("rt2.cat.sert"))}</p>${srcTkdn()}` });
   const gk = $("rt2-g-kat"); gk.innerHTML = batangIh({ baris, seri: S.map((o) => ({ k: o.k, kelas: "rt2-c-" + o.k })), satuan: "%", el: gk, d: 1, label: t("rt2.s.kat"), ref: { nilai: 40, label: t("rt.tk.batas") } });
   $("rt2-cari").value = cariS;
   rt2Tabel();
@@ -565,11 +578,22 @@ function kelompokPab(B) {
   return [...m.values()];
 }
 function rt2Tabel() {
-  const q = cariS.trim().toLowerCase();
-  const S = tkdn2.baris.filter((r) => (!fKat || r.kategori === fKat) && (!q || `${r.pabrikan} ${r.produk} ${r.merk || ""} ${r.provinsi || ""}`.toLowerCase().includes(q)));
+  const q = cariS.trim().toLowerCase(), S = saringSert();
+  $("rt2-hapus").hidden = !(fKat || fStatus || q);
+  if (tkMode === "prod") {
+    $("rt2-hitung").textContent = t("rt2.info", { n: S.length, total: tkdn2.baris.length });
+    return tabelIh($("rt2-tabel"), { satuan: "rt2.u.sertifikat", per: 10, urutAwal: 3, kolom: [
+      { label: t("rt2.c.produk"), v: (r) => r.produk, f: (r) => `<span class="rt2-prod"><b>${esc(r.produk || t("rt2.tanpa_produk"))}</b>${r.merk || r.tipe ? `<small>${esc([r.merk, r.tipe].filter(Boolean).join(" "))}</small>` : ""}</span>` },
+      { label: t("rt2.c.pabrikan"), v: (r) => r.pabrikan, f: (r) => { const isi = `<span class="jm-id"><b>${esc(namaBaku(r.pabrikan).nama)}</b><small>${esc([r.lokasi, r.provinsi].filter(Boolean).join(", ") || "-")}</small></span>`; return r.pabrikan_org_id ? `<a class="jm-an-nama" href="/o/${esc(r.pabrikan_org_id)}">${isi}</a>` : `<span class="jm-an-nama">${isi}</span>`; } },
+      { label: t("rt2.c.kat"), v: (r) => t("rt2.kat." + r.kategori), f: (r) => `<span class="rt2-pils">${pilKat(r.kategori)}</span>` },
+      { label: t("rt.col.tkdn"), num: true, v: (r) => r.tkdn_persen, f: (r) => (r.tkdn_persen == null ? "-" : `<span class="rt2-nilai${r.tkdn_persen >= 40 ? " rt2-ok" : ""}">${esc(n1(r.tkdn_persen, 2))}</span>`) },
+      { label: t("rt2.c.sampai"), num: true, v: (r) => r.berlaku_sampai, f: (r) => (r.berlaku_sampai ? esc(tanggal(r.berlaku_sampai)) : "-") },
+      { label: t("rt2.c.status"), v: (r) => (lewat(r) ? 0 : 1), f: (r) => { const l = lewat(r); return `<span class="jm-pil ${l ? "jm-pil-bad" : "jm-pil-ok"}">${ikon(l ? "silang" : "centang", 14)}${esc(t(l ? "rt2.lewat" : "rt2.aktif"))}</span>`; } },
+      { label: t("rt2.c.sumber"), v: (r) => r.sumber_url || "", f: (r) => (r.sumber_url ? `<a class="jm-tbl jm-tbl-kecil" href="${esc(r.sumber_url)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 14)}<span>${esc(t("rt2.buka_sert"))}</span></a>` : "-") },
+    ], baris: S });
+  }
   const B = kelompokPab(S), total = kelompokPab(tkdn2.baris).length;
   $("rt2-hitung").textContent = t("rt2.info_pab", { n: B.length, total, s: S.length });
-  $("rt2-hapus").hidden = !(fKat || q);
   tabelIh($("rt2-tabel"), { satuan: "rt2.u.pabrikan", per: 10, urutAwal: 3, kolom: [
     { label: t("rt.col.nama"), v: (r) => r.nama, f: (r) => { const lg = logoHtml({ id: r.id, nama: r.nama, logo: r.id }), isi = `${lg}<span class="jm-id"><b>${esc(r.nama)}</b><small>${esc(r.lok || "-")}</small></span>`; return r.id ? `<a class="jm-an-nama" href="/o/${esc(r.id)}">${isi}</a>` : `<span class="jm-an-nama">${isi}</span>`; } },
     { label: t("rt2.c.produk"), v: (r) => r.produk[0], f: (r) => `<span class="rt2-prod"><b>${esc(r.produk[0])}</b>${r.produk.length > 1 ? `<small>${esc(t("rt2.lain", { n: r.produk.length - 1 }))}</small>` : ""}</span>` },

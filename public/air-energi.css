@@ -73,7 +73,7 @@
 .ae2-metode{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
 .ae2-metode li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:16px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card)}
 .ae2-metode p{margin:4px 0 0;color:var(--ink2)}
-.ae2-m-no{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--on-brand)}
+.ae2-m-no{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--on-accent)}
 .ae2-m-aksi{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
 .ae2-m-aksi>a{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}
 /* tabel */

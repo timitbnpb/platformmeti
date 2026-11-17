@@ -10,6 +10,7 @@ import { buktiHtml } from "/inti/bukti.js";
 import { muatData, sumberLipat, pil, saatBahasa } from "/analisis.js";
 import { hitungModel, tornado, skenario } from "/inti/model_keuangan_rumus.js";
 import { TEK, BISNIS, SKALA, bawaan, keParam } from "/model_keuangan_data.js";
+import { hitungBaterai } from "/inti/baterai_rumus.js";
 
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
@@ -18,13 +19,13 @@ const GRUP = [
   ["biaya", "tag", ["capexUsdKw", "opexUsdKwThn", "eskOpex", "gantiTahun", "gantiPersen", "kurs"]],
   ["produksi", "petir", ["fk", "degr"]],
   ["tarif", "transaksi", ["tarif", "tarifTahun2", "tarifGanti", "eskTarif", "porsiBayar", "sewaRpKwp", "recRpMwh", "karbonRpT", "emisiTMwh"]],
-  ["dana", "kartu", ["utang", "bunga", "tenor"]],
+  ["dana", "kartu", ["utang", "bunga", "tenor", "utangLunak", "bungaLunak", "tenorLunak", "hibah"]],
   ["pajak", "regulasi", ["pajak", "libur", "susut", "ppnPorsi", "diskonto"]],
 ];
-const DESIMAL = { mw: 3, capexUsdKw: 0, opexUsdKwThn: 1, fk: 1, degr: 2, eskOpex: 1, eskTarif: 1, bunga: 2, pajak: 1, diskonto: 1, emisiTMwh: 3, kurs: 0 };
+const DESIMAL = { mw: 3, capexUsdKw: 0, opexUsdKwThn: 1, fk: 1, degr: 2, eskOpex: 1, eskTarif: 1, bunga: 2, bungaLunak: 2, pajak: 1, diskonto: 1, emisiTMwh: 3, kurs: 0 };
 const SATUAN = { mw: "MW", capexUsdKw: "USD/kW", opexUsdKwThn: "USD/kW", kurs: "Rp/USD", tarif: "Rp/kWh", tarifTahun2: "Rp/kWh", sewaRpKwp: "Rp/kWp", recRpMwh: "Rp/MWh", karbonRpT: "Rp/tCO2e", emisiTMwh: "tCO2e/MWh" };
-const SATUAN_T = new Set(["umur", "gantiTahun", "tarifGanti", "tenor", "libur", "susut"]);
-const PERSEN = new Set(["eskOpex", "gantiPersen", "fk", "degr", "eskTarif", "porsiBayar", "utang", "bunga", "pajak", "ppnPorsi", "diskonto"]);
+const SATUAN_T = new Set(["umur", "gantiTahun", "tarifGanti", "tenor", "tenorLunak", "libur", "susut"]);
+const PERSEN = new Set(["eskOpex", "gantiPersen", "fk", "degr", "eskTarif", "porsiBayar", "utang", "bunga", "utangLunak", "bungaLunak", "hibah", "pajak", "ppnPorsi", "diskonto"]);
 const S = { tek: "surya-atap-rumah", skala: "plts-atap-rumah", bis: "netmeter", prov: "31", lok: 1, acuan: null, gol: "", bpp: "", grid: "jawa-bali", v: {}, sum: {}, diubah: new Set(), wT: 20, wS: 10, ppnDtp: false };
 /* ?tek=<id model | teknologi patokan>: dari halaman teknologi/profil; id tak dikenal diabaikan */
 { const q = new URLSearchParams(location.search).get("tek"), x = q && (TEK.find((e) => e.id === q) || TEK.find((e) => e.patokan === q)); if (x) { S.tek = x.id; S.skala = (SKALA[x.id] || [])[0] || ""; S.bis = x.bisnis[0]; } }
@@ -129,7 +130,7 @@ function isiKolom() {
 function hitung() {
   const r = keParam(S.v);
   if (r.kurang) { hasil = { kurang: r.kurang }; return; }
-  const p = r.p, ada = p.utang > 0 && p.bunga >= 0 && p.tenor > 0, metrik = ada ? (x) => x.irrEkuitas : (x) => x.irrProyek;
+  const p = r.p, ada = (p.utang > 0 && p.bunga >= 0 && p.tenor > 0) || (p.utangLunak > 0 && p.tenorLunak > 0), metrik = ada ? (x) => x.irrEkuitas : (x) => x.irrProyek;
   const peubah = ["capexUsdKw", "opexUsdKwThn", "fk", "tarif", "kurs", ...(ada && p.bunga > 0 ? ["bunga"] : [])];
   hasil = { p, m: hitungModel(p), tr: tornado(p, peubah, S.wT / 100, metrik), sk: skenario(p, S.wS / 100), ada };
 }
@@ -157,7 +158,7 @@ const UBIN_IK = { irr: "grafik", npv: "kalkulator", lcoe: "tag", dscr: "perisai"
 
 function ringkasHtml(r, h) {
   const baris = [
-    ["capex", rp(r.capex), r.ppnRp > 0 ? t("mk.ket.ppn", { n: rp(r.ppnRp) }) : ""], ["utang", rp(r.utang), pct(h.p.utang)], ["ekuitas", rp(r.ekuitas), ""],
+    ["capex", rp(r.capex), r.ppnRp > 0 ? t("mk.ket.ppn", { n: rp(r.ppnRp) }) : ""], ["utang", rp(r.utang), pct(h.p.utang + h.p.utangLunak)], ...(r.utangLunak > 0 ? [["utang_lunak", rp(r.utangLunak), t("mk.ket.bunga_rata", { n: N(r.bungaUtangRata * 100, 2) })]] : []), ...(r.hibah > 0 ? [["hibah", rp(r.hibah), pct(h.p.hibah)]] : []), ["ekuitas", rp(r.ekuitas), r.capex > 0 ? pct(r.ekuitas / r.capex) : ""],
     ["irr_proyek", pct(r.irrProyek), ""], ["irr_ekuitas", h.ada ? pct(r.irrEkuitas) : "-", h.ada ? "" : t("mk.ket.tanpa_utang")],
     ["npv_proyek", rp(r.npvProyek), t("mk.ket.diskonto", { n: N(h.p.diskonto * 100, 1) })], ["npv_ekuitas", rp(r.npvEkuitas), ""],
     ["balik_proyek", thn(r.balikProyek), ""], ["balik_ekuitas", thn(r.balikEkuitas), ""], ["lcoe", rpkwh(r.lcoe), t("mk.ket.lcoe")],
@@ -225,6 +226,28 @@ function tabelHtml(b) {
 }
 
 /* ---- rangka halaman ---- */
+/* ---- baterai geser beban (F65-105; rumus di /inti/baterai_rumus.js; semua isian milik pengguna, tanpa bawaan) ---- */
+const BT_F = [["kwh", ""], ["dod", 'max="100"'], ["kw", ""], ["jam", 'max="24"'], ["eff", 'max="100"'], ["selisih", 'data-negatif'], ["hari", 'max="366"'], ["degr", 'max="100"'], ["umur", 'min="1" max="60" step="1"'], ["capex", ""], ["diskonto", 'max="100"']];
+const BT_O = ["energiHari", "energiTahun1", "pendapatanTahun1", "npv", "balik"];
+function bateraiHtml() {
+  const f = ([k, attr]) => `<label class="mk-bt-f"><span>${esc(t("mk.bt.f." + k))}</span><input id="mkBt-${k}" type="number" inputmode="decimal" step="any" ${attr.includes("data-negatif") ? "" : attr.includes("min=") ? "" : 'min="0"'} ${attr.replace("data-negatif", "")}></label>`;
+  return exHtml({ id: "mk-baterai", ikon: "kalkulator", topik: t("mk.bt.ey"), judulHtml: esc(t("mk.bt.j")), subHtml: esc(t("mk.bt.sub")) + " " + pil("an.est"),
+    isiHtml: `<div class="mk-bt"><div class="mk-bt-in">${BT_F.map(f).join("")}</div>
+      <div><dl class="mk-bt-h">${BT_O.map((k) => `<div><dt>${esc(t("mk.bt.o." + k))}</dt><dd><b id="mkBtO-${k}">-</b></dd></div>`).join("")}</dl>
+      <p><span id="mkBtPutus" hidden></span></p><p id="mkBtIsi" class="jm-bantu" role="status">${esc(t("mk.bt.isi"))}</p></div></div><p class="jm-bantu">${esc(t("mk.bt.batas"))}</p>` });
+}
+function hitungBt() {
+  const n = (k) => { const v = $("mkBt-" + k).value; return v === "" ? NaN : +v; }, isi = Object.fromEntries(BT_F.map(([k]) => [k, n(k)]));
+  if (Number.isNaN(isi.degr)) isi.degr = 0; // degradasi kosong = tanpa degradasi (tertulis di label)
+  const h = hitungBaterai(isi), kwh = (v) => `${N(v, v < 100 ? 1 : 0)} kWh`;
+  const tulis = { energiHari: h.energiHari == null ? "-" : kwh(h.energiHari), energiTahun1: h.energiTahun1 == null ? "-" : kwh(h.energiTahun1), pendapatanTahun1: h.pendapatanTahun1 == null ? "-" : rp(h.pendapatanTahun1),
+    npv: h.npv == null ? "-" : rp(h.npv), balik: !h.arus ? "-" : h.balik == null ? t("mk.bt.tak_balik") : thn(h.balik) };
+  for (const k of BT_O) $("mkBtO-" + k).textContent = tulis[k];
+  const p = $("mkBtPutus"), ada = h.pendapatanTahun1 != null;
+  p.hidden = !ada; if (ada) { const ok = isi.selisih > 0; p.textContent = t(ok ? "mk.bt.untung" : "mk.bt.rugi"); p.className = "jm-pil " + (ok ? "jm-pil-ok" : "jm-pil-warn"); }
+  $("mkBtIsi").hidden = ada;
+}
+
 function rangka() {
   const sumber = sumberLipat([
     { sumber: "Perpres 112/2022", halaman: t("mk.s.perpres"), tanggal: D.peluang.meta?.diperbarui || D.listrik.dibangun_pada },
@@ -237,7 +260,8 @@ function rangka() {
     isiHtml: `${kontrolHtml()}<p class="jm-bantu mk-tanpa" id="mkTanpa" hidden>${ikon("info", 16)}<span>${esc(t("mk.tanpa_asumsi"))}</span></p><div class="mk-grup">${GRUP.map(([g, ik, ks]) => `<section class="mk-g"><h3 class="mk-gh">${ikon(ik, 16)}<span>${esc(t("mk.g." + g))}</span></h3><div class="mk-gb">${ks.map(medan).join("")}${g === "pajak" ? `<label class="mk-cb" for="mkDtp"><input type="checkbox" id="mkDtp"><span>${esc(t("mk.dtp"))}</span></label>` : ""}</div></section>`).join("")}</div>${sumber}` })
     + `<div id="mkHasil" aria-live="polite">${hantuHtml(4)}</div>`
     + exHtml({ id: "mk-cara", ikon: "metode", topik: t("mk.cara.ey"), judulHtml: esc(t("mk.cara.j")), subHtml: pil("an.hipotesis"),
-      isiHtml: `<ol class="mk-cara">${[1, 2, 3, 4, 5].map((i) => `<li>${esc(t("mk.cara" + i))}</li>`).join("")}</ol><p><a class="jm-tbl jm-tbl-kecil" href="/metode#model-keuangan">${ikon("tautan", 16)}<span>${esc(t("mk.metode"))}</span></a></p>` });
+      isiHtml: `<ol class="mk-cara">${[1, 2, 3, 4, 5].map((i) => `<li>${esc(t("mk.cara" + i))}</li>`).join("")}</ol><p><a class="jm-tbl jm-tbl-kecil" href="/metode#model-keuangan">${ikon("tautan", 16)}<span>${esc(t("mk.metode"))}</span></a></p>` })
+    + bateraiHtml();
   import("/inti/pilih.js").then((m) => m.pasangPilih()).catch(() => {});
 }
 
@@ -246,6 +270,7 @@ function pasang() {
   const akar = $("mkIsi");
   akar.addEventListener("input", (e) => {
     const el = e.target;
+    if (el.id.startsWith("mkBt-")) return hitungBt();
     if (el.dataset.k) { // kolom isian: tandai diubah seketika (chrome), hitung ulang menyusul
       const nil = urai(el.value), k = el.dataset.k;
       S.v[k] = nil; S.diubah.add(k); $("mk-s-" + k).innerHTML = sumberKolom(k, null);
@@ -276,7 +301,8 @@ try {
   S.gol = (atap.tarif.find((g) => /r_1_tr_2_200/.test(g.id)) || atap.tarif[0]).id; S.bpp = listrik.bpp_sistem[0].kunci;
   rangka(); terap({ simpan: false }); sajikan();
   pasang();
-  saatBahasa(() => { rangka(); terap(); sajikan(); });
+  /* isian kartu baterai milik pengguna: disimpan sebelum gambar ulang lalu dikembalikan, supaya ganti bahasa tidak menghapusnya */
+  saatBahasa(() => { const bt = BT_F.map(([k]) => [k, $("mkBt-" + k)?.value ?? ""]); rangka(); terap(); sajikan(); let ada = false; for (const [k, v] of bt) { const el = $("mkBt-" + k); if (el && v !== "") { el.value = v; ada = true; } } if (ada) hitungBt(); });
 } catch (e) {
   $("mkIsi").innerHTML = galatHtml("umum");
   $("mkIsi").querySelector("[data-aksi=ulang]")?.addEventListener("click", () => location.reload());

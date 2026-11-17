@@ -9,7 +9,7 @@
 .tg-ang{display:flex;align-items:baseline;gap:8px;margin:0}
 .tg-ang b{font:700 var(--t-display)/1 var(--font);color:var(--head);font-variant-numeric:tabular-nums}
 .tg-ang span{font:400 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
-.tg-pil{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;background:color-mix(in srgb,var(--c) 14%,var(--card));color:var(--c)}
+.tg-pil{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;background:color-mix(in srgb,var(--c) 14%,var(--card));color:color-mix(in srgb,var(--c) 45%,var(--ink))}
 .tg-pil .jm-ik{flex:none}
 .tg-k-bauran{--c:var(--tp-listrik)}.tg-k-kapasitas{--c:var(--tp-surya)}.tg-k-emisi{--c:var(--tp-panas)}.tg-k-bahan-bakar{--c:var(--tp-bio)}.tg-k-kendaraan{--c:var(--tp-simpan)}.tg-k-daerah{--c:var(--tp-bayu)}
 .tg-st-tercapai{--c:var(--ok)}.tg-st-di-jalur{--c:var(--ok)}.tg-st-tertinggal{--c:var(--warn)}.tg-st-jauh-tertinggal{--c:var(--bad)}.tg-st-tidak-ada-data{--c:var(--ink2)}
@@ -35,7 +35,7 @@
 .tg-fk{display:grid;gap:2px;align-content:start;min-width:0;padding:8px 10px;border-radius:var(--r-sm);background:var(--surface)}
 .tg-fk-l{font:400 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tg-fk b{font:600 var(--t-body)/var(--lh-rapat) var(--font);color:var(--head);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
-.tg-buka{display:flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--brand);font:600 var(--t-tombol)/1 var(--font);cursor:pointer}
+.tg-buka{display:flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--accent);font:600 var(--t-tombol)/1 var(--font);cursor:pointer}
 .tg-buka:hover{background:var(--surface)}
 /* modal */
 .tg-modal{margin:auto;width:min(960px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);overflow:auto}
@@ -61,7 +61,7 @@
 .tg-pj time,.tg-pj small{font:400 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
 .tg-pj a{color:var(--head);font-weight:600;text-decoration:none}
 .tg-lj,.tg-ljs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
-.tg-lj a{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:var(--r);color:var(--brand);text-decoration:none}
+.tg-lj a{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:var(--r);color:var(--accent);text-decoration:none}
 .tg-lj a span{display:grid;gap:2px}.tg-lj small,.tg-lj-k small{font:400 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
 .tg-lj-k{display:grid;gap:8px;align-content:start;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--head);text-decoration:none;box-shadow:var(--shadow)}
 .tg-lj-k:hover{border-color:var(--accent)}

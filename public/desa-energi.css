@@ -7,9 +7,9 @@
 .de2-s-mati{--sk:var(--bad)}
 .de2-t-hidup{background:var(--ok)}.de2-t-rusak{background:var(--warn)}.de2-t-mati{background:var(--bad)}
 .de2-j-plts-komunal{--sk:var(--tp-surya)}.de2-j-pltmh{--sk:var(--tp-hidro)}.de2-j-biogas{--sk:var(--tp-bio)}
-.de2-jenis{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;color:var(--sk);background:color-mix(in srgb,var(--sk) 14%,var(--card))}
+.de2-jenis{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;color:color-mix(in srgb,var(--sk) 45%,var(--ink));background:color-mix(in srgb,var(--sk) 14%,var(--card))}
 .de2-sebab{display:flex;flex-wrap:wrap;gap:6px}
-.de2-sb{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);background:color-mix(in srgb,var(--sk) 14%,var(--card));color:var(--sk);white-space:nowrap}
+.de2-sb{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);background:color-mix(in srgb,var(--sk) 14%,var(--card));color:color-mix(in srgb,var(--sk) 45%,var(--ink));white-space:nowrap}
 .de2-p-komponen{--sk:var(--bad)}.de2-p-biaya{--sk:var(--warn)}.de2-p-kelembagaan{--sk:var(--data5)}.de2-p-sdm{--sk:var(--info)}
 .de2-p-bencana{--sk:var(--data3)}.de2-p-jaringan_pln{--sk:var(--data4)}.de2-p-beban{--sk:var(--data2)}.de2-p-tak_diketahui{--sk:var(--ink2)}
 .de2-b-sebab{background:var(--sk)}
@@ -34,3 +34,18 @@
 @media (max-width:999px){.pt2-saring .jm-cari{grid-column:1/-1}}
 .jm-de2 .pt2-prov{flex-wrap:nowrap;align-items:flex-start}
 .jm-de2 .pt2-prov img{flex:none;margin-top:2px}
+/* kalkulator hemat dibanding diesel (F65-104) */
+.de2-dk{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start;margin-bottom:12px}
+.de2-dk-in{display:grid;gap:14px}
+.de2-dk-f{display:grid;gap:6px;min-width:0}
+.de2-dk-f>span{font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.de2-dk-f>input{width:100%;min-height:var(--target);padding:0 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:600 var(--t-masukan)/1 var(--font)}
+.de2-dk-f>input:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.de2-dk-in>.jm-tbl{justify-self:start}
+.de2-dk-h{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 12px}
+.de2-dk-h>div{display:grid;gap:8px;padding:16px;border-radius:var(--r);background:var(--surface)}
+.de2-dk-h dt{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.de2-dk-h dd{margin:0}
+.de2-dk-h b{font:700 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--accent);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+@media (max-width:991px){.de2-dk{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:479px){.de2-dk-h{grid-template-columns:minmax(0,1fr)}}

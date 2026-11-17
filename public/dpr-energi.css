@@ -1,8 +1,8 @@
 /* /dpr-energi: avatar inisial berwarna fraksi, kartu anggota, kartu sikap, lini masa agenda. Token tema.css saja. */
-.dp-f-pdip{background:var(--tp-nuklir)}.dp-f-golkar{background:var(--tp-biaya)}.dp-f-gerindra{background:var(--tp-panas)}.dp-f-nasdem{background:var(--tp-hidro)}
-.dp-f-pkb{background:var(--tp-bio)}.dp-f-pks{background:var(--tp-hidrogen)}.dp-f-pan{background:var(--tp-simpan)}.dp-f-demokrat{background:var(--tp-bayu)}
+.dp-f-pdip{background:color-mix(in srgb,var(--tp-nuklir) 50%,var(--kaki-bg))}.dp-f-golkar{background:color-mix(in srgb,var(--tp-biaya) 50%,var(--kaki-bg))}.dp-f-gerindra{background:color-mix(in srgb,var(--tp-panas) 50%,var(--kaki-bg))}.dp-f-nasdem{background:color-mix(in srgb,var(--tp-hidro) 50%,var(--kaki-bg))}
+.dp-f-pkb{background:color-mix(in srgb,var(--tp-bio) 50%,var(--kaki-bg))}.dp-f-pks{background:color-mix(in srgb,var(--tp-hidrogen) 50%,var(--kaki-bg))}.dp-f-pan{background:color-mix(in srgb,var(--tp-simpan) 50%,var(--kaki-bg))}.dp-f-demokrat{background:color-mix(in srgb,var(--tp-bayu) 50%,var(--kaki-bg))}
 .dp-av{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:var(--on-brand);font-weight:700;font-size:var(--t-kecil);letter-spacing:.02em}
-.dp-av.dp-f-golkar{color:var(--ink)}
+.dp-av.dp-f-golkar{color:var(--on-brand)}
 .dp-av-k{width:32px;height:32px}
 .dp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:12px;margin:0;padding:0;list-style:none}
 .dp-grid>li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);min-width:0}

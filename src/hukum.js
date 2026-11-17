@@ -3,6 +3,7 @@
 import * as hak from "./hak.js";
 import { bacaBody, Galat, json, perlu, PRIVAT } from "./util.js";
 import { kueriFts, normTeks, verifikasiKutipan } from "./hukum_spek.js";
+import { MODEL_RINGKAS, SKEMA_RINGKAS, LAJU_ADMIN_JAM, PLAFON_HARIAN, pilihPasal, susunPesan, saringButir } from "./ringkas_pasal.js";
 export { kueriFts, normTeks, verifikasiKutipan };
 
 const PER_HAL = 20, MAKS_Q = 200, MAKS_SEGMEN_TANYA = 8, MAKS_TEKS_KIRIM = 1800;
@@ -63,7 +64,46 @@ export async function tanya(env, akun, pertanyaan) {
     dibuang, segmen_dipakai: pakai, model: MODEL_TANYA };
 }
 
+/* ---------- F65-304: ringkasan mesin per peraturan ---------- */
+const ADM = ["admin", "super"];
+// Baca: tembolok untuk versi teks sekarang, atau { ada: false }. boleh_buat hanya untuk admin atau super DAN binding AI tersedia DAN ada pasal untuk dirangkum.
+export async function ringkasanBaca(env, akun, id) {
+  const d = WAJIB_ADA(await hak.hukumPasal(env, akun, id));
+  if (d.tidak_sah) throw new Galat("masukan_salah");
+  if (!d.ada) throw new Galat("tidak_ditemukan");
+  const { kirim, total, versi } = pilihPasal(d.segmen);
+  const r = kirim.length ? WAJIB_ADA(await hak.hukumRingkasBaca(env, akun, id, versi)) : false;
+  const boleh_buat = ADM.includes(akun.peran) && typeof env.AI?.run === "function" && kirim.length > 0;
+  return r ? { ada: true, ...r, boleh_buat } : { ada: false, total, boleh_buat };
+}
+// Buat: hanya admin atau super. Tembolok dipakai bila ada (AI tidak dipanggil). Urutan: tembolok -> laju admin -> plafon harian -> AI -> pemeriksa kutipan -> simpan.
+// Tanpa butir berkutipan sah, tidak ada yang disimpan dan tidak ada teks model yang keluar.
+export async function ringkasanBuat(env, akun, id) {
+  const d = WAJIB_ADA(await hak.hukumPasal(env, akun, id));
+  if (d.tidak_sah) throw new Galat("masukan_salah");
+  if (!d.ada) throw new Galat("tidak_ditemukan");
+  const { kirim, total, versi } = pilihPasal(d.segmen);
+  if (!kirim.length) return { ada: false, total, sebab: "tanpa_pasal" };
+  const ada = WAJIB_ADA(await hak.hukumRingkasBaca(env, akun, id, versi));
+  if (ada) return { ada: true, ...ada, dari_tembolok: true };
+  if (typeof env.AI?.run !== "function") throw new Galat("layanan");
+  await lajuHukum(env, "ringkasan-ai", akun, LAJU_ADMIN_JAM);
+  if ((await hak.catatLaju(env, "ringkasan-ai:rp-semua", 86400)) > PLAFON_HARIAN) throw new Galat("laju_terlampaui");
+  let out;
+  try { out = uraiJson(await env.AI.run(MODEL_RINGKAS, { max_tokens: 900, temperature: 0.1, response_format: { type: "json_schema", json_schema: SKEMA_RINGKAS }, messages: susunPesan(d.judul, kirim) })); }
+  catch (e) { console.error("hukum.ringkasan AI", e?.message); throw new Galat("layanan"); }
+  const { butir, dibuang } = saringButir(out, kirim);
+  if (!butir.length) return { ada: false, total, sebab: "tanpa_kutipan", dibuang };
+  await hak.hukumRingkasSimpan(env, akun, id, { versi, model: MODEL_RINGKAS, butir, dikirim: kirim.length, total, dibuang });
+  return { ada: true, butir, model: MODEL_RINGKAS, dikirim: kirim.length, total, dibuat: Math.floor(Date.now() / 1000), dibuang };
+}
+
 export const rute = {
+  "GET /api/hukum/ringkasan": async (req, env, ctx, p) => json(await ringkasanBaca(env, perlu(p), new URL(req.url).searchParams.get("id")), 200, PRIVAT),
+  "POST /api/hukum/ringkasan": async (req, env, ctx, p) => {
+    const akun = perlu(p, ADM), b = await bacaBody(req, 256);
+    return json(await ringkasanBuat(env, akun, b.id), 200, PRIVAT);
+  },
   "GET /api/hukum/cari": async (req, env, ctx, p) => json(await cari(env, perlu(p), new URL(req.url).searchParams), 200, PRIVAT),
   "GET /api/hukum/dok": async (req, env, ctx, p) => {
     const akun = perlu(p), id = new URL(req.url).searchParams.get("id");

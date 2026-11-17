@@ -92,6 +92,10 @@ async function mulai() {
   akar.querySelector(".pf-kepala-teks")?.insertAdjacentHTML("beforeend", diperbaruiHtml({ jenis: "proyek", id, nama: r.nama, tgl: dibangun }));
   pasangRiwayat(akar);
   pk.pasang(akar);
+  // kiriman yang ditinjau admin: foto tonggak dan kebutuhan dana proyek ini (F65-206, F65-208)
+  akar.querySelector(".pf-bagian")?.insertAdjacentHTML("beforeend", '<div id="pfKiriman" class="pf-kiriman"></div>');
+  akar.querySelector(".pf-bagian")?.insertAdjacentHTML("beforeend", '<div id="pfLaporan" class="pf-kiriman"></div>'); // laporan warga atas proyek ini (F65-214)
+  import("/kiriman.js").then((m) => { m.pasangProyek(document.getElementById("pfKiriman"), { id, namaOrg: (x) => orgById.get(x)?.nama || x }); m.pasangLaporan(document.getElementById("pfLaporan"), { id }); }).catch(() => {});
   pasangIkuti(akar); muatPembaruan("proyek", id, akar.querySelector(".pf-bagian"));
   petaTitik(document.getElementById("pfPeta"), [r], { zoomSatu: persis ? 11 : 6, klik: false });
 }

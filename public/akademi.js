@@ -1,14 +1,14 @@
 /* /akademi: jalur belajar EBT (6 modul) yang merangkai konten wiki yang ada, kuis pilihan ganda bersumber, lencana partisipasi.
-   Data /data/akademi.json; fungsi murni akademi_hitung.js. Progres disimpan di peramban (localStorage), tanpa server: tidak ada data pribadi yang dikirim.
+   Data /data/akademi.json; fungsi murni akademi_hitung.js. Centang langkah disimpan di peramban (localStorage). Jawaban kuis dikirim ke /api/akademi/kuis: server yang menilai (berkas soal tidak memuat jawaban) dan mencatat nilai terbaik di akun (F65-205).
    INP: centang langkah dan pilihan jawaban berubah seketika; ubin, grafik, dan lencana menyusul lewat nanti(). */
 import { t, angka, bahasa, bahasaData } from "/i18n.js";
-import { esc, nanti, ikon, hantuHtml, galatHtml } from "/inti/umum.js";
+import { esc, nanti, ikon, hantuHtml, galatHtml, api } from "/inti/umum.js";
 import { khUbin } from "/inti/kh.js";
 import { exHtml } from "/inti/komponen.js";
 import { hlHtml } from "/inti/aksi_ex.js";
 import { buktiHtml } from "/inti/bukti.js";
 import { batang } from "/grafik.js";
-import { KUNCI, hrefSumber, nilaiKuis, statusModul, berikutnya, lencana, bersihkanProgres } from "/akademi_hitung.js";
+import { KUNCI, hrefSumber, statusModul, berikutnya, lencana, bersihkanProgres } from "/akademi_hitung.js";
 
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
@@ -89,7 +89,7 @@ function rangka() {
     ex({ id: "adJalur", ikon: "akademi", topik: t("ad.ey.jalur"), judulHtml: hlHtml("ad.t.jalur", String(D.modul.length)), subHtml: esc(t("ad.s.jalur")),
       isiHtml: `<div class="ad-modul-w" id="adModul">${D.modul.map((m, i) => modulHtml(m, i + 1, saran)).join("")}</div>` }),
     ex({ id: "adSkor", ikon: "medali", topik: t("ad.ey.skor"), judulHtml: esc(t("ad.t.skor")), subHtml: esc(t("ad.s.skor", { n: D.lulus_persen })),
-      isiHtml: `<div class="ad-grafik" id="adGrafik"></div><div id="adLencana"></div>
+      isiHtml: `<div class="ad-grafik" id="adGrafik"></div><div id="adLencana"></div><div id="adAkun" class="ad-akun" aria-live="polite"></div>
         <p class="ad-penafian">${ikon("peringatan", 16)}<span>${esc(t("ad.penafian"))}</span></p>
         <div class="ad-aksi"><button type="button" class="jm-tbl" id="adReset">${ikon("balik", 16)}<span>${esc(t("ad.reset"))}</span></button><span class="ad-bantu">${ikon("kunci", 14)}<span>${esc(t("ad.lokal"))}</span></span></div>` }),
     ex({ id: "adCara", ikon: "metode", topik: t("ad.ey.cara"), judulHtml: esc(t("ad.t.cara")) + " " + hip(), subHtml: esc(L(D.catatan)),
@@ -101,9 +101,19 @@ function rangka() {
     simpan(); segarkanKartu(MODUL.get(c.dataset.lg.split("/")[0])); nanti(ringkas);
   });
   $("adModul").addEventListener("click", (e) => { const b = e.target.closest("[data-kuis]"); if (b && b.getAttribute("aria-disabled") !== "true") bukaKuis(b.dataset.kuis); else if (b) b.title = t("ad.kuis.terkunci"); });
-  $("adReset").addEventListener("click", () => { if (!confirm(t("ad.reset.tanya"))) return; P = bersihkanProgres(null, D); simpan(); rangka(); ringkas(); });
+  $("adReset").addEventListener("click", () => { if (!confirm(t("ad.reset.tanya"))) return; P = bersihkanProgres(null, D); simpan(); rangka(); ringkas(); muatAkun(); });
 }
 function ringkas() { ubin(); gambarRingkasan(); }
+/* Nilai kuis tercatat di akun (F65-205): server yang menilai dari jawaban. Sertifikat muncul bila semua modul lulus di akun, bukan dari progres peramban. */
+async function muatAkun() {
+  const el = $("adAkun"); if (!el) return;
+  try {
+    const d = await api("/api/akademi/nilai");
+    el.innerHTML = `<p class="ad-akun-t">${ikon("orang", 16)}<span>${esc(t("ad.akun.tercatat", { a: N(d.lulus), b: N(d.wajib) }))}</span></p>`
+      + (d.sertifikat ? `<a class="jm-tbl jm-tbl-utama" href="${esc(d.sertifikat)}">${ikon("medali", 16)}<span>${esc(t("ad.akun.sertifikat"))}</span></a>` : `<p class="ad-bantu">${ikon("info", 14)}<span>${esc(t("ad.akun.belum"))}</span></p>`)
+      + `<p class="ad-bantu">${ikon("kunci", 14)}<span>${esc(t("ad.akun.pindah"))}</span></p>`;
+  } catch (e) { el.innerHTML = ""; }
+}
 
 /* ---------- kuis ---------- */
 const HURUF = ["A", "B", "C", "D"];
@@ -116,32 +126,35 @@ function bukaKuis(id) {
   if (!dlg.open) dlg.showModal();
   dlg.scrollTop = 0;
 }
-function periksa(m) {
+async function periksa(m) {
   const form = $("adKuis"), jawab = {};
   for (const s of m.kuis) { const c = form.querySelector(`input[name="${CSS.escape(s.id)}"]:checked`); if (c) jawab[s.id] = +c.value; }
-  const pesan = $("adPesan");
+  const pesan = $("adPesan"), tbl = $("adPeriksa");
   if (Object.keys(jawab).length < m.kuis.length) { pesan.hidden = false; pesan.textContent = t("ad.belum_lengkap"); return; }
-  pesan.hidden = true;
-  const r = nilaiKuis(m, jawab, D.lulus_persen);
+  pesan.hidden = true; tbl.disabled = true;
+  /* Server yang menilai: berkas soal tidak memuat jawaban. r = { benar, total, persen, lulus, hasil: {id: bool}, kunci: {id: indeks} | null (hanya bila lulus) }. */
+  let r;
+  try { r = await api("/api/akademi/kuis", { metode: "POST", badan: { modul: m.id, jawaban: jawab } }); }
+  catch (e) { tbl.disabled = false; pesan.hidden = false; pesan.textContent = t("ad.kuis.gagal"); return; }
   const lama = P.kuis[m.id]?.terbaik ?? -1;
   if (r.persen > lama) P.kuis[m.id] = { terbaik: r.persen, waktu: Date.now() };
-  simpan();
+  simpan(); muatAkun();
   for (const s of m.kuis) {
-    const benar = jawab[s.id] === s.a, fb = form.querySelector(`[data-fb="${CSS.escape(s.id)}"]`), href = hrefSumber(s.sumber);
+    const benar = !!r.hasil[s.id], kunci = r.kunci ? r.kunci[s.id] : null, fb = form.querySelector(`[data-fb="${CSS.escape(s.id)}"]`), href = hrefSumber(s.sumber);
     form.querySelectorAll(`input[name="${CSS.escape(s.id)}"]`).forEach((inp) => {
       inp.disabled = true;
-      const lab = inp.closest(".ad-o"), j = +inp.value;
-      lab.classList.toggle("ad-o-benar", j === s.a); lab.classList.toggle("ad-o-salah", j === jawab[s.id] && !benar);
-      lab.querySelector(".ad-o-ik").innerHTML = j === s.a ? ikon("centang", 18) : j === jawab[s.id] ? ikon("silang", 18) : "";
+      const lab = inp.closest(".ad-o"), j = +inp.value, tepat = kunci != null ? j === kunci : j === jawab[s.id] && benar;
+      lab.classList.toggle("ad-o-benar", tepat); lab.classList.toggle("ad-o-salah", j === jawab[s.id] && !benar);
+      lab.querySelector(".ad-o-ik").innerHTML = tepat ? ikon("centang", 18) : j === jawab[s.id] ? ikon("silang", 18) : "";
     });
     fb.hidden = false;
     fb.className = `ad-fb ${benar ? "ad-fb-benar" : "ad-fb-salah"}`;
-    fb.innerHTML = `${ikon(benar ? "centang" : "peringatan", 16)}<p>${esc(t(benar ? "ad.benar" : "ad.salah", { j: HURUF[s.a] }))} <a href="${esc(href)}">${esc(t("ad.sumber_baca", { s: labelSumber(s.sumber) }))}</a></p>`;
+    fb.innerHTML = `${ikon(benar ? "centang" : "peringatan", 16)}<p>${esc(benar ? t("ad.benar") : kunci != null ? t("ad.salah", { j: HURUF[kunci] }) : t("ad.salah_baca"))} <a href="${esc(href)}">${esc(t("ad.sumber_baca", { s: labelSumber(s.sumber) }))}</a></p>`;
   }
   const h = $("adHasil");
   h.hidden = false;
   h.innerHTML = `<span class="jm-pil ${r.lulus ? "jm-pil-ok" : "jm-pil-warn"}">${ikon(r.lulus ? "medali" : "peringatan", 16)}<b>${N(r.persen)}%</b><span>${esc(t("ad.hasil", { a: r.benar, b: r.total }))}</span></span><p>${esc(t(r.lulus ? "ad.lulus" : "ad.belum_lulus", { n: D.lulus_persen }))}</p>`;
-  const tbl = $("adPeriksa");
+  tbl.disabled = false;
   tbl.innerHTML = `${ikon("balik", 16)}<span>${esc(t("ad.kuis.ulang"))}</span>`;
   tbl.type = "button"; tbl.addEventListener("click", () => bukaKuis(m.id), { once: true });
   segarkanKartu(m); nanti(ringkas);
@@ -150,4 +163,5 @@ $("adDlg").addEventListener("click", (e) => { if (e.target.closest("[data-tutup]
 
 rangka();
 ringkas();
+muatAkun();
 document.addEventListener("jm:bahasa", () => location.reload());

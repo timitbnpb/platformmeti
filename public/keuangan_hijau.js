@@ -9,6 +9,7 @@ import { legendaHtml, tabel, celahHtml, n1 } from "/info_hijau.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
 import { uangHtml } from "/inti/uang.js";
 import { logoUrl } from "/penerbit.js";
+import { TANYA, kelompokkan } from "/inti/insentif_cek.js";
 
 const $ = (id) => document.getElementById(id);
 const PENDANAAN = "/direktori?tampil=pendanaan";
@@ -252,6 +253,7 @@ async function mulai() {
   saatBahasa(gambar);
   /* legenda kolom: chrome (aria-pressed) sinkron, grafik digambar ulang sesudah satu bingkai */
   $("kgIsi").addEventListener("click", (e) => {
+    if (icKlik(e)) return;
     const b = e.target.closest(".kg-leg-b"); if (!b) return;
     const k = b.dataset.seri, mati = !HID.has(k);
     if (mati && HID.size >= KEL.length - 1) return;
@@ -279,6 +281,33 @@ function kartuIf(r) {
     ${r.regulasi_id && reg ? `<a class="jm-tbl kg2-reg" href="/regulasi?id=${encodeURIComponent(r.regulasi_id)}">${ikon("regulasi", 16)}${esc(t("kg2.regulasi"))}</a>` : ""}</li>`;
 }
 
+/* ---------- pemeriksa insentif (F65-107): hanya jenis kegiatan (kolom teknologi) dan status berlaku; logika di /inti/insentif_cek.js ---------- */
+const IC = {}, IC_IK = { ya: "centang", cek: "info", tidak: "silang" };
+function icHasilHtml() {
+  const g = kelompokkan(dIf.baris, IC);
+  const dasar = (r) => {
+    const reg = r.regulasi_id && dReg.baris.find((x) => x.id === r.regulasi_id);
+    return reg ? `<a href="/regulasi?id=${encodeURIComponent(r.regulasi_id)}">${esc(r.nomor_aturan)}</a>` : /^https?:\/\//.test(r.sumber_url) ? `<a href="${esc(r.sumber_url)}" target="_blank" rel="noopener noreferrer">${esc(r.nomor_aturan)}</a>` : esc(r.nomor_aturan);
+  };
+  const item = (x) => `<li><b>${esc(x.r.instrumen)}</b><small>${dasar(x.r)}</small><span>${esc(t("ic.al." + x.alasan, { k: x.cocok.map((k) => t("ic.k." + k)).join(", "), tek: x.r.teknologi.join(", ") }))}</span>${x.kelompok === "ya" ? `<span class="ic-blm">${esc(t("ic.belum", { judul: x.r.judul_resmi }))}${x.catatan.length ? " " + esc(t("ic.catatan", { c: x.catatan.join("; ") })) : ""}</span>` : ""}</li>`;
+  return Object.keys(IC_IK).map((k) => `<section class="ic-kol ic-${k}" aria-labelledby="ic-h-${k}"><h3 id="ic-h-${k}">${ikon(IC_IK[k], 18)}<span>${esc(t("ic.g." + k))}</span><b>${num(g[k].length)}</b></h3>${g[k].length ? `<ul>${g[k].map(item).join("")}</ul>` : `<p class="jm-bantu">${esc(t("ic.kosong"))}</p>`}</section>`).join("");
+}
+function icHtml() {
+  const tombol = (k, l, v) => `<button type="button" data-ic="${k}" data-v="${v}" aria-pressed="${IC[k] === v}">${ikon(v ? "centang" : "silang", 16)}<span>${esc(t("ic." + l))}</span></button>`;
+  const tanya = TANYA.map((k) => `<div class="ic-t"><span id="ic-q-${k}">${esc(t("ic.q." + k))}</span><div class="jm-seg ic-seg" role="group" aria-labelledby="ic-q-${k}">${tombol(k, "ya", true)}${tombol(k, "tidak", false)}</div></div>`).join("");
+  return `<p class="jm-bantu ic-cat">${esc(t("ic.batas"))}</p><div class="ic-w"><div class="ic-tanya">${tanya}<button type="button" class="jm-tbl" id="icUlang">${ikon("silang", 16)}<span>${esc(t("ic.ulang"))}</span></button></div><div id="icHasil" class="ic-hasil" aria-live="polite">${icHasilHtml()}</div></div>`;
+}
+/* chrome (aria-pressed) seketika; daftar hasil digambar ulang sesudah satu bingkai */
+function icKlik(e) {
+  const q = e.target.closest("[data-ic]"), ulang = !q && e.target.closest("#icUlang");
+  if (!q && !ulang) return false;
+  if (q) { const k = q.dataset.ic, v = q.dataset.v === "true"; if (IC[k] === v) delete IC[k]; else IC[k] = v; }
+  else for (const k of TANYA) delete IC[k];
+  for (const b of $("kgIsi").querySelectorAll("[data-ic]")) b.setAttribute("aria-pressed", String(IC[b.dataset.ic] === (b.dataset.v === "true")));
+  nanti(() => { const h = $("icHasil"); if (h) h.innerHTML = icHasilHtml(); });
+  return true;
+}
+
 function rangka2() {
   const B = dIf.baris, ber = B.filter((r) => r.status_berlaku === "berlaku").length, TB = dTk.baris, hj = TB.filter((r) => adaKls(r.klasifikasi_hijau_eo1)).length, kr = dTk.meta.kerangka;
   const ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: false }), tingkat: "h2" });
@@ -286,6 +315,7 @@ function rangka2() {
   const leg = (kunci, arr, kls) => `<div class="kg2-lg"><small>${esc(t(kunci))}</small><span class="kg2-lgp">${arr.map((x) => `<span class="jm-pil-tek kg-pil ${kls}">${esc(x)}</span>`).join("")}</span></div>`;
   const hasil = (kr.hasil_penilaian || []).map((x) => `<span class="jm-pil-tek kg-pil ${/^Hijau/.test(x) ? "kg2-h" : /^Transisi/.test(x) ? "kg2-t" : "kg2-0"}">${esc(x)}</span>`).join("");
   $("kgIsi").insertAdjacentHTML("beforeend",
+    ex({ id: "insentif-cek", ikon: "centang", topik: t("ic.ey"), judulHtml: esc(t("ic.j")), subHtml: esc(t("ic.sub")), isiHtml: icHtml() }) +
     ex({ id: "insentif", ikon: "kalkulator", topik: t("kg2.ey.insentif"), judulHtml: hlHtml("kg2.t.insentif", String(B.length), { n: ber }), subHtml: esc(t("kg2.s.insentif")),
       isiHtml: `<ul class="kg2-kartu">${urut.map(kartuIf).join("")}</ul>${srcDari(dIf, t("kg2.cat.insentif"))}` }) +
     ex({ id: "taksonomi", ikon: "perisai", topik: t("kg2.ey.taks"), judulHtml: hlHtml("kg2.t.taks", String(TB.length), { h: hj }), subHtml: esc(t("kg2.s.taks")),

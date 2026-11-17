@@ -97,6 +97,9 @@ async function mulai() {
   gambar();
   saatBahasa(gambar);
   pasangDetail($("isi"));
+  // formulir minat listrik hijau korporat + agregat per provinsi (F65-207)
+  $("isi").insertAdjacentHTML("afterend", '<div id="krHijauW"></div>');
+  import("/kiriman.js").then((m) => m.pasangHijau($("krHijauW"))).catch(() => {});
   $("isi").addEventListener("error", (e) => { const im = e.target; if (im.tagName === "IMG" && im.dataset.ini !== undefined && im.closest(".km-lg")) im.replaceWith(document.createTextNode(im.dataset.ini)); }, true);
   let w = innerWidth;
   addEventListener("resize", debounce(() => { if (Math.abs(innerWidth - w) > 20) { w = innerWidth; nanti(bagan); } }, 200));

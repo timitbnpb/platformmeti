@@ -11,7 +11,7 @@ const isi = $("lg-isi");
 $("lg-sos").innerHTML = sosmedHtml();
 const MINAT = ["kebijakan", "proyek", "acara", "kajian", "lowongan"];
 const RE_SUREL = /^[^\s@]{1,64}@[^\s@.]+(\.[^\s@.]+)+$/;
-const RE_TOKEN = /^[0-9a-f]{64}$/;
+const RE_TOKEN = /^([0-9a-f]{64}|p\d{1,9}\.[0-9a-f]{32})$/; // 64 hex = berhenti newsletter; p<id>.<32 hex> = berhenti pengingat hal yang diikuti (F65-215)
 
 const tx = (kunci) => `data-i18n="${kunci}"`;
 const pesan = (jenis, teks) => { const p = $("lg-pesan"); if (p) p.innerHTML = teks ? pesanHtml(jenis, teks) : ""; };

@@ -17,7 +17,8 @@ export function panelSurel(panel) {
   panel.innerHTML = `${kepalaTab("surel", "sm.ad.ey", "sm.ad.j", "sm.ad.d")}
     <div class="jm-bar jm-adm-bar1"><select data-ikon="status" class="jm-pilih" id="sStatus" aria-label="${esc(t("kor.f.status"))}">${STATUS.map((x) => `<option value="${x}"${x === S.status ? " selected" : ""}>${esc(t("sm.status." + x))}</option>`).join("")}</select></div>
     <div id="sDaftar" aria-live="polite"></div><div class="jm-hal" id="sHal"></div>
-    <dialog class="jm-dlg" id="sTinjau" aria-labelledby="sTinjauJ"></dialog>`;
+    <dialog class="jm-dlg" id="sTinjau" aria-labelledby="sTinjauJ"></dialog><section id="sKeluar" class="ask" aria-live="polite"></section>`;
+  import("/admin_surel_keluar.js").then((m) => m.pasangSurelKeluar(panel.querySelector("#sKeluar"))).catch(() => {}); // antrean surel keluar dan draf buletin (F65-215, 216)
   const $ = (i) => panel.querySelector("#" + i), dlg = $("sTinjau");
   panel.addEventListener("change", (e) => { if (e.target.id === "sStatus") { S.status = e.target.value; S.hal = 1; muat(); } });
   panel.addEventListener("click", (e) => {

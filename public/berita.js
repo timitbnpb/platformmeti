@@ -12,6 +12,7 @@ import { IKON_TEK as IKT, pilTek } from "/inti/ikon_tek.js";
 import { LOGO_ORG } from "/beranda_data.js";
 import { petaHtml, pasangPeta, agregat } from "/berita_peta.js";
 import { gambarAnalisis } from "/berita_analisis.js";
+import { rekapHarian } from "/berita_kamus.js";
 
 const LANJUT = 15; // kartu per halaman (3 baris x 5)
 const HARI = 86400000;
@@ -100,6 +101,17 @@ function gambarRingkas() {
   h += ex({ id: "ex-media", ikon: "jenis", topik: t("brt.ex.med.ey"), judulHtml: hlHtml("brt.ex.med.j", medTop[0][0]), subHtml: esc(t("brt.ex.med.sub")),
     isiHtml: batangMendatar(medTop.map(([k, v]) => [k, v, k, { ikon: logoMedia(k, favMedia(k)) }]), "media") });
   document.getElementById("r-lain").innerHTML = h;
+}
+/* Rekap judul harian (F65-305): judul hari terbaru di data, dikelompokkan menurut kamus isu. Tanpa AI, tanpa kalimat buatan; tiap judul menaut ke sumbernya.
+   Tanpa hari yang punya cukup judul, kartu tidak tampil. */
+function gambarRekap() {
+  const r = rekapHarian(B), lama = document.getElementById("rekap");
+  if (!r) { lama?.remove(); return; }
+  const wadah = lama || (document.getElementById("analisis").insertAdjacentHTML("beforebegin", `<section class="brt-bagian" id="rekap"><div class="jm-wadah"></div></section>`), document.getElementById("rekap"));
+  const butir = (x) => { const u = urlAman(x.url); return `<li>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(x.judul)}</a>` : `<span>${esc(x.judul)}</span>`}<small>${esc(x.media)}</small></li>`; };
+  wadah.firstElementChild.innerHTML = exHtml({ id: "ex-rekap", ikon: "daftar", topik: t("brt.rk.ey"), tingkat: "h2", judulHtml: hlHtml("brt.rk.j", angka(r.n), { tgl: tanggal(r.tanggal), media: angka(r.media) }),
+    subHtml: `<span class="jm-pil">${ikon("info", 14)}${esc(t("brt.rk.pil"))}</span> ${esc(t("brt.rk.sub"))}`, aksiHtml: sumberHtml(`${esc(t("brt.sumber"))} ${esc(tanggal(DIBANGUN))}.`),
+    isiHtml: `<div class="brt-rk">${r.kelompok.map((k) => `<section><h3>${esc(k.id === "lain" ? t("brt.rk.lain") : t("brt.an.i." + k.id))} <span class="jm-pil">${esc(angka(k.n))}</span></h3><ul>${k.judul.map(butir).join("")}</ul>${k.lagi ? `<p class="jm-bantu">${esc(t("brt.rk.lagi", { n: angka(k.lagi) }))}</p>` : ""}</section>`).join("")}</div>` });
 }
 function gambarAngka() {
   khUbin("khUbin", [["berita", B.length, "brt.n.berita"], ["jenis", new Set(B.map((r) => r.media)).size, "brt.n.media"], ["tahun", B.filter((r) => umur(r.terbit) <= 30).length, "brt.n.30"], ["video", V.length, "brt.n.video"]].map(([ik, v, k]) => ({ ikon: ik, nilai: angka(v), label: t(k) })));
@@ -218,7 +230,7 @@ async function mulai() {
   if (p.has("teknologi")) S.tek = p.get("teknologi");
   if (S.tab !== "video") S.tab = "berita";
   gambarAngka(); gambarBagian(); gambarRingkas(); gambarTab(); gambarSaring(); gambarIsi();
-  gambarPeta();
+  gambarPeta(); gambarRekap();
   gambarAnalisis(document.getElementById("analisis"), { B, FOTO, dibangun: DIBANGUN });
   Promise.all([muat("organisasi"), muat("program").catch(() => ({ baris: [] })), muat("regulasi").catch(() => ({ baris: [] }))]).then(([o, p, r]) => { ORG = new Map(o.baris.map((x) => [x.id, x.singkatan || x.nama])); PRG = p.baris; REG = r.baris; gambarBagian(); gambarRingkas(); gambarIsi(); }).catch(() => {});
 }

@@ -71,6 +71,22 @@ export const MATRIKS = {
   surel_minta:     ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 8 Nov 2026: permintaan alamat @metiires.or.id; ajukan/lihat miliknya = akun masuk; antrean + putusan hanya admin, super (dijaga gerbangAdm)
   konsultasi_putus: ["-", "-", "T", "T", "-", "T", "T"], // moderasi + keputusan + kelola naskah: pengurus, kurator, admin, super
   keyakinan:       ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 8 Nov 2026: survei triwulanan keyakinan bisnis EBT; akun masuk menjawab/membaca agregat (n >= 5); jawaban satu per akun per periode
+  akademi_nilai:   ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-205): nilai kuis akademi dan kuis rekaman milik akun; dihitung server; bank soal rekaman diisi admin, super
+  proyek_foto:     ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-206): foto tonggak proyek; kirim hanya akun berklaim organisasi (dijaga fungsi); yang lain hanya melihat yang disetujui; tinjau admin, super
+  permintaan_hijau: ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-207): minat listrik hijau; akun hanya miliknya; publik hanya agregat per provinsi (n >= 3); tinjau admin, super
+  proyek_dana:     ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-208): kebutuhan dana proyek; kirim hanya akun berklaim organisasi; yang lain hanya melihat yang disetujui; tinjau admin, super
+  kerja_minat:     ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-212): minat lowongan tanpa CV; akun hanya miliknya; peminat hanya terlihat pemasang lowongan itu dan admin, super (dijaga fungsi)
+  mentor:          ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-211): pendaftaran mentor; yang lain hanya melihat yang disetujui; tinjau admin, super
+  mentor_minta:    ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-211): permintaan mentor; akun hanya miliknya; mentor yang dituju hanya melihat yang disetujui admin; tinjau admin, super
+  lencana:         ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-213): lencana verifikasi organisasi; kirim hanya akun berklaim organisasi; yang lain hanya melihat yang disetujui; tinjau admin, super
+  laporan_warga:   ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-214): laporan warga atas proyek; akun hanya miliknya; yang lain hanya melihat isi yang disetujui, tanpa nama pelapor; tinjau admin, super
+  surel_keluar:    ["-", "-", "-", "-", "-", "T", "T"], // 15 Nov 2026 (F65-215, 216): antrean surel keluar dan draf buletin; hanya admin dan super; cron menulis lewat jalur sistem; tidak ada pengiriman (K19)
+  minat_unit:      ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-303): papan minat REC dan karbon, tanpa transaksi; akun hanya miliknya; yang lain hanya melihat yang disetujui, nama organisasi hanya bila pengirim memilih; tinjau admin, super
+  event_stan:      ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-302): minat stan pameran per acara, tanpa bayar; akun hanya miliknya; tinjau admin, super
+  cek_fakta:       ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-306): klaim untuk dicek; akun hanya miliknya; yang lain hanya melihat yang sudah diputus; putusan hanya admin, super
+  hukum_ringkas:   ["-", "B", "B", "B", "B", "T", "T"], // 15 Nov 2026 (F65-304): ringkasan mesin per peraturan (tembolok); akun masuk membaca; dibuat hanya admin, super (memanggil AI, berbatas laju dan plafon harian)
+  iuran_bayar:     ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-301): pembayaran perpanjangan iuran; akun hanya miliknya; jumlah ditentukan server; tinjau bukti hanya admin, super; lunas via Midtrans lewat jalur sistem
+  forum:           ["-", "T daftar", "T daftar", "T daftar", "T daftar", "T", "T"], // 15 Nov 2026 (F65-210): forum per bidang; akun masuk membaca yang tidak disembunyikan, menulis utas, balasan, laporan; sembunyi hanya admin, super (dijaga gerbangAdm)
 };
 export const AKSI = ["baca", "tambah", "ubah", "hapus", "kirim", "cabut", "tinjau", "hapus_keras"];
 
@@ -976,10 +992,117 @@ export async function eventHitung(env, akun) {
 export async function eventPeserta(env, akun, eventId, { unduh = false } = {}) {
   const p = peranEfektif(akun);
   if (!["admin", "super"].includes(p)) throw tolak("event: peserta hanya untuk admin");
-  const r = await env.DB.prepare(
-    "SELECT d.id, d.akun_id, a.nama, a.surel, d.jumlah, d.instansi, d.telepon, d.catatan, d.status, d.waktu FROM event_daftar d JOIN akun a ON a.id = d.akun_id WHERE d.event_id = ? ORDER BY d.id").bind(String(eventId)).all();
+  const KOL = "d.id, d.akun_id, a.nama, a.surel, d.jumlah, d.instansi, d.telepon, d.catatan, d.status, d.waktu";
+  // hadir_pada ikut bila migrasi 0038 sudah diterapkan; sebelum itu daftar peserta tetap jalan tanpa kolom hadir.
+  const r = (await tanpaTabel(() => env.DB.prepare(`SELECT ${KOL}, h.hadir_pada FROM event_daftar d JOIN akun a ON a.id = d.akun_id LEFT JOIN event_hadir h ON h.daftar_id = d.id WHERE d.event_id = ? ORDER BY d.id`).bind(String(eventId)).all()))
+    ?? (await env.DB.prepare(`SELECT ${KOL} FROM event_daftar d JOIN akun a ON a.id = d.akun_id WHERE d.event_id = ? ORDER BY d.id`).bind(String(eventId)).all());
   if (unduh) await jejakTulis(env, { siapa: akun.id, peran: p, aksi: "tinjau", tabel: "event_daftar", barisId: String(eventId).slice(0, 80) });
   return r.results;
+}
+
+/* ============ event: tiket, hadir, tutup, sertifikat, survei, laporan (0038_event_hadir.sql; F65-201..204) ============ */
+// Tabel baru tidak menambah jenis data: tiket/hadir/survei milik peserta mengikuti sel `event_daftar` (tiap akun hanya miliknya),
+// pencatatan hadir, penutupan, agregat, dan laporan mengikuti sel `event_atur` (tulis hanya admin dan super). null = migrasi belum diterapkan.
+export const BUTIR_SURVEI_EVENT = ["puas", "relevan", "selenggara", "minat"];
+const KOL_SURVEI_EVENT = BUTIR_SURVEI_EVENT.map((k) => "k_" + k);
+const gEventAdm = (akun) => { const r = boleh(akun?.peran, "ubah", "event_atur", undefined, akun); if (!r.ok) throw tolak(r.alasan); };
+const gEventMasuk = (akun) => { if (peranEfektif(akun) === "publik" || !akun?.id) throw tolak("event: harus masuk"); };
+
+// Pendaftaran milik akun ini di satu acara + status hadir, penutupan, dan sudah-survei. false = tidak terdaftar.
+export async function eventTiketSaya(env, akun, eventId) {
+  gEventMasuk(akun);
+  return tanpaTabel(async () => (await env.DB.prepare(
+    `SELECT d.id, d.event_id, d.status, d.waktu, d.jumlah, h.hadir_pada, t.ditutup,
+       EXISTS (SELECT 1 FROM event_survei s WHERE s.event_id = d.event_id AND s.akun_id = d.akun_id) AS sudah_survei
+     FROM event_daftar d LEFT JOIN event_hadir h ON h.daftar_id = d.id LEFT JOIN event_tutup t ON t.event_id = d.event_id
+     WHERE d.event_id = ? AND d.akun_id = ?`).bind(String(eventId), akun.id).first()) ?? false);
+}
+
+// Baris pendaftaran untuk MEMERIKSA TOKEN (tiket oleh admin, sertifikat publik). Tanpa penjaga peran karena pemanggil belum tentu punya sesi:
+// rute WAJIB membandingkan token (waktu tetap) sebelum memakai satu kolom pun, dan hanya meneruskan nama peserta. false = tidak ada.
+export async function eventDaftarUntukToken(env, daftarId) {
+  return tanpaTabel(async () => (await env.DB.prepare(
+    `SELECT d.id, d.event_id, d.status, d.waktu, d.jumlah, a.nama, h.hadir_pada, t.ditutup
+     FROM event_daftar d JOIN akun a ON a.id = d.akun_id LEFT JOIN event_hadir h ON h.daftar_id = d.id LEFT JOIN event_tutup t ON t.event_id = d.event_id
+     WHERE d.id = ?`).bind(Number(daftarId)).first()) ?? false);
+}
+
+// Catat hadir SEKALI: INSERT OR IGNORE pada PRIMARY KEY (atomik, juga saat dua pindai bersamaan). Pindai kedua mengembalikan jam pindai pertama.
+// false = pendaftaran tidak aktif atau bukan milik acara itu (ditolak trigger event_hadir_sah).
+export async function eventHadirCatat(env, akun, daftarId, eventId) {
+  gEventAdm(akun);
+  return tanpaTabel(async () => {
+    let ins;
+    try { ins = await env.DB.prepare("INSERT OR IGNORE INTO event_hadir (daftar_id, event_id, oleh) VALUES (?, ?, ?)").bind(Number(daftarId), String(eventId), akun.id).run(); }
+    catch (e) { if (/tidak boleh/i.test(String(e?.message) + String(e?.cause?.message))) return false; throw terjemah(e); }
+    const baru = ins.meta.changes > 0;
+    const r = await env.DB.prepare("SELECT hadir_pada FROM event_hadir WHERE daftar_id = ?").bind(Number(daftarId)).first();
+    if (!r) return false;
+    if (baru) await jejakAdm(env, akun, "tinjau", "event_hadir", daftarId, "hadir " + String(eventId)).run();
+    return { baru, hadir_pada: r.hadir_pada };
+  });
+}
+
+// Tutup (atau buka lagi) acara: sertifikat dan survei terbuka hanya selama baris ini ada.
+export async function eventTutupAtur(env, akun, eventId, tutup) {
+  gEventAdm(akun);
+  return tanpaTabel(async () => {
+    const id = String(eventId);
+    await env.DB.batch([
+      tutup ? env.DB.prepare("INSERT OR IGNORE INTO event_tutup (event_id, oleh) VALUES (?, ?)").bind(id, akun.id) : env.DB.prepare("DELETE FROM event_tutup WHERE event_id = ?").bind(id),
+      jejakAdm(env, akun, "ubah", "event_tutup", id, tutup ? "acara ditutup" : "acara dibuka lagi"),
+    ]);
+    const r = await env.DB.prepare("SELECT ditutup FROM event_tutup WHERE event_id = ?").bind(id).first();
+    return { ditutup: r?.ditutup ?? null };
+  });
+}
+
+/** Murni: { puas, relevan, selenggara, minat } bulat 1-5, tanpa kunci lain; selain itu galat 422. */
+export function periksaSurveiEvent(d) {
+  if (!d || typeof d !== "object" || Array.isArray(d)) throw salah("jawaban tidak sah");
+  const kunci = Object.keys(d);
+  if (kunci.length !== BUTIR_SURVEI_EVENT.length || kunci.some((k) => !BUTIR_SURVEI_EVENT.includes(k))) throw salah("butir tidak sah");
+  for (const k of BUTIR_SURVEI_EVENT) if (!Number.isInteger(d[k]) || d[k] < 1 || d[k] > 5) throw salah("nilai butir tidak sah");
+  return d;
+}
+// Simpan jawaban survei akun ini (akun dari sesi). Ganda = 409 (PRIMARY KEY); belum hadir atau acara belum ditutup = 409 (trigger). Jejak tanpa nilai.
+export async function eventSurveiJawab(env, akun, eventId, d) {
+  gEventMasuk(akun);
+  periksaSurveiEvent(d);
+  return tanpaTabel(async () => {
+    try {
+      await env.DB.batch([
+        env.DB.prepare(`INSERT INTO event_survei (event_id, akun_id, ${KOL_SURVEI_EVENT.join(", ")}) VALUES (?, ?, ?, ?, ?, ?)`).bind(String(eventId), akun.id, ...BUTIR_SURVEI_EVENT.map((k) => d[k])),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, 'kirim', 'event_survei', ?, ?)")
+          .bind(akun.id, akun.peran, String(eventId).slice(0, 80), JSON.stringify({ ringkas: "jawab survei acara" })),
+      ]);
+      return { ok: true };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+// Laporan satu acara untuk admin: pendaftaran, hadir, agregat survei, dan kunjungan. Tidak ada baris per orang.
+// Survei dengan n < N_MIN_KEYAKINAN hanya mengembalikan n. Kunjungan: statistik hanya mencatat SEMUA halaman /event/* bersama
+// (lalin.jalurBersih membuang slug), jadi angkanya untuk seluruh acara, bukan acara ini; klik ke sponsor tidak pernah dicatat.
+export async function eventLaporan(env, akun, eventId, sekarang = Date.now()) {
+  gEventAdm(akun);
+  return tanpaTabel(async () => {
+    const id = String(eventId);
+    const [d, h, t, s] = await env.DB.batch([
+      env.DB.prepare("SELECT count(*) AS pendaftaran, coalesce(sum(jumlah), 0) AS orang FROM event_daftar WHERE event_id = ? AND status = 'terdaftar'").bind(id),
+      env.DB.prepare("SELECT count(*) AS n FROM event_hadir WHERE event_id = ?").bind(id),
+      env.DB.prepare("SELECT ditutup FROM event_tutup WHERE event_id = ?").bind(id),
+      env.DB.prepare(`SELECT count(*) AS n, ${KOL_SURVEI_EVENT.map((c) => `AVG(${c}) AS ${c}`).join(", ")} FROM event_survei WHERE event_id = ?`).bind(id),
+    ]);
+    const sv = s.results[0], n = sv?.n ?? 0;
+    const dari = tglLalin(sekarang - 29 * HARI_MS);
+    const k = await tanpaTabel(async () => (await env.DB.prepare("SELECT coalesce(sum(n), 0) AS n FROM lalin WHERE dim = 'halaman' AND kunci = '/event/*' AND tgl >= ?").bind(dari).first()).n);
+    return {
+      pendaftaran: d.results[0].pendaftaran, orang: d.results[0].orang, hadir: h.results[0].n, ditutup: t.results[0]?.ditutup ?? null,
+      survei: n < N_MIN_KEYAKINAN ? { n, tersembunyi: true } : { n, tersembunyi: false, rata: Object.fromEntries(BUTIR_SURVEI_EVENT.map((b) => [b, Math.round(sv["k_" + b] * 10) / 10])) },
+      kunjungan_semua_acara: k == null ? null : { n: k, dari },
+    };
+  });
 }
 
 /* ========================= METI Wilayah 0015 ========================= */
@@ -1536,13 +1659,14 @@ export async function profilRiwayatTambah(env, akun, jenis, isi) {
   gerbangMasuk(akun);
   if (!JENIS_RIWAYAT.includes(jenis)) throw salah("jenis riwayat tidak sah");
   return tanpaTabel(async () => {
-    const n = await env.DB.prepare("SELECT COUNT(*) AS n FROM profil_riwayat WHERE akun_id = ? AND jenis = ?").bind(akun.id, jenis).first();
-    if (n.n >= MAKS_RIWAYAT) throw mk("konflik", 409, "riwayat penuh");
     try {
+      // Batas dan sisip dalam SATU pernyataan (tinjauan keamanan 15 Nov 2026): dua permintaan bersamaan tidak bisa melewati MAKS_RIWAYAT.
       const [r] = await env.DB.batch([
-        env.DB.prepare("INSERT INTO profil_riwayat (akun_id, jenis, isi, urut) VALUES (?, ?, ?, (SELECT COALESCE(MAX(urut), 0) + 1 FROM profil_riwayat WHERE akun_id = ? AND jenis = ?))").bind(akun.id, jenis, JSON.stringify(isi), akun.id, jenis),
-        jejakAdm(env, akun, "tambah", "profil_riwayat", akun.id, "tambah riwayat " + jenis),
+        env.DB.prepare(`INSERT INTO profil_riwayat (akun_id, jenis, isi, urut) SELECT ?, ?, ?, (SELECT COALESCE(MAX(urut), 0) + 1 FROM profil_riwayat WHERE akun_id = ? AND jenis = ?)
+          WHERE (SELECT COUNT(*) FROM profil_riwayat WHERE akun_id = ? AND jenis = ?) < ${MAKS_RIWAYAT}`).bind(akun.id, jenis, JSON.stringify(isi), akun.id, jenis, akun.id, jenis),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tambah', 'profil_riwayat', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(akun.id), JSON.stringify({ ringkas: "tambah riwayat " + jenis })),
       ]);
+      if (!r.meta.changes) throw mk("konflik", 409, "riwayat penuh");
       return { ada: true, id: r.meta.last_row_id };
     } catch (e) { throw terjemah(e); }
   });
@@ -1830,7 +1954,10 @@ export async function ikutiDaftar(env, akun) {
       env.DB.prepare("SELECT jenis, ref, dibuat FROM ikuti WHERE akun_id = ? ORDER BY dibuat DESC, ref LIMIT 200").bind(akun.id),
       env.DB.prepare("SELECT waktu FROM ikuti_lihat WHERE akun_id = ?").bind(akun.id),
     ]);
-    return { baris: b.results, lihat: l.results[0]?.waktu ?? 0 };
+    // pilihan pengingat surel per hal (0041); tabel belum ada = semua mati
+    const pilih = await tanpaTabel(async () => (await env.DB.prepare("SELECT jenis, ref FROM ikuti_surel WHERE akun_id = ?").bind(akun.id).all()).results);
+    const hidup = new Set((pilih ?? []).map((x) => x.jenis + "|" + x.ref));
+    return { baris: b.results.map((x) => ({ ...x, surel: hidup.has(x.jenis + "|" + x.ref) })), lihat: l.results[0]?.waktu ?? 0 };
   });
 }
 
@@ -1847,8 +1974,23 @@ export async function ikutiSet(env, akun, jenis, ref, ikut) {
       const r = await (ikut
         ? env.DB.prepare("INSERT INTO ikuti (akun_id, jenis, ref) VALUES (?, ?, ?) ON CONFLICT DO NOTHING")
         : env.DB.prepare("DELETE FROM ikuti WHERE akun_id = ? AND jenis = ? AND ref = ?")).bind(akun.id, jenis, ref).run();
+      if (!ikut) await tanpaTabel(() => env.DB.prepare("DELETE FROM ikuti_surel WHERE akun_id = ? AND jenis = ? AND ref = ?").bind(akun.id, jenis, ref).run()); // berhenti mengikuti = pengingatnya ikut mati
       return { ubah: r.meta.changes };
     } catch (e) { throw terjemah(e); }
+  });
+}
+
+// Pilihan "kirimi saya surel" untuk SATU hal yang sedang diikuti (F65-215). Bawaan mati; hanya bisa dinyalakan untuk hal yang benar-benar diikuti akun ini.
+export async function ikutiSurelSet(env, akun, jenis, ref, aktif) {
+  gerbangMasuk(akun);
+  sahIkuti(jenis, ref);
+  if (typeof aktif !== "boolean") throw salah("pilihan tidak sah");
+  return tanpaTabel(async () => {
+    const r = await (aktif
+      ? env.DB.prepare("INSERT OR IGNORE INTO ikuti_surel (akun_id, jenis, ref) SELECT akun_id, jenis, ref FROM ikuti WHERE akun_id = ? AND jenis = ? AND ref = ?")
+      : env.DB.prepare("DELETE FROM ikuti_surel WHERE akun_id = ? AND jenis = ? AND ref = ?")).bind(akun.id, jenis, ref).run();
+    const ada = aktif ? !!(await env.DB.prepare("SELECT 1 AS x FROM ikuti_surel WHERE akun_id = ? AND jenis = ? AND ref = ?").bind(akun.id, jenis, ref).first()) : true;
+    return { ubah: r.meta.changes, ada };
   });
 }
 
@@ -3141,3 +3283,692 @@ export async function roadmapKomentarSembunyi(env, akun, id) {
     return { ubah: r.meta.changes > 0 };
   });
 }
+
+/* ===================== Akademi di akun dan kiriman yang ditinjau (0039_kiriman.sql, F65-205..208) ===================== */
+const gDaftar = (akun, jenis, aksi = "tambah") => { const r = boleh(akun?.peran, aksi, jenis, undefined, akun); if (!r.ok) throw tolak(r.alasan); };
+const RE_MODUL = /^[A-Za-z0-9:_-]{1,80}$/, RE_REKAMAN = /^[A-Za-z0-9_-]{1,40}$/, RE_REF_KIRIM = /^[A-Za-z0-9_-]{2,60}$/;
+
+// ---- nilai kuis (F65-205). persen dan lulus dihitung RUTE dari jawaban terhadap bank soal; di sini hanya disimpan yang terbaik.
+export async function akademiNilaiSaya(env, akun) {
+  gDaftar(akun, "akademi_nilai", "baca");
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT modul, persen, lulus, diubah FROM akademi_nilai WHERE akun_id = ? ORDER BY modul").bind(akun.id).all()).results);
+}
+export async function akademiNilaiCatat(env, akun, modul, persen, lulus) {
+  gDaftar(akun, "akademi_nilai");
+  if (!RE_MODUL.test(String(modul)) || !Number.isInteger(persen) || persen < 0 || persen > 100) throw salah("nilai tidak sah");
+  return tanpaTabel(async () => {
+    try {
+      await env.DB.batch([
+        env.DB.prepare(`INSERT INTO akademi_nilai (akun_id, modul, persen, lulus) VALUES (?, ?, ?, ?)
+          ON CONFLICT (akun_id, modul) DO UPDATE SET persen = excluded.persen, lulus = excluded.lulus, diubah = unixepoch() WHERE excluded.persen > akademi_nilai.persen`).bind(akun.id, modul, persen, lulus ? 1 : 0),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, 'kirim', 'akademi_nilai', ?, ?)").bind(akun.id, akun.peran, modul, JSON.stringify({ ringkas: "kuis " + modul })),
+      ]);
+      return { ok: true };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// Untuk verifikasi sertifikat publik (tanpa sesi; rute sudah memeriksa token): nama akun aktif dan nilai modul yang diminta. null = tabel belum ada; undefined = akun tak ada.
+export async function akademiUntukSertifikat(env, akunId, modulWajib) {
+  if (!RE_ID.test(String(akunId)) || !modulWajib.length || !modulWajib.every((m) => RE_MODUL.test(m))) return undefined;
+  return tanpaTabel(async () => {
+    const a = await env.DB.prepare("SELECT id, nama, dibuat FROM akun WHERE id = ? AND status = 'aktif'").bind(Number(akunId)).first();
+    if (!a) return undefined;
+    const r = (await env.DB.prepare(`SELECT modul, diubah FROM akademi_nilai WHERE akun_id = ? AND lulus = 1 AND modul IN (${modulWajib.map(() => "?").join(",")})`).bind(a.id, ...modulWajib).all()).results;
+    return { id: a.id, nama: a.nama, dibuat: a.dibuat, lulus: r.length, selesai: r.length ? Math.max(...r.map((x) => x.diubah)) : null };
+  });
+}
+
+// ---- bank soal per rekaman. soal: [{ q, o: [2..5 teks], a: indeks }], 1..10 butir; null atau [] = hapus kuis rekaman itu.
+export function periksaSoalKuis(soal) {
+  if (!Array.isArray(soal) || soal.length > 10) throw salah("soal tidak sah");
+  return soal.map((x) => {
+    if (!x || typeof x !== "object" || Object.keys(x).some((k) => !["q", "o", "a"].includes(k))) throw salah("soal tidak sah");
+    const tk = (v, maks) => { if (typeof v !== "string") throw salah("soal tidak sah"); const z = v.replace(/\s+/g, " ").trim(); if (z.length < 1 || z.length > maks || /[\u0000-\u001f\u007f]/.test(z)) throw salah("soal tidak sah"); return z; };
+    if (!Array.isArray(x.o) || x.o.length < 2 || x.o.length > 5 || !Number.isInteger(x.a) || x.a < 0 || x.a >= x.o.length) throw salah("soal tidak sah");
+    return { q: tk(x.q, 300), o: x.o.map((o) => tk(o, 200)), a: x.a };
+  });
+}
+// kunci = true menyertakan jawaban benar (hanya untuk admin dan untuk penilaian di rute); tanpa itu hanya q dan o.
+export async function kuisRekamanBaca(env, akun, rekamanId, { kunci = false } = {}) {
+  if (kunci) gerbangAdm(akun); else gDaftar(akun, "akademi_nilai", "baca");
+  if (!RE_REKAMAN.test(String(rekamanId))) throw salah("rekaman tidak sah");
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT soal, diubah FROM kuis_rekaman WHERE rekaman_id = ?").bind(rekamanId).first();
+    if (!r) return { soal: [] };
+    const soal = JSON.parse(r.soal);
+    return { soal: kunci ? soal : soal.map(({ q, o }) => ({ q, o })), diubah: r.diubah };
+  });
+}
+// Penilaian: satu-satunya jalan non-admin menyentuh kunci jawaban; mengembalikan { benar, total, hasil, kunci } atau { total: 0 } (rute hanya meneruskan kunci bila lulus) bila rekaman tanpa kuis.
+export async function kuisRekamanNilai(env, akun, rekamanId, jawaban) {
+  gDaftar(akun, "akademi_nilai");
+  if (!RE_REKAMAN.test(String(rekamanId)) || !Array.isArray(jawaban) || jawaban.length > 10 || jawaban.some((j) => !Number.isInteger(j) || j < 0 || j > 4)) throw salah("jawaban tidak sah");
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT soal FROM kuis_rekaman WHERE rekaman_id = ?").bind(rekamanId).first();
+    if (!r) return { total: 0 };
+    const soal = JSON.parse(r.soal);
+    if (jawaban.length !== soal.length) throw salah("jumlah jawaban tidak sama dengan jumlah soal");
+    const hasil = soal.map((x, i) => x.a === jawaban[i]);
+    return { benar: hasil.filter(Boolean).length, total: soal.length, hasil, kunci: soal.map((x) => x.a) };
+  });
+}
+export async function kuisRekamanSimpan(env, akun, rekamanId, soal) {
+  gerbangAdm(akun);
+  if (!RE_REKAMAN.test(String(rekamanId))) throw salah("rekaman tidak sah");
+  const bersih = periksaSoalKuis(soal ?? []);
+  return tanpaTabel(async () => {
+    const jej = env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) VALUES (?, ?, 'ubah', 'kuis_rekaman', ?, ?)").bind(akun.id, akun.peran, rekamanId, JSON.stringify({ ringkas: `kuis rekaman ${rekamanId}: ${bersih.length} soal` }));
+    try {
+      await env.DB.batch([bersih.length
+        ? env.DB.prepare("INSERT INTO kuis_rekaman (rekaman_id, soal, oleh) VALUES (?, ?, ?) ON CONFLICT (rekaman_id) DO UPDATE SET soal = excluded.soal, oleh = excluded.oleh, diubah = unixepoch()").bind(rekamanId, JSON.stringify(bersih), akun.id)
+        : env.DB.prepare("DELETE FROM kuis_rekaman WHERE rekaman_id = ?").bind(rekamanId), jej]);
+      return { soal: bersih.length };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+// ---- tiga kiriman yang ditinjau admin: satu alur (menunggu -> disetujui | ditolak; pengirim boleh menarik). Nama tabel dan kolom HANYA dari peta tetap ini.
+const KIRIMAN = {
+  foto:  { tabel: "proyek_foto", kolom: ["organisasi_id", "proyek_id", "kunci", "tipe", "ukuran", "keterangan"], lihat: "id, organisasi_id, proyek_id, keterangan, status, alasan, dibuat, diputus_pada", klaim: true, batas: true },
+  hijau: { tabel: "permintaan_hijau", kolom: ["perusahaan", "prov", "mwh_tahun", "tahun_mulai", "catatan"], lihat: "id, perusahaan, prov, mwh_tahun, tahun_mulai, catatan, status, alasan, dibuat, diputus_pada", klaim: false },
+  dana:  { tabel: "proyek_dana", kolom: ["organisasi_id", "proyek_id", "jumlah", "mata_uang", "jenis", "uraian"], lihat: "id, organisasi_id, proyek_id, jumlah, mata_uang, jenis, uraian, status, alasan, dibuat, diputus_pada", klaim: true },
+  // F65-211 (0040): pendaftaran mentor dan permintaan mentor memakai alur yang sama. Trigger mentor_minta_sah menolak mentor yang belum disetujui dan diri sendiri.
+  mentor: { tabel: "mentor", kolom: ["bidang", "uraian"], lihat: "id, bidang, uraian, status, alasan, dibuat, diputus_pada", klaim: false },
+  minta:  { tabel: "mentor_minta", kolom: ["mentor_id", "pesan"], lihat: "id, mentor_id, pesan, status, alasan, dibuat, diputus_pada", klaim: false },
+  // F65-213, 214 (0041): lencana verifikasi organisasi (hanya akun berklaim) dan laporan warga atas proyek.
+  lencana: { tabel: "lencana", kolom: ["organisasi_id", "jenis", "bukti_url", "uraian"], lihat: "id, organisasi_id, jenis, bukti_url, uraian, status, alasan, dibuat, diputus_pada", klaim: true },
+  laporan: { tabel: "laporan_warga", kolom: ["proyek_id", "isi"], lihat: "id, proyek_id, isi, status, alasan, dibuat, diputus_pada", klaim: false, batas: true },
+  // F65-303, 302, 306 (0042): papan minat REC dan karbon, minat stan pameran, klaim untuk cek fakta. Ketiganya dibatasi MAKS_MENUNGGU per akun.
+  // unit: organisasi_id opsional (hanya bila pengirim memilih menampilkan nama organisasinya) dan, bila diisi, wajib klaim yang disetujui.
+  unit:  { tabel: "minat_unit", kolom: ["jenis", "arah", "volume", "rujukan", "prov", "uraian", "organisasi_id"], lihat: "id, jenis, arah, volume, rujukan, prov, uraian, organisasi_id, status, alasan, dibuat, diputus_pada", klaim: "opsional", batas: true },
+  stan:  { tabel: "event_stan", kolom: ["event_id", "organisasi", "kebutuhan"], lihat: "id, event_id, organisasi, kebutuhan, status, alasan, dibuat, diputus_pada", klaim: false, batas: true },
+  // fakta: 'disetujui' = sudah diputus redaksi (faktaPutus), bukan sekadar disetujui; pengirim hanya boleh menarik selama masih menunggu.
+  fakta: { tabel: "cek_fakta", kolom: ["kutipan", "penutur", "sumber_url", "tanggal"], lihat: "id, kutipan, penutur, sumber_url, tanggal, status, alasan, putusan, penjelasan, sumber, dibuat, diputus_pada", klaim: false, batas: true, tarik: "('menunggu')" },
+};
+export const JENIS_KIRIMAN = Object.keys(KIRIMAN);
+export const STATUS_KIRIMAN = ["menunggu", "disetujui", "ditolak", "ditarik"];
+export const MAKS_FOTO_MENUNGGU = 5; // foto tonggak berstatus menunggu per akun (tinjauan keamanan): membatasi isi R2 yang belum ditinjau
+export const N_MIN_HIJAU = 3; // privasi: agregat sebuah provinsi tidak keluar bila pengirim yang disetujui kurang dari ini
+const kir = (jenis) => { const k = KIRIMAN[jenis]; if (!k) throw salah("jenis kiriman tidak sah"); return k; };
+
+// Organisasi yang klaimnya atas nama akun ini disetujui admin (portal, 0019). [] = belum punya; null = tabel belum ada.
+export async function orgKlaimSetuju(env, akun) {
+  if (!akun) throw tolak("belum masuk");
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT organisasi_id FROM org_klaim WHERE akun_id = ? AND status = 'setuju' ORDER BY id").bind(akun.id).all()).results.map((r) => r.organisasi_id));
+}
+
+// d = nilai kolom yang SUDAH divalidasi rute. Untuk foto dan dana, organisasi_id wajib salah satu klaim akun yang disetujui (diperiksa di sini, bukan dipercaya dari rute).
+// Hasil: { id } | { tanpaKlaim: true } | { aktif: true } (sudah ada kiriman aktif) | { penuh: true } (foto menunggu sudah MAKS_FOTO_MENUNGGU); null = tabel belum ada.
+export async function kirimanBuat(env, akun, jenis, d) {
+  const k = kir(jenis); gDaftar(akun, k.tabel);
+  if (k.kolom.some((c) => d[c] === undefined)) throw salah("kiriman tidak lengkap");
+  return tanpaTabel(async () => {
+    if (k.klaim && (k.klaim !== "opsional" || d.organisasi_id != null) && !(await env.DB.prepare("SELECT 1 AS x FROM org_klaim WHERE akun_id = ? AND organisasi_id = ? AND status = 'setuju'").bind(akun.id, d.organisasi_id).first())) return { tanpaKlaim: true };
+    try {
+      // foto: sisip hanya bila yang menunggu milik akun ini masih di bawah batas (satu pernyataan, jadi dua kiriman bersamaan tidak bisa melewatinya)
+      // laporan warga ikut dibatasi (tinjauan keamanan 15 Nov 2026): satu akun tidak bisa membanjiri antrean admin dengan laporan ke banyak proyek
+      const batas = k.batas ? ` WHERE (SELECT COUNT(*) FROM ${k.tabel} WHERE akun_id = ? AND status = 'menunggu') < ${MAKS_FOTO_MENUNGGU}` : "";
+      const ins = env.DB.prepare(`INSERT INTO ${k.tabel} (akun_id, ${k.kolom.join(", ")}) SELECT ?, ${k.kolom.map(() => "?").join(", ")}${batas}`).bind(akun.id, ...k.kolom.map((c) => d[c] ?? null), ...(batas ? [akun.id] : []));
+      const [r] = await env.DB.batch([ins,
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'kirim', ?, CAST(last_insert_rowid() AS TEXT), ? WHERE changes() > 0").bind(akun.id, akun.peran, k.tabel, JSON.stringify({ ringkas: "kiriman " + jenis })),
+      ]);
+      if (!r.meta.changes) return { penuh: true };
+      return { id: r.meta.last_row_id };
+    } catch (e) {
+      if (/UNIQUE/i.test(String(e?.message) + String(e?.cause?.message))) return { aktif: true };
+      throw terjemah(e);
+    }
+  });
+}
+export async function kirimanSaya(env, akun) {
+  if (!akun) throw tolak("belum masuk");
+  return tanpaTabel(async () => {
+    const h = await env.DB.batch(JENIS_KIRIMAN.map((j) => env.DB.prepare(`SELECT ${KIRIMAN[j].lihat} FROM ${KIRIMAN[j].tabel} WHERE akun_id = ? ORDER BY id DESC LIMIT 50`).bind(akun.id)));
+    return Object.fromEntries(JENIS_KIRIMAN.map((j, i) => [j, h[i].results]));
+  });
+}
+// Pengirim menarik miliknya (menunggu atau disetujui). Hasil { ubah, kunci? }: kunci R2 foto dikembalikan supaya rute menghapus berkasnya.
+export async function kirimanTarik(env, akun, jenis, id) {
+  const k = kir(jenis); gDaftar(akun, k.tabel, "ubah");
+  if (!RE_ID.test(String(id))) throw salah("id tidak sah");
+  return tanpaTabel(async () => {
+    const lama = jenis === "foto" ? await env.DB.prepare("SELECT kunci FROM proyek_foto WHERE id = ? AND akun_id = ? AND status IN ('menunggu','disetujui')").bind(Number(id), akun.id).first() : null;
+    const [u] = await env.DB.batch([
+      env.DB.prepare(`UPDATE ${k.tabel} SET status = 'ditarik' WHERE id = ? AND akun_id = ? AND status IN ${k.tarik || "('menunggu','disetujui')"}`).bind(Number(id), akun.id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'ubah', ?, ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, k.tabel, String(id), JSON.stringify({ ringkas: "tarik kiriman " + jenis })),
+    ]);
+    return { ubah: u.meta.changes, kunci: u.meta.changes ? lama?.kunci ?? null : null };
+  });
+}
+export async function kirimanAntrean(env, akun, jenis, status, hal = 1) {
+  gerbangAdm(akun);
+  const k = kir(jenis);
+  if (!STATUS_KIRIMAN.includes(status)) throw salah("antrean tidak sah");
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  return tanpaTabel(async () => {
+    const [b, c] = await env.DB.batch([
+      env.DB.prepare(`SELECT t.${k.lihat.split(", ").join(", t.")}, a.nama AS pengirim FROM ${k.tabel} t LEFT JOIN akun a ON a.id = t.akun_id WHERE t.status = ? ORDER BY t.id DESC LIMIT ? OFFSET ?`).bind(status, HALAMAN_ADM, (h - 1) * HALAMAN_ADM),
+      env.DB.prepare(`SELECT COUNT(*) AS n FROM ${k.tabel} WHERE status = ?`).bind(status),
+    ]);
+    return { baris: b.results, total: c.results[0].n, per: HALAMAN_ADM };
+  });
+}
+// aksi: setuju | tolak (alasan wajib). Hanya dari 'menunggu'; jejak hanya bila baris berubah.
+export async function kirimanPutus(env, akun, jenis, id, aksi, alasan = null) {
+  gerbangAdm(akun);
+  const k = kir(jenis);
+  if (!["setuju", "tolak"].includes(aksi) || !RE_ID.test(String(id))) throw salah("putusan tidak sah");
+  if (jenis === "fakta" && aksi === "setuju") throw salah("cek fakta diputus lewat faktaPutus"); // putusan wajib membawa penjelasan dan sumber
+  if (aksi === "tolak" && (typeof alasan !== "string" || alasan.trim().length < 3 || alasan.length > 500)) throw salah("alasan wajib");
+  return tanpaTabel(async () => {
+    try {
+      const [u] = await env.DB.batch([
+        env.DB.prepare(`UPDATE ${k.tabel} SET status = ?, alasan = ?, diputus_pada = ?, diputus_oleh = ? WHERE id = ? AND status = 'menunggu'`).bind(aksi === "setuju" ? "disetujui" : "ditolak", aksi === "tolak" ? alasan.trim() : null, kini(), akun.id, Number(id)),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', ?, ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, k.tabel, String(id), JSON.stringify({ ringkas: `kiriman ${jenis} ${aksi}` })),
+      ]);
+      // foto yang ditolak: kunci R2 dikembalikan supaya rute menghapus berkasnya (baris tetap ada sebagai catatan putusan)
+      const kunci = u.meta.changes && jenis === "foto" && aksi === "tolak" ? (await env.DB.prepare("SELECT kunci FROM proyek_foto WHERE id = ?").bind(Number(id)).first())?.kunci ?? null : null;
+      return { ubah: u.meta.changes, kunci };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+// Acara sudah ditutup admin? (tinjauan keamanan: minat stan ditolak untuk acara yang sudah ditutup). null = tabel belum ada.
+export async function eventSudahTutup(env, akun, eventId) {
+  gerbangMasuk(akun);
+  return tanpaTabel(async () => !!(await env.DB.prepare("SELECT 1 AS x FROM event_tutup WHERE event_id = ?").bind(String(eventId)).first()));
+}
+// ---- F65-303: papan minat REC dan karbon. Hanya yang disetujui; tanpa akun pengirim; organisasi_id hanya ada bila pengirim memilih menampilkannya.
+export async function unitDaftar(env, akun) {
+  gDaftar(akun, "minat_unit", "baca");
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT m.id, m.jenis, m.arah, m.volume, m.rujukan, m.prov, m.uraian, m.dibuat,
+    CASE WHEN EXISTS (SELECT 1 FROM org_klaim c WHERE c.akun_id = m.akun_id AND c.organisasi_id = m.organisasi_id AND c.status = 'setuju') THEN m.organisasi_id END AS organisasi_id
+    FROM minat_unit m WHERE m.status = 'disetujui' ORDER BY m.id DESC LIMIT 200`).all()).results);
+}
+// ---- F65-306: cek fakta. Daftar hanya klaim yang SUDAH DIPUTUS redaksi; tanpa akun pengaju. Berpaginasi.
+export const PUTUSAN_FAKTA = ["benar", "sebagian", "keliru", "tidak_pasti"];
+export const HALAMAN_FAKTA = 10;
+export async function faktaDaftar(env, akun, hal = 1) {
+  gDaftar(akun, "cek_fakta", "baca");
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  return tanpaTabel(async () => {
+    const [b, c] = await env.DB.batch([
+      env.DB.prepare("SELECT id, kutipan, penutur, sumber_url, tanggal, putusan, penjelasan, sumber, diputus_pada FROM cek_fakta WHERE status = 'disetujui' ORDER BY diputus_pada DESC, id DESC LIMIT ? OFFSET ?").bind(HALAMAN_FAKTA, (h - 1) * HALAMAN_FAKTA),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM cek_fakta WHERE status = 'disetujui'"),
+    ]);
+    return { baris: b.results.map((r) => ({ ...r, sumber: JSON.parse(r.sumber) })), total: c.results[0].n, per: HALAMAN_FAKTA };
+  });
+}
+// Putusan redaksi (admin, super). d = { putusan, penjelasan, sumber[] } yang SUDAH divalidasi rute; diperiksa lagi di sini. Hanya dari 'menunggu'.
+export async function faktaPutus(env, akun, id, d) {
+  gerbangAdm(akun);
+  if (!RE_ID.test(String(id)) || !PUTUSAN_FAKTA.includes(d?.putusan) || typeof d.penjelasan !== "string" || d.penjelasan.length < 20 || d.penjelasan.length > 1500
+    || !Array.isArray(d.sumber) || d.sumber.length < 1 || d.sumber.length > 5 || d.sumber.some((u) => typeof u !== "string" || !/^https:\/\//.test(u) || u.length > 600)) throw salah("putusan cek fakta tidak sah");
+  return tanpaTabel(async () => {
+    try {
+      const [u] = await env.DB.batch([
+        env.DB.prepare("UPDATE cek_fakta SET status = 'disetujui', putusan = ?, penjelasan = ?, sumber = ?, diputus_pada = ?, diputus_oleh = ? WHERE id = ? AND status = 'menunggu'").bind(d.putusan, d.penjelasan, JSON.stringify(d.sumber), kini(), akun.id, Number(id)),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'cek_fakta', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: "putusan cek fakta " + d.putusan })),
+      ]);
+      return { ubah: u.meta.changes };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+// ---- yang tampil ke pengguna lain: hanya 'disetujui'.
+export async function proyekFotoDaftar(env, akun, proyekId) {
+  gDaftar(akun, "proyek_foto", "baca");
+  if (!RE_REF_KIRIM.test(String(proyekId))) throw salah("proyek tidak sah");
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT id, organisasi_id, keterangan, dibuat FROM proyek_foto WHERE proyek_id = ? AND status = 'disetujui' ORDER BY id DESC LIMIT 40").bind(proyekId).all()).results);
+}
+// Berkas foto: disetujui = semua akun masuk; menunggu = hanya pengirim dan admin; ditarik dan ditolak = tidak ada (berkasnya dihapus). undefined = tak terlihat (rute membalas 404 seragam).
+export async function proyekFotoBerkas(env, akun, id) {
+  gDaftar(akun, "proyek_foto", "baca");
+  if (!RE_ID.test(String(id))) return undefined;
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT akun_id, kunci, tipe, status FROM proyek_foto WHERE id = ?").bind(Number(id)).first();
+    if (!r || r.status === "ditarik" || r.status === "ditolak") return undefined; // berkas yang ditarik atau ditolak sudah dihapus dari R2
+    if (r.status !== "disetujui" && r.akun_id !== akun.id && !ADM_HAK.includes(akun.peran)) return undefined;
+    return { kunci: r.kunci, tipe: r.tipe };
+  });
+}
+export async function proyekDanaDaftar(env, akun) {
+  gDaftar(akun, "proyek_dana", "baca");
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT id, organisasi_id, proyek_id, jumlah, mata_uang, jenis, uraian, dibuat FROM proyek_dana WHERE status = 'disetujui' ORDER BY id DESC LIMIT 200").all()).results);
+}
+/** Murni (diekspor untuk uji): jumlah MWh -> rentang kasar { mwh_min, mwh_maks } per orde besaran; mwh_maks null = tanpa batas atas. */
+export function rentangMwh(n) {
+  const tepi = [0, 1000, 10000, 100000, 1000000, 10000000];
+  const i = tepi.findLastIndex((x) => n >= x);
+  return { mwh_min: tepi[i], mwh_maks: tepi[i + 1] ?? null };
+}
+// Agregat minat listrik hijau per provinsi. Provinsi dengan pengirim disetujui < N_MIN_HIJAU tidak keluar sama sekali (bukan dinolkan); nama perusahaan tidak pernah keluar.
+export async function hijauAgregat(env, akun) {
+  gDaftar(akun, "permintaan_hijau", "baca");
+  return tanpaTabel(async () => {
+    const r = (await env.DB.prepare("SELECT prov, COUNT(*) AS n, SUM(mwh_tahun) AS mwh FROM permintaan_hijau WHERE status = 'disetujui' GROUP BY prov HAVING COUNT(*) >= ? ORDER BY mwh DESC").bind(N_MIN_HIJAU).all()).results;
+    // Jumlah tepat tidak pernah keluar: selisih antar-laporan saat pengirim bertambah akan membuka angka satu perusahaan. Yang keluar hanya rentang per orde besaran.
+    return { baris: r.map((x) => ({ prov: x.prov, n: x.n, ...rentangMwh(x.mwh) })), ambang: N_MIN_HIJAU };
+  });
+}
+
+/* ===================== Jejaring (0040_jejaring.sql, F65-210..212): minat lowongan, mentor, forum per bidang ===================== */
+export const BIDANG_METI = ["organisasi", "advokasi", "sdm", "pendanaan", "umkm", "esg", "komunikasi", "internasional", "data"];
+const HALAMAN_FORUM = 20;
+
+// ---- minat lowongan (F65-212, C-03): tanpa CV. Trigger kerja_minat_sah menolak lowongan tutup dan lowongan milik sendiri.
+// Hasil: { id } | { ganda: true } | { tutup: true }; null = tabel belum ada.
+export async function kerjaMinatKirim(env, akun, lowonganId, pesan = null) {
+  gDaftar(akun, "kerja_minat");
+  if (!RE_ID.test(String(lowonganId))) throw salah("lowongan tidak sah");
+  return tanpaTabel(async () => {
+    try {
+      const [r] = await env.DB.batch([
+        env.DB.prepare("INSERT INTO kerja_minat (lowongan_id, akun_id, pesan) VALUES (?, ?, ?)").bind(Number(lowonganId), akun.id, pesan ?? null),
+        jejakOrg(env, akun, "kerja_minat", "minat lowongan " + lowonganId),
+      ]);
+      return { id: r.meta.last_row_id };
+    } catch (e) {
+      const m = String(e?.message) + String(e?.cause?.message);
+      if (/UNIQUE/i.test(m)) return { ganda: true };
+      if (/tidak boleh|FOREIGN/i.test(m)) return { tutup: true };
+      throw terjemah(e);
+    }
+  });
+}
+// Menarik minat = baris dihapus. Hanya milik sendiri (akun dari sesi).
+export async function kerjaMinatTarik(env, akun, lowonganId) {
+  gDaftar(akun, "kerja_minat", "ubah");
+  if (!RE_ID.test(String(lowonganId))) throw salah("lowongan tidak sah");
+  return tanpaTabel(async () => {
+    const [u] = await env.DB.batch([
+      env.DB.prepare("DELETE FROM kerja_minat WHERE lowongan_id = ? AND akun_id = ?").bind(Number(lowonganId), akun.id),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'hapus', 'kerja_minat', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(lowonganId), JSON.stringify({ ringkas: "tarik minat lowongan" })),
+    ]);
+    return { ubah: u.meta.changes };
+  });
+}
+// Lowongan yang saya minati (id saja) dan jumlah peminat pada lowongan yang saya pasang. Minat pada lowongan tutup tidak keluar.
+export async function kerjaMinatSaya(env, akun) {
+  gDaftar(akun, "kerja_minat", "baca");
+  return tanpaTabel(async () => {
+    const buka = "l.status = 'terbit' AND (l.batas IS NULL OR l.batas >= date('now'))";
+    const [m, p] = await env.DB.batch([
+      env.DB.prepare(`SELECT m.lowongan_id FROM kerja_minat m JOIN lowongan l ON l.id = m.lowongan_id WHERE m.akun_id = ? AND ${buka}`).bind(akun.id),
+      env.DB.prepare(`SELECT m.lowongan_id, COUNT(*) AS n FROM kerja_minat m JOIN lowongan l ON l.id = m.lowongan_id WHERE l.akun_id = ? AND ${buka} GROUP BY m.lowongan_id`).bind(akun.id),
+    ]);
+    return { minat: m.results.map((r) => r.lowongan_id), peminat: Object.fromEntries(p.results.map((r) => [r.lowongan_id, r.n])) };
+  });
+}
+// Peminat satu lowongan: hanya pemasang lowongan itu, admin, dan super. Hanya nama dan pesan. undefined = bukan miliknya atau lowongan tutup (rute membalas 404 seragam).
+export async function kerjaPeminat(env, akun, lowonganId) {
+  gDaftar(akun, "kerja_minat", "baca");
+  if (!RE_ID.test(String(lowonganId))) return undefined;
+  return tanpaTabel(async () => {
+    const l = await env.DB.prepare("SELECT akun_id FROM lowongan WHERE id = ? AND status = 'terbit' AND (batas IS NULL OR batas >= date('now'))").bind(Number(lowonganId)).first();
+    if (!l || (l.akun_id !== akun.id && !ADM_HAK.includes(akun.peran))) return undefined;
+    return (await env.DB.prepare("SELECT a.nama, m.pesan, m.dibuat FROM kerja_minat m JOIN akun a ON a.id = m.akun_id WHERE m.lowongan_id = ? ORDER BY m.id DESC LIMIT 200").bind(Number(lowonganId)).all()).results;
+  });
+}
+
+// ---- mentor (F65-211, C-04): daftar dan permintaan lewat kirimanBuat('mentor' | 'minta'). Di sini hanya yang tampil ke orang lain.
+export async function mentorDaftar(env, akun) {
+  gDaftar(akun, "mentor", "baca");
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT m.id, m.bidang, m.uraian, a.nama, (m.akun_id = ?) AS saya FROM mentor m JOIN akun a ON a.id = m.akun_id WHERE m.status = 'disetujui' AND a.status = 'aktif' ORDER BY m.bidang, a.nama LIMIT 300").bind(akun.id).all()).results);
+}
+// Permintaan yang ditujukan kepada saya sebagai mentor: hanya yang SUDAH disetujui admin; nama peminta dan pesan saja.
+export async function mentorPermintaan(env, akun) {
+  gDaftar(akun, "mentor_minta", "baca");
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT q.id, a.nama, q.pesan, q.diputus_pada FROM mentor_minta q JOIN mentor m ON m.id = q.mentor_id JOIN akun a ON a.id = q.akun_id WHERE m.akun_id = ? AND m.status = 'disetujui' AND q.status = 'disetujui' ORDER BY q.id DESC LIMIT 100").bind(akun.id).all()).results);
+}
+
+// ---- forum per bidang (F65-210, C-04). Teks polos; yang disembunyikan tidak keluar ke non-admin sama sekali.
+const gForum = (akun, aksi = "tambah") => gDaftar(akun, "forum", aksi);
+const bidangSah = (b) => { if (!BIDANG_METI.includes(b)) throw salah("bidang tidak sah"); return b; };
+export async function forumDaftar(env, akun, bidang, hal = 1) {
+  gForum(akun, "baca"); bidangSah(bidang);
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000), adm = ADM_HAK.includes(akun.peran) ? 1 : 0;
+  return tanpaTabel(async () => {
+    const [b, c] = await env.DB.batch([
+      env.DB.prepare(`SELECT u.id, u.judul, u.dibuat, u.tersembunyi, a.nama, (SELECT COUNT(*) FROM forum_balasan r WHERE r.utas_id = u.id AND (r.tersembunyi = 0 OR ? = 1)) AS balasan
+        FROM forum_utas u JOIN akun a ON a.id = u.akun_id WHERE u.bidang = ? AND (u.tersembunyi = 0 OR ? = 1) ORDER BY u.id DESC LIMIT ? OFFSET ?`).bind(adm, bidang, adm, HALAMAN_FORUM, (h - 1) * HALAMAN_FORUM),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM forum_utas WHERE bidang = ? AND (tersembunyi = 0 OR ? = 1)").bind(bidang, adm),
+    ]);
+    return { baris: b.results, total: c.results[0].n, per: HALAMAN_FORUM };
+  });
+}
+// Satu utas dan balasannya. undefined = tidak ada atau disembunyikan bagi non-admin.
+export async function forumUtas(env, akun, id) {
+  gForum(akun, "baca");
+  if (!RE_ID.test(String(id))) return undefined;
+  const adm = ADM_HAK.includes(akun.peran) ? 1 : 0;
+  return tanpaTabel(async () => {
+    const [u, r] = await env.DB.batch([
+      env.DB.prepare("SELECT u.id, u.bidang, u.judul, u.isi, u.dibuat, u.tersembunyi, u.alasan, a.nama FROM forum_utas u JOIN akun a ON a.id = u.akun_id WHERE u.id = ? AND (u.tersembunyi = 0 OR ? = 1)").bind(Number(id), adm),
+      env.DB.prepare("SELECT r.id, r.isi, r.dibuat, r.tersembunyi, r.alasan, a.nama FROM forum_balasan r JOIN akun a ON a.id = r.akun_id WHERE r.utas_id = ? AND (r.tersembunyi = 0 OR ? = 1) ORDER BY r.id LIMIT 500").bind(Number(id), adm),
+    ]);
+    return u.results[0] ? { ...u.results[0], balasan: r.results } : undefined;
+  });
+}
+export async function forumUtasBaru(env, akun, bidang, judul, isi) {
+  gForum(akun); bidangSah(bidang);
+  return tanpaTabel(async () => {
+    try {
+      const [r] = await env.DB.batch([
+        env.DB.prepare("INSERT INTO forum_utas (bidang, akun_id, judul, isi) VALUES (?, ?, ?, ?)").bind(bidang, akun.id, judul, isi),
+        jejakOrg(env, akun, "forum_utas", "utas forum " + bidang),
+      ]);
+      return { id: r.meta.last_row_id };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// Hasil { id } | { tutup: true } (utas tidak ada atau disembunyikan).
+export async function forumBalas(env, akun, utasId, isi) {
+  gForum(akun);
+  if (!RE_ID.test(String(utasId))) throw salah("utas tidak sah");
+  return tanpaTabel(async () => {
+    try {
+      const [r] = await env.DB.batch([
+        env.DB.prepare("INSERT INTO forum_balasan (utas_id, akun_id, isi) VALUES (?, ?, ?)").bind(Number(utasId), akun.id, isi),
+        jejakOrg(env, akun, "forum_balasan", "balasan forum " + utasId),
+      ]);
+      return { id: r.meta.last_row_id };
+    } catch (e) {
+      if (/tidak boleh|FOREIGN/i.test(String(e?.message) + String(e?.cause?.message))) return { tutup: true };
+      throw terjemah(e);
+    }
+  });
+}
+// Satu laporan per akun per sasaran; laporan ulang diabaikan. Sasaran yang tidak ada atau sudah disembunyikan = { ada: false }.
+export async function forumLapor(env, akun, jenis, id, alasan) {
+  gForum(akun);
+  if (!["utas", "balasan"].includes(jenis) || !RE_ID.test(String(id))) throw salah("laporan tidak sah");
+  const tabel = jenis === "utas" ? "forum_utas" : "forum_balasan";
+  return tanpaTabel(async () => {
+    if (!(await env.DB.prepare(`SELECT 1 AS x FROM ${tabel} WHERE id = ? AND tersembunyi = 0`).bind(Number(id)).first())) return { ada: false };
+    try {
+      await env.DB.batch([
+        env.DB.prepare("INSERT OR IGNORE INTO forum_lapor (jenis, sasaran_id, akun_id, alasan) VALUES (?, ?, ?, ?)").bind(jenis, Number(id), akun.id, alasan),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'kirim', 'forum_lapor', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, `${jenis}:${id}`, JSON.stringify({ ringkas: "lapor forum " + jenis })),
+      ]);
+      return { ada: true };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// Antrean laporan untuk admin: sasaran yang masih tampil, jumlah pelapor, alasan terbaru, cuplikan isi.
+export async function forumLaporan(env, akun, hal = 1) {
+  gerbangAdm(akun);
+  const h = Math.min(Math.max(Number(hal) || 1, 1), 10000);
+  // Urut jumlah laporan dulu lalu yang terbaru, berpaginasi: banjir laporan atas sasaran lain tidak bisa mendorong sasaran yang banyak dilaporkan keluar dari daftar.
+  const masihTampil = "CASE l.jenis WHEN 'utas' THEN (SELECT tersembunyi FROM forum_utas WHERE id = l.sasaran_id) ELSE (SELECT tersembunyi FROM forum_balasan WHERE id = l.sasaran_id) END = 0";
+  return tanpaTabel(async () => {
+    const [b, c] = await env.DB.batch([
+      env.DB.prepare(`SELECT l.jenis, l.sasaran_id AS id, COUNT(*) AS n, MAX(l.dibuat) AS terakhir,
+      (SELECT x.alasan FROM forum_lapor x WHERE x.jenis = l.jenis AND x.sasaran_id = l.sasaran_id ORDER BY x.dibuat DESC, x.akun_id DESC LIMIT 1) AS alasan,
+      CASE l.jenis WHEN 'utas' THEN (SELECT substr(judul || ': ' || isi, 1, 300) FROM forum_utas WHERE id = l.sasaran_id) ELSE (SELECT substr(isi, 1, 300) FROM forum_balasan WHERE id = l.sasaran_id) END AS cuplikan,
+      CASE l.jenis WHEN 'utas' THEN l.sasaran_id ELSE (SELECT utas_id FROM forum_balasan WHERE id = l.sasaran_id) END AS utas_id
+    FROM forum_lapor l WHERE ${masihTampil}
+    GROUP BY l.jenis, l.sasaran_id ORDER BY n DESC, terakhir DESC LIMIT ? OFFSET ?`).bind(HALAMAN_FORUM, (h - 1) * HALAMAN_FORUM),
+      env.DB.prepare(`SELECT COUNT(*) AS n FROM (SELECT 1 FROM forum_lapor l WHERE ${masihTampil} GROUP BY l.jenis, l.sasaran_id)`),
+    ]);
+    return { baris: b.results, total: c.results[0].n, per: HALAMAN_FORUM };
+  });
+}
+// Admin menyembunyikan (alasan wajib) atau menampilkan lagi. Jejak hanya bila baris berubah.
+export async function forumSembunyi(env, akun, jenis, id, sembunyi, alasan = null) {
+  gerbangAdm(akun);
+  if (!["utas", "balasan"].includes(jenis) || !RE_ID.test(String(id)) || typeof sembunyi !== "boolean") throw salah("sasaran tidak sah");
+  if (sembunyi && (typeof alasan !== "string" || alasan.trim().length < 3 || alasan.length > 500)) throw salah("alasan wajib");
+  const tabel = jenis === "utas" ? "forum_utas" : "forum_balasan";
+  return tanpaTabel(async () => {
+    const [u] = await env.DB.batch([
+      env.DB.prepare(`UPDATE ${tabel} SET tersembunyi = ?, alasan = ? WHERE id = ? AND tersembunyi = ?`).bind(sembunyi ? 1 : 0, sembunyi ? alasan.trim() : null, Number(id), sembunyi ? 0 : 1),
+      env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', ?, ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, tabel, String(id), JSON.stringify({ ringkas: (sembunyi ? "sembunyikan " : "tampilkan lagi ") + jenis + (sembunyi ? ": " + alasan.trim().slice(0, 200) : "") })),
+    ]);
+    return { ubah: u.meta.changes };
+  });
+}
+
+/* ===================== Lencana, laporan warga, surel keluar (0041_lencana_laporan_surel.sql, F65-213..216) ===================== */
+// Lencana yang disetujui untuk satu organisasi: jenis, uraian, tautan bukti, tanggal putusan, nama peninjau (admin). Tanpa data pengirim.
+export async function lencanaOrganisasi(env, akun, organisasiId) {
+  gDaftar(akun, "lencana", "baca");
+  if (!RE_REF_KIRIM.test(String(organisasiId))) throw salah("organisasi tidak sah");
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT l.id, l.jenis, l.uraian, l.bukti_url, l.diputus_pada, a.nama AS peninjau FROM lencana l LEFT JOIN akun a ON a.id = l.diputus_oleh WHERE l.organisasi_id = ? AND l.status = 'disetujui' ORDER BY l.jenis").bind(organisasiId).all()).results);
+}
+// Laporan warga yang disetujui untuk satu proyek: isi dan tanggal saja. Nama pelapor tidak pernah keluar.
+export async function laporanProyek(env, akun, proyekId) {
+  gDaftar(akun, "laporan_warga", "baca");
+  if (!RE_REF_KIRIM.test(String(proyekId))) throw salah("proyek tidak sah");
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT id, isi, dibuat, diputus_pada FROM laporan_warga WHERE proyek_id = ? AND status = 'disetujui' ORDER BY id DESC LIMIT 50").bind(proyekId).all()).results);
+}
+
+// ---- surel keluar. Platform ini TIDAK mengirim surel (K19). Yang ada hanya antrean (daftar yang akan dikirim) dan draf buletin.
+export const PLAFON_PENGINGAT = 200; // paling banyak sekian akun diproses per jalan cron; sisanya giliran hari berikutnya (urut yang paling lama tidak diantrekan)
+const gSurelKeluar = (akun) => { const r = boleh(akun?.peran, "baca", "surel_keluar", undefined, akun); if (!r.ok) throw tolak(r.alasan); };
+
+// Jalur sistem (cron, tanpa akun): akun aktif yang memilih pengingat untuk minimal satu hal yang MASIH diikuti, dan surelnya tidak berhenti langganan.
+async function pengingatCalon(env, batas = PLAFON_PENGINGAT) {
+  const n = Math.min(Math.max(Number(batas) || 0, 1), PLAFON_PENGINGAT);
+  return tanpaTabel(async () => {
+    const a = (await env.DB.prepare(`SELECT a.id, a.peran, a.nama, a.bahasa, coalesce(p.terakhir, 0) AS terakhir FROM akun a LEFT JOIN surel_penanda p ON p.akun_id = a.id
+      WHERE a.status = 'aktif'
+        AND EXISTS (SELECT 1 FROM ikuti_surel s JOIN ikuti i ON i.akun_id = s.akun_id AND i.jenis = s.jenis AND i.ref = s.ref WHERE s.akun_id = a.id)
+        AND NOT EXISTS (SELECT 1 FROM langganan l WHERE l.surel = lower(a.surel) AND l.status = 'berhenti')
+      ORDER BY terakhir, a.id LIMIT ?`).bind(n).all()).results;
+    if (!a.length) return [];
+    const pilih = (await env.DB.prepare(`SELECT s.akun_id, s.jenis, s.ref FROM ikuti_surel s JOIN ikuti i ON i.akun_id = s.akun_id AND i.jenis = s.jenis AND i.ref = s.ref WHERE s.akun_id IN (${a.map(() => "?").join(",")})`).bind(...a.map((x) => x.id)).all()).results;
+    return a.map((x) => ({ ...x, pilihan: pilih.filter((q) => q.akun_id === x.id).map((q) => q.jenis + "|" + q.ref) }));
+  });
+}
+// Akun yang diperiksa tetapi tidak punya butir baru: penanda dimajukan (tidak pernah mundur) supaya gilirannya berputar. Tanpa ini, PLAFON akun terdepan
+// yang sepi butir baru menahan akun berikutnya selamanya (tinjauan keamanan 15 Nov 2026). Disisakan sehari ke belakang agar butir bertanggal hari ini tidak terlewat.
+async function pengingatLewati(env, akunId, sampai) {
+  if (!RE_ID.test(String(akunId)) || !Number.isFinite(sampai)) return { ubah: 0 };
+  return tanpaTabel(async () => ({ ubah: (await env.DB.prepare("INSERT INTO surel_penanda (akun_id, terakhir) VALUES (?, ?) ON CONFLICT (akun_id) DO UPDATE SET terakhir = max(terakhir, excluded.terakhir)").bind(Number(akunId), Math.floor(sampai)).run()).meta.changes }));
+}
+// Antrekan satu pengingat dan majukan penanda, atomik. kunci 'p:<akun>:<tanggal>' unik: paling banyak satu per akun per hari. Hasil { antre: 0 | 1 }.
+async function pengingatAntre(env, akunId, tanggal, subjek, isi, sekarang = kini()) {
+  if (!RE_ID.test(String(akunId)) || !/^\d{4}-\d{2}-\d{2}$/.test(tanggal)) throw salah("pengingat tidak sah");
+  return tanpaTabel(async () => {
+    const [r] = await env.DB.batch([
+      env.DB.prepare("INSERT OR IGNORE INTO surel_antre (jenis, akun_id, kunci, subjek, isi) VALUES ('pengingat', ?, ?, ?, ?)").bind(Number(akunId), `p:${akunId}:${tanggal}`, subjek, isi),
+      env.DB.prepare("INSERT INTO surel_penanda (akun_id, terakhir) VALUES (?, ?) ON CONFLICT (akun_id) DO UPDATE SET terakhir = excluded.terakhir").bind(Number(akunId), sekarang),
+    ]);
+    return { antre: r.meta.changes };
+  });
+}
+// Tautan berhenti satu klik (token diverifikasi rute): semua pilihan pengingat akun dimatikan dan yang masih antre dibatalkan.
+async function pengingatMatikan(env, akunId) {
+  if (!RE_ID.test(String(akunId))) return { ubah: 0 };
+  return tanpaTabel(async () => {
+    const [h] = await env.DB.batch([
+      env.DB.prepare("DELETE FROM ikuti_surel WHERE akun_id = ?").bind(Number(akunId)),
+      env.DB.prepare("UPDATE surel_antre SET status = 'batal' WHERE jenis = 'pengingat' AND akun_id = ? AND status = 'antre'").bind(Number(akunId)),
+    ]);
+    return { ubah: h.meta.changes };
+  });
+}
+// Draf buletin satu minggu ISO: dibuat sekali (cron atau admin); minggu yang sudah punya draf tidak ditimpa. Hasil { baru: 0 | 1 }.
+async function buletinDrafBuat(env, minggu, subjek, isi) {
+  if (!/^\d{4}-W\d{2}$/.test(String(minggu))) throw salah("minggu tidak sah");
+  return tanpaTabel(async () => ({ baru: (await env.DB.prepare("INSERT OR IGNORE INTO surel_draf (minggu, subjek, isi) VALUES (?, ?, ?)").bind(minggu, subjek, isi).run()).meta.changes }));
+}
+Object.assign(sistem, { pengingatCalon, pengingatAntre, pengingatLewati, pengingatMatikan, buletinDrafBuat });
+
+// Admin: ringkasan antrean dan daftar draf buletin (terbaru dulu), plus jumlah pelanggan aktif yang AKAN menerima bila disetujui sekarang.
+export async function surelKeluarRingkas(env, akun) {
+  gSurelKeluar(akun);
+  return tanpaTabel(async () => {
+    const [a, d, l] = await env.DB.batch([
+      env.DB.prepare("SELECT jenis, status, COUNT(*) AS n FROM surel_antre GROUP BY jenis, status"),
+      env.DB.prepare("SELECT id, minggu, subjek, isi, status, penerima, dibuat, diputus_pada FROM surel_draf ORDER BY id DESC LIMIT 12"),
+      env.DB.prepare("SELECT COUNT(*) AS n FROM langganan WHERE status = 'aktif'"),
+    ]);
+    return { antre: a.results, draf: d.results, pelanggan_aktif: l.results[0].n };
+  });
+}
+// Putusan admin atas draf: setuju = draf disetujui DAN satu baris antrean per pelanggan aktif (satu batch); batal = draf dibatalkan. Hanya dari status 'draf'.
+// Tidak ada jalur lain yang mengantrekan buletin; trigger surel_antre_buletin_sah menolak draf yang belum disetujui.
+export async function buletinPutus(env, akun, id, aksi) {
+  gSurelKeluar(akun); gerbangAdm(akun);
+  if (!["setuju", "batal"].includes(aksi) || !RE_ID.test(String(id))) throw salah("putusan tidak sah");
+  return tanpaTabel(async () => {
+    try {
+      const n = Number(id), t = kini();
+      if (aksi === "batal") {
+        const [u] = await env.DB.batch([
+          env.DB.prepare("UPDATE surel_draf SET status = 'batal', diputus_pada = ?, diputus_oleh = ? WHERE id = ? AND status = 'draf'").bind(t, akun.id, n),
+          env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'surel_draf', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(n), JSON.stringify({ ringkas: "buletin batal" })),
+        ]);
+        return { ubah: u.meta.changes, antre: 0 };
+      }
+      const [u, , q] = await env.DB.batch([
+        env.DB.prepare("UPDATE surel_draf SET status = 'disetujui', diputus_pada = ?, diputus_oleh = ?, penerima = (SELECT COUNT(*) FROM langganan WHERE status = 'aktif') WHERE id = ? AND status = 'draf'").bind(t, akun.id, n),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'surel_draf', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(n), JSON.stringify({ ringkas: "buletin disetujui dan diantrekan" })),
+        env.DB.prepare("INSERT OR IGNORE INTO surel_antre (jenis, langganan_id, draf_id, kunci, subjek, isi) SELECT 'buletin', l.id, d.id, 'b:' || d.id || ':' || l.id, d.subjek, d.isi FROM surel_draf d JOIN langganan l ON l.status = 'aktif' WHERE d.id = ? AND d.status = 'disetujui' AND d.diputus_pada = ? AND d.diputus_oleh = ?").bind(n, t, akun.id),
+      ]);
+      return { ubah: u.meta.changes, antre: u.meta.changes ? q.meta.changes : 0 };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+/* ===================== F65-304: ringkasan mesin per peraturan (0043_ringkas_iuran.sql) ===================== */
+// Pembaca dan penulis tembolok saja; pemanggilan AI dan pemeriksa kutipan ada di src/hukum.js dan src/ringkas_pasal.js.
+// Pasal sebuah dokumen untuk dirangkum. { tidak_sah } | { ada: false } | { ada: true, judul, segmen }; null = tabel belum ada.
+export async function hukumPasal(env, akun, id) {
+  gDaftar(akun, "hukum_ringkas", "baca");
+  if (typeof id !== "string" || !RE_HUKUM_ID.test(id)) return { tidak_sah: true };
+  return tanpaTabel(async () => {
+    const dok = await env.DB.prepare("SELECT id, judul FROM hukum_dok WHERE id = ?").bind(id).first();
+    if (!dok) return { ada: false };
+    return { ada: true, judul: dok.judul, segmen: (await env.DB.prepare("SELECT jenis, label, teks FROM hukum_segmen WHERE dok = ? AND jenis = 'pasal' ORDER BY urut").bind(id).all()).results };
+  });
+}
+// Ringkasan tersimpan untuk versi teks itu, atau false (belum ada, atau teks pasal sudah berubah sejak dirangkum).
+export async function hukumRingkasBaca(env, akun, id, versi) {
+  gDaftar(akun, "hukum_ringkas", "baca");
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT butir, model, dikirim, total, dibuat FROM hukum_ringkas WHERE dok = ? AND versi = ?").bind(String(id), String(versi)).first();
+    if (!r) return false;
+    let butir = []; try { butir = JSON.parse(r.butir); } catch { return false; }
+    return { butir, model: r.model, dikirim: r.dikirim, total: r.total, dibuat: r.dibuat };
+  });
+}
+// Simpan (atau ganti) ringkasan yang SUDAH lolos pemeriksa kutipan. Hanya admin, super.
+export async function hukumRingkasSimpan(env, akun, id, d) {
+  gerbangAdm(akun); gDaftar(akun, "hukum_ringkas", "tambah");
+  if (!RE_HUKUM_ID.test(String(id)) || !Array.isArray(d?.butir) || !d.butir.length) throw salah("ringkasan tidak sah");
+  return tanpaTabel(async () => {
+    try {
+      await env.DB.batch([
+        env.DB.prepare(`INSERT INTO hukum_ringkas (dok, versi, model, butir, dikirim, total, dibuang, oleh) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+          ON CONFLICT (dok) DO UPDATE SET versi = excluded.versi, model = excluded.model, butir = excluded.butir, dikirim = excluded.dikirim, total = excluded.total, dibuang = excluded.dibuang, oleh = excluded.oleh, dibuat = unixepoch()`)
+          .bind(String(id), String(d.versi), String(d.model), JSON.stringify(d.butir), d.dikirim, d.total, d.dibuang ?? 0, akun.id),
+        jejakAdm(env, akun, "tambah", "hukum_ringkas", id, "ringkasan mesin dibuat"),
+      ]);
+      return { ok: true };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+
+/* ===================== F65-301: perpanjangan iuran mandiri (0043_ringkas_iuran.sql) ===================== */
+// gross SELALU dihitung rute dari tarif tahunan kategori (public/data/keanggotaan.json) untuk jenis KTA yang dibaca DI SINI dari D1; tidak pernah dari badan permintaan.
+// Jenis KTA -> kode kategori tarif. Hanya dua yang punya padanan tunggal; 'biasa' (perusahaan, organisasi, koperasi) terbagi tiga kategori tarif,
+// 'luar biasa' dan 'kehormatan' tidak punya tarif, jadi ketiganya tidak bisa memperpanjang sendiri.
+export const JENIS_IURAN = { individu: "individu", utama: "utama" };
+const KOLOM_IURAN = "id, jalur, jenis, gross, status, berlaku_sampai, alasan, dibuat, diputus_pada";
+const ktaIuran = (env, akunId) => env.DB.prepare("SELECT id, jenis, nama_cetak, nomor_kta, berlaku_sampai, status FROM kta WHERE akun_id = ? AND status IN ('aktif','kedaluwarsa') AND nomor_kta IS NOT NULL").bind(akunId).first();
+// KTA milik akun (yang bisa diperpanjang) dan riwayat pembayarannya. { kta: baris | null, riwayat: [] }; null = tabel belum ada.
+export async function iuranSaya(env, akun) {
+  gDaftar(akun, "iuran_bayar", "baca");
+  return tanpaTabel(async () => ({ kta: (await ktaIuran(env, akun.id)) ?? null,
+    riwayat: (await env.DB.prepare(`SELECT ${KOLOM_IURAN} FROM iuran_bayar WHERE akun_id = ? ORDER BY id DESC LIMIT 30`).bind(akun.id).all()).results }));
+}
+// Buat pembayaran. tarif = fungsi (jenisKta) -> rupiah bulat > 0 atau null, dipanggil dengan jenis yang DIBACA DARI D1.
+// d = { jalur: 'midtrans', orderId } atau { jalur: 'bukti', kunci, tipe }. Hasil { id, gross, nama, surel } | { tanpaKta } | { tanpaTarif } | { aktif } (sudah ada bukti menunggu).
+export async function iuranBuat(env, akun, d, tarif) {
+  gDaftar(akun, "iuran_bayar");
+  if (!["midtrans", "bukti"].includes(d?.jalur) || typeof tarif !== "function") throw salah("iuran tidak sah");
+  return tanpaTabel(async () => {
+    const k = await ktaIuran(env, akun.id);
+    if (!k) return { tanpaKta: true };
+    const gross = JENIS_IURAN[k.jenis] ? tarif(JENIS_IURAN[k.jenis]) : null;
+    if (!Number.isInteger(gross) || gross <= 0) return { tanpaTarif: true };
+    try {
+      const [r] = await env.DB.batch([
+        env.DB.prepare("INSERT INTO iuran_bayar (akun_id, kta_id, jalur, order_id, bukti_kunci, bukti_tipe, jenis, gross) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
+          .bind(akun.id, k.id, d.jalur, d.jalur === "midtrans" ? String(d.orderId) : null, d.jalur === "bukti" ? String(d.kunci) : null, d.jalur === "bukti" ? String(d.tipe) : null, k.jenis, gross),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'kirim', 'iuran_bayar', CAST(last_insert_rowid() AS TEXT), ? WHERE changes() > 0").bind(akun.id, akun.peran, JSON.stringify({ ringkas: "iuran " + d.jalur })),
+      ]);
+      const a = await env.DB.prepare("SELECT surel FROM akun WHERE id = ?").bind(akun.id).first();
+      return { id: r.meta.last_row_id, gross, nama: k.nama_cetak, surel: a?.surel ?? null };
+    } catch (e) {
+      if (/UNIQUE/i.test(String(e?.message) + String(e?.cause?.message))) return { aktif: true };
+      throw terjemah(e);
+    }
+  });
+}
+// Lunas: SATU batch. (1) tandai lunas hanya dari 'menunggu' (notifikasi berulang tidak berpengaruh); (2) KTA diperpanjang setahun dari masa berlaku lama,
+// atau dari hari ini bila sudah lewat; (3) masa berlaku baru dicatat di pembayaran; (4) jejak. Tiap langkah hanya jalan bila langkah sebelumnya mengubah baris.
+function batchLunas(env, where, bind, oleh, siapa, peran) {
+  return [
+    env.DB.prepare(`UPDATE iuran_bayar SET status = 'lunas', diputus_pada = unixepoch(), diputus_oleh = ? WHERE ${where} AND status = 'menunggu'`).bind(oleh, ...bind),
+    env.DB.prepare(`UPDATE kta SET berlaku_sampai = date(max(coalesce(berlaku_sampai, date('now')), date('now')), '+1 year'), status = 'aktif', diubah = unixepoch()
+      WHERE changes() > 0 AND id = (SELECT kta_id FROM iuran_bayar WHERE ${where}) AND status IN ('aktif','kedaluwarsa')`).bind(...bind),
+    env.DB.prepare(`UPDATE iuran_bayar SET berlaku_sampai = (SELECT berlaku_sampai FROM kta WHERE id = iuran_bayar.kta_id) WHERE changes() > 0 AND ${where}`).bind(...bind),
+    env.DB.prepare(`INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'iuran_bayar', CAST(id AS TEXT), ? FROM iuran_bayar WHERE changes() > 0 AND ${where}`).bind(siapa, peran, JSON.stringify({ ringkas: "iuran lunas, KTA diperpanjang" }), ...bind),
+    // Lunas tetapi KTA tidak diperpanjang (mis. KTA dicabut sesudah pesanan dibuat): uang sudah masuk, jadi dicatat sekali supaya admin menindaklanjuti (tinjauan keamanan 15 Nov 2026).
+    env.DB.prepare(`INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'iuran_bayar', CAST(id AS TEXT), ? FROM iuran_bayar
+      WHERE ${where} AND status = 'lunas' AND berlaku_sampai IS NULL
+        AND NOT EXISTS (SELECT 1 FROM jejak j WHERE j.tabel = 'iuran_bayar' AND j.baris_id = CAST(iuran_bayar.id AS TEXT) AND j.ke LIKE '%KTA TIDAK diperpanjang%')`).bind(siapa, peran, JSON.stringify({ ringkas: "iuran lunas tetapi KTA TIDAK diperpanjang: perlu ditinjau admin" }), ...bind),
+  ];
+}
+// Jalur sistem (webhook Midtrans yang tanda tangannya SUDAH diverifikasi rute): baca pesanan, lalu selesaikan.
+async function iuranOnlineBaca(env, orderId) {
+  return tanpaTabel(async () => (await env.DB.prepare("SELECT id, order_id, gross, status FROM iuran_bayar WHERE order_id = ? AND jalur = 'midtrans'").bind(String(orderId)).first()) ?? false);
+}
+async function iuranOnlineSelesai(env, orderId, lunas) {
+  return tanpaTabel(async () => {
+    if (!lunas) return { ubah: (await env.DB.prepare("UPDATE iuran_bayar SET status = 'gagal', diputus_pada = unixepoch() WHERE order_id = ? AND jalur = 'midtrans' AND status = 'menunggu'").bind(String(orderId)).run()).meta.changes };
+    const [r] = await env.DB.batch(batchLunas(env, "order_id = ?", [String(orderId)], null, null, "sistem"));
+    return { ubah: r.meta.changes };
+  });
+}
+Object.assign(sistem, { iuranOnlineBaca, iuranOnlineSelesai });
+// Admin: antrean bukti transfer (menunggu dulu, lalu yang terbaru).
+export async function iuranAntrean(env, akun) {
+  gerbangAdm(akun);
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT i.id, i.jalur, i.jenis, i.gross, i.status, i.berlaku_sampai, i.alasan, i.dibuat, i.diputus_pada, i.bukti_kunci IS NOT NULL AS ada_bukti, k.nama_cetak AS nama, k.nomor_kta, k.berlaku_sampai AS kta_sampai
+    FROM iuran_bayar i JOIN kta k ON k.id = i.kta_id ORDER BY (i.status = 'menunggu' AND i.jalur = 'bukti') DESC, i.id DESC LIMIT 100`).all()).results);
+}
+// Berkas bukti: pemiliknya atau admin. false = tidak ada atau bukan haknya.
+export async function iuranBuktiBerkas(env, akun, id) {
+  gDaftar(akun, "iuran_bayar", "baca");
+  return tanpaTabel(async () => {
+    const r = await env.DB.prepare("SELECT akun_id, bukti_kunci AS kunci, bukti_tipe AS tipe FROM iuran_bayar WHERE id = ? AND jalur = 'bukti'").bind(Number(id)).first();
+    return r && (r.akun_id === akun.id || ADM_HAK.includes(akun.peran)) ? { kunci: r.kunci, tipe: r.tipe } : false;
+  });
+}
+// Admin memutus bukti transfer: setuju = lunas + perpanjang (batch yang sama dengan Midtrans); tolak wajib beralasan. Hanya dari 'menunggu'. { ok }.
+export async function iuranPutus(env, akun, id, aksi, alasan = null) {
+  gerbangAdm(akun);
+  if (!["setuju", "tolak"].includes(aksi)) throw salah("aksi tidak dikenal");
+  if (aksi === "tolak" && !(typeof alasan === "string" && alasan.trim().length >= 3 && alasan.length <= 500)) throw salah("alasan wajib");
+  return tanpaTabel(async () => {
+    try {
+      const [r] = await env.DB.batch(aksi === "setuju" ? batchLunas(env, "id = ? AND jalur = 'bukti' AND akun_id <> ?", [Number(id), akun.id], akun.id, akun.id, akun.peran) /* bukan bukti milik peninjau sendiri */ : [
+        env.DB.prepare("UPDATE iuran_bayar SET status = 'ditolak', alasan = ?, diputus_pada = unixepoch(), diputus_oleh = ? WHERE id = ? AND jalur = 'bukti' AND status = 'menunggu'").bind(alasan.trim(), akun.id, Number(id)),
+        env.DB.prepare("INSERT INTO jejak (siapa, peran, aksi, tabel, baris_id, ke) SELECT ?, ?, 'tinjau', 'iuran_bayar', ?, ? WHERE changes() > 0").bind(akun.id, akun.peran, String(id), JSON.stringify({ ringkas: "bukti iuran ditolak" })),
+      ]);
+      return { ok: r.meta.changes > 0 };
+    } catch (e) { throw terjemah(e); }
+  });
+}
+// Bukti pembayaran (untuk dicetak): hanya pembayaran LUNAS milik akun itu. false = tidak ada atau bukan miliknya.
+export async function iuranBuktiBayar(env, akun, id) {
+  gDaftar(akun, "iuran_bayar", "baca");
+  return tanpaTabel(async () => (await env.DB.prepare(`SELECT i.id, i.jalur, i.jenis, i.gross, i.status, i.berlaku_sampai, i.diputus_pada, k.nama_cetak AS nama, k.nomor_kta
+    FROM iuran_bayar i JOIN kta k ON k.id = i.kta_id WHERE i.id = ? AND i.akun_id = ? AND i.status = 'lunas'`).bind(Number(id), akun.id).first()) ?? false);
+}
+

@@ -26,7 +26,7 @@
 .km-nama{display:inline-flex;align-items:center;gap:10px;min-width:0}
 .km-nama a,.km-nama b{font-weight:600;color:var(--ink);text-decoration:none}
 .km-nama a:hover{color:var(--accent)}
-.km-lg{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:var(--r-sm);border:1px solid var(--line-cell);background:var(--on-brand);color:var(--ink2);font:700 var(--t-kecil)/1 var(--font);overflow:hidden}
+.km-lg{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:var(--r-sm);border:1px solid var(--line-cell);background:var(--on-brand);color:var(--meti-navy);font:700 var(--t-kecil)/1 var(--font);overflow:hidden}
 .km-lg img{width:26px;height:26px;object-fit:contain}
 .km-jenis{display:inline-flex;flex-wrap:wrap;gap:6px}
 .km-jenis .jm-pil{white-space:nowrap}

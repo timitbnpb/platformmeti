@@ -9,7 +9,7 @@ import { IKON_TEK } from "/inti/ikon_tek.js";
 import { pasangPilih } from "/inti/pilih.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { segarkanAvatar } from "/inti/akun_menu.js";
-import { namaProvinsi, pasangFoto, fotoIsi, labelKeahlian } from "/profil_tampil.js";
+import { namaProvinsi, pasangFoto, fotoIsi, labelKeahlian, sertLabelHtml } from "/profil_tampil.js";
 
 await mulaiHalaman();
 pasangFoto();
@@ -23,7 +23,7 @@ const IK_JENIS = { pendidikan: "wisuda", pengalaman: "gedung", sertifikasi: "per
 const BIDANG = {
   pendidikan: [["jenjang", "pilih", 0, true, "wisuda"], ["kampus", "teks", 120, true, "gedung"], ["jurusan", "teks", 120, false, "buku"], ["tahun", "angka", 0, false, "tahun"]],
   pengalaman: [["jabatan", "teks", 120, true, "orang"], ["organisasi", "teks", 120, true, "gedung"], ["mulai", "angka", 0, true, "tahun"], ["selesai", "angka", 0, false, "tahun"]],
-  sertifikasi: [["nama", "teks", 120, true, "perisai"], ["penerbit", "teks", 120, false, "gedung"], ["tahun", "angka", 0, false, "tahun"]],
+  sertifikasi: [["nama", "teks", 120, true, "perisai"], ["penerbit", "teks", 120, false, "gedung"], ["nomor", "teks", 60, false, "tag"], ["tahun", "angka", 0, false, "tahun"], ["bukti_url", "teks", 200, false, "tautan"]],
   publikasi: [["judul", "teks", 160, true, "regulasi"], ["tahun", "angka", 0, false, "tahun"], ["proyek_id", "proyek", 0, false, "proyek"]],
 };
 
@@ -134,7 +134,7 @@ function periode(j, x) {
 function judulSub(j, x) {
   if (j === "pendidikan") return [x.kampus, [t("pf.jenjang." + x.jenjang), x.jurusan].filter(Boolean).join(", ")];
   if (j === "pengalaman") return [x.jabatan, x.organisasi];
-  if (j === "sertifikasi") return [x.nama, x.penerbit];
+  if (j === "sertifikasi") return [x.nama, [x.penerbit, x.nomor ? t("pf.sert.nomor", { n: x.nomor }) : ""].filter(Boolean).join(", ")];
   return [x.judul, ""];
 }
 function timeline(j) {
@@ -143,7 +143,7 @@ function timeline(j) {
   return `<ol class="ps-tl${j === "pengalaman" || j === "pendidikan" ? " ps-tl-garis" : ""}">${d.map((x) => {
     const [a, b] = judulSub(j, x), p = periode(j, x);
     const taut = j === "publikasi" && x.proyek_id ? `<a class="pf-taut pf-taut-kecil" href="/p/${encodeURIComponent(x.proyek_id)}">${ikon("proyek", 14)}<span>${esc(t("pf.lihat_proyek"))}</span></a>` : "";
-    return `<li class="ps-tl-i"><span class="ps-logo">${ikon(IK_JENIS[j], 22)}</span><div class="ps-tl-isi"><b>${esc(a)}</b>${b ? `<span>${esc(b)}</span>` : ""}${p ? `<small>${ikon("tahun", 14)}<span>${esc(p)}</span></small>` : ""}${taut}</div>${tombolIk("ubah-rw", "ubah", t("pf.ubah"), `data-jenis="${j}" data-id="${x.id}"`)}</li>`;
+    return `<li class="ps-tl-i"><span class="ps-logo">${ikon(IK_JENIS[j], 22)}</span><div class="ps-tl-isi"><b>${esc(a)}</b>${b ? `<span>${esc(b)}</span>` : ""}${p ? `<small>${ikon("tahun", 14)}<span>${esc(p)}</span></small>` : ""}${j === "sertifikasi" ? sertLabelHtml(x) : ""}${taut}</div>${tombolIk("ubah-rw", "ubah", t("pf.ubah"), `data-jenis="${j}" data-id="${x.id}"`)}</li>`;
   }).join("")}</ol>`;
 }
 const aksiRw = (j) => (daftarRw(j).length >= MAKS_RIWAYAT ? "" : tombolIk("tambah-rw", "tambah", t("pf.tambah"), `data-jenis="${j}"`));

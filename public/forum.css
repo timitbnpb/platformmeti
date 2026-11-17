@@ -1,0 +1,48 @@
+/* forum per bidang (F65-210) dan program mentor (F65-211): hanya token */
+.fr-catatan,.mt-catatan{display:flex;gap:8px;align-items:flex-start;margin:0 0 12px;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.fr-catatan svg,.mt-catatan svg{flex:none;margin-top:2px}
+.fr-atas{margin-bottom:12px}
+.fr-form,.mt-form{display:grid;gap:10px;margin:0 0 16px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.fr-form[hidden],.mt-form[hidden]{display:none}
+.fr-form label,.mt-form label,.mt-f{display:grid;gap:6px;min-width:0}
+.fr-form label>span,.mt-form label>span,.mt-f>span{font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.fr-form :is(input,textarea),.mt-form textarea{width:100%;min-height:var(--target);padding:10px 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:400 var(--t-masukan)/var(--lh-isi) var(--font);resize:vertical}
+.fr-form :is(input,textarea):focus-visible,.mt-form textarea:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.fr-aksi,.mt-aksi{display:flex;flex-wrap:wrap;gap:8px}
+.fr-ket,.mt-ket{margin:0;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.fr-pesan,.mt-pesan{margin:0;color:var(--bad);font:600 var(--t-kecil)/var(--lh-isi) var(--font)}
+.mt-pesan-ok{color:var(--ok)}
+.fr-daftar,.fr-balasan,.fr-laporan ul,.mt-daftar,.mt-minta{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.fr-baris{border:1px solid var(--line-cell);border-radius:var(--r-sm);background:var(--card)}
+.fr-judul{display:grid;gap:6px;width:100%;min-height:var(--target);padding:12px 14px;border:0;background:none;color:var(--ink);font:inherit;text-align:left;cursor:pointer;border-radius:var(--r-sm)}
+.fr-judul:hover{background:var(--surface)}
+.fr-judul:focus-visible{outline:2px solid var(--fokus);outline-offset:-2px}
+.fr-judul[aria-expanded="true"] b{color:var(--accent)}
+.fr-j{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.fr-j b{font:600 var(--t-body)/var(--lh-rapat) var(--font);overflow-wrap:anywhere}
+.fr-meta{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;margin:0;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.fr-meta>span{display:inline-flex;align-items:center;gap:4px}
+.fr-rinci{padding:0 14px 14px}
+.fr-utas{display:grid;gap:10px;padding-top:12px;border-top:1px solid var(--line-cell)}
+.fr-utas h4{margin:4px 0 0;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--head)}
+.fr-isi{margin:0;white-space:pre-line;overflow-wrap:anywhere;line-height:var(--lh-isi)}
+.fr-balasan li{display:grid;gap:4px;padding:10px 12px;border-radius:var(--r-sm);background:var(--surface)}
+.fr-redup{opacity:.7}
+.fr-mod{display:inline-flex;flex-wrap:wrap;gap:4px 12px;margin-left:auto}
+.fr-taut{display:inline-flex;align-items:center;gap:4px;min-height:var(--target);padding:0 4px;border:0;background:none;color:var(--ink2);font:600 var(--t-kecil)/1 var(--font);cursor:pointer}
+.fr-taut:hover{color:var(--accent)}
+.fr-taut:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.fr-laporan{margin:0 0 16px;padding:14px 16px;border-radius:var(--r);background:var(--warn-bg)}
+.fr-laporan h4{display:flex;align-items:center;gap:8px;margin:0 0 8px;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--warn)}
+.fr-laporan li{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
+.fr-laporan li>span{flex:1 1 240px;min-width:0;overflow-wrap:anywhere}
+.fr-laporan small{display:block;color:var(--ink2);font-size:var(--t-kecil)}
+.mt-atur{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:899px){.mt-atur{grid-template-columns:minmax(0,1fr)}}
+.mt-daftar li,.mt-minta li{display:grid;gap:6px;padding:12px 14px;border:1px solid var(--line-cell);border-radius:var(--r-sm);background:var(--card)}
+.mt-kepala{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.mt-kepala b{font:600 var(--t-body)/var(--lh-rapat) var(--font);overflow-wrap:anywhere}
+.mt-uraian{margin:0;white-space:pre-line;overflow-wrap:anywhere;line-height:var(--lh-isi)}
+.mt-h{margin:0 0 8px;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--head)}
+.mt-blok{display:grid;gap:10px;align-content:start}
+.fr-j .jm-pil,.fr-meta .jm-pil,.mt-kepala .jm-pil{gap:6px}

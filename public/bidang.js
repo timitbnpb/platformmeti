@@ -6,6 +6,7 @@ import { t, angka } from "/i18n.js";
 import { esc, ikon } from "/inti/umum.js";
 import { lihatSemuaHtml } from "/inti/komponen.js";
 import { pasangProdukTerkait } from "/inti/produk_meti.js";
+import { pasangForum } from "/forum.js";
 
 const $ = (id) => document.getElementById(id);
 const EBT = "n7.ebt", PUS = "nav.pustaka", TNT = "n7.tentang", PEN = "bid.n.pendanaan";
@@ -25,7 +26,7 @@ const BIDANG = {
 const SLUG = Object.keys(BIDANG);
 
 /* id alat untuk kunci bid.a.<id> */
-const SPESIAL = { "/direktori?tampil=pakar": "orang", "/direktori?tampil=lembaga": "institusi", "/direktori?tampil=pendanaan": "pendanaan", "/direktori?tampil=sistem_data": "sistem-data", "/siaran-pers": "meti-berita", "/investasi#peluang": "peluang", "/investasi#pembiayaan": "keuangan-hijau", "/investasi#model": "model-keuangan", "/investasi#biaya": "biaya-listrik", "/cek-lokasi#kawasan-hijau": "lokasi-hijau" };
+const SPESIAL = { "/target#strategi": "strategi", "/target#transisi": "transisi", "/direktori?tampil=pakar": "orang", "/direktori?tampil=lembaga": "institusi", "/direktori?tampil=pendanaan": "pendanaan", "/direktori?tampil=sistem_data": "sistem-data", "/siaran-pers": "meti-berita", "/investasi#peluang": "peluang", "/investasi#pembiayaan": "keuangan-hijau", "/investasi#model": "model-keuangan", "/investasi#biaya": "biaya-listrik", "/cek-lokasi#kawasan-hijau": "lokasi-hijau" };
 const idAlat = (h) => SPESIAL[h] || h.replace(/^\//, "");
 /* satu-satunya foto (pemilik 8 Nov 2026): Pelaku orang */
 const KEG = "/img/kegiatan/audiensi-mpr-2026-10-05.webp", BR = (f) => `/img/beranda/${f}.webp`;
@@ -71,9 +72,9 @@ function gambar() {
   else if (!slug) { $("judul").textContent = t("bid.judul"); $("jawab").textContent = t("bid.lead"); document.title = t("bid.judul") + " | " + t("jm.merek"); }
   else { $("judul").textContent = t("bid.n." + slug); $("jawab").textContent = t("bid.d." + slug); document.title = t("bid.n." + slug) + " | " + t("jm.merek"); }
   $("isi").innerHTML = B
-    ? `<a class="jm-bd-balik" href="/bidang">${esc(t("bid.semua"))}</a><div class="jm-bd-kisi">${B.alat.map(kartuAlat).join("")}</div><div id="produkBid" hidden></div>`
+    ? `<a class="jm-bd-balik" href="/bidang">${esc(t("bid.semua"))}</a><div class="jm-bd-kisi">${B.alat.map(kartuAlat).join("")}</div><div id="produkBid" hidden></div><div id="forumBid"></div>`
     : `<div class="jm-bd-kisi">${SLUG.map(kartuBidang).join("")}</div>`;
-  if (B) pasangProdukTerkait("produkBid", { j: "bidang", k: slug });
+  if (B) { pasangProdukTerkait("produkBid", { j: "bidang", k: slug }); pasangForum($("forumBid"), { bidang: slug, nama: t("bid.n." + slug), admin: ["admin", "super"].includes(SESI?.peran) }); }
   isiLencana(); isiKredit(); isiPengurus(B ? SLUG.indexOf(slug) + 1 : 0);
 }
 
@@ -108,6 +109,6 @@ async function isiKredit() {
   wadah.hidden = false;
 }
 
-await mulaiHalaman();
+const SESI = await mulaiHalaman();
 gambar();
 document.addEventListener("jm:bahasa", gambar);

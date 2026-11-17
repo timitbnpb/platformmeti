@@ -12,7 +12,7 @@
 .rs3-b-rendah{background:var(--ok)}.rs3-b-sedang{background:var(--info)}.rs3-b-tinggi{background:var(--warn)}.rs3-b-sangat-tinggi{background:var(--bad)}
 /* komponen */
 .rs3-komp{display:flex;flex-wrap:wrap;gap:6px}
-.rs3-ch{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);background:color-mix(in srgb,var(--sk) 14%,var(--card));color:var(--sk);white-space:nowrap}
+.rs3-ch{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);background:color-mix(in srgb,var(--sk) 14%,var(--card));color:color-mix(in srgb,var(--sk) 45%,var(--ink));white-space:nowrap}
 .rs3-c-hutan{--sk:var(--ok)}
 .rs3-c-gambut{--sk:var(--lg-bronze)}
 .rs3-c-adat{--sk:var(--tp-industri)}

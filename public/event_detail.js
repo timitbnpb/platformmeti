@@ -1,6 +1,6 @@
 /* /event/<slug>: poster, latar belakang, video, foto, berita; panel: waktu, lokasi + peta mini, penyelenggara, Daftar (RSVP), bagikan, QR, kalender, hitung mundur, tag, contact person. */
 import { mulaiHalaman } from "/inti/kepala.js";
-import { t, angka, tanggal } from "/i18n.js";
+import { t, angka, tanggal, tanggalDariUnix, jam } from "/i18n.js";
 import { esc, nanti, ikon, hantuHtml, kosongHtml, galatHtml, galatTeks, api } from "/inti/umum.js";
 import { exHtml, sumberHtml, terkaitHtml } from "/inti/komponen.js";
 import { muat, label, urlAman } from "/publik.js";
@@ -97,7 +97,42 @@ async function batal() {
     catch (err) { const g = d.querySelector("#rGalat"); g.textContent = galatTeks(err.kode || "umum"); g.hidden = false; }
   });
 }
-function segarkanPanel() { const r = document.querySelector(".ev-rsvp"); if (r) r.outerHTML = rsvpHtml() || '<div class="ev-rsvp"></div>'; const k = document.getElementById("evKontak"); if (k) k.innerHTML = kontakIsi(); }
+function segarkanPanel() { const r = document.querySelector(".ev-rsvp"); if (r) r.outerHTML = rsvpHtml() || '<div class="ev-rsvp"></div>'; const k = document.getElementById("evKontak"); if (k) k.innerHTML = kontakIsi(); nanti(muatTiket); }
+
+/* ---------- tiket, hadir, sertifikat, survei (F65-201..203): hanya untuk akun yang terdaftar di acara ini ---------- */
+const BUTIR_SV = ["puas", "relevan", "selenggara", "minat"];
+function tiketHtml(d) {
+  const hadir = d.hadir_pada
+    ? `<p class="ev-tk-st ev-tk-ok">${ikon("centang", 18)}<span>${esc(t("ev.tk.hadir", { waktu: `${tanggal(tanggalDariUnix(d.hadir_pada))} ${jam(d.hadir_pada)}` }))}</span></p>`
+    : `<p class="ev-tk-st">${ikon("info", 18)}<span>${esc(t("ev.tk.belum"))}</span></p>`;
+  const sert = d.sertifikat ? `<a class="jm-tbl jm-tbl-utama" href="${esc(new URL(d.sertifikat).pathname)}" target="_blank" rel="noopener">${ikon("perisai", 18)}<span>${esc(t("ev.tk.sertifikat"))}</span></a>`
+    : d.hadir_pada ? `<p class="jm-bantu">${esc(t("ev.tk.sert_tunggu"))}</p>` : "";
+  const skala = (k) => `<fieldset class="ev-sv-b"><legend>${esc(t("ev.sv.b." + k))}</legend><div class="ev-sv-skala">${[1, 2, 3, 4, 5].map((n) => `<label><input type="radio" name="sv-${k}" value="${n}" required><span>${n}</span></label>`).join("")}</div></fieldset>`;
+  const survei = d.survei.sudah ? `<p class="ev-tk-st ev-tk-ok">${ikon("centang", 18)}<span>${esc(t("ev.sv.sudah"))}</span></p>`
+    : d.survei.boleh ? `<form class="ev-sv" id="evSurvei" novalidate><h3>${esc(t("ev.sv.j"))}</h3><p class="jm-bantu">${esc(t("ev.sv.bantu"))}</p>${BUTIR_SV.map(skala).join("")}<p class="ev-dlg-galat" id="evSvGalat" role="alert" hidden></p><button type="submit" class="jm-tbl jm-tbl-utama">${ikon("panah-kanan", 18)}<span>${esc(t("ev.sv.kirim"))}</span></button></form>` : "";
+  return `<div class="ev-blok ev-tk"><h3>${ikon("kalender-bintang", 18)}<span>${esc(t("ev.tk.j"))}</span></h3><div class="ev-qr" id="evTkQr"></div><p class="ev-tk-kode"><small>${esc(t("ev.tk.kode"))}</small><code>${esc(d.kode)}</code></p>${hadir}${sert}${survei}</div>`;
+}
+async function muatTiket() {
+  const el = document.getElementById("evTiket");
+  if (!el) return;
+  const mine = sayaDaftar();
+  if (!mine || mine.status !== "terdaftar") { el.innerHTML = ""; return; }
+  let d;
+  try { d = await api(`/api/event/${encodeURIComponent(slug)}/tiket`); } catch { el.innerHTML = ""; return; } // fitur belum aktif atau layanan: panel RSVP tetap utuh
+  if (!d.terdaftar || !el.isConnected) { el.innerHTML = ""; return; }
+  el.innerHTML = tiketHtml(d);
+  qrSvg(d.kode).then((svg) => { const q = document.getElementById("evTkQr"); if (q) q.innerHTML = svg; }, () => {});
+}
+async function kirimSurvei(e) {
+  const f = e.target.closest("#evSurvei");
+  if (!f) return;
+  e.preventDefault();
+  const g = f.querySelector("#evSvGalat"), tbl = f.querySelector("button[type=submit]"), badan = {};
+  for (const k of BUTIR_SV) { const v = f.querySelector(`input[name=sv-${k}]:checked`); if (!v) { g.textContent = t("ev.sv.lengkapi"); g.hidden = false; return; } badan[k] = Number(v.value); }
+  g.hidden = true; tbl.disabled = true;
+  try { await api(`/api/event/${encodeURIComponent(slug)}/survei`, { metode: "POST", badan }); await muatTiket(); }
+  catch (err) { g.textContent = galatTeks(err.kode || "umum"); g.hidden = false; tbl.disabled = false; }
+}
 
 /* ---------- panel samping ---------- */
 function kontakIsi() {
@@ -178,6 +213,7 @@ async function gambar() {
     : { fakta: [{ ikon: "kalender", label: t("kh.tgl"), nilai: tglRentang(B) }, { ikon: "lokasi", label: t("kh.lokasi"), nilai: lokasiTeks(B) }, { ikon: "jenis", label: t("kh.jenis"), nilai: label("kal.jenis.", B.jenis) }, { ikon: "orang", label: t("kh.mitra"), nilai: mitra }] });
   isi.innerHTML = `<div class="ev-detail-kisi"><div class="ev-utama"><figure class="ev-besar">${posterHtml(B, "ev-poster-besar")}${B.poster ? `<figcaption class="jm-bantu">${esc(t("ev.poster.hak", { hak: B.poster.hak }))}${urlAman(B.poster.url_sumber) ? ` <a href="${esc(B.poster.url_sumber)}" target="_blank" rel="noopener noreferrer">${esc(t("ev.poster.sumber"))}</a>` : ""}</figcaption>` : ""}</figure><div id="evBagian">${hantuHtml(3)}</div></div>${panelHtml()}</div>`;
   document.querySelector(".ev-rsvp").outerHTML = rsvpHtml() || '<div class="ev-rsvp"></div>';
+  document.querySelector(".ev-rsvp").insertAdjacentHTML("afterend", '<div id="evTiket" aria-live="polite"></div>'); nanti(muatTiket);
   tik(); clearInterval(WAKTU); WAKTU = setInterval(tik, 1000);
   qrSvg(urlMutlak(B)).then((s) => { const q = document.getElementById("evQr"); if (q) q.innerHTML = s; }, () => {});
   for (const [id, daftar] of [["evPen", B.daftarPen], ["evMit", B.daftarMitra]]) {
@@ -185,7 +221,9 @@ async function gambar() {
     if (ul) Promise.all(daftar.map(async (n) => mitraHtml(n, await logoMitra(n)))).then((h) => { if (ul.isConnected && h.length) ul.innerHTML = h.join(""); });
   }
   nanti(muatPeta);
-  document.getElementById("evBagian").innerHTML = (await isiUtama()) + (await terkaitHtml("event", slug));
+  document.getElementById("evBagian").innerHTML = (await isiUtama()) + (await terkaitHtml("event", slug)) + (aturAcara() ? '<div id="evStan"></div>' : "");
+  // F65-302: minat stan pameran, hanya untuk acara yang pengaturannya ada (server memeriksa lagi)
+  if (aturAcara()) import("/kiriman.js").then((m) => m.pasangStan(document.getElementById("evStan"), { id: slug })).catch(() => {});
 }
 
 async function main() {
@@ -204,6 +242,7 @@ async function main() {
     if (!b) return;
     if (b.dataset.rsvp === "buka") bukaForm(); else if (b.dataset.rsvp === "batal") batal(); else if ("ics" in b.dataset) unduhIcs(B); else location.href = "/event";
   });
+  document.addEventListener("submit", kirimSurvei);
   document.addEventListener("jm:bahasa", () => B && gambar());
 }
 main();

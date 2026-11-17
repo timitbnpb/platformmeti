@@ -9,6 +9,7 @@ import { exHtml, sumberHtml, cariHtml, pilihHtml, hapusHtml } from "/inti/kompon
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
 import { muatMapLibre } from "/inti/maplibre.js";
+import { hitungDiesel } from "/inti/diesel_rumus.js";
 import { rapikanPeta, pasangBatas } from "/inti/peta_indonesia.js";
 import { geserPanel } from "/inti/panel_geser.js";
 import { muatTeks, tt, L, num, tgl, persen, tautan, url, seksi, catatan, narasi, sumber, butuhDaftar, tabel, petaHtml, pasangPeta, lambang, labelPil, saatBahasa } from "/info_kerangka.js";
@@ -105,6 +106,37 @@ function bagPembiayaan() {
     { k: "sasaran", label: tt("tabel.sasaran"), v: (p) => p.sasaran.join(", ") },
     { k: "uraian", label: tt("tabel.uraian"), v: (p) => p.uraian },
   ] });
+}
+
+/* ---------- kalkulator hemat dibanding diesel (F65-104; rumus di /inti/diesel_rumus.js; semua isian milik pengguna) ---------- */
+const DK = [["dieselKwh", "rpkwh"], ["dieselTahun", "rp"], ["ebtTahun", "rp"], ["hemat", "rp"], ["liter", "liter"]];
+function hitungDk() {
+  const n = (id) => { const v = $(id).value; return v === "" ? NaN : +v; }, om = $("dkOm").value === "" ? 0 : +$("dkOm").value;
+  const h = hitungDiesel({ kwhHari: n("dkKwh"), harga: n("dkHarga"), sfc: n("dkSfc"), om, ebt: n("dkEbt") });
+  const rp = (v) => (v < 0 ? "-" : "") + "Rp " + angka(Math.abs(Math.round(v)));
+  for (const [k, sat] of DK) $("dk-" + k).textContent = h[k] == null ? "-" : sat === "liter" ? `${angka(Math.round(h[k]))} ${t("de2.dk.liter")}` : sat === "rpkwh" ? `${rp(h[k])}/kWh` : rp(h[k]);
+  const p = $("dkPutus");
+  p.hidden = h.hemat == null; if (h.hemat != null) { p.textContent = t(h.hemat > 0 ? "de2.dk.hemat" : "de2.dk.tidak"); p.className = "jm-pil " + (h.hemat > 0 ? "jm-pil-ok" : "jm-pil-warn"); }
+  $("dkIsi").hidden = h.hemat != null;
+}
+async function bagDiesel() {
+  const f = (id, k, attr = "") => `<label class="de2-dk-f"><span>${esc(t("de2.dk.f." + k))}</span><input id="${id}" type="number" inputmode="decimal" min="0" step="any" ${attr}></label>`;
+  $("s-diesel").innerHTML = seksi({ id: "diesel", ik: "kalkulator", topik: t("de2.dk.ey"), judul: t("de2.dk.j"), turunan: true, sub: t("de2.dk.sub"),
+    isi: `<div class="de2-dk"><div class="de2-dk-in">${f("dkKwh", "kwh")}${f("dkHarga", "harga")}${f("dkSfc", "sfc")}${f("dkOm", "om")}${f("dkEbt", "ebt")}
+      <button type="button" class="jm-tbl" id="dkAsumsi" hidden>${ikon("info", 16)}<span>${esc(t("de2.dk.asumsi"))}</span></button><p class="jm-bantu" id="dkAsumsiKet" hidden></p></div>
+      <div><dl class="de2-dk-h">${DK.map(([k]) => `<div><dt>${esc(t("de2.dk.o." + k))}</dt><dd><b id="dk-${k}">-</b></dd></div>`).join("")}</dl>
+      <p><span id="dkPutus" hidden></span></p><p id="dkIsi" class="jm-bantu" role="status">${esc(t("de2.dk.isi"))}</p></div></div>${catatan(t("de2.dk.batas"))}` });
+  $("diesel").addEventListener("input", hitungDk);
+  try {
+    const D = await muatData("dedieselisasi.json"), a = D.asumsi, tombol = $("dkAsumsi");
+    if (!tombol) return;
+    tombol.hidden = false;
+    tombol.addEventListener("click", () => {
+      $("dkHarga").value = D.harga_solar.rp_per_liter; $("dkSfc").value = a.sfc_l_kwh; $("dkEbt").value = Math.round((a.biaya_sen_usd_kwh.dasar / 100) * a.kurs);
+      const k = $("dkAsumsiKet"); k.hidden = false; k.textContent = t("de2.dk.asumsi_ket", { harga: angka(D.harga_solar.rp_per_liter), sfc: angka(a.sfc_l_kwh, { desimal: 2 }), sen: angka(a.biaya_sen_usd_kwh.dasar), kurs: angka(a.kurs) });
+      hitungDk();
+    });
+  } catch (e) { /* tanpa data asumsi, kalkulator tetap jalan dengan isian pengguna */ }
 }
 
 function bagMetode() {
@@ -290,8 +322,8 @@ async function bagKasus() {
 async function gambar() {
   await bagKasus();
   ubin();
-  for (const id of ["s-peta", "s-hidro", "s-mandiri", "s-koperasi", "s-biaya", "s-metode"]) if (!$(id)) $("isi").insertAdjacentHTML("beforeend", `<div id="${id}"></div>`);
-  bagHidro(); bagMandiri(); bagKoperasi(); bagPembiayaan(); bagMetode();
+  for (const id of ["s-peta", "s-hidro", "s-mandiri", "s-koperasi", "s-diesel", "s-biaya", "s-metode"]) if (!$(id)) $("isi").insertAdjacentHTML("beforeend", `<div id="${id}"></div>`);
+  bagHidro(); bagMandiri(); bagKoperasi(); bagDiesel(); bagPembiayaan(); bagMetode();
   await bagPeta();
   document.querySelectorAll("[data-k]").forEach((e) => { e.textContent = tt(e.dataset.k); });
   document.title = tt("judul.halaman");

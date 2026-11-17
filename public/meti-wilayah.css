@@ -51,7 +51,7 @@
 .mw-cacah .jm-ik{grid-row:span 2;color:var(--accent)}
 .mw-cacah b{font:700 var(--t-tombol)/1.1 var(--display);color:var(--head)}
 .mw-cacah small{font-size:var(--t-label);line-height:1.2}
-.mw-ajak{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;min-height:44px;margin:0;padding:0 16px;border-radius:var(--r-pil);background:var(--accent);color:var(--on-brand);font:700 var(--t-kecil)/1 var(--font);text-decoration:none}
+.mw-ajak{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;min-height:44px;margin:0;padding:0 16px;border-radius:var(--r-pil);background:var(--accent);color:var(--on-accent);font:700 var(--t-kecil)/1 var(--font);text-decoration:none}
 .mw-ajak .jm-ik{color:inherit}
 .mw-pil{display:inline-flex;align-items:center;gap:5px;color:var(--head);border:1px solid transparent;font-weight:700}
 .mw-pil-berdiri{background:color-mix(in srgb,var(--ok) 18%,var(--card));border-color:var(--ok)}

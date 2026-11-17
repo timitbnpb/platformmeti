@@ -12,11 +12,11 @@
 .kj-logo-ik{position:absolute;color:var(--ink2)}
 .kj-pil{display:flex;flex-wrap:wrap;gap:8px}
 .kj-jj{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font)}
-.kj-jj-magang{color:var(--tp-listrik);background:color-mix(in srgb,var(--tp-listrik) 14%,transparent)}
-.kj-jj-pemula{color:var(--tp-efisiensi);background:color-mix(in srgb,var(--tp-efisiensi) 14%,transparent)}
-.kj-jj-menengah{color:var(--tp-biaya);background:color-mix(in srgb,var(--tp-biaya) 14%,transparent)}
-.kj-jj-senior{color:var(--tp-simpan);background:color-mix(in srgb,var(--tp-simpan) 14%,transparent)}
-.kj-jj-pimpinan{color:var(--tp-adil);background:color-mix(in srgb,var(--tp-adil) 14%,transparent)}
+.kj-jj-magang{color:color-mix(in srgb,var(--tp-listrik) 45%,var(--ink));background:color-mix(in srgb,var(--tp-listrik) 14%,transparent)}
+.kj-jj-pemula{color:color-mix(in srgb,var(--tp-efisiensi) 45%,var(--ink));background:color-mix(in srgb,var(--tp-efisiensi) 14%,transparent)}
+.kj-jj-menengah{color:color-mix(in srgb,var(--tp-biaya) 45%,var(--ink));background:color-mix(in srgb,var(--tp-biaya) 14%,transparent)}
+.kj-jj-senior{color:color-mix(in srgb,var(--tp-simpan) 45%,var(--ink));background:color-mix(in srgb,var(--tp-simpan) 14%,transparent)}
+.kj-jj-pimpinan{color:color-mix(in srgb,var(--tp-adil) 45%,var(--ink));background:color-mix(in srgb,var(--tp-adil) 14%,transparent)}
 .kj-meta{display:flex;flex-wrap:wrap;gap:10px 18px;color:var(--ink2);font:400 var(--t-kecil)/1.4 var(--font)}
 .kj-lok,.kj-tgl,.kj-taut{display:inline-flex;align-items:center;gap:6px;min-width:0}
 .kj-lok img{border-radius:4px}
@@ -65,3 +65,22 @@ path.kj-q[data-tip]{cursor:pointer}
 .kj-lg i.kj-q{border:0}
 .kj-lg i.kj-q1{background:color-mix(in srgb,var(--accent) 22%,var(--card))}.kj-lg i.kj-q2{background:color-mix(in srgb,var(--accent) 40%,var(--card))}.kj-lg i.kj-q3{background:color-mix(in srgb,var(--accent) 60%,var(--card))}.kj-lg i.kj-q4{background:color-mix(in srgb,var(--accent) 80%,var(--card))}.kj-lg i.kj-q5{background:var(--accent)}
 #kjCelah .ih-sorot .ih-bar{color:var(--tp-adil)}
+/* minat lowongan (F65-212) */
+.kjm{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line-cell)}
+.kjm:empty{display:none}
+.kjm-form,.kjm-daftar{flex:1 1 100%;display:grid;gap:8px}
+.kjm-form[hidden],.kjm-daftar[hidden]{display:none}
+.kjm-form label{display:grid;gap:6px}
+.kjm-form label>span{font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.kjm-form textarea{width:100%;min-height:var(--target);padding:10px 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:400 var(--t-masukan)/var(--lh-isi) var(--font);resize:vertical}
+.kjm-form textarea:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.kjm-aksi{display:flex;flex-wrap:wrap;gap:8px}
+.kjm-ket{margin:0;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.kjm-pesan{margin:0;color:var(--bad);font:600 var(--t-kecil)/var(--lh-isi) var(--font)}
+.kjm-daftar ul{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.kjm-daftar li{display:grid;gap:2px;padding:10px 12px;border-radius:var(--r-sm);background:var(--surface)}
+.kjm-daftar li small{color:var(--ink2);font-size:var(--t-kecil)}
+.kjm-daftar li p{margin:4px 0 0;overflow-wrap:anywhere;white-space:pre-line}
+.kjm-taut{padding:0;border:0;background:none;color:var(--accent);font:inherit;font-weight:600;cursor:pointer;min-height:var(--target)}
+.kjm-taut:hover{text-decoration:underline}
+.kjm .jm-pil{gap:6px}

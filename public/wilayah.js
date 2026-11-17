@@ -4,6 +4,7 @@ import { geserPanel } from "/inti/panel_geser.js";
 import { unduhRegHtml } from "/inti/komponen.js";
 import { nanti, esc, hantuHtml, debounce } from "/inti/umum.js";
 import { t, tanggal } from "/i18n.js";
+import { potensiTotal, rasioPersen } from "/inti/rasio_rumus.js";
 import { muatData, tampilGalat, sumberHtml, sumberLipat, pasangAksi, kartuHtml, batangHtml, pasangBar, temuanHtml, heroVisual, ubinHtml, pil, teksTek, teksStatus, num, saatBahasa, amanUrl } from "/analisis.js";
 
 const $ = (id) => document.getElementById(id);
@@ -20,6 +21,8 @@ const METRIK = {
   terpasang: { ambil: (p) => p.terpasang_mw?.nilai ?? null, satuan: "MW", d: 1, sumber: (p) => p.terpasang_mw, kedua: ["proyek", "ebt"] },
   ebt: { ambil: (p) => jumlah(daftarTek().map((k) => PEL.get(p.kode)?.potensi[k]?.mw).filter((v) => v != null)), satuan: "MW", d: 0, sumber: sumberEbt, kedua: ["terpasang", "proyek"] },
   sisa: { ambil: (p) => jumlah(daftarTek().map((k) => { const b = PEL.get(p.kode), a = b?.potensi[k]?.mw, c = b?.terpasang?.[k]?.mw; return a != null && c != null ? Math.max(0, a - c) : null; }).filter((v) => v != null)), satuan: "MW", d: 0, sumber: sumberEbt, kedua: ["ebt", "terpasang"] },
+  /* F65-112: terpasang (HEESI) dibagi jumlah potensi semua teknologi (sama dengan /banding); potensi kosong = tanpa angka, tidak dipotong di 100 */
+  pakai: { ambil: (p) => rasioPersen(p.terpasang_mw?.nilai ?? null, potensiTotal(PEL.get(p.kode)?.potensi)), satuan: "%", d: 1, sumber: () => ({ sumber: t("wl.src.gabung"), tanggal: PELMETA }), kedua: ["terpasang", "ebt"] },
   proyek: { ambil: (p) => p.jumlah_proyek, satuan: "", d: 0, sumber: () => null, kedua: ["terpasang", "ebt"] },
   capaian: { ambil: (p) => CAP.get(p.kode)?.rasio_persen ?? null, satuan: "%", d: 0, sumber: (p) => (CAP.has(p.kode) ? { sumber: t("wl.sumber_capaian"), tanggal: CAPTGL } : null), kedua: ["terpasang", "rued"] },
   rued: { ambil: (p) => (p.rued.perda ? 1 : null), satuan: "", d: 0, sumber: (p) => (p.rued.perda ? { sumber: t("wl.sumber_rued"), url: p.rued.url, tanggal: p.rued.tanggal } : null), kedua: ["terpasang", "proyek"] },
@@ -94,14 +97,16 @@ function legenda() {
   const m = metrik, { rentang } = kelasPeta(m), kosong = data.baris.length - berdata(m).length;
   const fmt = (v) => num(v, METRIK[m].d);
   $("lg-j").textContent = t("wl.m." + m);
-  $("lg-isi").innerHTML = `<div class="jm-wl-rp"><div class="jm-wl-rp-s">${rentang.map((r) => `<span><i class="jm-wl-k${r.k}" aria-hidden="true"></i><small>${esc(m === "rued" ? t("wl.lg.ada") : fmt(r.min))}</small></span>`).join("")}</div>${kosong ? `<span class="jm-wl-rp-k"><i class="jm-wl-sw-kos" aria-hidden="true"></i><small>${esc(t("an.tanpa_data"))}</small></span>` : ""}</div>`;
-  const pra = (m === "ebt" || m === "sisa") && daftarTek().some((k) => PEL.get("91")?.potensi[k]?.pra_pemekaran);
-  $("lg-pita").hidden = !pra; $("lg-pita").textContent = pra ? t("wl.pita.pra") : "";
+  $("lg-isi").innerHTML = `<div class="jm-wl-rp"><div class="jm-wl-rp-s">${rentang.map((r) => `<span><i class="jm-wl-k${r.k}" aria-hidden="true"></i><small>${esc(m === "rued" ? t("wl.lg.ada") : fmt(r.min) + (m === "pakai" ? " %" : ""))}</small></span>`).join("")}</div>${kosong ? `<span class="jm-wl-rp-k"><i class="jm-wl-sw-kos" aria-hidden="true"></i><small>${esc(t("an.tanpa_data"))}</small></span>` : ""}</div>`;
+  const pra = (m === "ebt" || m === "sisa" || m === "pakai") && daftarTek().some((k) => PEL.get("91")?.potensi[k]?.pra_pemekaran);
+  const lebih = m === "pakai" && berdata(m).some((p) => METRIK[m].ambil(p) > 100);
+  $("lg-pita").hidden = !(pra || m === "pakai"); $("lg-pita").textContent = [m === "pakai" ? t("wl.rasio.cat") : "", lebih ? t("wl.rasio.lebih") : "", pra ? t("wl.pita.pra") : ""].filter(Boolean).join(" ");
   const tp = urutM(m)[0], tgt = METRIK[m].ambil(tp);
   const sumP = berdata(m).reduce((a, p) => a + METRIK[m].ambil(p), 0), top10 = urutM(m).slice(0, 10).reduce((a, p) => a + (METRIK[m].ambil(p) ?? 0), 0);
   $("j-peta").innerHTML = m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.peta", { mj: t("wl.mj." + m), nilai: nilaiTeks(m, tp) }, tp.nama);
   $("sub-peta").innerHTML = `${esc(t("wl.sub.peta", { metrik: t("wl.m." + m), n: berdata(m).length, total: data.baris.length }))} ${pil("an.est")}`;
-  $("j-urut").innerHTML = m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.urut", { mj: t("wl.mj." + m) }, num((top10 / sumP) * 100, 0) + "%");
+  const bd = berdata("pakai"), gab = rasioPersen(bd.reduce((a, p) => a + p.terpasang_mw.nilai, 0), bd.reduce((a, p) => a + potensiTotal(PEL.get(p.kode).potensi), 0));
+  $("j-urut").innerHTML = m === "pakai" ? hlHtml("wl.rasio.j_urut", { n: bd.length }, gab === null ? "-" : num(gab, 1) + "%") : m === "rued" ? hlHtml("wl.j.rued", { n: data.baris.length }, num(berdata(m).length)) : hlHtml("wl.j.urut", { mj: t("wl.mj." + m) }, num((top10 / sumP) * 100, 0) + "%");
   $("sub-urut").innerHTML = `${esc(t("wl.sub.urut", { metrik: t("wl.m." + m) }))} ${pil("an.est")}`;
   for (const id of ["aksi-peta", "aksi-urut"]) { const el = $(id); el.querySelector(".jm-an-src")?.remove(); el.insertAdjacentHTML("beforeend", infoSumber()); }
 }
@@ -224,6 +229,8 @@ async function bukaPeta() {
 }
 
 function pasangSakelar() {
+  const seg = document.querySelector(".jm-wl-seg"); // F65-112: segmen ketujuh ditambah dari JS; span ber-data-i18n supaya ikut ganti bahasa
+  if (!seg.querySelector('[data-m="pakai"]')) seg.querySelector('[data-m="sisa"]').insertAdjacentHTML("afterend", `<button type="button" role="tab" data-m="pakai" aria-selected="false"><svg class="jm-ik" width="18" height="18" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-tingkat"/></svg><span data-i18n="wl.m.pakai">${esc(t("wl.m.pakai"))}</span></button>`);
   $("tek").addEventListener("change", () => { tek = $("tek").value; nanti(() => { warnai(); legenda(); urutan(); }); });
   $("urutan").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-href]"); if (tr && !e.target.closest("a")) location.assign(tr.dataset.href); });
   document.querySelector(".jm-wl-seg").addEventListener("click", (e) => {
@@ -231,6 +238,7 @@ function pasangSakelar() {
     if (!b || b.dataset.m === metrik) return;
     for (const x of b.parentElement.children) x.setAttribute("aria-selected", String(x === b)); // chrome urgent
     metrik = b.dataset.m;
+    if (metrik === "pakai" && tek !== "semua") { tek = "semua"; $("tek").value = "semua"; } // rasio memakai jumlah semua teknologi
     const adaTek = metrik === "ebt" || metrik === "sisa";
     $("tek-baris").hidden = !adaTek; b.closest(".jm-wl-bingkai").classList.toggle("jm-wl-ada-tek", adaTek);
     nanti(() => { warnai(); legenda(); urutan(); });

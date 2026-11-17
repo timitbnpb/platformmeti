@@ -84,3 +84,8 @@
 .sy-kosong .jm-tbl{flex:none;margin-left:auto}
 @media (max-width:639px){.sy-kosong{flex-wrap:wrap}.sy-kosong .jm-tbl{width:100%;justify-content:center}}
 @media (max-width:639px){.sy-seg>button{gap:6px;padding-inline:8px}.sy-seg>button .jm-ik{display:none}}
+/* pencocokan bisnis (F65-209) */
+.sy-cc-ket{margin:12px 0 0;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.sy-cc-taut{padding:0;border:0;background:none;color:var(--accent);font:inherit;font-weight:600;cursor:pointer;min-height:var(--target)}
+.sy-cc-taut:hover{text-decoration:underline}
+.sy-cc-taut:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}

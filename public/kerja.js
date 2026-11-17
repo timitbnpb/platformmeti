@@ -14,6 +14,7 @@ import { t, tanggal, angka } from "/i18n.js";
 import { sumberLipat, saatBahasa } from "/analisis.js";
 import { kolomSvg, batangSvg, legendaHtml, tipHtml } from "/info_hijau.js";
 import "/inti/galat_gambar.js";
+import { slotMinat, pasangMinat, segarkanMinat } from "/kerja_minat.js";
 
 const $ = (id) => document.getElementById(id);
 const HAL = 9;
@@ -29,7 +30,7 @@ const tglUnix = (u) => new Date(u * 1000).toISOString().slice(0, 10);
 /* ---------- data lowongan gabungan ---------- */
 function semuaLowongan() {
   const situs = (D?.lowongan || []).map((r) => ({ judul: r.judul, org_id: r.organisasi_id, org: r.organisasi, kode: r.provinsi || "", lokasi: r.lokasi, tek: r.teknologi, jenjang: r.jenjang, tanggal: r.tanggal, batas: r.batas, tautan: r.tautan, asal: "situs" }));
-  const mem = anggota.map((r) => ({ judul: r.judul, org_id: r.organisasi_id, org: r.organisasi_nama, kode: r.kode_prov || "", lokasi: r.lokasi, tek: r.teknologi, jenjang: r.jenjang, tanggal: tglUnix(r.dibuat), batas: r.batas, tautan: r.tautan, asal: "anggota" }));
+  const mem = anggota.map((r) => ({ judul: r.judul, org_id: r.organisasi_id, org: r.organisasi_nama, kode: r.kode_prov || "", lokasi: r.lokasi, tek: r.teknologi, jenjang: r.jenjang, tanggal: tglUnix(r.dibuat), batas: r.batas, tautan: r.tautan, asal: "anggota", lid: r.id }));
   return [...mem, ...situs];
 }
 const norm = (s) => String(s || "").toLowerCase();
@@ -63,7 +64,7 @@ function kartu(r) {
     <header>${logoHtml(r)}<div><h3>${esc(r.judul)}</h3><p class="kj-org">${esc(r.org)}</p></div></header>
     <div class="kj-pil">${r.tek ? pilTek(r.tek) : ""}<span class="kj-jj kj-jj-${esc(r.jenjang)}">${ikon("tingkat", 14)}<span>${esc(t("kj.jj." + r.jenjang))}</span></span></div>
     <div class="kj-meta">${lokasiHtml(r)}<span class="kj-tgl">${ikon("kalender", 16)}<span>${esc(r.tanggal ? tanggal(r.tanggal) : t("kj.tgl.kosong"))}</span></span></div>
-    <footer>${tautan ? `<a class="jm-tbl jm-tbl-utama" href="${esc(tautan)}" target="_blank" rel="noopener noreferrer nofollow">${ikon("tautan", 16)}<span>${esc(t("kj.buka"))}</span></a>` : ""}<span class="jm-pil ${r.asal === "anggota" ? "jm-pil-ok" : ""}">${esc(t("kj.asal." + r.asal))}</span></footer>
+    <footer>${tautan ? `<a class="jm-tbl jm-tbl-utama" href="${esc(tautan)}" target="_blank" rel="noopener noreferrer nofollow">${ikon("tautan", 16)}<span>${esc(t("kj.buka"))}</span></a>` : ""}<span class="jm-pil ${r.asal === "anggota" ? "jm-pil-ok" : ""}">${esc(t("kj.asal." + r.asal))}</span></footer>${r.lid ? slotMinat(r.lid) : ""}
   </article>`;
 }
 function gambarDaftar() {
@@ -75,6 +76,7 @@ function gambarDaftar() {
   const potong = hasil.slice((S.hal - 1) * HAL, S.hal * HAL);
   $("kjDaftar").innerHTML = potong.length ? `<div class="kj-grid">${potong.map(kartu).join("")}</div>` : kosongHtml(semua.length ? "kj.kosong.saring" : "kj.kosong");
   $("kjHal").innerHTML = paginasiHtml({ hal: S.hal, total: hasil.length, per: HAL, satuan: "kj.pag" });
+  segarkanMinat($("kjDaftar"));
 }
 function bagianLowongan() {
   const semua = semuaLowongan();
@@ -330,7 +332,7 @@ async function muat() {
   await Promise.all([muatAnggota(), muatSaya(), muatOrg]);
   ubin(semuaLowongan());
   isi.innerHTML = [bagianLowongan(), bagianAnalisis(), bagianPeta(), V ? bagianVokasi() : "", bagianSertifikasi(), `<div id="kjPasangW" class="jm-hal-pf">${bagianPasang()}</div>`, saya_admin ? bagianAntre() : ""].join("");
-  gambarDaftar(); pasangLowongan(); gambarGrafik(); gambarPeta(); if (V) gambarVokasi(); pasangSegmen(); pasangForm();
+  pasangMinat($("kjDaftar"), () => new Set((saya?.lowongan || []).map((x) => x.id))); gambarDaftar(); pasangLowongan(); gambarGrafik(); gambarPeta(); if (V) gambarVokasi(); pasangSegmen(); pasangForm();
   if (saya_admin) { muatAntrean(); $("kjAntre").addEventListener("click", (e) => { const b = e.target.closest("[data-aksi]"); if (b) putus(b); }); }
   import("/inti/pilih.js").then((m) => m.pasangPilih()).catch(() => {});
 }

@@ -7,6 +7,7 @@ import { exHtml, sumberHtml, unduhRegHtml, pasangUrutTabel } from "/inti/kompone
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { khSisi } from "/inti/kh.js";
 import { num, saatBahasa, tampilGalat, muatData, sumberLipat, amanUrl } from "/analisis.js";
+import { nt, pilSt } from "/target_format.js";
 
 const $ = (id) => document.getElementById(id);
 const D = {};
@@ -14,29 +15,14 @@ const ST = { kat: "semua" };
 const L = (o) => (o && (o[bahasaData()] ?? o.id)) ?? "";
 const KAT = ["bauran", "kapasitas", "emisi", "bahan-bakar", "kendaraan"];
 const IK_KAT = { semua: "bendera", bauran: "grafik", kapasitas: "tek-surya", emisi: "pabrik", "bahan-bakar": "tek-bio", kendaraan: "petir", daerah: "wilayah" };
-const IK_ST = { tercapai: "piala", "di-jalur": "centang", tertinggal: "peringatan", "jauh-tertinggal": "silang", "tidak-ada-data": "tanya" };
 const BAIK = new Set(["tercapai", "di-jalur"]);
 
 /* ---------- format ---------- */
-const des = (v) => { const r2 = +v.toFixed(2); return Number.isInteger(r2) ? 0 : +v.toFixed(1) === r2 ? 1 : 2; };
-function nt(sat, v) {
-  if (v == null) return "-";
-  switch (sat) {
-    case "persen": return num(v, des(v)) + "%";
-    case "mw": return v >= 1000 ? num(v / 1000, v >= 100000 ? 0 : 1) + " GW" : num(v) + " MW";
-    case "unit": return v >= 1e6 ? num(v / 1e6, 1) + " " + t("tg2.sat.juta") : num(v);
-    case "juta_ton": return num(v, v < 10 ? 2 : 1) + " " + t("tg2.sat.juta_ton");
-    case "usd_miliar": return "US$" + num(v, 1) + " " + t("tg2.sat.miliar");
-    case "pltu": return num(v) + " " + t("tg2.sat.pltu");
-    default: return num(v);
-  }
-}
 const lajuTeks = (sat, v) => (v == null ? "-" : (sat === "persen" ? num(v, 2) + " " + t("tg2.sat.poin") : nt(sat, v)) + t("tg2.per_th"));
 const tglTeks = (s) => (/^\d{4}-\d{2}-\d{2}$/.test(s || "") ? tanggal(s) : s || "");
 const thn = (d) => String(d.tahunTampil ?? Math.floor(d.tahun));
 
 /* ---------- pil ---------- */
-const pilSt = (s) => `<span class="tg-pil tg-st-${s}">${ikon(IK_ST[s], 14)}<span>${esc(t("tg2.st." + s))}</span></span>`;
 const pilKat = (k) => `<span class="tg-pil tg-k-${k}">${ikon(IK_KAT[k], 14)}<span>${esc(t("tg2.kat." + k))}</span></span>`;
 
 /* ---------- grafik ---------- */

@@ -35,18 +35,21 @@ export const pilKeahlian = (k) => `<span class="pf-pil">${IKON_TEK[k] || ikon("t
 const aman = (u) => (/^https?:\/\//i.test(u) ? esc(u) : "");
 const taut = (u, ik, teks) => (aman(u) ? `<a class="pf-taut" href="${aman(u)}" target="_blank" rel="noopener noreferrer nofollow">${ikon(ik, 18)}<span>${esc(teks)}</span></a>` : "");
 
+/** F65-307: sertifikasi adalah isian sendiri. Label teks "belum diverifikasi" selalu ikut tampil (bukan warna saja), plus tautan bukti bila diisi dan https. */
+export const sertLabelHtml = (x) => `<span class="jm-pil jm-pil-warn pf-sert">${ikon("info", 14)}<span>${esc(t("pf.sert.belum"))}</span></span>${/^https:\/\//.test(x.bukti_url || "") ? `<a class="pf-taut pf-taut-kecil" href="${esc(x.bukti_url)}" target="_blank" rel="noopener noreferrer nofollow">${ikon("tautan", 14)}<span>${esc(t("pf.sert.bukti"))}</span></a>` : ""}`;
+
 /** Satu baris riwayat sebagai teks bersih: [utama, sampingan]. */
 export function riwayatBaris(jenis, x) {
   const th = (a) => (a ? String(a) : "");
   if (jenis === "pendidikan") return [[t("pf.jenjang." + x.jenjang), x.kampus].filter(Boolean).join(", "), [x.jurusan, th(x.tahun)].filter(Boolean).join(", ")];
   if (jenis === "pengalaman") return [x.jabatan, [x.organisasi, x.mulai ? `${x.mulai} - ${x.selesai || t("pf.sekarang")}` : ""].filter(Boolean).join(", ")];
-  if (jenis === "sertifikasi") return [x.nama, [x.penerbit, th(x.tahun)].filter(Boolean).join(", ")];
+  if (jenis === "sertifikasi") return [x.nama, [x.penerbit, x.nomor ? t("pf.sert.nomor", { n: x.nomor }) : "", th(x.tahun)].filter(Boolean).join(", ")];
   return [x.judul, th(x.tahun)];
 }
 const riwayatItem = (jenis, x) => {
   const [a, b] = riwayatBaris(jenis, x);
   const tautan = jenis === "publikasi" && x.proyek_id ? `<a class="pf-taut pf-taut-kecil" href="/p/${encodeURIComponent(x.proyek_id)}">${ikon("proyek", 14)}<span>${esc(t("pf.lihat_proyek"))}</span></a>` : "";
-  return `<li><b>${esc(a)}</b>${b ? `<span>${esc(b)}</span>` : ""}${tautan}</li>`;
+  return `<li><b>${esc(a)}</b>${b ? `<span>${esc(b)}</span>` : ""}${jenis === "sertifikasi" ? sertLabelHtml(x) : ""}${tautan}</li>`;
 };
 export const riwayatDaftarHtml = (jenis, daftar) =>
   daftar.length ? `<ul class="pf-riwayat">${daftar.map((x) => riwayatItem(jenis, x)).join("")}</ul>` : `<p class="pf-kosong">${esc(t("pf.riwayat.kosong"))}</p>`;

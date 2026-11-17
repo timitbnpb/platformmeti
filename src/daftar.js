@@ -2,6 +2,7 @@
 // Publik: POST /api/daftar, /foto, /lacak, /bukti, /bayar-online, /midtrans/notifikasi. Admin/pengurus: /api/admin/pendaftaran*.
 // Token lacak: dikirim di BADAN permintaan (bukan URL API), hanya SHA-256-nya disimpan. Semua D1 lewat hak.js.
 import * as hak from "./hak.js";
+import { notifikasiIuran } from "./iuran.js";   // siklus impor dengan iuran.js aman: keduanya hanya saling memakai di dalam fungsi
 import { acak, bacaBody, formTerbatas, gagal, ipHash, json, perlu, PRIVAT, RE_EMAIL, sha } from "./util.js";
 
 const STAF = ["pengurus", "admin", "super"];
@@ -180,6 +181,7 @@ export const rute = {
     const f = (k) => (typeof n[k] === "string" ? n[k] : "");
     if (!f("order_id") || !f("status_code") || !f("gross_amount") || !f("signature_key")) return gagal("masukan_salah", 422);
     if (!samaTetap(await tandaMidtrans({ order_id: f("order_id"), status_code: f("status_code"), gross_amount: f("gross_amount") }, env.MIDTRANS_SERVER_KEY), f("signature_key").toLowerCase())) return gagal("dilarang");
+    if (f("order_id").startsWith("IU-")) return notifikasiIuran(env, f);   // perpanjangan iuran (F65-301): tanda tangan sudah diverifikasi di atas
     const o = await hak.onlineBaca(env, f("order_id"));
     if (!o) return gagal("tidak_ditemukan");
     if (Math.round(Number(f("gross_amount"))) !== o.gross) return gagal("masukan_salah", 422);

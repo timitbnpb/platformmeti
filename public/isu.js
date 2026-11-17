@@ -131,7 +131,7 @@ async function gambarDaerah() {
 }
 
 /* ---------- rincian satu isu ---------- */
-const TAB = new Set(["", "nasional", "daerah", "linimasa"]);
+const TAB = new Set(["", "nasional", "daerah", "linimasa", "fakta"]);
 const dariHash = () => { try { return decodeURIComponent(location.hash.slice(1)); } catch { return ""; } };
 async function rute() {
   const h = dariHash(), det = $("isuDetail");
@@ -139,7 +139,7 @@ async function rute() {
   det.hidden = !mode; $("isuTab").hidden = mode;
   document.querySelector(".jm-kh").hidden = false;
   if (!mode) { document.title = t("isu.title"); return; }
-  for (const p of ["isuNasional", "isuDaerah", "isuLini"]) $(p).hidden = true;
+  for (const p of ["isuNasional", "isuDaerah", "isuLini", "isuFakta"]) $(p).hidden = true;
   det.innerHTML = hantuHtml(5);
   try { await (await import("/isu_detail.js")).tampilDetail(det, D, h); } catch { det.innerHTML = galatHtml("layanan"); }
   scrollTo({ top: 0 });
@@ -149,8 +149,10 @@ const tab = tabHalaman("isuTab", { label: "isu.tab.label", tab: [
   { k: "nasional", ikon: "globe", teks: "isu.tab.nasional", panel: "isuNasional", muat: async () => { gambarNasional(); sinkronSaring(); } },
   { k: "daerah", ikon: "peta", teks: "isu.tab.daerah", panel: "isuDaerah", muat: async () => { await gambarDaerah(); sinkronSaring(); } },
   { k: "linimasa", ikon: "linimasa", teks: "isu.tab.linimasa", panel: "isuLini", muat: async () => { gambarLini(); sinkronSaring(); } },
+  // F65-306: cek fakta. Dipasang sekali; kiriman.js menggambar ulang sendiri saat bahasa berganti.
+  { k: "fakta", ikon: "tanya", teks: "isu.tab.fakta", panel: "isuFakta", muat: async () => { if (sudah.has("f")) return; sudah.add("f"); await (await import("/kiriman.js")).pasangFakta($("isuFakta")); } },
 ] });
 kepalaAngka();
 addEventListener("hashchange", rute);
-document.addEventListener("jm:bahasa", () => { sudah.clear(); kepalaAngka(); $("isuNasional").innerHTML = ""; $("isuDaerah").innerHTML = ""; $("isuLini").innerHTML = ""; tab.buka(dariHash() || "nasional"); rute(); });
+document.addEventListener("jm:bahasa", () => { const f = sudah.has("f"); sudah.clear(); if (f) sudah.add("f"); kepalaAngka(); $("isuNasional").innerHTML = ""; $("isuDaerah").innerHTML = ""; $("isuLini").innerHTML = ""; tab.buka(dariHash() || "nasional"); rute(); });
 await rute();

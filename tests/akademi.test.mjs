@@ -3,10 +3,21 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import { KUNCI_AKADEMI } from "../src/akademi_kunci.js";
 import { KUNCI, hrefSumber, nilaiKuis, statusModul, berikutnya, lencana, bersihkanProgres } from "../public/akademi_hitung.js";
 
 const baca = (f) => JSON.parse(fs.readFileSync(new URL("../public/" + f, import.meta.url), "utf8"));
-const D = baca("data/akademi.json");
+// Kunci jawaban tinggal di server (src/akademi_kunci.js), bukan di berkas publik. PUBLIK = berkas apa adanya; D = berkas + kunci, dipakai semua uji isi di bawah.
+const PUBLIK = baca("data/akademi.json");
+const D = { ...PUBLIK, modul: PUBLIK.modul.map((m) => ({ ...m, kuis: m.kuis.map((s) => ({ ...s, ...KUNCI_AKADEMI[s.id] })) })) };
+
+test("berkas publik tidak memuat jawaban; tiap soal punya tepat satu kunci di server", () => {
+  const ids = PUBLIK.modul.flatMap((m) => m.kuis.map((s) => s.id));
+  for (const m of PUBLIK.modul) for (const s of m.kuis) { assert.ok(!("a" in s) && !("cek" in s), "jawaban bocor di berkas publik: " + s.id); }
+  assert.ok(!/"a"\s*:\s*\d|"cek"\s*:/.test(fs.readFileSync(new URL("../public/data/akademi.json", import.meta.url), "utf8")));
+  assert.deepEqual(Object.keys(KUNCI_AKADEMI).sort(), [...ids].sort());
+  assert.ok(!fs.existsSync(new URL("../public/akademi_kunci.js", import.meta.url)), "kunci tidak boleh ada di public/");
+});
 const ISTILAH = new Map(baca("data/istilah.json").istilah.map((x) => [x.id, x]));
 const IZIN = new Map(baca("data/izin_kontrak.json").tanya.map((x) => [x.id, x]));
 const metodeSrc = fs.readFileSync(new URL("../public/metode_halaman.js", import.meta.url), "utf8");

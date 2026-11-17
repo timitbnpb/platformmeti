@@ -54,6 +54,22 @@ Sel berkualifikasi: `B prov` atau `T prov` = hanya baris yang `cakupan_prov` aku
 | Daftar sesi aktif semua akun dan pencabutan per sesi; admin tak mencabut sesi super {sesi_admin} | - | - | - | - | - | T cabut bukan-super | T cabut |
 | Permintaan alamat surel @metiires.or.id; antrean dan putusan hanya admin dan super {surel_minta} | - | T daftar | T daftar | T daftar | T daftar | T | T |
 | Survei keyakinan bisnis EBT triwulanan; jawaban satu per akun per periode, agregat hanya bila n >= 5 {keyakinan} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Nilai kuis akademi dan kuis rekaman milik akun, dihitung server; bank soal rekaman diisi admin dan super {akademi_nilai} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Foto tonggak proyek; kirim hanya akun berklaim organisasi, yang lain hanya melihat yang disetujui, tinjau admin dan super {proyek_foto} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Minat listrik hijau korporat; akun hanya miliknya, pengguna lain hanya agregat per provinsi bila n >= 3 {permintaan_hijau} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Kebutuhan dana proyek; kirim hanya akun berklaim organisasi, yang lain hanya melihat yang disetujui, tinjau admin dan super {proyek_dana} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Minat lowongan tanpa CV; akun hanya miliknya, peminat hanya terlihat pemasang lowongan itu, admin, dan super {kerja_minat} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Pendaftaran mentor; yang lain hanya melihat yang disetujui, tinjau admin dan super {mentor} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Permintaan mentor; akun hanya miliknya, mentor yang dituju hanya melihat yang disetujui admin, tinjau admin dan super {mentor_minta} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Lencana verifikasi organisasi; kirim hanya akun berklaim organisasi, yang lain hanya melihat yang disetujui, tinjau admin dan super {lencana} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Laporan warga atas proyek; akun hanya miliknya, yang lain hanya isi yang disetujui tanpa nama pelapor, tinjau admin dan super {laporan_warga} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Antrean surel keluar dan draf buletin; hanya admin dan super, cron menulis lewat jalur sistem, tidak ada pengiriman (K19) {surel_keluar} | - | - | - | - | - | T | T |
+| Forum per bidang; akun masuk membaca yang tidak disembunyikan dan menulis utas, balasan, laporan; sembunyi hanya admin dan super {forum} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Papan minat REC dan karbon, tanpa transaksi; akun hanya miliknya, yang lain hanya yang disetujui, nama organisasi hanya bila pengirim memilih, tinjau admin dan super {minat_unit} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Minat stan pameran per acara, tanpa bayar; akun hanya miliknya, tinjau admin dan super {event_stan} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Klaim untuk cek fakta; akun hanya miliknya, yang lain hanya yang sudah diputus, putusan hanya admin dan super {cek_fakta} | - | T daftar | T daftar | T daftar | T daftar | T | T |
+| Ringkasan mesin per peraturan (tembolok); akun masuk membaca, dibuat hanya admin dan super, memanggil AI dengan batas laju dan plafon harian {hukum_ringkas} | - | B | B | B | B | T | T |
+| Pembayaran perpanjangan iuran; akun hanya miliknya, jumlah ditentukan server, tinjau bukti hanya admin dan super, lunas Midtrans lewat jalur sistem {iuran_bayar} | - | T daftar | T daftar | T daftar | T daftar | T | T |
 
 Penjelasan dan aturan sel:
 

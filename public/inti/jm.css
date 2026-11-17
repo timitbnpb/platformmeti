@@ -158,7 +158,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 .jm-ex .jm-ex-ey .jm-ik{width:14px;height:14px}
 .jm-ex .jm-ex-j{margin:0;font:700 var(--t-h2)/var(--lh-rapat) var(--display);letter-spacing:-.01em;color:var(--head);text-wrap:balance;max-width:68ch}
 .jm-ex .jm-hl{color:var(--accent)}
-.jm-ex .jm-ex-sub{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-ex .jm-ex-sub{display:block;margin:8px 0 0;font:600 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink2);text-wrap:pretty}
 .jm-ex .jm-ex-aksi{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .jm-ex>.jm-ex-bd{padding:16px 22px;min-width:0}
 .jm-ex>.jm-ex-ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;padding:10px 22px 14px;border-top:1px solid var(--line);font-size:var(--t-kecil);color:var(--ink2)}
@@ -220,7 +220,7 @@ th[aria-sort="descending"] .jm-urut::after{opacity:1;clip-path:polygon(0 0,100% 
 
 /* PIL TEKNOLOGI dan STATUS dengan ikon (pilTek/pilStatus di ikon_tek.js): warna dari token, tidak pernah terpotong */
 .jm-ikt-s{width:14px;height:14px;flex:none}
-.jm-pil-tek,.jm-pil-st{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;max-width:100%;background:color-mix(in srgb,var(--tk,var(--ink2)) 14%,var(--card));color:color-mix(in srgb,var(--tk,var(--ink2)) 62%,var(--ink))}
+.jm-pil-tek,.jm-pil-st{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:var(--r-pil);font:600 var(--t-kecil)/var(--lh-rapat) var(--font);white-space:nowrap;max-width:100%;background:color-mix(in srgb,var(--tk,var(--ink2)) 14%,var(--card));color:color-mix(in srgb,var(--tk,var(--ink2)) 45%,var(--ink))}
 .jm-pil-tek>.jm-ikt,.jm-pil-st>.jm-ikt{color:var(--tk,var(--ink2))}
 .jm-pil-st{--tk:var(--sk)}
 .jm-tek-surya{--tk:var(--data4)}.jm-tek-bayu{--tk:var(--data3)}.jm-tek-hidro{--tk:var(--data5)}.jm-tek-panas-bumi{--tk:var(--warn)}
@@ -778,7 +778,7 @@ li.jm-gf-on{stroke:none;outline:2px solid var(--fokus);outline-offset:2px;border
 }
 
 /* G2 label kepercayaan (inti/bukti.js): Resmi / Media / EST / Hipotesis / Kata pihak / Kajian / Perlu tinjau. Selalu ikon + teks, tidak hanya warna. */
-.jm-bukti{display:inline-flex;align-items:center;gap:5px;min-height:24px;padding:0 10px 0 8px;border:0;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font);white-space:nowrap;cursor:help;vertical-align:middle;background:var(--info-bg);color:var(--info)}
+.jm-bukti{position:relative;display:inline-flex;align-items:center;gap:5px;min-height:24px;padding:0 10px 0 8px;border:0;border-radius:var(--r-pil);font:600 var(--t-kecil)/1 var(--font);white-space:nowrap;cursor:help;vertical-align:middle;background:var(--info-bg);color:var(--info)}
 .jm-bukti .jm-ik{width:14px;height:14px;flex:none}
 .jm-bukti:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .jm-bukti[data-b=resmi]{background:var(--ok-bg);color:var(--ok)}
@@ -890,3 +890,19 @@ html body .jm-kh-ubin:not(.pf-kepala-sisi *,.rm *,.jm-kh-tab *,.jm-tp-ubin)>.jm-
 .jm-cak-jawab,.jm-cak-ket{margin:0 0 12px}
 .jm-cak-hit>summary{cursor:pointer;font-weight:600;margin-bottom:8px}
 .jm-cak-sum{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:12px 0 0}
+/* Audit 15 Nov 2026: area sentuh lencana bukti diperluas tanpa mengubah tampak (DS 6.0); angka ubin kepala tidak pernah patah di tengah digit. */
+.jm-bukti::after{content:"";position:absolute;inset:-10px 0}
+.jm-kh .jm-kh-angka b{white-space:nowrap;overflow-wrap:normal;word-break:normal}
+/* Subjudul kartu mengalir sebagai satu paragraf: flex memecah kalimat di tiap istilah bergaris bawah. Pil di dalamnya diberi jarak sendiri. */
+.jm-ex-sub>:is(.jm-pil,.jm-bukti,.jm-est,.jm-hip,.jm-pil-st,button,a.jm-tbl){margin-inline:3px;vertical-align:middle}
+/* Lebar tablet dan laptop kecil (768 sampai 1279): tabel berkolom banyak tidak dimampatkan sampai satu baris setinggi ratusan piksel;
+   tabelnya diberi lebar minimum dan bergulir di dalam .jm-gulir (DS 6.0). Di bawah 768 tabel berdata-label sudah menjadi kartu. */
+@media (min-width:768px) and (max-width:1279px){
+  /* lebar minimum tabel tidak boleh ikut melebarkan kartu atau kolom grid induknya: ukuran intrinsik pembungkusnya dinolkan */
+  .jm-gulir:has(>.jm-tabel thead th:nth-child(7)){contain:inline-size}
+  .jm-gulir>.jm-tabel:has(thead th:nth-child(7)){min-width:1120px}
+  .jm-gulir>.jm-tabel:has(thead th:nth-child(9)){min-width:1320px}
+}
+/* Pembungkus gulir menjadi blok penampung: teks khusus pembaca layar (.sr, position:absolute) di dalam sel tabel yang lebar
+   tidak lagi lolos dari pemotongan dan memperlebar halaman (ditemukan di /daftar pada lebar tablet). */
+.jm-gulir{position:relative}

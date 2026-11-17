@@ -14,6 +14,7 @@ import { logoOrg } from "/inti/logo_org.js";
 import { kodeProv, singkatProv } from "/inti/prov_singkat.js";
 import "/inti/tip_grafik.js";
 import { integritas } from "/karbon_integritas.js";
+import { hitungHindar } from "/inti/karbon_rumus.js";
 
 const HAL = 20;
 const SEKTOR = ["energi-terbarukan", "efisiensi", "redd", "mangrove", "gambut", "agroforestri", "limbah", "lain"];
@@ -257,6 +258,31 @@ function panelSaing() {
   ex.addEventListener("input", (e) => { if (e.target.id === "kbHarga") D.harga = +e.target.value; else if (e.target.id === "kbSelisih") D.selisih = +e.target.value; else return; hitungSaing(); });
   ex.addEventListener("click", (e) => { const b = e.target.closest("[data-harga]"); if (!b) return; D.harga = +b.dataset.harga; document.getElementById("kbHarga").value = D.harga; hitungSaing(); });
   hitungSaing();
+  document.getElementById("panelSaing").insertAdjacentHTML("beforeend", hindarHtml());
+  const hd = document.getElementById("ex-hindar"); hd.addEventListener("input", hitungHindarTampil); hd.addEventListener("change", hitungHindarTampil);
+}
+
+/* ---------- kalkulator emisi dihindari dan REC (F65-103; EST, rumus di /inti/karbon_rumus.js) ---------- */
+const HD = [["mwh", "MWh"], ["tco2", "tCO2e"], ["nilaiKarbon", "Rp"], ["nilaiRec", "Rp"]];
+function hitungHindarTampil() {
+  const n = (id) => { const v = document.getElementById(id).value; return v === "" ? NaN : +v; };
+  const fe = P.faktor_emisi.grid_est.find((x) => x.id === document.getElementById("kbHdSis").value)?.intensitas_t_per_mwh;
+  const h = hitungHindar({ mw: n("kbHdMw"), fk: n("kbHdFk"), fe: fe ?? NaN, hargaKarbon: n("kbHdHk"), hargaRec: n("kbHdHr") });
+  for (const [k, sat] of HD) document.getElementById("kbHd-" + k).textContent = h[k] == null ? "-" : sat === "Rp" ? `Rp ${angka(Math.round(h[k]))}` : `${angka(Math.round(h[k]))} ${sat}`;
+  document.getElementById("kbHdIsi").hidden = h.tco2 != null;
+}
+function hindarHtml() {
+  const ak = akhirHarga(), g = P.faktor_emisi.grid_est;
+  const f = (id, label, attr = "") => `<label class="kb-hd-f"><span>${esc(label)}</span><input id="${id}" type="number" inputmode="decimal" min="0" step="any" ${attr}></label>`;
+  const opsi = [["", t("kb2.hd.pilih")], ...g.map((x) => [x.id, `${x.nama} (${angka(x.intensitas_t_per_mwh, { desimal: 2 })} t/MWh, ${x.tahun})`])];
+  return exHtml({ id: "ex-hindar", ikon: "kalkulator", topik: t("kb2.hd.ey"), judulHtml: esc(t("kb2.hd.j")), subHtml: esc(t("kb2.hd.sub")), aksiHtml: sumberHtml(esc(t("kb2.sumber.pasar", { tanggal: tanggal(P.dibangun_pada) }))),
+    isiHtml: `<p class="kb-est">${pilAn("an.est")}<span>${esc(t("kb2.hd.batas"))}</span></p><div class="kb-ds"><div class="kb-ds-in">
+      <div class="kb-hd-f"><span>${esc(t("kb2.hd.sistem"))}</span>${pilihHtml({ id: "kbHdSis", ikon: "petir", label: t("kb2.hd.sistem"), opsi })}</div>
+      ${f("kbHdMw", t("kb2.hd.mw"))}${f("kbHdFk", t("kb2.hd.fk"), 'max="100"')}
+      ${f("kbHdHk", t("kb2.hd.hk"), `value="${ak.harga_rata}"`)}<p class="kb-hd-ket">${esc(t("kb2.hd.hk_ket", { bulan: BLN(ak.periode) }))}</p>
+      ${f("kbHdHr", t("kb2.hd.hr"))}</div>
+      <div><dl class="kb-hd-h">${HD.map(([k]) => `<div class="kb-impas"><dt>${esc(t("kb2.hd.o." + k))}</dt><dd><b id="kbHd-${k}">-</b></dd></div>`).join("")}</dl>
+      <p id="kbHdIsi" class="kb-hd-ket" role="status">${esc(t("kb2.hd.isi"))}</p></div></div>` });
 }
 
 /* ---------- hukum NEK ---------- */
@@ -296,5 +322,6 @@ tabHalaman("tabHal", { label: "kb2.tab", tab: [
   { k: "saing", ikon: "kalkulator", teks: "kb2.tab.saing", panel: "panelSaing", muat: muatSaing },
   { k: "hukum", ikon: "palu", teks: "kb2.tab.hukum", panel: "panelHukum", muat: muatHukum },
   { k: "integritas", ikon: "perisai", teks: "kb2.tab.integritas", panel: "panelIntegritas", muat: muatIntegritas },
+  { k: "minat", ikon: "transaksi", teks: "kb2.tab.minat", panel: "panelMinat", muat: sekali(() => import("/kiriman.js").then((m) => m.pasangUnit(document.getElementById("panelMinat")))) }, // F65-303: papan minat REC dan karbon, tanpa transaksi
 ] });
 addEventListener("resize", debounce(() => { if (!document.getElementById("panelKredit").hidden) gambarKredit(); if (!document.getElementById("panelPasar").hidden) gambarPasar(); }, 200));

@@ -1,0 +1,20 @@
+/* /izin-kontrak: alur izin bertahap (F65-109) dan penaksir lahan (F65-108). Hanya token. */
+.iz-alur{margin:0;padding:0;list-style:none}
+.iz-alur summary{gap:12px;padding-block:8px}
+.iz-no{display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:var(--soft-hijau);color:var(--accent);font:700 var(--t-kecil)/1 var(--font);font-variant-numeric:tabular-nums}
+.iz-q{flex:1 1 auto;min-width:0}
+.iz-alur summary .jm-pil{flex:none}
+.iz-batas{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.iz-lahan{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start;margin-bottom:12px}
+.iz-in{display:grid;gap:14px}
+.iz-f{display:grid;gap:6px;min-width:0}
+.iz-f>span{font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.iz-f>input{width:100%;min-height:var(--target);padding:0 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:600 var(--t-masukan)/1 var(--font)}
+.iz-f>input:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.iz-h{margin:0 0 12px}
+.iz-h>div{display:grid;gap:8px;padding:16px;border-radius:var(--r);background:var(--surface)}
+.iz-h dt{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.iz-h dd{margin:0}
+.iz-h b{font:700 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--accent);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+@media (max-width:991px){.iz-lahan{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:479px){.iz-alur summary{flex-wrap:wrap}.iz-q{flex-basis:calc(100% - 40px)}.iz-alur summary .jm-pil{margin-left:40px}}

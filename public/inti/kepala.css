@@ -207,7 +207,7 @@ body header.top{gap:12px;padding-inline:var(--tepi)}
 /* tab Tanya di palet cari */
 .jm-cari-mode{display:flex;gap:8px;padding:0 16px 8px}
 .jm-cari-mode button{display:inline-flex;align-items:center;gap:6px;min-height:var(--target);padding:0 14px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--surface);color:var(--ink);font:600 var(--t-kecil)/1 var(--font);cursor:pointer}
-.jm-cari-mode button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-brand)}
+.jm-cari-mode button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .jm-cari-tanya{flex:1;display:grid;align-content:start;gap:12px;padding:8px 16px 16px;overflow-y:auto;overscroll-behavior:contain}
 /* panel cari: mode ringkas, jalan pintas 4 kolom sama tinggi, ikon terbaca (pemilik 9 Nov 2026) */
 .jm-cari-mode{gap:6px;padding:0 16px 10px}

@@ -1,9 +1,9 @@
 /* banding_hitung.js: fungsi murni pembanding /banding (tanpa DOM, tanpa fetch), dipakai halaman dan uji.
-   Dua mode: provinsi (2 sampai 4 dari 38) atau organisasi (2 sampai 4). Tiap metrik: nilai angka atau null (null tampil "-", tidak pernah 0 karangan).
+   Tiga mode: provinsi (2 sampai 4 dari 38), organisasi, atau proyek (2 sampai 4). Tiap metrik: nilai angka atau null (null tampil "-", tidak pernah 0 karangan).
    Pemenang per baris = nilai tertinggi (satu-satunya ukuran yang dipakai, tertulis di kolom "arah" supaya bisa diperiksa); butuh minimal dua nilai berisi. */
 
 export const MIN = 2, MAKS = 4;
-export const MODE = ["prov", "org"];
+export const MODE = ["prov", "org", "pro"];
 
 /* arah: "tinggi" = lebih besar lebih baik. Semua metrik di sini bermakna begitu (jumlah, kapasitas, skor). */
 export const METRIK_PROV = [
@@ -26,7 +26,23 @@ export const METRIK_ORG = [
   { k: "pakar", ikon: "orang", sat: "", d: 0 },
   { k: "regulasi", ikon: "regulasi", sat: "", d: 0 },
   { k: "berita", ikon: "berita", sat: "", d: 0 },
+  { k: "produk_tkdn", ikon: "centang", sat: "", d: 0 },
+  { k: "tkdn_maks", ikon: "tingkat", sat: "%", d: 1 },
 ];
+/* Komponen sertifikat TKDN (F65-102): kategori di tkdn_produk.json. Saringan komponen mempersempit pilihan organisasi dan dua baris TKDN. */
+export const KOMPONEN = ["modul", "baterai", "inverter", "kabel", "struktur", "trafo", "turbin"];
+/* Proyek (F65-101). pecah: true = nilai bukan bulat ditampilkan dengan desimal (0,17 MW tidak boleh tampil "0"). tahun: true = tahun COD, bukan besaran: tanpa pemenang, tanpa batang, tanpa pemisah ribuan. */
+export const METRIK_PRO = [
+  { k: "mw", ikon: "petir", sat: "MW", d: 0, pecah: true },
+  { k: "investasi", ikon: "tingkat", sat: "", d: 0, pecah: true },
+  { k: "cod", ikon: "kalender", sat: "", d: 0, tahun: true },
+  { k: "program", ikon: "bintang", sat: "", d: 0 },
+  { k: "regulasi", ikon: "regulasi", sat: "", d: 0 },
+  { k: "berita", ikon: "berita", sat: "", d: 0 },
+  { k: "sumber", ikon: "buku", sat: "", d: 0 },
+];
+/* baris teks proyek: tampil apa adanya, tidak pernah dinilai */
+export const TEKS_PRO = ["teknologi", "status", "provinsi", "pemilik", "bukti"];
 /* sumbu radar: provinsi memakai 10 komponen indeks kesiapan (skor 0-100 bawaan sumber); organisasi memakai metrik terhadap yang tertinggi */
 export const KOMPONEN_PROV = ["potensi", "terpasang", "elektrifikasi", "bpp", "ruptl", "proyek", "organisasi", "rued", "plts_atap", "wkp"];
 export const SUMBU_ORG = ["proyek", "mw", "provinsi", "program", "pakar", "regulasi", "berita"];
@@ -68,7 +84,8 @@ export function metrikProvinsi(kode, D) {
   };
 }
 
-/** Satu organisasi -> { id, nama, m, ... }. D = { proyek, orang, berita, regulasi, program } (daftar baris). Hubungan proyek persis seperti /o/<id>. */
+/** Satu organisasi -> { id, nama, m, ... }. D = { proyek, orang, berita, tkdn?, komponen? } (daftar baris; tkdn = baris tkdn_produk.json, komponen = saringan kategori atau "").
+ *  Tanpa D.tkdn dua baris TKDN bernilai null. tkdn_maks null bila organisasi tidak punya sertifikat pada komponen itu (bukan 0). Hubungan proyek persis seperti /o/<id>. */
 export function metrikOrganisasi(o, D) {
   const ids = new Set(o.proyek_ids || []);
   for (const p of D.proyek) if (Object.values(p.pihak || {}).flat().some((x) => x?.organisasi_id === o.id)) ids.add(p.id);
@@ -77,6 +94,8 @@ export function metrikOrganisasi(o, D) {
   const prov = new Set(rows.map((p) => p.lokasi?.provinsi).filter(Boolean));
   const prog = new Set(rows.flatMap((p) => p.program_ids || []));
   const reg = new Set(rows.flatMap((p) => p.regulasi_ids || []));
+  const sert = D.tkdn ? D.tkdn.filter((x) => x.pabrikan_org_id === o.id && (!D.komponen || x.kategori === D.komponen)) : null;
+  const persen = sert ? sert.map((x) => x.tkdn_persen).filter(ada) : [];
   return {
     id: o.id, nama: o.nama, logo: o.logo || "",
     m: {
@@ -87,6 +106,37 @@ export function metrikOrganisasi(o, D) {
       pakar: D.orang.filter((x) => x.organisasi_id === o.id).length + (o.pengurus || []).filter((x) => x.orang_id && !D.orang.some((q) => q.id === x.orang_id && q.organisasi_id === o.id)).length,
       regulasi: reg.size,
       berita: D.berita.filter((b) => (b.organisasi_ids || []).includes(o.id) || (o.berita_ids || []).includes(b.id)).length,
+      produk_tkdn: sert ? sert.length : null,
+      tkdn_maks: persen.length ? Math.max(...persen) : null,
+    },
+  };
+}
+
+/** Satu proyek -> { id, nama, m: {metrik: angka|null}, teks: {baris: kode atau teks|null} }. Tanpa konversi mata uang: investasi hanya diisi bila sumbernya USD. */
+export function metrikProyek(p) {
+  if (!p) return null;
+  const mw = (p.kapasitas || []).find((k) => /^MWp?$/i.test(k.satuan))?.nilai;
+  const usd = (p.nilai_investasi || []).find((x) => x.satuan === "USD" && ada(x.nilai))?.nilai;
+  const tahun = (l) => (l || []).map((x) => x.nilai).filter(ada);
+  const aktual = tahun(p.cod_aktual), target = tahun(p.cod_target);
+  const pemilik = (p.pihak?.pemilik || []).map((x) => x.nilai).filter(Boolean);
+  return {
+    id: p.id, nama: p.nama,
+    m: {
+      mw: ada(mw) ? mw : null,
+      investasi: ada(usd) ? Math.round(usd / 1e5) / 10 : null,
+      cod: aktual.length ? Math.min(...aktual) : target.length ? Math.max(...target) : null,
+      program: (p.program_ids || []).length,
+      regulasi: (p.regulasi_ids || []).length,
+      berita: (p.berita_ids || []).length,
+      sumber: (p.sumber || []).length,
+    },
+    teks: {
+      teknologi: p.teknologi || null,
+      status: p.status?.[0]?.nilai || null,
+      provinsi: p.lokasi?.provinsi || null,
+      pemilik: pemilik.length ? pemilik.slice(0, 2).join(", ") + (pemilik.length > 2 ? " +" + (pemilik.length - 2) : "") : null,
+      bukti: p.tingkat_bukti || null,
     },
   };
 }
@@ -112,12 +162,14 @@ export function matriks(entitas, metrik, label, format = (v) => String(v)) {
 }
 export const csv = (mat) => "﻿" + mat.map((r) => r.map((c) => `"${String(c ?? "").replace(/"/g, '""')}"`).join(";")).join("\r\n") + "\r\n";
 
-/* ---------- URL berbagi: ?m=prov&p=11,32  atau  ?m=org&o=l_aaa,p_bbb ---------- */
+/* ---------- URL berbagi: ?m=prov&p=11,32  atau  ?m=org&o=l_aaa,p_bbb  atau  ?m=pro&j=pj_0001,pj_0002 ---------- */
+const PARAM = { prov: "p", org: "o", pro: "j" };
 const RE_ID = /^[A-Za-z0-9_-]{1,40}$/;
 export function bacaUrl(search) {
   const q = new URLSearchParams(search);
-  const mode = q.get("m") === "org" ? "org" : "prov";
-  const mentah = (q.get(mode === "org" ? "o" : "p") || "").split(",").map((s) => s.trim()).filter((s) => RE_ID.test(s));
-  return { mode, ids: [...new Set(mentah)].slice(0, MAKS) };
+  const mode = MODE.includes(q.get("m")) ? q.get("m") : "prov";
+  const mentah = (q.get(PARAM[mode]) || "").split(",").map((s) => s.trim()).filter((s) => RE_ID.test(s));
+  const k = q.get("k");
+  return { mode, ids: [...new Set(mentah)].slice(0, MAKS), ...(mode === "org" && KOMPONEN.includes(k) ? { komponen: k } : {}) };
 }
-export const tulisUrl = ({ mode, ids }) => (ids.length ? `?m=${mode}&${mode === "org" ? "o" : "p"}=${ids.join(",")}` : "?m=" + mode);
+export const tulisUrl = ({ mode, ids, komponen }) => (ids.length ? `?m=${mode}&${PARAM[mode]}=${ids.join(",")}` : "?m=" + mode) + (mode === "org" && KOMPONEN.includes(komponen) ? "&k=" + komponen : "");

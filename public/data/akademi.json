@@ -96,12 +96,10 @@
        "en": "Number of sunshine hours in a year"
       }
      ],
-     "a": 0,
      "sumber": {
       "jenis": "istilah",
       "ref": "faktor-kapasitas"
-     },
-     "cek": "produksi maksimum teoretis"
+     }
     },
     {
      "id": "dasar-ebt-2",
@@ -127,12 +125,10 @@
        "en": "36 persen"
       }
      ],
-     "a": 1,
      "sumber": {
       "jenis": "topik",
       "ref": "surya"
-     },
-     "cek": "0.36 persen"
+     }
     },
     {
      "id": "dasar-ebt-3",
@@ -158,12 +154,10 @@
        "en": "25 persen"
       }
      ],
-     "a": 2,
      "sumber": {
       "jenis": "topik",
       "ref": "hidro"
-     },
-     "cek": "7,34 persen"
+     }
     },
     {
      "id": "dasar-ebt-4",
@@ -189,12 +183,10 @@
        "en": "72,5 persen"
       }
      ],
-     "a": 3,
      "sumber": {
       "jenis": "topik",
       "ref": "panas-bumi"
-     },
-     "cek": "72.5"
+     }
     }
    ]
   },
@@ -278,12 +270,10 @@
        "en": "An IUPTLU"
       }
      ],
-     "a": 1,
      "sumber": {
       "jenis": "izin",
       "ref": "plts-atap"
-     },
-     "cek": "IUPTLS"
+     }
     },
     {
      "id": "plts-atap-2",
@@ -309,12 +299,10 @@
        "en": "Paid without any quota"
       }
      ],
-     "a": 2,
      "sumber": {
       "jenis": "topik",
       "ref": "surya"
-     },
-     "cek": "ekspor ke jaringan tidak dibayar"
+     }
     },
     {
      "id": "plts-atap-3",
@@ -340,12 +328,10 @@
        "en": "Total inverter capacity times 720 hours times the electricity tariff"
       }
      ],
-     "a": 1,
      "sumber": {
       "jenis": "izin",
       "ref": "plts-atap-tanpa-izin"
-     },
-     "cek": "240 jam"
+     }
     },
     {
      "id": "plts-atap-4",
@@ -371,12 +357,10 @@
        "en": "A safety statement with supporting documents"
       }
      ],
-     "a": 3,
      "sumber": {
       "jenis": "izin",
       "ref": "plts-atap"
-     },
-     "cek": "surat pernyataan keselamatan"
+     }
     }
    ]
   },
@@ -460,12 +444,10 @@
        "en": "30 tahun"
       }
      ],
-     "a": 3,
      "sumber": {
       "jenis": "izin",
       "ref": "iuptlu"
-     },
-     "cek": "30 tahun"
+     }
     },
     {
      "id": "perizinan-2",
@@ -491,12 +473,10 @@
        "en": "5 MW"
       }
      ],
-     "a": 1,
      "sumber": {
       "jenis": "izin",
       "ref": "iuptls"
-     },
-     "cek": "500 kW"
+     }
     },
     {
      "id": "perizinan-3",
@@ -522,12 +502,10 @@
        "en": "180 hari kalender"
       }
      ],
-     "a": 2,
      "sumber": {
       "jenis": "izin",
       "ref": "waktu"
-     },
-     "cek": "90 hari"
+     }
     },
     {
      "id": "perizinan-4",
@@ -553,12 +531,10 @@
        "en": "20 orang"
       }
      ],
-     "a": 3,
      "sumber": {
       "jenis": "izin",
       "ref": "koperasi"
-     },
-     "cek": "20 orang"
+     }
     }
    ]
   },
@@ -650,12 +626,10 @@
        "en": "Guarantees fuel supply"
       }
      ],
-     "a": 0,
      "sumber": {
       "jenis": "istilah",
       "ref": "ppa"
-     },
-     "cek": "mengunci harga dan volume"
+     }
     },
     {
      "id": "pembiayaan-2",
@@ -681,12 +655,10 @@
        "en": "USD 0,5 miliar"
       }
      ],
-     "a": 2,
      "sumber": {
       "jenis": "topik",
       "ref": "pembiayaan-hijau"
-     },
-     "cek": "USD 3,1 miliar dari USD 21,4 miliar"
+     }
     },
     {
      "id": "pembiayaan-3",
@@ -712,12 +684,10 @@
        "en": "3,59 persen"
       }
      ],
-     "a": 3,
      "sumber": {
       "jenis": "topik",
       "ref": "pembiayaan-hijau"
-     },
-     "cek": "3,59 persen"
+     }
     },
     {
      "id": "pembiayaan-4",
@@ -743,12 +713,10 @@
        "en": "Grant, loan, equity"
       }
      ],
-     "a": 0,
      "sumber": {
       "jenis": "topik",
       "ref": "pembiayaan-hijau"
-     },
-     "cek": "hijau, transisi, tidak memenuhi"
+     }
     }
    ]
   },
@@ -840,12 +808,10 @@
        "en": "An environmental permit fee"
       }
      ],
-     "a": 0,
      "sumber": {
       "jenis": "istilah",
       "ref": "offset"
-     },
-     "cek": "mengimbangi emisinya"
+     }
     },
     {
      "id": "karbon-2",
@@ -871,12 +837,10 @@
        "en": "Electricity buyers choose the cheapest plant"
       }
      ],
-     "a": 1,
      "sumber": {
       "jenis": "istilah",
       "ref": "ets"
-     },
-     "cek": "membatasi emisi total"
+     }
     },
     {
      "id": "karbon-3",
@@ -902,12 +866,10 @@
        "en": "2070"
       }
      ],
-     "a": 2,
      "sumber": {
       "jenis": "istilah",
       "ref": "net-zero"
-     },
-     "cek": "2060"
+     }
     },
     {
      "id": "karbon-4",
@@ -933,12 +895,10 @@
        "en": "A renewable energy certificate that is the basis for green electricity claims"
       }
      ],
-     "a": 3,
      "sumber": {
       "jenis": "istilah",
       "ref": "rec"
-     },
-     "cek": "dasar klaim listrik hijau"
+     }
     }
    ]
   },
@@ -1022,12 +982,10 @@
        "en": "A forest area classification code"
       }
      ],
-     "a": 0,
      "sumber": {
       "jenis": "istilah",
       "ref": "k3"
-     },
-     "cek": "mencegah terjadinya kecelakaan"
+     }
     },
     {
      "id": "keselamatan-2",
@@ -1053,12 +1011,10 @@
        "en": "An environmental study report"
       }
      ],
-     "a": 1,
      "sumber": {
       "jenis": "istilah",
       "ref": "slo"
-     },
-     "cek": "siap dioperasikan"
+     }
     },
     {
      "id": "keselamatan-3",
@@ -1084,12 +1040,10 @@
        "en": "A lack of geothermal resources"
       }
      ],
-     "a": 2,
      "sumber": {
       "jenis": "topik",
       "ref": "panas-bumi"
-     },
-     "cek": "keselamatan H2S"
+     }
     },
     {
      "id": "keselamatan-4",
@@ -1115,12 +1069,10 @@
        "en": "Safety cannot be compromised"
       }
      ],
-     "a": 3,
      "sumber": {
       "jenis": "topik",
       "ref": "penyimpanan"
-     },
-     "cek": "keselamatan tidak boleh ditawar"
+     }
     }
    ]
   }

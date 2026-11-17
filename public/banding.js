@@ -6,20 +6,22 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { khUbin } from "/inti/kh.js";
 import "/inti/tip_grafik.js";
 import { t, angka } from "/i18n.js";
-import { esc, ikon, hantuHtml, nanti } from "/inti/umum.js";
-import { exHtml, bagikanHtml, sumberHtml } from "/inti/komponen.js";
+import { esc, ikon, hantuHtml, nanti, debounce } from "/inti/umum.js";
+import { exHtml, bagikanHtml, sumberHtml, pilihHtml as pilihSaring } from "/inti/komponen.js";
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { logoOrgSatu } from "/inti/logo_org.js";
 import { muatData, tampilGalat, saatBahasa } from "/analisis.js";
-import { MIN, MAKS, METRIK_PROV, METRIK_ORG, KOMPONEN_PROV, SUMBU_ORG, metrikProvinsi, metrikOrganisasi, pemenang, indeksPemimpin, bacaUrl, tulisUrl, norma } from "/banding_hitung.js";
+import { MIN, MAKS, MODE, KOMPONEN, METRIK_PROV, METRIK_ORG, METRIK_PRO, TEKS_PRO, KOMPONEN_PROV, SUMBU_ORG, metrikProvinsi, metrikOrganisasi, metrikProyek, pemenang, indeksPemimpin, bacaUrl, tulisUrl, norma } from "/banding_hitung.js";
 
 const $ = (id) => document.getElementById(id);
-const S = { mode: "prov", ids: [], q: "", buka: false, D: {}, daftar: { prov: null, org: null } };
+const S = { mode: "prov", ids: [], q: "", buka: false, komponen: "", D: {}, daftar: { prov: null, org: null } };
+const PRE = { prov: "bd2.m.", org: "bd2.mo.", pro: "bd2.mp." }, PRE_TIP = { prov: "bd2.mt.", org: "bd2.mot.", pro: "bd2.mpt." }, IK_MODE = { prov: "wilayah", org: "gedung", pro: "proyek" };
+const fmtM = (v, mt) => (mt.tahun ? String(v) : fmt(v, mt.pecah && !Number.isInteger(v) ? (Math.abs(v) < 1 ? 2 : 1) : mt.d));
 const fmt = (v, d = 0) => angka(v, { desimal: d });
 const WARNA = ["bd-c0", "bd-c1", "bd-c2", "bd-c3"];
 
 /* ---------- data ---------- */
-const MUAT = { prov: ["wilayah", "indeks", "radar_kabupaten", "rued_capaian", "peluang", "berita"], org: ["organisasi", "proyek", "orang", "berita"] };
+const MUAT = { prov: ["wilayah", "indeks", "radar_kabupaten", "rued_capaian", "peluang", "berita"], org: ["organisasi", "proyek", "orang", "berita", "tkdn_produk"], pro: ["proyek"] };
 async function muatMode(mode) {
   if (S.D[mode]) return S.D[mode];
   const h = await Promise.all(MUAT[mode].map((n) => muatData(n + ".json")));
@@ -27,17 +29,25 @@ async function muatMode(mode) {
   if (mode === "prov") {
     D.radar = D.radar_kabupaten; D.rued = D.rued_capaian;
     D.daftar = D.wilayah.baris.map((b) => ({ id: b.kode, nama: b.nama, sub: b.identitas?.ibu_kota || "", terpasang: b.terpasang_mw?.nilai ?? 0 }));
+  } else if (mode === "pro") {
+    D.baris = D.proyek.baris;
+    const mwP = (p) => (p.kapasitas || []).find((k) => /^MWp?$/i.test(k.satuan))?.nilai ?? 0;
+    D.daftar = D.baris.map((p) => ({ id: p.id, nama: p.nama, sub: [p.lokasi?.provinsi, p.teknologi ? t("pj.tek." + p.teknologi) : ""].filter(Boolean).join(", "), n: mwP(p) }));
   } else {
     D.baris = D.organisasi.baris;
     const per = new Map();
     for (const p of D.proyek.baris) for (const x of Object.values(p.pihak || {}).flat()) if (x?.organisasi_id) per.set(x.organisasi_id, (per.get(x.organisasi_id) || 0) + 1);
     D.daftar = D.baris.map((o) => ({ id: o.id, nama: o.nama, sub: o.kategori?.label || "", logo: o.logo || "", n: (o.proyek_ids || []).length + (per.get(o.id) || 0), o }));
+    /* komponen -> Map(id organisasi -> jumlah produk bersertifikat TKDN) */
+    D.perKomponen = {};
+    for (const x of D.tkdn_produk.baris) if (x.pabrikan_org_id) { const m = (D.perKomponen[x.kategori] ||= new Map()); m.set(x.pabrikan_org_id, (m.get(x.pabrikan_org_id) || 0) + 1); }
   }
   return (S.D[mode] = D);
 }
 
 /* ---------- lambang dan logo ---------- */
 const lambang = (e, kelas = "bd-lb") => {
+  if (S.mode === "pro") return `<span class="${kelas} bd-ini" aria-hidden="true">${ikon("proyek", 18)}</span>`;
   if (S.mode === "prov") return `<img class="${kelas}" src="/img/provinsi/${esc(e.id)}.png" alt="" width="36" height="36" loading="lazy" decoding="async" data-galat="hapus">`;
   const u = logoOrgSatu(e.id, e.nama, e.logo);
   return u ? `<img class="${kelas}" src="${esc(u)}" alt="" width="36" height="36" loading="lazy" decoding="async" data-galat="hapus">` : `<span class="${kelas} bd-ini">${esc(inisial(e.nama))}</span>`;
@@ -48,17 +58,22 @@ const inisial = (n) => String(n).replace(/\(.*?\)/g, "").replace(/^(PT|CV|The)\s
 function entitas() {
   const D = S.D[S.mode];
   if (!D) return [];
-  return S.ids.map((id) => (S.mode === "prov" ? metrikProvinsi(id, D) : metrikOrganisasi(D.baris.find((o) => o.id === id), { proyek: D.proyek.baris, orang: D.orang.baris, berita: D.berita.baris }))).filter(Boolean);
+  if (S.mode === "pro") return S.ids.map((id) => metrikProyek(D.baris.find((p) => p.id === id))).filter(Boolean);
+  return S.ids.map((id) => (S.mode === "prov" ? metrikProvinsi(id, D) : metrikOrganisasi(D.baris.find((o) => o.id === id), { proyek: D.proyek.baris, orang: D.orang.baris, berita: D.berita.baris, tkdn: D.tkdn_produk.baris, komponen: S.komponen }))).filter(Boolean);
 }
-const metrikMode = () => (S.mode === "prov" ? METRIK_PROV : METRIK_ORG);
-const labelM = (k) => t((S.mode === "prov" ? "bd2.m." : "bd2.mo.") + k);
-const tipM = (k) => t((S.mode === "prov" ? "bd2.mt." : "bd2.mot.") + k);
+const metrikMode = () => (S.mode === "prov" ? METRIK_PROV : S.mode === "pro" ? METRIK_PRO : METRIK_ORG);
+const labelM = (k) => t(PRE[S.mode] + k);
+const tipM = (k) => t(PRE_TIP[S.mode] + k);
 
+/* organisasi yang lolos saringan komponen, dan hitungan produknya */
+const nKomponen = (D, id) => D.perKomponen?.[S.komponen]?.get(id) || 0;
+const lolosKomponen = (D, x) => S.mode !== "org" || !S.komponen || nKomponen(D, x.id) > 0;
 function awal(D, mode) {
+  if (mode === "org" && S.komponen) return D.daftar.filter((x) => nKomponen(D, x.id) > 0).sort((a, z) => nKomponen(D, z.id) - nKomponen(D, a.id) || a.nama.localeCompare(z.nama, "id")).slice(0, 3).map((x) => x.id);
   const urut = [...D.daftar].sort((a, z) => (mode === "prov" ? z.terpasang - a.terpasang : z.n - a.n) || a.nama.localeCompare(z.nama, "id"));
   return urut.slice(0, 3).map((x) => x.id);
 }
-function simpanUrl() { history.replaceState(null, "", location.pathname + tulisUrl({ mode: S.mode, ids: S.ids })); }
+function simpanUrl() { history.replaceState(null, "", location.pathname + tulisUrl({ mode: S.mode, ids: S.ids, komponen: S.komponen })); }
 
 /* ---------- kepala + pilihan ---------- */
 function ubinKepala() {
@@ -72,9 +87,10 @@ function ubinKepala() {
 }
 function hasilCari() {
   const D = S.D[S.mode], q = norma(S.q);
-  let l = D.daftar.filter((x) => !S.ids.includes(x.id));
-  if (q) l = l.filter((x) => norma(x.nama).includes(q) || norma(x.sub).includes(q));
-  else if (S.mode === "org") l = [...l].sort((a, z) => z.n - a.n);
+  let l = D.daftar.filter((x) => !S.ids.includes(x.id) && lolosKomponen(D, x));
+  if (q) l = l.filter((x) => (x._cari ??= norma(x.nama + " " + x.sub)).includes(q));
+  else if (S.mode === "org" && S.komponen) l = [...l].sort((a, z) => nKomponen(D, z.id) - nKomponen(D, a.id));
+  else if (S.mode !== "prov") l = [...l].sort((a, z) => z.n - a.n);
   return l.slice(0, S.mode === "prov" ? 40 : 8);
 }
 function hasilHtml() {
@@ -87,16 +103,17 @@ function kartuPilih(e, i, ringkas) {
 }
 function pilihHtml() {
   const ent = entitas(), penuh = S.ids.length >= MAKS;
-  const ring = (e) => (S.mode === "prov" ? t("bd2.ring_prov", { mw: fmt(e.m.terpasang ?? 0), n: fmt(e.m.proyek ?? 0) }) : t("bd2.ring_org", { n: fmt(e.m.proyek), mw: fmt(e.m.mw ?? 0) }));
+  const ring = (e) => (S.mode === "pro" ? [e.m.mw != null ? fmt(e.m.mw) + " MW" : "", e.teks.teknologi ? t("pj.tek." + e.teks.teknologi) : "", e.teks.provinsi || ""].filter(Boolean).join(", ") : S.mode === "prov" ? t("bd2.ring_prov", { mw: fmt(e.m.terpasang ?? 0), n: fmt(e.m.proyek ?? 0) }) : t("bd2.ring_org", { n: fmt(e.m.proyek), mw: fmt(e.m.mw ?? 0) }));
   const kosong = Math.max(0, MIN - ent.length);
   const slot = (n) => Array.from({ length: n }, () => `<li class="bd-pilih-kosong"><button type="button" data-fokus-cari>${ikon("tambah", 18)}<span>${esc(t("bd2.slot"))}</span></button></li>`).join("");
-  const seg = ["prov", "org"].map((m) => `<button type="button" role="tab" data-mode="${m}" aria-selected="${S.mode === m}">${ikon(m === "prov" ? "wilayah" : "gedung", 16)}<span>${esc(t("bd2.mode." + m))}</span></button>`).join("");
+  const seg = MODE.map((m) => `<button type="button" role="tab" data-mode="${m}" aria-selected="${S.mode === m}">${ikon(IK_MODE[m], 16)}<span>${esc(t("bd2.mode." + m))}</span></button>`).join("");
   const isi = `<div class="jm-tab jm-tab-rata bd-seg" role="tablist" aria-label="${esc(t("bd2.mode"))}">${seg}</div>
-    <div class="bd-cari-w"><label class="jm-cari bd-cari">${ikon("cari2", 18)}<span class="sr">${esc(t("bd2.cari"))}</span><input id="bdCari" type="search" autocomplete="off" role="combobox" aria-expanded="${S.buka && !penuh}" aria-controls="bdHasil" value="${esc(S.q)}" placeholder="${esc(t(penuh ? "bd2.penuh" : S.mode === "prov" ? "bd2.cari_prov" : "bd2.cari_org"))}"${penuh ? " disabled" : ""}></label>
+    ${S.mode === "org" ? `<div class="bd-komp">${pilihSaring({ id: "bdKomponen", ikon: "centang", label: t("bd2.komponen"), opsi: [["", t("bd2.komponen_semua")], ...KOMPONEN.map((k) => [k, t("rt2.kat." + k), "", S.D.org?.perKomponen?.[k]?.size ?? ""])], nilai: S.komponen })}</div>` : ""}
+    <div class="bd-cari-w"><label class="jm-cari bd-cari">${ikon("cari2", 18)}<span class="sr">${esc(t("bd2.cari"))}</span><input id="bdCari" type="search" autocomplete="off" role="combobox" aria-expanded="${S.buka && !penuh}" aria-controls="bdHasil" value="${esc(S.q)}" placeholder="${esc(t(penuh ? "bd2.penuh" : "bd2.cari_" + S.mode))}"${penuh ? " disabled" : ""}></label>
       <div id="bdHasil" class="bd-hasil-w" ${S.buka && !penuh ? "" : "hidden"}>${S.buka && !penuh ? hasilHtml() : ""}</div></div>
     <ul class="bd-pilih" data-n="${Math.max(MIN, ent.length)}">${ent.map((e, i) => kartuPilih(e, i, ring(e))).join("")}${slot(kosong)}</ul>
     <p class="bd-catatan">${ikon("info", 14)}<span>${esc(t(S.ids.length < MIN ? "bd2.min" : "bd2.maks", { min: MIN, maks: MAKS }))}</span></p>`;
-  return exHtml({ id: "bd-pilih", ikon: "tambah", topik: t("bd2.ey.pilih"), judulHtml: esc(t(S.mode === "prov" ? "bd2.j.pilih_prov" : "bd2.j.pilih_org")), subHtml: esc(t("bd2.sub.pilih", { maks: MAKS })), aksiHtml: bagikanHtml({ url: location.pathname + tulisUrl({ mode: S.mode, ids: S.ids }), judul: t("bd2.judul"), lengkap: true }), isiHtml: isi });
+  return exHtml({ id: "bd-pilih", ikon: "tambah", topik: t("bd2.ey.pilih"), judulHtml: esc(t("bd2.j.pilih_" + S.mode)), subHtml: esc(t("bd2.sub.pilih", { maks: MAKS })), aksiHtml: bagikanHtml({ url: location.pathname + tulisUrl({ mode: S.mode, ids: S.ids, komponen: S.komponen }), judul: t("bd2.judul"), lengkap: true }), isiHtml: isi });
 }
 
 /* ---------- tabel angka kunci ---------- */
@@ -104,20 +121,23 @@ function tabelHtml(ent) {
   const ms = metrikMode();
   const kep = `<th scope="col" class="bd-th-m">${esc(t("bd2.metrik"))}</th>` + ent.map((e, i) => `<th scope="col" class="${WARNA[i]}"><span class="bd-th">${lambang(e, "bd-lb bd-lb-k")}<span>${esc(e.nama)}</span></span></th>`).join("");
   const baris = ms.map((mt) => {
-    const nil = ent.map((e) => e.m[mt.k]), menang = pemenang(nil);
+    const nil = ent.map((e) => e.m[mt.k]), menang = mt.tahun ? [] : pemenang(nil);
     const sel = ent.map((e, i) => {
       const v = nil[i], ada = typeof v === "number";
-      const isi = ada ? `${menang.includes(i) ? `<span class="bd-menang" title="${esc(t("bd2.tertinggi"))}">${ikon("piala", 14)}<b>${esc(fmt(v, mt.d))}</b></span>` : `<span>${esc(fmt(v, mt.d))}</span>`}${mt.sat ? `<small>${esc(mt.sat)}</small>` : ""}` : `<span class="bd-kosong" title="${esc(t("bd2.kosong"))}" tabindex="0">-</span>`;
+      const isi = ada ? `${menang.includes(i) ? `<span class="bd-menang" title="${esc(t("bd2.tertinggi"))}">${ikon("piala", 14)}<b>${esc(fmtM(v, mt))}</b></span>` : `<span>${esc(fmtM(v, mt))}</span>`}${mt.sat ? `<small>${esc(mt.sat)}</small>` : ""}` : `<span class="bd-kosong" title="${esc(t("bd2.kosong"))}" tabindex="0">-</span>`;
       return `<td data-label="${esc(e.nama)}" class="bd-n${menang.includes(i) ? " bd-win" : ""}"><span class="bd-v">${isi}</span></td>`;
     }).join("");
     return `<tr><th scope="row" class="bd-th-m" title="${esc(tipM(mt.k))}"><span class="bd-mt">${ikon(mt.ikon, 16)}<span>${esc(labelM(mt.k))}</span></span></th>${sel}</tr>`;
   }).join("");
-  const sumber = sumberHtml(esc(t(S.mode === "prov" ? "bd2.sumber_prov" : "bd2.sumber_org")) + ` <a href="/metode#banding">${esc(t("bd2.cara"))}</a>`);
+  const kosong = `<span class="bd-kosong" title="${esc(t("bd2.kosong"))}" tabindex="0">-</span>`;
+  const teksSel = (k, v) => (v == null ? kosong : `<span>${esc(k === "teknologi" ? t("pj.tek." + v) : k === "status" ? t("pj.st." + v) : k === "bukti" ? t(v === "kajian" ? "met.bk.kajian" : "pj.bukti." + v) : v)}</span>`);
+  const barisTeks = S.mode === "pro" ? TEKS_PRO.map((k) => `<tr><th scope="row" class="bd-th-m"><span class="bd-mt"><span>${esc(t("bd2.tp." + k))}</span></span></th>${ent.map((e) => `<td data-label="${esc(e.nama)}" class="bd-n"><span class="bd-v">${teksSel(k, e.teks[k])}</span></td>`).join("")}</tr>`).join("") : "";
+  const sumber = sumberHtml(esc(t("bd2.sumber_" + S.mode) + (S.mode === "org" ? " " + t(S.komponen ? "bd2.sumber_tkdn_k" : "bd2.sumber_tkdn", { k: S.komponen ? t("rt2.kat." + S.komponen) : "" }) : "")) + ` <a href="/metode#banding">${esc(t("bd2.cara"))}</a>`);
   return exHtml({ id: "bd-angka", ikon: "tabel", topik: t("bd2.ey.angka"), judulHtml: judulAngka(ent), subHtml: esc(t("bd2.sub.angka")), aksiHtml: aksiHtml({ csv: true, png: true, pdf: true, bagi: false }) + sumber,
-    isiHtml: `<div class="jm-gulir"><table class="jm-tabel bd-t"><thead><tr>${kep}</tr></thead><tbody>${baris}</tbody></table></div>` });
+    isiHtml: `<div class="jm-gulir"><table class="jm-tabel bd-t"><thead><tr>${kep}</tr></thead><tbody>${barisTeks}${baris}</tbody></table></div>` });
 }
 function judulAngka(ent) {
-  const ms = metrikMode(), skor = ent.map(() => 0);
+  const ms = metrikMode().filter((mt) => !mt.tahun), skor = ent.map(() => 0);
   for (const mt of ms) pemenang(ent.map((e) => e.m[mt.k])).forEach((i) => skor[i]++);
   const maks = Math.max(...skor), puncak = ent.filter((_, i) => skor[i] === maks);
   if (!maks) return esc(t("bd2.j.angka_seri"));
@@ -127,6 +147,7 @@ function judulAngka(ent) {
 /* ---------- batang berkelompok: satu grup per metrik, tinggi = indeks terhadap pemimpin (100) ---------- */
 function kelompokSvg(mt, ent) {
   const nil = ent.map((e) => e.m[mt.k]);
+  if (mt.tahun) return "";
   if (nil.filter((v) => typeof v === "number").length < 1) return "";
   const idx = indeksPemimpin(nil), W = 140, H = 170, B = 130, T = 26, lebar = (W - 16) / ent.length;
   const menang = pemenang(nil);
@@ -172,14 +193,14 @@ function radarHtml(ent) {
 function bawahHtml() {
   const ent = entitas();
   return ent.length >= MIN
-    ? tabelHtml(ent) + `<div class="bd-dua">${grafikHtml(ent)}${radarHtml(ent)}</div>`
+    ? tabelHtml(ent) + (S.mode === "pro" ? grafikHtml(ent) : `<div class="bd-dua">${grafikHtml(ent)}${radarHtml(ent)}</div>`)
     : `<div class="jm-ex bd-kosong-ex">${ikon("tabel", 28)}<p>${esc(t("bd2.min", { min: MIN, maks: MAKS }))}</p></div>`;
 }
 function gambar() { $("isi").innerHTML = `<div id="bdPilih">${pilihHtml()}</div><div id="bdBawah" class="bd-bawah">${bawahHtml()}</div>`; }
 function ubah(fn) { fn(); simpanUrl(); $("bdPilih").innerHTML = pilihHtml(); nanti(() => { const b = $("bdBawah"); if (b) b.innerHTML = bawahHtml(); }); }
 
 async function gantiMode(mode) {
-  S.mode = mode; S.q = ""; S.buka = false; S.ids = [];
+  S.mode = mode; S.q = ""; S.buka = false; S.ids = []; S.komponen = "";
   $("isi").innerHTML = hantuHtml(5);
   try { const D = await muatMode(mode); S.ids = awal(D, mode); } catch (e) { return tampilGalat($("isi"), () => gantiMode(mode)); }
   simpanUrl(); ubinKepala(); gambar();
@@ -188,15 +209,15 @@ async function gantiMode(mode) {
 async function mulai() {
   await mulaiHalaman();
   const dari = bacaUrl(location.search);
-  S.mode = dari.mode; S.ids = dari.ids;
+  S.mode = dari.mode; S.ids = dari.ids; S.komponen = dari.komponen || "";
   $("isi").innerHTML = hantuHtml(6);
   try {
     const [D, ringkas] = await Promise.all([muatMode(S.mode), muatData("ringkas.json").catch(() => null)]);
     S.D.ringkas = ringkas;
     const sah = new Set(D.daftar.map((x) => x.id));
-    S.ids = S.ids.filter((id) => sah.has(id));
+    S.ids = S.ids.filter((id) => sah.has(id) && lolosKomponen(D, { id }));
     if (S.ids.length < MIN) S.ids = awal(D, S.mode);
-    if (S.mode === "org") muatMode("prov").catch(() => {}); /* untuk ubin kepala */
+    if (S.mode !== "prov") muatMode("prov").catch(() => {}); /* untuk ubin kepala */
   } catch (e) { return tampilGalat($("isi"), mulai); }
   simpanUrl(); ubinKepala(); gambar();
 
@@ -210,8 +231,10 @@ async function mulai() {
     if (tb) return ubah(() => { if (S.ids.length < MAKS) S.ids.push(tb.dataset.tambah); S.q = ""; S.buka = false; });
     if (e.target.closest("[data-fokus-cari]")) { S.buka = true; const i = $("bdCari"); i?.focus(); return void ubahBuka(); }
   });
+  akar.addEventListener("change", (e) => { if (e.target.id !== "bdKomponen") return; S.komponen = e.target.value; S.q = ""; S.buka = false; const D = S.D.org; nanti(() => { S.ids = S.ids.filter((id) => lolosKomponen(D, { id })); if (S.ids.length < MIN) S.ids = awal(D, "org"); simpanUrl(); gambar(); }); });
   akar.addEventListener("focusin", (e) => { if (e.target.id === "bdCari" && !S.buka) { S.buka = true; ubahBuka(); } });
-  akar.addEventListener("input", (e) => { if (e.target.id !== "bdCari") return; S.q = e.target.value; S.buka = true; const w = $("bdHasil"); w.hidden = false; nanti(() => { w.innerHTML = hasilHtml(); }); });
+  const segarHasil = debounce(() => { const w = $("bdHasil"); if (w && S.buka) w.innerHTML = hasilHtml(); }, 120); // chrome (nilai, panel terbuka) langsung; daftar 902 entri ditunda dan diredam
+  akar.addEventListener("input", (e) => { if (e.target.id !== "bdCari") return; S.q = e.target.value; S.buka = true; $("bdHasil").hidden = false; segarHasil(); });
   akar.addEventListener("keydown", (e) => { if (e.key === "Escape" && S.buka) { S.buka = false; ubahBuka(); } });
   document.addEventListener("click", (e) => { if (S.buka && !e.target.closest(".bd-cari-w") && !e.target.closest("[data-fokus-cari]")) { S.buka = false; ubahBuka(); } });
 }

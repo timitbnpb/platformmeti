@@ -79,3 +79,6 @@
   .bd-grup-w{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media print{.bd-hasil-w,.bd-hapus,.bd-seg,.bd-cari-w{display:none}}
+/* saringan komponen pemasok (F65-102) */
+.bd-komp{margin-bottom:12px}
+.bd-komp .jm-pil-pilih{width:100%}

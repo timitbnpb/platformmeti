@@ -6,6 +6,7 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { LEBAR, TINGGI, bikinQr, gambarDepan, gambarBelakang, labelJenis, muatGambar, pastikanFont, unduhPng, unduhPdf } from "/kta_kartu.js";
 import { potongFoto } from "/kta_foto.js";
 import { unggahHtml } from "/inti/unggah.js";
+import { pasangIuran } from "/iuran_layar.js";
 
 const saya = await mulaiHalaman();
 const $ = (id) => document.getElementById(id);
@@ -165,8 +166,9 @@ function kartu() {
         ${ikonAksi("gambar", "kta.aksi.png", "png")}${ikonAksi("pdf", "kta.aksi.pdf", "pdf")}${ikonAksi("tambah", "kta.aksi.layar", "layar")}${ikonAksi("bagikan", "kta.aksi.bagikan", "bagikan")}${ikonAksi("orang", k.ada_foto ? "kta.aksi.foto" : "kta.aksi.foto_baru", "foto")}
       </div>
     </aside>
-  </div>`;
+  </div><div id="kta-iuran"></div>`;
   nanti(gambarSemua);
+  nanti(() => pasangIuran($("kta-iuran"), dlg));   // perpanjangan iuran (F65-301): tidak tampil bila kategori ini tidak punya tarif tahunan
 }
 
 async function gambarSemua() {

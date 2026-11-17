@@ -13,6 +13,8 @@
       "DELETE /api/berita-meti/:ref/foto": "tests/e2e/rute-peran.test.mjs",
       "DELETE /api/event/:id/daftar": "tests/e2e/rute-peran.test.mjs",
       "DELETE /api/ikuti/:jenis/:ref": "tests/e2e/rute-peran.test.mjs",
+      "DELETE /api/kerja/:id/minat": "tests/e2e/rute-peran.test.mjs",
+      "DELETE /api/kiriman/:jenis/:id": "tests/e2e/rute-peran.test.mjs",
       "DELETE /api/konsultasi/balasan/:bid": "tests/e2e/rute-peran.test.mjs",
       "DELETE /api/konsultasi/utas/:uid": "tests/e2e/rute-peran.test.mjs",
       "DELETE /api/profil/saya/foto": "tests/e2e/rute-peran.test.mjs",
@@ -23,15 +25,19 @@
       "DELETE /api/roadmap/komentar/:id": "tests/roadmap.test.mjs",
       "GET /api/admin/akun": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/anggota-meti": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/admin/forum/laporan": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/admin/iuran": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/jejak": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/keamanan/gagal": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/keamanan/matriks": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/keamanan/sesi": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/kerja": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/admin/kiriman": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/koreksi": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/kotak": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/kta": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/kta/:id/bukti": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/admin/kuis/:rekaman": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/lalin": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/langganan": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/meti-wilayah": "tests/e2e/rute-peran.test.mjs",
@@ -49,15 +55,19 @@
       "GET /api/admin/ringkas": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/statistik": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/surel": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/admin/surel-keluar": "tests/e2e/rute-peran.test.mjs",
       "GET /api/admin/wilayah-akun": "tests/e2e/rute-peran.test.mjs",
       "GET /api/agenda": "tests/e2e/rute-peran.test.mjs",
       "GET /api/agenda/:ref": "tests/e2e/rute-peran.test.mjs",
       "GET /api/agenda/dokumen/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/agenda/foto/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/agenda/sumber-resmi": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/akademi/nilai": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/akademi/sertifikat/:token": "tests/e2e/rute-peran.test.mjs",
       "GET /api/berita-meti": "tests/e2e/rute-peran.test.mjs",
       "GET /api/berita-meti/:ref": "tests/e2e/rute-peran.test.mjs",
       "GET /api/berita-meti/foto/:ref": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/cek-fakta": "tests/e2e/rute-peran.test.mjs",
       "GET /api/direktori": "tests/e2e/rute-peran.test.mjs",
       "GET /api/direktori/data/:nama": "tests/e2e/rute-peran.test.mjs",
       "GET /api/direktori/kampus": "tests/e2e/rute-peran.test.mjs",
@@ -70,21 +80,33 @@
       "GET /api/direktori/sinta/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/direktori/terdekat": "tests/e2e/rute-peran.test.mjs",
       "GET /api/event": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/event/:id/laporan": "tests/e2e/rute-peran.test.mjs",
       "GET /api/event/:id/peserta": "tests/e2e/rute-peran.test.mjs",
       "GET /api/event/:id/peserta.csv": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/event/:id/tiket": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/event/sertifikat/:token": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/forum": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/forum/utas/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/foto-berita/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/gambar/foto/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/gambar/logo/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/hukum/cari": "tests/e2e/rute-peran.test.mjs",
       "GET /api/hukum/dok": "tests/e2e/rute-peran.test.mjs",
       "GET /api/hukum/ringkas": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/hukum/ringkasan": "tests/e2e/rute-peran.test.mjs",
       "GET /api/ikuti": "tests/e2e/rute-peran.test.mjs",
       "GET /api/ikuti/ringkasan": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/iuran": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/iuran/:id/bukti": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/iuran/:id/bukti-bayar": "tests/e2e/rute-peran.test.mjs",
       "GET /api/kalender/tautan": "tests/e2e/rute-peran.test.mjs",
       "GET /api/kelayakan/power": "tests/e2e/rute-peran.test.mjs",
       "GET /api/kerja": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/kerja/:id/peminat": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/kerja/minat": "tests/e2e/rute-peran.test.mjs",
       "GET /api/kerja/saya": "tests/e2e/rute-peran.test.mjs",
       "GET /api/keyakinan": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/kiriman/saya": "tests/e2e/rute-peran.test.mjs",
       "GET /api/konsultasi": "tests/e2e/rute-peran.test.mjs",
       "GET /api/konsultasi/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/konsultasi/:id/berkas": "tests/e2e/rute-peran.test.mjs",
@@ -96,21 +118,27 @@
       "GET /api/kta/foto/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/kta/saya": "tests/e2e/rute-peran.test.mjs",
       "GET /api/kta/verifikasi/:token": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/kuis/:rekaman": "tests/e2e/rute-peran.test.mjs",
       "GET /api/langganan/saya": "tests/e2e/rute-peran.test.mjs",
       "GET /api/masuk/google": "tests/e2e/rute-peran.test.mjs",
       "GET /api/masuk/google/kembali": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/mentor": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/mentor/permintaan": "tests/e2e/rute-peran.test.mjs",
       "GET /api/meti-wilayah": "tests/e2e/rute-peran.test.mjs",
       "GET /api/meti-wilayah/:kode": "tests/e2e/rute-peran.test.mjs",
       "GET /api/meti-wilayah/ajuan/:id/berkas/:n": "tests/e2e/rute-peran.test.mjs",
       "GET /api/meti-wilayah/ajuan/saya": "tests/e2e/rute-peran.test.mjs",
       "GET /api/meti-wilayah/kit/:nama": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/minat-unit": "tests/e2e/rute-peran.test.mjs",
       "GET /api/naskah": "tests/naskah.test.mjs",
       "GET /api/naskah/:ref": "tests/naskah.test.mjs",
       "GET /api/naskah/:ref/unduh": "tests/naskah.test.mjs",
       "GET /api/orang/revisi": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/organisasi/:id/lencana": "tests/e2e/rute-peran.test.mjs",
       "GET /api/otorisasi": "tests/naskah.test.mjs",
       "GET /api/otorisasi/:sumber/:ref": "tests/naskah.test.mjs",
       "GET /api/pembaruan/:jenis/:id": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/permintaan-hijau": "tests/e2e/rute-peran.test.mjs",
       "GET /api/pesan": "tests/e2e/rute-peran.test.mjs",
       "GET /api/pesan/:id": "tests/e2e/rute-peran.test.mjs",
       "GET /api/pesan/:id/berkas/:pid": "tests/e2e/rute-peran.test.mjs",
@@ -120,6 +148,10 @@
       "GET /api/profil/:id/foto": "tests/e2e/rute-peran.test.mjs",
       "GET /api/profil/saya": "tests/e2e/rute-peran.test.mjs",
       "GET /api/profil/saya/sesi": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/proyek-dana": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/proyek-foto/:fid": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/proyek/:id/foto": "tests/e2e/rute-peran.test.mjs",
+      "GET /api/proyek/:id/laporan": "tests/e2e/rute-peran.test.mjs",
       "GET /api/pustaka": "tests/e2e/rute-peran.test.mjs",
       "GET /api/pustaka-unggah": "tests/e2e/rute-peran.test.mjs",
       "GET /api/pustaka-unggah/:ref/unduh": "tests/e2e/rute-peran.test.mjs",
@@ -151,7 +183,13 @@
       "POST /api/admin/akun": "tests/e2e/rute-peran.test.mjs",
       "POST /api/admin/akun/:id/aktivasi": "tests/e2e/rute-peran.test.mjs",
       "POST /api/admin/anggota-meti": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/admin/buletin/:id": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/admin/buletin/rakit": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/admin/cek-fakta/:id": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/admin/forum/sembunyi": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/admin/iuran/:id": "tests/e2e/rute-peran.test.mjs",
       "POST /api/admin/kerja/:id": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/admin/kiriman/:jenis/:id": "tests/e2e/rute-peran.test.mjs",
       "POST /api/admin/koreksi/:id": "tests/e2e/rute-peran.test.mjs",
       "POST /api/admin/kta": "tests/e2e/rute-peran.test.mjs",
       "POST /api/admin/kta/masa": "tests/e2e/rute-peran.test.mjs",
@@ -169,8 +207,10 @@
       "POST /api/agenda/:ref/dokumen": "tests/e2e/rute-peran.test.mjs",
       "POST /api/agenda/:ref/foto": "tests/e2e/rute-peran.test.mjs",
       "POST /api/agenda/kegiatan": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/akademi/kuis": "tests/e2e/rute-peran.test.mjs",
       "POST /api/aktivasi": "tests/e2e/rute-peran.test.mjs",
       "POST /api/berita-meti": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/cek-fakta": "tests/e2e/rute-peran.test.mjs",
       "POST /api/daftar": "tests/e2e/rute-peran.test.mjs",
       "POST /api/daftar/bayar-online": "tests/e2e/rute-peran.test.mjs",
       "POST /api/daftar/bukti": "tests/e2e/rute-peran.test.mjs",
@@ -179,12 +219,22 @@
       "POST /api/daftar/midtrans/notifikasi": "tests/e2e/rute-peran.test.mjs",
       "POST /api/direktori/ringkasan": "tests/e2e/rute-peran.test.mjs",
       "POST /api/event/:id/daftar": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/event/:id/hadir": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/event/:id/stan": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/event/:id/survei": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/forum": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/forum/lapor": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/forum/utas/:id/balasan": "tests/e2e/rute-peran.test.mjs",
       "POST /api/ganti-sandi": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/hukum/ringkasan": "tests/e2e/rute-peran.test.mjs",
       "POST /api/hukum/tanya": "tests/e2e/rute-peran.test.mjs",
       "POST /api/ikuti": "tests/e2e/rute-peran.test.mjs",
       "POST /api/ikuti/lihat": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/iuran/bayar-online": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/iuran/bukti": "tests/e2e/rute-peran.test.mjs",
       "POST /api/keluar": "tests/e2e/rute-peran.test.mjs",
       "POST /api/kerja": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/kerja/:id/minat": "tests/e2e/rute-peran.test.mjs",
       "POST /api/keyakinan": "tests/e2e/rute-peran.test.mjs",
       "POST /api/konsultasi": "tests/e2e/rute-peran.test.mjs",
       "POST /api/konsultasi/:id/berkas": "tests/e2e/rute-peran.test.mjs",
@@ -199,11 +249,15 @@
       "POST /api/konsultasi/utas/:uid/sembunyi": "tests/e2e/rute-peran.test.mjs",
       "POST /api/koreksi": "tests/e2e/rute-peran.test.mjs",
       "POST /api/kta/klaim": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/kuis/:rekaman": "tests/e2e/rute-peran.test.mjs",
       "POST /api/langganan": "tests/e2e/rute-peran.test.mjs",
       "POST /api/langganan/berhenti": "tests/e2e/rute-peran.test.mjs",
       "POST /api/masuk": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/mentor": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/mentor/:id/minta": "tests/e2e/rute-peran.test.mjs",
       "POST /api/meti-wilayah/ajuan": "tests/e2e/rute-peran.test.mjs",
       "POST /api/meti-wilayah/ajuan/:id/berkas": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/minat-unit": "tests/e2e/rute-peran.test.mjs",
       "POST /api/naskah": "tests/naskah.test.mjs",
       "POST /api/naskah/:ref/ajukan": "tests/naskah.test.mjs",
       "POST /api/naskah/:ref/catatan": "tests/naskah.test.mjs",
@@ -211,10 +265,12 @@
       "POST /api/naskah/:ref/setujui": "tests/naskah.test.mjs",
       "POST /api/naskah/:ref/tarik": "tests/naskah.test.mjs",
       "POST /api/naskah/:ref/tolak": "tests/naskah.test.mjs",
+      "POST /api/organisasi/:id/lencana": "tests/e2e/rute-peran.test.mjs",
       "POST /api/otorisasi/:sumber/:ref/catatan": "tests/naskah.test.mjs",
       "POST /api/otorisasi/:sumber/:ref/revisi": "tests/naskah.test.mjs",
       "POST /api/otorisasi/:sumber/:ref/setujui": "tests/naskah.test.mjs",
       "POST /api/otorisasi/:sumber/:ref/tolak": "tests/naskah.test.mjs",
+      "POST /api/permintaan-hijau": "tests/e2e/rute-peran.test.mjs",
       "POST /api/pesan": "tests/e2e/rute-peran.test.mjs",
       "POST /api/portal/ajuan": "tests/e2e/rute-peran.test.mjs",
       "POST /api/portal/klaim": "tests/e2e/rute-peran.test.mjs",
@@ -222,6 +278,9 @@
       "POST /api/profil/saya/foto": "tests/e2e/rute-peran.test.mjs",
       "POST /api/profil/saya/riwayat": "tests/e2e/rute-peran.test.mjs",
       "POST /api/profil/saya/sesi/keluar-lain": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/proyek/:id/dana": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/proyek/:id/foto": "tests/e2e/rute-peran.test.mjs",
+      "POST /api/proyek/:id/laporan": "tests/e2e/rute-peran.test.mjs",
       "POST /api/pustaka-unggah": "tests/e2e/rute-peran.test.mjs",
       "POST /api/pustaka/:id/unduh": "tests/e2e/rute-peran.test.mjs",
       "POST /api/riwayat": "tests/e2e/rute-peran.test.mjs",
@@ -232,10 +291,13 @@
       "POST /api/tanya": "tests/e2e/rute-peran.test.mjs",
       "PUT /api/admin/konten-beranda": "tests/e2e/rute-peran.test.mjs",
       "PUT /api/admin/kotak/tugas": "tests/e2e/rute-peran.test.mjs",
+      "PUT /api/admin/kuis/:rekaman": "tests/e2e/rute-peran.test.mjs",
       "PUT /api/admin/pengaturan-daftar": "tests/e2e/rute-peran.test.mjs",
       "PUT /api/agenda/:ref": "tests/e2e/rute-peran.test.mjs",
       "PUT /api/berita-meti/:ref/foto": "tests/e2e/rute-peran.test.mjs",
       "PUT /api/event/:id/atur": "tests/e2e/rute-peran.test.mjs",
+      "PUT /api/event/:id/tutup": "tests/e2e/rute-peran.test.mjs",
+      "PUT /api/ikuti/surel": "tests/e2e/rute-peran.test.mjs",
       "PUT /api/konsultasi/:id": "tests/e2e/rute-peran.test.mjs",
       "PUT /api/kta/bukti": "tests/e2e/rute-peran.test.mjs",
       "PUT /api/kta/foto": "tests/e2e/rute-peran.test.mjs",
@@ -405,6 +467,32 @@
           "tamu"
         ]
       },
+      "DELETE /api/kerja/:id/minat": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "DELETE /api/kiriman/:jenis/:id": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "DELETE /api/konsultasi/balasan/:bid": {
         "benar": [
           "anggota",
@@ -535,6 +623,32 @@
           "wilayah"
         ]
       },
+      "GET /api/admin/forum/laporan": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
+      "GET /api/admin/iuran": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
       "GET /api/admin/jejak": {
         "benar": [
           "admin",
@@ -600,6 +714,19 @@
           "wilayah"
         ]
       },
+      "GET /api/admin/kiriman": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
       "GET /api/admin/koreksi": {
         "benar": [
           "kurator",
@@ -640,6 +767,19 @@
         ]
       },
       "GET /api/admin/kta/:id/bukti": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
+      "GET /api/admin/kuis/:rekaman": {
         "benar": [
           "admin",
           "super"
@@ -873,6 +1013,19 @@
           "wilayah"
         ]
       },
+      "GET /api/admin/surel-keluar": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
       "GET /api/admin/wilayah-akun": {
         "benar": [
           "admin",
@@ -951,6 +1104,31 @@
           "tamu"
         ]
       },
+      "GET /api/akademi/nilai": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/akademi/sertifikat/:token": {
+        "benar": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": []
+      },
       "GET /api/berita-meti": {
         "benar": [
           "anggota",
@@ -978,6 +1156,19 @@
         ]
       },
       "GET /api/berita-meti/foto/:ref": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/cek-fakta": {
         "benar": [
           "anggota",
           "pengurus",
@@ -1146,6 +1337,19 @@
           "tamu"
         ]
       },
+      "GET /api/event/:id/laporan": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
       "GET /api/event/:id/peserta": {
         "benar": [
           "admin",
@@ -1170,6 +1374,57 @@
           "pengurus",
           "kurator",
           "wilayah"
+        ]
+      },
+      "GET /api/event/:id/tiket": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/event/sertifikat/:token": {
+        "benar": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": []
+      },
+      "GET /api/forum": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/forum/utas/:id": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
         ]
       },
       "GET /api/foto-berita/:id": {
@@ -1250,6 +1505,19 @@
           "tamu"
         ]
       },
+      "GET /api/hukum/ringkasan": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "GET /api/ikuti": {
         "benar": [
           "anggota",
@@ -1264,6 +1532,45 @@
         ]
       },
       "GET /api/ikuti/ringkasan": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/iuran": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/iuran/:id/bukti": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/iuran/:id/bukti-bayar": {
         "benar": [
           "anggota",
           "pengurus",
@@ -1315,6 +1622,32 @@
           "tamu"
         ]
       },
+      "GET /api/kerja/:id/peminat": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/kerja/minat": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "GET /api/kerja/saya": {
         "benar": [
           "anggota",
@@ -1329,6 +1662,19 @@
         ]
       },
       "GET /api/keyakinan": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/kiriman/saya": {
         "benar": [
           "anggota",
           "pengurus",
@@ -1483,6 +1829,19 @@
         ],
         "salah": []
       },
+      "GET /api/kuis/:rekaman": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "GET /api/langganan/saya": {
         "benar": [
           "anggota",
@@ -1519,6 +1878,32 @@
           "super"
         ],
         "salah": []
+      },
+      "GET /api/mentor": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/mentor/permintaan": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
       },
       "GET /api/meti-wilayah": {
         "benar": [
@@ -1585,6 +1970,19 @@
           "tamu"
         ]
       },
+      "GET /api/minat-unit": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "GET /api/naskah": {
         "benar": [
           "anggota",
@@ -1637,6 +2035,19 @@
           "tamu"
         ]
       },
+      "GET /api/organisasi/:id/lencana": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "GET /api/otorisasi": {
         "benar": [
           "pengurus",
@@ -1664,6 +2075,19 @@
         ]
       },
       "GET /api/pembaruan/:jenis/:id": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/permintaan-hijau": {
         "benar": [
           "anggota",
           "pengurus",
@@ -1781,6 +2205,58 @@
         ]
       },
       "GET /api/profil/saya/sesi": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/proyek-dana": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/proyek-foto/:fid": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/proyek/:id/foto": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "GET /api/proyek/:id/laporan": {
         "benar": [
           "anggota",
           "pengurus",
@@ -2194,7 +2670,85 @@
           "wilayah"
         ]
       },
+      "POST /api/admin/buletin/:id": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
+      "POST /api/admin/buletin/rakit": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
+      "POST /api/admin/cek-fakta/:id": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
+      "POST /api/admin/forum/sembunyi": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
+      "POST /api/admin/iuran/:id": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
       "POST /api/admin/kerja/:id": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
+      "POST /api/admin/kiriman/:jenis/:id": {
         "benar": [
           "admin",
           "super"
@@ -2428,6 +2982,19 @@
           "wilayah"
         ]
       },
+      "POST /api/akademi/kuis": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "POST /api/aktivasi": {
         "benar": [
           "tamu",
@@ -2451,6 +3018,19 @@
           "pengurus",
           "kurator",
           "wilayah"
+        ]
+      },
+      "POST /api/cek-fakta": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
         ]
       },
       "POST /api/daftar": {
@@ -2551,6 +3131,84 @@
           "tamu"
         ]
       },
+      "POST /api/event/:id/hadir": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
+      "POST /api/event/:id/stan": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/event/:id/survei": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/forum": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/forum/lapor": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/forum/utas/:id/balasan": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "POST /api/ganti-sandi": {
         "benar": [
           "anggota",
@@ -2562,6 +3220,19 @@
         ],
         "salah": [
           "tamu"
+        ]
+      },
+      "POST /api/hukum/ringkasan": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
         ]
       },
       "POST /api/hukum/tanya": {
@@ -2603,6 +3274,32 @@
           "tamu"
         ]
       },
+      "POST /api/iuran/bayar-online": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/iuran/bukti": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "POST /api/keluar": {
         "benar": [
           "anggota",
@@ -2617,6 +3314,19 @@
         ]
       },
       "POST /api/kerja": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/kerja/:id/minat": {
         "benar": [
           "anggota",
           "pengurus",
@@ -2811,6 +3521,19 @@
           "tamu"
         ]
       },
+      "POST /api/kuis/:rekaman": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "POST /api/langganan": {
         "benar": [
           "tamu",
@@ -2847,6 +3570,32 @@
         ],
         "salah": []
       },
+      "POST /api/mentor": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/mentor/:id/minta": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "POST /api/meti-wilayah/ajuan": {
         "benar": [
           "anggota",
@@ -2861,6 +3610,19 @@
         ]
       },
       "POST /api/meti-wilayah/ajuan/:id/berkas": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/minat-unit": {
         "benar": [
           "anggota",
           "pengurus",
@@ -2964,6 +3726,19 @@
           "admin"
         ]
       },
+      "POST /api/organisasi/:id/lencana": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
       "POST /api/otorisasi/:sumber/:ref/catatan": {
         "benar": [
           "pengurus",
@@ -3014,6 +3789,19 @@
           "kurator",
           "wilayah",
           "admin"
+        ]
+      },
+      "POST /api/permintaan-hijau": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
         ]
       },
       "POST /api/pesan": {
@@ -3095,6 +3883,45 @@
         ]
       },
       "POST /api/profil/saya/sesi/keluar-lain": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/proyek/:id/dana": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/proyek/:id/foto": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
+        ]
+      },
+      "POST /api/proyek/:id/laporan": {
         "benar": [
           "anggota",
           "pengurus",
@@ -3237,6 +4064,19 @@
           "wilayah"
         ]
       },
+      "PUT /api/admin/kuis/:rekaman": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
       "PUT /api/admin/pengaturan-daftar": {
         "benar": [
           "admin",
@@ -3287,6 +4127,32 @@
           "pengurus",
           "kurator",
           "wilayah"
+        ]
+      },
+      "PUT /api/event/:id/tutup": {
+        "benar": [
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu",
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah"
+        ]
+      },
+      "PUT /api/ikuti/surel": {
+        "benar": [
+          "anggota",
+          "pengurus",
+          "kurator",
+          "wilayah",
+          "admin",
+          "super"
+        ],
+        "salah": [
+          "tamu"
         ]
       },
       "PUT /api/konsultasi/:id": {
@@ -3369,6 +4235,8 @@
       }
     },
     "publik": {
+      "GET /api/akademi/sertifikat/:token": "Verifikasi publik sertifikat akademi (F65-205), pola verifikasi KTA dan sertifikat acara: token HMAC di jalur, salah = 404 seragam, batas laju per IP; hanya nama, jumlah modul, dan tanggal selesai.",
+      "GET /api/event/sertifikat/:token": "Verifikasi sertifikat kehadiran acara (F65-202), pola verifikasi KTA: pemindai QR belum tentu punya akun. Token HMAC di jalur; hanya nama acara, tanggal, dan nama peserta yang hadir di acara yang sudah ditutup; salah = 404 seragam; batas laju per IP.",
       "GET /api/kta/verifikasi/:token": "Verifikasi KTA publik: token HMAC di jalur, salah = 404 seragam (API_KTA_PUBLIK).",
       "GET /api/masuk/google": "Alur masuk Google (API_PUBLIK).",
       "GET /api/masuk/google/kembali": "Alur masuk Google (API_PUBLIK).",
@@ -3385,7 +4253,7 @@
       "POST /api/langganan/berhenti": "Berhenti newsletter bertoken (API_PUBLIK).",
       "POST /api/masuk": "Alur masuk (API_PUBLIK)."
     },
-    "jumlah_minimal": 243,
+    "jumlah_minimal": 305,
     "belum_batas": 2
   }
 }

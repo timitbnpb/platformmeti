@@ -3,7 +3,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { bangun } from "../scripts/pipa/ringkasan_eksekutif.mjs";
-import { pemenang, indeksPemimpin, bacaUrl, tulisUrl, csv, metrikProvinsi, MAKS } from "../public/banding_hitung.js";
+import { pemenang, indeksPemimpin, bacaUrl, tulisUrl, csv, metrikProvinsi, metrikProyek, metrikOrganisasi, METRIK_PRO, KOMPONEN, MAKS } from "../public/banding_hitung.js";
 import { susunKertas, cocokRegulasi } from "../public/konsultasi_kertas.js";
 
 const baca = (f) => JSON.parse(readFileSync(new URL("../public/data/" + f, import.meta.url), "utf8"));
@@ -61,4 +61,44 @@ test("tombol kertas posisi hanya untuk staf (hak) dan tanpa rute baru", () => {
   const s = readFileSync(new URL("../public/konsultasi_naskah.js", import.meta.url), "utf8");
   assert.match(s, /\$\{staf\(\) \? `<button[^`]*data-m="kertas"/);
   assert.match(s, /if \(m === "kertas"\) \{ if \(!staf\(\)\) return;/);
+});
+
+test("pembanding proyek: angka dari sumber, tanpa konversi mata uang, tahun COD tidak dinilai", () => {
+  const p = { id: "pj_x", nama: "PLTS Uji", teknologi: "surya", lokasi: { provinsi: "Bali" }, kapasitas: [{ nilai: 9, satuan: "ton/hari" }, { nilai: 50, satuan: "MWp" }],
+    status: [{ nilai: "konstruksi" }], cod_target: [{ nilai: 2026 }, { nilai: 2028 }], nilai_investasi: [{ nilai: 5e9, satuan: "IDR" }, { nilai: 42500000, satuan: "USD" }],
+    pihak: { pemilik: [{ nilai: "A" }, { nilai: "B" }, { nilai: "C" }] }, tingkat_bukti: "resmi", sumber: [{}, {}], program_ids: ["ruptl"] };
+  const e = metrikProyek(p);
+  assert.deepEqual(e.m, { mw: 50, investasi: 42.5, cod: 2028, program: 1, regulasi: 0, berita: 0, sumber: 2 });
+  assert.deepEqual(e.teks, { teknologi: "surya", status: "konstruksi", provinsi: "Bali", pemilik: "A, B +1", bukti: "resmi" });
+  assert.equal(metrikProyek({ ...p, cod_aktual: [{ nilai: 2025 }] }).m.cod, 2025);
+  const kosong = metrikProyek({ id: "pj_y", nama: "Tanpa angka" });
+  assert.equal(kosong.m.mw, null); assert.equal(kosong.m.investasi, null); assert.equal(kosong.m.cod, null); assert.equal(kosong.teks.pemilik, null);
+  assert.equal(metrikProyek({ ...p, nilai_investasi: [{ nilai: 5e9, satuan: "IDR" }] }).m.investasi, null);
+  assert.equal(metrikProyek(undefined), null);
+  assert.ok(METRIK_PRO.find((m) => m.k === "cod").tahun);
+  const u = bacaUrl("?m=pro&j=pj_0001,pj_0002");
+  assert.deepEqual(u, { mode: "pro", ids: ["pj_0001", "pj_0002"] });
+  assert.equal(tulisUrl(u), "?m=pro&j=pj_0001,pj_0002");
+  assert.equal(bacaUrl("?m=aneh&p=11").mode, "prov");
+  const nyata = baca("proyek.json").baris.map(metrikProyek);
+  assert.ok(nyata.every((x) => x && x.id && x.nama));
+});
+
+test("pembanding pemasok per komponen (F65-102): hitungan dan TKDN tertinggi dari sertifikat, tanpa sertifikat = null bukan 0", () => {
+  const o = { id: "p_x", nama: "Pabrik Uji" }, kosong = { proyek: [], orang: [], berita: [] };
+  const tkdn = [{ pabrikan_org_id: "p_x", kategori: "modul", tkdn_persen: 41.2 }, { pabrikan_org_id: "p_x", kategori: "modul", tkdn_persen: 47.5 }, { pabrikan_org_id: "p_x", kategori: "baterai", tkdn_persen: 60 }, { pabrikan_org_id: "p_y", kategori: "modul", tkdn_persen: 99 }];
+  const semua = metrikOrganisasi(o, { ...kosong, tkdn, komponen: "" }).m;
+  assert.equal(semua.produk_tkdn, 3); assert.equal(semua.tkdn_maks, 60);
+  const modul = metrikOrganisasi(o, { ...kosong, tkdn, komponen: "modul" }).m;
+  assert.equal(modul.produk_tkdn, 2); assert.equal(modul.tkdn_maks, 47.5);
+  const kabel = metrikOrganisasi(o, { ...kosong, tkdn, komponen: "kabel" }).m;
+  assert.equal(kabel.produk_tkdn, 0); assert.equal(kabel.tkdn_maks, null);
+  const tanpa = metrikOrganisasi(o, kosong).m;
+  assert.equal(tanpa.produk_tkdn, null); assert.equal(tanpa.tkdn_maks, null);
+  const u = bacaUrl("?m=org&o=p_x,p_y&k=modul");
+  assert.equal(u.komponen, "modul"); assert.equal(tulisUrl(u), "?m=org&o=p_x,p_y&k=modul");
+  assert.equal(bacaUrl("?m=org&o=p_x&k=<x>").komponen, undefined);
+  assert.equal(bacaUrl("?m=prov&p=11&k=modul").komponen, undefined);
+  const nyata = baca("tkdn_produk.json").baris;
+  assert.deepEqual([...new Set(nyata.map((x) => x.kategori))].sort(), [...KOMPONEN].sort());
 });

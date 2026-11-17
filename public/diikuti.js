@@ -37,6 +37,7 @@ function barisRingkasan(x) {
       : x.tipe === "topik" ? esc(t("dk.topik_baru", { judul: x.judul || x.ref }))
       : x.tipe === "konsultasi" ? esc(t("dk.kons." + x.sub))
       : x.tipe === "regulasi" ? esc(t("dk.regulasi_baru", { judul: x.judul }))
+      : x.tipe === "tender" ? esc(t("dk.tender_baru", { judul: x.judul || x.ref }))
         : `<a href="${/^https?:\/\//i.test(x.url) ? esc(x.url) : "#"}" target="_blank" rel="noopener noreferrer">${esc(x.judul)}</a>${x.media ? ` <small>${esc(x.media)}</small>` : ""}`;
   return `<tr><td class="jm-nowrap" data-l="${esc(t("dk.c.tanggal"))}">${tgl(x.waktu)}</td><td data-l="${esc(t("dk.c.entitas"))}">${ent(x.jenis, x.ref)}</td><td data-l="${esc(t("dk.c.pembaruan"))}"><span class="jm-ringkas-sel"><b>${esc(t("dk.tipe." + x.tipe))}</b><span>${apa}</span></span></td></tr>`;
 }
@@ -46,10 +47,10 @@ function gambar(d, r) {
     ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["dk.c.tanggal", "dk.c.entitas", "dk.c.pembaruan"].map((k) => `<th scope="col">${esc(t(k))}</th>`).join("")}</tr></thead><tbody>${r.item.map(barisRingkasan).join("")}</tbody></table></div>`
     : kosongHtml(d.baris.length ? "dk.ringkas_kosong" : "dk.kosong");
   const daftar = d.baris.length
-    ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["dk.c.entitas", "dk.c.sejak"].map((k) => `<th scope="col">${esc(t(k))}</th>`).join("")}<th scope="col" data-urut="tidak">${esc(t("dk.c.aksi"))}</th></tr></thead><tbody>${d.baris.map((x) => `<tr><td data-l="${esc(t("dk.c.entitas"))}">${ent(x.jenis, x.ref)}</td><td class="jm-nowrap" data-l="${esc(t("dk.c.sejak"))}">${tgl(x.dibuat)}</td><td data-l="${esc(t("dk.c.aksi"))}"><button type="button" class="jm-tbl jm-tbl-kecil" data-lepas="${esc(x.jenis)}|${esc(x.ref)}" title="${esc(t("dk.lepas"))}">${ikon("silang", 16)}<span>${esc(t("dk.lepas"))}</span></button></td></tr>`).join("")}</tbody></table></div>`
+    ? `<div class="jm-gulir"><table class="jm-tabel"><thead><tr>${["dk.c.entitas", "dk.c.sejak"].map((k) => `<th scope="col">${esc(t(k))}</th>`).join("")}<th scope="col" data-urut="tidak">${esc(t("dk.c.surel"))}</th><th scope="col" data-urut="tidak">${esc(t("dk.c.aksi"))}</th></tr></thead><tbody>${d.baris.map((x) => `<tr><td data-l="${esc(t("dk.c.entitas"))}">${ent(x.jenis, x.ref)}</td><td class="jm-nowrap" data-l="${esc(t("dk.c.sejak"))}">${tgl(x.dibuat)}</td><td data-l="${esc(t("dk.c.surel"))}"><label class="dk-surel"><input type="checkbox" data-surel="${esc(x.jenis)}|${esc(x.ref)}"${x.surel ? " checked" : ""}><span>${esc(t("dk.surel"))}</span></label></td><td data-l="${esc(t("dk.c.aksi"))}"><button type="button" class="jm-tbl jm-tbl-kecil" data-lepas="${esc(x.jenis)}|${esc(x.ref)}" title="${esc(t("dk.lepas"))}">${ikon("silang", 16)}<span>${esc(t("dk.lepas"))}</span></button></td></tr>`).join("")}</tbody></table></div>`
     : kosongHtml("dk.kosong");
   akar.innerHTML = exHtml({ id: "ringkasan", ikon: "kalender", judulHtml: esc(t("dk.ringkasan")), subHtml: esc(t("dk.ringkasan_sub")), isiHtml: ringkas })
-    + exHtml({ id: "daftar", ikon: "bintang", judulHtml: esc(t("dk.daftar", { n: d.baris.length })), isiHtml: `<div id="dkPesan" aria-live="polite"></div>${daftar}` });
+    + exHtml({ id: "daftar", ikon: "bintang", judulHtml: esc(t("dk.daftar", { n: d.baris.length })), isiHtml: `<div id="dkPesan" aria-live="polite"></div>${daftar}${d.baris.length ? `<p class="jm-bantu">${ikon("info", 14)} ${esc(t("dk.surel_ket"))}</p>` : ""}` });
 }
 
 async function muat() {
@@ -62,6 +63,16 @@ async function muat() {
     akar.innerHTML = e.kode === "fitur_belum_aktif" ? siapHtml("dk.siap") + kosongHtml("dk.kosong") : pesanHtml("galat", galatTeks(e.kode || "umum"));
   }
 }
+/* Pilihan pengingat surel per hal (F65-215): bawaan mati; centang berubah seketika, gagal simpan mengembalikannya. */
+akar.addEventListener("change", async (e) => {
+  const c = e.target.closest("[data-surel]");
+  if (!c) return;
+  const [jenis, ref] = c.dataset.surel.split("|"), aktif = c.checked;
+  c.disabled = true;
+  try { await api("/api/ikuti/surel", { metode: "PUT", badan: { jenis, ref, aktif } }); document.getElementById("dkPesan").innerHTML = ""; }
+  catch (er) { c.checked = !aktif; document.getElementById("dkPesan").innerHTML = pesanHtml("galat", galatTeks(er.kode || "umum")); }
+  c.disabled = false;
+});
 akar.addEventListener("click", async (e) => {
   const b = e.target.closest("[data-lepas]");
   if (!b) return;

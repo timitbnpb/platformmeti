@@ -22,6 +22,13 @@ const KPV = {
   konsultasi: "- daftar daftar daftar daftar T T", konsultasi_putus: "- - T T - T T",
   surel_minta: "- daftar daftar daftar daftar T T",
   keyakinan: "- daftar daftar daftar daftar T T",
+  akademi_nilai: "- daftar daftar daftar daftar T T", proyek_foto: "- daftar daftar daftar daftar T T",
+  permintaan_hijau: "- daftar daftar daftar daftar T T", proyek_dana: "- daftar daftar daftar daftar T T",
+  kerja_minat: "- daftar daftar daftar daftar T T", mentor: "- daftar daftar daftar daftar T T",
+  mentor_minta: "- daftar daftar daftar daftar T T", forum: "- daftar daftar daftar daftar T T",
+  lencana: "- daftar daftar daftar daftar T T", laporan_warga: "- daftar daftar daftar daftar T T", surel_keluar: "- - - - - T T",
+  minat_unit: "- daftar daftar daftar daftar T T", event_stan: "- daftar daftar daftar daftar T T", cek_fakta: "- daftar daftar daftar daftar T T",
+  hukum_ringkas: "- B B B B T T", iuran_bayar: "- daftar daftar daftar daftar T T",
 };
 const KODE_KPV = (s) => s.split(" ").map((x) => ({ "-": "-", B: "B", T: "T", "B(prov)": "B prov", diri: "T diri", "bukan-super": "T bukan-super",
   cabut: "T cabut", "cabut-bukan-super": "T cabut bukan-super", kirim: "T kirim", "kirim(prov)": "T kirim prov", daftar: "T daftar", sah: "B sah", putus: "T putus", catat: "T catat", konten: "B konten", tinjau: "T tinjau", milik: "T milik" })[x]);

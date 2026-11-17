@@ -10,7 +10,9 @@ test("ALIH_GABUNG memetakan halaman lama ke tab baru", () => {
   assert.deepEqual(peta, { "/kelayakan": "/investasi#hitung", "/event": "/kalender#daftar", "/video": "/galeri#video", "/podcast": "/galeri#sosmed", "/tender": "/proyek#tender", "/psn": "/program#psn", "/hukum": "/regulasi#hukum", "/pelacak-proyek": "/proyek#terpadu", "/proyek-besar": "/proyek#besar", "/proyek-berhenti": "/proyek#henti", "/energi-baru": "/transisi-pltu?tab=enb", "/transisi": "/target#transisi", "/strategi": "/target#strategi", "/rapor": "/target#rapor", "/ringkasan": "/insight#ringkasan", "/rantai": "/rantai-global?tab=tkdn", "/akademi": "/panduan#akademi", "/istilah": "/panduan#istilah", "/peluang": "/investasi#peluang", "/model-keuangan": "/investasi#model", "/keuangan-hijau": "/investasi#pembiayaan", "/harga-komponen": "/investasi#harga-komponen", "/biaya-listrik": "/investasi#biaya", "/lokasi-hijau": "/cek-lokasi#kawasan-hijau" });
 });
 test("alihan berstatus 301 dan mempertahankan query", () => {
-  assert.match(src, /status: 301, headers: \{ location: ke \+ \(q\.size \? "\?" \+ q : ""\) \+ "#" \+ hash \}/);
+  assert.match(src, /status: 301, headers: \{ location: ke \+ \(q\.size \? "\?" \+ q : ""\) \+ \(hash \? "#" \+ hash : ""\) \}/);
+  // Tujuan tanpa hash (mis. /energi-baru) tidak boleh menghasilkan "#undefined".
+  assert.doesNotMatch(src, /\+ "#" \+ hash \}/);
   assert.match(src, /path === "\/sektor" && url\.searchParams\.has\("id"\)/);
 });
 test("halaman lama tidak lagi berkas statis; halaman gabungan memuat tabnya", () => {

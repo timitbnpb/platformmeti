@@ -15,6 +15,7 @@ import { pasangPilih } from "/inti/pilih.js";
 import { batang } from "/grafik.js";
 import { jarakKm, jarakGarisKm, fiturMemuat, dalamGeometri, terdekat, terdekatN, dalamKotak, titikSah } from "/inti/geo_titik.js";
 import { BOBOT, LAHAN, skorLokasi, indeksBahaya, kelasBahaya, kelasSkor } from "/cek_lokasi_hitung.js";
+import { hitungInterkoneksi } from "/inti/interkoneksi_rumus.js";
 
 const $ = (id) => document.getElementById(id);
 const N = (n, d = 0) => angka(n, { desimal: d });
@@ -224,6 +225,29 @@ function kartuProyek(p) {
     tautan("/proyek", "proyek", "cl.taut.proyek") + tautan("/proyek#terpadu", "petir", "cl.taut.pelacak"), est());
 }
 
+/* ---------- penaksir biaya interkoneksi (F65-308; rumus di /inti/interkoneksi_rumus.js). Jarak dari hitungan titik ini; biaya satuan isian pengguna. ---------- */
+const rupiah = (v) => "Rp " + N(Math.round(v));
+function hitungInter() {
+  const n = (id) => { const v = $(id).value; return v === "" ? NaN : +v; }, gd = $("clIkGardu").value === "" ? 0 : +$("clIkGardu").value;
+  const h = hitungInterkoneksi({ km: n("clIkKm"), perKm: n("clIkPerKm"), gardu: gd });
+  $("clIkO-saluran").textContent = h.saluran == null ? "-" : rupiah(h.saluran);
+  $("clIkO-total").textContent = h.total == null ? "-" : rupiah(h.total);
+  $("clIkIsi").hidden = h.total != null;
+  const k = $("clIkTanpaGardu"); if (k) k.hidden = h.total == null || $("clIkGardu").value !== "";
+}
+function kartuInter(j) {
+  const km = !j.galat && Number.isFinite(j.km) ? Math.round(j.km * 10) / 10 : null;
+  const f = (id, k, attr = "") => `<label class="cl-ik-f"><span>${esc(t("cl.ik.f." + k))}</span><input id="${id}" type="number" inputmode="decimal" min="0" step="any" ${attr}></label>`;
+  return ex({ id: "clInter", ikon: "kalkulator", topik: t("cl.ik.ey"), judulHtml: esc(t("cl.ik.j")) + " " + est(), subHtml: esc(t("cl.ik.sub")),
+    isiHtml: `<div class="cl-ik"><div class="cl-ik-in">${f("clIkKm", "km", km == null ? "" : `value="${km}"`)}
+        <p class="cl-bantu">${ikon("info", 14)}<span>${esc(t(km == null ? "cl.ik.km_kosong" : "cl.ik.km_ket", { km: km == null ? "" : N(km, 1) }))}</span></p>
+        ${f("clIkPerKm", "perkm")}${f("clIkGardu", "gardu")}</div>
+      <div><dl class="cl-ik-h"><div><dt>${esc(t("cl.ik.o.saluran"))}</dt><dd><b id="clIkO-saluran">-</b></dd></div><div><dt>${esc(t("cl.ik.o.total"))}</dt><dd><b id="clIkO-total">-</b><small id="clIkTanpaGardu" class="jm-bantu" hidden>${esc(t("cl.ik.o.tanpa_gardu"))}</small></dd></div></dl>
+        <p id="clIkIsi" class="cl-bantu" role="status">${ikon("info", 14)}<span>${esc(t("cl.ik.isi"))}</span></p></div></div>
+      <p class="cl-bantu">${ikon("peringatan", 14)}<span>${esc(t("cl.ik.batas"))}</span></p>
+      <div class="cl-aksi">${tautan("/metode#biaya-interkoneksi", "metode", "cl.cara.tautan")}</div>` });
+}
+
 function kartuSkor(r, kode) {
   if (r.skor == null) return ex({ id: "clSkor", ikon: "kalkulator", topik: t("cl.ey.skor"), judulHtml: esc(t("cl.t.skor0")) + " " + hip(), subHtml: esc(t("cl.s.skor0")), isiHtml: "" });
   const rows = KOM.filter((k) => r.kom[k]).map((k) => ({ label: t("cl.kom." + k), v: Math.max(0.5, r.kom[k].skor), teks: N(r.kom[k].skor), sorot: false }));
@@ -248,7 +272,8 @@ async function hitung(jalan) {
   const lp = LH_PROV.get(kode), atlas = ATLAS_PROV.get(kode);
   const r = skorLokasi({ pvout: atlas?.pvout_kwh_per_kwp_tahun ?? null, jaringanKm: j.tercakup ? j.km : null, lahan: l.galat ? null : l.kelas, bahaya: b.galat ? null : b.indeks, bpp: lp?.bpp?.rp_kwh ?? null, bppSemua: BPP_SEMUA });
   $("clGrid").innerHTML = [kartuWilayah(kode), kartuSumber(kode), kartuJaringan(j), kartuLahan(l), kartuBahaya(b), kartuBpp(kode), kartuProyek(pj)].join("");
-  el.insertAdjacentHTML("beforeend", kartuSkor(r, kode));
+  el.insertAdjacentHTML("beforeend", kartuSkor(r, kode) + kartuInter(j));
+  $("clInter").addEventListener("input", hitungInter);
   pasangPilih();
   $("clKab")?.addEventListener("change", () => { S.kab = $("clKab").value; kabHasil(); });
 }

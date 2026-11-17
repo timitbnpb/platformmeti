@@ -4,10 +4,12 @@ import { mulaiHalaman } from "/inti/kepala.js";
 import { esc, hantuHtml, nanti } from "/inti/umum.js";
 import { pilihHtml } from "/inti/komponen.js";
 import { muatData, tampilGalat, batangHtml, pasangBar, ubinHtml } from "/analisis.js";
+import { t } from "/i18n.js";
+import { JENIS_ALUR, langkahIzin, luasLahan } from "/inti/izin_alur.js";
 import { muatTeks, tt, L, num, tautan, seksi, catatan, narasi, sumber, butuhDaftar, tabel, labelPil, saatBahasa } from "/info_kerangka.js";
 
 const $ = (id) => document.getElementById(id);
-let d = null, jenis = "semua", tingkat = "semua";
+let d = null, jenis = "semua", tingkat = "semua", alur = "surya";
 const dok = (k) => d.dok[k];
 const pasalHtml = (psl) => psl.map((x) => (dok(x.dok) ? `${tautan(dok(x.dok).pdf, dok(x.dok).nama)}: ${esc(x.pasal)}` : esc(x.pasal))).join("; ");
 const JENIS = ["semua", "umum", "surya", "hidro", "panas-bumi", "bioenergi"];
@@ -33,6 +35,39 @@ function bagTanya() {
     isi: `${narasi(tt("tanya.narasi"))}<div class="inf-sel">${pilihHtml({ id: "pilih-jenis", ikon: "daftar2", label: tt("seg.jenis"), opsi: JENIS.map((k) => [k, tt("jn." + k)]), nilai: jenis })}</div><div id="isi-tanya"></div>${catatan(tt("tanya.catatan"))}${butuhDaftar(d.butuh_unduhan, ["pp28"])}${sumber(SUM())}`,
   });
   isiTanya();
+}
+
+/* ---------- alur izin bertahap (F65-109): butir umum + butir jenis, urutan sumber; batas waktu hanya yang berpasal di data ---------- */
+function isiAlur() {
+  const l = langkahIzin(d.tanya, alur);
+  const batas = `<ul class="iz-batas">${d.batas_waktu.map((b) => `<li><span class="jm-pil">${esc(`${tt("bw." + b.id)}: ${num(b.hari)} ${tt("satuan.hari")}`)}</span> <span class="inf-pasal">${pasalHtml([b.pasal])}</span></li>`).join("")}</ul>`;
+  $("isi-alur").innerHTML = `<ol class="inf-qa iz-alur">${l.map((x) => `<li><details><summary><span class="iz-no" aria-hidden="true">${x.no}</span><span class="iz-q">${esc(L(x.q))}</span><span class="jm-pil">${esc(tt("jn." + x.jenis))}</span></summary><div class="inf-jawab"><p>${esc(L(x.a))}</p><p class="inf-pasal">${pasalHtml(x.pasal)}</p>${x.id === "waktu" ? batas : ""}${x.verifikasi ? `<p>${labelPil("tanya.cek")}</p>` : ""}</div></details></li>`).join("")}</ol>`;
+  $("alur").querySelector(".jm-ex-j").textContent = t("iz.alur.j", { n: l.length, jenis: tt("jn." + alur) });
+}
+function bagAlur() {
+  $("s-alur").innerHTML = seksi({
+    id: "alur", ik: "linimasa", topik: t("iz.alur.ey"), judul: " ", turunan: false, sub: t("iz.alur.sub"),
+    isi: `<div class="inf-sel">${pilihHtml({ id: "pilih-alur", ikon: "daftar2", label: tt("seg.jenis"), opsi: JENIS_ALUR.map((k) => [k, tt("jn." + k)]), nilai: alur })}</div><div id="isi-alur"></div>${catatan(t("iz.alur.urutan"))}${sumber(SUM())}`,
+  });
+  isiAlur();
+}
+
+/* ---------- penaksir lahan (F65-108): luas per MW isian pengguna karena belum ada data bersumber di repo ---------- */
+function hitungLahan() {
+  const n = (id) => { const v = $(id).value; return v === "" ? NaN : +v; }, mw = n("izMw"), a = n("izMin"), b = n("izMaks");
+  const r = luasLahan(mw, a, b), terbalik = Number.isFinite(a) && Number.isFinite(b) && b < a;
+  $("izLuas").textContent = r == null ? "-" : r.min === r.maks ? `${num(r.min, 1)} ha` : t("iz.lahan.rentang", { min: num(r.min, 1), maks: num(r.maks, 1) });
+  const p = $("izIsi"); p.hidden = r != null; p.textContent = t(terbalik ? "iz.lahan.salah" : "iz.lahan.isi");
+}
+function bagLahan() {
+  const f = (id, k) => `<label class="iz-f"><span>${esc(t("iz.lahan.f." + k))}</span><input id="${id}" type="number" inputmode="decimal" min="0" step="any"></label>`;
+  $("s-lahan").innerHTML = seksi({
+    id: "lahan", ik: "kalkulator", topik: t("iz.lahan.ey"), judul: t("iz.lahan.j"), turunan: true, sub: t("iz.lahan.sub"),
+    isi: `<div class="iz-lahan"><div class="iz-in">${f("izMw", "mw")}${f("izMin", "min")}${f("izMaks", "maks")}</div>
+      <div><dl class="iz-h"><div><dt>${esc(t("iz.lahan.o.luas"))}</dt><dd><b id="izLuas">-</b></dd></div></dl><p id="izIsi" class="jm-bantu" role="status">${esc(t("iz.lahan.isi"))}</p>
+      <p class="jm-bantu"><a href="#alur">${esc(t("iz.lahan.ke_alur"))}</a></p></div></div>${catatan(t("iz.lahan.batas"))}`,
+  });
+  $("lahan").addEventListener("input", hitungLahan);
 }
 
 function bagLead() {
@@ -71,8 +106,8 @@ function bagMetode() {
 
 async function gambar() {
   ubin();
-  for (const id of ["s-tanya", "s-lead", "s-klausul", "s-metode"]) if (!$(id)) $("isi").insertAdjacentHTML("beforeend", `<div id="${id}"></div>`);
-  bagTanya(); bagLead(); bagKlausul(); bagMetode();
+  for (const id of ["s-tanya", "s-alur", "s-lahan", "s-lead", "s-klausul", "s-metode"]) if (!$(id)) $("isi").insertAdjacentHTML("beforeend", `<div id="${id}"></div>`);
+  bagTanya(); bagAlur(); bagLahan(); bagLead(); bagKlausul(); bagMetode();
   document.querySelectorAll("[data-k]").forEach((e) => { e.textContent = tt(e.dataset.k); });
   document.title = tt("judul.halaman");
 }
@@ -80,6 +115,7 @@ async function gambar() {
 function pasangSegmen() {
   $("isi").addEventListener("change", (e) => {
     if (e.target.id === "pilih-jenis" && e.target.value !== jenis) { jenis = e.target.value; nanti(isiTanya); }
+    else if (e.target.id === "pilih-alur" && e.target.value !== alur) { alur = e.target.value; nanti(isiAlur); }
     else if (e.target.id === "pilih-tingkat" && e.target.value !== tingkat) { tingkat = e.target.value; nanti(isiKlausul); }
   });
 }

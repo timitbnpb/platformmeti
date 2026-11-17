@@ -35,7 +35,7 @@
 .rg3-chip-pudar{--wc:var(--ink2);opacity:.8}
 .rg3-chipb{cursor:pointer;min-height:var(--target);padding:0 14px}
 .rg3-chipb i{font-style:normal;color:var(--ink2);font-weight:600}
-.rg3-chipb[aria-pressed="true"]{background:var(--wc);color:var(--on-brand);border-color:var(--wc)}
+.rg3-chipb[aria-pressed="true"]{background:var(--wc);color:var(--on-accent);border-color:var(--wc)}
 .rg3-chipb[aria-pressed="true"] :is(.jm-ik,i){color:inherit}
 .rg3-chipb:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .rg3-chips{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
@@ -55,7 +55,7 @@
 .rg3-tautan:hover{text-decoration:underline;color:var(--brand2)}
 .rg3-proyek{display:inline-flex;align-items:center;gap:4px;font-size:var(--t-kecil)}
 .rg3-org{display:inline-flex;align-items:center;gap:8px}
-.rg3-teks{overflow-wrap:anywhere}
+.rg3-teks{overflow-wrap:break-word}
 .rg3-catat{display:block;color:var(--ink2);font-size:var(--t-kecil)}
 .rg3-sm{display:grid;gap:6px;justify-items:start}
 .rg3-sub{margin:20px 0 10px;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
@@ -216,8 +216,8 @@
 .jm-kh-ubin{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 .rg3-sub-k{margin:6px 0 0;font:600 var(--t-label)/var(--lh-rapat) var(--font);color:var(--ink2)}
 .rg3-idk{display:grid;gap:2px;min-width:0}
-.rg3-idk b{font-weight:600;color:var(--ink);overflow-wrap:anywhere}
-.rg3-idk small{color:var(--ink2);font-size:var(--t-kecil);white-space:normal;overflow-wrap:anywhere}
+.rg3-idk b{font-weight:600;color:var(--ink);overflow-wrap:break-word}
+.rg3-idk small{color:var(--ink2);font-size:var(--t-kecil);white-space:normal;overflow-wrap:break-word}
 .rg3-tg{white-space:nowrap;font-variant-numeric:tabular-nums}
 /* label tab panjang membungkus di dalam tombolnya, tidak menabrak ikon tab sebelah (pemilik 9 Nov 2026) */
 @media (min-width:900px){.rg3-tab .jm-tab>button{min-height:48px;height:auto;gap:6px}.rg3-tab .jm-tab>button .jm-ik{flex:none}.rg3-tab .jm-tab>button span{min-width:0;white-space:normal;overflow-wrap:normal;text-align:left;line-height:1.15}}

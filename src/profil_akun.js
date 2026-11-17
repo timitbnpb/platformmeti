@@ -110,7 +110,8 @@ export function periksaRiwayat(jenis, b) {
     if (selesai != null && selesai < mulai) throw SALAH();
     return { jabatan: wajib(b.jabatan, 120), organisasi: wajib(b.organisasi, 120), mulai, selesai };
   }
-  if (jenis === "sertifikasi") return { nama: wajib(b.nama, 120), penerbit: teks(b.penerbit, 120), tahun: tahun(b.tahun, false) };
+  // F65-307: sertifikasi isian sendiri. nomor dan tautan bukti opsional (https saja); tidak ada unggahan dokumen. Layar selalu melabelinya "belum diverifikasi".
+  if (jenis === "sertifikasi") return { nama: wajib(b.nama, 120), penerbit: teks(b.penerbit, 120), nomor: teks(b.nomor, 60), tahun: tahun(b.tahun, false), bukti_url: tautanAman(b.bukti_url) };
   if (jenis === "publikasi") {
     const ref = teks(b.proyek_id, 60);
     if (ref && !RE_REF.test(ref)) throw SALAH();

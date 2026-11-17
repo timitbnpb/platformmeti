@@ -125,13 +125,15 @@ export function keParam(v) {
   const wajib = ["mw", "capexUsdKw", "opexUsdKwThn", "fk", "umur", "tarif", "kurs"];
   const kurang = wajib.filter((k) => !(v[k] > 0) && !(k === "opexUsdKwThn" && v[k] === 0));
   if (v.utang > 0) for (const k of ["tenor"]) if (!(v[k] > 0)) kurang.push(k);
+  if (v.utangLunak > 0 && !(v.tenorLunak > 0)) kurang.push("tenorLunak");
+  if ((v.utang || 0) + (v.utangLunak || 0) + (v.hibah || 0) > 100) kurang.push("porsi_modal");
   if (kurang.length) return { kurang };
   const u = (x) => (x || 0) / 100;
   return { p: {
     mw: v.mw, capexUsdKw: v.capexUsdKw, opexUsdKwThn: v.opexUsdKwThn, kurs: v.kurs, fk: u(v.fk), degr: u(v.degr), umur: v.umur,
     tarif: v.tarif, tarifTahun2: v.tarifTahun2 > 0 ? v.tarifTahun2 : null, tarifGanti: v.tarifGanti || 11, eskTarif: u(v.eskTarif), eskOpex: u(v.eskOpex),
     porsiBayar: v.porsiBayar === undefined || v.porsiBayar === null ? 1 : u(v.porsiBayar), sewaRpKwp: v.sewaRpKwp || 0, recRpMwh: v.recRpMwh || 0, karbonRpT: v.karbonRpT || 0, emisiTMwh: v.emisiTMwh || 0,
-    utang: u(v.utang), bunga: u(v.bunga), tenor: v.tenor || 0, pajak: u(v.pajak), libur: v.libur || 0, susut: v.susut || v.umur,
+    utang: u(v.utang), bunga: u(v.bunga), tenor: v.tenor || 0, hibah: u(v.hibah), utangLunak: u(v.utangLunak), bungaLunak: u(v.bungaLunak), tenorLunak: v.tenorLunak || 0, pajak: u(v.pajak), libur: v.libur || 0, susut: v.susut || v.umur,
     ppn: 0.11, ppnPorsi: u(v.ppnPorsi), ppnDtp: !!v.ppnDtp, gantiTahun: v.gantiTahun || 0, gantiPersen: u(v.gantiPersen), diskonto: u(v.diskonto),
   } };
 }

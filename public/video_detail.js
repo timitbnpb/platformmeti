@@ -60,7 +60,10 @@ async function main() {
   try { D = await muatVideo(); } catch { isi.innerHTML = galatHtml("layanan"); return; }
   const v = D.semua.find((x) => x.id === id);
   if (!v) { document.getElementById("judul").textContent = t("vid.tidak_ada"); isi.innerHTML = kosongHtml("vid.tidak_ada_isi"); return; }
+  // kuis rekaman (F65-205): wadah di luar #isi supaya tidak ikut tergambar ulang saat ganti bahasa; kosong bila rekaman tanpa bank soal
+  isi.insertAdjacentHTML("afterend", '<div id="vidKuis" class="jm-wadah"></div>');
   await gambar(D, v);
+  import("/kuis_rekaman.js").then((m) => m.pasangKuisRekaman(document.getElementById("vidKuis"), v.id)).catch(() => {});
   document.addEventListener("jm:bahasa", () => gambar(D, v));
 }
 main();

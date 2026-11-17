@@ -38,7 +38,7 @@
 .hk-isi{position:sticky;top:84px;max-height:calc(100dvh - 110px);overflow:auto;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);display:grid;gap:6px}
 .hk-isi h3{margin:0 0 6px;font:700 var(--t-body)/var(--lh-judul) var(--display);color:var(--head)}
 .hk-isi button{display:block;width:100%;text-align:left;padding:7px 10px;border:0;border-radius:var(--r-sm);background:none;color:var(--ink);font:500 var(--t-kecil)/1.35 var(--font);cursor:pointer;overflow-wrap:anywhere}
-.hk-isi button:hover,.hk-isi button[aria-current=true]{background:var(--ok-bg);color:var(--brand)}
+.hk-isi button:hover,.hk-isi button[aria-current=true]{background:var(--ok-bg);color:var(--accent)}
 .hk-isi .hk-bab{font-weight:700;color:var(--head);margin-top:8px}
 .hk-bacaan{display:grid;gap:14px;min-width:0}
 .hk-seg{display:grid;gap:8px;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);scroll-margin-top:90px}
@@ -78,3 +78,30 @@
 }
 @media (max-width:600px){.hk-dl{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:480px){.hk-kartu{padding:14px}.hk-peringkat li{grid-template-columns:30px minmax(0,1fr)}.hk-peringkat li>.jm-pil{grid-column:2}}
+/* banding pasal (F65-111): tambahan dan hapusan dibedakan warna DAN tanda teks + / - */
+.hk-bd-aksi{margin:12px 0}
+.hk-bd-aksi .jm-tbl{max-width:100%}
+.hk-bd-aksi .jm-tbl small{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:28ch;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.hk-bd-aksi .jm-tbl[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+.hk-bd{display:grid;gap:12px;margin-bottom:16px}
+.hk-bd:empty{display:none}
+.hk-bd-kep{display:grid;gap:8px}
+.hk-bd-kep h3{margin:0;font:700 var(--t-h3)/var(--lh-judul) var(--display);color:var(--head)}
+.hk-bd-leg{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0;font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.hk-bd-isi{display:grid;gap:12px}
+.hk-bd-p h3{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.hk-bd-t{margin:0;line-height:var(--lh-isi);overflow-wrap:break-word;white-space:pre-line}
+.hk-bd :is(ins,del){padding:1px 4px;border-radius:4px;text-decoration:none;color:var(--ink)}
+.hk-bd ins{background:var(--ok-bg)}
+.hk-bd del{background:var(--bad-bg);text-decoration:line-through}
+.hk-bd-tanda{margin-right:4px;font-weight:700}
+.hk-bd ins .hk-bd-tanda,.hk-bd-leg ins span{color:var(--ok)}
+.hk-bd del .hk-bd-tanda,.hk-bd-leg del span{color:var(--bad);display:inline-block;text-decoration:none}
+/* ringkasan mesin per peraturan (F65-304) */
+#hringkas:not(:empty){margin:16px 0}
+.hk-rk{display:grid;gap:12px;margin:0 0 12px;padding-left:20px}
+.hk-rk p{margin:0 0 6px;font:400 var(--t-body)/var(--lh-isi) var(--font);color:var(--ink)}
+.hk-rk-p{display:flex;flex-wrap:wrap;gap:6px}
+.hk-rk-buat{display:grid;gap:12px;justify-items:start}
+
+#hringkas .jm-pil{gap:6px}

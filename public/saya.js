@@ -14,6 +14,7 @@ import { namaProyek } from "/inti/nama_proyek.js";
 import { tombolIkuti, pasangIkuti } from "/inti/ikuti.js";
 import { seksiSurelHtml, bukaMintaSurel } from "/inti/surel_minta.js";
 import * as C from "/saya_cocok.js";
+import { PERAN_COCOK, indeksProyek, cocokUntuk } from "/inti/cocok_rumus.js";
 
 const saya = await mulaiHalaman();
 const akar = document.getElementById("isi");
@@ -28,7 +29,7 @@ const IK_CEK = { foto: "kamera", jabatan: "koper", organisasi: "gedung", lokasi:
 const NOL = () => null;
 
 const S = { p: {}, ikut: [], r: { item: [], baru: 0 }, kerja: [], kons: [], org: [], skema: [], kal: [], proyek: [], prov: [], topik: [], reg: [],
-  tab: { syIkuti: "organisasi", syUntuk: "pendanaan" }, hal: { syBaru: 1, syIkuti: 1, syUntuk: 1 }, aktif: { ikuti: true, ringkasan: true } };
+  tab: { syIkuti: "organisasi", syUntuk: "pendanaan", syCocok: "pembiaya" }, hal: { syBaru: 1, syIkuti: 1, syUntuk: 1, syCocok: 1 }, pabrikan: new Set(), aktif: { ikuti: true, ringkasan: true } };
 let ORG = new Map(), PROY = new Map(), REG = new Map(), KONS = new Map(), D = {};
 
 const muatJson = (n) => fetch(`/data/${n}.json`).then((r) => (r.ok ? r.json() : null)).catch(NOL);
@@ -138,6 +139,22 @@ function seksiUntuk() {
   return exHtml({ id: "syUntuk", ikon: "mahkota", topik: t("sy2.untuk.topik"), judulHtml: hl("sy2.untuk.judul", angka(a.length), { tab: t("sy2.t." + tab).toLowerCase() }), subHtml: esc(t("sy2.untuk.sub")), aksiHtml: lihatSemua(jelajah), isiHtml: isi });
 }
 
+/* ---------- seksi: pencocokan bisnis (F65-209; rumus /inti/cocok_rumus.js, Hipotesis) ---------- */
+const IK_COCOK = { pembiaya: "kartu", epc: "pabrik", pemasok: "rantai", pengembang: "proyek" };
+function seksiCocok() {
+  const org = ORG.get(S.p.organisasi_id), tab = S.tab.syCocok, a = D.cocok?.[tab] || [], hal = Math.min(S.hal.syCocok, Math.max(1, Math.ceil(a.length / PER)));
+  const baris = (r) => kartu(`${lead("gedung", logoOrg(r.o.id, r.o.nama, r.o.logo)[0])}<span class="sy-pil sy-w0"><b>${esc(angka(r.skor))}</b><span>${esc(t("cc.dari100"))}</span></span>`, r.o.nama, "/o/" + encodeURIComponent(r.o.id),
+    r.o.kategori?.label ? pil("gedung", r.o.kategori.label, warna(r.o.kategori.kode)) : "",
+    cocokKaki(...r.sama.tek.map(pilTek), ...r.sama.prov.slice(0, 2).map((x) => pil("lokasi", x, 1)), pil("tabel", t("cc.terhitung", { n: angka(r.terhitung) }), 4)));
+  const isi = !org ? kosong("gedung", "cc.k.tanpa_org", "/profil-saya", "sy2.lengkapi")
+    : !D.cocok ? kosong("topik", "cc.k.tanpa_tek", "/portal", "cc.ke_portal")
+    : tabHtml("syCocok", PERAN_COCOK, tab, IK_COCOK, (k) => D.cocok[k].length)
+      + (a.length ? `<div class="sy-kisi">${potong(a, hal).map(baris).join("")}</div>${pag(a, hal)}` : kosong(IK_COCOK[tab], "cc.k.kosong"))
+      + `<p class="sy-cc-ket">${esc(t("cc.bobot"))}</p><p class="sy-cc-ket">${esc(t("cc.kenal_ket"))} <button type="button" class="sy-cc-taut" data-cc="kenal">${esc(t("cc.kenal"))}</button></p>`;
+  return exHtml({ id: "syCocok", ikon: "sambung", topik: t("cc.ey"), judulHtml: org && D.cocok ? hl("cc.j", angka(a.length), { peran: tab === "epc" ? t("sy2.t.epc") : t("sy2.t." + tab).toLowerCase(), org: org.nama }) : esc(t("cc.j0")),
+    subHtml: esc(t("cc.sub")) + ` <span class="jm-pil jm-pil-warn">${esc(t("cc.hip"))}</span>`, isiHtml: isi });
+}
+
 /* ---------- seksi: saran ikuti ---------- */
 function seksiSaran() {
   const org = D.saranOrg.map((r) => `<li class="sy-ent">${lead("gedung", logoOrg(r.x.id, r.x.nama, r.x.logo)[0])}<span class="sy-ent-nama"><a href="/o/${encodeURIComponent(r.x.id)}">${esc(r.x.nama)}</a><span class="sy-meta">${r.x.kategori?.label ? pil("gedung", r.x.kategori.label, warna(r.x.kategori.kode)) : ""}${r.bersama.slice(0, 2).map(pilTek).join("")}</span></span>${tombolIkuti({ jenis: "organisasi", id: r.x.id, nama: r.x.nama })}</li>`).join("");
@@ -174,17 +191,21 @@ function hitung() {
     proyek: C.proyekBaru(S.proyek, { provNama: provKode.map((k) => D.provNama.get(k)).filter(Boolean), teknologi: topikIkut.map((i) => C.SEKTOR_TOPIK[i] || i) }),
   };
   D.saranOrg = C.saranOrganisasi(S.org, org, ikutSet);
+  /* pencocokan bisnis: hanya bila organisasi akun punya kepakaran teknologi; indeks proyek dihitung sekali */
+  S.ix ||= indeksProyek(S.proyek, S.org);
+  const pasangan = org ? Object.fromEntries(PERAN_COCOK.map((k) => [k, cocokUntuk(org, S.org, k, { ix: S.ix, pabrikan: S.pabrikan })])) : null;
+  D.cocok = pasangan && PERAN_COCOK.some((k) => pasangan[k].length) ? pasangan : null;
   D.saranTopik = C.saranTopik(sektor, S.topik.map((x) => x.id), ikutSet);
 }
 
 function gambar() {
   hitung();
   gambarKepala();
-  akar.innerHTML = seksiBaru() + seksiIkuti() + seksiUntuk() + seksiSurelHtml(S.surel) + seksiSaran();
+  akar.innerHTML = seksiBaru() + seksiIkuti() + seksiUntuk() + seksiCocok() + seksiSurelHtml(S.surel) + seksiSaran();
   pasangIkuti(akar);
 }
 const ulang = (id) => {
-  const fn = { syBaru: seksiBaru, syIkuti: seksiIkuti, syUntuk: seksiUntuk }[id], el = document.getElementById(id);
+  const fn = { syBaru: seksiBaru, syIkuti: seksiIkuti, syUntuk: seksiUntuk, syCocok: seksiCocok }[id], el = document.getElementById(id);
   if (!fn || !el) return;
   el.outerHTML = fn();
   pasangIkuti(document.getElementById(id));
@@ -195,6 +216,7 @@ async function muat() {
   const [p, ik, rg, kj, ks, org, sk, kal, pj, wl, tp, reg, sr] = await Promise.all([
     ambil("/api/profil/saya"), ambil("/api/ikuti"), ambil("/api/ikuti/ringkasan"), ambil("/api/kerja"), ambil("/api/konsultasi"),
     muatJson("organisasi"), muatJson("pendanaan"), muatJson("kalender"), muatJson("proyek"), muatJson("meti-wilayah"), muatJson("topik/indeks"), muatJson("regulasi"), ambil("/api/surel/saya")]);
+  S.pabrikan = new Set(((await muatJson("tkdn_produk"))?.baris || []).map((x) => x.pabrikan_org_id).filter(Boolean)); // pabrikan bersertifikat TKDN = pemasok
   S.surel = sr?.baris ?? null; // null = fitur belum aktif: seksi tidak tampil
   S.p = p || {}; S.ikut = ik?.baris || []; S.r = rg || { item: [], baru: 0 }; S.kerja = kj?.baris || []; S.kons = ks?.baris || [];
   S.org = org?.baris || []; S.skema = sk?.pendanaan || []; S.kal = Array.isArray(kal) ? kal : kal?.baris || []; S.proyek = pj?.baris || [];
@@ -223,6 +245,7 @@ async function segarkanIkuti() {
 
 akar.addEventListener("click", (e) => {
   if (e.target.closest("[data-surel=buka]")) { bukaMintaSurel(); return; }
+  if (e.target.closest("[data-cc=kenal]")) { document.getElementById("psFab")?.click(); return; } // perkenalan hanya lewat pesan ke sekretariat
   const sek = e.target.closest(".jm-ex")?.id;
   const tab = e.target.closest("[data-tab]");
   if (tab && sek) {

@@ -244,8 +244,8 @@ img.ev-poster-besar{background:var(--surface)}
 .gal-chip{flex:1 1 auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:var(--target);padding:0 14px;border:1px solid var(--line-ctl);border-radius:var(--r-pil);background:var(--card);color:var(--ink);font:600 var(--t-body)/1 var(--font);cursor:pointer;min-width:0}
 .gal-chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:26ch}
 .gal-chip em{font:600 var(--t-kecil)/1 var(--font);font-style:normal;padding:3px 8px;border-radius:var(--r-pil);background:var(--info-bg);color:var(--info)}
-.gal-chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-brand)}
-.gal-chip[aria-pressed=true] em{background:rgb(255 255 255/.2);color:var(--on-brand)}
+.gal-chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.gal-chip[aria-pressed=true] em{background:rgb(255 255 255/.2);color:var(--on-accent)}
 .gal-chip:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .gal-hero{margin:0 0 6px}
 .gal-hero .gal-foto{height:clamp(220px,34vw,440px)}
@@ -261,7 +261,7 @@ img.ev-poster-besar{background:var(--surface)}
 .gal-foto:hover .gal-ket,.gal-foto:focus-visible .gal-ket{opacity:1}
 .gal-ket b{font:600 var(--t-tombol)/var(--lh-rapat) var(--font);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .gal-ket small{font:400 var(--t-kecil)/1 var(--font)}
-.gal-jenis{gap:5px;min-height:22px;padding:0 8px;background:var(--accent);color:var(--on-brand)}
+.gal-jenis{gap:5px;min-height:22px;padding:0 8px;background:var(--accent);color:var(--on-accent)}
 @media (hover:none){.gal-ket{opacity:1}}
 @media (max-width:639px){
 .gal-chip{flex:1 1 calc(50% - 4px);padding:0 10px}
@@ -307,7 +307,7 @@ dialog.gal-dlg::backdrop{background:rgb(4 14 11/.82)}
 .sos-profil{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr))}
 .sos-kartu{display:grid;justify-items:start;gap:8px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
 .sos-kartu p{margin:0;color:var(--ink2)}
-.sos-ik{display:grid;place-items:center;width:48px;height:48px;border-radius:var(--r-sm);background:var(--accent);color:var(--on-brand)}
+.sos-ik{display:grid;place-items:center;width:48px;height:48px;border-radius:var(--r-sm);background:var(--accent);color:var(--on-accent)}
 .sos-feed{list-style:none;margin:0;padding:0;display:grid;gap:16px 14px;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
 .sos-seg{margin-bottom:16px}
 .sos-post{display:grid;border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden}
@@ -329,7 +329,7 @@ dialog.gal-dlg::backdrop{background:rgb(4 14 11/.82)}
 @media (max-width:560px){.sos-seg button:not([aria-selected=true]) span{display:none}.sos-profil,.sos-feed{grid-template-columns:minmax(0,1fr)}}
 
 .ev-lok{display:inline-flex;align-items:center;gap:8px;min-width:0;color:var(--accent);font-weight:600;text-decoration:none;border-radius:var(--r-sm)}
-.ev-lok:hover,.ev-lok:focus-visible{color:var(--brand)}
+.ev-lok:hover,.ev-lok:focus-visible{color:var(--accent)}
 .ev-lok .jm-ik:last-child{flex:none;opacity:.7}
 
 /* ---- rapi 8 Nov: karusel kartu fakta, matriks sponsor, daftar sebelumnya ---- */
@@ -387,7 +387,7 @@ dialog.gal-dlg::backdrop{background:rgb(4 14 11/.82)}
 .ev-grup h3{display:flex;align-items:center;gap:12px;padding:10px 14px;border:0;border-radius:var(--r);background:linear-gradient(120deg,var(--brand),var(--brand2));color:var(--on-brand);font:700 var(--t-h2)/1.2 var(--display)}
 .ev-grup h3 b{flex:1;min-width:0;font:inherit}
 .ev-grup-ik{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:rgb(255 255 255/.16)}
-.ev-grup h3>span:last-child{padding:0 12px;height:28px;background:var(--card);color:var(--brand);font:700 var(--t-kecil)/1 var(--font);white-space:nowrap}
+.ev-grup h3>span:last-child{padding:0 12px;height:28px;background:var(--card);color:var(--accent);font:700 var(--t-kecil)/1 var(--font);white-space:nowrap}
 .ev-lalu{grid-template-columns:168px minmax(0,1fr);grid-template-areas:"p i";align-items:stretch;gap:16px;padding:12px;min-height:144px}
 .ev-lalu-p{min-height:120px}
 .ev-lalu-isi{align-content:start;gap:8px}
@@ -410,3 +410,21 @@ dialog.gal-dlg::backdrop{background:rgb(4 14 11/.82)}
 .ev-bf-t{align-content:center}
 .ev-lalu{min-height:0}.ev-lalu-p{min-height:104px}.ev-lalu-isi{align-content:center}
 @media (max-width:999px){.ev-slide-teks{align-content:start}}
+/* tiket, hadir, sertifikat, survei (F65-201..203) */
+#evTiket:empty{display:none}
+.ev-tk{display:grid;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.ev-tk-kode{display:grid;gap:4px;justify-items:center;margin:0}
+.ev-tk-kode code{font:600 var(--t-kecil)/var(--lh-rapat) ui-monospace,monospace;color:var(--ink);overflow-wrap:anywhere;text-align:center;user-select:all}
+.ev-tk-st{display:flex;align-items:center;gap:8px;margin:0;color:var(--ink2);font:600 var(--t-tombol)/var(--lh-rapat) var(--font)}
+.ev-tk-ok{color:var(--ok)}
+.ev-tk>.jm-tbl{justify-content:center}
+.ev-sv{display:grid;gap:12px;padding-top:12px;border-top:1px solid var(--line)}
+.ev-sv h3{margin:0}
+.ev-sv-b{margin:0;padding:0;border:0;min-width:0}
+.ev-sv-b legend{padding:0;margin-bottom:6px;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink)}
+.ev-sv-skala{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px}
+.ev-sv-skala label{position:relative;display:grid;place-items:center;min-height:var(--target);border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:600 var(--t-body)/1 var(--font);cursor:pointer}
+.ev-sv-skala input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.ev-sv-skala label:has(input:checked){background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.ev-sv-skala label:has(input:focus-visible){outline:2px solid var(--fokus);outline-offset:2px}
+.ev-sv>.jm-tbl{justify-content:center}

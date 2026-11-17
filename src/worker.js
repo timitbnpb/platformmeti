@@ -30,6 +30,11 @@ import { rute as ruteHukum } from "./hukum.js";
 import { tujuanAlihTek } from "./alih_tek.js";
 import { rute as ruteTanya } from "./tanya.js";
 import { rute as ruteKeyakinan } from "./keyakinan.js";
+import { rute as ruteAkademi } from "./akademi.js";
+import { rute as ruteKiriman } from "./kiriman.js";
+import { rute as ruteJejaring } from "./jejaring.js";
+import { rute as ruteIuran } from "./iuran.js";
+import { rute as ruteSurelKeluar, jalankanPengingat, buletinTerjadwal } from "./surel_keluar.js";
 import { catatHit, perbaruiRentang } from "./lalin.js";
 import * as hak from "./hak.js";
 import { halamanProfil } from "./profil.js";
@@ -54,7 +59,7 @@ const rutePemilik = {
 };
 
 // Tabel rute dikompilasi sekali: { metode, bagian[], fn }.
-const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteRiwayat, ...ruteKontenMeti, ...ruteNaskah, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteRoadmap, ...ruteKerja, ...ruteSurel, ...ruteHukum, ...ruteTanya, ...ruteKeyakinan, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
+const DAFTAR = Object.entries({ ...ruteSesi, ...ruteGoogle, ...ruteAkun, ...ruteAgenda, ...ruteRiwayat, ...ruteKontenMeti, ...ruteNaskah, ...ruteSosmed, ...ruteEvent, ...ruteDirektori, ...ruteFoto, ...ruteAdmin, ...ruteLangganan, ...ruteKelayakan, ...rutePustaka, ...ruteKta, ...ruteMetiWilayah, ...rutePesan, ...ruteProfilAkun, ...ruteIkuti, ...rutePortal, ...ruteWilayahKelola, ...ruteKonsultasi, ...ruteRoadmap, ...ruteKerja, ...ruteSurel, ...ruteHukum, ...ruteTanya, ...ruteKeyakinan, ...ruteAkademi, ...ruteKiriman, ...ruteJejaring, ...ruteIuran, ...ruteSurelKeluar, ...ruteDaftar, ...rutePemilik }).map(([k, fn]) => {
   const [metode, jalur] = k.split(" ");
   return { metode, bagian: jalur.split("/").slice(1), fn };
 });
@@ -94,14 +99,14 @@ async function icsSah(env, t) {
 }
 
 // Seluruh situs di balik login (KEPUTUSAN 7 Nov 2026): hanya alur masuk, aset yang dibutuhkannya, dan API masuk yang terbuka.
-const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|kta_v\.js|kta\.css|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|daftar(\.html|\.js|\.css)?|daftar\/lacak(\/[0-9a-f]{64})?|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/img\/logo\/meti(-vertikal-611)?\.png$|^\/img\/logo\/(org|mitra)\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/mitra\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/bendera\/(id|gb|us)\.svg$|^\/img\/beranda\/[^/]+\.webp$|^\/fonts\/|^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$|^\/data\/keanggotaan\.json$/;
+const PUBLIK = /^\/((masuk|aktivasi|ganti-sandi|404)(\.html)?|masuk\.js|kta_v\.js|sertifikat_v\.js|kta\.css|tema\.js|i18n\.js|404\.js|langganan(\.html|\.js|\.css)?|daftar(\.html|\.js|\.css)?|daftar\/lacak(\/[0-9a-f]{64})?|berhenti|favicon[^/]*|robots\.txt)$|^\/inti\/[^/]+\.(css|js)$|^\/i18n\/|^\/img\/(logo|ikon)[^/]*$|^\/img\/logo\/meti(-vertikal-611)?\.png$|^\/img\/logo\/(org|mitra)\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/mitra\/[a-z0-9._-]+\.(png|webp|svg|jpg)$|^\/img\/bendera\/(id|gb|us)\.svg$|^\/img\/beranda\/[^/]+\.webp$|^\/fonts\/|^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$|^\/sertifikat\/[va]\/\d{1,9}\.[0-9a-f]{32}$|^\/data\/keanggotaan\.json$/;
 // /api/langganan(/berhenti): ajakan publik newsletter (K19 turunan); rute lain di langganan.js tetap menagih sesi lewat perlu().
 const API_PUBLIK = new Set(["/api/masuk", "/api/masuk/google", "/api/masuk/google/kembali", "/api/keluar", "/api/status", "/api/aktivasi", "/api/saya", "/api/langganan", "/api/langganan/berhenti",
   // Pendaftaran anggota mandiri (8 Nov 2026): tamu boleh mendaftar, melacak lewat token (di badan), dan mengunggah bukti iuran.
   "/api/daftar", "/api/daftar/foto", "/api/daftar/lacak", "/api/daftar/bukti", "/api/daftar/bayar-online", "/api/daftar/midtrans/notifikasi"]);
 
 // Verifikasi KTA publik (token HMAC di jalur; salah = 404 seragam): satu-satunya rute data terbuka selain alur masuk.
-const API_KTA_PUBLIK = /^\/api\/kta\/verifikasi\/[^/]+$/;
+const API_KTA_PUBLIK = /^\/api\/(kta\/verifikasi|event\/sertifikat|akademi\/sertifikat)\/[^/]+$/; // + verifikasi sertifikat acara dan akademi: token rusak tetap 404 seragam (bukan 401), jadi segmen terakhir tidak dipersempit di sini; rute bertuan tetap ditagih perlu().
 const TULIS = new Set(["POST", "PATCH", "PUT", "DELETE"]);
 const RE_TOKEN = /^[0-9a-f]{64}$/;
 const BOLEH_WAJIB_GANTI = new Set(["/api/ganti-sandi", "/api/keluar", "/api/saya", "/api/status"]);
@@ -197,7 +202,7 @@ async function halaman(req, env, url, akun) {
   if (ALIH_GABUNG[path] && (req.method === "GET" || req.method === "HEAD")) {
     const [dasar, hash] = ALIH_GABUNG[path].split("#"), [ke, qsBaru = ""] = dasar.split("?");
     const q = new URLSearchParams(url.search); for (const [k, v] of new URLSearchParams(qsBaru)) q.set(k, v);
-    return new Response(null, { status: 301, headers: { location: ke + (q.size ? "?" + q : "") + "#" + hash } });
+    return new Response(null, { status: 301, headers: { location: ke + (q.size ? "?" + q : "") + (hash ? "#" + hash : "") } });
   }
   // /sektor?id=<id> (rincian satu sektor) dialihkan ke /direktori; /sektor tanpa id tetap peta sektor.
   if (path === "/sektor" && url.searchParams.has("id") && (req.method === "GET" || req.method === "HEAD")) return new Response(null, { status: 301, headers: { location: "/direktori" } });
@@ -219,6 +224,7 @@ async function halaman(req, env, url, akun) {
   if (path === "/daftar/lacak") return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/daftar", url), { method: req.method })));
   if ((m = path.match(/^\/daftar\/lacak\/([0-9a-f]{64})$/))) return new Response(null, { status: 302, headers: { location: "/daftar/lacak#" + m[1], "referrer-policy": "no-referrer", ...PRIVAT } });
   if (path === "/berhenti") return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/langganan", url), { method: req.method })));
+  if (/^\/sertifikat\/[va]\/\d{1,9}\.[0-9a-f]{32}$/.test(path) && (req.method === "GET" || req.method === "HEAD")) return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/sertifikat_v", url), { method: req.method })));
   if (/^\/kta\/v\/\d{1,9}\.[0-9a-f]{32}$/.test(path) && (req.method === "GET" || req.method === "HEAD")) return halamanPrivat(await env.ASSETS.fetch(new Request(new URL("/kta_v", url), { method: req.method })));
   if ((m = path.match(/^\/siaran-pers\/([^/]+)$/)) && (req.method === "GET" || req.method === "HEAD")) {
     return (await halamanSiaran(req, env, url, m[1])) ?? TIDAK_ADA();
@@ -342,5 +348,8 @@ export default {
     ctx?.waitUntil?.(hak.sistem.sapu(env).catch((e) => console.error("sapu", e?.message)));
     ctx?.waitUntil?.(perbaruiRentang(env).catch((e) => console.error("rentang-ip", e?.message)));
     ctx?.waitUntil?.(perbaruiSosmed(env).then((h) => console.log("sosmed", JSON.stringify(h))).catch((e) => console.error("sosmed", e?.message)));
+    // F65-215, 216: hanya MENGANTREKAN pengingat dan MERAKIT draf buletin (Senin). Tidak ada pengiriman surel di sini (K19).
+    ctx?.waitUntil?.(jalankanPengingat(env).then((h) => console.log("pengingat", JSON.stringify(h))).catch((e) => console.error("pengingat", e?.message)));
+    ctx?.waitUntil?.(buletinTerjadwal(env).then((h) => console.log("buletin", JSON.stringify(h))).catch((e) => console.error("buletin", e?.message)));
   },
 };

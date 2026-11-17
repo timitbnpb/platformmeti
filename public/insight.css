@@ -36,7 +36,7 @@ article.jm-ins-kartu{padding:0;overflow:hidden;gap:0}
 .jm-ins-w-d{color:var(--ok)}
 .jm-ins h3.jm-ins-j{padding-right:36px;font:600 var(--t-h2)/var(--lh-rapat) var(--display);letter-spacing:-.01em;color:var(--ink)}
 .jm-hl{color:var(--accent);font-weight:700}
-.jm-ex-sub{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.jm-ex-sub{display:block;margin:8px 0 0;font:600 var(--t-tombol)/var(--lh-isi) var(--font);color:var(--ink2);text-wrap:pretty}
 .jm-ex-unit{margin:2px 0 0;font-size:var(--t-kecil);color:var(--ink2)}
 .jm-ex-bd{padding:16px 22px 10px;min-width:0}
 .jm-ex-ft{display:grid;gap:6px;padding:10px 22px 14px;border-top:1px solid var(--line);font-size:var(--t-label);color:var(--ink2)}

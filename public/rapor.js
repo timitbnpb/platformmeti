@@ -218,7 +218,8 @@ async function tampil(jenis, periode) {
   khUbin("rpUbin", ubinData(S.r).filter((u) => u.nilai !== "-")); /* ubin tanpa nilai disembunyikan */
   TB.clear();
   kepala(S.r, jenis, periode);
-  isi.innerHTML = badanRapor(S.r) + arsipHtml();
+  isi.innerHTML = badanRapor(S.r) + `<div id="rpJanji"></div>` + arsipHtml();
+  import("/rapor_janji.js").then((m) => m.pasangJanji($("rpJanji"))).catch(() => {}); /* F65-113: kartu skor target vs realisasi, dimuat malas */
   document.title = t("rp.h1", { nama: namaPeriode(jenis, periode) }) + " | Direktori METI";
 }
 

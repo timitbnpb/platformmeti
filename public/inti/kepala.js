@@ -68,7 +68,7 @@ function gambarKepala(el, saya) {
     : `<a class="iconbtn jm-akun" href="/masuk?ke=${encodeURIComponent(jalur === "/masuk" ? "/" : jalur)}" data-i18n-attr="aria-label:jm.masuk;title:jm.masuk" aria-label="${t("jm.masuk")}" title="${t("jm.masuk")}">${ikon("masuk", 22)}<span class="jm-teks" data-i18n="jm.masuk">${t("jm.masuk")}</span></a>`;
   el.innerHTML = `
     <button type="button" class="iconbtn" id="burger" aria-expanded="false" aria-controls="menu" data-i18n-attr="aria-label:jm.menu;title:jm.menu" aria-label="${t("jm.menu")}" title="${t("jm.menu")}">${ikon("burger", 22)}</button>
-    <a class="jm-merek" href="/"><img src="/img/logo-meti-tanda.png" width="42" height="40" alt=""><span data-i18n="jm.merek">${t("jm.merek")}</span></a>
+    <a class="jm-merek" href="/" aria-label="${t("jm.merek")}"><img src="/img/logo-meti-tanda.png" width="42" height="40" alt=""><span data-i18n="jm.merek">${t("jm.merek")}</span></a>
     <nav class="tabs" id="menu" data-i18n-attr="aria-label:jm.menu" aria-label="${t("jm.menu")}">${tab}</nav>
     <div class="jm-sisi">
       <button type="button" class="iconbtn jm-bulat jm-cari-kotak" id="cari" aria-haspopup="dialog" data-i18n-attr="aria-label:cari.tombol;title:cari.tombol" aria-label="${t("cari.tombol")}" title="${t("cari.tombol")}">${ikon("cari", 20)}<span class="jm-cari-kotak-t" data-i18n="cari.kotak">${t("cari.kotak")}</span><span class="jm-cari-kotak-k" aria-hidden="true"><kbd>${/mac|iphone|ipad/i.test(navigator.platform || navigator.userAgent || "") ? "⌘" : "Ctrl"}</kbd><kbd>K</kbd></span></button>

@@ -57,6 +57,15 @@ export async function ringkasanMingguan(env, akun, kini = Date.now()) {
       if (reg.has(r.id) || p) item.push({ tipe: "regulasi", jenis: reg.has(r.id) ? "regulasi" : "proyek", ref: reg.has(r.id) ? r.id : p, regulasi_id: r.id, judul: r.judul, waktu: Math.floor(Date.parse(r.tanggal_ditetapkan) / 1000) });
     }
   }
+  // Tender yang diikuti: butir bila tanggal peristiwa atau tanggal sumbernya jatuh dalam 7 hari. Data tender tidak punya kolom tenggat, jadi tidak ada pengingat "tenggat mendekat".
+  const tdr = ikut("tender");
+  if (tdr.size) {
+    const tgl = sejakIso.slice(0, 10);
+    for (const x of await muatBaris(env, "tender")) {
+      const w = [x.tanggal, x.tanggal_sumber].filter((v) => typeof v === "string" && v >= tgl).sort().pop();
+      if (tdr.has(x.id) && w) item.push({ tipe: "tender", jenis: "tender", ref: x.id, judul: x.judul, tahap: x.tahap, waktu: Math.floor(Date.parse(w) / 1000) });
+    }
+  }
   item.sort((a, b) => b.waktu - a.waktu);
   return { sejak, item: item.slice(0, 80), baru: item.filter((x) => x.waktu > d.lihat).length };
 }
@@ -87,6 +96,17 @@ export const rute = {
     if ((await hak.catatLaju(env, "koreksi:ik" + akun.id, 3600)) > BATAS_KIRIM_JAM) return gagal("laju_terlampaui");
     const r = await hak.ikutiSet(env, akun, p.params.jenis, p.params.ref, false);
     return r ? json({ ok: true }, 200, PRIVAT) : NONAKTIF();
+  },
+
+  // Pilihan "kirimi saya surel" untuk satu hal yang diikuti {jenis, ref, aktif}. Bawaan mati. Bukan hal yang diikuti = 404.
+  "PUT /api/ikuti/surel": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    const b = await bacaBody(req, 512);
+    if (!b || Object.keys(b).some((k) => !["jenis", "ref", "aktif"].includes(k)) || !sahJenisRef(b.jenis, b.ref) || typeof b.aktif !== "boolean") return gagal("masukan_salah", 422);
+    if ((await hak.catatLaju(env, "koreksi:ik" + akun.id, 3600)) > BATAS_KIRIM_JAM) return gagal("laju_terlampaui");
+    const r = await hak.ikutiSurelSet(env, akun, b.jenis, b.ref, b.aktif);
+    if (!r) return NONAKTIF();
+    return r.ada ? json({ ok: true, aktif: b.aktif }, 200, PRIVAT) : gagal("tidak_ditemukan");
   },
 
   "GET /api/ikuti/ringkasan": async (req, env, ctx, p) => {

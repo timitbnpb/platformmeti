@@ -101,3 +101,17 @@
 
 /* induk dua tab (cek_lokasi_halaman.js): tiap panel memakai jarak antarblok yang sama */
 .cl-panel{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap);min-width:0;align-content:start}
+/* penaksir biaya interkoneksi (F65-308) */
+.cl-ik{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start;margin-bottom:12px}
+.cl-ik-in{display:grid;gap:14px}
+.cl-ik-f{display:grid;gap:6px;min-width:0}
+.cl-ik-f>span{font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.cl-ik-f>input{width:100%;min-height:var(--target);padding:0 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:600 var(--t-masukan)/1 var(--font)}
+.cl-ik-f>input:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.cl-ik-h{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 12px}
+.cl-ik-h>div{display:grid;gap:8px;padding:16px;border-radius:var(--r);background:var(--surface)}
+.cl-ik-h dt{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.cl-ik-h dd{margin:0}
+.cl-ik-h b{font:700 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--accent);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+@media (max-width:991px){.cl-ik{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:479px){.cl-ik-h{grid-template-columns:minmax(0,1fr)}}

@@ -6,6 +6,7 @@ import { paginasiHtml, sorotHalaman } from "/inti/paginasi.js";
 import { hlHtml } from "/inti/aksi_ex.js";
 import { tabHalaman } from "/inti/tab_halaman.js";
 import { label, urlAman } from "/publik.js";
+import { bedaTeks, ringkasBeda, pasangPasal } from "/inti/beda_teks.js";
 
 const PER = 20, LOKAL = 20;
 const S = { q: "", jenis: "", tahun: "", status: "", hal: 1 };
@@ -133,12 +134,19 @@ async function tampilDokumen(id, seg) {
   const grup = bagi(d.segmen);
   const isi = grup.map((g) => `${g.b ? `<button type="button" class="hk-bab" data-s="${g.s[0].id}">${esc(g.b)}</button>` : ""}${g.s.map((x) => `<button type="button" data-s="${x.id}">${esc(x.label)}</button>`).join("")}`).join("");
   const rel = (daftar, arah) => daftar.length ? `<ul>${daftar.map((r) => `<li>${r.terdaftar === 0 && arah === "keluar" ? `<span class="hk-nama2">${esc(r.judul || r.id)}</span><span class="jm-pil">${esc(t("hk.rl.luar"))}</span>` : `<button type="button" data-buka="${esc(r.id)}">${esc(r.judul || r.id)}</button>${pilStatus(r.status)}`}<span class="jm-pil">${esc(label("hk.rel.", r.jenis))}</span></li>`).join("")}</ul>` : `<p class="hk-sub">${esc(t("hk.dok.kosong_rel"))}</p>`;
+  /* banding pasal (F65-111): dokumen ini mengubah/mengganti dokumen lain (= ada versi sebelumnya), atau diubah/diganti dokumen lain (= ada versi sesudahnya) */
+  const UBAH = new Set(["mengubah", "mengganti"]);
+  const sebelum = d.keluar.filter((r) => UBAH.has(r.jenis) && r.terdaftar !== 0), sesudah = d.masuk.filter((r) => UBAH.has(r.jenis));
+  const tblBd = (r, arah) => `<button type="button" class="jm-tbl" data-banding="${esc(r.id)}" data-arah="${arah}">${ikon("banding", 16)}<span>${esc(t(arah === "sebelum" ? "rgb.sebelum" : "rgb.sesudah"))}</span><small>${esc(r.judul || r.id)}</small></button>`;
+  const bandingHtml = sebelum.length || sesudah.length ? `<div class="hk-aksi hk-bd-aksi">${sebelum.map((r) => tblBd(r, "sebelum")).join("")}${sesudah.map((r) => tblBd(r, "sesudah")).join("")}</div><div id="hbanding" class="hk-bd" aria-live="polite"></div>` : "";
   w.innerHTML = `<div class="hk-panel"><div class="hk-aksi"><button type="button" class="jm-tbl" data-aksi="balik">${ikon("panah-kiri", 16)}${esc(t("hk.dok.balik"))}</button></div>
     ${exHtml({ id: "ex-satu", ikon: "palu", topik: label("hk.j.", o.singkatan), judulHtml: esc(`${nama(o)}: ${judulHuruf(o.judul)}`), subHtml: "",
       aksiHtml: sumberHtml(esc(o.sumber || "")),
       isiHtml: `<div class="hk-meta">${pilJenis(o.singkatan)}${pilStatus(o.status)}${o.resmi ? "" : `<span class="jm-pil jm-pil-warn">${ikon("peringatan", 14)}${esc(t("hk.dok.nonresmi"))}</span>`}${o.ocr ? `<span class="jm-pil hk-pil-r">${ikon("pdf", 14)}${esc(t("hk.dok.ocr"))}</span>` : ""}</div>
       <dl class="hk-dl">${info.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
       <div class="hk-aksi">${pdf ? `<a class="jm-tbl jm-tbl-utama" href="${esc(pdf)}" target="_blank" rel="noopener noreferrer">${ikon("pdf", 16)}${esc(t("hk.dok.pdf"))}</a>` : ""}${urlAman(o.url) ? `<a class="jm-tbl" href="${esc(o.url)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 16)}${esc(t("hk.dok.sumber"))}</a>` : ""}${o.regulasi_id ? `<a class="jm-tbl" href="/regulasi?id=${encodeURIComponent(o.regulasi_id)}">${ikon("regulasi", 16)}${esc(t("hk.dok.di_regulasi"))}</a>` : ""}</div>` })}
+    ${bandingHtml}
+    <div id="hringkas" aria-live="polite"></div>
     <div class="hk-dok"><aside class="hk-isi" aria-label="${esc(t("hk.dok.isi"))}"><h3>${esc(t("hk.dok.isi"))}</h3>${isi}</aside><div class="hk-bacaan" id="hbaca"></div></div>
     ${exHtml({ id: "ex-rel", ikon: "rantai", topik: t("hk.dok.relasi"), judulHtml: esc(t("hk.dok.relasi_j")), subHtml: "", isiHtml: `<div class="hk-rel"><section><h3>${esc(t("hk.dok.keluar"))}</h3>${rel(d.keluar, "keluar")}</section><section><h3>${esc(t("hk.dok.masuk"))}</h3>${rel(d.masuk, "masuk")}</section></div>` })}</div>`;
   const baca = el("hbaca");
@@ -151,6 +159,76 @@ async function tampilDokumen(id, seg) {
   const lompat = (sid) => { const a = el("seg-" + sid); if (!a) return; for (const b of baca.querySelectorAll("[data-sorot]")) delete b.dataset.sorot; a.dataset.sorot = "ya"; a.scrollIntoView({ block: "start", behavior: "smooth" }); };
   if (seg) nanti(() => lompat(seg));
   w.querySelector(".hk-isi").addEventListener("click", (e) => { const b = e.target.closest("[data-s]"); if (b) lompat(b.dataset.s); });
+  /* ringkasan mesin (F65-304): pasal yang dikutip melompat ke teksnya; tombol buat hanya tampil bagi admin bila AI tersedia */
+  const noPasal = (l) => (String(l).match(/^\s*pasal\s+(\d{1,4}[a-z]?)\b/i) || [])[1]?.toUpperCase();
+  const segPasal = new Map(); for (const x of d.segmen) { const n = x.jenis === "pasal" ? noPasal(x.label) : null; if (n && !segPasal.has(n)) segPasal.set(n, x.id); }
+  ringkasan(id, segPasal);
+  el("hringkas").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-s]"); if (b) return lompat(b.dataset.s);
+    const m = e.target.closest("[data-rk-buat]"); if (!m || m.disabled) return;
+    m.disabled = true; m.setAttribute("aria-busy", "true");   // chrome urgent
+    nanti(() => ringkasan(id, segPasal, true));
+  });
+  w.querySelector(".hk-bd-aksi")?.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-banding]"); if (!b) return;
+    for (const x of w.querySelectorAll("[data-banding]")) x.setAttribute("aria-pressed", String(x === b));   // chrome urgent
+    nanti(() => banding(d, b.dataset.banding, b.dataset.arah));
+  });
+}
+/* Ringkasan mesin per peraturan (F65-304). Teks butir adalah keluaran model yang sudah lolos pemeriksa kutipan server; tetap hanya masuk lewat esc.
+   Tanpa ringkasan dan tanpa hak membuat: tidak ada yang tampil (fitur yang belum jalan disembunyikan). */
+async function ringkasan(id, segPasal, buat = false) {
+  const w = el("hringkas"); if (!w) return;
+  let r, pesan = "";
+  /* api langsung (bukan ambil): 503 di sini berarti AI atau tembolok belum aktif, bukan seluruh pustaka */
+  try { r = await api("/api/hukum/ringkasan" + (buat ? "" : "?id=" + encodeURIComponent(id)), buat ? { metode: "POST", badan: { id } } : undefined); }
+  catch (e) { if (!buat) { w.innerHTML = ""; return; } pesan = t(e.status === 429 ? "rk.laju" : "rk.gagal"); r = { ada: false, boleh_buat: true }; }
+  if (buat && !r.ada && r.sebab) { pesan = t("rk.sebab." + r.sebab); r.boleh_buat = true; }
+  if (r.ada) {
+    const butir = r.butir.map((b) => `<li><p>${esc(b.k)}</p><span class="hk-rk-p">${b.p.map((l) => { const sid = segPasal.get(String(l).replace(/^Pasal\s+/, "")); return sid ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-s="${esc(sid)}">${ikon("palu", 14)}<span>${esc(l)}</span></button>` : `<span class="jm-pil">${esc(l)}</span>`; }).join("")}</span></li>`).join("");
+    w.innerHTML = exHtml({ id: "ex-ringkas", ikon: "analisis", topik: t("rk.ey"), judulHtml: esc(t("rk.j")), subHtml: `<span class="jm-pil jm-pil-warn">${ikon("info", 14)}${esc(t("rk.ey"))}</span> ${esc(t("rk.penafian"))}`,
+      isiHtml: `<ol class="hk-rk">${butir}</ol><p class="hk-sub">${esc(t("rk.asal", { n: angka(r.dikirim), total: angka(r.total) }))} ${esc(t("rk.model", { model: String(r.model).split("/").pop(), tgl: tanggal(new Date(r.dibuat * 1000).toISOString().slice(0, 10)) }))}</p>` });
+    return;
+  }
+  w.innerHTML = r.boleh_buat ? `<div class="hk-panel hk-rk-buat"><p class="hk-sub">${esc(pesan || t("rk.buat_ket"))}</p><button type="button" class="jm-tbl" data-rk-buat>${ikon("analisis", 16)}<span>${esc(t("rk.buat"))}</span></button></div>` : "";
+}
+/* Beda per pasal antara dokumen yang sedang dibuka dan dokumen lain. Teks pasal adalah data luar: hanya masuk lewat textContent.
+   Tiap pasal dihitung dalam giliran sendiri (nanti) supaya dokumen berpasal banyak tidak membekukan layar. */
+let gilirBanding = 0;
+async function banding(d, idLain, arah) {
+  const w = el("hbanding"), gilir = ++gilirBanding;
+  w.innerHTML = hantuHtml(3);
+  let lain;
+  try { lain = await ambil("/api/hukum/dok?id=" + encodeURIComponent(idLain)); } catch (e) { if (gilir === gilirBanding) w.innerHTML = e.status === 404 ? kosongHtml("rgb.tak_ada") : galatHtml(e.kode); return; }
+  if (gilir !== gilirBanding) return;
+  if (!lain) { w.innerHTML = tidakAktif(); return; }
+  const [lama, baru] = arah === "sebelum" ? [lain, d] : [d, lain];
+  const { pasangan, tetap } = pasangPasal(lama.segmen, baru.segmen);
+  if (!pasangan.length) { w.innerHTML = kosongHtml("rgb.kosong"); return; }
+  w.innerHTML = `<div class="hk-bd-kep"><h3>${esc(t("rgb.j", { lama: nama(lama.dok), baru: nama(baru.dok) }))}</h3><p class="hk-sub" id="hbdRingkas"></p>
+    <p class="hk-bd-leg"><ins><span aria-hidden="true">+</span> ${esc(t("rgb.leg.tambah"))}</ins><del><span aria-hidden="true">-</span> ${esc(t("rgb.leg.hapus"))}</del></p></div><div id="hbdIsi" class="hk-bd-isi"></div>`;
+  const isi = el("hbdIsi"); let berubah = 0, sisip = 0, i = 0;
+  const satu = () => {
+    if (gilir !== gilirBanding || !isi.isConnected) return;
+    const p = pasangan[i++], ops = bedaTeks(p.lama ?? "", p.baru), r = ringkasBeda(ops), sama = !r.tambah && !r.hapus;
+    if (p.lama == null) sisip++; else if (!sama) berubah++;
+    const a = document.createElement("article"); a.className = "hk-seg hk-bd-p";
+    const h = document.createElement("h3"); h.textContent = t("rgb.pasal", { n: p.pasal });
+    const pil = document.createElement("span"); pil.className = "jm-pil " + (p.lama == null ? "jm-pil-ok" : sama ? "" : "jm-pil-warn");
+    pil.textContent = p.lama == null ? t("rgb.st.sisip") : sama ? t("rgb.st.sama") : t("rgb.st.ubah", { tambah: angka(r.tambah), hapus: angka(r.hapus) });
+    h.append(" ", pil);
+    const b = document.createElement("p"); b.className = "hk-bd-t";
+    for (const o of ops) {
+      if (o.j === "sama") { b.append(document.createTextNode(o.s + " ")); continue; }
+      const x = document.createElement(o.j === "tambah" ? "ins" : "del"), tanda = document.createElement("span");
+      tanda.textContent = o.j === "tambah" ? "+" : "-"; tanda.className = "hk-bd-tanda"; tanda.setAttribute("aria-hidden", "true");
+      x.append(tanda, document.createTextNode(o.s)); b.append(x, document.createTextNode(" "));
+    }
+    a.append(h, b); isi.append(a);
+    if (i < pasangan.length) nanti(satu);
+    else el("hbdRingkas").textContent = t("rgb.ringkas", { n: angka(pasangan.length), berubah: angka(berubah), sisip: angka(sisip), tetap: angka(tetap) });
+  };
+  satu();
 }
 function pasangDokumen() {
   const w = el("panelDokumen");

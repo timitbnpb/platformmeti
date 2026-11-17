@@ -1,5 +1,7 @@
-/* /admin: tab Event. Atur pendaftaran per acara (buka/tutup, kuota, batas, contact person), lihat peserta, unduh CSV. Hak ditegakkan di server (admin dan super). */
-import { t, angka, tanggal, tanggalDariUnix } from "/i18n.js";
+/* /admin: tab Event. Atur pendaftaran per acara (buka/tutup, kuota, batas, contact person), lihat peserta, unduh CSV. Hak ditegakkan di server (admin dan super).
+   F65-201..204: catat hadir dari kode tiket, tutup acara (membuka sertifikat dan survei), laporan agregat. Kamera diblokir Permissions-Policy situs,
+   jadi kode diketik atau dibaca pemindai genggam (yang mengetik seperti papan ketik); tidak ada pemindai kamera. */
+import { t, angka, tanggal, tanggalDariUnix, jam as jamTeks } from "/i18n.js";
 import { esc, api, nanti, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
 import { muatAcara, hariIni, urlEvent } from "/event_umum.js";
 
@@ -12,6 +14,8 @@ export function panelEvent(el) {
   const host = $("evHost");
   host.addEventListener("click", klik);
   dlg.addEventListener("submit", simpan);
+  dlg.addEventListener("submit", catatHadir);
+  dlg.addEventListener("click", klikHadir);
   muat();
 
   async function muat() {
@@ -27,12 +31,14 @@ export function panelEvent(el) {
         <td data-l="${esc(t("adm.event.k.status"))}"><span class="jm-pil ${lalu ? "" : a && a.terbuka ? "jm-pil-ok" : "jm-pil-warn"}">${esc(t(lalu ? "ev.selesai" : a && a.terbuka ? "adm.event.buka" : "adm.event.tutup"))}</span></td>
         <td class="jm-num" data-l="${esc(t("adm.event.k.terdaftar"))}">${esc(angka(n))}</td><td class="jm-num" data-l="${esc(t("adm.event.k.kuota"))}">${a && a.kuota != null ? esc(angka(a.kuota)) : "-"}</td><td class="jm-nowrap" data-l="${esc(t("adm.event.k.batas"))}">${a && a.batas ? esc(tanggal(a.batas)) : "-"}</td>
         <td data-l="${esc(t("adm.event.k.aksi"))}"><button type="button" class="jm-tbl jm-tbl-kecil" data-m="atur" data-slug="${esc(b.slug)}">${ikon("ubah", 16)}<span>${esc(t("adm.event.atur"))}</span></button>
+          <button type="button" class="jm-tbl jm-tbl-kecil" data-m="hadir" data-slug="${esc(b.slug)}">${ikon("centang", 16)}<span>${esc(t("adm.event.h.tombol"))}</span></button>
           <a class="jm-tbl jm-tbl-kecil" href="/api/event/${encodeURIComponent(b.slug)}/peserta.csv" download>${ikon("csv", 16)}<span>${esc(t("adm.event.csv"))}</span></a></td></tr>`;
     }).join("")}</tbody></table></div>`;
   }
   function klik(e) {
-    const b = e.target.closest("[data-m=atur]");
+    const b = e.target.closest("[data-m=atur]"), h = e.target.closest("[data-m=hadir]");
     if (b) bukaAtur(b.dataset.slug);
+    else if (h) bukaHadir(h.dataset.slug);
     else if (e.target.closest("[data-aksi=ulang]")) muat();
   }
   function bukaAtur(slug) {
@@ -65,5 +71,64 @@ export function panelEvent(el) {
       dlg.close(); kabar("ok", t("adm.event.tersimpan"));
       S.api = await api("/api/event"); nanti(rangka);
     } catch (err) { g.textContent = galatTeks(err.kode || "umum"); g.hidden = false; tbl.disabled = false; }
+  }
+
+  /* ---------- hadir, tutup, laporan ---------- */
+  const jam = (u) => `${tanggal(tanggalDariUnix(u))} ${jamTeks(u)}`;
+  function laporanHtml(L) {
+    const ubin = [["pendaftaran", L.pendaftaran], ["orang", L.orang], ["hadir", L.hadir]].map(([k, v]) => `<div><dt>${esc(t("adm.event.h.u." + k))}</dt><dd>${esc(angka(v))}</dd></div>`).join("");
+    const sv = L.survei.tersembunyi
+      ? `<p class="jm-bantu">${esc(t("adm.event.h.sv_sembunyi", { n: angka(L.survei.n), min: angka(L.n_min) }))}</p>`
+      : `<dl class="adm-ev-dl">${L.butir.map((k) => `<div><dt>${esc(t("ev.sv.b." + k))}</dt><dd>${esc(angka(L.survei.rata[k], { desimal: 1 }))} / 5</dd></div>`).join("")}</dl><p class="jm-bantu">${esc(t("adm.event.h.sv_n", { n: angka(L.survei.n) }))}</p>`;
+    const kj = L.kunjungan_semua_acara ? t("adm.event.h.kunjungan", { n: angka(L.kunjungan_semua_acara.n), dari: tanggal(L.kunjungan_semua_acara.dari) }) : t("adm.event.h.kunjungan_kosong");
+    return `<dl class="adm-ev-dl">${ubin}</dl><h3>${esc(t("adm.event.h.sv_j"))}</h3>${sv}<h3>${esc(t("adm.event.h.jangkau_j"))}</h3><p>${esc(kj)}</p><p class="jm-bantu">${esc(t("adm.event.h.jangkau_batas"))}</p>`;
+  }
+  async function isiLaporan() {
+    const w = dlg.querySelector("#evLaporan"), tb = dlg.querySelector("#evTutup");
+    if (!w) return;
+    try {
+      const L = await api(`/api/event/${encodeURIComponent(S.slug)}/laporan`);
+      if (!w.isConnected) return;
+      w.innerHTML = laporanHtml(L);
+      tb.dataset.tutup = L.ditutup ? "0" : "1"; tb.hidden = false;
+      tb.querySelector("span").textContent = t(L.ditutup ? "adm.event.h.buka_lagi" : "adm.event.h.tutup");
+      dlg.querySelector("#evTutupKet").textContent = L.ditutup ? t("adm.event.h.ditutup_pada", { waktu: jam(L.ditutup) }) : t("adm.event.h.tutup_bantu");
+    } catch (err) { if (w.isConnected) w.innerHTML = galatHtml(err.kode || "umum"); }
+  }
+  function bukaHadir(slug) {
+    const b = S.acara.find((x) => x.slug === slug);
+    if (!b) return;
+    S.slug = slug;
+    dlg.innerHTML = `<div class="jm-form"><h2 id="dlgJudul">${esc(b.judulTampil)}</h2>
+      <form id="evHadirForm" novalidate data-ev-hadir><div class="jm-medan"><label for="evKode">${esc(t("adm.event.h.kode"))}</label><input class="jm-isian" id="evKode" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="60" inputmode="text"></div>
+        <p class="jm-bantu">${esc(t("adm.event.h.kode_bantu"))}</p><div id="evHadirHasil" role="status" aria-live="polite"></div>
+        <div class="jm-aksi"><button type="submit" class="jm-tbl jm-tbl-utama" id="evHadirTbl">${ikon("centang", 18)}<span>${esc(t("adm.event.h.catat"))}</span></button></div></form>
+      <h3>${esc(t("adm.event.h.laporan_j"))}</h3><div id="evLaporan">${hantuHtml(3)}</div>
+      <p class="jm-bantu" id="evTutupKet"></p>
+      <div class="jm-aksi"><button type="button" class="jm-tbl" data-tutup-dlg>${esc(t("jm.tutup"))}</button><button type="button" class="jm-tbl" id="evTutup" hidden>${ikon("kunci", 18)}<span></span></button></div></div>`;
+    dlg.showModal(); dlg.querySelector("#evKode").focus();
+    nanti(isiLaporan);
+  }
+  async function catatHadir(e) {
+    if (!e.target.matches("[data-ev-hadir]")) return;
+    e.preventDefault();
+    const m = dlg.querySelector("#evKode"), out = dlg.querySelector("#evHadirHasil"), tbl = dlg.querySelector("#evHadirTbl"), kode = m.value.trim();
+    if (!kode) { m.focus(); return; }
+    tbl.disabled = true;
+    try {
+      const r = await api(`/api/event/${encodeURIComponent(S.slug)}/hadir`, { metode: "POST", badan: { kode } });
+      out.innerHTML = pesanHtml("ok", t(r.baru ? "adm.event.h.ok" : "adm.event.h.sudah", { nama: r.nama, n: angka(r.jumlah), waktu: jam(r.hadir_pada) }));
+      m.value = ""; nanti(isiLaporan);
+    } catch (err) { out.innerHTML = pesanHtml("galat", err.kode === "tidak_ditemukan" ? t("adm.event.h.tak_sah") : galatTeks(err.kode || "umum")); }
+    tbl.disabled = false; m.focus();
+  }
+  async function klikHadir(e) {
+    if (e.target.closest("[data-tutup-dlg]") && dlg.querySelector("[data-ev-hadir]")) return void dlg.close();
+    const tb = e.target.closest("#evTutup");
+    if (!tb) return;
+    tb.disabled = true;
+    try { await api(`/api/event/${encodeURIComponent(S.slug)}/tutup`, { metode: "PUT", badan: { tutup: tb.dataset.tutup === "1" } }); await isiLaporan(); }
+    catch (err) { dlg.querySelector("#evHadirHasil").innerHTML = pesanHtml("galat", galatTeks(err.kode || "umum")); }
+    tb.disabled = false;
   }
 }

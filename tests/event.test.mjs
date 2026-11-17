@@ -46,7 +46,7 @@ async function panggil(metode, jalur, { peran = null, badan } = {}) {
 }
 const atur = (peran, id, b) => panggil("PUT", `/api/event/${id}/atur`, { peran, badan: { terbuka: true, ...b } });
 
-test("modul mengekspor 6 rute event", () => assert.equal(Object.keys(rute).length, 6));
+test("modul mengekspor 12 rute event (6 RSVP + 6 tiket, hadir, tutup, sertifikat, survei, laporan)", () => assert.equal(Object.keys(rute).length, 12));
 
 test("tamu 401 di semua rute event", async () => {
   for (const [m, j, b] of [["GET", "/api/event"], ["POST", "/api/event/acara-depan/daftar", {}], ["DELETE", "/api/event/acara-depan/daftar"],

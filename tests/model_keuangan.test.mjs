@@ -72,3 +72,25 @@ test("tornado terurut menurut ayunan; skenario rendah < tengah < tinggi", () => 
   const b = tr.baris.find((x) => x.kunci === "capexUsdKw"); assert.ok(b.rendah > tr.dasar && b.tinggi < tr.dasar); // capex turun -> IRR naik
   const s = skenario(acuan, 0.1); assert.ok(s.rendah.irrProyek < s.tengah.irrProyek && s.tengah.irrProyek < s.tinggi.irrProyek);
 });
+
+test("pembiayaan campuran (F65-106): hibah dan pinjaman lunak mengurangi ekuitas, arus proyek tidak berubah", () => {
+  const dasar = hitungModel(acuan).ringkas;
+  const c = hitungModel({ ...acuan, utang: 0.3, utangLunak: 0.3, bungaLunak: 0.02, tenorLunak: 4, hibah: 0.1 });
+  dekat(c.ringkas.capex, 1e9, 1e-3);
+  dekat(c.ringkas.utangKomersial, 3e8, 1e-3); dekat(c.ringkas.utangLunak, 3e8, 1e-3); dekat(c.ringkas.utang, 6e8, 1e-3);
+  dekat(c.ringkas.hibah, 1e8, 1e-3); dekat(c.ringkas.ekuitas, 3e8, 1e-3);
+  dekat(c.ringkas.bungaUtangRata, 0.06, 1e-9);
+  dekat(c.baris[0].arusEkuitas, -3e8, 1e-3); dekat(c.baris[0].arusProyek, -1e9, 1e-3);
+  dekat(c.ringkas.irrProyek, dasar.irrProyek, 1e-9);
+  // cicilan tahun 1 = anuitas komersial (300 juta, 10%, 2 th) + anuitas lunak (300 juta, 2%, 4 th)
+  dekat(c.baris[1].cicilan, anuitas(3e8, 0.1, 2) + anuitas(3e8, 0.02, 4), 1e-3);
+  dekat(c.baris[3].cicilan, anuitas(3e8, 0.02, 4), 1e-3);
+  dekat(c.baris[5].saldo, 0, 1e-3);
+});
+
+test("pembiayaan campuran: bawaan nol = hasil lama; porsi berlebih tidak membuat ekuitas negatif", () => {
+  const lama = hitungModel(acuan).ringkas, nol = hitungModel({ ...acuan, hibah: 0, utangLunak: 0, bungaLunak: 0, tenorLunak: 0 }).ringkas;
+  dekat(nol.irrEkuitas, lama.irrEkuitas, 1e-12); dekat(nol.ekuitas, 5e8, 1e-3); assert.equal(lama.hibah, 0); assert.equal(lama.utangLunak, 0);
+  assert.equal(hitungModel({ ...acuan, utang: 0.8, hibah: 0.5 }).ringkas.ekuitas, 0);
+  assert.equal(hitungModel({ ...acuan, utang: 0 }).ringkas.bungaUtangRata, null);
+});

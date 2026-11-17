@@ -92,3 +92,9 @@ dialog.ad-dlg{width:min(760px,calc(100vw - 24px));max-height:calc(100dvh - 24px)
 @media (max-width:1000px){.ad-lcs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){.ad-modul-w,.ad-cara{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:639px){.ad-lg{grid-template-columns:auto minmax(0,1fr)}.ad-lg .jm-tbl{grid-column:2;justify-self:start}.ad-kuis{padding:14px}}
+/* nilai tercatat di akun dan sertifikat (F65-205) */
+.ad-akun{display:grid;gap:10px;justify-items:start;margin-top:16px;padding:16px;border-radius:var(--r);background:var(--surface)}
+.ad-akun:empty{display:none}
+.ad-akun-t{display:flex;align-items:center;gap:8px;margin:0;font:600 var(--t-body)/var(--lh-isi) var(--font);color:var(--head)}
+.ad-akun .ad-bantu{align-items:flex-start}
+

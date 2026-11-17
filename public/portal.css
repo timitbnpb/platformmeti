@@ -54,3 +54,5 @@
 .pt-lab{flex-wrap:wrap}.pt-tek{grid-template-columns:repeat(2,minmax(0,1fr))}.pt-chip{padding:8px 10px;gap:8px}
 }
 .pt-in>.jm-ik{z-index:1}
+/* Kartu portal berisi formulir dan tabel: lebar minimum 340px supaya di tablet tidak terjepit jadi tiga kolom 246px (sapu tablet 15 Nov 2026). */
+.jm-hal-pf[data-halaman="portal"] #isi.jm-kisi{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}

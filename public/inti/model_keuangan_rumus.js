@@ -66,14 +66,18 @@ export function balikModal(arus) {
  *    tarifGanti (tahun ke-), eskTarif, eskOpex, porsiBayar (0..1: bagian energi yang dibayar/dihemat), sewaRpKwp (Rp/kWp/tahun, biaya),
  *    recRpMwh, karbonRpT (Rp/tCO2e), emisiTMwh, utang (0..1 dari capex total), bunga, tenor, pajak, libur, susut (tahun),
  *    ppn, ppnPorsi (0..1), ppnDtp (bool), gantiTahun, gantiPersen (0..1 capex), diskonto.
+ *    Pembiayaan campuran (F65-106, semua opsional, bawaan 0): hibah (0..1 capex, tidak dikembalikan), utangLunak (0..1 capex), bungaLunak, tenorLunak.
+ *    utang + utangLunak + hibah wajib <= 1 (dijaga keParam); ekuitas = sisa. Arus proyek tidak berubah (sebelum pendanaan); hibah hanya mengurangi setoran ekuitas.
  */
 export function hitungModel(p) {
   const umur = Math.max(1, Math.round(p.umur));
   const kW = p.mw * 1000, capexDasar = kW * p.capexUsdKw * p.kurs;
   const ppnRp = p.ppnDtp ? 0 : capexDasar * (p.ppn || 0) * (p.ppnPorsi || 0);
-  const capex = capexDasar + ppnRp, utang = capex * (p.utang || 0);
+  const capex = capexDasar + ppnRp, utangKomersial = capex * (p.utang || 0), utangLunak = capex * (p.utangLunak || 0), utang = utangKomersial + utangLunak;
+  const hibah = capex * (p.hibah || 0), ekuitas = Math.max(0, capex - utang - hibah);
   const susut = Math.max(1, Math.round(p.susut || umur));
-  const jadwal = jadwalUtang(utang, p.bunga || 0, Math.min(p.tenor || 0, umur), umur);
+  const jadK = jadwalUtang(utangKomersial, p.bunga || 0, Math.min(p.tenor || 0, umur), umur), jadL = jadwalUtang(utangLunak, p.bungaLunak || 0, Math.min(p.tenorLunak || 0, umur), umur);
+  const jadwal = jadK.map((a, i) => ({ bunga: a.bunga + jadL[i].bunga, pokok: a.pokok + jadL[i].pokok, cicilan: a.cicilan + jadL[i].cicilan, saldo: a.saldo + jadL[i].saldo }));
   const baris = [], ebitda = [], ebtU = [], ebtL = [];
   for (let y = 1; y <= umur; y++) {
     const energi = kW * JAM_TAHUN * p.fk * (1 - (p.degr || 0)) ** (y - 1);
@@ -90,13 +94,13 @@ export function hitungModel(p) {
     baris.push({ tahun: y, energi, tarif, pendapatan: pendTarif + pendLain, opex, ebitda: e, susut: dep, bunga: j.bunga, pokok: j.pokok, cicilan: j.cicilan, saldo: j.saldo });
   }
   const pjU = pajakTahunan(ebtU, p.pajak || 0, p.libur || 0), pjL = pajakTahunan(ebtL, p.pajak || 0, p.libur || 0);
-  let kumP = -capex, kumE = -(capex - utang);
+  let kumP = -capex, kumE = -ekuitas;
   baris.forEach((b, i) => {
     b.pajak = pjL[i]; b.cfads = b.ebitda - pjL[i]; b.dscr = b.cicilan > 0 ? b.cfads / b.cicilan : null;
     b.arusProyek = b.ebitda - pjU[i]; b.arusEkuitas = b.cfads - b.cicilan;
     kumP += b.arusProyek; kumE += b.arusEkuitas; b.kumProyek = kumP; b.kumEkuitas = kumE;
   });
-  baris.unshift({ tahun: 0, energi: 0, tarif: 0, pendapatan: 0, opex: 0, ebitda: 0, susut: 0, bunga: 0, pokok: 0, cicilan: 0, saldo: utang, pajak: 0, cfads: 0, dscr: null, arusProyek: -capex, arusEkuitas: -(capex - utang), kumProyek: -capex, kumEkuitas: -(capex - utang), capex });
+  baris.unshift({ tahun: 0, energi: 0, tarif: 0, pendapatan: 0, opex: 0, ebitda: 0, susut: 0, bunga: 0, pokok: 0, cicilan: 0, saldo: utang, pajak: 0, cfads: 0, dscr: null, arusProyek: -capex, arusEkuitas: -ekuitas, kumProyek: -capex, kumEkuitas: -ekuitas, capex });
   const aP = baris.map((b) => b.arusProyek), aE = baris.map((b) => b.arusEkuitas);
   const ds = baris.map((b) => b.dscr).filter((x) => x != null);
   const d = p.diskonto, pvE = baris.slice(1).reduce((s, b) => s + b.energi / (1 + d) ** b.tahun, 0);
@@ -104,7 +108,8 @@ export function hitungModel(p) {
   return {
     baris,
     ringkas: {
-      capexDasar, ppnRp, capex, utang, ekuitas: capex - utang,
+      capexDasar, ppnRp, capex, utang, ekuitas, hibah, utangKomersial, utangLunak,
+      bungaUtangRata: utang > 0 ? (utangKomersial * (p.bunga || 0) + utangLunak * (p.bungaLunak || 0)) / utang : null,
       irrProyek: irr(aP), irrEkuitas: irr(aE), npvProyek: npv(d, aP), npvEkuitas: npv(d, aE),
       balikProyek: balikModal(aP), balikEkuitas: balikModal(aE),
       lcoe: pvE > 0 ? (capex + pvB) / pvE : null, // Rp/kWh, nominal, sebelum pajak dan pendanaan (kecuali pajakLcoe)

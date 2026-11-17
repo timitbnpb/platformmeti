@@ -518,3 +518,43 @@ button.jm-kt-j.jm-hi-u .jm-ik{color:var(--kt)}button.jm-kt-j.jm-hi-u[aria-presse
 .jm-sisi-t:focus-visible,.jm-sisi-s:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .jm-sisi-kaki{display:grid;gap:2px;padding-top:12px;border-top:1px solid var(--line)}
 .jm-sisi-kaki:empty{display:none}
+/* admin event: ringkasan hadir dan survei (F65-201..204) */
+.adm-ev-dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:0 0 12px}
+.adm-ev-dl>div{display:grid;gap:4px;padding:12px;border-radius:var(--r-sm);background:var(--surface)}
+.adm-ev-dl dt{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.adm-ev-dl dd{margin:0;font:700 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--head);font-variant-numeric:tabular-nums}
+/* tab Kiriman (F65-206..208) */
+.akr-isi{display:flex;align-items:flex-start;gap:12px;min-width:0}
+.akr-isi>span{display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.akr-isi small{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.akr-foto{flex:none;width:96px;height:72px;object-fit:cover;border-radius:var(--r-sm);background:var(--surface)}
+.akr-aksi{display:flex;flex-wrap:wrap;gap:8px}
+/* surel keluar dan draf buletin (F65-215, 216) */
+.ask{margin-top:32px;display:grid;gap:12px}
+.ask-catatan{display:flex;gap:8px;align-items:flex-start;margin:0;padding:12px 14px;border-radius:var(--r-sm);background:var(--info-bg);color:var(--ink);font:400 var(--t-body)/var(--lh-isi) var(--font)}
+.ask-catatan svg{flex:none;margin-top:2px;color:var(--info)}
+.ask-angka{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:0}
+.ask-angka>div{padding:14px 16px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.ask-angka dt{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-rapat) var(--font)}
+.ask-angka dd{margin:4px 0 0;font:700 var(--t-h2)/var(--lh-judul) var(--font);color:var(--head);font-variant-numeric:tabular-nums}
+.ask-kepala{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px}
+.ask-kepala h4{margin:0;font:600 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--head)}
+.ask-draf{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.ask-draf li{display:grid;gap:8px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.ask-draf small{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.ask-draf summary{min-height:var(--target);display:flex;align-items:center;cursor:pointer;color:var(--accent);font:600 var(--t-tombol)/1 var(--font)}
+.ask-pre{margin:0;padding:12px;max-height:360px;overflow:auto;border-radius:var(--r-sm);background:var(--surface);color:var(--ink);font:400 var(--t-kecil)/var(--lh-isi) var(--font);white-space:pre-wrap;overflow-wrap:anywhere}
+/* putusan cek fakta (F65-306) */
+.akr-vonis{width:min(640px,calc(100vw - 32px));padding:20px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);color:var(--ink)}
+.akr-vonis form{display:grid;gap:14px}
+.akr-vonis h3{margin:0}
+.akr-f{display:grid;gap:6px;min-width:0}
+.akr-f>span{font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.akr-f>:is(input,textarea){width:100%;min-height:var(--target);padding:10px 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:400 var(--t-masukan)/var(--lh-isi) var(--font)}
+.akr-f>:is(input,textarea):focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+/* antrean bukti perpanjangan iuran di tab KTA (F65-301) */
+.iu-adm:not(:empty){margin-top:24px}
+.iu-adm-j{display:flex;align-items:center;gap:8px;margin:0 0 6px;font:600 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--head)}
+.iu-adm td small{display:block;color:var(--ink2);font-size:var(--t-kecil)}
+.iu-adm td .jm-tbl{margin:2px 4px 2px 0}
+

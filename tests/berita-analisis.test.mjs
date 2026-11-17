@@ -42,3 +42,23 @@ test("tierMedia: domain, subdomain daerah, nama, bawaan", () => {
   assert.equal(tierMedia(r(1, "x", "esdm.go.id", "", "id"), tabel), "rilis");
   assert.equal(tierMedia(r(1, "x", "foo.com", "", "en"), tabel), "internasional");
 });
+
+test("rekap judul harian (F65-305): hari terbaru yang cukup judul, satu judul satu kelompok, 'lain' terakhir, tanpa AI dan tanpa kalimat buatan", async () => {
+  const { rekapHarian, tglWib } = await import("../public/berita_kamus.js");
+  assert.equal(tglWib("2026-11-06T18:30:00Z"), "2026-11-07", "tanggal WIB, bukan UTC");
+  const rows = [r(1, "RUPTL baru menambah PLTS", "a.com", "2026-11-07T02:00:00Z"), r(2, "PLN bahas RUPTL dengan DPR", "b.com", "2026-11-07T03:00:00Z"),
+    r(3, "Harga nikel turun", "a.com", "2026-11-07T04:00:00Z"), r(4, "Proyek hidrogen hijau dimulai", "c.com", "2026-11-07T05:00:00Z"),
+    r(5, "Satu judul saja hari ini", "d.com", "2026-11-08T05:00:00Z"), r(6, "", "d.com", "2026-11-08T06:00:00Z"), r(7, "Tanggal rusak", "d.com", "bukan-tanggal")];
+  const k = rekapHarian(rows);
+  assert.equal(k.tanggal, "2026-11-07", "8 Nov hanya punya satu judul, jadi dilewati"); assert.equal(k.n, 4); assert.equal(k.media, 3);
+  assert.deepEqual(k.kelompok.map((x) => [x.id, x.n]), [["ruptl", 2], ["hidrogen", 1], ["lain", 1]]);
+  assert.equal(k.kelompok.reduce((n, x) => n + x.n, 0), k.n, "tiap judul tepat satu kelompok");
+  assert.equal(rekapHarian(rows.slice(4)), null, "tanpa hari yang cukup judul tidak ada rekap");
+  const banyak = Array.from({ length: 8 }, (_, i) => r(i, "RUPTL nomor " + i, "a.com", "2026-11-07T0" + i + ":00:00Z"));
+  const b = rekapHarian(banyak); assert.equal(b.kelompok[0].judul.length, 5); assert.equal(b.kelompok[0].lagi, 3);
+  const nyata = rekapHarian(JSON.parse(readFileSync(new URL("../public/data/berita.json", import.meta.url), "utf8")).baris);
+  assert.ok(nyata && nyata.n >= 3 && nyata.kelompok.every((x) => x.judul.every((j) => j.judul && j.url)));
+  const src = readFileSync(new URL("../public/berita.js", import.meta.url), "utf8"), f = src.slice(src.indexOf("function gambarRekap"), src.indexOf("function gambarAngka"));
+  assert.ok(!/api\(|fetch\(|\/api\//.test(f), "rekap dihitung di peramban dari data yang sudah dimuat; tidak memanggil server atau AI");
+  assert.match(f, /esc\(x\.judul\)/); assert.match(f, /rel="noopener noreferrer"/);
+});

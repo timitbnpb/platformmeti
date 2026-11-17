@@ -13,7 +13,7 @@
   --on-brand:#FFFFFF;   /* teks di atas pita hijau METI */
   --data1:#0A5C47; --data2:#12896B; --data3:#4AA9E0; --data4:#9DC94F; --data5:#1E7FA8;
   --sorot:#9DC94F; --kaki-bg:#06261D;
-  --ok:#066B52; --warn:#A8480A; --bad:#B3261E; --info:#1E7FA8;
+  --ok:#066B52; --warn:#A8480A; --bad:#B3261E; --info:#186C90;
   --ok-bg:#E2F3EC; --warn-bg:#FBEBDD; --bad-bg:#FBE7E5; --info-bg:#E3F3FA;
   --fokus:#1E7FA8; --kemajuan:0; --h:0%; --w:0%; --tk:var(--accent); --tc:var(--accent); --ref:var(--accent); --a:0%; --b:0%; --x:50%; --nk:3; --sk:var(--ink2); /* warna teknologi bawaan; pil/batang menimpanya per elemen */
   --shadow:0 2px 14px rgb(10 60 45/.08); --shadow-lg:0 8px 28px rgb(10 60 45/.16);

@@ -5,6 +5,7 @@ import { t, ada, angka, tanggal } from "/i18n.js";
 import { namaBaku } from "/inti/nama_baku.js";
 import { cariHtml } from "/inti/komponen.js";
 import { esc, api, nanti, debounce, hantuHtml, kosongHtml, galatHtml, galatTeks, ikon, pesanHtml } from "/inti/umum.js";
+import { panelIuranAdmin } from "/iuran_layar.js";
 
 const BARIS = 50;
 const JENIS = ["individu", "utama", "biasa", "luar biasa", "kehormatan"];
@@ -30,7 +31,9 @@ export function panelKta(panel) {
     </div>
     <div id="kIsi" aria-live="polite"></div>
     <div id="kPesan" aria-live="polite"></div>
+    <div id="kIuran" class="iu-adm"></div>
     <dialog class="jm-dlg" id="kDlg" aria-labelledby="kDlgJudul"></dialog>`;
+  panelIuranAdmin(panel.querySelector("#kIuran"));
   const $ = (id) => panel.querySelector("#" + id);
   const dlg = $("kDlg");
   const kabari = (j, tk) => { $("kPesan").innerHTML = tk ? pesanHtml(j, tk) : ""; };

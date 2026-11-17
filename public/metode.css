@@ -73,7 +73,7 @@ body:has(.met-tata){overflow-x:clip}
 .met-lg{display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:var(--r-sm);border:1px solid var(--line-cell);background:var(--on-brand);color:var(--on-brand);font:700 var(--t-kecil)/1 var(--font);overflow:hidden}
 .met-lg img{width:32px;height:32px;object-fit:contain}
 .met-lg-k{width:32px;height:32px}.met-lg-k img{width:26px;height:26px}
-.met-m0{background:var(--data1);border:0;color:var(--ink)}.met-m1{background:var(--data2);border:0}.met-m2{background:var(--data3);border:0}.met-m3{background:var(--data4);border:0}.met-m4{background:var(--data5);border:0}
+.met-m0{background:color-mix(in srgb,var(--data1) 50%,var(--kaki-bg));border:0}.met-m1{background:color-mix(in srgb,var(--data2) 50%,var(--kaki-bg));border:0}.met-m2{background:color-mix(in srgb,var(--data3) 50%,var(--kaki-bg));border:0}.met-m3{background:color-mix(in srgb,var(--data4) 50%,var(--kaki-bg));border:0}.met-m4{background:color-mix(in srgb,var(--data5) 50%,var(--kaki-bg));border:0}
 .met-kosong{color:var(--ink2)}
 .met-ik{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-ctl);color:var(--accent);text-decoration:none}
 .met-ik:hover,.met-ik:focus-visible{border-color:var(--accent);background:var(--soft-hijau)}

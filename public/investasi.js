@@ -182,5 +182,8 @@ bacaUrl();
 for (const k of ["banding"]) { const v = new URLSearchParams(location.search).get(k); if (v) S.banding = v.split(",").filter((id) => CTX.per.has(id)).slice(0, MAKS_BANDING); }
 hero(); kerangka(); pasang();
 tray();
+// kebutuhan dana yang dipasang pemilik proyek dan disetujui admin (F65-208); klaim pengirim, bukan data Direktori
+$("ivIsi").insertAdjacentHTML("afterend", '<div id="ivDana" class="iv-dana"></div>');
+import("/kiriman.js").then((m) => m.pasangDanaDaftar($("ivDana"))).catch(() => {});
 { const id = decodeURIComponent(location.hash.slice(1)); if (id && CTX.per.has(id)) bukaLembar(id); else if (S.banding.length >= 2 && new URLSearchParams(location.search).has("banding")) bukaBanding(); }
 document.addEventListener("jm:bahasa", () => { hero(); kerangka(); tray(); });

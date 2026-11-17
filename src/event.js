@@ -1,7 +1,8 @@
 // event.js: pendaftaran (RSVP) acara METI + pengaturan admin + peserta CSV. D1 hanya lewat hak.js (tabel event_atur, event_daftar).
+// F65-201..204 (migrasi 0038): tiket ber-QR, pencatatan hadir, penutupan acara, sertifikat dengan verifikasi publik, survei pasca acara, laporan.
 // Acara dikenali dari `slug` di public/data/kalender.json (bukan regulasi/tenggat); kuota dijaga rute DAN trigger (atomik).
 import * as hak from "./hak.js";
-import { bacaBody, Galat, gagal, json, perlu, PRIVAT } from "./util.js";
+import { bacaBody, Galat, gagal, ipHash, json, perlu, PRIVAT, samaTetap } from "./util.js";
 
 const ADM = ["admin", "super"];
 const RE_SLUG = /^[a-z0-9][a-z0-9-]{0,78}$/;
@@ -29,6 +30,28 @@ async function acara(env, req, slug) {
   try { k = await res.json(); } catch { throw new Galat("layanan"); }
   return (Array.isArray(k?.baris) ? k.baris : []).find((b) => b?.slug === slug && !["regulasi", "tenggat"].includes(b.jenis)) ?? null;
 }
+const NONAKTIF = () => json({ galat: "Fitur belum aktif.", kode: "fitur_belum_aktif" }, 503, PRIVAT);
+// Token tiket dan sertifikat: <id pendaftaran>.<32 hex HMAC(id|acara|waktu daftar)>, pola KTA. Kunci berawalan beda ("tiket|" dan "sert|")
+// supaya kode tiket tidak bisa dipakai sebagai tautan sertifikat. Token dihitung, tidak disimpan; selalu di jalur URL, tidak di query string.
+const RE_TOKEN = /^(\d{1,9})\.([0-9a-f]{32})$/;
+const heksa = (b) => [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join("");
+async function tokenEvent(env, jenis, d) {
+  const r = env.EVENT_RAHASIA || env.KTA_RAHASIA || env.ICS_RAHASIA || env.IP_SALT;
+  if (!r) throw new Galat("layanan");
+  const k = await crypto.subtle.importKey("raw", new TextEncoder().encode(jenis + "|" + r), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  return `${d.id}.${heksa(await crypto.subtle.sign("HMAC", k, new TextEncoder().encode(`${d.id}|${d.event_id}|${d.waktu}`))).slice(0, 32)}`;
+}
+// Baris pendaftaran bila token sah (waktu tetap), selain itu null. Bentuk salah, id tak ada, dan HMAC salah tidak dibedakan.
+async function daftarDariToken(env, jenis, token) {
+  const m = typeof token === "string" ? token.match(RE_TOKEN) : null;
+  if (!m) return null;
+  const d = await hak.eventDaftarUntukToken(env, Number(m[1]));
+  if (d === null) throw new Galat("layanan");
+  const benar = d ? await tokenEvent(env, jenis, d) : "0." + "0".repeat(32);
+  return samaTetap(benar, token) && d ? d : null;
+}
+// Pencatatan hadir punya kunci laju sendiri yang longgar: satu admin di pintu masuk memindai ratusan tamu per jam (tinjauan keamanan 15 Nov 2026).
+const lajuHadir = async (env, akun) => (await hak.sistem.catatLaju(env, "kurasi:evh" + akun.id)) > 1200;
 const lajuLewat = async (env, akun) => (await hak.sistem.catatLaju(env, "kurasi:ev" + akun.id)) > BATAS_LAJU;
 const cariAtur = async (env, akun, id) => (await hak.baca(env, akun, "event_atur", { where: { event_id: id } }))[0] ?? null;
 const cariDaftar = async (env, akun, id) => (await hak.baca(env, akun, "event_daftar", { where: { event_id: id, akun_id: akun.id } }))[0] ?? null;
@@ -133,5 +156,86 @@ export const rute = {
     const csv = "﻿" + [kepala, ...baris.map((r) => [r.id, r.nama, r.surel, r.instansi, r.telepon, r.jumlah, r.catatan, r.status, new Date(r.waktu * 1000).toISOString()])]
       .map((r) => r.map(selCsv).join(",")).join("\r\n") + "\r\n";
     return new Response(csv, { headers: { "content-type": "text/csv; charset=utf-8", "content-disposition": `attachment; filename="peserta-${id}.csv"`, "x-content-type-options": "nosniff", ...PRIVAT } });
+  },
+
+  /* ---------- F65-201: tiket dan hadir ---------- */
+  // Tiket milik akun yang masuk untuk satu acara: kode (isi QR), status hadir, dan apa yang sudah terbuka (sertifikat, survei).
+  "GET /api/event/:id/tiket": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    if (!RE_SLUG.test(p.params.id)) return gagal("tidak_ditemukan");
+    const d = await hak.eventTiketSaya(env, akun, p.params.id);
+    if (d === null) return NONAKTIF();
+    if (!d || d.status !== "terdaftar") return json({ terdaftar: false }, 200, PRIVAT);
+    const selesai = !!d.hadir_pada && !!d.ditutup;
+    return json({
+      terdaftar: true, jumlah: d.jumlah, kode: await tokenEvent(env, "tiket", d), hadir_pada: d.hadir_pada ?? null, ditutup: !!d.ditutup,
+      sertifikat: selesai ? new URL("/sertifikat/v/" + (await tokenEvent(env, "sert", d)), req.url).href : null,
+      survei: { boleh: selesai && !d.sudah_survei, sudah: !!d.sudah_survei, butir: hak.BUTIR_SURVEI_EVENT },
+    }, 200, PRIVAT);
+  },
+
+  // POST /api/event/:id/hadir {kode}: admin memindai atau mengetik kode tiket. Dicatat sekali; pindai kedua mengembalikan jam pindai pertama (baru: false).
+  // Kode salah, kode acara lain, dan pendaftaran yang dibatalkan = 404 seragam.
+  "POST /api/event/:id/hadir": async (req, env, ctx, p) => {
+    const akun = perlu(p, ADM);
+    const id = p.params.id;
+    const b = await bacaBody(req, 512);
+    if (!RE_SLUG.test(id)) return gagal("tidak_ditemukan");
+    if (typeof b.kode !== "string" || b.kode.length > 60) return gagal("masukan_salah", 422);
+    if (await lajuHadir(env, akun)) return gagal("laju_terlampaui");
+    const d = await daftarDariToken(env, "tiket", b.kode.trim());
+    if (!d || d.event_id !== id || d.status !== "terdaftar") return gagal("tidak_ditemukan");
+    const r = await hak.eventHadirCatat(env, akun, d.id, id);
+    if (r === null) return NONAKTIF();
+    if (!r) return gagal("tidak_ditemukan");
+    return json({ baru: r.baru, hadir_pada: r.hadir_pada, nama: d.nama, jumlah: d.jumlah }, 200, PRIVAT);
+  },
+
+  // PUT /api/event/:id/tutup {tutup}: admin menutup acara (membuka sertifikat dan survei bagi yang hadir) atau membukanya lagi.
+  "PUT /api/event/:id/tutup": async (req, env, ctx, p) => {
+    const akun = perlu(p, ADM);
+    const b = await bacaBody(req, 256);
+    if (typeof b.tutup !== "boolean") return gagal("masukan_salah", 422);
+    if (!(await acara(env, req, p.params.id))) return gagal("tidak_ditemukan");
+    if (await lajuLewat(env, akun)) return gagal("laju_terlampaui");
+    const r = await hak.eventTutupAtur(env, akun, p.params.id, b.tutup);
+    return r === null ? NONAKTIF() : json({ ditutup: r.ditutup }, 200, PRIVAT);
+  },
+
+  /* ---------- F65-202: sertifikat kehadiran (verifikasi publik) ---------- */
+  // Terbuka tanpa sesi. Hanya: nama acara, tanggal, nama peserta. Sah bila token cocok, peserta hadir, acara ditutup; selain itu 404 seragam.
+  "GET /api/event/sertifikat/:token": async (req, env, ctx, p) => {
+    if ((await hak.sistem.catatLaju(env, "koreksi:sv|" + (await ipHash(env, req)), 3600)) > 120) return gagal("laju_terlampaui");
+    const d = await daftarDariToken(env, "sert", p.params.token);
+    if (!d || d.status !== "terdaftar" || !d.hadir_pada || !d.ditutup) return gagal("tidak_ditemukan");
+    const ac = await acara(env, req, d.event_id);
+    if (!ac) return gagal("tidak_ditemukan");
+    return json({ acara: ac.judul, tanggal: ac.tanggal, nama: d.nama }, 200, PRIVAT);
+  },
+
+  /* ---------- F65-203: survei pasca acara ---------- */
+  // POST /api/event/:id/survei { puas, relevan, selenggara, minat } bulat 1-5: hanya peserta hadir, sesudah acara ditutup, sekali.
+  "POST /api/event/:id/survei": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    const id = p.params.id;
+    const b = await bacaBody(req, 512);
+    if (!RE_SLUG.test(id)) return gagal("tidak_ditemukan");
+    hak.periksaSurveiEvent(b);
+    if (await lajuLewat(env, akun)) return gagal("laju_terlampaui");
+    const d = await hak.eventTiketSaya(env, akun, id);
+    if (d === null) return NONAKTIF();
+    if (!d || d.status !== "terdaftar" || !d.hadir_pada || !d.ditutup) return gagal("dilarang");
+    if (d.sudah_survei) return gagal("konflik");
+    const r = await hak.eventSurveiJawab(env, akun, id, b);
+    return r === null ? NONAKTIF() : json({ ok: true }, 201, PRIVAT);
+  },
+
+  /* ---------- F65-203 dan F65-204: laporan admin (agregat saja) ---------- */
+  // Pendaftaran, hadir, agregat survei (tanpa nilai bila n < ambang), dan kunjungan halaman acara. Tidak ada baris per orang.
+  "GET /api/event/:id/laporan": async (req, env, ctx, p) => {
+    const akun = perlu(p, ADM);
+    if (!RE_SLUG.test(p.params.id)) return gagal("tidak_ditemukan");
+    const r = await hak.eventLaporan(env, akun, p.params.id);
+    return r === null ? NONAKTIF() : json({ ...r, butir: hak.BUTIR_SURVEI_EVENT, n_min: hak.N_MIN_KEYAKINAN }, 200, PRIVAT);
   },
 };

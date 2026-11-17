@@ -167,3 +167,10 @@ th[aria-sort="ascending"] .kq-urut-ik{transform:rotate(180deg)}
 .kq-kh .jm-kh-ubin{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important}
 .kq-cel{display:inline-flex;align-items:center;gap:6px;min-width:0}
 .kq-cel .kq-rank{margin-left:0}
+/* Monogram tanpa logo: .kq-lg (latar kertas) ditulis sesudah .kq-k-* sehingga menimpa warnanya dan huruf putih jatuh di atas putih.
+   Kekhususan dinaikkan dan latar digelapkan supaya huruf putih terbaca di dua tema (audit kontras 15 Nov 2026). */
+.kq-lg-mono{color:var(--on-brand)}
+.kq-lg-mono.kq-k-bumn{background:color-mix(in srgb,var(--data1) 50%,var(--kaki-bg))}
+.kq-lg-mono.kq-k-swasta{background:color-mix(in srgb,var(--data5) 50%,var(--kaki-bg))}
+.kq-lg-mono.kq-k-internasional{background:color-mix(in srgb,var(--data3) 50%,var(--kaki-bg))}
+.kq-lg-mono.kq-k-lainnya{background:color-mix(in srgb,var(--ink2) 50%,var(--kaki-bg))}

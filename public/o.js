@@ -89,6 +89,9 @@ async function mulai() {
     + `</div>`;
   pasangRingkas(akar, o);
   pro.pasang(akar); ber.pasang(akar); pen.pasang(akar); kb.pasang(akar); rl.pasang(akar);
+  // lencana verifikasi yang sudah ditinjau admin (F65-213)
+  akar.querySelector(".pf-bagian")?.insertAdjacentHTML("beforeend", '<div id="pfLencana" class="pf-kiriman"></div>');
+  import("/kiriman.js").then((m) => m.pasangLencana(document.getElementById("pfLencana"), { id, nama: o.nama })).catch(() => {});
   pasangIkuti(akar); muatPembaruan("organisasi", id, akar.querySelector(".pf-bagian"));
   pasangLogoCadangan(akar);
   petaTitik(document.getElementById("pfPeta"), tampilProyek, {});

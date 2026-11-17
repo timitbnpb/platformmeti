@@ -8,6 +8,7 @@ import { exHtml } from "/inti/komponen.js";
 import { namaProyek } from "/inti/nama_proyek.js";
 import { namaProvinsi } from "/profil_tampil.js";
 import { IKON_TEK } from "/inti/ikon_tek.js";
+import { pasangMentor } from "/mentor.js";
 
 await mulaiHalaman();
 const akar = document.getElementById("isi");
@@ -127,3 +128,6 @@ try {
 } catch (e) {
   akar.innerHTML = pesanHtml("galat", galatTeks(e.kode || "umum"));
 }
+/* Program mentor (F65-211): kartu sendiri di bawah portal, tidak ikut digambar ulang bersama #isi. */
+document.getElementById("isi").insertAdjacentHTML("afterend", '<div id="mentorPortal" class="jm-hal-pf"></div>');
+pasangMentor(document.getElementById("mentorPortal"));

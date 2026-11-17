@@ -1,6 +1,7 @@
 // langganan.js: newsletter METI (migrasi 0014). Pendaftaran dan berhenti terbuka untuk tamu; daftar dan CSV hanya admin. D1 hanya lewat hak.js.
 // K19: belum ada layanan surel, jadi tidak ada surel yang dikirim. Respons publik tidak pernah memuat atau membocorkan surel.
 import * as hak from "./hak.js";
+import { berhentiIngat, RE_TOKEN_INGAT } from "./surel_keluar.js";
 import { acak, bacaBody, gagal, ipHash, json, perlu, PRIVAT, RE_EMAIL } from "./util.js";
 
 const ADM = ["admin", "super"];
@@ -54,6 +55,13 @@ export const rute = {
   // Terbuka: token dari tautan berhenti (halaman /berhenti memanggil ini setelah konfirmasi klik), atau akun masuk tanpa token.
   "POST /api/langganan/berhenti": async (req, env, ctx, p) => {
     const b = await bacaBody(req, 1024);
+    // Tautan berhenti PENGINGAT (F65-215) memakai halaman dan rute yang sama: token berbentuk p<id>.<32 hex> mematikan semua pilihan pengingat akun itu.
+    if (typeof b.token === "string" && RE_TOKEN_INGAT.test(b.token)) {
+      if (await lajuLewat(env, req, "bh|", BATAS_BERHENTI)) return gagal("laju_terlampaui");
+      const r = await berhentiIngat(env, b.token);
+      if (!r) return NONAKTIF();
+      return r.ada ? json({ ok: true }, 200, PRIVAT) : gagal("tidak_ditemukan");
+    }
     if (b.token != null && (typeof b.token !== "string" || !/^[0-9a-f]{64}$/.test(b.token))) return gagal("masukan_salah", 422);
     if (b.token == null && !p.akun) return gagal("masukan_salah", 422);
     if (await lajuLewat(env, req, "bh|", BATAS_BERHENTI)) return gagal("laju_terlampaui");

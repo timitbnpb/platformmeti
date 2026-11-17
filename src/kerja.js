@@ -61,6 +61,45 @@ export const rute = {
     return r ? json({ id: r.id }, 201, PRIVAT) : NONAKTIF();
   },
 
+  /* ---------- F65-212 (C-03): minat lowongan tanpa CV. Akun selalu dari sesi; peminat hanya terlihat pemasang lowongan itu dan admin. ---------- */
+  // Lowongan yang saya minati, dan jumlah peminat pada lowongan yang saya pasang.
+  "GET /api/kerja/minat": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    const r = await hak.kerjaMinatSaya(env, akun);
+    return r ? json(r, 200, PRIVAT) : NONAKTIF();
+  },
+
+  // POST {pesan?}: satu minat per akun per lowongan. Lowongan tutup, belum terbit, atau milik sendiri = 404 seragam; minat ganda = 409.
+  "POST /api/kerja/:id/minat": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    if (!RE_ID.test(p.params.id)) return gagal("tidak_ditemukan");
+    const b = await bacaBody(req, 2048);
+    hanyaKunci(b, ["pesan"]);
+    const pesan = teks(b.pesan, 500, { baris: true });
+    if ((await hak.catatLaju(env, "koreksi:km" + akun.id, 3600)) > 30) return gagal("laju_terlampaui");
+    const r = await hak.kerjaMinatKirim(env, akun, p.params.id, pesan);
+    if (!r) return NONAKTIF();
+    return r.id ? json({ id: r.id }, 201, PRIVAT) : r.ganda ? gagal("konflik") : gagal("tidak_ditemukan");
+  },
+
+  // Menarik minat sendiri (baris dihapus). Tidak ada minat = 404.
+  "DELETE /api/kerja/:id/minat": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    if (!RE_ID.test(p.params.id)) return gagal("tidak_ditemukan");
+    if ((await hak.catatLaju(env, "koreksi:km" + akun.id, 3600)) > 30) return gagal("laju_terlampaui");
+    const r = await hak.kerjaMinatTarik(env, akun, p.params.id);
+    if (!r) return NONAKTIF();
+    return r.ubah ? json({ ok: true }, 200, PRIVAT) : gagal("tidak_ditemukan");
+  },
+
+  // Peminat lowongan: nama dan pesan saja; hanya pemasang lowongan itu, admin, super. Bukan miliknya atau lowongan tutup = 404 seragam.
+  "GET /api/kerja/:id/peminat": async (req, env, ctx, p) => {
+    const akun = perlu(p);
+    const r = await hak.kerjaPeminat(env, akun, p.params.id);
+    if (r === null) return NONAKTIF();
+    return r ? json({ baris: r }, 200, PRIVAT) : gagal("tidak_ditemukan");
+  },
+
   // ---------------- admin ----------------
   "GET /api/admin/kerja": async (req, env, ctx, p) => {
     const akun = perlu(p, ADM);

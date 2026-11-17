@@ -1,0 +1,62 @@
+/* kiriman.css (F65-205..208): formulir dan daftar kiriman pengguna, kuis rekaman. Hanya token. */
+.kr-form{display:grid;gap:14px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.kr-form>.jm-tbl{justify-self:start}
+.kr-f{display:grid;gap:6px;min-width:0}
+.kr-f>span{font:600 var(--t-kecil)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.kr-f>:is(input,textarea){width:100%;min-height:var(--target);padding:10px 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:400 var(--t-masukan)/var(--lh-isi) var(--font)}
+.kr-f>:is(input,textarea):focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.kr-f .jm-pil-pilih{width:100%}
+.kr-dua{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.kr-belah{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.kr-belah h4,.kr-saya h4{margin:0 0 8px;font:600 var(--t-tombol)/var(--lh-rapat) var(--font);color:var(--ink2)}
+.kr-catatan,.kr-kosong{display:flex;align-items:flex-start;gap:8px;margin:0;color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.kr-catatan .jm-ik,.kr-kosong .jm-ik{flex:none;margin-top:2px}
+.kr-kosong{padding:16px;border-radius:var(--r);background:var(--surface)}
+.kr-penafian{margin-bottom:12px;padding:12px;border-radius:var(--r-sm);background:var(--warn-bg);color:var(--ink)}
+.kr-pesan{margin:0;padding:10px 12px;border-radius:var(--r-sm);font:600 var(--t-kecil)/var(--lh-isi) var(--font)}
+.kr-pesan-ok{background:var(--ok-bg);color:var(--ok)}
+.kr-pesan-bad{background:var(--bad-bg);color:var(--bad)}
+.kr-saya{margin-top:16px}
+.kr-saya ul,.kr-dana,.kr-galeri,.kr-soal{margin:0;padding:0;list-style:none}
+.kr-saya li{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 0;border-top:1px solid var(--line-cell)}
+.kr-saya-t{flex:1 1 200px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.kr-saya-t small,.kr-dana small,.kr-galeri small{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.kr-galeri{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.kr-galeri figure{margin:0;display:grid;gap:8px}
+.kr-galeri img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-sm);background:var(--surface)}
+.kr-galeri figcaption{display:grid;gap:2px;font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+.kr-dana{display:grid;gap:12px}
+.kr-dana li{display:grid;gap:8px;justify-items:start;padding:16px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.kr-dana p{margin:0}
+.kr-dana-n{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.kr-dana-n b{font:700 var(--t-h3)/var(--lh-rapat) var(--font);color:var(--head);font-variant-numeric:tabular-nums}
+.kr-soal{display:grid;gap:16px}
+.kr-soal fieldset{margin:0;padding:0;border:0;display:grid;gap:8px;min-width:0}
+.kr-soal legend{padding:0;font:600 var(--t-body)/var(--lh-isi) var(--font);color:var(--head)}
+.kr-op{display:flex;align-items:flex-start;gap:10px;min-height:var(--target);padding:10px 12px;border:1px solid var(--line-ctl);border-radius:var(--r-sm);background:var(--card);cursor:pointer}
+.kr-op:has(input:checked){border-color:var(--accent);background:var(--soft-hijau)}
+.kr-op:focus-within{outline:2px solid var(--fokus);outline-offset:2px}
+.kr-op-benar{border-color:var(--ok);background:var(--ok-bg)}
+.kr-op-salah{border-color:var(--bad);background:var(--bad-bg)}
+.kr-sunting{display:grid;gap:12px;padding:12px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.kr-baris-aksi{display:flex;flex-wrap:wrap;gap:8px}
+@media (max-width:767px){.kr-belah,.kr-dua{grid-template-columns:minmax(0,1fr)}}
+.kr-saya .jm-pil{gap:5px}
+/* lencana verifikasi dan laporan warga (F65-213, 214) */
+.kr-lencana,.kr-laporan{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.kr-lencana li{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.kr-lencana-ik{display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:50%;background:var(--soft-hijau);color:var(--accent)}
+.kr-laporan li{padding:14px 16px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.kr-laporan p{margin:0 0 6px;white-space:pre-line;overflow-wrap:anywhere}
+.kr-lencana small,.kr-laporan small{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font)}
+/* papan minat REC dan karbon, minat stan, cek fakta (F65-303, 302, 306) */
+.kr-cek{display:flex;align-items:center;gap:10px;min-height:var(--target);font:400 var(--t-body)/var(--lh-isi) var(--font)}
+.kr-cek input{width:20px;height:20px;flex:none;accent-color:var(--accent)}
+.kr-belah h4{margin:0 0 8px}
+#kr-unit .jm-gulir{margin-bottom:16px}
+.kr-fakta{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.kr-fakta li{display:grid;gap:8px;padding:14px 16px;border:1px solid var(--line-cell);border-radius:var(--r);background:var(--surface)}
+.kr-fakta-k{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.kr-fakta blockquote{margin:0;padding-left:12px;border-left:3px solid var(--line-ctl);font:600 var(--t-body)/var(--lh-isi) var(--font);white-space:pre-line;overflow-wrap:anywhere}
+.kr-fakta p{margin:0;white-space:pre-line;overflow-wrap:anywhere}
+.kr-fakta small{color:var(--ink2);font:400 var(--t-kecil)/var(--lh-isi) var(--font);overflow-wrap:anywhere}
