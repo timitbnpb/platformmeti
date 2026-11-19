@@ -9,7 +9,7 @@ import { hlHtml } from "/profil.js";
 import "/inti/tip_grafik.js";
 
 const SERI = ["emisi_s1", "emisi_s2", "emisi_s3", "intensitas"];
-const akhir = (rows) => rows.slice().sort((a, b) => b.tahun - a.tahun)[0];
+const akhir = (rows) => rows.toSorted((a, b) => b.tahun - a.tahun)[0];
 const aman = (u) => (/^https:\/\//.test(u || "") ? u : "");
 const num = (v) => angka(v, { desimal: v !== 0 && Math.abs(v) < 0.1 ? 4 : Number.isInteger(v) || Math.abs(v) >= 100 ? 0 : 2 });
 const fmt = (r) => `${num(r.nilai)} ${r.satuan}`;
@@ -29,7 +29,7 @@ function grafik(rows, kunci) {
 
 export function bagKeberlanjutan({ data, sumber }) {
   if (!data) return { html: "", pasang() {} };
-  const rows = data.metrik || [], lap = (data.laporan || []).slice().sort((a, b) => b.tahun - a.tahun);
+  const rows = data.metrik || [], lap = (data.laporan || []).toSorted((a, b) => b.tahun - a.tahun);
   const ubin = [];
   const s1 = akhir(rows.filter((r) => r.kunci === "emisi_s1")), it = akhir(rows.filter((r) => r.kunci === "intensitas")), tk = akhir(rows.filter((r) => r.kunci === "tenaga_kerja")), kp = akhir(rows.filter((r) => r.kunci === "kapasitas_ebt"));
   if (s1) ubin.push({ ikon: "karbon", nilai: num(s1.nilai), satuan: s1.satuan, label: `${t("kbl.k.emisi_s1")} ${s1.tahun}` });

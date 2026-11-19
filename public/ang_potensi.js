@@ -18,7 +18,7 @@ function grafikTarget() {
   const P = B.ang.potensi, terp = P.terpasang_mw[0], rup = (B.ruptl?.baris || []).filter((b) => b.teknologi === "bayu").reduce((s, b) => s + (b.kapasitas_mw || 0), 0);
   const baris = [{ k: "n", label: t("ang.p.g.terpasang", { th: terp.tahun }), gw: terp.nilai / 1000, tip: t("ang.p.g.terpasang", { th: terp.tahun }), src: terp.sumber_id, tb: terp.tingkat_bukti },
     { k: "n", label: t("ang.p.g.ruptl_nama"), gw: rup / 1000, tip: t("ang.p.g.ruptl_nama"), src: "ruptl", tb: "resmi" },
-    ...P.target.slice().sort((a, z) => a.tahun - z.tahun).map((x) => ({ k: "t", label: t("ang.p.tg." + x.k, { th: x.tahun }), gw: x.nilai_mw / 1000, tip: t("ang.p.tg." + x.k, { th: x.tahun }), src: x.sumber_id, tb: x.tingkat_bukti }))];
+    ...P.target.toSorted((a, z) => a.tahun - z.tahun).map((x) => ({ k: "t", label: t("ang.p.tg." + x.k, { th: x.tahun }), gw: x.nilai_mw / 1000, tip: t("ang.p.tg." + x.k, { th: x.tahun }), src: x.sumber_id, tb: x.tingkat_bukti }))];
   el.innerHTML = batangSvg({ el, d: 2, satuan: "GW", label: t("ang.p.g.label"), seri: [{ k: "n", kelas: "rg3-s-id" }, { k: "t", kelas: "rg3-s-banding" }],
     baris: baris.map((b) => ({ label: b.label, ikon: "angin", tip: `${b.tip}: ${num(b.gw, 2)} GW`, th: tipHtml(b.label, [[t("ang.p.g.nilai"), `${num(b.gw, 2)} GW`], [t("ang.c.sumber"), B.ang.sumber.find((s) => s.id === b.src)?.penerbit || "-"], [t("ang.c.bukti"), t("ang.p.g.bukti." + b.tb)]]), bagian: [{ k: b.k, nilai: b.gw }] })) });
 }

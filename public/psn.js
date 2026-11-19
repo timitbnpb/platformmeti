@@ -122,7 +122,7 @@ function gambarGantt() {
 /* ---------- tabel ---------- */
 const KOLOM = { prio: (b) => (b.energi === "inti" ? 0 : b.energi === "turunan" ? 1 : 2) * 100000 + (b.lengkap ? 0 : 50000) + b.no + (b.tipe === "proyek" ? 0 : 1000), no: (b) => b.no + (b.tipe === "proyek" ? 0 : 1000), nama: (b) => b.nama, sektor: (b) => b.sektor, status: (b) => STATUS.indexOf(b.status), invest: (b) => b.investasi?.usd_miliar ?? (b.investasi?.rp_triliun ? b.investasi.rp_triliun / 16 : -1), cod: (b) => b.cod ?? 9999 };
 function gambarTabel() {
-  const f = KOLOM[S.uk] || KOLOM.no, urut = [...HASIL].sort((a, c) => { const x = f(a), y = f(c); return (typeof x === "string" ? x.localeCompare(y, "id") : x - y) * S.ua || a.id.localeCompare(c.id); });
+  const f = KOLOM[S.uk] || KOLOM.no, urut = HASIL.toSorted((a, c) => { const x = f(a), y = f(c); return (typeof x === "string" ? x.localeCompare(y, "id") : x - y) * S.ua || a.id.localeCompare(c.id); });
   const awal = (S.hal - 1) * PER, hal = urut.slice(awal, awal + PER);
   const th = (k, uk, kelas = "") => `<th class="${kelas}" aria-sort="${S.uk === uk ? (S.ua > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-uk="${uk}">${esc(t(k))}</button></th>`;
   $("psnTabelIsi").innerHTML = hal.length ? `<div class="jm-gulir"><table class="jm-tabel psn-tabel" data-urut="tidak"><thead><tr>${th("psn.col.no", "no", "jm-no")}${th("psn.col.nama", "nama")}${th("psn.col.sektor", "sektor")}<th>${esc(t("psn.col.lokasi"))}</th>${th("psn.col.status", "status")}${th("psn.col.invest", "invest")}${th("psn.col.cod", "cod")}<th>${esc(t("psn.col.bukti"))}</th></tr></thead><tbody>${hal.map((b) => `<tr>

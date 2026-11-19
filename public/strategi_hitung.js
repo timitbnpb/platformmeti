@@ -85,8 +85,8 @@ function seriIrena(kt, tek) {
 
 export function kesenjangan(D, ref) {
   const T = D.target, laju = T.meta.laju_historis_mw_per_tahun_2015_2024;
-  const real = [...T.realisasi.pembangkitan_ebt_persen].sort((a, b) => a.tahun - b.tahun);
-  const rp = [...T.realisasi.energi_primer_ebt_persen_ei].sort((a, b) => a.tahun - b.tahun);
+  const real = T.realisasi.pembangkitan_ebt_persen.toSorted((a, b) => a.tahun - b.tahun);
+  const rp = T.realisasi.energi_primer_ebt_persen_ei.toSorted((a, b) => a.tahun - b.tahun);
   const reg = regresi(real.map((r) => r.tahun), real.map((r) => r.nilai)), regP = regresi(rp.map((r) => r.tahun), rp.map((r) => r.nilai));
   const akhir = real.at(-1), akhirP = rp.at(-1);
   const rukn = T.target.find((x) => x.id === "rukn-2025-pembangkitan").seri;

@@ -39,7 +39,7 @@ function tabelKab() {
 export async function mulai(el) {
   await muat(["atlas", "radar"]);
   if (!A().length) { el.innerHTML = kosongTab("sur.kosong_data"); return; }
-  const ts = [...A()].sort((a, z) => z.pvout_kwh_per_kwp_tahun - a.pvout_kwh_per_kwp_tahun), at = ts[0], bw = ts.at(-1);
+  const ts = A().toSorted((a, z) => z.pvout_kwh_per_kwp_tahun - a.pvout_kwh_per_kwp_tahun), at = ts[0], bw = ts.at(-1);
   el.innerHTML = [
     ex({ id: "sur-o-prov", ikon: "tek-surya", topik: t("sur.po.ey.prov"), judulHtml: esc(t("sur.po.j.prov", { a: at.provinsi, av: num(at.pvout_kwh_per_kwp_tahun, 0), b: bw.provinsi, bv: num(bw.pvout_kwh_per_kwp_tahun, 0) })), subHtml: esc(t("sur.po.s.prov")),
       isiHtml: `<div class="jm-saring rg3-saring rg3-saring-1">${pilihHtml({ id: "sur-o-m", ikon: "tek-surya", label: t("sur.po.f.metrik"), opsi: Object.entries(M).map(([k, v]) => [k, t(v[1]), "tek-surya"]), nilai: metrik })}</div><div id="sur-o-g" class="ih-bagan"></div><div id="sur-o-t"></div>${catatan("sur.po.n.prov")}${daftarCelah((X.atlas.meta?.celah || []).slice(0, 1))}`,

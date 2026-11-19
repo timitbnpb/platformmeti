@@ -176,7 +176,7 @@ async function bukaForm(b) {
   if (!b) { S.form = { jenis: "notulensi", tanggal: new Date().toISOString().slice(0, 10) }; isiPanel(); return; }
   try {
     const d = await api(`/api/naskah/${encodeURIComponent(b.ref)}`);
-    S.form = { ...d, catatanRevisi: [...(d.catatan || [])].reverse().find((c) => c.jenis === "revisi")?.isi || "" };
+    S.form = { ...d, catatanRevisi: (d.catatan || []).toReversed().find((c) => c.jenis === "revisi")?.isi || "" };
     isiPanel();
   } catch (e) { kabar("galat", t("ot.galat.umum")); }
 }

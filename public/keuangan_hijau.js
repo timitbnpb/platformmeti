@@ -142,7 +142,7 @@ function rangka() {
   const th = TAHUN(), z = th.at(-1), k = jumlahKel(z - 9, z), pers = (k.ebt / (k.ebt + k.fosil)) * 100, est = " " + pil("an.est");
   const ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: !!o.csv }), tingkat: "h2" });
   const pem = d.pemberi, besar = pem[0];
-  const nt = d.tetangga.find((r) => r.iso3 === "IDN"), urutE = [...d.tetangga].sort((a, b) => b.ebt_persen - a.ebt_persen), rk = urutE.findIndex((r) => r.iso3 === "IDN") + 1;
+  const nt = d.tetangga.find((r) => r.iso3 === "IDN"), urutE = d.tetangga.toSorted((a, b) => b.ebt_persen - a.ebt_persen), rk = urutE.findIndex((r) => r.iso3 === "IDN") + 1;
   const g = d.instrumen_hijau.filter((r) => r.pemerintah && r.satuan === "USD juta" && /Global Sovereign/.test(r.instrumen) && !/Agregat/.test(r.instrumen));
   const jp = d.jetp.proyek, ebtMw = jp.reduce((a, r) => a + (r.kapasitas_mw || 0), 0);
   const cap = (id, kunci) => `<p class="jm-bantu" id="${id}">${esc(t(kunci))}</p>`;
@@ -215,7 +215,7 @@ function bagan() {
   /* 1. investasi publik */
   const kat = th.map((y) => {
     const rs = d.investasi_publik.filter((r) => r.tahun === y), nilai = { ebt: 0, fosil: 0, lain: 0 }; for (const r of rs) nilai[r.kelompok] += r.usd_juta_2023;
-    const top = [...rs].sort((a, b) => b.usd_juta_2023 - a.usd_juta_2023).slice(0, 3).filter((r) => r.usd_juta_2023 > 0), tot = nilai.ebt + nilai.fosil + nilai.lain, ef = nilai.ebt + nilai.fosil;
+    const top = rs.toSorted((a, b) => b.usd_juta_2023 - a.usd_juta_2023).slice(0, 3).filter((r) => r.usd_juta_2023 > 0), tot = nilai.ebt + nilai.fosil + nilai.lain, ef = nilai.ebt + nilai.fosil;
     return { label: String(y), th: y, nilai, tip: { judul: String(y), baris: [...KEL.filter((x) => x !== "lain" || nilai.lain).map((x) => [t("kg.kel." + x), num(nilai[x], 0), swK[x]]), [t("kg.tt.total"), num(tot, 0)], [t("kg.tt.pangsa"), ef ? `${num((nilai.ebt / ef) * 100, 0)}%` : "-"], ...top.map((r, i) => [i ? "" : t("kg.tt.top"), `${t("kg.tek." + slug(r.teknologi))} ${num(r.usd_juta_2023, 0)}`])], cat: t("kg.sat_usd") } };
   });
   kolom($("g-investasi"), { kategori: kat, seri: KEL.map((k) => ({ k, kelas: KLS[k] })), label: t("kg.s.investasi"), band: [z - 9, z] });
@@ -231,7 +231,7 @@ function bagan() {
   batang($("g-pendana"), d.pemberi.map((r) => { const o = orgDari(r.pemberi); return { kelas: "kg-lm-" + o.lm, w: (r.usd / maksP) * 100, nilai: n1(r.usd / 1e9, 1), labelHtml: `${logo(o.logo)}<span class="kg-nm">${esc(o.s)}</span>${bendera(o.iso)}`,
     tip: { judul: r.pemberi, img: logo(o.logo), baris: [[t("kg.tt.total"), `US$ ${n1(r.usd / 1e9, 2)} ${t("kg.u.miliar")}`], ...(kurs ? [[t("kg.tt.rp"), t("kg.tt.rp_v", { v: num((r.usd * kurs) / 1e12, 0) })]] : []), [t("kg.tt.proyek"), String(r.jumlah_proyek)], [t("kg.tt.jenis"), t("kg.lm." + o.lm)], [t("kg.c.bukti"), t("kg.bukti." + r.tingkat_bukti)]], cat: kurs ? t("kg.tt.kurs", { k: num(kurs, 0) }) : "" } }; }));
   /* 5. tetangga */
-  const u = [...d.tetangga].sort((a, b) => b.ebt_persen - a.ebt_persen), asean = d.tetangga.filter((r) => r.iso3 !== "IND"), rata = asean.reduce((a, r) => a + r.ebt_persen, 0) / asean.length, atas = Math.ceil(Math.max(...u.map((r) => r.ebt_persen)) / 10) * 10;
+  const u = d.tetangga.toSorted((a, b) => b.ebt_persen - a.ebt_persen), asean = d.tetangga.filter((r) => r.iso3 !== "IND"), rata = asean.reduce((a, r) => a + r.ebt_persen, 0) / asean.length, atas = Math.ceil(Math.max(...u.map((r) => r.ebt_persen)) / 10) * 10;
   batang($("g-tetangga"), u.map((r, i) => ({ kelas: r.iso3 === "IDN" ? "kg-tid" : "kg-tlain", w: (r.ebt_persen / atas) * 100, nilai: `${n1(r.ebt_persen, 1)}%`, labelHtml: `${bendera(ISO2[r.iso3], 24)}<span class="kg-nm">${esc(t("ih.neg." + r.iso3))}</span>`,
     tip: { judul: t("ih.neg." + r.iso3), img: bendera(ISO2[r.iso3], 24), baris: [[t("kg.c.ebt"), `${n1(r.ebt_persen, 1)}%`], [`${t("kg.c.fosil")} ${t("an.est")}`, `${n1(r.fosil_persen, 1)}%`], [t("kg.c.karbon"), r.intensitas_gco2_kwh == null ? "-" : num(r.intensitas_gco2_kwh, 0)], [t("kg.tt.tahun"), String(r.tahun)], [t("kg.tt.peringkat"), t("kg.tt.peringkat_v", { n: i + 1, m: u.length })], [t("kg.tt.rata"), t("kg.tt.poin", { v: `${r.ebt_persen - rata > 0 ? "+" : ""}${n1(r.ebt_persen - rata, 1)}` })]] } })), { ref: { w: (rata / atas) * 100, label: `${t("kg.rata_asean")} ${n1(rata, 1)}%` } });
 }
@@ -311,7 +311,7 @@ function icKlik(e) {
 function rangka2() {
   const B = dIf.baris, ber = B.filter((r) => r.status_berlaku === "berlaku").length, TB = dTk.baris, hj = TB.filter((r) => adaKls(r.klasifikasi_hijau_eo1)).length, kr = dTk.meta.kerangka;
   const ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: false }), tingkat: "h2" });
-  const urut = [...B].sort((a, b) => (b.status_berlaku === "berlaku") - (a.status_berlaku === "berlaku"));
+  const urut = B.toSorted((a, b) => (b.status_berlaku === "berlaku") - (a.status_berlaku === "berlaku"));
   const leg = (kunci, arr, kls) => `<div class="kg2-lg"><small>${esc(t(kunci))}</small><span class="kg2-lgp">${arr.map((x) => `<span class="jm-pil-tek kg-pil ${kls}">${esc(x)}</span>`).join("")}</span></div>`;
   const hasil = (kr.hasil_penilaian || []).map((x) => `<span class="jm-pil-tek kg-pil ${/^Hijau/.test(x) ? "kg2-h" : /^Transisi/.test(x) ? "kg2-t" : "kg2-0"}">${esc(x)}</span>`).join("");
   $("kgIsi").insertAdjacentHTML("beforeend",

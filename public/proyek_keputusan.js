@@ -35,7 +35,7 @@ const bandingkan = (k, a) => (x, y) => {
 
 /* tabel urut + bertahap; kolom = [kunciUrut|null, kunciKamus, sel(r), kelas] */
 function tabel(el, kolom, rows, S, kosong) {
-  rows = rows.slice().sort(bandingkan(S.k, S.arah));
+  rows = rows.toSorted(bandingkan(S.k, S.arah));
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t(kosong))}</p></div>`; return; }
   const kepala = kolom.map(([k, kt]) => `<th scope="col"${k ? ` aria-sort="${S.k === k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"` : ""}>${k ? `<button type="button" class="jm-urut" data-u="${k}">${esc(t(kt))}</button>` : esc(t(kt))}</th>`).join("");
   const maks = Math.max(1, Math.ceil(rows.length / BATAS)); S.hal = Math.min(Math.max(1, S.hal || 1), maks);

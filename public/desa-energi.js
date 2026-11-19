@@ -259,7 +259,7 @@ function panelK() {
     $("dePanelJ").firstElementChild.textContent = t("de2.panel.rinci"); return;
   }
   DS.pilih = -1;
-  const top = kasusTerpilih().slice().sort((a, z) => ({ mati: 0, rusak: 1, hidup: 2 }[a.status] - { mati: 0, rusak: 1, hidup: 2 }[z.status]) || a.nama.localeCompare(z.nama)).slice(0, 8);
+  const top = kasusTerpilih().toSorted((a, z) => ({ mati: 0, rusak: 1, hidup: 2 }[a.status] - { mati: 0, rusak: 1, hidup: 2 }[z.status]) || a.nama.localeCompare(z.nama)).slice(0, 8);
   el.innerHTML = top.length ? `<ol class="pt2-rank">${top.map((x, n) => `<li><button type="button" class="pt2-rank-b" data-i="${K.baris.indexOf(x)}"><span class="jm-rank${n < 3 ? " jm-rank-top" : ""}">${n + 1}</span><span class="pt2-rank-t"><b>${esc(x.nama)}</b><span class="pt2-rank-s">${pilJn(x.jenis)}</span></span><span class="pt2-rank-v">${pilSt(x.status)}</span></button></li>`).join("")}</ol>` : `<div class="jm-kosong">${ikon("info", 24)}<p>${esc(t("jm.kosong.cocok"))}</p></div>`;
   $("dePanelJ").firstElementChild.textContent = t("de2.panel");
 }
@@ -333,7 +333,7 @@ async function gambar() {
   await mulaiHalaman();
   $("isi").innerHTML = hantuHtml(6);
   try { [d] = await Promise.all([muatData("desa_akses.json"), muatTeks("desa")]); } catch (e) { tampilGalat($("isi"), () => location.reload()); return; }
-  $("isi").innerHTML = "";
+  $("isi").replaceChildren();
   await gambar();
   saatBahasa(() => gambar());
   if (location.hash) $(location.hash.slice(1))?.scrollIntoView();

@@ -4,7 +4,7 @@ import { B, t, ex, num, esc, tx, buktiS, kakiSumber, tabel, batangSvg, tipHtml, 
 function grafik() {
   const g = document.getElementById("gsj-pp-g"); if (!g) return;
   g.innerHTML = batangSvg({ el: g, d: 0, satuan: "km", label: t("gsj.pp.g.label"), seri: [{ k: "n", kelas: "gsj-s-gas" }],
-    baris: [...B.gs.pipa.ruas].sort((a, b) => b.km - a.km).map((r) => ({ label: r.nama, tip: r.nama, th: tipHtml(r.nama, [["km", num(r.km, 0)], [t("gsj.c.status"), t("gsj.st." + r.status)], [t("gsj.c.biaya"), r.biaya_rp_t != null ? `Rp ${num(r.biaya_rp_t, 1)} ${t("gsj.u.triliun")}` : "-"]]), bagian: [{ k: "n", nilai: r.km }] })) });
+    baris: B.gs.pipa.ruas.toSorted((a, b) => b.km - a.km).map((r) => ({ label: r.nama, tip: r.nama, th: tipHtml(r.nama, [["km", num(r.km, 0)], [t("gsj.c.status"), t("gsj.st." + r.status)], [t("gsj.c.biaya"), r.biaya_rp_t != null ? `Rp ${num(r.biaya_rp_t, 1)} ${t("gsj.u.triliun")}` : "-"]]), bagian: [{ k: "n", nilai: r.km }] })) });
 }
 function tab() {
   const el = document.getElementById("gsj-pp-tab"); if (!el) return;

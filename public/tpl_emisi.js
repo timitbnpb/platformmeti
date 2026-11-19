@@ -7,7 +7,7 @@ function kartu() {
 }
 function emisiProv() {
   const g = document.getElementById("tpl-e-prov"); if (!g) return;
-  const top = [...DP()].sort((a, b) => b.emisi_ct_t - a.emisi_ct_t).slice(0, 10);
+  const top = DP().toSorted((a, b) => b.emisi_ct_t - a.emisi_ct_t).slice(0, 10);
   g.innerHTML = batangSvg({ el: g, d: 1, satuan: t("tpl.u.juta_t") + " CO2", label: t("tpl.em.j.prov"), seri: [{ k: "e", kelas: "tpl-s-emisi" }],
     baris: top.map((p) => ({ label: p.nama, logo: `/img/provinsi/${p.kode}.png`, tip: p.nama, th: tipHtml(p.nama, [[t("tpl.em.emisi"), `${num(p.emisi_ct_t / 1e6, 1)} Mt`], ["MW", num(p.mw_operasi, 0)], [t("tpl.em.mati"), `${num(p.kematian_est, 0)} (EST)`]], { img: `/img/provinsi/${p.kode}.png` }), bagian: [{ k: "e", nilai: p.emisi_ct_t / 1e6 }] })) });
 }

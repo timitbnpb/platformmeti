@@ -311,7 +311,7 @@ function gambarPanel() {
   if (r && cocok(r)) { el.innerHTML = detailPembangkit(r); $("aePanelJ").firstElementChild.textContent = t("ae2.panel.rinci"); return; }
   if (d) { el.innerHTML = detailDas(d); $("aePanelJ").firstElementChild.textContent = t("ae2.panel.das"); return; }
   S.pilih = -1; S.pilihDas = "";
-  const top = terpilih().slice().sort((a, b) => b.skor - a.skor || (b.mw || 0) - (a.mw || 0)).slice(0, 8);
+  const top = terpilih().toSorted((a, b) => b.skor - a.skor || (b.mw || 0) - (a.mw || 0)).slice(0, 8);
   el.innerHTML = top.length ? `<ol class="pt2-rank">${top.map((x, n) => `<li><button type="button" class="pt2-rank-b" data-i="${x.i}"><span class="jm-rank${n < 3 ? " jm-rank-top" : ""}">${n + 1}</span><span class="pt2-rank-t"><b>${esc(x.nama)}</b><span class="pt2-rank-s">${pilJenis(x.jenis)}</span></span><span class="pt2-rank-v">${pilKelas(x)}</span></button></li>`).join("")}</ol>` : `<div class="jm-kosong">${ikon("info", 24)}<p>${esc(t("jm.kosong.cocok"))}</p></div>`;
   $("aePanelJ").firstElementChild.textContent = t("ae2.panel");
 }
@@ -362,14 +362,14 @@ function gambarAir() {
   const A = D.air, h2 = A.h2, pltu = A.baris.find((b) => b.id === "pltu"), plts = A.baris.find((b) => b.id === "plts");
   const rasio = pltu && plts ? Math.round(pltu.koef_m3_mwh / plts.koef_m3_mwh) : 0;
   judulEx("ae-air", hlHtml("ae2.ex.air.j", N(rasio)), esc(t("ae2.ex.air.s", { h2: N(h2.praktis_l_kg), st: N(h2.stoikiometri_l_kg) })));
-  const baris = A.baris.slice().sort((a, b) => b.koef_m3_mwh - a.koef_m3_mwh).map((b) => ({ id: b.id, label: t("ae2.air." + b.id), labelHtml: `<span class="ae2-air-l ae2-a-${b.id}">${svg(IKK[b.id === "pltu" ? "tampungan" : b.id === "pltp" ? "spi" : "hth"])}<span>${esc(t("ae2.air." + b.id))}</span></span>`,
+  const baris = A.baris.toSorted((a, b) => b.koef_m3_mwh - a.koef_m3_mwh).map((b) => ({ id: b.id, label: t("ae2.air." + b.id), labelHtml: `<span class="ae2-air-l ae2-a-${b.id}">${svg(IKK[b.id === "pltu" ? "tampungan" : b.id === "pltp" ? "spi" : "hth"])}<span>${esc(t("ae2.air." + b.id))}</span></span>`,
     bagian: [{ nilai: b.koef_m3_mwh, kelas: "ae2-b-" + b.id }], teks: `${N(b.koef_m3_mwh, 1)} (${N(b.rentang[0], 2)} - ${N(b.rentang[1], 1)})` }));
   const kartu = A.baris.map((b) => `<div class="ae2-s"><span class="ae2-air-l ae2-a-${b.id}">${svg(IKK[b.id === "pltu" ? "tampungan" : b.id === "pltp" ? "spi" : "hth"])}</span><p class="ae2-s-l">${esc(t("ae2.air." + b.id))} <span class="jm-pil ${b.label === "hipotesis" ? "jm-pil-est" : ""}">${esc(t(b.label === "hipotesis" ? "an.hipotesis" : "ae2.rujukan"))}</span></p><p class="ae2-s-n"><b>${N(b.juta_m3_op, b.juta_m3_op < 10 ? 2 : 0)}</b><span>${esc(t("ae2.sat.jtm3"))}</span></p><p class="jm-bantu">${esc(t("ae2.air.k", { mw: N(b.mw_op), fk: N(b.fk * 100) }))}</p></div>`).join("")
     + `<div class="ae2-s"><span class="ae2-air-l ae2-a-h2">${svg('<circle cx="7" cy="12" r="3.6"/><circle cx="17" cy="12" r="3.6"/><path d="M10.6 12h2.8"/>')}</span><p class="ae2-s-l">${esc(t("ae2.air.h2"))} <span class="jm-pil">${esc(t("ae2.rujukan"))}</span></p><p class="ae2-s-n"><b>${N(h2.per_100kt_juta_m3, 1)}</b><span>${esc(t("ae2.sat.jtm3"))}</span></p><p class="jm-bantu">${esc(t("ae2.air.h2.k", { ton: N(h2.ton_per_tahun || 0), jt: N(h2.juta_m3 || 0, 4) }))}</p></div>`;
   $("aeAir").innerHTML = `<div class="ae2-air"><div><p class="pt2-leg-j">${esc(t("ae2.air.int"))}</p>${batangHtml(baris, { label: t("ae2.ex.air") })}</div><div class="ae2-air-k">${kartu}</div></div>`;
   pasangBar($("aeAir"));
   const lis = $("aeAir").querySelectorAll(".jm-batang>li.jm-bar-b");
-  A.baris.slice().sort((a, b) => b.koef_m3_mwh - a.koef_m3_mwh).forEach((b, i) => {
+  A.baris.toSorted((a, b) => b.koef_m3_mwh - a.koef_m3_mwh).forEach((b, i) => {
     const li = lis[i]; if (!li) return;
     li.removeAttribute("title");
     li.dataset.tip = `${t("ae2.air." + b.id)}: ${t("ae2.air.tip", { k: N(b.koef_m3_mwh, 2), a: N(b.rentang[0], 2), b: N(b.rentang[1], 2), v: N(b.juta_m3_op, 1), rumus: b.rumus })}`;

@@ -40,7 +40,7 @@ function ubin() {
 
 function rangka() {
   const est = " " + pil("an.est"), ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: !!o.csv }), tingkat: "h2" });
-  const tinggi = [...d.nasional].sort((a, b) => b.fk_aktual - a.fk_aktual)[0], rendah = [...d.nasional].sort((a, b) => a.fk_aktual - b.fk_aktual)[0];
+  const tinggi = d.nasional.toSorted((a, b) => b.fk_aktual - a.fk_aktual)[0], rendah = d.nasional.toSorted((a, b) => a.fk_aktual - b.fk_aktual)[0];
   const tabBasis = `<div class="jm-tab" role="tablist" aria-label="${esc(t("kn2.pilih_basis"))}">${["ruptl", "esdm"].map((k) => `<button type="button" role="tab" data-basis="${k}" aria-selected="${k === basis}">${esc(t("kn2.basis." + k))}</button>`).join("")}</div>`;
   const pilih = pilihHtml({ id: "pil-tek", ikon: "tek-surya", label: t("kn2.pilih_tek"), nilai: tek, opsi: TEK.map((k) => [k, ns(k), "tek:" + IKT[k]]) });
   $("isi").innerHTML = [
@@ -80,7 +80,7 @@ function tbWil() {
 }
 
 function gTek() {
-  const urut = [...d.nasional].sort((a, b) => fkNas(b) - fkNas(a));
+  const urut = d.nasional.toSorted((a, b) => fkNas(b) - fkNas(a));
   $("g-tek").innerHTML = batangSvg({ el: $("g-tek"), d: 1, label: t("kn2.s.tek"), satuan: "%", seri: TEK.map((k) => ({ k, kelas: KLS[k] })),
     baris: urut.map((n) => ({ label: ns(n.id), ikon: IKC[n.id], kelasIkon: KLS[n.id], tip: `${ns(n.id)}: ${pct(fkNas(n))}`,
       th: tipHtml(nm(n.id), [[t(basis === "ruptl" ? "kn2.basis.ruptl" : "kn2.basis.esdm"), pct(fkNas(n))], [t("kn2.c.bawah"), pct(n.fk_batas_bawah)], [t("kn2.c.rencana"), n.fk_rencana == null ? "-" : pct(n.fk_rencana)], [t("kn2.c.selisih"), selisihPp(n) == null ? "-" : `${selisihPp(n) > 0 ? "+" : ""}${n1(selisihPp(n), 1)} ${t("kn2.pp")}`, selisihPp(n) > 0 ? "ih-turun" : "ih-naik"], [t("kn2.c.prod"), `${num(n.produksi_gwh, 0)} GWh`], [t("kn2.c.kap"), `${num(basis === "ruptl" ? n.kapasitas_ruptl_mw : n.kapasitas_esdm_mw, 0)} MW`]]),

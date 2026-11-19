@@ -61,13 +61,13 @@ async function gambarPeta() {
   const leg = [0, 1, 2, 3, 4].map((i) => ({ kelas: "inf-k" + i, teks: i === 0 ? `${num(lo, 0)}%` : i === 4 ? `${num(hi, 0)}%` : "" })).concat([{ kelas: "inf-kx", teks: t("kd2.leg.kosong") }]);
   $("peta-isi").innerHTML = await petaKoroplet({ data: peta, nama: namaProv, label: t("kd2.peta.label"), legenda: leg });
   const f = M[metrik].f;
-  const urut = [...S].sort((a, z) => f(z) - f(a));
+  const urut = S.toSorted((a, z) => f(z) - f(a));
   $("bar-isi").innerHTML = batangHtml(urut.map((s) => ({ id: s.id, label: s.nama, labelHtml: namaS(s), bagian: [{ nilai: f(s), kelas: butuh(s) ? "jm-an-c2" : "jm-an-id" }], teks: `${num(f(s), 1)}%${butuh(s) ? ` (${t("kd2.status.butuh")})` : ""}` })), { label: t("kd2.bar.label"), satuan: "%" });
   pasangBar($("bar-isi"));
 }
 
 const nilaiKol = { nama: (s) => s.nama, bp: (s) => s.beban_puncak_neto_mw[0], rm0: (s) => M.rm0.f(s), rmmin: (s) => M.rmmin.f(s), ebt: (s) => M.ebt.f(s), sim: (s) => s.penyimpanan_ruptl_mw };
-const susun = () => [...S].sort((a, z) => { const x = nilaiKol[st.k](a), y = nilaiKol[st.k](z); return (typeof x === "number" ? x - y : String(x).localeCompare(String(y), "id")) * st.arah; });
+const susun = () => S.toSorted((a, z) => { const x = nilaiKol[st.k](a), y = nilaiKol[st.k](z); return (typeof x === "number" ? x - y : String(x).localeCompare(String(y), "id")) * st.arah; });
 function tabelHtml() {
   const a = susun(), m = (st.hal - 1) * PER;
   const kol = [["nama", "kd2.kol.sistem"], ["bp", "kd2.kol.bp"], ["rm0", "kd2.kol.rm0"], ["rmmin", "kd2.kol.rmmin"], ["ebt", "kd2.kol.ebt"], ["sim", "kd2.kol.sim"]];

@@ -11,7 +11,7 @@ const BM = () => B.biomassa?.baris || [];
 
 function grafik() {
   const el = document.getElementById("bn-b-prov"); if (!el) return;
-  const m = M[metrik], baris = [...BM()].sort((a, b) => m.f(b) - m.f(a)).slice(0, 12);
+  const m = M[metrik], baris = BM().toSorted((a, b) => m.f(b) - m.f(a)).slice(0, 12);
   el.innerHTML = batangSvg({ el, d: m.d >= 1e6 ? 2 : 0, satuan: t(m.u), label: t(m.k), seri: [{ k: "n", kelas: "bn-s-" + metrik }],
     baris: baris.map((b) => ({ label: b.provinsi, logo: `/img/provinsi/${b.kode_prov}.png`, tip: b.provinsi, th: tipHtml(b.provinsi, [[t("bn.bh.m.cpo"), `${num(b.cpo_ton / 1e6, 2)} ${t("bn.u.juta_t")}`], [t("bn.bh.m.luas"), `${num(b.luas_sawit_ha / 1e6, 2)} ${t("bn.u.juta_ha")}`], [t("bn.bh.m.cangkang"), `${num(b.cangkang_ton_est / 1e3, 0)} ${t("bn.u.ribu_t")}`], [t("bn.bh.m.pome"), `${num(b.pome_m3_est / 1e6, 2)} ${t("bn.u.juta_m3")}`]], { img: `/img/provinsi/${b.kode_prov}.png` }), bagian: [{ k: "n", nilai: m.f(b) / m.d }] })) });
 }

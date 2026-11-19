@@ -37,7 +37,7 @@ const infoSumber = () => {
   const tg = data.dibangun_pada, B = data.baris;
   return sumberLipat([B.find((p) => p.terpasang_mw)?.terpasang_mw, { sumber: t("wl.src.gabung"), tanggal: PELMETA || tg }, { sumber: t("wl.sumber_proyek"), tanggal: tg }, { sumber: t("wl.sumber_rued"), url: B.find((p) => p.rued.url)?.rued.url, tanggal: B.find((p) => p.rued.tanggal)?.rued.tanggal || tg }, CAP.size && { sumber: t("wl.sumber_capaian"), tanggal: CAPTGL || tg }], `<span><a href="/metode#peta-wilayah">${esc(t("wl.cara_link"))}</a></span>`);
 };
-const urutM = (m) => [...data.baris].sort((a, b) => (METRIK[m].ambil(b) ?? -1) - (METRIK[m].ambil(a) ?? -1) || a.nama.localeCompare(b.nama));
+const urutM = (m) => data.baris.toSorted((a, b) => (METRIK[m].ambil(b) ?? -1) - (METRIK[m].ambil(a) ?? -1) || a.nama.localeCompare(b.nama));
 const berdata = (m) => data.baris.filter((p) => METRIK[m].ambil(p) !== null);
 const peringkat = (m, p) => urutM(m).findIndex((x) => x.kode === p.kode) + 1;
 const hlHtml = (kunci, v, sorot) => esc(t(kunci, { ...v, hl: "\u0001" + sorot + "\u0002" })).replace("\u0001", '<span class="jm-hl">').replace("\u0002", "</span>");

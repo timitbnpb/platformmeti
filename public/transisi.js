@@ -45,7 +45,7 @@ function isiTabel(id) {
   let b = s.baris;
   if (s.urut) {
     const k = s.kols.find((c) => c.k === s.urut.k);
-    b = [...b].sort((x, z) => { const a = k.v(x), c = k.v(z); return ((a == null) - (c == null)) || (a == null ? 0 : (typeof a === "number" ? a - c : String(a).localeCompare(String(c), bahasa()))) * s.urut.arah; });
+    b = b.toSorted((x, z) => { const a = k.v(x), c = k.v(z); return ((a == null) - (c == null)) || (a == null ? 0 : (typeof a === "number" ? a - c : String(a).localeCompare(String(c), bahasa()))) * s.urut.arah; });
   }
   const dari = (s.hal - 1) * s.per;
   const kep = s.kols.map((c) => `<th${c.num ? ' class="jm-num"' : ""} aria-sort="${s.urut?.k === c.k ? (s.urut.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-urut="${esc(c.k)}">${esc(t(c.l))}${c.est ? " " + pil("an.est") : ""}</button></th>`).join("");
@@ -99,7 +99,7 @@ function garisTip(labels, seri, { d = 0, satuan = "", label = "" } = {}) {
   const langkah = Math.max(1, Math.ceil(n / (M ? 5 : 8)));
   g += labels.map((l, i) => ((i % langkah === 0 && n - 1 - i >= langkah) || i === n - 1 ? `<text class="jm-gf-t2" x="${X(i).toFixed(1)}" y="${B + 16}" text-anchor="${i === n - 1 ? "end" : "middle"}" font-size="${fs}">${esc(l)}</text>` : "")).join("");
   const ujung = [];
-  for (const s of [...seri].sort((a, b) => !!a.sorot - !!b.sorot)) {
+  for (const s of seri.toSorted((a, b) => !!a.sorot - !!b.sorot)) {
     const p = s.v.map((v, i) => (v == null ? null : [X(i), Y(v), v, i])).filter(Boolean);
     if (!p.length) continue;
     const z = p.at(-1);
@@ -190,7 +190,7 @@ function tTambah() {
     { k: "t", l: "tr.c.total", v: (x) => x.total, f: (x) => mw(x.total), num: true },
     { k: "b", l: "tr.c.per_bulan", v: (x) => x.bulanan, f: (x) => mw(x.bulanan), num: true, est: true },
     ...["hidro", "panas_bumi", "surya", "bayu", "bioenergi"].map((k) => ({ k, l: "tr.tek." + k, v: (x) => x.per[k + "_mw"], f: (x) => mw(x.per[k + "_mw"]), num: true })),
-  ], [...a].reverse(), 5);
+  ], a.toReversed(), 5);
   return ex("tambah", "grafik", "tambah", {
     judul: hlHtml("tr.tambah.judul", num(rata), { bln: num(rata / 12), a: D.target.kapasitas_ebt[0].tahun, z: D.target.kapasitas_ebt.at(-1).tahun }) + EST(),
     isi: kolom(items, { rata, teksRata: t("tr.tambah.rata"), label: t("tr.tambah.grafik") }) + `<p class="jm-bantu">${esc(t("tr.tambah.catatan"))}</p>` + tab,
@@ -250,7 +250,7 @@ function tDekomp() {
     { k: "s", l: "tr.c.selisih_poin", v: (x) => x.selisih, f: (x) => num(x.selisih, 2), num: true, est: true },
     { k: "e", l: "tr.dk.efek_ebt", v: (x) => x.efek_ebt, f: (x) => num(x.efek_ebt, 2), num: true, est: true },
     { k: "p", l: "tr.dk.efek_perm", v: (x) => x.efek_permintaan, f: (x) => num(x.efek_permintaan, 2), num: true, est: true },
-  ], [...d].reverse(), 5);
+  ], d.toReversed(), 5);
   return ex("dekomp", "insight", "dekomp", {
     judul: hlHtml(net >= 0 ? "tr.dk.judul_naik" : "tr.dk.judul_turun", num(Math.abs(net), 1), { a: d[0].tahun - 1, z: d.at(-1).tahun, e: num(eb, 1), p: num(Math.abs(pm), 1) }) + EST(),
     isi: legenda([["ebt", "tr.dk.efek_ebt"], ["perm", "tr.dk.efek_perm"], ["net", "tr.dk.bersih"]]) + divergen(d, { label: t("tr.dk.grafik") }) + `<p class="jm-bantu">${esc(t("tr.dk.catatan"))}</p>` + tab,
@@ -412,7 +412,7 @@ function tBursa() {
     { k: "h", l: "tr.c.harga", v: (x) => x.harga_rata_idr_per_tco2e, f: (x) => rp(x.harga_rata_idr_per_tco2e), num: true, est: true },
     { k: "f", l: "tr.c.frekuensi", v: (x) => x.frekuensi, f: (x) => mw(x.frekuensi), num: true },
     { k: "t", l: "tr.c.peserta", v: (x) => x.peserta, f: (x) => mw(x.peserta), num: true },
-  ], [...b].reverse(), 7);
+  ], b.toReversed(), 7);
   return ex("bursa", "kartu", "bursa", {
     judul: hlHtml("tr.bursa.judul", num(z.volume_ytd_tco2e), { bln: BLN(z.periode), nilai: num(z.nilai_ytd_idr / 1e9, 2), harga: rp(z.harga_rata_idr_per_tco2e) }),
     isi: seg("bursa", [["volume", "tr.b.volume", "grafik"], ["nilai", "tr.b.nilai", "kartu"], ["harga", "tr.b.harga", "tahun"]], ST.bursa) + `<p class="jm-bantu" id="trBursaUnit">${esc(t("tr.b.unit_" + ST.bursa))}</p><div id="trBursa">${kolom(itemsBursa(b), { d: m.d, label: t("tr.bursa.grafik") })}</div><p class="jm-bantu">${esc(t("tr.bursa.catatan"))}</p>` + tab,

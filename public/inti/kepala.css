@@ -83,7 +83,6 @@ dialog.jm-cari::backdrop{background:color-mix(in srgb,var(--ink) 45%,transparent
 .jm-cari-chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:8px;padding:2px 16px 12px;border-bottom:1px solid var(--line)}
 .jm-cari:not(.jm-cari-ada) .jm-cari-chips{display:none}
 .jm-cari-chip[hidden]{display:none}
-.jm-cari-chips::-webkit-scrollbar{display:none}
 .jm-cari-chip{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;padding:0 12px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--surface);color:var(--ink2);font:600 var(--t-tombol)/1 var(--font);cursor:pointer;transition:background .12s,border-color .12s,color .12s}
 .jm-cari-chip:hover{border-color:var(--accent);color:var(--ink)}
 .jm-cari .jm-cari-chip .jm-ik{color:inherit}

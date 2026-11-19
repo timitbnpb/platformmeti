@@ -138,7 +138,7 @@ function grafikMinggu(daftar) {
 
 export function bagBerita({ daftar, foto, sumber }) {
   if (!daftar.length) return { html: "", pasang() {} };
-  const urut = [...daftar].sort((a, b) => String(b.terbit).localeCompare(String(a.terbit))), gm = grafikMinggu(urut), terlihat = new Set();
+  const urut = daftar.toSorted((a, b) => String(b.terbit).localeCompare(String(a.terbit))), gm = grafikMinggu(urut), terlihat = new Set();
   const kartu = (b) => {
     const f = fotoBerita(foto, b.id), pakai = f && !terlihat.has(foto[b.id]) ? (terlihat.add(foto[b.id]), f) : "", lg = logoLokal(b.media);
     const th = pakai ? `<span class="oj-bt-f"><img src="${esc(pakai)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-foto></span>` : `<span class="oj-bt-f oj-bt-ik">${ikon("berita", 22)}</span>`;

@@ -61,7 +61,7 @@ export function pasangPesan() {
       if (S.view !== "utas" || S.utas !== id) return;
       const dibaca = d.utas.dibaca_admin === 1;
       const urut = d.pesan;
-      const terakhirAkun = [...urut].reverse().find((m) => m.dari === "akun");
+      const terakhirAkun = urut.toReversed().find((m) => m.dari === "akun");
       const daftar = urut.map((m) => gelembungHtml(m, {
         nama: m.dari === "admin" ? t("ps.admin") : t("ps.saya"), waktu: waktu(m.waktu),
         status: m === terakhirAkun ? t(dibaca ? "ps.dibaca" : "ps.terkirim") : "",

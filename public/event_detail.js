@@ -116,10 +116,10 @@ async function muatTiket() {
   const el = document.getElementById("evTiket");
   if (!el) return;
   const mine = sayaDaftar();
-  if (!mine || mine.status !== "terdaftar") { el.innerHTML = ""; return; }
+  if (!mine || mine.status !== "terdaftar") { el.replaceChildren(); return; }
   let d;
-  try { d = await api(`/api/event/${encodeURIComponent(slug)}/tiket`); } catch { el.innerHTML = ""; return; } // fitur belum aktif atau layanan: panel RSVP tetap utuh
-  if (!d.terdaftar || !el.isConnected) { el.innerHTML = ""; return; }
+  try { d = await api(`/api/event/${encodeURIComponent(slug)}/tiket`); } catch { el.replaceChildren(); return; } // fitur belum aktif atau layanan: panel RSVP tetap utuh
+  if (!d.terdaftar || !el.isConnected) { el.replaceChildren(); return; }
   el.innerHTML = tiketHtml(d);
   qrSvg(d.kode).then((svg) => { const q = document.getElementById("evTkQr"); if (q) q.innerHTML = svg; }, () => {});
 }

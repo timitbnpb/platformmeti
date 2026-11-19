@@ -124,7 +124,7 @@ function pasangSegmen() {
   await mulaiHalaman();
   $("isi").innerHTML = hantuHtml(6);
   try { [d] = await Promise.all([muatData("izin_kontrak.json"), muatTeks("izin")]); } catch (e) { tampilGalat($("isi"), () => location.reload()); return; }
-  $("isi").innerHTML = "";
+  $("isi").replaceChildren();
   await gambar();
   pasangSegmen();
   saatBahasa(() => gambar());

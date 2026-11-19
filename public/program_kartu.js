@@ -19,7 +19,7 @@ const WARNA = { surya: "surya", "biomassa-sampah": "sampah", bioenergi: "bio", j
 const kecil = (svg) => svg.replace('class="jm-ikt"', 'class="jm-ikt jm-ikt-s"');
 export const fotoProgram = (g) => { const f = FOTO[g.kode] || g.gambar; return f ? `/img/beranda/${f}.webp` : ""; };
 export const pilTahap = (k) => `<span class="jm-pil-st jm-st-${ST_IK[k]}">${kecil(ikonStatus(ST_IK[k]))}<span>${esc(t("pg.tahap." + k))}</span></span>`;
-export const teratas = (g) => [...g.isu].sort((a, z) => BOBOT[a.tingkat] - BOBOT[z.tingkat])[0] || null;
+export const teratas = (g) => g.isu.toSorted((a, z) => BOBOT[a.tingkat] - BOBOT[z.tingkat])[0] || null;
 export const berat = (g) => g.isu.filter((x) => x.tingkat === "tinggi").length;
 /* "100", "1.076", "3,21" ditulis format Indonesia di data; tampil mengikuti bahasa. Nilai bukan angka apa adanya. */
 export function angkaTampil(s) {

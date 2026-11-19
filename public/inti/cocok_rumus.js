@@ -8,7 +8,7 @@ export const PERAN_COCOK = ["pembiaya", "epc", "pemasok", "pengembang"];
 export const KOMPONEN_COCOK = ["teknologi", "wilayah", "ukuran", "tahap"];
 const TEK = ["surya", "bayu", "hidro", "panas-bumi", "bioenergi", "biomassa-sampah", "penyimpanan", "hidrogen", "nuklir"];
 const ada = (v) => typeof v === "number" && Number.isFinite(v);
-const median = (l) => { const s = [...l].sort((a, b) => a - b), n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
+const median = (l) => { const s = l.toSorted((a, b) => a - b), n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
 
 /** Peran sebuah organisasi, hanya dari kolom yang ada: peran_rantai, kategori.kode, dan sertifikat TKDN (pabrikan = pemasok). */
 export function peranOrg(o, pabrikan = new Set()) {

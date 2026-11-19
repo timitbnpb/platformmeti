@@ -21,7 +21,7 @@ export function gambarTabel(id, fokus) {
   const T = REG.get(id), el = document.getElementById(id);
   if (!T || !el) return;
   const c = T.kolom.find((x) => x.k === T.k) || T.kolom[0];
-  const rows = T.baris.slice().sort(banding(c, T.arah));
+  const rows = T.baris.toSorted(banding(c, T.arah));
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t("pl.kosong.tabel"))}</p></div>`; return; }
   T.hal = Math.min(T.hal, Math.max(1, Math.ceil(rows.length / T.per)));
   if (T.kartu) {

@@ -76,7 +76,7 @@ export function garis(labels, seri, { area = false, d = 0, label = "", teksAkhir
   const langkah = Math.max(1, Math.ceil(n / (M ? 5 : 8)));
   g += labels.map((l, i) => (i % langkah === 0 || i === n - 1 ? `<text class="jm-gf-t2" x="${X(i).toFixed(1)}" y="${B + 16}" text-anchor="${i === n - 1 && n > 1 ? "end" : "middle"}" font-size="${fs}">${esc(l)}</text>` : "")).join("");
   const adaS = seri.some((s) => s.sorot), ujung = [];
-  [...seri].sort((a, b) => (adaS ? !!a.sorot - !!b.sorot : 0)).forEach((s, si, arr) => {
+  seri.toSorted((a, b) => (adaS ? !!a.sorot - !!b.sorot : 0)).forEach((s, si, arr) => {
     const on = adaS ? !!s.sorot : si === arr.length - 1, p = s.v.map((v, i) => (v == null ? null : [X(i), Y(v), v, i])).filter(Boolean);
     if (!p.length) return;
     const pts = p.map((q) => q[0].toFixed(1) + "," + q[1].toFixed(1)).join(" "), z = p[p.length - 1];

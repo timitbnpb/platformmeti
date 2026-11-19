@@ -36,7 +36,7 @@ function unitTabel() {
 }
 function potensi() {
   const g = document.getElementById("bn-l-pot"); if (!g) return;
-  const baris = [...(B.biomassa?.baris || [])].sort((a, b) => b.mw_termal_setara_est - a.mw_termal_setara_est).slice(0, 10);
+  const baris = (B.biomassa?.baris || []).toSorted((a, b) => b.mw_termal_setara_est - a.mw_termal_setara_est).slice(0, 10);
   g.innerHTML = batangSvg({ el: g, d: 0, satuan: "MW termal", label: t("bn.li.j.pot"), seri: [{ k: "n", kelas: "bn-s-biomassa" }], baris: baris.map((b) => ({ label: b.provinsi, logo: `/img/provinsi/${b.kode_prov}.png`, tip: b.provinsi, th: tipHtml(b.provinsi, [["MW termal (EST)", num(b.mw_termal_setara_est, 0)], ["RUPTL", `${num(b.ruptl_bioenergi_mw ?? 0, 0)} MW`], ["RUEN", `${num(b.ruen_bioenergi_mw ?? 0, 0)} MW`]], { img: `/img/provinsi/${b.kode_prov}.png` }), bagian: [{ k: "n", nilai: b.mw_termal_setara_est }] })) });
 }
 export function mulai(el) {

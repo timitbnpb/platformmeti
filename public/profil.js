@@ -98,7 +98,7 @@ export function petaTitik(el, rows, { zoomSatu = 9, klik = true } = {}) {
 
 /** Berita sebagai kartu bergambar (berita_foto.json: id -> url foto), terbaru dulu, maks 12. Tanpa foto = latar bermerek berikon. */
 export function tabelBerita(daftar, foto = {}) {
-  const urut = [...daftar].sort((a, b) => String(b.terbit).localeCompare(String(a.terbit))).slice(0, 12);
+  const urut = daftar.toSorted((a, b) => String(b.terbit).localeCompare(String(a.terbit))).slice(0, 12);
   if (!urut.length) return "";
   return `<ul class="pf-ber">${urut.map((x) => {
     const f = fotoBerita(foto, x.id);
@@ -108,7 +108,7 @@ export function tabelBerita(daftar, foto = {}) {
 }
 /** Tabel regulasi terkait, tertaut ke /regulasi?id=, maks 50. */
 export function tabelRegulasi(daftar) {
-  const urut = [...daftar].sort((a, b) => (b.tahun || 0) - (a.tahun || 0)).slice(0, 50);
+  const urut = daftar.toSorted((a, b) => (b.tahun || 0) - (a.tahun || 0)).slice(0, 50);
   if (!urut.length) return "";
   return tabel([["pf.c.aturan"], ["pf.c.status"], ["pf.c.tanggal", "jm-tengah"], ["pf.c.unduh", "jm-tengah"]], urut.map((x) => `<tr>${td("pf.c.aturan", `<span class="jm-id"><b><a class="pf-nm" href="/regulasi?id=${encodeURIComponent(x.id)}">${esc(namaRegulasi(x))}</a></b><small>${esc(x.judul || "")}</small></span>`)}${td("pf.c.status", `<span class="jm-pil ${kelasStatus(x.status)}">${esc(label("reg.status.", x.status))}</span>`)}${td("pf.c.tanggal", tglSel(x.tanggal_ditetapkan), "jm-tengah")}${td("pf.c.unduh", unduhRegHtml(x) || "-", "jm-tengah")}</tr>`).join(""), "pf-tabel-reg");
 }

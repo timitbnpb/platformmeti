@@ -112,7 +112,7 @@ async function muatAkun() {
     el.innerHTML = `<p class="ad-akun-t">${ikon("orang", 16)}<span>${esc(t("ad.akun.tercatat", { a: N(d.lulus), b: N(d.wajib) }))}</span></p>`
       + (d.sertifikat ? `<a class="jm-tbl jm-tbl-utama" href="${esc(d.sertifikat)}">${ikon("medali", 16)}<span>${esc(t("ad.akun.sertifikat"))}</span></a>` : `<p class="ad-bantu">${ikon("info", 14)}<span>${esc(t("ad.akun.belum"))}</span></p>`)
       + `<p class="ad-bantu">${ikon("kunci", 14)}<span>${esc(t("ad.akun.pindah"))}</span></p>`;
-  } catch (e) { el.innerHTML = ""; }
+  } catch (e) { el.replaceChildren(); }
 }
 
 /* ---------- kuis ---------- */

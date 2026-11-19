@@ -118,7 +118,7 @@ let resizeT = 0, lebar = innerWidth < 640;
   await mulaiHalaman();
   $("isi").innerHTML = hantuHtml(6);
   try { [d] = await Promise.all([muatData("sejarah.json"), muatTeks("sejarah")]); } catch (e) { tampilGalat($("isi"), () => location.reload()); return; }
-  $("isi").innerHTML = "";
+  $("isi").replaceChildren();
   gambar(); pasang();
   saatBahasa(() => gambar());
   addEventListener("resize", () => { clearTimeout(resizeT); resizeT = setTimeout(() => { if ((innerWidth < 640) !== lebar) { lebar = innerWidth < 640; bagKapasitas(); } }, 200); });

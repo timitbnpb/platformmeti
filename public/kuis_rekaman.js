@@ -22,7 +22,7 @@ export async function pasangKuisRekaman(el, id) {
     <p id="kqEdP" class="kr-pesan" role="status" hidden></p><div class="kr-baris-aksi"><button type="button" class="jm-tbl" data-tambah${sunting.length >= 10 ? " disabled" : ""}>${ikon("tambah", 16)}<span>${esc(t("kq.ed.tambah"))}</span></button>
     <button type="submit" class="jm-tbl jm-tbl-utama">${ikon("centang", 16)}<span>${esc(t("kq.ed.simpan"))}</span></button><button type="button" class="jm-tbl" data-batal>${esc(t("kq.ed.batal"))}</button></div></form>`;
   function gambar() {
-    if (!soal.length && !admin) { el.innerHTML = ""; return; } // rekaman tanpa bank soal: tidak ada kuis
+    if (!soal.length && !admin) { el.replaceChildren(); return; } // rekaman tanpa bank soal: tidak ada kuis
     const isi = sunting ? suntingHtml() : (soal.length ? kuisHtml() : `<p class="kr-kosong">${ikon("info", 20)}<span>${esc(t("kq.kosong_admin"))}</span></p>`)
       + (admin ? `<div class="kr-form"><button type="button" class="jm-tbl" data-kelola>${ikon("ubah", 16)}<span>${esc(t("kq.ed.buka"))}</span></button></div>` : "");
     el.innerHTML = exHtml({ id: "vid-kuis", ikon: "survei", topik: t("kq.ey"), judulHtml: esc(t("kq.j", { n: angka(soal.length) })), subHtml: esc(t("kq.sub", { n: lulus })), isiHtml: isi });
@@ -32,7 +32,7 @@ export async function pasangKuisRekaman(el, id) {
     return { q: li.querySelector("[data-q]").value.trim(), o, a: benar ? +benar.value : -1 };
   });
   async function muat() {
-    try { const d = await api(`/api/kuis/${rid}`); soal = d.soal; lulus = d.lulus_persen; } catch (e) { soal = []; if (e.kode !== "fitur_belum_aktif" && !admin) { el.innerHTML = ""; return; } }
+    try { const d = await api(`/api/kuis/${rid}`); soal = d.soal; lulus = d.lulus_persen; } catch (e) { soal = []; if (e.kode !== "fitur_belum_aktif" && !admin) { el.replaceChildren(); return; } }
     gambar();
   }
   const tulis = (p, jenis, teks) => { p.hidden = false; p.className = "kr-pesan " + (jenis === "ok" ? "kr-pesan-ok" : "kr-pesan-bad"); p.textContent = teks; };

@@ -83,7 +83,7 @@ export async function bangunSensus(akar) {
   function render() {
     hasil = S.baris.filter(cocok);
     const { k, arah } = st.urut, f = kunciUrut[k];
-    hasil = [...hasil].sort((a, b) => { const x = f(a), y = f(b); return (typeof x === "string" ? x.localeCompare(y) : x - y) * arah || a.rank - b.rank; });
+    hasil = hasil.toSorted((a, b) => { const x = f(a), y = f(b); return (typeof x === "string" ? x.localeCompare(y) : x - y) * arah || a.rank - b.rank; });
     const hal = Math.min(st.hal, Math.max(1, Math.ceil(hasil.length / PER))), a = (hal - 1) * PER;
     st.hal = hal;
     $("soHitung").textContent = t("so.tampil", { n: angka(hasil.length) });
@@ -123,7 +123,7 @@ export async function bangunSensus(akar) {
     const mwTek = new Map(); for (const p of r.ps) if (TEK_PROYEK.includes(p.teknologi)) mwTek.set(p.teknologi, (mwTek.get(p.teknologi) || 0) + mwP(p));
     const bauran = [...mwTek].sort((a, b) => b[1] - a[1]);
     const mwMaks = Math.max(1, ...bauran.map((b) => b[1]));
-    const top = [...r.ps].sort((a, b) => mwP(b) - mwP(a)).slice(0, 5);
+    const top = r.ps.toSorted((a, b) => mwP(b) - mwP(a)).slice(0, 5);
     const situs = urlOk(o.situs);
     const jawab = r.nProy ? t(r.mw ? "so.lc.jawab" : "so.lc.jawab_p", { nama: r.nm, p: angka(r.nProy), mw: angka(Math.round(r.mw)), k: angka(r.rank), n: angka(N) }) : t("so.lc.jawab_0", { nama: r.nm, k: angka(r.rank), n: angka(N) });
     const ubn = [r.nProy && ubL("proyek", r.nProy, t("so.u.proyek"), "so-u2"), r.mw && ubL("analisis", Math.round(r.mw), t("so.u.mw"), "so-u3"), r.nProv && ubL("wilayah", r.nProv, t("so.lc.prov"), "so-u4"), anak.length && ubL("rantai", anak.length, t("so.f.anak_n"), "so-u1"), n90 && ubL("berita", n90, t("so.lc.berita90"), "so-u5")].filter(Boolean).join("");

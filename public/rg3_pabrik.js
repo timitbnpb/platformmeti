@@ -50,7 +50,7 @@ async function peta() {
 /* ---------- ASEAN dan daftar ---------- */
 function asean() {
   const a = D.pabrik?.ringkasan_asean, el = document.getElementById("rg3-b-as"); if (!el || !a?.negara?.length) return;
-  const B = [...a.negara].sort((x, y) => (y.modul || 0) - (x.modul || 0));
+  const B = a.negara.toSorted((x, y) => (y.modul || 0) - (x.modul || 0));
   document.getElementById("rg3-b-as-l").innerHTML = legendaHtml([{ kelas: "rg3-s-modul", label: t("rg3.pb.modul") }, { kelas: "rg3-s-sel", label: t("rg3.pb.sel") }]);
   el.innerHTML = batangSvg({ el, d: 1, label: t("rg3.pb.ey.asean"), satuan: a.satuan || "GW", seri: [{ k: "modul", kelas: "rg3-s-modul" }, { k: "sel", kelas: "rg3-s-sel" }],
     baris: B.map((n) => ({ label: namaNegara(n.iso2), bendera: n.iso2.toLowerCase(), sorot: n.iso2 === "ID", tip: `${namaNegara(n.iso2)}`, th: tipHtml(namaNegara(n.iso2), [[t("rg3.pb.modul"), n.modul == null ? "-" : `${num(n.modul, 1)} ${a.satuan}`], [t("rg3.pb.sel"), n.sel == null ? "-" : `${num(n.sel, 1)} ${a.satuan}`], [t("rg3.pb.per"), a.per]], { img: `/img/bendera/${n.iso2.toLowerCase()}.svg` }), bagian: [{ k: "modul", nilai: n.modul || 0 }, { k: "sel", nilai: n.sel || 0 }] })) });

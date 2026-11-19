@@ -34,7 +34,7 @@ const pilKat = (k) => `<span class="${KAT[k]}">${esc(t("ix.cat." + k))}</span>`;
 
 /* ---------- popup ---------- */
 const IKX = { potensi: "tek-surya", terpasang: "centang", elektrifikasi: "tek-listrik", bpp: "kalkulator", ruptl: "daftar", proyek: "proyek", organisasi: "gedung", rued: "regulasi", plts_atap: "tek-surya", wkp: "tek-panas" };
-const median = (a) => { const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
+const median = (a) => { const s = a.toSorted((x, y) => x - y), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
 const medKomp = (id) => median(S.d.provinsi.map((p) => p.komponen[id]?.skor).filter((v) => typeof v === "number"));
 const medSkor = () => median(S.d.provinsi.filter((p) => p.peringkat).map((p) => p.skor));
 const selisih = (d) => (d >= 0 ? "+" : "-") + num(Math.abs(d), 1);

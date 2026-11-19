@@ -64,8 +64,8 @@ function tren() {
   // label ujung: urut menurut y, geser ke bawah minimal 14px dari label sebelumnya, garis penuntun tipis ke ujung garis
   const LX = W - R + 16, ly = new Map();
   let prev = -1e9;
-  for (const n of [...seri].sort((a, b) => y(a[M[m].tren].at(-1).nilai) - y(b[M[m].tren].at(-1).nilai))) { const v = Math.max(y(n[M[m].tren].at(-1).nilai), prev + 14); ly.set(n.iso3, v); prev = v; }
-  const garis = [...seri].sort((a, b) => (a.iso3 === "IDN") - (b.iso3 === "IDN") || (a.iso3 === pilih) - (b.iso3 === pilih)).map((n) => {
+  for (const n of seri.toSorted((a, b) => y(a[M[m].tren].at(-1).nilai) - y(b[M[m].tren].at(-1).nilai))) { const v = Math.max(y(n[M[m].tren].at(-1).nilai), prev + 14); ly.set(n.iso3, v); prev = v; }
+  const garis = seri.toSorted((a, b) => (a.iso3 === "IDN") - (b.iso3 === "IDN") || (a.iso3 === pilih) - (b.iso3 === pilih)).map((n) => {
     const s = n[M[m].tren], id = n.iso3 === "IDN", a = s[s.length - 1], pts = s.map((p) => x(p.tahun).toFixed(1) + "," + y(p.nilai).toFixed(1)).join(" ");
     const titik = s.map((p) => `<circle class="jm-an-titik-tren" cx="${x(p.tahun).toFixed(1)}" cy="${y(p.nilai).toFixed(1)}" r="7"><title>${esc(namaN(n))}, ${p.tahun}: ${esc(num(p.nilai, M[m].d))} ${esc(M[m].satuan)}</title></circle>`).join("");
     return `<g class="jm-an-gars${id ? " jm-an-sorot" : ""}${n.iso3 === pilih ? " jm-an-pilih" : ""}" data-iso="${n.iso3}"><polyline points="${pts}"/><polyline class="jm-an-tangkap" points="${pts}"><title>${esc(namaN(n))}: ${esc(num(s[0].nilai, M[m].d))} ${esc(M[m].satuan)} (${s[0].tahun}), ${esc(num(a.nilai, M[m].d))} ${esc(M[m].satuan)} (${a.tahun})</title></polyline><polyline class="jm-an-penuntun" points="${x(a.tahun).toFixed(1)},${y(a.nilai).toFixed(1)} ${(LX - 4).toFixed(1)},${ly.get(n.iso3).toFixed(1)}"/><text class="jm-an-lbl" x="${LX}" y="${(ly.get(n.iso3) + 4).toFixed(1)}">${esc(n.iso3)}</text>${titik}</g>`;

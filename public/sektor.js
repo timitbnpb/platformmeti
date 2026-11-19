@@ -70,7 +70,7 @@ function hitung() {
 const diAplsi = (o) => aplsiSet.has(NORM(o.nama));
 const pers = (p) => (p ? angka(p, { desimal: p < 10 ? 1 : 0 }) + "%" : "-");
 const tgl = () => tanggal(ORG.dibangun_pada || PROY.dibangun_pada);
-const urutBy = (a, k, arah) => [...a].sort((x, y) => (typeof x[k] === "string" ? x[k].localeCompare(y[k]) : (x[k] || 0) - (y[k] || 0)) * arah || String(x.nm || x.id).localeCompare(String(y.nm || y.id)));
+const urutBy = (a, k, arah) => a.toSorted((x, y) => (typeof x[k] === "string" ? x[k].localeCompare(y[k]) : (x[k] || 0) - (y[k] || 0)) * arah || String(x.nm || x.id).localeCompare(String(y.nm || y.id)));
 const th = (k, kunci, num) => `<th scope="col" class="${num ? "jm-sk-n" : ""}" aria-sort="${urutan.k === k ? (urutan.arah > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-sk-th" data-urut="${k}" aria-label="${esc(t("sk.urut", { k: t(kunci) }))}">${esc(t(kunci))}</button></th>`;
 const kolom = (kunci, v, num) => `<td data-label="${esc(t(kunci))}"${num ? ' class="jm-sk-n"' : ""}>${v}</td>`;
 const angkaSel = (n) => (n ? esc(angka(n)) : '<span class="jm-sk-dim">-</span>');
@@ -78,7 +78,7 @@ const angkaSel = (n) => (n ? esc(angka(n)) : '<span class="jm-sk-dim">-</span>')
 function halamanSemua() {
   const ids = (sumbu === "tek" ? TEK : Object.keys(PERAN)).filter((i) => SEK.has(i));
   const ada = [...SEK.values()], uniq = new Set(ORG.baris.map((o) => o.id));
-  const besar = [...ada].sort((a, b) => b.org - a.org).slice(0, 3).map((s) => `${nama(s.id)} (${angka(s.org)})`).join(", ");
+  const besar = ada.toSorted((a, b) => b.org - a.org).slice(0, 3).map((s) => `${nama(s.id)} (${angka(s.org)})`).join(", ");
   $("judul").textContent = t("sk.judul");
   $("jawab").textContent = t("sk.lead", { tgl: tgl(), n: angka(uniq.size), m: angka(ada.length), besar });
   $("aksi").innerHTML = `<a href="/direktori?tampil=lembaga">${ikon("direktori", 18)}${esc(t("sk.ke_direktori"))}</a><a href="/wilayah">${ikon("peta", 18)}${esc(t("sk.ke_peta"))}</a><a href="/proyek">${ikon("proyek", 18)}${esc(t("sk.ke_proyek"))}</a>`;
@@ -91,7 +91,7 @@ function halamanSemua() {
     { href: "#ex-sektor", ikon: "topik", nilai: angka(ada.length), label: t("sk.u.sektor") },
   ]);
   const rows = urutBy(ids.map((i) => ({ ...SEK.get(i), nm: nama(i) })), urutan.k === "nm" ? "nm" : urutan.k, urutan.arah);
-  const atas = [...rows].sort((a, b) => b.mw - a.mw)[0], orgs = rows.map((r) => r.org).sort((a, b) => a - b);
+  const atas = rows.toSorted((a, b) => b.mw - a.mw)[0], orgs = rows.map((r) => r.org).sort((a, b) => a - b);
   const walau = atas && atas.org <= orgs[Math.floor(orgs.length / 2)];
   const judul = atas ? hlHtml(walau ? "sk.ex.j.walau" : "sk.ex.j", pers(atas.pct), { nama: atas.nm, n: angka(atas.org) }) : esc(t("sk.semua"));
   const sumber = `<span class="jm-sk-sumber">${esc(t("sk.sumber", { tgl: tgl() }))}</span>`;
@@ -108,7 +108,7 @@ function halamanSemua() {
 
 function halamanSatu(id) {
   const s = SEK.get(id);
-  if (!s) { $("judul").textContent = t("sk.tak_dikenal"); $("jawab").textContent = ""; $("ubin").innerHTML = ""; $("aksi").innerHTML = ""; $("skIsi").innerHTML = `<p><a href="/sektor">${esc(t("sk.semua_link"))}</a></p>`; return; }
+  if (!s) { $("judul").textContent = t("sk.tak_dikenal"); $("jawab").textContent = ""; $("ubin").replaceChildren(); $("aksi").replaceChildren(); $("skIsi").innerHTML = `<p><a href="/sektor">${esc(t("sk.semua_link"))}</a></p>`; return; }
   $("judul").textContent = t("sk.h1", { nama: nama(id) });
   $("jawab").textContent = t("sk.lead2", { tgl: tgl(), n: angka(s.org), nama: nama(id), p: angka(s.berproyek), mw: angka(Math.round(s.mw)) });
   $("aksi").innerHTML = `<a href="/sektor">${ikon("direktori", 18)}${esc(t("sk.semua_link"))}</a>`;
@@ -132,7 +132,7 @@ function halamanSatu(id) {
 
 function halamanProgram(kode) {
   const A = ASOS?.baris?.[kode];
-  if (!A) { $("judul").textContent = t("sk.p.tak_ada"); $("jawab").textContent = ""; $("ubin").innerHTML = ""; $("aksi").innerHTML = ""; $("skIsi").innerHTML = `<p><a href="/sektor">${esc(t("sk.semua_link"))}</a></p>`; return; }
+  if (!A) { $("judul").textContent = t("sk.p.tak_ada"); $("jawab").textContent = ""; $("ubin").replaceChildren(); $("aksi").replaceChildren(); $("skIsi").innerHTML = `<p><a href="/sektor">${esc(t("sk.semua_link"))}</a></p>`; return; }
   const peta = new Map(ORG.baris.map((o) => [NORM(o.nama), o])), ada = [], belum = [];
   for (const n of A.anggota) (peta.has(NORM(n)) ? ada : belum).push(n);
   const nm = t("sk.program.aplsi");

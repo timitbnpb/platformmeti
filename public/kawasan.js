@@ -35,7 +35,7 @@ function indeks() {
   ]);
   const seg = ["semua", "kek", "ki", "diriset"].map((k) => `<button type="button" data-f="${k}" aria-pressed="${k === filter}">${esc(t("kw2.f." + k))}</button>`).join("");
   $("isi").innerHTML = `<div id="s-peta"></div><div id="s-cap"></div><div id="s-tabel"></div><div id="s-celah"></div>`;
-  const cc = [...cap].sort((a, z) => z.captive.mw_operasi + z.captive.mw_konstruksi - (a.captive.mw_operasi + a.captive.mw_konstruksi));
+  const cc = cap.toSorted((a, z) => z.captive.mw_operasi + z.captive.mw_konstruksi - (a.captive.mw_operasi + a.captive.mw_konstruksi));
   $("s-peta").innerHTML = seksi({ id: "peta", ik: "peta", topik: t("kw2.peta.topik"), judul: t("kw2.peta.judul", { n: num(B.length), p: num(new Set(B.map((r) => r.kode).filter(Boolean)).size) }), sub: t("kw2.peta.sub"), turunan: false, isi: `${narasi(t("kw2.peta.narasi"))}<div id="peta-isi"></div>` });
   $("s-cap").innerHTML = seksi({ id: "captive", ik: "petir", topik: t("kw2.cap.topik"), judul: t("kw2.cap.judul", { n: num(cap.length), mw: num(mwCap) }), sub: t("kw2.cap.sub"), turunan: false,
     isi: `${narasi(t("kw2.cap.narasi"))}${legendaHtml([{ kelas: "kw-cap-o", teks: t("kw2.cap.ops") }, { kelas: "kw-cap-k", teks: t("kw2.cap.kons") }, { kelas: "kw-cap-r", teks: t("kw2.cap.rencana") }])}<div id="bar-cap">${batangHtml(cc.map((r) => ({ id: r.id, label: r.nama, labelHtml: `${lamb(r.kode)}${namaLink(r)}`, bagian: [{ nilai: r.captive.mw_operasi, kelas: "kw-cap-o" }, { nilai: r.captive.mw_konstruksi, kelas: "kw-cap-k" }, { nilai: r.captive.mw_rencana, kelas: "kw-cap-r" }], teks: `${num(r.captive.mw_operasi)} / ${num(r.captive.mw_konstruksi)} / ${num(r.captive.mw_rencana)} MW` })), { label: t("kw2.cap.label"), satuan: "MW" })}</div>` });

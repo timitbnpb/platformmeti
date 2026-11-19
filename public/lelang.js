@@ -29,7 +29,7 @@ const muatTab = (k) => async () => {
   siap.add(k);
   const p = $("pn-" + k);
   p.innerHTML = hantuHtml(3);
-  try { p.innerHTML = ""; await (await import(MOD[k])).mulai(p); } catch (e) { console.error(e); siap.delete(k); throw e; }
+  try { p.replaceChildren(); await (await import(MOD[k])).mulai(p); } catch (e) { console.error(e); siap.delete(k); throw e; }
 };
 
 async function mulai() {

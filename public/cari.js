@@ -42,7 +42,7 @@ function render() {
   if (!ada || !total) {
     hasil.innerHTML = ada ? `<p class="jm-cari-info">${ikon("cari2", 28)}<span>${esc(t(sedangMuat ? "cari.memuat" : "cari.kosong", { q: S.q.trim() }))}</span></p>`
       : `<div class="jm-cari-contoh">${["cari.c1", "cari.c2", "cari.c3", "cari.c4", "cari.c5"].map((k) => `<button type="button" data-q="${esc(t(k))}">${esc(t(k))}</button>`).join("")}</div>`;
-    pag.innerHTML = ""; return;
+    pag.replaceChildren(); return;
   }
   const frag = document.createDocumentFragment();
   if (S.j === "semua") {
@@ -55,7 +55,7 @@ function render() {
       for (const it of a.slice(0, RINGKAS)) grup.append(barisCari(it, S.q, { ik, logo, id: "cr-" + n++ }));
       frag.append(grup);
     }
-    pag.innerHTML = "";
+    pag.replaceChildren();
   } else {
     const a = per.get(S.j) || [], hal = Math.min(S.hal, Math.max(1, Math.ceil(a.length / PER))), ik = JENIS.find(([g]) => g === S.j)[2];
     S.hal = hal;

@@ -38,7 +38,7 @@ function ubin() {
 /* ---------- tab listrik ---------- */
 async function bagListrik() {
   const el = $("pnListrik"), P = d.provinsi;
-  const sort = [...P].sort((a, z) => a.re_persen - z.re_persen), rendah = sort[0];
+  const sort = P.toSorted((a, z) => a.re_persen - z.re_persen), rendah = sort[0];
   const peta = new Map(P.map((p) => [p.kode, { nilai: p.re_persen, teks: persen(p.re_persen, 2) }]));
   const mp = await petaHtml(peta, { nama, lebar: lebar(el) });
   const bar = batangHtml(sort.slice(0, 10).map((p, i) => ({ id: p.kode, label: p.nama, labelHtml: namaL(p), bagian: [{ nilai: +(100 - p.re_persen).toFixed(2), kelas: WARNA[i % 4] }], teks: persen(100 - p.re_persen, 2) })), { label: t("akn.l.bar") });
@@ -64,9 +64,9 @@ async function bagListrik() {
 /* ---------- tab desa ---------- */
 async function bagDesa() {
   const el = $("pnDesa"), lk = d.lokasi_belum_berlistrik, rd = d.rd_pln, pp = d.papua_rumah_tangga, nas = d.nasional;
-  const wilayah = [...lk.wilayah].sort((a, z) => z.nilai - a.nilai);
+  const wilayah = lk.wilayah.toSorted((a, z) => z.nilai - a.nilai);
   const barW = batangHtml(wilayah.map((w, i) => ({ id: w.id, label: L(w.ket), bagian: [{ nilai: w.nilai, kelas: WARNA[i % 5] }], teks: num(w.nilai) })), { label: t("akn.d.lok.b") });
-  const rdUrut = [...rd.provinsi].sort((a, z) => a.nilai - z.nilai);
+  const rdUrut = rd.provinsi.toSorted((a, z) => a.nilai - z.nilai);
   const kls = (v) => (v < 30 ? "bad" : v < 60 ? "warn" : v < 80 ? "info" : "ok");
   const barR = batangHtml(rdUrut.map((r) => ({ id: r.kode, label: nama(r.kode), labelHtml: namaL({ kode: r.kode, nama: nama(r.kode) }), bagian: [{ nilai: r.nilai, kelas: "akn-c-" + kls(r.nilai) }], teks: persen(r.nilai, 1) })), { ref: rd.nasional, sumbu: 100, satuan: "%", label: t("akn.d.rd.b") });
   const legR = ket(["bad", "warn", "info", "ok"].map((n) => pilNada(n, t("akn.d.nada." + n))));
@@ -109,7 +109,7 @@ async function bagKendaraan() {
   const mp = await petaHtml(peta, { nama, lebar: lebar(el) });
   const barP = batangHtml(ada.filter((p) => p.spklu_2025 > 0).map((p, i) => ({ id: p.kode, label: p.nama, labelHtml: namaL(p), bagian: [{ nilai: p.spklu_2025, kelas: WARNA[i % 4] }], teks: num(p.spklu_2025) })), { label: t("akn.v.prov.b") });
   const nol = ada.filter((p) => p.spklu_2025 === 0);
-  const pulau = [...sp.pulau.baris].sort((a, z) => z.unit - a.unit);
+  const pulau = sp.pulau.baris.toSorted((a, z) => z.unit - a.unit);
   const barI = batangHtml(pulau.map((r, i) => ({ id: r.id, label: L(r.ket), bagian: [{ nilai: r.unit, kelas: WARNA[i % 5] }], teks: `${num(r.unit)} / ${num(r.lokasi)}` })), { label: t("akn.v.pulau.b") });
   const jawa = pulau.find((r) => r.id === "jawa").unit, tot = pulau.reduce((s, r) => s + r.unit, 0);
   const kb = d.kendaraan_listrik;
@@ -136,7 +136,7 @@ async function bagKendaraan() {
 /* ---------- tab efisiensi ---------- */
 async function bagEfisiensi() {
   const el = $("pnEfisiensi"), e = d.efisiensi, ed = e.edge, tn = e.tenaga;
-  const bg = [...ed.bangunan].sort((a, z) => z.n - a.n);
+  const bg = ed.bangunan.toSorted((a, z) => z.n - a.n);
   const barE = batangHtml(bg.map((r, i) => ({ id: r.kode, label: nama(r.kode), labelHtml: namaL({ kode: r.kode, nama: nama(r.kode) }), bagian: [{ nilai: r.n, kelas: WARNA[i % 4] }], teks: num(r.n) })), { label: t("akn.e.edge.b") });
   const barT = batangHtml([
     { id: "m", label: t("akn.e.tn.manajer"), bagian: [{ nilai: tn.manajer_perempuan, kelas: "jm-an-c2" }, { nilai: tn.manajer - tn.manajer_perempuan, kelas: "jm-an-c1" }], teks: num(tn.manajer) },
@@ -212,5 +212,5 @@ async function isiSemua() {
   [hukum, efis] = await Promise.all([muatData("hukum/katalog.json").catch(() => null), muatData("topik/efisiensi.json").catch(() => null)]);
   document.title = t("akn.judul_halaman");
   await isiSemua();
-  saatBahasa(() => { selesai.clear(); document.title = t("akn.judul_halaman"); ubin(); bagBawah(); for (const id of Object.keys(BAGIAN)) if (!$(id).hidden) muat(id)(); else $(id).innerHTML = ""; });
+  saatBahasa(() => { selesai.clear(); document.title = t("akn.judul_halaman"); ubin(); bagBawah(); for (const id of Object.keys(BAGIAN)) if (!$(id).hidden) muat(id)(); else $(id).replaceChildren(); });
 })();

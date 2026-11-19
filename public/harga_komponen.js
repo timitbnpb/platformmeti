@@ -20,7 +20,7 @@ const persen = (a, b) => ((b - a) / a) * 100;
 const nilai = (v) => n1(v, v < 1 ? 3 : v < 10 ? 2 : 0);
 const juta = (usd) => n1(usd / 1e6, usd < 1e5 ? 3 : usd < 1e7 ? 2 : usd < 1e8 ? 1 : 0);
 const seriH = (id) => H.deret.find((s) => s.id === id);
-const urut = (s) => [...s.titik].sort((a, b) => a.x - b.x);
+const urut = (s) => s.titik.toSorted((a, b) => a.x - b.x);
 const srcDari = (data, ids) => sumberLipat(ids.map((i) => { const s = data.sumber.find((x) => x.id === i); return { sumber: s.penerbit, halaman: s.judul, url: s.url, tahun: s.tahun, tanggal: data.dibangun_pada }; }));
 const tingkat = (k) => pil("hk2.tb." + k, k === "resmi" ? "ok" : "warn");
 const PEKAN = new Map();

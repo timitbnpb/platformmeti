@@ -18,7 +18,7 @@ export function tabelUrut(akar, { kolom, baris, per = 10, satuan = "jm.pag.u.dat
   const susun = () => {
     if (!st.k) return baris;
     const c = kolom.find((x) => x.k === st.k);
-    return [...baris].sort((a, z) => { const x = c.v(a), y = c.v(z); return ((x == null) - (y == null)) || (x == null ? 0 : (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * st.arah); });
+    return baris.toSorted((a, z) => { const x = c.v(a), y = c.v(z); return ((x == null) - (y == null)) || (x == null ? 0 : (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * st.arah); });
   };
   const gambar = () => {
     const a = susun(), m = (st.hal - 1) * per;

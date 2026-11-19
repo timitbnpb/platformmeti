@@ -94,7 +94,7 @@ function gambarHasil() {
   if (!lihat) { $("kyIndeksIsi").innerHTML = tertutup(a); }
   else {
     const rows = BUTIR.map((k) => ({ label: t("ky.b." + k), v: Math.max(0.5, lihat.butir[k]), teks: N(lihat.butir[k], 1), sorot: false }));
-    const urut = [...rows].sort((x, y) => y.v - x.v); urut[0].sorot = true;
+    const urut = rows.toSorted((x, y) => y.v - x.v); urut[0].sorot = true;
     $("kyIndeksIsi").innerHTML = `${a.tersembunyi ? `<p class="ky-bantu">${ikon("info", 14)}<span>${esc(t("ky.tutup_ini", { n: a.n, m: D.n_min }))}</span></p>` : ""}
       <div class="ky-ringkas"><span class="jm-pil ky-indeks ${lihat.indeks >= 55 ? "jm-pil-ok" : lihat.indeks >= 45 ? "jm-pil-info" : "jm-pil-warn"}"><b>${N(lihat.indeks, 1)}</b><span>${esc(t(lihat.indeks >= 55 ? "ky.arah.naik" : lihat.indeks >= 45 ? "ky.arah.netral" : "ky.arah.turun"))}</span></span><span class="ky-n">${ikon("orang", 14)}<span>${esc(t("ky.n", { n: lihat.n }))}</span></span></div>
       <div class="ky-grafik">${batang(urut, { maks: 100, ref: 50, teksRef: t("ky.netral"), label: t("ky.grafik.butir") })}</div>`;
@@ -106,7 +106,7 @@ function gambarHasil() {
   gambarTren();
 }
 function gambarTren() {
-  const asc = [...TERLIHAT].reverse(), el = $("kyTrenIsi");
+  const asc = TERLIHAT.toReversed(), el = $("kyTrenIsi");
   if (asc.length < 2) { el.innerHTML = `<div class="ky-kosong">${ikon("linimasa", 28)}<p>${esc(t("ky.tren0"))}</p></div>`; return; }
   const lab = asc.map((a) => a.periode.replace("-", " "));
   const seri = [{ nama: t("ky.indeks"), v: asc.map((a) => a.indeks), sorot: !S.butir }];

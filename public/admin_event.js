@@ -20,7 +20,7 @@ export function panelEvent(el) {
 
   async function muat() {
     host.innerHTML = hantuHtml(5);
-    try { const [a, d] = await Promise.all([muatAcara(), api("/api/event")]); S.acara = a.slice().reverse(); S.api = d; } catch (e) { host.innerHTML = galatHtml(e.kode || "umum"); return; }
+    try { const [a, d] = await Promise.all([muatAcara(), api("/api/event")]); S.acara = a.toReversed(); S.api = d; } catch (e) { host.innerHTML = galatHtml(e.kode || "umum"); return; }
     nanti(rangka);
   }
   function rangka() {

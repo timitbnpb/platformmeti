@@ -154,5 +154,5 @@ const tab = tabHalaman("isuTab", { label: "isu.tab.label", tab: [
 ] });
 kepalaAngka();
 addEventListener("hashchange", rute);
-document.addEventListener("jm:bahasa", () => { const f = sudah.has("f"); sudah.clear(); if (f) sudah.add("f"); kepalaAngka(); $("isuNasional").innerHTML = ""; $("isuDaerah").innerHTML = ""; $("isuLini").innerHTML = ""; tab.buka(dariHash() || "nasional"); rute(); });
+document.addEventListener("jm:bahasa", () => { const f = sudah.has("f"); sudah.clear(); if (f) sudah.add("f"); kepalaAngka(); $("isuNasional").replaceChildren(); $("isuDaerah").innerHTML = ""; $("isuLini").replaceChildren(); tab.buka(dariHash() || "nasional"); rute(); });
 await rute();

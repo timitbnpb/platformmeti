@@ -76,7 +76,7 @@ function klaim() {
   const cari = debounce(async () => {
     const q = $("kCari").value.trim();
     if (ctl) ctl.abort();
-    if (q.length < 3) { $("kHasil").innerHTML = ""; $("kBantu").textContent = t("kta.klaim.min"); return; }
+    if (q.length < 3) { $("kHasil").replaceChildren(); $("kBantu").textContent = t("kta.klaim.min"); return; }
     ctl = new AbortController();
     try {
       const d = await api("/api/kta/anggota?cari=" + encodeURIComponent(q), { signal: ctl.signal });

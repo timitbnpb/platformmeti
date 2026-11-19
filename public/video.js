@@ -31,7 +31,7 @@ function unggulan() {
   const d = dalamSeg();
   if (S.seg === "meti") return d.find((v) => v.id === D.unggulan) || d[0];
   if (S.seg === "conex") return d.find((v) => /highlight day 1/i.test(v.judul)) || d[0];
-  return [...d].sort((a, c) => (c.tonton || 0) - (a.tonton || 0))[0];
+  return d.toSorted((a, c) => (c.tonton || 0) - (a.tonton || 0))[0];
 }
 function unggulanHtml() {
   const v = unggulan();

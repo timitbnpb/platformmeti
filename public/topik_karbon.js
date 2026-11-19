@@ -99,7 +99,7 @@ K[7] = ({ d }) => {
 
 K[8] = ({ d, iJb }) => {
   const rows = d.sistem.map((s) => { const i = s.tahun.indexOf(2025), j = s.tahun.length - 1; return { id: s.id, nama: s.nama, tabel: s.tabel, emisi: s.emisi[i], int: s.intensitas[i], ebt: s.ebt[i], ebtAkhir: s.ebt[j], bara: s.batubara[i], thn: s.tahun[j] }; });
-  const grafik = batang([...rows].sort((a, z) => z.int - a.int).map((r, i) => ({ label: r.nama, v: r.int, teks: num(r.int, 2), sorot: i === 0 })), { label: u("g.intensitas") });
+  const grafik = batang(rows.toSorted((a, z) => z.int - a.int).map((r, i) => ({ label: r.nama, v: r.int, teks: num(r.int, 2), sorot: i === 0 })), { label: u("g.intensitas") });
   const t = daftarTabel("sistem", [
     { k: "nama", l: u("k.nama"), f: (r) => esc(r.nama), v: (r) => r.nama },
     { k: "emisi", l: u("k.emisi"), num: true, f: (r) => num(r.emisi), v: (r) => r.emisi },
@@ -158,9 +158,9 @@ K[20] = ({ lu }) => {
     { k: "k", l: u("k.kapita"), num: true, f: (r) => num(r.per_kapita?.[1], 1), v: (r) => r.per_kapita?.[1] },
     { k: "i", l: u("k.intensitas_listrik"), num: true, f: (r) => num(r.intensitas_listrik?.[1]), v: (r) => r.intensitas_listrik?.[1] }], baris, 8);
   const sorot = (n) => n.kode === "IDN", bd = (n) => { const i = isoNegara(L(n.nama).split(" (")[0]); return i ? { img: `/img/bendera/${i}.svg`, bend: true } : {}; };
-  const gC = batang([...baris].sort((a, z) => (z.cakupan?.semua ?? 0) - (a.cakupan?.semua ?? 0)).map((n) => ({ label: L(n.nama), ...bd(n), v: n.cakupan?.semua ?? 0, teks: num(n.cakupan?.semua, 1) + "%", sorot: sorot(n) })), { maks: 100, label: u("g.cakupan") });
+  const gC = batang(baris.toSorted((a, z) => (z.cakupan?.semua ?? 0) - (a.cakupan?.semua ?? 0)).map((n) => ({ label: L(n.nama), ...bd(n), v: n.cakupan?.semua ?? 0, teks: num(n.cakupan?.semua, 1) + "%", sorot: sorot(n) })), { maks: 100, label: u("g.cakupan") });
   const hg = (n) => Math.max(n.harga_ets?.[1] || 0, n.harga_pajak?.[1] || 0);
-  const gH = batang([...baris].sort((a, z) => hg(z) - hg(a)).map((n) => ({ label: L(n.nama), ...bd(n), v: hg(n), teks: "US$" + num(hg(n), 1), sorot: sorot(n) })), { label: u("g.harga_luar") });
+  const gH = batang(baris.toSorted((a, z) => hg(z) - hg(a)).map((n) => ({ label: L(n.nama), ...bd(n), v: hg(n), teks: "US$" + num(hg(n), 1), sorot: sorot(n) })), { label: u("g.harga_luar") });
   const pilih = ["IDN", "CHN", "KOR", "DEU", "ZAF"].map((k) => baris.find((n) => n.kode === k)), tahun = pilih[0].deret_cakupan.map((p) => p[0]);
   const gT = garisTip(tahun.map(String), pilih.map((n) => ({ nama: L(n.nama).split(" (")[0], sorot: n.kode === "IDN", v: tahun.map((y) => n.deret_cakupan.find((p) => p[0] === y)?.[1] ?? null) })), { d: 0, satuan: "%", label: u("g.cakupan_tren") });
   const pil2 = ["IDN", "MYS", "CHN", "DEU", "ZAF"].map((k) => baris.find((n) => n.kode === k)), thn2 = pil2[0].deret_intensitas.map((p) => p[0]);

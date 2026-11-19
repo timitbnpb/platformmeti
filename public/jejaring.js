@@ -71,7 +71,7 @@ function gambarGraf() {
 function gambarPanel() {
   const el = document.getElementById("jjPanelIsi"), n = S.pilih;
   document.getElementById("jjPanel").hidden = !n; /* panel muncul saat simpul diklik */
-  if (!n) { el.innerHTML = ""; return; }
+  if (!n) { el.replaceChildren(); return; }
   const [j, id] = kunciTaut(n);
   const grup = new Map();
   for (const m of tetangga.get(n.k) || []) { if (!grup.has(m.n.j)) grup.set(m.n.j, []); grup.get(m.n.j).push(m); }

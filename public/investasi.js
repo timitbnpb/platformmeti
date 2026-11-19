@@ -91,7 +91,7 @@ function metode() {
 function tray() {
   const el = $("ivTray"), n = S.banding.length;
   el.hidden = n === 0;
-  if (!n) { el.innerHTML = ""; return; }
+  if (!n) { el.replaceChildren(); return; }
   const dp = S.banding.map((id) => CTX.per.get(id));
   el.innerHTML = `<div class="iv-tray-isi"><p class="iv-tray-j">${ikon("banding", 18)}<span>${esc(t("iv.tray.n", { n: N(n) }))}</span></p><ul class="iv-tray-daftar">${dp.map((b) => `<li><span>${esc(b.nama)}</span><button type="button" data-banding="${esc(b.id)}" aria-label="${esc(t("iv.b.lepas", { nama: b.nama }))}">${ikon("silang", 14)}</button></li>`).join("")}</ul>
     <div class="iv-tray-aksi"><button type="button" class="jm-tbl jm-tbl-utama" data-buka-banding${n < 2 ? " disabled" : ""}>${ikon("banding", 16)}<span>${esc(n < 2 ? t("iv.tray.min") : t("iv.tray.banding"))}</span></button><button type="button" class="jm-hapus" data-kosong>${ikon("silang", 16)}${esc(t("iv.tray.kosongkan"))}</button></div></div>`;

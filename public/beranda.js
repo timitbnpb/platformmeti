@@ -42,7 +42,7 @@ function delapan(org, pro) {
     const dasar = k === "lembaga" ? "kementerian-lembaga" : k, pool = [...new Map([...kat(dasar), ...org.filter((o) => pins.some((p) => typeof p === "string" ? p === o.id : p.test(o.nama)))].map((o) => [o.id, o])).values()];
     const pilih = [];
     for (const p of pins) { const o = typeof p === "string" ? semua.get(p) : pool.find((x) => p.test(x.nama)); if (o && !pilih.includes(o)) pilih.push(o); }
-    for (const o of [...pool].sort((a, b) => skor(b) - skor(a))) { if (pilih.length >= 8) break; if (skor(o) > 0 && !pilih.includes(o)) pilih.push(o); }
+    for (const o of pool.toSorted((a, b) => skor(b) - skor(a))) { if (pilih.length >= 8) break; if (skor(o) > 0 && !pilih.includes(o)) pilih.push(o); }
     hasil[k] = { daftar: pilih.slice(0, 8), total: dasar === "lembaga" ? kat(dasar).length : kat(dasar).length };
   }
   return hasil;
@@ -108,7 +108,7 @@ async function gambarProyek() {
     const p = await muat("proyek");
     const sorot = daftarKonten(await kontenBeranda(), "sorotan").filter((x) => x && x.jenis === "proyek"), byId = new Map(p.baris.map((x) => [x.id, x]));
     const manual = sorot.map((x) => byId.get(x.id)).filter(Boolean).slice(0, 6);
-    const baru = manual.length ? manual : [...p.baris].sort((a, b) => String(b.sumber?.[0]?.tanggal).localeCompare(String(a.sumber?.[0]?.tanggal)) || b.id.localeCompare(a.id)).slice(0, 6);
+    const baru = manual.length ? manual : p.baris.toSorted((a, b) => String(b.sumber?.[0]?.tanggal).localeCompare(String(a.sumber?.[0]?.tanggal)) || b.id.localeCompare(a.id)).slice(0, 6);
     const foto = await muat("berita_foto").catch(() => ({}));
     el.innerHTML = `<ul class="jm-feed">${baru.map((x) => {
       const st = x.status?.[0]?.nilai || "tidak-diketahui", href = "/p/" + encodeURIComponent(x.id);
@@ -201,7 +201,7 @@ async function gambarSorotan() {
   const akanDatang = (d.baris || []).filter((r) => r && r.judul && r.jenis !== "regulasi" && String(r.tanggal_selesai || r.tanggal || "") >= hari).sort((a, b) => String(a.tanggal).localeCompare(String(b.tanggal)));
   const bulanIni = akanDatang[0] ? String(akanDatang[0].tanggal < hari ? hari : akanDatang[0].tanggal).slice(0, 7) : "";
   const baris = akanDatang.filter((r) => String(r.tanggal).slice(0, 7) <= bulanIni);
-  if (!baris.length) { el.hidden = true; el.innerHTML = ""; return; }
+  if (!baris.length) { el.hidden = true; el.replaceChildren(); return; }
   const luar = (u, kunci, kelas) => { const h = urlAman(u); return h ? `<a class="${kelas}" href="${esc(h)}" target="_blank" rel="noopener noreferrer">${esc(t(kunci))}</a>` : ""; };
   const judulBulan = tanggal(bulanIni + "-01", { gaya: "panjang" }).split(" ").slice(1, -1).join(" ");
   const kepalaAgenda = `<header class="jm-sorotan-hd"><h2>${esc(t("beranda.sorotan.bulan", { bulan: judulBulan }))}</h2><a class="jm-lihat" href="/kalender">${ikon("kalender", 16)}<span>${esc(t("beranda.sorotan.kalender"))}</span></a></header>`;
@@ -249,9 +249,9 @@ async function main() {
   };
   input.addEventListener("click", bukaPanel);
   input.addEventListener("input", bukaPanel);
-  input.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); bukaPanel(); } });
+  input.addEventListener("keydown", (e) => { if (e.isComposing || e.keyCode === 229) return; if (e.key === "Enter") { e.preventDefault(); bukaPanel(); } });
   document.getElementById("cariTbl").addEventListener("click", bukaPanel);
-  input.addEventListener("keydown", (e) => e.key === "Enter" && cari(input.value));
+  input.addEventListener("keydown", (e) => !e.isComposing && e.keyCode !== 229 && e.key === "Enter" && cari(input.value));
   document.addEventListener("jm:bahasa", () => nanti(() => { gambarSorotan(); R && gambarKartu(); gambarEkosistem(); gambarJalur(); R && gambarDataset(R); gambarBerita(); gambarProyek(); gambarAgenda(); gambarAkses(); pasangPita(document.getElementById("pitaRiwayat")); input.value && cari(input.value); }));
 }
 main();

@@ -389,7 +389,7 @@ function pasangPop() {
 }
 
 /* CSV seksi kalender (hook jm:csv dari inti/aksi_ex.js): acara yang tampil menurut filter */
-const csvBaris = () => [[t("kal.pop.tanggal"), "s/d", "Judul", t("kal.pop.jenis"), t("kal.pop.mitra"), t("kal.pop.sumber"), "URL"], ...ROWS.slice().sort((a, c) => a.tanggal.localeCompare(c.tanggal)).map((b) => [b.tanggal, b.akhir, b.judul, label("kal.jenis.", b.jenis), mitraTeks(b), sumberTeks(b.sumber, FMT), urlB(b)])];
+const csvBaris = () => [[t("kal.pop.tanggal"), "s/d", "Judul", t("kal.pop.jenis"), t("kal.pop.mitra"), t("kal.pop.sumber"), "URL"], ...ROWS.toSorted((a, c) => a.tanggal.localeCompare(c.tanggal)).map((b) => [b.tanggal, b.akhir, b.judul, label("kal.jenis.", b.jenis), mitraTeks(b), sumberTeks(b.sumber, FMT), urlB(b)])];
 
 /** Dipanggil kalender_halaman.js saat tab Kalender pertama dibuka; saya = hasil mulaiHalaman(). */
 export async function pasang(saya) {

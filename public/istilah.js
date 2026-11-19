@@ -49,7 +49,7 @@ function gambarDaftar() {
   S.hal = Math.min(Math.max(1, S.hal), jumlah);
   $("isCacah").textContent = t("is2.n", { n: angka(hasil.length) });
   const w = $("isDaftar");
-  if (!hasil.length) { w.innerHTML = kosongHtml("is2.kosong"); $("isPag").innerHTML = ""; return; }
+  if (!hasil.length) { w.innerHTML = kosongHtml("is2.kosong"); $("isPag").replaceChildren(); return; }
   w.innerHTML = hasil.slice((S.hal - 1) * PER, S.hal * PER).map(kartu).join("");
   $("isPag").innerHTML = paginasiHtml({ hal: S.hal, total: hasil.length, per: PER, satuan: "is2.pag" });
   if (S.sorot) { const el = document.getElementById(S.sorot); if (el) { el.classList.add("jm-is-sorot"); el.scrollIntoView({ block: "center" }); } }

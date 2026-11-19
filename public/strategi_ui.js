@@ -22,7 +22,7 @@ export function ubahBaris(id, baris) {
 function urutkan(s) {
   if (!s.urut) return s.baris;
   const k = s.kols.find((c) => c.k === s.urut.k);
-  return [...s.baris].sort((x, z) => {
+  return s.baris.toSorted((x, z) => {
     const a = k.v(x), c = k.v(z);
     return ((a == null) - (c == null)) || (a == null ? 0 : (typeof a === "number" ? a - c : String(a).localeCompare(String(c), bahasa()))) * s.urut.arah;
   });
@@ -73,7 +73,7 @@ export function garisTip(labels, seri, { d = 0, satuan = "", label = "" } = {}) 
   const langkah = Math.max(1, Math.ceil(n / (M ? 5 : 8)));
   g += labels.map((l, i) => ((i % langkah === 0 && n - 1 - i >= langkah) || i === n - 1 ? `<text class="jm-gf-t2" x="${X(i).toFixed(1)}" y="${B + 16}" text-anchor="${i === n - 1 ? "end" : "middle"}" font-size="${fs}">${esc(l)}</text>` : "")).join("");
   const ujung = [];
-  for (const s of [...seri].sort((a, b) => !!a.sorot - !!b.sorot)) {
+  for (const s of seri.toSorted((a, b) => !!a.sorot - !!b.sorot)) {
     const p = s.v.map((v, i) => (v == null ? null : [X(i), Y(v), v, i])).filter(Boolean);
     if (!p.length) continue;
     const z = p.at(-1);

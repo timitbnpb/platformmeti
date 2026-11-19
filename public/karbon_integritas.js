@@ -45,6 +45,6 @@ export async function integritas(el) {
     d.addEventListener("close", () => d.remove()); document.body.append(d); d.showModal();
   };
   tbl.addEventListener("click", (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) rinci(tr.dataset.id); });
-  tbl.addEventListener("keydown", (e) => { if (e.key === "Enter") { const tr = e.target.closest("tr[data-id]"); if (tr) rinci(tr.dataset.id); } });
+  tbl.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.isComposing && e.keyCode !== 229) { const tr = e.target.closest("tr[data-id]"); if (tr) rinci(tr.dataset.id); } });
   gambar();
 }

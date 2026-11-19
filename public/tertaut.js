@@ -7,7 +7,7 @@ import { hlHtml } from "/inti/aksi_ex.js";
 import { muat } from "/publik.js";
 
 const ambil = (n) => muat(n).catch(() => null);
-const urut = (a, f) => [...a].sort((x, y) => f(y) - f(x));
+const urut = (a, f) => a.toSorted((x, y) => f(y) - f(x));
 const slug = (k) => (ada("td.s." + k) ? t("td.s." + k) : String(k || "").replace(/[-_]+/g, " ").replace(/^./, (c) => c.toUpperCase()));
 const daftarSlug = (a, n = 5) => (a || []).slice(0, n).map((k) => `<span class="jm-pil">${esc(slug(k))}</span>`).join(" ");
 const tgl = (s) => (s ? tanggal(String(s).slice(0, 10)) : "-");

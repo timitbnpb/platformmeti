@@ -15,7 +15,7 @@ async function muat() { try { ST = await api("/api/kerja/minat"); } catch { ST =
 export const slotMinat = (id) => `<div class="kjm" data-minat="${esc(id)}"></div>`;
 
 function isiSlot(el) {
-  if (!ST) { el.innerHTML = ""; return; }
+  if (!ST) { el.replaceChildren(); return; }
   const id = Number(el.dataset.minat);
   if (milikSaya().has(id)) {
     const n = ST.peminat[id] || 0;

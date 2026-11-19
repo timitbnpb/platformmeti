@@ -179,7 +179,7 @@ function gambarKisi() {
   document.getElementById("hitung").textContent = t("pu.hitung", { n: angka(baris.length), total: angka(D.docs.length) });
   document.getElementById("hapus").hidden = !adaFilter();
   const isi = document.getElementById("isi"), hal = document.getElementById("lagi");
-  if (!baris.length) { isi.innerHTML = kosongHtml("pu.kosong", { data: "reset", kunci: "jm.kosong.reset" }); hal.innerHTML = ""; return; }
+  if (!baris.length) { isi.innerHTML = kosongHtml("pu.kosong", { data: "reset", kunci: "jm.kosong.reset" }); hal.replaceChildren(); return; }
   const potong = baris.slice((S.hal - 1) * PER, S.hal * PER);
   isi.innerHTML = `<div class="pu-kisi">${potong.map(kartuHtml).join("")}</div>`;
   hal.innerHTML = paginasiHtml({ hal: S.hal, total: baris.length, per: PER, satuan: "jm.pag.u.dokumen" });
@@ -324,7 +324,7 @@ async function kirimUnduh() {
   if (ins) badan.instansi = ins;
   if (tel) badan.telepon = tel;
   ok.disabled = true; ok.setAttribute("aria-busy", "true");
-  document.getElementById("pu-pesan").innerHTML = "";
+  document.getElementById("pu-pesan").replaceChildren();
   try {
     const r = await api(`/api/pustaka/${encodeURIComponent(TARGET.id)}/unduh`, { metode: "POST", badan });
     SAYA = { ...SAYA, pernah: true, tujuan: badan.tujuan, instansi: SAYA.instansi || ins || null, telepon: SAYA.telepon || tel || null };

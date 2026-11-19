@@ -91,7 +91,7 @@ const URUT = { sumber: (r) => r.judul, dataset: (r) => labDs(r.dataset), lisensi
 function sumberRows() {
   const q = S.qs.trim().toLocaleLowerCase();
   let b = KAT.baris.filter((r) => (!q || [r.judul, r.penerbit, labDs(r.dataset), r.lisensi].join(" ").toLocaleLowerCase().includes(q)) && (!S.qb || (r.tingkat_bukti || "-") === S.qb) && (!S.qd || r.dataset === S.qd));
-  const f = URUT[S.uk]; if (f) b = [...b].sort((x, y) => { const p = f(x), z = f(y); return (typeof p === "number" ? p - z : String(p).localeCompare(String(z), "id")) * S.ua; });
+  const f = URUT[S.uk]; if (f) b = b.toSorted((x, y) => { const p = f(x), z = f(y); return (typeof p === "number" ? p - z : String(p).localeCompare(String(z), "id")) * S.ua; });
   return b;
 }
 const lisensiPendek = (l) => { const x = l ? l.split(/[;(]/)[0].trim() : ""; return x.length > 28 ? x.slice(0, 26).trim() + "..." : x; };

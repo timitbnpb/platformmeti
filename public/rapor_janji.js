@@ -36,7 +36,7 @@ function baris(d) {
 export async function pasangJanji(el) {
   if (!el) return;
   let o;
-  try { o = await muatData("target_realisasi.json"); } catch (e) { el.innerHTML = ""; return; }
+  try { o = await muatData("target_realisasi.json"); } catch (e) { el.replaceChildren(); return; }
   const a = o.target, r = ringkasJanji(a), th = (k, kelas = "") => `<th scope="col"${kelas ? ` class="${kelas}"` : ""}>${esc(t("rp.janji.c." + k))}</th>`;
   el.innerHTML = `<section class="rp-bag" id="rpJanjiK" aria-labelledby="rpJanjiJ"><h2 class="rp-h2" id="rpJanjiJ">${ikon("bendera", 20)}<span>${esc(t("rp.janji.j", { baik: num(r.baik), berdata: num(r.berdata), total: num(r.total) }))}</span></h2>
     <p class="jm-bantu">${esc(t("rp.janji.sub", { tertinggal: num(r.tertinggal), tanpa: num(r.tanpaData) }))} <a href="/target">${esc(t("rp.janji.buka"))}</a></p>

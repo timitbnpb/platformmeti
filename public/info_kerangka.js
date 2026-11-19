@@ -48,7 +48,7 @@ export function tabel(akar, { kolom, baris, per = 10, satuan = "jm.pag.u.data", 
   const nilai = (r, k) => kolom.find((c) => c.k === k).v(r);
   const susun = () => {
     if (!st.k) return baris;
-    return [...baris].sort((a, z) => {
+    return baris.toSorted((a, z) => {
       const x = nilai(a, st.k), y = nilai(z, st.k);
       return ((x == null) - (y == null)) || (x == null ? 0 : (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * st.arah);
     });

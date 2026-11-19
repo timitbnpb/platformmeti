@@ -111,7 +111,7 @@ export async function pasangProyek(el, { id, namaOrg = (x) => x }) {
 /* ---------------- /investasi: semua kebutuhan dana yang disetujui ---------------- */
 export async function pasangDanaDaftar(el, { namaOrg, namaProyek } = {}) {
   let d;
-  try { d = await api("/api/proyek-dana"); } catch (e) { el.innerHTML = ""; return; }
+  try { d = await api("/api/proyek-dana"); } catch (e) { el.replaceChildren(); return; }
   const baris = d.baris;
   // nama organisasi dan proyek hanya dimuat bila ada baris untuk ditampilkan (kedua berkas besar)
   const peta = async (nama) => (baris.length ? fetch(`/data/${nama}.json`).then((r) => r.json()).then((o) => new Map(o.baris.map((x) => [x.id, x.nama]))).catch(() => new Map()) : new Map());
@@ -292,7 +292,7 @@ export async function pasangUnit(el) {
 export async function pasangStan(el, { id }) {
   async function gambar() {
     let saya;
-    try { saya = await api("/api/kiriman/saya"); } catch (e) { el.innerHTML = ""; return; }
+    try { saya = await api("/api/kiriman/saya"); } catch (e) { el.replaceChildren(); return; }
     const milik = (saya.stan || []).filter((r) => r.event_id === id);
     const form = milik.some(aktif) ? "" : `<form id="krStanF" class="kr-form" novalidate>${isian("krStanO", t("st.f.organisasi"), 'type="text" maxlength="120" required')}${isian("krStanK", t("st.f.kebutuhan"), 'rows="3" maxlength="500" required', "textarea")}
       <p class="kr-catatan">${ikon("info", 16)}<span>${esc(t("st.aturan"))}</span></p><p id="krStanP" class="kr-pesan" role="status" hidden></p>

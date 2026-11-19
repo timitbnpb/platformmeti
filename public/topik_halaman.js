@@ -99,7 +99,7 @@ function tocHtml(out, id) {
 
 export async function halaman(id, tanam = null) {
   const ISI = tanam || $("isi");
-  if (!S.ui.topik[id]) { if (tanam) { tanam.innerHTML = ""; return; } $("judul").textContent = u("kosong.judul"); $("jawab").textContent = u("kosong.isi"); khSisi("#kh", { fakta: [{ ikon: "topik", label: u("toc.hub"), nilai: u("toc.hub"), href: "/topik" }] }); ISI.innerHTML = ""; return; }
+  if (!S.ui.topik[id]) { if (tanam) { tanam.replaceChildren(); return; } $("judul").textContent = u("kosong.judul"); $("jawab").textContent = u("kosong.isi"); khSisi("#kh", { fakta: [{ ikon: "topik", label: u("toc.hub"), nilai: u("toc.hub"), href: "/topik" }] }); ISI.replaceChildren(); return; }
   const [dasar, naskah, luar, org, rantai, ind] = await Promise.all([muat(`/data/topik/dasar-${id}.json`), muat(`/data/topik/${berkas(id)}.json`), id === "karbon" ? muat("/data/topik/luar_karbon.json") : null, muat("/data/organisasi.json"), muat("/data/rantai_pasok.json"), muat("/data/topik/indeks.json")]);
   if (!dasar) throw new Error("data");
   S.id = id; S.dipakai = new Set(); S.tabel.clear(); S.sumber = { ...(naskah?.sumber || {}), dasar: { judul: u("src.dasar"), penerbit: "METI", tanggal: dasar.dibangun_pada, bukti: "editorial" } };

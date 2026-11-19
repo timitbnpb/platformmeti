@@ -5,7 +5,7 @@ import { esc, ikon } from "/inti/umum.js";
 import { num } from "/analisis.js";
 
 const IK_ST = { tercapai: "piala", "di-jalur": "centang", tertinggal: "peringatan", "jauh-tertinggal": "silang", "tidak-ada-data": "tanya" };
-const des = (v) => { const r2 = +v.toFixed(2); return Number.isInteger(r2) ? 0 : +v.toFixed(1) === r2 ? 1 : 2; };
+export const des = (v) => { const r2 = +v.toFixed(2); return Number.isInteger(r2) ? 0 : +v.toFixed(1) === r2 ? 1 : 2; };
 export function nt(sat, v) {
   if (v == null) return "-";
   switch (sat) {

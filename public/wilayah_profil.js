@@ -24,7 +24,7 @@ const EBT = ["plta", "pltb", "plt_bio", "pltp", "plts", "pltgb"];
 let TGL = "", PEL = null, PELTGL = "", DATA = null;
 const kos = (alasan) => `<span class="jm-wp-kos" title="${esc(alasan || t("wp.kos"))}" aria-label="${esc(alasan || t("wp.kos"))}">-</span>`;
 const nilaiAtau = (v, f) => (v == null ? kos() : f(v));
-const median = (a) => { const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
+const median = (a) => { const s = a.toSorted((x, y) => x - y), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
 const tautan = (u, teks) => (amanUrl(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(teks)}</a>` : esc(teks));
 const REG = new Map();
 const tautanReg = (x, teks) => (REG.has(x.id) ? `<a href="/regulasi?id=${encodeURIComponent(x.id)}">${esc(teks)}</a>` : tautan(x.url, teks));
@@ -205,7 +205,7 @@ const dedupe = (n) => String(n).replace(/\b(\S+)(\s+\1)+(?=\s|$)/gi, "$1");
 const namaBersih = (x) => dedupe(namaProyek(x));
 function proyek(p) {
   if (!p.proyek.length) return "";
-  const A = [...p.proyek].sort((a, b) => (b.mw ?? -1) - (a.mw ?? -1) || namaBersih(a).localeCompare(namaBersih(b)));
+  const A = p.proyek.toSorted((a, b) => (b.mw ?? -1) - (a.mw ?? -1) || namaBersih(a).localeCompare(namaBersih(b)));
   const mw = A.reduce((s, x) => s + (x.mw || 0), 0);
   const hit = (f) => { const m = new Map(); for (const x of A) m.set(f(x), (m.get(f(x)) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };
   const rinci = `<div class="jm-wp-pil">${hit((x) => x.teknologi).map(([k, n]) => `<span class="jm-wp-pilgrup">${pilTek(k)} <b>${n}</b></span>`).join("")}${hit((x) => x.status || ST0).map(([k, n]) => `<span class="jm-wp-pilgrup">${pilStatus(k)} <b>${n}</b></span>`).join("")}</div>`;
@@ -225,7 +225,7 @@ const JENIS_REG = [[/energi\s+daerah/i, "rued", "kebijakan"], [/gas\s+rumah\s+ka
 const jenisReg = (j) => JENIS_REG.find(([re]) => re.test(j)) || [null, "perda", "industri"];
 function regulasi(p) {
   if (!p.perda.length) return "";
-  const A = [...p.perda].sort((a, b) => (b.tahun || 0) - (a.tahun || 0));
+  const A = p.perda.toSorted((a, b) => (b.tahun || 0) - (a.tahun || 0));
   const stil = (v) => {
     const k = /cabut|batal/i.test(v) ? "bad" : /berlaku/i.test(v) ? "ok" : "warn", lab = ada("wp.rg.st." + String(v).toLowerCase()) ? t("wp.rg.st." + String(v).toLowerCase()) : String(v).charAt(0).toUpperCase() + String(v).slice(1);
     return `<span class="jm-pil jm-pil-${k} jm-wp-rj-st">${ikon(k === "bad" ? "blokir" : k === "ok" ? "centang" : "info", 14)}<span>${esc(lab)}</span></span>`;

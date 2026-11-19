@@ -85,7 +85,7 @@ function gambarDaftar(rows) {
   S.hal = Math.min(S.hal, maks);
   /* urut seluruh data sebelum dipotong halaman (pemilik: semua tabel bisa diurutkan) */
   const KUNCI = { aturan: (r) => namaRegulasi(r), penerbit: (r) => r.instansi_penerbit || "", tanggal: (r) => r.tanggal_ditetapkan || String(r.tahun || ""), status: (r) => r.status || "", dok: (r) => (r.url_pdf ? 2 : r.url_sumber ? 1 : 0) };
-  if (S.uk && KUNCI[S.uk]) { const f = KUNCI[S.uk]; rows = [...rows].sort((a, b) => { const x = f(a), y = f(b); return (typeof x === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * S.ua; }); }
+  if (S.uk && KUNCI[S.uk]) { const f = KUNCI[S.uk]; rows = rows.toSorted((a, b) => { const x = f(a), y = f(b); return (typeof x === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * S.ua; }); }
   const potong = rows.slice((S.hal - 1) * HAL, S.hal * HAL);
   const th = (k, kelas = "", uk = "") => uk ? `<th class="${kelas}" aria-sort="${S.uk === uk ? (S.ua > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-uk="${uk}">${esc(t(k))}</button></th>` : `<th class="${kelas}">${esc(t(k))}</th>`;
   document.getElementById("isi").innerHTML = potong.length ? `<div class="jm-gulir"><table class="jm-tabel jm-tabel-tetap jm-reg-tabel" data-urut="tidak"><thead><tr>${th("reg.col.no", "jm-no")}${th("reg.col.aturan", "", "aturan")}${th("reg.col.penerbit", "", "penerbit")}${th("reg.col.tanggal", "", "tanggal")}${th("reg.col.status", "", "status")}${th("reg.col.dok", "", "dok")}</tr></thead><tbody>${potong.map((r, i) => barisHtml(r, (S.hal - 1) * HAL + i)).join("")}</tbody></table></div>` : kosongHtml("jm.kosong.cocok", { data: "reset", kunci: "jm.kosong.reset" });
@@ -132,7 +132,7 @@ function grafikTahun(per) {
 /* tinggi batang lewat style properti (CSP style-src 'self' mengizinkan CSSOM) */
 function pasangTinggi(akar) { for (const el of akar.querySelectorAll(".jm-lg [data-h]")) el.style.setProperty("--h", el.dataset.h + "%"); }
 function gambarLinimasa(rows) {
-  document.getElementById("hal").innerHTML = "";
+  document.getElementById("hal").replaceChildren();
   const per = new Map();
   for (const r of rows) (per.get(r.tahun || 0) || per.set(r.tahun || 0, []).get(r.tahun || 0)).push(r);
   const tahun = [...per.keys()].sort((a, b) => b - a);

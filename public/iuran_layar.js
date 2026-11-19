@@ -13,8 +13,8 @@ const pilStatus = (s) => `<span class="jm-pil ${PIL[s] ?? ""}">${esc(t("iu.st." 
 /* ---------- /kta: bagian "Perpanjang keanggotaan" ---------- */
 export async function pasangIuran(w, dlg) {
   let d;
-  try { d = await api("/api/iuran"); } catch (e) { w.innerHTML = ""; return; }   // fitur belum aktif atau galat: bagian tidak tampil
-  if (!d.boleh && !d.riwayat.length) { w.innerHTML = ""; return; }
+  try { d = await api("/api/iuran"); } catch (e) { w.replaceChildren(); return; }   // fitur belum aktif atau galat: bagian tidak tampil
+  if (!d.boleh && !d.riwayat.length) { w.replaceChildren(); return; }
   const menunggu = d.riwayat.find((r) => r.status === "menunggu" && r.jalur === "bukti");
   const bayar = !d.boleh ? "" : `<dl class="kta-dl"><div><dt>${esc(t("kta.kartu.berlaku"))}</dt><dd>${esc(tanggal(d.kta.berlaku_sampai, { gaya: "panjang" }))}</dd></div><div><dt>${esc(t("iu.tarif"))}</dt><dd><b>${esc(rp(d.tarif))}</b></dd></div></dl>
     <p class="kta-bantu">${esc(t("iu.ket"))}</p>

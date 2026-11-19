@@ -265,7 +265,7 @@ function gambarPanel() {
     return;
   }
   S.pilih = -1;
-  const top = terpilih().slice().sort((a, b) => (b.mw || 0) - (a.mw || 0)).slice(0, 8);
+  const top = terpilih().toSorted((a, b) => (b.mw || 0) - (a.mw || 0)).slice(0, 8);
   el.innerHTML = top.length ? `<ol class="pt2-rank">${top.map((x, n) => `<li><button type="button" class="pt2-rank-b" data-i="${x.i}"><span class="jm-rank${n < 3 ? " jm-rank-top" : ""}">${n + 1}</span><span class="pt2-rank-t"><b>${esc(x.nama)}</b><span class="pt2-rank-s">${pilTek(x.tek)}</span></span><span class="pt2-rank-v"><span class="pt2-mw">${esc(N(x.mw, 0))} MW</span></span></button></li>`).join("")}</ol>` : `<div class="jm-kosong">${ikon("info", 24)}<p>${esc(t("jm.kosong.cocok"))}</p></div>`;
   $("ptPanelJ").firstElementChild.textContent = t("pt2.panel");
 }

@@ -359,7 +359,7 @@ function pasangEvent() {
   q.addEventListener("input", cariTunda);
   q.addEventListener("keydown", (e) => {
     if (e.key === "Escape") $("pnHasil").hidden = true;
-    if (e.key === "Enter") { const h = ($("pnHasil")._hasil || [])[0]; if (h) pilihHasil(h); }
+    if (e.key === "Enter" && !e.isComposing && e.keyCode !== 229) { const h = ($("pnHasil")._hasil || [])[0]; if (h) pilihHasil(h); }
   });
   $("pnHasil").addEventListener("click", (e) => { const b = e.target.closest("[data-h]"); if (b) pilihHasil($("pnHasil")._hasil[+b.dataset.h]); });
   document.addEventListener("click", (e) => { if (!e.target.closest(".pn-cari")) $("pnHasil").hidden = true; });

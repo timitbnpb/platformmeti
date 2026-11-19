@@ -39,7 +39,7 @@ const bandingkan = (k, a) => (x, y) => {
 /* kolom = [kunciUrut|null, kunciKamus, sel(r), kelas]. S = { k, arah, hal } ; kembali ke S yang sama */
 export function pasangTabel(el, kolom, rows, S, kosongKunci = "jm.kosong.cocok") {
   const gambar = (fokus) => {
-    const urut = rows.slice().sort(bandingkan(S.k, S.arah));
+    const urut = rows.toSorted(bandingkan(S.k, S.arah));
     if (!urut.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t(kosongKunci))}</p></div>`; return; }
     S.hal = Math.min(Math.max(1, S.hal || 1), Math.ceil(urut.length / BATAS));
     const kepala = kolom.map(([k, kt, , kls], i) => `<th scope="col" class="${[kls && kls.includes("jm-num") ? "jm-num" : "", ...String(kls || "").split(" ").filter((x) => x.startsWith("pb-c-")), k ? "pb-c-" + k : "pb-c-n"].filter(Boolean).join(" ")}"${k ? ` aria-sort="${S.k === k ? (S.arah > 0 ? "ascending" : "descending") : "none"}"` : ""}>${k ? `<button type="button" class="jm-urut" data-u="${k}">${esc(t(kt))}</button>` : esc(t(kt))}</th>`).join("");

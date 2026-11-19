@@ -23,7 +23,7 @@ function perProvinsi() {
 }
 function grafik(baris) {
   const g = document.getElementById("swe-s-grafik"); if (!g) return;
-  const top = [...baris].sort((a, b) => b.ton - a.ton).slice(0, 10);
+  const top = baris.toSorted((a, b) => b.ton - a.ton).slice(0, 10);
   g.innerHTML = batangSvg({ el: g, d: 0, satuan: t("swe.u.ton_hari"), label: t("swe.s.j.grafik"), seri: [{ k: "v", kelas: "swe-s-ton" }],
     baris: top.map((p) => ({ label: p.provinsi, logo: `/img/provinsi/${p.kode}.png`, tip: p.provinsi, th: tipHtml(p.provinsi, [[t("swe.c.proyek"), num(p.n, 0)], [t("swe.u.ton_hari"), num(p.ton, 0)], [t("swe.st.beroperasi"), num(p.op, 0)], [t("swe.st.konstruksi"), num(p.bangun, 0)]], { img: `/img/provinsi/${p.kode}.png` }), bagian: [{ k: "v", nilai: p.ton }] })) });
 }

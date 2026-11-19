@@ -20,7 +20,7 @@ function impor(komp) {
 }
 function konsentrasi() {
   const x = impor(dk), el = document.getElementById("rg3-r-g"), ket = document.getElementById("rg3-r-k"); if (!el) return;
-  if (!x) { el.innerHTML = ""; ket.innerHTML = `<p class="jm-kosong">${esc(t("rg3.r.kosong_dagang"))}</p>`; return; }
+  if (!x) { el.replaceChildren(); ket.innerHTML = `<p class="jm-kosong">${esc(t("rg3.r.kosong_dagang"))}</p>`; return; }
   const iso = Object.fromEntries((D.dagang.mitra || []).map((m) => [m.kode, m])), P = pangsaMitra(x.r.mitra), h = hhi(x.r.mitra.map((m) => m.usd)), kl = kelasHhi(h), top = P.slice(0, 8);
   ket.innerHTML = `<ul class="rg3-ubin rg3-ubin-3"><li class="rg3-ub"><span class="jm-kpi-ik">${ikon("kartu", 18)}</span><b>US$ ${esc(num(x.r.usd / 1e6, 0))} ${esc(t("rg3.r.juta"))}</b><small>${esc(t("rg3.r.impor", { th: x.th, hs: x.r.hs }))}</small>${bukti("resmi", { sumber: cariSumber(D.dagang, "s-comtrade")?.penerbit || "UN Comtrade" })}</li>
     <li class="rg3-ub"><span class="jm-kpi-ik">${ikon("globe", 18)}</span><b>${esc(num(P[0]?.pct, 1))}%</b><small>${esc(t("rg3.r.terbesar", { n: P[0] ? (iso[P[0].kode]?.iso2 ? namaNegara(iso[P[0].kode].iso2) : iso[P[0].kode]?.nama) || "-" : "-" }))}</small>${bukti("est", { cara: t("rg3.r.cara_pangsa") })}</li>
@@ -33,7 +33,7 @@ function hhiPemasok() {
   const per = new Map();
   for (const b of D.surya?.baris || []) for (const s of b.segmen) { const o = per.get(s) || {}; o[b.negara_iso2] = (o[b.negara_iso2] || 0) + 1; per.set(s, o); }
   const B = [...per].map(([s, o]) => ({ s, o, n: Object.values(o).reduce((a, b) => a + b, 0), h: hhi(Object.values(o)) })).filter((x) => x.n >= 2).sort((a, b) => b.h - a.h);
-  if (!B.length) { el.innerHTML = ""; return; }
+  if (!B.length) { el.replaceChildren(); return; }
   document.getElementById("rg3-r-hp-l").innerHTML = legendaHtml(["tinggi", "sedang", "rendah"].map((k) => ({ kelas: "rg3-s-h-" + k, label: t("rg3.r.hhi." + k) })));
   el.innerHTML = batangSvg({ el, d: 0, label: t("rg3.r.ey.hhi"), satuan: "HHI", seri: ["tinggi", "sedang", "rendah"].map((k) => ({ k, kelas: "rg3-s-h-" + k })),
     baris: B.map((x) => { const kl = kelasHhi(x.h), top = Object.entries(x.o).sort((a, b) => b[1] - a[1]); return { label: lbl("rg3.seg.", x.s), ikon: "pabrik", tip: `${lbl("rg3.seg.", x.s)}: HHI ${num(x.h, 0)}`, th: tipHtml(lbl("rg3.seg.", x.s), [["HHI", num(x.h, 0), ""], [t("rg3.r.pemasok"), String(x.n)], ...top.slice(0, 4).map(([n, c]) => [namaNegara(n), `${c} (${num((c / x.n) * 100, 0)}%)`])]), bagian: [{ k: kl, nilai: x.h }] }; }) });

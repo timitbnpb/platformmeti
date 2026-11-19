@@ -211,7 +211,7 @@ function tabelDeret(d, tab, m) {
 function barisProv(m) {
   const q = S.q.trim().toLocaleLowerCase();
   let b = m.baris.filter((r) => (!S.g || r.id === S.g) && (!q || r.nama.toLocaleLowerCase().includes(q) || Object.values(r.v).some((x) => String(x ?? "").includes(q))));
-  if (S.uk) { const ak = S.uk, v = (r) => (ak === "_nama" ? r.nama : ak === "_tot" ? r.tot : ak === "_pangsa" ? r.pangsa : r.v[ak]); b = [...b].sort((a, z) => { const x = v(a), y = v(z); return ((x == null) - (y == null)) || (typeof x === "string" ? x.localeCompare(y, "id") * S.ua : (x - y) * S.ua); }); }
+  if (S.uk) { const ak = S.uk, v = (r) => (ak === "_nama" ? r.nama : ak === "_tot" ? r.tot : ak === "_pangsa" ? r.pangsa : r.v[ak]); b = b.toSorted((a, z) => { const x = v(a), y = v(z); return ((x == null) - (y == null)) || (typeof x === "string" ? x.localeCompare(y, "id") * S.ua : (x - y) * S.ua); }); }
   return b;
 }
 const urutTh = (k, isi, kls = "dd-n") => `<th scope="col" class="${kls}" aria-sort="${S.uk === k ? (S.ua > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-uk="${esc(k)}">${isi}</button></th>`;
@@ -330,7 +330,7 @@ function cfgDeret(d, tab, m) {
   };
 }
 function cfgProv(d, tab, m) {
-  const urut = [...m.baris].sort((a, b) => b.tot - a.tot), seri = m.kol.map((c) => ({ id: c.k, label: c.label, kls: c.info[2], ebt: c.info[1], nilai: urut.map((r) => r.v[c.k] || 0), tip: jPanjang(c.k, c.label) }));
+  const urut = m.baris.toSorted((a, b) => b.tot - a.tot), seri = m.kol.map((c) => ({ id: c.k, label: c.label, kls: c.info[2], ebt: c.info[1], nilai: urut.map((r) => r.v[c.k] || 0), tip: jPanjang(c.k, c.label) }));
   return {
     mode: "kolom", slot: 22, satuan: dasar(tab), judul: t("dd.g.prov", { s: dasar(tab) }), sub: t("dd.g.sub_klik"), klik: true,
     kat: urut.map((r) => ({ id: r.id, kode: r.kode, label: r.nama, pend: singkatProv(r.kode) || r.nama })), seri,

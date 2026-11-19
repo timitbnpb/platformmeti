@@ -264,7 +264,7 @@ const bandingkan = (k, a) => (x, y) => {
 };
 
 function gambarTabel(T, fokus) {
-  const rows = T.baris().slice().sort(bandingkan(T.k, T.arah)), el = $(T.el);
+  const rows = T.baris().toSorted(bandingkan(T.k, T.arah)), el = $(T.el);
   T.hal = Math.min(T.hal, Math.max(1, Math.ceil(rows.length / BATAS)));
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t(T === TT ? "pj.telat.kosong" : "jm.kosong.cocok"))}</p></div>`; return; }
   const kepala = T.kolom.map(([k, kt, , kls]) => k
@@ -295,7 +295,7 @@ for (const T of [TD, TT]) {
 /* CSV seksi tabel: semua baris (bukan hanya yang tampil); aksi_ex.js memanggil jm:csv lalu memakai d.baris */
 for (const [id, T] of [["exTelat", TT], ["exDaftar", TD]]) {
   $(id).addEventListener("jm:csv", (e) => {
-    const rows = T.baris().slice().sort(bandingkan(T.k, T.arah));
+    const rows = T.baris().toSorted(bandingkan(T.k, T.arah));
     e.detail.baris = [[t("pj.c.nama"), t("pj.c.tek"), t("pj.c.kap"), t("pj.c.satuan"), t("pj.c.prov"), t("pj.c.status"), t("pj.c.cod"), t("pj.c.telat"), t("pj.c.sumber")],
       ...rows.map((r) => [r.nama, r.tek ? labTek(r.tek) : "", r.kap ?? "", r.kap === null ? "" : r.sat, r.prov, labSt(r.st), r.cod ?? "", r.telat || "", ((r.p.sumber || [])[0] || {}).url || ""])];
   }, true);
@@ -511,7 +511,7 @@ if (innerWidth < 1000) { $("pjLapis").open = false; $("pjDrawer").open = false; 
 /* panel samping: daftar proyek yang tampil di peta; klik baris menerbangkan peta dan membuka kartu */
 const PN = { hal: 1, per: 40 };
 function gambarPanel() {
-  const rows = tampil.slice().sort((a, b) => (b.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(b.nama)), el = $("pjPanel");
+  const rows = tampil.toSorted((a, b) => (b.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(b.nama)), el = $("pjPanel");
   if (!rows.length) { el.innerHTML = `<div class="jm-kosong">${ikon("info", 32)}<p>${esc(t("jm.kosong.cocok"))}</p></div>`; return; }
   el.innerHTML = `<ul class="jm-pj-pl">${rows.slice((PN.hal - 1) * PN.per, PN.hal * PN.per).map((r) => `<li><button type="button" class="jm-pj-pr" data-id="${esc(r.id)}" title="${esc(r.nama)}"><span class="jm-pj-pr-n">${esc(r.nama)}</span><span class="jm-pj-pr-k">${selKap(r)}</span><span class="jm-pj-pr-m">${selTek(r)}<small>${esc(r.prov || "-")}${r.ada ? "" : " (" + esc(t("pj.presisi.tak")) + ")"}</small></span></button></li>`).join("")}</ul>` +
     paginasiHtml({ hal: PN.hal, total: rows.length, per: PN.per, satuan: "jm.pag.u.proyek" });

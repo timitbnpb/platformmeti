@@ -104,7 +104,7 @@ function sRuptl(D) {
 
 function sProyek(D) {
   if (!D.proyek.length) return "";
-  const urutP = [...D.proyek].sort((a, z) => kapProyek(z) - kapProyek(a));
+  const urutP = D.proyek.toSorted((a, z) => kapProyek(z) - kapProyek(a));
   const cod = (p) => { const a = (p.cod_target || []).map((c) => c.nilai).filter(Number.isFinite); return a.length ? Math.min(...a) : null; };
   const baris = urutP.map((p, i) => {
     const k = p.kapasitas?.[0], pem = p.pihak?.pemilik?.[0]?.nilai;
@@ -127,7 +127,7 @@ function sProyek(D) {
 function sRantai() {
   let h = "", sumber = [];
   if (RANTAI?.pabrikan?.length) {
-    const top = [...RANTAI.pabrikan].sort((a, z) => (z.mwp || 0) - (a.mwp || 0)).slice(0, 15);
+    const top = RANTAI.pabrikan.toSorted((a, z) => (z.mwp || 0) - (a.mwp || 0)).slice(0, 15);
     h += `<h3 class="jm-tk-sub">${esc(t("tk.rantai.pabrik", { n: RANTAI.ringkas.pabrikan, mwp: num(RANTAI.ringkas.total_mwp) }))}</h3>` + tabel(["tk.c.pabrikan", "tk.c.kota", "tk.c.mwp", "tk.c.pasar"], top.map((p) => `<tr>${sel("tk.c.pabrikan", esc(p.nama))}${sel("tk.c.kota", esc(p.kota || "-"))}${sel("tk.c.mwp", mw(p.mwp), "jm-num")}${sel("tk.c.pasar", esc(label("rt.pasar.", p.pasar)))}</tr>`).join(""));
     sumber.push({ sumber: RANTAI.sumber.judul, tanggal: RANTAI.dibangun_pada });
   }
@@ -167,7 +167,7 @@ function sReg(D) {
 
 function sWkp() {
   if (!WKP?.baris?.length) return "";
-  const baris = [...WKP.baris].sort((a, z) => (z.rencana_mw || 0) - (a.rencana_mw || 0)).map((w) => `<tr>${sel("tk.c.wkp", esc(w.nama))}${sel("tk.c.prov", tautProvinsi(w.provinsi))}${sel("tk.c.status", esc(label("tk.wkp.", w.status)), "jm-tengah")}${sel("tk.c.terpasang", mw(w.terpasang_mw, 1), "jm-num")}${sel("tk.c.rencana", mw(w.rencana_mw), "jm-num")}</tr>`).join("");
+  const baris = WKP.baris.toSorted((a, z) => (z.rencana_mw || 0) - (a.rencana_mw || 0)).map((w) => `<tr>${sel("tk.c.wkp", esc(w.nama))}${sel("tk.c.prov", tautProvinsi(w.provinsi))}${sel("tk.c.status", esc(label("tk.wkp.", w.status)), "jm-tengah")}${sel("tk.c.terpasang", mw(w.terpasang_mw, 1), "jm-num")}${sel("tk.c.rencana", mw(w.rencana_mw), "jm-num")}</tr>`).join("");
   return bagian("tk-wkp", "peta", "wkp", {
     judulHtml: hlHtml("tk.s.wkp.j", num(WKP.baris.length), {}), sub: esc(t("tk.s.wkp.sub")),
     isiHtml: tabel(["tk.c.wkp", "tk.c.prov", "tk.c.status", "tk.c.terpasang", "tk.c.rencana"], baris), sumber: src("tk.src.wkp", WKP.meta.diperbarui), csv: true,
@@ -199,7 +199,7 @@ function sPemain(D) {
     const x = stat.get(id) || { n: 0, mw: 0 }; x.n++; x.mw += kapProyek(p); stat.set(id, x);
   }
   const berlogo = (o) => { const l = logoOrgSatu(o.id, o.nama, o.logo); return l && !l.startsWith("/img/logo/org/") ? 0 : 1; };
-  const daftar = [...D.org].sort((a, z) => (stat.get(z.id)?.mw || 0) - (stat.get(a.id)?.mw || 0) || (stat.get(z.id)?.n || 0) - (stat.get(a.id)?.n || 0) || berlogo(a) - berlogo(z) || a.nama.localeCompare(z.nama));
+  const daftar = D.org.toSorted((a, z) => (stat.get(z.id)?.mw || 0) - (stat.get(a.id)?.mw || 0) || (stat.get(z.id)?.n || 0) - (stat.get(a.id)?.n || 0) || berlogo(a) - berlogo(z) || a.nama.localeCompare(z.nama));
   const kartu = daftar.map((o, i) => {
     const lg = logoOrgSatu(o.id, o.nama, o.logo), nama = o.singkatan || o.nama, kk = o.kategori?.kode, kat = KAT[kk];
     const kp = kat ? `<span class="tkp-pil tkp-k-${kat[0]}">${ikon(kat[1], 14)}<span>${esc(t("tk.kat." + kat[0]))}</span></span>` : `<span class="tkp-pil tkp-k-lain">${ikon("direktori", 14)}<span>${esc(o.kategori?.label || "-")}</span></span>`;
@@ -255,7 +255,7 @@ export async function mulai(el) {
   [PEL, RUPTL, PROY, RANTAI, TKDN, REG, ORG, BER, FOTO, WKP, ATAP] = await Promise.all(
     ["peluang", "ruptl", "proyek", C.rantai ? "rantai_plts" : null, C.tkdn ? "tkdn" : null, "regulasi", "organisasi", "berita", "berita_foto", C.wkp ? "wkp" : null, C.atap ? "plts_atap" : null].map((n) => (n ? ambil(n) : null)),
   );
-  if (!PEL && !PROY && !REG && !BER) { el.innerHTML = ""; tampilGalat(el, () => location.reload()); return; }
+  if (!PEL && !PROY && !REG && !BER) { el.replaceChildren(); tampilGalat(el, () => location.reload()); return; }
   const D = olah();
   el.innerHTML = [sPotensi(D), sRuptl(D), sProyek(D), C.rantai || C.tkdn ? sRantai() : "", C.wkp ? sWkp() : "", C.atap ? sAtap() : "", sHarga(), sReg(D), sPemain(D), sBerita(D), sTelusur(), sCara(D)].join("");
   pasangBar(el);

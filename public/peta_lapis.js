@@ -190,7 +190,7 @@ const KORO = {
       const per = new Map();
       for (const b of d.baris) (per.get(b.prov) || per.set(b.prov, []).get(b.prov)).push(b);
       const peta = new Map();
-      for (const [kode, a] of per) { const top = a.slice().sort((x, y) => y.skor - x.skor).slice(0, 3); peta.set(kode, { v: Math.round(rataRata(a.map((b) => b.skor)) * 10) / 10, n: a.length, top }); }
+      for (const [kode, a] of per) { const top = a.toSorted((x, y) => y.skor - x.skor).slice(0, 3); peta.set(kode, { v: Math.round(rataRata(a.map((b) => b.skor)) * 10) / 10, n: a.length, top }); }
       return koro(peta, "hijau", 1, "", { skala: [0, 100] });
     },
     popup: popupKoro("pn2.l.radar", (x) => baris("pn2.n_kab", N(x.n)) + baris("pn2.top_kab", `<ol class="pn-top">${x.top.map((b) => `<li><span>${esc(b.nama)}</span><b>${esc(N(b.skor, 1))}</b></li>`).join("")}</ol>`), () => taut("/radar", "pn2.t.radar", "berlian")),

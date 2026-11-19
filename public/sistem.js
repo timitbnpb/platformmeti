@@ -37,9 +37,9 @@ function indeks() {
     { ikon: "peringatan", nilai: num(rmMin(terendah), 1), satuan: "%", label: t("sp2.ubin.rm", { s: nama(terendah) }) },
   ]);
   const maks = Math.max(...S.map((s) => s.kapasitas_mw.total));
-  const urut = [...S].sort((a, z) => z.kapasitas_mw.total - a.kapasitas_mw.total);
+  const urut = S.toSorted((a, z) => z.kapasitas_mw.total - a.kapasitas_mw.total);
   const bar = batangHtml(urut.map((s) => ({ id: s.id, label: nama(s), labelHtml: namaLink(s), bagian: JENIS.map((j) => ({ nilai: s.kapasitas_mw[j], kelas: "sp-t-" + j })), teks: `${num(s.kapasitas_mw.total)} MW (${t("sp2.ebt_pct", { v: num((s.kapasitas_mw.ebt / s.kapasitas_mw.total) * 100, 0) })})` })), { label: t("sp2.bar.kap"), satuan: "MW", maks });
-  const bauran = batangHtml([...S].sort((a, z) => z.bauran_ebt_persen - a.bauran_ebt_persen).map((s) => ({ id: s.id, label: nama(s), labelHtml: namaLink(s), bagian: [{ nilai: s.bauran_ebt_persen, kelas: "jm-an-id" }], teks: `${num(s.bauran_ebt_persen, 1)}%` })), { label: t("sp2.bar.bauran"), satuan: "%", maks: 100 });
+  const bauran = batangHtml(S.toSorted((a, z) => z.bauran_ebt_persen - a.bauran_ebt_persen).map((s) => ({ id: s.id, label: nama(s), labelHtml: namaLink(s), bagian: [{ nilai: s.bauran_ebt_persen, kelas: "jm-an-id" }], teks: `${num(s.bauran_ebt_persen, 1)}%` })), { label: t("sp2.bar.bauran"), satuan: "%", maks: 100 });
   const kol = [
     { k: "nama", label: t("sp2.kol.sistem"), v: (s) => nama(s), f: (s) => namaLink(s) },
     { k: "kap", label: t("sp2.kol.kap"), v: (s) => s.kapasitas_mw.total, num: true, f: (s) => num(s.kapasitas_mw.total) },
@@ -53,7 +53,7 @@ function indeks() {
   $("isi").innerHTML = `<div id="s-kap"></div><div id="s-bauran"></div><div id="s-tabel"></div><div id="s-inter"></div><div id="s-celah"></div>`;
   $("s-kap").innerHTML = seksi({ id: "kap", ik: "grafik", topik: t("sp2.kap.topik"), judul: t("sp2.kap.judul", { n: num(S.length), mw: num(tot) }), sub: t("sp2.kap.sub"), turunan: false, isi: `${narasi(t("sp2.kap.narasi"))}${lgJenis(JENIS)}<div id="bar-kap">${bar}</div>` });
   pasangBar($("bar-kap"));
-  const top = [...S].sort((a, z) => z.bauran_ebt_persen - a.bauran_ebt_persen)[0];
+  const top = S.toSorted((a, z) => z.bauran_ebt_persen - a.bauran_ebt_persen)[0];
   $("s-bauran").innerHTML = seksi({ id: "bauran", ik: "tek-bio", topik: t("sp2.bauran.topik"), judul: t("sp2.bauran.judul", { s: nama(top), v: num(top.bauran_ebt_persen, 1) }), sub: t("sp2.bauran.sub"), turunan: false, isi: `${narasi(t("sp2.bauran.narasi"))}<div id="bar-bauran">${bauran}</div>` });
   pasangBar($("bar-bauran"));
   $("s-tabel").innerHTML = seksi({ id: "tabel", ik: "tabel", topik: t("sp2.tabel.topik"), judul: t("sp2.tabel.judul", { n: num(S.length) }), sub: t("sp2.tabel.sub"), turunan: false, csv: true, isi: `<div id="t-sp"></div>` });
@@ -89,7 +89,7 @@ function profil(s) {
   if (s.beban_puncak_mw || s.rm_persen) {
     $("p-neraca").innerHTML = seksi({ id: "neraca", ik: "jam", topik: t("sp2.neraca.topik"), judul: t("sp2.neraca.judul", { rm: s.rm_persen ? num(Math.min(...s.rm_persen), 1) : "-", bp: s.beban_puncak_mw ? num(s.beban_puncak_mw[9]) : "-" }), sub: t("sp2.neraca.sub"), turunan: false,
       isi: `${narasi(t("sp2.neraca.narasi." + s.rm_ket))}<div class="sp-grid2">${s.rm_persen ? garisDeret(s.rm_persen, t("sp2.dlg.rm"), "sp2.tip.rm", ambang) : ""}${s.beban_puncak_mw ? garisDeret(s.beban_puncak_mw, t("sp2.dlg.bp"), "sp2.tip.mw") : ""}${s.ebt_dmn_mw ? garisDeret(s.ebt_dmn_mw, t("sp2.dlg.ebt"), "sp2.tip.mw") : ""}</div>${s.penyimpanan_ruptl_mw ? catatan(t("sp2.simpan", { mw: num(s.penyimpanan_ruptl_mw) })) : ""}` });
-  } else $("p-neraca").innerHTML = "";
+  } else $("p-neraca").replaceChildren();
   $("p-ruptl").innerHTML = seksi({ id: "ruptl", ik: "kalender", topik: t("sp2.ruptl.topik"), judul: t("sp2.ruptl.judul", { n: num(s.ruptl.jumlah_proyek), mw: num(s.ruptl.mw) }), sub: t("sp2.ruptl.sub"), turunan: false,
     isi: ruptlTh.length ? `${narasi(t("sp2.ruptl.narasi"))}${lgJenis(adaTek.map((x) => "t:" + x))}<div id="b-ruptl">${barRuptl}</div>` : `<p class="jm-bantu">${esc(t("sp2.ruptl.kosong"))}</p>` });
   $("p-bpp").innerHTML = seksi({ id: "bpp", ik: "kalkulator", topik: t("sp2.bpp.topik"), judul: t("sp2.bpp.judul", { v: bppTeks(s) }), sub: t("sp2.bpp.sub"), turunan: false, isi: `${bppT}${catatan(t("sp2.bpp.catatan", { n: num(d.bpp_nasional_2025.rp_kwh), m: num(d.bpp_nasional_2025.proyeksi_2034_rp_kwh) }))}` });

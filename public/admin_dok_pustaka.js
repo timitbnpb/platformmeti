@@ -33,7 +33,7 @@ export function panelDokPustaka(el) {
   const cariTunda = debounce(() => isiTabel());
   muatDaftar();
 
-  const urut = (l) => l.slice().sort((a, c) => String(c.dibuat || c.tanggal_terbit).localeCompare(String(a.dibuat || a.tanggal_terbit)));
+  const urut = (l) => l.toSorted((a, c) => String(c.dibuat || c.tanggal_terbit).localeCompare(String(a.dibuat || a.tanggal_terbit)));
   async function muatDaftar() {
     if (S.ctl) S.ctl.abort();
     S.ctl = new AbortController();

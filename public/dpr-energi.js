@@ -36,7 +36,7 @@ function gambar() {
   const e = d.ruu_ebet;
   $("d-status").innerHTML = seksi({ id: "status", ik: "regulasi", topik: t("dp2.status.topik"), judul: t("dp2.status.judul"), sub: t("dp2.status.sub"), turunan: false,
     isi: `<div class="dp-status"><p>${esc(L(e.status, bahasa()))}</p><p class="jm-bantu">${esc(L(e.catatan, bahasa()))}</p><div class="dp-kaki">${tautan(d.sumber[e.sumber_id].url, d.sumber[e.sumber_id].judul)}${pilBukti(d.sumber[e.sumber_id].tingkat_bukti)}<span>${esc(tgl(e.tanggal))}</span></div></div>` });
-  const urut = [...d.fraksi].sort((a, z) => z.jumlah - a.jumlah);
+  const urut = d.fraksi.toSorted((a, z) => z.jumlah - a.jumlah);
   $("d-fraksi").innerHTML = seksi({ id: "fraksi", ik: "grafik", topik: t("dp2.fraksi.topik"), judul: t("dp2.fraksi.judul", { n: num(d.anggota.length), f: num(d.fraksi.length) }), sub: t("dp2.fraksi.sub"), turunan: false,
     isi: `${narasi(t("dp2.fraksi.narasi"))}<div id="bar-fr">${batangHtml(urut.map((f) => ({ id: f.id, label: f.singkat, labelHtml: `<span class="sp-teknis"><i class="dp-f-${esc(f.id)}"></i>${esc(f.singkat)}</span>`, bagian: [{ nilai: f.jumlah, kelas: "dp-f-" + f.id }], teks: `${num(f.jumlah)} (${num((f.jumlah / d.anggota.length) * 100, 0)}%)` })), { label: t("dp2.fraksi.label"), maks: Math.max(...urut.map((f) => f.jumlah)) + 2 })}</div>` });
   pasangBar($("bar-fr"));

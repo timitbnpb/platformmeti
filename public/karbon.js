@@ -58,7 +58,7 @@ const saring = () => {
 const KUNCI = { nama: (r) => r.nama, sektor: (r) => t("kb2.s." + r.sektor), registri: (r) => r.registri[0].nama, pengembang: (r) => r.pengembang || "", prov: (r) => r.lokasi.provinsi || "", status: (r) => t("kb2.st." + r.status), terbit: (r) => r.kredit.diterbitkan ?? -1, pensiun: (r) => r.kredit.dipensiunkan ?? -1 };
 function urutkan(rows) {
   const f = KUNCI[S.uk]; if (!f) return rows;
-  return [...rows].sort((a, b) => { const x = f(a), y = f(b); return (typeof x === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * S.ua; });
+  return rows.toSorted((a, b) => { const x = f(a), y = f(b); return (typeof x === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * S.ua; });
 }
 const lambangProv = (p) => { const k = p && kodeProv(p); return k ? `<span class="kb-prov"><img src="/img/provinsi/${esc(k)}.png" width="22" height="22" alt="" loading="lazy" decoding="async" data-galat="hapus"><span>${esc(singkatProv(k) || p)}</span></span>` : p ? `<span class="kb-prov">${ikon("lokasi", 16)}<span>${esc(p)}</span></span>` : redup(); };
 function pengembangHtml(r) {
@@ -200,13 +200,13 @@ function gambarPasar() {
     tip: (i) => (b[i].volume ? t("kb2.ps.tip", { bulan: BLN(b[i].periode), vol: angka(b[i].volume), nil: angka(b[i].nilai_idr), hrg: angka(b[i].harga_rata), fr: angka(b[i].frekuensi) }) : t("kb2.ps.tip0", { bulan: BLN(b[i].periode) })) });
   document.getElementById("kbPsRef").hidden = S.pasar !== "harga";
 }
-const akhirHarga = () => [...P.idxcarbon.bulanan].reverse().find((x) => x.harga_rata);
+const akhirHarga = () => P.idxcarbon.bulanan.toReversed().find((x) => x.harga_rata);
 function panelPasar() {
   const b = P.idxcarbon.bulanan, ak = akhirHarga(), pj = P.pajak_karbon, pt = P.ptbae_pu, fe = P.faktor_emisi, eb = P.kredit_ebt, el = document.getElementById("panelPasar");
   const bar = (baris, opsi) => batangHtml(baris, opsi);
   const barPt = pt.aktual_est.map((k) => ({ id: k.kelompok, label: t("kb2.pt.k." + k.kelompok), bagian: [{ nilai: k.intensitas_t_per_mwh || 0, kelas: "kb-b-pt" }], teks: `${angka(k.intensitas_t_per_mwh, { desimal: 3 })} t/MWh`,
     sorot: false, tip: t("kb2.pt.tip", { kelompok: t("kb2.pt.k." + k.kelompok), n: angka(k.pltu), mw: angka(k.mw), int: angka(k.intensitas_t_per_mwh, { desimal: 3 }), emisi: angka(k.emisi_tco2e / 1e6, { desimal: 1 }) }) }));
-  const grid = fe.grid_est.slice().sort((a, c) => c.intensitas_t_per_mwh - a.intensitas_t_per_mwh), gTop = grid[0];
+  const grid = fe.grid_est.toSorted((a, c) => c.intensitas_t_per_mwh - a.intensitas_t_per_mwh), gTop = grid[0];
   const barGrid = grid.slice(0, 8).map((s) => ({ id: s.id, label: s.nama, bagian: [{ nilai: s.intensitas_t_per_mwh, kelas: "kb-b-gr" }], teks: `${angka(s.intensitas_t_per_mwh, { desimal: 2 })} t/MWh`, tip: t("kb2.fe.tip", { sistem: s.nama, int: angka(s.intensitas_t_per_mwh, { desimal: 2 }), tahun: s.tahun, skenario: s.skenario, tabel: s.tabel }) }));
   const bd = (rows, o) => bar(rows.map((r) => ({ ...r, label: r.label })), o);
   const sumber = esc(t("kb2.sumber.pasar", { tanggal: tanggal(P.dibangun_pada) }));

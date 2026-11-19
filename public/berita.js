@@ -71,7 +71,7 @@ const urutHitung = (f) => { const m = new Map(); for (const r of B) for (const k
 function gambarPeta() {
   const A = agregat(B), est = `<span class="jm-pil jm-pil-est">${esc(t("an.est"))}</span>`;
   const el = document.getElementById("r-peta");
-  if (!A.prov.length) { el.innerHTML = ""; return; }
+  if (!A.prov.length) { el.replaceChildren(); return; }
   el.innerHTML = exHtml({ id: "ex-peta", ikon: "wilayah", topik: t("brt.ex.peta.ey"), tingkat: "h2", judulHtml: hlHtml("brt.ex.peta.j", A.prov[0].nama, { n: angka(A.berlokasi) }),
     subHtml: `${esc(t("brt.ex.peta.sub", { p: angka(Math.round(A.berlokasi / B.length * 100)) }))} ${est}`, isiHtml: "",
     aksiHtml: aksiHtml({ csv: false }) + sumberHtml(`${esc(t("brt.sumber.peta"))} ${esc(tanggal(DIBANGUN))}.`) }) + petaHtml();

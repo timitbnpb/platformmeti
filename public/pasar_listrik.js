@@ -136,7 +136,7 @@ function gBbm() {
   const baris = [
     { label: t("psl.b.hba", { tahun: r.tahun }), k: "fosil", nilai: r.biaya_bbm_hba_sen_kwh, tip: `${t("psl.b.hba", { tahun: r.tahun })}: ${n1(r.biaya_bbm_hba_sen_kwh, 2)} ${sat}`, ikon: "tek-listrik" },
     { label: t("psl.b.dmo"), k: "dmo", nilai: r.biaya_bbm_dmo_sen_kwh, tip: `${t("psl.b.dmo")}: ${n1(r.biaya_bbm_dmo_sen_kwh, 2)} ${sat}`, ikon: "tek-listrik" },
-    ...[...A.ebt].sort((a, b) => b.lcoe_sen_kwh - a.lcoe_sen_kwh).map((e) => ({ label: t("psl.tek." + e.teknologi), k: "ebt", nilai: e.lcoe_sen_kwh, tip: `${t("psl.b.ebt", { tek: t("ih.tek." + e.teknologi) })}: ${n1(e.lcoe_sen_kwh, 1)} ${sat}`, ikon: "tek-" + ({ surya: "surya", "bayu-darat": "listrik", air: "listrik", "panas-bumi": "panas", bioenergi: "bio" })[e.teknologi], e })),
+    ...A.ebt.toSorted((a, b) => b.lcoe_sen_kwh - a.lcoe_sen_kwh).map((e) => ({ label: t("psl.tek." + e.teknologi), k: "ebt", nilai: e.lcoe_sen_kwh, tip: `${t("psl.b.ebt", { tek: t("ih.tek." + e.teknologi) })}: ${n1(e.lcoe_sen_kwh, 1)} ${sat}`, ikon: "tek-" + ({ surya: "surya", "bayu-darat": "listrik", air: "listrik", "panas-bumi": "panas", bioenergi: "bio" })[e.teknologi], e })),
   ];
   $("g-bbm").innerHTML = batangSvg({ el: $("g-bbm"), d: 1, label: t("psl.s.bbm"), satuan: sat,
     seri: [{ k: "fosil", kelas: "ih-fosil" }, { k: "dmo", kelas: "ih-lawan" }, { k: "ebt", kelas: "ih-ebt" }],

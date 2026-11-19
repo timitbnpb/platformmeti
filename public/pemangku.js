@@ -164,7 +164,7 @@ function pasangGraf(akar, G, M) {
   function buka(k) {
     pilih = k; tandai();
     const n = k && M.per.get(k);
-    panel.hidden = !n; if (!n) { panelIsi.innerHTML = ""; return; }
+    panel.hidden = !n; if (!n) { panelIsi.replaceChildren(); return; }
     const h = hrefNode(n);
     const baris = [...n.peran.values()].sort((a, b) => PERAN.indexOf(a.p) - PERAN.indexOf(b.p)).map((e) => `<li>${pilPeran(e.p)} ${pilTingkat(e.t)}${e.c ? `<small>${esc(e.c)}</small>` : ""}${(e.s || []).length ? `<span class="pk-src">${e.s.map((s) => `<a href="${esc(s.u)}" target="_blank" rel="noopener noreferrer">${ikon("tautan", 14)}<span>${esc(s.n || new URL(s.u).hostname.replace(/^www\./, ""))}</span></a>`).join("")}</span>` : ""}</li>`).join("");
     const reg = n.j === "regulasi" ? `<p class="pk-reg">${unduhRegHtml({ url_pdf: n.pdf, url_sumber: n.url, judul: n.nama })}<small>${esc(n.judul || "")}</small></p>` : "";

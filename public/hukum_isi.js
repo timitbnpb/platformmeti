@@ -74,14 +74,14 @@ function saringHtml(perJenis) {
 }
 async function jalankanCari() {
   const hasil = el("hhasil"), hal = el("hhal");
-  if (!S.q.trim()) { hasil.innerHTML = kosongHtml("hk.cari.mulai"); hal.innerHTML = ""; if (!el("hsaring").children.length) saringHtml(null); return; }
+  if (!S.q.trim()) { hasil.innerHTML = kosongHtml("hk.cari.mulai"); hal.replaceChildren(); if (!el("hsaring").children.length) saringHtml(null); return; }
   hasil.innerHTML = hantuHtml(4);
   const u = new URLSearchParams({ q: S.q.trim(), hal: S.hal }); for (const k of ["jenis", "tahun", "status"]) if (S[k]) u.set(k, S[k]);
   let d;
   try { d = await ambil("/api/hukum/cari?" + u); } catch (e) { hasil.innerHTML = e.status === 422 ? kosongHtml("hk.cari.kosong") : galatHtml(e.kode); return; }
   if (!d) { hasil.innerHTML = tidakAktif(); return; }
   saringHtml(d.per_jenis); el("hhapus").hidden = !adaFilter();
-  if (!d.hasil.length) { hasil.innerHTML = kosongHtml("hk.cari.kosong"); hal.innerHTML = ""; return; }
+  if (!d.hasil.length) { hasil.innerHTML = kosongHtml("hk.cari.kosong"); hal.replaceChildren(); return; }
   hasil.innerHTML = `<p class="jm-hitung" role="status">${esc(t("hk.cari.hasil", { n: angka(d.total) }))}${d.longgar ? ` <span class="jm-pil jm-pil-warn">${ikon("info", 14)}${esc(t("hk.cari.longgar"))}</span>` : ""}</p><ul class="hk-daftar">${d.hasil.map((r, i) => `<li class="hk-kartu" data-buka="${esc(r.dok)}" data-seg="${r.segmen}" data-i="${i}" tabindex="0">
     <div class="hk-kep"><img src="${esc(LOGO(r.dok, r.singkatan))}" alt="" loading="lazy" decoding="async"><div><p class="hk-nama">${esc(nama(r))}</p><p class="hk-sub">${esc(judulHuruf(r.judul))}</p></div></div>
     <div class="hk-meta">${pilJenis(r.singkatan)}${pilStatus(r.status)}<span class="hk-pasal">${esc(r.label)}${r.bab ? " | " + esc(r.bab) : ""}</span></div><div data-cup></div></li>`).join("")}</ul>`;
@@ -100,7 +100,7 @@ function pasangCari() {
     const b = e.target.closest("[data-hal]"); if (b && !b.disabled) { S.hal = +b.dataset.hal; sorotHalaman(b, S.hal); tunda(); nanti(() => el("ex-cari").scrollIntoView({ block: "start" })); return; }
     const k = e.target.closest("[data-buka]"); if (k) location.hash = bukaHref(k.dataset.buka, k.dataset.seg);
   });
-  p.addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-buka]"); if (k && e.key === "Enter") location.hash = bukaHref(k.dataset.buka, k.dataset.seg); });
+  p.addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-buka]"); if (k && e.key === "Enter" && !e.isComposing && e.keyCode !== 229) location.hash = bukaHref(k.dataset.buka, k.dataset.seg); });
 }
 
 /* ---------- tab dokumen ---------- */
@@ -182,7 +182,7 @@ async function ringkasan(id, segPasal, buat = false) {
   let r, pesan = "";
   /* api langsung (bukan ambil): 503 di sini berarti AI atau tembolok belum aktif, bukan seluruh pustaka */
   try { r = await api("/api/hukum/ringkasan" + (buat ? "" : "?id=" + encodeURIComponent(id)), buat ? { metode: "POST", badan: { id } } : undefined); }
-  catch (e) { if (!buat) { w.innerHTML = ""; return; } pesan = t(e.status === 429 ? "rk.laju" : "rk.gagal"); r = { ada: false, boleh_buat: true }; }
+  catch (e) { if (!buat) { w.replaceChildren(); return; } pesan = t(e.status === 429 ? "rk.laju" : "rk.gagal"); r = { ada: false, boleh_buat: true }; }
   if (buat && !r.ada && r.sebab) { pesan = t("rk.sebab." + r.sebab); r.boleh_buat = true; }
   if (r.ada) {
     const butir = r.butir.map((b) => `<li><p>${esc(b.k)}</p><span class="hk-rk-p">${b.p.map((l) => { const sid = segPasal.get(String(l).replace(/^Pasal\s+/, "")); return sid ? `<button type="button" class="jm-tbl jm-tbl-kecil" data-s="${esc(sid)}">${ikon("palu", 14)}<span>${esc(l)}</span></button>` : `<span class="jm-pil">${esc(l)}</span>`; }).join("")}</span></li>`).join("");
@@ -239,7 +239,7 @@ function pasangDokumen() {
     const b = e.target.closest("[data-hal]"); if (b && !b.disabled) { L.hal = +b.dataset.hal; sorotHalaman(b, L.hal); tundaDaftar(); return; }
     const k = e.target.closest("[data-buka]"); if (k) location.hash = bukaHref(k.dataset.buka);
   });
-  w.addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-buka]"); if (k && e.key === "Enter") location.hash = bukaHref(k.dataset.buka); });
+  w.addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-buka]"); if (k && e.key === "Enter" && !e.isComposing && e.keyCode !== 229) location.hash = bukaHref(k.dataset.buka); });
 }
 const tundaDaftar = debounce(() => nanti(daftarDok));
 async function muatDokumen() {

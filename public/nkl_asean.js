@@ -6,7 +6,7 @@ function grafik() {
   const g = document.getElementById("nkl-a-g"), l = document.getElementById("nkl-a-l"); if (!g) return;
   l.innerHTML = legendaHtml(ST.map((k) => ({ kelas: "nkl-s-" + k, label: t("nkl.st." + k) })));
   g.innerHTML = batangSvg({ el: g, d: 0, satuan: "MW", label: t("nkl.a.j.g"), seri: ST.map((k) => ({ k, kelas: "nkl-s-" + k })),
-    baris: [...B.nk.asean.negara].sort((a, z) => z.ukuran_mw - a.ukuran_mw).map((n) => { const lab = namaNegara(n.iso2); return { label: lab, bendera: n.iso2.toLowerCase(), bagian: [{ k: n.status, nilai: n.ukuran_mw }], tip: lab, th: tipHtml(lab, [[t("nkl.a.ukuran"), `${num(n.ukuran_mw, 0)} MW`], [t("nkl.c.status"), t("nkl.st." + n.status)]]) }; }) });
+    baris: B.nk.asean.negara.toSorted((a, z) => z.ukuran_mw - a.ukuran_mw).map((n) => { const lab = namaNegara(n.iso2); return { label: lab, bendera: n.iso2.toLowerCase(), bagian: [{ k: n.status, nilai: n.ukuran_mw }], tip: lab, th: tipHtml(lab, [[t("nkl.a.ukuran"), `${num(n.ukuran_mw, 0)} MW`], [t("nkl.c.status"), t("nkl.st." + n.status)]]) }; }) });
 }
 function tabNegara() {
   const el = document.getElementById("nkl-a-tab"); if (!el) return;

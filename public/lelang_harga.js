@@ -52,7 +52,7 @@ export async function mulai(panel) {
     { label: t("lel.c.selisih"), num: true, v: (x) => x.selisih, f: (x) => pilUbah(x.selisih) },
     { label: t("lel.c.sumber"), v: (x) => cariSumber(x.p.harga.sumber_id)?.penerbit || "", f: (x) => sumberSel(x.p.harga.sumber_id, x.p.tingkat_bukti) },
   ], baris: H });
-  else $("hg-tb").innerHTML = "";
+  else $("hg-tb").replaceChildren();
   $("hg-banding").addEventListener("jm:csv", (e) => { e.detail.baris = [["putaran", "teknologi", "kapasitas_mw", "harga_sen_usd_kwh", "jenis_harga", "patokan_sen_usd_kwh", "koefisien", "faktor_lokasi", "selisih_persen", "sumber", "url"], ...H.map((x) => [x.p.nama, x.p.teknologi, x.p.kapasitas_mw ?? "", x.p.harga.usd_sen_kwh, x.p.harga.jenis, x.pat?.sen ?? "", x.pat?.koef ?? "", x.pat?.F ?? "", x.selisih == null ? "" : Math.round(x.selisih * 10) / 10, cariSumber(x.p.harga.sumber_id)?.penerbit || "", cariSumber(x.p.harga.sumber_id)?.url || ""])]; });
 
   if (adaPat) $("hg-g-patokan").innerHTML = batangSvg({ el: $("hg-g-patokan"), d: 2, label: t("lel.ey.patokan"), satuan: t("lel.u.sen"), seri: ["surya", "bayu", "hidro", "panas-bumi"].map((k) => ({ k, kelas: "lel-s-" + k })),

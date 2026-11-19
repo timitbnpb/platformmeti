@@ -121,7 +121,7 @@ function eTek() {
 const kelasSkor = (s) => (s == null ? "k" : s < 20 ? "s0" : s < 40 ? "s1" : s < 60 ? "s2" : s < 80 ? "s3" : "s4");
 function urutProv() {
   const u = ST.urutPeta, P = A.peta, nilai = (p) => (u.k === "rata" ? P.baris.find((b) => b.kode === p.kode).rata : u.k === "nama" ? p.nama : P.sel[p.kode + "|" + u.k].skor);
-  return [...P.provinsi].sort((a, b) => {
+  return P.provinsi.toSorted((a, b) => {
     const x = nilai(a), z = nilai(b);
     return ((x == null) - (z == null)) || (x == null ? 0 : typeof x === "number" ? (x - z) * u.arah : String(x).localeCompare(String(z), bahasa()) * u.arah) || a.nama.localeCompare(b.nama);
   });
@@ -152,7 +152,7 @@ function rinciSel() {
   const kurang = c.skor == null;
   let kes = "";
   if (!kurang) {
-    const sorted = [...c.komponen].sort((a, b) => b.skor - a.skor), kuat = sorted[0], lemah = sorted.at(-1);
+    const sorted = c.komponen.toSorted((a, b) => b.skor - a.skor), kuat = sorted[0], lemah = sorted.at(-1);
     kes = kesimpulan(t("st.kes." + (c.skor >= 70 ? "kuat" : c.skor >= 50 ? "telaah" : "terbatas"), { prov: c.prov, tek: tekL(c.tek), skor: n1(c.skor), kuat: t("st.kn." + kuat.id), lemah: t("st.kn." + lemah.id) }));
   }
   el.innerHTML = `<h3 class="jm-st-h3">${esc(c.prov)}, ${esc(tekL(c.tek))}${kurang ? "" : `<span class="jm-st-skor">${n1(c.skor)}</span>`}</h3>${kurang ? bantu("st.peta.kurang_n", { n: c.n }) : ""}<div class="jm-gulir"><table class="jm-tabel" data-urut="tidak"><thead><tr><th>${esc(t("st.c.komponen"))}</th><th>${esc(t("st.c.alasan"))}</th><th class="jm-num">${esc(t("st.c.skor"))}</th><th class="jm-num">${esc(t("st.c.bobot"))}</th></tr></thead><tbody>${baris}</tbody></table></div>${kes}`;
@@ -161,7 +161,7 @@ function ePeta() {
   const P = A.peta, top = P.top[0];
   const semua = Object.values(P.sel).filter((s) => s.skor != null).sort((a, b) => b.skor - a.skor || a.prov.localeCompare(b.prov) || a.tek.localeCompare(b.tek));
   const rank = new Map(semua.map((s, i) => [s, i + 1]));
-  const ekstrem = (s, f) => t("st.kn." + [...s.komponen].sort((a, b) => f * (b.skor - a.skor))[0].id);
+  const ekstrem = (s, f) => t("st.kn." + s.komponen.toSorted((a, b) => f * (b.skor - a.skor))[0].id);
   const tab = daftarTabel("sel", [
     { k: "r", l: "st.c.peringkat", v: (x) => rank.get(x), f: (x) => rank.get(x), num: true },
     { k: "p", l: "st.c.provinsi", v: (x) => x.prov, f: (x) => esc(x.prov) },
@@ -251,7 +251,7 @@ function ePangsa() {
     { k: "b", l: "st.gol.bumn", v: (x) => x.bumn, f: (x) => pct(x.bumn), num: true, est: true },
     { k: "s", l: "st.gol.swasta", v: (x) => x.swasta, f: (x) => pct(x.swasta), num: true, est: true },
     { k: "a", l: "st.gol.asing", v: (x) => x.asing, f: (x) => pct(x.asing), num: true, est: true },
-  ], [...K].reverse(), 5);
+  ], K.toReversed(), 5);
   return ex("pangsa", "grafik", "pangsa", {
     judul: hlHtml("st.pangsa.judul", n0(z.bumn), { dari: n0(a.bumn), a: a.tahun, z: z.tahun }),
     isi: garisTip(th, seri, { d: 1, satuan: "%", label: t("st.pangsa.grafik") }) + bantu("st.pangsa.catatan") + tab + kesimpulan(t("st.pangsa.kes", { asing: pct(z.asing, 0), swasta: pct(z.swasta, 0) })),
@@ -304,7 +304,7 @@ function eTahunan() {
     { k: "n", l: "st.c.aktivitas", v: (x) => x.n, f: (x) => n0(x.n), num: true },
     { k: "i", l: "st.c.iati", v: (x) => x.iati_usd, f: (x) => usd(x.iati_usd), num: true },
     { k: "p", l: "st.c.dana_publik", v: (x) => x.publik_usd, f: (x) => (x.publik_usd ? usd(x.publik_usd) : "-"), num: true },
-  ], [...S].reverse(), 6);
+  ], S.toReversed(), 6);
   return ex("tahunan", "linimasa", "tahunan", {
     judul: hlHtml("st.tahunan.judul", usd(A.uang.iati_usd), { tahun: puncak.tahun, n: n0(S.reduce((s, x) => s + x.n, 0)) }),
     isi: garisTip(th, seri, { d: 1, satuan: "", label: t("st.tahunan.grafik") }) + bantu("st.tahunan.catatan") + tab,
@@ -358,7 +358,7 @@ function eBulanan() {
     { k: "l", l: "st.c.t_lelang", v: (x) => x.topik.lelang, f: (x) => n0(x.topik.lelang), num: true, est: true },
     { k: "x", l: "st.c.t_batal", v: (x) => x.topik.batal, f: (x) => n0(x.topik.batal), num: true, est: true },
     { k: "v", l: "st.c.peristiwa_v", v: (x) => ["peresmian", "ppa", "lelang"].reduce((s, k) => s + peristiwa(x.bulan, k), 0), f: (x) => n0(["peresmian", "ppa", "lelang"].reduce((s, k) => s + peristiwa(x.bulan, k), 0)), num: true },
-  ], [...bulan].reverse(), 6);
+  ], bulan.toReversed(), 6);
   const topikTot = bulan.reduce((s, x) => s + x.topik.resmi + x.topik.ppa + x.topik.lelang + x.topik.batal, 0);
   return ex("bulanan", "kalender", "bulanan", {
     judul: hlHtml("st.bulanan.judul", n0(S.n_berita), { n: n0(topikTot), batal: n0(S.n_batal_proyek) }),

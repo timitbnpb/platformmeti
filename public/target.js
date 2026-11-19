@@ -7,7 +7,7 @@ import { exHtml, sumberHtml, unduhRegHtml, pasangUrutTabel } from "/inti/kompone
 import { aksiHtml, hlHtml } from "/inti/aksi_ex.js";
 import { khSisi } from "/inti/kh.js";
 import { num, saatBahasa, tampilGalat, muatData, sumberLipat, amanUrl } from "/analisis.js";
-import { nt, pilSt } from "/target_format.js";
+import { nt, pilSt, des } from "/target_format.js";
 
 const $ = (id) => document.getElementById(id);
 const D = {};
@@ -210,7 +210,7 @@ function pasang() {
     const k = e.target.closest("[data-buka]");
     if (k) buka(k.dataset.buka);
   });
-  document.addEventListener("close", (e) => { if (e.target.id === "tgModal") { e.target.innerHTML = ""; sembunyiTip(); terakhir?.focus?.(); } }, true);
+  document.addEventListener("close", (e) => { if (e.target.id === "tgModal") { e.target.replaceChildren(); sembunyiTip(); terakhir?.focus?.(); } }, true);
 }
 async function mulai() {
   $("tgIsi").innerHTML = hantuHtml(4);

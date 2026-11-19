@@ -84,7 +84,7 @@ export function panelKotak(panel) {
   const hitung = () => { const h = Object.fromEntries(KUNCI.map((k) => [k, 0])); for (const x of S.butir) h[x.jenis] = (h[x.jenis] || 0) + 1; for (const [k, n] of Object.entries(S.hitungD1)) h[k] = n; return h; };
   function ubin() {
     const el = $("ktUbin"); if (!el) return;
-    if (S.galat) { el.innerHTML = ""; return; }
+    if (S.galat) { el.replaceChildren(); return; }
     const h = hitung(), total = KUNCI.reduce((s, k) => s + h[k], 0), saya = [...S.tugas.values()].filter((x) => x.akun_id === S.saya).length;
     ubinKepala(panel, [{ ikon: "lonceng", nilai: total, label: t("kt.k.total") }, { ikon: "orang", nilai: saya, label: t("kt.k.saya") },
       { ikon: "tabel", nilai: KUNCI.filter((k) => JENIS.find((j) => j[0] === k)[2] === "d1").reduce((s, k) => s + h[k], 0), label: t("kt.k.d1") }, { ikon: "info", nilai: KUNCI.filter((k) => JENIS.find((j) => j[0] === k)[2] === "data").reduce((s, k) => s + h[k], 0), label: t("kt.k.data") }]);
@@ -92,11 +92,11 @@ export function panelKotak(panel) {
   }
   function gambar() {
     const el = $("ktDaftar"); if (!el) return;
-    if (S.galat) { el.innerHTML = keadaan(S.galat); $("ktHal").innerHTML = ""; return; }
+    if (S.galat) { el.innerHTML = keadaan(S.galat); $("ktHal").replaceChildren(); return; }
     const sekarang = kini();
     const umur = (x) => hariDari(x.dibuat, sekarang);
     const daftar = S.butir.filter((x) => !S.jenis || x.jenis === S.jenis).sort((a, b) => (S.urut === "tua" ? a.dibuat - b.dibuat : b.dibuat - a.dibuat));
-    if (!daftar.length) { el.innerHTML = kosongHtml("kt.kosong"); $("ktHal").innerHTML = ""; return; }
+    if (!daftar.length) { el.innerHTML = kosongHtml("kt.kosong"); $("ktHal").replaceChildren(); return; }
     const hal = Math.min(S.hal, Math.ceil(daftar.length / PER)), ik = Object.fromEntries(JENIS.map((j) => [j[0], j[1]]));
     const baris = daftar.slice((hal - 1) * PER, hal * PER).map((x) => {
       const link = hrefRef(x.ref), tugas = S.tugas.get(kunciTugas(x));

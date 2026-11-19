@@ -15,12 +15,12 @@ export async function mulai(el) {
   const pilihan = GANDA[K], pakai = pilihan?.includes(new URLSearchParams(location.search).get("topik")) ? new URLSearchParams(location.search).get("topik") : K;
   el.innerHTML = hantuHtml(6);
   S.ui = S.ui || (await muat("/data/topik/ui.json"));
-  if (!S.ui) { el.innerHTML = ""; tampilGalat(el, () => location.reload()); return; }
+  if (!S.ui) { el.replaceChildren(); tampilGalat(el, () => location.reload()); return; }
   pasangTabel();
   const sakelar = pilihan ? `<p class="jm-tp-pilih-topik">${pilihan.map((id) => `<a class="jm-tbl" href="?tab=dasar${id === K ? "" : "&topik=" + id}"${id === pakai ? ' aria-current="page"' : ""}>${esc(t("tk.dasar." + id))}</a>`).join(" ")}</p>` : "";
   const isi = document.createElement("div");
   el.replaceChildren();
   el.insertAdjacentHTML("beforeend", sakelar);
   el.appendChild(isi);
-  try { await halaman(pakai, isi); } catch (e) { console.error(e); isi.innerHTML = ""; tampilGalat(isi, () => location.reload()); }
+  try { await halaman(pakai, isi); } catch (e) { console.error(e); isi.replaceChildren(); tampilGalat(isi, () => location.reload()); }
 }

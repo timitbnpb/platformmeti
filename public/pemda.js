@@ -195,7 +195,7 @@ async function gambar() {
   try {
     [d] = await Promise.all([muatData("paket_pemda.json"), muatTeks("pemda")]);
   } catch (e) { tampilGalat($("isi"), () => location.reload()); return; }
-  $("isi").innerHTML = "";
+  $("isi").replaceChildren();
   await gambar();
   saatBahasa(() => gambar());
   if (location.hash) $(location.hash.slice(1))?.scrollIntoView();

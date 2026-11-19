@@ -521,7 +521,7 @@ dlg.addEventListener("input", (e) => {
   if (e.target.id === "fInstansi" && Z.org) { Z.org = ""; segarOrg(); }
 });
 dlg.addEventListener("change", (e) => { if (e.target.dataset?.bagian) simpanPrivasi(e.target.dataset.bagian, e.target.value); });
-dlg.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.id === "fAhliBaru") { e.preventDefault(); tambahAhli(e.target.value); } });
+dlg.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.isComposing && e.keyCode !== 229 && e.target.id === "fAhliBaru") { e.preventDefault(); tambahAhli(e.target.value); } });
 samping.addEventListener("input", (e) => {
   if (e.target.id === "kBukti") Z.klaim.bukti = e.target.value;
   else if (e.target.id === "kNama") { Z.klaim.nama = e.target.value; if (Z.klaim.id) { Z.klaim.id = ""; $("kRef").textContent = t("prk.cari_bantu"); } }

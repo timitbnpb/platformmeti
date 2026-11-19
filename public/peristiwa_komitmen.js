@@ -17,7 +17,7 @@ export const muatKomitmen = () => ambil("komitmen_iklim");
 const IK = { peresmian: "kalender-bintang", ppa: "regulasi", lelang: "palu", lain: "berita" };
 const jenisDari = (b) => b.peristiwa || "lain";
 const urlEsdm = (u) => (/^https:\/\/(www\.)?esdm\.go\.id\//.test(u || "") ? u : "");
-const urut = (a) => [...a].sort((x, y) => String(y.tanggal).localeCompare(String(x.tanggal)));
+const urut = (a) => a.toSorted((x, y) => String(y.tanggal).localeCompare(String(x.tanggal)));
 
 function itemHtml(b) {
   const j = jenisDari(b), u = urlEsdm(b.sumber_url);

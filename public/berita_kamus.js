@@ -31,7 +31,7 @@ export function jaccard(a, b) { let i = 0; for (const x of a) if (b.has(x)) i++;
 
 /** Kluster judul sejenis: serakan pertama (terbaru) jadi benih; anggota harus dalam jendela jam dari benih dan Jaccard >= ambang. Mengembalikan kluster dengan >= minMedia media. */
 export function klaster(rows, { jam = 72, ambang = 0.4, minMedia = 2 } = {}) {
-  const urut = [...rows].sort((x, y) => y.terbit.localeCompare(x.terbit)), ks = [];
+  const urut = rows.toSorted((x, y) => y.terbit.localeCompare(x.terbit)), ks = [];
   for (const r of urut) {
     const tk = token(r.judul), tr = Date.parse(r.terbit);
     const k = ks.find((c) => Math.abs(c.t - tr) <= jam * JAM && jaccard(c.tk, tk) >= ambang);

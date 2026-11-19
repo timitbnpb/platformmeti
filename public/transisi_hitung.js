@@ -5,7 +5,7 @@ export const TEK_EBT = ["hidro_mw", "panas_bumi_mw", "surya_mw", "bayu_mw", "bio
 
 /** Tambahan kapasitas EBT per tahun dari target.json kapasitas_ebt: [{tahun, total, bulanan, per:{kunci:mw}}]. Tahun 2020 membandingkan seri Statistik 2020 dengan 2024 (beda versi): bertanda beda_seri. */
 export function tambahanTahunan(kap) {
-  const u = [...kap].sort((a, b) => a.tahun - b.tahun);
+  const u = kap.toSorted((a, b) => a.tahun - b.tahun);
   return u.slice(1).map((b, i) => {
     const a = u[i];
     const per = Object.fromEntries(TEK_EBT.map((k) => [k, Math.round(((b[k] ?? 0) - (a[k] ?? 0)) * 100) / 100]));
@@ -16,14 +16,14 @@ export function tambahanTahunan(kap) {
 
 /** Rata-rata laju per tahun antara dua titik. */
 export const lajuRata = (kap) => {
-  const u = [...kap].sort((a, b) => a.tahun - b.tahun);
+  const u = kap.toSorted((a, b) => a.tahun - b.tahun);
   return (u.at(-1).total_ebt_mw - u[0].total_ebt_mw) / (u.at(-1).tahun - u[0].tahun);
 };
 
 /** Dekomposisi perubahan bauran (poin persen) per tahun: efek_ebt + efek_permintaan = selisih bauran (identitas eksak).
  *  bauran = E/T. dBauran = (E1-E0)/T1 [EBT bertambah] + E0*(1/T1 - 1/T0) [permintaan total tumbuh]. */
 export function dekomposisiBauran(real) {
-  const u = [...real].sort((a, b) => a.tahun - b.tahun);
+  const u = real.toSorted((a, b) => a.tahun - b.tahun);
   return u.slice(1).map((b, i) => {
     const a = u[i];
     const efekEbt = ((b.twh - a.twh) / b.total_twh) * 100;

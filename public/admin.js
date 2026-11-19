@@ -384,7 +384,7 @@ function jalan() {
       case "nonaktif": { const r = cari(b.dataset.id); if (r) dialogNonaktif(r); break; }
       case "taut": buatTaut(b); break;
       case "salin": salin(); break;
-      case "tutup-taut": $("aTaut").innerHTML = ""; break;
+      case "tutup-taut": $("aTaut").replaceChildren(); break;
     }
   }
 
@@ -411,7 +411,7 @@ function jalan() {
     }
     const kirim = $("fKirim");
     kirim.disabled = true;
-    $("fPesan").innerHTML = "";
+    $("fPesan").replaceChildren();
     try {
       const d = await api("/api/admin/akun", { metode: "POST", badan });
       $("aForm").reset();

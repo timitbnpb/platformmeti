@@ -153,7 +153,7 @@ function pasang() {
   try { [d, biaya, izin, desa, tren] = await Promise.all([muatData("panduan.json"), muatData("biaya_bangun.json"), muatData("izin_kontrak.json"), muatData("desa_energi_mandiri.json"), muatData("kapasitas_tren.json"), muatTeks("panduan")]); } catch (e) { tampilGalat($("isi"), () => location.reload()); return; }
   const h = location.hash.replace(/^#g-/, "");
   sel = d.panduan.some((g) => g.id === h) ? h : d.panduan[0].id;
-  $("isi").innerHTML = "";
+  $("isi").replaceChildren();
   gambar(); pasang();
   saatBahasa(() => gambar());
   if (/^#(templat|mitos|panduan|metode|t-|m-)/.test(location.hash)) $(location.hash.slice(1))?.scrollIntoView();

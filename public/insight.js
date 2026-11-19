@@ -20,7 +20,7 @@ const cod = (p) => { const a = (p.cod_target ?? []).map((c) => c.nilai).filter(N
 const belumJalan = (p) => p.status?.[0]?.nilai !== "beroperasi";
 const prov = (p) => p.lokasi?.provinsi ?? null;
 const jumlah = (a) => a.reduce((s, x) => s + x, 0);
-const median = (a) => { const s = [...a].sort((x, y) => x - y), n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
+const median = (a) => { const s = a.toSorted((x, y) => x - y), n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
 const tahunIni = () => Number((D.proyek?.dibangun_pada ?? D.regulasi?.dibangun_pada ?? "").slice(0, 4)) || new Date().getFullYear();
 const sekarang = () => Date.parse(D.berita?.dibangun_pada ?? D.regulasi?.dibangun_pada ?? "") || Date.now();
 const namaTek = (k) => (ada("an.tek." + k) ? t("an.tek." + k) : null);
@@ -114,8 +114,8 @@ function cBauran() {
   if (kunci.length < 2 || !jumlah(Object.values(inst))) return null;
   const hasil = kunci.map((k) => ({ k, a: pangsa(Object.fromEntries(kunci.map((x) => [x, pip[x]])), k), b: pangsa(Object.fromEntries(kunci.map((x) => [x, inst[x]])), k) }))
     .sort((x, y) => y.a - x.a);
-  const sorot = [...hasil].sort((x, y) => (y.a - y.b) - (x.a - x.b))[0];
-  const baris = [...hasil].sort((x, y) => (y.a - y.b) - (x.a - x.b)).map((h) => ({ label: namaTek(h.k), a: h.b, b: h.a, sorot: h.k === sorot.k, tekA: num(h.b, 0) + "%", tekB: num(h.a, 0) + "%" }));
+  const sorot = hasil.toSorted((x, y) => (y.a - y.b) - (x.a - x.b))[0];
+  const baris = hasil.toSorted((x, y) => (y.a - y.b) - (x.a - x.b)).map((h) => ({ label: namaTek(h.k), a: h.b, b: h.a, sorot: h.k === sorot.k, tekA: num(h.b, 0) + "%", tekB: num(h.a, 0) + "%" }));
   return {
     id: "bauran", topik: "proyek", bobot: 75, est: true,
     judul: t("ins.mix.j", { tek: namaTek(sorot.k), a: num(sorot.a, 0), b: num(sorot.b, 0) }),

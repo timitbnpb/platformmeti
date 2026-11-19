@@ -55,7 +55,7 @@ function baris(r, i) {
     <td class="td-aksi" data-label="${esc(t("td.col.aksi"))}"><span class="td-aksi-b">${src}${tombolIkuti({ jenis: "tender", id: r.id, nama: r.judul })}</span></td></tr>`;
 }
 const urutkan = (rows) => {
-  rows = [...rows].sort((a, b) => (b.tanggal || "").localeCompare(a.tanggal || ""));
+  rows = rows.toSorted((a, b) => (b.tanggal || "").localeCompare(a.tanggal || ""));
   if (S.uk && URUT[S.uk]) { const f = URUT[S.uk]; rows.sort((a, b) => { const x = f(a), y = f(b); return (typeof x === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * S.ua; }); }
   return rows;
 };

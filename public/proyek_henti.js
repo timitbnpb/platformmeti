@@ -17,7 +17,7 @@ try { D = await muatPotret(); } catch (e) {
 }
 const B = D.berhenti, rows = B.baris;
 const mwTotal = rows.reduce((a, r) => a + (r.mw || 0), 0), media = rows.filter((r) => r.dilaporkan_media).length;
-const puncak = B.per_tahun.slice().sort((a, b) => b.jumlah - a.jumlah)[0];
+const puncak = B.per_tahun.toSorted((a, b) => b.jumlah - a.jumlah)[0];
 const sumber = sumberHtml(esc(t("ph.sumber", { tgl: tanggal(D.dibangun_pada, { gaya: "panjang" }) })));
 
 khUbin("phAngka", [
@@ -49,5 +49,5 @@ pasangTabel($("phBesar"), [
 
 $("ph-besar").addEventListener("jm:csv", (e) => {
   e.detail.baris = [[t("pj.c.nama"), t("pj.c.tek"), t("pj.c.prov"), t("ph.c.jenis"), t("pj.c.kap"), t("pj.c.satuan"), t("ph.c.tahun"), t("ph.c.tanggal"), t("ph.c.bukti"), t("pj.c.sumber")],
-    ...rows.slice().sort((a, b) => (b.mw || 0) - (a.mw || 0)).map((r) => [r.nama, labTek(r.tek), r.prov, t("ph.j." + r.jenis), r.mw ?? "", r.mw === null ? "" : r.sat, r.tahun, r.tanggal || "", r.jenis === "mundur" ? t("ph.bukti.mundur") : r.dilaporkan_media ? t("ph.bukti.media") : t("ph.bukti.resmi"), r.sumber_url])];
+    ...rows.toSorted((a, b) => (b.mw || 0) - (a.mw || 0)).map((r) => [r.nama, labTek(r.tek), r.prov, t("ph.j." + r.jenis), r.mw ?? "", r.mw === null ? "" : r.sat, r.tahun, r.tanggal || "", r.jenis === "mundur" ? t("ph.bukti.mundur") : r.dilaporkan_media ? t("ph.bukti.media") : t("ph.bukti.resmi"), r.sumber_url])];
 }, true);

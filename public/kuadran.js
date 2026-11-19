@@ -30,7 +30,7 @@ let D, UK, BYID, ANAK, INDUK, MED;
 const S = { pasang: 0, x: "kapasitas", y: "pipeline", sek: null, tek: null, id: null, q: "", urut: { k: "kapasitas", arah: -1 }, hal: 1, v: { z: 1, cx: 2.6, cy: 2.5 } };
 const skor = (e, u) => e.skor[u]?.skor ?? null;
 const ringkas = (n) => String(n).replace(/^PT\.?\s+/i, "").replace(/\s*\((Persero|IPP|GDE)\)/i, "").replace(/\s+Tbk\.?$/i, "").replace(/\s+(Pte\.?\s+)?Ltd\.?$/i, "");
-const median = (a) => { const s = [...a].sort((p, q) => p - q), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
+const median = (a) => { const s = a.toSorted((p, q) => p - q), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
 const huruf = (n) => ringkas(n).charAt(0);
 const cocokFilter = (e) => (!S.sek || e.kategori === S.sek) && (!S.tek || e.teknologi.includes(S.tek));
 
@@ -106,7 +106,7 @@ function plot() {
   /* label: tempatkan menurut penting; geser dengan garis penunjuk bila bertabrakan */
   const kotak = lihat.map((p) => ({ x: p.px - r, y: p.py - r, w: 2 * r, h: 2 * r }));
   const hit = (a, b) => a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
-  const urut = [...lihat].sort((a, b) => (b.e.id === S.id) - (a.e.id === S.id) || (cocokFilter(b.e) - cocokFilter(a.e)) || totalSkor(b.e) - totalSkor(a.e));
+  const urut = lihat.toSorted((a, b) => (b.e.id === S.id) - (a.e.id === S.id) || (cocokFilter(b.e) - cocokFilter(a.e)) || totalSkor(b.e) - totalSkor(a.e));
   const cpl = Math.max(8, Math.floor((pw / 2 - 14) / 6.2)), bungkusKata = (tx) => { const o = []; let b = ""; for (const w of tx.split(" ")) { if (b && (b + " " + w).length > cpl) { o.push(b); b = w; } else b = b ? b + " " + w : w; } if (b) o.push(b); return o; };
   const sudutDef = [["ki", px0 + 6, py0 + 14, "start", 1], ["ka", px1 - 6, py0 + 14, "end", 1], ["kib", px0 + 6, py1 - 8, "start", -1], ["kb", px1 - 6, py1 - 8, "end", -1]].map(([q, x, y, a, d]) => { const ls = bungkusKata(namaKuad(q)), n = ls.length, y0 = d > 0 ? y : y - (n - 1) * 13, wmax = Math.max(...ls.map((l) => l.length)) * 6.4; return { q, x, y0, a, ls, kt: { x: a === "start" ? x : x - wmax, y: y0 - 12, w: wmax, h: n * 13 + 2 } }; });
   const label = new Map(), taruh = [...sudutDef.map((c) => c.kt), { x: ml, y: py0 - 20, w: 112, h: 14 }, { x: px1 - 112, y: H - 18, w: 112, h: 14 }];
@@ -162,7 +162,7 @@ const totalSkor = (e) => UK.reduce((s, u) => s + (skor(e, u) || 0), 0);
 function siapa(P, mx, my) {
   const g = { ka: [], ki: [], kb: [], kib: [] };
   for (const p of P.ada) g[kuad(p.x, p.y, mx, my)].push(p.e);
-  const urutKu = (a) => [...a].sort((p, q) => totalSkor(q) - totalSkor(p));
+  const urutKu = (a) => a.toSorted((p, q) => totalSkor(q) - totalSkor(p));
   const kartu = ["ka", "ki", "kb", "kib"].map((q) => `<section class="kq-kuadran kq-q-${q}"><h3>${esc(namaKuad(q))}</h3><p class="kq-jml">${esc(k("siapa.jumlah", { n: angka(g[q].length) }))}</p>
     <ul>${urutKu(g[q]).slice(0, 4).map((e) => `<li><button type="button" class="kq-nm" data-aksi="buka" data-v="${esc(e.id)}">${logoMini(e)}<span>${esc(ringkas(e.nama))}</span></button></li>`).join("")}</ul></section>`).join("");
   const lajur = P.kiri.length + P.bawah.length;
@@ -247,7 +247,7 @@ function tabel() {
   let a = D.entitas.filter((e) => cocokFilter(e) && (!q || e.nama.toLowerCase().includes(q)));
   const { k: kk, arah } = S.urut;
   const nilai = (e) => (kk === "nama" ? e.nama.toLowerCase() : kk === "sektor" ? e.kategori : skor(e, kk));
-  a = [...a].sort((p, r) => { const u = nilai(p), v = nilai(r); if (u == null && v == null) return p.nama.localeCompare(r.nama); if (u == null) return 1; if (v == null) return -1; return (u < v ? -1 : u > v ? 1 : 0) * (kk === "nama" || kk === "sektor" ? -arah : arah) || p.nama.localeCompare(r.nama); });
+  a = a.toSorted((p, r) => { const u = nilai(p), v = nilai(r); if (u == null && v == null) return p.nama.localeCompare(r.nama); if (u == null) return 1; if (v == null) return -1; return (u < v ? -1 : u > v ? 1 : 0) * (kk === "nama" || kk === "sektor" ? -arah : arah) || p.nama.localeCompare(r.nama); });
   const hal = Math.min(S.hal, Math.max(1, Math.ceil(a.length / PER))), baris = a.slice((hal - 1) * PER, hal * PER);
   const kolom = [["nama", k("tabel.pemain")], ["sektor", k("tabel.sektor")], ...UK.map((u) => [u, k("us." + u)])];
   const th = kolom.map(([kc, nm]) => `<th scope="col" aria-sort="${S.urut.k === kc ? (S.urut.arah < 0 ? "descending" : "ascending") : "none"}"><button type="button" class="kq-th${S.urut.k === kc ? " on" : ""}" data-aksi="urut" data-v="${kc}" title="${esc(k("tabel.urut", { k: nm }))}"><span>${esc(nm)}</span>${SVG_PANAH}</button></th>`).join("");

@@ -145,7 +145,7 @@ async function gambar() {
   await mulaiHalaman();
   $("isi").innerHTML = hantuHtml(6);
   try { [d] = await Promise.all([muatData("kebijakan_info.json"), muatTeks("kebijakan")]); } catch (e) { tampilGalat($("isi"), () => location.reload()); return; }
-  $("isi").innerHTML = "";
+  $("isi").replaceChildren();
   await gambar();
   saatBahasa(() => gambar());
   if (location.hash) $(location.hash.slice(1))?.scrollIntoView();

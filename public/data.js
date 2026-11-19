@@ -125,7 +125,7 @@ function gambar() {
   await mulaiHalaman();
   $("isi").innerHTML = hantuHtml(6);
   try { [K] = await Promise.all([muatData("katalog_data.json"), muatTeks("katalog")]); } catch (e) { tampilGalat($("isi"), () => location.reload()); return; }
-  $("isi").innerHTML = "";
+  $("isi").replaceChildren();
   gambar();
   saatBahasa(() => { st.q = ""; st.tema = ""; gambar(); });
   if (location.hash) $(location.hash.slice(1))?.scrollIntoView();

@@ -58,7 +58,7 @@ export async function panelBeranda(panel) {
   function hasil(k) {
     const ul = isi.querySelector(`[data-hasil="${k}"]`), q = norm(Q[k] || "");
     if (!ul) return;
-    if (q.length < 2) { ul.innerHTML = ""; return; }
+    if (q.length < 2) { ul.replaceChildren(); return; }
     const ada = new Set(K[k]), out = [];
     for (const [tok, f] of C[k]) { if (!ada.has(tok) && norm(f.label + " " + f.sub).includes(q)) { out.push([tok, f]); if (out.length >= 8) break; } }
     ul.innerHTML = out.length ? out.map(([tok, f]) => `<li><button type="button" class="jm-tbl jm-tbl-kecil" data-tambah="${esc(tok)}" data-k="${k}" aria-label="${esc(t("ber.tambah"))}">${ikon("tambah", 16)}</button><span class="jm-ber-teks"><b>${esc(f.label)}</b>${f.sub ? `<small>${esc(f.sub)}</small>` : ""}</span>${jenisTeks(k, f)}</li>`).join("") : `<li class="jm-ber-kosong">${esc(t("ber.tak_ada"))}</li>`;
@@ -87,7 +87,7 @@ export async function panelBeranda(panel) {
   });
   async function simpan(k, b) {
     const pesan = isi.querySelector(`[data-pesan="${k}"]`);
-    b.disabled = true; pesan.innerHTML = "";
+    b.disabled = true; pesan.replaceChildren();
     try { await api("/api/admin/konten-beranda", { metode: "PUT", badan: { kunci: k, isi: keIsi(k, K[k]) } }); pesan.innerHTML = pesanHtml("ok", t("admin.tersimpan")); }
     catch (err) { pesan.innerHTML = pesanHtml("galat", err.kode === "fitur_belum_aktif" ? t("adm.belum_aktif") : galatTeks(err.kode || "umum")); }
     b.disabled = false;

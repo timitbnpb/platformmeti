@@ -103,14 +103,14 @@ export async function gambarDataset(R) {
     const tahun = +String(pro.dibangun_pada).slice(0, 4);
     const kap = R.kartu.find((k) => k.kode === "kapasitas")?.nilai;
     const lewat = pro.baris.filter((p) => st(p) !== "beroperasi" && p.cod_target?.length && Math.min(...p.cod_target.map((c) => c.nilai)) < tahun).length;
-    const urut7 = [...pro.baris].sort((a, b) => sat(b) - sat(a)).slice(0, 10);
+    const urut7 = pro.baris.toSorted((a, b) => sat(b) - sat(a)).slice(0, 10);
     const top7 = rangking(urut7.map((p) => ({ nama: namaProyek(p), href: "/p/" + p.id, pilHtml: pilTek(p.teknologi), meta: lokasiHtml(p), th: ubinProyek(p, foto), thKls: p.teknologi || "lain", nilai: angka(sat(p)), unit: p.kapasitas[0].satuan, frac: sat(p) / sat(urut7[0]) })));
     const pc = pencar(pro.baris, org.baris);
     const baru = `<ol class="jm-rb">${[...reg.baris].filter((r) => r.tanggal_ditetapkan).sort((a, b) => String(b.tanggal_ditetapkan).localeCompare(String(a.tanggal_ditetapkan))).slice(0, 7).map((r) => `<li class="jm-rb-i">${penerbitHtml(r.instansi_penerbit, 28).replace(/<span class="jm-pen-pendek">.*?<\/span>/, "")}<a class="jm-rb-t" href="/regulasi?id=${encodeURIComponent(r.id)}"><b>${esc(namaRegulasi(r))}</b><small title="${esc(r.judul || "")}">${esc(r.judul || "")}</small></a><span class="jm-rb-tgl">${esc(tanggal(r.tanggal_ditetapkan))}</span>${unduhRegHtml(r)}</li>`).join("")}</ol>`;
-    const topPab = [...rantai.pabrikan].sort((a, b) => b.mwp - a.mwp).slice(0, 6), rr = rantai.ringkas, tk = rantai.pabrikan.filter((x) => x.tkdn != null), tkdn = tk.length ? jml(tk, (x) => x.tkdn) / tk.length : null;
+    const topPab = rantai.pabrikan.toSorted((a, b) => b.mwp - a.mwp).slice(0, 6), rr = rantai.ringkas, tk = rantai.pabrikan.filter((x) => x.tkdn != null), tkdn = tk.length ? jml(tk, (x) => x.tkdn) / tk.length : null;
     const top5 = [...wil.baris].filter((w) => w.terpasang_mw?.nilai != null).sort((a, b) => b.terpasang_mw.nilai - a.terpasang_mw.nilai).slice(0, 5), mw5 = top5[0]?.terpasang_mw.nilai || 1;
     const re = wil.baris.map((w) => w.rasio_elektrifikasi?.nilai).filter(Number.isFinite);
-    const doc = rangking([...pus.baris].sort((a, b) => String(b.tanggal).localeCompare(String(a.tanggal))).slice(0, 5).map((d) => ({ nama: d.judul, nilai: tanggal(d.tanggal) })));
+    const doc = rangking(pus.baris.toSorted((a, b) => String(b.tanggal).localeCompare(String(a.tanggal))).slice(0, 5).map((d) => ({ nama: d.judul, nilai: tanggal(d.tanggal) })));
     const sm = (k, p) => t("beranda.ds." + k + ".s", { tanggal: tanggal(p) });
     el.innerHTML = [
       kartu("proyek", 1, "/proyek", pro.dibangun_pada, [[angka(nPro), "beranda.ds.l.proyek", 0, "lokasi", "data2"], [angka(kap), "beranda.ds.l.mw", 1, "petir", "warn", "beranda.ds.tip.mw"], [angka(lewat), "beranda.ds.l.cod", 1, "jam", "bad", "beranda.ds.tip.cod"]], top7, sm("proyek", pro.dibangun_pada)),

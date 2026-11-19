@@ -25,7 +25,7 @@ function produsen() {
   const ids = B.bio.rujukan.produsen_fame;
   const rows = ids.map((id) => { const b = butir((x) => x.organisasi_id === id && x.jenis === "kapasitas" && x.segmen === "biofuel")[0]; return b ? { id, kl: klDari(b.nilai), tahun: b.periode, b } : null; }).filter(Boolean);
   const gr = document.getElementById("bn-d-pro-g");
-  gr.innerHTML = batangSvg({ el: gr, d: 2, satuan: t("bn.u.juta_kl"), label: t("bn.bd.kap"), seri: [{ k: "kap", kelas: "bn-s-alokasi" }], baris: [...rows].sort((a, b) => b.kl - a.kl).map((r) => ({ label: r.b.org_nama, logo: B.org?.baris?.find((o) => o.id === r.id)?.logo, tip: r.b.org_nama, th: tipHtml(r.b.org_nama, [[t("bn.bd.kap"), `${juta(r.kl, 2)} ${t("bn.u.juta_kl")}`], [t("bn.c.periode"), r.b.periode]]), bagian: [{ k: "kap", nilai: r.kl / 1e6 }] })) });
+  gr.innerHTML = batangSvg({ el: gr, d: 2, satuan: t("bn.u.juta_kl"), label: t("bn.bd.kap"), seri: [{ k: "kap", kelas: "bn-s-alokasi" }], baris: rows.toSorted((a, b) => b.kl - a.kl).map((r) => ({ label: r.b.org_nama, logo: B.org?.baris?.find((o) => o.id === r.id)?.logo, tip: r.b.org_nama, th: tipHtml(r.b.org_nama, [[t("bn.bd.kap"), `${juta(r.kl, 2)} ${t("bn.u.juta_kl")}`], [t("bn.c.periode"), r.b.periode]]), bagian: [{ k: "kap", nilai: r.kl / 1e6 }] })) });
   tabel(el, { satuan: "bn.u.produsen", per: 6, urutAwal: 1, menurun: true, kolom: [
     { label: t("bn.c.produsen"), v: (r) => r.b.org_nama, f: (r) => orgSel(r.id) },
     { label: t("bn.bd.kap"), num: true, v: (r) => r.kl, f: (r) => `<b>${esc(juta(r.kl, 2))}</b> ${esc(t("bn.u.juta_kl"))}` },

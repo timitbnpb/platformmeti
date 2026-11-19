@@ -192,7 +192,7 @@ function pasangKit(akar, b) {
       const u = URL.createObjectURL(await r.blob()), a = document.createElement("a");
       a.href = u; a.download = tombol.dataset.kit; a.click();
       setTimeout(() => URL.revokeObjectURL(u), 4000);
-      pesan.innerHTML = "";
+      pesan.replaceChildren();
     } catch (err) { pesan.innerHTML = pesanHtml("galat", galatTeks(err.kode || "umum")); } finally { tombol.removeAttribute("aria-busy"); }
   });
   akar.querySelector(".mw-tugas")?.addEventListener("change", () => {

@@ -67,7 +67,7 @@ const teksButir = (b) => norm([L(b.nama), L(b.ringkas), b.lokasi_teks, ...(b.pih
 const negaraButir = (b) => [...new Set([...(b.negara || []), ...(b.pihak || []).map((p) => p.iso2).filter(Boolean)])];
 const saringE = () => { const q = norm(SE.q.trim()); return E.baris.filter((b) => (!SE.bag || b.bagian === SE.bag) && (!SE.st || b.status === SE.st) && (!SE.neg || negaraButir(b).includes(SE.neg)) && (!q || b._cari.includes(q))); };
 const KE = { nama: (b) => L(b.nama), bagian: (b) => t("enb.bag." + b.bagian), status: (b) => STAT.indexOf(b.status), kap: (b) => b.kapasitas?.nilai ?? -1, tahun: (b) => b.target_tahun ?? 9999, pihak: (b) => b.pihak?.[0]?.nama || "" };
-const urutE = (rows) => { const f = KE[SE.uk]; return f ? [...rows].sort((a, b) => urut(f(a), f(b)) * SE.ua) : rows; };
+const urutE = (rows) => { const f = KE[SE.uk]; return f ? rows.toSorted((a, b) => urut(f(a), f(b)) * SE.ua) : rows; };
 
 function barisE(b, i) {
   const no = (SE.hal - 1) * HAL + i + 1, kap = b.kapasitas ? `${N(b.kapasitas.nilai, b.kapasitas.nilai < 10 ? 1 : 0)} ${esc(b.kapasitas.satuan)}` : redup();

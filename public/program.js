@@ -61,7 +61,7 @@ function gambarIndeks() {
   document.title = t("pg.title");
   $("pgFoto").hidden = true;
   $("pgStatus").hidden = true;
-  const semua = [...D.baris].sort((a, z) => a.urut - z.urut);
+  const semua = D.baris.toSorted((a, z) => a.urut - z.urut);
   const idProyek = new Set(semua.flatMap((g) => g.proyek.map((p) => p.id)));
   const nBerat = semua.reduce((s, g) => s + berat(g), 0);
   $("judul").textContent = t("pg.judul");
@@ -164,7 +164,7 @@ function sPeta(g) {
 function sProyek(g) {
   const pr = g.proyek_ringkas;
   if (!g.proyek.length) return exHtml({ id: "pg-proyek", ikon: "proyek", topik: t("pg.s.proyek.ey"), judulHtml: esc(t("pg.s.proyek.j0")), subHtml: esc(t("pg.s.proyek.sub0")), aksiHtml: aksiHtml({}), isiHtml: `<p class="jm-pg-kosong">${esc(t("pg.proyek.kosong"))}</p>` });
-  const urut = [...g.proyek].sort((a, z) => (z.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(z.nama));
+  const urut = g.proyek.toSorted((a, z) => (z.kap ?? -1) - (a.kap ?? -1) || a.nama.localeCompare(z.nama));
   const baris = urut.map((r, i) => `<tr${i >= BATAS_PROYEK ? " hidden" : ""}>${sel("pg.c.nama", `<a href="/p/${esc(r.id)}">${esc(r.nama)}</a>`)}${sel("pg.c.tek", r.tek ? pilTek(r.tek) : "-", "jm-tengah")}${sel("pg.c.prov", esc(r.prov || "-"), "jm-tengah")}${sel("pg.c.kap", kapTeks(r), "jm-tengah")}${sel("pg.c.status", pilStatus(r.st), "jm-tengah")}</tr>`).join("");
   const lebih = navLokal({ total: urut.length, per: BATAS_PROYEK, satuan: "jm.pag.u.proyek" });
   return bagian("pg-proyek", "tabel", "proyek", {
@@ -189,7 +189,7 @@ function sPihak(g) {
 
 function sIsu(g) {
   if (!g.isu.length) return "";
-  const urut = [...g.isu].sort((a, z) => BOBOT[a.tingkat] - BOBOT[z.tingkat]);
+  const urut = g.isu.toSorted((a, z) => BOBOT[a.tingkat] - BOBOT[z.tingkat]);
   const kartu = urut.map((x) => `<article class="jm-pg-isu jm-pg-isu-${x.tingkat}"><div class="jm-pg-isu-atas">${pilSev(x.tingkat)}${pilJenis(x.jenis)}${sumberIkon(x.url, D.dibangun_pada, x.bukti)}</div><h3>${esc(L(x.judul))}</h3><p>${esc(L(x.uraian))}</p></article>`).join("");
   return bagian("pg-isu", "peringatan", "isu", {
     judulHtml: hlHtml("pg.s.isu.j", num(g.isu.length), { tinggi: num(berat(g)) }), sub: esc(t("pg.s.isu.sub")), isiHtml: `<div class="jm-pg-isu-daftar">${kartu}</div>`,
@@ -244,7 +244,7 @@ function sIndikator(g) {
 }
 
 function sLain(g) {
-  const li = [...D.baris].sort((a, z) => a.urut - z.urut).map((x) => `<li><a href="/program/${esc(x.kode)}"${x.kode === g.kode ? ' aria-current="page"' : ""}>${ikonTek(x.ikon)}<span>${esc(L(x.nama))}</span></a></li>`).join("");
+  const li = D.baris.toSorted((a, z) => a.urut - z.urut).map((x) => `<li><a href="/program/${esc(x.kode)}"${x.kode === g.kode ? ' aria-current="page"' : ""}>${ikonTek(x.ikon)}<span>${esc(L(x.nama))}</span></a></li>`).join("");
   return exHtml({ id: "pg-lain", ikon: "proyek", topik: t("pg.s.lain.ey"), judulHtml: esc(t("pg.s.lain.j")), isiHtml: `<ul class="jm-pg-lain">${li}</ul>${g.kode === "nuklir" ? `<p class="jm-bantu"><a href="/nuklir?tab=rencana">${esc(t("nkl.dari_program"))}</a></p>` : ""}${g.kode === "wte" ? `<p class="jm-bantu"><a href="/sampah-energi?tab=kota">${esc(t("swe.ln.program"))}</a></p>` : g.kode === "plts-100gw" ? `<p class="jm-bantu"><a href="/surya?tab=proyek">${esc(t("sur.dari_program"))}</a></p>` : ""}` });
 }
 
@@ -297,7 +297,7 @@ function bukaPeta(g) {
   const per = {};
   for (const p of pts) per[p.st] = (per[p.st] || 0) + 1;
   $("pgLegenda").innerHTML = Object.keys(per).sort((a, z) => per[z] - per[a]).map((k) => `<p class="jm-pg-leg jm-st-${k}"><i></i><span>${esc(ada("pj.st." + k) ? t("pj.st." + k) : k)}</span><b>${num(per[k])}</b></p>`).join("");
-  $("pgPanel").innerHTML = [...pts].sort((a, z) => (z.kap ?? -1) - (a.kap ?? -1)).slice(0, 60).map((r) => `<button type="button" class="jm-pg-pt" data-id="${esc(r.id)}"><span>${esc(r.nama)}</span><small>${esc(r.prov || "-")}, ${kapTeks(r)}</small></button>`).join("");
+  $("pgPanel").innerHTML = pts.toSorted((a, z) => (z.kap ?? -1) - (a.kap ?? -1)).slice(0, 60).map((r) => `<button type="button" class="jm-pg-pt" data-id="${esc(r.id)}"><span>${esc(r.nama)}</span><small>${esc(r.prov || "-")}, ${kapTeks(r)}</small></button>`).join("");
   $("pgPanel").addEventListener("click", (e) => { const b = e.target.closest("button[data-id]"); if (b) sorot(pts.find((p) => p.id === b.dataset.id)); });
   if (innerWidth >= 1000) { geserPanel($("pgLapis"), { kunci: "lapis" }); geserPanel($("pgDrawer"), { kunci: "drawer" }); }
   muatMapLibre().then(() => {
@@ -343,7 +343,7 @@ try {
   D = await muat("program_analisis");
   PSN = segmen ? null : await fetch("/data/psn.json", { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
 } catch (e) { D = null; }
-if (!D) { isi.innerHTML = ""; tampilGalat(isi, () => location.reload()); } else {
+if (!D) { isi.replaceChildren(); tampilGalat(isi, () => location.reload()); } else {
   const g = segmen ? D.baris.find((x) => x.kode === segmen) : null;
   if (segmen && !g) {
     $("judul").textContent = t("pg.tak_dikenal");

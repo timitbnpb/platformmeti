@@ -280,11 +280,11 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
       const cari = debounce(async () => {
         const m = ta.value.slice(0, ta.selectionStart).match(/@([^\s@]{2,40})$/);
         const wadah = ta.closest("form").querySelector("[data-sebut]");
-        if (!m) { wadah.innerHTML = ""; return; }
+        if (!m) { wadah.replaceChildren(); return; }
         try {
           const d = await api("/api/konsultasi/anggota?q=" + encodeURIComponent(m[1]));
           wadah.innerHTML = d.baris.length ? `<ul class="kf-sebut-daftar" role="listbox" aria-label="${esc(t("kf.sebut"))}">${d.baris.map((a) => `<li><button type="button" role="option" data-sebut-id="${a.id}" data-sebut-nama="${esc(a.nama)}">${esc(a.nama)}</button></li>`).join("")}</ul>` : "";
-        } catch { wadah.innerHTML = ""; }
+        } catch { wadah.replaceChildren(); }
       }, 220);
       ta.addEventListener("input", cari);
     });
@@ -294,7 +294,7 @@ export async function bukaDokumen(akar, id, { tutup, bagianAwal = null }) {
     const pos = ta.selectionStart, awal = ta.value.slice(0, pos).replace(/@[^\s@]*$/, "@" + nama + " ");
     ta.value = awal + ta.value.slice(pos); ta.selectionStart = ta.selectionEnd = awal.length;
     sebutDipilih.set(nama, Number(tombol.dataset.sebutId));
-    form.querySelector("[data-sebut]").innerHTML = ""; ta.focus();
+    form.querySelector("[data-sebut]").replaceChildren(); ta.focus();
   }
   const idSebut = (teks) => [...sebutDipilih].filter(([n]) => teks.includes("@" + n)).map(([, i]) => i);
 

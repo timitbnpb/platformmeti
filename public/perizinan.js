@@ -48,7 +48,7 @@ const nilaiKol = {
   peringkat: (r) => r.peringkat ?? null, nama: (r) => r.nama, skor: (r) => r.skor,
   rued: (r) => r.komponen.rued.nilai?.tahun ?? null, perda: (r) => r.komponen.perda.nilai.n, wkp: (r) => r.komponen.wkp.nilai?.n ?? null,
 };
-const susun = () => [...d.baris].sort((a, z) => {
+const susun = () => d.baris.toSorted((a, z) => {
   const x = nilaiKol[st.k](a), y = nilaiKol[st.k](z);
   return ((x == null) - (y == null)) || (x == null ? 0 : (typeof x === "number" ? x - y : String(x).localeCompare(String(y), "id")) * st.arah);
 });

@@ -143,7 +143,7 @@ function gTahun() {
     kategori: kat.map((y) => {
       const L = sel.filter((r) => r.tahun === y), v = {}; let tot = 0;
       for (const r of L) { v[kunciSeri(r)] = (v[kunciSeri(r)] || 0) + usd(r); tot += usd(r); }
-      const terbesar = [...L].sort((a, b) => usd(b) - usd(a))[0];
+      const terbesar = L.toSorted((a, b) => usd(b) - usd(a))[0];
       return { label: String(y), nilai: v, tip: `${y}: ${teksUsd(tot)}`,
         th: tipHtml(String(y), [[t("tr3.tip.total"), teksUsd(tot)], [t("tr3.tip.jumlah"), String(L.length)], ...seri.filter((k) => v[k]).map((k) => [labelSeri(k), teksUsd(v[k]), ""]), ...(terbesar ? [[t("tr3.tip.terbesar"), `${terbesar.pihak.find((p) => ["penerima", "penerbit", "pembeli", "mitra"].includes(p.peran))?.nama || terbesar.id} (${teksUsd(usd(terbesar))})`]] : [])]) };
     }) });
@@ -202,8 +202,7 @@ const nilaiSel = (r) => {
   return `<span class="tr3-nl">${utama}<small>${lain}</small></span>`;
 };
 const transaksiSel = (r) => {
-  const urut = ["pembeli", "penjual", "penerbit", "penerima", "pendana", "investor", "mitra"], per = {};
-  for (const p of r.pihak) (per[p.peran] ||= []).push(p);
+  const urut = ["pembeli", "penjual", "penerbit", "penerima", "pendana", "investor", "mitra"], per = Object.groupBy(r.pihak, p => p.peran);
   const baris2 = urut.filter((k) => per[k]).slice(0, 3).map((k) => `<span class="tr3-pr"><em>${esc(t("tr3.p." + k))}</em><span>${per[k].slice(0, 3).map(pihakHtml).join("")}${per[k].length > 3 ? `<small>+${per[k].length - 3} ${esc(t("tr3.pihak_lain"))}</small>` : ""}</span></span>`).join("");
   return `<div class="tr3-tx"><b>${esc(r.aset)}</b>${proyekHtml(r) ? `<span class="tr3-pjs">${proyekHtml(r)}</span>` : ""}${baris2}</div>`;
 };

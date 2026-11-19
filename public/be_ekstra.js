@@ -19,14 +19,14 @@ export function bagianImporKritis() {
 /* ---------- olah: PLTU captive di kawasan nikel ---------- */
 export function bagianCaptive() {
   const C = X.captive; if (!C?.kawasan?.length) return "";
-  const kaw = [...C.kawasan].sort((a, b) => b.mw_operasi - a.mw_operasi);
+  const kaw = C.kawasan.toSorted((a, b) => b.mw_operasi - a.mw_operasi);
   const m = C.meta || {};
   return ex({ id: "bev-olah-captive", ikon: "petir", topik: t("bev.ey.captive"), judulHtml: esc(t("bev.j.captive", { mw: num(m.mw_operasi_nikel || 0), p: num(m.pct_batubara || 0, 1) })), subHtml: esc(t("bev.s.captive")),
     isiHtml: `<div id="bev-olah-cpl">${legendaHtml([{ kelas: "rg3-s-h-tinggi", label: t("bev.cp.op") }, { kelas: "rg3-s-h-sedang", label: t("bev.cp.kon") }, { kelas: "rg3-s-banding", label: t("bev.cp.ren") }])}</div><div id="bev-olah-cp" class="ih-bagan"></div><p class="rg3-info rg3-info-ok">${ikon("info", 18)}<span>${esc(t("bev.cp.n"))} ${bukti("media", { sumber: "GEM", tanggal: C.dibangun_pada })} <a class="rg3-tautan" href="/industri">${esc(t("bev.cp.lihat"))}</a></span></p>`, kakiHtml: sumberBerkas(C) });
 }
 export function gambarCaptive(el) {
   const w = el.querySelector("#bev-olah-cp"); if (!w) return;
-  const kaw = [...X.captive.kawasan].sort((a, b) => b.mw_operasi - a.mw_operasi);
+  const kaw = X.captive.kawasan.toSorted((a, b) => b.mw_operasi - a.mw_operasi);
   w.innerHTML = batangSvg({ el: w, d: 0, label: t("bev.cp.label"), satuan: "MW", seri: [{ k: "op", kelas: "rg3-s-h-tinggi" }, { k: "kon", kelas: "rg3-s-h-sedang" }, { k: "ren", kelas: "rg3-s-banding" }],
     baris: kaw.map((k) => ({ label: k.nama, ikon: "pabrik", tip: `${k.nama}: ${k.mw_operasi}`, th: tipHtml(k.nama, [[t("bev.cp.op"), `${num(k.mw_operasi)} MW`], [t("bev.cp.kon"), `${num(k.mw_konstruksi || 0)} MW`], [t("bev.cp.ren"), `${num(k.mw_rencana || 0)} MW`], [t("bev.cp.emisi"), `${num((k.emisi_tco2e || 0) / 1e6, 1)} Mt CO2e`], [t("bev.cp.batubara"), `${num(k.pct_batubara ?? 0, 0)}%`]]), bagian: [{ k: "op", nilai: k.mw_operasi }, { k: "kon", nilai: k.mw_konstruksi || 0 }, { k: "ren", nilai: k.mw_rencana || 0 }] })) });
 }

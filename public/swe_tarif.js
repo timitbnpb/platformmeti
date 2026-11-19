@@ -33,7 +33,7 @@ function perTon() {
 }
 function grafikTon() {
   const g = document.getElementById("swe-t-gr"); if (!g) return;
-  const a = perTon(); if (!a.length) { g.innerHTML = ""; return; }
+  const a = perTon(); if (!a.length) { g.replaceChildren(); return; }
   g.innerHTML = batangSvg({ el: g, d: 2, satuan: "MWh / ton", label: t("swe.t.j.gr"), seri: [{ k: "v", kelas: "swe-s-mwh" }],
     baris: a.sort((x, y) => y.v - x.v).map(({ r, v }) => ({ label: r.kota, tip: r.nama, th: tipHtml(r.nama, [["MW", num(pertama(r.kapasitas_mw), 1)], [t("swe.u.ton_hari"), num(pertama(r.kapasitas_ton_hari), 0)], ["MWh / ton (EST)", num(v, 2)]]), bagian: [{ k: "v", nilai: v }] })) });
 }

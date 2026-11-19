@@ -28,7 +28,7 @@ let peta = null, petaSiap = false, grup = [], markah = [];
 const gw = (mwp) => mwp / 1000;
 const sumberTabel = () => ({ sumber: d.sumber.judul, tanggal: d.sumber.tanggal });
 const sumberProgram = () => ({ sumber: d.program.sumber, tanggal: d.program.tanggal_sumber });
-const median = (a) => { const s = [...a].sort((x, y) => x - y), n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
+const median = (a) => { const s = a.toSorted((x, y) => x - y), n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
 const butuh = () => d.program.target_gwp / horizon;
 const warna = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const tautOrg = (x) => (x.org_id ? `<a href="/o/${esc(x.org_id)}">${esc(x.nama)}</a>` : esc(x.nama));
@@ -174,8 +174,8 @@ function gambarBulat() {
   const skala = (rc.width || 1000) / vb[2]; SK = skala;
   const gb = svg.querySelector(".jm-rt-bulat"), gl = svg.querySelector(".jm-rt-lbl");
   gb.replaceChildren(); gl.replaceChildren();
-  const urutMw = [...grup].sort((a, b) => b.mwp - a.mwp);
-  for (const g of [...grup].sort((a, b) => b.mwp - a.mwp)) {
+  const urutMw = grup.toSorted((a, b) => b.mwp - a.mwp);
+  for (const g of grup.toSorted((a, b) => b.mwp - a.mwp)) {
     const c = document.createElementNS(ns, "circle");
     c.setAttribute("class", `jm-rt-c jm-rt-${g.dom}${g.kota === sel ? " jm-rt-sel" : ""}`);
     c.setAttribute("cx", px(g.lng).toFixed(1)); c.setAttribute("cy", py(g.lat).toFixed(1)); c.setAttribute("r", radius(g.mwp, maks).toFixed(1));
@@ -232,7 +232,7 @@ function petaPerbarui() {
 }
 
 function kotaTeks() {
-  const tot = grup.reduce((s, g) => s + g.mwp, 0), a = [...grup].sort((x, y) => y.mwp - x.mwp)[0];
+  const tot = grup.reduce((s, g) => s + g.mwp, 0), a = grup.toSorted((x, y) => y.mwp - x.mwp)[0];
   $("temuan-peta").innerHTML = a ? temuan(t("rt.t.peta", { kota: a.kota, persen: num((a.mwp / (tot || 1)) * 100, 0), gw: num(gw(a.mwp), 1), total: num(gw(tot), 1) })) : esc(t("an.tanpa_data"));
   $("sumber-peta").innerHTML = sumberLipat([sumberTabel()]);
 }
@@ -240,8 +240,8 @@ function kotaTeks() {
 function panel() {
   const g = grup.find((x) => x.kota === sel), p = $("kota-panel");
   p.hidden = !g;
-  if (!g) { p.innerHTML = ""; return; }
-  const tot = [...g.pabrik].sort((a, b) => (b.mwp ?? -1) - (a.mwp ?? -1));
+  if (!g) { p.replaceChildren(); return; }
+  const tot = g.pabrik.toSorted((a, b) => (b.mwp ?? -1) - (a.mwp ?? -1));
   p.innerHTML = `<div class="jm-panel-kepala"><div><h3>${esc(g.kota)}</h3><p class="jm-bantu">${esc(t("rt.panel_ringkas", { mwp: num(g.mwp), n: g.pabrik.length }))}</p></div><button type="button" class="jm-rt-x" data-aksi="tutup" aria-label="${esc(t("jm.tutup"))}">${ikon("silang", 16)}</button></div>
     <ul class="jm-rt-daftar">${tot.map((x) => `<li><a class="jm-an-nama" href="/direktori#${esc(x.id)}">${logoHtml({ ...x, nama: namaBaku(x.nama).nama })}<span class="jm-id"><b>${esc(namaBaku(x.nama).nama)}</b><small>${esc(x.mwp == null ? "-" : num(x.mwp))} MWp</small></span></a>${pasarPil(x.pasar)}</li>`).join("")}</ul>`;
 }
@@ -276,7 +276,7 @@ async function bukaPeta() {
 
 function tabelKota(tetap) {
   if (tetap !== true) halK = 1;
-  const B = [...grup].sort((a, b) => {
+  const B = grup.toSorted((a, b) => {
     const k = urutKota.k, x = k === "kota" ? a.kota : k === "n" ? a.pabrik.length : a.mwp, y = k === "kota" ? b.kota : k === "n" ? b.pabrik.length : b.mwp;
     return (typeof x === "string" ? x.localeCompare(y) : x - y) * urutKota.arah || a.kota.localeCompare(b.kota);
   });
@@ -325,7 +325,7 @@ function tabel(tetap) {
   const sy = tek === "surya", semua = barisTek();
   const kosongTek = !semua.length;
   $("h-tabel").closest("section").hidden = kosongTek;
-  if (kosongTek) { daftarKini = []; $("tabel").innerHTML = ""; return; }
+  if (kosongTek) { daftarKini = []; $("tabel").replaceChildren(); return; }
   const B = semua.filter((x) => (!q || (x.nama + " " + (x.kota || "") + " " + (x.provinsi || "") + " " + x.kompTeks).toLowerCase().includes(q)) && (!fProv || x.provinsi === fProv) && (!fKomp || x.komp.includes(fKomp)) && (!sy || (!fPasar || x.pasar === fPasar) && (!fApamsi || (fApamsi === "ya") === !!x.apamsi)) &&
     (bin === null || (x.tkdn != null && x.tkdn >= bin[0] && x.tkdn < bin[1])));
   B.sort((a, b) => {
@@ -402,7 +402,7 @@ function komp() {
   $("komp").innerHTML = `<div class="jm-rt-komp">${T.komponen.map((k, i) => {
       const tk = k.pemasok.map((p) => p.tkdn).filter((v) => v != null), ada = k.pemasok.length > 0;
       if (!ada) return `<a class="jm-rt-kk jm-rt-celah" href="/investasi#peluang"><span class="jm-rt-ik jm-rt-w3">${ikon("peringatan", 22)}</span><b>${esc(t("rt.komp." + k.id))}</b><span class="jm-rt-n"><span class="jm-pil jm-pil-warn">${esc(t("rt.celah"))}</span></span><small>${esc(t("rt.celah_cat"))}</small><span class="jm-rt-ajak">${esc(t("rt.peluang"))}</span></a>`;
-      const top = [...k.pemasok].sort((a, b) => (b.mwp ?? -1) - (a.mwp ?? -1)).slice(0, 3).map((p) => logoHtml({ ...(peta.get(p.id) || p), nama: namaBaku(p.nama).nama }, "jm-rt-lgk")).join(""), lebih = k.pemasok.length - 3;
+      const top = k.pemasok.toSorted((a, b) => (b.mwp ?? -1) - (a.mwp ?? -1)).slice(0, 3).map((p) => logoHtml({ ...(peta.get(p.id) || p), nama: namaBaku(p.nama).nama }, "jm-rt-lgk")).join(""), lebih = k.pemasok.length - 3;
       return `<button type="button" class="jm-rt-kk" data-komp="${esc(k.id)}" aria-pressed="${fKomp === k.id}">${kompIk(k.id, i)}<b>${esc(t("rt.komp." + k.id))}</b>
         <span class="jm-rt-n"><strong>${esc(num(k.pemasok.length))}</strong><span>${esc(t("rt.kk.label"))}</span>${tk.length ? `<span class="jm-pil ${median(tk) >= 40 ? "jm-pil-ok" : "jm-pil-warn"}">${esc(t("rt.kk.tkdn", { v: num(median(tk), 1) }))}</span>${tk.length ? `<span class="jm-pil jm-pil-info">${esc(t("rt2.kk.maks", { v: num(Math.max(...tk), 1) }))}</span>` : ""}` : ""}</span>
         <span class="jm-rt-lgs">${top}${lebih > 0 ? `<span class="jm-rt-lebihk">+${lebih}</span>` : ""}</span></button>`; }).join("")}</div>`;
@@ -526,7 +526,7 @@ const ubin2 = (ik, nilai, satuan, label) => `<div class="rt2-ub"><span class="jm
 
 function rt2Pasok() {
   const T = dTek(), per = T.kebutuhan?.per_tahun || [], akar = $("rt2-pasok");
-  if (!per.length) { akar.innerHTML = ""; return; }
+  if (!per.length) { akar.replaceChildren(); return; }
   const tot = per.reduce((a, r) => a + r.mw, 0), span = per.at(-1).tahun - per[0].tahun + 1, rata = tot / span, maks = Math.max(...per.map((r) => r.mw));
   const kap = barisTek().reduce((a, x) => a + (x.mwp || 0), 0), ada = kap > 0, rasio = ada ? kap / rata : null;
   const sumb = (dp.sumber || []).map((z) => ({ sumber: z.judul, tanggal: z.tanggal }));
@@ -547,7 +547,7 @@ function statKat() {
 
 function rt2Sisa() {
   const akar = $("rt2-sisa");
-  if (!tkdn2.baris.length) { akar.innerHTML = ""; return; }
+  if (!tkdn2.baris.length) { akar.replaceChildren(); return; }
   const S = statKat(), pab = new Set(tkdn2.baris.map((r) => r.pabrikan_org_id || r.pabrikan)).size, top = S[0];
   const baris = S.map((o) => ({ label: t("rt2.kat." + o.k), ikon: "", bagian: [{ k: o.k, nilai: o.rata }], th: tipHtml(t("rt2.kat." + o.k), [[t("rt2.tip.rata"), n1(o.rata, 1) + "%", "rt2-c-" + o.k], [t("rt2.tip.maks"), n1(o.maks, 1) + "%"], [t("rt2.tip.sert"), num(o.n)], [t("rt2.tip.aktif"), num(o.aktif)], [t("rt2.tip.pab"), num(o.pab.size)], [t("rt2.tip.relevansi"), t(UMUM.has(o.k) ? "rt2.umum" : "rt2.khusus")]]), tip: `${t("rt2.kat." + o.k)}: ${n1(o.rata, 1)}%` }));
   const filterHtml = `<div class="jm-saring">${cariHtml({ id: "rt2-cari", label: t("rt2.cari") })}${pilihHtml({ id: "rt2-kat", ikon: "jenis", label: t("rt2.f_kat"), nilai: fKat, opsi: [["", t("rt2.f_kat") + ": " + t("rt.semua")], ...S.map((o) => [o.k, t("rt2.kat." + o.k), "tek:" + KAT[o.k], o.n])] })}${pilihHtml({ id: "rt2-status", ikon: "status", label: t("rt2.f_status"), nilai: fStatus, opsi: [["", t("rt2.f_status") + ": " + t("rt.semua")], ["aktif", t("rt2.aktif")], ["lewat", t("rt2.lewat")]] })}${hapusHtml({ id: "rt2-hapus", label: t("jm.kosong.reset") })}${hitungHtml({ id: "rt2-hitung", teks: "" })}</div>`;

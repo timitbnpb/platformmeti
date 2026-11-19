@@ -11,7 +11,7 @@ export function pasangTabel(el, { kolom, baris, per = 10, kosong = "sta.kosong",
     if (!baris.length) { el.innerHTML = kosongHtml(kosong); return; }
     let isi = baris;
     const c = kolom.find((x) => x.k === S.k);
-    if (c) isi = [...baris].sort((a, z) => {
+    if (c) isi = baris.toSorted((a, z) => {
       const x = kunciUrut(a, c), y = kunciUrut(z, c);
       return ((x === null) - (y === null)) || (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "id", { numeric: true })) * S.arah;
     });

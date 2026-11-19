@@ -158,7 +158,7 @@ async function kakiIsi(kaki, saya) {
     const tambah = (n, kunci, ik, judul) => { if (Number.isFinite(n) && n > 0) ul.insertAdjacentHTML("beforeend", `<li title="${judul || ""}"><i>${ikon(ik, 18)}</i><b>${angka(n)}</b><span data-i18n="${kunci}">${t(kunci)}</span></li>`); };
     if (mw) {
       const anggota = (mw.provinsi || []).reduce((u, x) => u + (x.individu || 0) + (x.organisasi || 0), 0);
-      const terbaru = [...(mw.versi_angka || [])].sort((x, y) => (y.tanggal || "").localeCompare(x.tanggal || ""))[0];
+      const terbaru = (mw.versi_angka || []).toSorted((x, y) => (y.tanggal || "").localeCompare(x.tanggal || ""))[0];
       tambah(anggota, "jm.kaki.anggota", "orang", mw.anggota_sumber?.label);
       tambah(terbaru?.berdiri, "jm.kaki.wilayah", "lokasi", terbaru?.sumber);
     }

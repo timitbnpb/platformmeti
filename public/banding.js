@@ -70,7 +70,7 @@ const nKomponen = (D, id) => D.perKomponen?.[S.komponen]?.get(id) || 0;
 const lolosKomponen = (D, x) => S.mode !== "org" || !S.komponen || nKomponen(D, x.id) > 0;
 function awal(D, mode) {
   if (mode === "org" && S.komponen) return D.daftar.filter((x) => nKomponen(D, x.id) > 0).sort((a, z) => nKomponen(D, z.id) - nKomponen(D, a.id) || a.nama.localeCompare(z.nama, "id")).slice(0, 3).map((x) => x.id);
-  const urut = [...D.daftar].sort((a, z) => (mode === "prov" ? z.terpasang - a.terpasang : z.n - a.n) || a.nama.localeCompare(z.nama, "id"));
+  const urut = D.daftar.toSorted((a, z) => (mode === "prov" ? z.terpasang - a.terpasang : z.n - a.n) || a.nama.localeCompare(z.nama, "id"));
   return urut.slice(0, 3).map((x) => x.id);
 }
 function simpanUrl() { history.replaceState(null, "", location.pathname + tulisUrl({ mode: S.mode, ids: S.ids, komponen: S.komponen })); }
@@ -89,8 +89,8 @@ function hasilCari() {
   const D = S.D[S.mode], q = norma(S.q);
   let l = D.daftar.filter((x) => !S.ids.includes(x.id) && lolosKomponen(D, x));
   if (q) l = l.filter((x) => (x._cari ??= norma(x.nama + " " + x.sub)).includes(q));
-  else if (S.mode === "org" && S.komponen) l = [...l].sort((a, z) => nKomponen(D, z.id) - nKomponen(D, a.id));
-  else if (S.mode !== "prov") l = [...l].sort((a, z) => z.n - a.n);
+  else if (S.mode === "org" && S.komponen) l = l.toSorted((a, z) => nKomponen(D, z.id) - nKomponen(D, a.id));
+  else if (S.mode !== "prov") l = l.toSorted((a, z) => z.n - a.n);
   return l.slice(0, S.mode === "prov" ? 40 : 8);
 }
 function hasilHtml() {

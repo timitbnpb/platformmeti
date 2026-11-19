@@ -80,7 +80,7 @@ export function garisSvg({ seri, satuan, el, label, xTick, skalaLog = false, ano
   }).join("");
   const an = anot.filter((a) => W >= 500 || a === anot[0]).map((a) => { const p = seri[0].titik.find((q) => q.x === a); if (!p) return ""; const px = x(p.x), py = y(p.y), fin = px > W * 0.7, bawah = fin && py + 20 < H - B - 6; return `<g class="ih-g ${seri[0].kelas}"><circle class="ih-an" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="6"/></g><text class="ih-lbl ih-lbl-an" x="${(fin ? px - 8 : px + 9).toFixed(1)}" y="${(bawah ? py + 20 : py - 10).toFixed(1)}" text-anchor="${fin ? "end" : "start"}">${esc(`${a}: ${n1(p.y, p.y < 10 ? 2 : 0)}`)}</text>`; }).join("");
   const id = ++gidN;
-  GR.set(String(id), { W, H, X: x, Y: y, xs: [...new Set(semua.map((p) => p.x))].sort((a, b) => a - b), seri: seri.map((s) => ({ ...s, pts: [...s.titik].sort((a, b) => a.x - b.x) })), satuan, ringkas, T, B });
+  GR.set(String(id), { W, H, X: x, Y: y, xs: [...new Set(semua.map((p) => p.x))].sort((a, b) => a - b), seri: seri.map((s) => ({ ...s, pts: s.titik.toSorted((a, b) => a.x - b.x) })), satuan, ringkas, T, B });
   if (GR.size > 40) GR.delete(GR.keys().next().value);
   return `<svg class="ih-svg ih-garis" data-gid="${id}" viewBox="0 0 ${W} ${H}" role="group" tabindex="0" aria-label="${esc(label || satuan)}" focusable="false"><text class="ih-lbl" x="${L}" y="9">${esc(satuan)}</text>${grid}${sb}${g}${an}<line class="ih-xh" hidden x1="0" x2="0" y1="${T}" y2="${H - B}"/><g class="ih-hov"></g></svg>`;
 }
@@ -108,7 +108,7 @@ function garisGerak(svg, ev) {
   garisTampil(svg, best, ev.clientX, ev.clientY, sy);
 }
 function garisSembunyi(svg) {
-  svg.querySelector(".ih-xh").setAttribute("hidden", ""); svg.querySelector(".ih-hov").innerHTML = ""; svg.classList.remove("ih-fokus");
+  svg.querySelector(".ih-xh").setAttribute("hidden", ""); svg.querySelector(".ih-hov").replaceChildren(); svg.classList.remove("ih-fokus");
   for (const e of svg.querySelectorAll(".ih-g-on")) e.classList.remove("ih-g-on");
   if (TIP) TIP.hidden = true;
 }
@@ -217,7 +217,7 @@ export function tabel(el, { kolom, baris, per = 10, satuan = "jm.pag.u.data", ur
 }
 function gambar(el) {
   const s = ST.get(el.id), { kolom, baris, per, satuan, kelasBaris } = el._tb, k = kolom[s.uk] || kolom[0];
-  const urut = [...baris].sort((a, b) => { const x = k.v(a), y = k.v(b); if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1; return (typeof x === "string" ? x.localeCompare(y, "id") : x - y) * s.ua; });
+  const urut = baris.toSorted((a, b) => { const x = k.v(a), y = k.v(b); if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1; return (typeof x === "string" ? x.localeCompare(y, "id") : x - y) * s.ua; });
   const maks = Math.max(1, Math.ceil(urut.length / per)); s.hal = Math.min(s.hal, maks);
   const lihat = urut.slice((s.hal - 1) * per, s.hal * per);
   const th = kolom.map((c, i) => `<th class="${c.num ? "jm-num" : ""}" aria-sort="${i === s.uk ? (s.ua > 0 ? "ascending" : "descending") : "none"}"><button type="button" class="jm-urut" data-uk="${i}">${esc(c.label)}</button></th>`).join("");

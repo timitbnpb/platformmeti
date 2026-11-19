@@ -24,7 +24,7 @@ export function panelBeritaMeti(el) {
   host.addEventListener("input", masuk);
   host.addEventListener("change", ubah);
   host.addEventListener("submit", (e) => { if (e.target.id === "bmForm") { e.preventDefault(); simpan(); } });
-  host.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.matches && e.target.matches("tr[data-ref]")) bukaEditor(e.target.dataset.ref); });
+  host.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.isComposing && e.keyCode !== 229 && e.target.matches && e.target.matches("tr[data-ref]")) bukaEditor(e.target.dataset.ref); });
   const cariTunda = debounce(() => isiTabel());
   muatDaftar();
 
@@ -34,7 +34,7 @@ export function panelBeritaMeti(el) {
     host.innerHTML = hantuHtml(5);
     try {
       const d = await api("/api/berita-meti", { signal: S.ctl.signal });
-      S.baris = (Array.isArray(d) ? d : (d && d.baris) || []).slice().sort((a, c) => String(c.tanggal).localeCompare(String(a.tanggal)));
+      S.baris = (Array.isArray(d) ? d : (d && d.baris) || []).toSorted((a, c) => String(c.tanggal).localeCompare(String(a.tanggal)));
     } catch (e) {
       if (e.name === "AbortError") return;
       host.innerHTML = galatHtml(e.kode || "umum");
@@ -158,7 +158,7 @@ export function panelBeritaMeti(el) {
   async function muatUlang(pesan) {
     try {
       const d = await api("/api/berita-meti");
-      S.baris = (Array.isArray(d) ? d : (d && d.baris) || []).slice().sort((a, c) => String(c.tanggal).localeCompare(String(a.tanggal)));
+      S.baris = (Array.isArray(d) ? d : (d && d.baris) || []).toSorted((a, c) => String(c.tanggal).localeCompare(String(a.tanggal)));
     } catch (e) { /* daftar lama tetap */ }
     kabar("ok", pesan);
     nanti(rangkaDaftar);
@@ -176,7 +176,7 @@ export function panelBeritaMeti(el) {
   async function hapusFoto() {
     try {
       await api(`/api/berita-meti/${encodeURIComponent(S.ref)}/foto`, { metode: "DELETE" });
-      const k = $("bmFotoSaatIni"); if (k) k.innerHTML = "";
+      const k = $("bmFotoSaatIni"); if (k) k.replaceChildren();
       kabar("ok", t("adm.bm.foto_dihapus"));
     } catch (e) { kabar("galat", galatTeks(e.kode || "umum")); }
   }

@@ -59,8 +59,8 @@ const tampilPesan = (jenis, teks) => {
   kotak.insertAdjacentHTML("beforeend", `<button type="button" class="jm-pesan-tutup" aria-label="${t("masuk.tutup_pesan")}">${IKX}</button>`);
 };
 pesan.addEventListener("click", (e) => {
-  if (e.target.closest(".jm-pesan-tutup")) pesan.innerHTML = "";
-  else if (e.target.closest("[data-lupa]")) { pesan.innerHTML = ""; if ($("lupa").getAttribute("aria-expanded") !== "true") $("lupa").click(); $("lupa").scrollIntoView({ block: "center" }); }
+  if (e.target.closest(".jm-pesan-tutup")) pesan.replaceChildren();
+  else if (e.target.closest("[data-lupa]")) { pesan.replaceChildren(); if ($("lupa").getAttribute("aria-expanded") !== "true") $("lupa").click(); $("lupa").scrollIntoView({ block: "center" }); }
 });
 const sibuk = (ya) => {
   kirim.disabled = ya;
@@ -114,7 +114,7 @@ function cekBaru(baru, ulang, lama) {
 }
 
 async function kirimForm(fn) {
-  pesan.innerHTML = "";
+  pesan.replaceChildren();
   sibuk(true);
   try { await fn(); } catch (e) {
     if (e.name !== "AbortError") tampilPesan("galat", galatTeks(e.kode || "umum") + (halaman === "aktivasi" && e.kode !== "jaringan" ? " " + t("aktivasi.petunjuk") : ""));
@@ -130,7 +130,7 @@ if (halaman === "masuk") {
   const segarkan = () => {
     for (const b of document.querySelectorAll("#kirim, .jm-tbl-google")) b.setAttribute("aria-disabled", String(!setuju.checked));
     try { setuju.checked ? localStorage.setItem(KS, "1") : localStorage.removeItem(KS); } catch (e) {}
-    if (setuju.checked) pesan.innerHTML = "";
+    if (setuju.checked) pesan.replaceChildren();
   };
   setuju.addEventListener("change", segarkan);
   document.addEventListener("click", (e) => { if (!setuju.checked && e.target.closest(".jm-tbl-google")) { e.preventDefault(); tampilPesan("galat", t("masuk.setuju_perlu")); } });

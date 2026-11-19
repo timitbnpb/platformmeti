@@ -169,7 +169,7 @@ function sKuotaAtap(S) {
 function sPemain(S) {
   if (!S.org.length) return "";
   const nilai = (o) => (logoOrgSatu(o.id, o.nama, o.logo)?.startsWith("/img/logo/org/") ? 0 : 1);
-  const daftar = [...S.org].sort((a, z) => nilai(a) - nilai(z) || a.nama.localeCompare(z.nama)).slice(0, 12);
+  const daftar = S.org.toSorted((a, z) => nilai(a) - nilai(z) || a.nama.localeCompare(z.nama)).slice(0, 12);
   const kartu = daftar.map((o) => `<li><a href="/o/${esc(o.id)}"><span class="jm-tk-lg">${logoHtml(o.id, o.nama, o.logo)}</span><strong>${esc(o.singkatan || o.nama)}</strong><small>${esc(o.kategori?.label || "")}</small></a></li>`).join("");
   return bagian("pl-pemain", "direktori", "pemain", {
     judulHtml: hlHtml("tk.s.pemain.j", num(S.org.length), { nama: nm() }), sub: esc(t("tk.s.pemain.sub", { n: daftar.length })),
@@ -198,7 +198,7 @@ function sReg(S) {
 
 function sBerita(S) {
   if (!S.ber.length) return "";
-  const ber = [...S.ber].sort((a, z) => urut(a.terbit, z.terbit));
+  const ber = S.ber.toSorted((a, z) => urut(a.terbit, z.terbit));
   const kartu = ber.slice(0, 6).map((b) => {
     const f = fotoBerita(D.foto, b.id), u = amanUrl(b.url), lg = logoLokal(b.media);
     return `<li><a href="${esc(u || "#")}" target="_blank" rel="noopener noreferrer">${f ? `<img class="jm-tk-brt-f" data-bf="1" src="${esc(f)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : `<span class="jm-tk-brt-k">${ikon("berita", 32)}</span>`}<span class="jm-tk-brt-t">${esc(b.judul)}</span><small class="jm-tk-media">${lg ? `<img src="${esc(lg)}" width="16" height="16" alt="" loading="lazy" decoding="async" data-galat="hapus">` : ""}<span>${esc(namaMedia(b.media))}, ${esc(tanggal(String(b.terbit).slice(0, 10)))}</span></small></a></li>`;
@@ -282,7 +282,7 @@ segmen();
 isi.innerHTML = hantuHtml(6);
 const ambil = (n) => muat(n).catch(() => null);
 const [proyek, ruptl, reg, org, ber, foto, wkp, atap, target, tren] = await Promise.all(["proyek", "ruptl", "regulasi", "organisasi", "berita", "berita_foto", "wkp", "plts_atap", "target", "kapasitas_tren"].map(ambil));
-if (!proyek || !target) { isi.innerHTML = ""; tampilGalat(isi, () => location.reload()); } else {
+if (!proyek || !target) { isi.replaceChildren(); tampilGalat(isi, () => location.reload()); } else {
   D = { proyek: proyek.baris, proyek_tgl: proyek.dibangun_pada, ruptl, reg: reg?.baris || [], reg_tgl: reg?.dibangun_pada, org: org?.baris || [], org_tgl: org?.dibangun_pada, berita: ber?.baris || [], ber_tgl: ber?.dibangun_pada, foto, wkp, atap, target, tren: tren || { baris: [] } };
   D.rup = ruptl || { baris: [], sumber: [], meta: {} }; D.ruptl = D.rup.baris;
   gambarIsi();

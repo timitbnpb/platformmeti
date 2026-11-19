@@ -49,7 +49,7 @@ function buka(k, { ubahUrl = true } = {}) {
   siap.add(d.k);
   panel.innerHTML = hantuHtml(3);
   nanti(async () => {
-    try { const m = await import(d.mod); panel.innerHTML = ""; await m.mulai(panel); }
+    try { const m = await import(d.mod); panel.replaceChildren(); await m.mulai(panel); }
     catch (e) { console.error(e); panel.innerHTML = galatHtml("layanan"); siap.delete(d.k); }
     dispatchEvent(new Event("resize")); // peta yang dibuat saat panel tersembunyi menyesuaikan ukuran
   });

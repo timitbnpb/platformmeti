@@ -91,7 +91,7 @@ function tarif() {
 function tarifGrafik() {
   const el = document.getElementById("rg3-w-tarif"); if (!el) return;
   const a = tarifPerpres35(mw), b = tarifPerpres109(mw);
-  if (a == null) { el.innerHTML = ""; return; }
+  if (a == null) { el.replaceChildren(); return; }
   el.innerHTML = batangSvg({ el, d: 2, label: t("rg3.w.ey.tarif"), satuan: "US cent/kWh", seri: [{ k: "a", kelas: "rg3-s-p35" }, { k: "b", kelas: "rg3-s-p109" }],
     baris: [{ label: "Perpres 35/2018", ikon: "regulasi", tip: `${num(a, 2)}`, th: tipHtml("Perpres 35/2018", [[t("rg3.w.tarif"), `${num(a, 2)} US cent/kWh`], [t("rg3.w.mw"), `${num(mw, 0)} MW`], [t("rg3.w.status"), t("rg3.w.dicabut")]]), bagian: [{ k: "a", nilai: a }] },
       { label: "Perpres 109/2025", ikon: "regulasi", sorot: true, tip: `${num(b, 2)}`, th: tipHtml("Perpres 109/2025", [[t("rg3.w.tarif"), `${num(b, 2)} US cent/kWh`], [t("rg3.w.mw"), `${num(mw, 0)} MW`], [t("rg3.w.status"), t("rg3.w.berlaku")]]), bagian: [{ k: "b", nilai: b }] }] }) + `<p class="jm-bantu ih-catatan">${esc(t("rg3.w.tarif_n", { a: num(a, 2), b: num(b, 2), s: num(b - a, 2) }))} ${bukti("est", { cara: t("rg3.w.tarif_cara") })}</p>`;

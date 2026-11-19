@@ -16,7 +16,7 @@ const hargaTeks = (h) => (h ? `${num(h.nilai, h.nilai < 1 ? 4 : 2)} ${h.satuan}`
 
 export async function mulai(panel) {
   const ex = (o) => exHtml({ ...o, aksiHtml: aksiHtml({ csv: !!o.csv }), tingkat: "h2" });
-  const R = (D.dun?.baris || []).slice().sort((a, b) => (b.tahun || 0) - (a.tahun || 0)), negara = new Set(R.map((r) => r.iso2));
+  const R = (D.dun?.baris || []).toSorted((a, b) => (b.tahun || 0) - (a.tahun || 0)), negara = new Set(R.map((r) => r.iso2));
   const ina = baris().filter((p) => p.harga);
   if (!R.length) { panel.innerHTML = `<p class="jm-kosong">${esc(t("lel.kosong"))}</p>`; return; }
   const bersatuan = R.filter((r) => hargaUsd(r) != null);

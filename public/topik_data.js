@@ -193,7 +193,7 @@ export function grafikSeri(b, id, ctx, { mode = "garis" } = {}) {
   labels.forEach((l, i) => { if ((n - 1 - i) % step === 0) s += `<text class="jm-gf-t2" x="${X(i).toFixed(1)}" y="${Bk + 18}" text-anchor="middle" font-size="${fs}">${esc(l)}</text>`; });
   for (const x of tg) { const i = labels.indexOf(x.tahun); s += `<line class="jm-tp-tg-g" x1="${X(i).toFixed(1)}" x2="${X(i).toFixed(1)}" y1="${T}" y2="${Bk}"/><circle class="jm-tp-tg" cx="${X(i).toFixed(1)}" cy="${Bk}" r="5"/>`; }
   const ujung = [];
-  for (const sr of [...seri].sort((a, b2) => a.sorot - b2.sorot)) {
+  for (const sr of seri.toSorted((a, b2) => a.sorot - b2.sorot)) {
     const p = labels.map((l, i) => (sr.m.has(l) ? [X(i), Y(sr.m.get(l)), sr.m.get(l)] : null)).filter(Boolean);
     if (!p.length) continue;
     if (mode === "kolom") { const bw = Math.min(26, ((Wd - Lk - Rk) / n) * 0.66); s += labels.map((l, i) => (sr.m.has(l) ? `<rect class="jm-gf-b jm-tp-kol${i === n - 1 ? " jm-gf-sorot" : ""}" data-i="${i}" x="${(X(i) - bw / 2).toFixed(1)}" y="${Y(sr.m.get(l)).toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, Bk - Y(sr.m.get(l))).toFixed(1)}" rx="2"/>` : "")).join(""); continue; }
@@ -246,7 +246,7 @@ export function batangNegara(b) {
 /* ---------- linimasa vertikal bertitik ---------- */
 export function linimasaVertikal(butir, ctx) {
   const reg = new Map((ctx.dasar.regulasi || []).map((r) => [r.id, r]));
-  const li = [...butir].sort((a, z) => a.tanggal.localeCompare(z.tanggal)).map((x) => {
+  const li = butir.toSorted((a, z) => a.tanggal.localeCompare(z.tanggal)).map((x) => {
     const r = x.reg ? reg.get(x.reg) : null, judul = tok(x.judul), depan = x.tanggal > HARI_INI;
     const st = depan ? "rencana" : r?.status === "dicabut" || /\bdicabut\b|\brevoked\b|\brepealed\b/i.test(judul) ? "dicabut" : "berlaku";
     const url = (/^https?:\/\//.test(x.url || "") && x.url) || (r && `/regulasi?id=${encodeURIComponent(r.id)}`) || "";

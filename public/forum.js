@@ -55,7 +55,7 @@ export function pasangForum(el, { bidang, nama, admin = false }) {
   }
   async function muatLaporan() {
     const w = $("#frLaporan"); if (!w) return;
-    let d; try { d = await api(`/api/admin/forum/laporan?hal=${S.lapHal || 1}`); } catch { w.innerHTML = ""; return; }
+    let d; try { d = await api(`/api/admin/forum/laporan?hal=${S.lapHal || 1}`); } catch { w.replaceChildren(); return; }
     const r = d.baris;
     if (!r.length && (S.lapHal || 1) > 1) { S.lapHal = 1; return muatLaporan(); } // halaman terakhir habis sesudah menyembunyikan
     w.innerHTML = r.length ? `<div class="fr-laporan"><h4>${ikon("bendera", 16)}<span>${esc(t("fr.laporan", { n: angka(d.total) }))}</span></h4><ul>${r.map((x) => `<li><span><b>${esc(t("fr.lap." + x.jenis))}</b> ${esc(t("fr.lap.n", { n: angka(x.n) }))}: ${esc(x.alasan)}<small>${esc(x.cuplikan || "")}</small></span>
