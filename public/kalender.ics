@@ -334,12 +334,48 @@ SUMMARY:Workshop Roadmap Pemanfaatan EBT 2026-2028 di prasarana penerbangan Polr
 DESCRIPTION:Ditpoludara Korpolairud Baharkam Polri
 END:VEVENT
 BEGIN:VEVENT
+UID:kd_webinar_3t_2026@meti
+DTSTAMP:20261107T000000Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261113
+SUMMARY:Webinar Nasional: Elektrifikasi Daerah 3T\, Perbatasan\, dan Fasilitas Vital Terpencil (Sistem Microgrid/Hybrid)
+DESCRIPTION:Techminar\, METI\, Onesia
+LOCATION:[object Object]
+END:VEVENT
+BEGIN:VEVENT
+UID:kd_fgd_ikpln_2026@meti
+DTSTAMP:20261107T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:FGD IKPLN 2026: Peran Strategis Sektor Distribusi dan Microgrid EBT Mandiri dalam Mendukung Ketahanan Energi Nasional
+DESCRIPTION:IKPLN\, PT PLN (Persero)
+LOCATION:[object Object]
+END:VEVENT
+BEGIN:VEVENT
+UID:kd_lokakarya_lpem_subsidi_listrik_2026@meti
+DTSTAMP:20261107T000000Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Lokakarya Penelitian LPEM FEB UI & CETEX LSE: Energy Subsidy Reform\, Scenario\, Pathway\, and Policy Design for Electricity Sector in Indonesia
+DESCRIPTION:LPEM FEB UI\, CETEX LSE
+LOCATION:[object Object]
+END:VEVENT
+BEGIN:VEVENT
 UID:kd_golf_meti_2026@meti
 DTSTAMP:20261107T000000Z
 DTSTART;VALUE=DATE:20261122
 DTEND;VALUE=DATE:20261123
 SUMMARY:The 1st METI Challenge Trophy Golf Tournament 2026
 DESCRIPTION:METI
+LOCATION:[object Object]
+END:VEVENT
+BEGIN:VEVENT
+UID:kd_climate_technopreneurship_2026@meti
+DTSTAMP:20261107T000000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Launching Climate Technopreneurship Programme
+DESCRIPTION:Kementerian Ekonomi Kreatif/Badan Ekonomi Kreatif\, GGGI
 LOCATION:[object Object]
 END:VEVENT
 BEGIN:VEVENT

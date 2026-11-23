@@ -549,10 +549,25 @@
    ],
    "keterbukaan": "umum",
    "pembicara": [
-    { "peran": "keynote", "nama": "Amarullah Ramadhan, S.Tr.T", "ket": "Installer Solar Panel" },
-    { "peran": "narasumber", "nama": "Adrian Lembong", "ket": "Ketua Bidang Advokasi dan Regulasi METI" },
-    { "peran": "narasumber", "nama": "Dr. Parlindungan Purba, SH., MM", "ket": "Ketua METI Wilayah" },
-    { "peran": "moderator", "nama": "Lananda Arsy Jovansyah" }
+    {
+     "peran": "keynote",
+     "nama": "Amarullah Ramadhan, S.Tr.T",
+     "ket": "Installer Solar Panel"
+    },
+    {
+     "peran": "narasumber",
+     "nama": "Adrian Lembong",
+     "ket": "Ketua Bidang Advokasi dan Regulasi METI"
+    },
+    {
+     "peran": "narasumber",
+     "nama": "Dr. Parlindungan Purba, SH., MM",
+     "ket": "Ketua METI Wilayah"
+    },
+    {
+     "peran": "moderator",
+     "nama": "Lananda Arsy Jovansyah"
+    }
    ],
    "fasilitas": "Doorprize dan E-Certificate",
    "daftar_url": "https://event.onesia.id/index.php?event=elektrifikasi_daerah",
@@ -574,6 +589,121 @@
    "slug": "webinar-elektrifikasi-daerah-3t-2026",
    "jam": "09.30 WIB",
    "sorotan": true
+  },
+  {
+   "kandidat_id": "kd_lokakarya_lpem_subsidi_listrik_2026",
+   "slug": "lokakarya-lpem-reformasi-subsidi-listrik-2026",
+   "tanda": "kandidat-lalu",
+   "judul": "Lokakarya Penelitian LPEM FEB UI & CETEX LSE: Energy Subsidy Reform, Scenario, Pathway, and Policy Design for Electricity Sector in Indonesia",
+   "jenis": "lokakarya",
+   "tanggal": "2026-11-20",
+   "jam": "08.30-11.30 WIB",
+   "deskripsi": "Lokakarya penelitian LPEM FEB UI bersama CETEX LSE yang membahas temuan awal dan desain kebijakan reformasi subsidi listrik di Indonesia: skenario, jalur, dan rancangan kebijakan. Pengurus METI hadir mewakili METI atas arahan Ketua Umum.",
+   "lokasi": {
+    "tempat": "Ruang Seminar Lt. 7, LPEM FEB UI, Kampus Salemba",
+    "kota": "Jakarta Pusat",
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "LPEM FEB UI",
+    "CETEX LSE"
+   ],
+   "keterbukaan": "undangan",
+   "sumber": [
+    {
+     "url": "https://www.lpem.org/",
+     "label": "undangan-sekretariat",
+     "tanggal_periksa": "2026-11-23",
+     "tingkat_bukti": "dokumen-resmi"
+    }
+   ]
+  },
+  {
+   "kandidat_id": "kd_climate_technopreneurship_2026",
+   "slug": "launching-climate-technopreneurship-programme-2026",
+   "tanda": "kandidat-mendatang",
+   "judul": "Launching Climate Technopreneurship Programme",
+   "jenis": "seminar",
+   "tanggal": "2026-11-23",
+   "jam": "10.00-16.00 WIB",
+   "deskripsi": "Peluncuran Climate Technopreneurship Programme oleh Kementerian Ekonomi Kreatif/Badan Ekonomi Kreatif bersama GGGI. METI diwakili Lucila Ismoyo Rukmi (Wakil Sekretaris Jenderal II) sebagai narasumber Panel 1 \"Mapping Climate Challenges & Opportunities in Indonesia\" (13.30-14.30 WIB), membawa perspektif tantangan dan peluang inovasi teknologi iklim di sektor energi terbarukan.",
+   "lokasi": {
+    "tempat": "Thamrin Nine Ballroom",
+    "kota": "Jakarta Pusat",
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "Kementerian Ekonomi Kreatif/Badan Ekonomi Kreatif",
+    "GGGI"
+   ],
+   "organisasi_ids": [
+    "l_41bf1f0b41"
+   ],
+   "keterbukaan": "umum",
+   "pembicara": [
+    {
+     "peran": "narasumber",
+     "nama": "Lucila Ismoyo Rukmi",
+     "ket": "Wakil Sekretaris Jenderal II METI"
+    },
+    {
+     "peran": "narasumber",
+     "nama": "Hana Nur Auliana",
+     "ket": "Head of Business Development, Waste4Change"
+    },
+    {
+     "peran": "narasumber",
+     "nama": "I Kadek Mudarta",
+     "ket": "Kepala Dinas Perhubungan Provinsi Bali"
+    },
+    {
+     "peran": "moderator",
+     "nama": "Yorkie Sutaryo",
+     "ket": "GGGI Indonesia"
+    }
+   ],
+   "instagram": [
+    "https://www.instagram.com/metiires/"
+   ],
+   "sumber": [
+    {
+     "url": "https://www.instagram.com/metiires/",
+     "label": "kanal-resmi",
+     "tanggal_periksa": "2026-11-23",
+     "tingkat_bukti": "kata-pihak"
+    }
+   ]
+  },
+  {
+   "kandidat_id": "kd_fgd_ikpln_2026",
+   "slug": "fgd-ikpln-2026",
+   "tanda": "kandidat-lalu",
+   "judul": "FGD IKPLN 2026: Peran Strategis Sektor Distribusi dan Microgrid EBT Mandiri dalam Mendukung Ketahanan Energi Nasional",
+   "jenis": "lokakarya",
+   "tanggal": "2026-11-17",
+   "jam": "08.30-16.20 WIB",
+   "deskripsi": "Focus Group Discussion IKPLN tentang arah PLTS skala besar dan integrasi BESS, transformasi jaringan distribusi menjadi jaringan aktif dua arah dengan prosumer dan microgrid, serta masukan strategis untuk program distribusi PLN. METI diwakili Anthony Utomo (Ketua Bidang SDU).",
+   "lokasi": {
+    "tempat": "Auditorium PT PLN (Persero) Kantor Pusat",
+    "kota": "Jakarta Selatan",
+    "lat": null,
+    "lon": null
+   },
+   "penyelenggara": [
+    "IKPLN",
+    "PT PLN (Persero)"
+   ],
+   "keterbukaan": "undangan",
+   "sumber": [
+    {
+     "url": "https://web.pln.co.id/",
+     "label": "laporan-sekretariat",
+     "tanggal_periksa": "2026-11-23",
+     "tingkat_bukti": "dokumen-resmi"
+    }
+   ]
   }
  ]
 }
