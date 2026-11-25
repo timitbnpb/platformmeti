@@ -16,7 +16,10 @@ for (const s of [-5, -11, 1]) for (let w = 95; w < 141; w += 8) { // urutan: Sum
   WILAYAH[`u_${s}_${w}`] = [s, w, s + 6, Math.min(w + 8, 141.1)];
 }
 const VOLT = '^((1[5-9]|[2-9][0-9])[0-9]{4}|[0-9]{7,})'; // >= 150000 V
-export const kueri = (b) => `[out:json][timeout:280];(way["power"="line"]["voltage"~"${VOLT}"](${b.join(',')});way["power"="substation"]["voltage"~"${VOLT}"](${b.join(',')});node["power"="substation"]["voltage"~"${VOLT}"](${b.join(',')}););out geom tags;`;
+// Kembaran jaringan (KM-*): ambil juga 66-70 kV dan kabel tanah/laut; graf_jaringan.mjs membaca mentahnya langsung.
+const VOLT_KEMBARAN = '^((6[6-9]|[7-9][0-9]|[1-9][0-9]{2})[0-9]{3}|[0-9]{7,})'; // >= 66000 V
+const volt = () => (process.env.TEG_MIN === '66' ? VOLT_KEMBARAN : VOLT);
+export const kueri = (b, V = volt()) => `[out:json][timeout:280];(way["power"~"^(line|cable)$"]["voltage"~"${V}"](${b.join(',')});way["power"="substation"]["voltage"~"${V}"](${b.join(',')});node["power"="substation"]["voltage"~"${V}"](${b.join(',')}););out geom tags;`;
 
 export const tegMax = (v) => Math.max(0, ...String(v || '').split(';').map((x) => parseInt(x, 10)).filter(Number.isFinite));
 const bulat = (x, d = 4) => Math.round(x * 10 ** d) / 10 ** d;
