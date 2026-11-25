@@ -48,12 +48,12 @@ def pdftext(pdf, layout=True):
 def blok(teks, no):
     """Baris-baris tabel 'Tabel <no> :' (kemunculan TERAKHIR = isi, bukan daftar isi) sampai 'Tabel N :' berikut."""
     L = teks.split('\n')
-    idx = [i for i, g in enumerate(L) if re.match(r'^\s*Tabel\s+%d\s*:' % no, g, re.I)]
+    idx = [i for i, g in enumerate(L) if re.match(r'^\s*Tabel(?:/Table)?\s+%d\s*:' % no, g, re.I)]
     if not idx: return None, None
     s = idx[-1]
     e = len(L)
     for j in range(s + 1, len(L)):
-        if re.match(r'^\s*Tabel\s+\d+\s*:', L[j], re.I): e = j; break
+        if re.match(r'^\s*Tabel(?:/Table)?\s+\d+\s*:', L[j], re.I): e = j; break
     return L[s:e], L[s]
 
 PREFIX = re.compile(r'^(UIW|UID|UIK|UIKL|UIP|UIP3B|UIT|UIPLN|PLN|PT|PJB|Unit|Proyek|Luar|Jawa|Indonesia|-|Sub|Jumlah|\*)', re.I)
@@ -62,7 +62,7 @@ def baris_pln(lines, n):
     out, gagal, buf, prev = [], [], '', None
     for g in lines[1:]:
         t = g.strip()
-        if not t or re.match(r'^(Statistik PLN|Data Tahunan|\d+\s+Statistik PLN)', t) or re.search(r'Statistik PLN \d{4}\s*\d*$', t): continue
+        if not t or re.match(r'^(Statistik PLN|Statistics PLN|Unit PLN / PLN Units|Energy Sold|Number and Installed|Energy Production|Data Tahunan|\d+\s+Statistik PLN)', t) or re.search(r'Statistic[sk] PLN \d{4}\s*\d*$', t): continue
         tok = t.split()
         k = len(tok)
         while k > 0 and NUM.match(tok[k - 1]): k -= 1
@@ -145,15 +145,16 @@ def ekstrak_pln(th):
         return petakan(rows)
     NOMOR = NOMOR_TABEL[th]
     # penjualan per kelompok (GWh): RT, Industri, Bisnis, Sosial, GdgKantor, PJU, Jumlah, %
-    for x in ambil(NOMOR['jual'], 8, 'energi terjual'):
-        r['penjualan'].append({'tahun': th, 'tingkat': x['tingkat'], 'prov_kode': x['prov'], 'unit': x['unit'] if not x['anak'] else x['unit'], 'baris': x['label'], 'gwh': jml(x['nilai'][6]),
-                               'per_kelompok_gwh': dict(zip(['rumah_tangga', 'industri', 'bisnis', 'sosial', 'gedung_kantor_pemerintah', 'penerangan_jalan'], [jml(v) for v in x['nilai'][:6]])),
+    JK = ['rumah_tangga', 'industri', 'bisnis', 'sosial', 'gedung_kantor_pemerintah', 'penerangan_jalan'] + (['lainnya_tcl'] if NOMOR.get('jual_n', 8) == 9 else [])
+    for x in ambil(NOMOR['jual'], NOMOR.get('jual_n', 8), 'energi terjual'):
+        r['penjualan'].append({'tahun': th, 'tingkat': x['tingkat'], 'prov_kode': x['prov'], 'unit': x['unit'] if not x['anak'] else x['unit'], 'baris': x['label'], 'gwh': jml(x['nilai'][len(JK)]),
+                               'per_kelompok_gwh': dict(zip(JK, [jml(v) for v in x['nilai'][:len(JK)]])),
                                'src': src, 'st': 'sumber', 'catatan': 'Statistik PLN %d Tabel %d, kolom Jumlah (GWh)' % (th, NOMOR['jual'])})
     for x in ambil(NOMOR['neraca'], 3, 'neraca daya'):
         r['beban'].append({'tahun': th, 'tingkat': x['tingkat'], 'sistem_pln': x['label'], 'unit': x['unit'], 'prov_kode': x['prov'], 'mw': jml(x['nilai'][2]),
                            'kapasitas_terpasang_mw': jml(x['nilai'][0]), 'daya_mampu_mw': jml(x['nilai'][1]), 'src': src, 'st': 'sumber',
                            'catatan': 'Statistik PLN %d Tabel %d Neraca Daya, kolom Beban Puncak (MW); beban puncak per unit PLN, tidak dijumlahkan; kapasitas = milik PLN, sewa, IPP' % (th, NOMOR['neraca'])})
-    for x in ambil(NOMOR['saidi'], 2, 'SAIDI SAIFI'):
+    for x in ambil(NOMOR['saidi'], 2, 'SAIDI SAIFI', NOMOR.get('saidi_potong')):
         r['saidi'].append({'tahun': th, 'tingkat': x['tingkat'], 'unit': x['unit'], 'baris': x['label'], 'prov_kode': x['prov'], 'saidi_jam': jml(x['nilai'][0]), 'saifi_kali': jml(x['nilai'][1]), 'src': src, 'st': 'sumber',
                            'catatan': 'Statistik PLN %d Tabel %d, jam atau kali per pelanggan' % (th, NOMOR['saidi'])})
     for x in ambil(NOMOR['trafo'], 12, 'trafo gardu induk'):
@@ -173,6 +174,8 @@ def ekstrak_pln(th):
     return r
 
 NOMOR_TABEL = {th: {'jual': 6, 'neraca': 1, 'saidi': 16, 'trafo': 30, 'prod': 23} for th in (2021, 2022, 2023, 2024)}
+# 2024: Tabel 6 punya kolom 'Lainnya (T,C,L)' (9 angka); Tabel 23 blok Produksi Sendiri halaman pertama hanya PLTA..PLTMG (kolom Surya/Bayu/Biomassa di blok halaman berikut tidak diambil)
+NOMOR_TABEL[2024].update({'saidi_potong': 'Lama Gangguan', 'jual_n': 9, 'prod_n': 9, 'prod_jenis': ['PLTA', 'PLTM', 'PLTMH', 'PLTU', 'PLTG', 'PLTGU', 'PLTP', 'PLTD', 'PLTMG']})
 
 # ---------- Faktor Emisi GRK (Gatrik) ----------
 def fnum(t):
@@ -308,8 +311,8 @@ SUMBER = [
      'url': 'https://web.pln.co.id/statics/uploads/2023/05/Statistik-PLN-2022-Final.pdf', 'arsip': 'https://web.archive.org/web/20240706142137id_/https://web.pln.co.id/statics/uploads/2023/05/Statistik-PLN-2022-Final.pdf'},
     {'id': 'PLN-STAT-2023', 'judul': 'Statistik PLN 2023 (Indonesia)', 'penerbit': 'PT PLN (Persero)', 'tanggal_terbit': '2025-09',
      'url': 'https://web.pln.co.id/statics/uploads/2025/09/Statistik-PLN-2023-Ind.pdf', 'arsip': 'https://web.archive.org/web/20260208090156id_/https://web.pln.co.id/statics/uploads/2025/09/Statistik-PLN-2023-Ind.pdf'},
-    {'id': 'PLN-STAT-2024', 'judul': 'Statistik PLN 2024 (Indonesia-Inggris)', 'penerbit': 'PT PLN (Persero)', 'tanggal_terbit': '2025-09',
-     'url': 'https://web.pln.co.id/statics/uploads/2025/09/Statistik-PLN-2024-Ind-Eng.pdf', 'arsip': 'https://web.archive.org/web/20260212164311id_/https://web.pln.co.id/statics/uploads/2025/09/Statistik-PLN-2024-Ind-Eng.pdf'},
+    {'id': 'PLN-STAT-2024', 'judul': 'Statistik PLN 2024', 'penerbit': 'PT PLN (Persero)', 'tanggal_terbit': '2025-09',
+     'url': 'https://www.pln.co.id/webapi/media/file/webkorp/asset/Statistik2024.pdf', 'arsip': 'https://web.archive.org/web/20260701111630id_/https://www.pln.co.id/webapi/media/file/webkorp/asset/Statistik2024.pdf'},
 ]
 for _r in SUMBER: _r.update({'lisensi': 'publikasi PLN; hanya angka, atribusi PLN; salinan dari arsip Wayback Machine (situs web.pln.co.id tak terjangkau DNS publik)', 'tanggal_baca': TGL_BACA})
 GATRIK = 'https://gatrik.esdm.go.id/gatrik/gatrik-api//storage/migrasi/download_index/files/'
@@ -351,6 +354,7 @@ def main():
     CELAH.append('Faktor emisi: grid multi-provinsi (Jamali, Sumatera, Sulselbar, Sulutgo) hanya memuat provinsi yang tercetak sebaris dengan angka. FE 2011-2016 hanya Ex-Ante/Ex-Post (kolom om/bm kosong). Tak ada edisi resmi setelah 2019 di gatrik.')
     CELAH.append('SAIDI/SAIFI per UIW/UID hanya dari Statistik PLN; ESDM hanya nasional. Tidak ada angka per UP3/ULP.')
     CELAH.append('Beban puncak: per unit PLN dari Tabel 1 Neraca Daya; beban puncak sistem interkoneksi besar tidak terbit sebagai satu angka kecuali baris "Jawa", "Luar Jawa", "Indonesia" yang dicetak PLN.')
+    if 2024 in PLN: CELAH.append('Statistik PLN 2024 dibaca dari salinan utuh Wayback 20260701111630 (Statistik2024.pdf, 8.503.625 byte, 106 hlm; www.pln.co.id live 503 saat dicek). Tabel 23 produksi 2024: hanya PLTA..PLTMG (blok halaman pertama); kolom PLT Surya/Bayu/Biomassa tidak diambil. Penjualan 2024 PLN punya kolom Lainnya (T,C,L); jumlah provinsi + Kaltim/Kaltara = total Indonesia 306.219,42 GWh.')
     tahun_ok = sorted(PLN)
     return {
         'meta': {'versi': 1, 'dibuat_oleh': 'scripts/panen/statistik_resmi.py', 'tanggal_baca': TGL_BACA, 'tingkat_bukti': 'situs-sendiri',
