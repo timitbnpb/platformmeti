@@ -3335,25 +3335,6 @@
    "catatan": "Statistik PLN 2016 Tabel 6, kolom Jumlah (GWh)"
   },
   {
-   "tahun": 2016,
-   "tingkat": "provinsi",
-   "prov_kode": "36",
-   "unit": "Dist. Banten",
-   "baris": "Dist. Banten",
-   "gwh": 20368.56,
-   "per_kelompok_gwh": {
-    "rumah_tangga": 4543.27,
-    "industri": 12810.74,
-    "bisnis": 2545.45,
-    "sosial": 235.78,
-    "gedung_kantor_pemerintah": 139.16,
-    "penerangan_jalan": 94.16
-   },
-   "src": "PLN-STAT-2016",
-   "st": "sumber",
-   "catatan": "Statistik PLN 2016 Tabel 6, kolom Jumlah (GWh)"
-  },
-  {
    "tahun": 2017,
    "tingkat": "provinsi",
    "prov_kode": "11",
@@ -3717,44 +3698,6 @@
   {
    "tahun": 2017,
    "tingkat": "provinsi",
-   "prov_kode": "81",
-   "unit": "Region of Maluku & North Maluku",
-   "baris": "Maluku",
-   "gwh": 463.05,
-   "per_kelompok_gwh": {
-    "rumah_tangga": 269.86,
-    "industri": 10.15,
-    "bisnis": 120.96,
-    "sosial": 18.71,
-    "gedung_kantor_pemerintah": 36.29,
-    "penerangan_jalan": 7.08
-   },
-   "src": "PLN-STAT-2017",
-   "st": "sumber",
-   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
-  },
-  {
-   "tahun": 2017,
-   "tingkat": "provinsi",
-   "prov_kode": "82",
-   "unit": "Region of Maluku & North Maluku",
-   "baris": "North Maluku",
-   "gwh": 237.12,
-   "per_kelompok_gwh": {
-    "rumah_tangga": 147.56,
-    "industri": 3.27,
-    "bisnis": 52.25,
-    "sosial": 8.6,
-    "gedung_kantor_pemerintah": 19.19,
-    "penerangan_jalan": 6.25
-   },
-   "src": "PLN-STAT-2017",
-   "st": "sumber",
-   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
-  },
-  {
-   "tahun": 2017,
-   "tingkat": "provinsi",
    "prov_kode": "91",
    "unit": "Region of Papua",
    "baris": "Papua",
@@ -3888,44 +3831,6 @@
   {
    "tahun": 2017,
    "tingkat": "provinsi",
-   "prov_kode": "33",
-   "unit": "Dist. of Central Java & Yogyakarta",
-   "baris": "Central Java",
-   "gwh": 21057.04,
-   "per_kelompok_gwh": {
-    "rumah_tangga": 9717.11,
-    "industri": 7223.07,
-    "bisnis": 2618.18,
-    "sosial": 819.7,
-    "gedung_kantor_pemerintah": 227.56,
-    "penerangan_jalan": 451.42
-   },
-   "src": "PLN-STAT-2017",
-   "st": "sumber",
-   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
-  },
-  {
-   "tahun": 2017,
-   "tingkat": "provinsi",
-   "prov_kode": "34",
-   "unit": "Dist. of Central Java & Yogyakarta",
-   "baris": "D.I. Yogyakarta",
-   "gwh": 2724.49,
-   "per_kelompok_gwh": {
-    "rumah_tangga": 1447.72,
-    "industri": 240.07,
-    "bisnis": 697,
-    "sosial": 226.41,
-    "gedung_kantor_pemerintah": 58.82,
-    "penerangan_jalan": 54.47
-   },
-   "src": "PLN-STAT-2017",
-   "st": "sumber",
-   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
-  },
-  {
-   "tahun": 2017,
-   "tingkat": "provinsi",
    "prov_kode": "32",
    "unit": "Dist. of West Java",
    "baris": "Dist. of West Java",
@@ -3937,25 +3842,6 @@
     "sosial": 951.15,
     "gedung_kantor_pemerintah": 393.52,
     "penerangan_jalan": 336.99
-   },
-   "src": "PLN-STAT-2017",
-   "st": "sumber",
-   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
-  },
-  {
-   "tahun": 2017,
-   "tingkat": "provinsi",
-   "prov_kode": "36",
-   "unit": "Dist. of Banten",
-   "baris": "Dist. of Banten",
-   "gwh": 21681.47,
-   "per_kelompok_gwh": {
-    "rumah_tangga": 4599.68,
-    "industri": 13623.27,
-    "bisnis": 2957.89,
-    "sosial": 261.9,
-    "gedung_kantor_pemerintah": 148.49,
-    "penerangan_jalan": 90.24
    },
    "src": "PLN-STAT-2017",
    "st": "sumber",
@@ -8721,8 +8607,13 @@
   },
   {
    "tahun": 2014,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "Wilayah Sumsel, Jambi dan Bengkulu",
    "baris": "Wilayah Sumsel, Jambi dan Bengkulu",
    "gwh": 6199.03,
@@ -8740,8 +8631,12 @@
   },
   {
    "tahun": 2014,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "Wilayah Kalsel dan Kalteng",
    "baris": "Wilayah Kalsel dan Kalteng",
    "gwh": 3063.19,
@@ -8759,8 +8654,9 @@
   },
   {
    "tahun": 2014,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "Wilayah Kalimantan Timur dan Utara",
    "baris": "Wilayah Kalimantan Timur dan Utara",
    "gwh": 2815.56,
@@ -8778,8 +8674,13 @@
   },
   {
    "tahun": 2014,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "75",
+    "72"
+   ],
    "unit": "Wilayah Sulut, Sulteng dan Gorontalo",
    "baris": "Wilayah Sulut, Sulteng dan Gorontalo",
    "gwh": 2472.68,
@@ -8797,8 +8698,13 @@
   },
   {
    "tahun": 2014,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "Wilayah Sulsel, Sultra dan Sulbar",
    "baris": "Wilayah Sulsel, Sultra dan Sulbar",
    "gwh": 5247.95,
@@ -8816,8 +8722,12 @@
   },
   {
    "tahun": 2014,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "81",
+    "82"
+   ],
    "unit": "Wilayah Maluku dan Maluku Utara",
    "baris": "Wilayah Maluku dan Maluku Utara",
    "gwh": 789.45,
@@ -8892,8 +8802,12 @@
   },
   {
    "tahun": 2014,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "Dist. Jawa Tengah dan Yogyakarta",
    "baris": "Dist. Jawa Tengah dan Yogyakarta",
    "gwh": 22001.09,
@@ -8911,8 +8825,12 @@
   },
   {
    "tahun": 2014,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "32",
+    "36"
+   ],
    "unit": "Dist. Jawa Barat dan Banten",
    "baris": "Dist. Jawa Barat dan Banten",
    "gwh": 51277.35,
@@ -8930,8 +8848,9 @@
   },
   {
    "tahun": 2014,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "Dist. Jakarta Raya dan Tangerang",
    "baris": "Dist. Jakarta Raya dan Tangerang",
    "gwh": 41269.02,
@@ -9006,8 +8925,13 @@
   },
   {
    "tahun": 2015,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "Region of South Sumatera, Jambi Bengkulu",
    "baris": "Region of South Sumatera, Jambi Bengkulu",
    "gwh": 6606.71,
@@ -9063,8 +8987,13 @@
   },
   {
    "tahun": 2015,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "75",
+    "72"
+   ],
    "unit": "Region of N, C Sulawesi Gorontalo",
    "baris": "Region of N, C Sulawesi Gorontalo",
    "gwh": 2650.2,
@@ -9082,8 +9011,13 @@
   },
   {
    "tahun": 2015,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "Region of S, SE W Sulawesi",
    "baris": "Region of S, SE W Sulawesi",
    "gwh": 5441.75,
@@ -9291,8 +9225,13 @@
   },
   {
    "tahun": 2016,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "Wilayah Sumsel, Jambi dan Bengkulu",
    "baris": "Wilayah Sumsel, Jambi dan Bengkulu",
    "gwh": 6906.17,
@@ -9310,8 +9249,12 @@
   },
   {
    "tahun": 2016,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "Wilayah Kalsel dan Kalteng",
    "baris": "Wilayah Kalsel dan Kalteng",
    "gwh": 3414.67,
@@ -9329,8 +9272,9 @@
   },
   {
    "tahun": 2016,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "Wilayah Kalimantan Timur dan Utara",
    "baris": "Wilayah Kalimantan Timur dan Utara",
    "gwh": 3203.85,
@@ -9348,8 +9292,13 @@
   },
   {
    "tahun": 2016,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "75",
+    "72"
+   ],
    "unit": "Wilayah Sulut, Sulteng dan Gorontalo",
    "baris": "Wilayah Sulut, Sulteng dan Gorontalo",
    "gwh": 2883.75,
@@ -9367,8 +9316,13 @@
   },
   {
    "tahun": 2016,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "Wilayah Sulsel, Sultra dan Sulbar",
    "baris": "Wilayah Sulsel, Sultra dan Sulbar",
    "gwh": 6031.53,
@@ -9462,8 +9416,12 @@
   },
   {
    "tahun": 2016,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "Dist. Jawa Tengah dan Yogyakarta",
    "baris": "Dist. Jawa Tengah dan Yogyakarta",
    "gwh": 24373.07,
@@ -9481,8 +9439,31 @@
   },
   {
    "tahun": 2016,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "36"
+   ],
+   "unit": "Dist. Banten",
+   "baris": "Dist. Banten",
+   "gwh": 20368.56,
+   "per_kelompok_gwh": {
+    "rumah_tangga": 4543.27,
+    "industri": 12810.74,
+    "bisnis": 2545.45,
+    "sosial": 235.78,
+    "gedung_kantor_pemerintah": 139.16,
+    "penerangan_jalan": 94.16
+   },
+   "src": "PLN-STAT-2016",
+   "st": "sumber",
+   "catatan": "Statistik PLN 2016 Tabel 6, kolom Jumlah (GWh)"
+  },
+  {
+   "tahun": 2016,
+   "tingkat": "unit-gabungan",
+   "prov_kode": null,
+   "prov_daftar": [],
    "unit": "Dist. Jakarta Raya dan Tangerang",
    "baris": "Dist. Jakarta Raya dan Tangerang",
    "gwh": 31293.75,
@@ -9557,8 +9538,13 @@
   },
   {
    "tahun": 2017,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "Region of South Sumatera, Jambi & Bengkulu",
    "baris": "Region of South Sumatera, Jambi & Bengkulu",
    "gwh": 7224.44,
@@ -9576,8 +9562,12 @@
   },
   {
    "tahun": 2017,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "Region of S & C Kalimantan",
    "baris": "Region of S & C Kalimantan",
    "gwh": 3526.81,
@@ -9595,8 +9585,9 @@
   },
   {
    "tahun": 2017,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "Region of East Kalimantan & North",
    "baris": "Region of East Kalimantan & North",
    "gwh": 3418.33,
@@ -9614,8 +9605,13 @@
   },
   {
    "tahun": 2017,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "75",
+    "72"
+   ],
    "unit": "Region of N, C Sulawesi & Gorontalo",
    "baris": "Region of N, C Sulawesi & Gorontalo",
    "gwh": 3073.79,
@@ -9633,8 +9629,13 @@
   },
   {
    "tahun": 2017,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "Region of S, SE & W Sulawesi",
    "baris": "Region of S, SE & W Sulawesi",
    "gwh": 6336.08,
@@ -9652,8 +9653,12 @@
   },
   {
    "tahun": 2017,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "81",
+    "82"
+   ],
    "unit": "Region of Maluku & North Maluku",
    "baris": "Region of Maluku & North Maluku",
    "gwh": 913.85,
@@ -9664,6 +9669,44 @@
     "sosial": 35.63,
     "gedung_kantor_pemerintah": 67.74,
     "penerangan_jalan": 16.21
+   },
+   "src": "PLN-STAT-2017",
+   "st": "sumber",
+   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
+  },
+  {
+   "tahun": 2017,
+   "tingkat": "unit-gabungan-anak",
+   "prov_kode": "81",
+   "unit": "Region of Maluku & North Maluku",
+   "baris": "Maluku",
+   "gwh": 463.05,
+   "per_kelompok_gwh": {
+    "rumah_tangga": 269.86,
+    "industri": 10.15,
+    "bisnis": 120.96,
+    "sosial": 18.71,
+    "gedung_kantor_pemerintah": 36.29,
+    "penerangan_jalan": 7.08
+   },
+   "src": "PLN-STAT-2017",
+   "st": "sumber",
+   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
+  },
+  {
+   "tahun": 2017,
+   "tingkat": "unit-gabungan-anak",
+   "prov_kode": "82",
+   "unit": "Region of Maluku & North Maluku",
+   "baris": "North Maluku",
+   "gwh": 237.12,
+   "per_kelompok_gwh": {
+    "rumah_tangga": 147.56,
+    "industri": 3.27,
+    "bisnis": 52.25,
+    "sosial": 8.6,
+    "gedung_kantor_pemerintah": 19.19,
+    "penerangan_jalan": 6.25
    },
    "src": "PLN-STAT-2017",
    "st": "sumber",
@@ -9709,8 +9752,12 @@
   },
   {
    "tahun": 2017,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "Dist. of Central Java & Yogyakarta",
    "baris": "Dist. of Central Java & Yogyakarta",
    "gwh": 25126.93,
@@ -9728,8 +9775,69 @@
   },
   {
    "tahun": 2017,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan-anak",
+   "prov_kode": "33",
+   "unit": "Dist. of Central Java & Yogyakarta",
+   "baris": "Central Java",
+   "gwh": 21057.04,
+   "per_kelompok_gwh": {
+    "rumah_tangga": 9717.11,
+    "industri": 7223.07,
+    "bisnis": 2618.18,
+    "sosial": 819.7,
+    "gedung_kantor_pemerintah": 227.56,
+    "penerangan_jalan": 451.42
+   },
+   "src": "PLN-STAT-2017",
+   "st": "sumber",
+   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
+  },
+  {
+   "tahun": 2017,
+   "tingkat": "unit-gabungan-anak",
+   "prov_kode": "34",
+   "unit": "Dist. of Central Java & Yogyakarta",
+   "baris": "D.I. Yogyakarta",
+   "gwh": 2724.49,
+   "per_kelompok_gwh": {
+    "rumah_tangga": 1447.72,
+    "industri": 240.07,
+    "bisnis": 697,
+    "sosial": 226.41,
+    "gedung_kantor_pemerintah": 58.82,
+    "penerangan_jalan": 54.47
+   },
+   "src": "PLN-STAT-2017",
+   "st": "sumber",
+   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
+  },
+  {
+   "tahun": 2017,
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "36"
+   ],
+   "unit": "Dist. of Banten",
+   "baris": "Dist. of Banten",
+   "gwh": 21681.47,
+   "per_kelompok_gwh": {
+    "rumah_tangga": 4599.68,
+    "industri": 13623.27,
+    "bisnis": 2957.89,
+    "sosial": 261.9,
+    "gedung_kantor_pemerintah": 148.49,
+    "penerangan_jalan": 90.24
+   },
+   "src": "PLN-STAT-2017",
+   "st": "sumber",
+   "catatan": "Statistik PLN 2017 Tabel 6, kolom Jumlah (GWh)"
+  },
+  {
+   "tahun": 2017,
+   "tingkat": "unit-gabungan",
+   "prov_kode": null,
+   "prov_daftar": [],
    "unit": "Dist. of Jakarta Raya & Tangerang",
    "baris": "Dist. of Jakarta Raya & Tangerang",
    "gwh": 31643.13,
@@ -9804,8 +9912,13 @@
   },
   {
    "tahun": 2018,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "Wilayah Sumsel, Jambi dan Bengkulu",
    "baris": "Wilayah Sumsel, Jambi dan Bengkulu",
    "gwh": 7577.17,
@@ -9823,8 +9936,12 @@
   },
   {
    "tahun": 2018,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "Wilayah Kalsel dan Kalteng",
    "baris": "Wilayah Kalsel dan Kalteng",
    "gwh": 3826.18,
@@ -9842,8 +9959,9 @@
   },
   {
    "tahun": 2018,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "Wilayah Kalimantan Timur dan Utara",
    "baris": "Wilayah Kalimantan Timur dan Utara",
    "gwh": 3637.27,
@@ -9861,8 +9979,13 @@
   },
   {
    "tahun": 2018,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "75",
+    "72"
+   ],
    "unit": "Wilayah Sulut, Sulteng dan Gorontalo",
    "baris": "Wilayah Sulut, Sulteng dan Gorontalo",
    "gwh": 3277.58,
@@ -9880,8 +10003,13 @@
   },
   {
    "tahun": 2018,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "Wilayah Sulsel, Sultra dan Sulbar",
    "baris": "Wilayah Sulsel, Sultra dan Sulbar",
    "gwh": 6729.51,
@@ -9899,8 +10027,12 @@
   },
   {
    "tahun": 2018,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "81",
+    "82"
+   ],
    "unit": "Wilayah Maluku dan Maluku Utara",
    "baris": "Wilayah Maluku dan Maluku Utara",
    "gwh": 998.85,
@@ -9956,8 +10088,12 @@
   },
   {
    "tahun": 2018,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "Dist. Jawa Tengah dan Yogyakarta",
    "baris": "Dist. Jawa Tengah dan Yogyakarta",
    "gwh": 26415.06,
@@ -10013,8 +10149,12 @@
   },
   {
    "tahun": 2019,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "14",
+    "21"
+   ],
    "unit": "UIW Riau dan Kepulauan Riau",
    "baris": "UIW Riau dan Kepulauan Riau",
    "gwh": 5533.04,
@@ -10032,8 +10172,13 @@
   },
   {
    "tahun": 2019,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "UIW Sumatera Selatan, Jambi dan Bengkulu",
    "baris": "UIW Sumatera Selatan, Jambi dan Bengkulu",
    "gwh": 8141.54,
@@ -10051,8 +10196,12 @@
   },
   {
    "tahun": 2019,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "UIW Kalimantan Selatan dan Tengah",
    "baris": "UIW Kalimantan Selatan dan Tengah",
    "gwh": 4177.91,
@@ -10070,8 +10219,9 @@
   },
   {
    "tahun": 2019,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "UIW Kalimantan Timur dan Utara",
    "baris": "UIW Kalimantan Timur dan Utara",
    "gwh": 3952.88,
@@ -10089,8 +10239,13 @@
   },
   {
    "tahun": 2019,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "75",
+    "72"
+   ],
    "unit": "UIW Sulawesi Utara, Tengah dan Gorontalo",
    "baris": "UIW Sulawesi Utara, Tengah dan Gorontalo",
    "gwh": 3471.24,
@@ -10108,8 +10263,13 @@
   },
   {
    "tahun": 2019,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "UIW Sulawesi Selatan, Tenggara dan Barat",
    "baris": "UIW Sulawesi Selatan, Tenggara dan Barat",
    "gwh": 7312.75,
@@ -10127,8 +10287,12 @@
   },
   {
    "tahun": 2019,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "81",
+    "82"
+   ],
    "unit": "UIW Maluku dan Maluku Utara",
    "baris": "UIW Maluku dan Maluku Utara",
    "gwh": 1056.64,
@@ -10146,8 +10310,12 @@
   },
   {
    "tahun": 2019,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "91",
+    "92"
+   ],
    "unit": "UIW Papua dan Papua Barat",
    "baris": "UIW Papua dan Papua Barat",
    "gwh": 1567.65,
@@ -10184,8 +10352,12 @@
   },
   {
    "tahun": 2019,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "UID Jawa Tengah dan Yogyakarta",
    "baris": "UID Jawa Tengah dan Yogyakarta",
    "gwh": 27786.77,
@@ -10241,8 +10413,12 @@
   },
   {
    "tahun": 2020,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "14",
+    "21"
+   ],
    "unit": "UIW Riau dan Kepulauan Riau",
    "baris": "UIW Riau dan Kepulauan Riau",
    "gwh": 5854.65,
@@ -10260,8 +10436,13 @@
   },
   {
    "tahun": 2020,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "UIW Sumatera Selatan, Jambi dan Bengkulu",
    "baris": "UIW Sumatera Selatan, Jambi dan Bengkulu",
    "gwh": 8332.54,
@@ -10279,8 +10460,12 @@
   },
   {
    "tahun": 2020,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "UIW Kalimantan Selatan dan Tengah",
    "baris": "UIW Kalimantan Selatan dan Tengah",
    "gwh": 4432.7,
@@ -10298,8 +10483,9 @@
   },
   {
    "tahun": 2020,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "UIW Kalimantan Timur dan Utara",
    "baris": "UIW Kalimantan Timur dan Utara",
    "gwh": 4123.86,
@@ -10317,8 +10503,13 @@
   },
   {
    "tahun": 2020,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "75",
+    "72"
+   ],
    "unit": "UIW Sulawesi Utara, Tengah dan Gorontalo",
    "baris": "UIW Sulawesi Utara, Tengah dan Gorontalo",
    "gwh": 3734.91,
@@ -10336,8 +10527,13 @@
   },
   {
    "tahun": 2020,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "UIW Sulawesi Selatan, Tenggara dan Barat",
    "baris": "UIW Sulawesi Selatan, Tenggara dan Barat",
    "gwh": 7464.97,
@@ -10355,8 +10551,12 @@
   },
   {
    "tahun": 2020,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "81",
+    "82"
+   ],
    "unit": "UIW Maluku dan Maluku Utara",
    "baris": "UIW Maluku dan Maluku Utara",
    "gwh": 1139.46,
@@ -10374,8 +10574,12 @@
   },
   {
    "tahun": 2020,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "91",
+    "92"
+   ],
    "unit": "UIW Papua dan Papua Barat",
    "baris": "UIW Papua dan Papua Barat",
    "gwh": 1679.86,
@@ -10412,8 +10616,12 @@
   },
   {
    "tahun": 2020,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "UID Jawa Tengah dan Yogyakarta",
    "baris": "UID Jawa Tengah dan Yogyakarta",
    "gwh": 28103.18,
@@ -10469,8 +10677,12 @@
   },
   {
    "tahun": 2021,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "14",
+    "21"
+   ],
    "unit": "UIW Riau dan Kepulauan Riau",
    "baris": "UIW Riau dan Kepulauan Riau",
    "gwh": 7021.16,
@@ -10488,8 +10700,13 @@
   },
   {
    "tahun": 2021,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "UIW Sumatera Selatan, Jambi dan Bengkulu",
    "baris": "UIW Sumatera Selatan, Jambi dan Bengkulu",
    "gwh": 8764.46,
@@ -10507,8 +10724,12 @@
   },
   {
    "tahun": 2021,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "UIW Kalimantan Selatan dan Tengah",
    "baris": "UIW Kalimantan Selatan dan Tengah",
    "gwh": 4648.6,
@@ -10526,8 +10747,9 @@
   },
   {
    "tahun": 2021,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "UIW Kalimantan Timur dan Utara",
    "baris": "UIW Kalimantan Timur dan Utara",
    "gwh": 4301.94,
@@ -10545,8 +10767,13 @@
   },
   {
    "tahun": 2021,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "75",
+    "72"
+   ],
    "unit": "UIW Sulawesi Utara, Tengah dan Gorontalo",
    "baris": "UIW Sulawesi Utara, Tengah dan Gorontalo",
    "gwh": 3932.82,
@@ -10564,8 +10791,13 @@
   },
   {
    "tahun": 2021,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "UIW Sulawesi Selatan, Tenggara dan Barat",
    "baris": "UIW Sulawesi Selatan, Tenggara dan Barat",
    "gwh": 8187.2,
@@ -10583,8 +10815,12 @@
   },
   {
    "tahun": 2021,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "81",
+    "82"
+   ],
    "unit": "UIW Maluku dan Maluku Utara",
    "baris": "UIW Maluku dan Maluku Utara",
    "gwh": 1219.92,
@@ -10602,8 +10838,12 @@
   },
   {
    "tahun": 2021,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "91",
+    "92"
+   ],
    "unit": "UIW Papua dan Papua Barat",
    "baris": "UIW Papua dan Papua Barat",
    "gwh": 1820.85,
@@ -10640,8 +10880,12 @@
   },
   {
    "tahun": 2021,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "UID Jawa Tengah dan Yogyakarta",
    "baris": "UID Jawa Tengah dan Yogyakarta",
    "gwh": 29769.54,
@@ -10697,8 +10941,12 @@
   },
   {
    "tahun": 2022,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "14",
+    "21"
+   ],
    "unit": "UIW Riau dan Kepulauan Riau",
    "baris": "UIW Riau dan Kepulauan Riau",
    "gwh": 8638.19,
@@ -10716,8 +10964,13 @@
   },
   {
    "tahun": 2022,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "UIW Sumatera Selatan, Jambi dan Bengkulu",
    "baris": "UIW Sumatera Selatan, Jambi dan Bengkulu",
    "gwh": 9200.39,
@@ -10735,8 +10988,12 @@
   },
   {
    "tahun": 2022,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "UIW Kalimantan Selatan dan Tengah",
    "baris": "UIW Kalimantan Selatan dan Tengah",
    "gwh": 4987.15,
@@ -10754,8 +11011,9 @@
   },
   {
    "tahun": 2022,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "UIW Kalimantan Timur dan Utara",
    "baris": "UIW Kalimantan Timur dan Utara",
    "gwh": 4479.3,
@@ -10773,8 +11031,13 @@
   },
   {
    "tahun": 2022,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "75",
+    "72"
+   ],
    "unit": "UIW Sulawesi Utara, Tengah dan Gorontalo",
    "baris": "UIW Sulawesi Utara, Tengah dan Gorontalo",
    "gwh": 4060.49,
@@ -10792,8 +11055,13 @@
   },
   {
    "tahun": 2022,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "UIW Sulawesi Selatan, Tenggara dan Barat",
    "baris": "UIW Sulawesi Selatan, Tenggara dan Barat",
    "gwh": 9540.75,
@@ -10811,8 +11079,12 @@
   },
   {
    "tahun": 2022,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "81",
+    "82"
+   ],
    "unit": "UIW Maluku dan Maluku Utara",
    "baris": "UIW Maluku dan Maluku Utara",
    "gwh": 1279.42,
@@ -10830,8 +11102,12 @@
   },
   {
    "tahun": 2022,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "91",
+    "92"
+   ],
    "unit": "UIW Papua dan Papua Barat",
    "baris": "UIW Papua dan Papua Barat",
    "gwh": 1901.98,
@@ -10868,8 +11144,12 @@
   },
   {
    "tahun": 2022,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "UID Jawa Tengah dan Yogyakarta",
    "baris": "UID Jawa Tengah dan Yogyakarta",
    "gwh": 30891.25,
@@ -10925,8 +11205,12 @@
   },
   {
    "tahun": 2023,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "14",
+    "21"
+   ],
    "unit": "UID Riau dan Kepulauan Riau",
    "baris": "UID Riau dan Kepulauan Riau",
    "gwh": 9212.16,
@@ -10944,8 +11228,13 @@
   },
   {
    "tahun": 2023,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "UID Sumatera Selatan, Jambi dan Bengkulu",
    "baris": "UID Sumatera Selatan, Jambi dan Bengkulu",
    "gwh": 9805.65,
@@ -10963,8 +11252,12 @@
   },
   {
    "tahun": 2023,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "UID Kalimantan Selatan dan Tengah",
    "baris": "UID Kalimantan Selatan dan Tengah",
    "gwh": 5524.95,
@@ -10982,8 +11275,9 @@
   },
   {
    "tahun": 2023,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "UID Kalimantan Timur dan Utara",
    "baris": "UID Kalimantan Timur dan Utara",
    "gwh": 5066.92,
@@ -11001,8 +11295,13 @@
   },
   {
    "tahun": 2023,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "72",
+    "75"
+   ],
    "unit": "UID Sulawesi Utara, Tengah dan Gorontalo",
    "baris": "UID Sulawesi Utara, Tengah dan Gorontalo",
    "gwh": 4440.52,
@@ -11020,8 +11319,13 @@
   },
   {
    "tahun": 2023,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "UID Sulawesi Selatan, Tenggara dan Barat",
    "baris": "UID Sulawesi Selatan, Tenggara dan Barat",
    "gwh": 10419.32,
@@ -11039,8 +11343,12 @@
   },
   {
    "tahun": 2023,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "81",
+    "82"
+   ],
    "unit": "UIW Maluku dan Maluku Utara",
    "baris": "UIW Maluku dan Maluku Utara",
    "gwh": 1652.08,
@@ -11058,8 +11366,12 @@
   },
   {
    "tahun": 2023,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "91",
+    "92"
+   ],
    "unit": "UIW Papua dan Papua Barat",
    "baris": "UIW Papua dan Papua Barat",
    "gwh": 2010.38,
@@ -11096,8 +11408,12 @@
   },
   {
    "tahun": 2023,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "UID Jawa Tengah dan Yogyakarta",
    "baris": "UID Jawa Tengah dan Yogyakarta",
    "gwh": 31995.98,
@@ -11153,8 +11469,12 @@
   },
   {
    "tahun": 2024,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "14",
+    "21"
+   ],
    "unit": "UID Riau dan Kepulauan Riau",
    "baris": "UID Riau dan Kepulauan Riau",
    "gwh": 9891.75,
@@ -11173,8 +11493,13 @@
   },
   {
    "tahun": 2024,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "16",
+    "15",
+    "17"
+   ],
    "unit": "UID Sumatera Selatan, Jambi dan Bengkulu",
    "baris": "UID Sumatera Selatan, Jambi dan Bengkulu",
    "gwh": 10266.11,
@@ -11193,8 +11518,12 @@
   },
   {
    "tahun": 2024,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "63",
+    "62"
+   ],
    "unit": "UID Kalimantan Selatan dan Tengah",
    "baris": "UID Kalimantan Selatan dan Tengah",
    "gwh": 5950.92,
@@ -11213,8 +11542,9 @@
   },
   {
    "tahun": 2024,
-   "tingkat": "unit",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [],
    "unit": "UID Kalimantan Timur dan Utara",
    "baris": "UID Kalimantan Timur dan Utara",
    "gwh": 6214.99,
@@ -11233,8 +11563,13 @@
   },
   {
    "tahun": 2024,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "71",
+    "72",
+    "75"
+   ],
    "unit": "UID Sulawesi Utara, Tengah dan Gorontalo",
    "baris": "UID Sulawesi Utara, Tengah dan Gorontalo",
    "gwh": 4739.75,
@@ -11253,8 +11588,13 @@
   },
   {
    "tahun": 2024,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "73",
+    "74",
+    "76"
+   ],
    "unit": "UID Sulawesi Selatan, Tenggara dan Barat",
    "baris": "UID Sulawesi Selatan, Tenggara dan Barat",
    "gwh": 10917.52,
@@ -11273,8 +11613,12 @@
   },
   {
    "tahun": 2024,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "81",
+    "82"
+   ],
    "unit": "UIW Maluku dan Maluku Utara",
    "baris": "UIW Maluku dan Maluku Utara",
    "gwh": 2026.72,
@@ -11293,8 +11637,12 @@
   },
   {
    "tahun": 2024,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "91",
+    "92"
+   ],
    "unit": "UIW Papua dan Papua Barat",
    "baris": "UIW Papua dan Papua Barat",
    "gwh": 2156.53,
@@ -11333,8 +11681,12 @@
   },
   {
    "tahun": 2024,
-   "tingkat": "induk",
+   "tingkat": "unit-gabungan",
    "prov_kode": null,
+   "prov_daftar": [
+    "33",
+    "34"
+   ],
    "unit": "UID Jawa Tengah dan Yogyakarta",
    "baris": "UID Jawa Tengah dan Yogyakarta",
    "gwh": 34282.61,

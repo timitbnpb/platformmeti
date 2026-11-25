@@ -32,29 +32,33 @@ export function kotaTerdekat(geonames, cx, cy, radiusKm = 25) {
   return { nama: p.nama, penduduk: p.pop || null, km: R(p.km), kode_fitur: p.kode };
 }
 
+const PULAU_TERPISAH = new Set(['bangka', 'belitung']); // BPP 2020: Bangka dan Belitung sub-sistem pulau tersendiri
 // ---- BPP pembangkitan per sistem (Kepmen ESDM; biaya_listrik.bpp_sistem). Nama persis = sumber; selain itu cocok lewat provinsi (hitung).
 export function bppSistem(biaya, sistem /* [{id, nama, prov:[kode]}] */, tahun = 2020) {
   if (!biaya?.bpp_sistem?.length) return new Map();
   const nas = (biaya.bpp_nasional || []).find((x) => x.tahun === tahun), tgl = nas?.tanggal_penetapan ?? String(tahun), t = String(tahun);
-  const rows = biaya.bpp_sistem.filter((r) => r.rp_kwh?.[t] != null), hasil = new Map(), pakai = new Map();
+  const rows = biaya.bpp_sistem.filter((r) => r.rp_kwh?.[t] != null), hasil = new Map(), pakai = new Map(), dikeluarkan = new Map(), hasilProv = new Map();
   for (const s of sistem) {
     const P = new Set(s.prov), nm = norm(s.nama), persis = rows.filter((r) => norm(r.nama) === nm);
-    const cocok = persis.length ? persis.map((r) => [r, 'nama']) : rows.filter((r) => r.provinsi.every((p) => P.has(p))).map((r) => [r, 'provinsi']);
+    const kandidat = persis.length ? persis.map((r) => [r, 'nama']) : rows.filter((r) => r.provinsi.some((p) => P.has(p))).map((r) => [r, 'provinsi']); // irisan provinsi, bukan subset: "Kaltim dan Utara" ikut sistem yang tak memuat Kaltara
+    const keluar = kandidat.filter(([r]) => PULAU_TERPISAH.has(r.kunci)), cocok = kandidat.filter(([r]) => !PULAU_TERPISAH.has(r.kunci));
     if (!cocok.length) continue;
+    dikeluarkan.set(s.id, keluar.map(([r]) => ({ nama: r.nama, rp_kwh: r.rp_kwh[t], alasan: 'pulau dengan sub-sistem BPP tersendiri; sistem terpisah di peta kami (tak masuk rentang)' })));
     for (const [r] of cocok) pakai.set(r.kunci, (pakai.get(r.kunci) || 0) + 1);
-    hasil.set(s.id, cocok);
+    hasil.set(s.id, cocok); hasilProv.set(s.id, P);
   }
   const keluar = new Map();
   for (const [id, cocok] of hasil) {
-    const v = cocok.map(([r]) => r.rp_kwh[t]), tahunAda = [...new Set(cocok.flatMap(([r]) => Object.keys(r.rp_kwh)))].sort(), nama = cocok[0][1] === 'nama';
+    const luar = cocok.filter(([r, c]) => c === 'provinsi' && r.provinsi.some((p) => !hasilProv.get(id).has(p))).map(([r]) => r.nama), v = cocok.map(([r]) => r.rp_kwh[t]), tahunAda = [...new Set(cocok.flatMap(([r]) => Object.keys(r.rp_kwh)))].sort(), nama = cocok[0][1] === 'nama';
     const bersama = cocok.filter(([r]) => pakai.get(r.kunci) > 1).map(([r]) => r.nama);
     keluar.set(id, {
       tahun, rp_kwh_min: R(Math.min(...v), 2), rp_kwh_maks: R(Math.max(...v), 2), ...(nas?.rp_kwh != null ? { nasional_rp_kwh: nas.rp_kwh } : {}),
       baris: cocok.map(([r, cara]) => ({ nama: r.nama, rp_kwh: r.rp_kwh[t], provinsi: r.provinsi, cara_cocok: cara })).sort((a, b) => cmp(a.nama, b.nama)),
       per_tahun: Object.fromEntries(tahunAda.map((y) => { const q = cocok.map(([r]) => r.rp_kwh[y]).filter((x) => x != null); return [y, { min: R(Math.min(...q), 2), maks: R(Math.max(...q), 2), n: q.length }]; })),
+      ...(dikeluarkan.get(id)?.length ? { dikeluarkan: dikeluarkan.get(id) } : {}),
       st: nama && cocok.length === 1 ? 'sumber' : 'hitung', src: 's-bpp', tgl,
-      catatan: nama ? 'Nama sistem sama persis dengan nama baris Kepmen.' : 'Dicocokkan lewat provinsi (heuristik): baris Kepmen yang provinsinya seluruhnya ada di sistem ini. BPP Kepmen per sistem PLN, bukan per jaringan OSM; sistem kecil di pulau lain dalam provinsi yang sama bisa punya BPP berbeda.' + (bersama.length ? ' Baris yang juga dicocokkan ke sistem kembaran lain: ' + [...new Set(bersama)].sort().join(', ') + '.' : ''),
-      ...(bersama.length ? { ragu: true } : {}),
+      catatan: nama ? 'Nama sistem sama persis dengan nama baris Kepmen.' : 'Dicocokkan lewat provinsi (heuristik): baris Kepmen yang provinsinya seluruhnya ada di sistem ini. BPP Kepmen per sistem PLN, bukan per jaringan OSM; sistem kecil di pulau lain dalam provinsi yang sama bisa punya BPP berbeda.' + (luar.length ? ' Baris mencakup provinsi di luar sistem ini: ' + [...new Set(luar)].sort().join(', ') + '.' : '') + (bersama.length ? ' Baris yang juga dicocokkan ke sistem kembaran lain: ' + [...new Set(bersama)].sort().join(', ') + '.' : ''),
+      ...(bersama.length || luar.length ? { ragu: true } : {}),
     });
   }
   return keluar;
@@ -106,12 +110,13 @@ export function ruptlJaringanSistem(kartuProv, provSistem /* [kodeProv] */) { //
 export function pendudukKapita(pel, penjualanBps /* [{prov_kode, gwh, tahun, src}] tahun data */, thn) {
   const hasil = new Map(); if (!pel?.penduduk?.length) return hasil;
   const pop = new Map(pel.penduduk.map((p) => [p.kode, p]));
-  for (const p of pel.penduduk) hasil.set(p.kode, { penduduk: { tahun: p.tahun, jiwa: p.jiwa, st: 'sumber', src: p.src, tgl: String(p.tahun), ...(p.bukti ? { bukti: p.bukti } : {}) } });
+  for (const p of pel.penduduk) hasil.set(p.kode, { penduduk: { tahun: p.tahun, jiwa: p.jiwa, st: p.bukti === 'via-pihak-ketiga' ? 'est' : 'sumber', src: p.src, tgl: String(p.tahun), ...(p.bukti ? { bukti: p.bukti } : {}) } });
   for (const r of penjualanBps) {
     const anak = Object.entries(PEMEKARAN).filter(([, ind]) => ind === r.prov_kode).map(([a]) => a), kode = [r.prov_kode, ...anak], p = pop.get(r.prov_kode);
     if (!p || kode.some((k) => !pop.has(k))) continue;
-    const jiwa = kode.reduce((t, k) => t + pop.get(k).jiwa, 0), o = hasil.get(r.prov_kode);
-    o.kwh_per_kapita = { tahun: thn, kwh: R((r.gwh * 1e6) / jiwa, 0), penjualan_gwh: r.gwh, jiwa, st: 'hitung', src: r.src + ',' + p.src, tgl: String(thn), ...(anak.length ? { catatan: 'Penjualan BPS 859 belum memisahkan provinsi pemekaran Papua: penduduk induk dijumlah dengan ' + anak.sort().join(', ') } : {}), ...(p.tahun !== thn ? { catatan_tahun: `penjualan ${thn}, penduduk ${p.tahun}` } : {}) };
+    const jiwa = kode.reduce((t, k) => t + (pop.get(k).jiwa || 0), 0), o = hasil.get(r.prov_kode);
+    if (!(jiwa > 0) || !(r.gwh >= 0)) continue; // tanpa penduduk atau penjualan: tak ada pembagian
+    o.kwh_per_kapita = { tahun: thn, kwh: R((r.gwh * 1e6) / jiwa, 0), penjualan_gwh: r.gwh, jiwa, label: 'penjualan PLN per kapita, bukan konsumsi total', st: 'hitung', src: r.src + ',' + p.src, tgl: String(thn), ...(anak.length ? { catatan: 'Penjualan BPS 859 belum memisahkan provinsi pemekaran Papua: penduduk induk dijumlah dengan ' + anak.sort().join(', ') } : {}), ...(p.tahun !== thn ? { catatan_tahun: `penjualan ${thn}, penduduk ${p.tahun}` } : {}) };
   }
   return hasil;
 }

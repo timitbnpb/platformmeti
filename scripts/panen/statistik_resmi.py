@@ -273,8 +273,25 @@ def ekstrak_pln(th):
         JK = ['rumah_tangga', 'industri', 'bisnis', 'sosial', 'gedung_kantor_pemerintah', 'penerangan_jalan'] + (['lainnya_tcl'] if n == 9 else [])
         if n < 8: CELAH.append('PLN %d Tabel %d (energi terjual): hanya %d kolom, tidak diurai.' % (th, no, n)); rows = []
         cek_total(th, 'penjualan (Tabel %d)' % no, rows, range(n - 1), JK + ['jumlah'])
-        for x in petakan(rows):
-            r['penjualan'].append({'tahun': th, 'tingkat': x['tingkat'], 'prov_kode': x['prov'], 'unit': x['unit'], 'baris': x['label'], 'gwh': jml(x['nilai'][len(JK)]),
+        pm = petakan(rows); jc = len(JK); gab = {}  # unit gabungan: induk dengan anak yang jumlahnya tidak sama dengan induk, atau nama memuat dan/&/koma
+        for i, x in enumerate(pm):
+            if x['anak'] or not x.get('induk'): continue
+            ch = []
+            for y in pm[i + 1:]:
+                if not y['anak']: break
+                ch.append(y)
+            ada_tang = any('tangerang' in norma(y['label']) for y in pm)  # edisi lama: Tangerang ikut unit Jakarta, batas unit distribusi != batas provinsi
+            if abs(sum((y['nilai'][jc] or 0) for y in ch) - (x['nilai'][jc] or 0)) > 0.5: gab[x['unit']] = [y['prov'] for y in ch if y['prov']]
+        for x in pm:
+            tot_ = norma(x['label']) in TOTAL_LABEL
+            ganda = (not tot_) and (x['unit'] in gab or (not x['anak'] and not x['prov'] and re.search(r'\bdan\b|\band\b|&|,', x['label'], re.I)))
+            if not ganda and not x['anak'] and any('tangerang' in norma(y['label']) for y in pm) and x['prov'] == '36':
+                x['tingkat'] = 'unit-gabungan'; x['daftar'] = ['36']; continue  # Dist. Banten edisi lama: Tangerang ada di unit Jakarta Raya, bukan provinsi Banten
+            if ganda:
+                x['tingkat'] = 'unit-gabungan-anak' if x['anak'] and x['unit'] in gab else 'unit-gabungan'
+                x['daftar'] = gab.get(x['unit'], [y['prov'] for y in pm if y['anak'] and y['unit'] == x['unit'] and y['prov']]) if not x['anak'] else None
+        for x in pm:
+            r['penjualan'].append({'tahun': th, 'tingkat': x['tingkat'], 'prov_kode': x['prov'] if x['tingkat'] != 'unit-gabungan' else None, **({'prov_daftar': x['daftar']} if x.get('daftar') is not None else {}), 'unit': x['unit'], 'baris': x['label'], 'gwh': jml(x['nilai'][len(JK)]),
                                    'per_kelompok_gwh': dict(zip(JK, [jml(v) for v in x['nilai'][:len(JK)]])),
                                    'src': src, 'st': 'sumber', 'catatan': 'Statistik PLN %d Tabel %d, kolom Jumlah (GWh)' % (th, no)})
     rows, no, n = ambil('neraca', 3, 'neraca daya')
