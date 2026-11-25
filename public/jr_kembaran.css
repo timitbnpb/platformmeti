@@ -75,3 +75,4 @@
 .kj-batang{display:block;width:100%;max-width:160px;height:auto}.kj-batang rect{fill:var(--accent)}
 .kj-der2{display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:8px;align-items:end;font-size:var(--t-kecil)}
 .kj-enb,.kj-putus,.kj-menunggu{grid-template-columns:minmax(0,1fr);min-width:0}
+.kj-patah{fill:var(--card);stroke:var(--warn);stroke-width:1.5}

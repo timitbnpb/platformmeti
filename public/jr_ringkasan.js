@@ -30,10 +30,16 @@ function barKv(s) {
   const isi = KELAS.filter((k) => m[k] > 0).map((k) => t("kj.rk.kv.tip", { kelas: t("kj.rk.kv." + k), km: n1(Math.round(m[k] * 10) / 10) }));
   return `<span class="kj-kvb" role="img" aria-label="${esc(t("kj.rk.kv.bar", { isi: isi.join("; ") }))}">${KELAS.filter((k) => m[k] > 0).map((k, i) => `<i class="kj-k-${k}" data-w="${(m[k] / tot) * 100}" title="${esc(isi[i])}"></i>`).join("")}</span>`;
 }
+/** Selisih total RUPTL provinsi vs jumlah kartu sistem (ringkas.ruptl_jaringan_agregat). */
+function agregat() {
+  const a = R0?.ruptl_jaringan_agregat; if (!a) return "";
+  const tanpa = (a.provinsi_tanpa_sistem || []).map((p) => `${p.nama} (${n1(p.kms)} kms, ${n1(p.mva)} MVA)`).join(", ");
+  return `<p class="kj-cat">${esc(t("kj.rk.agregat", { prov: n1(a.total_kms_provinsi), sis: n1(a.total_kms_kartu_sistem), sel: n1(a.selisih_kms), mva: n1(a.selisih_mva), tanpa: tanpa || "-" }))}</p>${kaki(a.st, a.src, a.tgl)}<p class="kj-cat">${esc(a.catatan || "")}</p>`;
+}
 function isiSistem(b) {
   return `<ol class="kj-rk-ol">${b.teratas.map((s, i) => nomor(i, `<a class="kj-rk-nm" href="${fokus(s.id)}">${esc(s.nama)}</a>
     <span class="kj-rk-md">${esc(t("kj.rk.sis.baris", { km: n1(s.km), gi: n1(s.gi), mw: n1(s.mw_pln) }))}${s.mva ? esc(", " + t("kj.rk.sis.mva", { mva: n1(s.mva) })) : ""}</span>
-    ${barKv(s)}`)).join("")}</ol>${lainnya(b.lainnya)}`;
+    ${barKv(s)}`)).join("")}</ol>${lainnya(b.lainnya)}${agregat()}`;
 }
 function isiTunggal(b, R) {
   const mx = Math.max(1, ...b.teratas.map((x) => x.gi || 0)), sis = new Map(R.sistem.map((s) => [s.id, s.nama]));
@@ -95,7 +101,7 @@ function jawab(b, R) {
     default: return t("kj.rk.b.cara.a");
   }
 }
-let E = null; /* energi.json: keandalan; dimuat bersama ringkas.json */
+let R0 = null, E = null; /* energi.json: keandalan; dimuat bersama ringkas.json */
 
 /** Ubin km saluran sedang dibangun per kelas kV (bab 1). */
 function blokKonstruksi(R) {
@@ -153,7 +159,7 @@ function skala(panel) {
 
 export async function mulai(panel) {
   const [R, En] = await Promise.all([muatKJ("ringkas"), muatKJ("energi")]);
-  E = En;
+  E = En; R0 = R;
   if (!R?.bab?.length) { panel.innerHTML = kosongTab("kj.rk.kosong"); return; }
   panel.innerHTML = `<div class="kj-rk"><h2 class="kj-rk-judul">${esc(t("kj.rk.judul"))}</h2>
     <nav class="kj-rk-nav" aria-label="${esc(t("kj.rk.nav"))}"><ol>${R.bab.map((b) => `<li><a href="#rk-${esc(b.id)}"><b>${esc(b.n)}</b> ${esc(t(`kj.rk.b.${b.id}.t`))}</a></li>`).join("")}${R.ebt_dekat_gardu ? `<li><a href="#rk-ebt"><b>${R.bab.length + 1}</b> ${esc(t("kj.rk.ebt.j"))}</a></li>` : ""}</ol></nav>

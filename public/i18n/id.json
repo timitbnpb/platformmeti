@@ -19266,7 +19266,7 @@
  "kj.kt.ragu": "Kecocokan nama kurang pasti",
  "kj.kt.demo.j": "Penduduk dan pemakaian",
  "kj.kt.penduduk": "Penduduk {tahun}",
- "kj.kt.kapita": "Penjualan listrik per orang",
+ "kj.kt.kapita": "Penjualan PLN per orang",
  "kj.kt.catatan_tahun": "Tahun data berbeda: {c}.",
  "kj.kt.elek.j": "Elektrifikasi {tahun}",
  "kj.kt.elek.rasio": "Rasio elektrifikasi",
@@ -19300,5 +19300,15 @@
  "kj.kt.rj.kms": "Transmisi baru",
  "kj.kt.rj.mva": "Gardu induk baru",
  "kj.kt.rj.aria": "{nama} per tahun, {dari} sampai {ke}",
- "kj.kt.rj.skenario": "Skenario {skenario}, batang per tahun mulai {awal}, semua tegangan dijumlahkan."
+ "kj.kt.rj.skenario": "Skenario {skenario}, batang per tahun mulai {awal}, semua tegangan dijumlahkan.",
+ "kj.kt.kapita_cat": "Penjualan PLN per kapita, bukan konsumsi total.",
+ "kj.kt.patah.edisi-2016": "Titik patah: ukuran SAIDI/SAIFI berubah pada edisi 2016, tidak disambung dengan titik sebelumnya",
+ "kj.kt.patah.lompat-3x": "Titik patah: nilai melompat lebih dari tiga kali lipat, tidak disambung",
+ "kj.kt.patah.unit-gabungan": "Titik patah: cakupan unit PLN berubah, tidak disambung",
+ "kj.kt.ke.patah": "Garis diputus di titik patah karena definisi atau cakupan ukuran berubah antar edisi.",
+ "kj.kt.bpp.keluar": "Dikeluarkan dari rentang BPP:",
+ "kj.kt.bagian": "Sebagian dari provinsi {prov} ({n} dari {dari} gardu)",
+ "kj.kt.wilayah": "Wilayah RUPTL: {w}",
+ "kj.kt.agregat": "Total kms RUPTL: provinsi {prov}, jumlah sistem {sis}, selisih {sel}.",
+ "kj.rk.agregat": "Total transmisi RUPTL menurut provinsi {prov} kms, menurut jumlah kartu sistem {sis} kms, selisih {sel} kms dan {mva} MVA. Provinsi tanpa sistem: {tanpa}."
 }

@@ -51,3 +51,4 @@ Modul dan bagian ALG: kunci/nama/slug §1, taksonomi §2, ikatan dan dedup §3, 
 ## Kasus
 
 Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
+- 2026-11-25 · Deret penjualan_gwh 2024 ganda (rasio ~2,0 vs 2023): filter pj di graf_jaringan.mjs:444 hanya buang unit/induk, baris BPS tanpa tingkat ikut dijumlah. Cara tahu: bandingkan kartu_provinsi.penjualan_gwh[2024] dengan kwh_per_kapita.penjualan_gwh.

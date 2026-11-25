@@ -9,7 +9,7 @@ import { URUT_BBM, namaBbm, rampIntensitas, SKALA, batangBbm, legendaBbm, pasang
 import { blokSistem } from "/jr_kartu.js";
 import { petaBersama, pasangPeta, padPeta, bukaPanel, bawahSlot } from "/jr_app.js";
 
-const S = { mode: "langsung", sel: null, E: null, peta: null, bbox: new Map() };
+const S = { mode: "langsung", sel: null, E: null, peta: null, bbox: new Map(), wil: new Map(), R: null };
 let hidup = true;
 let akar;
 const $ = (s) => akar.querySelector(s);
@@ -62,7 +62,7 @@ function rincian() {
     <div class="kj-ang"><b>${gi(s.daur_hidup)}<small>g/kWh</small></b><span>${esc(t("kj.ba.nas.int_daur_hidup"))}</span></div>
     <div class="kj-ang"><b>${num(s.total)}<small>GWh</small></b><span>${esc(t("kj.ba.total"))}</span></div></div>
     <ul class="kje-jenis">${jenis.map((j) => `<li><i class="kje-sw" data-bbm="${j}"></i><span>${esc(namaBbm(j))}</span><b>${num(s.persen?.[j] ?? 0, 1)}%</b><small>${num(s.gwh[j])} GWh</small></li>`).join("")}</ul>
-    ${kakiFakta(s.st, s.src, s.tgl)}${blokSistem(S.E.kartu_sistem?.find((x) => x.id === s.id))}${terbit(s)}${faktor()}`;
+    ${kakiFakta(s.st, s.src, s.tgl)}${blokSistem(S.E.kartu_sistem?.find((x) => x.id === s.id), { agregat: S.R?.ruptl_jaringan_agregat, wilayah: S.wil.get(s.id) })}${terbit(s)}${faktor()}`;
 }
 
 /* ---- tren tahunan: hanya tahun berdata ---- */
@@ -151,7 +151,7 @@ async function bangunPeta() {
   const [g, o, rsb] = await Promise.all([muatKJ("geo"), muatKJ("inti"), muatKJ("rs")]);
   if (!g || !o || !rsb) { el.insertAdjacentHTML("afterbegin", `<p class="kj-cat">${esc(t("kj.ba.peta.kosong"))}</p>`); return; }
   const sisOf = new Map(rsb.rs.map((r) => [r.id, r.sis])), by = new Map(S.E.bauran.sistem.map((s) => [s.id, s]));
-  for (const s of o.sis) S.bbox.set(s.id, s.bbox);
+  for (const s of o.sis) { S.bbox.set(s.id, s.bbox); if (s.wilayah_ruptl) S.wil.set(s.id, s.wilayah_ruptl); }
   S.geo = { type: "FeatureCollection", features: g.rs.map((r) => { const sid = sisOf.get(r.id) || "", s = by.get(sid), l = nilai0(s, "langsung"), h = nilai0(s, "daur_hidup"); return { type: "Feature", properties: { s: sid, l, h }, geometry: { type: "LineString", coordinates: r.c } }; }) };
   S.peta = await petaBersama();
   const peta = S.peta; if (!peta) { el.insertAdjacentHTML("afterbegin", `<p class="kj-cat">${esc(t("kj.ba.peta.gagal"))}</p>`); return; }
@@ -191,7 +191,7 @@ export async function mulai(el) {
   akar = el;
   const E = await muatKJ("energi");
   if (!E?.bauran?.sistem?.length) { el.innerHTML = kosongTab("kj.ba.kosong"); return; }
-  S.E = E;
+  S.E = E; S.R = await muatKJ("ringkas");
   const tahun = E.meta?.tahun_data ?? E.nasional?.tahun;
   const sakelar = ["langsung", "daur"].map((m) => { const mm = m === "daur" ? "daur_hidup" : m; return `<button type="button" class="kj-mb" data-mode="${mm}" aria-pressed="${mm === S.mode}">${esc(t("kj.ba.mode." + m))}</button>`; }).join("");
   const slot = bawahSlot("bauran");

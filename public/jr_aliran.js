@@ -154,7 +154,7 @@ function rincianProv(k) {
     ${bs?.langsung != null ? `<p class="kj-cat">${esc(t("kj.al.karbon_prov", { v: num(bs.langsung) }))}</p>` : ""}
     ${kakiFakta(n.st, n.src, n.tgl)}
     <section class="kje-blok kje-blok-d"><h4>${esc(t("kj.al.batas_prov"))}</h4>${sb.length ? `<ul class="kje-banding">${sb.map((b) => barisBatas(b, k)).join("")}</ul>` : `<p class="kj-cat">${esc(t("kj.al.tanpa_batas"))}</p>`}
-    <p class="kj-cat">${esc(t("kj.al.batas_kalimat"))}</p></section>${blokProvinsi(S.E.kartu_provinsi?.find((x) => x.kode === k), { jual: true })}`;
+    <p class="kj-cat">${esc(t("kj.al.batas_kalimat"))}</p></section>${blokProvinsi(S.E.kartu_provinsi?.find((x) => x.kode === k), { jual: true, patah: S.E.meta?.keandalan_patah })}`;
 }
 function rincian() {
   if (S.sel?.tipe === "prov") return rincianProv(S.sel.id);

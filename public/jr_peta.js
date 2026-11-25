@@ -297,16 +297,16 @@ function blokEnergi(j, o) {
   if (!ENERGI) return "";
   const cat = (x) => (x?.catatan ? `<p class="kj-cat">${esc(x.catatan)}</p>` : "");
   if (j === "sis") {
-    const ks = ENERGI.kartu_sistem?.find((x) => x.id === o.id), bp = ks?.beban_puncak; if (!bp) return blokSistem(ks);
-    return blokSistem(ks) + `<section class="kj-enb"><h4>${esc(t("kj.peta.bp.j"))}</h4><div class="kj-angs kj-angs-1"><div class="kj-ang"><b>${esc(num(bp.mw))} <small>MW</small></b><span>${esc(t("kj.peta.bp.tile", { tahun: bp.tahun }))}</span>${chipSt(bp.st)}${chipSrc(bp.src)}</div></div>${bp.unit ? `<p class="kj-cat">${esc(t("kj.peta.bp.unit", { unit: [].concat(bp.unit).join(", ") }))}</p>` : ""}${cat(bp)}</section>`;
+    const ks = ENERGI.kartu_sistem?.find((x) => x.id === o.id), bp = ks?.beban_puncak; if (!bp) return blokSistem(ks, { agregat: S.kj?.ringkas?.ruptl_jaringan_agregat, wilayah: o.wilayah_ruptl });
+    return blokSistem(ks, { agregat: S.kj?.ringkas?.ruptl_jaringan_agregat, wilayah: o.wilayah_ruptl }) + `<section class="kj-enb"><h4>${esc(t("kj.peta.bp.j"))}</h4><div class="kj-angs kj-angs-1"><div class="kj-ang"><b>${esc(num(bp.mw))} <small>MW</small></b><span>${esc(t("kj.peta.bp.tile", { tahun: bp.tahun }))}</span>${chipSt(bp.st)}${chipSrc(bp.src)}</div></div>${bp.unit ? `<p class="kj-cat">${esc(t("kj.peta.bp.unit", { unit: [].concat(bp.unit).join(", ") }))}</p>` : ""}${cat(bp)}</section>`;
   }
   if (j !== "prov") return "";
   const kp = ENERGI.kartu_provinsi?.find((x) => x.kode === o.kode); if (!kp) return "";
   const m = kp.mva_per_kv, jual = kp.penjualan_gwh || [];
   const mx = m ? Math.max(1, ...Object.values(m.per_kv)) : 1, jm = Math.max(1, ...jual.map((x) => x.gwh));
   const mv = m ? `<h4>${esc(t("kj.peta.mva.j", { tahun: m.tahun }))}</h4><ul class="kj-mva">${Object.entries(m.per_kv).sort((a, b) => b[0] - a[0]).map(([kv, v]) => `<li><span>${esc(num(kv))} kV</span><span class="kj-rk-bar"><i data-c="${WARNA_KELAS[kelasDari(+kv)]}" data-w="${Math.round((v / mx) * 100)}"></i></span><b>${esc(num(v))} MVA</b><small>${esc(t("kj.peta.mva.unit", { n: num(m.unit_trafo?.[kv] ?? 0) }))}</small></li>`).join("")}</ul><p class="kj-kaki"><b>${esc(t("kj.peta.mva.total", { n: num(m.total_mva) }))}</b>${chipSt(m.st)}${chipSrc(m.src)}</p>${cat(m)}` : `<p class="kj-cat">${chipSt("menunggu")} ${esc(t("kj.peta.mva.kosong"))}</p>`;
-  const pj = jual.length ? `<h4>${esc(t("kj.peta.jual.j"))}</h4><ol class="kj-hist kj-hist-k">${jual.map((x) => `<li title="${esc(x.tahun + ": " + num(x.gwh) + " GWh")}"><b>${esc(num(x.gwh))}</b><i data-h="${Math.round((x.gwh / jm) * 100)}"></i><span>${esc(x.tahun)}</span></li>`).join("")}</ol><p class="kj-kaki">${chipSt(jual.at(-1).st)}${[...new Set(jual.map((x) => x.src))].map(chipSrc).join("")}<span class="kj-tgl">${esc(t("kj.peta.jual.sat"))}</span></p>` : "";
-  return `<section class="kj-enb">${mv}${pj}</section>` + blokProvinsi(kp);
+  const pj = jual.length ? `<h4>${esc(t("kj.peta.jual.j"))}</h4><ol class="kj-hist kj-hist-k">${jual.map((x) => `<li title="${esc(x.tahun + ": " + num(x.gwh) + " GWh" + (x.patah_edisi ? " (" + t("kj.kt.patah." + x.alasan) + ")" : ""))}"><b>${esc(num(x.gwh))}</b><i data-h="${Math.round((x.gwh / jm) * 100)}"></i><span>${esc(x.tahun)}</span></li>`).join("")}</ol><p class="kj-kaki">${chipSt(jual.at(-1).st)}${[...new Set(jual.map((x) => x.src))].map(chipSrc).join("")}<span class="kj-tgl">${esc(t("kj.peta.jual.sat"))}</span></p>` : "";
+  return `<section class="kj-enb">${mv}${pj}</section>` + blokProvinsi(kp, { patah: ENERGI.meta?.keandalan_patah });
 }
 function kartu(j, o) {
   if ((j === "sis" || j === "prov") && !ENERGI) muatKJ("energi").then((e) => { ENERGI = e || { kartu_sistem: [], kartu_provinsi: [] }; if (S.sel === o.id) kartu(j, o); });

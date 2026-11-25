@@ -19266,7 +19266,7 @@
  "kj.kt.ragu": "Name match uncertain",
  "kj.kt.demo.j": "Population and use",
  "kj.kt.penduduk": "Population {tahun}",
- "kj.kt.kapita": "Electricity sales per person",
+ "kj.kt.kapita": "PLN sales per person",
  "kj.kt.catatan_tahun": "Data years differ: {c}.",
  "kj.kt.elek.j": "Electrification {tahun}",
  "kj.kt.elek.rasio": "Electrification ratio",
@@ -19300,5 +19300,15 @@
  "kj.kt.rj.kms": "New transmission",
  "kj.kt.rj.mva": "New substation capacity",
  "kj.kt.rj.aria": "{nama} per year, {dari} to {ke}",
- "kj.kt.rj.skenario": "{skenario} scenario, bars per year from {awal}, all voltages summed."
+ "kj.kt.rj.skenario": "{skenario} scenario, bars per year from {awal}, all voltages summed.",
+ "kj.kt.kapita_cat": "PLN sales per capita, not total consumption.",
+ "kj.kt.patah.edisi-2016": "Break point: the SAIDI/SAIFI measure changed in the 2016 edition, not joined to the earlier point",
+ "kj.kt.patah.lompat-3x": "Break point: value jumped more than threefold, not joined",
+ "kj.kt.patah.unit-gabungan": "Break point: PLN unit coverage changed, not joined",
+ "kj.kt.ke.patah": "The line is broken at break points because the definition or coverage changed between editions.",
+ "kj.kt.bpp.keluar": "Excluded from the BPP range:",
+ "kj.kt.bagian": "Part of province {prov} ({n} of {dari} substations)",
+ "kj.kt.wilayah": "RUPTL region: {w}",
+ "kj.kt.agregat": "RUPTL total kms: provinces {prov}, systems sum {sis}, difference {sel}.",
+ "kj.rk.agregat": "RUPTL transmission total by province {prov} kms, by sum of system cards {sis} kms, difference {sel} kms and {mva} MVA. Provinces without a system: {tanpa}."
 }
