@@ -294,6 +294,30 @@ JM-G01 sampai JM-G04 menunggu C-01 dan C-09.
 #### JM-H04 `[induk]` `[manusia]` Rilis
 - Commit path spesifik, `wrangler d1 migrations apply --remote` oleh pemilik, deploy, cek `/api/status`. Deploy belum dianggap tayang sebelum `npm run uji:live` lulus (bersesi bila `SESI_UJI` ada). **Ukuran:** S
 
+### 3.I Kembaran jaringan (D-KJ, kontrak `KEMBARAN-JARINGAN.md`)
+
+| ID | Judul | Pengerja | Ukuran | Status |
+| --- | --- | --- | --- | --- |
+| KJ-01 | Panen OSM >= 66 kV seluruh Indonesia, termasuk `power=cable` (`TEG_MIN=66`) `[induk]` | induk | S | selesai |
+| KJ-02 | `scripts/pipa/graf_jaringan.mjs`: simpul, sistem, jalur, jembatan, di belakangnya, provinsi, pembangkit, neraca (§4) | pipa | L | selesai |
+| KJ-03 | Potret `public/data/kembaran/{ringkas,objek}.json` + `public/geo/kembaran.json` (§5) | pipa | M | selesai |
+| KJ-04 | Uji graf pada fixture kecil + determinisme + gerbang potret (`st/src/tgl`, ukuran) + `cakupan.json` | gerbang | M | selesai |
+| KJ-05 | Tab Kembaran: warna tegangan, kartu fakta, Kalau terputus, Menunggu, Semua fakta, `?fokus=` (§6.1) | layar | L | selesai |
+| KJ-06 | Tab Ontologi: tumpukan 7 lapis, jejak, tabel per lapis, cari, tombol Peta (§6.2) | layar | L | selesai |
+| KJ-07 | Tab Ringkasan jaringan: 6 bab + daftar sumber (§6.3) | layar | M | selesai |
+| KJ-08 | Teks ID/EN semua tab KJ di `public/i18n/*.json` | layar | S | selesai |
+| KJ-11 | Potret `energi.json`: bauran tahunan, intensitas, neraca, batas, aliran (§4.8-9) | pipa | M | selesai |
+| KJ-12 | Tab Bauran tahunan (§6.4) | layar | M | selesai |
+| KJ-13 | Tab Aliran tahunan (§6.5) | layar | M | selesai |
+| KJ-14 | Panen BIG Satu Peta (saluran, gardu MVA/tahun, pembangkit) + OSM pembangkit semua bahan bakar + cek GEM GIPT publik (§4.10) | pipa | M | selesai (BIG tanpa MVA/tahun) |
+| KJ-15 | Integrasi tautan ke organisasi, proyek, PLTU, wilayah, sistem_pln (§4.11) | pipa | M | selesai |
+| KJ-16 | Kurasi `data/kembaran/terbitan.json`: sambungan diketahui, peristiwa 2024-2026, batas dan kiriman terbit, pembanding emisi, angka PLN (§4.12) | pipa | M | selesai |
+| KJ-17 | Tab Sumber + label gardu/pembangkit saat zoom (§6.8-9) | layar | M | selesai |
+| KJ-09 | Bab "yang bertambah sejak 2021" dari BIG Satu Peta (bergantung KJ-14) | pipa | M | belum |
+| KJ-10 | `[manusia]` Unduh GEM Oil & Gas Plant Tracker (gas, diesel) untuk melengkapi pembangkit | pemilik | S | antre |
+
+Bukti tiap tiket: `npm run uji` keluar 0; KJ-05..07 juga tangkapan 1440/375 terang/gelap ID/EN.
+
 ## 4. Grafik dependensi
 
 ```

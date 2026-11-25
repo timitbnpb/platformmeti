@@ -108,3 +108,7 @@ Dua puluh pertanyaan untuk pemilik sebelum mulai membangun. Kolom "Bawaan" dipak
 ## D. Perubahan sesudah rilis awal
 
 Belum ada rilis. Perubahan keputusan sebelum rilis: D15 (7 Nov 2026, panen 1001startup.id terbatas dijalankan, lihat R13).
+
+| ID | Keputusan | Tanggal | Rujukan |
+| --- | --- | --- | --- |
+| D-KJ | `/jaringan` mendapat Kembaran Jaringan (tab Kembaran, Ontologi tujuh lapis, Ringkasan jaringan) dari data publik, konsep dari Foundry IDN-GRID tanpa menyalin rupa, teks, kode, atau angka. Tanpa fitur tanya-jawab. Jalur A: angka tahunan bersumber, tanpa model per jam. | 24 Nov 2026 | `KEMBARAN-JARINGAN.md`, tiket KJ-* |
