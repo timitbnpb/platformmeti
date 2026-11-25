@@ -15,6 +15,7 @@ const LAPIS = [
   { k: "ruas", lb: "kj.peta.lapis.ruas", ik: "menara", lapisan: ["jr-kr", "jr-kr-sel", "jr-kr-hit", "jr-tr"] },
   { k: "gardu", lb: "kj.peta.lapis.gardu", ik: "petir", lapisan: ["jr-kg", "jr-kg-sel", "jr-kgl", "jr-gi"] },
   { k: "pb", lb: "kj.peta.lapis.pb", ik: "petir", lapisan: ["jr-kp", "jr-kp-sel", "jr-kpl"] },
+  { k: "konstruksi", lb: "kj.peta.lapis.konstruksi", ik: "menara", lapisan: ["jr-kon", "jr-kong"] },
   { k: "antarpulau", lb: "jr.lapis.antarpulau", ik: "sambung", lapisan: ["jr-rc"] },
   { k: "lintas", lb: "jr.lapis.lintas", ik: "asean", lapisan: ["jr-ln"] },
 ];
@@ -28,6 +29,7 @@ const JENIS = ["op", "sis", "prov", "pb", "gi", "jl", "rs"];
 const TILE = { rs: ["tegangan", "panjang", "sirkit"], jl: ["tegangan", "panjang", "sirkit"], gi: ["tegangan", "kapasitas_trafo", "jalur_masuk"], pb: ["kapasitas", "bahan_bakar", "tahun_operasi"], sis: ["panjang", "gardu", "pembangkit_pln", "mva_terbit"], prov: ["panjang", "gardu", "mva_terbit"], op: ["panjang", "gardu", "pembangkit"] };
 const SAT_MENTAH = new Set(["km", "MW", "MVA", "kV"]);
 const IDX = new Map(), GRS = new Map(), GPT = new Map(), GIRS = new Map(), JLRS = new Map();
+let ENERGI = null; /* energi.json: kartu sistem dan provinsi */
 let FAKTA = null; /* objek-fakta.json: dimuat saat kartu pertama dibuka */
 const S = { kj: null, mode: "tegangan", sel: null, tanda: [], hit: null };
 const ge = (id) => document.getElementById(id);
@@ -107,8 +109,10 @@ const fiturRuas = (kj) => ({ type: "FeatureCollection", features: kj.geo.rs.map(
 const fiturTitik = (kj, j) => ({ type: "FeatureCollection", features: kj.geo[j].map((g) => { const o = IDX.get(g.id)?.o || {}; return { type: "Feature", properties: j === "gi" ? { id: g.id, n: g.n || o.nama || "", kv: g.kv, sm: o.satu_masuk ? 1 : 0 } : { id: g.id, n: o.nama || "", j: g.j, mw: g.mw || 0 }, geometry: { type: "Point", coordinates: [g.x, g.y] } }; }) });
 
 /* ---------- kembaran: peta ---------- */
+const fiturKons = (kj) => ({ type: "FeatureCollection", features: (kj.geo.konstruksi || []).map((g) => ({ type: "Feature", properties: { id: g.id, k: kelasDari(g.kv) }, geometry: g.c ? { type: "LineString", coordinates: g.c } : { type: "Point", coordinates: [g.x, g.y] } })) });
 function pasangKJ(kj) {
   indeks(kj);
+  peta.addSource("kj-kon", { type: "geojson", data: fiturKons(kj) });
   peta.addSource("kj-rs", { type: "geojson", data: fiturRuas(kj) });
   peta.addSource("kj-gi", { type: "geojson", data: fiturTitik(kj, "gi") });
   peta.addSource("kj-pb", { type: "geojson", data: fiturTitik(kj, "pb") });
@@ -119,6 +123,8 @@ function pasangKJ(kj) {
     { id: "jr-kr", type: "line", source: "kj-rs", layout: { "line-cap": "round" }, paint: { "line-color": token("--ink2"), "line-width": 1.5 } },
     { id: "jr-kr-hit", type: "line", source: "kj-rs", paint: { "line-color": ink, "line-width": 14, "line-opacity": 0 } },
     { id: "jr-kr-sel", type: "line", source: "kj-rs", filter: kosong, layout: { "line-cap": "round" }, paint: { "line-color": merah, "line-width": 5 } },
+    { id: "jr-kon", type: "line", source: "kj-kon", filter: ["==", ["geometry-type"], "LineString"], layout: { "line-cap": "butt" }, paint: { "line-color": ["match", ["get", "k"], ...Object.entries(WARNA_KELAS).flatMap(([k, v]) => [k, token(v)]), token("--ink2")], "line-width": 2.4, "line-dasharray": [2, 1.6] } },
+    { id: "jr-kong", type: "circle", source: "kj-kon", filter: ["==", ["geometry-type"], "Point"], paint: { "circle-radius": 4.5, "circle-color": token("--card"), "circle-stroke-color": token("--warn"), "circle-stroke-width": 2 } },
     { id: "jr-kg", type: "circle", source: "kj-gi", minzoom: 5, paint: { "circle-radius": 3.5, "circle-color": token("--card"), "circle-stroke-color": ink, "circle-stroke-width": 1.5 } },
     { id: "jr-kg-sel", type: "circle", source: "kj-gi", filter: kosong, paint: { "circle-radius": 9, "circle-color": merah, "circle-opacity": 0.25, "circle-stroke-color": merah, "circle-stroke-width": 3 } },
     { id: "jr-kgl", type: "symbol", source: "kj-gi", minzoom: 9, layout: teks, paint: halo },
@@ -240,7 +246,8 @@ function legenda() {
   }
   if (S.mode === "tunggal") return li(sw("--tp-adil"), t("kj.peta.lg.tunggal")) + li(sw("--bad"), t("kj.peta.lg.satu")) + li(`<i class="kj-sw kj-sw-cincin" aria-hidden="true"></i>`, t("kj.peta.lg.cincin")) + li(sw("--ink2", "kj-sw-pudar"), t("kj.peta.lg.lain"));
   const km = Object.fromEntries((kj.ringkas?.tegangan || []).map((x) => [x.kelas === "tak-tercatat" ? "tak" : x.kelas, x.km]));
-  return KELAS.map((k) => li(sw(WARNA_KELAS[k]), t("kj.peta.kelas." + k), km[k] != null ? `<b class="kj-ln">${esc(num(km[k]))} km</b>` : "")).join("");
+  const kons = kj.ringkas?.konstruksi;
+  return KELAS.map((k) => li(sw(WARNA_KELAS[k]), t("kj.peta.kelas." + k), km[k] != null ? `<b class="kj-ln">${esc(num(km[k]))} km</b>` : "")).join("") + (kons ? li(`<i class="kj-sw kj-sw-putus" aria-hidden="true"></i>`, t("kj.peta.lg.konstruksi", { km: num(kons.km) })) : "");
 }
 function infoTunggal() {
   const tg = S.tg;
@@ -285,7 +292,24 @@ function lengkap(j, o) {
   if (j === "pb") x.push({ ...tmb("bahan_bakar", o.jenis, "", "sumber"), src: d.src }, tmb("captive", o.captive ? 1 : 0, "bool", "sumber"));
   return [...o.fakta, ...x.filter((f) => f && f.v != null)];
 }
+/** Blok dari energi.json: beban puncak sistem; MVA per kV dan deret penjualan provinsi. */
+function blokEnergi(j, o) {
+  if (!ENERGI) return "";
+  const cat = (x) => (x?.catatan ? `<p class="kj-cat">${esc(x.catatan)}</p>` : "");
+  if (j === "sis") {
+    const bp = ENERGI.kartu_sistem?.find((x) => x.id === o.id)?.beban_puncak; if (!bp) return "";
+    return `<section class="kj-enb"><h4>${esc(t("kj.peta.bp.j"))}</h4><div class="kj-angs kj-angs-1"><div class="kj-ang"><b>${esc(num(bp.mw))} <small>MW</small></b><span>${esc(t("kj.peta.bp.tile", { tahun: bp.tahun }))}</span>${chipSt(bp.st)}${chipSrc(bp.src)}</div></div>${bp.unit ? `<p class="kj-cat">${esc(t("kj.peta.bp.unit", { unit: [].concat(bp.unit).join(", ") }))}</p>` : ""}${cat(bp)}</section>`;
+  }
+  if (j !== "prov") return "";
+  const kp = ENERGI.kartu_provinsi?.find((x) => x.kode === o.kode); if (!kp) return "";
+  const m = kp.mva_per_kv, jual = kp.penjualan_gwh || [];
+  const mx = m ? Math.max(1, ...Object.values(m.per_kv)) : 1, jm = Math.max(1, ...jual.map((x) => x.gwh));
+  const mv = m ? `<h4>${esc(t("kj.peta.mva.j", { tahun: m.tahun }))}</h4><ul class="kj-mva">${Object.entries(m.per_kv).sort((a, b) => b[0] - a[0]).map(([kv, v]) => `<li><span>${esc(num(kv))} kV</span><span class="kj-rk-bar"><i data-c="${WARNA_KELAS[kelasDari(+kv)]}" data-w="${Math.round((v / mx) * 100)}"></i></span><b>${esc(num(v))} MVA</b><small>${esc(t("kj.peta.mva.unit", { n: num(m.unit_trafo?.[kv] ?? 0) }))}</small></li>`).join("")}</ul><p class="kj-kaki"><b>${esc(t("kj.peta.mva.total", { n: num(m.total_mva) }))}</b>${chipSt(m.st)}${chipSrc(m.src)}</p>${cat(m)}` : `<p class="kj-cat">${chipSt("menunggu")} ${esc(t("kj.peta.mva.kosong"))}</p>`;
+  const pj = jual.length ? `<h4>${esc(t("kj.peta.jual.j"))}</h4><ol class="kj-hist kj-hist-k">${jual.map((x) => `<li title="${esc(x.tahun + ": " + num(x.gwh) + " GWh")}"><b>${esc(num(x.gwh))}</b><i data-h="${Math.round((x.gwh / jm) * 100)}"></i><span>${esc(x.tahun)}</span></li>`).join("")}</ol><p class="kj-kaki">${chipSt(jual.at(-1).st)}${[...new Set(jual.map((x) => x.src))].map(chipSrc).join("")}<span class="kj-tgl">${esc(t("kj.peta.jual.sat"))}</span></p>` : "";
+  return `<section class="kj-enb">${mv}${pj}</section>`;
+}
 function kartu(j, o) {
+  if ((j === "sis" || j === "prov") && !ENERGI) muatKJ("energi").then((e) => { ENERGI = e || { kartu_sistem: [], kartu_provinsi: [] }; if (S.sel === o.id) kartu(j, o); });
   if (!FAKTA) muatKJ("fakta").then((f) => { FAKTA = f || { fakta: {} }; if (S.sel === o.id) kartu(j, o); }); /* fakta dimuat saat dibutuhkan; kartu dulu tampil tanpa fakta */
   o = { ...o, ...(FAKTA?.pb_rinci?.[o.id] || {}), fakta: FAKTA ? FAKTA.fakta[o.id] || [] : [] }; /* pemilik, tautan, catatan pembangkit ada di objek-fakta */
   o.fakta = lengkap(j, o);
@@ -299,10 +323,14 @@ function kartu(j, o) {
     <div class="kj-angs">${TILE[j].map((k) => tile(o, k)).join("")}</div>
     ${j === "pb" ? `<p class="jr-pn-t">${esc(t("kj.peta.pemilik"))}: ${esc(o.pemilik || "-")}${o.gi ? `, ${esc(IDX.get(o.gi)?.o?.nama || "")}` : ""}</p>${o.catatan ? `<p class="kj-cat">${esc(o.catatan)}</p>` : ""}` : ""}
     ${j === "sis" || j === "prov" ? `<p class="kj-cat">${esc(t(j === "sis" ? "kj.peta.mva_sis_cat" : "kj.peta.mva_prov_cat"))}</p>` : ""}
-    ${blokPutus(j, o)}
+    ${blokEnergi(j, o)}${blokPutus(j, o)}
     <section class="kj-menunggu"><h4>${esc(t("kj.st.menunggu"))}</h4><ul>${mg.map((k) => `<li><span>${esc(t("kj.peta.m." + k))}</span>${chipSt("menunggu")}</li>`).join("")}</ul>${tm ? `<p class="kj-tgl">${esc(t("kj.per", { tgl: tglTeks(tm) }))}</p>` : ""}</section>
     <details class="kj-semua"><summary>${esc(t("kj.peta.semua", { n: num(o.fakta?.length || 0) }))}</summary><div class="kj-tabel">${FAKTA ? `<table><tbody>${rows}</tbody></table>` : `<p class="kj-cat">${esc(t("kj.peta.memuat"))}</p>`}</div></details>
     ${tautan ? `<p class="kj-tautan">${tautan}</p>` : ""}`;
+  const pn = ge("jr-pn-isi");
+  for (const el of pn.querySelectorAll("[data-w]")) el.style.width = el.dataset.w + "%";
+  for (const el of pn.querySelectorAll("[data-h]")) el.style.height = el.dataset.h + "%";
+  for (const el of pn.querySelectorAll("[data-c]")) el.style.background = `var(${el.dataset.c})`;
 }
 function pilih(id, terbangKe = true) {
   const h = IDX.get(id); if (!h) return;

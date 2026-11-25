@@ -49,6 +49,8 @@ function gabung(R, E) {
   const peta = new Map(), tgl = {};
   for (const s of [...(R.meta?.sumber || []), ...(E?.meta?.sumber || [])]) peta.set(s.id, { ...peta.get(s.id), ...s });
   for (const a of [...R.angka, ...R.tegangan, ...R.neraca, ...(E ? [E.nasional, ...E.faktor.map((f) => ({ ...f, src: f.src_langsung }))] : [])]) if (a?.src && a.tgl) tgl[a.src] ??= a.tgl;
+  const lain = E ? [...E.keandalan, ...E.keandalan_nasional, ...E.tren_pln_nasional, ...E.tren_nasional, ...E.pembanding_esdm_lain, ...E.kartu_provinsi.flatMap((k) => [...(k.penjualan_gwh || []), k.mva_per_kv]), ...E.kartu_sistem.map((k) => k.beban_puncak), ...E.bauran.sistem.map((x) => x.pembanding_esdm), ...E.neraca.map((n) => ({ src: n.src_penjualan, tgl: n.tgl }))] : [];
+  for (const a of lain) if (a?.src && a.tgl) tgl[a.src] ??= a.tgl;
   return [...peta.values()].map((s) => ({ ...s, tgl: s.tanggal_terbit || s.tgl || tgl[s.id] || "" }));
 }
 const tak = () => t("kj.sb.tak");

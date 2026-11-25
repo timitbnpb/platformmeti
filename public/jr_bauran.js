@@ -40,12 +40,14 @@ function terbit(s) {
   });
   const pb = s.pembanding?.ebt_persen_terbit;
   if (pb != null) rows.push(`<li><span>${esc(t("kj.ba.terbit.ebt", { sis: s.pembanding.sistem_terbit || s.nama }))}</span><b>${num(pb, 1)} <small>%</small></b><span>${esc(t("kj.ba.terbit.kami"))}: <b>${num(s.rendah_karbon_persen, 1)} %</b></span>${chipSrc(s.pembanding.src)}</li>`);
+  const pe = s.pembanding_esdm;
+  if (pe) { const v = (x) => (x == null ? "-" : num(x, 2)); rows.push(`<li><span>${esc(t("kj.ba.esdm.grid", { grid: pe.grid, tahun: pe.tahun }))}</span><b>${esc(t("kj.ba.esdm.om"))} ${v(pe.om)}, ${esc(t("kj.ba.esdm.bm"))} ${v(pe.bm)}, ${esc(t("kj.ba.esdm.cm"))} ${v(pe.cm_ex_post_050)} <small>${esc(t("kj.ba.esdm.sat"))}</small></b><span>${esc(t("kj.ba.terbit.kami"))}: <b>${gi(nilai(s))} g/kWh</b></span><span class="kj-tgl">${esc(t("kj.ba.esdm.cocok." + pe.cara_cocok))}</span><span class="kj-kaki">${chipSt(pe.st)}${chipSrc(pe.src)}</span></li>`); }
   return `<section class="kje-blok"><h4>${esc(t("kj.ba.terbit.j"))}</h4>${rows.length ? `<ul class="kje-banding">${rows.join("")}</ul>` : `<p class="kj-cat">${chipSt("menunggu")} ${esc(t("kj.ba.terbit.kosong"))}</p>`}</section>`;
 }
 function faktor() {
   const f = S.E.faktor || [];
   return `<details class="kje-cara" open><summary>${esc(t("kj.ba.cara.j"))}</summary><p class="kj-cat">${esc(t("kj.ba.cara.isi"))}</p>
-    <div class="kj-tabel"><table><thead><tr><th>${esc(t("kj.ba.cara.jenis"))}</th><th>${esc(t("kj.ba.cara.l"))}</th><th>${esc(t("kj.ba.cara.d"))}</th><th></th></tr></thead><tbody>${f.map((x) => `<tr><td>${esc(namaBbm(x.jenis))}</td><td>${num(x.langsung)}</td><td>${num(x.daur_hidup)}</td><td>${chipSt(x.st)}${chipSrc(x.src_langsung)}</td></tr>`).join("")}</tbody></table></div></details>`;
+    <div class="kj-tabel"><table><thead><tr><th>${esc(t("kj.ba.cara.jenis"))}</th><th>${esc(t("kj.ba.cara.l"))}</th><th>${esc(t("kj.ba.cara.d"))}</th><th></th></tr></thead><tbody>${f.map((x) => `<tr><td><b>${esc(x.teknologi)}</b> <small>${esc(namaBbm(x.jenis))}</small></td><td>${num(x.langsung)}</td><td>${num(x.daur_hidup)}</td><td>${chipSt(x.st)}${chipSrc(x.src_langsung)}</td></tr>`).join("")}</tbody></table></div></details>`;
 }
 function rincian() {
   const s = S.E.bauran.sistem.find((x) => x.id === S.sel);
@@ -78,6 +80,32 @@ function tren() {
   return `<svg class="kje-tren" viewBox="0 -18 ${W} ${H + 36}" role="img" aria-label="${esc(t("kj.ba.tren.aria", { nama, tahun: th.map((y) => y.tahun).join(", ") }))}">
     <g class="kje-ax"><line x1="${L}" y1="${H}" x2="${W}" y2="${H}"/><text x="${L - 4}" y="${H}" text-anchor="end">0%</text><text x="${L - 4}" y="8" text-anchor="end">100%</text></g>${bars}</svg>
     <p class="kj-cat">${esc(t("kj.ba.tren.cat", { nama, tahun: th.map((y) => y.tahun).join(", ") }))}</p>`;
+}
+
+/* ---- tren nasional Ember 2000-2025 + persen bauran PLN ---- */
+const EMB = { surya: "--tp-surya", bayu: "--tp-bayu", hidro: "--tp-hidro", bioenergi: "--tp-bio", "terbarukan-lain": "--tp-panas", batubara: "--tp-karbon", gas: "--tp-hidrogen", "fosil-lain": "--tp-sampah", "impor-bersih": "--line-ctl" };
+const PLN = ["batubara", "gas", "bbm", "hidro", "panas-bumi", "bioenergi", "ebt-lain"];
+function trenNasional() {
+  const th = S.E.tren_nasional || []; if (!th.length) return "";
+  const L = 40, W = 640, H = 170, g = (W - L - 36) / th.length, lb = Math.max(4, g - 3);
+  const mx = Math.max(...th.map((y) => y.total_twh)), imx = Math.max(...th.map((y) => y.intensitas_g_kwh));
+  const bars = th.map((y, i) => {
+    let yy = H; const x = L + g * i + (g - lb) / 2;
+    const seg = Object.keys(EMB).filter((j) => y.twh[j] > 0).map((j) => { const h = (H * y.twh[j]) / mx; yy -= h; return `<rect data-c="${EMB[j]}" x="${x.toFixed(1)}" y="${yy.toFixed(1)}" width="${lb.toFixed(1)}" height="${h.toFixed(1)}"><title>${esc(y.tahun + " " + t("kj.ba.emb." + j) + " " + num(y.twh[j], 1) + " TWh")}</title></rect>`; }).join("");
+    return seg + (y.tahun % 5 === 0 ? `<text class="kje-tx" x="${(x + lb / 2).toFixed(1)}" y="${H + 14}" text-anchor="middle">${y.tahun}</text>` : "");
+  }).join("");
+  const pts = th.map((y, i) => `${(L + g * i + g / 2).toFixed(1)},${(H - (H * y.intensitas_g_kwh) / imx).toFixed(1)}`).join(" ");
+  const a = th[0], z = th.at(-1), ariaEmb = esc(t("kj.ba.emb.aria", { dari: a.tahun, ke: z.tahun }));
+  return `<h4>${esc(t("kj.ba.emb.j"))}</h4><svg class="kje-tren kje-tren-w" viewBox="0 -22 ${W} ${H + 40}" role="img" aria-label="${ariaEmb}">
+    <g class="kje-ax"><line x1="${L}" y1="${H}" x2="${W - 36}" y2="${H}"/>${[0, 1, 2, 3].map((i) => `<text x="${L - 4}" y="${(H - (H * i) / 3 + 4).toFixed(0)}" text-anchor="end">${num((mx * i) / 3)}</text><text x="${W - 32}" y="${(H - (H * i) / 3 + 4).toFixed(0)}">${num((imx * i) / 3)}</text>`).join("")}<text x="${L - 4}" y="-10" text-anchor="end">TWh</text><text x="${W - 32}" y="-10">g/kWh</text></g>${bars}<polyline class="kje-gar" points="${pts}"/></svg>
+    <ul class="kje-leg">${Object.keys(EMB).map((j) => `<li><i class="kje-sw" data-c="${EMB[j]}"></i>${esc(t("kj.ba.emb." + j))}</li>`).join("")}<li><i class="kje-sw kje-sw-gar"></i>${esc(t("kj.ba.emb.int"))}</li></ul>
+    <div class="kj-angs kje-angs-2"><div class="kj-ang"><b>${num(z.intensitas_g_kwh)}<small>g/kWh</small></b><span>${esc(t("kj.ba.emb.int_z", { tahun: z.tahun }))}</span></div><div class="kj-ang"><b>${num(z.terbarukan_persen, 1)}<small>%</small></b><span>${esc(t("kj.ba.emb.ebt_z", { tahun: z.tahun }))}</span></div><div class="kj-ang"><b>${num(z.fosil_persen, 1)}<small>%</small></b><span>${esc(t("kj.ba.emb.fosil_z", { tahun: z.tahun }))}</span></div></div>
+    ${kakiFakta(z.st, z.src, z.tgl)}<p class="kj-cat">${esc(t("kj.ba.emb.cat"))}</p>`;
+}
+function trenPln() {
+  const th = S.E.tren_pln_nasional || []; if (!th.length) return "";
+  return `<h4>${esc(t("kj.ba.pln.j"))}</h4><div class="kj-tabel" tabindex="0" role="region" aria-label="${esc(t("kj.ba.pln.j"))}"><table><thead><tr><th scope="col">${esc(t("kj.ba.pln.tahun"))}</th>${PLN.map((j) => `<th scope="col" class="kj-rk-n">${esc(t("kj.ba.pln." + j))}</th>`).join("")}<th scope="col">${esc(t("kj.ba.pln.sumber"))}</th></tr></thead><tbody>${th.map((y) => `<tr><th scope="row">${esc(y.tahun)}</th>${PLN.map((j) => `<td class="kj-rk-n">${y.persen[j] == null ? "-" : num(y.persen[j], 1)}</td>`).join("")}<td>${chipSrc(y.src)}</td></tr>`).join("")}</tbody></table></div>
+    <p class="kj-cat">${esc(t("kj.ba.pln.cat", { cakupan: th.at(-1).cakupan }))}</p>${kakiFakta(th.at(-1).st, th.at(-1).src, th.at(-1).tgl)}`;
 }
 
 /* ---- peta ---- */
@@ -153,6 +181,7 @@ export async function mulai(el) {
     </div>
     <section class="kje-blok" id="kb-rinci" aria-live="polite">${rincian()}</section>
     <section class="kje-blok"><h3 class="kje-j">${esc(t("kj.ba.tren.j"))}</h3><div id="kb-tren">${tren()}</div>${legendaBbm()}</section>
+    <section class="kje-blok" id="kb-nasional">${trenNasional()}${trenPln()}</section>
     <p class="kje-menunggu-b">${chipSt("menunggu")}<span>${esc(t("kj.ba.perjam"))}</span></p>
     <p class="kj-cat">${esc(t("kj.ba.catatan"))}</p>${daftarCelah(E.meta?.celah)}`;
   el.innerHTML = ex({ id: "kb-ex", ikon: "karbon", topik: t("kj.ba.ey"), judulHtml: esc(t("kj.ba.j")), subHtml: esc(t("kj.ba.s", { tahun })), isiHtml: isi, kakiHtml: sumberBerkas(E.meta) });

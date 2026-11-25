@@ -43,10 +43,10 @@ function panah(b) { // penanda panah + label MW di tengah garis (DOM; dibuat sek
   const a = S.pusat.get(b.dari), z = S.pusat.get(b.ke); if (!a || !z) return;
   const sudut = (Math.atan2(-(z[1] - a[1]), z[0] - a[0]) * 180) / Math.PI;
   const el = document.createElement("span");
-  el.className = "kje-pan" + (b.dibatasi ? " kje-pan-batas" : "");
-  el.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 12h15M12 5l7 7-7 7"/></svg><b>${esc(num(b.mw))} MW</b>${b.dibatasi ? `<small>${esc(t("kj.al.kabel_batas"))}</small>` : ""}`;
+  el.className = "kje-pan" + (b.batas_mw != null ? " kje-pan-batas" : "");
+  el.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 12h15M12 5l7 7-7 7"/></svg><b>${esc(num(b.mw))} MW</b>${b.batas_mw != null ? `<small>${esc(t("kj.al.batas_n", { mw: num(b.batas_mw) }))}</small>` : ""}`;
   el.querySelector("svg").style.transform = `rotate(${sudut.toFixed(0)}deg)`;
-  el.title = t("kj.al.arah", { a: nm(b.dari), b: nm(b.ke) }) + ", " + num(b.mw) + " MW";
+  el.title = t("kj.al.arah", { a: nm(b.dari), b: nm(b.ke) }) + ", " + num(b.mw) + " MW" + (b.batas_mw != null ? ", " + t("kj.al.batas_n", { mw: num(b.batas_mw) }) : "");
   S.mark.push(new maplibregl.Marker({ element: el }).setLngLat([(a[0] + z[0]) / 2, (a[1] + z[1]) / 2]).addTo(S.peta));
 }
 function paint() {
@@ -59,7 +59,8 @@ async function bangunPeta() {
   const g = await fetch("/geo/provinsi.json", { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   if (!g) { el.innerHTML = `<p class="kj-cat">${esc(t("kj.al.peta.kosong"))}</p>`; return; }
   for (const f of g.features) { const k = kotakGeo(f.geometry); S.kotak.set(f.properties.kode, k); S.pusat.set(f.properties.kode, [(k[0] + k[2]) / 2, (k[1] + k[3]) / 2]); }
-  const ner = new Map(S.E.neraca.map((n) => [n.kode, n])), bp = new Map(S.E.bauran.provinsi.map((p) => [p.kode, p]));
+  for (const n of S.E.neraca) { const ps = (n.provinsi || []).map((k) => S.pusat.get(k)).filter(Boolean); if (ps.length > 1 && !S.pusat.has(n.kode)) S.pusat.set(n.kode, [ps.reduce((a, c) => a + c[0], 0) / ps.length, ps.reduce((a, c) => a + c[1], 0) / ps.length]); }
+  const ner = new Map(S.E.neraca.flatMap((n) => [n.kode, ...(n.provinsi || [])].map((k) => [k, n]))), bp = new Map(S.E.bauran.provinsi.map((p) => [p.kode, p]));
   const own = (k) => bp.get(k)?.langsung, pakai = new Map(); // karbon dipakai: milik sendiri + tertimbang dari provinsi asal aliran masuk
   for (const n of S.E.neraca) {
     const masuk = S.E.batas.filter((b) => b.ke === n.kode && own(b.dari) != null), gm = n.segmen?.masuk?.gwh || 0, gb = masuk.reduce((a, b) => a + b.gwh, 0), lok = n.segmen?.lokal?.gwh || 0;
@@ -77,7 +78,7 @@ async function bangunPeta() {
     pop.setLngLat(e.lngLat).setHTML(`<div class="rg3-tipm"><b>${esc(n.nama)}</b><span><em>${esc(t("kj.al.st." + n.status))}</em><strong>${tanda(n.neraca_gwh)} GWh</strong></span></div>`).addTo(peta);
   });
   peta.on("mouseleave", "ka-isi", () => { peta.getCanvas().style.cursor = ""; pop.remove(); });
-  peta.on("click", "ka-isi", (e) => { const k = e.features?.[0]?.properties?.kode; if (k && ner.has(k)) pilih("prov", k); });
+  peta.on("click", "ka-isi", (e) => { const k = e.features?.[0]?.properties?.kode; if (k && ner.has(k)) pilih("prov", ner.get(k).kode); });
 }
 
 /* ---- panel ---- */
@@ -106,9 +107,10 @@ function rincianSistem(sid) {
 }
 function barisBatas(b, k) {
   const lain = b.a === k ? b.b : b.a, arah = t(b.dari === k ? "kj.al.keluar" : "kj.al.masuk");
-  const sirkit = Object.entries(b.sirkit_per_kv).map(([kv, c]) => t("kj.al.sirkit", { n: c, kv })).join(", ");
-  const cap = b.dibatasi ? `<span class="kje-ns kje-ns-defisit">${esc(t("kj.al.kabel_batas"))}: ${num(b.mw_dihitung)} MW</span>` : "";
-  return `<li><span><b>${esc(nm(lain))}</b> ${esc(arah)}</span><b>${num(b.mw)} <small>MW</small></b><span>${esc(sirkit)}</span>${cap}${chipSt(b.st)}${chipSrc(b.src)}</li>`;
+  const sirkit = Object.entries(b.sirkit_per_kv || {}).map(([kv, c]) => t("kj.al.sirkit", { n: c, kv })).join(", ");
+  const cap = b.batas_mw != null ? `<span class="kje-ns kje-ns-defisit">${esc(t("kj.al.batas_n", { mw: num(b.batas_mw) }))}</span>${chipSrc(b.batas_src)}` : "";
+  const lebih = (b.melebihi_puncak ? `<span class="kje-ns kje-ns-defisit">${esc(t("kj.al.melebihi_c"))}</span><small class="kj-cat">${esc(t("kj.al.melebihi"))}</small>` : "") + (b.jauh_di_bawah_terbit ? `<span class="kje-ns kje-ns-defisit">${esc(t("kj.al.jauh_c"))}</span><small class="kj-cat">${esc(t("kj.al.jauh"))}</small>` : "") + (b.batas_info || []).map((x) => `<small class="kj-cat">${esc(t("kj.al.batas_info", { mw: num(x.mw ?? x.batas_mw), jenis: x.jenis ?? "-" }))}${chipSrc(x.src || x.batas_src)}</small>`).join("");
+  return `<li><span><b>${esc(nm(lain))}</b> ${esc(arah)}</span><b>${num(b.mw)} <small>MW</small></b><span>${esc(sirkit)}</span>${cap}${chipSt(b.st)}${chipSrc(b.src)}${lebih}</li>`;
 }
 function rincianProv(k) {
   const n = S.E.neraca.find((x) => x.kode === k); if (!n) return "";
@@ -146,9 +148,9 @@ function cek() {
     return `<li class="kje-cek-${esc(r.sebanding)}"><span class="kje-cek-p"><b>${esc(t("kj.al.arah", { a: r.dari ?? "-", b: r.ke ?? "-" }))}</b></span>
       <span>${esc(t("kj.al.cek.terbit"))}: <b>${mw == null ? "-" : num(Math.abs(mw)) + " MW"}</b>${mw == null ? "" : ` ${esc(t("kj.al.arah", { a, b }))}`}</span>
       <span>${esc(t("kj.al.cek.kami"))}: <b>${kami ? gi(kami.mw) + " MW" : "-"}</b>${kami ? ` ${esc(t("kj.al.arah", { a: nm(kami.dari), b: nm(kami.ke) }))}` : ""}</span>
-      ${r.selisih_mw != null ? `<span>${esc(t("kj.al.cek.selisih"))}: <b>${tanda(r.selisih_mw)} MW${r.selisih_persen != null ? ` (${tanda(r.selisih_persen, 1)}%)` : ""}</b></span>` : ""}
+      ${r.selisih_mw != null && !r.arah_berlawanan && !r.catatan_tegangan ? `<span>${esc(t("kj.al.cek.selisih"))}: <b>${tanda(r.selisih_mw)} MW${r.selisih_persen != null ? ` (${tanda(r.selisih_persen, 1)}%)` : ""}</b></span>` : ""}
       <span class="kj-kaki"><span class="kje-sb kje-sb-${esc(r.sebanding)}">${esc(t(sbd[r.sebanding] || sbd.tidak))}</span>${chipSt(r.st)}${chipSrc(r.src?.id || r.src)}${tg ? `<span class="kj-tgl">${esc(t("kj.al.cek.beban_puncak", { tgl: tanggal(tg) }))}</span>` : ""}</span>
-      ${r.alasan ? `<small class="kj-cat">${esc(r.alasan)}</small>` : ""}${r.tanpa_batas ? `<small class="kj-cat">${esc(t("kj.al.cek.tanpa_batas", { mw: num(r.tanpa_batas.mw) }))}</small>` : ""}</li>`;
+      ${r.arah_berlawanan ? `<span class="kje-ns kje-ns-defisit">${esc(t("kj.al.cek.lawan"))}</span>` : ""}${r.catatan_tegangan ? `<small class="kj-cat">${esc(r.catatan_tegangan)}</small>` : ""}${r.melebihi_puncak ? `<span class="kje-ns kje-ns-defisit">${esc(t("kj.al.melebihi_c"))}</span>` : ""}${r.jauh_di_bawah_terbit ? `<span class="kje-ns kje-ns-defisit">${esc(t("kj.al.jauh_c"))}</span>` : ""}${r.alasan ? `<small class="kj-cat">${esc(r.alasan)}</small>` : ""}${r.tanpa_batas ? `<small class="kj-cat">${esc(t("kj.al.cek.tanpa_batas", { mw: num(r.tanpa_batas.mw) }))}</small>` : ""}</li>`;
   }).join("");
   return `<h3 class="kje-j">${esc(t("kj.al.cek.j"))}</h3>${rows.length ? `<ul class="kje-banding kje-cek">${isi}</ul>` : `<p class="kj-cat">${chipSt("menunggu")} ${esc(t("kj.al.cek.kosong"))}</p>`}`;
 }
@@ -178,6 +180,7 @@ export async function mulai(el) {
   const E = await muatKJ("energi");
   if (!E?.neraca?.length || !E.batas) { el.innerHTML = kosongTab("kj.al.kosong"); return; }
   S.E = E;
+  for (const k of E.kartu_provinsi || []) S.nama.set(k.kode, k.nama);
   for (const n of E.neraca) S.nama.set(n.kode, n.nama);
   const tahun = E.meta?.tahun_data;
   const sakelar = ["neraca", "karbon"].map((m) => `<button type="button" class="kj-mb" data-mode="${m}" aria-pressed="${m === S.mode}">${esc(t("kj.al.mode." + m))}</button>`).join("");

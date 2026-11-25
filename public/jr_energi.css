@@ -69,3 +69,6 @@
 .kje-pan small{padding:1px 5px;border-radius:var(--r-pil);background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn);font:600 var(--t-label)/1.1 var(--font);white-space:nowrap}
 .kje-pan-batas svg{border-color:var(--warn);stroke:var(--warn)}
 @media (max-width:640px){.kje-angs-2,.kje-en .kj-angs{grid-template-columns:1fr 1fr 1fr}.kje-jenis small{min-width:0}}
+.kje-tren-w{max-width:760px}
+.kje-gar{fill:none;stroke:var(--head);stroke-width:2;stroke-linejoin:round}
+.kje-sw-gar{height:0;border-top:3px solid var(--head);background:none;border-radius:0;align-self:center}

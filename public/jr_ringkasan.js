@@ -95,7 +95,35 @@ function jawab(b, R) {
     default: return t("kj.rk.b.cara.a");
   }
 }
-const ISI = { sekilas: isiSekilas, sistem: isiSistem, tunggal: isiTunggal, bertambah: isiBertambah, neraca: isiNeraca, "tak-terlihat": isiTak, cara: isiCara };
+let E = null; /* energi.json: keandalan; dimuat bersama ringkas.json */
+
+/** Ubin km saluran sedang dibangun per kelas kV (bab 1). */
+function blokKonstruksi(R) {
+  const k = R.konstruksi; if (!k) return "";
+  const m = {};
+  for (const x of k.km_per_kv || []) { const c = x.kelas === "tak-tercatat" ? "tak" : KV_KELAS[x.kelas]; if (c && x.km > 0) m[c] = (m[c] || 0) + x.km; }
+  const ub = KELAS.filter((c) => m[c] > 0).map((c) => `<div class="kj-ang"><b>${esc(n1(Math.round(m[c] * 10) / 10))} <small>km</small></b><span>${esc(t("kj.rk.kv." + c))}</span></div>`).join("");
+  return `<h3 class="kj-rk-h3">${esc(t("kj.rk.kons.j"))}</h3><p class="kj-cat">${esc(t("kj.rk.kons.a", { km: n1(k.km), ruas: num(k.ruas), gardu: num(k.gardu) }))}</p><div class="kj-rk-ub">${ub}</div>${kaki(k.st, k.src, k.tgl)}<p class="kj-cat">${esc(k.catatan || "")}</p>`;
+}
+/** Proyek pembangkit gas yang sedang dibangun atau pra-konstruksi (bab 4). */
+function blokProyek(R) {
+  const p = R.pembangkit_proyek; if (!p?.status?.length) return "";
+  const grup = p.status.map((s) => `<h4 class="kj-rk-h3">${esc(t("kj.rk.pp.st." + s.status))}: ${esc(t("kj.rk.pp.tot", { n: num(s.n), mw: num(s.mw) }))}</h4><ul class="kj-rk-ul">${s.proyek.map((x) => `<li class="kj-rk-ev"><b>${esc(x.nama)}</b> <span class="kj-rk-md">${esc(t("kj.rk.pp.baris", { jenis: t("kj.ba.bbm." + x.jenis), mw: num(x.mw), tahun: x.tahun ?? t("kj.rk.pp.tak") }))}</span></li>`).join("")}</ul>`).join("");
+  return `<h3 class="kj-rk-h3">${esc(t("kj.rk.pp.j"))}</h3>${grup}${kakiFakta(p.st, p.src, tg(p.tgl))}<p class="kj-cat">${esc(p.catatan || "")}</p>`;
+}
+/** Keandalan: SAIDI/SAIFI nasional per tahun dan lima unit terburuk tahun terakhir (sub-bagian bab 6). */
+function blokKeandalan() {
+  const kn = E?.keandalan_nasional || [], ku = E?.keandalan || []; if (!kn.length) return "";
+  const per = new Map();
+  for (const x of kn) { const k = x.pengukur + x.tahun; if (!per.has(k)) per.set(k, { ...x, srcs: [] }); per.get(k).srcs.push(x.src); }
+  const rows = [...per.values()].sort((a, b) => b.tahun - a.tahun || a.pengukur.localeCompare(b.pengukur));
+  const th = ["tahun", "pengukur", "saidi", "saifi", "sumber"].map((k) => `<th scope="col"${k === "saidi" || k === "saifi" ? ` class="kj-rk-n"` : ""}>${esc(t("kj.rk.ke.c." + k))}</th>`).join("");
+  const tr = rows.map((x) => `<tr><th scope="row">${esc(x.tahun)}</th><td>${esc(x.pengukur)}</td><td class="kj-rk-n">${esc(n1(x.saidi))}</td><td class="kj-rk-n">${esc(n1(x.saifi))}</td><td>${[...new Set(x.srcs)].map(chipSrc).join("")}</td></tr>`).join("");
+  const th0 = Math.max(...ku.map((x) => x.tahun)), top = ku.filter((x) => x.tahun === th0 && x.tingkat === "provinsi").sort((a, b) => b.saidi - a.saidi).slice(0, 5);
+  const ter = top.length ? `<h4 class="kj-rk-h3">${esc(t("kj.rk.ke.terburuk", { tahun: th0 }))}</h4><ol class="kj-rk-ol">${top.map((x, i) => nomor(i, `<b class="kj-rk-nm">${esc(x.unit)}</b><span class="kj-rk-md">${esc(t("kj.rk.ke.baris", { saidi: n1(x.saidi), saifi: n1(x.saifi) }))}</span><span class="kj-kaki">${chipSt(x.st)}${chipSrc(x.src)}</span>`)).join("")}</ol><p class="kj-cat">${esc(t("kj.rk.ke.cat"))}</p>` : "";
+  return `<h3 class="kj-rk-h3">${esc(t("kj.rk.ke.j"))}</h3><p class="kj-cat">${esc(t("kj.rk.ke.a"))}</p><div class="kj-tabel kj-rk-tb" tabindex="0" role="region" aria-label="${esc(t("kj.rk.ke.j"))}"><table><thead><tr>${th}</tr></thead><tbody>${tr}</tbody></table></div>${ter}`;
+}
+const ISI = { sekilas: (b, R) => isiSekilas(b) + blokKonstruksi(R), sistem: isiSistem, tunggal: isiTunggal, bertambah: (b, R) => isiBertambah(b) + blokProyek(R), neraca: isiNeraca, "tak-terlihat": (b) => isiTak(b) + blokKeandalan(), cara: isiCara };
 
 function babHtml(b, i, semua, R) {
   const nx = semua[i + 1], tgl = b.id === "neraca" ? b.teratas[0]?.tgl || b.tgl : b.tgl;
@@ -113,7 +141,8 @@ function skala(panel) {
 }
 
 export async function mulai(panel) {
-  const R = await muatKJ("ringkas");
+  const [R, En] = await Promise.all([muatKJ("ringkas"), muatKJ("energi")]);
+  E = En;
   if (!R?.bab?.length) { panel.innerHTML = kosongTab("kj.rk.kosong"); return; }
   panel.innerHTML = `<div class="kj-rk"><h2 class="kj-rk-judul">${esc(t("kj.rk.judul"))}</h2>
     <nav class="kj-rk-nav" aria-label="${esc(t("kj.rk.nav"))}"><ol>${R.bab.map((b) => `<li><a href="#rk-${esc(b.id)}"><b>${esc(b.n)}</b> ${esc(t(`kj.rk.b.${b.id}.t`))}</a></li>`).join("")}</ol></nav>
