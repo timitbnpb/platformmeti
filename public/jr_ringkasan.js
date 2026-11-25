@@ -1,8 +1,7 @@
 /* /jaringan?tab=ringkasan: tujuh bab bernomor dari ringkas.json (bab[] sudah dihitung pipa). Kontrak: KEMBARAN-JARINGAN.md §6 butir 3.
-   Komposisi kV per sistem dan nama jalur butuh objek-inti.json (nama jalur) dan objek-rs.json (kV ruas): dimuat lewat nanti() sesudah bab tercat, lalu ditempelkan. */
+   Muatan tab HANYA ringkas.json: nama jalur dari bab[].teratas[].nama, komposisi kV dari sistem[].km_kv. */
 import { t, esc, num, L, kosongTab } from "/jr_umum.js";
 import { tanggal } from "/i18n.js";
-import { nanti } from "/inti/umum.js";
 import { muatKJ, chipSt, chipSrc, kakiFakta } from "/jr_kj.js";
 
 const n1 = (v) => (v == null ? "-" : num(v, Number.isInteger(v) ? 0 : 1));
@@ -10,32 +9,48 @@ const tg = (s) => (s ? tanggal(s) : "");
 const kaki = (st, src, tgl) => kakiFakta(st, src, tg(tgl));
 const fokus = (id) => `?tab=peta&fokus=${encodeURIComponent(id)}`;
 const KELAS = ["500", "230-275", "115-150", "66-70", "tak"];
-const kelas = (kv) => (kv == null ? "tak" : kv >= 500 ? "500" : kv >= 230 ? "230-275" : kv >= 100 ? "115-150" : kv >= 66 ? "66-70" : "tak");
+const KV_KELAS = { 500: "500", 275: "230-275", 230: "230-275", 150: "115-150", 70: "66-70", null: "tak" };
 const srcId = (s) => (s && typeof s === "object" ? s.id : s);
 
-const ubin = (u, stBab) => {
-  const kosong = u.v == null, st = kosong ? "menunggu" : u.st;
-  return `<div class="kj-ang"><b>${esc(n1(u.v))}${!kosong && u.sat ? ` <small>${esc(t("kj.rk.sat." + u.sat))}</small>` : ""}</b><span>${esc(t("kj.rk.u." + u.k))}</span>${st !== stBab ? chipSt(st) : ""}</div>`;
+const ubin = (u, b) => {
+  const kosong = u.v == null, st = kosong ? "menunggu" : u.st, luar = !kosong && u.src && !b.src.includes(u.src);
+  return `<div class="kj-ang"><b>${esc(n1(u.v))}${!kosong && u.sat ? ` <small>${esc(t("kj.rk.sat." + u.sat))}</small>` : ""}</b><span>${esc(t("kj.rk.u." + u.k))}</span>${st !== b.st ? chipSt(st) : ""}${luar ? chipSrc(u.src) + (u.tgl ? `<span class="kj-tgl">${esc(t("kj.per", { tgl: tg(u.tgl) }))}</span>` : "") : ""}</div>`;
 };
-const ubinan = (arr, st) => (arr.length ? `<div class="kj-rk-ub">${arr.map((u) => ubin(u, st)).join("")}</div>` : "");
+const ubinan = (b) => (b.ubin.length ? `<div class="kj-rk-ub">${b.ubin.map((u) => ubin(u, b)).join("")}</div>` : "");
 const lainnya = (n) => (n > 0 ? `<p class="kj-cat">${esc(t("kj.rk.lainnya", { n: num(n) }))}</p>` : "");
 
 const nomor = (i, isi) => `<li class="kj-rk-li"><b class="kj-ln">${i + 1}</b>${isi}</li>`;
 
+/** Batang komposisi kV dari sistem[].km_kv; lebar dan tinggi lewat skala() (CSP tanpa style=). */
+function barKv(s) {
+  const m = {};
+  for (const [kv, km] of Object.entries(s.km_kv || {})) { const k = KV_KELAS[kv]; if (k && km > 0) m[k] = (m[k] || 0) + km; }
+  const tot = KELAS.reduce((a, k) => a + (m[k] || 0), 0);
+  if (!tot) return "";
+  const isi = KELAS.filter((k) => m[k] > 0).map((k) => t("kj.rk.kv.tip", { kelas: t("kj.rk.kv." + k), km: n1(Math.round(m[k] * 10) / 10) }));
+  return `<span class="kj-kvb" role="img" aria-label="${esc(t("kj.rk.kv.bar", { isi: isi.join("; ") }))}">${KELAS.filter((k) => m[k] > 0).map((k, i) => `<i class="kj-k-${k}" data-w="${(m[k] / tot) * 100}" title="${esc(isi[i])}"></i>`).join("")}</span>`;
+}
 function isiSistem(b) {
   return `<ol class="kj-rk-ol">${b.teratas.map((s, i) => nomor(i, `<a class="kj-rk-nm" href="${fokus(s.id)}">${esc(s.nama)}</a>
-    <span class="kj-rk-md">${esc(t("kj.rk.sis.baris", { km: n1(s.km), gi: n1(s.gi), mw: n1(s.mw_pln) }))}</span>
-    <span class="kj-kvb" role="img" data-sis="${esc(s.id)}" data-w="${Math.max(2, Math.round((s.km / b.teratas[0].km) * 100))}"></span>`)).join("")}</ol>${lainnya(b.lainnya)}`;
+    <span class="kj-rk-md">${esc(t("kj.rk.sis.baris", { km: n1(s.km), gi: n1(s.gi), mw: n1(s.mw_pln) }))}${s.mva ? esc(", " + t("kj.rk.sis.mva", { mva: n1(s.mva) })) : ""}</span>
+    ${barKv(s)}`)).join("")}</ol>${lainnya(b.lainnya)}`;
 }
 function isiTunggal(b, R) {
   const mx = Math.max(1, ...b.teratas.map((x) => x.gi || 0)), sis = new Map(R.sistem.map((s) => [s.id, s.nama]));
-  return `<ol class="kj-rk-ol">${b.teratas.slice(0, 8).map((x, i) => nomor(i, `<a class="kj-rk-nm" data-jl="${esc(x.id)}" href="${fokus(x.id)}">${esc(x.kv ? t("kj.rk.jl_n", { kv: num(x.kv) }) : t("kj.rk.jl_tak"))}</a>
+  return `<ol class="kj-rk-ol">${b.teratas.slice(0, 8).map((x, i) => nomor(i, `<a class="kj-rk-nm" href="${fokus(x.id)}">${esc(x.nama || (x.kv ? t("kj.rk.jl_n", { kv: num(x.kv) }) : t("kj.rk.jl_tak")))}</a>
     <span class="kj-rk-md">${esc(sis.get(x.sis) || "-")}, ${esc(t("kj.rk.b.tunggal.gi", { n: n1(x.gi) }))}</span>
     <span class="kj-rk-bar"><i data-w="${Math.round(((x.gi || 0) / mx) * 100)}"></i></span>`)).join("")}</ol>${lainnya(b.lainnya)}`;
 }
 function isiBertambah(b) {
   const bt = b.bertambah || {};
-  const cat = bt.tersedia === false ? `<p class="kj-cat">${esc(t("kj.rk.b.bertambah.cakupan", { cakupan: (bt.cakupan || []).join(", ") }))}</p><p class="kj-kaki">${chipSt(bt.st)}${chipSrc(bt.src)}</p>` : "";
+  const prov = (bt.per_prov || []).map((p) => `<tr><th scope="row">${esc(p.nama)}</th><td class="kj-rk-n">${esc(n1(p.km_osm))}</td><td class="kj-rk-n">${esc(n1(p.km_baru))}</td></tr>`).join("");
+  const cat = bt.tersedia === false
+    ? `<p class="kj-cat">${esc(t("kj.rk.b.bertambah.cakupan", { cakupan: (bt.cakupan || []).join(", ") }))}</p><p class="kj-kaki">${chipSt(bt.st)}${[].concat(bt.src || []).map(chipSrc).join("")}</p>`
+    : `<div class="kj-rk-peringatan" role="note"><b>${esc(t("kj.rk.b.bertambah.bukan"))}</b><p>${esc(bt.catatan || "")}</p></div>
+      <h3 class="kj-rk-h3">${esc(t("kj.rk.b.bertambah.cak_j"))}</h3>
+      <p class="kj-cat">${esc(t("kj.rk.b.bertambah.cak", { dengan: (bt.cakupan_garis || []).join(", ") || "-" }))}${bt.tanpa_garis?.length ? ` ${esc(t("kj.rk.b.bertambah.tanpa", { tanpa: bt.tanpa_garis.join(", ") }))}` : ""}</p>
+      ${prov ? `<div class="kj-tabel kj-rk-tb" tabindex="0" role="region" aria-label="${esc(t("kj.rk.b.bertambah.cak_j"))}"><table><thead><tr><th scope="col">${esc(t("kj.rk.b.bertambah.c.prov"))}</th><th scope="col" class="kj-rk-n">${esc(t("kj.rk.b.bertambah.c.osm"))}</th><th scope="col" class="kj-rk-n">${esc(t("kj.rk.b.bertambah.c.baru"))}</th></tr></thead><tbody>${prov}</tbody></table></div>` : ""}
+      ${kakiFakta(bt.st, bt.src, tg(bt.tgl))}`;
   const ev = b.teratas.length ? `<h3 class="kj-rk-h3">${esc(t("kj.rk.b.bertambah.daftar"))}</h3><ul class="kj-rk-ul">${b.teratas.map((p) => `<li class="kj-rk-ev"><b>${esc(L(p.judul ?? p.nama ?? p.teks))}</b>${p.objek_id ? ` <a class="kj-rk-nm" href="${fokus(p.objek_id)}">${esc(t("kj.rk.peta"))}</a>` : ""}${kakiFakta(p.st || "sumber", srcId(p.src), tg(p.tanggal || p.tgl))}</li>`).join("")}</ul>${lainnya(b.lainnya)}` : `<p class="kj-cat">${esc(t("kj.rk.b.bertambah.kosong"))}</p>`;
   return cat + ev;
 }
@@ -84,7 +99,7 @@ const ISI = { sekilas: isiSekilas, sistem: isiSistem, tunggal: isiTunggal, berta
 
 function babHtml(b, i, semua, R) {
   const nx = semua[i + 1], tgl = b.id === "neraca" ? b.teratas[0]?.tgl || b.tgl : b.tgl;
-  const ub = b.id === "tak-terlihat" ? "" : ubinan(b.ubin, b.st);
+  const ub = b.id === "tak-terlihat" ? "" : ubinan(b);
   const next = nx ? `<a class="kj-next" href="#rk-${esc(nx.id)}">${esc(t("kj.rk.next", { bab: t(`kj.rk.b.${nx.id}.t`) }))}</a>` : `<a class="kj-next" href="?tab=sumber">${esc(t("kj.rk.next_sumber"))}</a>`;
   return `<article class="kj-bab" id="rk-${esc(b.id)}" aria-labelledby="rk-h-${esc(b.id)}">
     <header class="kj-bab-h"><span class="kj-bn" role="img" aria-label="${esc(t("kj.rk.bab", { n: b.n }))}">${esc(b.n)}</span><h2 id="rk-h-${esc(b.id)}">${esc(t(`kj.rk.b.${b.id}.t`))}</h2></header>
@@ -97,28 +112,6 @@ function skala(panel) {
   for (const el of panel.querySelectorAll("[data-h]")) el.style.height = el.dataset.h + "%";
 }
 
-/** Sesudah tercat: komposisi kV tiap sistem dan nama jalur (a ke b) dari objek-inti.json dan objek-rs.json. */
-async function tempel(panel) {
-  const o = await muatKJ("inti");
-  if (!o) return;
-  const jl = new Map(o.jl.map((j) => [j.id, j]));
-  for (const el of panel.querySelectorAll("[data-jl]")) { const nm = jl.get(el.dataset.jl)?.nama; if (nm) el.textContent = nm; }
-  const rsb = await muatKJ("rs");
-  if (!rsb) return;
-  const km = {};
-  for (const r of rsb.rs) if (r.sis) { const m = (km[r.sis] ??= {}), k = kelas(r.kv); m[k] = (m[k] || 0) + (r.km || 0); }
-  for (const el of panel.querySelectorAll("[data-sis]")) {
-    const m = km[el.dataset.sis] || {}, tot = KELAS.reduce((a, k) => a + (m[k] || 0), 0), isi = [];
-    if (!tot) continue;
-    for (const k of KELAS) {
-      if (!(m[k] > 0)) continue;
-      const i = document.createElement("i"), tip = t("kj.rk.kv.tip", { kelas: t("kj.rk.kv." + k), km: n1(Math.round(m[k] * 10) / 10) });
-      i.className = "kj-k-" + k; i.style.width = (m[k] / tot) * 100 + "%"; i.title = tip; isi.push(tip); el.append(i);
-    }
-    el.setAttribute("aria-label", t("kj.rk.kv.bar", { isi: isi.join("; ") }));
-  }
-}
-
 export async function mulai(panel) {
   const R = await muatKJ("ringkas");
   if (!R?.bab?.length) { panel.innerHTML = kosongTab("kj.rk.kosong"); return; }
@@ -126,5 +119,4 @@ export async function mulai(panel) {
     <nav class="kj-rk-nav" aria-label="${esc(t("kj.rk.nav"))}"><ol>${R.bab.map((b) => `<li><a href="#rk-${esc(b.id)}"><b>${esc(b.n)}</b> ${esc(t(`kj.rk.b.${b.id}.t`))}</a></li>`).join("")}</ol></nav>
     ${R.bab.map((b, i, a) => babHtml(b, i, a, R)).join("")}</div>`;
   skala(panel);
-  nanti(() => tempel(panel));
 }

@@ -25,7 +25,7 @@ const kelasDari = (kv) => (!kv ? "tak" : kv >= 450 ? "500" : kv >= 200 ? "230-27
 const PAL = ["--data1", "--data2", "--data3", "--data4", "--data5", "--tp-panas", "--tp-simpan", "--tp-adil", "--tp-industri", "--tp-surya", "--tp-bayu", "--tp-bio"];
 const WARNA_BB = { batubara: "--tp-karbon", gas: "--tp-biaya", diesel: "--tp-sampah", "panas-bumi": "--tp-panas", hidro: "--tp-hidro", surya: "--tp-surya", bayu: "--tp-bayu", bioenergi: "--tp-bio" };
 const JENIS = ["op", "sis", "prov", "pb", "gi", "jl", "rs"];
-const TILE = { rs: ["tegangan", "panjang", "sirkit"], jl: ["tegangan", "panjang", "sirkit"], gi: ["tegangan", "kapasitas_trafo", "jalur_masuk"], pb: ["kapasitas", "bahan_bakar", "tahun_operasi"], sis: ["panjang", "gardu", "pembangkit_pln"], prov: ["panjang", "gardu", "kapasitas_trafo"], op: ["panjang", "gardu", "pembangkit"] };
+const TILE = { rs: ["tegangan", "panjang", "sirkit"], jl: ["tegangan", "panjang", "sirkit"], gi: ["tegangan", "kapasitas_trafo", "jalur_masuk"], pb: ["kapasitas", "bahan_bakar", "tahun_operasi"], sis: ["panjang", "gardu", "pembangkit_pln", "mva_terbit"], prov: ["panjang", "gardu", "mva_terbit"], op: ["panjang", "gardu", "pembangkit"] };
 const SAT_MENTAH = new Set(["km", "MW", "MVA", "kV"]);
 const IDX = new Map(), GRS = new Map(), GPT = new Map(), GIRS = new Map(), JLRS = new Map();
 let FAKTA = null; /* objek-fakta.json: dimuat saat kartu pertama dibuka */
@@ -181,11 +181,18 @@ function cakupan(j, o) {
   }
   return c;
 }
+/** Padding peta menurut panel Lapis (kiri) dan Detail (kanan) yang terbuka, agar objek ada di area yang terlihat. */
+function padPanel() {
+  const m = peta.getContainer().getBoundingClientRect(), pd = { top: 40, bottom: 40, left: 20, right: 20 };
+  const buka = (id, sisi) => { const e = ge(id); if (!e?.open || e.offsetParent === null) return; const r = e.getBoundingClientRect(); if (r.width < m.width * 0.6) pd[sisi] = sisi === "left" ? Math.max(pd.left, r.right - m.left + 16) : Math.max(pd.right, m.right - r.left + 16); };
+  buka("jr-lapis", "left"); buka("jr-pn", "right");
+  return pd;
+}
 function terbang(j, o) {
   const c = cakupan(j, o); if (!c.length || !peta) return;
   const b = c.reduce((a, [x, y]) => [Math.min(a[0], x), Math.min(a[1], y), Math.max(a[2], x), Math.max(a[3], y)], [180, 90, -180, -90]);
-  if (b[0] === b[2] && b[1] === b[3]) peta.flyTo({ center: [b[0], b[1]], zoom: 10, duration: 600 });
-  else peta.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: { top: 70, bottom: 70, left: 60, right: innerWidth >= 1000 ? 400 : 60 }, maxZoom: 11, duration: 600 });
+  if (b[0] === b[2] && b[1] === b[3]) peta.easeTo({ center: [b[0], b[1]], zoom: 10, padding: padPanel(), duration: 600 });
+  else peta.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: padPanel(), maxZoom: 11, duration: 600 });
 }
 
 /* ---------- mode warna ---------- */
@@ -280,7 +287,7 @@ function lengkap(j, o) {
 }
 function kartu(j, o) {
   if (!FAKTA) muatKJ("fakta").then((f) => { FAKTA = f || { fakta: {} }; if (S.sel === o.id) kartu(j, o); }); /* fakta dimuat saat dibutuhkan; kartu dulu tampil tanpa fakta */
-  o = { ...o, fakta: FAKTA ? FAKTA.fakta[o.id] || [] : [] };
+  o = { ...o, ...(FAKTA?.pb_rinci?.[o.id] || {}), fakta: FAKTA ? FAKTA.fakta[o.id] || [] : [] }; /* pemilik, tautan, catatan pembangkit ada di objek-fakta */
   o.fakta = lengkap(j, o);
   const jj = crumb(j, o);
   const jejak = `<ol class="kj-jejak"><li><button type="button" data-reset>${esc(t("kj.peta.jaringan"))}</button></li>${jj.map((c) => `<li>${c.id ? `<button type="button" data-pilih="${esc(c.id)}">${esc(c.teks)}</button>` : `<span>${esc(c.teks)}</span>`}</li>`).join("")}<li aria-current="true"><span>${esc(nm(j, o))}</span></li></ol>`;
@@ -290,7 +297,8 @@ function kartu(j, o) {
   const tautan = (o.tautan || []).map((x) => ({ ...x, url: amanRel(x.url) })).filter((x) => x.url).map((x) => `<a class="kj-lnk" href="${esc(x.url)}">${esc(t("kj.peta.direktori"))}<small>${esc(t("kj.peta.tj." + x.jenis))}</small></a>`).join("");
   ge("jr-pn-isi").innerHTML = `${jejak}<h3 class="jr-pn-j">${esc(nm(j, o))}</h3><p class="jr-pn-m"><span class="rg3-lain">${esc(t("kj.peta.jenis." + j))}</span>${(j === "pb" || j === "sis") && o.captive ? `<span class="rg3-lain">${esc(t("kj.peta.captive"))}</span>` : ""}${j === "sis" && o.potongan ? `<span class="rg3-lain">${esc(t("kj.sis.potongan"))}</span>` : ""}</p>
     <div class="kj-angs">${TILE[j].map((k) => tile(o, k)).join("")}</div>
-    ${j === "pb" ? `<p class="jr-pn-t">${esc(t("kj.peta.pemilik"))}: ${esc(o.pemilik || "-")}${o.gi ? `, ${esc(IDX.get(o.gi)?.o?.nama || "")}` : ""}</p>` : ""}
+    ${j === "pb" ? `<p class="jr-pn-t">${esc(t("kj.peta.pemilik"))}: ${esc(o.pemilik || "-")}${o.gi ? `, ${esc(IDX.get(o.gi)?.o?.nama || "")}` : ""}</p>${o.catatan ? `<p class="kj-cat">${esc(o.catatan)}</p>` : ""}` : ""}
+    ${j === "sis" || j === "prov" ? `<p class="kj-cat">${esc(t(j === "sis" ? "kj.peta.mva_sis_cat" : "kj.peta.mva_prov_cat"))}</p>` : ""}
     ${blokPutus(j, o)}
     <section class="kj-menunggu"><h4>${esc(t("kj.st.menunggu"))}</h4><ul>${mg.map((k) => `<li><span>${esc(t("kj.peta.m." + k))}</span>${chipSt("menunggu")}</li>`).join("")}</ul>${tm ? `<p class="kj-tgl">${esc(t("kj.per", { tgl: tglTeks(tm) }))}</p>` : ""}</section>
     <details class="kj-semua"><summary>${esc(t("kj.peta.semua", { n: num(o.fakta?.length || 0) }))}</summary><div class="kj-tabel">${FAKTA ? `<table><tbody>${rows}</tbody></table>` : `<p class="kj-cat">${esc(t("kj.peta.memuat"))}</p>`}</div></details>
@@ -308,7 +316,7 @@ function aturUlang() {
   S.sel = null; setSel(null, null);
   if (S.kj) { S.mode = "tegangan"; for (const b of document.querySelectorAll("#kj-mode [data-mode]")) b.setAttribute("aria-pressed", String(b.dataset.mode === "tegangan")); terapkanMode(); }
   ge("jr-pn-isi").innerHTML = `<p class="jr-pn-t">${esc(t("jr.peta.pilih"))}</p>`;
-  peta?.fitBounds([[BAWAH[0], BAWAH[1]], [BAWAH[2], BAWAH[3]]], { duration: 500 });
+  peta?.fitBounds([[BAWAH[0], BAWAH[1]], [BAWAH[2], BAWAH[3]]], { padding: padPanel(), duration: 500 });
   const u = new URL(location.href); u.searchParams.delete("fokus"); history.replaceState(null, "", u);
 }
 async function muatKembaran() {
@@ -361,7 +369,7 @@ async function bangunPeta() {
   const gaya = "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron");
   /* peta dasar gagal dimuat (luring, diblokir): lapis jaringan tetap tampil di atas latar polos */
   const style = await fetch(gaya).then((r) => (r.ok ? gaya : null)).catch(() => null) || { version: 8, sources: {}, glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf", layers: [{ id: "latar", type: "background", paint: { "background-color": token("--soft-hijau") } }] };
-  peta = new maplibregl.Map({ container: el, style, center: [108, -2.2], zoom: 4.1, minZoom: 3, maxZoom: 13, dragRotate: false, pitchWithRotate: false, attributionControl: false });
+  peta = new maplibregl.Map({ container: el, style, bounds: [[BAWAH[0], BAWAH[1]], [BAWAH[2], BAWAH[3]]], fitBoundsOptions: { padding: 20 }, minZoom: 3, maxZoom: 13, dragRotate: false, pitchWithRotate: false, attributionControl: false });
   peta.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: "© OpenStreetMap (ODbL)" }), "bottom-right");
   peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-left");
   peta.once("style.load", () => { pasangGeo(fiturSkematik(D.m)); nanti(muatKembaran); });

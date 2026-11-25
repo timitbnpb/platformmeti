@@ -24,6 +24,8 @@
 .kj-k-500{background:var(--data1)}.kj-k-230-275{background:var(--data3)}.kj-k-115-150{background:var(--data2)}.kj-k-66-70{background:var(--data4)}.kj-k-tak{background:var(--ink2)}
 .kj-rk-n{text-align:right!important;font-variant-numeric:tabular-nums}
 .kj-rk-tb{max-height:none}
+.kj-rk-peringatan{display:grid;gap:4px;padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r-sm);background:var(--surface);color:var(--ink)}
+.kj-rk-peringatan b{color:var(--head)}.kj-rk-peringatan p{margin:0;font-size:var(--t-kecil);line-height:var(--lh-isi)}
 .kj-rk-ev,.kj-rk-tk{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 10px;padding:8px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);color:var(--ink)}
 .kj-rk-ev{display:grid;justify-content:stretch}
 .kj-hist{list-style:none;margin:0;padding:0;display:flex;align-items:flex-end;gap:4px;height:140px}
