@@ -112,6 +112,14 @@ Semua di `/jaringan`, modul malas per tab, token DS METI, ID dan EN.
 
 INP: tabel besar dipaginasi (50 baris) dan cari di-debounce; objek-rs.json dimuat lewat `nanti()` sesudah inti, objek-fakta.json saat kartu dibuka.
 
+## 6b. Tata letak (pemilik 25 Nov 2026, pilihan A "peta penuh")
+
+`/jaringan` jadi aplikasi peta layar penuh, tetap satu halaman dan satu rute:
+- Mode peta: peta selebar viewport di bawah kepala situs (tinggi `100dvh` dikurangi kepala, dengan fallback). Pil tab melayang di atas peta: Kembaran, Bauran, Aliran (ketiganya berbagi SATU instans MapLibre; ganti tab = ganti lapis dan panel, bukan muat ulang peta). Satu panel kiri yang bisa dilipat (lebar ~380 px; di <= 768 px jadi lembar bawah yang bisa ditarik) memuat isi panel tab aktif; kartu objek terbuka di panel yang sama (dengan tombol kembali), bukan panel kanan kedua. Legenda dan sakelar mode di bawah peta.
+- Mode baca: pil tab yang sama memuat Ontologi, Ringkasan, Sumber, dan "Rencana dan kebijakan" (sembilan tab lama: Rencana RUPTL, Antar-pulau, ASEAN dan lintas negara, Penyimpanan, Curtailment, Keandalan, Pendanaan, Pemain) sebagai halaman baca biasa berlebar konten.
+- Hero RUPTL dan ubin angkanya pindah ke tab "Rencana dan kebijakan"; mode peta tanpa hero.
+- `?tab=` tetap berlaku (tautan lama tidak rusak; tab lama dipetakan ke "Rencana dan kebijakan" dengan sub-tab).
+
 ## 7. Bukti selesai
 
 - `npm run uji` hijau, termasuk uji baru: algoritma graf pada fixture kecil (jembatan, komponen, tempel), determinisme, gerbang potret (`st/src/tgl` wajib, ukuran), i18n setara. Skrip baru terdaftar di `data/rangkai.json` (uji T06); `tests/e2e/cakupan.json` hanya untuk rute, dan fitur ini tidak menambah rute.

@@ -26,16 +26,33 @@
 </head>
 <body data-halaman="jaringan">
 <header class="top" id="kepala"></header>
-<main class="jm-halaman jm-wadah jm-an">
-<section class="jm-kh" aria-labelledby="judul">
-  <div class="jm-kh-teks">
-    <p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-menara"/></svg><span data-i18n="jr.eyebrow">Jaringan dan interkoneksi</span></p>
-    <h1 id="judul" data-i18n="jr.judul">Jaringan dan interkoneksi listrik</h1>
-    <p id="jawab" class="jm-kh-lead"></p>
+<main id="jr-app" class="jr-app" data-mode="peta">
+<section class="jm-kh jr-sr"><p class="jm-kh-ey"><svg class="jm-ik" width="16" height="16" aria-hidden="true" focusable="false"><use href="/img/ikon.svg#i-menara"/></svg></p><h1 id="judul" data-i18n="jr.judul">Jaringan dan interkoneksi listrik</h1></section>
+<div class="jr-pil"><div id="jrTab" class="jr-pil-tab" role="tablist" data-i18n-attr="aria-label:jr.tab"></div></div>
+<div id="jr-stage" class="jr-stage" data-panel="buka">
+  <div id="jr-kanvas" class="jr-kanvas" role="application" data-i18n-attr="aria-label:jr.app.peta"></div>
+  <aside id="jr-panel" class="jr-panel">
+    <button type="button" id="jr-pnl-grip" class="jr-pnl-grip" data-i18n-attr="aria-label:jr.app.tarik"><i aria-hidden="true"></i></button>
+    <div class="jr-pnl-kep"><h2 id="jr-pnl-j"></h2></div>
+    <div id="jr-pnl-isi" class="jr-pnl-isi">
+      <section id="p-peta" class="jr-pt" role="tabpanel" aria-labelledby="tab-peta" hidden></section>
+      <section id="p-bauran" class="jr-pt" role="tabpanel" aria-labelledby="tab-bauran" hidden></section>
+      <section id="p-aliran" class="jr-pt" role="tabpanel" aria-labelledby="tab-aliran" hidden></section>
+    </div>
+  </aside>
+  <button type="button" id="jr-pnl-tgl" class="jr-pnl-tgl" aria-expanded="true" aria-controls="jr-panel"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <div id="jr-bawah" class="jr-bawah" role="group" data-i18n-attr="aria-label:jr.app.bawah">
+    <div id="bw-peta" class="jr-bw" hidden></div>
+    <div id="bw-bauran" class="jr-bw" hidden></div>
+    <div id="bw-aliran" class="jr-bw" hidden></div>
   </div>
-</section>
-<div id="jrTab" class="rg3-tab"></div>
-<div id="isi" class="rg3-isi"></div>
+</div>
+<div id="jr-baca" class="jm-halaman jm-wadah jm-an jr-baca" hidden>
+  <section id="p-ontologi" class="rg3-panel" role="tabpanel" aria-labelledby="tab-ontologi" hidden></section>
+  <section id="p-ringkasan" class="rg3-panel" role="tabpanel" aria-labelledby="tab-ringkasan" hidden></section>
+  <section id="p-sumber" class="rg3-panel" role="tabpanel" aria-labelledby="tab-sumber" hidden></section>
+  <section id="p-kebijakan" class="rg3-panel" role="tabpanel" aria-labelledby="tab-kebijakan" hidden></section>
+</div>
 </main>
 <footer class="jm-kaki" id="kaki"></footer>
 <script type="module" src="/jaringan.js"></script>

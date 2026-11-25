@@ -1,14 +1,15 @@
 /* /jaringan?tab=aliran (KJ-13): aliran listrik TAHUNAN antarprovinsi (neraca provinsi + panah + batas), semua berstatus Dihitung.
    Data: /data/kembaran/energi.json + /geo/provinsi.json. Kontrak: KEMBARAN-JARINGAN.md §4 butir 9, §6 butir 5.
    INP: sakelar Neraca/Karbon dan pilihan provinsi/sistem memakai setPaintProperty/setFilter; peta tidak dibangun ulang. */
-import { ex, t, esc, num, token, kosongTab, sumberBerkas } from "/jr_umum.js";
+import { t, esc, num, token, ikon, kosongTab, sumberBerkas } from "/jr_umum.js";
 import { tanggal } from "/i18n.js";
 import { muatKJ, chipSt, chipSrc, kakiFakta } from "/jr_kj.js";
 import { nanti } from "/inti/umum.js";
-import { SKALA, rampIntensitas, pasangGaya, bukaPeta } from "/jr_bbm.js";
+import { SKALA, rampIntensitas, pasangGaya } from "/jr_bbm.js";
+import { petaBersama, pasangPeta, padPeta, bukaPanel, bawahSlot } from "/jr_app.js";
 
-const S = { mode: "neraca", sel: null, E: null, peta: null, geo: null, pusat: new Map(), kotak: new Map(), nama: new Map(), mark: [] };
-let akar;
+const S = { mode: "neraca", sel: null, E: null, peta: null, geo: null, pusat: new Map(), kotak: new Map(), nama: new Map(), mark: [], pan: [] };
+let akar, hidup = true;
 const $ = (s) => akar.querySelector(s);
 const nm = (k) => S.nama.get(String(k)) || String(k);
 const gi = (v, d = 0) => (v == null ? "-" : num(v, d));
@@ -30,7 +31,7 @@ const ekspresWarna = () => {
   if (S.mode === "karbon") return ["case", ["<", ["get", "p"], 0], abu, rampIntensitas(["get", "p"])];
   return ["case", ["<", ["get", "n"], -900], abu, ["interpolate", ["linear"], ["get", "n"], -30, token("--tp-simpan"), 0, token("--line"), 30, token("--ok")]];
 };
-function pasangPeta(peta) {
+function pasangLapis(peta) {
   if (!peta.getSource("ka-prov")) peta.addSource("ka-prov", { type: "geojson", data: S.geo });
   peta.addLayer({ id: "ka-isi", type: "fill", source: "ka-prov", paint: { "fill-color": ekspresWarna(), "fill-opacity": 0.78 } });
   peta.addLayer({ id: "ka-gar", type: "line", source: "ka-prov", paint: { "line-color": token("--ink2"), "line-width": 0.5, "line-opacity": 0.6 } });
@@ -38,7 +39,25 @@ function pasangPeta(peta) {
   const fit = S.E.batas.filter((b) => S.pusat.has(b.dari) && S.pusat.has(b.ke));
   if (!peta.getSource("ka-ali")) peta.addSource("ka-ali", { type: "geojson", data: { type: "FeatureCollection", features: fit.map((b) => ({ type: "Feature", properties: { mw: b.mw }, geometry: { type: "LineString", coordinates: [S.pusat.get(b.dari), S.pusat.get(b.ke)] } })) } });
   peta.addLayer({ id: "ka-ali", type: "line", source: "ka-ali", layout: { "line-cap": "round" }, paint: { "line-color": token("--head"), "line-opacity": 0.85, "line-width": ["interpolate", ["linear"], ["get", "mw"], 0, 1.5, 1500, 7] } });
+  vis();
 }
+/** Label MW: yang terbesar menang; yang kecil (<100 MW) baru muncul mulai zoom 5, label batas mulai zoom 5, dan label yang bertumpuk disembunyikan. */
+function aturLabel() {
+  const peta = S.peta; if (!peta || !hidup) return;
+  const z = peta.getZoom(), ambil = [];
+  for (const p of [...S.pan].sort((a, b) => b.mw - a.mw)) {
+    p.el.style.display = "";
+    p.el.querySelector("small")?.toggleAttribute("hidden", z < 5);
+    const hilang = (z < 5 && p.mw < 100) || ambil.some((r) => { const q = p.el.getBoundingClientRect(); return q.left < r.right && q.right > r.left && q.top < r.bottom && q.bottom > r.top; });
+    if (hilang) p.el.style.display = "none"; else ambil.push(p.el.getBoundingClientRect());
+  }
+}
+function vis() {
+  for (const id of ["ka-isi", "ka-gar", "ka-sel", "ka-ali"]) if (S.peta?.getLayer(id)) S.peta.setLayoutProperty(id, "visibility", hidup ? "visible" : "none");
+  if (hidup) aturLabel(); else for (const m of S.mark) m.getElement().style.display = "none";
+}
+/** Dipanggil cangkang saat tab Aliran aktif/tidak. */
+export function aktif(on) { hidup = on; vis(); if (!on) S.pop?.remove(); }
 function panah(b) { // penanda panah + label MW di tengah garis (DOM; dibuat sekali)
   const a = S.pusat.get(b.dari), z = S.pusat.get(b.ke); if (!a || !z) return;
   const sudut = (Math.atan2(-(z[1] - a[1]), z[0] - a[0]) * 180) / Math.PI;
@@ -47,7 +66,8 @@ function panah(b) { // penanda panah + label MW di tengah garis (DOM; dibuat sek
   el.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 12h15M12 5l7 7-7 7"/></svg><b>${esc(num(b.mw))} MW</b>${b.batas_mw != null ? `<small>${esc(t("kj.al.batas_n", { mw: num(b.batas_mw) }))}</small>` : ""}`;
   el.querySelector("svg").style.transform = `rotate(${sudut.toFixed(0)}deg)`;
   el.title = t("kj.al.arah", { a: nm(b.dari), b: nm(b.ke) }) + ", " + num(b.mw) + " MW" + (b.batas_mw != null ? ", " + t("kj.al.batas_n", { mw: num(b.batas_mw) }) : "");
-  S.mark.push(new maplibregl.Marker({ element: el }).setLngLat([(a[0] + z[0]) / 2, (a[1] + z[1]) / 2]).addTo(S.peta));
+  const mk = new maplibregl.Marker({ element: el }).setLngLat([(a[0] + z[0]) / 2, (a[1] + z[1]) / 2]).addTo(S.peta);
+  S.mark.push(mk); S.pan.push({ el, mk, mw: b.mw, batas: b.batas_mw != null });
 }
 function paint() {
   const peta = S.peta; if (!peta?.getLayer("ka-isi")) return;
@@ -55,9 +75,9 @@ function paint() {
   peta.setFilter("ka-sel", ["==", ["get", "kode"], S.sel?.tipe === "prov" ? S.sel.id : "-"]);
 }
 async function bangunPeta() {
-  const el = $("#ka-kanvas"); if (!el) return;
+  const el = $("#ka-beranda"); if (!el) return;
   const g = await fetch("/geo/provinsi.json", { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-  if (!g) { el.innerHTML = `<p class="kj-cat">${esc(t("kj.al.peta.kosong"))}</p>`; return; }
+  if (!g) { el.insertAdjacentHTML("afterbegin", `<p class="kj-cat">${esc(t("kj.al.peta.kosong"))}</p>`); return; }
   for (const f of g.features) { const k = kotakGeo(f.geometry); S.kotak.set(f.properties.kode, k); S.pusat.set(f.properties.kode, [(k[0] + k[2]) / 2, (k[1] + k[3]) / 2]); }
   for (const n of S.E.neraca) { const ps = (n.provinsi || []).map((k) => S.pusat.get(k)).filter(Boolean); if (ps.length > 1 && !S.pusat.has(n.kode)) S.pusat.set(n.kode, [ps.reduce((a, c) => a + c[0], 0) / ps.length, ps.reduce((a, c) => a + c[1], 0) / ps.length]); }
   const ner = new Map(S.E.neraca.flatMap((n) => [n.kode, ...(n.provinsi || [])].map((k) => [k, n]))), bp = new Map(S.E.bauran.provinsi.map((p) => [p.kode, p]));
@@ -68,10 +88,13 @@ async function bangunPeta() {
     pakai.set(n.kode, gm > 0 && gb > 0 && lok + gm > 0 ? (lok * own(n.kode) + gm * (masuk.reduce((a, b) => a + b.gwh * own(b.dari), 0) / gb)) / (lok + gm) : own(n.kode));
   }
   S.geo = { type: "FeatureCollection", features: g.features.map((f) => { const n = ner.get(f.properties.kode), b = bp.get(f.properties.kode); return { type: "Feature", properties: { kode: f.properties.kode, n: n ? n.persen : -999, l: b?.langsung ?? -1, p: pakai.get(f.properties.kode) ?? -1 }, geometry: f.geometry }; }) };
-  S.peta = await bukaPeta(el, pasangPeta, { pusat: [113, -3.2], zoom: 4.2 });
-  const peta = S.peta; if (!peta) { el.textContent = t("kj.al.peta.gagal"); return; }
-  peta.once("load", () => { for (const b of S.E.batas) panah(b); });
-  const pop = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 8, className: "rg3-pop" });
+  S.peta = await petaBersama();
+  const peta = S.peta; if (!peta) { el.insertAdjacentHTML("afterbegin", `<p class="kj-cat">${esc(t("kj.al.peta.gagal"))}</p>`); return; }
+  pasangPeta(pasangLapis);
+  for (const b of S.E.batas) panah(b);
+  peta.on("zoomend", aturLabel); peta.on("moveend", aturLabel);
+  vis();
+  const pop = S.pop = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 8, className: "rg3-pop" });
   peta.on("mousemove", "ka-isi", (e) => {
     const k = e.features?.[0]?.properties?.kode, n = ner.get(k); if (!n) { pop.remove(); return; }
     peta.getCanvas().style.cursor = "pointer";
@@ -159,20 +182,23 @@ function cek() {
 function segarkanPanel() { $("#ka-rinci").innerHTML = rincian(); $("#ka-cek").innerHTML = cek(); $("#ka-daftar").innerHTML = daftarSistem(); pasangGaya(akar); }
 function pilih(tipe, id) {
   S.sel = S.sel?.tipe === tipe && S.sel.id === id ? null : { tipe, id };
-  for (const b of akar.querySelectorAll("#ka-daftar .kj-sis")) b.setAttribute("aria-pressed", String(S.sel?.tipe === "sis" && b.dataset.id === S.sel.id)); // chrome urgent
+  for (const b of akar.querySelectorAll("#ka-daftar .kje-sis")) b.setAttribute("aria-pressed", String(S.sel?.tipe === "sis" && b.dataset.id === S.sel.id)); // chrome urgent
+  $("#ka-beranda").hidden = !!S.sel; $("#ka-detail").hidden = !S.sel;
   paint();
+  if (S.sel) bukaPanel();
+  else S.peta?.easeTo({ padding: padPeta(), duration: 300 });
   if (S.sel && S.peta) {
     const ks = S.sel.tipe === "prov" ? [S.sel.id] : provSis(S.sel.id), bs = ks.map((k) => S.kotak.get(k)).filter(Boolean);
-    if (bs.length) S.peta.fitBounds([[Math.min(...bs.map((b) => b[0])), Math.min(...bs.map((b) => b[1]))], [Math.max(...bs.map((b) => b[2])), Math.max(...bs.map((b) => b[3]))]], { padding: 50, maxZoom: 7, duration: 400 });
+    if (bs.length) S.peta.fitBounds([[Math.min(...bs.map((b) => b[0])), Math.min(...bs.map((b) => b[1]))], [Math.max(...bs.map((b) => b[2])), Math.max(...bs.map((b) => b[3]))]], { padding: padPeta(), maxZoom: 7, duration: 400 });
   }
   nanti(segarkanPanel);
 }
 function ganti(m) {
   if (m === S.mode) return;
   S.mode = m;
-  for (const b of akar.querySelectorAll("[data-mode]")) b.setAttribute("aria-pressed", String(b.dataset.mode === m)); // chrome urgent
+  for (const b of bawahSlot("aliran").querySelectorAll("[data-mode]")) b.setAttribute("aria-pressed", String(b.dataset.mode === m)); // chrome urgent
   paint();
-  nanti(() => { $("#ka-legenda").innerHTML = legenda(); });
+  nanti(() => { document.getElementById("ka-legenda").innerHTML = legenda(); });
 }
 
 export async function mulai(el) {
@@ -184,22 +210,21 @@ export async function mulai(el) {
   for (const n of E.neraca) S.nama.set(n.kode, n.nama);
   const tahun = E.meta?.tahun_data;
   const sakelar = ["neraca", "karbon"].map((m) => `<button type="button" class="kj-mb" data-mode="${m}" aria-pressed="${m === S.mode}">${esc(t("kj.al.mode." + m))}</button>`).join("");
-  const isi = `<div class="kje-bar-atas"><div class="kj-mode" role="group" aria-label="${esc(t("kj.al.mode.j"))}">${sakelar}</div>
-      <p class="kj-kaki">${chipSt("hitung")}<span class="kj-tgl">${esc(t("kj.al.tahunan", { tahun }))}</span><span class="kj-tgl">${esc(t("kj.per", { tgl: tanggal(E.meta?.tanggal) }))}</span></p></div>
-    <div class="kje-en">
-      <div class="kje-peta"><div id="ka-kanvas" class="kje-kanvas" role="application" aria-label="${esc(t("kj.al.peta.aria"))}"></div><div id="ka-legenda">${legenda()}</div></div>
-      <div class="kje-sisi">
-        <section class="kje-blok"><h3 class="kje-j">${esc(t("kj.al.daftar.j"))}</h3><p class="kj-cat">${esc(t("kj.al.daftar.cat"))}</p><ul class="kje-daftar" id="ka-daftar">${daftarSistem()}</ul></section>
-        <section class="kje-blok" id="ka-rinci" aria-live="polite">${rincian()}</section>
-      </div>
-    </div>
+  const slot = bawahSlot("aliran");
+  slot.innerHTML = `<div class="kj-mode" role="group" aria-label="${esc(t("kj.al.mode.j"))}">${sakelar}</div><div id="ka-legenda">${legenda()}</div>`;
+  el.innerHTML = `<div id="ka-beranda" class="jr-ber"><p class="kj-kaki">${chipSt("hitung")}<span class="kj-tgl">${esc(t("kj.al.tahunan", { tahun }))}</span><span class="kj-tgl">${esc(t("kj.per", { tgl: tanggal(E.meta?.tanggal) }))}</span></p>
+    <p class="kj-cat">${esc(t("kj.al.s", { tahun }))}</p>
+    <section class="kje-blok"><h3 class="kje-j">${esc(t("kj.al.daftar.j"))}</h3><p class="kj-cat">${esc(t("kj.al.daftar.cat"))}</p><ul class="kje-daftar" id="ka-daftar">${daftarSistem()}</ul></section></div>
+    <div id="ka-detail" class="jr-ber" hidden><button type="button" class="jr-kembali" data-kembali>${ikon("panah-kiri", 16)}<span>${esc(t("jr.app.kembali"))}</span></button>
+      <section class="kje-blok" id="ka-rinci" aria-live="polite">${rincian()}</section></div>
     <section class="kje-blok" id="ka-cek">${cek()}</section>
-    <p class="kj-cat">${esc(t("kj.al.catatan", { susut: num(E.meta?.susut_nasional_persen, 2) }))}</p>`;
-  el.innerHTML = ex({ id: "ka-ex", ikon: "sambung", topik: t("kj.al.ey"), judulHtml: esc(t("kj.al.j")), subHtml: esc(t("kj.al.s", { tahun })), isiHtml: isi, kakiHtml: sumberBerkas(E.meta) });
+    <p class="kj-cat">${esc(t("kj.al.catatan", { susut: num(E.meta?.susut_nasional_persen, 2) }))}</p><div class="jr-kaki-sumber">${sumberBerkas(E.meta)}</div>`;
   pasangGaya(el);
-  akar.addEventListener("click", (e) => {
+  const klik = (e) => {
     const m = e.target.closest("[data-mode]"); if (m) { ganti(m.dataset.mode); return; }
-    const b = e.target.closest("[data-aksi]"); if (b) pilih(b.dataset.aksi, b.dataset.id);
-  });
+    const b = e.target.closest("[data-aksi]"); if (b) { pilih(b.dataset.aksi, b.dataset.id); return; }
+    if (e.target.closest("[data-kembali]") && S.sel) pilih(S.sel.tipe, S.sel.id);
+  };
+  akar.addEventListener("click", klik); slot.addEventListener("click", klik);
   nanti(bangunPeta);
 }

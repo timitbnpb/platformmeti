@@ -7,10 +7,9 @@ import { fiturSkematik, kelasKv } from "/jaringan_hitung.js";
 import { tanggal } from "/i18n.js";
 import { muatKJ, chipSt, chipSrc } from "/jr_kj.js";
 import { nanti } from "/inti/umum.js";
-import { muatMapLibre } from "/inti/maplibre.js";
-import { geserPanel } from "/inti/panel_geser.js";
+import { petaBersama, pasangPeta, padPeta, bukaPanel, bawahSlot, kotakIndonesia } from "/jr_app.js";
 
-let peta = null;
+let peta = null, hidup = true;
 const LAPIS = [
   { k: "ruas", lb: "kj.peta.lapis.ruas", ik: "menara", lapisan: ["jr-kr", "jr-kr-sel", "jr-kr-hit", "jr-tr"] },
   { k: "gardu", lb: "kj.peta.lapis.gardu", ik: "petir", lapisan: ["jr-kg", "jr-kg-sel", "jr-kgl", "jr-gi"] },
@@ -41,9 +40,14 @@ const exprStatus = () => ["match", ["get", "status"], ...Object.entries(warnaSta
 function detail(id) {
   const x = SEMUA().find((r) => r.id === id), el = document.getElementById("jr-pn-isi");
   if (!x || !el) return;
+  S.sel = null;
   const neg = x.negara ? `<span class="rg3-neg">${bendera(x.negara, 20)}<b>${esc(L(x.mitra))}</b></span>` : "";
   el.innerHTML = `<h3 class="jr-pn-j">${esc(L(x.nama))}</h3>${neg}<p class="jr-pn-m">${chipStatus(x.status)}${x.tegangan_kv ? `<span class="rg3-lain">${esc(num(x.tegangan_kv))} kV</span>` : ""}${x.kapasitas_mw ? `<span class="rg3-lain">${esc(num(x.kapasitas_mw))} MW</span>` : ""}${(x.cod || x.tahun) ? `<span class="rg3-lain">${esc(t("jr.cod"))} ${esc(String(x.cod || x.tahun))}</span>` : ""}</p><p class="jr-pn-t">${esc(L(x.ket))}</p><p class="jr-pn-b">${buktiSumber(x.bukti, x.sumber_id)}</p>`;
-  document.getElementById("jr-pn").open = true;
+  tampilKartu(true);
+}
+function tampilKartu(on) {
+  ge("jr-beranda").hidden = on; ge("jr-pn").hidden = !on;
+  if (on) bukaPanel();
 }
 function sorot(id) {
   if (!peta?.getLayer("jr-rc")) return;
@@ -55,6 +59,8 @@ function pasangGeo(skem) {
   peta.addSource("jr-skem", { type: "geojson", data: skem });
   for (const [idL, jenis, lebar] of [["jr-rc", "antar-pulau", 2.5], ["jr-ln", "lintas", 3.5]])
     peta.addLayer({ id: idL, type: "line", source: "jr-skem", filter: ["==", ["get", "jenis"], jenis], layout: { "line-cap": "round" }, paint: { "line-color": exprStatus(), "line-width": lebar, "line-dasharray": [2, 1.6], "line-opacity": 0.9 } });
+  if (S.evGeo) return; /* pendengar dan penanda dipasang sekali; lapis dipasang ulang tiap gaya dasar berganti */
+  S.evGeo = true;
   const pop = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10, className: "rg3-pop", maxWidth: "300px" });
   for (const idL of ["jr-rc", "jr-ln"]) {
     peta.on("mousemove", idL, (e) => {
@@ -111,7 +117,7 @@ const fiturTitik = (kj, j) => ({ type: "FeatureCollection", features: kj.geo[j].
 /* ---------- kembaran: peta ---------- */
 const fiturKons = (kj) => ({ type: "FeatureCollection", features: (kj.geo.konstruksi || []).map((g) => ({ type: "Feature", properties: { id: g.id, k: kelasDari(g.kv) }, geometry: g.c ? { type: "LineString", coordinates: g.c } : { type: "Point", coordinates: [g.x, g.y] } })) });
 function pasangKJ(kj) {
-  indeks(kj);
+  if (!S.diindeks) { indeks(kj); S.diindeks = true; }
   peta.addSource("kj-kon", { type: "geojson", data: fiturKons(kj) });
   peta.addSource("kj-rs", { type: "geojson", data: fiturRuas(kj) });
   peta.addSource("kj-gi", { type: "geojson", data: fiturTitik(kj, "gi") });
@@ -133,6 +139,8 @@ function pasangKJ(kj) {
     { id: "jr-kpl", type: "symbol", source: "kj-pb", minzoom: 9, layout: teks, paint: halo },
   ];
   for (const l of L2) peta.addLayer(l, "jr-rc");
+  if (S.evKJ) { terapkanMode(); vis(); const h = S.sel && IDX.get(S.sel); if (h) setSel(h.j, h.o); return; }
+  S.evKJ = true;
   pop = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10, className: "rg3-pop" });
   const HIT = ["jr-kp", "jr-kg", "jr-kr-hit"];
   const cari = (e) => peta.queryRenderedFeatures([[e.point.x - 6, e.point.y - 6], [e.point.x + 6, e.point.y + 6]], { layers: ["jr-rc", "jr-ln", ...HIT].filter((l) => peta.getLayer(l)) })[0];
@@ -147,8 +155,7 @@ function pasangKJ(kj) {
     if (/^jr-(rc|ln)$/.test(f.layer.id)) { setSel(null); detail(f.properties.id); } else pilih(f.properties.id, false);
   });
   terapkanMode();
-  const aktif = new Set([...document.querySelectorAll("#jr-lapis [data-lp][aria-pressed=false]")].map((b) => b.dataset.lp));
-  for (const k of aktif) nyala(k, false);
+  vis();
   bukaFokus();
 }
 function bukaFokus() {
@@ -187,22 +194,14 @@ function cakupan(j, o) {
   }
   return c;
 }
-/** Padding peta menurut panel Lapis (kiri) dan Detail (kanan) yang terbuka, agar objek ada di area yang terlihat. */
-function padPanel() {
-  const m = peta.getContainer().getBoundingClientRect(), pd = { top: 40, bottom: 40, left: 20, right: 20 };
-  const buka = (id, sisi) => { const e = ge(id); if (!e?.open || e.offsetParent === null) return; const r = e.getBoundingClientRect(); if (r.width < m.width * 0.6) pd[sisi] = sisi === "left" ? Math.max(pd.left, r.right - m.left + 16) : Math.max(pd.right, m.right - r.left + 16); };
-  buka("jr-lapis", "left"); buka("jr-pn", "right");
-  return pd;
-}
 function terbang(j, o) {
   const c = cakupan(j, o); if (!c.length || !peta) return;
   const b = c.reduce((a, [x, y]) => [Math.min(a[0], x), Math.min(a[1], y), Math.max(a[2], x), Math.max(a[3], y)], [180, 90, -180, -90]);
-  if (b[0] === b[2] && b[1] === b[3]) peta.easeTo({ center: [b[0], b[1]], zoom: 10, padding: padPanel(), duration: 600 });
-  else peta.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: padPanel(), maxZoom: 11, duration: 600 });
+  if (b[0] === b[2] && b[1] === b[3]) peta.easeTo({ center: [b[0], b[1]], zoom: 10, padding: padPeta(), duration: 600 });
+  else peta.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: padPeta(), maxZoom: 11, duration: 600 });
 }
 
 /* ---------- mode warna ---------- */
-const BAWAH = [94, -11.5, 141.5, 6.5];
 function ekspr(mode) {
   const ink2 = token("--ink2");
   if (mode === "sistem") {
@@ -225,7 +224,7 @@ function terapkanMode() {
 function tandai() {
   for (const m of S.tanda) m.remove();
   S.tanda = [];
-  const no = (n, lngLat) => { const el = document.createElement("span"); el.className = "kj-no"; el.textContent = n; S.tanda.push(new maplibregl.Marker({ element: el }).setLngLat(lngLat).addTo(peta)); };
+  const no = (n, lngLat) => { const el = document.createElement("span"); el.className = "kj-no"; el.textContent = n; el.style.display = hidup ? "" : "none"; S.tanda.push(new maplibregl.Marker({ element: el }).setLngLat(lngLat).addTo(peta)); };
   if (S.mode === "sistem") {
     [...S.rank.keys()].slice(0, 10).forEach((id, i) => { const b = IDX.get(id)?.o?.bbox; if (b) no(i + 1, [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2]); });
   } else if (S.mode === "tunggal") {
@@ -233,8 +232,8 @@ function tandai() {
   }
   ge("kj-leg").innerHTML = legenda();
   ge("kj-mode-info").innerHTML = S.mode === "tunggal" ? infoTunggal() : "";
-  for (const el of document.querySelectorAll("#jr-peta-ex [data-c]")) el.style.background = `var(${el.dataset.c})`;
-  for (const el of document.querySelectorAll("#jr-peta-ex [data-w]")) el.style.width = el.dataset.w + "%";
+  for (const el of document.querySelectorAll("#p-peta [data-c], #bw-peta [data-c]")) el.style.background = `var(${el.dataset.c})`;
+  for (const el of document.querySelectorAll("#p-peta [data-w]")) el.style.width = el.dataset.w + "%";
 }
 function legenda() {
   const kj = S.kj; if (!kj) return "";
@@ -335,7 +334,7 @@ function kartu(j, o) {
 function pilih(id, terbangKe = true) {
   const h = IDX.get(id); if (!h) return;
   S.sel = id; kartu(h.j, h.o);
-  ge("jr-pn").open = true;
+  tampilKartu(true);
   setSel(h.j, h.o);
   if (terbangKe) terbang(h.j, h.o);
   const u = new URL(location.href); u.searchParams.set("fokus", id); u.searchParams.delete("ruas"); history.replaceState(null, "", u);
@@ -343,8 +342,9 @@ function pilih(id, terbangKe = true) {
 function aturUlang() {
   S.sel = null; setSel(null, null);
   if (S.kj) { S.mode = "tegangan"; for (const b of document.querySelectorAll("#kj-mode [data-mode]")) b.setAttribute("aria-pressed", String(b.dataset.mode === "tegangan")); terapkanMode(); }
-  ge("jr-pn-isi").innerHTML = `<p class="jr-pn-t">${esc(t("jr.peta.pilih"))}</p>`;
-  peta?.fitBounds([[BAWAH[0], BAWAH[1]], [BAWAH[2], BAWAH[3]]], { padding: padPanel(), duration: 500 });
+  ge("jr-pn-isi").innerHTML = "";
+  tampilKartu(false);
+  peta?.fitBounds(kotakIndonesia(), { padding: padPeta(), duration: 500 });
   const u = new URL(location.href); u.searchParams.delete("fokus"); history.replaceState(null, "", u);
 }
 async function muatKembaran() {
@@ -386,21 +386,27 @@ async function pasangOsm() {
   for (const k of sudahMati) nyala(k, false);
 }
 function nyala(k, on) {
-  const l = LAPIS.find((x) => x.k === k);
-  for (const id of l?.lapisan || []) if (peta?.getLayer(id)) peta.setLayoutProperty(id, "visibility", on ? "visible" : "none");
-  if (k === "lintas") for (const b of document.querySelectorAll(".jr-bd")) b.hidden = !on;
+  const l = LAPIS.find((x) => x.k === k), tampil = on && hidup;
+  for (const id of l?.lapisan || []) if (peta?.getLayer(id)) peta.setLayoutProperty(id, "visibility", tampil ? "visible" : "none");
+  if (k === "lintas") for (const b of document.querySelectorAll(".jr-bd")) b.hidden = !tampil;
 }
+/** Terapkan sakelar lapis dan status tab aktif ke peta bersama. */
+function vis() {
+  for (const l of LAPIS) { const b = document.querySelector(`#jr-lapis [data-lp="${l.k}"]`); nyala(l.k, !b || b.getAttribute("aria-pressed") !== "false"); }
+  for (const m of S.tanda) m.getElement().style.display = hidup ? "" : "none";
+}
+/** Dipanggil cangkang saat tab Kembaran aktif/tidak: lapis, penanda, dan popup ikut. */
+export function aktif(on) { hidup = on; vis(); if (!on) pop?.remove(); }
 
 async function bangunPeta() {
-  const el = document.getElementById("jr-kanvas"); if (!el) return;
-  try { await muatMapLibre(); } catch { el.textContent = t("jr.peta.gagal"); return; }
-  const gaya = "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron");
-  /* peta dasar gagal dimuat (luring, diblokir): lapis jaringan tetap tampil di atas latar polos */
-  const style = await fetch(gaya).then((r) => (r.ok ? gaya : null)).catch(() => null) || { version: 8, sources: {}, glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf", layers: [{ id: "latar", type: "background", paint: { "background-color": token("--soft-hijau") } }] };
-  peta = new maplibregl.Map({ container: el, style, bounds: [[BAWAH[0], BAWAH[1]], [BAWAH[2], BAWAH[3]]], fitBoundsOptions: { padding: 20 }, minZoom: 3, maxZoom: 13, dragRotate: false, pitchWithRotate: false, attributionControl: false });
-  peta.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: "© OpenStreetMap (ODbL)" }), "bottom-right");
-  peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-left");
-  peta.once("style.load", () => { pasangGeo(fiturSkematik(D.m)); nanti(muatKembaran); });
+  const m = await petaBersama();
+  if (!m) { ge("jr-beranda").insertAdjacentHTML("afterbegin", `<p class="jr-pn-t" role="alert">${esc(t("jr.peta.gagal"))}</p>`); return; }
+  peta = m;
+  pasangPeta(() => {
+    pasangGeo(fiturSkematik(D.m));
+    if (S.mulaiKJ) { if (S.kj) pasangKJ(S.kj); else vis(); return; }
+    S.mulaiKJ = true; nanti(muatKembaran);
+  });
 }
 
 export function mulai(el) {
@@ -408,30 +414,32 @@ export function mulai(el) {
   const n = { antarpulau: (D.m.antar_pulau || []).filter((x) => x.garis).length, lintas: (D.m.lintas_negara?.negara || []).length };
   const tombol = LAPIS.map((l) => `<li><button type="button" class="pt2-leg" data-lp="${l.k}" aria-pressed="true">${ikon(l.ik, 16)}<span>${esc(t(l.lb))}</span>${l.k === "antarpulau" || l.k === "lintas" ? `<b>${esc(num(n[l.k]))}</b>` : ""}</button></li>`).join("");
   const mode = ["tegangan", "sistem", "tunggal"].map((m) => `<button type="button" class="kj-mb" data-mode="${m}" aria-pressed="${m === "tegangan"}">${esc(t("kj.peta.mode." + m))}</button>`).join("");
-  const isi = `<div class="pt2-peta jr-petawrap">
-    <div id="jr-kanvas" class="pt2-kanvas" role="application" aria-label="${esc(t("jr.peta.label"))}"></div>
-    <details class="pt2-lapis jr-lapis" id="jr-lapis" ${innerWidth >= 1280 ? "open" : ""}><summary><span>${esc(t("jr.peta.lapis"))}</span></summary>
-      <div class="pt2-lapis-isi"><ul class="pt2-leg-daftar">${tombol}</ul>
-      <p class="pt2-leg-j">${esc(t("kj.peta.mode.j"))}</p><div class="kj-mode" id="kj-mode" role="group" aria-label="${esc(t("kj.peta.mode.j"))}">${mode}</div>
-      <div id="kj-mode-info" class="kj-info"></div>
-      <button type="button" class="kj-reset" id="kj-reset">${esc(t("kj.peta.reset"))}</button>
-      <p class="pt2-attr">${esc(t("jr.peta.skematik"))}</p></div></details>
-    <details class="pt2-panel jr-panel" id="jr-pn" ${innerWidth >= 1280 ? "open" : ""}><summary><span>${esc(t("jr.peta.panel"))}</span></summary>
-      <div class="pt2-panel-isi" id="jr-pn-isi" aria-live="polite"><p class="jr-pn-t">${esc(t("jr.peta.pilih"))}</p></div></details>
-    <ul class="kj-legbar" id="kj-leg" aria-label="${esc(t("kj.peta.legenda"))}"></ul>
-  </div>`;
-  el.innerHTML = ex({ id: "jr-peta-ex", ikon: "peta", topik: t("jr.peta.ey"), judulHtml: esc(t("jr.peta.j")), subHtml: `${esc(t("kj.peta.s"))} <span id="kj-sub-tgl"></span>`, isiHtml: `${isi}${catatan("kj.peta.n")}<div id="kj-celah">${daftarCelah(D.m.meta?.celah?.slice(0, 2))}</div>`, kakiHtml: sumberBerkas(D.m) });
-  ge("jr-lapis").addEventListener("click", (e) => {
+  el.innerHTML = `<div id="jr-beranda" class="jr-ber">
+    <p class="kj-cat">${esc(t("kj.peta.s"))} <span id="kj-sub-tgl"></span></p>
+    <p class="pt2-leg-j">${esc(t("jr.peta.lapis"))}</p><div id="jr-lapis" class="jr-lapis"><ul class="pt2-leg-daftar">${tombol}</ul></div>
+    <div id="kj-mode-info" class="kj-info"></div>
+    <button type="button" class="kj-reset" id="kj-reset">${esc(t("kj.peta.reset"))}</button>
+    <p class="pt2-attr">${esc(t("jr.peta.skematik"))}</p>
+    ${catatan("kj.peta.n")}<div id="kj-celah">${daftarCelah(D.m.meta?.celah?.slice(0, 2))}</div>
+    <div class="jr-kaki-sumber">${sumberBerkas(D.m)}</div></div>
+    <div id="jr-pn" class="jr-kartu-pn" hidden><button type="button" class="jr-kembali" data-kembali>${ikon("panah-kiri", 16)}<span>${esc(t("jr.app.kembali"))}</span></button>
+      <div id="jr-pn-isi" aria-live="polite"></div></div>`;
+  bawahSlot("peta").innerHTML = `<div class="kj-mode" id="kj-mode" role="group" aria-label="${esc(t("kj.peta.mode.j"))}">${mode}</div><ul class="kj-legbar" id="kj-leg" aria-label="${esc(t("kj.peta.legenda"))}"></ul>`;
+  el.addEventListener("click", (e) => {
     const b = e.target.closest("[data-lp]"); if (b) { const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", String(on)); nyala(b.dataset.lp, on); return; }
+    const p = e.target.closest("[data-pilih]"); if (p) { pilih(p.dataset.pilih); return; }
+    if (e.target.closest("#kj-reset") || e.target.closest("[data-reset]")) aturUlang();
+    else if (e.target.closest("[data-kembali]")) tutupKartu();
+  });
+  bawahSlot("peta").addEventListener("click", (e) => {
     const m = e.target.closest("[data-mode]");
-    if (m && S.kj) { S.mode = m.dataset.mode; for (const x of ge("kj-mode").children) x.setAttribute("aria-pressed", String(x === m)); nanti(terapkanMode); return; }
-    const p = e.target.closest("[data-pilih]"); if (p) pilih(p.dataset.pilih);
-    if (e.target.closest("#kj-reset")) aturUlang();
+    if (m && S.kj) { S.mode = m.dataset.mode; for (const x of ge("kj-mode").children) x.setAttribute("aria-pressed", String(x === m)); nanti(terapkanMode); }
   });
-  ge("jr-pn-isi").addEventListener("click", (e) => {
-    const p = e.target.closest("[data-pilih]"); if (p) pilih(p.dataset.pilih); else if (e.target.closest("[data-reset]")) aturUlang();
-  });
-  if (innerWidth >= 1000) { geserPanel(ge("jr-lapis"), { kunci: "lapis" }); geserPanel(ge("jr-pn"), { kunci: "panel" }); }
   const q = new URLSearchParams(location.search).get("ruas");
   nanti(async () => { await bangunPeta(); if (q) detail(q); });
+}
+/** Kembali dari kartu objek ke beranda panel (mode warna tidak diubah). */
+function tutupKartu() {
+  S.sel = null; setSel(null, null); tampilKartu(false);
+  const u = new URL(location.href); u.searchParams.delete("fokus"); history.replaceState(null, "", u);
 }

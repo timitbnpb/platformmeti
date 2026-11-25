@@ -111,4 +111,5 @@ Belum ada rilis. Perubahan keputusan sebelum rilis: D15 (7 Nov 2026, panen 1001s
 
 | ID | Keputusan | Tanggal | Rujukan |
 | --- | --- | --- | --- |
+| D-KJ2 | Tata letak `/jaringan` pilihan A: aplikasi peta layar penuh (Kembaran, Bauran, Aliran berbagi satu peta, satu panel kiri), Ontologi/Ringkasan/Sumber/Rencana dan kebijakan sebagai halaman baca dalam halaman yang sama. | 25 Nov 2026 | `KEMBARAN-JARINGAN.md` §6b |
 | D-KJ | `/jaringan` mendapat Kembaran Jaringan (tab Kembaran, Ontologi tujuh lapis, Ringkasan jaringan) dari data publik, konsep dari Foundry IDN-GRID tanpa menyalin rupa, teks, kode, atau angka. Tanpa fitur tanya-jawab. Jalur A: angka tahunan bersumber, tanpa model per jam. | 24 Nov 2026 | `KEMBARAN-JARINGAN.md`, tiket KJ-* |

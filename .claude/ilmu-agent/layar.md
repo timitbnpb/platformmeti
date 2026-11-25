@@ -116,3 +116,4 @@ Belum ada kasus. Tambahkan lewat ilmu.mjs kasus.
 - 2026-11-08 · Rute /siaran-pers/<id> (src/siaran.js) hanya mengenal JSON statis; butir D1 dibuka lewat dialog ?buka=ref di halaman daftar. Unggah dengan progres pakai XMLHttpRequest (fetch tanpa progres).
 - 2026-11-09 · Gerbang ikon-nav menuntut ikon unik: 'linimasa' sudah dipakai /sejarah, jadi menu Roadmap memakai 'kompas'.
 - 2026-11-24 · KJ-06: objek.json op punya id ganda (107 baris, 106 id unik) dan sistem bernama 'Sistem undefined'; indeks per id menelan duplikat. Tahu: Map size vs array length.
+- 2026-11-25 · /jaringan app peta: kelas .maplibregl-map{position:relative} menimpa .x{position:absolute} (tinggi 0, kanvas hilang) - pakai selektor .induk>.kelas; jm.css 'main>div+div' menyisipkan margin-top 24px antar anak main; profil Chrome CDP tetap men-cache CSS lama: pakai user-data-dir unik per jalan. Kembaran butuh sampai ~20 dtk di swiftshader: tunggu #kj-leg terisi sebelum tangkap.

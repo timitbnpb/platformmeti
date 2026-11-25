@@ -19237,5 +19237,13 @@
  "kj.al.melebihi_c": "Melebihi puncak terbitan",
  "kj.al.jauh_c": "Jauh di bawah terbitan",
  "kj.al.jauh": "Aliran rata-rata kami jauh di bawah angka terbitan; tanda model kasar.",
- "kj.al.batas_info": "Batas {mw} MW ({jenis})"
+ "kj.al.batas_info": "Batas {mw} MW ({jenis})",
+ "jr.tab.kebijakan": "Rencana dan kebijakan",
+ "jr.sub": "Bagian rencana dan kebijakan",
+ "jr.app.peta": "Peta kembaran jaringan listrik Indonesia",
+ "jr.app.panel_tutup": "Sembunyikan panel",
+ "jr.app.panel_buka": "Tampilkan panel",
+ "jr.app.tarik": "Ubah tinggi panel",
+ "jr.app.kembali": "Kembali",
+ "jr.app.bawah": "Sakelar dan legenda peta"
 }

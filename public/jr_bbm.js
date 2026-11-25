@@ -31,14 +31,14 @@ export function pasangGaya(akar) {
 }
 
 /** Peta dasar OpenFreeMap + tema. `pasang(peta)` memasang sumber dan lapis; dipanggil ulang saat tema berganti. Mengembalikan peta atau null. */
-export async function bukaPeta(el, pasang, { pusat = [118, -2.4], zoom = 3.9 } = {}) {
+export async function bukaPeta(el, pasang, { pusat = [118, -2.4], zoom = 3.9, bounds = null, padding = 20, maksZoom = 9, kontrol = "bottom-left" } = {}) {
   try { await muatMapLibre(); } catch { return null; }
   const gaya = () => "https://tiles.openfreemap.org/styles/" + (gelap() ? "dark" : "positron");
   const polos = () => ({ version: 8, sources: {}, glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf", layers: [{ id: "latar", type: "background", paint: { "background-color": token("--soft-hijau") } }] });
   const ada = await fetch(gaya()).then((r) => r.ok).catch(() => false);
-  const peta = new maplibregl.Map({ container: el, style: ada ? gaya() : polos(), center: pusat, zoom, minZoom: 3, maxZoom: 9, dragRotate: false, pitchWithRotate: false, attributionControl: false });
+  const peta = new maplibregl.Map({ container: el, style: ada ? gaya() : polos(), ...(bounds ? { bounds, fitBoundsOptions: { padding } } : { center: pusat, zoom }), minZoom: 3, maxZoom: maksZoom, dragRotate: false, pitchWithRotate: false, attributionControl: false });
   peta.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: "© OpenStreetMap (ODbL)" }), "bottom-right");
-  peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-left");
+  peta.addControl(new maplibregl.NavigationControl({ showCompass: false }), kontrol);
   peta.on("style.load", () => pasang(peta));
   let g0 = gelap();
   new MutationObserver(() => { const g = gelap(); if (g !== g0) { g0 = g; peta.setStyle(ada ? gaya() : polos(), { diff: false }); } }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });

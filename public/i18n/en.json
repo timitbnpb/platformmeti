@@ -19237,5 +19237,13 @@
  "kj.al.melebihi_c": "Exceeds published peak",
  "kj.al.jauh_c": "Far below published",
  "kj.al.jauh": "Our average flow is far below the published figure, a sign of a crude model.",
- "kj.al.batas_info": "Limit {mw} MW ({jenis})"
+ "kj.al.batas_info": "Limit {mw} MW ({jenis})",
+ "jr.tab.kebijakan": "Plans and policy",
+ "jr.sub": "Plans and policy sections",
+ "jr.app.peta": "Map of Indonesia's electricity grid twin",
+ "jr.app.panel_tutup": "Hide panel",
+ "jr.app.panel_buka": "Show panel",
+ "jr.app.tarik": "Resize panel height",
+ "jr.app.kembali": "Back",
+ "jr.app.bawah": "Map switches and legend"
 }

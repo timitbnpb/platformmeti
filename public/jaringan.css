@@ -53,7 +53,6 @@
 .jr-org-a small{color:var(--ink2)}
 
 /* ---- peta: panel, legenda, marker bendera ---- */
-.jr-petawrap{height:max(560px,78vh)}
 .jr-lapis .pt2-leg svg{flex:none;color:var(--accent)}
 .jr-lapis .pt2-leg[aria-pressed="true"] svg{color:inherit}
 .jr-leg{display:flex;align-items:center;gap:8px;font-size:var(--t-kecil);color:var(--ink2)}
@@ -67,7 +66,56 @@
 .jr-bd img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .jr-bd:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
 .jr-bd[hidden]{display:none}
-@media (max-width:640px){.jr-petawrap{height:auto}}
 
-/* ---- tab ujung ke ujung: aturan umum jm.css (grid auto-fit) lebih spesifik daripada .rg3-tab, jadi dikunci per id ---- */
-@media (max-width:899px){#jrTab .jm-tab>button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+/* ---- sub-tab Rencana dan kebijakan: aturan umum jm.css (grid auto-fit) lebih spesifik daripada .rg3-tab, jadi dikunci per id ---- */
+@media (max-width:899px){#jrSub .jm-tab>button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+/* ---- aplikasi peta layar penuh (KEMBARAN-JARINGAN §6b): peta selebar viewport, pil tab melayang, satu panel kiri ---- */
+.jr-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.jr-app{position:relative;flex:1 0 auto;min-width:0}
+.jr-stage{position:relative;height:calc(100vh - var(--top));height:calc(100dvh - var(--top));overflow:hidden;background:var(--surface)}
+.jr-stage[hidden],.jr-baca[hidden],.jr-bw[hidden],.jr-pt[hidden],.jr-ber[hidden],.jr-kartu-pn[hidden]{display:none}
+.jr-app>.jr-stage,.jr-app>.jr-baca,.jr-app>.jr-pil{margin-top:0}
+.jr-stage>.jr-kanvas{position:absolute;inset:0}
+.jr-stage .maplibregl-ctrl-top-right{top:64px}
+.jr-pil{position:absolute;z-index:6;top:10px;left:50%;transform:translateX(-50%);max-width:calc(100% - 16px);pointer-events:none}
+.jr-app[data-mode="baca"] .jr-pil{position:sticky;top:calc(var(--top) + 8px);left:auto;transform:none;margin:12px auto 0;width:max-content}
+#jrTab.jr-pil-tab{display:flex!important;flex-flow:row nowrap!important;width:auto!important;max-width:100%;gap:4px;padding:4px;overflow-x:auto!important;border:1px solid var(--line);border-radius:var(--r-pil)!important;background:color-mix(in srgb,var(--card) 95%,transparent);box-shadow:var(--shadow-lg);pointer-events:auto;scrollbar-width:none}
+#jrTab>button{display:inline-flex;align-items:center;justify-content:center;gap:6px;flex:none;width:auto;min-width:var(--target);min-height:var(--target);padding:0 14px;border:0;border-radius:var(--r-pil);background:none;color:var(--ink2);font:600 var(--t-kecil)/1 var(--font);white-space:nowrap;cursor:pointer}
+#jrTab>button:hover{background:var(--soft-hijau);color:var(--ink)}
+#jrTab>button[aria-selected="true"]{background:var(--brand);color:var(--on-brand)}
+#jrTab>button:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jr-panel{position:absolute;z-index:4;top:64px;left:12px;bottom:12px;width:380px;display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);box-shadow:var(--shadow-lg)}
+.jr-stage[data-panel="tutup"] .jr-panel{transform:translateX(calc(-100% - 24px));visibility:hidden}
+@media (prefers-reduced-motion:no-preference){.jr-panel{transition:transform .2s ease,visibility 0s linear .2s}.jr-stage[data-panel="buka"] .jr-panel{transition:transform .2s ease}}
+.jr-pnl-kep{flex:none;padding:12px 16px 8px;border-bottom:1px solid var(--line-cell)}
+.jr-pnl-kep h2{margin:0;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.jr-pnl-isi{flex:1;min-height:0;overflow:auto;padding:12px 16px 16px;display:grid;gap:12px;align-content:start;overscroll-behavior:contain}
+.jr-pt,.jr-ber,.jr-kartu-pn{display:grid;gap:12px;min-width:0;align-content:start}
+.jr-kartu-pn>#jr-pn-isi{display:grid;gap:12px;min-width:0}
+.jr-pnl-grip{display:none;touch-action:none;place-items:center;width:100%;min-height:var(--target);border:0;background:none;cursor:grab}
+.jr-pnl-grip i{width:44px;height:5px;border-radius:3px;background:var(--line-ctl)}
+.jr-pnl-grip:focus-visible,.jr-pnl-tgl:focus-visible,.jr-kembali:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jr-pnl-tgl{position:absolute;z-index:5;top:72px;left:8px;display:grid;place-items:center;width:var(--target);height:var(--target);border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--ink);box-shadow:var(--shadow);cursor:pointer}
+.jr-pnl-tgl svg{transform:rotate(180deg)}
+.jr-stage[data-panel="buka"] .jr-pnl-tgl{left:396px}
+.jr-stage[data-panel="buka"] .jr-pnl-tgl svg{transform:none}
+.jr-kembali{display:inline-flex;align-items:center;gap:6px;justify-self:start;min-height:var(--target);padding:0 14px 0 10px;border:1px solid var(--line);border-radius:var(--r-pil);background:var(--card);color:var(--accent);font:600 var(--t-kecil)/1 var(--font);cursor:pointer}
+.jr-kembali:hover{background:var(--soft-hijau)}
+.jr-bawah{position:absolute;z-index:3;left:12px;bottom:28px;display:grid;gap:8px;max-width:min(640px,calc(100% - 24px));pointer-events:none}
+.jr-stage[data-panel="buka"] .jr-bawah{left:404px;max-width:calc(100% - 404px - 140px)}
+.jr-bw{display:grid;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r);background:color-mix(in srgb,var(--card) 95%,transparent);box-shadow:var(--shadow);pointer-events:auto}
+.jr-kaki-sumber{font-size:var(--t-label);color:var(--ink2)}
+.jr-baca{padding-top:12px}
+@media (max-width:768px){
+  .jr-panel{top:auto;left:0;right:0;bottom:0;width:auto;border-width:1px 0 0;border-radius:var(--r-lg) var(--r-lg) 0 0}
+  .jr-stage[data-panel="tutup"] .jr-panel{transform:none;visibility:visible}
+  .jr-pnl-tgl{display:none}
+  .jr-pnl-grip{display:grid}
+  .jr-pnl-kep{padding-top:0}
+  .jr-bawah{position:static;max-width:none;pointer-events:auto}
+  .jr-stage[data-panel="buka"] .jr-bawah{left:auto;max-width:none}
+  .jr-bw{box-shadow:none;background:var(--surface)}
+  #jrTab>button{padding:0 11px}
+  #jrTab>button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
