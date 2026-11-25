@@ -57,8 +57,43 @@ function jaringan(r) {
     <p class="kj-cat">${esc(t("kj.kt.rj.skenario", { skenario: r.skenario, awal: r.tahun_awal }))}</p>${kaki(r.st, r.src, r.tgl)}${cat(r.catatan)}</section>`;
 }
 
+/** Proyeksi RUPTL 2025-2034 (beban puncak, kebutuhan, penjualan; faktor beban dan pelanggan bila ada). */
+function proyeksi(p) {
+  if (!p?.tahun?.length) return "";
+  const dr = (judul, arr, sat) => (arr?.length > 1 ? deret(judul, arr.map((v, i) => ({ x: p.tahun[i], y: v })), arr.at(-1), sat) : "");
+  const a = p.skenario_ared;
+  return `<section class="kj-enb"><h4>${esc(t("kj.kt.pj.j", { dari: p.tahun[0], ke: p.tahun.at(-1) }))}</h4>
+    ${p.skenario ? `<p class="kj-cat">${esc(t("kj.kt.pj.skenario", { skenario: p.skenario, nama: p.nama_ruptl || "-" }))}</p>` : ""}
+    ${dr(t("kj.kt.pj.beban"), p.beban_puncak_mw, "MW")}${dr(t("kj.kt.pj.kebutuhan"), p.kebutuhan_gwh, "GWh")}${dr(t("kj.kt.pj.jual"), p.penjualan_gwh, "GWh")}${dr(t("kj.kt.pj.pelanggan"), p.pelanggan, "")}${dr(t("kj.kt.pj.fb"), p.faktor_beban_pct, "%")}
+    ${a ? `<p class="kj-cat">${esc(t("kj.kt.pj.ared", { a: n(a.beban_puncak_mw?.[0]), b: n(a.beban_puncak_mw?.at(-1)), nama: a.nama_ruptl || "-" }))}</p>` : ""}
+    ${kaki(p.st, p.src, p.tgl)}${cat(p.ket)}${cat(p.tabel)}</section>`;
+}
+/** Linimasa gangguan besar per sistem (deret.gangguan_per_sistem). */
+function gangguan(arr) {
+  if (!arr?.length) return "";
+  const li = arr.map((g) => `<li><b>${esc(tanggal(g.tanggal))}</b> <span>${esc(g.nama)}</span>${g.ringkas ? `<p class="kj-cat">${esc(g.ringkas)}</p>` : ""}${g.terdampak ? `<p class="kj-cat">${esc(t("kj.kt.gg.terdampak", { p: g.terdampak.pelanggan_teks || n(g.terdampak.pelanggan), mw: n(g.terdampak.beban_mw) }))}</p>` : ""}${kaki(g.st, [g.src, ...(g.src_tambahan || [])].join(","), g.tgl)}</li>`).join("");
+  return `<section class="kj-enb"><h4>${esc(t("kj.kt.gg.j"))}</h4><ol class="kj-line">${li}</ol></section>`;
+}
+/** Tabel tarif golongan dan selisih terhadap BPP nasional 2020 (peringatan dari pembanding_bpp.ket). */
+export function blokTarif(tr) {
+  if (!tr?.golongan?.length) return "";
+  const pb = tr.pembanding_bpp, b = tr.berlaku;
+  const rows = tr.golongan.map((g) => `<tr><th scope="row">${esc(g.kode)}</th><td>${esc(g.golongan)} <small>${esc(g.batas_daya || "")}</small></td><td class="kj-rk-n">${n(g.harga_rp_kwh)}</td><td class="kj-rk-n">${g.selisih_bpp_rp_kwh == null ? "-" : n(g.selisih_bpp_rp_kwh)}</td><td class="kj-rk-n">${g.selisih_bpp_persen == null ? "-" : n(g.selisih_bpp_persen) + "%"}</td></tr>`).join("");
+  return `<h4>${esc(t("kj.kt.tf.j"))}</h4><p class="kj-cat">${esc(t("kj.kt.tf.berlaku", { dari: tanggal(b?.dari), sampai: tanggal(b?.sampai) }))}</p>
+    <div class="kj-tabel" tabindex="0" role="region" aria-label="${esc(t("kj.kt.tf.j"))}"><table><thead><tr><th scope="col">${esc(t("kj.kt.tf.kode"))}</th><th scope="col">${esc(t("kj.kt.tf.gol"))}</th><th scope="col" class="kj-rk-n">Rp/kWh</th><th scope="col" class="kj-rk-n">${esc(t("kj.kt.tf.sel"))}</th><th scope="col" class="kj-rk-n">%</th></tr></thead><tbody>${rows}</tbody></table></div>
+    ${pb ? `<div class="kj-rk-peringatan" role="note"><p>${esc(pb.ket)}</p></div>${kaki(pb.st, pb.src, pb.tgl)}` : ""}${kaki(tr.st, tr.src, tr.tgl)}${cat(tr.catatan)}`;
+}
+const BAHAYA = ["banjir", "longsor", "gempabumi", "tsunami"];
+/** Kartu gardu: risiko bencana IRBI 2025 per kabupaten. f = fakta {k:"risiko", v:{...}}. */
+export function blokRisiko(f) {
+  const v = f?.v; if (!v) return "";
+  const baris = BAHAYA.map((b) => `<li><span>${esc(t("kj.kt.rs.b." + b))}</span><b>${v[b] == null ? "-" : n(v[b])}</b>${(v.tinggi || []).includes(b) ? `<span class="kj-st kj-st-est">${esc(t("kj.kt.rs.tinggi"))}</span>` : ""}</li>`).join("");
+  return `<section class="kj-enb"><h4>${esc(t("kj.kt.rs.j"))}</h4><p class="kj-cat">${esc(t("kj.kt.rs.kab", { kab: v.kab || "-" }))}</p>
+    <div class="kj-angs kj-angs-1">${ubin(esc(v.total_resmi || "-"), "", t("kj.kt.rs.total"))}</div><ul class="kj-mini">${baris}</ul>${kaki(f.st, f.src, f.tgl)}<p class="kj-cat">${esc(t("kj.kt.rs.cat"))}</p></section>`;
+}
+
 /** Kartu sistem: BPP 2020 dan rencana EBT RUPTL. */
-export function blokSistem(ks, { agregat = null, wilayah = "" } = {}) {
+export function blokSistem(ks, { agregat = null, wilayah = "", gg = null } = {}) {
   if (!ks) return "";
   const bagian = ks.provinsi_bagian?.daftar?.length ? `<section class="kj-enb">${ks.provinsi_bagian.daftar.map((x) => `<p class="kj-cat">${esc(t("kj.kt.bagian", { prov: x.nama, n: num(x.gardu), dari: num(x.dari) }))}</p>`).join("")}${cat(ks.provinsi_bagian.catatan)}</section>` : "";
   const wil = wilayah ? `<p class="kj-cat">${esc(t("kj.kt.wilayah", { w: wilayah }))}</p>` : "";
@@ -69,7 +104,7 @@ export function blokSistem(ks, { agregat = null, wilayah = "" } = {}) {
     ${deret(t("kj.kt.bpp.deret"), Object.entries(b.per_tahun || {}).map(([y, o]) => ({ x: +y, y: (o.min + o.maks) / 2 })), (b.rp_kwh_min + b.rp_kwh_maks) / 2, "Rp/kWh")}
     ${b.dikeluarkan?.length ? `<p class="kj-cat">${esc(t("kj.kt.bpp.keluar"))}</p><ul class="kj-mini">${b.dikeluarkan.map((x) => `<li><span>${esc(x.nama)}</span><b>${n(x.rp_kwh, 0)} Rp/kWh</b></li><li class="kj-cat">${esc(x.alasan)}</li>`).join("")}</ul>` : ""}
     ${kaki(b.st, b.src, b.tgl, b.ragu ? `<span class="kj-st kj-st-est">${esc(t("kj.kt.ragu"))}</span>` : "")}${cat(b.catatan)}</section>` : "";
-  return wil + bagian + bpp + jaringan(ks.ruptl_jaringan) + agr + ebt(ks.ruptl_ebt);
+  return wil + bagian + bpp + proyeksi(ks.proyeksi) + jaringan(ks.ruptl_jaringan) + agr + ebt(ks.ruptl_ebt) + gangguan(gg);
 }
 
 /** Kartu provinsi: penduduk, kWh per kapita, elektrifikasi, potensi EBT, keandalan, deret MVA, rencana EBT; jual = sertakan deret penjualan. */
@@ -85,5 +120,5 @@ export function blokProvinsi(kp, { jual = false, patah = "" } = {}) {
   const ke = kp.keandalan_deret || [], mv = kp.deret_total_mva || [], jl = jual ? kp.penjualan_gwh || [] : [];
   const kea = ke.length ? `<section class="kj-enb"><h4>${esc(t("kj.kt.ke.j"))}</h4>${deret("SAIDI", pt(ke, "saidi"), ke.at(-1).saidi, t("kj.kt.ke.jam"))}${deret("SAIFI", pt(ke, "saifi"), ke.at(-1).saifi, t("kj.kt.ke.kali"))}${kaki(ke.at(-1).st, ke.at(-1).src, ke.at(-1).tgl)}<p class="kj-cat">${esc(t("kj.kt.ke.unit", { unit: ke.at(-1).unit }))}</p>${adaPatah(ke) ? cat(patah || t("kj.kt.ke.patah")) : ""}</section>` : "";
   const der = mv.length || jl.length ? `<section class="kj-enb">${mv.length ? `<h4>${esc(t("kj.kt.mva.j"))}</h4>${deret(t("kj.kt.mva.j"), mv.map((x) => ({ x: x.tahun, y: x.total_mva })), mv.at(-1).total_mva, "MVA")}${kaki(mv.at(-1).st, mv.at(-1).src, mv.at(-1).tgl)}` : ""}${jl.length ? `<h4>${esc(t("kj.peta.jual.j"))}</h4>${deret(t("kj.peta.jual.j"), pt(jl, "gwh"), jl.at(-1).gwh, "GWh")}${kaki(jl.at(-1).st, jl.at(-1).src, jl.at(-1).tgl)}` : ""}</section>` : "";
-  return demo + elek + pot + kea + der + jaringan(kp.ruptl_jaringan) + ebt(kp.ruptl_ebt);
+  return demo + elek + pot + kea + der + proyeksi(kp.proyeksi) + jaringan(kp.ruptl_jaringan) + ebt(kp.ruptl_ebt);
 }

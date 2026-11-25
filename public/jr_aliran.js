@@ -1,9 +1,9 @@
 /* /jaringan?tab=aliran (KJ-13): aliran listrik TAHUNAN antarprovinsi (neraca provinsi + panah + batas), semua berstatus Dihitung.
    Data: /data/kembaran/energi.json + /geo/provinsi.json. Kontrak: KEMBARAN-JARINGAN.md §4 butir 9, §6 butir 5.
    INP: sakelar Neraca/Karbon dan pilihan provinsi/sistem memakai setPaintProperty/setFilter; peta tidak dibangun ulang. */
-import { t, esc, num, token, ikon, kosongTab, sumberBerkas } from "/jr_umum.js";
+import { t, esc, num, token, ikon, kosongTab } from "/jr_umum.js";
 import { tanggal } from "/i18n.js";
-import { muatKJ, chipSt, chipSrc, kakiFakta } from "/jr_kj.js";
+import { muatKJ, chipSt, chipSrc, kakiFakta, muatSumber, kakiSumber } from "/jr_kj.js";
 import { nanti } from "/inti/umum.js";
 import { SKALA, rampIntensitas, pasangGaya } from "/jr_bbm.js";
 import { blokProvinsi } from "/jr_kartu.js";
@@ -206,7 +206,7 @@ export async function mulai(el) {
   akar = el;
   const E = await muatKJ("energi");
   if (!E?.neraca?.length || !E.batas) { el.innerHTML = kosongTab("kj.al.kosong"); return; }
-  S.E = E;
+  S.E = E; await muatSumber();
   for (const k of E.kartu_provinsi || []) S.nama.set(k.kode, k.nama);
   for (const n of E.neraca) S.nama.set(n.kode, n.nama);
   const tahun = E.meta?.tahun_data;
@@ -219,7 +219,7 @@ export async function mulai(el) {
     <div id="ka-detail" class="jr-ber" hidden><button type="button" class="jr-kembali" data-kembali>${ikon("panah-kiri", 16)}<span>${esc(t("jr.app.kembali"))}</span></button>
       <section class="kje-blok" id="ka-rinci" aria-live="polite">${rincian()}</section></div>
     <section class="kje-blok" id="ka-cek">${cek()}</section>
-    <p class="kj-cat">${esc(t("kj.al.catatan", { susut: num(E.meta?.susut_nasional_persen, 2) }))}</p><div class="jr-kaki-sumber">${sumberBerkas(E.meta)}</div>`;
+    <p class="kj-cat">${esc(t("kj.al.catatan", { susut: num(E.meta?.susut_nasional_persen, 2) }))}</p><div class="jr-kaki-sumber">${kakiSumber(E.meta)}</div>`;
   pasangGaya(el);
   const klik = (e) => {
     const m = e.target.closest("[data-mode]"); if (m) { ganti(m.dataset.mode); return; }

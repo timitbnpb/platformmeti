@@ -250,6 +250,9 @@
   "scripts/panen/atlas_unduh.py": "unduh PVOUT Global Solar Atlas (lewat HTTP Range, hanya satu berkas dari zip 349 MB) dan angin 100 m Global Wind Atlas ke mentah di luar repo; manual untuk kembaran jaringan",
   "scripts/panen/atlas_sampel.mjs": "sampel surya/angin di gardu dan provinsi dari mentah atlas (gdallocationinfo), keluaran data/kembaran/atlas.json; manual untuk kembaran jaringan",
   "scripts/panen/ruptl_jaringan.py": "ekstrak rencana transmisi (kms) dan gardu induk (MVA) per provinsi dari Lampiran A-C RUPTL 2025-2034 (pdftotext; PDF di luar repo) ke data/kembaran/ruptl_jaringan.json; manual untuk kembaran jaringan",
+  "scripts/panen/ruptl_beban.py": "ekstrak proyeksi kebutuhan energi, produksi, dan beban puncak per wilayah, sistem (neraca daya), dan provinsi dari RUPTL 2025-2034 (pdftotext; PDF di luar repo) ke data/kembaran/ruptl_beban.json; manual untuk kembaran jaringan",
+  "scripts/panen/gangguan_kurasi.py": "kurasi peristiwa gangguan listrik besar 2019-2026 dari siaran pers PLN/ESDM (dibaca manual dari cache di luar repo) ke data/kembaran/gangguan.json; manual untuk kembaran jaringan",
+  "scripts/panen/tarif_kurasi.py": "kurasi tarif tenaga listrik PLN per golongan Triwulan IV 2026 dari dokumen pindai PLN (dibaca dari gambar, di luar repo) ke data/kembaran/tarif.json; manual untuk kembaran jaringan",
   "scripts/panen/geonames_kota.mjs": "saring GeoNames ID.zip (CC BY 4.0) jadi daftar kota kecil data/kembaran/geonames_kota.json untuk nama sistem; manual untuk kembaran jaringan",
   "scripts/panen/penduduk_provinsi.mjs": "penduduk provinsi dari kelistrikan.json (sumber sementara, via pihak ketiga) ke data/kembaran/pelengkap.json; manual untuk kembaran jaringan",
   "scripts/pipa/graf_jaringan.mjs": "bangun kembaran jaringan dari mentah OSM di luar repo (argumen dirMentah dan tanggal); manual setelah panen, tidak ikut bot"

@@ -1,0 +1,530 @@
+{
+ "meta": {
+  "judul": "Peristiwa gangguan listrik besar 2019-2026 untuk Kembaran Jaringan",
+  "dibuat_oleh": "scripts/panen/gangguan_kurasi.py",
+  "tanggal_baca": "2026-11-25",
+  "tingkat_bukti": "sumber",
+  "aturan": [
+   "Tiap baris punya src (id di sumber[]) dan st=sumber; angka hanya yang tertulis; tak tertulis = null.",
+   "jenis_sumber media/ensiklopedia dipakai hanya bila sumber resmi tak ditemukan.",
+   "provinsi = kode public/data/wilayah.json."
+  ],
+  "skema": {
+   "sumber[]": "{id, jenis(siaran-pers|berita|ensiklopedia), jenis_sumber(resmi|media|ensiklopedia), judul, penerbit, url, tanggal_terbit, tanggal_baca, lisensi, catatan}",
+   "peristiwa[]": "{id, tanggal(ISO), tanggal_arti(kejadian|pulih), nama, sistem, provinsi[kode], provinsi_media?{kode[],src,catatan}, mulai, pulih, durasi_tertulis, terdampak{pelanggan|pelanggan_teks|beban_mw|...}, penyebab_tertulis, ringkas, catatan, src, src_tambahan[], st}"
+  },
+  "celah": [
+   "Cakupan 2018-2022: tidak ada sumber resmi yang bisa dibuka. Cache siaran pers PLN (webapi) hanya mulai 2023; arsip berita ESDM yang dijangkau pencarian situs mulai September 2024; pencarian situs ESDM dan mesin pencari memblokir klien otomatis. Satu-satunya peristiwa pra-2023 (Jawa-Bali 4 Agustus 2019) memakai media (CNN Indonesia, Okezone), ditandai jenis_sumber=media.",
+   "Padam lokal harian (penyulang, gardu distribusi) dan gangguan tanpa padam konsumen (mis. kebakaran PLTU Labuhan Angin 8 Mei 2025: ESDM menyatakan tak berdampak pada konsumen, cadangan berkurang 70 MW) tidak dimasukkan.",
+   "Durasi hanya ditulis bila tertulis di sumber; peristiwa tanpa jam mulai/akhir tertulis memakai null.",
+   "Jawa-Bali 2019: jam mulai (sekitar 11.50 WIB menurut Wikipedia), durasi, dan penyebab final investigasi tidak ada di dua sumber media yang dibuka.",
+   "Sumatera 22 Mei 2026: penyebab final investigasi (ESDM menyebut inspektur diturunkan) dan jumlah pemulihan akhir belum ada di sumber yang dibuka; PLN siaran pers tentang peristiwa ini tidak ditemukan di cache (berakhir 8 Mei 2026)."
+  ],
+  "jumlah_peristiwa": 10,
+  "rentang_tahun": [
+   2019,
+   2026
+  ]
+ },
+ "sumber": [
+  {
+   "id": "ESDM-PR-2026-033",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "Kementerian ESDM Minta PLN Percepat Pemulihan Gangguan Sistem Kelistrikan Sumatera",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/kementerian-esdm-minta-pln-percepat-pemulihan-gangguan-sistem-kelistrikan-sumatera",
+   "tanggal_terbit": "2026-05-23",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "publikasi pemerintah (Kementerian ESDM); hanya fakta dan angka dikutip; atribusi penerbit",
+   "catatan": "Siaran Pers Nomor 033.Pers/04/SJI/2026, tanggal 23 Mei 2026 (Sabtu)."
+  },
+  {
+   "id": "ESDM-BRT-2025-05-04",
+   "jenis": "berita",
+   "jenis_sumber": "resmi",
+   "judul": "Kementerian ESDM Lakukan Investigasi Penyebab Pemadaman di Bali",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/kementerian-esdm-lakukan-investigasi-penyebab-pemadaman-di-bali",
+   "tanggal_terbit": "2025-05-04",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "publikasi pemerintah (Kementerian ESDM); hanya fakta dan angka dikutip; atribusi penerbit",
+   "catatan": "Berita tanpa nomor siaran pers; pernyataan Dirjen Ketenagalistrikan Sabtu 3 Mei 2025."
+  },
+  {
+   "id": "ESDM-BRT-2025-11-28",
+   "jenis": "berita",
+   "jenis_sumber": "resmi",
+   "judul": "Kementerian ESDM Gerak Cepat Pulihkan Pasokan Listrik dan BBM untuk Bencana Sumatera",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/kementerian-esdm-gerak-cepat-pulihkan-pasokan-listrik-dan-bbm-untuk-bencana-sumatera",
+   "tanggal_terbit": "2025-11-28",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "publikasi pemerintah (Kementerian ESDM); hanya fakta dan angka dikutip; atribusi penerbit",
+   "catatan": ""
+  },
+  {
+   "id": "ESDM-BRT-2025-12-08",
+   "jenis": "berita",
+   "jenis_sumber": "resmi",
+   "judul": "Listrik Aceh Berangsur Pulih, Sumut dan Sumbar 100% Menyala",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/listrik-aceh-berangsur-pulih-sumut-dan-sumbar-100-menyala",
+   "tanggal_terbit": "2025-12-08",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "publikasi pemerintah (Kementerian ESDM); hanya fakta dan angka dikutip; atribusi penerbit",
+   "catatan": ""
+  },
+  {
+   "id": "ESDM-BRT-2025-12-14",
+   "jenis": "berita",
+   "jenis_sumber": "resmi",
+   "judul": "Atasi Medan Lumpur 1,5 Meter, Lebih dari 700 Ribu Pelanggan di Aceh Kembali Nikmati Listrik",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/atasi-medan-lumpur-15-meter-lebih-dari-700-ribu-pelanggan-di-aceh-kembali-nikmati-listrik",
+   "tanggal_terbit": "2025-12-14",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "publikasi pemerintah (Kementerian ESDM); hanya fakta dan angka dikutip; atribusi penerbit",
+   "catatan": ""
+  },
+  {
+   "id": "PLN-PR-2025-086",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "PLN Berhasil Pulihkan 100% Kelistrikan Bali, Seluruh Pelanggan Kembali Menyala",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/pln-berhasil-pulihkan-100-kelistrikan-bali-seluruh-pelanggan-kembali-menyala",
+   "tanggal_terbit": "2025-05-03",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "PLN-PR-2025-181",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "PLN Pulihkan Listrik Pascabencana, Warga Bali Kembali Beraktivitas",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/pln-pulihkan-listrik-bali-pascabencana",
+   "tanggal_terbit": "2025-09-13",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "PLN-PR-2025-294",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "Gubernur Sumbar Apresiasi Kerja PLN Pulihkan Listrik Pascabencana",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/pln-pemulihan-kelistrikan-sumbar-pascabencana",
+   "tanggal_terbit": "2025-12-02",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "PLN-PR-2025-300",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "Listrik Sumut Hampir Pulih Sepenuhnya, PLN All Out Hidupkan Kembali Listrik Sibolga dan Tapanuli Tengah",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/pemulihan-listrik-sumatra-utara-pln-percepat-penormalan-sibolga-tapteng",
+   "tanggal_terbit": "2025-12-05",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "PLN-PR-2025-301",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "Agam Kembali Menyala, Sistem Kelistrikan Sumbar Pulih 100% Pascabencana",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/pemulihan-kelistrikan-sumbar-100-persen-pln-pulihkan-listrik-agam",
+   "tanggal_terbit": "2025-12-06",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "PLN-PR-2025-304",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "PLN Nyalakan Kembali Empat Wilayah Terberat Pascabencana Banjir, Sistem Kelistrikan Aceh Pulih 93 Persen",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/pemulihan-kelistrikan-aceh-pln-nyalakan-empat-wilayah-terberat",
+   "tanggal_terbit": "2025-12-08",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "PLN-PR-2025-315",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "Sistem Kelistrikan Aceh Pulih, Seluruh Gardu Induk Beroperasi Normal, Kini PLN Lanjutkan Pemulihan Distribusi Hingga ke Masyarakat",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/sistem-kelistrikan-aceh-pulih-pln-gardu-induk-normal",
+   "tanggal_terbit": "2025-12-20",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "PLN-PR-2023-262",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "PLN Gerak Cepat, Kelistrikan Sumbar Kembali Pulih Kurang dari 2 Jam Pascagempa Mentawai",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/pln-gerak-cepat-kelistrikan-sumbar-kembali-pulih-kurang-dari-2-jam-pascagempa-mentawai",
+   "tanggal_terbit": "2023-04-25",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "PLN-PR-2023-370",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "Pascagempa Bantul, PLN Pulihkan Sistem Kelistrikan dan Bantu Warga Terdampak",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/pascagempa-bantul-pln-pulihkan-sistem-kelistrikan-dan-bantu-warga-terdampak",
+   "tanggal_terbit": "2023-07-03",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "PLN-PR-2024-476",
+   "jenis": "siaran-pers",
+   "jenis_sumber": "resmi",
+   "judul": "Bertahap, PLN Berhasil Pulihkan Kelistrikan Pascacuaca Ekstrem di Beberapa Wilayah Jawa Barat",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/bertahap-pln-berhasil-pulihkan-kelistrikan-pascacuaca-ekstrem-di-beberapa-wilayah-jawa-barat",
+   "tanggal_terbit": "2024-12-07",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Isi dibaca lewat webapi pln.co.id (kategori Press Release); nomor siaran pers dari teks."
+  },
+  {
+   "id": "MEDIA-CNN-2019-08-04",
+   "jenis": "berita",
+   "jenis_sumber": "media",
+   "judul": "PLN Ralat Penyebab Listrik Padam di Jakarta dan Sekitarnya",
+   "penerbit": "CNN Indonesia",
+   "url": "https://m.cnnindonesia.com/nasional/20190804133829-20-418196/pln-ralat-penyebab-listrik-padam-di-jakarta-dan-sekitarnya",
+   "tanggal_terbit": "2019-08-04",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta penerbit media; hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi penerbit",
+   "catatan": "Memuat pernyataan tertulis PLN (EVP Corporate Communication dan CSR). Sumber resmi PLN/ESDM 2019 tidak ditemukan dari lingkungan ini."
+  },
+  {
+   "id": "MEDIA-OKEZONE-2019-08-05",
+   "jenis": "berita",
+   "jenis_sumber": "media",
+   "judul": "PLN: 21,3 Juta Pelanggan Terdampak Pemadaman Listrik Serentak",
+   "penerbit": "Okezone",
+   "url": "https://economy.okezone.com/read/2019/08/05/320/2087791/pln-21-3-juta-pelanggan-terdampak-pemadaman-listrik-serentak",
+   "tanggal_terbit": "2019-08-05",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta penerbit media; hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi penerbit",
+   "catatan": "Kutipan Direktur Pengadaan Strategis 2 PLN. Teks menulis \"Senin (5/9/2019)\" (salah ketik; URL dan isi menunjuk 5 Agustus 2019)."
+  },
+  {
+   "id": "WIKI-ID-MATI-LISTRIK-SUMATRA-2026",
+   "jenis": "ensiklopedia",
+   "jenis_sumber": "ensiklopedia",
+   "judul": "Mati listrik Sumatra 2026",
+   "penerbit": "Wikipedia bahasa Indonesia",
+   "url": "https://id.wikipedia.org/wiki/Mati_listrik_Sumatra_2026",
+   "tanggal_terbit": null,
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "CC BY-SA 4.0 (Wikipedia bahasa Indonesia); hanya fakta dikutip; atribusi Wikipedia",
+   "catatan": "Sumber sekunder; dipakai hanya untuk jam mulai dan daftar provinsi yang tak ditulis siaran pers ESDM. Rujukannya media (Kompas, Tempo, Detik, CNN Indonesia); tidak dibuka satu per satu."
+  }
+ ],
+ "peristiwa": [
+  {
+   "id": "GG-2019-08-jawa-bali",
+   "tanggal": "2019-08-04",
+   "tanggal_arti": "kejadian",
+   "nama": "Padam meluas Jawa-Bali, gangguan transmisi 500 kV Ungaran-Pemalang",
+   "sistem": "Jawa-Bali",
+   "provinsi": [
+    "31",
+    "32",
+    "36",
+    "33"
+   ],
+   "mulai": null,
+   "pulih": null,
+   "durasi_tertulis": null,
+   "terdampak": {
+    "pelanggan": 21300000,
+    "pelanggan_teks": "21,3 juta pelanggan atau 30% dari total pelanggan PLN (71 juta)"
+   },
+   "penyebab_tertulis": "Gangguan sisi transmisi Ungaran dan Pemalang 500 kV; transfer energi timur ke barat gagal sehingga seluruh pembangkit di Jawa tengah dan barat trip. Penjelasan awal PLN (gangguan gas turbin 1-6 Suralaya dan PLTG Cilegon) diralat.",
+   "ringkas": "Padam di Jabodetabek, sebagian Jawa Barat, Banten, dan sebagian Jawa Tengah (kota Jawa Barat disebut: Bandung, Bekasi, Cianjur, Cimahi, Cirebon, Garut, Karawang, Purwakarta, Majalaya, Sumedang, Tasikmalaya, Depok, Gunung Putri, Sukabumi, Bogor).",
+   "catatan": "Provinsi dari frasa CNN (Jakarta, sebagian Jawa Barat, Banten, sebagian Jawa Tengah); wilayah lain (mis. DIY, Jawa Timur) hanya disebut media lain dan tidak dimasukkan. Jam mulai dan durasi tidak tertulis di dua sumber ini. Sumber resmi PLN/ESDM 2019 tidak ditemukan dari lingkungan ini (cache siaran pers PLN mulai 2023).",
+   "src": "MEDIA-CNN-2019-08-04",
+   "src_tambahan": [
+    "MEDIA-OKEZONE-2019-08-05"
+   ],
+   "st": "sumber"
+  },
+  {
+   "id": "GG-2023-04-mentawai-gempa",
+   "tanggal": "2023-04-25",
+   "tanggal_arti": "kejadian",
+   "nama": "Padam akibat gempa M7,3 Kepulauan Mentawai",
+   "sistem": "Sumatera",
+   "provinsi": [
+    "13",
+    "12"
+   ],
+   "mulai": "25 Apr 2023 03.00 WIB (waktu gempa)",
+   "pulih": "Sumbar 100% pukul 04.52 WIB; Sumut 100% pukul 08.50 WIB (25 Apr 2023)",
+   "durasi_tertulis": "Sumbar kurang dari 2 jam",
+   "terdampak": {
+    "pelanggan": 89158
+   },
+   "penyebab_tertulis": "Gempa bermagnitudo 7,3 SR di Kepulauan Mentawai dan sekitarnya.",
+   "ringkas": "89.158 pelanggan terdampak gempa; kelistrikan Sumatera Barat pulih 100% pukul 04.52 WIB, Sumatera Utara 100% pukul 08.50 WIB.",
+   "catatan": "Rilis tidak merinci jumlah pelanggan per provinsi.",
+   "src": "PLN-PR-2023-262",
+   "src_tambahan": [],
+   "st": "sumber"
+  },
+  {
+   "id": "GG-2023-06-bantul-gempa",
+   "tanggal": "2023-06-30",
+   "tanggal_arti": "kejadian",
+   "nama": "Padam akibat gempa M6,6 Bantul",
+   "sistem": "Jawa-Bali",
+   "provinsi": [
+    "34",
+    "33",
+    "35"
+   ],
+   "mulai": null,
+   "pulih": "Sabtu 1 Jul 2023 pukul 03.40 WIB",
+   "durasi_tertulis": "kurang dari 8 jam",
+   "terdampak": {
+    "pelanggan_teks": "lebih dari 34 ribu pelanggan",
+    "pelanggan_min": 34000
+   },
+   "penyebab_tertulis": "Gempa bermagnitudo 6,6 SR, episentrum Bantul, Jumat 30 Jun 2023.",
+   "ringkas": "Aliran listrik lebih dari 34 ribu pelanggan di pantai selatan Jawa Tengah, DIY, dan Jawa Timur menyala kembali dalam kurang dari 8 jam.",
+   "catatan": "Kode 34 = DI Yogyakarta, 33 = Jawa Tengah, 35 = Jawa Timur (wilayah.json). Jam mulai padam tidak tertulis.",
+   "src": "PLN-PR-2023-370",
+   "src_tambahan": [],
+   "st": "sumber"
+  },
+  {
+   "id": "GG-2024-12-jabar-cuaca-ekstrem",
+   "tanggal": "2024-12-04",
+   "tanggal_arti": "kejadian",
+   "nama": "Padam akibat cuaca ekstrem di Jawa Barat (Sukabumi dan sekitarnya)",
+   "sistem": "Jawa-Bali",
+   "provinsi": [
+    "32"
+   ],
+   "mulai": null,
+   "pulih": "per 7 Des 2024: 705 gardu (lebih dari 60%) dioperasikan kembali; pemulihan bertahap berlanjut",
+   "durasi_tertulis": null,
+   "terdampak": {
+    "gardu_padam": 1147,
+    "gardu_pulih_per_rilis": 705,
+    "pelanggan_teks": "sekitar 67 ribu pelanggan terdampak",
+    "pelanggan_min": 67000
+   },
+   "penyebab_tertulis": "Cuaca ekstrem (banjir) pada Rabu 4 Des 2024.",
+   "ringkas": "1.147 gardu padam; per 7 Des 2024 lebih dari 60% gardu dioperasikan kembali untuk mengaliri sekitar 67 ribu pelanggan terdampak.",
+   "catatan": "Kalimat rilis menggabungkan \"lebih dari 60 persen gardu\" dan \"sekitar 67 ribu pelanggan terdampak\"; tidak jelas apakah 67 ribu itu seluruh terdampak atau yang sudah dialiri. Disalin apa adanya.",
+   "src": "PLN-PR-2024-476",
+   "src_tambahan": [],
+   "st": "sumber"
+  },
+  {
+   "id": "GG-2025-05-bali-kabel-laut",
+   "tanggal": "2025-05-02",
+   "tanggal_arti": "kejadian",
+   "nama": "Padam seluruh Bali, indikasi gangguan kabel laut tegangan tinggi",
+   "sistem": "Bali",
+   "provinsi": [
+    "51"
+   ],
+   "mulai": "Jumat 2 Mei 2025 pukul 16.02 WITA (ESDM; PLN menulis sekitar 16.00 WITA)",
+   "pulih": "Sabtu 3 Mei 2025 pukul 03.30 WITA, seluruh pelanggan 100%",
+   "durasi_tertulis": "kurang dari 12 jam (PLN); transmisi dipulihkan dalam 35 menit (ESDM)",
+   "terdampak": {
+    "wilayah": "seluruh Bali",
+    "pelanggan": null,
+    "daya_gardu_induk_normal_mw": 747
+   },
+   "penyebab_tertulis": "Disinyalir gangguan pada Saluran Kabel Laut Tegangan Tinggi (SKLT) yang memutus aliran dari pembangkit; penyebab pasti masih diinvestigasi; PLN: bukan akibat serangan siber.",
+   "ringkas": "Padam meluas di seluruh Bali; transmisi pulih 35 menit, seluruh pelanggan pulih sebelum 12 jam; ESDM menurunkan Inspektur Ketenagalistrikan.",
+   "catatan": "747 MW ditulis ESDM sebagai \"total daya\" gardu induk yang telah beroperasi normal, bukan jumlah beban terdampak. Jumlah pelanggan tidak tertulis. Sudah ada juga di terbitan.json (PE-2025-02-bali-padam-kabel-laut).",
+   "src": "ESDM-BRT-2025-05-04",
+   "src_tambahan": [
+    "PLN-PR-2025-086"
+   ],
+   "st": "sumber"
+  },
+  {
+   "id": "GG-2025-09-bali-banjir",
+   "tanggal": "2025-09-11",
+   "tanggal_arti": "pulih",
+   "nama": "Padam sejumlah wilayah Bali akibat banjir dan longsor",
+   "sistem": "Bali",
+   "provinsi": [
+    "51"
+   ],
+   "mulai": null,
+   "pulih": "Kamis 11 Sep 2025 pukul 19.45 WITA, penormalan selesai",
+   "durasi_tertulis": null,
+   "terdampak": {
+    "pelanggan_teks": "lebih dari 90 ribu pelanggan",
+    "pelanggan_min": 90000
+   },
+   "penyebab_tertulis": "Banjir dan longsor; aliran dihentikan sementara di sejumlah titik demi keselamatan pelanggan dan aset, lalu dinormalkan bertahap.",
+   "ringkas": "Lebih dari 90 ribu pelanggan terdampak; fasilitas vital (rumah sakit, bandara, layanan publik) tetap dipasok.",
+   "catatan": "Tanggal = penyelesaian penormalan; tanggal mulai padam tidak tertulis di rilis.",
+   "src": "PLN-PR-2025-181",
+   "src_tambahan": [],
+   "st": "sumber"
+  },
+  {
+   "id": "GG-2025-11-aceh-banjir",
+   "tanggal": "2025-11-27",
+   "tanggal_arti": "kejadian",
+   "nama": "Padam Aceh akibat banjir bandang dan longsor; transmisi 150 kV rusak",
+   "sistem": "Sumatera",
+   "provinsi": [
+    "11"
+   ],
+   "mulai": null,
+   "pulih": "per 8 Des 2025: PLN 93% (lebih dari 1,7 juta masyarakat menyala); 20 gardu induk beroperasi dan sistem utama pulih 20 Des 2025",
+   "durasi_tertulis": null,
+   "terdampak": {
+    "pelanggan_terdampak_8des": 1520365,
+    "pelanggan_menyala_8des": 1140931,
+    "beban_terdampak_mw": 374.83,
+    "beban_menyala_mw": 263.69,
+    "penyulang_terdampak": 324,
+    "penyulang_menyala": 201,
+    "gardu_distribusi_terdampak": 14919,
+    "gardu_distribusi_normal": 11445,
+    "pelanggan_terdampak_14des": 970954,
+    "pelanggan_menyala_14des": 776875,
+    "desa_belum_berlistrik_14des": 562
+   },
+   "penyebab_tertulis": "Banjir dan longsor; tower SUTT 150 kV roboh (mis. Tower 340 Sigli-Bireuen, diganti tower darurat); PLTU Nagan Raya dan jalur Nagan-Sigli jadi kunci pemulihan.",
+   "ringkas": "Pemulihan Aceh bertahap dari 8 Des (1.140.931 dari 1.520.365 pelanggan) hingga 20 Des (20 GI normal).",
+   "catatan": "Angka dasar pelanggan terdampak berbeda antar rilis (1.520.365 pada 8 Des; 970.954 pada 14 Des) dan tidak direkonsiliasi di sumber; disalin apa adanya dengan tanggalnya. PLN 8 Des menyebut \"1,7 juta masyarakat\" (bukan pelanggan). Tanggal: lihat catatan GG-2025-11-sumbar-banjir. Peristiwa transmisinya (12 tower roboh) ada di terbitan.json.",
+   "src": "ESDM-BRT-2025-12-08",
+   "src_tambahan": [
+    "PLN-PR-2025-304",
+    "PLN-PR-2025-315",
+    "ESDM-BRT-2025-12-14"
+   ],
+   "st": "sumber"
+  },
+  {
+   "id": "GG-2025-11-sumbar-banjir",
+   "tanggal": "2025-11-27",
+   "tanggal_arti": "kejadian",
+   "nama": "Padam Sumatera Barat akibat banjir dan longsor (bencana Sumatera akhir November 2025)",
+   "sistem": "Sumatera",
+   "provinsi": [
+    "13"
+   ],
+   "mulai": null,
+   "pulih": "per 2 Des 2025: 99,8% menyala (268.853 dari 270.148); 100% setelah Agam menyala Jumat 5 Des 2025 pukul 17.53 WIB",
+   "durasi_tertulis": null,
+   "terdampak": {
+    "pelanggan": 270148,
+    "pelanggan_pulih_2des": 268853,
+    "pelanggan_tersisa_2des": 1295
+   },
+   "penyebab_tertulis": "Banjir dan tanah longsor (bencana hidrometeorologi).",
+   "ringkas": "270.148 pelanggan sempat padam; pulih 100% pada 5 Des 2025.",
+   "catatan": "Tanggal 2025-11-27 = \"semalam\" dalam pernyataan Menteri ESDM Jumat 28 Nov 2025 (\"Semalam listrik sempat mati\", tanpa menyebut provinsi); bukan tanggal tertulis per provinsi. Tiga baris bencana ini berbagi sebab yang sama.",
+   "src": "PLN-PR-2025-294",
+   "src_tambahan": [
+    "PLN-PR-2025-301",
+    "ESDM-BRT-2025-11-28",
+    "ESDM-BRT-2025-12-08"
+   ],
+   "st": "sumber"
+  },
+  {
+   "id": "GG-2025-11-sumut-banjir",
+   "tanggal": "2025-11-27",
+   "tanggal_arti": "kejadian",
+   "nama": "Padam Sumatera Utara akibat banjir dan longsor (Sibolga, Tapanuli Tengah)",
+   "sistem": "Sumatera",
+   "provinsi": [
+    "12"
+   ],
+   "mulai": null,
+   "pulih": "per 5 Des 2025: 98,61%; 100% Minggu 7 Des 2025 malam (ESDM)",
+   "durasi_tertulis": null,
+   "terdampak": {
+    "pelanggan_sibolga_tapteng_dinyalakan_5des_min": 92000,
+    "pelanggan_teks": "lebih dari 92 ribu pelanggan di Sibolga dan Tapanuli Tengah dinyalakan kembali (5 Des)",
+    "tiang_diganti": 900
+   },
+   "penyebab_tertulis": "Banjir dan longsor; alat berat tak bisa dioperasikan karena risiko longsor, material diangkut manual.",
+   "ringkas": "Pemulihan Sumut 98,61% pada 5 Des 2025; 900 tiang listrik di Sibolga dan Tapteng diganti; seluruh sistem normal 7 Des malam.",
+   "catatan": "Total pelanggan terdampak Sumut tidak tertulis; 92 ribu adalah pelanggan Sibolga dan Tapteng yang dinyalakan, bukan total provinsi. Tanggal: lihat catatan GG-2025-11-sumbar-banjir.",
+   "src": "PLN-PR-2025-300",
+   "src_tambahan": [
+    "ESDM-BRT-2025-12-08"
+   ],
+   "st": "sumber"
+  },
+  {
+   "id": "GG-2026-05-sumatera-blackout",
+   "tanggal": "2026-05-22",
+   "tanggal_arti": "kejadian",
+   "nama": "Blackout sistem Sumatera, gangguan transmisi 275 kV Muara Bungo-Sungai Rumbai",
+   "sistem": "Sumatera",
+   "provinsi": [],
+   "mulai": "Jumat 22 Mei 2026 sekitar pukul 18.45 WIB (hanya di Wikipedia, bukan di rilis ESDM)",
+   "pulih": "per Sabtu 23 Mei 2026 pukul 19.00 WIB: lebih dari 8,5 juta pelanggan dan 3.431,21 MW sudah pulih; 176 GI beroperasi kembali; belum tuntas",
+   "durasi_tertulis": null,
+   "terdampak": {
+    "pelanggan": 13100000,
+    "pelanggan_teks": "13,1 juta pelanggan",
+    "beban_mw": 5334,
+    "pelanggan_pulih_23mei_min": 8500000,
+    "beban_pulih_mw_23mei": 3431.21,
+    "gardu_induk_terdampak": 176
+   },
+   "penyebab_tertulis": "Indikasi awal gangguan sistem transmisi 275 kV antara Muara Bungo dan Sungai Rumbai (Jambi), diduga dipengaruhi cuaca, memicu gangguan berantai (domino effect) pada sejumlah pembangkit; pasokan daya Sumatera dinilai cukup, gangguan di sisi sistem dan penyaluran.",
+   "ringkas": "ESDM menyebut padam meluas di sebagian wilayah Sumatera; Dirut PLN menyampaikan permohonan maaf; ESDM menurunkan inspektur ketenagalistrikan.",
+   "catatan": "ESDM menulis \"Jumat (23/5) kemarin\" padahal rilis bertanggal Sabtu 23 Mei 2026 dan 23 Mei 2026 jatuh pada hari Sabtu; \"kemarin\" menunjuk Jumat 22 Mei 2026, tanggal yang dipakai di sini dan sesuai Wikipedia. Provinsi tidak disebut di rilis ESDM (\"sebagian wilayah Sumatera\"); lihat provinsi_media. Total 5.334 MW adalah beban terdampak yang tertulis. 8,5 juta ditulis \"lebih dari 8,5 juta\".",
+   "src": "ESDM-PR-2026-033",
+   "src_tambahan": [
+    "WIKI-ID-MATI-LISTRIK-SUMATRA-2026"
+   ],
+   "st": "sumber",
+   "provinsi_media": {
+    "kode": [
+     "11",
+     "13",
+     "12",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18"
+    ],
+    "src": "WIKI-ID-MATI-LISTRIK-SUMATRA-2026",
+    "catatan": "Wikipedia: paling terdampak Aceh, Sumatera Barat, Sumatera Utara, Riau, Jambi; padam serentak juga di Sumatera Selatan, Bengkulu, Lampung; daerah kepulauan (Natuna, Kepulauan Riau, Mentawai) kurang/tidak terdampak."
+   }
+  }
+ ]
+}

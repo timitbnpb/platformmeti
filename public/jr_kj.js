@@ -1,10 +1,17 @@
 /* Kembaran jaringan (KJ-*): pemuat potret bersama + chip status fakta. Kontrak: docs/perencanaan/KEMBARAN-JARINGAN.md §2, §5.
    Tiap potret dimuat sekali per halaman; berkas yang belum ada menjadi null dan tab menampilkan keadaan kosong. */
-import { t, esc } from "/jr_umum.js";
+import { t, esc, sumberBerkas } from "/jr_umum.js";
 
-const URL_KJ = { ringkas: "/data/kembaran/ringkas.json", inti: "/data/kembaran/objek-inti.json", rs: "/data/kembaran/objek-rs.json", fakta: "/data/kembaran/objek-fakta.json", energi: "/data/kembaran/energi.json", geo: "/geo/kembaran.json" };
+const URL_KJ = { ringkas: "/data/kembaran/ringkas.json", inti: "/data/kembaran/objek-inti.json", rs: "/data/kembaran/objek-rs.json", fakta: "/data/kembaran/objek-fakta.json", energi: "/data/kembaran/energi.json", geo: "/geo/kembaran.json", sumber: "/data/kembaran/sumber.json", deret: "/data/kembaran/deret.json", lapis: "/data/kembaran/lapis.json" };
 const cache = {};
 export const muatKJ = (n) => (cache[n] ??= fetch(URL_KJ[n], { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null));
+
+/** Daftar sumber penuh (sumber.json): meta.sumber di berkas lain hanya id. Panggil muatSumber() sebelum memakai kakiSumber(). */
+let SUMBER = new Map();
+export async function muatSumber() { const s = await muatKJ("sumber"); SUMBER = new Map((s?.sumber || []).map((x) => [x.id, x])); return SUMBER; }
+export const sumberDari = (id) => SUMBER.get(id) || null;
+/** Kaki "Sumber: ..." dari meta.sumber (id) dengan objek penuh dari sumber.json. */
+export const kakiSumber = (meta) => sumberBerkas({ sumber: (meta?.sumber || []).map((id) => SUMBER.get(typeof id === "string" ? id : id?.id)).filter(Boolean) });
 
 /** Chip status fakta: sumber | hitung | menunggu | est. */
 export const chipSt = (st) => (st ? `<span class="kj-st kj-st-${esc(st)}">${esc(t("kj.st." + st))}</span>` : "");

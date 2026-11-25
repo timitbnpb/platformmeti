@@ -2,7 +2,7 @@
    Kontrak: KEMBARAN-JARINGAN.md §6 butir 8. Baris sumber ber-id `src-<id>` jadi sasaran chip id sumber di semua tab. */
 import { t, esc, num, amanUrl, kosongTab } from "/jr_umum.js";
 import { tanggal } from "/i18n.js";
-import { muatKJ, chipSt, chipSrc } from "/jr_kj.js";
+import { muatKJ, chipSt, chipSrc, muatSumber } from "/jr_kj.js";
 
 const n1 = (v) => (typeof v === "number" ? num(v, Number.isInteger(v) ? 0 : 1) : "-");
 const ST = ["sumber", "hitung", "menunggu", "est"];
@@ -13,7 +13,7 @@ const CARA = [
   ["bauran", ["b.1", ["esdm-statistik-2024"]], ["b.2", ["ipcc-2006", "ipcc-ar5"]], ["b.3", ["esdm-statistik-2024"]]],
   ["aliran", ["a.1", ["esdm-statistik-2024"]], ["a.2", ["osm-power"]], ["a.3", ["osm-power", "esdm-statistik-2024"]], ["a.4", ["osm-power"]]],
 ];
-const ATR = [["osm", "https://www.openstreetmap.org/copyright"], ["gem", "https://globalenergymonitor.org/"], ["esdm", "https://gatrik.esdm.go.id/"], ["gsa", "https://globalsolaratlas.info/"], ["gwa", "https://globalwindatlas.info/"], ["geonames", "https://www.geonames.org/"]];
+const ATR = [["osm", "https://www.openstreetmap.org/copyright"], ["gem", "https://globalenergymonitor.org/"], ["esdm", "https://gatrik.esdm.go.id/"], ["gsa", "https://globalsolaratlas.info/"], ["gwa", "https://globalwindatlas.info/"], ["geonames", "https://www.geonames.org/"], ["irbi", "https://inarisk.bnpb.go.id/"], ["bigkab", "https://tanahair.indonesia.go.id/"]];
 
 const bagStatus = () => `<section class="kj-sb-bag" aria-labelledby="sb-st"><h2 id="sb-st">${esc(t("kj.sb.st.j"))}</h2><dl class="kj-sb-dl">${ST.map((s) => `<div><dt>${chipSt(s)}</dt><dd>${esc(t("kj.sb.st." + s))}</dd></div>`).join("")}</dl></section>`;
 
@@ -45,11 +45,11 @@ const bagTidak = () => `<section class="kj-sb-bag" aria-labelledby="sb-tdk"><h2 
 const bagAtr = () => `<section class="kj-sb-bag" aria-labelledby="sb-atr"><h2 id="sb-atr">${esc(t("kj.sb.atr.j"))}</h2><ul class="kj-rk-ul">${ATR.map(([k, u]) => `<li class="kj-rk-tk"><span>${esc(t("kj.sb.atr." + k))}</span><a class="kj-rk-nm" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(new URL(u).host)}</a></li>`).join("")}</ul></section>`;
 
 /** Gabung sumber ringkas.json (lisensi) dan energi.json (url) menurut id; tanggal dari fakta pertama yang bersumber itu. */
-function gabung(R, E) {
+function gabung(R, E, S0, Dr) {
   const peta = new Map(), tgl = {};
-  for (const s of [...(R.meta?.sumber || []), ...(E?.meta?.sumber || [])]) peta.set(s.id, { ...peta.get(s.id), ...s });
+  for (const s of S0) peta.set(s.id, { ...peta.get(s.id), ...s });
   for (const a of [...R.angka, ...R.tegangan, ...R.neraca, ...(E ? [E.nasional, ...E.faktor.map((f) => ({ ...f, src: f.src_langsung }))] : [])]) if (a?.src && a.tgl) tgl[a.src] ??= a.tgl;
-  const lain = E ? [...E.keandalan, ...E.keandalan_nasional, ...E.tren_pln_nasional, ...E.tren_nasional, ...E.pembanding_esdm_lain, ...E.kartu_provinsi.flatMap((k) => [...(k.penjualan_gwh || []), k.mva_per_kv]), ...E.kartu_sistem.map((k) => k.beban_puncak), ...E.bauran.sistem.map((x) => x.pembanding_esdm), ...E.neraca.map((n) => ({ src: n.src_penjualan, tgl: n.tgl }))] : [];
+  const lain = E ? [...E.keandalan, ...E.keandalan_nasional, ...(Dr?.tren_pln_nasional || []), ...(Dr?.tren_nasional || []), ...(Dr?.produksi_pln_nasional || []), ...E.pembanding_esdm_lain, ...E.kartu_provinsi.flatMap((k) => [...(k.penjualan_gwh || []), k.mva_per_kv]), ...E.kartu_sistem.map((k) => k.beban_puncak), ...E.bauran.sistem.map((x) => x.pembanding_esdm), ...E.neraca.map((n) => ({ src: n.src_penjualan, tgl: n.tgl }))] : [];
   for (const a of lain) if (a?.src && a.tgl) tgl[a.src] ??= a.tgl;
   return [...peta.values()].map((s) => ({ ...s, tgl: s.tanggal_terbit || s.tgl || tgl[s.id] || "" }));
 }
@@ -64,9 +64,9 @@ function bagDaftar(S) {
 }
 
 export async function mulai(panel) {
-  const [R, E] = await Promise.all([muatKJ("ringkas"), muatKJ("energi")]);
+  const [R, E, SM, Dr] = await Promise.all([muatKJ("ringkas"), muatKJ("energi"), muatSumber(), muatKJ("deret")]);
   if (!R?.meta) { panel.innerHTML = kosongTab("kj.sb.kosong"); return; }
-  const S = gabung(R, E);
+  const S = gabung(R, E, [...SM.values()], Dr);
   panel.innerHTML = `<div class="kj-rk kj-sb"><h2 class="kj-rk-judul">${esc(t("kj.sb.judul"))}</h2>${bagStatus()}${bagTanggal(S)}${bagCara()}${bagDekat(E)}${bagTidak()}${bagAtr()}${bagDaftar(S)}</div>`;
   const h = decodeURIComponent(location.hash || ""), el = h.startsWith("#src-") ? document.getElementById(h.slice(1)) : null;
   if (el) { el.classList.add("kj-sb-sorot"); el.scrollIntoView({ block: "center" }); }

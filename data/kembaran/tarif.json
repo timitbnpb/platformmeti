@@ -1,0 +1,261 @@
+{
+ "meta": {
+  "judul": "Tarif tenaga listrik PLN per golongan (non-subsidi, reguler) berlaku Oktober-Desember 2026 (Triwulan IV 2026)",
+  "dibuat_oleh": "scripts/panen/tarif_kurasi.py",
+  "tanggal_baca": "2026-11-25",
+  "tingkat_bukti": "sumber",
+  "berlaku": {
+   "tahun": 2026,
+   "triwulan": 4,
+   "dari": "2026-10-01",
+   "sampai": "2026-12-31",
+   "ditetapkan_pln": "2026-10-22",
+   "catatan": "Judul dokumen: \"Bulan Oktober - Desember 2026\". Siaran pers PLN 14 Okt 2026 menyatakan tarif tetap (tidak naik) dibanding triwulan sebelumnya; tarif Triwulan III 2026 juga tetap (ESDM 30 Jun 2026)."
+  },
+  "dasar_hukum": "Peraturan Menteri ESDM No. 7 Tahun 2024 tentang Tarif Tenaga Listrik yang Disediakan oleh PT PLN (Persero), penyesuaian tiap tiga bulan untuk 13 golongan non-subsidi (kurs, ICP, inflasi, HBA). Teks peraturannya tidak dibuka.",
+  "satuan": {
+   "rp_per_kwh": "Rp/kWh",
+   "kvarh_rp_per_kvarh": "Rp/kVArh",
+   "pra_bayar_rp_per_kwh": "Rp/kWh (token)"
+  },
+  "skema": {
+   "sumber[]": "{id, jenis, judul, penerbit, url, tanggal_terbit, tanggal_baca, lisensi, catatan}",
+   "golongan[]": "{no, kode, golongan(nama umum, bukan istilah dokumen), batas_daya, bentuk(reguler|blok), rp_per_kwh | lwbp_rp_per_kwh + wbp_rumus + faktor_pengali_wbp, kvarh_rp_per_kvarh, pra_bayar_rp_per_kwh, rekening_minimum, src, st}"
+  },
+  "catatan": "WBP = waktu beban puncak, LWBP = luar WBP; K = faktor pembanding WBP terhadap LWBP (1,4 <= K <= 2) ditetapkan Direksi PLN per sistem setempat, nilainya tidak ada di dokumen. N pada golongan L juga faktor yang tidak dijabarkan di dokumen. Biaya kVArh dikenakan bila faktor daya rata-rata bulanan di bawah 0,85. Kolom \"golongan\" (nama umum) ditambahkan kurator dari kode tarif, bukan dari dokumen yang hanya memuat kode.",
+  "celah": [
+   "Tarif 24 golongan bersubsidi (mis. R-1 450 VA, R-1 900 VA subsidi, S, U, I-1, B-1) tidak ada di dokumen dan tidak dikutip; sumber hanya menyatakan tarifnya tetap.",
+   "Biaya beban (Rp/kVA/bulan) hanya bertanda rekening minimum di dokumen; angkanya tidak tertulis.",
+   "Tarif rata-rata per golongan atau nasional (Rp/kWh) tidak terbit dalam dokumen ini; angka biaya pokok penyediaan (BPP) ada di sistem_pln/statistik, bukan di sini.",
+   "Riwayat tarif triwulan sebelumnya tidak dikutip kecuali pernyataan ESDM bahwa penyesuaian terakhir R-2, R-3, P-1, P-2, P-3 terjadi pada Triwulan III 2022 dan golongan lain pada 2020 (ESDM-PR-2025-077).",
+   "PDF sumber berupa pindai gambar; angka dibaca dari gambar resolusi 150 dan 230 dpi dan diperiksa dua kali, bukan dari lapisan teks."
+  ],
+  "jumlah_golongan": 13
+ },
+ "sumber": [
+  {
+   "id": "PLN-TARIF-2026-TW4",
+   "jenis": "dokumen",
+   "judul": "Penetapan Penyesuaian Tarif Tenaga Listrik (Tariff Adjustment) Bulan Oktober - Desember 2026",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/webapi/media/file/webkorp/asset/TARIFF-ADJUSTMENT-Okt-Des-2026.pdf",
+   "tanggal_terbit": "2026-10-22",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "dokumen publik PT PLN (Persero); hanya angka tarif dikutip; atribusi PLN",
+   "catatan": "Halaman tautan: https://www.pln.co.id/customer-en/electricity-tariffs-en/tariff-adjustment-en (bagian Quarter 4 2026). PDF 1 halaman, hasil pindai gambar; 13 golongan reguler dan kolom pra bayar."
+  },
+  {
+   "id": "PLN-PR-2026-TW4-TETAP",
+   "jenis": "siaran-pers",
+   "judul": "Q4 2026 Electricity Tariffs Remains, PLN Supports Indonesian Economic Growth",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/q4-2026-electricity-tariffs-unchanged",
+   "tanggal_terbit": "2026-10-14",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dikutip; atribusi PLN",
+   "catatan": "Pemerintah mempertahankan tarif Oktober-Desember 2026 untuk 13 golongan non-subsidi dan 24 golongan bersubsidi (tarif tetap)."
+  },
+  {
+   "id": "ESDM-PR-2026-038",
+   "jenis": "siaran-pers",
+   "judul": "Jaga Daya Beli, Menteri ESDM: Tarif Listrik Tidak Naik",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/jaga-daya-beli-menteri-esdm-tarif-listrik-tidak-naik",
+   "tanggal_terbit": "2026-06-30",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "publikasi pemerintah (Kementerian ESDM); hanya fakta dikutip; atribusi penerbit",
+   "catatan": "Siaran Pers 038.Pers/04/SJI/2026: tarif Triwulan III 2026 (Jul-Sep) tetap; dasar Permen ESDM No. 7 Tahun 2024; parameter Feb-Apr 2026: kurs Rp16.959,32/USD, ICP USD96,12/barel, inflasi 0,21%, HBA USD70/ton."
+  },
+  {
+   "id": "ESDM-PR-2025-077",
+   "jenis": "siaran-pers",
+   "judul": "Pemerintah Putuskan Tarif Listrik Triwulan IV 2025 Tetap",
+   "penerbit": "Kementerian ESDM",
+   "url": "https://www.esdm.go.id/id/media-center/arsip-berita/pemerintah-putuskan-tarif-listrik-triwulan-iv-2025-tetap-",
+   "tanggal_terbit": "2025-09-24",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "publikasi pemerintah (Kementerian ESDM); hanya fakta dikutip; atribusi penerbit",
+   "catatan": "Siaran Pers 077.Pers/04/SJI/2025: tertulis penyesuaian tarif terakhir dilakukan Triwulan III 2022 untuk R-2, R-3 (3.500 VA ke atas) dan P-1, P-2, P-3; golongan lain terakhir pada 2020."
+  }
+ ],
+ "golongan": [
+  {
+   "no": 1,
+   "kode": "R-1/TR",
+   "golongan": "Rumah tangga kecil",
+   "batas_daya": "900 VA-RTM",
+   "bentuk": "reguler",
+   "rp_per_kwh": 1352.0,
+   "pra_bayar_rp_per_kwh": 1352.0,
+   "rekening_minimum": "RM1 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 2,
+   "kode": "R-1/TR",
+   "golongan": "Rumah tangga kecil",
+   "batas_daya": "1.300 VA",
+   "bentuk": "reguler",
+   "rp_per_kwh": 1444.7,
+   "pra_bayar_rp_per_kwh": 1444.7,
+   "rekening_minimum": "RM1 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 3,
+   "kode": "R-1/TR",
+   "golongan": "Rumah tangga kecil",
+   "batas_daya": "2.200 VA",
+   "bentuk": "reguler",
+   "rp_per_kwh": 1444.7,
+   "pra_bayar_rp_per_kwh": 1444.7,
+   "rekening_minimum": "RM1 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 4,
+   "kode": "R-2/TR",
+   "golongan": "Rumah tangga menengah",
+   "batas_daya": "3.500 VA s.d. 5.500 VA",
+   "bentuk": "reguler",
+   "rp_per_kwh": 1699.53,
+   "pra_bayar_rp_per_kwh": 1699.53,
+   "rekening_minimum": "RM1 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 5,
+   "kode": "R-3/TR, TM",
+   "golongan": "Rumah tangga besar",
+   "batas_daya": "6.600 VA ke atas",
+   "bentuk": "reguler",
+   "rp_per_kwh": 1699.53,
+   "pra_bayar_rp_per_kwh": 1699.53,
+   "rekening_minimum": "RM1 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 6,
+   "kode": "B-2/TR",
+   "golongan": "Bisnis menengah",
+   "batas_daya": "6.600 VA s.d. 200 kVA",
+   "bentuk": "reguler",
+   "rp_per_kwh": 1444.7,
+   "pra_bayar_rp_per_kwh": 1444.7,
+   "rekening_minimum": "RM1 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 7,
+   "kode": "B-3/TM, TT",
+   "golongan": "Bisnis besar",
+   "batas_daya": "di atas 200 kVA",
+   "bentuk": "blok",
+   "lwbp_rp_per_kwh": 1035.78,
+   "wbp_rp_per_kwh_dasar": 1035.78,
+   "faktor_pengali_wbp": "K",
+   "wbp_rumus": "WBP = K x 1.035,78",
+   "kvarh_rp_per_kvarh": 1114.74,
+   "pra_bayar_rp_per_kwh": null,
+   "rekening_minimum": "RM2 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian LWBP",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 8,
+   "kode": "I-3/TM",
+   "golongan": "Industri menengah",
+   "batas_daya": "di atas 200 kVA",
+   "bentuk": "blok",
+   "lwbp_rp_per_kwh": 1035.78,
+   "wbp_rp_per_kwh_dasar": 1035.78,
+   "faktor_pengali_wbp": "K",
+   "wbp_rumus": "WBP = K x 1.035,78",
+   "kvarh_rp_per_kvarh": 1114.74,
+   "pra_bayar_rp_per_kwh": null,
+   "rekening_minimum": "RM2 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian LWBP",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 9,
+   "kode": "I-4/TT",
+   "golongan": "Industri besar",
+   "batas_daya": "30.000 kVA ke atas",
+   "bentuk": "blok",
+   "lwbp_rp_per_kwh": 996.74,
+   "wbp_rp_per_kwh_dasar": 996.74,
+   "faktor_pengali_wbp": null,
+   "wbp_rumus": "WBP dan LWBP sama (996,74)",
+   "kvarh_rp_per_kvarh": 996.74,
+   "pra_bayar_rp_per_kwh": null,
+   "rekening_minimum": "RM3 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian WBP dan LWBP",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 10,
+   "kode": "P-1/TR",
+   "golongan": "Kantor pemerintah (kecil)",
+   "batas_daya": "6.600 VA s.d. 200 kVA",
+   "bentuk": "reguler",
+   "rp_per_kwh": 1699.53,
+   "pra_bayar_rp_per_kwh": 1699.53,
+   "rekening_minimum": "RM1 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 11,
+   "kode": "P-2/TM",
+   "golongan": "Kantor pemerintah (menengah)",
+   "batas_daya": "di atas 200 kVA",
+   "bentuk": "blok",
+   "lwbp_rp_per_kwh": 1415.01,
+   "wbp_rp_per_kwh_dasar": 1415.01,
+   "faktor_pengali_wbp": "K",
+   "wbp_rumus": "WBP = K x 1.415,01",
+   "kvarh_rp_per_kvarh": 1522.88,
+   "pra_bayar_rp_per_kwh": null,
+   "rekening_minimum": "RM2 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian LWBP",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 12,
+   "kode": "P-3/TR",
+   "golongan": "Penerangan jalan umum",
+   "batas_daya": null,
+   "bentuk": "reguler",
+   "rp_per_kwh": 1699.53,
+   "pra_bayar_rp_per_kwh": 1699.53,
+   "rekening_minimum": "RM1 = 40 jam nyala x daya tersambung (kVA) x biaya pemakaian",
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  },
+  {
+   "no": 13,
+   "kode": "L/TR, TM, TT",
+   "golongan": "Layanan khusus",
+   "batas_daya": null,
+   "bentuk": "blok",
+   "lwbp_rp_per_kwh": null,
+   "wbp_rp_per_kwh_dasar": null,
+   "faktor_pengali_wbp": "N",
+   "wbp_rumus": "WBP dan LWBP = N x 1.644,52",
+   "dasar_rp_per_kwh": 1644.52,
+   "kvarh_rp_per_kvarh": null,
+   "kvarh_rumus": "N x 1.644,52",
+   "pra_bayar_rp_per_kwh": null,
+   "rekening_minimum": null,
+   "src": "PLN-TARIF-2026-TW4",
+   "st": "sumber"
+  }
+ ]
+}

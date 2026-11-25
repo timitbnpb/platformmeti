@@ -140,16 +140,29 @@ function babHtml(b, i, semua, R) {
     <p class="kj-jawab">${esc(jawab(b, R))}</p>${ub}${ISI[b.id]?.(b, R) || ""}${kaki(b.st, b.src, tgl)}${next}</article>`;
 }
 
-/** Gardu dengan potensi surya dan angin tertinggi (ringkas.ebt_dekat_gardu), tautan membuka gardu di peta. */
-function bagEbt(R) {
-  const d = R.ebt_dekat_gardu; if (!d?.surya?.length && !d?.angin?.length) return "";
-  const daftar = (arr, k, sat) => `<ol class="kj-rk-ol">${arr.slice(0, 10).map((x, i) => nomor(i, `<a class="kj-rk-nm" href="${fokus(x.id)}">${esc(x.nama)}</a><span class="kj-rk-md">${esc(n1(x[k]))} ${esc(sat)}, ${esc(x.kv)} kV</span>${kakiFakta(x.st, x.src, tg(x.tgl))}`)).join("")}</ol>`;
-  return `<article class="kj-bab" id="rk-ebt" aria-labelledby="rk-h-ebt"><header class="kj-bab-h"><span class="kj-bn" role="img" aria-label="${esc(t("kj.rk.bab", { n: R.bab.length + 1 }))}">${R.bab.length + 1}</span><h2 id="rk-h-ebt">${esc(t("kj.rk.ebt.j"))}</h2></header>
-    <p class="kj-jawab">${esc(t("kj.rk.ebt.a"))}</p>
-    ${d.surya?.length ? `<h3 class="kj-rk-h3">${esc(t("kj.rk.ebt.surya"))}</h3>${daftar(d.surya, "pvout", "kWh/kWp/tahun")}` : ""}
-    ${d.angin?.length ? `<h3 class="kj-rk-h3">${esc(t("kj.rk.ebt.angin"))}</h3>${daftar(d.angin, "angin_100m", "m/s")}` : ""}
-    <p class="kj-cat">${esc(t("kj.rk.ebt.cat"))}</p></article>`;
+/** Bab tambahan sesudah tujuh bab pipa: tiap elemen {id, isi}; judul dari kj.rk.<id>.j. Nomor dilanjutkan dari R.bab. */
+const li = (a, i, md, kk) => nomor(i, `<a class="kj-rk-nm" href="${fokus(a.id)}">${esc(a.nama)}</a><span class="kj-rk-md">${md}</span>${kk || ""}`);
+function babTambah(R) {
+  const d = R.ebt_dekat_gardu, out = [];
+  if (d?.surya?.length || d?.angin?.length) {
+    const daftar = (arr, k, sat) => `<ol class="kj-rk-ol">${arr.slice(0, 10).map((x, i) => li(x, i, `${esc(n1(x[k]))} ${esc(sat)}, ${esc(x.kv)} kV`, kakiFakta(x.st, x.src, tg(x.tgl)))).join("")}</ol>`;
+    out.push({ id: "ebt", jawab: t("kj.rk.ebt.a"), isi: `${d.surya?.length ? `<h3 class="kj-rk-h3">${esc(t("kj.rk.ebt.surya"))}</h3>${daftar(d.surya, "pvout", "kWh/kWp/tahun")}` : ""}${d.angin?.length ? `<h3 class="kj-rk-h3">${esc(t("kj.rk.ebt.angin"))}</h3>${daftar(d.angin, "angin_100m", "m/s")}` : ""}<p class="kj-cat">${esc(t("kj.rk.ebt.cat"))}</p>` });
+  }
+  const pb = R.rencana_pb;
+  if (pb?.jauh_dari_gardu_utama?.length) out.push({ id: "pb", jawab: t("kj.rk.pb.a", { n: num(pb.n), mw: n1(pb.mw), km: n1(pb.ambang_jauh_km) }),
+    isi: `<ol class="kj-rk-ol">${pb.jauh_dari_gardu_utama.slice(0, 10).map((x, i) => li(x, i, `${esc(t("kj.peta.bb." + x.jenis))}, ${esc(n1(x.mw))} MW, ${esc(t("jr.st." + x.status))}${x.tahun ? ", " + esc(x.tahun) : ""}, ${esc(x.prov || "")}${x.gardu_150 ? `, ${esc(t("kj.rk.pb.gardu", { nama: x.gardu_150.nama, km: n1(x.gardu_150.km) }))}` : ""}`)).join("")}</ol><p class="kj-cat">${esc(pb.catatan || "")}</p>${kaki(pb.st, pb.src, pb.tgl)}` });
+  const rj = R.risiko_jaringan;
+  if (rj?.jalur_tunggal_teratas?.length) out.push({ id: "rs", jawab: t("kj.rk.rs.a", { tahun: rj.tahun_irbi, n: num(rj.jalur_tunggal?.total_resmi_tinggi ?? 0), dari: num(rj.jalur_tunggal?.n ?? 0) }),
+    isi: `<ol class="kj-rk-ol">${rj.jalur_tunggal_teratas.slice(0, 10).map((x, i) => li(x, i, `${esc(x.kab || "-")}, ${esc(t("kj.rk.rs.kelas", { k: x.total_resmi || "-" }))}${x.tinggi?.length ? `, ${esc(t("kj.rk.rs.tinggi", { b: x.tinggi.map((b) => t("kj.kt.rs.b." + b)).join(", ") }))}` : ""}, ${esc(t("kj.rk.b.tunggal.gi", { n: n1(x.gardu_belakang) }))}`, kakiFakta(x.st, [].concat(x.src)[0], tg(x.tgl)))).join("")}</ol><p class="kj-cat">${esc(rj.catatan || "")}</p>${kaki(rj.st, rj.src, rj.tgl)}` });
+  const kw = R.kawasan_beban;
+  if (kw?.teratas_beban?.length) out.push({ id: "kw", jawab: t("kj.rk.kw.a", { n: num(kw.n), b: num(kw.n_dengan_beban) }),
+    isi: `<ol class="kj-rk-ol">${kw.teratas_beban.slice(0, 10).map((x, i) => li(x, i, `${esc(t("kj.lp.jenis." + x.jenis))}, ${esc(x.prov || "")}, ${esc(n1(x.mw_listrik ?? x.mw_butuh))} MW${x.gardu_150 ? `, ${esc(t("kj.rk.pb.gardu", { nama: x.gardu_150.nama, km: n1(x.gardu_150.km) }))}` : ""}`)).join("")}</ol><p class="kj-cat">${esc(kw.catatan || "")}</p>${kaki(kw.st, kw.src, kw.tgl)}` });
+  const gg = R.gangguan_terbaru;
+  if (gg?.length) out.push({ id: "gg", jawab: t("kj.rk.gg.a", { n: num(gg.length) }),
+    isi: `<ol class="kj-rk-ol">${gg.map((x, i) => nomor(i, `<b class="kj-rk-nm">${esc(tg(x.tanggal))} ${esc(x.nama)}</b>${x.sis ? ` <a class="kj-rk-md" href="${fokus(x.sis)}">${esc(x.sistem || "")}</a>` : ""}<span class="kj-rk-md">${x.terdampak ? esc(t("kj.kt.gg.terdampak", { p: x.terdampak.pelanggan_teks || n1(x.terdampak.pelanggan), mw: n1(x.terdampak.beban_mw) })) : ""}</span><p class="kj-cat">${esc(x.penyebab_tertulis || "")}</p>${kakiFakta(x.st, x.src, tg(x.tgl))}`)).join("")}</ol>` });
+  return out;
 }
+const babTambahHtml = (x, no) => `<article class="kj-bab" id="rk-${x.id}" aria-labelledby="rk-h-${x.id}"><header class="kj-bab-h"><span class="kj-bn" role="img" aria-label="${esc(t("kj.rk.bab", { n: no }))}">${no}</span><h2 id="rk-h-${x.id}">${esc(t("kj.rk." + x.id + ".j"))}</h2></header><p class="kj-jawab">${esc(x.jawab)}</p>${x.isi}</article>`;
 
 /** Lebar dan tinggi batang lewat style.setProperty (CSP tanpa style=). */
 function skala(panel) {
@@ -161,8 +174,9 @@ export async function mulai(panel) {
   const [R, En] = await Promise.all([muatKJ("ringkas"), muatKJ("energi")]);
   E = En; R0 = R;
   if (!R?.bab?.length) { panel.innerHTML = kosongTab("kj.rk.kosong"); return; }
+  const tambah = babTambah(R);
   panel.innerHTML = `<div class="kj-rk"><h2 class="kj-rk-judul">${esc(t("kj.rk.judul"))}</h2>
-    <nav class="kj-rk-nav" aria-label="${esc(t("kj.rk.nav"))}"><ol>${R.bab.map((b) => `<li><a href="#rk-${esc(b.id)}"><b>${esc(b.n)}</b> ${esc(t(`kj.rk.b.${b.id}.t`))}</a></li>`).join("")}${R.ebt_dekat_gardu ? `<li><a href="#rk-ebt"><b>${R.bab.length + 1}</b> ${esc(t("kj.rk.ebt.j"))}</a></li>` : ""}</ol></nav>
-    ${R.bab.map((b, i, a) => babHtml(b, i, a, R)).join("")}${bagEbt(R)}</div>`;
+    <nav class="kj-rk-nav" aria-label="${esc(t("kj.rk.nav"))}"><ol>${R.bab.map((b) => `<li><a href="#rk-${esc(b.id)}"><b>${esc(b.n)}</b> ${esc(t(`kj.rk.b.${b.id}.t`))}</a></li>`).join("")}${tambah.map((x, i) => `<li><a href="#rk-${x.id}"><b>${R.bab.length + 1 + i}</b> ${esc(t("kj.rk." + x.id + ".j"))}</a></li>`).join("")}</ol></nav>
+    ${R.bab.map((b, i, a) => babHtml(b, i, a, R)).join("")}${tambah.map((x, i) => babTambahHtml(x, R.bab.length + 1 + i)).join("")}</div>`;
   skala(panel);
 }

@@ -1,12 +1,12 @@
 /* /jaringan?tab=bauran (KJ-12): bauran energi dan intensitas karbon TAHUNAN per sistem. Data: /data/kembaran/energi.json (potret statis),
    geometri ruas: /geo/kembaran.json, peta ruas -> sistem: objek-rs.json, bbox sistem: objek-inti.json (dimuat sesudah bingkai pertama). Kontrak: KEMBARAN-JARINGAN.md §4 butir 8, §6 butir 4.
    INP: sakelar Langsung/Daur hidup dan pilih sistem memakai setPaintProperty; peta tidak dibangun ulang. */
-import { t, esc, num, token, ikon, kosongTab, sumberBerkas, daftarCelah } from "/jr_umum.js";
+import { t, esc, num, token, ikon, kosongTab, daftarCelah } from "/jr_umum.js";
 import { tanggal } from "/i18n.js";
-import { muatKJ, chipSt, chipSrc, kakiFakta } from "/jr_kj.js";
+import { muatKJ, chipSt, chipSrc, kakiFakta, muatSumber, kakiSumber } from "/jr_kj.js";
 import { nanti } from "/inti/umum.js";
 import { URUT_BBM, namaBbm, rampIntensitas, SKALA, batangBbm, legendaBbm, pasangGaya } from "/jr_bbm.js";
-import { blokSistem } from "/jr_kartu.js";
+import { blokSistem, blokTarif } from "/jr_kartu.js";
 import { petaBersama, pasangPeta, padPeta, bukaPanel, bawahSlot } from "/jr_app.js";
 
 const S = { mode: "langsung", sel: null, E: null, peta: null, bbox: new Map(), wil: new Map(), R: null };
@@ -62,7 +62,7 @@ function rincian() {
     <div class="kj-ang"><b>${gi(s.daur_hidup)}<small>g/kWh</small></b><span>${esc(t("kj.ba.nas.int_daur_hidup"))}</span></div>
     <div class="kj-ang"><b>${num(s.total)}<small>GWh</small></b><span>${esc(t("kj.ba.total"))}</span></div></div>
     <ul class="kje-jenis">${jenis.map((j) => `<li><i class="kje-sw" data-bbm="${j}"></i><span>${esc(namaBbm(j))}</span><b>${num(s.persen?.[j] ?? 0, 1)}%</b><small>${num(s.gwh[j])} GWh</small></li>`).join("")}</ul>
-    ${kakiFakta(s.st, s.src, s.tgl)}${blokSistem(S.E.kartu_sistem?.find((x) => x.id === s.id), { agregat: S.R?.ruptl_jaringan_agregat, wilayah: S.wil.get(s.id) })}${terbit(s)}${faktor()}`;
+    ${kakiFakta(s.st, s.src, s.tgl)}${blokSistem(S.E.kartu_sistem?.find((x) => x.id === s.id), { agregat: S.R?.ruptl_jaringan_agregat, wilayah: S.wil.get(s.id), gg: S.Dr?.gangguan_per_sistem?.[s.id] })}${terbit(s)}${faktor()}`;
 }
 
 /* ---- tren tahunan: hanya tahun berdata ---- */
@@ -89,7 +89,7 @@ function tren(sid) {
 const EMB = { surya: "--tp-surya", bayu: "--tp-bayu", hidro: "--tp-hidro", bioenergi: "--tp-bio", "terbarukan-lain": "--tp-panas", batubara: "--tp-karbon", gas: "--tp-hidrogen", "fosil-lain": "--tp-sampah", "impor-bersih": "--line-ctl" };
 const PLN = ["batubara", "gas", "bbm", "hidro", "panas-bumi", "bioenergi", "ebt-lain"];
 function trenNasional() {
-  const th = S.E.tren_nasional || []; if (!th.length) return "";
+  const th = S.Dr?.tren_nasional || []; if (!th.length) return "";
   const L = 40, W = 640, H = 170, g = (W - L - 36) / th.length, lb = Math.max(4, g - 3);
   const mx = Math.max(...th.map((y) => y.total_twh)), imx = Math.max(...th.map((y) => y.intensitas_g_kwh));
   const bars = th.map((y, i) => {
@@ -107,7 +107,7 @@ function trenNasional() {
 }
 /** Produksi dan pembelian listrik PLN nasional 2000-2020 (ESDM/DJK), satu baris per tahun (terbitan terbaru). */
 function produksiPln() {
-  const per = new Map(); for (const y of S.E.produksi_pln_nasional || []) per.set(y.tahun, y);
+  const per = new Map(); for (const y of S.Dr?.produksi_pln_nasional || []) per.set(y.tahun, y);
   const th = [...per.values()].sort((a, b) => a.tahun - b.tahun); if (!th.length) return "";
   const L = 40, W = 640, H = 150, g = (W - L - 8) / th.length, lb = Math.max(4, g - 4), mx = Math.max(...th.map((y) => y.jumlah_gwh));
   const bars = th.map((y, i) => {
@@ -119,7 +119,7 @@ function produksiPln() {
     <ul class="kje-leg"><li><i class="kje-sw" data-c="--data1"></i>${esc(t("kj.ba.pp.prod"))}</li><li><i class="kje-sw" data-c="--data3"></i>${esc(t("kj.ba.pp.beli"))}</li></ul>${kakiFakta(z.st, z.src, z.tgl)}<p class="kj-cat">${esc(t("kj.ba.pp.cat"))}</p>`;
 }
 function trenPln() {
-  const th = S.E.tren_pln_nasional || []; if (!th.length) return "";
+  const th = S.Dr?.tren_pln_nasional || []; if (!th.length) return "";
   return `<h4>${esc(t("kj.ba.pln.j"))}</h4><div class="kj-tabel" tabindex="0" role="region" aria-label="${esc(t("kj.ba.pln.j"))}"><table><thead><tr><th scope="col">${esc(t("kj.ba.pln.tahun"))}</th>${PLN.map((j) => `<th scope="col" class="kj-rk-n">${esc(t("kj.ba.pln." + j))}</th>`).join("")}<th scope="col">${esc(t("kj.ba.pln.sumber"))}</th></tr></thead><tbody>${th.map((y) => `<tr><th scope="row">${esc(y.tahun)}</th>${PLN.map((j) => `<td class="kj-rk-n">${y.persen[j] == null ? "-" : num(y.persen[j], 1)}</td>`).join("")}<td>${chipSrc(y.src)}</td></tr>`).join("")}</tbody></table></div>
     <p class="kj-cat">${esc(t("kj.ba.pln.cat", { cakupan: th.at(-1).cakupan }))}</p>${kakiFakta(th.at(-1).st, th.at(-1).src, th.at(-1).tgl)}`;
 }
@@ -191,7 +191,7 @@ export async function mulai(el) {
   akar = el;
   const E = await muatKJ("energi");
   if (!E?.bauran?.sistem?.length) { el.innerHTML = kosongTab("kj.ba.kosong"); return; }
-  S.E = E; S.R = await muatKJ("ringkas");
+  S.E = E; S.R = await muatKJ("ringkas"); S.Dr = await muatKJ("deret"); await muatSumber();
   const tahun = E.meta?.tahun_data ?? E.nasional?.tahun;
   const sakelar = ["langsung", "daur"].map((m) => { const mm = m === "daur" ? "daur_hidup" : m; return `<button type="button" class="kj-mb" data-mode="${mm}" aria-pressed="${mm === S.mode}">${esc(t("kj.ba.mode." + m))}</button>`; }).join("");
   const slot = bawahSlot("bauran");
@@ -203,8 +203,9 @@ export async function mulai(el) {
     <section class="kje-blok"><h3 class="kje-j">${esc(t("kj.ba.daftar.j"))}</h3><p class="kj-cat">${esc(t("kj.ba.daftar.cat"))}</p><ul class="kje-daftar" id="kb-daftar">${daftar()}</ul></section>
     <section class="kje-blok"><h3 class="kje-j">${esc(t("kj.ba.tren.j"))}</h3><div id="kb-tren">${tren(null)}</div>${legendaBbm()}</section>
     <section class="kje-blok" id="kb-nasional">${trenNasional()}${produksiPln()}${trenPln()}</section>
+    <section class="kje-blok" id="kb-tarif">${blokTarif(S.Dr?.tarif)}</section>
     <p class="kje-menunggu-b">${chipSt("menunggu")}<span>${esc(t("kj.ba.perjam"))}</span></p>
-    <p class="kj-cat">${esc(t("kj.ba.catatan"))}</p>${daftarCelah(E.meta?.celah)}<div class="jr-kaki-sumber">${sumberBerkas(E.meta)}</div></div>
+    <p class="kj-cat">${esc(t("kj.ba.catatan"))}</p>${daftarCelah(E.meta?.celah)}<div class="jr-kaki-sumber">${kakiSumber(E.meta)}</div></div>
     <div id="kb-detail" class="jr-ber" hidden><button type="button" class="jr-kembali" data-kembali>${ikon("panah-kiri", 16)}<span>${esc(t("jr.app.kembali"))}</span></button>
       <section class="kje-blok" id="kb-rinci" aria-live="polite">${rincian()}</section>
       <section class="kje-blok"><h3 class="kje-j">${esc(t("kj.ba.tren.j"))}</h3><div id="kb-tren-s">${tren(S.sel)}</div>${legendaBbm()}</section></div>`;
