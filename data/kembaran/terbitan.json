@@ -20,9 +20,9 @@
   },
   "celah": [
    "ESDM Faktor Emisi GRK 2019 (id ESDM-FE-2019) TIDAK dibuka: dokumennya tidak ditemukan dari lingkungan ini (mesin pencari memblokir klien otomatis; situs gatrik/esdm tidak menyediakan daftar yang bisa dicari). pembanding_emisi hanya memuat RUPTL-2025.",
-   "Kabel Suramadu Kedinding-Bangkalan eksisting: tidak ada di RUPTL maupun siaran pers PLN yang dibuka; SJ-16 hanya SKTT rencana RUPTL 4,0 kms COD 2025 (Pengadaan).",
    "Gardu ujung kabel laut Jawa-Bali dan Batam-Bintan, panjang, dan jumlah sirkit tidak tertulis di sumber yang dibuka.",
-   "Beban puncak per sistem 2024 yang tertulis di RUPTL hanya Jawa-Bali, provinsi di Jawa, Bali, dan beberapa provinsi Sumatera; angka sistem Sumatera, Kalimantan, Sulawesi 2024 tidak ditulis di teks yang dibaca (neraca daya memuat proyeksi 2025-2034, sudah ada di public/data/sistem_pln.json)."
+   "Beban puncak per sistem 2024 yang tertulis di RUPTL hanya Jawa-Bali, provinsi di Jawa, Bali, dan beberapa provinsi Sumatera; angka sistem Sumatera, Kalimantan, Sulawesi 2024 tidak ditulis di teks yang dibaca (neraca daya memuat proyeksi 2025-2034, sudah ada di public/data/sistem_pln.json).",
+   "Kabel Jawa-Madura eksisting dibuktikan oleh siaran pers PLN 24 Maret 2023 (SJ-18, SJ-19); rute Suramadu tidak disebut dan tidak diasumsikan."
   ]
  },
  "sumber": [
@@ -267,6 +267,17 @@
    "tanggal_baca": "2026-11-24",
    "lisensi": "publikasi pemerintah; hanya angka, atribusi penerbit",
    "catatan": "PDF 1.253 halaman diunduh dan diekstrak teks (pdftotext -layout). Halaman di catatan baris = nomor halaman PDF (bukan nomor cetak); nomor cetak (mis. V-321) disebut bila ada. Tanggal terbit = tanggal Kepmen."
+  },
+  {
+   "id": "PLN-PR-2023-192",
+   "jenis": "siaran-pers",
+   "judul": "Pastikan Pasokan Listrik Andal Saat Ramadan, PLN Rampungkan Jaringan Tegangan Tinggi Kedinding-Bangkalan",
+   "penerbit": "PT PLN (Persero)",
+   "url": "https://www.pln.co.id/pastikan-pasokan-listrik-andal-saat-ramadan-pln-rampungkan-jaringan-tegangan-tinggi-kedinding-bangkalan",
+   "tanggal_terbit": "2023-03-24",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
+   "catatan": "Press Release No. 192.PR/STH.00.01/III/2023, Surabaya 24 Maret 2023; dibaca lewat webapi pln.co.id; URL publik dicek HTTP 200."
   }
  ],
  "sambungan_diketahui": [
@@ -778,6 +789,66 @@
    "keterangan": "RUPTL: 2 cct SKLTET 13 kms COD 2030 (Rencana); proyek JBC kapasitas sekitar 2.000 MW, panjang sekitar 185 kms dengan penyeberangan kabel laut sekitar 3 km; tahap 1 sudah tahap lelang.",
    "catatan": "Rencana, bukan eksisting. Tabel penambahan transmisi JMB halaman PDF 922 (baris 99), teks halaman PDF 945 dan 556. Angka 13 kms dan sekitar 3 km penyeberangan tertulis di sumber yang sama; tidak direkonsiliasi.",
    "src": "RUPTL-2025",
+   "st": "sumber"
+  },
+  {
+   "id": "SJ-18-kenjeran-bangkalan-150",
+   "nama": "SUTT dan SKTT 150 kV Kenjeran (Surabaya)-Bangkalan (Madura)",
+   "jenis_saluran": "kabel-tanah-dan-udara",
+   "tegangan_kv": 150,
+   "sirkit": 1,
+   "status": "beroperasi",
+   "beroperasi_sejak": null,
+   "ujung_a": {
+    "nama": "Kenjeran",
+    "provinsi": "Jawa Timur",
+    "gardu": "Gardu Induk Kenjeran",
+    "lat": null,
+    "lon": null
+   },
+   "ujung_b": {
+    "nama": "Bangkalan",
+    "provinsi": "Jawa Timur",
+    "gardu": "Gardu Induk Bangkalan",
+    "lat": null,
+    "lon": null
+   },
+   "panjang_kms_sirkit": null,
+   "panjang_km": null,
+   "kapasitas_mw": null,
+   "keterangan": "Interkoneksi Jawa (Surabaya)-Madura (Bangkalan) lewat SUTT dan SKTT 150 kV, satu sirkit; beroperasi per rilis PLN 24 Maret 2023.",
+   "catatan": "Kutipan: \"PLN berhasil menyelesaikan interkoneksi listrik Jawa-Madura (21/03)\"; \"Saat ini interkoneksi Pulau Madura disokong dua sirkit yaitu satu dari SUTT dan SKTT 150 kV Ujung-Gilitimur dan satu sirkit dari SUTT dan SKTT 150 kV Kenjeran-Bangkalan.\" Rute melintasi Selat Madura (ruas kabel tanah/laut) tidak dirinci; panjang tidak tertulis. Kedinding-Bangkalan Tx sirkit 3 dienergize 21 Maret 2023 tetapi ujung 'Tx' bukan gardu, jadi tidak digambar; RUPTL-2025 masih mencatat SJ-16 sebagai rencana.",
+   "src": "PLN-PR-2023-192",
+   "st": "sumber"
+  },
+  {
+   "id": "SJ-19-ujung-gilitimur-150",
+   "nama": "SUTT dan SKTT 150 kV Ujung (Surabaya)-Gili Timur (Madura)",
+   "jenis_saluran": "kabel-tanah-dan-udara",
+   "tegangan_kv": 150,
+   "sirkit": 1,
+   "status": "beroperasi",
+   "beroperasi_sejak": null,
+   "ujung_a": {
+    "nama": "Ujung",
+    "provinsi": "Jawa Timur",
+    "gardu": "Gardu Induk Ujung",
+    "lat": null,
+    "lon": null
+   },
+   "ujung_b": {
+    "nama": "Gili Timur",
+    "provinsi": "Jawa Timur",
+    "gardu": "Gardu Induk Gili Timur",
+    "lat": null,
+    "lon": null
+   },
+   "panjang_kms_sirkit": null,
+   "panjang_km": null,
+   "kapasitas_mw": null,
+   "keterangan": "Interkoneksi Jawa (Surabaya)-Madura (Bangkalan) lewat SUTT dan SKTT 150 kV, satu sirkit; beroperasi per rilis PLN 24 Maret 2023.",
+   "catatan": "Kutipan: \"PLN berhasil menyelesaikan interkoneksi listrik Jawa-Madura (21/03)\"; \"Saat ini interkoneksi Pulau Madura disokong dua sirkit yaitu satu dari SUTT dan SKTT 150 kV Ujung-Gilitimur dan satu sirkit dari SUTT dan SKTT 150 kV Kenjeran-Bangkalan.\" Rute melintasi Selat Madura (ruas kabel tanah/laut) tidak dirinci; panjang tidak tertulis. Kedinding-Bangkalan Tx sirkit 3 dienergize 21 Maret 2023 tetapi ujung 'Tx' bukan gardu, jadi tidak digambar; RUPTL-2025 masih mencatat SJ-16 sebagai rencana.",
+   "src": "PLN-PR-2023-192",
    "st": "sumber"
   }
  ],
