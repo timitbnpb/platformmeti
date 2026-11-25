@@ -161,6 +161,10 @@ def ekstrak_pln(th):
         v = x['nilai']
         for i, kv in enumerate(KV):
             u, m = v[2 * i], v[2 * i + 1]
+            if not (u or m) and kv == '500' and x['tingkat'] == 'provinsi':
+                # GITET 500 kV dicatat PLN di tingkat unit (UIT/UIP3B); provinsi bukan nol, tapi tanpa nilai
+                r['mva'].append({'tahun': th, 'tingkat': 'provinsi', 'prov_kode': x['prov'], 'unit': x['unit'], 'baris': x['label'], 'kv': kv, 'unit_trafo': None, 'mva': None, 'src': src, 'st': 'sumber',
+                                 'catatan': 'tercatat di tingkat unit (Statistik PLN %d Tabel %d tidak memuat %s kV per provinsi)' % (th, NOMOR['trafo'], kv)})
             if u or m:
                 r['mva'].append({'tahun': th, 'tingkat': x['tingkat'], 'prov_kode': x['prov'], 'unit': x['unit'], 'baris': x['label'], 'kv': kv, 'unit_trafo': jml(u), 'mva': jml(m), 'src': src, 'st': 'sumber',
                                  'catatan': 'Statistik PLN %d Tabel %d Jumlah dan Daya Terpasang Trafo Gardu Induk' % (th, NOMOR['trafo'])})
@@ -171,11 +175,26 @@ def ekstrak_pln(th):
             if v is not None:
                 r['produksi'].append({'tahun': th, 'tingkat': x['tingkat'], 'wilayah': x['label'], 'prov_kode': x['prov'], 'jenis': j, 'gwh': jml(v), 'src': src, 'st': 'sumber',
                                       'catatan': 'Statistik PLN %d Tabel %d, blok Produksi Sendiri (tanpa sewa genset dan pembelian)' % (th, NOMOR['prod'])})
+    if NOMOR.get('prod2_n'):
+        # blok halaman berikut: baris tanpa label (urutan sama dengan blok pertama), n angka; hanya kolom Produksi Sendiri di depan yang diambil
+        b, _ = blok(t, NOMOR['prod'])
+        mulai = next((i for i, g in enumerate(b) if 'Sewa Genset' in g), None)
+        sec = []
+        for g in (b[mulai:] if mulai is not None else []):
+            tok = g.split()
+            if len(tok) == NOMOR['prod2_n'] and all(NUM.match(q) for q in tok): sec.append(tok)
+        if len(sec) != len(prod): CELAH.append('PLN %d Tabel %d blok kedua (Surya/Bayu/Biomassa): %d baris vs %d baris blok pertama, tidak diambil.' % (th, NOMOR['prod'], len(sec), len(prod)))
+        else:
+            for x, tok in zip(prod, sec):
+                for j, v in zip(NOMOR['prod2_jenis'], tok):
+                    if angka(v) is not None:
+                        r['produksi'].append({'tahun': th, 'tingkat': x['tingkat'], 'wilayah': x['label'], 'prov_kode': x['prov'], 'jenis': j, 'gwh': jml(angka(v)), 'src': src, 'st': 'sumber',
+                                              'catatan': 'Statistik PLN %d Tabel %d, blok Produksi Sendiri halaman berikut (baris dipasangkan menurut urutan blok pertama)' % (th, NOMOR['prod'])})
     return r
 
 NOMOR_TABEL = {th: {'jual': 6, 'neraca': 1, 'saidi': 16, 'trafo': 30, 'prod': 23} for th in (2021, 2022, 2023, 2024)}
 # 2024: Tabel 6 punya kolom 'Lainnya (T,C,L)' (9 angka); Tabel 23 blok Produksi Sendiri halaman pertama hanya PLTA..PLTMG (kolom Surya/Bayu/Biomassa di blok halaman berikut tidak diambil)
-NOMOR_TABEL[2024].update({'saidi_potong': 'Lama Gangguan', 'jual_n': 9, 'prod_n': 9, 'prod_jenis': ['PLTA', 'PLTM', 'PLTMH', 'PLTU', 'PLTG', 'PLTGU', 'PLTP', 'PLTD', 'PLTMG']})
+NOMOR_TABEL[2024].update({'saidi_potong': 'Lama Gangguan', 'jual_n': 9, 'prod_n': 9, 'prod_jenis': ['PLTA', 'PLTM', 'PLTMH', 'PLTU', 'PLTG', 'PLTGU', 'PLTP', 'PLTD', 'PLTMG'], 'prod2_n': 14, 'prod2_jenis': ['PLTS', 'PLTB', 'PLT Biomassa']})
 
 # ---------- Faktor Emisi GRK (Gatrik) ----------
 def fnum(t):
@@ -348,6 +367,7 @@ def main():
     fe = ekstrak_fe()
     CELAH.append('BPS var 859: hanya tahun 2024 (halaman tabel SSR, tanpa kunci WebAPI); 34 provinsi, belum memuat provinsi pemekaran Papua 2022.')
     CELAH.append('Statistik PLN: baris dengan label provinsi memuat tingkat=provinsi; unit multi-provinsi tanpa rincian (mis. UIW Kalimantan Timur dan Utara) tingkat=unit atau induk, jangan dijumlah dengan baris provinsi.')
+    CELAH.append('MVA trafo (Tabel 30): total Indonesia per tegangan = jumlah baris provinsi dan unit (tanpa baris induk, Jawa, Luar Jawa) untuk 2021-2024, kecuali 70 kV 2022 (110 vs 80 MVA di anak: Maluku, selisih 30) dan 2023 (130 vs 80, selisih 50) yang tak konsisten di sumber PLN sendiri. Provinsi tanpa nilai 500 kV bernilai null (catatan: tercatat di tingkat unit), bukan nol.')
     CELAH.append('Statistik PLN produksi: hanya blok Produksi Sendiri PLN per jenis (Tabel 23); sewa genset dan pembelian IPP tidak diekstrak (kolom terpisah halaman, tak sejajar). Bukan total produksi sistem.')
     CELAH.append('ESDM 2023: PDF tanpa lapisan teks; hanya Tabel 43 (SAIDI nasional) dan Tabel 44 (bauran) yang dibaca dari gambar halaman. Tabel lain 2023 (produksi, MVA, penjualan per wilayah) tidak diambil.')
     CELAH.append('Statistik ESDM 2021-2023: produksi per wilayah/provinsi tidak diekstrak (format sel gabung per jenis/sewa/beli); bauran energi primer PLN (persen) dan SAIDI/SAIFI nasional diambil.')
@@ -355,6 +375,7 @@ def main():
     CELAH.append('SAIDI/SAIFI per UIW/UID hanya dari Statistik PLN; ESDM hanya nasional. Tidak ada angka per UP3/ULP.')
     CELAH.append('Beban puncak: per unit PLN dari Tabel 1 Neraca Daya; beban puncak sistem interkoneksi besar tidak terbit sebagai satu angka kecuali baris "Jawa", "Luar Jawa", "Indonesia" yang dicetak PLN.')
     if 2024 in PLN: CELAH.append('Statistik PLN 2024 dibaca dari salinan utuh Wayback 20260701111630 (Statistik2024.pdf, 8.503.625 byte, 106 hlm; www.pln.co.id live 503 saat dicek). Tabel 23 produksi 2024: hanya PLTA..PLTMG (blok halaman pertama); kolom PLT Surya/Bayu/Biomassa tidak diambil. Penjualan 2024 PLN punya kolom Lainnya (T,C,L); jumlah provinsi + Kaltim/Kaltara = total Indonesia 306.219,42 GWh.')
+    CELAH.append('Statistik PLN 2025 (www.pln.co.id/webapi/media/file/webkorp/asset/Statistik-2025-2907.pdf, 76.192.226 byte): semua snapshot Wayback (20260913030335, 20260925103821, 20261009*, 20261010*) terpotong crawler di sekitar 15-16 MB (server menutup koneksi, tanpa xref/pohon halaman, pdfinfo gagal); situs live 503. Tidak ada angka PLN 2025; ulangi bila ada snapshot utuh.')
     tahun_ok = sorted(PLN)
     return {
         'meta': {'versi': 1, 'dibuat_oleh': 'scripts/panen/statistik_resmi.py', 'tanggal_baca': TGL_BACA, 'tingkat_bukti': 'situs-sendiri',
