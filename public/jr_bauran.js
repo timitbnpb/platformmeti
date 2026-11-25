@@ -6,6 +6,7 @@ import { tanggal } from "/i18n.js";
 import { muatKJ, chipSt, chipSrc, kakiFakta } from "/jr_kj.js";
 import { nanti } from "/inti/umum.js";
 import { URUT_BBM, namaBbm, rampIntensitas, SKALA, batangBbm, legendaBbm, pasangGaya } from "/jr_bbm.js";
+import { blokSistem } from "/jr_kartu.js";
 import { petaBersama, pasangPeta, padPeta, bukaPanel, bawahSlot } from "/jr_app.js";
 
 const S = { mode: "langsung", sel: null, E: null, peta: null, bbox: new Map() };
@@ -61,7 +62,7 @@ function rincian() {
     <div class="kj-ang"><b>${gi(s.daur_hidup)}<small>g/kWh</small></b><span>${esc(t("kj.ba.nas.int_daur_hidup"))}</span></div>
     <div class="kj-ang"><b>${num(s.total)}<small>GWh</small></b><span>${esc(t("kj.ba.total"))}</span></div></div>
     <ul class="kje-jenis">${jenis.map((j) => `<li><i class="kje-sw" data-bbm="${j}"></i><span>${esc(namaBbm(j))}</span><b>${num(s.persen?.[j] ?? 0, 1)}%</b><small>${num(s.gwh[j])} GWh</small></li>`).join("")}</ul>
-    ${kakiFakta(s.st, s.src, s.tgl)}${terbit(s)}${faktor()}`;
+    ${kakiFakta(s.st, s.src, s.tgl)}${blokSistem(S.E.kartu_sistem?.find((x) => x.id === s.id))}${terbit(s)}${faktor()}`;
 }
 
 /* ---- tren tahunan: hanya tahun berdata ---- */
@@ -103,6 +104,19 @@ function trenNasional() {
     <ul class="kje-leg">${Object.keys(EMB).map((j) => `<li><i class="kje-sw" data-c="${EMB[j]}"></i>${esc(t("kj.ba.emb." + j))}</li>`).join("")}<li><i class="kje-sw kje-sw-gar"></i>${esc(t("kj.ba.emb.int"))}</li></ul>
     <div class="kj-angs kje-angs-2"><div class="kj-ang"><b>${num(z.intensitas_g_kwh)}<small>g/kWh</small></b><span>${esc(t("kj.ba.emb.int_z", { tahun: z.tahun }))}</span></div><div class="kj-ang"><b>${num(z.terbarukan_persen, 1)}<small>%</small></b><span>${esc(t("kj.ba.emb.ebt_z", { tahun: z.tahun }))}</span></div><div class="kj-ang"><b>${num(z.fosil_persen, 1)}<small>%</small></b><span>${esc(t("kj.ba.emb.fosil_z", { tahun: z.tahun }))}</span></div></div>
     ${kakiFakta(z.st, z.src, z.tgl)}<p class="kj-cat">${esc(t("kj.ba.emb.cat"))}</p>`;
+}
+/** Produksi dan pembelian listrik PLN nasional 2000-2020 (ESDM/DJK), satu baris per tahun (terbitan terbaru). */
+function produksiPln() {
+  const per = new Map(); for (const y of S.E.produksi_pln_nasional || []) per.set(y.tahun, y);
+  const th = [...per.values()].sort((a, b) => a.tahun - b.tahun); if (!th.length) return "";
+  const L = 40, W = 640, H = 150, g = (W - L - 8) / th.length, lb = Math.max(4, g - 4), mx = Math.max(...th.map((y) => y.jumlah_gwh));
+  const bars = th.map((y, i) => {
+    const x = L + g * i + (g - lb) / 2, hp = (H * y.produksi_gwh) / mx, hb = (H * y.pembelian_gwh) / mx;
+    return `<rect data-c="--data1" x="${x.toFixed(1)}" y="${(H - hp).toFixed(1)}" width="${lb.toFixed(1)}" height="${hp.toFixed(1)}"><title>${esc(y.tahun + " " + t("kj.ba.pp.prod") + " " + num(y.produksi_gwh / 1000, 1) + " TWh")}</title></rect><rect data-c="--data3" x="${x.toFixed(1)}" y="${(H - hp - hb).toFixed(1)}" width="${lb.toFixed(1)}" height="${hb.toFixed(1)}"><title>${esc(y.tahun + " " + t("kj.ba.pp.beli") + " " + num(y.pembelian_gwh / 1000, 1) + " TWh")}</title></rect>${y.tahun % 5 === 0 ? `<text class="kje-tx" x="${(x + lb / 2).toFixed(1)}" y="${H + 14}" text-anchor="middle">${y.tahun}</text>` : ""}`;
+  }).join("");
+  const z = th.at(-1), ariaPp = esc(t("kj.ba.pp.aria", { dari: th[0].tahun, ke: z.tahun }));
+  return `<h4>${esc(t("kj.ba.pp.j"))}</h4><svg class="kje-tren kje-tren-w" viewBox="0 -14 ${W} ${H + 30}" role="img" aria-label="${ariaPp}"><g class="kje-ax"><line x1="${L}" y1="${H}" x2="${W - 8}" y2="${H}"/><text x="${L - 4}" y="${H}" text-anchor="end">0</text><text x="${L - 4}" y="8" text-anchor="end">${num(mx / 1000)}</text><text x="${L - 4}" y="-6" text-anchor="end">TWh</text></g>${bars}</svg>
+    <ul class="kje-leg"><li><i class="kje-sw" data-c="--data1"></i>${esc(t("kj.ba.pp.prod"))}</li><li><i class="kje-sw" data-c="--data3"></i>${esc(t("kj.ba.pp.beli"))}</li></ul>${kakiFakta(z.st, z.src, z.tgl)}<p class="kj-cat">${esc(t("kj.ba.pp.cat"))}</p>`;
 }
 function trenPln() {
   const th = S.E.tren_pln_nasional || []; if (!th.length) return "";
@@ -188,7 +202,7 @@ export async function mulai(el) {
     <section class="kje-blok"><h3 class="kje-j">${esc(t("kj.ba.indonesia"))}</h3><div id="kb-nas">${batangPanel()}</div>${legendaBbm()}</section>
     <section class="kje-blok"><h3 class="kje-j">${esc(t("kj.ba.daftar.j"))}</h3><p class="kj-cat">${esc(t("kj.ba.daftar.cat"))}</p><ul class="kje-daftar" id="kb-daftar">${daftar()}</ul></section>
     <section class="kje-blok"><h3 class="kje-j">${esc(t("kj.ba.tren.j"))}</h3><div id="kb-tren">${tren(null)}</div>${legendaBbm()}</section>
-    <section class="kje-blok" id="kb-nasional">${trenNasional()}${trenPln()}</section>
+    <section class="kje-blok" id="kb-nasional">${trenNasional()}${produksiPln()}${trenPln()}</section>
     <p class="kje-menunggu-b">${chipSt("menunggu")}<span>${esc(t("kj.ba.perjam"))}</span></p>
     <p class="kj-cat">${esc(t("kj.ba.catatan"))}</p>${daftarCelah(E.meta?.celah)}<div class="jr-kaki-sumber">${sumberBerkas(E.meta)}</div></div>
     <div id="kb-detail" class="jr-ber" hidden><button type="button" class="jr-kembali" data-kembali>${ikon("panah-kiri", 16)}<span>${esc(t("jr.app.kembali"))}</span></button>

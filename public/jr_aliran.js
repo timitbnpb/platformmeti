@@ -6,6 +6,7 @@ import { tanggal } from "/i18n.js";
 import { muatKJ, chipSt, chipSrc, kakiFakta } from "/jr_kj.js";
 import { nanti } from "/inti/umum.js";
 import { SKALA, rampIntensitas, pasangGaya } from "/jr_bbm.js";
+import { blokProvinsi } from "/jr_kartu.js";
 import { petaBersama, pasangPeta, padPeta, bukaPanel, bawahSlot } from "/jr_app.js";
 
 const S = { mode: "neraca", sel: null, E: null, peta: null, geo: null, pusat: new Map(), kotak: new Map(), nama: new Map(), mark: [], pan: [] };
@@ -153,7 +154,7 @@ function rincianProv(k) {
     ${bs?.langsung != null ? `<p class="kj-cat">${esc(t("kj.al.karbon_prov", { v: num(bs.langsung) }))}</p>` : ""}
     ${kakiFakta(n.st, n.src, n.tgl)}
     <section class="kje-blok kje-blok-d"><h4>${esc(t("kj.al.batas_prov"))}</h4>${sb.length ? `<ul class="kje-banding">${sb.map((b) => barisBatas(b, k)).join("")}</ul>` : `<p class="kj-cat">${esc(t("kj.al.tanpa_batas"))}</p>`}
-    <p class="kj-cat">${esc(t("kj.al.batas_kalimat"))}</p></section>`;
+    <p class="kj-cat">${esc(t("kj.al.batas_kalimat"))}</p></section>${blokProvinsi(S.E.kartu_provinsi?.find((x) => x.kode === k), { jual: true })}`;
 }
 function rincian() {
   if (S.sel?.tipe === "prov") return rincianProv(S.sel.id);

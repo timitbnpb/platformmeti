@@ -13,7 +13,7 @@ const CARA = [
   ["bauran", ["b.1", ["esdm-statistik-2024"]], ["b.2", ["ipcc-2006", "ipcc-ar5"]], ["b.3", ["esdm-statistik-2024"]]],
   ["aliran", ["a.1", ["esdm-statistik-2024"]], ["a.2", ["osm-power"]], ["a.3", ["osm-power", "esdm-statistik-2024"]], ["a.4", ["osm-power"]]],
 ];
-const ATR = [["osm", "https://www.openstreetmap.org/copyright"], ["gem", "https://globalenergymonitor.org/"], ["esdm", "https://gatrik.esdm.go.id/"]];
+const ATR = [["osm", "https://www.openstreetmap.org/copyright"], ["gem", "https://globalenergymonitor.org/"], ["esdm", "https://gatrik.esdm.go.id/"], ["gsa", "https://globalsolaratlas.info/"], ["gwa", "https://globalwindatlas.info/"], ["geonames", "https://www.geonames.org/"]];
 
 const bagStatus = () => `<section class="kj-sb-bag" aria-labelledby="sb-st"><h2 id="sb-st">${esc(t("kj.sb.st.j"))}</h2><dl class="kj-sb-dl">${ST.map((s) => `<div><dt>${chipSt(s)}</dt><dd>${esc(t("kj.sb.st." + s))}</dd></div>`).join("")}</dl></section>`;
 

@@ -134,6 +134,17 @@ function babHtml(b, i, semua, R) {
     <p class="kj-jawab">${esc(jawab(b, R))}</p>${ub}${ISI[b.id]?.(b, R) || ""}${kaki(b.st, b.src, tgl)}${next}</article>`;
 }
 
+/** Gardu dengan potensi surya dan angin tertinggi (ringkas.ebt_dekat_gardu), tautan membuka gardu di peta. */
+function bagEbt(R) {
+  const d = R.ebt_dekat_gardu; if (!d?.surya?.length && !d?.angin?.length) return "";
+  const daftar = (arr, k, sat) => `<ol class="kj-rk-ol">${arr.slice(0, 10).map((x, i) => nomor(i, `<a class="kj-rk-nm" href="${fokus(x.id)}">${esc(x.nama)}</a><span class="kj-rk-md">${esc(n1(x[k]))} ${esc(sat)}, ${esc(x.kv)} kV</span>${kakiFakta(x.st, x.src, tg(x.tgl))}`)).join("")}</ol>`;
+  return `<article class="kj-bab" id="rk-ebt" aria-labelledby="rk-h-ebt"><header class="kj-bab-h"><span class="kj-bn" role="img" aria-label="${esc(t("kj.rk.bab", { n: R.bab.length + 1 }))}">${R.bab.length + 1}</span><h2 id="rk-h-ebt">${esc(t("kj.rk.ebt.j"))}</h2></header>
+    <p class="kj-jawab">${esc(t("kj.rk.ebt.a"))}</p>
+    ${d.surya?.length ? `<h3 class="kj-rk-h3">${esc(t("kj.rk.ebt.surya"))}</h3>${daftar(d.surya, "pvout", "kWh/kWp/tahun")}` : ""}
+    ${d.angin?.length ? `<h3 class="kj-rk-h3">${esc(t("kj.rk.ebt.angin"))}</h3>${daftar(d.angin, "angin_100m", "m/s")}` : ""}
+    <p class="kj-cat">${esc(t("kj.rk.ebt.cat"))}</p></article>`;
+}
+
 /** Lebar dan tinggi batang lewat style.setProperty (CSP tanpa style=). */
 function skala(panel) {
   for (const el of panel.querySelectorAll("[data-w]")) el.style.width = el.dataset.w + "%";
@@ -145,7 +156,7 @@ export async function mulai(panel) {
   E = En;
   if (!R?.bab?.length) { panel.innerHTML = kosongTab("kj.rk.kosong"); return; }
   panel.innerHTML = `<div class="kj-rk"><h2 class="kj-rk-judul">${esc(t("kj.rk.judul"))}</h2>
-    <nav class="kj-rk-nav" aria-label="${esc(t("kj.rk.nav"))}"><ol>${R.bab.map((b) => `<li><a href="#rk-${esc(b.id)}"><b>${esc(b.n)}</b> ${esc(t(`kj.rk.b.${b.id}.t`))}</a></li>`).join("")}</ol></nav>
-    ${R.bab.map((b, i, a) => babHtml(b, i, a, R)).join("")}</div>`;
+    <nav class="kj-rk-nav" aria-label="${esc(t("kj.rk.nav"))}"><ol>${R.bab.map((b) => `<li><a href="#rk-${esc(b.id)}"><b>${esc(b.n)}</b> ${esc(t(`kj.rk.b.${b.id}.t`))}</a></li>`).join("")}${R.ebt_dekat_gardu ? `<li><a href="#rk-ebt"><b>${R.bab.length + 1}</b> ${esc(t("kj.rk.ebt.j"))}</a></li>` : ""}</ol></nav>
+    ${R.bab.map((b, i, a) => babHtml(b, i, a, R)).join("")}${bagEbt(R)}</div>`;
   skala(panel);
 }
