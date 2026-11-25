@@ -1,0 +1,87 @@
+/* /jaringan?tab=ontologi (KJ-06). Token DS METI saja; terang dan gelap lewat token. */
+.jm-ont{display:grid;gap:16px;min-width:0}
+.jm-ont-kep h2{margin:0 0 4px;font:700 var(--t-h1)/var(--lh-judul) var(--display);color:var(--head)}
+.jm-ont-kep p{margin:0;color:var(--ink2);line-height:var(--lh-isi);max-width:70ch}
+.jm-ont-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start}
+.jm-ont-kiri,.jm-ont-kanan{display:grid;gap:12px;min-width:0;align-content:start}
+.jm-ont-kiri{padding:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+
+/* tumpukan pelat: kolom label 220/980 di kiri, pelat isometrik di kanan, satu SVG */
+.jm-ont-tumpuk{position:relative;max-width:980px;width:100%}
+.jm-ont-svg{display:block;width:100%;height:auto;overflow:visible}
+.jm-ont-lb{--y:0%;position:absolute;left:0;top:var(--y);transform:translateY(-50%);width:calc(214 / 980 * 100%);display:grid;gap:1px;justify-items:start;text-align:left;padding:4px 8px 4px 10px;border:0;border-left:2px solid var(--line-ctl);border-radius:0;background:none;color:var(--ink);font:400 var(--t-kecil)/1.25 var(--font);cursor:pointer}
+.jm-ont-lb:hover{border-left-color:var(--ink2)}
+.jm-ont-lb.aktif{border-left-color:var(--accent)}
+.jm-ont-lb:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-ont-lb b{font:700 var(--t-body)/1.2 var(--font);color:var(--head)}
+.jm-ont-lb.aktif b{color:var(--accent)}
+.jm-ont-ln{font:600 var(--t-label)/1.2 ui-monospace,monospace;letter-spacing:var(--ls-label);color:var(--ink2)}
+.jm-ont-j{font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink2)}
+.jm-ont-j.on{color:var(--accent)}
+.jm-ont-rel{color:var(--ink2);font-style:italic}
+.jm-ont-cat{margin:0;font-size:var(--t-kecil);color:var(--ink2);line-height:var(--lh-isi)}
+
+/* pelat: warna per lapis dari --data1..5 */
+.jm-ont-p{--pc:var(--data1);color:var(--pc)}
+.jm-ont-p1{--pc:var(--data2)}.jm-ont-p2{--pc:var(--data5)}.jm-ont-p3{--pc:var(--data3)}.jm-ont-p4{--pc:var(--data4)}.jm-ont-p5{--pc:var(--data2)}.jm-ont-p6{--pc:var(--data5)}
+.jm-ont-p{filter:drop-shadow(0 5px 6px color-mix(in srgb,var(--ink) 14%,transparent))}
+.jm-ont-p .alas{fill:color-mix(in srgb,var(--card) 90%,var(--pc));stroke:var(--line-ctl);stroke-width:1;vector-effect:non-scaling-stroke;cursor:pointer}
+.jm-ont-p .sisi{fill:color-mix(in srgb,var(--pc) 38%,var(--card));stroke:var(--line-ctl);stroke-width:.6}
+.jm-ont-p .idn{fill:color-mix(in srgb,var(--ink2) 14%,transparent);stroke:none;pointer-events:none}
+.jm-ont-p .pen{fill:none;stroke:var(--line-ctl);stroke-width:1;vector-effect:non-scaling-stroke;filter:none}
+.jm-ont-p.aktif .alas,.jm-ont-p.aktif .pen{stroke:var(--accent);stroke-width:2}
+.jm-ont-p .o{fill:none;stroke:var(--pc);stroke-width:1.3;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;cursor:pointer;transition:opacity .15s}
+.jm-ont-p2 .o{fill:color-mix(in srgb,var(--pc) 18%,transparent);stroke-width:.8}
+.jm-ont-p :is(circle).o{fill:var(--pc);stroke:var(--card);stroke-width:.6}
+.jm-ont-p1 .o{stroke-width:1.8}
+.jm-ont-p5 .o{stroke-width:.9}
+.jm-ont-p6 .o{stroke-width:.8}
+.jm-ont-p .o:hover{stroke:var(--head);stroke-width:2.4}
+.jm-ont-svg.pilih .o{opacity:.14}
+.jm-ont-svg.pilih .o.terk{opacity:1}
+.jm-ont-svg.pilih .o.sel{stroke:var(--accent);stroke-width:3;opacity:1}
+.jm-ont-svg.pilih circle.o.sel{fill:var(--accent)}
+.jm-ont-hub circle:not(.in):not(.cin){fill:var(--accent);stroke:none;opacity:.8}
+.jm-ont-hub .cin{fill:none;stroke:var(--accent);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.jm-ont-hub path{fill:none;stroke:var(--accent);stroke-width:1;opacity:.6;vector-effect:non-scaling-stroke;pointer-events:none}
+.jm-ont-hub circle{fill:var(--accent);stroke:var(--card);stroke-width:1.5;pointer-events:none}
+.jm-ont-tip{position:absolute;z-index:3;display:grid;gap:2px;max-width:220px;padding:8px 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);color:var(--ink);box-shadow:var(--shadow-lg);font-size:var(--t-kecil);line-height:var(--lh-rapat);pointer-events:none}
+.jm-ont-tip[hidden]{display:none}
+.jm-ont-tip small{color:var(--ink2)}
+.jm-ont-tip span{font-weight:600;font-variant-numeric:tabular-nums}
+
+/* panel kanan */
+.jm-ont-jejak ol{display:flex;flex-wrap:wrap;gap:4px 2px;margin:0;padding:0;list-style:none;font-size:var(--t-kecil)}
+.jm-ont-jejak li{display:inline-flex;align-items:center}
+.jm-ont-jejak li+li::before{content:"\203A";padding:0 6px;color:var(--ink2)}
+.jm-ont-jejak :is(button,span){display:inline-flex;gap:6px;align-items:baseline;min-height:32px;padding:0 8px;border:0;border-radius:var(--r-sm);background:none;color:var(--ink);font:inherit;align-items:center}
+.jm-ont-jejak button{color:var(--accent);font-weight:600;cursor:pointer;text-underline-offset:3px}
+.jm-ont-jejak button:hover{text-decoration:underline}
+.jm-ont-jejak span[aria-current]{font-weight:700;color:var(--head)}
+.jm-ont-jejak small{color:var(--ink2);font-size:var(--t-label);letter-spacing:var(--ls-label)}
+.jm-ont-jejak button:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.jm-ont-peta{justify-self:start;max-width:100%}
+.jm-ont-peta[hidden]{display:none}
+.jm-ont-judul{margin:0;font:700 var(--t-h2)/var(--lh-judul) var(--display);color:var(--head);overflow-wrap:anywhere}
+#ontSaring [hidden]{display:none}
+#ontFSis,#ontFProv{display:contents}
+.jm-ont-kls{display:inline-block;width:18px;height:4px;margin-right:8px;border-radius:2px;vertical-align:middle;background:var(--ink2)}
+.jm-ont-kls-k5{background:var(--data1)}.jm-ont-kls-k2{background:var(--data5)}.jm-ont-kls-k1{background:var(--data3)}
+.jm-ont-kanan .jm-tabel td button{overflow-wrap:anywhere}
+.jm-ont-kanan .jm-tabel td button[aria-current]{color:var(--accent)}
+.jm-ont-kanan .jm-tabel td.jm-tengah .jm-tbl{min-height:36px;gap:6px}
+.jm-ont-kanan .jm-tabel td.jm-tengah .jm-tbl:hover{color:var(--accent)}
+.jm-ont-kosong{display:flex;gap:12px;align-items:flex-start;padding:16px;border:1px dashed var(--line-ctl);border-radius:var(--r);background:var(--surface);color:var(--ink)}
+.jm-ont-kosong .jm-ik{flex:none;color:var(--ink2)}
+.jm-ont-kosong p{margin:0;line-height:var(--lh-isi)}
+@media (max-width:640px){
+  .jm-ont-lb{padding:2px 4px;font-size:var(--t-label)}
+  .jm-ont-rel,.jm-ont-ln{display:none}
+}
+@media (prefers-reduced-motion:reduce){.jm-ont-p .o{transition:none}}
+.jm-ont-svg.pilih .o.terk{stroke-width:2.2}
+.jm-ont-svg.pilih circle.o.terk{r:3.4px}
+.jm-ont-svg.pilih circle.o.sel{r:5px}
+#ontSaring{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr))}
+#ontSaring .jm-cari,#ontSaring .jm-hitung{grid-column:1/-1}
+#ontSaring .jm-hitung{justify-self:start}

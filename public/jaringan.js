@@ -8,7 +8,9 @@ import { D, muatSemua, berisi, t, esc, ikon, num, bukti, urlGet, kosongTab } fro
 import { nasional, ringkasAntarPulau, ringkasEkspor } from "/jaringan_hitung.js";
 
 const TAB = [
-  { k: "peta", ikon: "peta", mod: "/jr_peta.js" }, { k: "rencana", ikon: "kalender", mod: "/jr_rencana.js" }, { k: "antar-pulau", ikon: "sambung", mod: "/jr_antarpulau.js" },
+  { k: "peta", ikon: "peta", mod: "/jr_peta.js" }, { k: "bauran", ikon: "karbon", mod: "/jr_bauran.js" }, { k: "aliran", ikon: "sambung", mod: "/jr_aliran.js" },
+  { k: "ontologi", ikon: "sistem-listrik", mod: "/jr_ontologi.js" }, { k: "ringkasan", ikon: "ringkasan", mod: "/jr_ringkasan.js" }, { k: "sumber", ikon: "buku", mod: "/jr_sumber.js" },
+  { k: "rencana", ikon: "kalender", mod: "/jr_rencana.js" }, { k: "antar-pulau", ikon: "sambung", mod: "/jr_antarpulau.js" },
   { k: "lintas", ikon: "asean", mod: "/jr_lintas.js" }, { k: "simpan", ikon: "baterai", mod: "/jr_simpan.js" }, { k: "curtailment", ikon: "petir", mod: "/jr_curtailment.js" },
   { k: "keandalan", ikon: "jam", mod: "/jr_keandalan.js" }, { k: "dana", ikon: "kartu", mod: "/jr_dana.js" }, { k: "pemain", ikon: "gedung", mod: "/jr_pemain.js" },
 ];

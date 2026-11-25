@@ -1,0 +1,71 @@
+/* /jaringan, tab Bauran dan Aliran (KJ-12/13): peta + panel, batang bauran, legenda. Token tema.css saja. Kelas .kje-* (kj-* yang dipakai bersama ada di jr_kembaran.css) */
+.kje-bar-atas{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px}
+.kje-en{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gap)}
+@media (min-width:1000px){.kje-en{grid-template-columns:minmax(0,1.5fr) minmax(320px,1fr);align-items:start}}
+.kje-peta{display:grid;gap:8px;min-width:0}
+.kje-kanvas{position:relative;height:380px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:clip}
+@media (min-width:1000px){.kje-kanvas{height:min(640px,76vh)}}
+.kje-sisi{display:grid;gap:var(--gap);min-width:0;grid-template-columns:minmax(0,1fr)}
+.kje-blok{display:grid;gap:10px;padding:12px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);min-width:0}
+.kje-blok-d{border-style:dashed;background:var(--surface)}
+.kje-blok h3,.kje-blok h4{margin:0}
+.kje-j{margin:0;font:700 var(--t-h3)/var(--lh-rapat) var(--display);color:var(--head)}
+.kje-blok h4{font:700 var(--t-body)/1.2 var(--font);color:var(--head)}
+.kje-angs-2{grid-template-columns:repeat(3,minmax(0,1fr))}
+.kje-ang-t{font:700 var(--t-body)/1.25 var(--font)}
+.kje-pn-m{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+/* batang bersegmen */
+.kje-bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--line);min-width:0}
+.kje-bar i{display:block;height:100%;flex:none}
+.kje-bar-b,.kje-bar-seg{height:14px}
+.kje-arsir{background:repeating-linear-gradient(135deg,var(--line-ctl) 0 2px,transparent 2px 6px)}
+.kje-leg{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:var(--t-label);color:var(--ink2)}
+.kje-leg li{display:flex;align-items:center;gap:6px}
+.kje-sw{display:inline-block;width:12px;height:12px;border-radius:3px;flex:none}
+.kje-sw-abu{background:var(--line-ctl)}
+.kje-leg-seg{display:grid;gap:6px;font-size:var(--t-kecil)}
+.kje-leg-seg li{display:grid;grid-template-columns:12px minmax(0,1fr) auto auto;gap:8px;align-items:center}
+.kje-leg-seg b{color:var(--head);font-variant-numeric:tabular-nums}
+/* skala peta */
+.kje-skala{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:var(--t-label);color:var(--ink2);font-variant-numeric:tabular-nums}
+.kje-grad{display:block;flex:1 1 120px;max-width:260px;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--ok),var(--warn),var(--bad))}
+.kje-grad-n{background:linear-gradient(90deg,var(--tp-simpan),var(--line),var(--ok))}
+.kje-skala em{display:inline-flex;align-items:center;gap:6px;font-style:normal}
+/* daftar sistem/provinsi */
+.kje-daftar{list-style:none;margin:0;padding:0;display:grid;gap:4px;max-height:340px;overflow:auto}
+.kje-sis{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n v" "b b";gap:4px 10px;align-items:center;width:100%;min-height:var(--target);padding:6px 10px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--card);color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.kje-sis:hover{border-color:var(--accent)}
+.kje-sis[aria-pressed=true]{border-color:var(--brand);background:var(--soft-hijau)}
+.kje-sis:focus-visible,.kje-cara summary:focus-visible{outline:2px solid var(--fokus);outline-offset:2px}
+.kje-sis-n{grid-area:n;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.kje-sis>b{grid-area:v;color:var(--head);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kje-sis>b small{font:600 var(--t-label)/1 var(--font);color:var(--ink2);margin-left:3px}
+.kje-sis>.kje-bar{grid-area:b}
+.kje-sis-s{grid-area:b;font-size:var(--t-label);color:var(--ink2)}
+.kje-sis .kje-ns{grid-area:b;justify-self:start}
+/* rincian per jenis */
+.kje-jenis{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.kje-jenis li{display:grid;grid-template-columns:12px minmax(0,1fr) auto auto;gap:8px;align-items:center}
+.kje-jenis b{color:var(--head);font-variant-numeric:tabular-nums}.kje-jenis small{color:var(--ink2);font-variant-numeric:tabular-nums;min-width:84px;text-align:right}
+.kje-banding{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.kje-banding li{display:grid;gap:4px;padding:8px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface);min-width:0;overflow-wrap:anywhere}
+.kje-banding b{color:var(--head);font-variant-numeric:tabular-nums}
+.kje-cek-p{font-size:var(--t-body)}
+.kje-sb,.kje-ns{display:inline-flex;align-items:center;min-height:20px;padding:0 8px;border-radius:var(--r-pil);font:600 var(--t-label)/1 var(--font);border:1px solid currentColor;white-space:nowrap;width:fit-content}
+.kje-sb-langsung,.kje-ns-surplus{color:var(--ok);background:var(--ok-bg)}
+.kje-sb-tidak,.kje-ns-hampir-seimbang{color:var(--ink2);background:var(--surface)}
+.kje-sb-berlawanan,.kje-ns-defisit{color:var(--warn);background:var(--warn-bg)}
+.kje-cara{border-top:1px solid var(--line-cell);padding-top:8px}
+.kje-cara summary{cursor:pointer;min-height:36px;display:flex;align-items:center;font-weight:700;color:var(--head)}
+.kje-menunggu-b{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px;border:1px dashed var(--line-ctl);border-radius:var(--r-sm);color:var(--ink2)}
+/* grafik tren */
+.kje-tren{width:100%;max-width:300px;height:auto;display:block}
+.kje-tx{font:600 var(--t-label)/1 var(--font);fill:var(--ink2)}.kje-tx-b{fill:var(--head);font-weight:700}
+.kje-ax line{stroke:var(--line-ctl);stroke-width:1}.kje-ax text{font:var(--t-label) var(--font);fill:var(--ink2)}
+/* panah aliran (penanda peta) */
+.kje-pan{display:grid;justify-items:center;gap:1px;pointer-events:none;color:var(--head);font:700 var(--t-label)/1.1 var(--font)}
+.kje-pan svg{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;background:var(--card);border-radius:50%;border:1px solid var(--line-ctl);padding:1px}
+.kje-pan b{padding:1px 5px;border-radius:var(--r-pil);background:var(--card);border:1px solid var(--line-ctl);font-variant-numeric:tabular-nums}
+.kje-pan small{padding:1px 5px;border-radius:var(--r-pil);background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn);font:600 var(--t-label)/1.1 var(--font);white-space:nowrap}
+.kje-pan-batas svg{border-color:var(--warn);stroke:var(--warn)}
+@media (max-width:640px){.kje-angs-2,.kje-en .kj-angs{grid-template-columns:1fr 1fr 1fr}.kje-jenis small{min-width:0}}
