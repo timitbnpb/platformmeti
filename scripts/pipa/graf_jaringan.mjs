@@ -152,6 +152,40 @@ export function parseElemen(elemen, eps = 0.0015) {
   return { ruas, gardu };
 }
 
+// Elemen konstruksi (mentah gf/osm-konstruksi, dari osm_geofabrik.mjs): ruas (power=construction+construction=line|cable, construction:power, line=construction) dan gardu.
+// Tegangan hanya bila tercatat (kv kosong = 'tak-tercatat'); TIDAK masuk graf/jembatan.
+export function parseKonstruksi(elemen, eps = 0.0015) {
+  const uniq = new Map(); for (const e of elemen) uniq.set(e.type + e.id, e);
+  const ruas = [], gardu = [];
+  for (const k of [...uniq.keys()].sort()) {
+    const e = uniq.get(k), t = e.tags || {}, kvRaw = tegMax(t.voltage) / 1000; if (t.voltage && kvRaw < 66) continue;
+    const kv = KV_SAH.has(kvRaw) ? kvRaw : null, jenis = t.power === 'construction' ? t.construction : t['construction:power'] || (t.power === 'cable' ? 'cable' : 'line');
+    const tahun = /^\d{4}/.test(t.start_date || '') ? +t.start_date.slice(0, 4) : null;
+    if (jenis === 'substation') {
+      const g = e.type === 'node' ? [e.lon, e.lat] : e.geometry?.length ? [e.geometry.reduce((s, q) => s + q.lon, 0) / e.geometry.length, e.geometry.reduce((s, q) => s + q.lat, 0) / e.geometry.length] : null; if (!g) continue;
+      gardu.push({ id: 'kg_' + e.type[0] + e.id, osm: e.type[0] + e.id, nama: t.name || null, kv, x: R(g[0], 5), y: R(g[1], 5), tahun });
+    } else if (e.type === 'way' && e.geometry?.length > 1) {
+      const raw = e.geometry.map((q) => [q.lon, q.lat]);
+      ruas.push({ id: 'kr_' + e.id, osm: e.id, jenis: jenis === 'cable' ? 'cable' : 'line', kv, nama: t.name || null, km: panjangKm(raw), c: sederhanakan(raw, eps).map(([x, y]) => [R(x, 5), R(y, 5)]), tahun });
+    }
+  }
+  return { ruas, gardu };
+}
+// Ember Yearly Electricity Data (CSV global, CC BY 4.0): Indonesia per tahun -> pembangkitan TWh per bahan bakar, emisi MtCO2e, intensitas gCO2e/kWh.
+const JENIS_EMBER = { Coal: 'batubara', Gas: 'gas', 'Other fossil': 'fosil-lain', Hydro: 'hidro', Bioenergy: 'bioenergi', 'Other renewables': 'terbarukan-lain', Solar: 'surya', Wind: 'bayu', 'Net imports': 'impor-bersih' };
+export function barisEmber(csv) {
+  const per = new Map(), n = (v) => (v === '' || v == null || !Number.isFinite(+v) ? null : +v);
+  for (const r of parseCsv(csv).filter((x) => x['ISO 3 code'] === 'IDN' && x['Area type'] === 'Country or economy')) {
+    const th = +r.Year, o = per.get(th) || { tahun: th, twh: {}, emisi_mt: {}, total_twh: null, emisi_total_mt: null, intensitas_g_kwh: null, fosil_persen: null, terbarukan_persen: null }, j = JENIS_EMBER[r['Electricity source']];
+    if (j) { o.twh[j] = n(r['Generation (TWh)']); if (n(r['Emissions (MtCO2e)']) != null) o.emisi_mt[j] = n(r['Emissions (MtCO2e)']); }
+    else if (r['Electricity source'] === 'Total generation') { o.total_twh = n(r['Generation (TWh)']); o.emisi_total_mt = n(r['Emissions (MtCO2e)']); o.intensitas_g_kwh = n(r['Emissions intensity (gCO2e/kWh)']); }
+    else if (r['Electricity source'] === 'Fossil') o.fosil_persen = n(r['Share of generation (%)']);
+    else if (r['Electricity source'] === 'Renewables') o.terbarukan_persen = n(r['Share of generation (%)']);
+    per.set(th, o);
+  }
+  return [...per.values()].filter((o) => o.total_twh != null).sort((a, b) => a.tahun - b.tahun);
+}
+
 // ---------- Butir 1: simpul. Ujung dalam 400 m / poligon gardu -> gardu; ujung < 150 m sesama -> gabung.
 export function tempelSimpul(ruas, gardu, o = {}) {
   const rG = o.rGardu ?? 400, rK = o.rGabung ?? 150, C = 0.01;
@@ -344,7 +378,19 @@ const JENIS_GPPD = { Gas: 'gas', Oil: 'diesel', Coal: 'batubara', Hydro: 'hidro'
 export function barisGppd(csv) {
   return parseCsv(csv).filter((r) => r.country === 'IDN' && JENIS_GPPD[r.primary_fuel] && r.latitude && r.longitude).map((r) => ({ id: r.gppd_idnr, nama: r.name, jenis: JENIS_GPPD[r.primary_fuel], mw: r.capacity_mw ? R(+r.capacity_mw, 2) : null, tahun: r.commissioning_year ? Math.floor(+r.commissioning_year) || null : null, x: +r.longitude, y: +r.latitude, pemilik: r.owner || null, tglData: String(Math.floor(+r.year_of_capacity_data) || 2021), url: r.url || null })).sort((a, b) => cmp(a.id, b.id));
 }
-export function kumpulPembangkit(pltu, gem, osm, ekstra = [], gppd = []) {
+// GEM Global Gas Plant Tracker (CSV peta GreenInfo, CC BY 4.0, Okt 2023): baris per unit dijumlah per proyek. Hanya Indonesia; bahan bakar gas -> gas, hanya diesel/minyak -> diesel; 'waste heat' bukan pembakaran gas.
+// Hasil { operasi: [proyek status operating], proyek: [construction | pre-construction, tidak masuk daftar pembangkit] }.
+export function barisGemGas(csv) {
+  const per = new Map();
+  for (const r of parseCsv(csv).filter((x) => x.country === 'Indonesia' && x.lat && x.lng && /^(operating|construction|pre-construction)$/.test(x.status) && !/waste heat/i.test(x.fuel_type))) {
+    const jenis = /gas/i.test(r.fuel_type) ? 'gas' : /diesel|fuel oil/i.test(r.fuel_type) ? 'diesel' : null; if (!jenis) continue;
+    const k = r.project + '|' + r.status, a = per.get(k) || { id: r.project.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '-' + r.status, nama: r.project, status: r.status, jenis, mw: 0, tahun: null, x: +r.lng, y: +r.lat, pemilik: r.owner || null, url: r.url || null, unit: 0 };
+    a.mw = R(a.mw + (+r.capacity || 0), 2); a.unit++; const th = Math.floor(+r.start_year) || null; if (th && (a.tahun == null || th < a.tahun)) a.tahun = th; if (jenis === 'gas') a.jenis = 'gas'; per.set(k, a);
+  }
+  const semua = [...per.values()].map((a) => ({ ...a, mw: a.mw || null })).sort((a, b) => cmp(a.id, b.id));
+  return { operasi: semua.filter((a) => a.status === 'operating'), proyek: semua.filter((a) => a.status !== 'operating') };
+}
+export function kumpulPembangkit(pltu, gem, osm, ekstra = [], gppd = [], gemGas = []) {
   const unit = new Map(); for (const u of pltu.unit || []) if (u.st === 'operasi') { const a = unit.get(u.pid) || { pln: 0, cap: 0 }; if (u.captive) a.cap += u.mw; else a.pln += u.mw; unit.set(u.pid, a); }
   const L = [];
   for (const b of pltu.baris) if (b.st === 'operasi' && b.lat != null) {
@@ -357,12 +403,13 @@ export function kumpulPembangkit(pltu, gem, osm, ekstra = [], gppd = []) {
   const osmBaris = [...osm.baris.filter((b) => JENIS_OSM[b.sumber] && !idEkstra.has(b.osm_id) && (b.jenis === 'plant' || (b.kapasitas_mw ?? 0) >= 1)).map((b) => ({ ...b, jenis_kj: JENIS_OSM[b.sumber] })), ...ekstra.map((b) => ({ ...b, proyek_id: lama.get(b.osm_id)?.proyek_id ?? null }))];
   for (const b of osmBaris) L.push({ id: 'pb_' + b.osm_id.replace('/', ''), grup: b.jenis === 'plant' ? 'osm-plant' : 'osm-gen', nama: b.nama, jenis: b.jenis_kj, bb: [b.jenis_kj], tahun: b.tahun ?? null, mw: b.kapasitas_mw ?? null, captive: false, x: b.lng, y: b.lat, pemilik: b.operator || null, op: kanonOp(b.operator), src: 'osm-pembangkit', tautan: b.proyek_id ? [{ jenis: 'proyek', id: b.proyek_id, url: '/proyek#' + encodeURIComponent(b.proyek_id) }] : [] });
   for (const b of gppd) L.push({ id: 'pb_gppd_' + b.id, grup: 'gppd', nama: b.nama, jenis: b.jenis, bb: [b.jenis], tahun: b.tahun, mw: b.mw, captive: false, x: b.x, y: b.y, pemilik: b.pemilik, op: kanonOp(b.pemilik), src: 'wri-gppd', tglData: b.tglData, catatan: 'data ' + b.tglData + ', bisa usang', tautan: [] });
-  const urut = { pltu: 0, gem: 1, 'osm-plant': 2, 'osm-gen': 3, gppd: 4 };
+  for (const b of gemGas) L.push({ id: 'pb_gemgas_' + b.id, grup: 'gem-gas', nama: b.nama, jenis: b.jenis, bb: [b.jenis], tahun: b.tahun, mw: b.mw, captive: false, x: b.x, y: b.y, pemilik: b.pemilik, op: kanonOp(b.pemilik), src: 'gem-ggpt-2023', tglData: '2023-10', catatan: 'GEM Global Gas Plant Tracker, rilis peta Okt 2023', tautan: b.url ? [{ jenis: 'gem', id: b.id, url: b.url }] : [] });
+  const urut = { pltu: 0, gem: 1, 'osm-plant': 2, 'osm-gen': 3, 'gem-gas': 4, gppd: 5 }, tambah = (g) => g === 'gppd' || g === 'gem-gas'; // GEM gas sesudah OSM (OSM menang dulu, GEM gas mengisi MW/tahun yang kosong) tetapi sebelum WRI: GEM gas menang atas WRI
   L.sort((a, b) => urut[a.grup] - urut[b.grup] || cmp(a.id, b.id));
   const kept = []; let gppdDedup = 0, gppdLain = 0; // GPPD baru hanya gas/diesel, sisanya hanya mengisi pemenang (batas gzip objek-inti)
   for (const p of L) { // GPPD: cocok dengan captive atau bukan; bila terdedup, isi kapasitas/tahun yang kosong pada pemenang
-    const k = kept.find((k) => k.grup !== p.grup && k.jenis === p.jenis && (p.grup === 'gppd' || k.captive === p.captive) && Math.abs(k.y - p.y) < 0.03 && jarakM([k.x, k.y], [p.x, p.y]) < 2000);
-    if (!k) { if (p.grup !== 'gppd' || p.jenis === 'gas' || p.jenis === 'diesel') kept.push(p); else gppdLain++; } else if (p.grup === 'gppd') { gppdDedup++; if (k.mw == null && p.mw != null) k.mw = p.mw; if (k.tahun == null && p.tahun != null) k.tahun = p.tahun; } }
+    const k = kept.find((k) => k.grup !== p.grup && k.jenis === p.jenis && (tambah(p.grup) || k.captive === p.captive) && Math.abs(k.y - p.y) < 0.03 && jarakM([k.x, k.y], [p.x, p.y]) < 2000);
+    if (!k) { if (!tambah(p.grup) || p.jenis === 'gas' || p.jenis === 'diesel') kept.push(p); else gppdLain++; } else if (tambah(p.grup)) { gppdDedup++; if (k.mw == null && p.mw != null) k.mw = p.mw; if (k.tahun == null && p.tahun != null) k.tahun = p.tahun; } }
   kumpulPembangkit.gppd = { dedup: gppdDedup, lainDibuang: gppdLain };
   const unik = new Set(); // id pembangkit unik (pertama menang)
   return kept.filter((p) => !unik.has(p.id) && unik.add(p.id)).sort((a, b) => cmp(a.id, b.id));
@@ -370,7 +417,62 @@ export function kumpulPembangkit(pltu, gem, osm, ekstra = [], gppd = []) {
 
 const PULAU = { 1: 'Sumatera', 2: 'Sumatera', 3: 'Jawa', 6: 'Kalimantan', 7: 'Sulawesi', 8: 'Maluku', 9: 'Papua' };
 export const pulauProv = (kode) => (kode === '51' || kode === '52' || kode === '53' ? 'Bali dan Nusa Tenggara' : PULAU[kode[0]] || null);
+const KAPTIF = /freeport|\bptfi\b|tambang|mining|smelter|nickel|nikel|\bvale\b|weda bay|\bimip\b|morowali|amman|newmont/i; // pemilik/operator tambang atau smelter: jaringan dan pembangkitnya captive
 const norm = (n) => String(n || '').toLowerCase().replace(/\b(pt|persero|tbk|cv|perum|perseroan|terbuka)\b/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+
+// ---------- Statistik resmi (data/kembaran/statistik.json): kartu sistem/provinsi, keandalan, pembanding emisi, tren bauran PLN nasional.
+// Semua murni dan deterministik. Tiap baris membawa st/src/tgl dari baris sumbernya; hasil hitungan (jumlah) st 'hitung'.
+const bersihNama = (n) => norm(String(n || '').replace(/\b(pt|pln|uid|uiw|uip3b|kota)\b/gi, ' '));
+const jum = (a) => R(a.reduce((t, x) => t + x, 0), 2);
+const JENIS_PRIMER = { 'BBM (+BBN)': 'bbm', Gas: 'gas', Batubara: 'batubara', BBN: 'bbn', Air: 'hidro', 'Panas Bumi': 'panas-bumi', Biomassa: 'bioenergi', 'EBT lainnya (angin, dll)': 'ebt-lain' };
+const ALIAS_GRID = { jamali: 'jawa bali' }; // grid ESDM -> nama sistem kembaran (lainnya cocok hanya bila nama sama persis)
+export function statResmi(SR, { sistem, namaProv, kodeProv, ruptl = [] }) {
+  // sistem: [{id, nama}]; ruptl: angka_pln jenis beban-puncak; kodeProv: Map(norm(nama) -> kode)
+  const kosong = (v) => v == null || Number.isNaN(v);
+  // --- beban puncak SISTEM hanya dari RUPTL (nama sistem persis). Tabel 1 Neraca Daya PLN = puncak sisi PEMBANGKIT per satuan PLN (tumpang tindih), BUKAN beban sistem: hanya disimpan sebagai fakta berlabel, bukan ubin.
+  const bp = SR.beban_puncak_sistem.filter((r) => !kosong(r.mw)), kartuSistem = [];
+  for (const s of sistem) {
+    const o = { id: s.id }, kn = bersihNama(s.nama), kata = kn.split(' ');
+    const rp = ruptl.filter((x) => norm(x.wilayah) === norm(s.nama) && x.cakupan === 'sistem').sort((a, b) => b.tahun - a.tahun)[0];
+    if (rp) o.beban_puncak = { tahun: rp.tahun, mw: rp.nilai, cara: 'nama', unit: rp.wilayah, st: 'sumber', src: rp.src, tgl: String(rp.tahun), id: rp.id, catatan: rp.catatan || null };
+    const pu = bp.filter((r) => kata.every((w) => norm(r.sistem_pln).split(' ').includes(w))), tp = Math.max(...pu.map((r) => r.tahun), -Infinity);
+    if (pu.length) o.puncak_pembangkit_unit = { label: 'puncak pembangkit unit PLN (Tabel 1), bukan beban sistem', tahun: tp, unit: pu.filter((r) => r.tahun === tp).map((r) => ({ unit: r.sistem_pln, mw: r.mw })).sort((a, b) => cmp(a.unit, b.unit)), st: 'sumber', src: [...new Set(pu.filter((r) => r.tahun === tp).map((r) => r.src))].sort().join(','), tgl: String(tp), catatan: 'Beban puncak pembangkit PLN, sewa, dan IPP per satuan; antar-unit tumpang tindih dan tidak serentak, jangan dijumlahkan atau dibaca sebagai beban sistem' };
+    if (o.beban_puncak || o.puncak_pembangkit_unit) kartuSistem.push(o);
+  }
+  // --- kartu provinsi: MVA per kV (tahun terakhir) dan deret penjualan
+  const mv = SR.mva_provinsi_tegangan.filter((r) => r.tingkat === 'provinsi' && r.prov_kode && !kosong(r.mva)), pj = SR.penjualan_provinsi.filter((r) => r.prov_kode && !kosong(r.gwh));
+  const kodes = [...new Set([...mv, ...pj].map((r) => r.prov_kode))].sort(), kartuProvinsi = [];
+  for (const k of kodes) {
+    const o = { kode: k, nama: namaProv.get(k) || k }, m = mv.filter((r) => r.prov_kode === k);
+    if (m.length) { const th = Math.max(...m.map((r) => r.tahun)), mm = m.filter((r) => r.tahun === th), per = {}; for (const r of mm) { const x = per[r.kv] || { mva: 0, unit_trafo: 0, n: 0 }; x.mva += r.mva; x.unit_trafo += r.unit_trafo || 0; x.n++; per[r.kv] = x; } const kv = Object.keys(per).sort((a, b) => (b === '<30' ? -1 : a === '<30' ? 1 : b - a)); o.mva_per_kv = { tahun: th, per_kv: Object.fromEntries(kv.map((q) => [q, R(per[q].mva, 2)])), unit_trafo: Object.fromEntries(kv.map((q) => [q, per[q].unit_trafo])), total_mva: jum(kv.map((q) => per[q].mva)), st: mm.length > 1 ? 'hitung' : 'sumber', src: [...new Set(mm.map((r) => r.src))].sort().join(','), tgl: String(th), unit: [...new Set(mm.map((r) => r.unit))].sort(), catatan: 'Trafo gardu induk milik PLN (Tabel 30); kV "<30" = distribusi' }; }
+    const dr = [...new Set(pj.filter((r) => r.prov_kode === k).map((r) => r.tahun))].sort().map((th) => { const rr = pj.filter((r) => r.prov_kode === k && r.tahun === th); return { tahun: th, gwh: jum(rr.map((r) => r.gwh)), st: rr.length > 1 ? 'hitung' : 'sumber', src: [...new Set(rr.map((r) => r.src))].sort().join(','), tgl: String(th), ...(rr.length > 1 ? { unit: rr.map((r) => r.unit || r.baris).sort() } : {}) }; });
+    if (dr.length) o.penjualan_gwh = dr;
+    if (o.mva_per_kv || o.penjualan_gwh) kartuProvinsi.push(o);
+  }
+  // --- keandalan
+  const pecahProv = (unit) => { // "Sulawesi Utara, Tengah dan Gorontalo" -> kode provinsi; potongan tanpa pulau mewarisi kata pertama
+    const bagian = String(unit).replace(/^(uid|uiw|pt pln)\s+/i, '').split(/,|\s+dan\s+/i).map((x) => x.trim()).filter(Boolean), pulau = bagian[0].split(' ')[0], hasil = [];
+    for (const b of bagian) { const n = norm(b), k = kodeProv.get(n) ?? kodeProv.get(norm(pulau + ' ' + b)) ?? (n === 'yogyakarta' ? kodeProv.get('di yogyakarta') : null); if (k) hasil.push(k); }
+    return hasil.sort();
+  };
+  const keandalan = SR.saidi_saifi.filter((r) => r.unit !== 'Nasional (ESDM)' && r.unit !== 'Indonesia').map((r) => ({ unit: r.unit, tingkat: r.tingkat, prov: r.prov_kode ? [r.prov_kode] : r.tingkat === 'unit' && /^(jawa|luar jawa)$/i.test(r.unit) ? [] : pecahProv(r.unit), tahun: r.tahun, saidi: r.saidi_jam, saifi: r.saifi_kali, st: r.st, src: r.src, tgl: String(r.tahun) })).sort((a, b) => a.tahun - b.tahun || cmp(a.unit, b.unit));
+  const keandalanNasional = SR.saidi_saifi.filter((r) => r.unit === 'Nasional (ESDM)' || r.unit === 'Indonesia').map((r) => ({ pengukur: r.unit === 'Indonesia' ? 'PLN' : 'ESDM', tahun: r.tahun, saidi: r.saidi_jam, saifi: r.saifi_kali, st: r.st, src: r.src, tgl: String(r.tahun) })).sort((a, b) => a.tahun - b.tahun || cmp(a.pengukur, b.pengukur));
+  // --- faktor emisi resmi: edisi terakhir per grid
+  const fe = new Map(); for (const r of SR.faktor_emisi_resmi) { const kk = norm(r.sistem), g = fe.get(kk) || { th: -1, rows: [] }; if (r.tahun > g.th) { g.th = r.tahun; g.rows = []; } if (r.tahun === g.th) g.rows.push(r); fe.set(kk, g); } // nama grid beda huruf besar antar edisi (JAMALI/Jamali)
+  const pembanding = [...fe].sort((a, b) => cmp(a[0], b[0])).map(([, g]) => { const r = g.rows[0], grid = r.sistem, n = (v) => (kosong(v) ? null : v); return { grid, provinsi: g.rows.some((x) => x.catatan_provinsi) ? [] : [...new Set(g.rows.map((x) => x.provinsi).filter(Boolean))].sort(), tahun: g.th, om: n(r.om), bm: n(r.bm), cm_ex_post_050: n(r.cm), cm_ex_post_075: n(r.cm_ex_post_075), cm_ex_ante_050: n(r.cm_ex_ante_050), cm_ex_ante_075: n(r.cm_ex_ante_075), ...(g.th <= 2016 ? { ket: 'Edisi 2011-2016 hanya memuat ex-ante/ex-post gabungan; kolom OM/BM kosong' } : {}), satuan: r.satuan, st: r.st, src: r.src, tgl: String(g.th), ket_sumber: 'OM=operating margin, BM=build margin, CM=combined margin; ex-post (realisasi) dan ex-ante (proyeksi) dari Gatrik ESDM' }; });
+  // grid -> sistem: nama persis, alias (Jamali = Jawa-Bali), atau semua kata nama sistem ada di nama grid (heuristik); tiap sistem mengambil grid edisi TERBARU, sisanya ke daftar lain
+  const cocok = new Map(), dipakai = new Set();
+  for (const sis of sistem) {
+    const kn = bersihNama(sis.nama), kata = kn.split(' '), cand = [];
+    for (const p of pembanding) { const n = norm(p.grid), cara = n === kn ? 'nama' : ALIAS_GRID[n] === kn ? 'alias' : kata.every((w) => n.split(' ').includes(w)) ? 'kata' : null; if (cara) cand.push({ ...p, cara_cocok: cara, ...(cara === 'kata' ? { catatan_cakupan: 'Cocok per kata nama; grid ESDM "' + p.grid + '" bisa mencakup wilayah lebih luas dari sistem kita (mis. Batam-Tanjung Pinang memuat juga Bintan)' } : {}) }); }
+    cand.sort((a, b) => b.tahun - a.tahun || cmp(a.grid, b.grid)); if (cand[0]) { cocok.set(sis.id, cand[0]); dipakai.add(cand[0].grid); }
+  }
+  const lain = pembanding.filter((p) => !dipakai.has(p.grid));
+  // --- tren bauran energi primer PLN nasional (persen, ESDM): edisi terbaru menang per (tahun, jenis)
+  const tp = new Map(); for (const r of SR.bauran_energi_primer_pln) { const k = r.tahun + '|' + r.jenis, o = tp.get(k); if (!o || r.src > o.src) tp.set(k, r); }
+  const tren = [...new Set([...tp.values()].map((r) => r.tahun))].sort().map((th) => { const rr = [...tp.values()].filter((r) => r.tahun === th).sort((a, b) => cmp(a.jenis, b.jenis)); return { tahun: th, persen: Object.fromEntries(rr.map((r) => [JENIS_PRIMER[r.jenis] || r.jenis, r.persen])), jumlah_persen: R(rr.filter((r) => r.jenis !== 'BBN').reduce((t, r) => t + r.persen, 0), 2), catatan: 'BBM (+BBN) sudah memuat BBN; jangan dijumlahkan dua kali (jumlah_persen tanpa baris bbn)', cakupan: 'energi primer pembangkit PLN, nasional (persen)', st: 'sumber', src: [...new Set(rr.map((r) => r.src))].sort().join(','), tgl: String(th) }; });
+  return { kartuSistem, kartuProvinsi, keandalan, keandalanNasional, pembandingSistem: cocok, pembandingLain: lain, trenPln: tren };
+}
 
 // ---------- Bangun semuanya
 export function bangun(elemen, ctx, tgl, celahMasukan = []) {
@@ -380,7 +482,7 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
   const gardu = mentah.gardu.filter((g) => dalamIndonesia(provIdx, g.x, g.y));
   const dibuang = { ruas: mentah.ruas.length - ruas.length, gardu: mentah.gardu.length - gardu.length, pembangkit: 0 };
   const namaProv = new Map(ctx.statistik.baris.map((b) => [b.kode, b.provinsi]));
-  const pbsSemua = kumpulPembangkit(ctx.pltu, ctx.gem, ctx.osm, ctx.osmEkstra || [], ctx.gppd || []), pbs = pbsSemua.filter((p) => dalamIndonesia(provIdx, p.x, p.y));
+  const pbsSemua = kumpulPembangkit(ctx.pltu, ctx.gem, ctx.osm, ctx.osmEkstra || [], ctx.gppd || [], ctx.gemGas?.operasi || []), pbs = pbsSemua.filter((p) => dalamIndonesia(provIdx, p.x, p.y));
   dibuang.pembangkit = pbsSemua.length - pbs.length;
   const T = ctx.terbitan || {}, ragu = [];
   const lengkap = (x) => ({ ...x, src: x.src ?? 'terbitan', st: x.st ?? 'sumber', tgl: x.tanggal ?? x.tgl ?? (x.tahun ? String(x.tahun) : tgl) });
@@ -389,6 +491,8 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
     { id: 'osm-power', judul: 'OpenStreetMap power=line|cable|substation >= 66 kV (ekstrak Geofabrik/Overpass)', lisensi: 'ODbL 1.0', tanggal_data: tgl },
     { id: 'gem', judul: 'Global Energy Monitor trackers (surya, hidro, panas bumi, bayu)', lisensi: 'CC BY 4.0', tanggal_ambil: ctx.gem.tanggal_akses ?? null },
     ...(ctx.gppd?.length ? [{ id: 'wri-gppd', judul: 'Global Power Plant Database v1.3 (WRI), Indonesia: gas, diesel, batu bara, hidro, panas bumi; data kapasitas ~2021', penerbit: 'World Resources Institute', url: 'https://datasets.wri.org/dataset/globalpowerplantdatabase', lisensi: 'CC BY 4.0', atribusi: 'World Resources Institute, Global Power Plant Database v1.3 (CC BY 4.0)' }] : []),
+    ...(ctx.gemGas ? [{ id: 'gem-ggpt-2023', judul: 'Global Energy Monitor, Global Gas Plant Tracker (data CSV peta GreenInfo, rilis 31 Okt 2023), Indonesia: unit >= 50 MW, dijumlah per proyek', penerbit: 'Global Energy Monitor', url: 'https://greeninfo-network.github.io/global-gas-plant-tracker/static/data/data.csv', lisensi: 'CC BY 4.0', atribusi: 'Global Energy Monitor, Global Gas Plant Tracker (CC BY 4.0)', tanggal_data: '2023-10-31', tanggal_ambil: ctx.gemGas.tanggal_ambil ?? null }] : []),
+    ...(ctx.ember?.length ? [{ id: 'ember-2025', judul: 'Ember, Yearly Electricity Data (global), Indonesia 2000-2025: pembangkitan TWh per bahan bakar, emisi dan intensitas', penerbit: 'Ember', url: 'https://ember-energy.org/data/yearly-electricity-data/', lisensi: 'CC BY 4.0', atribusi: 'Ember, Yearly Electricity Data (CC BY 4.0)', tanggal_ambil: ctx.emberTgl ?? null }] : []),
     { id: 'gem-gcpt', judul: 'Global Coal Plant Tracker', lisensi: 'CC BY 4.0' },
     { id: 'osm-pembangkit', judul: 'OpenStreetMap power=plant|generator', lisensi: 'ODbL 1.0', tanggal_data: tgl },
     { id: 'esdm-statistik-2024', judul: ctx.statistik.sumber, lisensi: 'publikasi pemerintah', tanggal_data: String(ctx.statistik.tahun), tanggal_ambil: ctx.statistik.tanggal_ambil ?? null },
@@ -397,6 +501,7 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
     ...(ctx.sistem_pln.sumber || []).filter((x) => x.id === 'riset-ruptl-2025').map((x) => ({ id: x.id, judul: x.judul, lisensi: 'publikasi pemerintah' })),
     { id: 'terbitan', judul: 'Fakta terbitan terkurasi (data/kembaran/terbitan.json) dari dokumen publik PLN/ESDM', lisensi: 'sesuai sumber asal' },
     { id: 'big', judul: 'BIG Satu Peta (RBI 1:25.000 utilitas): garis jaringan listrik tanpa tegangan/MVA/tahun, hanya Riau-Jambi 2018 dan Kalimantan 2016; dipakai membandingkan km OSM di cakupan itu', lisensi: 'sesuai BIG (atribusi Badan Informasi Geospasial)' },
+    ...(ctx.statResmi?.sumber || []).map((x) => ({ id: x.id, judul: x.judul, penerbit: x.penerbit, url: x.url, ...(x.arsip ? { arsip: x.arsip } : {}), lisensi: x.lisensi, tanggal_data: x.tanggal_terbit ?? null, tanggal_ambil: x.tanggal_baca ?? null })),
     ...(T.sumber || [])].filter((x) => !seen.has(x.id) && seen.add(x.id)); })();
   const garduBy = new Map(gardu.map((g) => [g.id, g]));
   let hint = null; const provPoint = (x, y) => { const h = provDi(provIdx, x, y, hint); if (h) { hint = h; return h.kode; } return provDekat(provIdx, x, y)?.kode ?? null; };
@@ -444,10 +549,30 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
   }
   { const keep = pbs.filter((p) => p.mw != null || p.gi); dibuang.pembangkit_tanpa_kapasitas_dan_gardu = pbs.length - keep.length; pbs.splice(0, pbs.length, ...keep); } // tanpa kapasitas dan tanpa gardu 15 km: tak berguna di graf, memberatkan potret
   for (const p of pbs) p.prov = provPoint(p.x, p.y);
-  for (const s of besar) { s.mwPre = 0; s.capPre = 0; }
-  for (const p of pbs) { const s = p.gi && sisDariNode.get(p.gi); if (s) { if (p.captive) s.capPre += p.mw || 0; else s.mwPre += p.mw || 0; } }
-  // captive = jaringan tambang/smelter: captive jauh melebihi PLN
-  for (const s of besar) { s.captive = s.capPre > 0 && s.capPre > 5 * s.mwPre; s.potongan = !s.captive && (s.gardu.length < 5 || s.mwPre === 0); }
+  // pembangkit milik tambang/smelter/industri (mis. Freeport) = captive walau sumbernya (GEM gas, WRI, OSM) tak menandainya
+  for (const p of pbs) if (!p.captive && KAPTIF.test(p.pemilik || '')) { p.captive = true; p.captive_dari_pemilik = true; }
+  const hitungPre = () => { for (const s of besar) { s.mwPre = 0; s.capPre = 0; } for (const p of pbs) { const s = p.gi && sisDariNode.get(p.gi); if (s) { if (p.captive) s.capPre += p.mw || 0; else s.mwPre += p.mw || 0; } } };
+  hitungPre();
+  // captive = jaringan tambang/smelter: ditentukan dari operator jaringan (ruas/gardu beroperator tambang > 50% dari yang beroperator) ATAU captive jauh melebihi PLN
+  const opKaptif = (s) => { const ops = [...s.ruas.map((r) => r.op), ...s.gardu.map((g) => g.op)].filter(Boolean); return ops.length > 0 && ops.filter((o) => KAPTIF.test(o)).length / ops.length > 0.5; };
+  for (const s of besar) s.captive = (s.capPre > 0 && s.capPre > 5 * s.mwPre) || opKaptif(s);
+  // pembangkit PLN tidak boleh tertempel ke gardu jaringan captive: cari gardu bukan-captive dalam 15 km (tegangan tertinggi, seri terdekat); selain itu tak tersambung
+  const captiveGi = (id) => !!id && !!sisDariNode.get(id)?.captive; dibuang.pln_lepas_dari_captive = 0; dibuang.pln_tak_tersambung_captive = 0;
+  for (const p of pbs) if (!p.captive && captiveGi(p.gi)) {
+    let best = null, bk = -1, bd = Infinity;
+    for (const g of gardu15) { if (Math.abs(g.y - p.y) > 0.14 || captiveGi(g.id)) continue; const d = jarakM([p.x, p.y], [g.x, g.y]); if (d > 15000) continue; const k = g.kv ?? 0; if (k > bk || (k === bk && d < bd)) { bk = k; bd = d; best = g; } }
+    p.gi = best ? best.id : null; p.jarak_gi_km = best ? R(bd / 1000, 1) : null; if (best) dibuang.pln_lepas_dari_captive++; else dibuang.pln_tak_tersambung_captive++;
+  }
+  // pembangkit captive dalam 15 km dari gardu jaringan captive: tertempel ke gardu captive itu (terdekat) agar mw_captive jaringan captive terhitung
+  dibuang.captive_ke_jaringan_captive = 0;
+  for (const p of pbs) if (p.captive) {
+    let best = null, bd = Infinity;
+    for (const g of gardu15) { if (Math.abs(g.y - p.y) > 0.14 || !captiveGi(g.id)) continue; const d = jarakM([p.x, p.y], [g.x, g.y]); if (d <= 15000 && d < bd) { bd = d; best = g; } }
+    if (best && p.gi !== best.id) { p.gi = best.id; p.jarak_gi_km = R(bd / 1000, 1); dibuang.captive_ke_jaringan_captive++; }
+    else if (!best) { const sc = besar.find((q) => q.captive && p.x >= q.bbox[0] - 0.03 && p.x <= q.bbox[2] + 0.03 && p.y >= q.bbox[1] - 0.03 && p.y <= q.bbox[3] + 0.03); if (sc) { p.sis_captive = sc; p.gi = null; p.jarak_gi_km = null; dibuang.captive_ke_jaringan_captive++; } } // pembangkit captive di dalam kotak jaringan captive (gardu terdekat > 15 km atau milik jaringan PLN): dihitung ke jaringan captive itu
+  }
+  hitungPre();
+  for (const s of besar) s.potongan = !s.captive && (s.gardu.length < 5 || s.mwPre === 0);
   const pakai = new Set(); const beri = (s, n) => { let nm = n, i = 2; while (pakai.has(nm)) nm = n + ' ' + i++; pakai.add(nm); s.nama = nm; };
   const bersih = (n) => n.replace(/^(gardu induk|gardu|gitet|gis|gi)\s+/i, '').replace(/\s*\d+\s*kv.*$/i, '').trim();
   // Nama sistem (aturan di meta.aturan_nama_sistem): Jawa-Bali, Sumatera menurut geografi (hanya sistem utama); nama RUPTL hanya bila >= 3 gardu, >= 100 km dan mayoritas GARDU
@@ -500,10 +625,11 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
     const bobot = nn.map(() => ({ gi: 0, mva: null, mw: 0 }));
     nn.forEach((n, i) => { if (n.startsWith('gi_')) { const g = garduBy.get(n); bobot[i].gi = 1; bobot[i].mva = g.mva; } });
     s.mw_pln = 0; s.mw_captive = 0;
-    for (const p of pbs) if (p.gi && ix.has(p.gi)) { if (p.captive) { s.mw_captive += p.mw || 0; continue; } bobot[ix.get(p.gi)].mw += p.mw || 0; s.mw_pln += p.mw || 0; p.sis = s.id; }
+    for (const p of pbs) if (p.gi && ix.has(p.gi)) { if (p.captive) { s.mw_captive += p.mw || 0; (s.pemilikCap ??= new Set()).add(p.pemilik || p.op || 'tanpa nama'); continue; } bobot[ix.get(p.gi)].mw += p.mw || 0; s.mw_pln += p.mw || 0; p.sis = s.id; }
     let akar = -1, mx = -1; nn.forEach((n, i) => { if (bobot[i].mw > mx) { mx = bobot[i].mw; akar = i; } });
     const bel = nn.length ? diBelakang(nn.length, sisi, Math.max(akar, 0), jm, bobot) : new Map();
     s.jalur.forEach((j, i) => { j.tunggal = jm.has(i); j.belakang = j.tunggal && bel.has(i) ? bel.get(i) : null; j.sis = s.id; });
+    for (const p of pbs) if (p.captive && p.sis_captive === s) { s.mw_captive += p.mw || 0; (s.pemilikCap ??= new Set()).add(p.pemilik || p.op || 'tanpa nama'); }
     s.mw_pln = R(s.mw_pln); s.mw_captive = R(s.mw_captive);
   }
   for (const j of jalur) if (!j.sis) { j.tunggal = false; j.belakang = null; j.sis = null; }
@@ -542,7 +668,7 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
   for (const p of pbs) obj.pb.push({ id: p.id, nama: p.nama, jenis: p.jenis, bb: p.bb, mw: p.mw, tahun: p.tahun, pemilik: p.pemilik, captive: p.captive, gi: p.gi, jarak_gi_km: p.jarak_gi_km, sis: p.sis || null, prov: p.prov, op: p.op ? opId(p.op) : null, tautan: [...p.tautan, ...orgTautan(p.pemilik, p.org_id)],
     ...(p.catatan ? { catatan: p.catatan } : {}), fakta: [F('kapasitas', p.mw, 'MW', p.mw == null ? 'menunggu' : 'sumber', p.src, p.tglData ?? tgl), F('tahun_operasi', p.tahun, 'tahun', p.tahun == null ? 'menunggu' : 'sumber', p.src, p.tglData ?? tgl)] });
   const sisPublik = (s) => { const kode = [...new Set(s.ruas.flatMap((r) => r.prov))]; const hit = new Map(); for (const k of kode) { const x = ctx.sistem_pln.baris.find((q) => q.provinsi.some((pp) => pp.kode === k)); if (x) hit.set(x.id, (hit.get(x.id) || 0) + 1); } const [id, n] = [...hit].sort((a, b) => b[1] - a[1] || cmp(a[0], b[0]))[0] || []; if (!id) return []; if (n / kode.length < 0.6) { ragu.push({ jenis: 'sistem', id: s.id, kandidat: id, alasan: 'provinsi tersebar di beberapa sistem PLN' }); return []; } return [{ jenis: 'sistem_pln', id, url: '/sistem/' + id }]; };
-  for (const s of besar) obj.sis.push({ id: s.id, nama: s.nama, km: R(s.km), gi: s.gardu.length, mw_pln: s.mw_pln, mw_captive: s.mw_captive, kv_maks: s.kv_maks, prov: [...new Set(s.ruas.flatMap((r) => r.prov))].sort(), bbox: s.bbox, warna_kelas: kelas(s.kv_maks), nama_sumber: s.namaSumber || 'hitung', potongan: !!s.potongan, captive: !!s.captive, tautan: sisPublik(s),
+  for (const s of besar) obj.sis.push({ id: s.id, nama: s.nama, km: R(s.km), gi: s.gardu.length, mw_pln: s.mw_pln, mw_captive: s.mw_captive, ...(s.captive ? { catatan_captive: 'Status captive berdasar nama pemilik/operator (pola tambang/smelter: ' + [...(s.pemilikCap || [])].sort().join(', ') + ') dan/atau MW captive > 5x MW PLN, bukan bukti bahwa listriknya tak dijual ke PLN' } : {}), kv_maks: s.kv_maks, prov: [...new Set(s.ruas.flatMap((r) => r.prov))].sort(), bbox: s.bbox, warna_kelas: kelas(s.kv_maks), nama_sumber: s.namaSumber || 'hitung', potongan: !!s.potongan, captive: !!s.captive, tautan: sisPublik(s),
     fakta: [F('nama', s.nama, '', 'hitung', s.namaSumber && s.namaSumber !== 'hitung' ? s.namaSumber : 'osm-power', tgl), F('panjang', R(s.km), 'km', 'hitung', 'osm-power', tgl), F('gardu', s.gardu.length, 'gardu', 'hitung', 'osm-power', tgl), F('pembangkit_pln', s.mw_pln, 'MW', 'hitung', 'gem', tgl), F('pembangkit_captive', s.mw_captive, 'MW', 'hitung', 'gem', tgl)] });
   const mvaJum = (a) => { const v = a.map((g) => g.mva).filter((x) => x != null); return v.length ? R(v.reduce((s, x) => s + x, 0)) : null; };
   const cmpKey = (n) => { const q = String(n || '').toLowerCase().replace(/[^a-z0-9]/g, ''); return q === 'jakartaraya' ? 'dkijakarta' : q; }, thnStat = String(ctx.statistik.tahun);
@@ -559,12 +685,30 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
   // ------ energi.json (KJ-11)
   const susut = ctx.sistem_pln.susut_nasional.find((s) => s.tahun === ctx.statistik.tahun)?.jumlah ?? ctx.sistem_pln.susut_nasional.at(-1).jumlah;
   const thn = ctx.statistik.tahun, stat = ctx.statistik, ptgl = String(thn); // tgl = tanggal DATA (tahun statistik); tanggal ambil terpisah di meta
-  const wil = new Map(stat.wilayah_pln.map((w) => [w.id, { ...w }])); const bt = wil.get('batam'), rk = wil.get('riau-kepri');
+  const SR = ctx.statResmi, prov2 = !!SR, PEMEKARAN = { 93: '91', 94: '91', 95: '91', 96: '92' }; // pemekaran Papua belum ada di BPS 859: digabung ke induk lama (Papua Selatan/Tengah/Pegunungan -> Papua, Papua Barat Daya -> Papua Barat)
+  // unit neraca: pemekaran Papua ke induk; wilayah PLN multi-provinsi yang faktor kapasitas implisit (produksi / (MW inventori non-captive x 8,76)) salah satu unitnya > 1 digabung utuh seperti sumbernya
+  const mwInv = new Map(); for (const p of pbs) if (!p.captive && p.prov) mwInv.set(p.prov, (mwInv.get(p.prov) || 0) + (p.mw || 0));
+  const basis = (b) => (prov2 ? PEMEKARAN[b.kode] ?? b.kode : b.wilayah_pln[0]), gabungMap = new Map(), unitGabung = [], cfTinggi = [];
+  if (prov2) {
+    const prodU = new Map(), mwU = new Map(), wilU = new Map();
+    for (const b of stat.baris) { const u = basis(b); prodU.set(u, (prodU.get(u) || 0) + b.produksi_pln_gwh.total); mwU.set(u, (mwU.get(u) || 0) + (mwInv.get(b.kode) || 0)); wilU.set(u, b.wilayah_pln[0]); }
+    const cfU = (u) => (mwU.get(u) > 0 ? prodU.get(u) / (mwU.get(u) * 8.76) : null), grup = new Map();
+    for (const [u, w] of [...wilU].sort((a, b) => cmp(a[0], b[0]))) { if (!grup.has(w)) grup.set(w, []); grup.get(w).push(u); }
+    for (const [w, us] of [...grup].sort((a, b) => cmp(a[0], b[0]))) {
+      const tinggi = us.filter((u) => cfU(u) > 1);
+      if (us.length > 1 && tinggi.length) { const id = us[0]; us.forEach((u) => gabungMap.set(u, id)); unitGabung.push({ id, nama: (stat.wilayah_pln.find((x) => x.id === w)?.nama || w).replace(/\s*\(wilayah PLN\)/, ''), unit_awal: us, faktor_kapasitas_awal: Object.fromEntries(us.map((u) => [u, cfU(u) == null ? null : R(cfU(u), 2)])), alasan: 'Faktor kapasitas implisit > 1 pada ' + tinggi.join(',') + ' (produksi PLN dicatat per wilayah PLN gabungan, bukan per provinsi); unit digabung seperti sumbernya' }); }
+      else for (const u of tinggi) cfTinggi.push({ id: u, faktor_kapasitas: R(cfU(u), 2), ket: 'Wilayah PLN satu provinsi; inventori pembangkit OSM/GEM tak lengkap, tak bisa digabung' });
+    }
+  }
+  const unitKode = (b) => gabungMap.get(basis(b)) ?? basis(b), tingkatNer = prov2 ? 'provinsi' : 'wilayah', gNama = new Map(unitGabung.map((g) => [g.id, g.nama]));
+  const bpsRows = prov2 ? SR.penjualan_provinsi.filter((r) => r.tahun === thn && r.prov_kode && /^BPS/.test(r.src)) : [];
+  const wil = new Map(); if (prov2) { for (const r of bpsRows) { const id = gabungMap.get(PEMEKARAN[r.prov_kode] ?? r.prov_kode) ?? PEMEKARAN[r.prov_kode] ?? r.prov_kode, o = wil.get(id) || { id, nama: gNama.get(id) || namaProv.get(id) || id, penjualan_gwh: 0 }; o.penjualan_gwh += r.gwh; wil.set(id, o); } } else for (const w of stat.wilayah_pln) wil.set(w.id, { ...w });
+  const bt = wil.get('batam'), rk = wil.get('riau-kepri');
   if (bt && rk) { rk.penjualan_gwh += bt.penjualan_gwh; wil.delete('batam'); }
-  const wilOf = new Map(stat.baris.map((b) => [b.kode, b.wilayah_pln[0]]));
-  const prodWil = new Map(), provWil = new Map(); for (const b of stat.baris) { const w = b.wilayah_pln[0]; prodWil.set(w, (prodWil.get(w) || 0) + b.produksi_pln_gwh.total); if (!provWil.has(w)) provWil.set(w, []); provWil.get(w).push(b.kode); }
-  const nerWil = [...wil.values()].map((w) => ({ id: w.id, nama: w.nama, provinsi: (provWil.get(w.id) || []).sort(), ...neraca(prodWil.get(w.id) || 0, w.penjualan_gwh, susut), tingkat: 'wilayah', st: 'hitung', ket: 'Selisih memuat susut jaringan dan pemakaian sendiri; bukan aliran terukur.', src: 'esdm-statistik-2024', tgl: ptgl })).sort((a, b) => cmp(a.id, b.id));
-  const produksiProv = stat.baris.map((b) => ({ kode: b.kode, nama: b.provinsi, produksi_gwh: R(b.produksi_pln_gwh.total), wilayah_pln: b.wilayah_pln[0], tidak_dihitung: true, alasan: 'Penjualan listrik hanya terbit per wilayah PLN (Statistik 2024); neraca dan aliran dihitung di tingkat wilayah, bukan provinsi', st: 'hitung', src: 'esdm-statistik-2024', tgl: ptgl })).sort((a, b) => cmp(a.kode, b.kode));
+  const wilOf = new Map(stat.baris.map((b) => [b.kode, unitKode(b)]));
+  const prodWil = new Map(), provWil = new Map(); for (const b of stat.baris) { const w = unitKode(b); prodWil.set(w, (prodWil.get(w) || 0) + b.produksi_pln_gwh.total); if (!provWil.has(w)) provWil.set(w, []); provWil.get(w).push(b.kode); }
+  const nerWil = [...wil.values()].map((w) => ({ id: w.id, ...(prov2 ? { kode: w.id } : {}), nama: prov2 && !gNama.has(w.id) && (provWil.get(w.id) || []).length > 1 ? w.nama + ' (dengan provinsi pemekaran)' : w.nama, provinsi: (provWil.get(w.id) || []).sort(), ...neraca(prodWil.get(w.id) || 0, w.penjualan_gwh, susut), tingkat: tingkatNer, st: 'hitung', ket: prov2 ? 'Penjualan BPS 2024 per provinsi; kebutuhan = penjualan/(1 - susut nasional seragam). Selisih memuat susut beda dari rata-rata, pemakaian sendiri, dan listrik non-PLN; bukan aliran terukur.' : 'Selisih memuat susut jaringan dan pemakaian sendiri; bukan aliran terukur.', ...(prov2 ? { src_penjualan: 'BPS-859-2024' } : {}), src: 'esdm-statistik-2024', tgl: ptgl })).sort((a, b) => cmp(a.id, b.id));
+  const produksiProv = stat.baris.map((b) => ({ kode: b.kode, nama: b.provinsi, produksi_gwh: R(b.produksi_pln_gwh.total), wilayah_pln: b.wilayah_pln[0], ...(prov2 ? { unit_neraca: unitKode(b) } : { tidak_dihitung: true, alasan: 'Penjualan listrik hanya terbit per wilayah PLN (Statistik 2024); neraca dan aliran dihitung di tingkat wilayah, bukan provinsi' }), st: 'hitung', src: 'esdm-statistik-2024', tgl: ptgl })).sort((a, b) => cmp(a.kode, b.kode));
   const nasional = bauran(stat.baris.reduce((m, b) => { for (const [k, v] of Object.entries(b.produksi_pln_gwh)) if (k !== 'total') m[k] = (m[k] || 0) + v; return m; }, {}));
   // bauran provinsi
   const sisPln = ctx.sistem_pln.baris, publik = (kode) => sisPln.find((s) => s.provinsi.some((p) => p.kode === kode));
@@ -601,6 +745,8 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
     return { ...dasar, ...bo, provinsi: anggota.map(([k]) => k), dasar_penetapan: Object.fromEntries(anggota.map(([k, f, d]) => [k, d + ' ' + Math.round(f * 100) + '%'])), mw_pln: s.mw_pln, kapasitas_statistik_mw: R(cap), faktor_kapasitas: R(fk, 2), pembanding_ruptl };
   }).sort((a, b) => cmp(a.id, b.id));
   const dipakaiProv = new Set(bauranSis.flatMap((b) => (b.tidak_dihitung ? [] : b.provinsi))), provTak = stat.baris.filter((b) => !dipakaiProv.has(b.kode)).map((b) => ({ kode: b.kode, nama: b.provinsi, gwh: R(b.produksi_pln_gwh.total) }));
+  const resmi = SR ? statResmi(SR, { sistem: besar.filter((s) => !s.captive && !s.potongan).map((s) => ({ id: s.id, nama: s.nama })), namaProv, kodeProv, ruptl: TP.angka_pln.filter((x) => x.jenis === 'beban-puncak') }) : null;
+  if (resmi) for (const b of bauranSis) { const q = resmi.pembandingSistem.get(b.id); if (q) b.pembanding_esdm = q; }
   const gwhTeralokasi = bauranSis.reduce((t, b) => t + (b.tidak_dihitung ? 0 : b.total), 0);
   // batas & aliran: tingkat WILAYAH PLN (penjualan hanya terbit per wilayah). Ruas kabel/laut dan sambungan terbitan ikut lewat urutan provinsi tiap ruas.
   const wilKode = (k) => wilOf.get(k);
@@ -608,17 +754,19 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
   const agg = new Map(); for (const o of [...batasRaw.values()].sort((a, b) => cmp(a.a + a.b + a.sis, b.a + b.b + b.sis))) { const wa = wilKode(o.a), wb = wilKode(o.b); if (!wa || !wb || wa === wb) continue; const [a, b] = [wa, wb].sort(); const k = a + '|' + b; const x = agg.get(k) || { a, b, sis: [], sirkit: {}, bobot: 0, ruas: 0 }; x.sis.push(o.sis); for (const [kv, n] of Object.entries(o.sirkit)) x.sirkit[kv] = (x.sirkit[kv] || 0) + n; x.bobot += bobotKv(o); x.ruas += o.ruas; agg.set(k, x); }
   const nerOk = new Map(nerWil.map((n) => [n.id, n]));
   const batasOk = [...agg.values()].filter((e) => nerOk.has(e.a) && nerOk.has(e.b));
-  const ALIAS_WIL = { 'jawa tengah dan diy': 'jateng-diy' }, namaKeWil = (n) => ALIAS_WIL[norm(n)] ?? wilKode(kodeProv.get(norm(n)));
+  const ALIAS_WIL = { 'jawa tengah dan diy': prov2 ? '33' : 'jateng-diy', ...(prov2 ? { 'jawa tengah 500 kv': '33', 'jawa timur 500 kv': '35' } : {}) }, namaKeWil = (n) => ALIAS_WIL[norm(n)] ?? wilKode(kodeProv.get(norm(n)));
   // pembatas aliran HANYA kemampuan/rating terbit (transfer, stabilitas). Pasokan, rencana, dan puncak hanya pembanding.
   const capT = new Map();
   const puncakT = new Map(); // hanya pembanding: rata-rata tahunan seharusnya <= puncak; bila melebihi ditandai, tidak dikunci
-  for (const k of T.kiriman_terbit || []) { if (!/puncak/.test(k.jenis || '') || k.nilai_mw == null) continue; const wa = namaKeWil(k.dari), wb = namaKeWil(k.ke); if (!wa || !wb || wa === wb) continue; const kk = [wa, wb].sort().join('|'), m = Math.abs(k.nilai_mw); if (!puncakT.has(kk) || m < puncakT.get(kk).mw) puncakT.set(kk, { mw: m, id: k.id, src: k.src ?? 'terbitan' }); }
-  for (const c of T.batas_terbit || []) { if (c.status !== 'berlaku' || !['kapasitas-transfer', 'batas-stabilitas'].includes(c.jenis_batas)) continue; const sj = sambunganDicatat.find((x) => x.id === c.sambungan_id); if (!sj || c.batas_mw == null) continue; const wa = wilKode(sj.prov[0]), wb = wilKode(sj.prov[1]); if (!wa || !wb || wa === wb) continue; const k = [wa, wb].sort().join('|'), o = capT.get(k), m = c.batas_mw; if (!o || m < o.mw) capT.set(k, { mw: m, src: new Set([c.src ?? 'terbitan']) }); else if (m === o.mw) o.src.add(c.src ?? 'terbitan'); }
+  for (const k of T.kiriman_terbit || []) { if (!/puncak/.test(k.jenis || '') || k.nilai_mw == null || /500 kV/.test(k.dari + k.ke)) continue; const wa = namaKeWil(k.dari), wb = namaKeWil(k.ke); if (!wa || !wb || wa === wb) continue; const kk = [wa, wb].sort().join('|'), m = Math.abs(k.nilai_mw); if (!puncakT.has(kk) || m < puncakT.get(kk).mw) puncakT.set(kk, { mw: m, id: k.id, src: k.src ?? 'terbitan' }); }
+  const infoT = new Map(); // semua batas berlaku per pasangan (termasuk kapasitas-pasokan) untuk ditampilkan; hanya transfer/stabilitas yang memotong aliran
+  for (const c of T.batas_terbit || []) { if (c.status !== 'berlaku' || !['kapasitas-transfer', 'batas-stabilitas', 'kapasitas-pasokan'].includes(c.jenis_batas)) continue; const sj = sambunganDicatat.find((x) => x.id === c.sambungan_id) ?? (() => { const sb = (T.sambungan_diketahui || []).find((x) => x.id === c.sambungan_id && (!x.status || x.status === 'beroperasi')); return sb ? { prov: [sisiKode(sb.ujung_a), sisiKode(sb.ujung_b)] } : null; })(); /* sambungan yang ujung gardunya tak tertulis: wilayah dari nama provinsi ujung */ if (!sj || c.batas_mw == null) continue; const wa = wilKode(sj.prov[0]), wb = wilKode(sj.prov[1]); if (!wa || !wb || wa === wb) continue; const k = [wa, wb].sort().join('|'), o = capT.get(k), m = c.batas_mw; if (!infoT.has(k)) infoT.set(k, []); infoT.get(k).push({ id: c.id, jenis_batas: c.jenis_batas, batas_mw: m, nama: c.nama ?? null, src: c.src ?? 'terbitan', memotong: c.jenis_batas !== 'kapasitas-pasokan' }); if (c.jenis_batas === 'kapasitas-pasokan') continue; if (!o || m < o.mw) capT.set(k, { mw: m, jenis: c.jenis_batas, src: new Set([c.src ?? 'terbitan']) }); else if (m === o.mw) o.src.add(c.src ?? 'terbitan'); }
   const simp = [...new Set(batasOk.flatMap((e) => [e.a, e.b]))].map((k) => ({ id: k, neraca_gwh: nerOk.get(k).neraca_gwh, kebutuhan_gwh: nerOk.get(k).kebutuhan_gwh }));
   const peringatan = [], bebasAlir = alirkan(simp, batasOk), alir = alirkan(simp, batasOk.map((e) => ({ ...e, maks_mw: capT.get(e.a + '|' + e.b)?.mw })));
-  const batas = batasOk.map((e, i) => { const f = alir[i], cp = capT.get(e.a + '|' + e.b), pk = puncakT.get(e.a + '|' + e.b), dr = f.mw >= 0 ? [e.a, e.b] : [e.b, e.a], lebih = pk && Math.abs(f.mw) > pk.mw; if (lebih) peringatan.push(`Aliran rata-rata tahunan ${e.a}-${e.b} ${Math.abs(f.mw)} MW melebihi kiriman puncak terbitan ${pk.mw} MW (${pk.id}); rata-rata seharusnya di bawah puncak, tanda model kasar`); return { ...(f.dibatasi ? { dibatasi: true, mw_dihitung: Math.abs(bebasAlir[i].mw), batas_src: [...cp.src].sort().join(',') } : {}), ...(lebih ? { melebihi_puncak: true, puncak_mw: pk.mw, puncak_src: pk.src, alasan: 'Rata-rata tahunan melebihi kiriman puncak terbitan; tanda model kasar' } : {}), a: e.a, b: e.b, tingkat: 'wilayah', sis: [...new Set(e.sis)].sort(), sirkit_per_kv: Object.fromEntries(Object.entries(e.sirkit).sort((x, y) => y[0] - x[0])), ruas: e.ruas, dari: dr[0], ke: dr[1], mw: Math.abs(f.mw), gwh: Math.abs(f.gwh), st: 'hitung', src: 'osm-power', tgl }; }).sort((x, y) => cmp(x.a + x.b, y.a + y.b));
+  const bawahList = [], lab = (k) => (prov2 ? namaProv.get(k) || k : k);
+  const batas = batasOk.map((e, i) => { const f = alir[i], cp = capT.get(e.a + '|' + e.b), pk = puncakT.get(e.a + '|' + e.b), dr = f.mw >= 0 ? [e.a, e.b] : [e.b, e.a], lebih = pk && Math.abs(f.mw) > pk.mw, bawah = pk && !lebih && Math.abs(f.mw) < 0.8 * pk.mw; if (bawah) bawahList.push(`Aliran rata-rata tahunan ${lab(e.a)}-${lab(e.b)} ${Math.abs(f.mw)} MW di bawah 80 persen kiriman puncak terbitan ${pk.mw} MW (${pk.id}); model mungkin menaksir terlalu rendah`); if (lebih) peringatan.push(`Aliran rata-rata tahunan ${lab(e.a)}-${lab(e.b)} ${Math.abs(f.mw)} MW melebihi kiriman puncak terbitan ${pk.mw} MW (${pk.id}); rata-rata seharusnya di bawah puncak, tanda model kasar`); return { ...(cp ? { batas_mw: cp.mw, jenis_batas: cp.jenis, batas_src: [...cp.src].sort().join(',') } : {}), ...(infoT.has(e.a + '|' + e.b) ? { batas_info: infoT.get(e.a + '|' + e.b).sort((x, y) => cmp(x.id, y.id)).map((x) => ({ ...x, ...(x.memotong ? {} : { ket: 'Komposisi pasokan saat puncak, bukan rating penghantar; tidak memotong aliran' }) })) } : {}),  ...(f.dibatasi ? { dibatasi: true, mw_dihitung: Math.abs(bebasAlir[i].mw) } : {}), ...(bawah ? { jauh_di_bawah_terbit: true, puncak_mw: pk.mw, puncak_src: pk.src, alasan: 'Rata-rata tahunan model di bawah 80 persen kiriman puncak terbitan; model mungkin terlalu rendah (rata-rata memang di bawah puncak, tetapi selisih besar patut dicurigai)' } : {}), ...(lebih ? { melebihi_puncak: true, puncak_mw: pk.mw, puncak_src: pk.src, alasan: 'Rata-rata tahunan melebihi kiriman puncak terbitan; tanda model kasar' } : {}), a: e.a, b: e.b, tingkat: tingkatNer, sis: [...new Set(e.sis)].sort(), sirkit_per_kv: Object.fromEntries(Object.entries(e.sirkit).sort((x, y) => y[0] - x[0])), ruas: e.ruas, dari: dr[0], ke: dr[1], mw: Math.abs(f.mw), gwh: Math.abs(f.gwh), st: 'hitung', src: 'osm-power', tgl }; }).sort((x, y) => cmp(x.a + x.b, y.a + y.b));
   const sisAliran = new Set(besar.filter((s) => !s.potongan && !s.captive).map((s) => s.id));
-  const aliranSis = besar.filter((s) => sisAliran.has(s.id)).map((s) => { const bb = batas.filter((e) => e.sis.includes(s.id)).sort((x, y) => y.mw - x.mw || cmp(x.a + x.b, y.a + y.b))[0]; return bb ? { sis: s.id, nama: s.nama, a: bb.dari, b: bb.ke, mw: bb.mw, tingkat: 'wilayah', st: 'hitung', src: 'osm-power', tgl } : null; }).filter(Boolean).sort((a, b) => cmp(a.sis, b.sis));
+  const aliranSis = besar.filter((s) => sisAliran.has(s.id)).map((s) => { const bb = batas.filter((e) => e.sis.includes(s.id)).sort((x, y) => y.mw - x.mw || cmp(x.a + x.b, y.a + y.b))[0]; return bb ? { sis: s.id, nama: s.nama, a: bb.dari, b: bb.ke, mw: bb.mw, tingkat: tingkatNer, st: 'hitung', src: 'osm-power', tgl } : null; }).filter(Boolean).sort((a, b) => cmp(a.sis, b.sis));
   // segmen per wilayah: lokal, keluar, masuk, tak tertutup
   for (const n of nerWil) {
     const keluar = batas.filter((e) => e.dari === n.id).reduce((t, e) => t + e.gwh, 0), masuk = batas.filter((e) => e.ke === n.id).reduce((t, e) => t + e.gwh, 0), lokal = Math.min(n.produksi_gwh, n.kebutuhan_gwh);
@@ -632,11 +780,12 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
     if (!e || k.nilai_mw == null) return { ...dasar, kami: null, sebanding: 'tidak', alasan: [k.alasan_sebanding, e ? null : 'Pasangan wilayah tidak dipetakan ke satu batas wilayah PLN di graf kami'].filter(Boolean).join(' '), st: 'hitung' };
     const kami = tanda(e, ka), selisih = R(kami - k.nilai_mw), persen = k.nilai_mw ? R((selisih / Math.abs(k.nilai_mw)) * 100) : null;
     const sebanding = k.sebanding_dengan_aliran_tahunan === 'tidak' ? 'tidak' : kami * k.nilai_mw < 0 ? 'berlawanan' : 'langsung';
-    return { ...dasar, kami: { mw: R(kami), dari: e.dari, ke: e.ke }, selisih_mw: selisih, selisih_persen: persen, sebanding, alasan: k.alasan_sebanding ?? null, ...(e.dibatasi ? { tanpa_batas: { mw: e.mw_dihitung } } : {}), ...(e.melebihi_puncak ? { melebihi_puncak: true, alasan: [k.alasan_sebanding, 'Rata-rata tahunan kami melebihi kiriman puncak terbitan (tanda model kasar).'].filter(Boolean).join(' ') } : {}), st: 'hitung' };
+    return { ...dasar, kami: { mw: R(kami), dari: e.dari, ke: e.ke }, selisih_mw: selisih, selisih_persen: persen, sebanding, alasan: k.alasan_sebanding ?? null, ...(e.dibatasi ? { tanpa_batas: { mw: e.mw_dihitung } } : {}), ...(k.jenis === 'aliran-terukur-beban-puncak' && kami * k.nilai_mw > 0 && Math.abs(kami) < 0.8 * Math.abs(k.nilai_mw) ? { jauh_di_bawah_terbit: true, alasan: [k.alasan_sebanding, 'Model kami di bawah 80 persen angka terbit searah (' + R(kami) + ' vs ' + k.nilai_mw + ' MW); rata-rata memang di bawah puncak, tetapi selisih besar patut dicurigai.'].filter(Boolean).join(' ') } : {}), ...(kami * k.nilai_mw < 0 ? { arah_berlawanan: true } : {}), ...(/500 kV/.test(k.dari + k.ke) ? { catatan_tegangan: 'Angka terbit hanya jalur 500 kV; model menjumlah semua tegangan pada batas provinsi itu: tidak sebanding' } : {}), ...(e.melebihi_puncak ? { melebihi_puncak: true, alasan: [k.alasan_sebanding, 'Rata-rata tahunan kami melebihi kiriman puncak terbitan (tanda model kasar).'].filter(Boolean).join(' ') } : {}), st: 'hitung' };
   });
   const kebNas = nerWil.reduce((t, n) => t + n.kebutuhan_gwh, 0), prodNas = nerWil.reduce((t, n) => t + n.produksi_gwh, 0);
-  const energi = { meta: { peringatan, provinsi_tak_teralokasi: provTak, tahun_data: thn, tanggal: tgl, tgl_ambil: stat.tanggal_ambil ?? null, tingkat_aliran: 'wilayah', susut_nasional_persen: susut, neraca_nasional: { produksi_gwh: R(prodNas), kebutuhan_gwh: R(kebNas), selisih_gwh: R(prodNas - kebNas), selisih_persen: R(((prodNas - kebNas) / kebNas) * 100), ket: 'Produksi PLN dikurangi penjualan/(1 - susut seragam); selisih memuat pemakaian sendiri, susut beda dari rata-rata, dan listrik non-PLN' }, gwh_tak_teralokasi: { gwh: R(nasional.total - gwhTeralokasi), dari: nasional.total, ket: 'Produksi nasional yang tidak masuk bauran sistem mana pun (provinsi terbelah, sistem tidak dihitung)' }, ket: 'Aliran = aproksimasi DC kasar dari neraca tahunan WILAYAH PLN dan topologi OSM; bukan aliran terukur. Penjualan hanya terbit per wilayah PLN, sehingga neraca dan aliran tidak dibagi ke provinsi. Susut nasional dipakai seragam. Produksi hanya PLN (termasuk beli IPP), tanpa captive. ' + CATATAN_RATA, sumber: SUMBER, celah: ['Faktor emisi ESDM FE 2019 tidak terbuka; pembanding emisi hanya RUPTL 2025 (proyeksi per wilayah RUPTL, bukan realisasi 2024).', 'Efisiensi pembangkit fosil adalah nilai tipikal (st est), bukan data operator; daur hidup AR5 tidak memuat PLTG/PLTMG/PLTD/biogas/sampah (null, intensitas daur hidup hanya bila >= 80% GWh tercakup).', 'Tren: hanya tahun 2024 yang punya produksi per provinsi di repo (HEESI 2025 hanya nasional); tahun lain tidak diisi.', 'Produksi PLN per provinsi memuat pembelian IPP tetapi bukan captive; bauran memakai PLTU sebagai batu bara.', 'Pemisahan provinsi oleh sistem OSM (mis. Bangka masuk Sumatera lewat SJ-01) memengaruhi sistem yang dihitung: provinsi terbelah tidak dialokasikan.'] },
-    faktor: FAKTOR, kiriman_terbit: bandingKiriman, batas_terbit: (T.batas_terbit || []).map(lengkap), pembanding_emisi: TP.pembanding_emisi, nasional: { ...nasional, tahun: thn, st: 'hitung', src: 'esdm-statistik-2024', tgl: ptgl }, bauran: { sistem: bauranSis, provinsi: bauranProv }, neraca: nerWil, produksi_provinsi: produksiProv, batas, aliran_sistem: aliranSis, tren: [{ tahun: thn, sistem: bauranSis.map((b) => ({ id: b.id, persen: b.persen || null, langsung: b.langsung ?? null, daur_hidup: b.daur_hidup ?? null, tidak_dihitung: !!b.tidak_dihitung })) }] };
+  const energi = { meta: { peringatan, provinsi_tak_teralokasi: provTak, tahun_data: thn, tanggal: tgl, tgl_ambil: stat.tanggal_ambil ?? null, tingkat_aliran: tingkatNer, jauh_di_bawah_terbit: bawahList, ...(prov2 ? { unit_gabungan: unitGabung, faktor_kapasitas_tinggi_tak_digabung: cfTinggi } : {}), ...(prov2 ? { penjualan_bps_total_gwh: SR.penjualan_provinsi.find((r) => r.tahun === thn && !r.prov_kode && /^BPS/.test(r.src))?.gwh ?? null, penjualan_bps_jumlah_provinsi_gwh: R(bpsRows.reduce((t, r) => t + r.gwh, 0)) } : {}), susut_nasional_persen: susut, neraca_nasional: { produksi_gwh: R(prodNas), kebutuhan_gwh: R(kebNas), selisih_gwh: R(prodNas - kebNas), selisih_persen: R(((prodNas - kebNas) / kebNas) * 100), ket: 'Produksi PLN dikurangi penjualan/(1 - susut seragam); selisih memuat pemakaian sendiri, susut beda dari rata-rata, dan listrik non-PLN' }, gwh_tak_teralokasi: { gwh: R(nasional.total - gwhTeralokasi), dari: nasional.total, ket: 'Produksi nasional yang tidak masuk bauran sistem mana pun (provinsi terbelah, sistem tidak dihitung)' }, ket: 'Aliran = aproksimasi DC kasar dari neraca tahunan ' + (prov2 ? 'PROVINSI (penjualan BPS 859 tahun ' + thn + '; pemekaran Papua digabung ke induk lama)' : 'WILAYAH PLN (penjualan hanya terbit per wilayah PLN, sehingga neraca dan aliran tidak dibagi ke provinsi)') + ' dan topologi OSM; bukan aliran terukur. Susut nasional dipakai seragam. Produksi hanya PLN (termasuk beli IPP), tanpa captive. ' + CATATAN_RATA, sumber: SUMBER, celah: [SR ? 'Faktor emisi resmi ESDM (Gatrik) hanya terbit 2011-2019 dan hanya provinsi yang tercetak sebaris dengan angka; tak ada edisi resmi 2020-2024. Pembanding RUPTL 2025 adalah proyeksi per wilayah RUPTL, bukan realisasi 2024.' : 'Faktor emisi ESDM FE 2019 tidak terbuka; pembanding emisi hanya RUPTL 2025 (proyeksi per wilayah RUPTL, bukan realisasi 2024).', 'Efisiensi pembangkit fosil adalah nilai tipikal (st est), bukan data operator; daur hidup AR5 tidak memuat PLTG/PLTMG/PLTD/biogas/sampah (null, intensitas daur hidup hanya bila >= 80% GWh tercakup).', SR ? 'Tren per sistem hanya 2024: produksi per provinsi 2021-2023 (Statistik PLN Tabel 23) hanya memuat produksi sendiri PLN tanpa sewa genset dan pembelian IPP, dan hanya 24-26 provinsi yang terpisah per provinsi (sisanya unit multi-provinsi); membandingkannya dengan 2024 (termasuk IPP) menyesatkan. Tren bauran 2017-2023 hanya nasional (persen energi primer PLN, ESDM) di tren_pln_nasional; Ember (tren_nasional) tetap tren seluruh pembangkitan.' : 'Tren: hanya tahun 2024 yang punya produksi per provinsi di repo (HEESI 2025 hanya nasional); tahun lain tidak diisi.',
+      ...(SR ? ['Statistik PLN 2024 tak terjangkau (snapshot terpotong); kartu MVA, beban puncak, keandalan, penjualan PLN berhenti di 2023; penjualan 2024 dari BPS 859.', ...SR.meta.celah.filter((c) => /^(BPS var|Statistik PLN: baris|Beban puncak:|SAIDI|ESDM 2023)/.test(c))] : []), 'Produksi PLN per provinsi memuat pembelian IPP tetapi bukan captive; bauran memakai PLTU sebagai batu bara.', 'Pemisahan provinsi oleh sistem OSM (mis. Bangka masuk Sumatera lewat SJ-01) memengaruhi sistem yang dihitung: provinsi terbelah tidak dialokasikan.'] },
+    faktor: FAKTOR, kiriman_terbit: bandingKiriman, batas_terbit: (T.batas_terbit || []).map(lengkap), pembanding_emisi: TP.pembanding_emisi, nasional: { ...nasional, tahun: thn, st: 'hitung', src: 'esdm-statistik-2024', tgl: ptgl }, bauran: { sistem: bauranSis, provinsi: bauranProv }, ...(resmi ? { pembanding_esdm_lain: resmi.pembandingLain, kartu_sistem: resmi.kartuSistem, kartu_provinsi: resmi.kartuProvinsi, keandalan: resmi.keandalan, keandalan_nasional: resmi.keandalanNasional, tren_pln_nasional: resmi.trenPln } : {}), neraca: nerWil, produksi_provinsi: produksiProv, batas, aliran_sistem: aliranSis, ...(ctx.ember?.length ? { tren_nasional: ctx.ember.map((o) => ({ ...o, st: 'sumber', src: 'ember-2025', tgl: ctx.emberTgl ?? tgl })) } : {}), tren: [{ tahun: thn, sistem: bauranSis.map((b) => ({ id: b.id, persen: b.persen || null, langsung: b.langsung ?? null, daur_hidup: b.daur_hidup ?? null, tidak_dihitung: !!b.tidak_dihitung })) }] };
 
   // ------ ringkas.json
   const kelasKm = new Map(); for (const r of ruas) { const k = kelas(r.kv); const o = kelasKm.get(k) || { kelas: k, km: 0, ruas: 0 }; o.km += r.km; o.ruas++; kelasKm.set(k, o); }
@@ -647,13 +796,25 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
     .slice(0, 20).map((j) => ({ id: j.id, sis: j.sis, kv: j.kv, sirkit: j.sirkit, km: R(j.km), gi: j.belakang.gi, mva: j.belakang.mva, mw: j.belakang.mw, sisi: 'kecil', nama: j.nama, st: 'hitung', src: 'osm-power', tgl }));
   const kmTot = R(ruas.reduce((s, r) => s + r.km, 0));
   const kmKv = new Map(besar.map((s) => { const o = { 500: 0, 275: 0, 230: 0, 150: 0, 70: 0, null: 0 }; for (const r of s.ruas) o[r.kv == null ? 'null' : r.kv >= 500 ? 500 : r.kv >= 275 ? 275 : r.kv >= 230 ? 230 : r.kv >= 150 ? 150 : 70] += r.km; return [s.id, Object.fromEntries(Object.entries(o).map(([k, v]) => [k, R(v)]))]; })); // km per kelas kV tepat; 66 dan 70 jadi 70; 115-149 jadi 70 tak ada di data (kv hanya 66/70/150/230/275/500)
-  const ringkas = { meta: { tanggal: tgl, atribusi: 'Peta jaringan: kontributor OpenStreetMap (ODbL 1.0). Pembangkit: Global Energy Monitor dan World Resources Institute GPPD (CC BY 4.0). Neraca dan statistik: Ditjen Ketenagalistrikan ESDM.', sumber: SUMBER, celah: [...celahMasukan, 'Pembangkit gas dan diesel: lokasi dari OSM dan WRI GPPD (data 2021, bisa usang); Global Energy Monitor GIPT gas/diesel belum dipakai.', 'Titik temu ruas di tengah garis (T) hanya dideteksi bila ruas lain berakhir dalam 50 m dari garis dan gardu terdekat <= 400 m; yang lebih jauh tidak disambung.', 'OSM dipetakan sukarelawan: tidak lengkap dan bukan data PLN.'] },
+  const ringkas = { meta: { tanggal: tgl, atribusi: 'Peta jaringan: kontributor OpenStreetMap (ODbL 1.0). Pembangkit: Global Energy Monitor dan World Resources Institute GPPD (CC BY 4.0). Tren nasional: Ember (CC BY 4.0). Neraca dan statistik: Ditjen Ketenagalistrikan ESDM.', sumber: SUMBER, celah: [...celahMasukan, 'Pembangkit gas dan diesel: lokasi dari OSM, GEM Global Gas Plant Tracker (rilis Okt 2023, unit >= 50 MW) dan WRI GPPD (data 2021, bisa usang); PLTD kecil < 50 MW tanpa koordinat belum ada.', 'Titik temu ruas di tengah garis (T) hanya dideteksi bila ruas lain berakhir dalam 50 m dari garis dan gardu terdekat <= 400 m; yang lebih jauh tidak disambung.', 'OSM dipetakan sukarelawan: tidak lengkap dan bukan data PLN.'] },
     angka: [F('ruas', ruas.length, 'ruas', 'hitung', 'osm-power', tgl), F('gardu', gardu.length, 'gardu', 'hitung', 'osm-power', tgl), F('pembangkit', pbs.length, 'pembangkit', 'hitung', 'gem', tgl), F('panjang_total', kmTot, 'km', 'hitung', 'osm-power', tgl), F('sistem', besar.length, 'sistem', 'hitung', 'osm-power', tgl), F('sistem_utama', besar.filter((s) => !s.potongan && !s.captive).length, 'sistem', 'hitung', 'osm-power', tgl), F('sistem_potongan', besar.filter((s) => s.potongan).length, 'sistem', 'hitung', 'osm-power', tgl), F('sistem_captive', besar.filter((s) => s.captive).length, 'sistem', 'hitung', 'osm-power', tgl), F('potongan_kecil', kecil.length, 'potongan', 'hitung', 'osm-power', tgl), F('jalur_tunggal', jalur.filter((j) => j.tunggal).length, 'jalur', 'hitung', 'osm-power', tgl), F('mw_pln_tertempel', R(pbs.reduce((s, p) => s + (p.gi && !p.captive ? p.mw || 0 : 0), 0)), 'MW', 'hitung', 'gem', tgl), F('gi_satu_masuk', obj.gi.filter((g) => g.satu_masuk).length, 'gardu', 'hitung', 'osm-power', tgl), F('rs_satu_sirkit_tunggal', obj.rs.filter((r) => r.tunggal && r.sirkit === 1).length, 'ruas', 'hitung', 'osm-power', tgl), F('jl_tunggal', jalur.filter((j) => j.tunggal).length, 'jalur', 'hitung', 'osm-power', tgl), F('rs_terbitan', ruas.filter((r) => r.asal).length, 'ruas', 'hitung', 'terbitan', tgl), F('tempelan_simpul', sambung.length, 'tempelan', 'hitung', 'osm-power', tgl)],
     lapis: [['op', obj.op.length], ['sis', obj.sis.length], ['prov', obj.prov.length], ['pb', obj.pb.length], ['gi', obj.gi.length], ['jl', obj.jl.length], ['rs', obj.rs.length]].map(([id, jumlah]) => ({ id, jumlah })),
     sistem: obj.sis.map((s) => ({ id: s.id, nama: s.nama, km: s.km, gi: s.gi, mw_pln: s.mw_pln, mw_captive: s.mw_captive, mva: s.mva, kv_maks: s.kv_maks, warna_kelas: s.warna_kelas, potongan: s.potongan, captive: s.captive, km_kv: kmKv.get(s.id) })).sort((a, b) => b.km - a.km || cmp(a.id, b.id)),
     tegangan: urutKelas.map((k) => { const o = kelasKm.get(k) || { km: 0, ruas: 0 }; return { kelas: k, km: R(o.km), ruas: o.ruas, st: 'hitung', src: 'osm-power', tgl }; }),
     tunggal_teratas: tunggal, neraca: nerWil,
-    menunggu: [['rating_trafo', 'Kapasitas trafo (MVA) tiap gardu'], ['beban_ruas', 'Beban aktual tiap ruas'], ['kapasitas_penghantar', 'Kapasitas penghantar (ampere)'], ['gangguan', 'Riwayat gangguan dan padam'], ['pembangkit_gas_diesel', 'Lokasi pembangkit gas dan diesel']].map(([k, ket]) => ({ k, v: null, sat: '', st: 'menunggu', src: 'osm-power', tgl, ket })) };
+    menunggu: [['rating_trafo', 'Kapasitas trafo (MVA) tiap gardu'], ['beban_ruas', 'Beban aktual tiap ruas'], ['kapasitas_penghantar', 'Kapasitas penghantar (ampere)'], ['gangguan', 'Riwayat gangguan dan padam']].map(([k, ket]) => ({ k, v: null, sat: '', st: 'menunggu', src: 'osm-power', tgl, ket })) };
+
+  // ------ konstruksi (OSM, di luar graf) dan proyek gas GEM (bukan pembangkit operasi)
+  const KV_K = [500, 275, 230, 150, 70], kelasK = (kv) => (kv == null ? 'tak-tercatat' : String(kv === 66 ? 70 : kv));
+  const kons = ctx.konstruksi ? (() => {
+    const k = parseKonstruksi(ctx.konstruksi, ctx.eps), r2 = k.ruas.filter((r) => r.c.some(([x, y]) => dalamIndonesia(provIdx, x, y))), g2 = k.gardu.filter((g) => dalamIndonesia(provIdx, g.x, g.y)), per = new Map();
+    for (const r of r2) { const o = per.get(kelasK(r.kv)) || { kelas: kelasK(r.kv), km: 0, ruas: 0 }; o.km += r.km; o.ruas++; per.set(o.kelas, o); }
+    const gk = new Map(); for (const g of g2) gk.set(kelasK(g.kv), (gk.get(kelasK(g.kv)) || 0) + 1);
+    const urut = [...KV_K.map(String), 'tak-tercatat'];
+    return { r2, g2, ringkas: { st: 'sumber', status: 'konstruksi', src: 'osm-power', tgl, ruas: r2.length, gardu: g2.length, km: R(r2.reduce((t, r) => t + r.km, 0)), km_per_kv: urut.map((u) => ({ kelas: u, km: R(per.get(u)?.km ?? 0), ruas: per.get(u)?.ruas ?? 0, gardu: gk.get(u) ?? 0 })), catatan: 'Fitur OSM dalam pembangunan (power=construction, construction:power, line=construction); tidak masuk graf, sistem, atau jembatan. Tegangan hanya bila tercatat; OSM tidak lengkap dan sebagian tag konstruksi usang.' } };
+  })() : null;
+  if (kons) ringkas.konstruksi = kons.ringkas;
+  if (ctx.gemGas?.proyek?.length) { const dalam = ctx.gemGas.proyek.filter((p) => dalamIndonesia(provIdx, p.x, p.y)); ringkas.pembangkit_proyek = { st: 'sumber', src: 'gem-ggpt-2023', tgl: '2023-10-31', status: ['construction', 'pre-construction'].map((st) => { const a = dalam.filter((p) => p.status === st); return { status: st, n: a.length, mw: R(a.reduce((t, p) => t + (p.mw || 0), 0)), proyek: a.map((p) => ({ id: p.id, nama: p.nama, jenis: p.jenis, mw: p.mw, tahun: p.tahun })) }; }), catatan: 'Proyek gas/diesel yang belum beroperasi (rilis GEM Okt 2023, bisa usang); tidak dihitung dalam pembangkit, bauran, atau MW PLN.' }; }
 
   // ------ geo
   const tahunG = gardu.map((g) => g.tahun).filter((x) => x != null).sort((a, b) => a - b), bin = new Map();
@@ -684,7 +845,7 @@ export function bangun(elemen, ctx, tgl, celahMasukan = []) {
     bab(6, 'tak-terlihat', ['osm-power'], ringkas.menunggu.map((m) => ({ k: m.k, v: null, sat: '', st: 'menunggu' })), [], 0, { umur_gardu: ringkas.umur_gardu }),
     bab(7, 'cara', ringkas.meta.sumber.map((x) => x.id), [], [], 0, { angka_pln: TP.angka_pln }),
   ];
-  const geo = { meta: { tanggal: tgl, atribusi: 'OpenStreetMap (ODbL 1.0); Global Energy Monitor (CC BY 4.0)' }, rs: ruas.map((r) => ({ id: r.id, kv: r.kv, c: r.c.map(([x, y]) => [R(x, 4), R(y, 4)]) })).sort((a, b) => cmp(a.id, b.id)), gi: gardu.map((g) => ({ id: g.id, n: g.nama, kv: g.kv, x: R(g.x, 4), y: R(g.y, 4) })).sort((a, b) => cmp(a.id, b.id)), pb: pbs.map((p) => ({ id: p.id, j: p.jenis, mw: p.mw, x: R(p.x, 4), y: R(p.y, 4) })) };
+  const geo = { meta: { tanggal: tgl, atribusi: 'OpenStreetMap (ODbL 1.0); Global Energy Monitor (CC BY 4.0)' }, rs: ruas.map((r) => ({ id: r.id, kv: r.kv, c: r.c.map(([x, y]) => [R(x, 4), R(y, 4)]) })).sort((a, b) => cmp(a.id, b.id)), gi: gardu.map((g) => ({ id: g.id, n: g.nama, kv: g.kv, x: R(g.x, 4), y: R(g.y, 4) })).sort((a, b) => cmp(a.id, b.id)), pb: pbs.map((p) => ({ id: p.id, j: p.jenis, mw: p.mw, x: R(p.x, 4), y: R(p.y, 4) })), ...(kons ? { konstruksi: [...kons.r2.map((r) => ({ id: r.id, j: r.jenis, kv: r.kv, st: 'sumber', status: 'konstruksi', c: r.c.map(([x, y]) => [R(x, 4), R(y, 4)]) })), ...kons.g2.map((g) => ({ id: g.id, j: 'substation', kv: g.kv, n: g.nama, st: 'sumber', status: 'konstruksi', x: R(g.x, 4), y: R(g.y, 4) }))].sort((a, b) => cmp(a.id, b.id)) } : {}) };
   return { ringkas, objek: obj, energi, geo };
 }
 
@@ -746,7 +907,7 @@ export function gerbang(o, ctx, celah = []) {
   telusur(o.ringkas); telusur(o.objek); telusur(o.energi);
   if (tidakAda.size) galat.push('id sumber tak ada di meta.sumber: ' + [...tidakAda].slice(0, 8).join(', '));
   // aliran rata-rata tahunan di satu batas tidak boleh melebihi angka kiriman puncak terbitan untuk pasangan yang sama
-  for (const k of o.energi.kiriman_terbit) if (k.kami && k.terbit_mw != null && Math.abs(k.kami.mw) > Math.abs(k.terbit_mw) && !k.melebihi_puncak) galat.push(`aliran ${k.dari} - ${k.ke} melebihi puncak terbitan tetapi tidak ditandai melebihi_puncak (${k.id})`); // melebihi puncak = peringatan (meta.peringatan), bukan galat
+  for (const k of o.energi.kiriman_terbit) if (!k.catatan_tegangan && k.kami && k.terbit_mw != null && Math.abs(k.kami.mw) > Math.abs(k.terbit_mw) && !k.melebihi_puncak) galat.push(`aliran ${k.dari} - ${k.ke} melebihi puncak terbitan tetapi tidak ditandai melebihi_puncak (${k.id})`); // melebihi puncak = peringatan (meta.peringatan), bukan galat
   // bauran: tak ada GWh dihitung dua kali; faktor kapasitas <= 1; potongan/captive tidak dihitung
   const sisBy = new Map(o.objek.sis.map((s) => [s.id, s])); let jum = 0;
   for (const b of o.energi.bauran.sistem) { const s = sisBy.get(b.id); if (b.tidak_dihitung) continue; jum += b.total; if (s.potongan || s.captive) galat.push(`bauran dihitung untuk sistem ${s.potongan ? 'potongan' : 'captive'} ${b.nama}`); if (b.daur_hidup != null && b.daur_hidup < b.langsung) galat.push(`daur hidup ${b.daur_hidup} < langsung ${b.langsung} di ${b.nama}`); if (!(b.faktor_kapasitas <= 1)) galat.push(`faktor kapasitas ${b.nama} ${b.faktor_kapasitas} > 1`); if (!(b.mw_pln > 0)) galat.push(`bauran ${b.nama} dihitung dengan MW PLN 0`); }
@@ -768,9 +929,13 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const el = []; for (const f of berkas) el.push(...JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).elements);
   const ctx = muatCtx();
   const mentahAdik = (n) => path.join(path.resolve(dir), '..', n);
+  const sj = path.join(ROOT, 'data/kembaran/statistik.json'); if (fs.existsSync(sj)) ctx.statResmi = JSON.parse(fs.readFileSync(sj, 'utf8'));
   const tj = path.join(ROOT, 'data/kembaran/terbitan.json'); if (fs.existsSync(tj)) ctx.terbitan = JSON.parse(fs.readFileSync(tj, 'utf8'));
   const gp = process.env.GPPD_CSV || path.join(path.resolve(dir), '..', '..', 'wri-gppd', 'global_power_plant_database.csv'); if (fs.existsSync(gp)) ctx.gppd = barisGppd(fs.readFileSync(gp, 'utf8'));
   const dp = mentahAdik('osm-pembangkit'); if (fs.existsSync(dp)) { const e = []; for (const f of fs.readdirSync(dp).filter((x) => x.endsWith('.json')).sort()) e.push(...(JSON.parse(fs.readFileSync(path.join(dp, f), 'utf8')).elements || [])); ctx.osmEkstra = barisDariOverpass(e); }
+  const gg = path.join(path.resolve(dir), '..', '..', 'gem-gas', 'data.csv'); if (fs.existsSync(gg)) { ctx.gemGas = barisGemGas(fs.readFileSync(gg, 'utf8')); ctx.gemGas.tanggal_ambil = '2026-11-25'; }
+  const em = path.join(path.resolve(dir), '..', '..', 'ember', 'global.csv'); if (fs.existsSync(em)) { ctx.ember = barisEmber(fs.readFileSync(em, 'utf8')); ctx.emberTgl = '2026-11-25'; }
+  const dk = mentahAdik('osm-konstruksi'); if (fs.existsSync(dk)) { const e = []; for (const f of fs.readdirSync(dk).filter((x) => x.endsWith('.json')).sort()) e.push(...(JSON.parse(fs.readFileSync(path.join(dk, f), 'utf8')).elements || [])); ctx.konstruksi = e; }
   ctx.big = fs.existsSync(mentahAdik('big')) && fs.readdirSync(mentahAdik('big')).length ? true : null;
   if (ctx.big) { // garis jaringan listrik BIG per lembar; grup dari nama berkas (RBI_<tahun>_25K_<wilayah>_...); grup tanpa garis dicatat saja
     const grupDari = (f) => { const m = f.match(/^RBI_(\d{4})_25K_(.+?)_(?:TRANSPORTASI)?(?:DAN)?UTILITAS/); return m ? m[2].replace(/\d+$/, '').split('_').filter(Boolean).map((w) => w[0] + w.slice(1).toLowerCase()).join('-') + ' ' + m[1] : f; };

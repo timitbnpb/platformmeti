@@ -244,6 +244,7 @@
   "scripts/pipa/topik_pembiayaan_hijau.mjs": "naskah topik ditulis tangan; hasil sudah di public/data",
   "scripts/pipa/topik_transisi_berkeadilan.mjs": "naskah topik ditulis tangan; hasil sudah di public/data",
   "scripts/panen/big_satupeta.mjs": "panen BIG Satu Peta atas perintah, mentah di luar repo; dijalankan manual untuk kembaran jaringan (KJ-14)",
+  "scripts/panen/statistik_resmi.py": "kurasi angka Statistik PLN/ESDM/BPS dari PDF dan HTML hasil unduh manual di luar repo (pdftotext, OCR); manual untuk kembaran jaringan, keluaran data/kembaran/statistik.json",
   "scripts/panen/osm_geofabrik.mjs": "saring ekstrak Geofabrik .osm.pbf lokal (butuh ogr2ogr); manual untuk kembaran jaringan (KJ-01)",
   "scripts/panen/osm_pembangkit_kembaran.mjs": "panen Overpass pembangkit semua bahan bakar, mentah di luar repo; manual untuk kembaran jaringan",
   "scripts/pipa/graf_jaringan.mjs": "bangun kembaran jaringan dari mentah OSM di luar repo (argumen dirMentah dan tanggal); manual setelah panen, tidak ikut bot"

@@ -278,6 +278,17 @@
    "tanggal_baca": "2026-11-25",
    "lisensi": "hak cipta PT PLN (Persero); hanya fakta dan angka dikutip, tanpa menyalin teks; atribusi PLN",
    "catatan": "Press Release No. 192.PR/STH.00.01/III/2023, Surabaya 24 Maret 2023; dibaca lewat webapi pln.co.id; URL publik dicek HTTP 200."
+  },
+  {
+   "id": "gtd-1-1-1",
+   "jenis": "dokumen",
+   "judul": "Global Transmission Database v1.1.1 (GTD-v1.1_regional_existing.csv, GTD-v1.1_regional_planned.csv)",
+   "penerbit": "Brinkerink, Sherman, Osei-Owusu, Mohanty, Majid, Barnes, Niet, Shivakumar, Mayfield (Zenodo, DOI 10.5281/zenodo.10063445)",
+   "url": "https://zenodo.org/records/15527469",
+   "tanggal_terbit": "2025-05-27",
+   "tanggal_baca": "2026-11-25",
+   "lisensi": "CC BY 4.0; atribusi Global Transmission Database v1.1.1",
+   "catatan": "Kapasitas transfer level region (Jawa-Bali, Sumatera, Kalimantan, Nusa Tenggara termasuk Bali), bukan ruas; GTD sendiri mengutip IESR 2019 dan RUPTL PLN 2021-2030. Baris Indonesia diambil dari CSV regional; baris bernilai 0 (tanpa sambungan) tidak dikutip."
   }
  ],
  "sambungan_diketahui": [
@@ -1348,6 +1359,66 @@
    "keterangan": "Daya yang disalurkan ke Sistem Jawa-Bali 2,6 GW (bertahap) dengan target COD 2031; neraca Jawa-Bali RE Base mencatat impor 1.705 MW (2031), 500 MW (2032), 395 MW (2033).",
    "catatan": "Rencana. ISJ belum punya baris di sambungan_diketahui (belum ada rute atau ujung yang tertulis). RUPTL hlm PDF 343 (V-108), 353 (V-118).",
    "src": "RUPTL-2025",
+   "st": "sumber"
+  },
+  {
+   "id": "BT-07-jawa-bali-gtd",
+   "sambungan_id": "SJ-02-jawa-bali-150-sklt",
+   "nama": "Transfer Jawa-Bali (kabel laut 150 kV) menurut GTD",
+   "batas_mw": 400,
+   "batas_sebelumnya_mw": null,
+   "tegangan_kv": 150,
+   "jenis_batas": "kapasitas-transfer",
+   "status": "berlaku",
+   "tahun": 2025,
+   "keterangan": "GTD v1.1.1 mencatat kapasitas transfer eksisting Jawa-Nusa Tenggara (termasuk Bali) 400 MW (regional_existing, IDNJW-IDNNU).",
+   "catatan": "Level region kasar. GTD menulis studi IESR menyebut batas 2.000 MW Bali-Jawa (2020), tetapi proyek 500 kV 1.600 MW (220 km) belum selesai, sehingga kapasitas eksisting dipakai 400 MW. Bukan rating kabel yang diterbitkan operator; RUPTL-2025 menyebut pasokan kabel 380 MW (BT-02).",
+   "src": "gtd-1-1-1",
+   "st": "sumber"
+  },
+  {
+   "id": "BT-08-kalbar-sarawak-gtd",
+   "sambungan_id": "SJ-04-kalbar-sarawak-275",
+   "nama": "Interkoneksi Kalbar-Sarawak 275 kV menurut GTD",
+   "batas_mw": 230,
+   "batas_sebelumnya_mw": null,
+   "tegangan_kv": 275,
+   "jenis_batas": "kapasitas-transfer",
+   "status": "berlaku",
+   "tahun": 2025,
+   "keterangan": "GTD v1.1.1 mencatat kapasitas transfer eksisting Kalimantan-Sarawak 230 MW pada 275 kV, rute 128,2 km (regional_existing, IDNKA-MYSSK).",
+   "catatan": "Level region kasar; sumber asal GTD: artikel Wiley (apv.12343) dan NS Energy (Trans-Borneo Power Grid). Pasangan Kalbar-Sarawak lintas negara, tidak masuk model aliran antarwilayah.",
+   "src": "gtd-1-1-1",
+   "st": "sumber"
+  },
+  {
+   "id": "BT-09-jawa-bali-rencana-gtd",
+   "sambungan_id": null,
+   "nama": "Jawa-Bali 500 kV (rencana) menurut GTD",
+   "batas_mw": 1600,
+   "batas_sebelumnya_mw": null,
+   "tegangan_kv": 500,
+   "jenis_batas": "kapasitas-rencana",
+   "status": "rencana",
+   "tahun": null,
+   "keterangan": "GTD v1.1.1 mencatat proyek 500 kV 1.600 MW, 220 km, Jawa-Bali masih berstatus pengembangan tanpa tahun selesai (regional_planned, IDNJW-IDNNU).",
+   "catatan": "Rencana, bukan batas berlaku. RUPTL-2025 (BT-04) menyebut JBC sekitar 2.000 MW dan target 2030; dua angka bersumber dokumen berbeda dan tidak diseragamkan.",
+   "src": "gtd-1-1-1",
+   "st": "sumber"
+  },
+  {
+   "id": "BT-10-jawa-sumatera-rencana-gtd",
+   "sambungan_id": null,
+   "nama": "Jawa-Sumatera 500 kV (rencana) menurut GTD",
+   "batas_mw": 3000,
+   "batas_sebelumnya_mw": null,
+   "tegangan_kv": 500,
+   "jenis_batas": "kapasitas-rencana",
+   "status": "rencana",
+   "tahun": null,
+   "keterangan": "GTD v1.1.1 mencatat proyek 500 kV 3.000 MW, 1.070 km, Jawa-Sumatera berstatus pengembangan tanpa tahun selesai (regional_planned, IDNJW-IDNSM).",
+   "catatan": "Rencana, bukan batas berlaku. RUPTL-2025 (BT-06) menyebut ISJ 2,6 GW target 2031; angka tidak diseragamkan.",
+   "src": "gtd-1-1-1",
    "st": "sumber"
   }
  ],
