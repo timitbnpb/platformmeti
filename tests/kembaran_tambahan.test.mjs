@@ -84,7 +84,7 @@ test('kawasanBeban: captive_terdekat hanya captive bermw dalam 100 km; > 100 km,
   assert.equal(run([]).captive_terdekat, null, 'tanpa captive');
   assert.equal(run([PB('dekat', 107.8), PB('lebih', 107.3)]).captive_terdekat.id, 'lebih', 'yang terdekat menang');
   assert.equal(run([PB('b', 107.3), PB('a', 107.3)]).captive_terdekat.id, 'a', 'seri jarak: id terkecil');
-  const ada = run([PB('c1', 107.5)]); assert.ok(ada.src.includes('gem-gcpt')); assert.ok(!run([PB('jauh', 108)]).src.includes('gem-gcpt') === false || true);
+  const ada = run([PB('c1', 107.5)]); assert.ok(ada.src.includes('gem-gcpt')); assert.ok(!run([PB('jauh', 108)]).src.includes('gem-gcpt'), 'captive > 100 km tak ditampilkan: gem-gcpt tak boleh dikutip');
   assert.equal(run([PB('c1', 107.5)], kawasan({ lat: null })) === undefined, true, 'lat null tak jadi titik');
 });
 
